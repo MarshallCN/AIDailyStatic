@@ -5,137 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Daily 简报</title>
   <meta name="description" content="纯静态、可本地打开、可部署到 GitHub Pages 的简约 AI 新闻站" />
-  <style>
-    :root {
-      --bg: #f6f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --primary: #2563eb;
-      --border: #e5e7eb;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 28px 16px 56px;
-    }
-
-    header {
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 1.9rem;
-      letter-spacing: 0.01em;
-    }
-
-    .sub {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .toolbar {
-      margin: 18px 0 14px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .chip {
-      border: 1px solid var(--border);
-      background: #fff;
-      color: #374151;
-      padding: 8px 12px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    .chip.active {
-      border-color: var(--primary);
-      color: var(--primary);
-      background: #eff6ff;
-    }
-
-    .list {
-      display: grid;
-      gap: 10px;
-    }
-
-    article {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px;
-    }
-
-    article h2 {
-      margin: 0 0 6px;
-      font-size: 1.08rem;
-    }
-
-    article h2 a {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    article h2 a:hover {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    .meta {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 8px;
-      color: var(--muted);
-      font-size: 0.84rem;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      background: #eef2ff;
-      color: #3730a3;
-      border-radius: 999px;
-      padding: 2px 8px;
-      font-size: 0.78rem;
-    }
-
-    .empty {
-      border: 1px dashed var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      text-align: center;
-      color: var(--muted);
-      background: #fff;
-    }
-
-    footer {
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-
-    code {
-      background: #eef2f7;
-      border-radius: 6px;
-      padding: 2px 6px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="wrap">
@@ -146,102 +16,16 @@
 
     <section class="toolbar" id="filters"></section>
     <section class="list" id="news"></section>
+    <div class="empty hidden" id="empty">当前分类暂无内容</div>
+    <div class="loading hidden" id="loading">正在加载更多新闻...</div>
 
     <footer>
-      <div>本地运行：直接双击打开 <code>index.html</code>。</div>
-      <div>GitHub Pages：推送到仓库后，在 <code>Settings → Pages</code> 里选择 <code>Deploy from a branch</code>，分支选 <code>main</code>、目录选 <code>/ (root)</code>。</div>
+      <div>本地运行：建议使用静态服务器（例如 <code>python3 -m http.server</code>），避免浏览器对本地 JSON 读取限制。</div>
+      <div>数据来源：<code>news/</code> 目录下按天分文件存储，页面按日期倒序加载，滚动自动加载更早日期。</div>
     </footer>
   </main>
 
-  <script>
-    const newsData = [
-      {
-        title: "OpenAI 发布新一代多模态推理模型",
-        source: "OpenAI Blog",
-        date: "2026-03-10",
-        category: "模型",
-        summary: "官方强调在代码、图像理解与长上下文推理上的综合提升。",
-        url: "https://openai.com/"
-      },
-      {
-        title: "Google 推出面向企业的 AI Agent 套件更新",
-        source: "Google Cloud",
-        date: "2026-03-09",
-        category: "产品",
-        summary: "新增跨应用自动化流程能力，并强化权限与审计。",
-        url: "https://cloud.google.com/"
-      },
-      {
-        title: "Meta 开源更高效的小参数视觉语言模型",
-        source: "Meta AI",
-        date: "2026-03-08",
-        category: "开源",
-        summary: "目标是在边缘设备上实现更低延迟的多模态任务推理。",
-        url: "https://ai.meta.com/"
-      },
-      {
-        title: "欧盟发布新一轮 AI 合规执行细则",
-        source: "EU News",
-        date: "2026-03-08",
-        category: "政策",
-        summary: "围绕高风险场景的数据、透明度与评估要求进一步细化。",
-        url: "https://european-union.europa.eu/"
-      },
-      {
-        title: "NVIDIA 发布推理优化库更新，主打低成本部署",
-        source: "NVIDIA News",
-        date: "2026-03-07",
-        category: "基础设施",
-        summary: "通过内核优化与量化工具链，降低模型线上运行成本。",
-        url: "https://www.nvidia.com/"
-      }
-    ];
-
-    const categories = ["全部", ...new Set(newsData.map(item => item.category))];
-    let activeCategory = "全部";
-
-    const filtersEl = document.getElementById("filters");
-    const listEl = document.getElementById("news");
-
-    function renderFilters() {
-      filtersEl.innerHTML = categories.map(name => `
-        <button class="chip ${name === activeCategory ? "active" : ""}" data-category="${name}">${name}</button>
-      `).join("");
-    }
-
-    function renderNews() {
-      const filtered = activeCategory === "全部"
-        ? newsData
-        : newsData.filter(item => item.category === activeCategory);
-
-      if (!filtered.length) {
-        listEl.innerHTML = '<div class="empty">当前分类暂无内容</div>';
-        return;
-      }
-
-      listEl.innerHTML = filtered.map(item => `
-        <article>
-          <h2><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.title}</a></h2>
-          <div class="meta">
-            <span>${item.date}</span>
-            <span>${item.source}</span>
-            <span class="tag">${item.category}</span>
-          </div>
-          <div>${item.summary}</div>
-        </article>
-      `).join("");
-    }
-
-    filtersEl.addEventListener("click", (e) => {
-      const btn = e.target.closest("button[data-category]");
-      if (!btn) return;
-      activeCategory = btn.dataset.category;
-      renderFilters();
-      renderNews();
-    });
-
-    renderFilters();
-    renderNews();
-  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 </body>
 </html>
