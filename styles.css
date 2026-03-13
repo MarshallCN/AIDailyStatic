@@ -1,0 +1,130 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 16px 56px;
+}
+
+header { margin-bottom: 18px; }
+
+h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  letter-spacing: 0.01em;
+}
+
+.sub {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.toolbar {
+  margin: 18px 0 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: #374151;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.chip.active {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #eff6ff;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+article {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+article h2 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+}
+
+article h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+article h2 a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #eef2ff;
+  color: #3730a3;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.78rem;
+}
+
+.empty, .loading {
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  color: var(--muted);
+  background: #fff;
+  border: 1px dashed var(--border);
+  margin-top: 12px;
+}
+
+.hidden { display: none; }
+
+footer {
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+code {
+  background: #eef2f7;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
