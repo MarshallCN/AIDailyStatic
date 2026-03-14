@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Daily 详情</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="styles.css?v=20260314" />
+</head>
+<body>
+  <main class="wrap detail-wrap">
+    <header class="detail-header">
+      <a class="back-link" href="index.html">← 返回首页</a>
+      <h1 id="detail-title">加载中...</h1>
+      <div class="meta detail-meta">
+        <span id="detail-date">-</span>
+        <span id="detail-source">-</span>
+        <span class="tag" id="detail-category">-</span>
+      </div>
+    </header>
+
+    <section class="detail-body" id="detail-body"></section>
+
+    <section class="detail-origin">
+      <h2>原文链接</h2>
+      <div id="detail-origin"></div>
+    </section>
+
+    <div class="empty hidden" id="detail-error"></div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="news/manifest.js?v=20260314"></script>
+  <script src="parse-news.js?v=20260314"></script>
+  <script src="detail.js?v=20260314"></script>
+</body>
+</html>
