@@ -96,7 +96,7 @@
     $empty.addClass('hidden');
     $list.html(filtered.map(item => `
       <article>
-        <h2><a href="${buildDetailLink(item)}">${item.title}</a></h2>
+        <h2><a href="detail.html?id=${encodeURIComponent(item.id)}">${item.title}</a></h2>
         <div class="meta">
           <span>${item.date}</span>
           <span>${item.source}</span>
@@ -119,8 +119,8 @@
 
   function loadOneDay(fileName) {
     return $.get(withCacheVersion(`news/${fileName}`)).then((rawMarkdown) => {
-      const parsed = parseNewsMarkdown(rawMarkdown, parseDayFromFile(fileName));
-      const normalized = normalizeItems(parsed.day, parsed.items);
+      const parsed = NewsParser.parseNewsMarkdown(rawMarkdown, NewsParser.parseDayFromFile(fileName));
+      const normalized = NewsParser.normalizeItems(parsed.day, parsed.items);
       state.allItems = state.allItems.concat(normalized);
       state.allItems.sort((a, b) => {
         if (a.date === b.date) return a.title.localeCompare(b.title, 'zh-Hans-CN');
@@ -178,7 +178,7 @@
       return;
     }
 
-    const files = manifest.files.slice().sort((a, b) => parseDayFromFile(b).localeCompare(parseDayFromFile(a)));
+    const files = manifest.files.slice().sort((a, b) => NewsParser.parseDayFromFile(b).localeCompare(NewsParser.parseDayFromFile(a)));
     state.dayFiles = files;
     initEvents();
     initScrollLoad();

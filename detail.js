@@ -1,137 +1,108 @@
 (function () {
+  const state = {
+    cacheVersion: (window.NEWS_MANIFEST && window.NEWS_MANIFEST.version) || String(Date.now())
+  };
+
   $.ajaxSetup({ cache: false });
 
-  const $card = $('#detail-card');
-  const $empty = $('#detail-empty');
   const $title = $('#detail-title');
   const $date = $('#detail-date');
-  const $source = $('#detail-source');
   const $category = $('#detail-category');
-  const $summary = $('#detail-summary');
-  const $originLink = $('#detail-origin-link');
-
-  const cacheVersion = (window.NEWS_MANIFEST && window.NEWS_MANIFEST.version) || String(Date.now());
+  const $source = $('#detail-source');
+  const $body = $('#detail-body');
+  const $origin = $('#detail-origin');
+  const $error = $('#detail-error');
 
   function withCacheVersion(path) {
-    return `${path}?v=${encodeURIComponent(cacheVersion)}`;
+    return `${path}?v=${encodeURIComponent(state.cacheVersion)}`;
   }
 
-  function parseNewsMarkdown(raw, fallbackDay) {
-    const dayMatch = raw.match(/^day:\s*(\d{4}-\d{2}-\d{2})\s*$/m);
-    const day = dayMatch ? dayMatch[1] : fallbackDay;
-    const blocks = raw
-      .split(/\n##\s+/)
-      .map((part, index) => (index === 0 ? part : `## ${part}`))
-      .filter(part => part.startsWith('## '));
-
-    const items = blocks.map((block) => {
-      const titleMatch = block.match(/^##\s+(.+)$/m);
-      const sourceMatch = block.match(/^-\s*source:\s*(.+)$/m);
-      const dateMatch = block.match(/^-\s*date:\s*(.+)$/m);
-      const categoryMatch = block.match(/^-\s*category:\s*(.+)$/m);
-      const urlMatch = block.match(/^-\s*url:\s*(.+)$/m);
-      const summaryMatch = block.match(/^-\s*summary:\s*(.+)$/m);
-
-      return {
-        title: titleMatch ? titleMatch[1].trim() : '无标题',
-        source: sourceMatch ? sourceMatch[1].trim() : '未知来源',
-        date: dateMatch ? dateMatch[1].trim() : day,
-        category: categoryMatch ? categoryMatch[1].trim() : '其他',
-        url: urlMatch ? urlMatch[1].trim() : '#',
-        summary: summaryMatch ? summaryMatch[1].trim() : ''
-      };
-    });
-
-    return { day, items };
+  function getNewsId() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id') || '';
   }
 
-  function normalizeItems(day, items) {
-    return (items || []).map((item, idx) => ({
-      id: typeof item.id === 'string' && item.id.trim() ? item.id.trim() : `${day}-${idx}`,
-      day,
-      title: item.title || '无标题',
-      source: item.source || '未知来源',
-      date: item.date || day,
-      category: item.category || '其他',
-      summary: item.summary || '',
-      url: item.url || '#'
-    }));
-  }
-
-  function parseId(rawId) {
-    const match = (rawId || '').match(/^(\d{4}-\d{2}-\d{2})-(\d+)$/);
+  function parseId(newsId) {
+    const match = String(newsId).match(/^(\d{4}-\d{2}-\d{2})-(\d+)$/);
     if (!match) return null;
-
-    return {
-      day: match[1],
-      index: Number(match[2])
-    };
+    return { day: match[1], index: Number(match[2]) };
   }
 
-  function showNotFound(reason) {
-    $card.addClass('hidden');
-    $empty.removeClass('hidden').text(`未找到该新闻（${reason}）`);
+  function renderBody(item) {
+    const hasDetail = Boolean(item.detail && item.detail.trim());
+    const content = hasDetail ? item.detail : item.summary;
+    const lines = String(content || '').split('\n').map(line => line.trim()).filter(Boolean);
+
+    if (!lines.length) {
+      $body.html('<p>暂无内容。</p>');
+      return;
+    }
+
+    const html = lines.map(line => `<p>${line}</p>`).join('');
+    if (hasDetail) {
+      $body.html(html);
+    } else {
+      $body.html(`<div class="detail-tip">暂无完整详情，以下为简要摘要：</div>${html}`);
+    }
   }
 
-  function showDetail(item) {
-    $title.text(item.title);
-    $date.text(item.date);
-    $source.text(item.source);
-    $category.text(item.category);
-    $summary.text(item.summary || '暂无摘要');
-    $originLink.attr('href', item.url || '#');
-
-    $empty.addClass('hidden');
-    $card.removeClass('hidden');
+  function renderSource(item) {
+    const text = item.source || '原文链接';
+    const href = item.url || '#';
+    $origin.html(`<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`);
   }
 
-  function findFromDayFile(parsedId) {
+  function renderDetail(item) {
+    $title.text(item.title || '无标题');
+    $date.text(item.date || '-');
+    $category.text(item.category || '其他');
+    $source.text(item.source || '未知来源');
+    renderBody(item);
+    renderSource(item);
+  }
+
+  function showError(message) {
+    $error.removeClass('hidden').text(message);
+  }
+
+  function loadDetail() {
+    const newsId = getNewsId();
+    const parsedId = parseId(newsId);
     const manifest = window.NEWS_MANIFEST;
+
+    if (!parsedId) {
+      showError('新闻标识无效，请从首页重新进入详情页。');
+      return;
+    }
+
     if (!manifest || !Array.isArray(manifest.files)) {
-      showNotFound('数据索引不可用');
+      showError('未找到 news/manifest.js 或格式不正确。');
       return;
     }
 
-    const dayFile = `${parsedId.day}.md`;
-    if (!manifest.files.includes(dayFile)) {
-      showNotFound('日期文件不存在');
+    const targetFile = manifest.files.find(fileName => NewsParser.parseDayFromFile(fileName) === parsedId.day);
+    if (!targetFile) {
+      showError('未找到对应日期的新闻文件。');
       return;
     }
 
-    $.get(withCacheVersion(`news/${dayFile}`))
+    $.get(withCacheVersion(`news/${targetFile}`))
       .done((rawMarkdown) => {
-        const parsed = parseNewsMarkdown(rawMarkdown, parsedId.day);
-        const items = normalizeItems(parsed.day, parsed.items);
-        const found = items[parsedId.index];
+        const parsed = NewsParser.parseNewsMarkdown(rawMarkdown, parsedId.day);
+        const normalized = NewsParser.normalizeItems(parsed.day, parsed.items);
+        const item = normalized[parsedId.index];
 
-        if (!found || found.id !== `${parsedId.day}-${parsedId.index}`) {
-          showNotFound('新闻编号无效');
+        if (!item) {
+          showError('未找到该条新闻内容。');
           return;
         }
 
-        showDetail(found);
+        renderDetail(item);
       })
       .fail(() => {
-        showNotFound('详情数据加载失败');
+        showError('详情加载失败，请稍后重试。');
       });
   }
 
-  function init() {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id') || '';
-    if (!id) {
-      showNotFound('缺少新闻编号');
-      return;
-    }
-
-    const parsedId = parseId(id);
-    if (!parsedId) {
-      showNotFound('新闻编号格式错误');
-      return;
-    }
-
-    findFromDayFile(parsedId);
-  }
-
-  $(init);
+  $(loadDetail);
 })();
