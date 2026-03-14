@@ -3,16 +3,14 @@
     cacheVersion: (window.NEWS_MANIFEST && window.NEWS_MANIFEST.version) || String(Date.now())
   };
 
-  $.ajaxSetup({ cache: false });
-
-  const $card = $('#detail-card');
-  const $title = $('#detail-title');
-  const $date = $('#detail-date');
-  const $category = $('#detail-category');
-  const $source = $('#detail-source');
-  const $body = $('#detail-body');
-  const $origin = $('#detail-origin');
-  const $empty = $('#detail-empty');
+  const $card = document.getElementById('detail-card');
+  const $title = document.getElementById('detail-title');
+  const $date = document.getElementById('detail-date');
+  const $category = document.getElementById('detail-category');
+  const $source = document.getElementById('detail-source');
+  const $body = document.getElementById('detail-body');
+  const $origin = document.getElementById('detail-origin');
+  const $empty = document.getElementById('detail-empty');
 
   function withCacheVersion(path) {
     return `${path}?v=${encodeURIComponent(state.cacheVersion)}`;
@@ -32,41 +30,54 @@
   function renderBody(item) {
     const hasDetail = Boolean(item.detail && item.detail.trim());
     const content = hasDetail ? item.detail : item.summary;
-    const lines = String(content || '').split('\n').map(line => line.trim()).filter(Boolean);
+    const lines = String(content || '')
+      .split('\n')
+      .map(line => line.trim())
+      .filter(Boolean);
 
     if (!lines.length) {
-      $body.html('<p>暂无内容。</p>');
+      $body.innerHTML = '<p>暂无内容。</p>';
       return;
     }
 
     const html = lines.map(line => `<p>${line}</p>`).join('');
     if (hasDetail) {
-      $body.html(html);
+      $body.innerHTML = html;
     } else {
-      $body.html(`<div class="detail-tip">暂无完整详情，以下为简要摘要：</div>${html}`);
+      $body.innerHTML = `<div class="detail-tip">暂无完整详情，以下为简要摘要：</div>${html}`;
     }
   }
 
   function renderSource(item) {
     const text = item.source || '原文链接';
     const href = item.url || '#';
-    $origin.html(`<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`);
+    $origin.innerHTML = `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
   }
 
   function renderDetail(item) {
-    $title.text(item.title || '无标题');
-    $date.text(item.date || '-');
-    $category.text(item.category || '其他');
-    $source.text(item.source || '未知来源');
+    $title.textContent = item.title || '无标题';
+    $date.textContent = item.date || '-';
+    $category.textContent = item.category || '其他';
+    $source.textContent = item.source || '未知来源';
     renderBody(item);
     renderSource(item);
-    $empty.addClass('hidden');
-    $card.removeClass('hidden');
+    $empty.classList.add('hidden');
+    $card.classList.remove('hidden');
   }
 
   function showError(message) {
-    $card.addClass('hidden');
-    $empty.removeClass('hidden').text(message);
+    $card.classList.add('hidden');
+    $empty.classList.remove('hidden');
+    $empty.textContent = message;
+  }
+
+  function fetchText(path) {
+    return fetch(withCacheVersion(path), { cache: 'no-store' }).then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      return response.text();
+    });
   }
 
   function loadDetail() {
@@ -90,8 +101,8 @@
       return;
     }
 
-    $.get(withCacheVersion(`news/${targetFile}`))
-      .done((rawMarkdown) => {
+    fetchText(`news/${targetFile}`)
+      .then((rawMarkdown) => {
         const parsed = NewsParser.parseNewsMarkdown(rawMarkdown, parsedId.day);
         const normalized = NewsParser.normalizeItems(parsed.day, parsed.items);
         const item = normalized[parsedId.index];
@@ -103,10 +114,10 @@
 
         renderDetail(item);
       })
-      .fail(() => {
+      .catch(() => {
         showError('详情加载失败，请稍后重试。');
       });
   }
 
-  $(loadDetail);
+  document.addEventListener('DOMContentLoaded', loadDetail);
 })();
