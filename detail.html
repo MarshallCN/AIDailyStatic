@@ -10,25 +10,24 @@
   <link rel="stylesheet" href="styles.css?v=20260314" />
 </head>
 <body>
-  <main class="wrap detail-wrap">
-    <header class="detail-header">
-      <a class="back-link" href="index.html">← 返回首页</a>
-      <h1 id="detail-title">加载中...</h1>
-      <div class="meta detail-meta">
-        <span id="detail-date">-</span>
-        <span id="detail-source">-</span>
-        <span class="tag" id="detail-category">-</span>
-      </div>
+  <main class="wrap">
+    <header>
+      <h1><a class="home-link" href="index.html">AI Daily 简报</a></h1>
+      <div class="sub">新闻详情</div>
     </header>
 
-    <section class="detail-body" id="detail-body"></section>
+    <article id="detail-card" class="hidden">
+      <h2 id="detail-title"></h2>
+      <div class="meta">
+        <span id="detail-date"></span>
+        <span id="detail-source"></span>
+        <span class="tag" id="detail-category"></span>
+      </div>
+      <div id="detail-summary"></div>
+      <p><a id="detail-origin-link" href="#" target="_blank" rel="noopener noreferrer">查看原文</a></p>
+    </article>
 
-    <section class="detail-origin">
-      <h2>原文链接</h2>
-      <div id="detail-origin"></div>
-    </section>
-
-    <div class="empty hidden" id="detail-error"></div>
+    <div class="empty" id="detail-empty">正在加载详情...</div>
   </main>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

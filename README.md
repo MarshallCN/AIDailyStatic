@@ -5,6 +5,7 @@
 - HTML / CSS / JS 分离
 - 新闻数据按天存放在 `news/*.md`
 - 支持按分类筛选 + 滚动懒加载更早日期
+- 首页点击标题进入站内详情页（`detail.html?id=YYYY-MM-DD-idx`）
 - 可部署到 GitHub Pages
 
 ## 目录结构
@@ -14,6 +15,8 @@
 ├── index.html
 ├── styles.css
 ├── app.js
+├── detail.html
+├── detail.js
 └── news/
     ├── manifest.js        # 新闻清单（列出每日 Markdown 文件）
     ├── 2026-03-14.md
@@ -33,10 +36,21 @@ day: 2026-03-14
 - date: 2026-03-14
 - category: 分类
 - url: https://example.com/news
-- summary: 新闻概要
+- summary: 一句话摘要（首页列表使用）
+- detail: |
+    第一段：背景
+
+    第二段：核心更新
+
+    第三段：影响与后续观察点
 ```
 
 可在同一个文件中追加多个 `## 标题` 区块，每个区块对应一条新闻。
+
+字段说明：
+- `summary`：用于首页新闻列表，仅展示一句话摘要。
+- `detail`：用于详情页正文，建议 2~4 段（可使用 YAML 多行文本 `|`）。
+- `url` + `source`：用于详情页底部统一渲染“来源链接”。
 
 ## 清单文件（manifest）
 

@@ -17,6 +17,52 @@
   const $empty = $('#empty');
   const $loading = $('#loading');
 
+  function parseDayFromFile(fileName) {
+    const m = fileName.match(/(\d{4}-\d{2}-\d{2})/);
+    return m ? m[1] : '1970-01-01';
+  }
+
+  function parseNewsMarkdown(raw, fallbackDay) {
+    const dayMatch = raw.match(/^day:\s*(\d{4}-\d{2}-\d{2})\s*$/m);
+    const day = dayMatch ? dayMatch[1] : fallbackDay;
+    const blocks = raw
+      .split(/\n##\s+/)
+      .map((part, index) => (index === 0 ? part : `## ${part}`))
+      .filter(part => part.startsWith('## '));
+
+    const items = blocks.map((block) => {
+      const titleMatch = block.match(/^##\s+(.+)$/m);
+      const sourceMatch = block.match(/^-\s*source:\s*(.+)$/m);
+      const dateMatch = block.match(/^-\s*date:\s*(.+)$/m);
+      const categoryMatch = block.match(/^-\s*category:\s*(.+)$/m);
+      const urlMatch = block.match(/^-\s*url:\s*(.+)$/m);
+      const summaryMatch = block.match(/^-\s*summary:\s*(.+)$/m);
+
+      return {
+        title: titleMatch ? titleMatch[1].trim() : '无标题',
+        source: sourceMatch ? sourceMatch[1].trim() : '未知来源',
+        date: dateMatch ? dateMatch[1].trim() : day,
+        category: categoryMatch ? categoryMatch[1].trim() : '其他',
+        url: urlMatch ? urlMatch[1].trim() : '#',
+        summary: summaryMatch ? summaryMatch[1].trim() : ''
+      };
+    });
+
+    return { day, items };
+  }
+
+  function normalizeItems(day, items) {
+    return (items || []).map((item, idx) => ({
+      id: typeof item.id === 'string' && item.id.trim() ? item.id.trim() : `${day}-${idx}`,
+      day,
+      title: item.title || '无标题',
+      source: item.source || '未知来源',
+      date: item.date || day,
+      category: item.category || '其他',
+      summary: item.summary || '',
+      url: item.url || '#'
+    }));
+  }
 
   function rebuildCategories() {
     const set = new Set(state.allItems.map(item => item.category));
@@ -30,6 +76,10 @@
     $filters.html(state.categories.map(name => (
       `<button class="chip ${name === state.activeCategory ? 'active' : ''}" data-category="${name}">${name}</button>`
     )).join(''));
+  }
+
+  function buildDetailLink(item) {
+    return `detail.html?id=${encodeURIComponent(item.id || '')}`;
   }
 
   function renderNews() {
