@@ -1,12 +1,18 @@
 (function () {
+  const HOME_STATE_KEY = 'ai-daily-home-state';
+  const RESTORE_QUERY_KEY = 'restore';
+  const DAILY_CATEGORY = '每日';
+  const ALL_CATEGORY = '全部';
+
   const state = {
     allItems: [],
-    categories: ['全部'],
-    activeCategory: '全部',
+    categories: [DAILY_CATEGORY, ALL_CATEGORY],
+    activeCategory: DAILY_CATEGORY,
     dayFiles: [],
     nextDayIndex: 0,
     daysPerLoad: 3,
     loading: false,
+    restoreSnapshot: null,
     cacheVersion: (window.NEWS_MANIFEST && window.NEWS_MANIFEST.version) || String(Date.now())
   };
 
@@ -16,6 +22,77 @@
   const $list = $('#news');
   const $empty = $('#empty');
   const $loading = $('#loading');
+
+  function readStoredHomeState() {
+    try {
+      const raw = window.sessionStorage.getItem(HOME_STATE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object') return null;
+
+      return {
+        activeCategory: typeof parsed.activeCategory === 'string' && parsed.activeCategory.trim()
+          ? parsed.activeCategory.trim()
+          : DAILY_CATEGORY,
+        loadedDayCount: Math.max(state.daysPerLoad, Number(parsed.loadedDayCount) || 0),
+        scrollY: Math.max(0, Number(parsed.scrollY) || 0)
+      };
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveHomeState() {
+    try {
+      window.sessionStorage.setItem(HOME_STATE_KEY, JSON.stringify({
+        activeCategory: state.activeCategory,
+        loadedDayCount: state.nextDayIndex || state.daysPerLoad,
+        scrollY: window.scrollY || window.pageYOffset || 0
+      }));
+    } catch (error) {
+      // Ignore sessionStorage failures and fall back to a normal navigation flow.
+    }
+  }
+
+  function clearStoredHomeState() {
+    try {
+      window.sessionStorage.removeItem(HOME_STATE_KEY);
+    } catch (error) {
+      // Ignore sessionStorage failures.
+    }
+  }
+
+  function shouldRestoreHomeState() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(RESTORE_QUERY_KEY) === '1';
+  }
+
+  function cleanRestoreParam() {
+    if (!window.history || typeof window.history.replaceState !== 'function') return;
+
+    const url = new URL(window.location.href);
+    url.searchParams.delete(RESTORE_QUERY_KEY);
+    const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+    window.history.replaceState(null, '', nextUrl || 'index.html');
+  }
+
+  function restoreHomeView() {
+    if (!state.restoreSnapshot) {
+      if (shouldRestoreHomeState()) cleanRestoreParam();
+      return;
+    }
+
+    const snapshot = state.restoreSnapshot;
+    state.restoreSnapshot = null;
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        window.scrollTo(0, snapshot.scrollY);
+        clearStoredHomeState();
+        cleanRestoreParam();
+      });
+    });
+  }
 
   function parseDayFromFile(fileName) {
     const m = fileName.match(/(\d{4}-\d{2}-\d{2})/);
@@ -66,9 +143,9 @@
 
   function rebuildCategories() {
     const set = new Set(state.allItems.map(item => item.category));
-    state.categories = ['全部', ...set];
+    state.categories = [DAILY_CATEGORY, ALL_CATEGORY, ...set];
     if (!state.categories.includes(state.activeCategory)) {
-      state.activeCategory = '全部';
+      state.activeCategory = DAILY_CATEGORY;
     }
   }
 
@@ -79,11 +156,82 @@
   }
 
   function buildDetailLink(item) {
-    return `detail.html?id=${encodeURIComponent(item.id || '')}`;
+    const params = new URLSearchParams({
+      id: item.id || '',
+      from: 'index.html?restore=1'
+    });
+    return `detail.html?${params.toString()}`;
+  }
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function groupItemsByDay(items) {
+    const groups = [];
+    const map = new Map();
+
+    items.forEach((item) => {
+      const dayKey = item.day || item.date || '1970-01-01';
+      if (!map.has(dayKey)) {
+        const group = { day: dayKey, items: [] };
+        map.set(dayKey, group);
+        groups.push(group);
+      }
+      map.get(dayKey).items.push(item);
+    });
+
+    return groups;
+  }
+
+  function renderDailyNews(items) {
+    const dayGroups = groupItemsByDay(items);
+
+    return dayGroups.map(group => `
+      <article class="day-card">
+        <div class="day-card-header">
+          <div>
+            <div class="day-card-date">${escapeHtml(group.day)}</div>
+            <div class="day-card-count">共 ${group.items.length} 条新闻</div>
+          </div>
+        </div>
+        <div class="day-card-list">
+          ${group.items.map(item => `
+            <section class="day-card-item">
+              <h2><a href="${buildDetailLink(item)}" data-detail-link="1">${escapeHtml(item.title)}</a></h2>
+              <div class="meta">
+                <span>${escapeHtml(item.source)}</span>
+                <span class="tag">${escapeHtml(item.category)}</span>
+              </div>
+              <div>${escapeHtml(item.summary)}</div>
+            </section>
+          `).join('')}
+        </div>
+      </article>
+    `).join('');
+  }
+
+  function renderItemNews(items) {
+    return items.map(item => `
+      <article>
+        <h2><a href="${buildDetailLink(item)}" data-detail-link="1">${escapeHtml(item.title)}</a></h2>
+        <div class="meta">
+          <span>${escapeHtml(item.date)}</span>
+          <span>${escapeHtml(item.source)}</span>
+          <span class="tag">${escapeHtml(item.category)}</span>
+        </div>
+        <div>${escapeHtml(item.summary)}</div>
+      </article>
+    `).join('');
   }
 
   function renderNews() {
-    const filtered = state.activeCategory === '全部'
+    const filtered = state.activeCategory === DAILY_CATEGORY || state.activeCategory === ALL_CATEGORY
       ? state.allItems
       : state.allItems.filter(item => item.category === state.activeCategory);
 
@@ -94,17 +242,11 @@
     }
 
     $empty.addClass('hidden');
-    $list.html(filtered.map(item => `
-      <article>
-        <h2><a href="detail.html?id=${encodeURIComponent(item.id)}">${item.title}</a></h2>
-        <div class="meta">
-          <span>${item.date}</span>
-          <span>${item.source}</span>
-          <span class="tag">${item.category}</span>
-        </div>
-        <div>${item.summary}</div>
-      </article>
-    `).join(''));
+    $list.html(
+      state.activeCategory === DAILY_CATEGORY
+        ? renderDailyNews(filtered)
+        : renderItemNews(filtered)
+    );
   }
 
   function rerenderAll() {
@@ -129,16 +271,19 @@
     });
   }
 
-  function loadMoreDays() {
-    if (state.loading || state.nextDayIndex >= state.dayFiles.length) return;
+  function loadMoreDays(count) {
+    if (state.loading || state.nextDayIndex >= state.dayFiles.length) {
+      return $.Deferred().resolve().promise();
+    }
 
     state.loading = true;
     $loading.removeClass('hidden');
 
-    const slice = state.dayFiles.slice(state.nextDayIndex, state.nextDayIndex + state.daysPerLoad);
+    const batchSize = Math.max(1, Number(count) || state.daysPerLoad);
+    const slice = state.dayFiles.slice(state.nextDayIndex, state.nextDayIndex + batchSize);
     const tasks = slice.map(loadOneDay);
 
-    $.when.apply($, tasks)
+    return $.when.apply($, tasks)
       .done(() => {
         state.nextDayIndex += slice.length;
         rerenderAll();
@@ -169,6 +314,10 @@
       renderFilters();
       renderNews();
     });
+
+    $list.on('click', 'a[data-detail-link]', function () {
+      saveHomeState();
+    });
   }
 
   function init() {
@@ -180,9 +329,20 @@
 
     const files = manifest.files.slice().sort((a, b) => NewsParser.parseDayFromFile(b).localeCompare(NewsParser.parseDayFromFile(a)));
     state.dayFiles = files;
+    state.restoreSnapshot = shouldRestoreHomeState() ? readStoredHomeState() : null;
+    if (state.restoreSnapshot) {
+      state.activeCategory = state.restoreSnapshot.activeCategory;
+    }
     initEvents();
     initScrollLoad();
-    loadMoreDays();
+
+    const initialLoadCount = state.restoreSnapshot
+      ? Math.max(state.daysPerLoad, state.restoreSnapshot.loadedDayCount)
+      : state.daysPerLoad;
+
+    loadMoreDays(initialLoadCount).done(() => {
+      restoreHomeView();
+    });
   }
 
   $(init);

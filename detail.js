@@ -11,6 +11,7 @@
   const $body = document.getElementById('detail-body');
   const $origin = document.getElementById('detail-origin');
   const $empty = document.getElementById('detail-empty');
+  const $back = document.getElementById('detail-back');
 
   function withCacheVersion(path) {
     return `${path}?v=${encodeURIComponent(state.cacheVersion)}`;
@@ -19,6 +20,30 @@
   function getNewsId() {
     const params = new URLSearchParams(window.location.search);
     return params.get('id') || '';
+  }
+
+  function getBackUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get('from');
+    if (!from) return 'index.html?restore=1';
+
+    try {
+      const url = new URL(from, window.location.href);
+      if (url.origin !== window.location.origin) {
+        return 'index.html?restore=1';
+      }
+      return `${url.pathname}${url.search}${url.hash}`;
+    } catch (error) {
+      return 'index.html?restore=1';
+    }
+  }
+
+  function initBackButton() {
+    if (!$back) return;
+
+    $back.addEventListener('click', () => {
+      window.location.href = getBackUrl();
+    });
   }
 
   function parseId(newsId) {
@@ -119,5 +144,8 @@
       });
   }
 
-  document.addEventListener('DOMContentLoaded', loadDetail);
+  document.addEventListener('DOMContentLoaded', () => {
+    initBackButton();
+    loadDetail();
+  });
 })();

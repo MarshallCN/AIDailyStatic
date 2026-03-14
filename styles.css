@@ -65,6 +65,45 @@ h1 {
   gap: 10px;
 }
 
+.day-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.day-card-header {
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.day-card-date {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.day-card-count {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.day-card-list {
+  display: grid;
+}
+
+.day-card-item {
+  padding: 14px 16px;
+}
+
+.day-card-item + .day-card-item {
+  border-top: 1px solid var(--border);
+}
+
+.day-card-item h2 {
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+}
+
 article {
   background: var(--card);
   border: 1px solid var(--border);
@@ -134,11 +173,17 @@ code {
 }
 
 .back-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 10px;
   color: var(--primary);
+  background: none;
+  border: 0;
+  padding: 0;
   text-decoration: none;
   font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .back-link:hover {

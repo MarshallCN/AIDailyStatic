@@ -17,6 +17,10 @@
 ├── app.js
 ├── detail.html
 ├── detail.js
+├── prompts/
+│   └── ai-daily-news-prompt-template.md
+├── vendor/
+│   └── jquery-3.7.1.min.js
 └── news/
     ├── manifest.js        # 新闻清单（列出每日 Markdown 文件）
     ├── 2026-03-14.md
@@ -68,4 +72,23 @@ window.NEWS_MANIFEST = {
 
 ## 本地打开说明
 
-可以直接双击 `index.html` 打开（`file://`）。
+不要直接双击 `index.html` 以 `file://` 方式打开。
+
+当前首页和详情页都会通过 Ajax / `fetch()` 读取 `news/*.md`，浏览器通常会拦截 `file://` 下的这类请求，因此需要用一个本地 HTTP 服务启动项目。
+
+推荐使用 Python：
+
+```powershell
+cd D:\Onebox\AI-Daily-Static
+py -m http.server 8080
+```
+
+然后在浏览器打开：
+
+```text
+http://localhost:8080
+```
+
+说明：
+- 首页依赖的 jQuery 已改为本地文件 `vendor/jquery-3.7.1.min.js`，离线也能加载脚本。
+- 但新闻内容仍然需要通过本地 HTTP 服务读取，所以启动方式仍然不是双击 HTML。
