@@ -19,6 +19,35 @@
     return m ? m[1] : '1970-01-01';
   }
 
+  function parseNewsMarkdown(raw, fallbackDay) {
+    const dayMatch = raw.match(/^day:\s*(\d{4}-\d{2}-\d{2})\s*$/m);
+    const day = dayMatch ? dayMatch[1] : fallbackDay;
+    const blocks = raw
+      .split(/\n##\s+/)
+      .map((part, index) => (index === 0 ? part : `## ${part}`))
+      .filter(part => part.startsWith('## '));
+
+    const items = blocks.map((block) => {
+      const titleMatch = block.match(/^##\s+(.+)$/m);
+      const sourceMatch = block.match(/^-\s*source:\s*(.+)$/m);
+      const dateMatch = block.match(/^-\s*date:\s*(.+)$/m);
+      const categoryMatch = block.match(/^-\s*category:\s*(.+)$/m);
+      const urlMatch = block.match(/^-\s*url:\s*(.+)$/m);
+      const summaryMatch = block.match(/^-\s*summary:\s*(.+)$/m);
+
+      return {
+        title: titleMatch ? titleMatch[1].trim() : '无标题',
+        source: sourceMatch ? sourceMatch[1].trim() : '未知来源',
+        date: dateMatch ? dateMatch[1].trim() : day,
+        category: categoryMatch ? categoryMatch[1].trim() : '其他',
+        url: urlMatch ? urlMatch[1].trim() : '#',
+        summary: summaryMatch ? summaryMatch[1].trim() : ''
+      };
+    });
+
+    return { day, items };
+  }
+
   function normalizeItems(day, items) {
     return (items || []).map((item, idx) => ({
       id: `${day}-${idx}`,
@@ -78,9 +107,9 @@
   }
 
   function loadOneDay(fileName) {
-    return $.getJSON(`news/${fileName}`).then((dayData) => {
-      const day = dayData.day || parseDayFromFile(fileName);
-      const normalized = normalizeItems(day, dayData.items);
+    return $.get(`news/${fileName}`).then((rawMarkdown) => {
+      const parsed = parseNewsMarkdown(rawMarkdown, parseDayFromFile(fileName));
+      const normalized = normalizeItems(parsed.day, parsed.items);
       state.allItems = state.allItems.concat(normalized);
       state.allItems.sort((a, b) => {
         if (a.date === b.date) return a.title.localeCompare(b.title, 'zh-Hans-CN');
@@ -104,7 +133,7 @@
         rerenderAll();
       })
       .fail(() => {
-        $empty.removeClass('hidden').text('新闻数据加载失败，请检查 news/ 目录与 JSON 格式。');
+        $empty.removeClass('hidden').text('新闻数据加载失败，请检查 news/ 目录与 Markdown 格式。');
       })
       .always(() => {
         state.loading = false;
