@@ -5,13 +5,14 @@
 
   $.ajaxSetup({ cache: false });
 
+  const $card = $('#detail-card');
   const $title = $('#detail-title');
   const $date = $('#detail-date');
   const $category = $('#detail-category');
   const $source = $('#detail-source');
   const $body = $('#detail-body');
   const $origin = $('#detail-origin');
-  const $error = $('#detail-error');
+  const $empty = $('#detail-empty');
 
   function withCacheVersion(path) {
     return `${path}?v=${encodeURIComponent(state.cacheVersion)}`;
@@ -59,10 +60,13 @@
     $source.text(item.source || '未知来源');
     renderBody(item);
     renderSource(item);
+    $empty.addClass('hidden');
+    $card.removeClass('hidden');
   }
 
   function showError(message) {
-    $error.removeClass('hidden').text(message);
+    $card.addClass('hidden');
+    $empty.removeClass('hidden').text(message);
   }
 
   function loadDetail() {

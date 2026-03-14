@@ -10,21 +10,26 @@
   <link rel="stylesheet" href="styles.css?v=20260314" />
 </head>
 <body>
-  <main class="wrap">
-    <header>
+  <main class="wrap detail-wrap">
+    <header class="detail-header">
       <h1><a class="home-link" href="index.html">AI Daily 简报</a></h1>
       <div class="sub">新闻详情</div>
     </header>
 
     <article id="detail-card" class="hidden">
       <h2 id="detail-title"></h2>
-      <div class="meta">
+      <div class="meta detail-meta">
         <span id="detail-date"></span>
         <span id="detail-source"></span>
         <span class="tag" id="detail-category"></span>
       </div>
-      <div id="detail-summary"></div>
-      <p><a id="detail-origin-link" href="#" target="_blank" rel="noopener noreferrer">查看原文</a></p>
+
+      <section id="detail-body" class="detail-body"></section>
+
+      <section class="detail-origin">
+        <h2>来源</h2>
+        <div id="detail-origin"></div>
+      </section>
     </article>
 
     <div class="empty" id="detail-empty">正在加载详情...</div>
