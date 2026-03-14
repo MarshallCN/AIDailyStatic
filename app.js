@@ -53,7 +53,7 @@
 
   function normalizeItems(day, items) {
     return (items || []).map((item, idx) => ({
-      id: `${day}-${idx}`,
+      id: typeof item.id === 'string' && item.id.trim() ? item.id.trim() : `${day}-${idx}`,
       day,
       title: item.title || '无标题',
       source: item.source || '未知来源',
@@ -78,6 +78,10 @@
     )).join(''));
   }
 
+  function buildDetailLink(item) {
+    return `detail.html?id=${encodeURIComponent(item.id || '')}`;
+  }
+
   function renderNews() {
     const filtered = state.activeCategory === '全部'
       ? state.allItems
@@ -92,7 +96,7 @@
     $empty.addClass('hidden');
     $list.html(filtered.map(item => `
       <article>
-        <h2><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.title}</a></h2>
+        <h2><a href="${buildDetailLink(item)}">${item.title}</a></h2>
         <div class="meta">
           <span>${item.date}</span>
           <span>${item.source}</span>
