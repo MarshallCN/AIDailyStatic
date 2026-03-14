@@ -15,7 +15,7 @@
 ├── styles.css
 ├── app.js
 └── news/
-    ├── index.json          # 新闻清单（列出每日 Markdown 文件）
+    ├── manifest.js        # 新闻清单（列出每日 Markdown 文件）
     ├── 2026-03-14.md
     ├── 2026-03-13.md
     └── ...
@@ -38,14 +38,20 @@ day: 2026-03-14
 
 可在同一个文件中追加多个 `## 标题` 区块，每个区块对应一条新闻。
 
-## 本地运行
+## 清单文件（manifest）
 
-> 注意：由于浏览器安全策略，直接双击 `index.html` 读取新闻文件可能失败（`file://` 跨域限制）。
+`news/manifest.js` 由全局变量提供新闻文件列表：
 
-推荐在项目目录运行：
-
-```bash
-python3 -m http.server 4173
+```js
+window.NEWS_MANIFEST = {
+  version: '20260314',
+  files: ['2026-03-14.md', '2026-03-13.md']
+};
 ```
 
-然后访问：`http://localhost:4173/`
+- 新增一天新闻时，追加对应 Markdown 文件名到 `files`。
+- 建议同步更新 `version`，用于给 `app.js` 与新闻请求附加版本号，避免浏览器缓存旧内容。
+
+## 本地打开说明
+
+可以直接双击 `index.html` 打开（`file://`）。
