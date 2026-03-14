@@ -6,8 +6,11 @@
     dayFiles: [],
     nextDayIndex: 0,
     daysPerLoad: 3,
-    loading: false
+    loading: false,
+    cacheVersion: (window.NEWS_MANIFEST && window.NEWS_MANIFEST.version) || String(Date.now())
   };
+
+  $.ajaxSetup({ cache: false });
 
   const $filters = $('#filters');
   const $list = $('#news');
@@ -106,8 +109,12 @@
     renderNews();
   }
 
+  function withCacheVersion(path) {
+    return `${path}?v=${encodeURIComponent(state.cacheVersion)}`;
+  }
+
   function loadOneDay(fileName) {
-    return $.get(`news/${fileName}`).then((rawMarkdown) => {
+    return $.get(withCacheVersion(`news/${fileName}`)).then((rawMarkdown) => {
       const parsed = parseNewsMarkdown(rawMarkdown, parseDayFromFile(fileName));
       const normalized = normalizeItems(parsed.day, parsed.items);
       state.allItems = state.allItems.concat(normalized);
@@ -161,17 +168,17 @@
   }
 
   function init() {
-    $.getJSON('news/index.json')
-      .done((manifest) => {
-        const files = (manifest.files || []).slice().sort((a, b) => parseDayFromFile(b).localeCompare(parseDayFromFile(a)));
-        state.dayFiles = files;
-        initEvents();
-        initScrollLoad();
-        loadMoreDays();
-      })
-      .fail(() => {
-        $empty.removeClass('hidden').text('未找到 news/index.json，请检查部署内容。');
-      });
+    const manifest = window.NEWS_MANIFEST;
+    if (!manifest || !Array.isArray(manifest.files)) {
+      $empty.removeClass('hidden').text('未找到 news/manifest.js 或格式不正确。');
+      return;
+    }
+
+    const files = manifest.files.slice().sort((a, b) => parseDayFromFile(b).localeCompare(parseDayFromFile(a)));
+    state.dayFiles = files;
+    initEvents();
+    initScrollLoad();
+    loadMoreDays();
   }
 
   $(init);

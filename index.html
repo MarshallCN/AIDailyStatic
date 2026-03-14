@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Daily 简报</title>
   <meta name="description" content="纯静态、可本地打开、可部署到 GitHub Pages 的简约 AI 新闻站" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="styles.css?v=20260314" />
 </head>
 <body>
   <main class="wrap">
     <header>
       <h1>AI Daily 简报</h1>
-      <div class="sub">纯静态 · 可直接本地打开 · 可部署到 GitHub Pages</div>
     </header>
 
     <section class="toolbar" id="filters"></section>
@@ -20,12 +22,12 @@
     <div class="loading hidden" id="loading">正在加载更多新闻...</div>
 
     <footer>
-      <div>本地运行：建议使用静态服务器（例如 <code>python3 -m http.server</code>），避免浏览器对本地 JSON 读取限制。</div>
-      <div>数据来源：<code>news/</code> 目录下按天分文件存储，页面按日期倒序加载，滚动自动加载更早日期。</div>
+      <div>数据来源：<code>news/</code> 目录下按天分文件存储，新闻清单由 <code>news/manifest.js</code> 维护，页面按日期倒序加载，滚动自动加载更早日期。</div>
     </footer>
   </main>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="app.js"></script>
+  <script src="news/manifest.js?v=20260314"></script>
+  <script src="app.js?v=20260314"></script>
 </body>
 </html>
