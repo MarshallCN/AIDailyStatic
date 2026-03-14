@@ -5,6 +5,7 @@
 - HTML / CSS / JS 分离
 - 新闻数据按天存放在 `news/*.md`
 - 支持按分类筛选 + 滚动懒加载更早日期
+- 首页点击标题进入站内详情页（`detail.html?id=YYYY-MM-DD-idx`）
 - 可部署到 GitHub Pages
 
 ## 目录结构
@@ -14,6 +15,8 @@
 ├── index.html
 ├── styles.css
 ├── app.js
+├── detail.html
+├── detail.js
 └── news/
     ├── manifest.js        # 新闻清单（列出每日 Markdown 文件）
     ├── 2026-03-14.md
