@@ -10,7 +10,7 @@
     activeCategory: DAILY_CATEGORY,
     dayFiles: [],
     nextDayIndex: 0,
-    daysPerLoad: 3,
+    itemsPerLoad: 10,
     loading: false,
     restoreSnapshot: null,
     cacheVersion: (window.NEWS_MANIFEST && window.NEWS_MANIFEST.version) || String(Date.now())
@@ -34,7 +34,7 @@
         activeCategory: typeof parsed.activeCategory === 'string' && parsed.activeCategory.trim()
           ? parsed.activeCategory.trim()
           : DAILY_CATEGORY,
-        loadedDayCount: Math.max(state.daysPerLoad, Number(parsed.loadedDayCount) || 0),
+        loadedItemCount: Math.max(state.itemsPerLoad, Number(parsed.loadedItemCount) || 0),
         scrollY: Math.max(0, Number(parsed.scrollY) || 0)
       };
     } catch (error) {
@@ -46,7 +46,7 @@
     try {
       window.sessionStorage.setItem(HOME_STATE_KEY, JSON.stringify({
         activeCategory: state.activeCategory,
-        loadedDayCount: state.nextDayIndex || state.daysPerLoad,
+        loadedItemCount: state.allItems.length || state.itemsPerLoad,
         scrollY: window.scrollY || window.pageYOffset || 0
       }));
     } catch (error) {
@@ -297,7 +297,7 @@
     });
   }
 
-  function loadMoreDays(count) {
+  function loadMoreDays(targetItemCount) {
     if (state.loading || state.nextDayIndex >= state.dayFiles.length) {
       return $.Deferred().resolve().promise();
     }
@@ -305,13 +305,20 @@
     state.loading = true;
     $loading.removeClass('hidden');
 
-    const batchSize = Math.max(1, Number(count) || state.daysPerLoad);
-    const slice = state.dayFiles.slice(state.nextDayIndex, state.nextDayIndex + batchSize);
-    const tasks = slice.map(loadOneDay);
+    const itemCountTarget = Math.max(state.itemsPerLoad, Number(targetItemCount) || state.itemsPerLoad);
+    const tasks = [];
 
-    return $.when.apply($, tasks)
+    // Load days until we have enough items or run out of files
+    while (
+      state.allItems.length < itemCountTarget &&
+      state.nextDayIndex < state.dayFiles.length
+    ) {
+      tasks.push(loadOneDay(state.dayFiles[state.nextDayIndex]));
+      state.nextDayIndex += 1;
+    }
+
+    return $.when.apply($, tasks.length > 0 ? tasks : [$.Deferred().resolve().promise()])
       .done(() => {
-        state.nextDayIndex += slice.length;
         rerenderAll();
       })
       .fail(() => {
@@ -330,7 +337,11 @@
   function initScrollLoad() {
     $(window).on('scroll', function () {
       const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 120;
-      if (nearBottom) loadMoreDays();
+      if (nearBottom) {
+        // 每次滚动到底部时，增加加载数量
+        const targetCount = state.allItems.length + state.itemsPerLoad;
+        loadMoreDays(targetCount);
+      }
     });
   }
 
@@ -363,8 +374,8 @@
     initScrollLoad();
 
     const initialLoadCount = state.restoreSnapshot
-      ? Math.max(state.daysPerLoad, state.restoreSnapshot.loadedDayCount)
-      : state.daysPerLoad;
+      ? Math.max(state.itemsPerLoad, state.restoreSnapshot.loadedItemCount)
+      : state.itemsPerLoad;
 
     loadMoreDays(initialLoadCount).done(() => {
       restoreHomeView();

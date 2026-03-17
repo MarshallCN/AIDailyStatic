@@ -18,7 +18,7 @@
 ├── detail.html
 ├── detail.js
 ├── prompts/
-│   └── ai-daily-unified-prompt.md
+│   └── PROMPT.md
 ├── vendor/
 │   └── jquery-3.7.1.min.js
 └── news/
@@ -114,3 +114,36 @@ http://localhost:8080
 说明：
 - 首页依赖的 jQuery 已改为本地文件 `vendor/jquery-3.7.1.min.js`，离线也能加载脚本。
 - 但新闻内容仍然需要通过本地 HTTP 服务读取，所以启动方式仍然不是双击 HTML。
+
+## 新闻来源网站
+
+### 官方一手来源（优先）
+
+#### 大模型公司官方
+- **OpenAI** - https://openai.com/news
+- **Anthropic** - https://www.anthropic.com/news
+- **Google DeepMind** - https://deepmind.google/
+- **Meta AI** - https://ai.meta.com/
+- **xAI** - https://x.ai/
+- **Mistral AI** - https://mistral.ai/
+
+#### 基础设施 & 平台官方
+- **NVIDIA** - https://blogs.nvidia.com/
+- **Microsoft Azure** - https://azure.microsoft.com/en-us/blog/
+- **Hugging Face** - https://huggingface.co/blog
+- **Stability AI** - https://stability.ai/news
+- **TensorFlow** - https://blog.tensorflow.org/
+- **PyTorch** - https://pytorch.org/blog/
+
+### 学术论文 & 研究
+- **arXiv AI/ML** - https://arxiv.org/list/cs.AI
+- **Papers with Code** - https://paperswithcode.com/
+- **ACL Anthology** - https://aclanthology.org/
+- **Nature AI** - https://www.nature.com/
+
+### 高质量科技媒体（二手来源）
+- **VentureBeat** - https://venturebeat.com/
+- **The Information** - https://theinformation.com/
+- **MIT Technology Review** - https://www.technologyreview.com/
+- **TechCrunch** - https://techcrunch.com/
+- **Reuters Technology** - https://www.reuters.com/technology/

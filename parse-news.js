@@ -1,6 +1,40 @@
 (function (global) {
+  const FIXED_CATEGORIES = [
+    '应用/产业',
+    '论文',
+    '基础设施',
+    '安全',
+    '生态',
+    '开源',
+    '观察'
+  ];
+  const FALLBACK_CATEGORY = '其他';
+
   function normalizeLineEndings(value) {
     return String(value || '').replace(/\r\n?/g, '\n');
+  }
+
+  function parseCategories(categoryString) {
+    return String(categoryString || '')
+      .split(',')
+      .map(cat => cat.trim())
+      .filter(cat => cat.length > 0 && cat !== FALLBACK_CATEGORY);
+  }
+
+  function normalizeCategoryString(categoryString, summary) {
+    const categories = parseCategories(categoryString);
+    const seen = new Set(categories);
+    const normalizedSummary = normalizeLineEndings(summary);
+
+    // If the summary explicitly mentions a fixed label, append it automatically.
+    FIXED_CATEGORIES.forEach((category) => {
+      if (normalizedSummary.includes(category) && !seen.has(category)) {
+        seen.add(category);
+        categories.push(category);
+      }
+    });
+
+    return categories.length ? categories.join(',') : FALLBACK_CATEGORY;
   }
 
   function normalizeFieldValue(value) {
@@ -54,14 +88,15 @@
 
     const items = blocks.map((block) => {
       const titleMatch = block.match(/^##\s+(.+)$/m);
+      const summary = readField(block, 'summary');
 
       return {
         title: titleMatch ? titleMatch[1].trim() : '无标题',
         source: readField(block, 'source') || '未知来源',
         date: readField(block, 'date') || day,
-        category: readField(block, 'category') || '其他',
+        category: normalizeCategoryString(readField(block, 'category'), summary),
         url: readField(block, 'url') || '#',
-        summary: readField(block, 'summary'),
+        summary,
         detail: readField(block, 'detail')
       };
     });
@@ -76,7 +111,7 @@
       title: item.title || '无标题',
       source: item.source || '未知来源',
       date: item.date || day,
-      category: item.category || '其他',
+      category: normalizeCategoryString(item.category, item.summary),
       summary: item.summary || '',
       detail: item.detail || '',
       url: item.url || '#'
