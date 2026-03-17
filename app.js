@@ -10,6 +10,7 @@
     activeCategory: DAILY_CATEGORY,
     dayFiles: [],
     nextDayIndex: 0,
+    visibleItemCount: 0,
     itemsPerLoad: 10,
     loading: false,
     restoreSnapshot: null,
@@ -22,6 +23,7 @@
   const $list = $('#news');
   const $empty = $('#empty');
   const $loading = $('#loading');
+  const $loadingText = $loading.find('.loading-text');
 
   function readStoredHomeState() {
     try {
@@ -46,7 +48,7 @@
     try {
       window.sessionStorage.setItem(HOME_STATE_KEY, JSON.stringify({
         activeCategory: state.activeCategory,
-        loadedItemCount: state.allItems.length || state.itemsPerLoad,
+        loadedItemCount: state.visibleItemCount || state.itemsPerLoad,
         scrollY: window.scrollY || window.pageYOffset || 0
       }));
     } catch (error) {
@@ -260,8 +262,9 @@
     const filtered = state.activeCategory === DAILY_CATEGORY || state.activeCategory === ALL_CATEGORY
       ? state.allItems
       : state.allItems.filter(item => itemHasCategory(item, state.activeCategory));
+    const visibleItems = filtered.slice(0, state.visibleItemCount);
 
-    if (!filtered.length) {
+    if (!visibleItems.length) {
       $list.empty();
       $empty.removeClass('hidden');
       return;
@@ -270,8 +273,8 @@
     $empty.addClass('hidden');
     $list.html(
       state.activeCategory === DAILY_CATEGORY
-        ? renderDailyNews(filtered)
-        : renderItemNews(filtered)
+        ? renderDailyNews(visibleItems)
+        : renderItemNews(visibleItems)
     );
   }
 
@@ -279,6 +282,45 @@
     rebuildCategories();
     renderFilters();
     renderNews();
+  }
+
+  function setLoadingState(mode) {
+    if (mode === 'loading') {
+      $loading.removeClass('hidden is-complete');
+      $loadingText.text('继续加载中...');
+      return;
+    }
+
+    if (mode === 'complete') {
+      $loading.removeClass('hidden').addClass('is-complete');
+      $loadingText.text('已加载全部新闻');
+      return;
+    }
+
+    $loading.addClass('hidden').removeClass('is-complete');
+    $loadingText.text('继续加载中...');
+  }
+
+  function updateVisibleItemCount(targetItemCount) {
+    const normalizedTarget = Math.max(state.itemsPerLoad, Number(targetItemCount) || state.itemsPerLoad);
+    state.visibleItemCount = Math.min(normalizedTarget, state.allItems.length);
+  }
+
+  function updateLoadingIndicator() {
+    const allVisible = state.visibleItemCount >= state.allItems.length;
+    const noMoreFiles = state.nextDayIndex >= state.dayFiles.length;
+
+    if (state.loading) {
+      setLoadingState('loading');
+      return;
+    }
+
+    if (state.allItems.length > 0 && allVisible && noMoreFiles) {
+      setLoadingState('complete');
+      return;
+    }
+
+    setLoadingState('idle');
   }
 
   function withCacheVersion(path) {
@@ -297,28 +339,36 @@
     });
   }
 
+  function loadDaysUntil(targetItemCount) {
+    if (state.allItems.length >= targetItemCount || state.nextDayIndex >= state.dayFiles.length) {
+      return $.Deferred().resolve().promise();
+    }
+
+    const nextFile = state.dayFiles[state.nextDayIndex];
+    state.nextDayIndex += 1;
+
+    return loadOneDay(nextFile).then(() => loadDaysUntil(targetItemCount));
+  }
+
   function loadMoreDays(targetItemCount) {
-    if (state.loading || state.nextDayIndex >= state.dayFiles.length) {
+    if (state.loading) {
+      return $.Deferred().resolve().promise();
+    }
+
+    if (state.allItems.length >= targetItemCount || state.nextDayIndex >= state.dayFiles.length) {
+      updateVisibleItemCount(targetItemCount);
+      rerenderAll();
+      updateLoadingIndicator();
       return $.Deferred().resolve().promise();
     }
 
     state.loading = true;
-    $loading.removeClass('hidden');
-
+    setLoadingState('loading');
     const itemCountTarget = Math.max(state.itemsPerLoad, Number(targetItemCount) || state.itemsPerLoad);
-    const tasks = [];
 
-    // Load days until we have enough items or run out of files
-    while (
-      state.allItems.length < itemCountTarget &&
-      state.nextDayIndex < state.dayFiles.length
-    ) {
-      tasks.push(loadOneDay(state.dayFiles[state.nextDayIndex]));
-      state.nextDayIndex += 1;
-    }
-
-    return $.when.apply($, tasks.length > 0 ? tasks : [$.Deferred().resolve().promise()])
+    return loadDaysUntil(itemCountTarget)
       .done(() => {
+        updateVisibleItemCount(itemCountTarget);
         rerenderAll();
       })
       .fail(() => {
@@ -326,11 +376,7 @@
       })
       .always(() => {
         state.loading = false;
-        if (state.nextDayIndex >= state.dayFiles.length) {
-          $loading.addClass('hidden').text('已加载全部新闻');
-        } else {
-          $loading.addClass('hidden').text('正在加载更多新闻...');
-        }
+        updateLoadingIndicator();
       });
   }
 

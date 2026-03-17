@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <link rel="stylesheet" href="styles.css?v=20260314-2" />
+  <link rel="stylesheet" href="styles.css?v=20260317-2" />
 </head>
 <body>
   <main class="wrap">
@@ -19,7 +19,10 @@
     <section class="toolbar" id="filters"></section>
     <section class="list" id="news"></section>
     <div class="empty hidden" id="empty">当前分类暂无内容</div>
-    <div class="loading hidden" id="loading">正在加载更多新闻...</div>
+    <div class="loading hidden" id="loading" role="status" aria-live="polite">
+      <span class="loading-spinner" aria-hidden="true"></span>
+      <span class="loading-text">继续加载中...</span>
+    </div>
 
     <footer>
       <div>数据来源：<code>news/</code> 目录下按天分文件存储，新闻清单由 <code>news/manifest.js</code> 维护，页面按日期倒序加载，滚动自动加载更早日期。</div>
@@ -29,6 +32,6 @@
   <script src="vendor/jquery-3.7.1.min.js"></script>
   <script src="news/manifest.js?v=20260314"></script>
   <script src="parse-news.js?v=20260317-1"></script>
-  <script src="app.js?v=20260314-2"></script>
+  <script src="app.js?v=20260317-2"></script>
 </body>
 </html>
