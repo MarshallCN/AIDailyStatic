@@ -142,8 +142,17 @@
   }
 
   function rebuildCategories() {
-    const set = new Set(state.allItems.map(item => item.category));
-    state.categories = [DAILY_CATEGORY, ALL_CATEGORY, ...set];
+    // Fixed categories list - do not add new ones dynamically
+    const FIXED_CATEGORIES = [
+      '应用/产业',
+      '论文',
+      '基础设施',
+      '观察',
+      '安全',
+      '生态',
+      '开源'
+    ];
+    state.categories = [DAILY_CATEGORY, ALL_CATEGORY, ...FIXED_CATEGORIES];
     if (!state.categories.includes(state.activeCategory)) {
       state.activeCategory = DAILY_CATEGORY;
     }
@@ -170,6 +179,23 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
+  }
+
+  function parseCategories(categoryString) {
+    return String(categoryString || '')
+      .split(',')
+      .map(cat => cat.trim())
+      .filter(cat => cat.length > 0);
+  }
+
+  function itemHasCategory(item, targetCategory) {
+    const categories = parseCategories(item.category);
+    return categories.includes(targetCategory);
+  }
+
+  function renderCategoryTags(categoryString) {
+    const categories = parseCategories(categoryString);
+    return categories.map(cat => `<span class="tag">${escapeHtml(cat)}</span>`).join('');
   }
 
   function groupItemsByDay(items) {
@@ -206,7 +232,7 @@
               <h2><a href="${buildDetailLink(item)}" data-detail-link="1">${escapeHtml(item.title)}</a></h2>
               <div class="meta">
                 <span>${escapeHtml(item.source)}</span>
-                <span class="tag">${escapeHtml(item.category)}</span>
+                ${renderCategoryTags(item.category)}
               </div>
               <div>${escapeHtml(item.summary)}</div>
             </section>
@@ -223,7 +249,7 @@
         <div class="meta">
           <span>${escapeHtml(item.date)}</span>
           <span>${escapeHtml(item.source)}</span>
-          <span class="tag">${escapeHtml(item.category)}</span>
+          ${renderCategoryTags(item.category)}
         </div>
         <div>${escapeHtml(item.summary)}</div>
       </article>
@@ -233,7 +259,7 @@
   function renderNews() {
     const filtered = state.activeCategory === DAILY_CATEGORY || state.activeCategory === ALL_CATEGORY
       ? state.allItems
-      : state.allItems.filter(item => item.category === state.activeCategory);
+      : state.allItems.filter(item => itemHasCategory(item, state.activeCategory));
 
     if (!filtered.length) {
       $list.empty();

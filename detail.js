@@ -17,6 +17,27 @@
     return `${path}?v=${encodeURIComponent(state.cacheVersion)}`;
   }
 
+  function parseCategories(categoryString) {
+    return String(categoryString || '')
+      .split(',')
+      .map(cat => cat.trim())
+      .filter(cat => cat.length > 0);
+  }
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function renderCategoryTags(categoryString) {
+    const categories = parseCategories(categoryString);
+    return categories.map(cat => `<span class="tag">${escapeHtml(cat)}</span>`).join('');
+  }
+
   function getNewsId() {
     const params = new URLSearchParams(window.location.search);
     return params.get('id') || '';
@@ -82,7 +103,7 @@
   function renderDetail(item) {
     $title.textContent = item.title || '无标题';
     $date.textContent = item.date || '-';
-    $category.textContent = item.category || '其他';
+    $category.innerHTML = renderCategoryTags(item.category) || '<span class="tag">其他</span>';
     $source.textContent = item.source || '未知来源';
     renderBody(item);
     renderSource(item);
