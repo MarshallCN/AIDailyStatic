@@ -147,3 +147,75 @@ http://localhost:8080
 - **MIT Technology Review** - https://www.technologyreview.com/
 - **TechCrunch** - https://techcrunch.com/
 - **Reuters Technology** - https://www.reuters.com/technology/
+
+## 自动化脚本
+
+项目新增了一个 Python CLI：`scripts/ai_daily.py`，把 Prompt 里重复执行的几步收敛成了命令行工具。
+
+### 1. 抓取当天候选新闻
+
+```powershell
+python scripts/ai_daily.py collect --date 2026-03-17
+```
+
+默认会抓取：
+- TechCrunch 当天 AI 相关文章
+- NVIDIA Blog 当天官方文章
+- arXiv `cs.AI / cs.CL / cs.LG` 当天新列表中的高相关论文
+
+也可以输出 JSON，方便后续二次处理：
+
+```powershell
+python scripts/ai_daily.py collect --date 2026-03-17 --format json
+```
+
+### 2. 生成精简 Prompt
+
+```powershell
+python scripts/ai_daily.py prompt --date 2026-03-17 > prompt.txt
+```
+
+默认使用 `compact` 模式，只输出必要规则和当天候选素材，比直接复制整份 `prompts/PROMPT.md` 更省 token。
+
+如果你仍想保留原 Prompt 全文，也可以：
+
+```powershell
+python scripts/ai_daily.py prompt --date 2026-03-17 --style full > prompt.txt
+```
+
+### 3. 校验 AI 生成结果
+
+```powershell
+python scripts/ai_daily.py validate --input draft.md
+```
+
+它会检查：
+- `day` / `date` 是否一致
+- 是否有 7 到 10 条新闻
+- 是否覆盖 `应用/产业`、`论文`、`基础设施`
+- 是否至少有 1 条 `观察`
+- `category` 是否只使用固定标签
+- `summary` / `detail` / 观察类参考来源是否符合约束
+
+### 4. 发布日报并更新 manifest
+
+如果 AI 已经生成好 Markdown：
+
+```powershell
+python scripts/ai_daily.py publish --date 2026-03-17 --input draft.md
+```
+
+脚本会自动：
+- 保存为 `news/2026-03-17.md`
+- 更新 `news/manifest.js`
+- 同步设置 `version: '20260317'`
+
+### 建议工作流
+
+```powershell
+python scripts/ai_daily.py collect --date 2026-03-17 > candidates.md
+python scripts/ai_daily.py prompt --date 2026-03-17 > prompt.txt
+# 将 prompt.txt 发给具备联网能力的 AI，拿回 draft.md
+python scripts/ai_daily.py validate --date 2026-03-17 --input draft.md
+python scripts/ai_daily.py publish --date 2026-03-17 --input draft.md
+```
