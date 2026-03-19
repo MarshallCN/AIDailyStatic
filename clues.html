@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Daily 线索</title>
+  <meta name="description" content="从近期 AI 新闻中抽取可解释的实体共现图，归纳成可视化线索并提供子图证据。" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="styles.css?v=20260319-1" />
+</head>
+<body>
+  <main class="wrap insight-wrap">
+    <header class="site-header">
+      <div>
+        <h1>AI Daily 线索</h1>
+        <div class="sub">把历史新闻中的实体、主题与来源组织成可解释图谱，并生成线索卡片与证据子图。</div>
+      </div>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="nav-link" href="index.html">首页</a>
+        <a class="nav-link" href="wordcloud.html">词云</a>
+        <a class="nav-link active" href="clues.html">线索</a>
+      </nav>
+    </header>
+
+    <section class="insight-toolbar">
+      <div class="preset-row" id="clue-presets"></div>
+      <div class="control-grid">
+        <label class="field">
+          <span>开始日期</span>
+          <select id="clue-start-date"></select>
+        </label>
+        <label class="field">
+          <span>结束日期</span>
+          <select id="clue-end-date"></select>
+        </label>
+      </div>
+      <section class="toolbar" id="clue-categories"></section>
+      <div class="insight-summary" id="clue-summary">正在加载历史新闻...</div>
+    </section>
+
+    <div class="insight-layout insight-layout-clues">
+      <section class="panel graph-panel">
+        <div class="panel-head">
+          <h2>知识图谱</h2>
+          <span id="clue-graph-meta"></span>
+        </div>
+        <div class="graph-canvas" id="clue-graph"></div>
+      </section>
+
+      <aside class="panel clue-panel">
+        <div class="panel-head">
+          <h2>线索卡片</h2>
+        </div>
+        <div class="clue-list" id="clue-list"></div>
+      </aside>
+    </div>
+
+    <div class="evidence-grid">
+      <section class="panel">
+        <div class="panel-head">
+          <h2>证据新闻</h2>
+        </div>
+        <div class="evidence-list" id="clue-evidence"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>视图说明</h2>
+        </div>
+        <div class="insight-notes" id="clue-notes"></div>
+      </section>
+    </div>
+
+    <div class="empty hidden" id="clue-empty">当前范围内没有可展示的线索。</div>
+  </main>
+
+  <script src="news/manifest.js?v=20260319"></script>
+  <script src="parse-news.js?v=20260319-1"></script>
+  <script src="news-store.js?v=20260319-1"></script>
+  <script src="analysis-utils.js?v=20260319-1"></script>
+  <script src="vendor/cytoscape.min.js"></script>
+  <script src="clues.js?v=20260319-1"></script>
+</body>
+</html>

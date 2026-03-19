@@ -14,7 +14,16 @@
     itemsPerLoad: 10,
     loading: false,
     restoreSnapshot: null,
-    cacheVersion: (window.NEWS_MANIFEST && window.NEWS_MANIFEST.version) || String(Date.now())
+    searchQuery: '',
+    exactMatch: false,
+    searchResults: [],
+    relatedResults: [],
+    searchReady: false,
+    searchLoading: false,
+    searchError: '',
+    searchPromise: null,
+    searchRunId: 0,
+    searchDebounceId: 0
   };
 
   $.ajaxSetup({ cache: false });
@@ -24,6 +33,11 @@
   const $empty = $('#empty');
   const $loading = $('#loading');
   const $loadingText = $loading.find('.loading-text');
+  const $searchInput = $('#search-input');
+  const $searchExact = $('#search-exact');
+  const $searchClear = $('#search-clear');
+  const $searchStatus = $('#search-status');
+  const $searchSummary = $('#search-summary');
 
   function readStoredHomeState() {
     try {
@@ -37,7 +51,9 @@
           ? parsed.activeCategory.trim()
           : DAILY_CATEGORY,
         loadedItemCount: Math.max(state.itemsPerLoad, Number(parsed.loadedItemCount) || 0),
-        scrollY: Math.max(0, Number(parsed.scrollY) || 0)
+        scrollY: Math.max(0, Number(parsed.scrollY) || 0),
+        searchQuery: typeof parsed.searchQuery === 'string' ? parsed.searchQuery : '',
+        exactMatch: Boolean(parsed.exactMatch)
       };
     } catch (error) {
       return null;
@@ -49,7 +65,9 @@
       window.sessionStorage.setItem(HOME_STATE_KEY, JSON.stringify({
         activeCategory: state.activeCategory,
         loadedItemCount: state.visibleItemCount || state.itemsPerLoad,
-        scrollY: window.scrollY || window.pageYOffset || 0
+        scrollY: window.scrollY || window.pageYOffset || 0,
+        searchQuery: state.searchQuery,
+        exactMatch: state.exactMatch
       }));
     } catch (error) {
       // Ignore sessionStorage failures and fall back to a normal navigation flow.
@@ -96,108 +114,65 @@
     });
   }
 
-  function parseDayFromFile(fileName) {
-    const m = fileName.match(/(\d{4}-\d{2}-\d{2})/);
-    return m ? m[1] : '1970-01-01';
+  function isSearchMode() {
+    return Boolean(state.searchQuery.trim());
   }
 
-  function parseNewsMarkdown(raw, fallbackDay) {
-    const dayMatch = raw.match(/^day:\s*(\d{4}-\d{2}-\d{2})\s*$/m);
-    const day = dayMatch ? dayMatch[1] : fallbackDay;
-    const blocks = raw
-      .split(/\n##\s+/)
-      .map((part, index) => (index === 0 ? part : `## ${part}`))
-      .filter(part => part.startsWith('## '));
+  function updateSearchStatus(message, tone) {
+    $searchStatus
+      .text(message || '')
+      .removeClass('is-ready is-error');
 
-    const items = blocks.map((block) => {
-      const titleMatch = block.match(/^##\s+(.+)$/m);
-      const sourceMatch = block.match(/^-\s*source:\s*(.+)$/m);
-      const dateMatch = block.match(/^-\s*date:\s*(.+)$/m);
-      const categoryMatch = block.match(/^-\s*category:\s*(.+)$/m);
-      const urlMatch = block.match(/^-\s*url:\s*(.+)$/m);
-      const summaryMatch = block.match(/^-\s*summary:\s*(.+)$/m);
-
-      return {
-        title: titleMatch ? titleMatch[1].trim() : '无标题',
-        source: sourceMatch ? sourceMatch[1].trim() : '未知来源',
-        date: dateMatch ? dateMatch[1].trim() : day,
-        category: categoryMatch ? categoryMatch[1].trim() : '其他',
-        url: urlMatch ? urlMatch[1].trim() : '#',
-        summary: summaryMatch ? summaryMatch[1].trim() : ''
-      };
-    });
-
-    return { day, items };
+    if (tone === 'ready') {
+      $searchStatus.addClass('is-ready');
+    } else if (tone === 'error') {
+      $searchStatus.addClass('is-error');
+    }
   }
 
-  function normalizeItems(day, items) {
-    return (items || []).map((item, idx) => ({
-      id: typeof item.id === 'string' && item.id.trim() ? item.id.trim() : `${day}-${idx}`,
-      day,
-      title: item.title || '无标题',
-      source: item.source || '未知来源',
-      date: item.date || day,
-      category: item.category || '其他',
-      summary: item.summary || '',
-      url: item.url || '#'
-    }));
+  function updateSearchSummary(text) {
+    if (!text) {
+      $searchSummary.addClass('hidden').text('');
+      return;
+    }
+    $searchSummary.removeClass('hidden').text(text);
   }
 
   function rebuildCategories() {
-    // Fixed categories list - do not add new ones dynamically
-    const FIXED_CATEGORIES = [
-      '应用/产业',
-      '论文',
-      '基础设施',
-      '观察',
-      '安全',
-      '生态',
-      '开源'
-    ];
-    state.categories = [DAILY_CATEGORY, ALL_CATEGORY, ...FIXED_CATEGORIES];
+    state.categories = [DAILY_CATEGORY, ALL_CATEGORY].concat(AnalysisUtils.FIXED_CATEGORIES);
     if (!state.categories.includes(state.activeCategory)) {
       state.activeCategory = DAILY_CATEGORY;
     }
   }
 
   function renderFilters() {
-    $filters.html(state.categories.map(name => (
+    $filters.html(state.categories.map((name) => (
       `<button class="chip ${name === state.activeCategory ? 'active' : ''}" data-category="${name}">${name}</button>`
     )).join(''));
   }
 
-  function buildDetailLink(item) {
-    const params = new URLSearchParams({
-      id: item.id || '',
-      from: 'index.html?restore=1'
-    });
-    return `detail.html?${params.toString()}`;
-  }
-
   function escapeHtml(value) {
-    return String(value || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
+    return AnalysisUtils.escapeHtml(value);
   }
 
   function parseCategories(categoryString) {
-    return String(categoryString || '')
-      .split(',')
-      .map(cat => cat.trim())
-      .filter(cat => cat.length > 0);
+    return AnalysisUtils.parseCategories(categoryString);
   }
 
   function itemHasCategory(item, targetCategory) {
-    const categories = parseCategories(item.category);
-    return categories.includes(targetCategory);
+    if (targetCategory === DAILY_CATEGORY || targetCategory === ALL_CATEGORY) {
+      return true;
+    }
+    return parseCategories(item.category).includes(targetCategory);
   }
 
   function renderCategoryTags(categoryString) {
     const categories = parseCategories(categoryString);
-    return categories.map(cat => `<span class="tag">${escapeHtml(cat)}</span>`).join('');
+    return categories.map((category) => `<span class="tag">${escapeHtml(category)}</span>`).join('');
+  }
+
+  function buildDetailLink(item) {
+    return AnalysisUtils.buildDetailLink(item, 'index.html?restore=1');
   }
 
   function groupItemsByDay(items) {
@@ -220,7 +195,7 @@
   function renderDailyNews(items) {
     const dayGroups = groupItemsByDay(items);
 
-    return dayGroups.map(group => `
+    return dayGroups.map((group) => `
       <article class="day-card">
         <div class="day-card-header">
           <div>
@@ -229,7 +204,7 @@
           </div>
         </div>
         <div class="day-card-list">
-          ${group.items.map(item => `
+          ${group.items.map((item) => `
             <section class="day-card-item">
               <h2><a href="${buildDetailLink(item)}" data-detail-link="1">${escapeHtml(item.title)}</a></h2>
               <div class="meta">
@@ -245,7 +220,7 @@
   }
 
   function renderItemNews(items) {
-    return items.map(item => `
+    return items.map((item) => `
       <article>
         <h2><a href="${buildDetailLink(item)}" data-detail-link="1">${escapeHtml(item.title)}</a></h2>
         <div class="meta">
@@ -258,15 +233,140 @@
     `).join('');
   }
 
+  function getSearchFilteredItems(items) {
+    if (state.activeCategory === DAILY_CATEGORY || state.activeCategory === ALL_CATEGORY) {
+      return items;
+    }
+    return items.filter((item) => itemHasCategory(item, state.activeCategory));
+  }
+
+  function renderSearchCard(entry, kind, highlightTerms) {
+    const item = entry.item;
+    const sharedParts = [];
+
+    if (kind === 'direct' && entry.matchedField) {
+      const matchedFieldLabel = entry.matchedField === 'title'
+        ? '标题命中'
+        : (entry.matchedField === 'summary' ? '摘要命中' : '正文命中');
+      sharedParts.push(`<span class="match-badge">${matchedFieldLabel}</span>`);
+    }
+
+    if (kind === 'related' && Array.isArray(entry.sharedTokens) && entry.sharedTokens.length) {
+      sharedParts.push(`<span class="match-badge">共现词：${escapeHtml(entry.sharedTokens.slice(0, 3).join('、'))}</span>`);
+    }
+
+    if (kind === 'related' && Array.isArray(entry.sharedCategories) && entry.sharedCategories.length) {
+      sharedParts.push(`<span class="match-badge">同类目：${escapeHtml(entry.sharedCategories.slice(0, 2).join('、'))}</span>`);
+    }
+
+    return `
+      <article class="search-card">
+        <div class="search-card-top">
+          <div class="meta">
+            <span>${escapeHtml(item.date)}</span>
+            <span>${escapeHtml(item.source)}</span>
+            ${renderCategoryTags(item.category)}
+          </div>
+          <div class="search-signals">${sharedParts.join('')}</div>
+        </div>
+        <h2><a href="${buildDetailLink(item)}" data-detail-link="1">${AnalysisUtils.highlightText(item.title, highlightTerms)}</a></h2>
+        <div class="search-snippet">${AnalysisUtils.highlightText(entry.snippet || item.summary, highlightTerms)}</div>
+      </article>
+    `;
+  }
+
+  function renderSearchSection(title, description, entries, kind, highlightTerms) {
+    return `
+      <section class="search-section">
+        <div class="search-section-head">
+          <div>
+            <h2>${escapeHtml(title)}</h2>
+            <div class="search-section-sub">${escapeHtml(description)}</div>
+          </div>
+          <div class="search-section-count">${entries.length} 条</div>
+        </div>
+        <div class="search-section-list">
+          ${entries.map((entry) => renderSearchCard(entry, kind, highlightTerms)).join('')}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderSearchLoading() {
+    const progress = NewsStore.getProgress();
+    $empty.addClass('hidden');
+    $list.html(`
+      <article class="search-placeholder">
+        <h2>正在建立全量搜索索引</h2>
+        <p>已加载 ${progress.loadedFiles}/${progress.totalFiles} 个新闻文件，稍后会显示完整历史结果。</p>
+      </article>
+    `);
+  }
+
+  function renderSearchNews() {
+    if (state.searchLoading && !state.searchReady && !state.searchError) {
+      renderSearchLoading();
+      return;
+    }
+
+    if (state.searchError) {
+      $empty.addClass('hidden');
+      $list.html(`
+        <article class="search-placeholder is-error">
+          <h2>搜索索引建立失败</h2>
+          <p>${escapeHtml(state.searchError)}</p>
+        </article>
+      `);
+      return;
+    }
+
+    const highlightTerms = AnalysisUtils.buildQueryProfile(state.searchQuery, state.exactMatch).highlightTerms;
+    const sections = [];
+
+    if (state.searchResults.length) {
+      sections.push(renderSearchSection(
+        '搜索结果',
+        state.exactMatch ? '仅展示连续精确命中的历史新闻。' : '按关键词交集和字段权重排序。',
+        state.searchResults,
+        'direct',
+        highlightTerms
+      ));
+    }
+
+    if (state.relatedResults.length) {
+      sections.push(renderSearchSection(
+        '相关新闻',
+        '基于共享高频词、分类与来源自动关联。',
+        state.relatedResults,
+        'related',
+        highlightTerms
+      ));
+    }
+
+    if (!sections.length) {
+      $list.empty();
+      $empty.removeClass('hidden').text('没有找到符合条件的历史新闻，请尝试更换关键词或关闭精确匹配。');
+      return;
+    }
+
+    $empty.addClass('hidden');
+    $list.html(sections.join(''));
+  }
+
   function renderNews() {
+    if (isSearchMode()) {
+      renderSearchNews();
+      return;
+    }
+
     const filtered = state.activeCategory === DAILY_CATEGORY || state.activeCategory === ALL_CATEGORY
       ? state.allItems
-      : state.allItems.filter(item => itemHasCategory(item, state.activeCategory));
+      : state.allItems.filter((item) => itemHasCategory(item, state.activeCategory));
     const visibleItems = filtered.slice(0, state.visibleItemCount);
 
     if (!visibleItems.length) {
       $list.empty();
-      $empty.removeClass('hidden');
+      $empty.removeClass('hidden').text('当前分类暂无内容');
       return;
     }
 
@@ -285,6 +385,11 @@
   }
 
   function setLoadingState(mode) {
+    if (isSearchMode()) {
+      $loading.addClass('hidden').removeClass('is-complete');
+      return;
+    }
+
     if (mode === 'loading') {
       $loading.removeClass('hidden is-complete');
       $loadingText.text('继续加载中...');
@@ -307,6 +412,11 @@
   }
 
   function updateLoadingIndicator() {
+    if (isSearchMode()) {
+      setLoadingState('idle');
+      return;
+    }
+
     const allVisible = state.visibleItemCount >= state.allItems.length;
     const noMoreFiles = state.nextDayIndex >= state.dayFiles.length;
 
@@ -323,25 +433,28 @@
     setLoadingState('idle');
   }
 
-  function withCacheVersion(path) {
-    return `${path}?v=${encodeURIComponent(state.cacheVersion)}`;
+  function mergeLoadedItems(nextItems) {
+    const map = new Map();
+    state.allItems.concat(nextItems).forEach((item) => {
+      map.set(item.id, item);
+    });
+    state.allItems = Array.from(map.values()).sort((a, b) => {
+      if (a.date === b.date) {
+        return a.title.localeCompare(b.title, 'zh-Hans-CN');
+      }
+      return b.date.localeCompare(a.date);
+    });
   }
 
   function loadOneDay(fileName) {
-    return $.get(withCacheVersion(`news/${fileName}`)).then((rawMarkdown) => {
-      const parsed = NewsParser.parseNewsMarkdown(rawMarkdown, NewsParser.parseDayFromFile(fileName));
-      const normalized = NewsParser.normalizeItems(parsed.day, parsed.items);
-      state.allItems = state.allItems.concat(normalized);
-      state.allItems.sort((a, b) => {
-        if (a.date === b.date) return a.title.localeCompare(b.title, 'zh-Hans-CN');
-        return b.date.localeCompare(a.date);
-      });
+    return NewsStore.loadDayFile(fileName).then((items) => {
+      mergeLoadedItems(items);
     });
   }
 
   function loadDaysUntil(targetItemCount) {
     if (state.allItems.length >= targetItemCount || state.nextDayIndex >= state.dayFiles.length) {
-      return $.Deferred().resolve().promise();
+      return Promise.resolve();
     }
 
     const nextFile = state.dayFiles[state.nextDayIndex];
@@ -351,15 +464,15 @@
   }
 
   function loadMoreDays(targetItemCount) {
-    if (state.loading) {
-      return $.Deferred().resolve().promise();
+    if (state.loading || isSearchMode()) {
+      return Promise.resolve();
     }
 
     if (state.allItems.length >= targetItemCount || state.nextDayIndex >= state.dayFiles.length) {
       updateVisibleItemCount(targetItemCount);
       rerenderAll();
       updateLoadingIndicator();
-      return $.Deferred().resolve().promise();
+      return Promise.resolve();
     }
 
     state.loading = true;
@@ -367,24 +480,135 @@
     const itemCountTarget = Math.max(state.itemsPerLoad, Number(targetItemCount) || state.itemsPerLoad);
 
     return loadDaysUntil(itemCountTarget)
-      .done(() => {
+      .then(() => {
         updateVisibleItemCount(itemCountTarget);
         rerenderAll();
       })
-      .fail(() => {
+      .catch(() => {
         $empty.removeClass('hidden').text('新闻数据加载失败，请检查 news/ 目录与 Markdown 格式。');
       })
-      .always(() => {
+      .finally(() => {
         state.loading = false;
         updateLoadingIndicator();
       });
   }
 
+  function updateSearchStatusFromProgress() {
+    const progress = NewsStore.getProgress();
+    if (state.searchError) {
+      updateSearchStatus(state.searchError, 'error');
+      return;
+    }
+    if (state.searchReady) {
+      updateSearchStatus('全量历史索引已就绪', 'ready');
+      return;
+    }
+    updateSearchStatus(`正在建立全量历史索引（${progress.loadedFiles}/${progress.totalFiles}）`);
+  }
+
+  function ensureSearchIndex() {
+    if (state.searchPromise) {
+      return state.searchPromise;
+    }
+
+    state.searchLoading = true;
+    updateSearchStatusFromProgress();
+
+    state.searchPromise = NewsStore.preloadAll()
+      .then((items) => {
+        state.searchLoading = false;
+        state.searchReady = true;
+        state.searchError = '';
+        updateSearchStatus('全量历史索引已就绪', 'ready');
+        return items;
+      })
+      .catch(() => {
+        state.searchLoading = false;
+        state.searchReady = false;
+        state.searchError = '全量新闻索引建立失败，请稍后重试。';
+        state.searchPromise = null;
+        updateSearchStatus(state.searchError, 'error');
+        throw new Error(state.searchError);
+      });
+
+    return state.searchPromise;
+  }
+
+  function runSearch() {
+    const query = state.searchQuery.trim();
+    state.searchRunId += 1;
+    const runId = state.searchRunId;
+
+    if (!query) {
+      state.searchResults = [];
+      state.relatedResults = [];
+      state.searchError = '';
+      updateSearchSummary('');
+      rerenderAll();
+      updateLoadingIndicator();
+      return Promise.resolve();
+    }
+
+    state.searchLoading = true;
+    updateSearchStatusFromProgress();
+    renderNews();
+
+    return ensureSearchIndex()
+      .then((items) => {
+        if (runId !== state.searchRunId) {
+          return;
+        }
+
+        const queryProfile = AnalysisUtils.buildQueryProfile(state.searchQuery, state.exactMatch);
+        const filteredItems = getSearchFilteredItems(items);
+
+        state.searchResults = AnalysisUtils.rankSearchResults(filteredItems, queryProfile);
+        state.relatedResults = AnalysisUtils.buildRelatedResults(filteredItems, state.searchResults, queryProfile, { limit: 8 });
+        state.searchLoading = false;
+
+        const summaryParts = [`“${state.searchQuery}”`];
+        if (state.exactMatch) {
+          summaryParts.push('精确匹配');
+        }
+        if (state.activeCategory !== DAILY_CATEGORY && state.activeCategory !== ALL_CATEGORY) {
+          summaryParts.push(state.activeCategory);
+        }
+        summaryParts.push(`直接命中 ${state.searchResults.length} 条`);
+        summaryParts.push(`相关新闻 ${state.relatedResults.length} 条`);
+        updateSearchSummary(summaryParts.join(' · '));
+
+        renderNews();
+        updateLoadingIndicator();
+      })
+      .catch(() => {
+        if (runId !== state.searchRunId) {
+          return;
+        }
+        state.searchLoading = false;
+        renderNews();
+        updateLoadingIndicator();
+      });
+  }
+
+  function scheduleSearch() {
+    window.clearTimeout(state.searchDebounceId);
+    state.searchDebounceId = window.setTimeout(() => {
+      runSearch();
+    }, 180);
+  }
+
+  function syncSearchControls() {
+    $searchInput.val(state.searchQuery);
+    $searchExact.prop('checked', state.exactMatch);
+  }
+
   function initScrollLoad() {
     $(window).on('scroll', function () {
+      if (isSearchMode()) {
+        return;
+      }
       const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 120;
       if (nearBottom) {
-        // 每次滚动到底部时，增加加载数量
         const targetCount = state.allItems.length + state.itemsPerLoad;
         loadMoreDays(targetCount);
       }
@@ -395,11 +619,46 @@
     $filters.on('click', 'button[data-category]', function () {
       state.activeCategory = $(this).data('category');
       renderFilters();
-      renderNews();
+      if (isSearchMode()) {
+        runSearch();
+      } else {
+        renderNews();
+        updateLoadingIndicator();
+      }
     });
 
     $list.on('click', 'a[data-detail-link]', function () {
       saveHomeState();
+    });
+
+    $searchInput.on('input', function () {
+      state.searchQuery = String($(this).val() || '');
+      if (state.searchQuery.trim()) {
+        ensureSearchIndex().catch(function () {});
+      }
+      scheduleSearch();
+    });
+
+    $searchExact.on('change', function () {
+      state.exactMatch = Boolean($(this).is(':checked'));
+      if (isSearchMode()) {
+        runSearch();
+      }
+    });
+
+    $searchClear.on('click', function () {
+      state.searchQuery = '';
+      state.exactMatch = false;
+      syncSearchControls();
+      updateSearchSummary('');
+      runSearch();
+    });
+
+    window.addEventListener('newsstore:progress', function () {
+      updateSearchStatusFromProgress();
+      if (isSearchMode() && state.searchLoading && !state.searchReady) {
+        renderNews();
+      }
     });
   }
 
@@ -410,20 +669,32 @@
       return;
     }
 
-    const files = manifest.files.slice().sort((a, b) => NewsParser.parseDayFromFile(b).localeCompare(NewsParser.parseDayFromFile(a)));
-    state.dayFiles = files;
+    state.dayFiles = NewsStore.getFiles();
     state.restoreSnapshot = shouldRestoreHomeState() ? readStoredHomeState() : null;
     if (state.restoreSnapshot) {
       state.activeCategory = state.restoreSnapshot.activeCategory;
+      state.searchQuery = state.restoreSnapshot.searchQuery || '';
+      state.exactMatch = Boolean(state.restoreSnapshot.exactMatch);
     }
+
     initEvents();
     initScrollLoad();
+    syncSearchControls();
+    updateSearchStatusFromProgress();
 
     const initialLoadCount = state.restoreSnapshot
       ? Math.max(state.itemsPerLoad, state.restoreSnapshot.loadedItemCount)
       : state.itemsPerLoad;
 
-    loadMoreDays(initialLoadCount).done(() => {
+    ensureSearchIndex().catch(function () {});
+
+    loadMoreDays(initialLoadCount).then(() => {
+      if (isSearchMode()) {
+        runSearch().finally(() => {
+          restoreHomeView();
+        });
+        return;
+      }
       restoreHomeView();
     });
   }

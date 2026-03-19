@@ -7,14 +7,21 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <link rel="stylesheet" href="styles.css?v=20260317-2" />
+  <link rel="stylesheet" href="styles.css?v=20260319-1" />
 </head>
 <body>
   <main class="wrap detail-wrap">
-    <header class="detail-header">
-      <button type="button" class="back-link" id="detail-back">返回列表</button>
-      <h1><a class="home-link" href="index.html">AI Daily 简报</a></h1>
-      <div class="sub">新闻详情</div>
+    <header class="site-header detail-header">
+      <div>
+        <button type="button" class="back-link" id="detail-back">返回列表</button>
+        <h1><a class="home-link" href="index.html">AI Daily 简报</a></h1>
+        <div class="sub">新闻详情</div>
+      </div>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="nav-link" href="index.html">首页</a>
+        <a class="nav-link" href="wordcloud.html">词云</a>
+        <a class="nav-link" href="clues.html">线索</a>
+      </nav>
     </header>
 
     <article id="detail-card" class="hidden">
@@ -22,7 +29,7 @@
       <div class="meta detail-meta">
         <span id="detail-date"></span>
         <span id="detail-source"></span>
-        <span class="tag" id="detail-category"></span>
+        <span id="detail-category"></span>
       </div>
 
       <section id="detail-body" class="detail-body"></section>
@@ -36,8 +43,8 @@
     <div class="empty" id="detail-empty">正在加载详情...</div>
   </main>
 
-  <script src="news/manifest.js?v=20260314"></script>
-  <script src="parse-news.js?v=20260317-1"></script>
-  <script src="detail.js?v=20260314-1"></script>
+  <script src="news/manifest.js?v=20260319"></script>
+  <script src="parse-news.js?v=20260319-1"></script>
+  <script src="detail.js?v=20260319-1"></script>
 </body>
 </html>

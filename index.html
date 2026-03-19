@@ -4,17 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Daily 简报</title>
-  <meta name="description" content="纯静态、可本地运行、可部署到 GitHub Pages 的简约 AI 新闻站" />
+  <meta name="description" content="纯静态、可本地运行、可部署到 GitHub Pages 的 AI 新闻站点，支持历史搜索、词云洞察与线索图谱。" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <link rel="stylesheet" href="styles.css?v=20260317-2" />
+  <link rel="stylesheet" href="styles.css?v=20260319-1" />
 </head>
 <body>
   <main class="wrap">
-    <header>
-      <h1>AI Daily 简报</h1>
+    <header class="site-header">
+      <div>
+        <h1>AI Daily 简报</h1>
+        <div class="sub">纯静态 AI 新闻站点，支持历史搜索、词云洞察与线索图谱。</div>
+      </div>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="nav-link active" href="index.html">首页</a>
+        <a class="nav-link" href="wordcloud.html">词云</a>
+        <a class="nav-link" href="clues.html">线索</a>
+      </nav>
     </header>
+
+    <section class="search-shell" aria-labelledby="search-title">
+      <div class="search-row">
+        <label class="search-input-wrap" for="search-input">
+          <span class="search-label" id="search-title">全站搜索</span>
+          <input id="search-input" type="search" placeholder="搜索关键词，支持精确匹配与历史相关新闻" autocomplete="off" />
+        </label>
+        <label class="toggle" for="search-exact">
+          <input id="search-exact" type="checkbox" />
+          <span>精确匹配</span>
+        </label>
+        <button class="ghost-button" id="search-clear" type="button">清空</button>
+      </div>
+      <div class="search-meta">
+        <span id="search-status">正在建立全量历史索引（0/0）</span>
+        <span class="hidden" id="search-summary"></span>
+      </div>
+    </section>
 
     <section class="toolbar" id="filters"></section>
     <section class="list" id="news"></section>
@@ -25,13 +51,15 @@
     </div>
 
     <footer>
-      <div>数据来源：<code>news/</code> 目录下按天分文件存储，新闻清单由 <code>news/manifest.js</code> 维护，页面按日期倒序加载，滚动自动加载更早日期。</div>
+      <div>数据来源：<code>news/</code> 目录下按天存储的 Markdown 新闻文件。首页保留按日期懒加载浏览，同时在后台建立全历史搜索索引。</div>
     </footer>
   </main>
 
   <script src="vendor/jquery-3.7.1.min.js"></script>
-  <script src="news/manifest.js?v=20260314"></script>
-  <script src="parse-news.js?v=20260317-1"></script>
-  <script src="app.js?v=20260317-2"></script>
+  <script src="news/manifest.js?v=20260319"></script>
+  <script src="parse-news.js?v=20260319-1"></script>
+  <script src="news-store.js?v=20260319-1"></script>
+  <script src="analysis-utils.js?v=20260319-1"></script>
+  <script src="app.js?v=20260319-1"></script>
 </body>
 </html>
