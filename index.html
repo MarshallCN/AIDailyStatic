@@ -27,8 +27,8 @@
     <section class="search-shell" aria-labelledby="search-title">
       <div class="search-row">
         <label class="search-input-wrap" for="search-input">
-          <span class="search-label" id="search-title">全站搜索</span>
-          <input id="search-input" type="search" placeholder="搜索关键词，支持精确匹配与历史相关新闻" autocomplete="off" />
+          <span class="search-label visually-hidden" id="search-title">全站搜索</span>
+          <input id="search-input" type="search" placeholder="搜索关键词，支持精确匹配与历史相关新闻" autocomplete="off" aria-label="全站搜索" />
         </label>
         <label class="toggle" for="search-exact">
           <input id="search-exact" type="checkbox" />
@@ -37,7 +37,7 @@
         <button class="ghost-button" id="search-clear" type="button">清空</button>
       </div>
       <div class="search-meta">
-        <span id="search-status">正在建立全量历史索引（0/0）</span>
+        <span class="visually-hidden" id="search-status" aria-live="polite"></span>
         <span class="hidden" id="search-summary"></span>
       </div>
     </section>
