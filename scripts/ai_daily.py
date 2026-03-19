@@ -10,6 +10,7 @@ import pathlib
 import re
 import sys
 import textwrap
+import time
 import urllib.error
 import urllib.request
 from typing import Iterable
@@ -78,8 +79,25 @@ HISTORY_HINT_SOURCES = [
     ("TechCrunch", "https://techcrunch.com/2026/03/02/users-are-ditching-chatgpt-for-claude-heres-how-to-make-the-switch/"),
 ]
 
+DEFAULT_REQUEST_TIMEOUT = 8
+DEFAULT_COLLECT_BUDGET_SECONDS = 25
+
 
 class CliError(RuntimeError):
+    pass
+
+
+@dataclasses.dataclass(slots=True)
+class CollectConfig:
+    request_timeout: int = DEFAULT_REQUEST_TIMEOUT
+    budget_seconds: int = DEFAULT_COLLECT_BUDGET_SECONDS
+    max_official_links: int = 12
+    max_media_links: int = 40
+    max_nvidia_links: int = 25
+    max_arxiv_items: int = 18
+
+
+class CollectDeadlineExceeded(RuntimeError):
     pass
 
 
@@ -129,9 +147,20 @@ class NewsItem:
         )
 
 
-def fetch_text(url: str, timeout: int = 20) -> str:
+def ensure_within_deadline(deadline: float | None) -> None:
+    if deadline is not None and time.monotonic() >= deadline:
+        raise CollectDeadlineExceeded()
+
+
+
+def fetch_text(url: str, timeout: int = DEFAULT_REQUEST_TIMEOUT, deadline: float | None = None) -> str:
+    ensure_within_deadline(deadline)
     request = urllib.request.Request(url, headers={"User-Agent": DEFAULT_USER_AGENT})
-    with urllib.request.urlopen(request, timeout=timeout) as response:
+    effective_timeout = timeout
+    if deadline is not None:
+        remaining = max(0.1, deadline - time.monotonic())
+        effective_timeout = min(timeout, remaining)
+    with urllib.request.urlopen(request, timeout=effective_timeout) as response:
         charset = response.headers.get_content_charset() or "utf-8"
         return response.read().decode(charset, "ignore")
 
@@ -226,10 +255,19 @@ def extract_published_date(page: str) -> str:
     return normalize_page_date(raw)
 
 
-def collect_official_site(index_url: str, source: str, link_pattern: str, date_str: str, limit: int = 12) -> list[Candidate]:
+def collect_official_site(
+    index_url: str,
+    source: str,
+    link_pattern: str,
+    date_str: str,
+    limit: int = 12,
+    *,
+    timeout: int = DEFAULT_REQUEST_TIMEOUT,
+    deadline: float | None = None,
+) -> list[Candidate]:
     try:
-        index_html = fetch_text(index_url)
-    except urllib.error.URLError:
+        index_html = fetch_text(index_url, timeout=timeout, deadline=deadline)
+    except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
         return []
 
     urls = []
@@ -243,8 +281,8 @@ def collect_official_site(index_url: str, source: str, link_pattern: str, date_s
     results: list[Candidate] = []
     for url in urls:
         try:
-            page = fetch_text(url)
-        except urllib.error.URLError:
+            page = fetch_text(url, timeout=timeout, deadline=deadline)
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
             continue
 
         published = extract_published_date(page)
@@ -270,17 +308,23 @@ def collect_official_site(index_url: str, source: str, link_pattern: str, date_s
     return results
 
 
-def collect_techcrunch(date_str: str) -> list[Candidate]:
+def collect_techcrunch(
+    date_str: str,
+    *,
+    timeout: int = DEFAULT_REQUEST_TIMEOUT,
+    deadline: float | None = None,
+    max_urls: int = 40,
+) -> list[Candidate]:
     archive_url = f"https://techcrunch.com/{date_str[:4]}/{date_str[5:7]}/"
-    archive_html = fetch_text(archive_url)
+    archive_html = fetch_text(archive_url, timeout=timeout, deadline=deadline)
     pattern = rf"https://techcrunch\.com/{date_str[:4]}/{date_str[5:7]}/{date_str[8:10]}/[^\"'\s<>]+"
-    urls = sorted(set(re.findall(pattern, archive_html)))
+    urls = sorted(set(re.findall(pattern, archive_html)))[:max_urls]
     results: list[Candidate] = []
 
     for url in urls:
         try:
-            page = fetch_text(url)
-        except urllib.error.URLError:
+            page = fetch_text(url, timeout=timeout, deadline=deadline)
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
             continue
 
         title, summary = extract_title_and_summary(page)
@@ -308,8 +352,14 @@ def collect_techcrunch(date_str: str) -> list[Candidate]:
     return results
 
 
-def collect_nvidia(date_str: str) -> list[Candidate]:
-    homepage = fetch_text("https://blogs.nvidia.com/")
+def collect_nvidia(
+    date_str: str,
+    *,
+    timeout: int = DEFAULT_REQUEST_TIMEOUT,
+    deadline: float | None = None,
+    max_urls: int = 25,
+) -> list[Candidate]:
+    homepage = fetch_text("https://blogs.nvidia.com/", timeout=timeout, deadline=deadline)
     urls = []
     for url in re.findall(r"https://blogs\.nvidia\.com/blog/[^\"'\s<>]+", homepage):
         if any(marker in url for marker in ("/category/", "/tag/")):
@@ -318,10 +368,10 @@ def collect_nvidia(date_str: str) -> list[Candidate]:
     urls = sorted(set(urls))
 
     results: list[Candidate] = []
-    for url in urls[:50]:
+    for url in urls[:max_urls]:
         try:
-            page = fetch_text(url + "/")
-        except urllib.error.URLError:
+            page = fetch_text(url + "/", timeout=timeout, deadline=deadline)
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
             continue
 
         published = extract_published_date(page)
@@ -357,19 +407,26 @@ def arxiv_interest_score(title: str, summary: str) -> int:
     return score
 
 
-def collect_media_month_archive(source: str, date_str: str) -> list[Candidate]:
+def collect_media_month_archive(
+    source: str,
+    date_str: str,
+    *,
+    timeout: int = DEFAULT_REQUEST_TIMEOUT,
+    deadline: float | None = None,
+    max_urls: int = 40,
+) -> list[Candidate]:
     archive_url = f"https://techcrunch.com/{date_str[:4]}/{date_str[5:7]}/"
     try:
-        archive_html = fetch_text(archive_url)
-    except urllib.error.URLError:
+        archive_html = fetch_text(archive_url, timeout=timeout, deadline=deadline)
+    except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
         return []
     pattern = rf"https://techcrunch\.com/{date_str[:4]}/{date_str[5:7]}/{date_str[8:10]}/[^\"'\s<>]+"
-    urls = sorted(set(re.findall(pattern, archive_html)))
+    urls = sorted(set(re.findall(pattern, archive_html)))[:max_urls]
     results: list[Candidate] = []
     for url in urls:
         try:
-            page = fetch_text(url)
-        except urllib.error.URLError:
+            page = fetch_text(url, timeout=timeout, deadline=deadline)
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
             continue
         title, summary = extract_title_and_summary(page)
         published = extract_published_date(page)
@@ -392,14 +449,19 @@ def collect_media_month_archive(source: str, date_str: str) -> list[Candidate]:
     return results
 
 
-def collect_history_hints(date_str: str) -> list[Candidate]:
+def collect_history_hints(
+    date_str: str,
+    *,
+    timeout: int = DEFAULT_REQUEST_TIMEOUT,
+    deadline: float | None = None,
+) -> list[Candidate]:
     results: list[Candidate] = []
     for source, url in HISTORY_HINT_SOURCES:
         if date_str not in url:
             continue
         try:
-            page = fetch_text(url)
-        except urllib.error.URLError:
+            page = fetch_text(url, timeout=timeout, deadline=deadline)
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
             continue
         title, summary = extract_title_and_summary(page)
         published = extract_published_date(page)
@@ -422,7 +484,13 @@ def collect_history_hints(date_str: str) -> list[Candidate]:
     return results
 
 
-def collect_arxiv(date_str: str) -> list[Candidate]:
+def collect_arxiv(
+    date_str: str,
+    *,
+    timeout: int = DEFAULT_REQUEST_TIMEOUT,
+    deadline: float | None = None,
+    max_items: int = 18,
+) -> list[Candidate]:
     target_heading = dt.date.fromisoformat(date_str).strftime("%A, %d %B %Y")
     pages = [
         ("cs.AI", "https://arxiv.org/list/cs.AI/new"),
@@ -433,8 +501,8 @@ def collect_arxiv(date_str: str) -> list[Candidate]:
 
     for category_name, url in pages:
         try:
-            raw = fetch_text(url)
-        except urllib.error.URLError:
+            raw = fetch_text(url, timeout=timeout, deadline=deadline)
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
             continue
 
         if target_heading not in raw:
@@ -480,20 +548,78 @@ def collect_arxiv(date_str: str) -> list[Candidate]:
             )
 
     results.sort(key=lambda item: (-arxiv_interest_score(item.title, item.summary), item.title))
-    return results[:18]
+    return results[:max_items]
 
 
-def collect_candidates(date_str: str) -> list[Candidate]:
+def collect_candidates(date_str: str, config: CollectConfig | None = None) -> list[Candidate]:
+    config = config or CollectConfig()
+    deadline = time.monotonic() + config.budget_seconds if config.budget_seconds > 0 else None
     candidates = []
+
     for source, index_url, link_pattern in OFFICIAL_SOURCES:
-        candidates.extend(collect_official_site(index_url, source, link_pattern, date_str))
+        if deadline is not None and time.monotonic() >= deadline:
+            break
+        candidates.extend(
+            collect_official_site(
+                index_url,
+                source,
+                link_pattern,
+                date_str,
+                limit=config.max_official_links,
+                timeout=config.request_timeout,
+                deadline=deadline,
+            )
+        )
+
     for source, _template, mode in MEDIA_SOURCES:
+        if deadline is not None and time.monotonic() >= deadline:
+            break
         if mode == "month-archive":
-            candidates.extend(collect_media_month_archive(source, date_str))
-    candidates.extend(collect_history_hints(date_str))
-    candidates.extend(collect_techcrunch(date_str))
-    candidates.extend(collect_nvidia(date_str))
-    candidates.extend(collect_arxiv(date_str))
+            candidates.extend(
+                collect_media_month_archive(
+                    source,
+                    date_str,
+                    timeout=config.request_timeout,
+                    deadline=deadline,
+                    max_urls=config.max_media_links,
+                )
+            )
+
+    if deadline is None or time.monotonic() < deadline:
+        candidates.extend(collect_history_hints(date_str, timeout=config.request_timeout, deadline=deadline))
+    if deadline is None or time.monotonic() < deadline:
+        try:
+            candidates.extend(
+                collect_techcrunch(
+                    date_str,
+                    timeout=config.request_timeout,
+                    deadline=deadline,
+                    max_urls=config.max_media_links,
+                )
+            )
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
+            pass
+    if deadline is None or time.monotonic() < deadline:
+        try:
+            candidates.extend(
+                collect_nvidia(
+                    date_str,
+                    timeout=config.request_timeout,
+                    deadline=deadline,
+                    max_urls=config.max_nvidia_links,
+                )
+            )
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
+            pass
+    if deadline is None or time.monotonic() < deadline:
+        candidates.extend(
+            collect_arxiv(
+                date_str,
+                timeout=config.request_timeout,
+                deadline=deadline,
+                max_items=config.max_arxiv_items,
+            )
+        )
     return sort_candidates(dedupe_candidates(candidates))
 
 
@@ -771,9 +897,21 @@ def read_input_text(path: str | None) -> str:
     return sys.stdin.read()
 
 
+def build_collect_config(args: argparse.Namespace) -> CollectConfig:
+    return CollectConfig(
+        request_timeout=args.request_timeout,
+        budget_seconds=args.budget_seconds,
+        max_official_links=args.max_official_links,
+        max_media_links=args.max_media_links,
+        max_nvidia_links=args.max_nvidia_links,
+        max_arxiv_items=args.max_arxiv_items,
+    )
+
+
+
 def cmd_collect(args: argparse.Namespace) -> int:
     date_str = parse_target_date(args.date)
-    candidates = collect_candidates(date_str)
+    candidates = collect_candidates(date_str, build_collect_config(args))
     if args.output:
         output_path = pathlib.Path(args.output)
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -795,7 +933,7 @@ def cmd_collect(args: argparse.Namespace) -> int:
 
 def cmd_prompt(args: argparse.Namespace) -> int:
     date_str = parse_target_date(args.date)
-    candidates = collect_candidates(date_str)
+    candidates = collect_candidates(date_str, build_collect_config(args))
     prompt_candidates = candidates[:18]
     if args.style == "full":
         template = PROMPT_PATH.read_text(encoding="utf-8").replace("{{DATE}}", date_str)
@@ -897,6 +1035,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="输出格式",
     )
     collect_parser.add_argument("--output", help="可选：把结果额外写入文件")
+    collect_parser.add_argument("--request-timeout", type=int, default=DEFAULT_REQUEST_TIMEOUT, help="单个网络请求超时秒数")
+    collect_parser.add_argument("--budget-seconds", type=int, default=DEFAULT_COLLECT_BUDGET_SECONDS, help="整轮抓取总预算秒数；超时后跳过剩余慢源")
+    collect_parser.add_argument("--max-official-links", type=int, default=12, help="每个官方源最多检查多少链接")
+    collect_parser.add_argument("--max-media-links", type=int, default=40, help="媒体归档最多检查多少链接")
+    collect_parser.add_argument("--max-nvidia-links", type=int, default=25, help="NVIDIA 首页最多检查多少链接")
+    collect_parser.add_argument("--max-arxiv-items", type=int, default=18, help="arXiv 最多保留多少条论文")
     collect_parser.set_defaults(func=cmd_collect)
 
     prompt_parser = subparsers.add_parser("prompt", help="生成给 AI 的 prompt")
@@ -907,6 +1051,12 @@ def build_parser() -> argparse.ArgumentParser:
         default="compact",
         help="compact 为精简提示词，full 为 PROMPT.md 原文加候选素材",
     )
+    prompt_parser.add_argument("--request-timeout", type=int, default=DEFAULT_REQUEST_TIMEOUT, help="单个网络请求超时秒数")
+    prompt_parser.add_argument("--budget-seconds", type=int, default=DEFAULT_COLLECT_BUDGET_SECONDS, help="整轮抓取总预算秒数；超时后跳过剩余慢源")
+    prompt_parser.add_argument("--max-official-links", type=int, default=12, help="每个官方源最多检查多少链接")
+    prompt_parser.add_argument("--max-media-links", type=int, default=40, help="媒体归档最多检查多少链接")
+    prompt_parser.add_argument("--max-nvidia-links", type=int, default=25, help="NVIDIA 首页最多检查多少链接")
+    prompt_parser.add_argument("--max-arxiv-items", type=int, default=18, help="arXiv 最多保留多少条论文")
     prompt_parser.set_defaults(func=cmd_prompt)
 
     validate_parser = subparsers.add_parser("validate", help="校验日报 Markdown 或 JSON")
