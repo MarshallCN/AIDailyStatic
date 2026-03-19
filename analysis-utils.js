@@ -70,6 +70,8 @@
       .replace(/\s+/g, ' ');
   }
 
+  const FIXED_CATEGORY_KEYS = new Set(FIXED_CATEGORIES.map((category) => normalizeForComparison(category)));
+
   function parseCategories(categoryString) {
     return String(categoryString || '')
       .split(',')
@@ -100,12 +102,20 @@
     return /^\d+(?:[.:/-]\d+)*$/.test(token);
   }
 
+  function isYearToken(token) {
+    return /^(?:19|20)\d{2}$/.test(String(token || ''));
+  }
+
   function isChineseToken(token) {
     return /[\u4e00-\u9fff]/.test(token);
   }
 
   function shouldKeepToken(token, mode) {
-    if (!token || isNumericToken(token)) {
+    if (!token) {
+      return false;
+    }
+
+    if (isNumericToken(token) && !isYearToken(token)) {
       return false;
     }
 
@@ -576,6 +586,12 @@
       const displayName = normalizeEntityName(name);
       const key = normalizeForComparison(displayName);
       if (!displayName || !key || ENTITY_NOISE_WORDS.has(key)) {
+        return;
+      }
+      if (FIXED_CATEGORY_KEYS.has(key)) {
+        return;
+      }
+      if (isNumericToken(key) && !isYearToken(key)) {
         return;
       }
       const current = scoreMap.get(key) || { key, name: displayName, score: 0 };

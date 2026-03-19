@@ -168,6 +168,21 @@ article,
   color: var(--primary);
 }
 
+.ghost-button.is-active {
+  border-color: rgba(37, 99, 235, 0.35);
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.ghost-button:disabled,
+.ghost-button:disabled:hover {
+  cursor: default;
+  opacity: 0.6;
+  color: #94a3b8;
+  border-color: var(--border);
+  background: #fff;
+}
+
 .search-meta,
 .insight-summary {
   margin-top: 12px;

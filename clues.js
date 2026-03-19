@@ -14,6 +14,7 @@
     endDate: '',
     category: '全部分类',
     activeClueId: '',
+    graphView: 'clue',
     graphData: null,
     cy: null
   };
@@ -29,6 +30,7 @@
   const $endDate = document.getElementById('clue-end-date');
   const $presets = document.getElementById('clue-presets');
   const $categories = document.getElementById('clue-categories');
+  const $showAllButton = document.getElementById('clue-show-all');
 
   function escapeHtml(value) {
     return AnalysisUtils.escapeHtml(value);
@@ -265,6 +267,27 @@
     }
   }
 
+  function renderGraphViewButton(activeClue) {
+    if (!$showAllButton) {
+      return;
+    }
+
+    if (!activeClue) {
+      $showAllButton.classList.add('hidden');
+      $showAllButton.classList.remove('is-active');
+      $showAllButton.disabled = true;
+      $showAllButton.textContent = '浏览全部图';
+      return;
+    }
+
+    $showAllButton.classList.remove('hidden');
+    $showAllButton.disabled = false;
+    const isAllView = state.graphView === 'all';
+    $showAllButton.classList.toggle('is-active', isAllView);
+    $showAllButton.textContent = isAllView ? '返回子图' : '浏览全部图';
+    $showAllButton.setAttribute('aria-pressed', isAllView ? 'true' : 'false');
+  }
+
   function renderEvidence(activeClue, itemMap) {
     if (!activeClue) {
       $evidence.innerHTML = '<div class="term-placeholder">当前范围内的共现强度不足以形成稳定线索，请尝试扩大时间范围或切换分类。</div>';
@@ -300,7 +323,9 @@
       `<p><strong>线索数量</strong>：${clueCount} 条</p>`
     ];
 
-    if (activeClue) {
+    if (activeClue && state.graphView === 'all') {
+      lines.push(`<p><strong>当前视图</strong>：正在浏览当前筛选范围内的全部图谱。已保留线索 ${escapeHtml(activeClue.title)} 作为参考，点击右上角按钮可返回子图高亮。</p>`);
+    } else if (activeClue) {
       lines.push(`<p><strong>当前子图</strong>：${escapeHtml(activeClue.title)}。线索只依据重复出现、共同出现和跨分类聚集等可解释信号生成，不做因果断言。</p>`);
     } else {
       lines.push('<p><strong>说明</strong>：当前范围内尚未形成足够强的共现社区，因此没有激活的线索子图。</p>');
@@ -312,7 +337,9 @@
   function renderClueCards(dataset, itemMap, rangeLabel, filteredItems) {
     if (!dataset.clues.length) {
       state.activeClueId = '';
+      state.graphView = 'all';
       $list.innerHTML = '<div class="term-placeholder">当前范围内的强共现社区不足，暂时没有可归纳的线索卡片。</div>';
+      renderGraphViewButton(null);
       renderEvidence(null, itemMap);
       renderNotes(dataset, filteredItems, null, rangeLabel);
       applyFocus(null);
@@ -324,6 +351,7 @@
     }
 
     const activeClue = dataset.clues.find((clue) => clue.id === state.activeClueId) || dataset.clues[0];
+    renderGraphViewButton(activeClue);
 
     $list.innerHTML = dataset.clues.map((clue) => `
       <article class="clue-card ${clue.id === activeClue.id ? 'is-active' : ''}">
@@ -341,7 +369,7 @@
 
     renderEvidence(activeClue, itemMap);
     renderNotes(dataset, filteredItems, activeClue, rangeLabel);
-    applyFocus(activeClue);
+    applyFocus(state.graphView === 'all' ? null : activeClue);
   }
 
   function render() {
@@ -361,6 +389,7 @@
       $list.innerHTML = '';
       $evidence.innerHTML = '<div class="term-placeholder">暂无证据新闻。</div>';
       $notes.innerHTML = '<p>请先调整筛选条件以生成线索图谱。</p>';
+      renderGraphViewButton(null);
       if (state.cy) {
         state.cy.elements().remove();
       }
@@ -418,8 +447,17 @@
       const button = event.target.closest('button[data-clue-id]');
       if (!button || !state.graphData) return;
       state.activeClueId = button.getAttribute('data-clue-id') || '';
+      state.graphView = 'clue';
       render();
     });
+
+    if ($showAllButton) {
+      $showAllButton.addEventListener('click', function () {
+        if ($showAllButton.disabled) return;
+        state.graphView = state.graphView === 'all' ? 'clue' : 'all';
+        render();
+      });
+    }
 
     let resizeTimer = 0;
     window.addEventListener('resize', function () {
