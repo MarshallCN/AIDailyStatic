@@ -91,6 +91,68 @@
     return `detail.html?${params.toString()}`;
   }
 
+  function bindFullscreenToggle(button, element, options) {
+    if (!button || !element || !global.document || typeof global.document.addEventListener !== 'function') {
+      return function () {};
+    }
+
+    const onChange = options && options.onChange;
+    const enterLabel = (options && options.enterLabel) || '全屏';
+    const exitLabel = (options && options.exitLabel) || '退出全屏';
+    const doc = global.document;
+    const supportsFullscreen = typeof element.requestFullscreen === 'function';
+
+    if (!supportsFullscreen) {
+      button.disabled = true;
+      return function () {};
+    }
+
+    element.classList.add('is-fullscreen-enabled');
+    button.classList.add('ghost-button', 'ghost-button-compact');
+
+    function syncState() {
+      const isFullscreen = doc.fullscreenElement === element;
+      element.classList.toggle('is-fullscreen-view', isFullscreen);
+      button.classList.toggle('is-active', isFullscreen);
+      button.textContent = isFullscreen ? exitLabel : enterLabel;
+      button.setAttribute('aria-pressed', isFullscreen ? 'true' : 'false');
+      if (typeof onChange === 'function') {
+        onChange(isFullscreen);
+      }
+    }
+
+    function handleClick(event) {
+      if (event) {
+        event.preventDefault();
+      }
+      if (doc.fullscreenElement === element) {
+        const exit = doc.exitFullscreen && doc.exitFullscreen();
+        if (exit && typeof exit.catch === 'function') {
+          exit.catch(function () {});
+        }
+        return;
+      }
+      if (doc.fullscreenElement) {
+        return;
+      }
+      const request = element.requestFullscreen();
+      if (request && typeof request.catch === 'function') {
+        request.catch(function () {});
+      }
+    }
+
+    button.addEventListener('click', handleClick);
+    doc.addEventListener('fullscreenchange', syncState);
+    syncState();
+
+    return function () {
+      button.removeEventListener('click', handleClick);
+      doc.removeEventListener('fullscreenchange', syncState);
+      element.classList.remove('is-fullscreen-enabled', 'is-fullscreen-view');
+      button.classList.remove('is-active', 'ghost-button', 'ghost-button-compact');
+    };
+  }
+
   function trimToken(token) {
     return String(token || '')
       .replace(/^[^0-9A-Za-z\u4e00-\u9fff.+-]+/, '')
@@ -949,6 +1011,7 @@
     formatDateRangeLabel,
     buildWordCloudStats,
     buildClueGraph,
-    buildDetailLink
+    buildDetailLink,
+    bindFullscreenToggle
   };
 })(window);

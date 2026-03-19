@@ -3,6 +3,11 @@
   const RESTORE_QUERY_KEY = 'restore';
   const DAILY_CATEGORY = '每日';
   const ALL_CATEGORY = '全部';
+  const SEARCH_SORT_LABELS = {
+    relevance: '相关性',
+    'date-asc': '最旧',
+    'date-desc': '最新'
+  };
 
   const state = {
     allItems: [],
@@ -16,6 +21,9 @@
     restoreSnapshot: null,
     searchQuery: '',
     exactMatch: false,
+    searchSort: 'relevance',
+    visibleSearchResultCount: 10,
+    visibleRelatedResultCount: 10,
     searchResults: [],
     relatedResults: [],
     searchReady: false,
@@ -34,6 +42,7 @@
   const $loading = $('#loading');
   const $loadingText = $loading.find('.loading-text');
   const $searchInput = $('#search-input');
+  const $searchSort = $('#search-sort');
   const $searchExact = $('#search-exact');
   const $searchClear = $('#search-clear');
   const $searchStatus = $('#search-status');
@@ -53,7 +62,12 @@
         loadedItemCount: Math.max(state.itemsPerLoad, Number(parsed.loadedItemCount) || 0),
         scrollY: Math.max(0, Number(parsed.scrollY) || 0),
         searchQuery: typeof parsed.searchQuery === 'string' ? parsed.searchQuery : '',
-        exactMatch: Boolean(parsed.exactMatch)
+        exactMatch: Boolean(parsed.exactMatch),
+        visibleSearchResultCount: Math.max(state.itemsPerLoad, Number(parsed.visibleSearchResultCount) || state.itemsPerLoad),
+        visibleRelatedResultCount: Math.max(state.itemsPerLoad, Number(parsed.visibleRelatedResultCount) || state.itemsPerLoad),
+        searchSort: typeof parsed.searchSort === 'string' && SEARCH_SORT_LABELS[parsed.searchSort]
+          ? parsed.searchSort
+          : 'relevance'
       };
     } catch (error) {
       return null;
@@ -67,7 +81,10 @@
         loadedItemCount: state.visibleItemCount || state.itemsPerLoad,
         scrollY: window.scrollY || window.pageYOffset || 0,
         searchQuery: state.searchQuery,
-        exactMatch: state.exactMatch
+        exactMatch: state.exactMatch,
+        visibleSearchResultCount: state.visibleSearchResultCount,
+        visibleRelatedResultCount: state.visibleRelatedResultCount,
+        searchSort: state.searchSort
       }));
     } catch (error) {
       // Ignore sessionStorage failures and fall back to a normal navigation flow.
@@ -276,6 +293,13 @@
   }
 
   function renderSearchSection(title, description, entries, kind, highlightTerms) {
+    const totalCount = entries.length;
+    const visibleEntries = entries.slice(0, kind === 'direct' ? state.visibleSearchResultCount : state.visibleRelatedResultCount);
+    const countLabel = visibleEntries.length < totalCount
+      ? `${visibleEntries.length} / ${totalCount} 条`
+      : `${totalCount} 条`;
+    const loadMoreLabel = kind === 'direct' ? '加载更多搜索结果' : '加载更多相关新闻';
+
     return `
       <section class="search-section">
         <div class="search-section-head">
@@ -283,11 +307,16 @@
             <h2>${escapeHtml(title)}</h2>
             <div class="search-section-sub">${escapeHtml(description)}</div>
           </div>
-          <div class="search-section-count">${entries.length} 条</div>
+          <div class="search-section-count">${countLabel}</div>
         </div>
         <div class="search-section-list">
-          ${entries.map((entry) => renderSearchCard(entry, kind, highlightTerms)).join('')}
+          ${visibleEntries.map((entry) => renderSearchCard(entry, kind, highlightTerms)).join('')}
         </div>
+        ${visibleEntries.length < totalCount ? `
+          <div class="search-section-actions">
+            <button class="ghost-button" data-search-load-more="${kind}" type="button">${loadMoreLabel}</button>
+          </div>
+        ` : ''}
       </section>
     `;
   }
@@ -301,6 +330,83 @@
         <p>已加载 ${progress.loadedFiles}/${progress.totalFiles} 个新闻文件，稍后会显示完整历史结果。</p>
       </article>
     `);
+  }
+
+  function compareByRelevance(a, b) {
+    if (a.score === b.score) {
+      if (a.item.date === b.item.date) {
+        return a.item.title.localeCompare(b.item.title, 'zh-Hans-CN');
+      }
+      return b.item.date.localeCompare(a.item.date);
+    }
+    return b.score - a.score;
+  }
+
+  function compareByDateAsc(a, b) {
+    if (a.item.date === b.item.date) {
+      if (a.score === b.score) {
+        return a.item.title.localeCompare(b.item.title, 'zh-Hans-CN');
+      }
+      return b.score - a.score;
+    }
+    return a.item.date.localeCompare(b.item.date);
+  }
+
+  function compareByDateDesc(a, b) {
+    if (a.item.date === b.item.date) {
+      if (a.score === b.score) {
+        return a.item.title.localeCompare(b.item.title, 'zh-Hans-CN');
+      }
+      return b.score - a.score;
+    }
+    return b.item.date.localeCompare(a.item.date);
+  }
+
+  function sortSearchEntries(entries) {
+    const list = (entries || []).slice();
+    if (state.searchSort === 'date-asc') {
+      return list.sort(compareByDateAsc);
+    }
+    if (state.searchSort === 'date-desc') {
+      return list.sort(compareByDateDesc);
+    }
+    return list.sort(compareByRelevance);
+  }
+
+  function resetSearchVisibleCounts() {
+    state.visibleSearchResultCount = state.itemsPerLoad;
+    state.visibleRelatedResultCount = state.itemsPerLoad;
+  }
+
+  function loadMoreSearchEntries(kind) {
+    if (kind === 'direct') {
+      const nextSearchCount = Math.min(state.searchResults.length, state.visibleSearchResultCount + state.itemsPerLoad);
+      if (nextSearchCount === state.visibleSearchResultCount) {
+        return;
+      }
+      state.visibleSearchResultCount = nextSearchCount;
+    } else if (kind === 'related') {
+      const nextRelatedCount = Math.min(state.relatedResults.length, state.visibleRelatedResultCount + state.itemsPerLoad);
+      if (nextRelatedCount === state.visibleRelatedResultCount) {
+        return;
+      }
+      state.visibleRelatedResultCount = nextRelatedCount;
+    } else {
+      return;
+    }
+
+    renderNews();
+    saveHomeState();
+  }
+
+  function describeSearchSort(defaultDescription) {
+    if (state.searchSort === 'date-asc') {
+      return '当前按最旧优先展示，相关性分数仍用于筛选结果。';
+    }
+    if (state.searchSort === 'date-desc') {
+      return '当前按最新优先展示，相关性分数仍用于筛选结果。';
+    }
+    return defaultDescription;
   }
 
   function renderSearchNews() {
@@ -322,22 +428,24 @@
 
     const highlightTerms = AnalysisUtils.buildQueryProfile(state.searchQuery, state.exactMatch).highlightTerms;
     const sections = [];
+    const searchResults = sortSearchEntries(state.searchResults);
+    const relatedResults = sortSearchEntries(state.relatedResults);
 
-    if (state.searchResults.length) {
+    if (searchResults.length) {
       sections.push(renderSearchSection(
         '搜索结果',
-        state.exactMatch ? '仅展示连续精确命中的历史新闻。' : '按关键词交集和字段权重排序。',
-        state.searchResults,
+        describeSearchSort(state.exactMatch ? '仅展示连续精确命中的历史新闻。' : '按关键词交集和字段权重排序。'),
+        searchResults,
         'direct',
         highlightTerms
       ));
     }
 
-    if (state.relatedResults.length) {
+    if (relatedResults.length) {
       sections.push(renderSearchSection(
         '相关新闻',
-        '基于共享高频词、分类与来源自动关联。',
-        state.relatedResults,
+        describeSearchSort('基于共享高频词、分类与来源自动关联。'),
+        relatedResults,
         'related',
         highlightTerms
       ));
@@ -506,6 +614,26 @@
     updateSearchStatus(`正在建立全量历史索引（${progress.loadedFiles}/${progress.totalFiles}）`);
   }
 
+  function refreshSearchSummary() {
+    const query = state.searchQuery.trim();
+    if (!query) {
+      updateSearchSummary('');
+      return;
+    }
+
+    const summaryParts = [`“${query}”`];
+    if (state.exactMatch) {
+      summaryParts.push('精确匹配');
+    }
+    if (state.activeCategory !== DAILY_CATEGORY && state.activeCategory !== ALL_CATEGORY) {
+      summaryParts.push(state.activeCategory);
+    }
+    summaryParts.push(SEARCH_SORT_LABELS[state.searchSort] || SEARCH_SORT_LABELS.relevance);
+    summaryParts.push(`直接命中 ${state.searchResults.length} 条`);
+    summaryParts.push(`相关新闻 ${state.relatedResults.length} 条`);
+    updateSearchSummary(summaryParts.join(' · '));
+  }
+
   function ensureSearchIndex() {
     if (state.searchPromise) {
       return state.searchPromise;
@@ -540,6 +668,7 @@
     const runId = state.searchRunId;
 
     if (!query) {
+      resetSearchVisibleCounts();
       state.searchResults = [];
       state.relatedResults = [];
       state.searchError = '';
@@ -563,19 +692,11 @@
         const filteredItems = getSearchFilteredItems(items);
 
         state.searchResults = AnalysisUtils.rankSearchResults(filteredItems, queryProfile);
-        state.relatedResults = AnalysisUtils.buildRelatedResults(filteredItems, state.searchResults, queryProfile, { limit: 8 });
+        state.relatedResults = AnalysisUtils.buildRelatedResults(filteredItems, state.searchResults, queryProfile, {
+          limit: filteredItems.length
+        });
         state.searchLoading = false;
-
-        const summaryParts = [`“${state.searchQuery}”`];
-        if (state.exactMatch) {
-          summaryParts.push('精确匹配');
-        }
-        if (state.activeCategory !== DAILY_CATEGORY && state.activeCategory !== ALL_CATEGORY) {
-          summaryParts.push(state.activeCategory);
-        }
-        summaryParts.push(`直接命中 ${state.searchResults.length} 条`);
-        summaryParts.push(`相关新闻 ${state.relatedResults.length} 条`);
-        updateSearchSummary(summaryParts.join(' · '));
+        refreshSearchSummary();
 
         renderNews();
         updateLoadingIndicator();
@@ -599,6 +720,7 @@
 
   function syncSearchControls() {
     $searchInput.val(state.searchQuery);
+    $searchSort.val(state.searchSort);
     $searchExact.prop('checked', state.exactMatch);
   }
 
@@ -620,6 +742,7 @@
       state.activeCategory = $(this).data('category');
       renderFilters();
       if (isSearchMode()) {
+        resetSearchVisibleCounts();
         runSearch();
       } else {
         renderNews();
@@ -631,8 +754,13 @@
       saveHomeState();
     });
 
+    $list.on('click', 'button[data-search-load-more]', function () {
+      loadMoreSearchEntries(String($(this).data('search-load-more') || ''));
+    });
+
     $searchInput.on('input', function () {
       state.searchQuery = String($(this).val() || '');
+      resetSearchVisibleCounts();
       if (state.searchQuery.trim()) {
         ensureSearchIndex().catch(function () {});
       }
@@ -642,13 +770,25 @@
     $searchExact.on('change', function () {
       state.exactMatch = Boolean($(this).is(':checked'));
       if (isSearchMode()) {
+        resetSearchVisibleCounts();
         runSearch();
       }
     });
 
+    $searchSort.on('change', function () {
+      state.searchSort = String($(this).val() || 'relevance');
+      if (isSearchMode()) {
+        refreshSearchSummary();
+        renderNews();
+        saveHomeState();
+      }
+    });
+
     $searchClear.on('click', function () {
+      resetSearchVisibleCounts();
       state.searchQuery = '';
       state.exactMatch = false;
+      state.searchSort = 'relevance';
       syncSearchControls();
       updateSearchSummary('');
       runSearch();
@@ -675,6 +815,9 @@
       state.activeCategory = state.restoreSnapshot.activeCategory;
       state.searchQuery = state.restoreSnapshot.searchQuery || '';
       state.exactMatch = Boolean(state.restoreSnapshot.exactMatch);
+      state.visibleSearchResultCount = state.restoreSnapshot.visibleSearchResultCount || state.itemsPerLoad;
+      state.visibleRelatedResultCount = state.restoreSnapshot.visibleRelatedResultCount || state.itemsPerLoad;
+      state.searchSort = state.restoreSnapshot.searchSort || 'relevance';
     }
 
     initEvents();

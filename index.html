@@ -30,6 +30,14 @@
           <span class="search-label visually-hidden" id="search-title">全站搜索</span>
           <input id="search-input" type="search" placeholder="搜索关键词，支持精确匹配与历史相关新闻" autocomplete="off" aria-label="全站搜索" />
         </label>
+        <label class="field search-sort-field" for="search-sort">
+          <span class="visually-hidden">结果排序</span>
+          <select id="search-sort" aria-label="搜索结果排序">
+            <option value="relevance">相关性</option>
+            <option value="date-asc">最旧</option>
+            <option value="date-desc">最新</option>
+          </select>
+        </label>
         <label class="toggle" for="search-exact">
           <input id="search-exact" type="checkbox" />
           <span>精确匹配</span>

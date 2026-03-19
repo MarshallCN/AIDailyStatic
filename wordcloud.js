@@ -16,7 +16,8 @@
     minFrequency: 2,
     selectedTerm: '',
     visibleTerms: [],
-    termMap: new Map()
+    termMap: new Map(),
+    visibleRelatedItemCount: 10
   };
 
   const $summary = document.getElementById('wc-summary');
@@ -30,6 +31,7 @@
   const $categories = document.getElementById('wc-categories');
   const $minFrequency = document.getElementById('wc-min-frequency');
   const $minFrequencyValue = document.getElementById('wc-min-frequency-value');
+  const $fullscreenToggle = document.getElementById('wc-fullscreen-toggle');
 
   function escapeHtml(value) {
     return AnalysisUtils.escapeHtml(value);
@@ -110,17 +112,53 @@
     });
   }
 
+  function resetVisibleRelatedItems() {
+    state.visibleRelatedItemCount = 10;
+  }
+
+  function getRelatedItems(termEntry, filteredItems) {
+    if (!termEntry) {
+      return [];
+    }
+
+    const itemMap = new Map(filteredItems.map((item) => [item.id, item]));
+    return termEntry.articleIds
+      .map((id) => itemMap.get(id))
+      .filter(Boolean)
+      .sort((a, b) => b.date.localeCompare(a.date));
+  }
+
+  function hasMoreRelatedItems() {
+    const termEntry = state.termMap.get(state.selectedTerm);
+    const relatedItems = getRelatedItems(termEntry, getFilteredItems());
+    return state.visibleRelatedItemCount < relatedItems.length;
+  }
+
+  function loadMoreRelatedItems() {
+    const filteredItems = getFilteredItems();
+    const termEntry = state.termMap.get(state.selectedTerm);
+    const relatedItems = getRelatedItems(termEntry, filteredItems);
+    const nextCount = Math.min(relatedItems.length, state.visibleRelatedItemCount + 10);
+
+    if (nextCount === state.visibleRelatedItemCount) {
+      return;
+    }
+
+    state.visibleRelatedItemCount = nextCount;
+    renderDetailPanel(termEntry, filteredItems);
+  }
+
   function renderDetailPanel(termEntry, filteredItems) {
     if (!termEntry) {
       $detail.innerHTML = '<div class="term-placeholder">当前词云中没有可展示的词条。</div>';
       return;
     }
 
-    const itemMap = new Map(filteredItems.map((item) => [item.id, item]));
-    const relatedItems = termEntry.articleIds
-      .map((id) => itemMap.get(id))
-      .filter(Boolean)
-      .sort((a, b) => b.date.localeCompare(a.date));
+    const relatedItems = getRelatedItems(termEntry, filteredItems);
+    const visibleRelatedItems = relatedItems.slice(0, state.visibleRelatedItemCount);
+    const countLabel = visibleRelatedItems.length < relatedItems.length
+      ? `${visibleRelatedItems.length} / ${relatedItems.length} 条`
+      : `${relatedItems.length} 条`;
 
     $detail.innerHTML = `
       <div class="term-head">
@@ -139,9 +177,12 @@
         </div>
       </div>
       <div class="term-section">
-        <h3>相关新闻</h3>
+        <div class="search-section-head">
+          <h3>相关新闻</h3>
+          <div class="search-section-count">${countLabel}</div>
+        </div>
         <div class="term-article-list">
-          ${relatedItems.map((item) => `
+          ${visibleRelatedItems.map((item) => `
             <article class="mini-card">
               <h4><a href="${AnalysisUtils.buildDetailLink(item, getCurrentPage())}">${AnalysisUtils.highlightText(item.title, [termEntry.term])}</a></h4>
               <div class="meta">
@@ -193,6 +234,7 @@
           return;
         }
         state.selectedTerm = item[0];
+        resetVisibleRelatedItems();
         renderDetailPanel(state.termMap.get(state.selectedTerm), getFilteredItems());
       }
     });
@@ -229,8 +271,12 @@
     $empty.classList.add('hidden');
     renderCloud(terms);
 
+    const previousSelectedTerm = state.selectedTerm;
     if (!state.selectedTerm || !stats.termMap.has(state.selectedTerm) || terms.every((entry) => entry.term !== state.selectedTerm)) {
       state.selectedTerm = terms[0].term;
+    }
+    if (state.selectedTerm !== previousSelectedTerm) {
+      resetVisibleRelatedItems();
     }
 
     renderDetailPanel(stats.termMap.get(state.selectedTerm), filteredItems);
@@ -241,6 +287,7 @@
     state.startDate = $startDate.value;
     state.endDate = $endDate.value;
     normalizeDateRange();
+    resetVisibleRelatedItems();
     render();
   }
 
@@ -249,6 +296,7 @@
       const button = event.target.closest('button[data-preset]');
       if (!button) return;
       setPreset(button.getAttribute('data-preset'));
+      resetVisibleRelatedItems();
       render();
     });
 
@@ -256,6 +304,7 @@
       const button = event.target.closest('button[data-category]');
       if (!button) return;
       state.category = button.getAttribute('data-category') || '全部分类';
+      resetVisibleRelatedItems();
       render();
     });
 
@@ -263,6 +312,7 @@
     $endDate.addEventListener('change', handleManualDateChange);
     $minFrequency.addEventListener('input', function () {
       state.minFrequency = Number($minFrequency.value) || 1;
+      resetVisibleRelatedItems();
       render();
     });
 
@@ -275,6 +325,13 @@
         }
       }, 160);
     });
+
+    window.addEventListener('scroll', function () {
+      const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 120;
+      if (nearBottom && hasMoreRelatedItems()) {
+        loadMoreRelatedItems();
+      }
+    });
   }
 
   function init() {
@@ -282,6 +339,14 @@
     populateDateOptions();
     setPreset(state.preset);
     initEvents();
+    AnalysisUtils.bindFullscreenToggle($fullscreenToggle, $canvas, {
+      onChange: function () {
+        if (!state.visibleTerms.length) {
+          return;
+        }
+        window.requestAnimationFrame(render);
+      }
+    });
 
     NewsStore.preloadAll()
       .then((items) => {

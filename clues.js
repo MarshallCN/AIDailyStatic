@@ -31,6 +31,7 @@
   const $presets = document.getElementById('clue-presets');
   const $categories = document.getElementById('clue-categories');
   const $showAllButton = document.getElementById('clue-show-all');
+  const $fullscreenToggle = document.getElementById('clue-fullscreen-toggle');
 
   function escapeHtml(value) {
     return AnalysisUtils.escapeHtml(value);
@@ -475,6 +476,14 @@
     populateDateOptions();
     setPreset(state.preset);
     initEvents();
+    AnalysisUtils.bindFullscreenToggle($fullscreenToggle, $graph, {
+      onChange: function () {
+        if (!state.graphData) {
+          return;
+        }
+        window.requestAnimationFrame(render);
+      }
+    });
 
     NewsStore.preloadAll()
       .then((items) => {
