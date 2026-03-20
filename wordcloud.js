@@ -6,6 +6,8 @@
     { id: 'all', label: '全部', days: 0 }
   ];
 
+  const WORDCLOUD_FONT_FAMILY = '"Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Source Han Sans SC", sans-serif';
+
   const state = {
     allItems: [],
     days: [],
@@ -17,7 +19,8 @@
     selectedTerm: '',
     visibleTerms: [],
     termMap: new Map(),
-    visibleRelatedItemCount: 10
+    visibleRelatedItemCount: 10,
+    fontsReady: false
   };
 
   const $summary = document.getElementById('wc-summary');
@@ -32,6 +35,17 @@
   const $minFrequency = document.getElementById('wc-min-frequency');
   const $minFrequencyValue = document.getElementById('wc-min-frequency-value');
   const $fullscreenToggle = document.getElementById('wc-fullscreen-toggle');
+
+  function waitForWordCloudFonts() {
+    if (!document.fonts || !document.fonts.ready) {
+      return Promise.resolve();
+    }
+
+    return Promise.race([
+      document.fonts.ready,
+      new Promise((resolve) => window.setTimeout(resolve, 2500))
+    ]).catch(() => undefined);
+  }
 
   function escapeHtml(value) {
     return AnalysisUtils.escapeHtml(value);
@@ -208,6 +222,7 @@
 
     WordCloud($canvas, {
       list: terms.map((entry) => [entry.term, entry.count]),
+      fontFamily: WORDCLOUD_FONT_FAMILY,
       gridSize: Math.max(10, Math.round($canvas.clientWidth / 30)),
       weightFactor: function (size) {
         return 14 + (size * 4);
@@ -348,8 +363,9 @@
       }
     });
 
-    NewsStore.preloadAll()
-      .then((items) => {
+    Promise.all([waitForWordCloudFonts(), NewsStore.preloadAll()])
+      .then(([_, items]) => {
+        state.fontsReady = true;
         state.allItems = items;
         render();
       })

@@ -8,7 +8,10 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <link rel="stylesheet" href="styles.css?v=20260319-1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260320-1" />
 </head>
 <body>
   <main class="wrap insight-wrap">
@@ -45,17 +48,17 @@
       <div class="insight-summary" id="wc-summary">正在加载历史新闻...</div>
     </section>
 
-      <div class="insight-layout insight-layout-wordcloud">
-        <section class="panel">
-          <div class="panel-head">
-            <h2>高频词云</h2>
-            <div class="panel-actions">
-              <span id="wc-cloud-meta"></span>
-              <button id="wc-fullscreen-toggle" type="button">全屏</button>
-            </div>
+    <div class="insight-layout insight-layout-wordcloud">
+      <section class="panel">
+        <div class="panel-head">
+          <h2>高频词云</h2>
+          <div class="panel-actions">
+            <span id="wc-cloud-meta"></span>
+            <button id="wc-fullscreen-toggle" type="button">全屏</button>
           </div>
-          <div class="wordcloud-canvas" id="wordcloud-canvas"></div>
-        </section>
+        </div>
+        <div class="wordcloud-canvas" id="wordcloud-canvas"></div>
+      </section>
 
       <aside class="panel">
         <div class="panel-head">
@@ -73,6 +76,6 @@
   <script src="news-store.js?v=20260319-1"></script>
   <script src="analysis-utils.js?v=20260319-1"></script>
   <script src="vendor/wordcloud2.js"></script>
-  <script src="wordcloud.js?v=20260319-1"></script>
+  <script src="wordcloud.js?v=20260320-1"></script>
 </body>
 </html>
