@@ -193,7 +193,7 @@ window.NEWS_MANIFEST = {
 
 ```powershell
 cd D:\Onebox\AI-Daily-Static
-python -m http.server 8080
+python3 -m http.server 8080
 ```
 
 然后在浏览器打开：
