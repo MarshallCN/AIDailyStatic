@@ -1,0 +1,1623 @@
+{
+  "date": "2026-03-02",
+  "analysis_window": {
+    "start_date": "2026-03-02",
+    "end_date": "2026-03-02",
+    "days": 30
+  },
+  "overview": {
+    "headline": "2026-03-02 的线索图显示 2 条可追踪主题：Anthropic / Responsible Scaling Policy / 以更细化的能力阈 / 作的新争论；ChatGPT / OpenAI / Sensor Tower / 上升",
+    "summary": "最近窗口中最稳定的结构不再是随机共现，而是围绕 Anthropic、Responsible Scaling Policy、以更细化的能力阈 形成的重复事件链条。",
+    "key_observations": [
+      "security 信号在该主题中最集中。",
+      "launch 信号在该主题中最集中。"
+    ]
+  },
+  "themes": [
+    {
+      "theme_id": "clue:33740d19c8ec",
+      "title": "Anthropic / Responsible Scaling Policy / 以更细化的能力阈 / 作的新争论",
+      "summary": "在 2026-03-02 至 2026-03-02 内，Anthropic、Responsible Scaling Policy、以更细化的能力阈 围绕重复出现的事件与实体关系形成稳定线索。",
+      "conclusion": "Anthropic、Responsible Scaling Policy 在最近窗口内刚形成可重复验证的连接，后续最值得看它是否会继续跨源、跨天扩张。",
+      "trend_signals": [
+        "security 信号在该主题中最集中。",
+        "证据新闻共 2 条，主导分类为 安全。",
+        "该主题在当前窗口内新成型，值得继续观察是否会跨天延续。"
+      ],
+      "core_entities": [
+        "Anthropic",
+        "Responsible Scaling Policy",
+        "以更细化的能力阈",
+        "作的新争论"
+      ],
+      "event_types": [
+        "security",
+        "launch",
+        "policy"
+      ],
+      "dominant_category": "安全",
+      "evidence_article_ids": [
+        "2026-03-02-1",
+        "2026-03-02-0"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "data": {
+              "id": "article:2026-03-02-0",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+              "type": "article",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "subtype": "安全",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:anthropic",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "Anthropic",
+              "type": "source",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "category:安全",
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1",
+                "2026-03-02-3"
+              ],
+              "label": "安全",
+              "type": "category",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:company-anthropic",
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1"
+              ],
+              "label": "Anthropic",
+              "type": "entity",
+              "subtype": "company",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "Anthropic"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:policy-responsible-scaling-policy",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "Responsible Scaling Policy",
+              "type": "entity",
+              "subtype": "policy",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "Responsible Scaling Policy"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-以更细化的能力阈",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "以更细化的能力阈",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "以更细化的能力阈"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-值和安全案例方法",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "值和安全案例方法",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "值和安全案例方法"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-强化前沿模型灾难",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "强化前沿模型灾难",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "强化前沿模型灾难"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-性风险治理框架",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "性风险治理框架",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "性风险治理框架"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-日发布新版",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "日发布新版",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "日发布新版"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-更新",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "更新",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "更新"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "event:security-entity-company-anthropic",
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1"
+              ],
+              "label": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+              "type": "event",
+              "subtype": "security",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "event:policy-entity-company-anthropic",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+              "type": "event",
+              "subtype": "policy",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-03-02-1",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+              "type": "article",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "subtype": "应用/产业",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:techcrunch",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2",
+                "2026-03-02-3",
+                "2026-03-02-4",
+                "2026-03-02-5",
+                "2026-03-02-6",
+                "2026-03-02-9"
+              ],
+              "label": "TechCrunch",
+              "type": "source",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "category:应用-产业",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2",
+                "2026-03-02-4",
+                "2026-03-02-5",
+                "2026-03-02-6"
+              ],
+              "label": "应用/产业",
+              "type": "category",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-作的新争论",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "作的新争论",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "作的新争论"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-公司与政府合作的",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "公司与政府合作的",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "公司与政府合作的"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-公司如何与政府协",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "公司如何与政府协",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "公司如何与政府协"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-则因监控与自主武",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "则因监控与自主武",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "则因监控与自主武"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-器条款退场",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "器条款退场",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "器条款退场"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-围绕五角大楼合作",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "围绕五角大楼合作",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "围绕五角大楼合作"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "event:launch-entity-company-anthropic",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+              "type": "event",
+              "subtype": "launch",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "weight": 1.4
+            }
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->source:anthropic",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "source:anthropic",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->category:安全",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "category:安全",
+              "type": "article-category",
+              "label": "安全"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:company-anthropic",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:company-anthropic",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:policy-responsible-scaling-policy",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:policy-responsible-scaling-policy",
+              "type": "article-entity",
+              "label": "policy"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-以更细化的能力阈",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-以更细化的能力阈",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-值和安全案例方法",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-值和安全案例方法",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-强化前沿模型灾难",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-强化前沿模型灾难",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-性风险治理框架",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-性风险治理框架",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-日发布新版",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-日发布新版",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-更新",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-更新",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->event:security-entity-company-anthropic",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "event:security-entity-company-anthropic",
+              "type": "article-event",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:company-anthropic",
+              "weight": 4.0,
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:company-anthropic",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:policy-responsible-scaling-policy",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:policy-responsible-scaling-policy",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:topic-以更细化的能力阈",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:topic-以更细化的能力阈",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:topic-值和安全案例方法",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:topic-值和安全案例方法",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->event:policy-entity-company-anthropic",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "event:policy-entity-company-anthropic",
+              "type": "article-event",
+              "label": "policy"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:policy-entity-company-anthropic->entity:company-anthropic",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:policy-entity-company-anthropic",
+              "target": "entity:company-anthropic",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:policy-entity-company-anthropic->entity:policy-responsible-scaling-policy",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:policy-entity-company-anthropic",
+              "target": "entity:policy-responsible-scaling-policy",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:policy-entity-company-anthropic->entity:topic-以更细化的能力阈",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:policy-entity-company-anthropic",
+              "target": "entity:topic-以更细化的能力阈",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:policy-entity-company-anthropic->entity:topic-值和安全案例方法",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:policy-entity-company-anthropic",
+              "target": "entity:topic-值和安全案例方法",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:policy-responsible-scaling-policy:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:policy-responsible-scaling-policy",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:topic-以更细化的能力阈:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:topic-以更细化的能力阈",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:topic-值和安全案例方法:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:topic-值和安全案例方法",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->source:techcrunch",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "source:techcrunch",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->category:应用-产业",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "category:应用-产业",
+              "type": "article-category",
+              "label": "应用/产业"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->category:安全",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "category:安全",
+              "type": "article-category",
+              "label": "安全"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:company-anthropic",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:company-anthropic",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-作的新争论",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-作的新争论",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-公司与政府合作的",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-公司与政府合作的",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-公司如何与政府协",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-公司如何与政府协",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-则因监控与自主武",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-则因监控与自主武",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-器条款退场",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-器条款退场",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-围绕五角大楼合作",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-围绕五角大楼合作",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->event:security-entity-company-anthropic",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "event:security-entity-company-anthropic",
+              "type": "article-event",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:topic-作的新争论",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:topic-作的新争论",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:topic-公司与政府合作的",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:topic-公司与政府合作的",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->event:launch-entity-company-anthropic",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "event:launch-entity-company-anthropic",
+              "type": "article-event",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-company-anthropic->entity:company-anthropic",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:launch-entity-company-anthropic",
+              "target": "entity:company-anthropic",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-company-anthropic->entity:topic-作的新争论",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:launch-entity-company-anthropic",
+              "target": "entity:topic-作的新争论",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-company-anthropic->entity:topic-公司与政府合作的",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:launch-entity-company-anthropic",
+              "target": "entity:topic-公司与政府合作的",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:topic-作的新争论:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:topic-作的新争论",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:topic-公司与政府合作的:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:topic-公司与政府合作的",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "report_index": 1,
+          "article_id": "2026-03-02-1",
+          "title": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+          "source": "TechCrunch",
+          "date": "2026-03-02",
+          "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。"
+        },
+        {
+          "report_index": 2,
+          "article_id": "2026-03-02-0",
+          "title": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+          "source": "Anthropic",
+          "date": "2026-03-02",
+          "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。"
+        }
+      ]
+    },
+    {
+      "theme_id": "clue:4a84aa8ad869",
+      "title": "ChatGPT / OpenAI / Sensor Tower / 上升",
+      "summary": "在 2026-03-02 至 2026-03-02 内，ChatGPT、OpenAI、Sensor Tower 围绕重复出现的事件与实体关系形成稳定线索。",
+      "conclusion": "ChatGPT、OpenAI 在最近窗口内刚形成可重复验证的连接，后续最值得看它是否会继续跨源、跨天扩张。",
+      "trend_signals": [
+        "launch 信号在该主题中最集中。",
+        "证据新闻共 2 条，主导分类为 应用/产业。",
+        "该主题在当前窗口内新成型，值得继续观察是否会跨天延续。"
+      ],
+      "core_entities": [
+        "ChatGPT",
+        "OpenAI",
+        "Sensor Tower",
+        "上升"
+      ],
+      "event_types": [
+        "launch",
+        "partnership"
+      ],
+      "dominant_category": "应用/产业",
+      "evidence_article_ids": [
+        "2026-03-02-2",
+        "2026-03-02-1"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "data": {
+              "id": "category:安全",
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1",
+                "2026-03-02-3"
+              ],
+              "label": "安全",
+              "type": "category",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-03-02-1",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+              "type": "article",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "subtype": "应用/产业",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:techcrunch",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2",
+                "2026-03-02-3",
+                "2026-03-02-4",
+                "2026-03-02-5",
+                "2026-03-02-6",
+                "2026-03-02-9"
+              ],
+              "label": "TechCrunch",
+              "type": "source",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "category:应用-产业",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2",
+                "2026-03-02-4",
+                "2026-03-02-5",
+                "2026-03-02-6"
+              ],
+              "label": "应用/产业",
+              "type": "category",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:company-openai",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2"
+              ],
+              "label": "OpenAI",
+              "type": "entity",
+              "subtype": "company",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "OpenAI"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-03-02-2",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+              "type": "article",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "subtype": "应用/产业",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "entity:model-chatgpt",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "ChatGPT",
+              "type": "entity",
+              "subtype": "model",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "ChatGPT"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:person-sensor-tower",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "Sensor Tower",
+              "type": "entity",
+              "subtype": "person",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "Sensor Tower"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-上升",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "上升",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "上升"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-产品份额",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "产品份额",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "产品份额"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-卸载量在国防合作",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "卸载量在国防合作",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "卸载量在国防合作"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-国防合作消息传出",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "国防合作消息传出",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "国防合作消息传出"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-在美国的移动端卸",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "在美国的移动端卸",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "在美国的移动端卸"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "event:launch-entity-model-chatgpt",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+              "type": "event",
+              "subtype": "launch",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "event:partnership-entity-model-chatgpt",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+              "type": "event",
+              "subtype": "partnership",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "weight": 1.4
+            }
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->source:techcrunch",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "source:techcrunch",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->category:应用-产业",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "category:应用-产业",
+              "type": "article-category",
+              "label": "应用/产业"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->category:安全",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "category:安全",
+              "type": "article-category",
+              "label": "安全"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:company-openai",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:company-openai",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->source:techcrunch",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "source:techcrunch",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->category:应用-产业",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "category:应用-产业",
+              "type": "article-category",
+              "label": "应用/产业"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:model-chatgpt",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:model-chatgpt",
+              "type": "article-entity",
+              "label": "model"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:company-openai",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:company-openai",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:person-sensor-tower",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:person-sensor-tower",
+              "type": "article-entity",
+              "label": "person"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-上升",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-上升",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-产品份额",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-产品份额",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-卸载量在国防合作",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-卸载量在国防合作",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-国防合作消息传出",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-国防合作消息传出",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-在美国的移动端卸",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-在美国的移动端卸",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->event:launch-entity-model-chatgpt",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "event:launch-entity-model-chatgpt",
+              "type": "article-event",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-model-chatgpt->entity:model-chatgpt",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:launch-entity-model-chatgpt",
+              "target": "entity:model-chatgpt",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-model-chatgpt->entity:company-openai",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:launch-entity-model-chatgpt",
+              "target": "entity:company-openai",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-model-chatgpt->entity:person-sensor-tower",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:launch-entity-model-chatgpt",
+              "target": "entity:person-sensor-tower",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-model-chatgpt->entity:topic-上升",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:launch-entity-model-chatgpt",
+              "target": "entity:topic-上升",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->event:partnership-entity-model-chatgpt",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "event:partnership-entity-model-chatgpt",
+              "type": "article-event",
+              "label": "partnership"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:partnership-entity-model-chatgpt->entity:model-chatgpt",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:partnership-entity-model-chatgpt",
+              "target": "entity:model-chatgpt",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:partnership-entity-model-chatgpt->entity:company-openai",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:partnership-entity-model-chatgpt",
+              "target": "entity:company-openai",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:partnership-entity-model-chatgpt->entity:person-sensor-tower",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:partnership-entity-model-chatgpt",
+              "target": "entity:person-sensor-tower",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:partnership-entity-model-chatgpt->entity:topic-上升",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:partnership-entity-model-chatgpt",
+              "target": "entity:topic-上升",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:model-chatgpt->entity:company-openai:launch",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "entity:model-chatgpt",
+              "target": "entity:company-openai",
+              "type": "explicit-relation",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:model-chatgpt->entity:person-sensor-tower:launch",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "entity:model-chatgpt",
+              "target": "entity:person-sensor-tower",
+              "type": "explicit-relation",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:model-chatgpt->entity:topic-上升:launch",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "entity:model-chatgpt",
+              "target": "entity:topic-上升",
+              "type": "explicit-relation",
+              "label": "launch"
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "report_index": 3,
+          "article_id": "2026-03-02-2",
+          "title": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+          "source": "TechCrunch",
+          "date": "2026-03-02",
+          "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。"
+        },
+        {
+          "report_index": 1,
+          "article_id": "2026-03-02-1",
+          "title": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+          "source": "TechCrunch",
+          "date": "2026-03-02",
+          "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。"
+        }
+      ]
+    }
+  ],
+  "evidence_index": [
+    {
+      "report_index": 1,
+      "article_id": "2026-03-02-1",
+      "title": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。"
+    },
+    {
+      "report_index": 2,
+      "article_id": "2026-03-02-0",
+      "title": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+      "source": "Anthropic",
+      "date": "2026-03-02",
+      "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。"
+    },
+    {
+      "report_index": 3,
+      "article_id": "2026-03-02-2",
+      "title": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。"
+    }
+  ],
+  "memory_refs": {
+    "recent_window": {
+      "start_date": "2026-03-02",
+      "end_date": "2026-03-02"
+    },
+    "archive_refs": []
+  }
+}

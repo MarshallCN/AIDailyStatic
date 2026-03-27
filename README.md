@@ -18,7 +18,9 @@
 ├── detail.html
 ├── detail.js
 ├── prompts/
-│   └── PROMPT.md
+│   ├── PROMPT.md
+│   ├── kg-extract.md
+│   └── insights.md
 ├── vendor/
 │   └── jquery-3.7.1.min.js
 └── news/
@@ -310,3 +312,41 @@ python scripts/ai_daily.py prompt --date 2026-03-17 > prompt.txt
 python scripts/ai_daily.py validate --date 2026-03-17 --input draft.md
 python scripts/ai_daily.py publish --date 2026-03-17 --input draft.md
 ```
+
+## 静态 KG / 洞察升级
+
+项目现在除了新闻列表、词云和线索页之外，还新增了一套纯静态的知识图谱与洞察产物链路，整个站点仍然可以直接部署到 GitHub Pages。
+
+- `clues.html`：改为本地 `d3` 力导向动态图，支持拖拽、缩放、图例、右侧详情面板，以及“全图 / 线索子图”切换。
+- `insights.html`：新增静态洞察报告页，支持按 `?date=YYYY-MM-DD` 浏览日报告，保留主题子图、证据新闻索引和稳定文章 ID。
+- `kg/*.json`：每天一份 KG 日产物，包含 `signal_records`、滚动 `clue_packets` 和分析窗口信息。
+- `insights/*.json`：每天一份静态洞察报告。
+- `memory/recent.json` 与 `memory/archive.json`：分别保存近 30 天详细记忆和更早历史的压缩长期记忆。
+- `prompts/kg-extract.md`：KG 抽取的通用模板。
+- `prompts/insights.md`：洞察报告的通用模板。
+
+### 新增命令
+
+```powershell
+python scripts/ai_daily.py kg-prompt --date 2026-03-26
+python scripts/ai_daily.py kg-build --date 2026-03-26
+python scripts/ai_daily.py insight-prompt --date 2026-03-26
+python scripts/ai_daily.py insight-build --date 2026-03-26
+python scripts/ai_daily.py memory-refresh
+python scripts/ai_daily.py repair-static
+```
+
+`kg-prompt` 与 `insight-prompt` 现在只按需渲染 prompt 到标准输出或你指定的文件，不会再自动写入 `drafts/generated/`。
+
+### 发布后的离线流程
+
+```powershell
+python scripts/ai_daily.py publish --date 2026-03-26 --input draft.md
+```
+
+执行 `publish` 后，脚本现在会继续自动：
+
+1. 写入 `news/YYYY-MM-DD.md` 并更新 `news/manifest.js`
+2. 重建静态 KG 日产物与 `kg/manifest.js`
+3. 重建静态洞察报告与 `insights/manifest.js`
+4. 刷新近期 / 长期记忆文件

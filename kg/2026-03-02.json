@@ -1,0 +1,4370 @@
+{
+  "date": "2026-03-02",
+  "articles": [
+    {
+      "article_id": "2026-03-02-0",
+      "title": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+      "source": "Anthropic",
+      "date": "2026-03-02",
+      "category": [
+        "安全"
+      ],
+      "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+      "url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy"
+    },
+    {
+      "article_id": "2026-03-02-1",
+      "title": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业",
+        "安全"
+      ],
+      "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+      "url": "https://techcrunch.com/2026/03/02/openai-anthropic-department-of-defense-war-hegseth-ai-companies-work-with-us-government/"
+    },
+    {
+      "article_id": "2026-03-02-2",
+      "title": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业"
+      ],
+      "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+      "url": "https://techcrunch.com/2026/03/02/chatgpt-uninstalls-surged-by-295-after-dod-deal/"
+    },
+    {
+      "article_id": "2026-03-02-3",
+      "title": "Claude 在流量激增背景下出现大范围故障，模型服务稳定性成为竞争中的硬指标",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "生态",
+        "安全"
+      ],
+      "summary": "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。",
+      "url": "https://techcrunch.com/2026/03/02/anthropics-claude-reports-widespread-outage/"
+    },
+    {
+      "article_id": "2026-03-02-4",
+      "title": "Stripe 推出新计费能力，试图把 AI Token 成本直接转化为创业公司的利润结构",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业",
+        "基础设施"
+      ],
+      "summary": "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。",
+      "url": "https://techcrunch.com/2026/03/02/stripe-wants-to-turn-your-ai-costs-into-a-profit-center/"
+    },
+    {
+      "article_id": "2026-03-02-5",
+      "title": "Apple 发布支持 Apple Intelligence 的 iPhone 17e，AI 正继续下沉到中端消费电子产品",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业",
+        "生态"
+      ],
+      "summary": "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。",
+      "url": "https://techcrunch.com/2026/03/02/apples-bakes-in-ai-smarts-into-its-new-599-iphone-17e/"
+    },
+    {
+      "article_id": "2026-03-02-6",
+      "title": "Cursor 年化收入据报突破 20 亿美元，AI 编程工具正从个人开发者走向企业采购主战场",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业",
+        "生态"
+      ],
+      "summary": "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。",
+      "url": "https://techcrunch.com/2026/03/02/cursor-has-reportedly-surpassed-2b-in-annualized-revenue/"
+    },
+    {
+      "article_id": "2026-03-02-7",
+      "title": "ASTRA-bench 发布，补上“带个人上下文的工具调用代理”评测空白",
+      "source": "arXiv",
+      "date": "2026-03-02",
+      "category": [
+        "论文"
+      ],
+      "summary": "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。",
+      "url": "https://arxiv.org/abs/2603.01357v1"
+    },
+    {
+      "article_id": "2026-03-02-8",
+      "title": "MetaState 为离散扩散语言模型引入持久工作记忆，尝试提升跨步一致性与生成效率",
+      "source": "arXiv",
+      "date": "2026-03-02",
+      "category": [
+        "论文",
+        "基础设施"
+      ],
+      "summary": "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。",
+      "url": "https://arxiv.org/abs/2603.01331v1"
+    },
+    {
+      "article_id": "2026-03-02-9",
+      "title": "观察：3 月 2 日的 AI 焦点不只是产品更新，而是“治理、稳定性与商业化结构”同步前移",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "观察"
+      ],
+      "summary": "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。",
+      "url": "https://techcrunch.com/2026/03/02/users-are-ditching-chatgpt-for-claude-heres-how-to-make-the-switch/"
+    }
+  ],
+  "signal_records": [
+    {
+      "article_id": "2026-03-02-0",
+      "title": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+      "source": "Anthropic",
+      "date": "2026-03-02",
+      "category": [
+        "安全"
+      ],
+      "url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+      "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+      "why_it_matters": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+      "entities": [
+        {
+          "entity_id": "entity:company-anthropic",
+          "name": "Anthropic",
+          "canonical_name": "Anthropic",
+          "type": "company",
+          "aliases": [
+            "Anthropic"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Anthropic"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:policy-responsible-scaling-policy",
+          "name": "Responsible Scaling Policy",
+          "canonical_name": "Responsible Scaling Policy",
+          "type": "policy",
+          "aliases": [
+            "Responsible Scaling Policy"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Responsible Scaling Policy"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-以更细化的能力阈",
+          "name": "以更细化的能力阈",
+          "canonical_name": "以更细化的能力阈",
+          "type": "topic",
+          "aliases": [
+            "以更细化的能力阈"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "以更细化的能力阈"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-值和安全案例方法",
+          "name": "值和安全案例方法",
+          "canonical_name": "值和安全案例方法",
+          "type": "topic",
+          "aliases": [
+            "值和安全案例方法"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "值和安全案例方法"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-强化前沿模型灾难",
+          "name": "强化前沿模型灾难",
+          "canonical_name": "强化前沿模型灾难",
+          "type": "topic",
+          "aliases": [
+            "强化前沿模型灾难"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "强化前沿模型灾难"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-性风险治理框架",
+          "name": "性风险治理框架",
+          "canonical_name": "性风险治理框架",
+          "type": "topic",
+          "aliases": [
+            "性风险治理框架"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "性风险治理框架"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-日发布新版",
+          "name": "日发布新版",
+          "canonical_name": "日发布新版",
+          "type": "topic",
+          "aliases": [
+            "日发布新版"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "日发布新版"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-更新",
+          "name": "更新",
+          "canonical_name": "更新",
+          "type": "topic",
+          "aliases": [
+            "更新"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "更新"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:security-entity-company-anthropic",
+          "event_type": "security",
+          "label": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+          "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+          "participants": [
+            {
+              "entity_id": "entity:company-anthropic",
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:policy-responsible-scaling-policy",
+              "name": "Responsible Scaling Policy",
+              "type": "policy",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-以更细化的能力阈",
+              "name": "以更细化的能力阈",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-值和安全案例方法",
+              "name": "值和安全案例方法",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。"
+          ]
+        },
+        {
+          "event_id": "event:policy-entity-company-anthropic",
+          "event_type": "policy",
+          "label": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+          "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+          "participants": [
+            {
+              "entity_id": "entity:company-anthropic",
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:policy-responsible-scaling-policy",
+              "name": "Responsible Scaling Policy",
+              "type": "policy",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-以更细化的能力阈",
+              "name": "以更细化的能力阈",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-值和安全案例方法",
+              "name": "值和安全案例方法",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:f5f291443a52",
+          "source_entity_id": "entity:company-anthropic",
+          "target_entity_id": "entity:policy-responsible-scaling-policy",
+          "source_name": "Anthropic",
+          "target_name": "Responsible Scaling Policy",
+          "relation_type": "security",
+          "weight": 1,
+          "evidence": [
+            "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。"
+          ]
+        },
+        {
+          "relation_id": "relation:36ba042db495",
+          "source_entity_id": "entity:company-anthropic",
+          "target_entity_id": "entity:topic-以更细化的能力阈",
+          "source_name": "Anthropic",
+          "target_name": "以更细化的能力阈",
+          "relation_type": "security",
+          "weight": 1,
+          "evidence": [
+            "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。"
+          ]
+        },
+        {
+          "relation_id": "relation:52a257304458",
+          "source_entity_id": "entity:company-anthropic",
+          "target_entity_id": "entity:topic-值和安全案例方法",
+          "source_name": "Anthropic",
+          "target_name": "值和安全案例方法",
+          "relation_type": "security",
+          "weight": 1,
+          "evidence": [
+            "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。"
+          ]
+        }
+      ],
+      "metrics": [],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "Anthropic",
+          "Responsible Scaling Policy",
+          "以更细化的能力阈",
+          "值和安全案例方法",
+          "强化前沿模型灾难",
+          "性风险治理框架",
+          "日发布新版",
+          "更新"
+        ],
+        "rule_event_types": [
+          "security",
+          "policy"
+        ]
+      }
+    },
+    {
+      "article_id": "2026-03-02-1",
+      "title": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业",
+        "安全"
+      ],
+      "url": "https://techcrunch.com/2026/03/02/openai-anthropic-department-of-defense-war-hegseth-ai-companies-work-with-us-government/",
+      "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+      "why_it_matters": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+      "entities": [
+        {
+          "entity_id": "entity:company-anthropic",
+          "name": "Anthropic",
+          "canonical_name": "Anthropic",
+          "type": "company",
+          "aliases": [
+            "Anthropic"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Anthropic"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:company-openai",
+          "name": "OpenAI",
+          "canonical_name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "OpenAI"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "OpenAI"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-作的新争论",
+          "name": "作的新争论",
+          "canonical_name": "作的新争论",
+          "type": "topic",
+          "aliases": [
+            "作的新争论"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "作的新争论"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-公司与政府合作的",
+          "name": "公司与政府合作的",
+          "canonical_name": "公司与政府合作的",
+          "type": "topic",
+          "aliases": [
+            "公司与政府合作的"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "公司与政府合作的"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-公司如何与政府协",
+          "name": "公司如何与政府协",
+          "canonical_name": "公司如何与政府协",
+          "type": "topic",
+          "aliases": [
+            "公司如何与政府协"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "公司如何与政府协"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-则因监控与自主武",
+          "name": "则因监控与自主武",
+          "canonical_name": "则因监控与自主武",
+          "type": "topic",
+          "aliases": [
+            "则因监控与自主武"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "则因监控与自主武"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-器条款退场",
+          "name": "器条款退场",
+          "canonical_name": "器条款退场",
+          "type": "topic",
+          "aliases": [
+            "器条款退场"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "器条款退场"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-围绕五角大楼合作",
+          "name": "围绕五角大楼合作",
+          "canonical_name": "围绕五角大楼合作",
+          "type": "topic",
+          "aliases": [
+            "围绕五角大楼合作"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "围绕五角大楼合作"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:security-entity-company-anthropic",
+          "event_type": "security",
+          "label": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+          "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+          "participants": [
+            {
+              "entity_id": "entity:company-anthropic",
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:company-openai",
+              "name": "OpenAI",
+              "type": "company",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-作的新争论",
+              "name": "作的新争论",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-公司与政府合作的",
+              "name": "公司与政府合作的",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。"
+          ]
+        },
+        {
+          "event_id": "event:launch-entity-company-anthropic",
+          "event_type": "launch",
+          "label": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+          "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+          "participants": [
+            {
+              "entity_id": "entity:company-anthropic",
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:company-openai",
+              "name": "OpenAI",
+              "type": "company",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-作的新争论",
+              "name": "作的新争论",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-公司与政府合作的",
+              "name": "公司与政府合作的",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:a8548eddb2d5",
+          "source_entity_id": "entity:company-anthropic",
+          "target_entity_id": "entity:company-openai",
+          "source_name": "Anthropic",
+          "target_name": "OpenAI",
+          "relation_type": "security",
+          "weight": 1,
+          "evidence": [
+            "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。"
+          ]
+        },
+        {
+          "relation_id": "relation:2c7b69faae4e",
+          "source_entity_id": "entity:company-anthropic",
+          "target_entity_id": "entity:topic-作的新争论",
+          "source_name": "Anthropic",
+          "target_name": "作的新争论",
+          "relation_type": "security",
+          "weight": 1,
+          "evidence": [
+            "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。"
+          ]
+        },
+        {
+          "relation_id": "relation:acb497c9d824",
+          "source_entity_id": "entity:company-anthropic",
+          "target_entity_id": "entity:topic-公司与政府合作的",
+          "source_name": "Anthropic",
+          "target_name": "公司与政府合作的",
+          "relation_type": "security",
+          "weight": 1,
+          "evidence": [
+            "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。"
+          ]
+        }
+      ],
+      "metrics": [],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "Anthropic",
+          "OpenAI",
+          "作的新争论",
+          "公司与政府合作的",
+          "公司如何与政府协",
+          "则因监控与自主武",
+          "器条款退场",
+          "围绕五角大楼合作"
+        ],
+        "rule_event_types": [
+          "security",
+          "launch"
+        ]
+      }
+    },
+    {
+      "article_id": "2026-03-02-2",
+      "title": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业"
+      ],
+      "url": "https://techcrunch.com/2026/03/02/chatgpt-uninstalls-surged-by-295-after-dod-deal/",
+      "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+      "why_it_matters": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+      "entities": [
+        {
+          "entity_id": "entity:model-chatgpt",
+          "name": "ChatGPT",
+          "canonical_name": "ChatGPT",
+          "type": "model",
+          "aliases": [
+            "ChatGPT"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "ChatGPT"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:company-openai",
+          "name": "OpenAI",
+          "canonical_name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "OpenAI"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "OpenAI"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:person-sensor-tower",
+          "name": "Sensor Tower",
+          "canonical_name": "Sensor Tower",
+          "type": "person",
+          "aliases": [
+            "Sensor Tower"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Sensor Tower"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-上升",
+          "name": "上升",
+          "canonical_name": "上升",
+          "type": "topic",
+          "aliases": [
+            "上升"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "上升"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-产品份额",
+          "name": "产品份额",
+          "canonical_name": "产品份额",
+          "type": "topic",
+          "aliases": [
+            "产品份额"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "产品份额"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-卸载量在国防合作",
+          "name": "卸载量在国防合作",
+          "canonical_name": "卸载量在国防合作",
+          "type": "topic",
+          "aliases": [
+            "卸载量在国防合作"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "卸载量在国防合作"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-国防合作消息传出",
+          "name": "国防合作消息传出",
+          "canonical_name": "国防合作消息传出",
+          "type": "topic",
+          "aliases": [
+            "国防合作消息传出"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "国防合作消息传出"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-在美国的移动端卸",
+          "name": "在美国的移动端卸",
+          "canonical_name": "在美国的移动端卸",
+          "type": "topic",
+          "aliases": [
+            "在美国的移动端卸"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "在美国的移动端卸"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:launch-entity-model-chatgpt",
+          "event_type": "launch",
+          "label": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+          "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+          "participants": [
+            {
+              "entity_id": "entity:model-chatgpt",
+              "name": "ChatGPT",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:company-openai",
+              "name": "OpenAI",
+              "type": "company",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:person-sensor-tower",
+              "name": "Sensor Tower",
+              "type": "person",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-上升",
+              "name": "上升",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。"
+          ]
+        },
+        {
+          "event_id": "event:partnership-entity-model-chatgpt",
+          "event_type": "partnership",
+          "label": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+          "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+          "participants": [
+            {
+              "entity_id": "entity:model-chatgpt",
+              "name": "ChatGPT",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:company-openai",
+              "name": "OpenAI",
+              "type": "company",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:person-sensor-tower",
+              "name": "Sensor Tower",
+              "type": "person",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-上升",
+              "name": "上升",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:f4fd60aa5572",
+          "source_entity_id": "entity:model-chatgpt",
+          "target_entity_id": "entity:company-openai",
+          "source_name": "ChatGPT",
+          "target_name": "OpenAI",
+          "relation_type": "launch",
+          "weight": 1,
+          "evidence": [
+            "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。"
+          ]
+        },
+        {
+          "relation_id": "relation:939c8d441b72",
+          "source_entity_id": "entity:model-chatgpt",
+          "target_entity_id": "entity:person-sensor-tower",
+          "source_name": "ChatGPT",
+          "target_name": "Sensor Tower",
+          "relation_type": "launch",
+          "weight": 1,
+          "evidence": [
+            "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。"
+          ]
+        },
+        {
+          "relation_id": "relation:b98947e955cd",
+          "source_entity_id": "entity:model-chatgpt",
+          "target_entity_id": "entity:topic-上升",
+          "source_name": "ChatGPT",
+          "target_name": "上升",
+          "relation_type": "launch",
+          "weight": 1,
+          "evidence": [
+            "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。"
+          ]
+        }
+      ],
+      "metrics": [],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "ChatGPT",
+          "OpenAI",
+          "Sensor Tower",
+          "上升",
+          "产品份额",
+          "卸载量在国防合作",
+          "国防合作消息传出",
+          "在美国的移动端卸"
+        ],
+        "rule_event_types": [
+          "launch",
+          "partnership"
+        ]
+      }
+    },
+    {
+      "article_id": "2026-03-02-3",
+      "title": "Claude 在流量激增背景下出现大范围故障，模型服务稳定性成为竞争中的硬指标",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "生态",
+        "安全"
+      ],
+      "url": "https://techcrunch.com/2026/03/02/anthropics-claude-reports-widespread-outage/",
+      "summary": "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。",
+      "why_it_matters": "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。",
+      "entities": [
+        {
+          "entity_id": "entity:model-claude",
+          "name": "Claude",
+          "canonical_name": "Claude",
+          "type": "model",
+          "aliases": [
+            "Claude"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Claude"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:model-claude-ai",
+          "name": "Claude.ai",
+          "canonical_name": "Claude.ai",
+          "type": "model",
+          "aliases": [
+            "Claude.ai"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Claude.ai"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:model-claude-在",
+          "name": "Claude 在",
+          "canonical_name": "Claude 在",
+          "type": "model",
+          "aliases": [
+            "Claude 在"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "Claude 在"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-与登录路径",
+          "name": "与登录路径",
+          "canonical_name": "与登录路径",
+          "type": "topic",
+          "aliases": [
+            "与登录路径"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "与登录路径"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-为竞争中的硬指标",
+          "name": "为竞争中的硬指标",
+          "canonical_name": "为竞争中的硬指标",
+          "type": "topic",
+          "aliases": [
+            "为竞争中的硬指标"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "为竞争中的硬指标"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-出现大范围故障",
+          "name": "出现大范围故障",
+          "canonical_name": "出现大范围故障",
+          "type": "topic",
+          "aliases": [
+            "出现大范围故障"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "出现大范围故障"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-则基本维持可用",
+          "name": "则基本维持可用",
+          "canonical_name": "则基本维持可用",
+          "type": "topic",
+          "aliases": [
+            "则基本维持可用"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "则基本维持可用"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-在流量激增背景下",
+          "name": "在流量激增背景下",
+          "canonical_name": "在流量激增背景下",
+          "type": "topic",
+          "aliases": [
+            "在流量激增背景下"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "在流量激增背景下"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:security-entity-model-claude",
+          "event_type": "security",
+          "label": "Claude 在流量激增背景下出现大范围故障，模型服务稳定性成为竞争中的硬指标",
+          "summary": "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。",
+          "participants": [
+            {
+              "entity_id": "entity:model-claude",
+              "name": "Claude",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:model-claude-ai",
+              "name": "Claude.ai",
+              "type": "model",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:model-claude-在",
+              "name": "Claude 在",
+              "type": "model",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-与登录路径",
+              "name": "与登录路径",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。"
+          ]
+        },
+        {
+          "event_id": "event:partnership-entity-model-claude",
+          "event_type": "partnership",
+          "label": "Claude 在流量激增背景下出现大范围故障，模型服务稳定性成为竞争中的硬指标",
+          "summary": "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。",
+          "participants": [
+            {
+              "entity_id": "entity:model-claude",
+              "name": "Claude",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:model-claude-ai",
+              "name": "Claude.ai",
+              "type": "model",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:model-claude-在",
+              "name": "Claude 在",
+              "type": "model",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-与登录路径",
+              "name": "与登录路径",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:28cf65bcc8b9",
+          "source_entity_id": "entity:model-claude",
+          "target_entity_id": "entity:model-claude-ai",
+          "source_name": "Claude",
+          "target_name": "Claude.ai",
+          "relation_type": "security",
+          "weight": 1,
+          "evidence": [
+            "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。"
+          ]
+        },
+        {
+          "relation_id": "relation:8e0a81b6586b",
+          "source_entity_id": "entity:model-claude",
+          "target_entity_id": "entity:model-claude-在",
+          "source_name": "Claude",
+          "target_name": "Claude 在",
+          "relation_type": "security",
+          "weight": 1,
+          "evidence": [
+            "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。"
+          ]
+        },
+        {
+          "relation_id": "relation:83f627cb02ea",
+          "source_entity_id": "entity:model-claude",
+          "target_entity_id": "entity:topic-与登录路径",
+          "source_name": "Claude",
+          "target_name": "与登录路径",
+          "relation_type": "security",
+          "weight": 1,
+          "evidence": [
+            "Claude 在 3 月 2 日出现大范围服务异常，问题主要集中在 Claude.ai 与登录路径，API 则基本维持可用。"
+          ]
+        }
+      ],
+      "metrics": [],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "Claude",
+          "Claude.ai",
+          "Claude 在",
+          "与登录路径",
+          "为竞争中的硬指标",
+          "出现大范围故障",
+          "则基本维持可用",
+          "在流量激增背景下"
+        ],
+        "rule_event_types": [
+          "security",
+          "partnership"
+        ]
+      }
+    },
+    {
+      "article_id": "2026-03-02-4",
+      "title": "Stripe 推出新计费能力，试图把 AI Token 成本直接转化为创业公司的利润结构",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业",
+        "基础设施"
+      ],
+      "url": "https://techcrunch.com/2026/03/02/stripe-wants-to-turn-your-ai-costs-into-a-profit-center/",
+      "summary": "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。",
+      "why_it_matters": "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。",
+      "entities": [
+        {
+          "entity_id": "entity:organization-stripe",
+          "name": "Stripe",
+          "canonical_name": "Stripe",
+          "type": "organization",
+          "aliases": [
+            "Stripe"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Stripe"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:organization-ai-token",
+          "name": "AI Token",
+          "canonical_name": "AI Token",
+          "type": "organization",
+          "aliases": [
+            "AI Token"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "AI Token"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:policy-billing",
+          "name": "Billing",
+          "canonical_name": "Billing",
+          "type": "policy",
+          "aliases": [
+            "Billing"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "Billing"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-业公司的利润结构",
+          "name": "业公司的利润结构",
+          "canonical_name": "业公司的利润结构",
+          "type": "topic",
+          "aliases": [
+            "业公司的利润结构"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "业公司的利润结构"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-允许",
+          "name": "允许",
+          "canonical_name": "允许",
+          "type": "topic",
+          "aliases": [
+            "允许"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "允许"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-创业公司按底层模",
+          "name": "创业公司按底层模",
+          "canonical_name": "创业公司按底层模",
+          "type": "topic",
+          "aliases": [
+            "创业公司按底层模"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "创业公司按底层模"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-发布新的计费预览",
+          "name": "发布新的计费预览",
+          "canonical_name": "发布新的计费预览",
+          "type": "topic",
+          "aliases": [
+            "发布新的计费预览"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "发布新的计费预览"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-成本直接转化为创",
+          "name": "成本直接转化为创",
+          "canonical_name": "成本直接转化为创",
+          "type": "topic",
+          "aliases": [
+            "成本直接转化为创"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "成本直接转化为创"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:infra-entity-organization-stripe",
+          "event_type": "infra",
+          "label": "Stripe 推出新计费能力，试图把 AI Token 成本直接转化为创业公司的利润结构",
+          "summary": "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。",
+          "participants": [
+            {
+              "entity_id": "entity:organization-stripe",
+              "name": "Stripe",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:organization-ai-token",
+              "name": "AI Token",
+              "type": "organization",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:policy-billing",
+              "name": "Billing",
+              "type": "policy",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-业公司的利润结构",
+              "name": "业公司的利润结构",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。"
+          ]
+        },
+        {
+          "event_id": "event:launch-entity-organization-stripe",
+          "event_type": "launch",
+          "label": "Stripe 推出新计费能力，试图把 AI Token 成本直接转化为创业公司的利润结构",
+          "summary": "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。",
+          "participants": [
+            {
+              "entity_id": "entity:organization-stripe",
+              "name": "Stripe",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:organization-ai-token",
+              "name": "AI Token",
+              "type": "organization",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:policy-billing",
+              "name": "Billing",
+              "type": "policy",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-业公司的利润结构",
+              "name": "业公司的利润结构",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:b7890072b20a",
+          "source_entity_id": "entity:organization-stripe",
+          "target_entity_id": "entity:organization-ai-token",
+          "source_name": "Stripe",
+          "target_name": "AI Token",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。"
+          ]
+        },
+        {
+          "relation_id": "relation:8a2e745e7074",
+          "source_entity_id": "entity:organization-stripe",
+          "target_entity_id": "entity:policy-billing",
+          "source_name": "Stripe",
+          "target_name": "Billing",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。"
+          ]
+        },
+        {
+          "relation_id": "relation:163e81aea982",
+          "source_entity_id": "entity:organization-stripe",
+          "target_entity_id": "entity:topic-业公司的利润结构",
+          "source_name": "Stripe",
+          "target_name": "业公司的利润结构",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "Stripe 发布新的计费预览能力，允许 AI 创业公司按底层模型 token 成本自动加价，把成本透传与利润率控制整合进 Billing。"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "percentage",
+          "value": "30"
+        }
+      ],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "Stripe",
+          "AI Token",
+          "Billing",
+          "业公司的利润结构",
+          "允许",
+          "创业公司按底层模",
+          "发布新的计费预览",
+          "成本直接转化为创"
+        ],
+        "rule_event_types": [
+          "infra",
+          "launch"
+        ]
+      }
+    },
+    {
+      "article_id": "2026-03-02-5",
+      "title": "Apple 发布支持 Apple Intelligence 的 iPhone 17e，AI 正继续下沉到中端消费电子产品",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业",
+        "生态"
+      ],
+      "url": "https://techcrunch.com/2026/03/02/apples-bakes-in-ai-smarts-into-its-new-599-iphone-17e/",
+      "summary": "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。",
+      "why_it_matters": "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。",
+      "entities": [
+        {
+          "entity_id": "entity:company-apple",
+          "name": "Apple",
+          "canonical_name": "Apple",
+          "type": "company",
+          "aliases": [
+            "Apple"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Apple"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:company-apple-intelligence",
+          "name": "Apple Intelligence",
+          "canonical_name": "Apple Intelligence",
+          "type": "company",
+          "aliases": [
+            "Apple Intelligence"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Apple Intelligence"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-发布支持",
+          "name": "发布支持",
+          "canonical_name": "发布支持",
+          "type": "topic",
+          "aliases": [
+            "发布支持"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "发布支持"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-带机型",
+          "name": "带机型",
+          "canonical_name": "带机型",
+          "type": "topic",
+          "aliases": [
+            "带机型"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "带机型"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-并让",
+          "name": "并让",
+          "canonical_name": "并让",
+          "type": "topic",
+          "aliases": [
+            "并让"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "并让"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-日推出售价",
+          "name": "日推出售价",
+          "canonical_name": "日推出售价",
+          "type": "topic",
+          "aliases": [
+            "日推出售价"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "日推出售价"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-正继续下沉到中端",
+          "name": "正继续下沉到中端",
+          "canonical_name": "正继续下沉到中端",
+          "type": "topic",
+          "aliases": [
+            "正继续下沉到中端"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "正继续下沉到中端"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-消费电子产品",
+          "name": "消费电子产品",
+          "canonical_name": "消费电子产品",
+          "type": "topic",
+          "aliases": [
+            "消费电子产品"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "消费电子产品"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:launch-entity-company-apple",
+          "event_type": "launch",
+          "label": "Apple 发布支持 Apple Intelligence 的 iPhone 17e，AI 正继续下沉到中端消费电子产品",
+          "summary": "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。",
+          "participants": [
+            {
+              "entity_id": "entity:company-apple",
+              "name": "Apple",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:company-apple-intelligence",
+              "name": "Apple Intelligence",
+              "type": "company",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-发布支持",
+              "name": "发布支持",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-带机型",
+              "name": "带机型",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。"
+          ]
+        },
+        {
+          "event_id": "event:infra-entity-company-apple",
+          "event_type": "infra",
+          "label": "Apple 发布支持 Apple Intelligence 的 iPhone 17e，AI 正继续下沉到中端消费电子产品",
+          "summary": "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。",
+          "participants": [
+            {
+              "entity_id": "entity:company-apple",
+              "name": "Apple",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:company-apple-intelligence",
+              "name": "Apple Intelligence",
+              "type": "company",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-发布支持",
+              "name": "发布支持",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-带机型",
+              "name": "带机型",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:fc753673b07b",
+          "source_entity_id": "entity:company-apple",
+          "target_entity_id": "entity:company-apple-intelligence",
+          "source_name": "Apple",
+          "target_name": "Apple Intelligence",
+          "relation_type": "launch",
+          "weight": 1,
+          "evidence": [
+            "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。"
+          ]
+        },
+        {
+          "relation_id": "relation:63748ffabc1e",
+          "source_entity_id": "entity:company-apple",
+          "target_entity_id": "entity:topic-发布支持",
+          "source_name": "Apple",
+          "target_name": "发布支持",
+          "relation_type": "launch",
+          "weight": 1,
+          "evidence": [
+            "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。"
+          ]
+        },
+        {
+          "relation_id": "relation:4101693fda9f",
+          "source_entity_id": "entity:company-apple",
+          "target_entity_id": "entity:topic-带机型",
+          "source_name": "Apple",
+          "target_name": "带机型",
+          "relation_type": "launch",
+          "weight": 1,
+          "evidence": [
+            "Apple 在 3 月 2 日推出售价 599 美元的 iPhone 17e，并让 Apple Intelligence 能力进入更低价格带机型。"
+          ]
+        }
+      ],
+      "metrics": [],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "Apple",
+          "Apple Intelligence",
+          "发布支持",
+          "带机型",
+          "并让",
+          "日推出售价",
+          "正继续下沉到中端",
+          "消费电子产品"
+        ],
+        "rule_event_types": [
+          "launch",
+          "infra"
+        ]
+      }
+    },
+    {
+      "article_id": "2026-03-02-6",
+      "title": "Cursor 年化收入据报突破 20 亿美元，AI 编程工具正从个人开发者走向企业采购主战场",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "应用/产业",
+        "生态"
+      ],
+      "url": "https://techcrunch.com/2026/03/02/cursor-has-reportedly-surpassed-2b-in-annualized-revenue/",
+      "summary": "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。",
+      "why_it_matters": "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。",
+      "entities": [
+        {
+          "entity_id": "entity:organization-cursor",
+          "name": "Cursor",
+          "canonical_name": "Cursor",
+          "type": "organization",
+          "aliases": [
+            "Cursor"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Cursor"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:company-techcrunch",
+          "name": "TechCrunch",
+          "canonical_name": "TechCrunch",
+          "type": "company",
+          "aliases": [
+            "TechCrunch"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "TechCrunch"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-且企业客户已成为",
+          "name": "且企业客户已成为",
+          "canonical_name": "且企业客户已成为",
+          "type": "topic",
+          "aliases": [
+            "且企业客户已成为"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "且企业客户已成为"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-主要收入来源",
+          "name": "主要收入来源",
+          "canonical_name": "主要收入来源",
+          "type": "topic",
+          "aliases": [
+            "主要收入来源"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "主要收入来源"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-亿美元",
+          "name": "亿美元",
+          "canonical_name": "亿美元",
+          "type": "topic",
+          "aliases": [
+            "亿美元"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "亿美元"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-年化收入据报突破",
+          "name": "年化收入据报突破",
+          "canonical_name": "年化收入据报突破",
+          "type": "topic",
+          "aliases": [
+            "年化收入据报突破"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "年化收入据报突破"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-开发者走向企业采",
+          "name": "开发者走向企业采",
+          "canonical_name": "开发者走向企业采",
+          "type": "topic",
+          "aliases": [
+            "开发者走向企业采"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "开发者走向企业采"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-援引报道指出",
+          "name": "援引报道指出",
+          "canonical_name": "援引报道指出",
+          "type": "topic",
+          "aliases": [
+            "援引报道指出"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "援引报道指出"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:launch-entity-organization-cursor",
+          "event_type": "launch",
+          "label": "Cursor 年化收入据报突破 20 亿美元，AI 编程工具正从个人开发者走向企业采购主战场",
+          "summary": "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。",
+          "participants": [
+            {
+              "entity_id": "entity:organization-cursor",
+              "name": "Cursor",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:company-techcrunch",
+              "name": "TechCrunch",
+              "type": "company",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-且企业客户已成为",
+              "name": "且企业客户已成为",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-主要收入来源",
+              "name": "主要收入来源",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。"
+          ]
+        },
+        {
+          "event_id": "event:partnership-entity-organization-cursor",
+          "event_type": "partnership",
+          "label": "Cursor 年化收入据报突破 20 亿美元，AI 编程工具正从个人开发者走向企业采购主战场",
+          "summary": "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。",
+          "participants": [
+            {
+              "entity_id": "entity:organization-cursor",
+              "name": "Cursor",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:company-techcrunch",
+              "name": "TechCrunch",
+              "type": "company",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-且企业客户已成为",
+              "name": "且企业客户已成为",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-主要收入来源",
+              "name": "主要收入来源",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:f84d2f074e09",
+          "source_entity_id": "entity:organization-cursor",
+          "target_entity_id": "entity:company-techcrunch",
+          "source_name": "Cursor",
+          "target_name": "TechCrunch",
+          "relation_type": "launch",
+          "weight": 1,
+          "evidence": [
+            "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。"
+          ]
+        },
+        {
+          "relation_id": "relation:a7b73e2be9e0",
+          "source_entity_id": "entity:organization-cursor",
+          "target_entity_id": "entity:topic-且企业客户已成为",
+          "source_name": "Cursor",
+          "target_name": "且企业客户已成为",
+          "relation_type": "launch",
+          "weight": 1,
+          "evidence": [
+            "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。"
+          ]
+        },
+        {
+          "relation_id": "relation:b906f3c8568c",
+          "source_entity_id": "entity:organization-cursor",
+          "target_entity_id": "entity:topic-主要收入来源",
+          "source_name": "Cursor",
+          "target_name": "主要收入来源",
+          "relation_type": "launch",
+          "weight": 1,
+          "evidence": [
+            "TechCrunch 援引报道指出，AI 编程助手 Cursor 的年化收入已突破 20 亿美元，且企业客户已成为主要收入来源。"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "money",
+          "value": "20 亿美元"
+        }
+      ],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "Cursor",
+          "TechCrunch",
+          "且企业客户已成为",
+          "主要收入来源",
+          "亿美元",
+          "年化收入据报突破",
+          "开发者走向企业采",
+          "援引报道指出"
+        ],
+        "rule_event_types": [
+          "launch",
+          "partnership"
+        ]
+      }
+    },
+    {
+      "article_id": "2026-03-02-7",
+      "title": "ASTRA-bench 发布，补上“带个人上下文的工具调用代理”评测空白",
+      "source": "arXiv",
+      "date": "2026-03-02",
+      "category": [
+        "论文"
+      ],
+      "url": "https://arxiv.org/abs/2603.01357v1",
+      "summary": "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。",
+      "why_it_matters": "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。",
+      "entities": [
+        {
+          "entity_id": "entity:organization-astra-bench",
+          "name": "ASTRA-bench",
+          "canonical_name": "ASTRA-bench",
+          "type": "organization",
+          "aliases": [
+            "ASTRA-bench"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "ASTRA-bench"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-上下文",
+          "name": "上下文",
+          "canonical_name": "上下文",
+          "type": "topic",
+          "aliases": [
+            "上下文"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "上下文"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-具调用代理",
+          "name": "具调用代理",
+          "canonical_name": "具调用代理",
+          "type": "topic",
+          "aliases": [
+            "具调用代理"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "具调用代理"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-发布",
+          "name": "发布",
+          "canonical_name": "发布",
+          "type": "topic",
+          "aliases": [
+            "发布"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "发布"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-工具箱与多步规划",
+          "name": "工具箱与多步规划",
+          "canonical_name": "工具箱与多步规划",
+          "type": "topic",
+          "aliases": [
+            "工具箱与多步规划"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "工具箱与多步规划"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-带个人上下文的工",
+          "name": "带个人上下文的工",
+          "canonical_name": "带个人上下文的工",
+          "type": "topic",
+          "aliases": [
+            "带个人上下文的工"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "带个人上下文的工"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-提出一个结合个人",
+          "name": "提出一个结合个人",
+          "canonical_name": "提出一个结合个人",
+          "type": "topic",
+          "aliases": [
+            "提出一个结合个人"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "提出一个结合个人"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-日提交的",
+          "name": "日提交的",
+          "canonical_name": "日提交的",
+          "type": "topic",
+          "aliases": [
+            "日提交的"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "日提交的"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:research-entity-organization-astra-bench",
+          "event_type": "research",
+          "label": "ASTRA-bench 发布，补上“带个人上下文的工具调用代理”评测空白",
+          "summary": "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。",
+          "participants": [
+            {
+              "entity_id": "entity:organization-astra-bench",
+              "name": "ASTRA-bench",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:topic-上下文",
+              "name": "上下文",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-具调用代理",
+              "name": "具调用代理",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-发布",
+              "name": "发布",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。"
+          ]
+        },
+        {
+          "event_id": "event:benchmark-entity-organization-astra-bench",
+          "event_type": "benchmark",
+          "label": "ASTRA-bench 发布，补上“带个人上下文的工具调用代理”评测空白",
+          "summary": "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。",
+          "participants": [
+            {
+              "entity_id": "entity:organization-astra-bench",
+              "name": "ASTRA-bench",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:topic-上下文",
+              "name": "上下文",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-具调用代理",
+              "name": "具调用代理",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-发布",
+              "name": "发布",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:38c31b3f4f4c",
+          "source_entity_id": "entity:organization-astra-bench",
+          "target_entity_id": "entity:topic-上下文",
+          "source_name": "ASTRA-bench",
+          "target_name": "上下文",
+          "relation_type": "research",
+          "weight": 1,
+          "evidence": [
+            "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。"
+          ]
+        },
+        {
+          "relation_id": "relation:1e096cf4c8d6",
+          "source_entity_id": "entity:organization-astra-bench",
+          "target_entity_id": "entity:topic-具调用代理",
+          "source_name": "ASTRA-bench",
+          "target_name": "具调用代理",
+          "relation_type": "research",
+          "weight": 1,
+          "evidence": [
+            "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。"
+          ]
+        },
+        {
+          "relation_id": "relation:5915ab2d7492",
+          "source_entity_id": "entity:organization-astra-bench",
+          "target_entity_id": "entity:topic-发布",
+          "source_name": "ASTRA-bench",
+          "target_name": "发布",
+          "relation_type": "research",
+          "weight": 1,
+          "evidence": [
+            "3 月 2 日提交的 ASTRA-bench 提出一个结合个人上下文、工具箱与多步规划的代理评测基准，用于检验真实助手型 AI 的推理与行动能力。"
+          ]
+        }
+      ],
+      "metrics": [],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "ASTRA-bench",
+          "上下文",
+          "具调用代理",
+          "发布",
+          "工具箱与多步规划",
+          "带个人上下文的工",
+          "提出一个结合个人",
+          "日提交的"
+        ],
+        "rule_event_types": [
+          "research",
+          "benchmark"
+        ]
+      }
+    },
+    {
+      "article_id": "2026-03-02-8",
+      "title": "MetaState 为离散扩散语言模型引入持久工作记忆，尝试提升跨步一致性与生成效率",
+      "source": "arXiv",
+      "date": "2026-03-02",
+      "category": [
+        "论文",
+        "基础设施"
+      ],
+      "url": "https://arxiv.org/abs/2603.01331v1",
+      "summary": "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。",
+      "why_it_matters": "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。",
+      "entities": [
+        {
+          "entity_id": "entity:company-metastate",
+          "name": "MetaState",
+          "canonical_name": "MetaState",
+          "type": "company",
+          "aliases": [
+            "MetaState"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "MetaState"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-为离散扩散语言模",
+          "name": "为离散扩散语言模",
+          "canonical_name": "为离散扩散语言模",
+          "type": "topic",
+          "aliases": [
+            "为离散扩散语言模"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "为离散扩散语言模"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-以缓解跨步信息丢",
+          "name": "以缓解跨步信息丢",
+          "canonical_name": "以缓解跨步信息丢",
+          "type": "topic",
+          "aliases": [
+            "以缓解跨步信息丢"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "以缓解跨步信息丢"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-型引入持久工作记",
+          "name": "型引入持久工作记",
+          "canonical_name": "型引入持久工作记",
+          "type": "topic",
+          "aliases": [
+            "型引入持久工作记"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "型引入持久工作记"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-失与重复计算问题",
+          "name": "失与重复计算问题",
+          "canonical_name": "失与重复计算问题",
+          "type": "topic",
+          "aliases": [
+            "失与重复计算问题"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "失与重复计算问题"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-小的持久工作记忆",
+          "name": "小的持久工作记忆",
+          "canonical_name": "小的持久工作记忆",
+          "type": "topic",
+          "aliases": [
+            "小的持久工作记忆"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "小的持久工作记忆"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-尝试提升跨步一致",
+          "name": "尝试提升跨步一致",
+          "canonical_name": "尝试提升跨步一致",
+          "type": "topic",
+          "aliases": [
+            "尝试提升跨步一致"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "尝试提升跨步一致"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-性与生成效率",
+          "name": "性与生成效率",
+          "canonical_name": "性与生成效率",
+          "type": "topic",
+          "aliases": [
+            "性与生成效率"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "性与生成效率"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:infra-entity-company-metastate",
+          "event_type": "infra",
+          "label": "MetaState 为离散扩散语言模型引入持久工作记忆，尝试提升跨步一致性与生成效率",
+          "summary": "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。",
+          "participants": [
+            {
+              "entity_id": "entity:company-metastate",
+              "name": "MetaState",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:topic-为离散扩散语言模",
+              "name": "为离散扩散语言模",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-以缓解跨步信息丢",
+              "name": "以缓解跨步信息丢",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-型引入持久工作记",
+              "name": "型引入持久工作记",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。"
+          ]
+        },
+        {
+          "event_id": "event:research-entity-company-metastate",
+          "event_type": "research",
+          "label": "MetaState 为离散扩散语言模型引入持久工作记忆，尝试提升跨步一致性与生成效率",
+          "summary": "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。",
+          "participants": [
+            {
+              "entity_id": "entity:company-metastate",
+              "name": "MetaState",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:topic-为离散扩散语言模",
+              "name": "为离散扩散语言模",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-以缓解跨步信息丢",
+              "name": "以缓解跨步信息丢",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-型引入持久工作记",
+              "name": "型引入持久工作记",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:7246736b1f64",
+          "source_entity_id": "entity:company-metastate",
+          "target_entity_id": "entity:topic-为离散扩散语言模",
+          "source_name": "MetaState",
+          "target_name": "为离散扩散语言模",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。"
+          ]
+        },
+        {
+          "relation_id": "relation:a0829c914681",
+          "source_entity_id": "entity:company-metastate",
+          "target_entity_id": "entity:topic-以缓解跨步信息丢",
+          "source_name": "MetaState",
+          "target_name": "以缓解跨步信息丢",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。"
+          ]
+        },
+        {
+          "relation_id": "relation:869c4fbabcb4",
+          "source_entity_id": "entity:company-metastate",
+          "target_entity_id": "entity:topic-型引入持久工作记",
+          "source_name": "MetaState",
+          "target_name": "型引入持久工作记",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "3 月 2 日提交的 MetaState 论文为离散扩散语言模型加入固定大小的持久工作记忆，以缓解跨步信息丢失与重复计算问题。"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "money",
+          "value": "8B"
+        },
+        {
+          "name": "money",
+          "value": "7B"
+        }
+      ],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "MetaState",
+          "为离散扩散语言模",
+          "以缓解跨步信息丢",
+          "型引入持久工作记",
+          "失与重复计算问题",
+          "小的持久工作记忆",
+          "尝试提升跨步一致",
+          "性与生成效率"
+        ],
+        "rule_event_types": [
+          "infra",
+          "research"
+        ]
+      }
+    },
+    {
+      "article_id": "2026-03-02-9",
+      "title": "观察：3 月 2 日的 AI 焦点不只是产品更新，而是“治理、稳定性与商业化结构”同步前移",
+      "source": "TechCrunch",
+      "date": "2026-03-02",
+      "category": [
+        "观察"
+      ],
+      "url": "https://techcrunch.com/2026/03/02/users-are-ditching-chatgpt-for-claude-heres-how-to-make-the-switch/",
+      "summary": "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。",
+      "why_it_matters": "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。",
+      "entities": [
+        {
+          "entity_id": "entity:topic-化结构设计",
+          "name": "化结构设计",
+          "canonical_name": "化结构设计",
+          "type": "topic",
+          "aliases": [
+            "化结构设计"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "化结构设计"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-单纯拼模型能力",
+          "name": "单纯拼模型能力",
+          "canonical_name": "单纯拼模型能力",
+          "type": "topic",
+          "aliases": [
+            "单纯拼模型能力"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "单纯拼模型能力"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-同步前移",
+          "name": "同步前移",
+          "canonical_name": "同步前移",
+          "type": "topic",
+          "aliases": [
+            "同步前移"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "同步前移"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-日的",
+          "name": "日的",
+          "canonical_name": "日的",
+          "type": "topic",
+          "aliases": [
+            "日的"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "日的"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-日的多条新闻看",
+          "name": "日的多条新闻看",
+          "canonical_name": "日的多条新闻看",
+          "type": "topic",
+          "aliases": [
+            "日的多条新闻看"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "日的多条新闻看"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-服务稳定性与商业",
+          "name": "服务稳定性与商业",
+          "canonical_name": "服务稳定性与商业",
+          "type": "topic",
+          "aliases": [
+            "服务稳定性与商业"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "服务稳定性与商业"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-治理",
+          "name": "治理",
+          "canonical_name": "治理",
+          "type": "topic",
+          "aliases": [
+            "治理"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "治理"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-焦点不只是产品更",
+          "name": "焦点不只是产品更",
+          "canonical_name": "焦点不只是产品更",
+          "type": "topic",
+          "aliases": [
+            "焦点不只是产品更"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "焦点不只是产品更"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:trend-entity-topic-化结构设计",
+          "event_type": "trend",
+          "label": "观察：3 月 2 日的 AI 焦点不只是产品更新，而是“治理、稳定性与商业化结构”同步前移",
+          "summary": "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。",
+          "participants": [
+            {
+              "entity_id": "entity:topic-化结构设计",
+              "name": "化结构设计",
+              "type": "topic",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:topic-单纯拼模型能力",
+              "name": "单纯拼模型能力",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-同步前移",
+              "name": "同步前移",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-日的",
+              "name": "日的",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。"
+          ]
+        },
+        {
+          "event_id": "event:security-entity-topic-化结构设计",
+          "event_type": "security",
+          "label": "观察：3 月 2 日的 AI 焦点不只是产品更新，而是“治理、稳定性与商业化结构”同步前移",
+          "summary": "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。",
+          "participants": [
+            {
+              "entity_id": "entity:topic-化结构设计",
+              "name": "化结构设计",
+              "type": "topic",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:topic-单纯拼模型能力",
+              "name": "单纯拼模型能力",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-同步前移",
+              "name": "同步前移",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-日的",
+              "name": "日的",
+              "type": "topic",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:d3f6624f1a7b",
+          "source_entity_id": "entity:topic-化结构设计",
+          "target_entity_id": "entity:topic-单纯拼模型能力",
+          "source_name": "化结构设计",
+          "target_name": "单纯拼模型能力",
+          "relation_type": "trend",
+          "weight": 1,
+          "evidence": [
+            "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。"
+          ]
+        },
+        {
+          "relation_id": "relation:b998641d2178",
+          "source_entity_id": "entity:topic-化结构设计",
+          "target_entity_id": "entity:topic-同步前移",
+          "source_name": "化结构设计",
+          "target_name": "同步前移",
+          "relation_type": "trend",
+          "weight": 1,
+          "evidence": [
+            "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。"
+          ]
+        },
+        {
+          "relation_id": "relation:a262bf5fbd4b",
+          "source_entity_id": "entity:topic-化结构设计",
+          "target_entity_id": "entity:topic-日的",
+          "source_name": "化结构设计",
+          "target_name": "日的",
+          "relation_type": "trend",
+          "weight": 1,
+          "evidence": [
+            "从 3 月 2 日的多条新闻看，AI 行业关注点正在从单纯拼模型能力，进一步转向治理边界、服务稳定性与商业化结构设计。"
+          ]
+        }
+      ],
+      "metrics": [],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "化结构设计",
+          "单纯拼模型能力",
+          "同步前移",
+          "日的",
+          "日的多条新闻看",
+          "服务稳定性与商业",
+          "治理",
+          "焦点不只是产品更"
+        ],
+        "rule_event_types": [
+          "trend",
+          "security"
+        ]
+      }
+    }
+  ],
+  "generated_at": "2026-03-27T02:35:35Z",
+  "analysis_window": {
+    "start_date": "2026-03-02",
+    "end_date": "2026-03-02",
+    "days": 30
+  },
+  "clue_packets": [
+    {
+      "clue_id": "clue:33740d19c8ec",
+      "title": "Anthropic / Responsible Scaling Policy / 以更细化的能力阈 / 作的新争论",
+      "time_window": {
+        "start_date": "2026-03-02",
+        "end_date": "2026-03-02"
+      },
+      "core_entities": [
+        "Anthropic",
+        "Responsible Scaling Policy",
+        "以更细化的能力阈",
+        "作的新争论"
+      ],
+      "event_types": [
+        "security",
+        "launch",
+        "policy"
+      ],
+      "dominant_category": "安全",
+      "summary": "在 2026-03-02 至 2026-03-02 内，Anthropic、Responsible Scaling Policy、以更细化的能力阈 围绕重复出现的事件与实体关系形成稳定线索。",
+      "trend_signals": [
+        "security 信号在该主题中最集中。",
+        "证据新闻共 2 条，主导分类为 安全。",
+        "该主题在当前窗口内新成型，值得继续观察是否会跨天延续。"
+      ],
+      "change": {
+        "direction": "new",
+        "current_article_count": 2,
+        "previous_article_count": 0,
+        "summary": "该主题在当前窗口内新成型，值得继续观察是否会跨天延续。"
+      },
+      "evidence_article_ids": [
+        "2026-03-02-1",
+        "2026-03-02-0"
+      ],
+      "focus_node_ids": [
+        "article:2026-03-02-0",
+        "article:2026-03-02-1",
+        "category:安全",
+        "category:应用-产业",
+        "entity:company-anthropic",
+        "entity:policy-responsible-scaling-policy",
+        "entity:topic-以更细化的能力阈",
+        "entity:topic-作的新争论",
+        "entity:topic-值和安全案例方法",
+        "entity:topic-公司与政府合作的",
+        "entity:topic-公司如何与政府协",
+        "entity:topic-则因监控与自主武",
+        "entity:topic-器条款退场",
+        "entity:topic-围绕五角大楼合作",
+        "entity:topic-强化前沿模型灾难",
+        "entity:topic-性风险治理框架",
+        "entity:topic-日发布新版",
+        "entity:topic-更新",
+        "event:launch-entity-company-anthropic",
+        "event:policy-entity-company-anthropic",
+        "event:security-entity-company-anthropic",
+        "source:anthropic",
+        "source:techcrunch"
+      ],
+      "focus_edge_ids": [
+        "edge:article:2026-03-02-0->category:安全",
+        "edge:article:2026-03-02-0->entity:company-anthropic",
+        "edge:article:2026-03-02-0->entity:policy-responsible-scaling-policy",
+        "edge:article:2026-03-02-0->entity:topic-以更细化的能力阈",
+        "edge:article:2026-03-02-0->entity:topic-值和安全案例方法",
+        "edge:article:2026-03-02-0->entity:topic-强化前沿模型灾难",
+        "edge:article:2026-03-02-0->entity:topic-性风险治理框架",
+        "edge:article:2026-03-02-0->entity:topic-日发布新版",
+        "edge:article:2026-03-02-0->entity:topic-更新",
+        "edge:article:2026-03-02-0->event:policy-entity-company-anthropic",
+        "edge:article:2026-03-02-0->event:security-entity-company-anthropic",
+        "edge:article:2026-03-02-0->source:anthropic",
+        "edge:article:2026-03-02-1->category:安全",
+        "edge:article:2026-03-02-1->category:应用-产业",
+        "edge:article:2026-03-02-1->entity:company-anthropic",
+        "edge:article:2026-03-02-1->entity:topic-作的新争论",
+        "edge:article:2026-03-02-1->entity:topic-公司与政府合作的",
+        "edge:article:2026-03-02-1->entity:topic-公司如何与政府协",
+        "edge:article:2026-03-02-1->entity:topic-则因监控与自主武",
+        "edge:article:2026-03-02-1->entity:topic-器条款退场",
+        "edge:article:2026-03-02-1->entity:topic-围绕五角大楼合作",
+        "edge:article:2026-03-02-1->event:launch-entity-company-anthropic",
+        "edge:article:2026-03-02-1->event:security-entity-company-anthropic",
+        "edge:article:2026-03-02-1->source:techcrunch",
+        "edge:entity:company-anthropic->entity:policy-responsible-scaling-policy:security",
+        "edge:entity:company-anthropic->entity:topic-以更细化的能力阈:security",
+        "edge:entity:company-anthropic->entity:topic-作的新争论:security",
+        "edge:entity:company-anthropic->entity:topic-值和安全案例方法:security",
+        "edge:entity:company-anthropic->entity:topic-公司与政府合作的:security",
+        "edge:event:launch-entity-company-anthropic->entity:company-anthropic",
+        "edge:event:launch-entity-company-anthropic->entity:topic-作的新争论",
+        "edge:event:launch-entity-company-anthropic->entity:topic-公司与政府合作的",
+        "edge:event:policy-entity-company-anthropic->entity:company-anthropic",
+        "edge:event:policy-entity-company-anthropic->entity:policy-responsible-scaling-policy",
+        "edge:event:policy-entity-company-anthropic->entity:topic-以更细化的能力阈",
+        "edge:event:policy-entity-company-anthropic->entity:topic-值和安全案例方法",
+        "edge:event:security-entity-company-anthropic->entity:company-anthropic",
+        "edge:event:security-entity-company-anthropic->entity:policy-responsible-scaling-policy",
+        "edge:event:security-entity-company-anthropic->entity:topic-以更细化的能力阈",
+        "edge:event:security-entity-company-anthropic->entity:topic-作的新争论",
+        "edge:event:security-entity-company-anthropic->entity:topic-值和安全案例方法",
+        "edge:event:security-entity-company-anthropic->entity:topic-公司与政府合作的"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "data": {
+              "id": "article:2026-03-02-0",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+              "type": "article",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "subtype": "安全",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:anthropic",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "Anthropic",
+              "type": "source",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "category:安全",
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1",
+                "2026-03-02-3"
+              ],
+              "label": "安全",
+              "type": "category",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:company-anthropic",
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1"
+              ],
+              "label": "Anthropic",
+              "type": "entity",
+              "subtype": "company",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "Anthropic"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:policy-responsible-scaling-policy",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "Responsible Scaling Policy",
+              "type": "entity",
+              "subtype": "policy",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "Responsible Scaling Policy"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-以更细化的能力阈",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "以更细化的能力阈",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "以更细化的能力阈"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-值和安全案例方法",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "值和安全案例方法",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "值和安全案例方法"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-强化前沿模型灾难",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "强化前沿模型灾难",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "强化前沿模型灾难"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-性风险治理框架",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "性风险治理框架",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "性风险治理框架"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-日发布新版",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "日发布新版",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "日发布新版"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-更新",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "更新",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "aliases": [
+                "更新"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "event:security-entity-company-anthropic",
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1"
+              ],
+              "label": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+              "type": "event",
+              "subtype": "security",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "event:policy-entity-company-anthropic",
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "label": "Anthropic 更新 Responsible Scaling Policy，强化前沿模型灾难性风险治理框架",
+              "type": "event",
+              "subtype": "policy",
+              "summary": "Anthropic 在 3 月 2 日发布新版 Responsible Scaling Policy，以更细化的能力阈值和安全案例方法更新前沿模型风险治理框架。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-03-02-1",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+              "type": "article",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "subtype": "应用/产业",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:techcrunch",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2",
+                "2026-03-02-3",
+                "2026-03-02-4",
+                "2026-03-02-5",
+                "2026-03-02-6",
+                "2026-03-02-9"
+              ],
+              "label": "TechCrunch",
+              "type": "source",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "category:应用-产业",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2",
+                "2026-03-02-4",
+                "2026-03-02-5",
+                "2026-03-02-6"
+              ],
+              "label": "应用/产业",
+              "type": "category",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-作的新争论",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "作的新争论",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "作的新争论"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-公司与政府合作的",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "公司与政府合作的",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "公司与政府合作的"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-公司如何与政府协",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "公司如何与政府协",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "公司如何与政府协"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-则因监控与自主武",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "则因监控与自主武",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "则因监控与自主武"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-器条款退场",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "器条款退场",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "器条款退场"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-围绕五角大楼合作",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "围绕五角大楼合作",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "围绕五角大楼合作"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "event:launch-entity-company-anthropic",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+              "type": "event",
+              "subtype": "launch",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "weight": 1.4
+            }
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->source:anthropic",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "source:anthropic",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->category:安全",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "category:安全",
+              "type": "article-category",
+              "label": "安全"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:company-anthropic",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:company-anthropic",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:policy-responsible-scaling-policy",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:policy-responsible-scaling-policy",
+              "type": "article-entity",
+              "label": "policy"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-以更细化的能力阈",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-以更细化的能力阈",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-值和安全案例方法",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-值和安全案例方法",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-强化前沿模型灾难",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-强化前沿模型灾难",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-性风险治理框架",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-性风险治理框架",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-日发布新版",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-日发布新版",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->entity:topic-更新",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "entity:topic-更新",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->event:security-entity-company-anthropic",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "event:security-entity-company-anthropic",
+              "type": "article-event",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:company-anthropic",
+              "weight": 4.0,
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:company-anthropic",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:policy-responsible-scaling-policy",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:policy-responsible-scaling-policy",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:topic-以更细化的能力阈",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:topic-以更细化的能力阈",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:topic-值和安全案例方法",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:topic-值和安全案例方法",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-0->event:policy-entity-company-anthropic",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "article:2026-03-02-0",
+              "target": "event:policy-entity-company-anthropic",
+              "type": "article-event",
+              "label": "policy"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:policy-entity-company-anthropic->entity:company-anthropic",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:policy-entity-company-anthropic",
+              "target": "entity:company-anthropic",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:policy-entity-company-anthropic->entity:policy-responsible-scaling-policy",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:policy-entity-company-anthropic",
+              "target": "entity:policy-responsible-scaling-policy",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:policy-entity-company-anthropic->entity:topic-以更细化的能力阈",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:policy-entity-company-anthropic",
+              "target": "entity:topic-以更细化的能力阈",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:policy-entity-company-anthropic->entity:topic-值和安全案例方法",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "event:policy-entity-company-anthropic",
+              "target": "entity:topic-值和安全案例方法",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:policy-responsible-scaling-policy:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:policy-responsible-scaling-policy",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:topic-以更细化的能力阈:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:topic-以更细化的能力阈",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:topic-值和安全案例方法:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-0"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:topic-值和安全案例方法",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->source:techcrunch",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "source:techcrunch",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->category:应用-产业",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "category:应用-产业",
+              "type": "article-category",
+              "label": "应用/产业"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->category:安全",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "category:安全",
+              "type": "article-category",
+              "label": "安全"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:company-anthropic",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:company-anthropic",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-作的新争论",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-作的新争论",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-公司与政府合作的",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-公司与政府合作的",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-公司如何与政府协",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-公司如何与政府协",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-则因监控与自主武",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-则因监控与自主武",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-器条款退场",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-器条款退场",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:topic-围绕五角大楼合作",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:topic-围绕五角大楼合作",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->event:security-entity-company-anthropic",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "event:security-entity-company-anthropic",
+              "type": "article-event",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:topic-作的新争论",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:topic-作的新争论",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:security-entity-company-anthropic->entity:topic-公司与政府合作的",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:security-entity-company-anthropic",
+              "target": "entity:topic-公司与政府合作的",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->event:launch-entity-company-anthropic",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "event:launch-entity-company-anthropic",
+              "type": "article-event",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-company-anthropic->entity:company-anthropic",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:launch-entity-company-anthropic",
+              "target": "entity:company-anthropic",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-company-anthropic->entity:topic-作的新争论",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:launch-entity-company-anthropic",
+              "target": "entity:topic-作的新争论",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-company-anthropic->entity:topic-公司与政府合作的",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "event:launch-entity-company-anthropic",
+              "target": "entity:topic-公司与政府合作的",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:topic-作的新争论:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:topic-作的新争论",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:company-anthropic->entity:topic-公司与政府合作的:security",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "entity:company-anthropic",
+              "target": "entity:topic-公司与政府合作的",
+              "type": "explicit-relation",
+              "label": "security"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clue_id": "clue:4a84aa8ad869",
+      "title": "ChatGPT / OpenAI / Sensor Tower / 上升",
+      "time_window": {
+        "start_date": "2026-03-02",
+        "end_date": "2026-03-02"
+      },
+      "core_entities": [
+        "ChatGPT",
+        "OpenAI",
+        "Sensor Tower",
+        "上升"
+      ],
+      "event_types": [
+        "launch",
+        "partnership"
+      ],
+      "dominant_category": "应用/产业",
+      "summary": "在 2026-03-02 至 2026-03-02 内，ChatGPT、OpenAI、Sensor Tower 围绕重复出现的事件与实体关系形成稳定线索。",
+      "trend_signals": [
+        "launch 信号在该主题中最集中。",
+        "证据新闻共 2 条，主导分类为 应用/产业。",
+        "该主题在当前窗口内新成型，值得继续观察是否会跨天延续。"
+      ],
+      "change": {
+        "direction": "new",
+        "current_article_count": 2,
+        "previous_article_count": 0,
+        "summary": "该主题在当前窗口内新成型，值得继续观察是否会跨天延续。"
+      },
+      "evidence_article_ids": [
+        "2026-03-02-2",
+        "2026-03-02-1"
+      ],
+      "focus_node_ids": [
+        "article:2026-03-02-1",
+        "article:2026-03-02-2",
+        "category:安全",
+        "category:应用-产业",
+        "entity:company-openai",
+        "entity:model-chatgpt",
+        "entity:person-sensor-tower",
+        "entity:topic-上升",
+        "entity:topic-产品份额",
+        "entity:topic-卸载量在国防合作",
+        "entity:topic-国防合作消息传出",
+        "entity:topic-在美国的移动端卸",
+        "event:launch-entity-model-chatgpt",
+        "event:partnership-entity-model-chatgpt",
+        "source:techcrunch"
+      ],
+      "focus_edge_ids": [
+        "edge:article:2026-03-02-1->category:安全",
+        "edge:article:2026-03-02-1->category:应用-产业",
+        "edge:article:2026-03-02-1->entity:company-openai",
+        "edge:article:2026-03-02-1->source:techcrunch",
+        "edge:article:2026-03-02-2->category:应用-产业",
+        "edge:article:2026-03-02-2->entity:company-openai",
+        "edge:article:2026-03-02-2->entity:model-chatgpt",
+        "edge:article:2026-03-02-2->entity:person-sensor-tower",
+        "edge:article:2026-03-02-2->entity:topic-上升",
+        "edge:article:2026-03-02-2->entity:topic-产品份额",
+        "edge:article:2026-03-02-2->entity:topic-卸载量在国防合作",
+        "edge:article:2026-03-02-2->entity:topic-国防合作消息传出",
+        "edge:article:2026-03-02-2->entity:topic-在美国的移动端卸",
+        "edge:article:2026-03-02-2->event:launch-entity-model-chatgpt",
+        "edge:article:2026-03-02-2->event:partnership-entity-model-chatgpt",
+        "edge:article:2026-03-02-2->source:techcrunch",
+        "edge:entity:model-chatgpt->entity:company-openai:launch",
+        "edge:entity:model-chatgpt->entity:person-sensor-tower:launch",
+        "edge:entity:model-chatgpt->entity:topic-上升:launch",
+        "edge:event:launch-entity-model-chatgpt->entity:company-openai",
+        "edge:event:launch-entity-model-chatgpt->entity:model-chatgpt",
+        "edge:event:launch-entity-model-chatgpt->entity:person-sensor-tower",
+        "edge:event:launch-entity-model-chatgpt->entity:topic-上升",
+        "edge:event:partnership-entity-model-chatgpt->entity:company-openai",
+        "edge:event:partnership-entity-model-chatgpt->entity:model-chatgpt",
+        "edge:event:partnership-entity-model-chatgpt->entity:person-sensor-tower",
+        "edge:event:partnership-entity-model-chatgpt->entity:topic-上升"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "data": {
+              "id": "category:安全",
+              "article_ids": [
+                "2026-03-02-0",
+                "2026-03-02-1",
+                "2026-03-02-3"
+              ],
+              "label": "安全",
+              "type": "category",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-03-02-1",
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "label": "OpenAI 与 Anthropic 围绕五角大楼合作的分歧，引发 AI 公司如何与政府协作的新争论",
+              "type": "article",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "subtype": "应用/产业",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:techcrunch",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2",
+                "2026-03-02-3",
+                "2026-03-02-4",
+                "2026-03-02-5",
+                "2026-03-02-6",
+                "2026-03-02-9"
+              ],
+              "label": "TechCrunch",
+              "type": "source",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "category:应用-产业",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2",
+                "2026-03-02-4",
+                "2026-03-02-5",
+                "2026-03-02-6"
+              ],
+              "label": "应用/产业",
+              "type": "category",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:company-openai",
+              "article_ids": [
+                "2026-03-02-1",
+                "2026-03-02-2"
+              ],
+              "label": "OpenAI",
+              "type": "entity",
+              "subtype": "company",
+              "summary": "OpenAI 接下五角大楼合同、Anthropic 则因监控与自主武器条款退场，这场分歧把 AI 公司与政府合作的边界问题推到台前。",
+              "aliases": [
+                "OpenAI"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-03-02-2",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+              "type": "article",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "subtype": "应用/产业",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "entity:model-chatgpt",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "ChatGPT",
+              "type": "entity",
+              "subtype": "model",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "ChatGPT"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:person-sensor-tower",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "Sensor Tower",
+              "type": "entity",
+              "subtype": "person",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "Sensor Tower"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-上升",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "上升",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "上升"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-产品份额",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "产品份额",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "产品份额"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-卸载量在国防合作",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "卸载量在国防合作",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "卸载量在国防合作"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-国防合作消息传出",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "国防合作消息传出",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "国防合作消息传出"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-在美国的移动端卸",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "在美国的移动端卸",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "aliases": [
+                "在美国的移动端卸"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "event:launch-entity-model-chatgpt",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+              "type": "event",
+              "subtype": "launch",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "event:partnership-entity-model-chatgpt",
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "label": "ChatGPT 卸载量在国防合作消息后激增，用户价值观开始直接影响 AI 产品份额",
+              "type": "event",
+              "subtype": "partnership",
+              "summary": "Sensor Tower 数据显示，OpenAI 国防合作消息传出后，ChatGPT 在美国的移动端卸载量短时间内大幅上升。",
+              "weight": 1.4
+            }
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->source:techcrunch",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "source:techcrunch",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->category:应用-产业",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "category:应用-产业",
+              "type": "article-category",
+              "label": "应用/产业"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->category:安全",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "category:安全",
+              "type": "article-category",
+              "label": "安全"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-1->entity:company-openai",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-1"
+              ],
+              "source": "article:2026-03-02-1",
+              "target": "entity:company-openai",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->source:techcrunch",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "source:techcrunch",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->category:应用-产业",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "category:应用-产业",
+              "type": "article-category",
+              "label": "应用/产业"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:model-chatgpt",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:model-chatgpt",
+              "type": "article-entity",
+              "label": "model"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:company-openai",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:company-openai",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:person-sensor-tower",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:person-sensor-tower",
+              "type": "article-entity",
+              "label": "person"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-上升",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-上升",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-产品份额",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-产品份额",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-卸载量在国防合作",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-卸载量在国防合作",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-国防合作消息传出",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-国防合作消息传出",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->entity:topic-在美国的移动端卸",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "entity:topic-在美国的移动端卸",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->event:launch-entity-model-chatgpt",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "event:launch-entity-model-chatgpt",
+              "type": "article-event",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-model-chatgpt->entity:model-chatgpt",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:launch-entity-model-chatgpt",
+              "target": "entity:model-chatgpt",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-model-chatgpt->entity:company-openai",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:launch-entity-model-chatgpt",
+              "target": "entity:company-openai",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-model-chatgpt->entity:person-sensor-tower",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:launch-entity-model-chatgpt",
+              "target": "entity:person-sensor-tower",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-model-chatgpt->entity:topic-上升",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:launch-entity-model-chatgpt",
+              "target": "entity:topic-上升",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-02-2->event:partnership-entity-model-chatgpt",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "article:2026-03-02-2",
+              "target": "event:partnership-entity-model-chatgpt",
+              "type": "article-event",
+              "label": "partnership"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:partnership-entity-model-chatgpt->entity:model-chatgpt",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:partnership-entity-model-chatgpt",
+              "target": "entity:model-chatgpt",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:partnership-entity-model-chatgpt->entity:company-openai",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:partnership-entity-model-chatgpt",
+              "target": "entity:company-openai",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:partnership-entity-model-chatgpt->entity:person-sensor-tower",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:partnership-entity-model-chatgpt",
+              "target": "entity:person-sensor-tower",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:partnership-entity-model-chatgpt->entity:topic-上升",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "event:partnership-entity-model-chatgpt",
+              "target": "entity:topic-上升",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:model-chatgpt->entity:company-openai:launch",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "entity:model-chatgpt",
+              "target": "entity:company-openai",
+              "type": "explicit-relation",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:model-chatgpt->entity:person-sensor-tower:launch",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "entity:model-chatgpt",
+              "target": "entity:person-sensor-tower",
+              "type": "explicit-relation",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:model-chatgpt->entity:topic-上升:launch",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-02-2"
+              ],
+              "source": "entity:model-chatgpt",
+              "target": "entity:topic-上升",
+              "type": "explicit-relation",
+              "label": "launch"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "graph_stats": {
+    "node_count": 116,
+    "edge_count": 235,
+    "clue_count": 2
+  }
+}

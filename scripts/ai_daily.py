@@ -16,6 +16,8 @@ import urllib.request
 from typing import Iterable
 from urllib.parse import urljoin
 
+import static_pipeline
+
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PROMPTS_DIR = ROOT / "prompts"
@@ -867,7 +869,6 @@ def load_items_from_json(raw: str, expected_day: str) -> tuple[str, list[NewsIte
 
 def update_manifest(date_str: str) -> None:
     manifest_path = NEWS_DIR / "manifest.js"
-    target_version = date_str.replace("-", "")
 
     files = [path.name for path in NEWS_DIR.glob("*.md") if path.is_file()]
 
@@ -878,6 +879,8 @@ def update_manifest(date_str: str) -> None:
         return (1, name)
 
     files = sorted(set(files), key=sort_key, reverse=True)
+    latest_date = next((name[:-3] for name in files if re.fullmatch(r"\d{4}-\d{2}-\d{2}\.md", name)), date_str)
+    target_version = latest_date.replace("-", "")
     rendered_files = ",\n".join(f"    '{name}'" for name in files)
     content = (
         "window.NEWS_MANIFEST = {\n"
@@ -888,7 +891,7 @@ def update_manifest(date_str: str) -> None:
         "  ]\n"
         "};\n"
     )
-    manifest_path.write_text(content, encoding="utf-8")
+    manifest_path.write_text(content, encoding="utf-8", newline="\n")
 
 
 def read_input_text(path: str | None) -> str:
@@ -919,9 +922,10 @@ def cmd_collect(args: argparse.Namespace) -> int:
             output_path.write_text(
                 json.dumps([item.to_dict() for item in candidates], ensure_ascii=False, indent=2) + "\n",
                 encoding="utf-8",
+                newline="\n",
             )
         else:
-            output_path.write_text(render_candidates_markdown(candidates), encoding="utf-8")
+            output_path.write_text(render_candidates_markdown(candidates), encoding="utf-8", newline="\n")
 
     if args.format == "json":
         json.dump([item.to_dict() for item in candidates], sys.stdout, ensure_ascii=False, indent=2)
@@ -998,15 +1002,122 @@ def cmd_publish(args: argparse.Namespace) -> int:
         raise CliError("发布失败，校验未通过：\n" + "\n".join(f"- {error}" for error in errors))
 
     news_path = NEWS_DIR / f"{date_str}.md"
-    news_path.write_text(markdown, encoding="utf-8")
+    news_path.write_text(markdown, encoding="utf-8", newline="\n")
     update_manifest(date_str)
+
+    rebuild_result = static_pipeline.rebuild_static_outputs(
+        ROOT,
+        window_days=args.window_days,
+        kg_llm_dir=pathlib.Path(args.kg_llm_dir) if args.kg_llm_dir else None,
+        insight_input_dir=pathlib.Path(args.insight_input_dir) if args.insight_input_dir else None,
+    )
 
     print(f"已写入 {news_path}")
     print(f"已更新 {(NEWS_DIR / 'manifest.js')}")
+    print(f"已生成 {(ROOT / 'kg')}")
+    print(f"已生成 {(ROOT / 'insights')}")
+    print(f"已更新 {(ROOT / 'memory')}")
+    if rebuild_result.get("kg_payloads"):
+        print(f"KG 日产物数量：{len(rebuild_result['kg_payloads'])}")
+    if rebuild_result.get("insight_reports"):
+        print(f"洞察报告数量：{len(rebuild_result['insight_reports'])}")
     if errors:
         print("注意：已使用 --force 发布，以下校验问题仍然存在：")
         for error in errors:
             print(f"- {error}")
+    return 0
+
+
+def require_date_or_all(args: argparse.Namespace) -> tuple[str | None, set[str] | None]:
+    if getattr(args, "all", False):
+        return None, None
+    if not getattr(args, "date", None):
+        raise CliError("请提供 --date YYYY-MM-DD，或使用 --all")
+    date_str = parse_target_date(args.date)
+    return date_str, {date_str}
+
+
+def write_text_command_result(text: str, output: str | None) -> int:
+    output_path = pathlib.Path(output) if output else None
+    static_pipeline.write_text_output(text, output_path)
+    if not output:
+        sys.stdout.write(text)
+    elif sys.stdout.isatty():
+        print(f"已写入 {output_path}")
+    return 0
+
+
+def cmd_kg_prompt(args: argparse.Namespace) -> int:
+    date_str = parse_target_date(args.date)
+    text = static_pipeline.render_kg_prompt(ROOT, date_str)
+    return write_text_command_result(text, args.output)
+
+
+def cmd_kg_build(args: argparse.Namespace) -> int:
+    date_str, days_filter = require_date_or_all(args)
+    payloads = static_pipeline.build_kg_artifacts(
+        ROOT,
+        days_filter=days_filter,
+        window_days=args.window_days,
+        kg_llm_dir=pathlib.Path(args.kg_llm_dir) if args.kg_llm_dir else None,
+        kg_llm_input=pathlib.Path(args.input) if args.input else None,
+    )
+    print(f"已更新 KG 产物目录：{ROOT / 'kg'}")
+    if date_str:
+        print(f"目标日期：{date_str}")
+    print(f"当前已生成 {len(payloads)} 份 KG 日产物")
+    return 0
+
+
+def cmd_insight_prompt(args: argparse.Namespace) -> int:
+    date_str = parse_target_date(args.date)
+    text = static_pipeline.render_insight_prompt(ROOT, date_str, window_days=args.window_days)
+    return write_text_command_result(text, args.output)
+
+
+def cmd_insight_build(args: argparse.Namespace) -> int:
+    date_str, days_filter = require_date_or_all(args)
+    kg_payloads = static_pipeline.build_kg_artifacts(
+        ROOT,
+        window_days=args.window_days,
+        kg_llm_dir=pathlib.Path(args.kg_llm_dir) if args.kg_llm_dir else None,
+    )
+    reports = static_pipeline.build_insight_artifacts(
+        ROOT,
+        kg_payloads,
+        days_filter=days_filter,
+        window_days=args.window_days,
+        insight_input_dir=pathlib.Path(args.input_dir) if args.input_dir else None,
+        insight_input=pathlib.Path(args.input) if args.input else None,
+    )
+    static_pipeline.refresh_memory(ROOT, end_day=date_str, kg_payloads=kg_payloads, insight_reports=reports, window_days=args.window_days)
+    print(f"已更新洞察目录：{ROOT / 'insights'}")
+    if date_str:
+        print(f"目标日期：{date_str}")
+    print(f"当前已生成 {len(reports)} 份洞察报告")
+    return 0
+
+
+def cmd_memory_refresh(args: argparse.Namespace) -> int:
+    date_str = parse_target_date(args.date) if args.date else None
+    payloads = static_pipeline.refresh_memory(ROOT, end_day=date_str, window_days=args.window_days)
+    print(f"已更新 {(ROOT / 'memory' / 'recent.json')}")
+    print(f"已更新 {(ROOT / 'memory' / 'archive.json')}")
+    print(f"近期详细信号数：{len(payloads['recent'].get('signals', []))}")
+    print(f"长期压缩周期数：{len(payloads['archive'].get('periods', []))}")
+    return 0
+
+
+def cmd_repair_static(args: argparse.Namespace) -> int:
+    result = static_pipeline.rebuild_static_outputs(
+        ROOT,
+        window_days=args.window_days,
+        kg_llm_dir=pathlib.Path(args.kg_llm_dir) if args.kg_llm_dir else None,
+        insight_input_dir=pathlib.Path(args.insight_input_dir) if args.insight_input_dir else None,
+    )
+    print(f"已重建静态产物：{ROOT / 'kg'}、{ROOT / 'insights'}、{ROOT / 'memory'}")
+    print(f"KG 产物数：{len(result.get('kg_payloads', {}))}")
+    print(f"洞察报告数：{len(result.get('insight_reports', {}))}")
     return 0
 
 
@@ -1021,6 +1132,10 @@ def build_parser() -> argparse.ArgumentParser:
               python scripts/ai_daily.py prompt --date 2026-03-17 > prompt.txt
               python scripts/ai_daily.py validate --input news/2026-03-17.md
               python scripts/ai_daily.py publish --date 2026-03-17 --input draft.md
+              python scripts/ai_daily.py kg-prompt --date 2026-03-17 > kg-prompt.md
+              python scripts/ai_daily.py insight-prompt --date 2026-03-17 > insights-prompt.md
+              python scripts/ai_daily.py insight-build --date 2026-03-17
+              python scripts/ai_daily.py repair-static
             """
         ),
     )
@@ -1094,7 +1209,49 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="即使校验失败也继续写入文件和 manifest",
     )
+    publish_parser.add_argument("--window-days", type=int, default=30, help="滚动窗口天数，默认 30")
+    publish_parser.add_argument("--kg-llm-dir", help="可选：按天存放 KG LLM 抽取 JSON 的目录")
+    publish_parser.add_argument("--insight-input-dir", help="可选：按天存放洞察 Agent JSON 输出的目录")
     publish_parser.set_defaults(func=cmd_publish)
+
+    kg_prompt_parser = subparsers.add_parser("kg-prompt", help="生成知识图谱抽取 prompt")
+    kg_prompt_parser.add_argument("--date", required=True, help="目标日期，格式 YYYY-MM-DD")
+    kg_prompt_parser.add_argument("--output", help="可选：写入 prompt 文件")
+    kg_prompt_parser.set_defaults(func=cmd_kg_prompt)
+
+    kg_build_parser = subparsers.add_parser("kg-build", help="生成静态 KG 日产物")
+    kg_build_parser.add_argument("--date", help="目标日期，格式 YYYY-MM-DD")
+    kg_build_parser.add_argument("--all", action="store_true", help="重建全部 KG 日产物")
+    kg_build_parser.add_argument("--window-days", type=int, default=30, help="滚动窗口天数，默认 30")
+    kg_build_parser.add_argument("--input", help="可选：单日 KG LLM JSON 输入")
+    kg_build_parser.add_argument("--kg-llm-dir", help="可选：按天存放 KG LLM 抽取 JSON 的目录")
+    kg_build_parser.set_defaults(func=cmd_kg_build)
+
+    insight_prompt_parser = subparsers.add_parser("insight-prompt", help="生成洞察报告 prompt")
+    insight_prompt_parser.add_argument("--date", required=True, help="目标日期，格式 YYYY-MM-DD")
+    insight_prompt_parser.add_argument("--window-days", type=int, default=30, help="滚动窗口天数，默认 30")
+    insight_prompt_parser.add_argument("--output", help="可选：写入 prompt 文件")
+    insight_prompt_parser.set_defaults(func=cmd_insight_prompt)
+
+    insight_build_parser = subparsers.add_parser("insight-build", help="生成静态洞察报告")
+    insight_build_parser.add_argument("--date", help="目标日期，格式 YYYY-MM-DD")
+    insight_build_parser.add_argument("--all", action="store_true", help="重建全部洞察报告")
+    insight_build_parser.add_argument("--window-days", type=int, default=30, help="滚动窗口天数，默认 30")
+    insight_build_parser.add_argument("--input", help="可选：单日洞察 Agent JSON 输出")
+    insight_build_parser.add_argument("--input-dir", help="可选：按天存放洞察 Agent JSON 输出的目录")
+    insight_build_parser.add_argument("--kg-llm-dir", help="可选：按天存放 KG LLM 抽取 JSON 的目录")
+    insight_build_parser.set_defaults(func=cmd_insight_build)
+
+    memory_refresh_parser = subparsers.add_parser("memory-refresh", help="刷新近期/长期记忆静态文件")
+    memory_refresh_parser.add_argument("--date", help="可选：以该日期作为记忆窗口终点，格式 YYYY-MM-DD")
+    memory_refresh_parser.add_argument("--window-days", type=int, default=30, help="近期详细记忆窗口天数，默认 30")
+    memory_refresh_parser.set_defaults(func=cmd_memory_refresh)
+
+    repair_parser = subparsers.add_parser("repair-static", help="重建全部静态 KG / 洞察 / 记忆产物")
+    repair_parser.add_argument("--window-days", type=int, default=30, help="滚动窗口天数，默认 30")
+    repair_parser.add_argument("--kg-llm-dir", help="可选：按天存放 KG LLM 抽取 JSON 的目录")
+    repair_parser.add_argument("--insight-input-dir", help="可选：按天存放洞察 Agent JSON 输出的目录")
+    repair_parser.set_defaults(func=cmd_repair_static)
 
     return parser
 
