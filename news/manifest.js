@@ -1,7 +1,8 @@
 window.NEWS_MANIFEST = {
   // Update version after publishing a daily brief.
-  version: '20260412',
+  version: '20260414',
   files: [
+    '2026-04-14.md',
     '2026-04-12.md',
     '2026-04-11.md',
     '2026-04-10.md',
