@@ -83,7 +83,7 @@
         "论文"
       ],
       "summary": "MIRAI 评测 LLM agent 是否能结合新闻、结构化数据库和工具完成事件预测。",
-      "url": "https://arxiv.org/abs/2407.01231"
+      "url": "https://arxiv.org/abs/2407.01231#search-agent-temporal-reasoning"
     },
     {
       "article_id": "2026-04-28-7",
@@ -1653,7 +1653,7 @@
       "category": [
         "论文"
       ],
-      "url": "https://arxiv.org/abs/2407.01231",
+      "url": "https://arxiv.org/abs/2407.01231#search-agent-temporal-reasoning",
       "summary": "MIRAI 评测 LLM agent 是否能结合新闻、结构化数据库和工具完成事件预测。",
       "why_it_matters": "MIRAI 评测 LLM agent 是否能结合新闻、结构化数据库和工具完成事件预测。",
       "entities": [
@@ -2157,7 +2157,7 @@
       }
     }
   ],
-  "generated_at": "2026-05-05T08:31:11Z",
+  "generated_at": "2026-05-19T01:08:37Z",
   "analysis_window": {
     "start_date": "2026-03-30",
     "end_date": "2026-04-28",

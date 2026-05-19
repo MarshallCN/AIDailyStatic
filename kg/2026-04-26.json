@@ -60,7 +60,7 @@
         "开源"
       ],
       "summary": "EVA 框架强调语音 agent 不能只测回答正确性，还要测 spoken output 的准确和自然度。",
-      "url": "https://huggingface.co/blog/ServiceNow-AI/eva"
+      "url": "https://huggingface.co/blog/ServiceNow-AI/eva#spoken-output-usability"
     },
     {
       "article_id": "2026-04-26-5",
@@ -1121,7 +1121,7 @@
         "论文",
         "开源"
       ],
-      "url": "https://huggingface.co/blog/ServiceNow-AI/eva",
+      "url": "https://huggingface.co/blog/ServiceNow-AI/eva#spoken-output-usability",
       "summary": "EVA 框架强调语音 agent 不能只测回答正确性，还要测 spoken output 的准确和自然度。",
       "why_it_matters": "EVA 框架强调语音 agent 不能只测回答正确性，还要测 spoken output 的准确和自然度。",
       "entities": [
@@ -1881,7 +1881,7 @@
       }
     }
   ],
-  "generated_at": "2026-05-05T08:31:11Z",
+  "generated_at": "2026-05-19T01:08:37Z",
   "analysis_window": {
     "start_date": "2026-03-28",
     "end_date": "2026-04-26",

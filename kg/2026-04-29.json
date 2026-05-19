@@ -82,7 +82,7 @@
         "论文"
       ],
       "summary": "MIRAI 通过事件预测任务评估 LLM agent 的检索、工具调用和长期推理能力。",
-      "url": "https://arxiv.org/abs/2407.01231"
+      "url": "https://arxiv.org/abs/2407.01231#long-horizon-web-agent"
     },
     {
       "article_id": "2026-04-29-7",
@@ -1657,7 +1657,7 @@
       "category": [
         "论文"
       ],
-      "url": "https://arxiv.org/abs/2407.01231",
+      "url": "https://arxiv.org/abs/2407.01231#long-horizon-web-agent",
       "summary": "MIRAI 通过事件预测任务评估 LLM agent 的检索、工具调用和长期推理能力。",
       "why_it_matters": "MIRAI 通过事件预测任务评估 LLM agent 的检索、工具调用和长期推理能力。",
       "entities": [
@@ -2174,7 +2174,7 @@
       }
     }
   ],
-  "generated_at": "2026-05-05T08:31:11Z",
+  "generated_at": "2026-05-19T01:08:37Z",
   "analysis_window": {
     "start_date": "2026-03-31",
     "end_date": "2026-04-29",

@@ -12,7 +12,7 @@
         "安全"
       ],
       "summary": "OpenAI 更新 GPT-5.5 发布说明，确认 GPT-5.5 和 GPT-5.5 Pro 已可用于 API，并补充系统卡安全信息。",
-      "url": "https://openai.com/index/introducing-gpt-5-5/"
+      "url": "https://openai.com/index/introducing-gpt-5-5/#api-availability"
     },
     {
       "article_id": "2026-04-24-1",
@@ -23,7 +23,7 @@
         "应用/产业"
       ],
       "summary": "Cohere 收购并合并德国 AI startup，被描述为创建跨大西洋企业 AI 能力的动作。",
-      "url": "https://techcrunch.com/2026/04/24/cohere-acquires-merges-with-german-based-startup-to-create-a-transatlantic-ai-powerhouse/"
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationcohere-acquires-merges-with-german-based-startup-to-create-a-transatlantic-ai-powerhouse/"
     },
     {
       "article_id": "2026-04-24-2",
@@ -35,7 +35,7 @@
         "应用/产业"
       ],
       "summary": "TechCrunch 报道 Google 将向 Anthropic 投入最高 400 亿美元现金和算力，继续推高前沿模型基础设施竞赛。",
-      "url": "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/"
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationgoogle-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/"
     },
     {
       "article_id": "2026-04-24-3",
@@ -48,7 +48,7 @@
         "生态"
       ],
       "summary": "ComfyUI 获得新估值，显示 AI 生成媒体市场正在从简单提示词走向可控工作流和开源生态。",
-      "url": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/"
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationcomfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/"
     },
     {
       "article_id": "2026-04-24-4",
@@ -60,7 +60,7 @@
         "基础设施"
       ],
       "summary": "DeepSeek 预览新 AI 模型，称能力进一步接近前沿模型，继续推动高性价比模型路线竞争。",
-      "url": "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/"
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationdeepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/"
     },
     {
       "article_id": "2026-04-24-5",
@@ -72,7 +72,7 @@
         "应用/产业"
       ],
       "summary": "Meta 据称签下数百万颗 Amazon AI CPU，提示推理基础设施竞争正在扩展到更多芯片形态。",
-      "url": "https://techcrunch.com/2026/04/24/in-another-wild-turn-for-ai-chips-meta-signs-deal-for-millions-of-amazon-ai-cpus/"
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationin-another-wild-turn-for-ai-chips-meta-signs-deal-for-millions-of-amazon-ai-cpus/"
     },
     {
       "article_id": "2026-04-24-6",
@@ -83,7 +83,7 @@
         "论文"
       ],
       "summary": "BixBench 论文把 LLM agent 放进生物信息学数据分析流程，补上单轮问答评测难以覆盖的能力缺口。",
-      "url": "https://arxiv.org/abs/2503.00096"
+      "url": "https://arxiv.org/abs/2503.00096#bixbench-method"
     },
     {
       "article_id": "2026-04-24-7",
@@ -97,7 +97,7 @@
         "开源"
       ],
       "summary": "从 GPT-5.5 API、Anthropic 算力交易、DeepSeek 模型预览到 ComfyUI 估值，今天的主线是 AI 能力被重新定价。",
-      "url": "https://techcrunch.com/2026/04/24/"
+      "url": "https://techcrunch.com/2026/04/24/#daily-observation"
     }
   ],
   "signal_records": [
@@ -111,7 +111,7 @@
         "生态",
         "安全"
       ],
-      "url": "https://openai.com/index/introducing-gpt-5-5/",
+      "url": "https://openai.com/index/introducing-gpt-5-5/#api-availability",
       "summary": "OpenAI 更新 GPT-5.5 发布说明，确认 GPT-5.5 和 GPT-5.5 Pro 已可用于 API，并补充系统卡安全信息。",
       "why_it_matters": "OpenAI 更新 GPT-5.5 发布说明，确认 GPT-5.5 和 GPT-5.5 Pro 已可用于 API，并补充系统卡安全信息。",
       "entities": [
@@ -365,7 +365,7 @@
       "category": [
         "应用/产业"
       ],
-      "url": "https://techcrunch.com/2026/04/24/cohere-acquires-merges-with-german-based-startup-to-create-a-transatlantic-ai-powerhouse/",
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationcohere-acquires-merges-with-german-based-startup-to-create-a-transatlantic-ai-powerhouse/",
       "summary": "Cohere 收购并合并德国 AI startup，被描述为创建跨大西洋企业 AI 能力的动作。",
       "why_it_matters": "Cohere 收购并合并德国 AI startup，被描述为创建跨大西洋企业 AI 能力的动作。",
       "entities": [
@@ -620,7 +620,7 @@
         "基础设施",
         "应用/产业"
       ],
-      "url": "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/",
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationgoogle-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/",
       "summary": "TechCrunch 报道 Google 将向 Anthropic 投入最高 400 亿美元现金和算力，继续推高前沿模型基础设施竞赛。",
       "why_it_matters": "TechCrunch 报道 Google 将向 Anthropic 投入最高 400 亿美元现金和算力，继续推高前沿模型基础设施竞赛。",
       "entities": [
@@ -881,7 +881,7 @@
         "开源",
         "生态"
       ],
-      "url": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/",
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationcomfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/",
       "summary": "ComfyUI 获得新估值，显示 AI 生成媒体市场正在从简单提示词走向可控工作流和开源生态。",
       "why_it_matters": "ComfyUI 获得新估值，显示 AI 生成媒体市场正在从简单提示词走向可控工作流和开源生态。",
       "entities": [
@@ -1141,7 +1141,7 @@
         "应用/产业",
         "基础设施"
       ],
-      "url": "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/",
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationdeepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/",
       "summary": "DeepSeek 预览新 AI 模型，称能力进一步接近前沿模型，继续推动高性价比模型路线竞争。",
       "why_it_matters": "DeepSeek 预览新 AI 模型，称能力进一步接近前沿模型，继续推动高性价比模型路线竞争。",
       "entities": [
@@ -1396,7 +1396,7 @@
         "基础设施",
         "应用/产业"
       ],
-      "url": "https://techcrunch.com/2026/04/24/in-another-wild-turn-for-ai-chips-meta-signs-deal-for-millions-of-amazon-ai-cpus/",
+      "url": "https://techcrunch.com/2026/04/24/#daily-observationin-another-wild-turn-for-ai-chips-meta-signs-deal-for-millions-of-amazon-ai-cpus/",
       "summary": "Meta 据称签下数百万颗 Amazon AI CPU，提示推理基础设施竞争正在扩展到更多芯片形态。",
       "why_it_matters": "Meta 据称签下数百万颗 Amazon AI CPU，提示推理基础设施竞争正在扩展到更多芯片形态。",
       "entities": [
@@ -1650,7 +1650,7 @@
       "category": [
         "论文"
       ],
-      "url": "https://arxiv.org/abs/2503.00096",
+      "url": "https://arxiv.org/abs/2503.00096#bixbench-method",
       "summary": "BixBench 论文把 LLM agent 放进生物信息学数据分析流程，补上单轮问答评测难以覆盖的能力缺口。",
       "why_it_matters": "BixBench 论文把 LLM agent 放进生物信息学数据分析流程，补上单轮问答评测难以覆盖的能力缺口。",
       "entities": [
@@ -1907,7 +1907,7 @@
         "基础设施",
         "开源"
       ],
-      "url": "https://techcrunch.com/2026/04/24/",
+      "url": "https://techcrunch.com/2026/04/24/#daily-observation",
       "summary": "从 GPT-5.5 API、Anthropic 算力交易、DeepSeek 模型预览到 ComfyUI 估值，今天的主线是 AI 能力被重新定价。",
       "why_it_matters": "从 GPT-5.5 API、Anthropic 算力交易、DeepSeek 模型预览到 ComfyUI 估值，今天的主线是 AI 能力被重新定价。",
       "entities": [
@@ -2163,7 +2163,7 @@
       }
     }
   ],
-  "generated_at": "2026-05-05T08:31:11Z",
+  "generated_at": "2026-05-19T01:08:36Z",
   "analysis_window": {
     "start_date": "2026-03-26",
     "end_date": "2026-04-24",

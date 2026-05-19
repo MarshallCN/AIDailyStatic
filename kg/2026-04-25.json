@@ -12,7 +12,7 @@
         "基础设施"
       ],
       "summary": "GPT-5.5 API 开放后的周末讨论集中在开发者如何评估长程任务收益、推理成本和部署约束。",
-      "url": "https://openai.com/index/introducing-gpt-5-5/"
+      "url": "https://openai.com/index/introducing-gpt-5-5/#developer-deployment-costs"
     },
     {
       "article_id": "2026-04-25-1",
@@ -25,7 +25,7 @@
         "应用/产业"
       ],
       "summary": "ComfyUI 的资本热度在周末继续被讨论，开源生成工作流成为 AI 影像制作的重要工具层。",
-      "url": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/"
+      "url": "https://techcrunch.com/2026/04/24/#weekend-deployment-tradeoffscomfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/#workflow-ecosystem"
     },
     {
       "article_id": "2026-04-25-2",
@@ -37,7 +37,7 @@
         "应用/产业"
       ],
       "summary": "Google 对 Anthropic 的现金和算力支持继续被视为前沿模型多云供给格局的重要信号。",
-      "url": "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/"
+      "url": "https://techcrunch.com/2026/04/24/#weekend-deployment-tradeoffsgoogle-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/#multi-cloud-supply"
     },
     {
       "article_id": "2026-04-25-3",
@@ -49,7 +49,7 @@
         "基础设施"
       ],
       "summary": "DeepSeek 新模型预览延续高性价比路线压力，迫使前沿模型厂商解释能力提升之外的成本收益。",
-      "url": "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/"
+      "url": "https://techcrunch.com/2026/04/24/#weekend-deployment-tradeoffsdeepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/#cost-performance"
     },
     {
       "article_id": "2026-04-25-4",
@@ -61,7 +61,7 @@
         "开源"
       ],
       "summary": "ServiceNow AI 的 EVA 框架为语音 agent 评测提供开源方法，关注准确性、策略忠实度和语音体验。",
-      "url": "https://huggingface.co/blog/ServiceNow-AI/eva"
+      "url": "https://huggingface.co/blog/ServiceNow-AI/eva#voice-agent-evaluation"
     },
     {
       "article_id": "2026-04-25-5",
@@ -87,7 +87,7 @@
         "生态"
       ],
       "summary": "周末没有大量新发布，但 GPT-5.5、ComfyUI、DeepSeek、EVA 和云算力合作共同把讨论拉回部署取舍。",
-      "url": "https://techcrunch.com/2026/04/24/"
+      "url": "https://techcrunch.com/2026/04/24/#weekend-deployment-tradeoffs"
     }
   ],
   "signal_records": [
@@ -101,7 +101,7 @@
         "生态",
         "基础设施"
       ],
-      "url": "https://openai.com/index/introducing-gpt-5-5/",
+      "url": "https://openai.com/index/introducing-gpt-5-5/#developer-deployment-costs",
       "summary": "GPT-5.5 API 开放后的周末讨论集中在开发者如何评估长程任务收益、推理成本和部署约束。",
       "why_it_matters": "GPT-5.5 API 开放后的周末讨论集中在开发者如何评估长程任务收益、推理成本和部署约束。",
       "entities": [
@@ -357,7 +357,7 @@
         "生态",
         "应用/产业"
       ],
-      "url": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/",
+      "url": "https://techcrunch.com/2026/04/24/#weekend-deployment-tradeoffscomfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/#workflow-ecosystem",
       "summary": "ComfyUI 的资本热度在周末继续被讨论，开源生成工作流成为 AI 影像制作的重要工具层。",
       "why_it_matters": "ComfyUI 的资本热度在周末继续被讨论，开源生成工作流成为 AI 影像制作的重要工具层。",
       "entities": [
@@ -612,7 +612,7 @@
         "基础设施",
         "应用/产业"
       ],
-      "url": "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/",
+      "url": "https://techcrunch.com/2026/04/24/#weekend-deployment-tradeoffsgoogle-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/#multi-cloud-supply",
       "summary": "Google 对 Anthropic 的现金和算力支持继续被视为前沿模型多云供给格局的重要信号。",
       "why_it_matters": "Google 对 Anthropic 的现金和算力支持继续被视为前沿模型多云供给格局的重要信号。",
       "entities": [
@@ -867,7 +867,7 @@
         "应用/产业",
         "基础设施"
       ],
-      "url": "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/",
+      "url": "https://techcrunch.com/2026/04/24/#weekend-deployment-tradeoffsdeepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/#cost-performance",
       "summary": "DeepSeek 新模型预览延续高性价比路线压力，迫使前沿模型厂商解释能力提升之外的成本收益。",
       "why_it_matters": "DeepSeek 新模型预览延续高性价比路线压力，迫使前沿模型厂商解释能力提升之外的成本收益。",
       "entities": [
@@ -1122,7 +1122,7 @@
         "论文",
         "开源"
       ],
-      "url": "https://huggingface.co/blog/ServiceNow-AI/eva",
+      "url": "https://huggingface.co/blog/ServiceNow-AI/eva#voice-agent-evaluation",
       "summary": "ServiceNow AI 的 EVA 框架为语音 agent 评测提供开源方法，关注准确性、策略忠实度和语音体验。",
       "why_it_matters": "ServiceNow AI 的 EVA 框架为语音 agent 评测提供开源方法，关注准确性、策略忠实度和语音体验。",
       "entities": [
@@ -1634,7 +1634,7 @@
         "开源",
         "生态"
       ],
-      "url": "https://techcrunch.com/2026/04/24/",
+      "url": "https://techcrunch.com/2026/04/24/#weekend-deployment-tradeoffs",
       "summary": "周末没有大量新发布，但 GPT-5.5、ComfyUI、DeepSeek、EVA 和云算力合作共同把讨论拉回部署取舍。",
       "why_it_matters": "周末没有大量新发布，但 GPT-5.5、ComfyUI、DeepSeek、EVA 和云算力合作共同把讨论拉回部署取舍。",
       "entities": [
@@ -1886,7 +1886,7 @@
       }
     }
   ],
-  "generated_at": "2026-05-05T08:31:11Z",
+  "generated_at": "2026-05-19T01:08:36Z",
   "analysis_window": {
     "start_date": "2026-03-27",
     "end_date": "2026-04-25",

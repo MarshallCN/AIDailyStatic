@@ -83,7 +83,7 @@
         "论文"
       ],
       "summary": "BixBench 面向生物信息学多步分析，适合作为 GPT-5.5 科研能力讨论的论文参照。",
-      "url": "https://arxiv.org/abs/2503.00096"
+      "url": "https://arxiv.org/abs/2503.00096#science-agent-reference"
     },
     {
       "article_id": "2026-04-30-7",
@@ -1645,7 +1645,7 @@
       "category": [
         "论文"
       ],
-      "url": "https://arxiv.org/abs/2503.00096",
+      "url": "https://arxiv.org/abs/2503.00096#science-agent-reference",
       "summary": "BixBench 面向生物信息学多步分析，适合作为 GPT-5.5 科研能力讨论的论文参照。",
       "why_it_matters": "BixBench 面向生物信息学多步分析，适合作为 GPT-5.5 科研能力讨论的论文参照。",
       "entities": [
@@ -2149,7 +2149,7 @@
       }
     }
   ],
-  "generated_at": "2026-05-05T08:31:12Z",
+  "generated_at": "2026-05-19T01:08:37Z",
   "analysis_window": {
     "start_date": "2026-04-01",
     "end_date": "2026-04-30",

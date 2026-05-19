@@ -11,7 +11,7 @@
         "生态"
       ],
       "summary": "OpenAI 发布工程文章，解释如何用 WebRTC、relay 和 transceiver 架构支撑低延迟 voice AI。",
-      "url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/"
+      "url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/#webrtc-relay-transceiver"
     },
     {
       "article_id": "2026-05-04-1",
@@ -104,7 +104,7 @@
         "论文"
       ],
       "summary": "BixBench 关注 LLM agents 在生物信息学中的多步任务能力，可作为企业 AI 高技能部署的论文参照。",
-      "url": "https://arxiv.org/abs/2503.00096"
+      "url": "https://arxiv.org/abs/2503.00096#enterprise-ai-high-skill-eval"
     },
     {
       "article_id": "2026-05-04-9",
@@ -131,7 +131,7 @@
         "基础设施",
         "生态"
       ],
-      "url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/",
+      "url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/#webrtc-relay-transceiver",
       "summary": "OpenAI 发布工程文章，解释如何用 WebRTC、relay 和 transceiver 架构支撑低延迟 voice AI。",
       "why_it_matters": "OpenAI 发布工程文章，解释如何用 WebRTC、relay 和 transceiver 架构支撑低延迟 voice AI。",
       "entities": [
@@ -2146,7 +2146,7 @@
       "category": [
         "论文"
       ],
-      "url": "https://arxiv.org/abs/2503.00096",
+      "url": "https://arxiv.org/abs/2503.00096#enterprise-ai-high-skill-eval",
       "summary": "BixBench 关注 LLM agents 在生物信息学中的多步任务能力，可作为企业 AI 高技能部署的论文参照。",
       "why_it_matters": "BixBench 关注 LLM agents 在生物信息学中的多步任务能力，可作为企业 AI 高技能部署的论文参照。",
       "entities": [
@@ -2655,7 +2655,7 @@
       }
     }
   ],
-  "generated_at": "2026-05-05T08:31:12Z",
+  "generated_at": "2026-05-19T01:08:37Z",
   "analysis_window": {
     "start_date": "2026-04-05",
     "end_date": "2026-05-04",
