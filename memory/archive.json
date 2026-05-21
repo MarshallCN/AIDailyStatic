@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-19T01:08:40Z",
+  "updated_at": "2026-05-21T20:22:37Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -179,8 +179,8 @@
       "period_id": "2026-W16",
       "period_type": "week",
       "start_date": "2026-04-13",
-      "end_date": "2026-04-18",
-      "summary": "2026-04-13 至 2026-04-18 期间，OpenAI、Google、发布 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-04-19",
+      "summary": "2026-04-13 至 2026-04-19 期间，OpenAI、Google、发布 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "Google",
@@ -188,13 +188,13 @@
         "Gemini"
       ],
       "event_types": [
-        "infra",
         "launch",
+        "infra",
         "security"
       ],
       "trend_signals": [
         "核心实体：OpenAI、Google、发布",
-        "主事件类型：infra、launch"
+        "主事件类型：launch、infra"
       ],
       "representative_article_ids": [
         "2026-04-13-0",
@@ -202,6 +202,35 @@
         "2026-04-13-2",
         "2026-04-13-3",
         "2026-04-13-4"
+      ]
+    },
+    {
+      "period_id": "2026-W17",
+      "period_type": "week",
+      "start_date": "2026-04-20",
+      "end_date": "2026-04-21",
+      "summary": "2026-04-20 至 2026-04-21 期间，OpenAI、MIRAI、入口 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "OpenAI",
+        "MIRAI",
+        "入口",
+        "Project Prometheus"
+      ],
+      "event_types": [
+        "infra",
+        "launch",
+        "benchmark"
+      ],
+      "trend_signals": [
+        "核心实体：OpenAI、MIRAI、入口",
+        "主事件类型：infra、launch"
+      ],
+      "representative_article_ids": [
+        "2026-04-20-0",
+        "2026-04-20-1",
+        "2026-04-20-2",
+        "2026-04-20-3",
+        "2026-04-20-4"
       ]
     }
   ]
