@@ -1,7 +1,11 @@
 window.NEWS_MANIFEST = {
-  // Update version after publishing a daily brief.
-  version: '20260603',
+  // 每次更新新闻后修改 version，可强制浏览器重新拉取最新资源
+  version: '20260607',
   files: [
+    '2026-06-07.md',
+    '2026-06-06.md',
+    '2026-06-05.md',
+    '2026-06-04.md',
     '2026-06-03.md',
     '2026-06-02.md',
     '2026-06-01.md',

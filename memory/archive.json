@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-21T20:22:37Z",
+  "updated_at": "2026-06-08T09:41:08Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -208,21 +208,21 @@
       "period_id": "2026-W17",
       "period_type": "week",
       "start_date": "2026-04-20",
-      "end_date": "2026-04-21",
-      "summary": "2026-04-20 至 2026-04-21 期间，OpenAI、MIRAI、入口 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-04-26",
+      "summary": "2026-04-20 至 2026-04-26 期间，GPT-5.5、OpenAI、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
+        "GPT-5.5",
         "OpenAI",
-        "MIRAI",
-        "入口",
-        "Project Prometheus"
+        "Anthropic",
+        "亿美元"
       ],
       "event_types": [
         "infra",
         "launch",
-        "benchmark"
+        "open_source"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、MIRAI、入口",
+        "核心实体：GPT-5.5、OpenAI、Anthropic",
         "主事件类型：infra、launch"
       ],
       "representative_article_ids": [
@@ -231,6 +231,64 @@
         "2026-04-20-2",
         "2026-04-20-3",
         "2026-04-20-4"
+      ]
+    },
+    {
+      "period_id": "2026-W18",
+      "period_type": "week",
+      "start_date": "2026-04-27",
+      "end_date": "2026-05-03",
+      "summary": "2026-04-27 至 2026-05-03 期间，TechCrunch、OpenAI、Microsoft 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "TechCrunch",
+        "OpenAI",
+        "Microsoft",
+        "亿美元"
+      ],
+      "event_types": [
+        "launch",
+        "infra",
+        "security"
+      ],
+      "trend_signals": [
+        "核心实体：TechCrunch、OpenAI、Microsoft",
+        "主事件类型：launch、infra"
+      ],
+      "representative_article_ids": [
+        "2026-04-27-0",
+        "2026-04-27-1",
+        "2026-04-27-2",
+        "2026-04-27-3",
+        "2026-04-27-4"
+      ]
+    },
+    {
+      "period_id": "2026-W19",
+      "period_type": "week",
+      "start_date": "2026-05-04",
+      "end_date": "2026-05-08",
+      "summary": "2026-05-04 至 2026-05-08 期间，Anthropic、OpenAI、Claude 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "Anthropic",
+        "OpenAI",
+        "Claude",
+        "多家模型公司同意"
+      ],
+      "event_types": [
+        "launch",
+        "infra",
+        "security"
+      ],
+      "trend_signals": [
+        "核心实体：Anthropic、OpenAI、Claude",
+        "主事件类型：launch、infra"
+      ],
+      "representative_article_ids": [
+        "2026-05-04-0",
+        "2026-05-04-1",
+        "2026-05-04-2",
+        "2026-05-04-3",
+        "2026-05-04-4"
       ]
     }
   ]
