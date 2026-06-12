@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-11T11:45:10Z",
+  "updated_at": "2026-06-12T09:45:05Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -295,21 +295,21 @@
       "period_id": "2026-W20",
       "period_type": "week",
       "start_date": "2026-05-11",
-      "end_date": "2026-05-11",
-      "summary": "2026-05-11 至 2026-05-11 期间，OpenAI、OpenAI Deployment Company、Deployment Company 主要围绕 security、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-05-12",
+      "summary": "2026-05-11 至 2026-05-12 期间，OpenAI、Daybreak、作流 主要围绕 security、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
-        "OpenAI Deployment Company",
-        "Deployment Company",
-        "作流"
+        "Daybreak",
+        "作流",
+        "推出"
       ],
       "event_types": [
         "security",
         "launch",
-        "partnership"
+        "infra"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、OpenAI Deployment Company、Deployment Company",
+        "核心实体：OpenAI、Daybreak、作流",
         "主事件类型：security、launch"
       ],
       "representative_article_ids": [
