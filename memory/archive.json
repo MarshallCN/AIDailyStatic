@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-12T09:45:05Z",
+  "updated_at": "2026-06-16T09:13:49Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -295,22 +295,22 @@
       "period_id": "2026-W20",
       "period_type": "week",
       "start_date": "2026-05-11",
-      "end_date": "2026-05-12",
-      "summary": "2026-05-11 至 2026-05-12 期间，OpenAI、Daybreak、作流 主要围绕 security、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-05-16",
+      "summary": "2026-05-11 至 2026-05-16 期间，OpenAI、报道、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
-        "Daybreak",
-        "作流",
-        "推出"
+        "报道",
+        "Anthropic",
+        "TechCrunch"
       ],
       "event_types": [
-        "security",
+        "infra",
         "launch",
-        "infra"
+        "security"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、Daybreak、作流",
-        "主事件类型：security、launch"
+        "核心实体：OpenAI、报道、Anthropic",
+        "主事件类型：infra、launch"
       ],
       "representative_article_ids": [
         "2026-05-11-0",
