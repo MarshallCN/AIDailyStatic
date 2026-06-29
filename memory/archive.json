@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-16T09:13:49Z",
+  "updated_at": "2026-06-29T09:44:43Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -295,8 +295,8 @@
       "period_id": "2026-W20",
       "period_type": "week",
       "start_date": "2026-05-11",
-      "end_date": "2026-05-16",
-      "summary": "2026-05-11 至 2026-05-16 期间，OpenAI、报道、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-05-17",
+      "summary": "2026-05-11 至 2026-05-17 期间，OpenAI、报道、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "报道",
@@ -318,6 +318,64 @@
         "2026-05-11-2",
         "2026-05-11-3",
         "2026-05-11-4"
+      ]
+    },
+    {
+      "period_id": "2026-W21",
+      "period_type": "week",
+      "start_date": "2026-05-18",
+      "end_date": "2026-05-24",
+      "summary": "2026-05-18 至 2026-05-24 期间，Anthropic、OpenAI、NVIDIA 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "Anthropic",
+        "OpenAI",
+        "NVIDIA",
+        "Google"
+      ],
+      "event_types": [
+        "infra",
+        "launch",
+        "research"
+      ],
+      "trend_signals": [
+        "核心实体：Anthropic、OpenAI、NVIDIA",
+        "主事件类型：infra、launch"
+      ],
+      "representative_article_ids": [
+        "2026-05-18-0",
+        "2026-05-18-1",
+        "2026-05-18-2",
+        "2026-05-18-3",
+        "2026-05-19-0"
+      ]
+    },
+    {
+      "period_id": "2026-W22",
+      "period_type": "week",
+      "start_date": "2026-05-25",
+      "end_date": "2026-05-29",
+      "summary": "2026-05-25 至 2026-05-29 期间，Anthropic、OpenAI、TechCrunch 主要围绕 security、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "Anthropic",
+        "OpenAI",
+        "TechCrunch",
+        "发布"
+      ],
+      "event_types": [
+        "security",
+        "launch",
+        "infra"
+      ],
+      "trend_signals": [
+        "核心实体：Anthropic、OpenAI、TechCrunch",
+        "主事件类型：security、launch"
+      ],
+      "representative_article_ids": [
+        "2026-05-25-0",
+        "2026-05-25-1",
+        "2026-05-25-2",
+        "2026-05-25-3",
+        "2026-05-25-4"
       ]
     }
   ]
