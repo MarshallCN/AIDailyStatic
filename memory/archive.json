@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T11:05:50Z",
+  "updated_at": "2026-07-13T10:02:47Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -382,13 +382,13 @@
       "period_id": "2026-W23",
       "period_type": "week",
       "start_date": "2026-06-01",
-      "end_date": "2026-06-02",
-      "summary": "2026-06-01 至 2026-06-02 期间，OpenAI、Codex、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-06-07",
+      "summary": "2026-06-01 至 2026-06-07 期间，OpenAI、Anthropic、Google 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
-        "Codex",
         "Anthropic",
-        "AWS"
+        "Google",
+        "Codex"
       ],
       "event_types": [
         "infra",
@@ -396,7 +396,7 @@
         "security"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、Codex、Anthropic",
+        "核心实体：OpenAI、Anthropic、Google",
         "主事件类型：infra、launch"
       ],
       "representative_article_ids": [
@@ -405,6 +405,35 @@
         "2026-06-01-2",
         "2026-06-01-3",
         "2026-06-01-4"
+      ]
+    },
+    {
+      "period_id": "2026-W24",
+      "period_type": "week",
+      "start_date": "2026-06-08",
+      "end_date": "2026-06-12",
+      "summary": "2026-06-08 至 2026-06-12 期间，OpenAI、论文、发布 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "OpenAI",
+        "论文",
+        "发布",
+        "Anthropic"
+      ],
+      "event_types": [
+        "launch",
+        "infra",
+        "security"
+      ],
+      "trend_signals": [
+        "核心实体：OpenAI、论文、发布",
+        "主事件类型：launch、infra"
+      ],
+      "representative_article_ids": [
+        "2026-06-08-0",
+        "2026-06-08-1",
+        "2026-06-08-2",
+        "2026-06-08-3",
+        "2026-06-08-4"
       ]
     }
   ]
