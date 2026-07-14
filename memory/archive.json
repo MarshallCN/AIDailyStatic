@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-13T10:02:47Z",
+  "updated_at": "2026-07-14T11:38:34Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -411,22 +411,22 @@
       "period_id": "2026-W24",
       "period_type": "week",
       "start_date": "2026-06-08",
-      "end_date": "2026-06-12",
-      "summary": "2026-06-08 至 2026-06-12 期间，OpenAI、论文、发布 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-06-13",
+      "summary": "2026-06-08 至 2026-06-13 期间，OpenAI、论文、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "论文",
-        "发布",
-        "Anthropic"
+        "Anthropic",
+        "发布"
       ],
       "event_types": [
-        "launch",
         "infra",
+        "launch",
         "security"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、论文、发布",
-        "主事件类型：launch、infra"
+        "核心实体：OpenAI、论文、Anthropic",
+        "主事件类型：infra、launch"
       ],
       "representative_article_ids": [
         "2026-06-08-0",
