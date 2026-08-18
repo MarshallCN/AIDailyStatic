@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-14T11:38:34Z",
+  "updated_at": "2026-08-18T09:00:17Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -411,8 +411,8 @@
       "period_id": "2026-W24",
       "period_type": "week",
       "start_date": "2026-06-08",
-      "end_date": "2026-06-13",
-      "summary": "2026-06-08 至 2026-06-13 期间，OpenAI、论文、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-06-14",
+      "summary": "2026-06-08 至 2026-06-14 期间，OpenAI、论文、Anthropic 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "论文",
@@ -420,13 +420,13 @@
         "发布"
       ],
       "event_types": [
-        "infra",
         "launch",
+        "infra",
         "security"
       ],
       "trend_signals": [
         "核心实体：OpenAI、论文、Anthropic",
-        "主事件类型：infra、launch"
+        "主事件类型：launch、infra"
       ],
       "representative_article_ids": [
         "2026-06-08-0",
@@ -434,6 +434,151 @@
         "2026-06-08-2",
         "2026-06-08-3",
         "2026-06-08-4"
+      ]
+    },
+    {
+      "period_id": "2026-W25",
+      "period_type": "week",
+      "start_date": "2026-06-15",
+      "end_date": "2026-06-21",
+      "summary": "2026-06-15 至 2026-06-21 期间，TechCrunch、Anthropic、Amazon 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "TechCrunch",
+        "Anthropic",
+        "Amazon",
+        "Apple"
+      ],
+      "event_types": [
+        "launch",
+        "infra",
+        "security"
+      ],
+      "trend_signals": [
+        "核心实体：TechCrunch、Anthropic、Amazon",
+        "主事件类型：launch、infra"
+      ],
+      "representative_article_ids": [
+        "2026-06-15-0",
+        "2026-06-15-1",
+        "2026-06-15-2",
+        "2026-06-15-3",
+        "2026-06-15-4"
+      ]
+    },
+    {
+      "period_id": "2026-W26",
+      "period_type": "week",
+      "start_date": "2026-06-22",
+      "end_date": "2026-06-28",
+      "summary": "2026-06-22 至 2026-06-28 期间，TechCrunch、OpenAI、Anthropic 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "TechCrunch",
+        "OpenAI",
+        "Anthropic",
+        "论文"
+      ],
+      "event_types": [
+        "launch",
+        "infra",
+        "security"
+      ],
+      "trend_signals": [
+        "核心实体：TechCrunch、OpenAI、Anthropic",
+        "主事件类型：launch、infra"
+      ],
+      "representative_article_ids": [
+        "2026-06-22-0",
+        "2026-06-22-1",
+        "2026-06-22-2",
+        "2026-06-22-3",
+        "2026-06-22-4"
+      ]
+    },
+    {
+      "period_id": "2026-W27",
+      "period_type": "week",
+      "start_date": "2026-06-29",
+      "end_date": "2026-07-05",
+      "summary": "2026-06-29 至 2026-07-05 期间，TechCrunch、Meta、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "TechCrunch",
+        "Meta",
+        "Anthropic",
+        "Claude"
+      ],
+      "event_types": [
+        "infra",
+        "launch",
+        "security"
+      ],
+      "trend_signals": [
+        "核心实体：TechCrunch、Meta、Anthropic",
+        "主事件类型：infra、launch"
+      ],
+      "representative_article_ids": [
+        "2026-06-29-0",
+        "2026-06-29-1",
+        "2026-06-29-2",
+        "2026-06-29-3",
+        "2026-06-29-4"
+      ]
+    },
+    {
+      "period_id": "2026-W28",
+      "period_type": "week",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-12",
+      "summary": "2026-07-06 至 2026-07-12 期间，Hugging Face、OpenAI、Daily Papers 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "Hugging Face",
+        "OpenAI",
+        "Daily Papers",
+        "亿美元"
+      ],
+      "event_types": [
+        "infra",
+        "launch",
+        "research"
+      ],
+      "trend_signals": [
+        "核心实体：Hugging Face、OpenAI、Daily Papers",
+        "主事件类型：infra、launch"
+      ],
+      "representative_article_ids": [
+        "2026-07-06-0",
+        "2026-07-06-1",
+        "2026-07-06-2",
+        "2026-07-06-3",
+        "2026-07-06-4"
+      ]
+    },
+    {
+      "period_id": "2026-W29",
+      "period_type": "week",
+      "start_date": "2026-07-13",
+      "end_date": "2026-07-18",
+      "summary": "2026-07-13 至 2026-07-18 期间，OpenAI、Anthropic、ChatGPT 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "OpenAI",
+        "Anthropic",
+        "ChatGPT",
+        "Kimi"
+      ],
+      "event_types": [
+        "infra",
+        "launch",
+        "research"
+      ],
+      "trend_signals": [
+        "核心实体：OpenAI、Anthropic、ChatGPT",
+        "主事件类型：infra、launch"
+      ],
+      "representative_article_ids": [
+        "2026-07-13-0",
+        "2026-07-13-1",
+        "2026-07-13-2",
+        "2026-07-13-3",
+        "2026-07-13-4"
       ]
     }
   ]
