@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-18T09:00:17Z",
+  "updated_at": "2026-08-28T15:40:33Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -556,13 +556,13 @@
       "period_id": "2026-W29",
       "period_type": "week",
       "start_date": "2026-07-13",
-      "end_date": "2026-07-18",
-      "summary": "2026-07-13 至 2026-07-18 期间，OpenAI、Anthropic、ChatGPT 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-07-19",
+      "summary": "2026-07-13 至 2026-07-19 期间，OpenAI、TechCrunch、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
+        "TechCrunch",
         "Anthropic",
-        "ChatGPT",
-        "Kimi"
+        "ChatGPT"
       ],
       "event_types": [
         "infra",
@@ -570,7 +570,7 @@
         "research"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、Anthropic、ChatGPT",
+        "核心实体：OpenAI、TechCrunch、Anthropic",
         "主事件类型：infra、launch"
       ],
       "representative_article_ids": [
@@ -579,6 +579,64 @@
         "2026-07-13-2",
         "2026-07-13-3",
         "2026-07-13-4"
+      ]
+    },
+    {
+      "period_id": "2026-W30",
+      "period_type": "week",
+      "start_date": "2026-07-20",
+      "end_date": "2026-07-26",
+      "summary": "2026-07-20 至 2026-07-26 期间，OpenAI、Anthropic、Hugging Face 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "OpenAI",
+        "Anthropic",
+        "Hugging Face",
+        "TechCrunch"
+      ],
+      "event_types": [
+        "infra",
+        "launch",
+        "research"
+      ],
+      "trend_signals": [
+        "核心实体：OpenAI、Anthropic、Hugging Face",
+        "主事件类型：infra、launch"
+      ],
+      "representative_article_ids": [
+        "2026-07-20-0",
+        "2026-07-20-1",
+        "2026-07-20-2",
+        "2026-07-20-3",
+        "2026-07-20-4"
+      ]
+    },
+    {
+      "period_id": "2026-W31",
+      "period_type": "week",
+      "start_date": "2026-07-27",
+      "end_date": "2026-07-28",
+      "summary": "2026-07-27 至 2026-07-28 期间，Hugging Face、OpenAI、不反对开放权重模 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "Hugging Face",
+        "OpenAI",
+        "不反对开放权重模",
+        "但担心中国"
+      ],
+      "event_types": [
+        "infra",
+        "launch",
+        "security"
+      ],
+      "trend_signals": [
+        "核心实体：Hugging Face、OpenAI、不反对开放权重模",
+        "主事件类型：infra、launch"
+      ],
+      "representative_article_ids": [
+        "2026-07-27-0",
+        "2026-07-27-1",
+        "2026-07-27-2",
+        "2026-07-27-3",
+        "2026-07-27-4"
       ]
     }
   ]
