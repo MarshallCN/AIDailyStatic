@@ -168,10 +168,16 @@
 
     function pushCandidate(match) {
       const cleaned = trimToken(match);
-      const key = normalizeCompare(cleaned);
-      if (!cleaned || !key || seen.has(key) || !isUsefulEntityName(cleaned)) return;
-      seen.add(key);
-      candidates.push(cleaned);
+      const splitNames = global.AnalysisUtils && typeof global.AnalysisUtils.splitConcatenatedEntityNames === 'function'
+        ? global.AnalysisUtils.splitConcatenatedEntityNames(cleaned)
+        : [];
+      const names = splitNames.length >= 2 ? splitNames : [cleaned];
+      names.forEach(function (name) {
+        const key = normalizeCompare(name);
+        if (!name || !key || seen.has(key) || !isUsefulEntityName(name)) return;
+        seen.add(key);
+        candidates.push(name);
+      });
     }
 
     const patterns = [
@@ -335,12 +341,18 @@
       ? global.AnalysisUtils.parseCategories(item.category)
       : String(item.category || '').split(',');
 
+    if (global.AnalysisUtils && typeof global.AnalysisUtils.extractKnowledgeConcepts === 'function') {
+      global.AnalysisUtils.extractKnowledgeConcepts(titleSummary).forEach(function (concept) {
+        addEntity(concept, 2.4);
+      });
+    }
+
     const entities = Array.from(scoreMap.values())
       .sort(function (a, b) {
         if (a.score === b.score) return a.name.localeCompare(b.name, 'zh-Hans-CN');
         return b.score - a.score;
       })
-      .slice(0, 8)
+      .slice(0, 10)
       .map(function (entry) {
         const type = inferEntityType(entry.name, item);
         return {
@@ -359,10 +371,13 @@
     const primaryEntity = entities[0];
     const events = eventTypes.map(function (eventType) {
       const seed = primaryEntity ? primaryEntity.entity_id : item.article_id;
+      const shortLabel = global.AnalysisUtils && typeof global.AnalysisUtils.shortEventLabel === 'function'
+        ? global.AnalysisUtils.shortEventLabel(eventType, primaryEntity && primaryEntity.name)
+        : (eventType + (primaryEntity ? ' · ' + primaryEntity.name : ''));
       return {
         event_id: 'event:' + slugify(eventType + '-' + seed),
         event_type: eventType,
-        label: item.title,
+        label: shortLabel,
         summary: item.summary || item.title,
         participants: entities.slice(0, 4).map(function (entity, entityIndex) {
           return {
@@ -598,24 +613,47 @@
       adjacency.set(right, rightMap);
     }
 
+    function entityNodeId(name) {
+      const cleaned = global.AnalysisUtils && typeof global.AnalysisUtils.canonicalizeTerm === 'function'
+        ? global.AnalysisUtils.canonicalizeTerm(name)
+        : name;
+      return cleaned ? 'entity:' + slugify(cleaned) : '';
+    }
+
     (records || []).forEach(function (record) {
       const communityNodes = [];
       (record.entities || []).forEach(function (entity) {
-        touchNode(entity.entity_id, { label: entity.name, type: 'entity', articleIds: [record.article_id], weight: entity.confidence || 1 });
-        communityNodes.push(entity.entity_id);
+        if (!isUsefulEntityName(entity && entity.name)) return;
+        const id = entityNodeId(entity.name);
+        if (!id) return;
+        touchNode(id, { label: entity.name, type: 'entity', articleIds: [record.article_id], weight: entity.confidence || 1 });
+        communityNodes.push(id);
       });
       (record.events || []).forEach(function (event) {
-        touchNode(event.event_id, { label: event.label, type: 'event', articleIds: [record.article_id], weight: 1.6 });
-        communityNodes.push(event.event_id);
+        const participantIds = [];
         (event.participants || []).forEach(function (participant) {
-          touchNode(participant.entity_id, { label: participant.name, type: 'entity', articleIds: [record.article_id], weight: 1 });
-          addWeight(event.event_id, participant.entity_id, 3.4);
+          if (!isUsefulEntityName(participant && participant.name)) return;
+          const id = entityNodeId(participant.name);
+          if (!id) return;
+          touchNode(id, { label: participant.name, type: 'entity', articleIds: [record.article_id], weight: 1 });
+          participantIds.push(id);
+          communityNodes.push(id);
         });
+        for (let i = 0; i < participantIds.length; i += 1) {
+          for (let j = i + 1; j < participantIds.length; j += 1) {
+            addWeight(participantIds[i], participantIds[j], 3.4);
+          }
+        }
       });
       (record.relations || []).forEach(function (relation) {
-        touchNode(relation.source_entity_id, { label: relation.source_name, type: 'entity', articleIds: [record.article_id], weight: 1 });
-        touchNode(relation.target_entity_id, { label: relation.target_name, type: 'entity', articleIds: [record.article_id], weight: 1 });
-        addWeight(relation.source_entity_id, relation.target_entity_id, 4 + Number(relation.weight || 1));
+        if (!isUsefulEntityName(relation.source_name) || !isUsefulEntityName(relation.target_name)) return;
+        const left = entityNodeId(relation.source_name);
+        const right = entityNodeId(relation.target_name);
+        if (!left || !right) return;
+        touchNode(left, { label: relation.source_name, type: 'entity', articleIds: [record.article_id], weight: 1 });
+        touchNode(right, { label: relation.target_name, type: 'entity', articleIds: [record.article_id], weight: 1 });
+        addWeight(left, right, 4 + Number(relation.weight || 1));
+        communityNodes.push(left, right);
       });
       const uniqueNodes = dedupe(communityNodes);
       for (let i = 0; i < uniqueNodes.length; i += 1) {
@@ -682,48 +720,26 @@
     records = (records || []).map(sanitizeSignalRecord);
     const recordMap = new Map(records.map(function (record) { return [record.article_id, record]; }));
 
+    function canonicalEntityName(name) {
+      return global.AnalysisUtils && typeof global.AnalysisUtils.canonicalizeTerm === 'function'
+        ? global.AnalysisUtils.canonicalizeTerm(name)
+        : name;
+    }
+
+    function eventActionLabel(eventType) {
+      if (global.AnalysisUtils && global.AnalysisUtils.EVENT_TYPE_LABELS && global.AnalysisUtils.EVENT_TYPE_LABELS[eventType]) {
+        return global.AnalysisUtils.EVENT_TYPE_LABELS[eventType];
+      }
+      return eventType || '';
+    }
+
     (records || []).forEach(function (record) {
-      const articleNode = ensureNode(nodeMap, nodes, 'article:' + record.article_id, {
-        label: record.title,
-        type: 'article',
-        summary: record.summary,
-        articleIds: [record.article_id],
-        subtype: record.category && record.category[0] ? record.category[0] : '',
-        weight: 1
-      });
-      const sourceNode = ensureNode(nodeMap, nodes, 'source:' + slugify(record.source), {
-        label: record.source,
-        type: 'source',
-        articleIds: [record.article_id],
-        weight: 1
-      });
-      ensureEdge(edgeMap, edges, 'edge:' + articleNode.id + '->' + sourceNode.id, {
-        source: articleNode.id,
-        target: sourceNode.id,
-        type: 'article-source',
-        label: 'source',
-        weight: 1,
-        articleIds: [record.article_id]
-      });
-      (record.category || []).forEach(function (category) {
-        const categoryNode = ensureNode(nodeMap, nodes, 'category:' + slugify(category), {
-          label: category,
-          type: 'category',
-          articleIds: [record.article_id],
-          weight: 1
-        });
-        ensureEdge(edgeMap, edges, 'edge:' + articleNode.id + '->' + categoryNode.id, {
-          source: articleNode.id,
-          target: categoryNode.id,
-          type: 'article-category',
-          label: category,
-          weight: 1,
-          articleIds: [record.article_id]
-        });
-      });
-      (record.entities || []).forEach(function (entity) {
-        const entityNode = ensureNode(nodeMap, nodes, entity.entity_id, {
-          label: entity.name,
+      const usefulEntities = (record.entities || []).filter(function (entity) {
+        return isUsefulEntityName(entity && entity.name);
+      }).map(function (entity) {
+        const name = canonicalEntityName(entity.name);
+        return ensureNode(nodeMap, nodes, 'entity:' + slugify(name), {
+          label: name,
           type: 'entity',
           subtype: entity.type,
           summary: record.why_it_matters,
@@ -731,56 +747,72 @@
           aliases: entity.aliases || [],
           weight: entity.confidence || 1
         });
-        ensureEdge(edgeMap, edges, 'edge:' + articleNode.id + '->' + entityNode.id, {
-          source: articleNode.id,
-          target: entityNode.id,
-          type: 'article-entity',
-          label: entity.type,
-          weight: entity.confidence || 1,
-          articleIds: [record.article_id]
-        });
       });
+
+      for (let i = 0; i < usefulEntities.length; i += 1) {
+        for (let j = i + 1; j < usefulEntities.length; j += 1) {
+          ensureEdge(edgeMap, edges, 'edge:' + usefulEntities[i].id + '<->' + usefulEntities[j].id, {
+            source: usefulEntities[i].id,
+            target: usefulEntities[j].id,
+            type: 'entity-entity',
+            label: '',
+            weight: 0.8,
+            articleIds: [record.article_id]
+          });
+        }
+      }
+
       (record.events || []).forEach(function (event) {
-        const eventNode = ensureNode(nodeMap, nodes, event.event_id, {
-          label: event.label,
-          type: 'event',
-          subtype: event.event_type,
-          summary: event.summary,
-          articleIds: [record.article_id],
-          weight: 1.4
-        });
-        ensureEdge(edgeMap, edges, 'edge:' + articleNode.id + '->' + eventNode.id, {
-          source: articleNode.id,
-          target: eventNode.id,
-          type: 'article-event',
-          label: event.event_type,
-          weight: 1.2,
-          articleIds: [record.article_id]
-        });
-        (event.participants || []).forEach(function (participant) {
-          const entityNode = ensureNode(nodeMap, nodes, participant.entity_id, {
-            label: participant.name,
+        const participants = (event.participants || []).filter(function (participant) {
+          return isUsefulEntityName(participant && participant.name);
+        }).map(function (participant) {
+          const name = canonicalEntityName(participant.name);
+          return ensureNode(nodeMap, nodes, 'entity:' + slugify(name), {
+            label: name,
             type: 'entity',
             subtype: participant.type,
             articleIds: [record.article_id],
             weight: 1
           });
-          ensureEdge(edgeMap, edges, 'edge:' + eventNode.id + '->' + entityNode.id, {
-            source: eventNode.id,
-            target: entityNode.id,
-            type: 'event-entity',
-            label: participant.role || 'participant',
-            weight: 2,
-            articleIds: [record.article_id]
-          });
         });
+        const action = eventActionLabel(event.event_type);
+        for (let i = 0; i < participants.length; i += 1) {
+          for (let j = i + 1; j < participants.length; j += 1) {
+            ensureEdge(edgeMap, edges, 'edge:' + participants[i].id + '<->' + participants[j].id + ':' + (event.event_type || 'related'), {
+              source: participants[i].id,
+              target: participants[j].id,
+              type: 'explicit-relation',
+              label: action,
+              weight: 2.2,
+              articleIds: [record.article_id]
+            });
+          }
+        }
       });
+
       (record.relations || []).forEach(function (relation) {
-        ensureEdge(edgeMap, edges, 'edge:' + relation.source_entity_id + '->' + relation.target_entity_id + ':' + relation.relation_type, {
-          source: relation.source_entity_id,
-          target: relation.target_entity_id,
+        if (!isUsefulEntityName(relation.source_name) || !isUsefulEntityName(relation.target_name)) {
+          return;
+        }
+        const sourceName = canonicalEntityName(relation.source_name);
+        const targetName = canonicalEntityName(relation.target_name);
+        const sourceNode = ensureNode(nodeMap, nodes, 'entity:' + slugify(sourceName), {
+          label: sourceName,
+          type: 'entity',
+          articleIds: [record.article_id],
+          weight: 1
+        });
+        const targetNode = ensureNode(nodeMap, nodes, 'entity:' + slugify(targetName), {
+          label: targetName,
+          type: 'entity',
+          articleIds: [record.article_id],
+          weight: 1
+        });
+        ensureEdge(edgeMap, edges, 'edge:' + sourceNode.id + '->' + targetNode.id + ':' + relation.relation_type, {
+          source: sourceNode.id,
+          target: targetNode.id,
           type: 'explicit-relation',
-          label: relation.relation_type,
+          label: eventActionLabel(relation.relation_type),
           weight: 2 + Number(relation.weight || 1),
           articleIds: [record.article_id]
         });
@@ -791,10 +823,18 @@
     const clues = communities.map(function (community) {
       const communitySet = new Set(community);
       const evidenceRecords = (records || []).filter(function (record) {
-        const touched = [];
-        (record.entities || []).forEach(function (entity) { touched.push(entity.entity_id); });
-        (record.events || []).forEach(function (event) { touched.push(event.event_id); });
-        return touched.some(function (nodeId) { return communitySet.has(nodeId); });
+        const names = [];
+        (record.entities || []).forEach(function (entity) { names.push(entity.name); });
+        (record.events || []).forEach(function (event) {
+          (event.participants || []).forEach(function (participant) { names.push(participant.name); });
+        });
+        (record.relations || []).forEach(function (relation) {
+          names.push(relation.source_name, relation.target_name);
+        });
+        return names.some(function (name) {
+          if (!isUsefulEntityName(name)) return false;
+          return communitySet.has('entity:' + slugify(canonicalEntityName(name)));
+        });
       }).sort(function (a, b) {
         return b.date.localeCompare(a.date);
       });
@@ -825,7 +865,7 @@
           categoryCounts.set(category, (categoryCounts.get(category) || 0) + 1);
         });
         (record.events || []).forEach(function (event) {
-          if (communitySet.has(event.event_id)) {
+          if (event.event_type) {
             eventTypeCounts.set(event.event_type, (eventTypeCounts.get(event.event_type) || 0) + 1);
           }
         });
@@ -842,17 +882,11 @@
       }).map(function (entry) { return entry[0]; });
 
       const evidenceIds = evidenceRecords.slice(0, 6).map(function (record) { return record.article_id; });
-      const focusNodeIds = new Set(community);
+      const focusNodeIds = new Set(community.filter(function (nodeId) {
+        const node = nodeMap.get(nodeId);
+        return node && node.type === 'entity';
+      }));
       const focusEdgeIds = new Set();
-      evidenceIds.forEach(function (articleId) {
-        const record = recordMap.get(articleId);
-        if (!record) return;
-        focusNodeIds.add('article:' + articleId);
-        focusNodeIds.add('source:' + slugify(record.source));
-        (record.category || []).forEach(function (category) {
-          focusNodeIds.add('category:' + slugify(category));
-        });
-      });
       edges.forEach(function (edge) {
         const data = edge.data;
         if (focusNodeIds.has(data.source) && focusNodeIds.has(data.target)) {
@@ -860,10 +894,15 @@
         }
       });
 
-      const title = coreLabels.slice(0, 4).join(' / ');
+      const title = (global.AnalysisUtils && typeof global.AnalysisUtils.cleanClueTitle === 'function')
+        ? global.AnalysisUtils.cleanClueTitle(coreLabels.join(' / '))
+        : coreLabels.slice(0, 4).join(' / ');
       const signals = [];
-      if (eventTypes[0]) signals.push(eventTypes[0] + ' 信号在该主题中最集中。');
-      signals.push('证据新闻共 ' + evidenceRecords.length + ' 条，主导分类为 ' + dominantCategory + '。');
+      if (eventTypes[0]) {
+        const action = eventActionLabel(eventTypes[0]);
+        signals.push(action + ' 是该线索里最集中的关系。');
+      }
+      signals.push('证据新闻共 ' + evidenceRecords.length + ' 条。');
 
       return {
         id: 'clue:' + stableHash(title + ':' + evidenceIds.join(',')),
@@ -882,7 +921,11 @@
       return b.score - a.score;
     }).slice(0, settings.maxClues);
 
-    return { nodes: nodes, edges: edges, clues: clues };
+    const built = { nodes: nodes, edges: edges, clues: clues };
+    if (global.AnalysisUtils && typeof global.AnalysisUtils.sanitizeGraphDataset === 'function') {
+      return global.AnalysisUtils.sanitizeGraphDataset(built, { keepTypes: ['entity'], maxNodes: 48 });
+    }
+    return built;
   }
 
   global.KGUtils = {

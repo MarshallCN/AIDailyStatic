@@ -27,12 +27,15 @@
     },
     graphRenderer: null,
     staticRenderer: null,
+    graph3dRenderer: null,
     staticDatasetRef: null,
     graphStage: null,
     dynamicHost: null,
     staticHost: null,
+    graph3dHost: null,
     graphToolbar: null,
     edgeLabelsVisible: false,
+    nodeLabelsVisible: true,
     resizeTimer: 0,
     loadSeq: 0
   };
@@ -156,16 +159,20 @@
     });
   }
 
+  function getDatasetKey() {
+    return state.graphMode === 'static' ? 'static' : 'dynamic';
+  }
+
   function getCurrentDataset() {
-    return state.graphDatasets[state.graphMode] || { nodes: [], edges: [], clues: [] };
+    return state.graphDatasets[getDatasetKey()] || { nodes: [], edges: [], clues: [] };
   }
 
   function getActiveClueId() {
-    return state.activeClueIds[state.graphMode] || '';
+    return state.activeClueIds[getDatasetKey()] || '';
   }
 
   function setActiveClueId(value) {
-    state.activeClueIds[state.graphMode] = value || '';
+    state.activeClueIds[getDatasetKey()] = value || '';
   }
 
   function getActiveClue(dataset) {
@@ -221,6 +228,7 @@
       state.graphStage &&
       state.dynamicHost &&
       state.staticHost &&
+      state.graph3dHost &&
       state.graphToolbar &&
       $graph.contains(state.graphStage) &&
       $graph.contains(state.graphToolbar)
@@ -236,16 +244,23 @@
     dynamicHost.className = 'clue-graph-host clue-graph-host-dynamic';
     const staticHost = document.createElement('div');
     staticHost.className = 'clue-graph-host clue-graph-host-static hidden';
+    const graph3dHost = document.createElement('div');
+    graph3dHost.className = 'clue-graph-host clue-graph-host-3d hidden';
     stage.appendChild(dynamicHost);
     stage.appendChild(staticHost);
+    stage.appendChild(graph3dHost);
 
     const toolbar = document.createElement('div');
     toolbar.className = 'dynamic-graph-controls clue-graph-toolbar';
-    toolbar.innerHTML = [
-      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="fit">重置视图</button>',
-      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="labels">显示边标签</button>',
-      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="mode" aria-pressed="false">切到静态KG</button>'
-    ].join('');
+    toolbar.innerHTML = typeof StaticGraphRenderer === 'object' && typeof StaticGraphRenderer.buildToolbarHtml === 'function'
+      ? StaticGraphRenderer.buildToolbarHtml({ includeStaticMode: true })
+      : [
+        '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="fit">重置视图</button>',
+        '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="labels">显示边标签</button>',
+        '<button type="button" class="ghost-button ghost-button-compact hidden" data-graph-action="nodelabels">隐藏节点标签</button>',
+        '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="mode" aria-pressed="false">切到静态KG</button>',
+        '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="view3d" aria-pressed="false">切到3D</button>'
+      ].join('');
     toolbar.addEventListener('click', handleGraphToolbarClick);
 
     $graph.appendChild(stage);
@@ -254,36 +269,40 @@
     state.graphStage = stage;
     state.dynamicHost = dynamicHost;
     state.staticHost = staticHost;
+    state.graph3dHost = graph3dHost;
     state.graphToolbar = toolbar;
   }
 
   function setVisibleGraphHost(mode) {
     ensureGraphShell();
-    if (!state.dynamicHost || !state.staticHost) {
+    if (!state.dynamicHost || !state.staticHost || !state.graph3dHost) {
       return;
     }
-    const showStatic = mode === 'static';
-    state.dynamicHost.classList.toggle('hidden', showStatic);
-    state.staticHost.classList.toggle('hidden', !showStatic);
+    state.dynamicHost.classList.toggle('hidden', mode !== 'dynamic');
+    state.staticHost.classList.toggle('hidden', mode !== 'static');
+    state.graph3dHost.classList.toggle('hidden', mode !== 'force3d');
   }
 
   function updateGraphToolbar() {
     ensureGraphShell();
     const fitButton = state.graphToolbar.querySelector('[data-graph-action="fit"]');
     const labelsButton = state.graphToolbar.querySelector('[data-graph-action="labels"]');
+    const nodeLabelsButton = state.graphToolbar.querySelector('[data-graph-action="nodelabels"]');
     const modeButton = state.graphToolbar.querySelector('[data-graph-action="mode"]');
+    const view3dButton = state.graphToolbar.querySelector('[data-graph-action="view3d"]');
+    state.graphToolbar.classList.toggle('is-3d', state.graphMode === 'force3d');
 
     if (fitButton) {
-      fitButton.textContent = state.graphMode === 'dynamic' ? '重置视图' : '重置静态图';
+      fitButton.textContent = state.graphMode === 'static' ? '重置静态图' : '重置视图';
     }
 
     if (labelsButton) {
-      if (state.graphMode === 'dynamic') {
-        labelsButton.disabled = false;
-        labelsButton.textContent = state.edgeLabelsVisible ? '隐藏边标签' : '显示边标签';
-      } else {
+      if (state.graphMode === 'static') {
         labelsButton.disabled = true;
         labelsButton.textContent = '静态图无边标签';
+      } else {
+        labelsButton.disabled = false;
+        labelsButton.textContent = state.edgeLabelsVisible ? '隐藏边标签' : '显示边标签';
       }
     }
 
@@ -292,6 +311,21 @@
       modeButton.textContent = staticMode ? '切到动态KG' : '切到静态KG';
       modeButton.classList.toggle('is-active', staticMode);
       modeButton.setAttribute('aria-pressed', staticMode ? 'true' : 'false');
+    }
+
+    if (nodeLabelsButton) {
+      const mode3d = state.graphMode === 'force3d';
+      nodeLabelsButton.classList.toggle('hidden', !mode3d);
+      nodeLabelsButton.textContent = state.nodeLabelsVisible ? '隐藏节点标签' : '显示节点标签';
+    }
+
+    if (view3dButton) {
+      const mode3d = state.graphMode === 'force3d';
+      const available = typeof StaticGraph3DRenderer === 'object' && StaticGraph3DRenderer.isAvailable();
+      view3dButton.disabled = !available;
+      view3dButton.textContent = !available ? '3D不可用' : (mode3d ? '切回平面' : '切到3D');
+      view3dButton.classList.toggle('is-active', mode3d);
+      view3dButton.setAttribute('aria-pressed', mode3d ? 'true' : 'false');
     }
   }
 
@@ -315,6 +349,17 @@
     state.staticDatasetRef = null;
     if (state.staticHost) {
       state.staticHost.innerHTML = '';
+    }
+  }
+
+  function destroyGraph3dRenderer() {
+    if (!state.graph3dRenderer) {
+      return;
+    }
+    state.graph3dRenderer.destroy();
+    state.graph3dRenderer = null;
+    if (state.graph3dHost) {
+      state.graph3dHost.innerHTML = '';
     }
   }
 
@@ -503,6 +548,7 @@
 
   function renderDynamicGraph(dataset, activeClue) {
     destroyStaticRenderer();
+    destroyGraph3dRenderer();
     setVisibleGraphHost('dynamic');
     ensureDynamicRenderer();
     updateGraphToolbar();
@@ -525,6 +571,7 @@
 
   function renderStaticGraph(dataset, activeClue) {
     destroyDynamicRenderer();
+    destroyGraph3dRenderer();
     setVisibleGraphHost('static');
     ensureStaticRenderer();
     updateGraphToolbar();
@@ -566,10 +613,55 @@
     $graphMeta.textContent = source.nodes.length + ' 个节点 · ' + countStaticStrongEdges(source) + ' 条强共现边';
   }
 
+  function ensureGraph3dRenderer() {
+    ensureGraphShell();
+    if (state.graph3dRenderer || typeof StaticGraph3DRenderer !== 'object') {
+      return;
+    }
+    state.graph3dRenderer = StaticGraph3DRenderer.create(state.graph3dHost, {
+      compact: false,
+      showEdgeLabels: state.edgeLabelsVisible,
+      showNodeLabels: state.nodeLabelsVisible
+    });
+  }
+
+  function renderGraph3d(dataset, activeClue) {
+    destroyDynamicRenderer();
+    destroyStaticRenderer();
+    setVisibleGraphHost('force3d');
+    ensureGraph3dRenderer();
+    updateGraphToolbar();
+
+    if (!state.graph3dRenderer) {
+      if (state.graph3dHost) {
+        state.graph3dHost.innerHTML = '<div class="dynamic-graph-empty">缺少 3D 图谱依赖。</div>';
+      }
+      $graphMeta.textContent = '3D 图不可用';
+      return;
+    }
+
+    const fullDataset = dataset || { nodes: [], edges: [], clues: [] };
+    const renderedDataset = state.graphView === 'all' || !activeClue
+      ? fullDataset
+      : buildGraphSubset(fullDataset, activeClue);
+
+    state.graph3dRenderer.options.showEdgeLabels = state.edgeLabelsVisible;
+    state.graph3dRenderer.options.showNodeLabels = state.nodeLabelsVisible;
+    state.graph3dRenderer.render(renderedDataset);
+    if (typeof state.graph3dRenderer.setNodeLabelsVisible === 'function') {
+      state.graph3dRenderer.setNodeLabelsVisible(state.nodeLabelsVisible);
+    }
+    $graphMeta.textContent = renderedDataset.nodes.length + ' 个节点 · ' + renderedDataset.edges.length + ' 条边 · 3D';
+  }
+
   function renderGraph(dataset, activeClue) {
     ensureGraphShell();
     if (state.graphMode === 'static') {
       renderStaticGraph(dataset, activeClue);
+      return;
+    }
+    if (state.graphMode === 'force3d') {
+      renderGraph3d(dataset, activeClue);
       return;
     }
     renderDynamicGraph(dataset, activeClue);
@@ -620,12 +712,14 @@
   }
 
   function renderNotes(dataset, filteredItems, activeClue, rangeLabel) {
-    const modeLabel = state.graphMode === 'dynamic'
-      ? '动态图 KG（结构化实体 / 事件）'
-      : '静态 KG（上一版实体共现图）';
-    const graphScale = state.graphMode === 'dynamic'
-      ? dataset.nodes.length + ' 个节点，' + dataset.edges.length + ' 条边'
-      : dataset.nodes.length + ' 个节点，' + countStaticStrongEdges(dataset) + ' 条强共现边';
+    const modeLabel = state.graphMode === 'force3d'
+      ? '3D 知识图谱（3d-force-graph）'
+      : (state.graphMode === 'dynamic'
+        ? '动态图 KG（结构化实体 / 事件）'
+        : '静态 KG（上一版实体共现图）');
+    const graphScale = state.graphMode === 'static'
+      ? dataset.nodes.length + ' 个节点，' + countStaticStrongEdges(dataset) + ' 条强共现边'
+      : dataset.nodes.length + ' 个节点，' + dataset.edges.length + ' 条边';
 
     const lines = [
       '<p><strong>当前范围</strong>：' + escapeHtml(rangeLabel) + ' · ' + escapeHtml(state.category) + ' · ' + filteredItems.length + ' 条新闻</p>',
@@ -636,11 +730,11 @@
 
     if (activeClue) {
       lines.push('<p><strong>当前线索</strong>：' + escapeHtml(activeClue.title) + '。</p>');
-      if (state.graphMode === 'dynamic') {
-        lines.push('<p>当前子图来自静态 KG 信号记录的聚类，强调结构化实体、事件和关系，而不是正文分词的即时共现。</p>');
-        if (activeClue.trendSignals && activeClue.trendSignals.length) {
-          lines.push('<p><strong>趋势信号</strong>：' + escapeHtml(activeClue.trendSignals.join('；')) + '</p>');
-        }
+      if (state.graphMode === 'dynamic' || state.graphMode === 'force3d') {
+        lines.push('<p><strong>判断</strong>：' + escapeHtml(activeClue.summary) + '</p>');
+        lines.push(state.graphMode === 'force3d'
+          ? '<p>3D 图可拖转、滚轮缩放；子图里是这条判断背后的公司、产品与知识节点。</p>'
+          : '<p>子图里是这条判断背后的公司、产品与知识节点，不是标题原句。</p>');
       } else if (state.graphView === 'all') {
         lines.push('<p>当前展示的是上一版静态共现图的全图视图，方便和新的动态图直接对照。</p>');
       } else {
@@ -686,17 +780,13 @@
     $list.innerHTML = source.clues.map(function (clue) {
       const eventTypeMarkup = clue.eventTypes && clue.eventTypes.length
         ? '<div class="term-day-list">' + clue.eventTypes.map(function (eventType) {
-          return '<span class="mini-tag">' + escapeHtml(eventType) + '</span>';
-        }).join('') + '</div>'
-        : '';
-      const signalMarkup = clue.trendSignals && clue.trendSignals.length
-        ? '<div class="clue-signal-list">' + clue.trendSignals.map(function (signal) {
-          return '<span class="match-badge">' + escapeHtml(signal) + '</span>';
+          const label = AnalysisUtils.eventTypeLabel ? AnalysisUtils.eventTypeLabel(eventType) : eventType;
+          return '<span class="mini-tag">' + escapeHtml(label) + '</span>';
         }).join('') + '</div>'
         : '';
 
       return [
-        '<article class="clue-card ', clue.id === activeClue.id ? 'is-active' : '', '">',
+        '<article class="clue-card ', clue.id === activeClue.id ? 'is-active' : '', '" data-clue-id="', clue.id, '">',
         '<div class="clue-card-head">',
         '<div>',
         '<h3>', escapeHtml(clue.title), '</h3>',
@@ -704,14 +794,7 @@
         '</div>',
         '<button class="ghost-button ghost-button-compact" data-clue-id="', clue.id, '" type="button">查看子图</button>',
         '</div>',
-        '<p>', escapeHtml(clue.summary), '</p>',
-        '<div class="term-day-list">',
-        (clue.coreEntities || []).map(function (entry) {
-          return '<span class="mini-tag">' + escapeHtml(entry) + '</span>';
-        }).join(''),
-        '<span class="mini-tag">', escapeHtml(clue.dominantCategory || '多主题'), '</span>',
-        '</div>',
-        signalMarkup,
+        '<p class="clue-judgment">', escapeHtml(clue.summary), '</p>',
         '</article>'
       ].join('');
     }).join('');
@@ -736,6 +819,13 @@
       return;
     }
 
+    if (state.graphMode === 'force3d') {
+      if (state.graph3dRenderer) {
+        state.graph3dRenderer.fitToAll();
+      }
+      return;
+    }
+
     fitStaticGraph(activeClue);
   }
 
@@ -752,11 +842,13 @@
     }
 
     if (action === 'labels') {
-      if (state.graphMode !== 'dynamic') {
+      if (state.graphMode === 'static') {
         return;
       }
       state.edgeLabelsVisible = !state.edgeLabelsVisible;
-      if (state.graphRenderer) {
+      if (state.graphMode === 'force3d' && state.graph3dRenderer) {
+        state.graph3dRenderer.setEdgeLabelsVisible(state.edgeLabelsVisible);
+      } else if (state.graphRenderer) {
         state.graphRenderer.options.showEdgeLabels = state.edgeLabelsVisible;
         state.graphRenderer.syncEdgeLabelVisibility();
       }
@@ -764,8 +856,29 @@
       return;
     }
 
+    if (action === 'nodelabels') {
+      if (state.graphMode !== 'force3d') {
+        return;
+      }
+      state.nodeLabelsVisible = !state.nodeLabelsVisible;
+      if (state.graph3dRenderer && typeof state.graph3dRenderer.setNodeLabelsVisible === 'function') {
+        state.graph3dRenderer.setNodeLabelsVisible(state.nodeLabelsVisible);
+      }
+      updateGraphToolbar();
+      return;
+    }
+
+    if (action === 'view3d') {
+      if (typeof StaticGraph3DRenderer !== 'object' || !StaticGraph3DRenderer.isAvailable()) {
+        return;
+      }
+      state.graphMode = state.graphMode === 'force3d' ? 'dynamic' : 'force3d';
+      renderCurrentView();
+      return;
+    }
+
     if (action === 'mode') {
-      state.graphMode = state.graphMode === 'dynamic' ? 'static' : 'dynamic';
+      state.graphMode = state.graphMode === 'static' ? 'dynamic' : 'static';
       renderCurrentView();
     }
   }
@@ -796,16 +909,44 @@
     $empty.classList.add('hidden');
 
     const signalRecords = getSignalRecordsForItems(filteredItems);
-    state.graphDatasets.dynamic = KGUtils.buildKnowledgeGraphFromRecords(signalRecords, {
-      rangeLabel: rangeLabel,
-      maxClues: 6
-    });
-    state.graphDatasets.static = AnalysisUtils.buildClueGraph(filteredItems, {
-      rangeLabel: rangeLabel,
-      maxEntities: 40,
-      minEntityEdgeWeight: 2,
-      maxClues: 5
-    });
+    function decorateClues(dataset) {
+      const itemMap = new Map(filteredItems.map(function (item) {
+        return [item.id, item];
+      }));
+      const enriched = AnalysisUtils.enrichGraphWithKnowledge(dataset, filteredItems, { maxTopics: 10 });
+      enriched.clues = (enriched.clues || []).map(function (clue) {
+        const evidenceItems = (clue.evidenceIds || []).map(function (articleId) {
+          return itemMap.get(articleId);
+        }).filter(Boolean);
+        return Object.assign({}, clue, {
+          title: AnalysisUtils.cleanClueTitle(clue.title),
+          summary: AnalysisUtils.buildClueJudgment(clue, evidenceItems),
+          coreEntities: (clue.coreEntities || []).slice(0, 3),
+          eventTypes: (clue.eventTypes || []).slice(0, 2),
+          trendSignals: []
+        });
+      }).filter(function (clue) {
+        return clue.title && clue.summary;
+      });
+      return enriched;
+    }
+
+    state.graphDatasets.dynamic = decorateClues(AnalysisUtils.sanitizeGraphDataset(
+      KGUtils.buildKnowledgeGraphFromRecords(signalRecords, {
+        rangeLabel: rangeLabel,
+        maxClues: 5
+      }),
+      { keepTypes: ['entity', 'topic'], maxNodes: 52 }
+    ));
+    state.graphDatasets.static = decorateClues(AnalysisUtils.sanitizeGraphDataset(
+      AnalysisUtils.buildClueGraph(filteredItems, {
+        rangeLabel: rangeLabel,
+        maxEntities: 40,
+        minEntityEdgeWeight: 2,
+        maxClues: 4
+      }),
+      { keepTypes: ['entity', 'topic'], maxNodes: 40 }
+    ));
 
     renderCurrentView();
   }
@@ -864,11 +1005,11 @@
     $endDate.addEventListener('change', handleManualDateChange);
 
     $list.addEventListener('click', function (event) {
-      const button = event.target.closest('button[data-clue-id]');
-      if (!button || !getCurrentDataset()) {
+      const target = event.target.closest('[data-clue-id]');
+      if (!target || !getCurrentDataset()) {
         return;
       }
-      setActiveClueId(button.getAttribute('data-clue-id') || '');
+      setActiveClueId(target.getAttribute('data-clue-id') || '');
       state.graphView = 'clue';
       renderCurrentView();
     });
@@ -887,6 +1028,9 @@
         if (state.graphMode === 'static' && state.staticRenderer) {
           state.staticRenderer.resize();
           fitStaticGraph(getActiveClue(getCurrentDataset()));
+        }
+        if (state.graphMode === 'force3d' && state.graph3dRenderer) {
+          state.graph3dRenderer.syncSize();
         }
       }, 160);
     });

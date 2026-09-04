@@ -4,7 +4,8 @@
     entity: { fill: '#eef2ff', stroke: '#a5b4fc', radius: 15, label: '实体' },
     event: { fill: '#ecfeff', stroke: '#67e8f9', radius: 13, label: '事件' },
     source: { fill: '#fef3c7', stroke: '#fbbf24', radius: 11, label: '来源' },
-    category: { fill: '#dcfce7', stroke: '#4ade80', radius: 10, label: '分类' }
+    category: { fill: '#dcfce7', stroke: '#4ade80', radius: 10, label: '分类' },
+    topic: { fill: '#fae8ff', stroke: '#e879f9', radius: 12, label: '知识' }
   };
 
   function escapeHtml(value) {
@@ -176,7 +177,7 @@
     this.renderDetail(null);
   };
 
-  GraphRenderer.prototype.prepareData = function (dataset) {
+  function prepareGraphDataset(dataset) {
     const nodes = (dataset.nodes || []).map(function (entry) {
       const data = Object.assign({}, entry.data || entry);
       return {
@@ -196,6 +197,44 @@
       return [node.id, node];
     }));
 
+    function displayEdgeLabel(edge) {
+      if (typeof AnalysisUtils === 'object' && typeof AnalysisUtils.normalizeEdgeLabel === 'function') {
+        return AnalysisUtils.normalizeEdgeLabel(edge && edge.label);
+      }
+      const skip = {
+        'entity-entity': true,
+        'explicit-relation': true,
+        'related': true,
+        'article-entity': true,
+        'article-source': true,
+        'article-category': true
+      };
+      const raw = String(edge && edge.label || '').trim();
+      if (!raw || skip[raw]) {
+        return '';
+      }
+      return raw;
+    }
+
+    function labelPriority(label) {
+      if (typeof AnalysisUtils === 'object' && typeof AnalysisUtils.edgeLabelPriority === 'function') {
+        return AnalysisUtils.edgeLabelPriority(label);
+      }
+      const ranks = {
+        收购: 5,
+        融资: 5,
+        发布: 4,
+        风险: 4,
+        开源: 3,
+        合作: 3,
+        监管: 3,
+        算力: 3,
+        研究: 2,
+        涉及: 1
+      };
+      return ranks[label] || (label ? 2 : 0);
+    }
+
     const grouped = new Map();
     const rawEdges = (dataset.edges || []).map(function (entry) {
       return Object.assign({}, entry.data || entry);
@@ -214,26 +253,37 @@
 
     const edges = [];
     grouped.forEach(function (list) {
-      list.forEach(function (edge, index) {
-        const total = list.length;
-        const middle = (total - 1) / 2;
-        const curvature = total === 1 ? 0 : (index - middle) * 0.26;
-        edges.push({
-          id: edge.id,
-          source: edge.source,
-          target: edge.target,
-          type: edge.type || 'relation',
-          label: edge.label || edge.type || '',
-          weight: Number(edge.weight || 1),
-          articleIds: edge.articleIds || [],
-          rawData: edge,
-          curvature: curvature
-        });
+      const merged = list.reduce(function (best, edge) {
+        const nextLabel = displayEdgeLabel(edge);
+        const nextWeight = Number(edge.weight || 1);
+        if (!best) {
+          return Object.assign({}, edge, { label: nextLabel, weight: nextWeight, articleIds: dedupe(edge.articleIds || []) });
+        }
+        best.articleIds = dedupe((best.articleIds || []).concat(edge.articleIds || []));
+        best.weight = Math.max(Number(best.weight || 1), nextWeight);
+        if (labelPriority(nextLabel) > labelPriority(best.label)) {
+          best.label = nextLabel;
+          best.type = edge.type || best.type;
+        }
+        return best;
+      }, null);
+      edges.push({
+        id: merged.id || ('edge:' + merged.source + '<->' + merged.target),
+        source: merged.source,
+        target: merged.target,
+        type: merged.type || 'relation',
+        label: displayEdgeLabel(merged),
+        weight: Number(merged.weight || 1),
+        articleIds: merged.articleIds || [],
+        rawData: merged,
+        curvature: 0
       });
     });
 
     return { nodes: nodes, edges: edges };
-  };
+  }
+
+  GraphRenderer.prototype.prepareData = prepareGraphDataset;
 
   GraphRenderer.prototype.render = function (dataset) {
     this.dataset = dataset || { nodes: [], edges: [] };
@@ -310,8 +360,12 @@
       })
       .on('click', this.handleEdgeClick.bind(this));
 
+    const labeledEdges = prepared.edges.filter(function (edge) {
+      return !!edge.label;
+    });
+
     const edgeLabelBgElements = labelBgLayer.selectAll('rect')
-      .data(prepared.edges, function (d) { return d.id; })
+      .data(labeledEdges, function (d) { return d.id; })
       .enter()
       .append('rect')
       .attr('class', 'graph-edge-label-bg')
@@ -320,7 +374,7 @@
       .on('click', this.handleEdgeClick.bind(this));
 
     const edgeLabelElements = edgeLabelLayer.selectAll('text')
-      .data(prepared.edges, function (d) { return d.id; })
+      .data(labeledEdges, function (d) { return d.id; })
       .enter()
       .append('text')
       .attr('class', 'graph-edge-label')
@@ -364,7 +418,11 @@
       .append('text')
       .attr('class', 'graph-node-label')
       .text(function (node) {
-        return node.label.length > 16 ? node.label.slice(0, 15) + '…' : node.label;
+        const label = String(node.label || '');
+        if (typeof AnalysisUtils === 'object' && typeof AnalysisUtils.isSentenceLikeLabel === 'function' && AnalysisUtils.isSentenceLikeLabel(label)) {
+          return '';
+        }
+        return label.length > 14 ? label.slice(0, 13) + '…' : label;
       });
 
     simulation.on('tick', function () {
@@ -539,6 +597,17 @@
     }).join('');
   };
 
+  GraphRenderer.prototype.setEdgeLabelsVisible = function (visible) {
+    this.options.showEdgeLabels = !!visible;
+    this.syncEdgeLabelVisibility();
+    if (this.controls) {
+      const button = this.controls.querySelector('[data-graph-action="labels"]');
+      if (button) {
+        button.textContent = this.options.showEdgeLabels ? '隐藏边标签' : '显示边标签';
+      }
+    }
+  };
+
   GraphRenderer.prototype.syncEdgeLabelVisibility = function () {
     if (!this.edgeLabelElements || !this.edgeLabelBgElements) {
       return;
@@ -700,10 +769,26 @@
     }
   };
 
+  function buildToolbarHtml(options) {
+    const settings = Object.assign({ includeStaticMode: false }, options || {});
+    const buttons = [
+      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="fit">重置视图</button>',
+      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="labels">显示边标签</button>',
+      '<button type="button" class="ghost-button ghost-button-compact hidden" data-graph-action="nodelabels">隐藏节点标签</button>'
+    ];
+    if (settings.includeStaticMode) {
+      buttons.push('<button type="button" class="ghost-button ghost-button-compact" data-graph-action="mode" aria-pressed="false">切到静态KG</button>');
+    }
+    buttons.push('<button type="button" class="ghost-button ghost-button-compact" data-graph-action="view3d" aria-pressed="false">切到3D</button>');
+    return buttons.join('');
+  }
+
   global.StaticGraphRenderer = {
     create: function (container, options) {
       return new GraphRenderer(container, options);
     },
+    prepareData: prepareGraphDataset,
+    buildToolbarHtml: buildToolbarHtml,
     TYPE_STYLES: TYPE_STYLES
   };
 })(window);
