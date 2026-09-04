@@ -36,8 +36,13 @@
     this.legend = null;
     this.emptyState = null;
     this.caption = null;
+    this.labelLayer = null;
+    this.nodeLabelEls = new Map();
+    this.edgeLabelEls = new Map();
+    this.labelRaf = 0;
     this.resizeTimer = 0;
     this.boundHandleResize = null;
+    this.boundTickLabels = this.tickOverlayLabels.bind(this);
     this.setup();
   }
 
@@ -53,9 +58,13 @@
     this.stage.className = 'graph-3d-stage';
     this.container.appendChild(this.stage);
 
+    this.labelLayer = document.createElement('div');
+    this.labelLayer.className = 'graph-3d-labels';
+    this.container.appendChild(this.labelLayer);
+
     this.caption = document.createElement('div');
     this.caption.className = 'graph-3d-caption';
-    this.caption.textContent = '拖转旋转 · 滚轮缩放 · 悬停看名称';
+    this.caption.textContent = '拖转旋转 · 滚轮缩放';
     this.container.appendChild(this.caption);
 
     this.emptyState = document.createElement('div');
@@ -86,6 +95,7 @@
     const width = Math.max(280, this.container.clientWidth || 320);
     const height = Math.max(this.options.compact ? 240 : 420, this.container.clientHeight || (this.options.compact ? 280 : 620));
     this.graph.width(width).height(height);
+    this.syncOverlayLabels();
   };
 
   Graph3DRenderer.prototype.prepareData = function (dataset) {
@@ -139,7 +149,11 @@
       .backgroundColor(this.options.background)
       .showNavInfo(false)
       .nodeId('id')
-      .nodeLabel(function (node) { return node.label || node.name || ''; })
+      .nodeLabel(function (node) {
+        const full = node.label || node.name || '';
+        const shown = truncateLabel(full, self.options.compact ? 10 : 14);
+        return shown && shown !== full ? full : '';
+      })
       .nodeColor(function (node) { return node.color; })
       .nodeRelSize(this.options.compact ? 5 : 6.4)
       .nodeOpacity(0.94)
@@ -156,79 +170,171 @@
         }
         self.caption.textContent = node && node.label
           ? node.label
-          : '拖转旋转 · 滚轮缩放 · 悬停看名称';
+          : '拖转旋转 · 滚轮缩放';
+      })
+      .onEngineTick(function () {
+        self.syncOverlayLabels();
       })
       .onEngineStop(function () {
         self.fitToAll({ animate: false });
+        self.syncOverlayLabels();
       });
 
-    try {
-      if (typeof SpriteText === 'function') {
-        this.graph
-          .nodeThreeObject(function (node) {
-            const text = truncateLabel(node.label, self.options.compact ? 10 : 14);
-            if (!text) {
-              return false;
-            }
-            const sprite = new SpriteText(text);
-            sprite.color = '#1e293b';
-            sprite.backgroundColor = 'rgba(255,255,255,0.9)';
-            sprite.padding = 1.6;
-            sprite.borderWidth = 0.35;
-            sprite.borderColor = node.color || '#93c5fd';
-            sprite.borderRadius = 2.4;
-            sprite.textHeight = self.options.compact ? 3.4 : 4.2;
-            return sprite;
-          })
-          .nodeThreeObjectExtend(true);
-      }
-    } catch (error) {
-      if (typeof console !== 'undefined' && console.warn) {
-        console.warn('3D node labels fallback to hover tooltips.', error);
-      }
-    }
-
-    this.applyLinkLabels();
+    this.startLabelLoop();
     this.syncSize();
     return this.graph;
   };
 
-  Graph3DRenderer.prototype.applyLinkLabels = function () {
-    if (!this.graph || typeof SpriteText !== 'function') {
+  Graph3DRenderer.prototype.edgeKey = function (link) {
+    if (link && link.id) {
+      return link.id;
+    }
+    const source = link && link.source && link.source.id ? link.source.id : link.source;
+    const target = link && link.target && link.target.id ? link.target.id : link.target;
+    return String(source || '') + '->' + String(target || '');
+  };
+
+  Graph3DRenderer.prototype.rebuildOverlayLabels = function () {
+    if (!this.labelLayer || !this.graph) {
       return;
     }
-    const self = this;
-    try {
-      if (!this.options.showEdgeLabels) {
-        this.graph.linkThreeObject(null).linkThreeObjectExtend(false);
+    this.labelLayer.innerHTML = '';
+    this.nodeLabelEls = new Map();
+    this.edgeLabelEls = new Map();
+    const data = this.graph.graphData() || { nodes: [], links: [] };
+    const compact = this.options.compact;
+    (data.nodes || []).forEach(function (node) {
+      const text = truncateLabel(node.label || node.name, compact ? 10 : 14);
+      if (!text) {
         return;
       }
-      this.graph
-        .linkThreeObject(function (link) {
-          if (!link.label) {
-            return false;
-          }
-          const sprite = new SpriteText(link.label);
-          sprite.color = '#e2e8f0';
-          sprite.backgroundColor = 'rgba(15,23,42,0.78)';
-          sprite.padding = 1.4;
-          sprite.textHeight = self.options.compact ? 2.8 : 3.2;
-          return sprite;
-        })
-        .linkThreeObjectExtend(true)
-        .linkPositionUpdate(function (obj, coords) {
-          if (!obj || !coords) {
-            return;
-          }
-          obj.position.x = coords.start.x + (coords.end.x - coords.start.x) / 2;
-          obj.position.y = coords.start.y + (coords.end.y - coords.start.y) / 2;
-          obj.position.z = coords.start.z + (coords.end.z - coords.start.z) / 2;
-        });
-    } catch (error) {
-      if (typeof console !== 'undefined' && console.warn) {
-        console.warn('3D edge labels fallback to hover tooltips.', error);
-      }
+      const el = document.createElement('span');
+      el.className = 'graph-3d-node-label';
+      el.textContent = text;
+      el.style.borderColor = node.color || '#93c5fd';
+      this.labelLayer.appendChild(el);
+      this.nodeLabelEls.set(node.id, el);
+    }, this);
+    this.rebuildEdgeOverlayLabels();
+    this.syncOverlayLabels();
+  };
+
+  Graph3DRenderer.prototype.rebuildEdgeOverlayLabels = function () {
+    if (!this.labelLayer) {
+      return;
     }
+    this.edgeLabelEls.forEach(function (el) {
+      if (el && el.parentNode) {
+        el.parentNode.removeChild(el);
+      }
+    });
+    this.edgeLabelEls = new Map();
+    if (!this.options.showEdgeLabels || !this.graph) {
+      return;
+    }
+    const data = this.graph.graphData() || { nodes: [], links: [] };
+    const self = this;
+    (data.links || []).forEach(function (link) {
+      if (!link.label) {
+        return;
+      }
+      const el = document.createElement('span');
+      el.className = 'graph-3d-edge-label';
+      el.textContent = link.label;
+      self.labelLayer.appendChild(el);
+      self.edgeLabelEls.set(self.edgeKey(link), el);
+    });
+  };
+
+  Graph3DRenderer.prototype.projectPoint = function (x, y, z) {
+    if (!this.graph || typeof this.graph.graph2ScreenCoords !== 'function' || x == null || y == null || z == null) {
+      return null;
+    }
+    return this.graph.graph2ScreenCoords(x, y, z);
+  };
+
+  Graph3DRenderer.prototype.isOnScreen = function (pos) {
+    if (!pos || !this.graph) {
+      return false;
+    }
+    const width = this.graph.width();
+    const height = this.graph.height();
+    return pos.x >= -70 && pos.y >= -28 && pos.x <= width + 70 && pos.y <= height + 28;
+  };
+
+  Graph3DRenderer.prototype.syncOverlayLabels = function () {
+    if (!this.graph || !this.labelLayer) {
+      return;
+    }
+    const data = this.graph.graphData() || { nodes: [], links: [] };
+    const self = this;
+    (data.nodes || []).forEach(function (node) {
+      const el = self.nodeLabelEls.get(node.id);
+      if (!el) {
+        return;
+      }
+      const pos = self.projectPoint(node.x, node.y, node.z);
+      if (!self.isOnScreen(pos)) {
+        el.style.display = 'none';
+        return;
+      }
+      el.style.display = 'block';
+      el.style.transform = 'translate(' + Math.round(pos.x + 8) + 'px,' + Math.round(pos.y - 8) + 'px)';
+    });
+    if (!this.options.showEdgeLabels) {
+      return;
+    }
+    (data.links || []).forEach(function (link) {
+      const el = self.edgeLabelEls.get(self.edgeKey(link));
+      if (!el) {
+        return;
+      }
+      const source = typeof link.source === 'object' ? link.source : null;
+      const target = typeof link.target === 'object' ? link.target : null;
+      if (!source || !target) {
+        el.style.display = 'none';
+        return;
+      }
+      const pos = self.projectPoint(
+        (source.x + target.x) / 2,
+        (source.y + target.y) / 2,
+        (source.z + target.z) / 2
+      );
+      if (!self.isOnScreen(pos)) {
+        el.style.display = 'none';
+        return;
+      }
+      el.style.display = 'block';
+      el.style.transform = 'translate(' + Math.round(pos.x) + 'px,' + Math.round(pos.y) + 'px) translate(-50%,-50%)';
+    });
+  };
+
+  Graph3DRenderer.prototype.startLabelLoop = function () {
+    if (this.labelRaf) {
+      return;
+    }
+    this.tickOverlayLabels();
+  };
+
+  Graph3DRenderer.prototype.stopLabelLoop = function () {
+    if (this.labelRaf) {
+      window.cancelAnimationFrame(this.labelRaf);
+      this.labelRaf = 0;
+    }
+  };
+
+  Graph3DRenderer.prototype.tickOverlayLabels = function () {
+    this.syncOverlayLabels();
+    if (this.graph) {
+      this.labelRaf = window.requestAnimationFrame(this.boundTickLabels);
+    } else {
+      this.labelRaf = 0;
+    }
+  };
+
+  Graph3DRenderer.prototype.applyLinkLabels = function () {
+    this.rebuildEdgeOverlayLabels();
+    this.syncOverlayLabels();
   };
 
   Graph3DRenderer.prototype.renderLegend = function (nodes) {
@@ -279,7 +385,8 @@
       return;
     }
     this.graph.graphData(this.toGraphData(prepared));
-    this.applyLinkLabels();
+    this.rebuildOverlayLabels();
+    this.startLabelLoop();
     this.syncSize();
   };
 
@@ -310,6 +417,9 @@
       window.removeEventListener('resize', this.boundHandleResize);
       this.boundHandleResize = null;
     }
+    this.stopLabelLoop();
+    this.nodeLabelEls = new Map();
+    this.edgeLabelEls = new Map();
     if (this.graph) {
       if (typeof this.graph.pauseAnimation === 'function') {
         this.graph.pauseAnimation();
