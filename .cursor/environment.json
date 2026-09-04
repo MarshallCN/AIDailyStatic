@@ -1,0 +1,17 @@
+{
+  "name": "AI Daily (static)",
+  "install": "python3 --version",
+  "terminals": [
+    {
+      "name": "web",
+      "command": "python3 -m http.server 8080",
+      "description": "Serves the static AI Daily site over HTTP on port 8080. Open http://localhost:8080 to view it."
+    }
+  ],
+  "ports": [
+    {
+      "name": "web server",
+      "port": 8080
+    }
+  ]
+}
