@@ -166,7 +166,7 @@
         }).join('') + '</div>' : '',
         '<div class="insight-layout insight-layout-report">',
         '<section class="panel theme-graph-panel">',
-        '<div class="panel-head"><h3>相关子图</h3><div class="panel-actions"><button type="button" id="theme-graph-labels-', String(index), '">隐藏边标签</button><button type="button" id="theme-graph-fullscreen-', String(index), '">全屏</button></div></div>',
+        '<div class="panel-head"><h3>相关子图</h3><div class="panel-actions"><button type="button" class="ghost-button ghost-button-compact" id="theme-graph-labels-', String(index), '">隐藏边标签</button><button type="button" class="ghost-button ghost-button-compact" id="theme-graph-view3d-', String(index), '">切到3D</button><button type="button" class="ghost-button ghost-button-compact" id="theme-graph-fullscreen-', String(index), '">全屏</button></div></div>',
         '<div class="graph-canvas theme-graph-canvas" id="theme-graph-', String(index), '"></div>',
         '</section>',
         '<section class="panel theme-evidence-panel">',
@@ -201,39 +201,94 @@
         container.innerHTML = '<div class="dynamic-graph-empty">该主题暂无足够干净的实体子图，请看右侧证据新闻。</div>';
         return;
       }
-      const renderer = StaticGraphRenderer.create(container, {
-        compact: true,
-        enableDetail: false,
-        showEdgeLabels: true,
-        fitPadding: 42
-      });
       const graph = theme.graph;
-      renderer.render(graph);
+      const instance = {
+        mode: '2d',
+        showEdgeLabels: true,
+        renderer: null,
+        cleanup: null
+      };
+
+      function syncLabelButton(button) {
+        if (!button) {
+          return;
+        }
+        button.textContent = instance.showEdgeLabels ? '隐藏边标签' : '显示边标签';
+      }
+
+      function syncView3dButton(button) {
+        if (!button) {
+          return;
+        }
+        const available = typeof StaticGraph3DRenderer === 'object' && StaticGraph3DRenderer.isAvailable();
+        button.disabled = !available;
+        button.textContent = !available ? '3D不可用' : (instance.mode === '3d' ? '切回平面' : '切到3D');
+        button.classList.toggle('is-active', instance.mode === '3d');
+      }
+
+      function renderCurrent() {
+        if (instance.renderer && typeof instance.renderer.destroy === 'function') {
+          instance.renderer.destroy();
+        }
+        container.innerHTML = '';
+        if (instance.mode === '3d' && typeof StaticGraph3DRenderer === 'object') {
+          instance.renderer = StaticGraph3DRenderer.create(container, {
+            compact: true,
+            showEdgeLabels: instance.showEdgeLabels
+          });
+        } else {
+          instance.renderer = StaticGraphRenderer.create(container, {
+            compact: true,
+            enableDetail: false,
+            showEdgeLabels: instance.showEdgeLabels,
+            fitPadding: 42
+          });
+        }
+        instance.renderer.render(graph);
+      }
+
+      renderCurrent();
       const labelsButton = document.getElementById('theme-graph-labels-' + index);
+      const view3dButton = document.getElementById('theme-graph-view3d-' + index);
       if (labelsButton) {
         labelsButton.addEventListener('click', function () {
-          const visible = !renderer.options.showEdgeLabels;
-          if (typeof renderer.setEdgeLabelsVisible === 'function') {
-            renderer.setEdgeLabelsVisible(visible);
-          } else {
-            renderer.options.showEdgeLabels = visible;
-            renderer.syncEdgeLabelVisibility();
+          instance.showEdgeLabels = !instance.showEdgeLabels;
+          if (instance.renderer && typeof instance.renderer.setEdgeLabelsVisible === 'function') {
+            instance.renderer.setEdgeLabelsVisible(instance.showEdgeLabels);
+          } else if (instance.renderer) {
+            instance.renderer.options.showEdgeLabels = instance.showEdgeLabels;
+            if (typeof instance.renderer.syncEdgeLabelVisibility === 'function') {
+              instance.renderer.syncEdgeLabelVisibility();
+            }
           }
-          labelsButton.textContent = visible ? '隐藏边标签' : '显示边标签';
+          syncLabelButton(labelsButton);
         });
       }
+      if (view3dButton) {
+        view3dButton.addEventListener('click', function () {
+          if (typeof StaticGraph3DRenderer !== 'object' || !StaticGraph3DRenderer.isAvailable()) {
+            return;
+          }
+          instance.mode = instance.mode === '3d' ? '2d' : '3d';
+          renderCurrent();
+          syncView3dButton(view3dButton);
+        });
+        syncView3dButton(view3dButton);
+      }
       const fullscreenButton = document.getElementById('theme-graph-fullscreen-' + index);
-      const cleanup = AnalysisUtils.bindFullscreenToggle(fullscreenButton, container, {
+      instance.cleanup = AnalysisUtils.bindFullscreenToggle(fullscreenButton, container, {
         onChange: function () {
           window.requestAnimationFrame(function () {
-            renderer.render(graph);
+            if (instance.renderer && typeof instance.renderer.render === 'function') {
+              instance.renderer.render(graph);
+            }
+            if (instance.renderer && typeof instance.renderer.syncSize === 'function') {
+              instance.renderer.syncSize();
+            }
           });
         }
       });
-      state.graphInstances.push({
-        renderer: renderer,
-        cleanup: cleanup
-      });
+      state.graphInstances.push(instance);
     });
   }
 

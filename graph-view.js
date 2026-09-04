@@ -177,7 +177,7 @@
     this.renderDetail(null);
   };
 
-  GraphRenderer.prototype.prepareData = function (dataset) {
+  function prepareGraphDataset(dataset) {
     const nodes = (dataset.nodes || []).map(function (entry) {
       const data = Object.assign({}, entry.data || entry);
       return {
@@ -281,7 +281,9 @@
     });
 
     return { nodes: nodes, edges: edges };
-  };
+  }
+
+  GraphRenderer.prototype.prepareData = prepareGraphDataset;
 
   GraphRenderer.prototype.render = function (dataset) {
     this.dataset = dataset || { nodes: [], edges: [] };
@@ -771,6 +773,7 @@
     create: function (container, options) {
       return new GraphRenderer(container, options);
     },
+    prepareData: prepareGraphDataset,
     TYPE_STYLES: TYPE_STYLES
   };
 })(window);
