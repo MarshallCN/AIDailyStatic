@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T15:40:33Z",
+  "updated_at": "2026-09-04T14:59:27Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -614,21 +614,21 @@
       "period_id": "2026-W31",
       "period_type": "week",
       "start_date": "2026-07-27",
-      "end_date": "2026-07-28",
-      "summary": "2026-07-27 至 2026-07-28 期间，Hugging Face、OpenAI、不反对开放权重模 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-02",
+      "summary": "2026-07-27 至 2026-08-02 期间，OpenAI、Hugging Face、Anthropic 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
-        "Hugging Face",
         "OpenAI",
-        "不反对开放权重模",
-        "但担心中国"
+        "Hugging Face",
+        "Anthropic",
+        "TechCrunch"
       ],
       "event_types": [
         "infra",
         "launch",
-        "security"
+        "research"
       ],
       "trend_signals": [
-        "核心实体：Hugging Face、OpenAI、不反对开放权重模",
+        "核心实体：OpenAI、Hugging Face、Anthropic",
         "主事件类型：infra、launch"
       ],
       "representative_article_ids": [
@@ -637,6 +637,35 @@
         "2026-07-27-2",
         "2026-07-27-3",
         "2026-07-27-4"
+      ]
+    },
+    {
+      "period_id": "2026-W32",
+      "period_type": "week",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-04",
+      "summary": "2026-08-03 至 2026-08-04 期间，Anthropic、OpenAI、有影响力的人因参 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "Anthropic",
+        "OpenAI",
+        "有影响力的人因参",
+        "便携式的吗"
+      ],
+      "event_types": [
+        "infra",
+        "launch",
+        "research"
+      ],
+      "trend_signals": [
+        "核心实体：Anthropic、OpenAI、有影响力的人因参",
+        "主事件类型：infra、launch"
+      ],
+      "representative_article_ids": [
+        "2026-08-03-0",
+        "2026-08-03-1",
+        "2026-08-03-2",
+        "2026-08-03-3",
+        "2026-08-03-4"
       ]
     }
   ]
