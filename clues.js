@@ -686,7 +686,8 @@
     $list.innerHTML = source.clues.map(function (clue) {
       const eventTypeMarkup = clue.eventTypes && clue.eventTypes.length
         ? '<div class="term-day-list">' + clue.eventTypes.map(function (eventType) {
-          return '<span class="mini-tag">' + escapeHtml(eventType) + '</span>';
+          const label = AnalysisUtils.eventTypeLabel ? AnalysisUtils.eventTypeLabel(eventType) : eventType;
+          return '<span class="mini-tag">' + escapeHtml(label) + '</span>';
         }).join('') + '</div>'
         : '';
       const signalMarkup = clue.trendSignals && clue.trendSignals.length
@@ -796,16 +797,22 @@
     $empty.classList.add('hidden');
 
     const signalRecords = getSignalRecordsForItems(filteredItems);
-    state.graphDatasets.dynamic = KGUtils.buildKnowledgeGraphFromRecords(signalRecords, {
-      rangeLabel: rangeLabel,
-      maxClues: 6
-    });
-    state.graphDatasets.static = AnalysisUtils.buildClueGraph(filteredItems, {
-      rangeLabel: rangeLabel,
-      maxEntities: 40,
-      minEntityEdgeWeight: 2,
-      maxClues: 5
-    });
+    state.graphDatasets.dynamic = AnalysisUtils.sanitizeGraphDataset(
+      KGUtils.buildKnowledgeGraphFromRecords(signalRecords, {
+        rangeLabel: rangeLabel,
+        maxClues: 6
+      }),
+      { keepTypes: ['entity'], maxNodes: 48 }
+    );
+    state.graphDatasets.static = AnalysisUtils.sanitizeGraphDataset(
+      AnalysisUtils.buildClueGraph(filteredItems, {
+        rangeLabel: rangeLabel,
+        maxEntities: 40,
+        minEntityEdgeWeight: 2,
+        maxClues: 5
+      }),
+      { keepTypes: ['entity'], maxNodes: 40 }
+    );
 
     renderCurrentView();
   }

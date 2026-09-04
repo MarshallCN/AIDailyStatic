@@ -364,7 +364,11 @@
       .append('text')
       .attr('class', 'graph-node-label')
       .text(function (node) {
-        return node.label.length > 16 ? node.label.slice(0, 15) + '…' : node.label;
+        const label = String(node.label || '');
+        if (typeof AnalysisUtils === 'object' && typeof AnalysisUtils.isSentenceLikeLabel === 'function' && AnalysisUtils.isSentenceLikeLabel(label)) {
+          return '';
+        }
+        return label.length > 14 ? label.slice(0, 13) + '…' : label;
       });
 
     simulation.on('tick', function () {
