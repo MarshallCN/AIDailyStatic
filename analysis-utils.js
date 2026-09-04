@@ -441,6 +441,48 @@
     trend: '动向'
   };
 
+  const GENERIC_EDGE_LABELS = {
+    'entity-entity': true,
+    'explicit-relation': true,
+    'related': true,
+    'article-entity': true,
+    'article-source': true,
+    'article-category': true
+  };
+
+  const EDGE_LABEL_PRIORITY = {
+    收购: 5,
+    融资: 5,
+    发布: 4,
+    风险: 4,
+    开源: 3,
+    合作: 3,
+    监管: 3,
+    算力: 3,
+    研究: 2,
+    涉及: 1
+  };
+
+  function normalizeEdgeLabel(label) {
+    const raw = String(label || '').trim();
+    if (!raw || GENERIC_EDGE_LABELS[raw]) {
+      return '';
+    }
+    return EVENT_TYPE_LABELS[raw] || raw;
+  }
+
+  function edgeLabelPriority(label) {
+    const text = normalizeEdgeLabel(label);
+    if (!text) {
+      return 0;
+    }
+    return EDGE_LABEL_PRIORITY[text] || 2;
+  }
+
+  function betterEdgeLabel(nextLabel, currentLabel) {
+    return edgeLabelPriority(nextLabel) > edgeLabelPriority(currentLabel);
+  }
+
   function isSentenceLikeLabel(value) {
     const text = normalizeText(value);
     if (!text) {
@@ -658,16 +700,51 @@
     const settings = Object.assign({ maxTopics: 10 }, options || {});
     const source = dataset || { nodes: [], edges: [], clues: [] };
     const nodes = (source.nodes || []).map(unwrapGraphItem);
-    const edges = (source.edges || []).map(unwrapGraphItem);
     const nodeByLabel = new Map();
     nodes.forEach((node) => {
       nodeByLabel.set(normalizeForComparison(node.label), node);
     });
-    const edgeKeys = new Set(edges.map((edge) => {
-      const left = edge.source < edge.target ? edge.source : edge.target;
-      const right = edge.source < edge.target ? edge.target : edge.source;
-      return left + '::' + right + '::' + (edge.label || '');
-    }));
+    const edges = [];
+    const edgeByPair = new Map();
+
+    function pairKey(sourceId, targetId) {
+      return sourceId < targetId ? sourceId + '::' + targetId : targetId + '::' + sourceId;
+    }
+
+    function upsertEdge(sourceId, targetId, label, articleIds, extra) {
+      if (!sourceId || !targetId || sourceId === targetId) {
+        return null;
+      }
+      const key = pairKey(sourceId, targetId);
+      const nextLabel = normalizeEdgeLabel(label);
+      const existing = edgeByPair.get(key);
+      const extraWeight = extra && extra.weight ? Number(extra.weight) : (nextLabel ? 2 : 1);
+      if (existing) {
+        existing.articleIds = uniqueStrings((existing.articleIds || []).concat(articleIds || []));
+        existing.weight = Math.max(Number(existing.weight || 1), extraWeight);
+        if (betterEdgeLabel(nextLabel, existing.label)) {
+          existing.label = nextLabel;
+          existing.type = nextLabel ? 'explicit-relation' : existing.type;
+        }
+        return existing;
+      }
+      const edge = {
+        id: (extra && extra.id) || ('edge:' + key),
+        source: sourceId,
+        target: targetId,
+        type: nextLabel ? 'explicit-relation' : ((extra && extra.type) || 'entity-entity'),
+        label: nextLabel,
+        weight: extraWeight,
+        articleIds: uniqueStrings(articleIds || [])
+      };
+      edgeByPair.set(key, edge);
+      edges.push(edge);
+      return edge;
+    }
+
+    (source.edges || []).map(unwrapGraphItem).forEach((edge) => {
+      upsertEdge(edge.source, edge.target, edge.label, edge.articleIds || edge.article_ids || [], edge);
+    });
 
     function ensureTopic(label, articleId) {
       const key = normalizeForComparison(label);
@@ -697,22 +774,9 @@
       if (!sourceNode || !targetNode || sourceNode.id === targetNode.id) {
         return;
       }
-      const left = sourceNode.id < targetNode.id ? sourceNode.id : targetNode.id;
-      const right = sourceNode.id < targetNode.id ? targetNode.id : sourceNode.id;
-      const pair = left + '::' + right + '::' + (label || '');
-      if (edgeKeys.has(pair) || edgeKeys.has(left + '::' + right + '::')) {
-        return;
-      }
-      edgeKeys.add(pair);
-      edgeKeys.add(left + '::' + right + '::');
-      edges.push({
-        id: 'edge:' + pair,
-        source: sourceNode.id,
-        target: targetNode.id,
+      upsertEdge(sourceNode.id, targetNode.id, label || '涉及', articleId ? [articleId] : [], {
         type: label ? 'explicit-relation' : 'entity-entity',
-        label: label || '涉及',
-        weight: label ? 2 : 1,
-        articleIds: articleId ? [articleId] : []
+        weight: label ? 2 : 1
       });
     }
 
@@ -917,7 +981,13 @@
           return EVENT_TYPE_LABELS[raw];
         }
         const mapped = eventTypeLabel(raw);
-        if (mapped && !skip.has(mapped) && !isSentenceLikeLabel(mapped) && !isCategoryOrMetaTerm(mapped)) {
+        if (!mapped || skip.has(mapped) || isSentenceLikeLabel(mapped)) {
+          continue;
+        }
+        if (EDGE_LABEL_PRIORITY[mapped] || Object.values(EVENT_TYPE_LABELS).indexOf(mapped) !== -1) {
+          return mapped;
+        }
+        if (!isCategoryOrMetaTerm(mapped)) {
           return mapped;
         }
       }
@@ -956,9 +1026,11 @@
         const existing = edges[existingIndex];
         existing.articleIds = uniqueStrings((existing.articleIds || []).concat(incoming.articleIds));
         existing.weight = Math.max(Number(existing.weight || 1), incoming.weight);
-        if (edgeRank(incoming) > edgeRank(existing)) {
+        if (betterEdgeLabel(incoming.label, existing.label)) {
           existing.label = incoming.label;
-          existing.type = incoming.type;
+          existing.type = incoming.type || existing.type;
+        } else if (edgeRank(incoming) > edgeRank(existing)) {
+          existing.type = incoming.type || existing.type;
         } else if (!existing.label && incoming.label) {
           existing.label = incoming.label;
           if (incoming.type === 'explicit-relation') {
@@ -2056,6 +2128,9 @@
     sanitizeGraphDataset,
     extractKnowledgeConcepts,
     enrichGraphWithKnowledge,
+    normalizeEdgeLabel,
+    edgeLabelPriority,
+    betterEdgeLabel,
     buildClueJudgment,
     buildInsightReport,
     EVENT_TYPE_LABELS

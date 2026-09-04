@@ -197,6 +197,44 @@
       return [node.id, node];
     }));
 
+    function displayEdgeLabel(edge) {
+      if (typeof AnalysisUtils === 'object' && typeof AnalysisUtils.normalizeEdgeLabel === 'function') {
+        return AnalysisUtils.normalizeEdgeLabel(edge && edge.label);
+      }
+      const skip = {
+        'entity-entity': true,
+        'explicit-relation': true,
+        'related': true,
+        'article-entity': true,
+        'article-source': true,
+        'article-category': true
+      };
+      const raw = String(edge && edge.label || '').trim();
+      if (!raw || skip[raw]) {
+        return '';
+      }
+      return raw;
+    }
+
+    function labelPriority(label) {
+      if (typeof AnalysisUtils === 'object' && typeof AnalysisUtils.edgeLabelPriority === 'function') {
+        return AnalysisUtils.edgeLabelPriority(label);
+      }
+      const ranks = {
+        收购: 5,
+        融资: 5,
+        发布: 4,
+        风险: 4,
+        开源: 3,
+        合作: 3,
+        监管: 3,
+        算力: 3,
+        研究: 2,
+        涉及: 1
+      };
+      return ranks[label] || (label ? 2 : 0);
+    }
+
     const grouped = new Map();
     const rawEdges = (dataset.edges || []).map(function (entry) {
       return Object.assign({}, entry.data || entry);
@@ -215,21 +253,30 @@
 
     const edges = [];
     grouped.forEach(function (list) {
-      list.forEach(function (edge, index) {
-        const total = list.length;
-        const middle = (total - 1) / 2;
-        const curvature = total === 1 ? 0 : (index - middle) * 0.26;
-        edges.push({
-          id: edge.id,
-          source: edge.source,
-          target: edge.target,
-          type: edge.type || 'relation',
-          label: edge.label || edge.type || '',
-          weight: Number(edge.weight || 1),
-          articleIds: edge.articleIds || [],
-          rawData: edge,
-          curvature: curvature
-        });
+      const merged = list.reduce(function (best, edge) {
+        const nextLabel = displayEdgeLabel(edge);
+        const nextWeight = Number(edge.weight || 1);
+        if (!best) {
+          return Object.assign({}, edge, { label: nextLabel, weight: nextWeight, articleIds: dedupe(edge.articleIds || []) });
+        }
+        best.articleIds = dedupe((best.articleIds || []).concat(edge.articleIds || []));
+        best.weight = Math.max(Number(best.weight || 1), nextWeight);
+        if (labelPriority(nextLabel) > labelPriority(best.label)) {
+          best.label = nextLabel;
+          best.type = edge.type || best.type;
+        }
+        return best;
+      }, null);
+      edges.push({
+        id: merged.id || ('edge:' + merged.source + '<->' + merged.target),
+        source: merged.source,
+        target: merged.target,
+        type: merged.type || 'relation',
+        label: displayEdgeLabel(merged),
+        weight: Number(merged.weight || 1),
+        articleIds: merged.articleIds || [],
+        rawData: merged,
+        curvature: 0
       });
     });
 
@@ -311,8 +358,12 @@
       })
       .on('click', this.handleEdgeClick.bind(this));
 
+    const labeledEdges = prepared.edges.filter(function (edge) {
+      return !!edge.label;
+    });
+
     const edgeLabelBgElements = labelBgLayer.selectAll('rect')
-      .data(prepared.edges, function (d) { return d.id; })
+      .data(labeledEdges, function (d) { return d.id; })
       .enter()
       .append('rect')
       .attr('class', 'graph-edge-label-bg')
@@ -321,7 +372,7 @@
       .on('click', this.handleEdgeClick.bind(this));
 
     const edgeLabelElements = edgeLabelLayer.selectAll('text')
-      .data(prepared.edges, function (d) { return d.id; })
+      .data(labeledEdges, function (d) { return d.id; })
       .enter()
       .append('text')
       .attr('class', 'graph-edge-label')
@@ -542,6 +593,17 @@
         '</span>'
       ].join('');
     }).join('');
+  };
+
+  GraphRenderer.prototype.setEdgeLabelsVisible = function (visible) {
+    this.options.showEdgeLabels = !!visible;
+    this.syncEdgeLabelVisibility();
+    if (this.controls) {
+      const button = this.controls.querySelector('[data-graph-action="labels"]');
+      if (button) {
+        button.textContent = this.options.showEdgeLabels ? '隐藏边标签' : '显示边标签';
+      }
+    }
   };
 
   GraphRenderer.prototype.syncEdgeLabelVisibility = function () {

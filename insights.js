@@ -166,7 +166,7 @@
         }).join('') + '</div>' : '',
         '<div class="insight-layout insight-layout-report">',
         '<section class="panel theme-graph-panel">',
-        '<div class="panel-head"><h3>相关子图</h3><div class="panel-actions"><button type="button" id="theme-graph-fullscreen-', String(index), '">全屏</button></div></div>',
+        '<div class="panel-head"><h3>相关子图</h3><div class="panel-actions"><button type="button" id="theme-graph-labels-', String(index), '">隐藏边标签</button><button type="button" id="theme-graph-fullscreen-', String(index), '">全屏</button></div></div>',
         '<div class="graph-canvas theme-graph-canvas" id="theme-graph-', String(index), '"></div>',
         '</section>',
         '<section class="panel theme-evidence-panel">',
@@ -209,6 +209,19 @@
       });
       const graph = theme.graph;
       renderer.render(graph);
+      const labelsButton = document.getElementById('theme-graph-labels-' + index);
+      if (labelsButton) {
+        labelsButton.addEventListener('click', function () {
+          const visible = !renderer.options.showEdgeLabels;
+          if (typeof renderer.setEdgeLabelsVisible === 'function') {
+            renderer.setEdgeLabelsVisible(visible);
+          } else {
+            renderer.options.showEdgeLabels = visible;
+            renderer.syncEdgeLabelVisibility();
+          }
+          labelsButton.textContent = visible ? '隐藏边标签' : '显示边标签';
+        });
+      }
       const fullscreenButton = document.getElementById('theme-graph-fullscreen-' + index);
       const cleanup = AnalysisUtils.bindFullscreenToggle(fullscreenButton, container, {
         onChange: function () {
