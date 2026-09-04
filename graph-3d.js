@@ -28,6 +28,7 @@
     this.options = Object.assign({
       compact: false,
       showEdgeLabels: false,
+      showNodeLabels: true,
       background: '#f8fafc'
     }, options || {});
     this.graph = null;
@@ -75,6 +76,7 @@
     this.legend = document.createElement('div');
     this.legend.className = 'dynamic-graph-legend hidden';
     this.container.appendChild(this.legend);
+    this.syncNodeLabelVisibility();
 
     this.boundHandleResize = this.handleResize.bind(this);
     window.addEventListener('resize', this.boundHandleResize);
@@ -274,7 +276,7 @@
         return;
       }
       const pos = self.projectPoint(node.x, node.y, node.z);
-      if (!self.isOnScreen(pos)) {
+      if (!self.options.showNodeLabels || !self.isOnScreen(pos)) {
         el.style.display = 'none';
         return;
       }
@@ -393,6 +395,18 @@
   Graph3DRenderer.prototype.setEdgeLabelsVisible = function (visible) {
     this.options.showEdgeLabels = !!visible;
     this.applyLinkLabels();
+  };
+
+  Graph3DRenderer.prototype.syncNodeLabelVisibility = function () {
+    if (this.labelLayer) {
+      this.labelLayer.classList.toggle('is-node-labels-hidden', this.options.showNodeLabels === false);
+    }
+    this.syncOverlayLabels();
+  };
+
+  Graph3DRenderer.prototype.setNodeLabelsVisible = function (visible) {
+    this.options.showNodeLabels = !!visible;
+    this.syncNodeLabelVisibility();
   };
 
   Graph3DRenderer.prototype.syncEdgeLabelVisibility = function () {

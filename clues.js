@@ -35,6 +35,7 @@
     graph3dHost: null,
     graphToolbar: null,
     edgeLabelsVisible: false,
+    nodeLabelsVisible: true,
     resizeTimer: 0,
     loadSeq: 0
   };
@@ -251,12 +252,15 @@
 
     const toolbar = document.createElement('div');
     toolbar.className = 'dynamic-graph-controls clue-graph-toolbar';
-    toolbar.innerHTML = [
-      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="fit">重置视图</button>',
-      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="labels">显示边标签</button>',
-      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="mode" aria-pressed="false">切到静态KG</button>',
-      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="view3d" aria-pressed="false">切到3D</button>'
-    ].join('');
+    toolbar.innerHTML = typeof StaticGraphRenderer === 'object' && typeof StaticGraphRenderer.buildToolbarHtml === 'function'
+      ? StaticGraphRenderer.buildToolbarHtml({ includeStaticMode: true })
+      : [
+        '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="fit">重置视图</button>',
+        '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="labels">显示边标签</button>',
+        '<button type="button" class="ghost-button ghost-button-compact hidden" data-graph-action="nodelabels">隐藏节点标签</button>',
+        '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="mode" aria-pressed="false">切到静态KG</button>',
+        '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="view3d" aria-pressed="false">切到3D</button>'
+      ].join('');
     toolbar.addEventListener('click', handleGraphToolbarClick);
 
     $graph.appendChild(stage);
@@ -283,8 +287,10 @@
     ensureGraphShell();
     const fitButton = state.graphToolbar.querySelector('[data-graph-action="fit"]');
     const labelsButton = state.graphToolbar.querySelector('[data-graph-action="labels"]');
+    const nodeLabelsButton = state.graphToolbar.querySelector('[data-graph-action="nodelabels"]');
     const modeButton = state.graphToolbar.querySelector('[data-graph-action="mode"]');
     const view3dButton = state.graphToolbar.querySelector('[data-graph-action="view3d"]');
+    state.graphToolbar.classList.toggle('is-3d', state.graphMode === 'force3d');
 
     if (fitButton) {
       fitButton.textContent = state.graphMode === 'static' ? '重置静态图' : '重置视图';
@@ -305,6 +311,12 @@
       modeButton.textContent = staticMode ? '切到动态KG' : '切到静态KG';
       modeButton.classList.toggle('is-active', staticMode);
       modeButton.setAttribute('aria-pressed', staticMode ? 'true' : 'false');
+    }
+
+    if (nodeLabelsButton) {
+      const mode3d = state.graphMode === 'force3d';
+      nodeLabelsButton.classList.toggle('hidden', !mode3d);
+      nodeLabelsButton.textContent = state.nodeLabelsVisible ? '隐藏节点标签' : '显示节点标签';
     }
 
     if (view3dButton) {
@@ -608,7 +620,8 @@
     }
     state.graph3dRenderer = StaticGraph3DRenderer.create(state.graph3dHost, {
       compact: false,
-      showEdgeLabels: state.edgeLabelsVisible
+      showEdgeLabels: state.edgeLabelsVisible,
+      showNodeLabels: state.nodeLabelsVisible
     });
   }
 
@@ -633,7 +646,11 @@
       : buildGraphSubset(fullDataset, activeClue);
 
     state.graph3dRenderer.options.showEdgeLabels = state.edgeLabelsVisible;
+    state.graph3dRenderer.options.showNodeLabels = state.nodeLabelsVisible;
     state.graph3dRenderer.render(renderedDataset);
+    if (typeof state.graph3dRenderer.setNodeLabelsVisible === 'function') {
+      state.graph3dRenderer.setNodeLabelsVisible(state.nodeLabelsVisible);
+    }
     $graphMeta.textContent = renderedDataset.nodes.length + ' 个节点 · ' + renderedDataset.edges.length + ' 条边 · 3D';
   }
 
@@ -834,6 +851,18 @@
       } else if (state.graphRenderer) {
         state.graphRenderer.options.showEdgeLabels = state.edgeLabelsVisible;
         state.graphRenderer.syncEdgeLabelVisibility();
+      }
+      updateGraphToolbar();
+      return;
+    }
+
+    if (action === 'nodelabels') {
+      if (state.graphMode !== 'force3d') {
+        return;
+      }
+      state.nodeLabelsVisible = !state.nodeLabelsVisible;
+      if (state.graph3dRenderer && typeof state.graph3dRenderer.setNodeLabelsVisible === 'function') {
+        state.graph3dRenderer.setNodeLabelsVisible(state.nodeLabelsVisible);
       }
       updateGraphToolbar();
       return;

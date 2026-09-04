@@ -45,6 +45,12 @@
       if (entry && entry.renderer && typeof entry.renderer.destroy === 'function') {
         entry.renderer.destroy();
       }
+      if (entry && entry.renderer2d && entry.renderer2d !== entry.renderer && typeof entry.renderer2d.destroy === 'function') {
+        entry.renderer2d.destroy();
+      }
+      if (entry && entry.renderer3d && entry.renderer3d !== entry.renderer && typeof entry.renderer3d.destroy === 'function') {
+        entry.renderer3d.destroy();
+      }
     });
     state.graphInstances = [];
   }
@@ -166,7 +172,7 @@
         }).join('') + '</div>' : '',
         '<div class="insight-layout insight-layout-report">',
         '<section class="panel theme-graph-panel">',
-        '<div class="panel-head"><h3>相关子图</h3><div class="panel-actions"><button type="button" class="ghost-button ghost-button-compact" id="theme-graph-labels-', String(index), '">隐藏边标签</button><button type="button" class="ghost-button ghost-button-compact" id="theme-graph-view3d-', String(index), '">切到3D</button><button type="button" class="ghost-button ghost-button-compact" id="theme-graph-fullscreen-', String(index), '">全屏</button></div></div>',
+        '<div class="panel-head"><h3>相关子图</h3><div class="panel-actions"><button type="button" class="ghost-button ghost-button-compact" id="theme-graph-fullscreen-', String(index), '">全屏</button></div></div>',
         '<div class="graph-canvas theme-graph-canvas" id="theme-graph-', String(index), '"></div>',
         '</section>',
         '<section class="panel theme-evidence-panel">',
@@ -202,88 +208,172 @@
         return;
       }
       const graph = theme.graph;
+      container.innerHTML = '';
+      const stage = document.createElement('div');
+      stage.className = 'clue-graph-stage';
+      const host2d = document.createElement('div');
+      host2d.className = 'clue-graph-host theme-graph-host-2d';
+      const host3d = document.createElement('div');
+      host3d.className = 'clue-graph-host theme-graph-host-3d hidden';
+      stage.appendChild(host2d);
+      stage.appendChild(host3d);
+      const toolbar = document.createElement('div');
+      toolbar.className = 'dynamic-graph-controls clue-graph-toolbar';
+      toolbar.innerHTML = typeof StaticGraphRenderer === 'object' && typeof StaticGraphRenderer.buildToolbarHtml === 'function'
+        ? StaticGraphRenderer.buildToolbarHtml({ includeStaticMode: false })
+        : [
+          '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="fit">重置视图</button>',
+          '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="labels">显示边标签</button>',
+          '<button type="button" class="ghost-button ghost-button-compact hidden" data-graph-action="nodelabels">隐藏节点标签</button>',
+          '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="view3d">切到3D</button>'
+        ].join('');
+      container.appendChild(stage);
+      container.appendChild(toolbar);
+
       const instance = {
         mode: '2d',
         showEdgeLabels: true,
+        showNodeLabels: true,
         renderer: null,
+        renderer2d: null,
+        renderer3d: null,
         cleanup: null
       };
 
-      function syncLabelButton(button) {
-        if (!button) {
-          return;
-        }
-        button.textContent = instance.showEdgeLabels ? '隐藏边标签' : '显示边标签';
+      function currentRenderer() {
+        return instance.mode === '3d' ? instance.renderer3d : instance.renderer2d;
       }
 
-      function syncView3dButton(button) {
-        if (!button) {
-          return;
+      function syncToolbar() {
+        const labelsButton = toolbar.querySelector('[data-graph-action="labels"]');
+        const nodeLabelsButton = toolbar.querySelector('[data-graph-action="nodelabels"]');
+        const view3dButton = toolbar.querySelector('[data-graph-action="view3d"]');
+        toolbar.classList.toggle('is-3d', instance.mode === '3d');
+        if (labelsButton) {
+          labelsButton.textContent = instance.showEdgeLabels ? '隐藏边标签' : '显示边标签';
         }
-        const available = typeof StaticGraph3DRenderer === 'object' && StaticGraph3DRenderer.isAvailable();
-        button.disabled = !available;
-        button.textContent = !available ? '3D不可用' : (instance.mode === '3d' ? '切回平面' : '切到3D');
-        button.classList.toggle('is-active', instance.mode === '3d');
+        if (nodeLabelsButton) {
+          nodeLabelsButton.classList.toggle('hidden', instance.mode !== '3d');
+          nodeLabelsButton.textContent = instance.showNodeLabels ? '隐藏节点标签' : '显示节点标签';
+        }
+        if (view3dButton) {
+          const available = typeof StaticGraph3DRenderer === 'object' && StaticGraph3DRenderer.isAvailable();
+          view3dButton.disabled = !available;
+          view3dButton.textContent = !available ? '3D不可用' : (instance.mode === '3d' ? '切回平面' : '切到3D');
+          view3dButton.classList.toggle('is-active', instance.mode === '3d');
+        }
       }
 
       function renderCurrent() {
-        if (instance.renderer && typeof instance.renderer.destroy === 'function') {
-          instance.renderer.destroy();
-        }
-        container.innerHTML = '';
-        if (instance.mode === '3d' && typeof StaticGraph3DRenderer === 'object') {
-          instance.renderer = StaticGraph3DRenderer.create(container, {
-            compact: true,
-            showEdgeLabels: instance.showEdgeLabels
-          });
-        } else {
-          instance.renderer = StaticGraphRenderer.create(container, {
-            compact: true,
-            enableDetail: false,
-            showEdgeLabels: instance.showEdgeLabels,
-            fitPadding: 42
-          });
-        }
-        instance.renderer.render(graph);
-      }
-
-      renderCurrent();
-      const labelsButton = document.getElementById('theme-graph-labels-' + index);
-      const view3dButton = document.getElementById('theme-graph-view3d-' + index);
-      if (labelsButton) {
-        labelsButton.addEventListener('click', function () {
-          instance.showEdgeLabels = !instance.showEdgeLabels;
-          if (instance.renderer && typeof instance.renderer.setEdgeLabelsVisible === 'function') {
-            instance.renderer.setEdgeLabelsVisible(instance.showEdgeLabels);
-          } else if (instance.renderer) {
-            instance.renderer.options.showEdgeLabels = instance.showEdgeLabels;
-            if (typeof instance.renderer.syncEdgeLabelVisibility === 'function') {
-              instance.renderer.syncEdgeLabelVisibility();
+        host2d.classList.toggle('hidden', instance.mode !== '2d');
+        host3d.classList.toggle('hidden', instance.mode !== '3d');
+        if (instance.mode === '3d') {
+          if (instance.renderer2d) {
+            instance.renderer2d.destroy();
+            instance.renderer2d = null;
+            host2d.innerHTML = '';
+          }
+          if (!instance.renderer3d && typeof StaticGraph3DRenderer === 'object') {
+            instance.renderer3d = StaticGraph3DRenderer.create(host3d, {
+              compact: true,
+              showEdgeLabels: instance.showEdgeLabels,
+              showNodeLabels: instance.showNodeLabels
+            });
+          }
+          instance.renderer = instance.renderer3d;
+          if (instance.renderer3d) {
+            instance.renderer3d.options.showEdgeLabels = instance.showEdgeLabels;
+            instance.renderer3d.options.showNodeLabels = instance.showNodeLabels;
+            instance.renderer3d.render(graph);
+            if (typeof instance.renderer3d.setNodeLabelsVisible === 'function') {
+              instance.renderer3d.setNodeLabelsVisible(instance.showNodeLabels);
             }
           }
-          syncLabelButton(labelsButton);
-        });
+        } else {
+          if (instance.renderer3d) {
+            instance.renderer3d.destroy();
+            instance.renderer3d = null;
+            host3d.innerHTML = '';
+          }
+          if (!instance.renderer2d) {
+            instance.renderer2d = StaticGraphRenderer.create(host2d, {
+              compact: true,
+              enableDetail: false,
+              showEdgeLabels: instance.showEdgeLabels,
+              showControls: false,
+              fitPadding: 42
+            });
+          }
+          instance.renderer = instance.renderer2d;
+          instance.renderer2d.options.showEdgeLabels = instance.showEdgeLabels;
+          instance.renderer2d.render(graph);
+          if (typeof instance.renderer2d.syncEdgeLabelVisibility === 'function') {
+            instance.renderer2d.syncEdgeLabelVisibility();
+          }
+        }
+        syncToolbar();
       }
-      if (view3dButton) {
-        view3dButton.addEventListener('click', function () {
+
+      toolbar.addEventListener('click', function (event) {
+        const button = event.target.closest('button[data-graph-action]');
+        if (!button) {
+          return;
+        }
+        const action = button.getAttribute('data-graph-action');
+        const renderer = currentRenderer();
+        if (action === 'fit') {
+          if (renderer && typeof renderer.fitToAll === 'function') {
+            renderer.fitToAll();
+          }
+          return;
+        }
+        if (action === 'labels') {
+          instance.showEdgeLabels = !instance.showEdgeLabels;
+          if (renderer && typeof renderer.setEdgeLabelsVisible === 'function') {
+            renderer.setEdgeLabelsVisible(instance.showEdgeLabels);
+          } else if (renderer) {
+            renderer.options.showEdgeLabels = instance.showEdgeLabels;
+            if (typeof renderer.syncEdgeLabelVisibility === 'function') {
+              renderer.syncEdgeLabelVisibility();
+            }
+          }
+          syncToolbar();
+          return;
+        }
+        if (action === 'nodelabels') {
+          if (instance.mode !== '3d') {
+            return;
+          }
+          instance.showNodeLabels = !instance.showNodeLabels;
+          if (instance.renderer3d && typeof instance.renderer3d.setNodeLabelsVisible === 'function') {
+            instance.renderer3d.setNodeLabelsVisible(instance.showNodeLabels);
+          }
+          syncToolbar();
+          return;
+        }
+        if (action === 'view3d') {
           if (typeof StaticGraph3DRenderer !== 'object' || !StaticGraph3DRenderer.isAvailable()) {
             return;
           }
           instance.mode = instance.mode === '3d' ? '2d' : '3d';
           renderCurrent();
-          syncView3dButton(view3dButton);
-        });
-        syncView3dButton(view3dButton);
-      }
+        }
+      });
+
+      renderCurrent();
       const fullscreenButton = document.getElementById('theme-graph-fullscreen-' + index);
       instance.cleanup = AnalysisUtils.bindFullscreenToggle(fullscreenButton, container, {
         onChange: function () {
           window.requestAnimationFrame(function () {
-            if (instance.renderer && typeof instance.renderer.render === 'function') {
-              instance.renderer.render(graph);
+            const renderer = currentRenderer();
+            if (renderer && typeof renderer.render === 'function') {
+              renderer.render(graph);
             }
-            if (instance.renderer && typeof instance.renderer.syncSize === 'function') {
-              instance.renderer.syncSize();
+            if (renderer && typeof renderer.syncSize === 'function') {
+              renderer.syncSize();
+            }
+            if (renderer && typeof renderer.setNodeLabelsVisible === 'function') {
+              renderer.setNodeLabelsVisible(instance.showNodeLabels);
             }
           });
         }

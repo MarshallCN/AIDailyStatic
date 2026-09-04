@@ -757,6 +757,10 @@ code {
   font-size: 0.72rem;
 }
 
+.graph-3d-labels.is-node-labels-hidden .graph-3d-node-label {
+  display: none !important;
+}
+
 .graph-3d-edge-label {
   padding: 1px 5px;
   border-radius: 5px;

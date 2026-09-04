@@ -769,11 +769,26 @@
     }
   };
 
+  function buildToolbarHtml(options) {
+    const settings = Object.assign({ includeStaticMode: false }, options || {});
+    const buttons = [
+      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="fit">重置视图</button>',
+      '<button type="button" class="ghost-button ghost-button-compact" data-graph-action="labels">显示边标签</button>',
+      '<button type="button" class="ghost-button ghost-button-compact hidden" data-graph-action="nodelabels">隐藏节点标签</button>'
+    ];
+    if (settings.includeStaticMode) {
+      buttons.push('<button type="button" class="ghost-button ghost-button-compact" data-graph-action="mode" aria-pressed="false">切到静态KG</button>');
+    }
+    buttons.push('<button type="button" class="ghost-button ghost-button-compact" data-graph-action="view3d" aria-pressed="false">切到3D</button>');
+    return buttons.join('');
+  }
+
   global.StaticGraphRenderer = {
     create: function (container, options) {
       return new GraphRenderer(container, options);
     },
     prepareData: prepareGraphDataset,
+    buildToolbarHtml: buildToolbarHtml,
     TYPE_STYLES: TYPE_STYLES
   };
 })(window);
