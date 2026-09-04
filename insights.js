@@ -230,14 +230,28 @@
       .map(prepareTheme)
       .filter(function (theme) {
         return theme.title && theme.summary && theme.graph && theme.graph.nodes && theme.graph.nodes.length >= 2;
-      })
-      .sort(function (left, right) {
+      });
+    const seenJudgments = new Set();
+    preparedThemes.forEach(function (theme) {
+      const key = String(theme.summary || '').slice(0, 24);
+      if (seenJudgments.has(key) && theme.report) {
+        const fallback = AnalysisUtils.buildClueJudgment(theme, (theme.evidence || []).filter(function (entry) {
+          return !/观察：/.test(entry.title || '');
+        }));
+        if (fallback && fallback.indexOf(key) === -1) {
+          theme.summary = fallback;
+          theme.report.judgment = fallback;
+        }
+      }
+      seenJudgments.add(String(theme.summary || '').slice(0, 24));
+    });
+    preparedThemes.sort(function (left, right) {
         function score(theme) {
           const evidenceCount = (theme.evidence || []).length;
-          const hasObservation = (theme.evidence || []).some(function (entry) {
-            return /观察：/.test(entry.title || '') || entry.source === '综合观察';
+          const usedObservation = theme.report && theme.report.judgment && (theme.evidence || []).some(function (entry) {
+            return entry.summary && theme.report.judgment.indexOf(String(entry.summary).slice(0, 12)) !== -1 && (/观察：/.test(entry.title || '') || entry.source === '综合观察');
           });
-          return evidenceCount * 2 + (theme.graph.nodes || []).length + (hasObservation ? 10 : 0) + ((theme.report && theme.report.factChain && theme.report.factChain.length) || 0);
+          return evidenceCount + (theme.graph.nodes || []).length + (usedObservation ? 12 : 0) + ((theme.report && theme.report.factChain && theme.report.factChain.length) || 0) * 3;
         }
         return score(right) - score(left);
       })

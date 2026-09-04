@@ -607,15 +607,19 @@
     const entities = uniqueStrings((theme.coreEntities || theme.core_entities || []).concat((theme.title || '').split(/\s*\/\s*/)))
       .filter((entry) => isMeaningfulEntityName(entry))
       .slice(0, 3);
+    function entityHitCount(text) {
+      return entities.filter((entity) => entity && String(text || '').toLowerCase().indexOf(String(entity).toLowerCase()) !== -1).length;
+    }
     const observations = evidence.filter((entry) => {
-      return isUsefulObservation(entry) && textMentionsEntities((entry.title || '') + (entry.summary || ''), entities);
+      const text = (entry.title || '') + (entry.summary || '');
+      return isUsefulObservation(entry) && entityHitCount(text) >= Math.min(2, entities.length || 2);
     });
     const facts = evidence.filter((entry) => !/观察：/.test(entry.title || '') && !isNoisyObservation(entry.summary)).slice(0, 5);
     const matchingEvidence = facts.filter((entry) => textMentionsEntities((entry.title || '') + (entry.summary || ''), entities));
     const judgment = observations[0] && observations[0].summary
       ? firstSentence(observations[0].summary, 220)
       : buildClueJudgment(theme, matchingEvidence.length ? matchingEvidence : facts);
-    const factChain = facts.map((entry) => {
+    const factChain = (matchingEvidence.length >= 2 ? matchingEvidence : facts).map((entry) => {
       const title = String(entry.title || '').replace(/^观察：/, '');
       const summary = firstSentence(entry.summary, 140);
       const line = (entry.date ? entry.date + '，' : '') + title;
