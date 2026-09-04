@@ -672,10 +672,31 @@
       connected.add(edge.source);
       connected.add(edge.target);
     });
-    const filteredNodes = nodes
-      .filter((node) => connected.has(node.id) || (node.articleIds || []).length >= 2)
-      .sort((a, b) => Number(b.weight || 1) - Number(a.weight || 1))
-      .slice(0, settings.maxNodes);
+    const priorityLabels = new Set();
+    (source.clues || []).forEach((clue) => {
+      String(clue.title || '').split(/\s*\/\s*/).forEach((part) => {
+        const split = splitConcatenatedEntityNames(part);
+        (split.length >= 2 ? split : [canonicalizeTerm(part)]).forEach((label) => {
+          if (label && isMeaningfulEntityName(label)) {
+            priorityLabels.add(normalizeForComparison(label));
+          }
+        });
+      });
+      (clue.coreEntities || clue.core_entities || []).forEach((entry) => {
+        const split = splitConcatenatedEntityNames(entry);
+        (split.length >= 2 ? split : [canonicalizeTerm(entry)]).forEach((label) => {
+          if (label && isMeaningfulEntityName(label)) {
+            priorityLabels.add(normalizeForComparison(label));
+          }
+        });
+      });
+    });
+    const rankedNodes = nodes
+      .filter((node) => connected.has(node.id) || (node.articleIds || []).length >= 2 || priorityLabels.has(normalizeForComparison(node.label)))
+      .sort((a, b) => Number(b.weight || 1) - Number(a.weight || 1));
+    const priorityNodes = rankedNodes.filter((node) => priorityLabels.has(normalizeForComparison(node.label)));
+    const fillerNodes = rankedNodes.filter((node) => !priorityLabels.has(normalizeForComparison(node.label)));
+    const filteredNodes = priorityNodes.concat(fillerNodes).slice(0, settings.maxNodes);
     const keptIds = new Set(filteredNodes.map((node) => node.id));
     const filteredEdges = edges.filter((edge) => keptIds.has(edge.source) && keptIds.has(edge.target));
 
@@ -692,12 +713,25 @@
       const coreEntities = uniqueStrings(splitEntities.filter((entry) => isMeaningfulEntityName(entry)));
       const title = cleanClueTitle(clue.title) || coreEntities.slice(0, 3).join(' / ');
       const labelSet = new Set(coreEntities.map((entry) => normalizeForComparison(entry)));
-      const focusNodeIds = filteredNodes
+      const mappedFocus = uniqueStrings((clue.focusNodeIds || []).flatMap((id) => resolveIds(id)))
+        .filter((id) => keptIds.has(id));
+      const titleFocus = filteredNodes
         .filter((node) => labelSet.has(normalizeForComparison(node.label)))
         .map((node) => node.id);
-      const focusSet = new Set(focusNodeIds);
+      const focusSet = new Set(mappedFocus.concat(titleFocus));
+      const seedEdgeCount = filteredEdges.filter((edge) => focusSet.has(edge.source) && focusSet.has(edge.target)).length;
+      if (focusSet.size && seedEdgeCount === 0) {
+        filteredEdges.forEach((edge) => {
+          if (focusSet.has(edge.source) || focusSet.has(edge.target)) {
+            focusSet.add(edge.source);
+            focusSet.add(edge.target);
+          }
+        });
+      }
+      const focusNodeIds = Array.from(focusSet).filter((id) => keptIds.has(id));
+      const focusNodeSet = new Set(focusNodeIds);
       const focusEdgeIds = filteredEdges
-        .filter((edge) => focusSet.has(edge.source) && focusSet.has(edge.target))
+        .filter((edge) => focusNodeSet.has(edge.source) && focusNodeSet.has(edge.target))
         .map((edge) => edge.id);
       const eventTypes = uniqueStrings((clue.eventTypes || clue.event_types || []).map(eventTypeLabel));
       const trendSignals = uniqueStrings((clue.trendSignals || clue.trend_signals || []).map(cleanInsightSignal).filter(Boolean));
@@ -709,7 +743,7 @@
         focusNodeIds: focusNodeIds,
         focusEdgeIds: focusEdgeIds
       });
-    }).filter((clue) => clue.title);
+    }).filter((clue) => clue.title && clue.focusNodeIds.length >= 2);
 
     return {
       nodes: filteredNodes.map((node) => ({ data: node })),
