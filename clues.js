@@ -637,10 +637,8 @@
     if (activeClue) {
       lines.push('<p><strong>当前线索</strong>：' + escapeHtml(activeClue.title) + '。</p>');
       if (state.graphMode === 'dynamic') {
-        lines.push('<p>当前子图来自静态 KG 信号记录的聚类，强调结构化实体、事件和关系，而不是正文分词的即时共现。</p>');
-        if (activeClue.trendSignals && activeClue.trendSignals.length) {
-          lines.push('<p><strong>趋势信号</strong>：' + escapeHtml(activeClue.trendSignals.join('；')) + '</p>');
-        }
+        lines.push('<p><strong>判断</strong>：' + escapeHtml(activeClue.summary) + '</p>');
+        lines.push('<p>子图里是这条判断背后的公司、产品与知识节点，不是标题原句。</p>');
       } else if (state.graphView === 'all') {
         lines.push('<p>当前展示的是上一版静态共现图的全图视图，方便和新的动态图直接对照。</p>');
       } else {
@@ -690,14 +688,9 @@
           return '<span class="mini-tag">' + escapeHtml(label) + '</span>';
         }).join('') + '</div>'
         : '';
-      const signalMarkup = clue.trendSignals && clue.trendSignals.length
-        ? '<div class="clue-signal-list">' + clue.trendSignals.map(function (signal) {
-          return '<span class="match-badge">' + escapeHtml(signal) + '</span>';
-        }).join('') + '</div>'
-        : '';
 
       return [
-        '<article class="clue-card ', clue.id === activeClue.id ? 'is-active' : '', '">',
+        '<article class="clue-card ', clue.id === activeClue.id ? 'is-active' : '', '" data-clue-id="', clue.id, '">',
         '<div class="clue-card-head">',
         '<div>',
         '<h3>', escapeHtml(clue.title), '</h3>',
@@ -705,14 +698,7 @@
         '</div>',
         '<button class="ghost-button ghost-button-compact" data-clue-id="', clue.id, '" type="button">查看子图</button>',
         '</div>',
-        '<p>', escapeHtml(clue.summary), '</p>',
-        '<div class="term-day-list">',
-        (clue.coreEntities || []).map(function (entry) {
-          return '<span class="mini-tag">' + escapeHtml(entry) + '</span>';
-        }).join(''),
-        '<span class="mini-tag">', escapeHtml(clue.dominantCategory || '多主题'), '</span>',
-        '</div>',
-        signalMarkup,
+        '<p class="clue-judgment">', escapeHtml(clue.summary), '</p>',
         '</article>'
       ].join('');
     }).join('');
@@ -797,22 +783,44 @@
     $empty.classList.add('hidden');
 
     const signalRecords = getSignalRecordsForItems(filteredItems);
-    state.graphDatasets.dynamic = AnalysisUtils.sanitizeGraphDataset(
+    function decorateClues(dataset) {
+      const itemMap = new Map(filteredItems.map(function (item) {
+        return [item.id, item];
+      }));
+      const enriched = AnalysisUtils.enrichGraphWithKnowledge(dataset, filteredItems, { maxTopics: 10 });
+      enriched.clues = (enriched.clues || []).map(function (clue) {
+        const evidenceItems = (clue.evidenceIds || []).map(function (articleId) {
+          return itemMap.get(articleId);
+        }).filter(Boolean);
+        return Object.assign({}, clue, {
+          title: AnalysisUtils.cleanClueTitle(clue.title),
+          summary: AnalysisUtils.buildClueJudgment(clue, evidenceItems),
+          coreEntities: (clue.coreEntities || []).slice(0, 3),
+          eventTypes: (clue.eventTypes || []).slice(0, 2),
+          trendSignals: []
+        });
+      }).filter(function (clue) {
+        return clue.title && clue.summary;
+      });
+      return enriched;
+    }
+
+    state.graphDatasets.dynamic = decorateClues(AnalysisUtils.sanitizeGraphDataset(
       KGUtils.buildKnowledgeGraphFromRecords(signalRecords, {
         rangeLabel: rangeLabel,
-        maxClues: 6
+        maxClues: 5
       }),
-      { keepTypes: ['entity'], maxNodes: 48 }
-    );
-    state.graphDatasets.static = AnalysisUtils.sanitizeGraphDataset(
+      { keepTypes: ['entity', 'topic'], maxNodes: 52 }
+    ));
+    state.graphDatasets.static = decorateClues(AnalysisUtils.sanitizeGraphDataset(
       AnalysisUtils.buildClueGraph(filteredItems, {
         rangeLabel: rangeLabel,
         maxEntities: 40,
         minEntityEdgeWeight: 2,
-        maxClues: 5
+        maxClues: 4
       }),
-      { keepTypes: ['entity'], maxNodes: 40 }
-    );
+      { keepTypes: ['entity', 'topic'], maxNodes: 40 }
+    ));
 
     renderCurrentView();
   }
@@ -871,11 +879,11 @@
     $endDate.addEventListener('change', handleManualDateChange);
 
     $list.addEventListener('click', function (event) {
-      const button = event.target.closest('button[data-clue-id]');
-      if (!button || !getCurrentDataset()) {
+      const target = event.target.closest('[data-clue-id]');
+      if (!target || !getCurrentDataset()) {
         return;
       }
-      setActiveClueId(button.getAttribute('data-clue-id') || '');
+      setActiveClueId(target.getAttribute('data-clue-id') || '');
       state.graphView = 'clue';
       renderCurrentView();
     });

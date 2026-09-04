@@ -341,12 +341,18 @@
       ? global.AnalysisUtils.parseCategories(item.category)
       : String(item.category || '').split(',');
 
+    if (global.AnalysisUtils && typeof global.AnalysisUtils.extractKnowledgeConcepts === 'function') {
+      global.AnalysisUtils.extractKnowledgeConcepts(titleSummary).forEach(function (concept) {
+        addEntity(concept, 2.4);
+      });
+    }
+
     const entities = Array.from(scoreMap.values())
       .sort(function (a, b) {
         if (a.score === b.score) return a.name.localeCompare(b.name, 'zh-Hans-CN');
         return b.score - a.score;
       })
-      .slice(0, 8)
+      .slice(0, 10)
       .map(function (entry) {
         const type = inferEntityType(entry.name, item);
         return {

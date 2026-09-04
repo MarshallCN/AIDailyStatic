@@ -71,52 +71,55 @@
   }
 
   function prepareTheme(theme) {
-    const graph = typeof AnalysisUtils !== 'undefined' && typeof AnalysisUtils.sanitizeGraphDataset === 'function'
-      ? AnalysisUtils.sanitizeGraphDataset(theme.graph || { nodes: [], edges: [] }, { keepTypes: ['entity'], maxNodes: 36 })
-      : (theme.graph || { nodes: [], edges: [] });
-    const graphLabels = labelsFromGraph(graph, 4);
+    const rawGraph = theme.graph || { nodes: [], edges: [] };
+    let graph = typeof AnalysisUtils !== 'undefined' && typeof AnalysisUtils.sanitizeGraphDataset === 'function'
+      ? AnalysisUtils.sanitizeGraphDataset(rawGraph, { keepTypes: ['entity', 'topic'], maxNodes: 36 })
+      : rawGraph;
+    if (typeof AnalysisUtils !== 'undefined' && typeof AnalysisUtils.enrichGraphWithKnowledge === 'function') {
+      graph = AnalysisUtils.enrichGraphWithKnowledge(graph, theme.evidence || [], { maxTopics: 8 });
+    }
+    const graphLabels = labelsFromGraph(graph, 3);
     const cleanedTitle = typeof AnalysisUtils !== 'undefined' ? AnalysisUtils.cleanClueTitle(theme.title) : '';
-    const title = cleanedTitle || graphLabels.slice(0, 3).join(' / ');
-    const summary = title
-      ? '近期报道里，' + title.replace(/\s*\/\s*/g, '、') + ' 反复共现，形成一条可以顺着实体往下看的主题。'
-      : '';
-    const trendSignals = (theme.trend_signals || []).map(cleanSignal).filter(Boolean);
-    const rewrite = typeof AnalysisUtils !== 'undefined' && typeof AnalysisUtils.rewriteConcatenatedMentions === 'function'
-      ? AnalysisUtils.rewriteConcatenatedMentions
-      : function (value) { return value; };
+    const title = cleanedTitle || graphLabels.join(' / ');
+    const report = typeof AnalysisUtils !== 'undefined' && typeof AnalysisUtils.buildInsightReport === 'function'
+      ? AnalysisUtils.buildInsightReport(Object.assign({}, theme, {
+        title: title,
+        coreEntities: (theme.core_entities || theme.coreEntities || []).concat(graphLabels),
+        eventTypes: theme.event_types || theme.eventTypes || []
+      }))
+      : null;
     return Object.assign({}, theme, {
       graph: graph,
-      title: title,
-      summary: summary || rewrite(theme.summary || ''),
-      conclusion: rewrite(theme.conclusion || ''),
-      trend_signals: trendSignals
+      title: (report && report.title) || title,
+      report: report,
+      summary: report ? report.judgment : '',
+      conclusion: report ? report.synthesis : '',
+      trend_signals: (report && report.actions) || (theme.trend_signals || []).map(cleanSignal).filter(Boolean)
     });
   }
 
   function renderOverview(report, themes) {
-    const overview = report.overview || {};
     const themeTitles = (themes || []).map(function (theme) { return theme.title; }).filter(Boolean);
+    const judgments = (themes || []).map(function (theme) {
+      return theme.summary;
+    }).filter(Boolean);
     const headline = themeTitles.length
-      ? (report.date || '') + ' 的图谱留下 ' + themeTitles.length + ' 条可追踪主题：' + themeTitles.join('；')
-      : (typeof AnalysisUtils !== 'undefined' ? AnalysisUtils.cleanClueTitle(overview.headline) : overview.headline);
-    const leadEntities = themeTitles[0] ? themeTitles[0].replace(/\s*\/\s*/g, '、') : '';
-    const summary = leadEntities
-      ? '最近窗口里最稳定的结构，是围绕 ' + leadEntities + ' 形成的实体关系，而不是标题原句或来源标签。'
-      : (overview.summary || '暂无总览摘要');
-    const observations = (themes || []).map(function (theme) {
-      return (theme.trend_signals || [])[0];
-    }).filter(Boolean).slice(0, 4);
+      ? (report.date || '') + ' 精选 ' + themeTitles.length + ' 篇主题报告：' + themeTitles.join('；')
+      : (report.date || '') + ' 暂无足够高质量主题';
+    const summary = judgments.length
+      ? judgments.map(function (entry, index) {
+        return '（' + String(index + 1) + '）' + entry;
+      }).join(' ')
+      : '当前窗口还没有足够的证据把线索串成报告。';
     $overview.innerHTML = [
-      '<div class="report-headline">', escapeHtml(headline || '暂无总览标题'), '</div>',
-      '<p class="report-summary">', escapeHtml(summary), '</p>',
-      observations.length ? '<div class="report-observation-list">' + observations.map(function (entry) {
-        return '<span class="match-badge">' + escapeHtml(entry) + '</span>';
-      }).join('') + '</div>' : ''
+      '<div class="report-headline">', escapeHtml(headline), '</div>',
+      '<p class="report-summary">', escapeHtml(summary), '</p>'
     ].join('');
 
-    const themeCount = (themes || []).length;
-    const evidenceCount = Array.isArray(report.evidence_index) ? report.evidence_index.length : 0;
-    $meta.textContent = themeCount + ' 个主题 · ' + evidenceCount + ' 条索引新闻';
+    const evidenceCount = (themes || []).reduce(function (sum, theme) {
+      return sum + ((theme.evidence && theme.evidence.length) || 0);
+    }, 0);
+    $meta.textContent = (themes || []).length + ' 篇主题报告 · ' + evidenceCount + ' 条直接证据';
   }
 
   function renderMemory(report) {
@@ -151,8 +154,13 @@
         '</div>',
         '<div class="theme-meta">', escapeHtml(theme.dominant_category || '多主题'), '</div>',
         '</div>',
-        '<p class="theme-summary">', escapeHtml(theme.summary || ''), '</p>',
-        '<div class="theme-conclusion">', escapeHtml(theme.conclusion || ''), '</div>',
+        '<div class="theme-report">',
+        theme.summary ? '<section class="theme-report-section"><h3>判断</h3><p class="theme-summary">' + escapeHtml(theme.summary) + '</p></section>' : '',
+        theme.report && theme.report.factChain && theme.report.factChain.length ? '<section class="theme-report-section"><h3>事实链</h3><div class="theme-report-facts">' + theme.report.factChain.map(function (fact) {
+          return '<p class="theme-report-fact">' + escapeHtml(fact) + '</p>';
+        }).join('') + '</div></section>' : '',
+        theme.conclusion ? '<section class="theme-report-section"><h3>串起来看</h3><div class="theme-conclusion">' + escapeHtml(theme.conclusion) + '</div></section>' : '',
+        '</div>',
         theme.trend_signals && theme.trend_signals.length ? '<div class="theme-signal-list">' + theme.trend_signals.map(function (signal) {
           return '<span class="match-badge">' + escapeHtml(signal) + '</span>';
         }).join('') + '</div>' : '',
@@ -196,7 +204,7 @@
       const renderer = StaticGraphRenderer.create(container, {
         compact: true,
         enableDetail: false,
-        showEdgeLabels: false,
+        showEdgeLabels: true,
         fitPadding: 42
       });
       const graph = theme.graph;
@@ -221,13 +229,24 @@
     const preparedThemes = (Array.isArray(report.themes) ? report.themes : [])
       .map(prepareTheme)
       .filter(function (theme) {
-        return theme.title && theme.graph && theme.graph.nodes && theme.graph.nodes.length >= 2;
-      });
+        return theme.title && theme.summary && theme.graph && theme.graph.nodes && theme.graph.nodes.length >= 2;
+      })
+      .sort(function (left, right) {
+        function score(theme) {
+          const evidenceCount = (theme.evidence || []).length;
+          const hasObservation = (theme.evidence || []).some(function (entry) {
+            return /观察：/.test(entry.title || '') || entry.source === '综合观察';
+          });
+          return evidenceCount * 2 + (theme.graph.nodes || []).length + (hasObservation ? 10 : 0) + ((theme.report && theme.report.factChain && theme.report.factChain.length) || 0);
+        }
+        return score(right) - score(left);
+      })
+      .slice(0, 3);
     $empty.classList.add('hidden');
     renderOverview(report, preparedThemes);
     renderMemory(report);
     renderThemes(preparedThemes);
-    $summary.textContent = report.date + ' · ' + preparedThemes.length + ' 个主题 · 静态洞察报告';
+    $summary.textContent = report.date + ' · ' + preparedThemes.length + ' 篇精选主题报告';
   }
 
   function showEmpty(message) {

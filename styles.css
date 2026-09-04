@@ -740,6 +740,17 @@ code {
   color: var(--muted);
 }
 
+.clue-card p.clue-judgment {
+  margin: 8px 0 0;
+  color: #0f172a;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.clue-card {
+  cursor: pointer;
+}
+
 .evidence-grid {
   margin-top: 16px;
   display: grid;
@@ -1115,6 +1126,36 @@ code {
   border-radius: 0 14px 14px 0;
   background: #f8fbff;
   color: #0f172a;
+}
+
+.theme-report {
+  display: grid;
+  gap: 14px;
+  margin: 8px 0 12px;
+}
+
+.theme-report-section h3 {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.theme-report-facts {
+  display: grid;
+  gap: 8px;
+}
+
+.theme-report-fact {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  color: #1e293b;
+  font-size: 0.94rem;
+  line-height: 1.65;
 }
 
 .insight-layout-report {

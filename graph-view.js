@@ -4,7 +4,8 @@
     entity: { fill: '#eef2ff', stroke: '#a5b4fc', radius: 15, label: '实体' },
     event: { fill: '#ecfeff', stroke: '#67e8f9', radius: 13, label: '事件' },
     source: { fill: '#fef3c7', stroke: '#fbbf24', radius: 11, label: '来源' },
-    category: { fill: '#dcfce7', stroke: '#4ade80', radius: 10, label: '分类' }
+    category: { fill: '#dcfce7', stroke: '#4ade80', radius: 10, label: '分类' },
+    topic: { fill: '#fae8ff', stroke: '#e879f9', radius: 12, label: '知识' }
   };
 
   function escapeHtml(value) {
