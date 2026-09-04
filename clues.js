@@ -33,7 +33,8 @@
     staticHost: null,
     graphToolbar: null,
     edgeLabelsVisible: false,
-    resizeTimer: 0
+    resizeTimer: 0,
+    loadSeq: 0
   };
 
   const $summary = document.getElementById('clue-summary');
@@ -124,6 +125,21 @@
       state.endDate = state.startDate;
       state.startDate = nextStart;
     }
+  }
+
+  function mergeItems(existing, incoming) {
+    const merged = new Map();
+    (existing || []).forEach(function (item) {
+      if (item && item.id) {
+        merged.set(item.id, item);
+      }
+    });
+    (incoming || []).forEach(function (item) {
+      if (item && item.id) {
+        merged.set(item.id, item);
+      }
+    });
+    return Array.from(merged.values());
   }
 
   function getFilteredItems() {
@@ -799,7 +815,7 @@
     state.startDate = $startDate.value;
     state.endDate = $endDate.value;
     normalizeDateRange();
-    render();
+    loadAndRender();
   }
 
   function initSignalRecordMap(items, kgPayloads) {
@@ -832,7 +848,7 @@
         return;
       }
       setPreset(button.getAttribute('data-preset'));
-      render();
+      loadAndRender();
     });
 
     $categories.addEventListener('click', function (event) {
@@ -891,22 +907,40 @@
       }
     });
 
-    Promise.allSettled([NewsStore.preloadAll(), KGStore.preloadAll()])
-      .then(function (results) {
-        const newsResult = results[0];
-        const kgResult = results[1];
-        if (!newsResult || newsResult.status !== 'fulfilled') {
-          throw new Error('news');
-        }
+    loadAndRender();
+  }
 
-        state.allItems = newsResult.value;
-        initSignalRecordMap(
-          newsResult.value,
-          kgResult && kgResult.status === 'fulfilled' ? kgResult.value : []
-        );
+  function loadAndRender() {
+    const seq = ++state.loadSeq;
+    const rangeLabel = AnalysisUtils.formatDateRangeLabel(state.startDate, state.endDate);
+    $summary.textContent = '正在加载 ' + rangeLabel + ' 的新闻与知识图谱...';
+
+    NewsStore.loadRange(state.startDate, state.endDate)
+      .then(function (items) {
+        if (seq !== state.loadSeq) {
+          return null;
+        }
+        state.allItems = mergeItems(state.allItems, items || []);
+        initSignalRecordMap(state.allItems, KGStore.getCachedDayData());
+        render();
+        return KGStore.loadRange(state.startDate, state.endDate);
+      })
+      .then(function (payloads) {
+        if (seq !== state.loadSeq || payloads == null) {
+          return;
+        }
+        initSignalRecordMap(state.allItems, KGStore.getCachedDayData());
         render();
       })
       .catch(function () {
+        if (seq !== state.loadSeq) {
+          return;
+        }
+        if (state.allItems.length) {
+          initSignalRecordMap(state.allItems, KGStore.getCachedDayData());
+          render();
+          return;
+        }
         $summary.textContent = '历史新闻加载失败。';
         $empty.classList.remove('hidden');
         $list.innerHTML = '<div class="term-placeholder">无法生成线索图谱，请检查本地服务或静态产物目录。</div>';

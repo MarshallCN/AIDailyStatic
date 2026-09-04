@@ -1001,10 +1001,16 @@ if (!window.clearImmediate) {
         }
       }
       if (settings.shrinkToFit) {
+        var nextWeight = Array.isArray(item) ? item[1] * 3 / 4 : item.weight * 3 / 4
+        // Without a floor this recurses until the call stack overflows when
+        // a word can never fit (zero-size canvas, huge first word, etc.).
+        if (!isFinite(nextWeight) || nextWeight < 0.75) {
+          return false
+        }
         if (Array.isArray(item)) {
-          item[1] = item[1] * 3 / 4
+          item[1] = nextWeight
         } else {
-          item.weight = item.weight * 3 / 4
+          item.weight = nextWeight
         }
         return putWord(item)
       }
@@ -1045,6 +1051,13 @@ if (!window.clearImmediate) {
         var rect = canvas.getBoundingClientRect()
         ngx = Math.ceil(rect.width / g)
         ngy = Math.ceil(rect.height / g)
+      }
+
+      if (ngx < 2 || ngy < 2) {
+        sendEvent('wordcloudfail', false, {
+          message: 'canvas is too small to place words'
+        })
+        return
       }
 
       // Sending a wordcloudstart event which cause the previous loop to stop.

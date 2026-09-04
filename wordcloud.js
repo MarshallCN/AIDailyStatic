@@ -20,7 +20,8 @@
     visibleTerms: [],
     termMap: new Map(),
     visibleRelatedItemCount: 10,
-    fontsReady: false
+    fontsReady: false,
+    loadSeq: 0
   };
 
   const $summary = document.getElementById('wc-summary');
@@ -212,47 +213,82 @@
     `;
   }
 
+  function mergeItems(existing, incoming) {
+    const merged = new Map();
+    (existing || []).forEach((item) => {
+      if (item && item.id) {
+        merged.set(item.id, item);
+      }
+    });
+    (incoming || []).forEach((item) => {
+      if (item && item.id) {
+        merged.set(item.id, item);
+      }
+    });
+    return Array.from(merged.values());
+  }
+
+  function measureCloudSize() {
+    const width = Math.max(280, $canvas.clientWidth || ($canvas.parentElement && $canvas.parentElement.clientWidth) || 640);
+    const height = Math.max(320, $canvas.clientHeight || 520);
+    return { width, height };
+  }
+
   function renderCloud(terms) {
     state.visibleTerms = terms;
     $canvas.innerHTML = '';
 
-    if (!terms.length) {
+    if (!terms.length || typeof WordCloud !== 'function') {
       return;
     }
 
-    WordCloud($canvas, {
-      list: terms.map((entry) => [entry.term, entry.count]),
-      fontFamily: WORDCLOUD_FONT_FAMILY,
-      gridSize: Math.max(10, Math.round($canvas.clientWidth / 30)),
-      weightFactor: function (size) {
-        return 14 + (size * 4);
-      },
-      backgroundColor: 'rgba(0, 0, 0, 0)',
-      color: function (_, weight) {
-        if (weight >= 10) return '#1d4ed8';
-        if (weight >= 6) return '#0f766e';
-        return '#7c3aed';
-      },
-      rotateRatio: 0.18,
-      minRotation: -Math.PI / 6,
-      maxRotation: Math.PI / 6,
-      drawOutOfBound: false,
-      shrinkToFit: true,
-      classes: 'wordcloud-term',
-      hover: function (item) {
-        if (item && item[0]) {
-          $cloudMeta.textContent = `悬停词条：${item[0]}`;
+    const size = measureCloudSize();
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('width', String(size.width));
+    canvas.setAttribute('height', String(size.height));
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', '词云');
+    $canvas.appendChild(canvas);
+
+    const maxCount = terms[0] && terms[0].count ? terms[0].count : 1;
+
+    try {
+      WordCloud(canvas, {
+        list: terms.map((entry) => [entry.term, entry.count]),
+        fontFamily: WORDCLOUD_FONT_FAMILY,
+        gridSize: Math.max(8, Math.round(size.width / 48)),
+        weightFactor: function (count) {
+          const ratio = Math.max(0.15, count / maxCount);
+          return 16 + ratio * Math.min(64, size.width / 12);
+        },
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+        color: function (_, weight) {
+          if (weight >= 10) return '#1d4ed8';
+          if (weight >= 6) return '#0f766e';
+          return '#7c3aed';
+        },
+        rotateRatio: 0.12,
+        minRotation: -Math.PI / 8,
+        maxRotation: Math.PI / 8,
+        drawOutOfBound: false,
+        shrinkToFit: true,
+        hover: function (item) {
+          if (item && item[0]) {
+            $cloudMeta.textContent = `悬停词条：${item[0]}`;
+          }
+        },
+        click: function (item) {
+          if (!item || !item[0]) {
+            return;
+          }
+          state.selectedTerm = item[0];
+          resetVisibleRelatedItems();
+          renderDetailPanel(state.termMap.get(state.selectedTerm), getFilteredItems());
         }
-      },
-      click: function (item) {
-        if (!item || !item[0]) {
-          return;
-        }
-        state.selectedTerm = item[0];
-        resetVisibleRelatedItems();
-        renderDetailPanel(state.termMap.get(state.selectedTerm), getFilteredItems());
-      }
-    });
+      });
+    } catch (error) {
+      $cloudMeta.textContent = '词云绘制失败，右侧仍可查看词条详情。';
+    }
   }
 
   function render() {
@@ -303,7 +339,7 @@
     state.endDate = $endDate.value;
     normalizeDateRange();
     resetVisibleRelatedItems();
-    render();
+    loadAndRender();
   }
 
   function initEvents() {
@@ -312,7 +348,7 @@
       if (!button) return;
       setPreset(button.getAttribute('data-preset'));
       resetVisibleRelatedItems();
-      render();
+      loadAndRender();
     });
 
     $categories.addEventListener('click', function (event) {
@@ -349,6 +385,35 @@
     });
   }
 
+  function loadAndRender() {
+    const seq = ++state.loadSeq;
+    const rangeLabel = AnalysisUtils.formatDateRangeLabel(state.startDate, state.endDate);
+    $summary.textContent = `正在加载 ${rangeLabel} 的新闻...`;
+
+    const fontsReady = waitForWordCloudFonts().then(() => {
+      state.fontsReady = true;
+    });
+
+    return Promise.all([
+      fontsReady,
+      NewsStore.loadRange(state.startDate, state.endDate)
+    ]).then((results) => {
+      if (seq !== state.loadSeq) {
+        return;
+      }
+      state.allItems = mergeItems(state.allItems, results[1] || []);
+      render();
+    }).catch(() => {
+      if (seq !== state.loadSeq) {
+        return;
+      }
+      $summary.textContent = '历史新闻加载失败。';
+      $empty.classList.remove('hidden');
+      $empty.textContent = '无法生成词云，请检查本地服务或新闻数据格式。';
+      $detail.innerHTML = '<div class="term-placeholder">无法生成词云，请检查本地服务或新闻数据格式。</div>';
+    });
+  }
+
   function init() {
     state.days = NewsStore.getAvailableDays();
     populateDateOptions();
@@ -362,18 +427,7 @@
         window.requestAnimationFrame(render);
       }
     });
-
-    Promise.all([waitForWordCloudFonts(), NewsStore.preloadAll()])
-      .then(([_, items]) => {
-        state.fontsReady = true;
-        state.allItems = items;
-        render();
-      })
-      .catch(() => {
-        $summary.textContent = '历史新闻加载失败。';
-        $empty.classList.remove('hidden');
-        $detail.innerHTML = '<div class="term-placeholder">无法生成词云，请检查本地服务或新闻数据格式。</div>';
-      });
+    loadAndRender();
   }
 
   document.addEventListener('DOMContentLoaded', init);

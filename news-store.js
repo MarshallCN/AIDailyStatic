@@ -38,6 +38,45 @@
     global.dispatchEvent(new global.CustomEvent(name, { detail }));
   }
 
+  function mapLimit(items, limit, worker) {
+    if (!items.length) {
+      return Promise.resolve([]);
+    }
+
+    const results = new Array(items.length);
+    let cursor = 0;
+    let running = 0;
+
+    return new Promise((resolve) => {
+      function doneOne() {
+        running -= 1;
+        if (cursor >= items.length && running === 0) {
+          resolve(results);
+          return;
+        }
+        pump();
+      }
+
+      function pump() {
+        while (running < limit && cursor < items.length) {
+          (function (index) {
+            running += 1;
+            Promise.resolve(worker(items[index], index)).then((value) => {
+              results[index] = value;
+              doneOne();
+            }, () => {
+              results[index] = null;
+              doneOne();
+            });
+          }(cursor));
+          cursor += 1;
+        }
+      }
+
+      pump();
+    });
+  }
+
   function getProgress() {
     const totalFiles = getFiles().length;
     const loadedFiles = state.dayItems.size;
@@ -77,6 +116,39 @@
     return promise;
   }
 
+  function filesInRange(startDate, endDate) {
+    return getFiles().filter((fileName) => {
+      const day = NewsParser.parseDayFromFile(fileName);
+      if (startDate && day < startDate) {
+        return false;
+      }
+      if (endDate && day > endDate) {
+        return false;
+      }
+      return true;
+    });
+  }
+
+  function flattenLoadedItems(chunks) {
+    const items = [];
+    (chunks || []).forEach((chunk) => {
+      if (Array.isArray(chunk) && chunk.length) {
+        items.push.apply(items, chunk);
+      }
+    });
+    return sortItems(items);
+  }
+
+  function loadFiles(fileNames) {
+    return mapLimit(fileNames, 8, (fileName) => {
+      return loadDayFile(fileName).catch(() => []);
+    }).then(flattenLoadedItems);
+  }
+
+  function loadRange(startDate, endDate) {
+    return loadFiles(filesInRange(startDate, endDate));
+  }
+
   function getCachedItems() {
     const items = [];
     getFiles().forEach((fileName) => {
@@ -93,20 +165,13 @@
       return state.preloadPromise;
     }
 
-    const files = getFiles();
-    state.preloadPromise = files
-      .reduce((chain, fileName) => {
-        return chain.then((items) => {
-          return loadDayFile(fileName).then((nextItems) => items.concat(nextItems));
-        });
-      }, Promise.resolve([]))
+    state.preloadPromise = loadFiles(getFiles())
       .then((items) => {
-        const sorted = sortItems(items);
         emit('newsstore:ready', {
-          items: sorted,
+          items: items,
           progress: getProgress()
         });
-        return sorted;
+        return items;
       })
       .catch((error) => {
         state.preloadPromise = null;
@@ -140,12 +205,15 @@
   global.NewsStore = {
     getFiles,
     getAvailableDays,
+    filesInRange,
     getCacheVersion: function () {
       return state.cacheVersion;
     },
     getProgress,
     getCachedItems,
     loadDayFile,
+    loadRange,
+    loadFiles,
     preloadAll,
     getAllItems: preloadAll,
     loadItemById
