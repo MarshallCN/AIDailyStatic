@@ -226,7 +226,7 @@
 
   function renderReport(report) {
     state.report = report;
-    const preparedThemes = (Array.isArray(report.themes) ? report.themes : [])
+    let preparedThemes = (Array.isArray(report.themes) ? report.themes : [])
       .map(prepareTheme)
       .filter(function (theme) {
         return theme.title && theme.summary && theme.graph && theme.graph.nodes && theme.graph.nodes.length >= 2;
@@ -245,7 +245,7 @@
       }
       seenJudgments.add(String(theme.summary || '').slice(0, 24));
     });
-    preparedThemes.sort(function (left, right) {
+    preparedThemes = preparedThemes.sort(function (left, right) {
         function score(theme) {
           const evidenceCount = (theme.evidence || []).length;
           const usedObservation = theme.report && theme.report.judgment && (theme.evidence || []).some(function (entry) {
