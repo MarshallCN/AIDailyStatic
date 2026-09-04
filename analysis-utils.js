@@ -12,7 +12,10 @@
   const EN_STOP_WORDS = new Set([
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'been', 'being', 'by', 'for', 'from', 'has',
     'have', 'if', 'in', 'into', 'is', 'it', 'its', 'of', 'on', 'or', 's', 'such', 't', 'that',
-    'the', 'their', 'then', 'there', 'these', 'this', 'to', 'via', 'was', 'were', 'will', 'with'
+    'the', 'their', 'then', 'there', 'these', 'this', 'to', 'via', 'was', 'were', 'will', 'with',
+    'about', 'after', 'also', 'but', 'can', 'could', 'do', 'does', 'how', 'just', 'may', 'more',
+    'most', 'new', 'not', 'now', 'only', 'over', 'so', 'than', 'up', 'we', 'when', 'which', 'who',
+    'would', 'you', 'your'
   ]);
 
   const ZH_STOP_WORDS = new Set([
@@ -24,20 +27,139 @@
     '方面', '显示', '更多', '未来', '模式', '此次', '流程', '相关', '看到', '真正',
     '研究', '系统', '继续', '能力', '落地', '表明', '观察', '这次', '这个', '这些',
     '这一', '这种', '这样', '还会', '还在', '还是', '通过', '那个', '那么', '进行',
-    '部分', '需要', '非常'
+    '部分', '需要', '非常', '可能', '成为', '进入', '达到', '变成', '发现', '采用',
+    '表示', '说明', '指出', '认为', '宣布', '发布', '报道', '据报', '这项', '当天',
+    '全球', '某些', '真实', '长期', '影响', '进展', '执行', '检验', '开发', '测试',
+    '任务', '机制', '商业', '竞争', '成本', '入口', '中心', '机器', '人工', '美元',
+    '收购', '融资', '边界', '身份', '初创', '扩展', '环境', '动态', '前沿', '社区',
+    '风险', '控制', '生成', '工具', '工程', '网络', '治理', '可靠性', '实验', '延伸到'
+  ]);
+
+  const CATEGORY_NOISE_WORDS = new Set([
+    '应用', '产业', '应用产业', '应用/产业', 'ai应用', 'ai应用产业',
+    '论文', 'paper', 'papers', 'arxiv',
+    '基础设施', '基础', '设施', 'infra', 'infrastructure', 'ai基础设施', 'ai infra', 'aiinfra',
+    '观察', '行业观察', 'insight', 'insights', 'trend', 'trends',
+    '安全', 'ai安全', 'security',
+    '生态', '硬件生态', 'ai硬件生态', 'ecosystem',
+    '开源', 'opensource', 'open-source', 'open source',
+    '行业', 'industry',
+    '公司', 'ai公司', 'company', 'companies',
+    '硬件', 'hardware', 'ai硬件',
+    '人工智能', '生成式'
+  ]);
+
+  const SOURCE_NOISE_WORDS = new Set([
+    'techcrunch', 'reuters', 'bloomberg', 'forbes', 'wired', 'verge', 'theverge',
+    'bbc', 'cnn', 'nytimes', 'wsj', 'ft', 'axios', 'semafor', 'theinformation',
+    'cyberscoop', 'techtimes', 'rcrwireless', 'rcr', 'daily', 'papers',
+    '未知来源', '官方博客', 'blog'
   ]);
 
   const ANALYSIS_NOISE_WORDS = new Set([
     'ai', 'llm', 'llms', 'api', 'apis', 'app', 'apps', 'demo', 'agent', 'agents', 'assistant',
     'assistants', 'chat', 'model', 'models', 'news', 'service', 'services', 'system', 'systems',
-    'workflow', 'workflows', 'today', 'update', 'updates', '产品', '体验', '功能', '问题',
-    '工作', '市场', '部署', '表现', '路线', '过程', '方案', '消息', '行业', '需求'
+    'workflow', 'workflows', 'today', 'update', 'updates', 'product', 'products', 'platform',
+    'platforms', 'user', 'users', 'team', 'teams', 'report', 'reports', 'said', 'says',
+    'according', 'reported', 'release', 'released', 'launch', 'launched', 'introduces',
+    '产品', '体验', '功能', '问题', '工作', '市场', '部署', '表现', '路线', '过程',
+    '方案', '消息', '行业', '需求', '模型', '智能', '平台', '服务', '新闻', '美元'
   ]);
 
   const ENTITY_NOISE_WORDS = new Set([
-    'ai', 'llm', 'api', 'gpu', 'gpus', 'ga', 'uk', 'us', 'app', 'apps', 'chat', 'prime',
-    '产品', '功能', '服务', '平台', '系统', '能力', '部署', '新闻', '行业', '公司', '模型'
+    'ai', 'llm', 'api', 'ga', 'uk', 'us', 'app', 'apps', 'chat', 'prime', 'token', 'tokens',
+    '产品', '功能', '服务', '平台', '系统', '能力', '部署', '新闻', '行业', '公司', '模型',
+    '智能', '工具', '训练', '测试', '开发', '发布', '收购', '美元', '人工', '英伟',
+    'hugging', 'face', 'techcrunch'
   ]);
+
+  const TECHNICAL_KEEP_WORDS = new Set([
+    '推理', '训练', '算力', '芯片', '评测', '基准', '对齐', '幻觉', '漏洞', '智驾',
+    '集群', '带宽', '延迟', '显卡', '加速器', '智能体', '数据中心', '自动驾驶',
+    '机器人', '开源权重', '多模态', '机器人出租车',
+    'gpu', 'gpus', 'tpu', 'h100', 'h200', 'b200', 'blackwell', 'cuda', 'nvlink',
+    'robotaxi', 'spacex', 'openai', 'anthropic', 'nvidia', '英伟达', 'deepmind',
+    'huggingface', 'hugging face', 'chatgpt', 'claude', 'gemini', 'llama', 'qwen',
+    'deepseek', 'mistral', 'cohere', 'astra', 'cursor', 'fable', 'litellm'
+  ]);
+
+  const TERM_ALIASES = {
+    'hugging face': 'Hugging Face',
+    'huggingface': 'Hugging Face',
+    'openai': 'OpenAI',
+    'open ai': 'OpenAI',
+    'anthropic': 'Anthropic',
+    'nvidia': 'NVIDIA',
+    '英伟达': 'NVIDIA',
+    'google': 'Google',
+    'meta': 'Meta',
+    'microsoft': 'Microsoft',
+    'deepmind': 'DeepMind',
+    'chatgpt': 'ChatGPT',
+    'claude': 'Claude',
+    'gemini': 'Gemini',
+    'llama': 'Llama',
+    'qwen': 'Qwen',
+    'deepseek': 'DeepSeek',
+    'mistral': 'Mistral',
+    'cohere': 'Cohere',
+    'astra': 'Astra',
+    'spacex': 'SpaceX',
+    'robotaxi': 'Robotaxi',
+    'blackwell': 'Blackwell',
+    'cuda': 'CUDA',
+    'cursor': 'Cursor',
+    'fable': 'Fable',
+    'litellm': 'LiteLLM',
+    'amd': 'AMD',
+    'instinct': 'Instinct'
+  };
+
+  const DISCOURSE_NOISE_WORDS = new Set([
+    '而不是', '会不会', '不只是', '越来越', '能不能', '不仅是', '可能是',
+    '而不能', '跟不上', '不再是', '不需要', '不透明', '是不是', '并不是',
+    '并没有', '之所以', '进一步', '一方面', '另一方面', '不仅仅', '与其说',
+    '上半年', '下半年', '下一代', '新一代', '现阶段', '一系列', '齐聚一堂',
+    '前所未有', '吸引力', '独角兽', '研究者', '大规模', '反作用', '齐聚',
+    'ceo', 'cto', 'cfo', 'coo', 'sec', 'token', 'tokens', 'inherent',
+    'thinking', 'machines', 'street', 'spark', 'muse', 'docs', 'keep',
+    'human', 'official', 'global', 'public', 'private', 'next', 'large',
+    'alpha', 'beta', 'depth', 'bench', 'cli', 'pics', 'slides',
+    '必要性', '出版商', '在一起', '稳定性', '通用性', '华尔街', '阿拉巴马州',
+    '毫不在意', '第一人称', '合伙人', 'general', 'intuition', 'creation', 'evolution'
+  ]);
+
+  const COMPOUND_PATTERNS = [
+    { pattern: /hugging\s*face(?:\s+daily(?:\s+papers)?)?/ig, token: 'HuggingFace' },
+    { pattern: /open\s*ai/ig, token: 'OpenAI' },
+    { pattern: /英伟达/g, token: '英伟达' },
+    { pattern: /基础设施/g, token: '基础设施' },
+    { pattern: /人工智能/g, token: '人工智能' },
+    { pattern: /智能体/g, token: '智能体' },
+    { pattern: /数据中心/g, token: '数据中心' },
+    { pattern: /开源权重/g, token: '开源权重' },
+    { pattern: /大语言模型/g, token: '大语言模型' },
+    { pattern: /自动驾驶/g, token: '自动驾驶' },
+    { pattern: /机器人出租车/g, token: 'Robotaxi' },
+    { pattern: /行业观察/g, token: '行业观察' },
+    { pattern: /硬件生态/g, token: '硬件生态' },
+    { pattern: /thinking\s+machines/ig, token: 'ThinkingMachines' },
+    { pattern: /muse\s+spark/ig, token: 'MuseSpark' },
+    { pattern: /jane\s+street/ig, token: 'JaneStreet' },
+    { pattern: /jalape[ñn]o/ig, token: 'Jalapeno' }
+  ];
+
+  Object.assign(TERM_ALIASES, {
+    thinkingmachines: 'Thinking Machines',
+    'thinking machines': 'Thinking Machines',
+    musespark: 'Muse Spark',
+    'muse spark': 'Muse Spark',
+    janestreet: 'Jane Street',
+    'jane street': 'Jane Street',
+    jalapeno: 'Jalapeño',
+    jalape: 'Jalapeño',
+    'jalapeño': 'Jalapeño'
+  });
 
   const segmenter = typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function'
     ? new Intl.Segmenter('zh-CN', { granularity: 'word' })
@@ -71,6 +193,122 @@
   }
 
   const FIXED_CATEGORY_KEYS = new Set(FIXED_CATEGORIES.map((category) => normalizeForComparison(category)));
+
+  function protectCompounds(text) {
+    let source = normalizeText(text);
+    COMPOUND_PATTERNS.forEach((entry) => {
+      source = source.replace(entry.pattern, ' ' + entry.token + ' ');
+    });
+    return source;
+  }
+
+  function canonicalizeTerm(token) {
+    const key = normalizeForComparison(token);
+    if (key.indexOf('hugging face') === 0 || key === 'huggingface') {
+      return 'Hugging Face';
+    }
+    if (key.indexOf('techcrunch') !== -1) {
+      return '';
+    }
+    if (Object.prototype.hasOwnProperty.call(TERM_ALIASES, key)) {
+      return TERM_ALIASES[key];
+    }
+    return token;
+  }
+
+  function isCategoryOrMetaTerm(token) {
+    const key = normalizeForComparison(token);
+    if (!key) {
+      return true;
+    }
+    if (FIXED_CATEGORY_KEYS.has(key) || CATEGORY_NOISE_WORDS.has(key) || SOURCE_NOISE_WORDS.has(key)) {
+      return true;
+    }
+    if (DISCOURSE_NOISE_WORDS.has(key) || ANALYSIS_NOISE_WORDS.has(key) || ZH_STOP_WORDS.has(token) || ZH_STOP_WORDS.has(key)) {
+      return true;
+    }
+    return false;
+  }
+
+  function isMeaningfulAnalysisTerm(token) {
+    const key = normalizeForComparison(token);
+    if (!key || isCategoryOrMetaTerm(key)) {
+      return false;
+    }
+    if (TECHNICAL_KEEP_WORDS.has(key) || Object.prototype.hasOwnProperty.call(TERM_ALIASES, key)) {
+      return true;
+    }
+    if (/美元|据报|报道|融资|估值|收购|入口|产业|讲师|分身|猜测/.test(key)) {
+      return false;
+    }
+    if (isChineseToken(token)) {
+      if (token.length < 2 || token.length > 8) {
+        return false;
+      }
+      if (token.length === 2 && !TECHNICAL_KEEP_WORDS.has(key)) {
+        return false;
+      }
+      if (/^(不|而|是|并|还|也|就|都|更|越|能|可|只|会|但|将|其|和|与|比|作为|对|从|把|被|让)/.test(token)) {
+        return false;
+      }
+      if (/[的了在将和与把被让]/.test(token)) {
+        return false;
+      }
+      return !/到$|了$|着$|的$/.test(token);
+    }
+    if (key.length < 3) {
+      return false;
+    }
+    if (EN_STOP_WORDS.has(key)) {
+      return false;
+    }
+    return /[a-z]/.test(key) && !isNumericToken(key);
+  }
+
+  function isMeaningfulEntityName(value) {
+    const displayName = canonicalizeTerm(normalizeEntityName(value));
+    const key = normalizeForComparison(displayName);
+    if (!displayName || !key) {
+      return false;
+    }
+    if (ENTITY_NOISE_WORDS.has(key) || isCategoryOrMetaTerm(key) || SOURCE_NOISE_WORDS.has(key)) {
+      return false;
+    }
+    if (TECHNICAL_KEEP_WORDS.has(key) || Object.prototype.hasOwnProperty.call(TERM_ALIASES, key)) {
+      return true;
+    }
+    if (/美元|据报|报道|融资|估值|收购|入口|产业|讲师|分身|猜测/.test(key)) {
+      return false;
+    }
+    if (/^\d/.test(key) && !/^(gpt|llama|claude|qwen|h100|h200|b200)/i.test(key)) {
+      return false;
+    }
+    if (isChineseToken(displayName)) {
+      if (displayName.length < 3 || displayName.length > 6) {
+        return false;
+      }
+      if (!TECHNICAL_KEEP_WORDS.has(key) && !/(模型|芯片|智能体|机器人|基准|算力|集群|加速器|对齐|幻觉|漏洞)$/.test(displayName)) {
+        return false;
+      }
+      if (/州$|市$|华尔街|公司|功能|平台|阈值|^伟达/.test(displayName)) {
+        return false;
+      }
+      if (/[性商者]$/.test(displayName) && !TECHNICAL_KEEP_WORDS.has(key)) {
+        return false;
+      }
+      if (/^(不|而|是|并|还|也|就|都|更|越|能|可|只|会|但|将|其|和|与|比|作为|对|从|把|被|让|已|正|提)/.test(displayName)) {
+        return false;
+      }
+      if (/[的了在将和与把被让]/.test(displayName)) {
+        return false;
+      }
+      if (/[以出为取约成否够]$/.test(displayName)) {
+        return false;
+      }
+      return !/到$|了$|着$|的$/.test(displayName);
+    }
+    return key.length >= 3 && !EN_STOP_WORDS.has(key) && !isNumericToken(key);
+  }
 
   function parseCategories(categoryString) {
     return String(categoryString || '')
@@ -161,7 +399,8 @@
   }
 
   function isNumericToken(token) {
-    return /^\d+(?:[.:/-]\d+)*$/.test(token);
+    const compact = String(token || '').replace(/[,$]/g, '');
+    return /^\d+(?:\.\d+)?(?:[bmk]|bn)?$/i.test(compact) || /^\d+(?:[.:/-]\d+)*$/.test(compact);
   }
 
   function isYearToken(token) {
@@ -181,14 +420,19 @@
       return false;
     }
 
+    if (mode === 'analysis') {
+      return isMeaningfulAnalysisTerm(token);
+    }
+
+    if (mode === 'entity') {
+      return isMeaningfulEntityName(token);
+    }
+
     if (isChineseToken(token)) {
       if (token.length < 2 || token.length > 6) {
         return false;
       }
       if (ZH_STOP_WORDS.has(token)) {
-        return false;
-      }
-      if (mode !== 'search' && ANALYSIS_NOISE_WORDS.has(token)) {
         return false;
       }
       return true;
@@ -200,14 +444,11 @@
     if (EN_STOP_WORDS.has(token)) {
       return false;
     }
-    if (mode !== 'search' && ANALYSIS_NOISE_WORDS.has(token)) {
-      return false;
-    }
     return true;
   }
 
   function collectRawSegments(text) {
-    const source = normalizeText(text);
+    const source = protectCompounds(text);
     const segments = [];
 
     if (segmenter) {
@@ -235,7 +476,7 @@
       if (!shouldKeepToken(normalized, mode)) {
         return;
       }
-      tokens.push(normalized);
+      tokens.push(canonicalizeTerm(normalized));
     });
 
     return tokens;
@@ -584,27 +825,39 @@
     return startDate || endDate || '全部时间';
   }
 
+  function addWordCloudToken(termMap, rawToken, item, weight) {
+    const canonical = canonicalizeTerm(trimToken(rawToken).toLowerCase());
+    const key = normalizeForComparison(canonical);
+    if (!canonical || !key || !isMeaningfulAnalysisTerm(canonical)) {
+      return;
+    }
+
+    let entry = termMap.get(key);
+    if (!entry) {
+      entry = {
+        term: canonical,
+        count: 0,
+        articleIds: new Set(),
+        dayCounts: new Map()
+      };
+      termMap.set(key, entry);
+    }
+
+    entry.count += weight;
+    entry.articleIds.add(item.id);
+    entry.dayCounts.set(item.day, (entry.dayCounts.get(item.day) || 0) + weight);
+    if (canonical.length > entry.term.length) {
+      entry.term = canonical;
+    }
+  }
+
   function buildWordCloudStats(items) {
     const termMap = new Map();
 
     (items || []).forEach((item) => {
-      const tokens = tokenizeAnalysisText([item.title, item.summary, item.detail].join('\n'));
-      tokens.forEach((token) => {
-        let entry = termMap.get(token);
-        if (!entry) {
-          entry = {
-            term: token,
-            count: 0,
-            articleIds: new Set(),
-            dayCounts: new Map()
-          };
-          termMap.set(token, entry);
-        }
-
-        entry.count += 1;
-        entry.articleIds.add(item.id);
-        entry.dayCounts.set(item.day, (entry.dayCounts.get(item.day) || 0) + 1);
-      });
+      tokenizeAnalysisText(item.title || '').forEach((token) => addWordCloudToken(termMap, token, item, 3));
+      tokenizeAnalysisText(item.summary || '').forEach((token) => addWordCloudToken(termMap, token, item, 2));
+      tokenizeAnalysisText(item.detail || '').forEach((token) => addWordCloudToken(termMap, token, item, 1));
     });
 
     const terms = Array.from(termMap.values())
@@ -645,12 +898,9 @@
     const body = item.detail || '';
 
     function addEntity(name, weight) {
-      const displayName = normalizeEntityName(name);
+      const displayName = canonicalizeTerm(normalizeEntityName(name));
       const key = normalizeForComparison(displayName);
-      if (!displayName || !key || ENTITY_NOISE_WORDS.has(key)) {
-        return;
-      }
-      if (FIXED_CATEGORY_KEYS.has(key)) {
+      if (!displayName || !key || !isMeaningfulEntityName(displayName)) {
         return;
       }
       if (isNumericToken(key) && !isYearToken(key)) {
@@ -1012,6 +1262,9 @@
     buildWordCloudStats,
     buildClueGraph,
     buildDetailLink,
-    bindFullscreenToggle
+    bindFullscreenToggle,
+    isMeaningfulAnalysisTerm,
+    isMeaningfulEntityName,
+    canonicalizeTerm
   };
 })(window);

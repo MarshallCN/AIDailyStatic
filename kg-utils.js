@@ -41,11 +41,15 @@
   const NOISE_WORDS = new Set([
     'ai', 'llm', 'llms', 'api', 'apis', 'app', 'apps', 'agent', 'agents', 'service', 'services',
     'system', 'systems', 'product', 'products', 'platform', 'platforms', 'news', 'update', 'updates',
-    'today', 'company', 'companies', 'industry', '行业', '新闻', '系统', '平台', '产品', '模型'
+    'today', 'company', 'companies', 'industry', 'infra', 'infrastructure', 'security', 'hardware',
+    'paper', 'papers', 'ecosystem',
+    '行业', '新闻', '系统', '平台', '产品', '模型', '论文', '基础设施', '观察', '安全',
+    '生态', '开源', '公司', '硬件', '应用', '产业', 'ai公司', '行业观察', 'ai安全',
+    'ai硬件生态', 'ai基础设施', 'techcrunch'
   ]);
 
   const ENTITY_HINTS = {
-    company: ['openai', 'anthropic', 'meta', 'microsoft', 'google', 'nvidia', 'apple', 'amazon', 'mistral', 'cohere', 'bytedance', 'shield ai', 'conntour', 'hugging face', 'techcrunch'],
+    company: ['openai', 'anthropic', 'meta', 'microsoft', 'google', 'nvidia', 'apple', 'amazon', 'mistral', 'cohere', 'bytedance', 'shield ai', 'conntour', 'hugging face'],
     organization: ['university', 'institute', 'foundation', 'committee', 'senate', 'government', 'lab', 'labs', 'research', '协会', '委员会', '研究院'],
     model: ['gpt', 'claude', 'gemini', 'llama', 'qwen', 'deepseek', 'seedance', 'voxtral', 'transcribe', 'hivemind', 'model'],
     product: ['whatsapp', 'capcut', 'chatgpt', 'copilot', 'assistant', 'dreamina', 'north'],
@@ -133,9 +137,24 @@
     return /[\u4e00-\u9fff]/.test(token);
   }
 
+  function isUsefulEntityName(name) {
+    if (global.AnalysisUtils && typeof global.AnalysisUtils.isMeaningfulEntityName === 'function') {
+      return global.AnalysisUtils.isMeaningfulEntityName(name);
+    }
+    const lower = normalizeCompare(name);
+    if (!lower || NOISE_WORDS.has(lower) || ZH_STOP_WORDS.has(name)) return false;
+    if (isChineseToken(name)) {
+      return name.length >= 3 && name.length <= 12;
+    }
+    return String(name || '').length >= 3 && !EN_STOP_WORDS.has(lower);
+  }
+
   function shouldKeepToken(token) {
     const lower = normalizeCompare(token);
     if (!lower || NOISE_WORDS.has(lower)) return false;
+    if (global.AnalysisUtils && typeof global.AnalysisUtils.isMeaningfulEntityName === 'function') {
+      return global.AnalysisUtils.isMeaningfulEntityName(token);
+    }
     if (isChineseToken(token)) {
       return token.length >= 2 && token.length <= 8 && !ZH_STOP_WORDS.has(token);
     }
@@ -146,24 +165,55 @@
     const source = normalizeText(text);
     const candidates = [];
     const seen = new Set();
+
+    function pushCandidate(match) {
+      const cleaned = trimToken(match);
+      const key = normalizeCompare(cleaned);
+      if (!cleaned || !key || seen.has(key) || !isUsefulEntityName(cleaned)) return;
+      seen.add(key);
+      candidates.push(cleaned);
+    }
+
     const patterns = [
       /\b[A-Z][A-Za-z0-9.+-]*(?:\s+[A-Z][A-Za-z0-9.+-]*){0,3}\b/g,
-      /\b(?:GPT-?\d+(?:\.\d+)?|Claude(?:\s+\w+)?|Gemini(?:\s+\w+)?|Llama(?:\s*\d+(?:\.\d+)?)?|Qwen(?:\s*\d+(?:\.\d+)?)?|DeepSeek(?:\s+\w+)?|Mistral(?:\s+\w+)?|Voxtral(?:\s+\w+)?|Seedance(?:\s+\w+)?|Hivemind|LiteLLM|CapCut|WhatsApp|Wikipedia|TechCrunch|OpenAI|Anthropic|NVIDIA|Meta|Microsoft|Cohere|Shield AI|Conntour)\b/g,
-      /[\u4e00-\u9fff]{2,8}/g
+      /\b(?:GPT-?\d+(?:\.\d+)?|Claude(?:\s+\w+)?|Gemini(?:\s+\w+)?|Llama(?:\s*\d+(?:\.\d+)?)?|Qwen(?:\s*\d+(?:\.\d+)?)?|DeepSeek(?:\s+\w+)?|Mistral(?:\s+\w+)?|Voxtral(?:\s+\w+)?|Seedance(?:\s+\w+)?|Hivemind|LiteLLM|CapCut|WhatsApp|Wikipedia|OpenAI|Anthropic|NVIDIA|Meta|Microsoft|Cohere|Shield AI|Conntour|Hugging\s*Face|Astra|Robotaxi|SpaceX|Blackwell|CUDA|Cursor)\b/g
     ];
 
     patterns.forEach(function (pattern) {
       const matches = source.match(pattern) || [];
-      matches.forEach(function (match) {
-        const cleaned = trimToken(match);
-        const key = normalizeCompare(cleaned);
-        if (!shouldKeepToken(cleaned) || seen.has(key)) return;
-        seen.add(key);
-        candidates.push(cleaned);
-      });
+      matches.forEach(pushCandidate);
     });
 
+    if (global.AnalysisUtils && typeof global.AnalysisUtils.tokenizeSearchText === 'function') {
+      global.AnalysisUtils.tokenizeSearchText(source).forEach(pushCandidate);
+    }
+
     return candidates;
+  }
+
+  function sanitizeSignalRecord(record) {
+    if (!record) {
+      return record;
+    }
+    const entities = (record.entities || []).filter(function (entity) {
+      return isUsefulEntityName(entity && entity.name);
+    });
+    const entityIds = new Set(entities.map(function (entity) { return entity.entity_id; }));
+    const events = (record.events || []).map(function (event) {
+      return Object.assign({}, event, {
+        participants: (event.participants || []).filter(function (participant) {
+          return isUsefulEntityName(participant && participant.name) || entityIds.has(participant.entity_id);
+        })
+      });
+    });
+    const relations = (record.relations || []).filter(function (relation) {
+      return isUsefulEntityName(relation.source_name) && isUsefulEntityName(relation.target_name);
+    });
+    return Object.assign({}, record, {
+      entities: entities,
+      events: events,
+      relations: relations
+    });
   }
 
   function inferEntityType(name, item) {
@@ -284,7 +334,6 @@
     const categories = global.AnalysisUtils
       ? global.AnalysisUtils.parseCategories(item.category)
       : String(item.category || '').split(',');
-    if (categories.indexOf('论文') !== -1) addEntity(item.title, 4.5);
 
     const entities = Array.from(scoreMap.values())
       .sort(function (a, b) {
@@ -630,7 +679,8 @@
     const edgeMap = new Map();
     const nodes = [];
     const edges = [];
-    const recordMap = new Map((records || []).map(function (record) { return [record.article_id, record]; }));
+    records = (records || []).map(sanitizeSignalRecord);
+    const recordMap = new Map(records.map(function (record) { return [record.article_id, record]; }));
 
     (records || []).forEach(function (record) {
       const articleNode = ensureNode(nodeMap, nodes, 'article:' + record.article_id, {
@@ -760,11 +810,12 @@
         return b.weight - a.weight;
       });
       const titleNodes = coreNodes.filter(function (node) {
-        return node.type === 'entity';
+        return node.type === 'entity' && isUsefulEntityName(node.label);
       }).slice(0, 4);
-      const resolvedTitleNodes = titleNodes.length ? titleNodes : coreNodes.filter(function (node) {
-        return node.type === 'event';
-      }).slice(0, 3);
+      if (!titleNodes.length) {
+        return null;
+      }
+      const resolvedTitleNodes = titleNodes;
       const coreLabels = resolvedTitleNodes.map(function (node) {
         return node.type === 'event' && node.subtype ? node.subtype : node.label;
       });
