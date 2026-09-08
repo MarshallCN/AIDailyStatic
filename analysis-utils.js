@@ -80,8 +80,31 @@
     'gpu', 'gpus', 'tpu', 'h100', 'h200', 'b200', 'blackwell', 'cuda', 'nvlink',
     'robotaxi', 'spacex', 'openai', 'anthropic', 'nvidia', '英伟达', 'deepmind',
     'huggingface', 'hugging face', 'chatgpt', 'claude', 'gemini', 'llama', 'qwen',
-    'deepseek', 'mistral', 'cohere', 'astra', 'cursor', 'fable', 'litellm'
+    'deepseek', 'mistral', 'cohere', 'astra', 'cursor', 'fable', 'litellm',
+    '开源入口', '计算机使用', '网络安全', '可监控性', '训练数据', '模型路由',
+    '自研芯片', '版权训练', '护栏'
   ]);
+
+  const KNOWLEDGE_CONCEPTS = [
+    { key: '开源权重', aliases: ['开源权重', 'open weights'] },
+    { key: '开源入口', aliases: ['开源入口', '模型分发'] },
+    { key: '数据中心', aliases: ['数据中心', 'datacenter', 'data center'] },
+    { key: '算力', aliases: ['算力'] },
+    { key: '计算机使用', aliases: ['计算机使用', '浏览器使用', 'computer use'] },
+    { key: '网络安全', aliases: ['网络安全', '关键网络能力'] },
+    { key: '可监控性', aliases: ['可监控性', '思维链监控', '不透明循环'] },
+    { key: '智能体', aliases: ['智能体'] },
+    { key: '训练数据', aliases: ['训练数据', '提示和输出'] },
+    { key: '模型路由', aliases: ['模型路由'] },
+    { key: 'Robotaxi', aliases: ['robotaxi', '机器人出租车'] },
+    { key: '自研芯片', aliases: ['自研芯片'] },
+    { key: '版权训练', aliases: ['盗用版权', '版权作品训练'] },
+    { key: '护栏', aliases: ['护栏', '去护栏'] },
+    { key: '推理', aliases: ['推理'] },
+    { key: '对齐', aliases: ['对齐'] },
+    { key: '多模态', aliases: ['多模态'] },
+    { key: '自动驾驶', aliases: ['自动驾驶'] }
+  ];
 
   const TERM_ALIASES = {
     'hugging face': 'Hugging Face',
@@ -112,7 +135,40 @@
     'fable': 'Fable',
     'litellm': 'LiteLLM',
     'amd': 'AMD',
-    'instinct': 'Instinct'
+    'instinct': 'Instinct',
+    '字节跳动': '字节跳动',
+    '阿里巴巴': '阿里巴巴',
+    '腾讯': '腾讯',
+    '百度': '百度',
+    '华为': '华为',
+    '商汤': '商汤',
+    '智谱': '智谱',
+    '月之暗面': '月之暗面',
+    '科大讯飞': '科大讯飞',
+    'waymo': 'Waymo',
+    'uber': 'Uber',
+    'stripe': 'Stripe',
+    'apple': 'Apple',
+    'amazon': 'Amazon',
+    'tesla': 'Tesla',
+    'ibm': 'IBM',
+    'github': 'GitHub',
+    'linux': 'Linux',
+    'visa': 'Visa',
+    'grok': 'Grok',
+    'kimi': 'Kimi',
+    'andreessen horowitz': 'Andreessen Horowitz',
+    'a16z': 'Andreessen Horowitz',
+    '开源权重': '开源权重',
+    '开源入口': '开源入口',
+    '计算机使用': '计算机使用',
+    '网络安全': '网络安全',
+    '可监控性': '可监控性',
+    '训练数据': '训练数据',
+    '模型路由': '模型路由',
+    '自研芯片': '自研芯片',
+    '版权训练': '版权训练',
+    '护栏': '护栏'
   };
 
   const DISCOURSE_NOISE_WORDS = new Set([
@@ -126,7 +182,9 @@
     'human', 'official', 'global', 'public', 'private', 'next', 'large',
     'alpha', 'beta', 'depth', 'bench', 'cli', 'pics', 'slides',
     '必要性', '出版商', '在一起', '稳定性', '通用性', '华尔街', '阿拉巴马州',
-    '毫不在意', '第一人称', '合伙人', 'general', 'intuition', 'creation', 'evolution'
+    '毫不在意', '第一人称', '合伙人', 'general', 'intuition', 'creation', 'evolution',
+    'teens', 'kids', 'people', 'users', 'daily', 'papers', 'mobility', 'disrupt',
+    'studio', 'banana', 'docs', 'keep', 'horizo'
   ]);
 
   const COMPOUND_PATTERNS = [
@@ -204,7 +262,7 @@
 
   function canonicalizeTerm(token) {
     const key = normalizeForComparison(token);
-    if (key.indexOf('hugging face') === 0 || key === 'huggingface') {
+    if (key === 'hugging face' || key === 'huggingface' || key === 'hugging face daily' || key === 'hugging face daily papers') {
       return 'Hugging Face';
     }
     if (key.indexOf('techcrunch') !== -1) {
@@ -214,6 +272,45 @@
       return TERM_ALIASES[key];
     }
     return token;
+  }
+
+  const KNOWN_ENTITY_FRAGMENTS = [
+    'hugging face', 'thinking machines', 'jane street', 'muse spark',
+    'openai', 'anthropic', 'google', 'deepmind', 'nvidia', '英伟达',
+    'meta', 'microsoft', 'apple', 'amazon', 'tesla', 'spacex', 'amd',
+    'chatgpt', 'claude', 'gemini', 'deepseek', 'llama', 'qwen',
+    'mistral', 'cohere', 'waymo', 'uber', 'stripe', 'astra',
+    'cursor', 'robotaxi', 'blackwell', 'fable'
+  ];
+
+  function containsKnownEntityFragment(text, fragment) {
+    const source = normalizeForComparison(text);
+    const needle = normalizeForComparison(fragment);
+    if (!source || !needle) {
+      return false;
+    }
+    if (/[\u4e00-\u9fff]/.test(needle)) {
+      return source.indexOf(needle) !== -1;
+    }
+    return new RegExp('(?:^|[^a-z0-9])' + escapeRegex(needle) + '(?:[^a-z0-9]|$)').test(source);
+  }
+
+  function splitConcatenatedEntityNames(value) {
+    const text = canonicalizeTerm(normalizeEntityName(value));
+    if (!text) {
+      return [];
+    }
+    const hits = [];
+    KNOWN_ENTITY_FRAGMENTS.forEach((fragment) => {
+      if (containsKnownEntityFragment(text, fragment)) {
+        hits.push(canonicalizeTerm(fragment));
+      }
+    });
+    return uniqueStrings(hits);
+  }
+
+  function looksLikeConcatenatedEntities(value) {
+    return splitConcatenatedEntityNames(value).length >= 2;
   }
 
   function isCategoryOrMetaTerm(token) {
@@ -271,6 +368,12 @@
     if (!displayName || !key) {
       return false;
     }
+    if (isSentenceLikeLabel(displayName)) {
+      return false;
+    }
+    if (looksLikeConcatenatedEntities(displayName)) {
+      return false;
+    }
     if (ENTITY_NOISE_WORDS.has(key) || isCategoryOrMetaTerm(key) || SOURCE_NOISE_WORDS.has(key)) {
       return false;
     }
@@ -284,10 +387,21 @@
       return false;
     }
     if (isChineseToken(displayName)) {
-      if (displayName.length < 3 || displayName.length > 6) {
+      if (displayName.length < 3 || displayName.length > 8) {
         return false;
       }
-      if (!TECHNICAL_KEEP_WORDS.has(key) && !/(模型|芯片|智能体|机器人|基准|算力|集群|加速器|对齐|幻觉|漏洞)$/.test(displayName)) {
+      const suffixMatch = displayName.match(/^(.*?)(模型|芯片|智能体|机器人|基准|算力|集群|加速器|对齐|幻觉|漏洞)$/);
+      if (!suffixMatch) {
+        return false;
+      }
+      const prefix = suffixMatch[1];
+      if (!prefix || prefix.length > 4) {
+        return false;
+      }
+      if (/[的了在将和与把被让以出为]|生产|中心|获得|声称|表示|报道|据报|人工|智能/.test(prefix)) {
+        return false;
+      }
+      if (isCategoryOrMetaTerm(prefix)) {
         return false;
       }
       if (/州$|市$|华尔街|公司|功能|平台|阈值|^伟达/.test(displayName)) {
@@ -307,7 +421,745 @@
       }
       return !/到$|了$|着$|的$/.test(displayName);
     }
+    if (isSentenceLikeLabel(displayName)) {
+      return false;
+    }
     return key.length >= 3 && !EN_STOP_WORDS.has(key) && !isNumericToken(key);
+  }
+
+  const EVENT_TYPE_LABELS = {
+    launch: '发布',
+    acquisition: '收购',
+    funding: '融资',
+    partnership: '合作',
+    open_source: '开源',
+    research: '研究',
+    benchmark: '评测',
+    policy: '监管',
+    security: '风险',
+    infra: '算力',
+    trend: '动向'
+  };
+
+  const GENERIC_EDGE_LABELS = {
+    'entity-entity': true,
+    'explicit-relation': true,
+    'related': true,
+    'article-entity': true,
+    'article-source': true,
+    'article-category': true
+  };
+
+  const EDGE_LABEL_PRIORITY = {
+    收购: 5,
+    融资: 5,
+    发布: 4,
+    风险: 4,
+    开源: 3,
+    合作: 3,
+    监管: 3,
+    算力: 3,
+    研究: 2,
+    涉及: 1
+  };
+
+  function normalizeEdgeLabel(label) {
+    const raw = String(label || '').trim();
+    if (!raw || GENERIC_EDGE_LABELS[raw]) {
+      return '';
+    }
+    return EVENT_TYPE_LABELS[raw] || raw;
+  }
+
+  function edgeLabelPriority(label) {
+    const text = normalizeEdgeLabel(label);
+    if (!text) {
+      return 0;
+    }
+    return EDGE_LABEL_PRIORITY[text] || 2;
+  }
+
+  function betterEdgeLabel(nextLabel, currentLabel) {
+    return edgeLabelPriority(nextLabel) > edgeLabelPriority(currentLabel);
+  }
+
+  function isSentenceLikeLabel(value) {
+    const text = normalizeText(value);
+    if (!text) {
+      return true;
+    }
+    const spaces = (text.match(/\s/g) || []).length;
+    if (/[。！？；]|观察：|据报|声称|表示|认为|称，|破坏了|带来无限/.test(text)) {
+      return true;
+    }
+    if (spaces >= 3 || text.length > 28) {
+      return true;
+    }
+    if (spaces >= 2 && text.length > 22) {
+      return true;
+    }
+    if (/[\u4e00-\u9fff]/.test(text) && text.length > 12) {
+      return true;
+    }
+    if (/^(在|并|的|了|与|将|把|被|从|对|为|以|其)/.test(text) && text.length >= 4) {
+      return true;
+    }
+    return false;
+  }
+
+  function shortEventLabel(eventType, entityName) {
+    const action = EVENT_TYPE_LABELS[eventType] || String(eventType || '').trim();
+    const entity = canonicalizeTerm(entityName || '');
+    if (entity && isMeaningfulEntityName(entity)) {
+      return action ? action + ' · ' + entity : entity;
+    }
+    return action || '';
+  }
+
+  function cleanClueTitle(title) {
+    const parts = [];
+    String(title || '').split(/\s*\/\s*/).forEach((part) => {
+      const trimmed = part.trim();
+      const split = splitConcatenatedEntityNames(trimmed);
+      if (split.length >= 2) {
+        parts.push.apply(parts, split);
+        return;
+      }
+      parts.push(canonicalizeTerm(trimmed));
+    });
+    return uniqueStrings(parts.filter((part) => part && isMeaningfulEntityName(part))).slice(0, 3).join(' / ');
+  }
+
+  function extractKnowledgeConcepts(text) {
+    const source = normalizeText(text);
+    const lower = source.toLowerCase();
+    const hits = [];
+    KNOWLEDGE_CONCEPTS.forEach((concept) => {
+      const matched = (concept.aliases || []).some((alias) => {
+        if (/[\u4e00-\u9fff]/.test(alias)) {
+          return source.indexOf(alias) !== -1;
+        }
+        return lower.indexOf(String(alias).toLowerCase()) !== -1;
+      });
+      if (matched) {
+        hits.push(concept.key);
+      }
+    });
+    return uniqueStrings(hits);
+  }
+
+  function firstSentence(text, maxLength) {
+    const raw = normalizeText(text).replace(/\s+/g, ' ');
+    if (!raw) {
+      return '';
+    }
+    const match = raw.match(/^[\s\S]+?[。！？]/);
+    const sentence = match ? match[0] : raw;
+    const limit = maxLength || 160;
+    return sentence.length > limit ? sentence.slice(0, limit - 1) + '…' : sentence;
+  }
+
+  function inferActionFromText(text) {
+    const source = normalizeText(text);
+    if (/收购|并购/.test(source)) return '收购';
+    if (/融资|估值|领投/.test(source)) return '融资';
+    if (/发布|推出|上线/.test(source)) return '发布';
+    if (/开源/.test(source)) return '开源';
+    if (/合作|集成|联手/.test(source)) return '合作';
+    if (/安全|漏洞|风险/.test(source)) return '风险';
+    if (/数据中心|算力|芯片/.test(source)) return '算力';
+    return '';
+  }
+
+  function pickLeadEvidence(items) {
+    return (items || []).slice().sort((left, right) => {
+      function score(item) {
+        const text = String(item.title || '') + String(item.summary || '');
+        let value = 0;
+        if (/观察：/.test(item.title || '') || item.source === '综合观察') value += 6;
+        if (/收购|并购/.test(text)) value += 5;
+        if (/融资|估值/.test(text)) value += 4;
+        if (/发布|推出|上线/.test(text)) value += 3;
+        if (/说明|意味着|显示/.test(item.summary || '')) value += 2;
+        return value;
+      }
+      return score(right) - score(left);
+    })[0] || null;
+  }
+
+  function judgmentTail(action) {
+    const tails = {
+      收购: '买方买的是入口和分发权，交割后中立承诺要被重新检验。',
+      融资: '钱在流向能签约、能交付电力或模型产能的一方。',
+      发布: '能力一旦产品化，客户和监管就要按真实流量判断。',
+      风险: '安全边界正在从研究警告变成可调用产品的接受条款。',
+      开源: '开源入口被芯片或云厂商收编后，中立性需要持续证明。',
+      合作: '谁掌握路由、支付或分发，谁就更接近产业入口。',
+      算力: '电力、芯片和数据中心合同正在改写下一轮成本曲线。',
+      监管: '规则一旦落地，部署节奏会比模型能力更快被改写。'
+    };
+    return tails[action] || '接下来要看它会停在新闻热度，还是进入下一轮验证。';
+  }
+
+  function buildClueJudgment(clue, items) {
+    const entities = (clue.coreEntities || clue.core_entities || []).filter((entry) => isMeaningfulEntityName(entry)).slice(0, 3);
+    const evidence = (items || []).filter((entry) => {
+      if (!entities.length) return true;
+      return textMentionsEntities((entry.title || '') + (entry.summary || ''), entities) || /观察：/.test(entry.title || '');
+    });
+    const lead = pickLeadEvidence(evidence.length ? evidence : items);
+    if (lead && isUsefulObservation(lead)) {
+      return firstSentence(lead.summary, 180);
+    }
+    if (lead && /说明|意味着|显示|不再是|正在变成/.test(lead.summary || '') && !isNoisyObservation(lead.summary)) {
+      return firstSentence(lead.summary, 180);
+    }
+    const action = inferActionFromText((lead && ((lead.title || '') + (lead.summary || ''))) || '') || eventTypeLabel((clue.eventTypes || clue.event_types || [])[0]);
+    if (lead && lead.title) {
+      const fact = String(lead.title || '').replace(/^观察：/, '').replace(/[。！？]$/, '');
+      const tail = judgmentTail(action);
+      if (fact && tail && fact.indexOf(tail.slice(0, 8)) === -1) {
+        return fact + '。' + tail;
+      }
+      return fact || tail;
+    }
+    if (!entities.length) {
+      return '';
+    }
+    return entities.join('、') + ' 已经拧成一条可跟踪的' + (action || '产业') + '线索。' + judgmentTail(action);
+  }
+
+  function isNoisyObservation(text) {
+    return /与当天论文|等动态|欢迎回到/.test(String(text || ''));
+  }
+
+  function isUsefulObservation(entry) {
+    if (!entry) return false;
+    const isObservation = /观察：/.test(entry.title || '') || entry.source === '综合观察';
+    return isObservation && entry.summary && !isNoisyObservation(entry.summary);
+  }
+
+  function textMentionsEntities(text, entities) {
+    const source = String(text || '').toLowerCase();
+    return (entities || []).some((entity) => entity && source.indexOf(String(entity).toLowerCase()) !== -1);
+  }
+
+  function buildInsightReport(theme) {
+    const evidence = (theme.evidence || []).filter((entry) => entry && entry.title);
+    const entities = uniqueStrings((theme.coreEntities || theme.core_entities || []).concat((theme.title || '').split(/\s*\/\s*/)))
+      .filter((entry) => isMeaningfulEntityName(entry))
+      .slice(0, 3);
+    function entityHitCount(text) {
+      return entities.filter((entity) => entity && String(text || '').toLowerCase().indexOf(String(entity).toLowerCase()) !== -1).length;
+    }
+    const observations = evidence.filter((entry) => {
+      const text = (entry.title || '') + (entry.summary || '');
+      return isUsefulObservation(entry) && entityHitCount(text) >= Math.min(2, entities.length || 2);
+    });
+    const facts = evidence.filter((entry) => !/观察：/.test(entry.title || '') && !isNoisyObservation(entry.summary)).slice(0, 5);
+    const matchingEvidence = facts.filter((entry) => textMentionsEntities((entry.title || '') + (entry.summary || ''), entities));
+    const judgment = observations[0] && observations[0].summary
+      ? firstSentence(observations[0].summary, 220)
+      : buildClueJudgment(theme, matchingEvidence.length ? matchingEvidence : facts);
+    const factChain = (matchingEvidence.length >= 2 ? matchingEvidence : facts).map((entry) => {
+      const title = String(entry.title || '').replace(/^观察：/, '');
+      const summary = firstSentence(entry.summary, 140);
+      const line = (entry.date ? entry.date + '，' : '') + title;
+      if (summary && summary.indexOf(title) === -1) {
+        return line + '。' + summary;
+      }
+      return line + (line.slice(-1) === '。' ? '' : '。');
+    });
+    const lead = matchingEvidence[0] || facts[0] || observations[0] || {};
+    const leadAction = inferActionFromText((lead.title || '') + (lead.summary || '')) || eventTypeLabel((theme.eventTypes || theme.event_types || [])[0]);
+    const actions = uniqueStrings([leadAction].concat((theme.eventTypes || theme.event_types || []).map(eventTypeLabel))).filter(Boolean);
+    let synthesis = observations[1] && observations[1].summary
+      ? firstSentence(observations[1].summary, 220)
+      : '';
+    if (!synthesis) {
+      if (leadAction === '收购') {
+        synthesis = (entities.slice(0, 2).join('、') || '相关入口') + ' 的并购说明分发权和默认推荐正在被重新定价，交割后的中立承诺要按真实流量检验。';
+      } else if (leadAction === '融资') {
+        synthesis = (entities[0] || '这条资本线') + ' 相关融资说明钱在追能交付电力、芯片或模型产能的一方，而不是再讲一轮故事。';
+      } else if (leadAction === '发布' || (actions.indexOf('发布') !== -1 && actions.indexOf('风险') !== -1)) {
+        synthesis = (entities.slice(0, 2).join('、') || '相关产品') + ' 把更强能力和更硬的安全争议捆在一起卖，治理压力会跟着流量起来。';
+      } else if (factChain.length) {
+        synthesis = '把上面这些事实串起来看，' + (entities.join('、') || '该主题') + ' 已经不是散点新闻，而是一条能影响产品、资本或治理选择的主线。';
+      }
+    }
+    return {
+      title: cleanClueTitle(theme.title) || entities.join(' / '),
+      judgment: judgment,
+      factChain: factChain,
+      synthesis: synthesis,
+      actions: actions.slice(0, 3)
+    };
+  }
+
+  function enrichGraphWithKnowledge(dataset, items, options) {
+    const settings = Object.assign({ maxTopics: 10 }, options || {});
+    const source = dataset || { nodes: [], edges: [], clues: [] };
+    const nodes = (source.nodes || []).map(unwrapGraphItem);
+    const nodeByLabel = new Map();
+    nodes.forEach((node) => {
+      nodeByLabel.set(normalizeForComparison(node.label), node);
+    });
+    const edges = [];
+    const edgeByPair = new Map();
+
+    function pairKey(sourceId, targetId) {
+      return sourceId < targetId ? sourceId + '::' + targetId : targetId + '::' + sourceId;
+    }
+
+    function upsertEdge(sourceId, targetId, label, articleIds, extra) {
+      if (!sourceId || !targetId || sourceId === targetId) {
+        return null;
+      }
+      const key = pairKey(sourceId, targetId);
+      const nextLabel = normalizeEdgeLabel(label);
+      const existing = edgeByPair.get(key);
+      const extraWeight = extra && extra.weight ? Number(extra.weight) : (nextLabel ? 2 : 1);
+      if (existing) {
+        existing.articleIds = uniqueStrings((existing.articleIds || []).concat(articleIds || []));
+        existing.weight = Math.max(Number(existing.weight || 1), extraWeight);
+        if (betterEdgeLabel(nextLabel, existing.label)) {
+          existing.label = nextLabel;
+          existing.type = nextLabel ? 'explicit-relation' : existing.type;
+        }
+        return existing;
+      }
+      const edge = {
+        id: (extra && extra.id) || ('edge:' + key),
+        source: sourceId,
+        target: targetId,
+        type: nextLabel ? 'explicit-relation' : ((extra && extra.type) || 'entity-entity'),
+        label: nextLabel,
+        weight: extraWeight,
+        articleIds: uniqueStrings(articleIds || [])
+      };
+      edgeByPair.set(key, edge);
+      edges.push(edge);
+      return edge;
+    }
+
+    (source.edges || []).map(unwrapGraphItem).forEach((edge) => {
+      upsertEdge(edge.source, edge.target, edge.label, edge.articleIds || edge.article_ids || [], edge);
+    });
+
+    function ensureTopic(label, articleId) {
+      const key = normalizeForComparison(label);
+      if (nodeByLabel.has(key)) {
+        const existing = nodeByLabel.get(key);
+        existing.articleIds = uniqueStrings((existing.articleIds || []).concat(articleId || []));
+        existing.weight = Number(existing.weight || 1) + 1;
+        return existing;
+      }
+      if (nodes.filter((node) => node.type === 'topic').length >= settings.maxTopics) {
+        return null;
+      }
+      const node = {
+        id: 'topic:' + key,
+        label: label,
+        type: 'topic',
+        subtype: 'concept',
+        weight: 1,
+        articleIds: articleId ? [articleId] : []
+      };
+      nodes.push(node);
+      nodeByLabel.set(key, node);
+      return node;
+    }
+
+    function connect(sourceNode, targetNode, label, articleId) {
+      if (!sourceNode || !targetNode || sourceNode.id === targetNode.id) {
+        return;
+      }
+      upsertEdge(sourceNode.id, targetNode.id, label || '涉及', articleId ? [articleId] : [], {
+        type: label ? 'explicit-relation' : 'entity-entity',
+        weight: label ? 2 : 1
+      });
+    }
+
+    (items || []).forEach((item) => {
+      const text = [item.title, item.summary, item.detail].join(' ');
+      const concepts = extractKnowledgeConcepts(text).slice(0, 3);
+      if (!concepts.length) {
+        return;
+      }
+      const articleId = item.id || item.article_id;
+      const action = inferActionFromText(text);
+      const anchors = nodes.filter((node) => {
+        if (node.type === 'topic') {
+          return false;
+        }
+        const label = String(node.label || '');
+        return label && text.toLowerCase().indexOf(label.toLowerCase()) !== -1;
+      }).slice(0, 3);
+      concepts.forEach((concept) => {
+        const topic = ensureTopic(concept, articleId);
+        anchors.forEach((anchor) => {
+          connect(anchor, topic, action || '涉及', articleId);
+        });
+      });
+      if (anchors.length >= 2 && action) {
+        connect(anchors[0], anchors[1], action, articleId);
+      }
+    });
+
+    return {
+      nodes: nodes.map((node) => ({ data: node })),
+      edges: edges.map((edge) => ({ data: edge })),
+      clues: source.clues || []
+    };
+  }
+
+  function rewriteConcatenatedMentions(text) {
+    return String(text || '').replace(/\b[A-Z][A-Za-z0-9.+-]*(?:\s+[A-Z][A-Za-z0-9.+-]*)+\b/g, (match) => {
+      const parts = splitConcatenatedEntityNames(match);
+      return parts.length >= 2 ? parts.join('、') : match;
+    });
+  }
+
+  function eventTypeLabel(eventType) {
+    const key = String(eventType || '').trim();
+    return EVENT_TYPE_LABELS[key] || key;
+  }
+
+  function cleanInsightSignal(signal) {
+    const text = normalizeText(signal);
+    if (!text) {
+      return '';
+    }
+    const mapped = text.replace(/^([a-z_]+)\s+信号在该主题中最集中[。.]?$/i, function (_, type) {
+      const label = eventTypeLabel(type);
+      return label ? label + ' 是该主题里最集中的关系。' : '';
+    });
+    if (/^[a-z_]+(\s|$)/i.test(mapped) && !/[\u4e00-\u9fff]/.test(mapped.slice(0, 12))) {
+      return '';
+    }
+    return mapped;
+  }
+
+  function unwrapGraphItem(entry) {
+    return Object.assign({}, entry && (entry.data || entry));
+  }
+
+  function sanitizeGraphDataset(dataset, options) {
+    const settings = Object.assign({
+      keepTypes: ['entity'],
+      maxNodes: 48
+    }, options || {});
+    const keepTypes = new Set(settings.keepTypes || ['entity']);
+    const source = dataset || { nodes: [], edges: [], clues: [] };
+    const rawNodes = (source.nodes || []).map(unwrapGraphItem);
+    const rawEdges = (source.edges || []).map(unwrapGraphItem);
+    const aliasToIds = new Map();
+    const nodes = [];
+    const nodeMap = new Map();
+
+    function rememberAlias(fromId, toIds) {
+      const next = uniqueStrings((aliasToIds.get(fromId) || []).concat(toIds));
+      aliasToIds.set(fromId, next);
+    }
+
+    function resolveIds(id) {
+      return aliasToIds.get(id) || [];
+    }
+
+    function mergeSingleEntity(node, label) {
+      const type = node.type || 'entity';
+      const key = type + ':' + normalizeForComparison(label);
+      if (aliasToIds.has(key)) {
+        const existingId = aliasToIds.get(key)[0];
+        const existing = nodeMap.get(existingId);
+        existing.articleIds = uniqueStrings((existing.articleIds || []).concat(node.articleIds || node.article_ids || []));
+        existing.weight = Number(existing.weight || 1) + Number(node.weight || 1);
+        rememberAlias(node.id, [existing.id]);
+        return existing;
+      }
+      const next = {
+        id: node.id,
+        label: label,
+        type: type,
+        subtype: node.subtype || '',
+        summary: '',
+        articleIds: uniqueStrings(node.articleIds || node.article_ids || []),
+        aliases: node.aliases || [],
+        weight: Number(node.weight || 1)
+      };
+      rememberAlias(key, [next.id]);
+      rememberAlias(node.id, [next.id]);
+      nodeMap.set(next.id, next);
+      nodes.push(next);
+      return next;
+    }
+
+    function mergeNode(node) {
+      const rawLabel = node.label || node.name || '';
+      const label = canonicalizeTerm(rawLabel);
+      const type = node.type || 'entity';
+      if (!keepTypes.has(type)) {
+        return null;
+      }
+      if (type === 'entity') {
+        const split = splitConcatenatedEntityNames(rawLabel);
+        if (split.length >= 2) {
+          const kept = [];
+          split.forEach((part, index) => {
+            if (!isMeaningfulEntityName(part)) {
+              return;
+            }
+            const created = mergeSingleEntity({
+              id: node.id + '::' + normalizeForComparison(part) + '-' + index,
+              type: 'entity',
+              articleIds: node.articleIds || node.article_ids || [],
+              weight: node.weight || 1
+            }, part);
+            if (created) {
+              kept.push(created.id);
+            }
+          });
+          rememberAlias(node.id, kept);
+          return null;
+        }
+        if (!label || !isMeaningfulEntityName(label) || isSentenceLikeLabel(label)) {
+          return null;
+        }
+        return mergeSingleEntity(node, label);
+      }
+      if (type === 'topic') {
+        if (!label || !isMeaningfulEntityName(label) || isSentenceLikeLabel(label)) {
+          return null;
+        }
+        return mergeSingleEntity(Object.assign({}, node, { type: 'topic' }), label);
+      }
+      if (type === 'event') {
+        const shortLabel = isSentenceLikeLabel(rawLabel)
+          ? shortEventLabel(node.subtype || node.event_type, '')
+          : label;
+        if (!shortLabel || isSentenceLikeLabel(shortLabel)) {
+          return null;
+        }
+        return mergeSingleEntity(Object.assign({}, node, { label: shortLabel }), shortLabel);
+      }
+      if (!label || isSentenceLikeLabel(label) || isCategoryOrMetaTerm(label)) {
+        return null;
+      }
+      return mergeSingleEntity(node, label);
+    }
+
+    rawNodes.forEach(mergeNode);
+
+    const neighborMap = new Map();
+    rawEdges.forEach((edge) => {
+      const leftIds = resolveIds(edge.source);
+      const rightIds = resolveIds(edge.target);
+      if (leftIds.length && !rightIds.length) {
+        const list = neighborMap.get(edge.target) || [];
+        list.push(edge.source);
+        neighborMap.set(edge.target, list);
+      }
+      if (rightIds.length && !leftIds.length) {
+        const list = neighborMap.get(edge.source) || [];
+        list.push(edge.target);
+        neighborMap.set(edge.source, list);
+      }
+    });
+
+    const edges = [];
+    const edgeIndex = new Map();
+
+    function semanticEdgeLabel(edge) {
+      const skip = new Set(['entity-entity', 'article-entity', 'article-source', 'article-category', 'explicit-relation', 'related']);
+      const candidates = [edge.label, edge.relation_type, edge.subtype, edge.event_type];
+      for (let i = 0; i < candidates.length; i += 1) {
+        const raw = candidates[i];
+        if (!raw || skip.has(String(raw))) {
+          continue;
+        }
+        if (EVENT_TYPE_LABELS[raw]) {
+          return EVENT_TYPE_LABELS[raw];
+        }
+        const mapped = eventTypeLabel(raw);
+        if (!mapped || skip.has(mapped) || isSentenceLikeLabel(mapped)) {
+          continue;
+        }
+        if (EDGE_LABEL_PRIORITY[mapped] || Object.values(EVENT_TYPE_LABELS).indexOf(mapped) !== -1) {
+          return mapped;
+        }
+        if (!isCategoryOrMetaTerm(mapped)) {
+          return mapped;
+        }
+      }
+      return '';
+    }
+
+    function edgeRank(edge) {
+      if (edge.type === 'explicit-relation' && edge.label) {
+        return 3;
+      }
+      if (edge.label) {
+        return 2;
+      }
+      return 1;
+    }
+
+    function addEdge(sourceId, targetId, edge) {
+      if (!sourceId || !targetId || sourceId === targetId) {
+        return;
+      }
+      const pairKey = sourceId < targetId ? sourceId + '::' + targetId : targetId + '::' + sourceId;
+      const incoming = {
+        id: edge.id || ('edge:' + pairKey),
+        source: sourceId,
+        target: targetId,
+        type: edge.type === 'explicit-relation' ? 'explicit-relation' : (edge.type || 'entity-entity'),
+        label: semanticEdgeLabel(edge),
+        weight: Number(edge.weight || 1),
+        articleIds: uniqueStrings(edge.articleIds || edge.article_ids || [])
+      };
+      if (incoming.label && isSentenceLikeLabel(incoming.label)) {
+        incoming.label = '';
+      }
+      const existingIndex = edgeIndex.get(pairKey);
+      if (existingIndex != null) {
+        const existing = edges[existingIndex];
+        existing.articleIds = uniqueStrings((existing.articleIds || []).concat(incoming.articleIds));
+        existing.weight = Math.max(Number(existing.weight || 1), incoming.weight);
+        if (betterEdgeLabel(incoming.label, existing.label)) {
+          existing.label = incoming.label;
+          existing.type = incoming.type || existing.type;
+        } else if (edgeRank(incoming) > edgeRank(existing)) {
+          existing.type = incoming.type || existing.type;
+        } else if (!existing.label && incoming.label) {
+          existing.label = incoming.label;
+          if (incoming.type === 'explicit-relation') {
+            existing.type = incoming.type;
+          }
+        }
+        return;
+      }
+      edgeIndex.set(pairKey, edges.length);
+      edges.push(incoming);
+    }
+
+    rawEdges.forEach((edge) => {
+      resolveIds(edge.source).forEach((sourceId) => {
+        resolveIds(edge.target).forEach((targetId) => {
+          addEdge(sourceId, targetId, edge);
+        });
+      });
+    });
+
+    rawNodes.forEach((node) => {
+      const splitIds = resolveIds(node.id);
+      if (splitIds.length >= 2) {
+        for (let i = 0; i < splitIds.length; i += 1) {
+          for (let j = i + 1; j < splitIds.length; j += 1) {
+            addEdge(splitIds[i], splitIds[j], { type: 'entity-entity', label: '', weight: 1, articleIds: node.articleIds || node.article_ids || [] });
+          }
+        }
+      }
+      if (keepTypes.has(node.type || 'entity')) {
+        return;
+      }
+      const links = neighborMap.get(node.id) || [];
+      const keptNeighbors = uniqueStrings(links.flatMap((other) => resolveIds(other)));
+      for (let i = 0; i < keptNeighbors.length; i += 1) {
+        for (let j = i + 1; j < keptNeighbors.length; j += 1) {
+          addEdge(keptNeighbors[i], keptNeighbors[j], {
+            type: 'entity-entity',
+            label: EVENT_TYPE_LABELS[node.subtype] || '',
+            weight: 1,
+            articleIds: node.articleIds || node.article_ids || []
+          });
+        }
+      }
+    });
+
+    const connected = new Set();
+    edges.forEach((edge) => {
+      connected.add(edge.source);
+      connected.add(edge.target);
+    });
+    const priorityLabels = new Set();
+    (source.clues || []).forEach((clue) => {
+      String(clue.title || '').split(/\s*\/\s*/).forEach((part) => {
+        const split = splitConcatenatedEntityNames(part);
+        (split.length >= 2 ? split : [canonicalizeTerm(part)]).forEach((label) => {
+          if (label && isMeaningfulEntityName(label)) {
+            priorityLabels.add(normalizeForComparison(label));
+          }
+        });
+      });
+      (clue.coreEntities || clue.core_entities || []).forEach((entry) => {
+        const split = splitConcatenatedEntityNames(entry);
+        (split.length >= 2 ? split : [canonicalizeTerm(entry)]).forEach((label) => {
+          if (label && isMeaningfulEntityName(label)) {
+            priorityLabels.add(normalizeForComparison(label));
+          }
+        });
+      });
+    });
+    const rankedNodes = nodes
+      .filter((node) => connected.has(node.id) || (node.articleIds || []).length >= 2 || priorityLabels.has(normalizeForComparison(node.label)))
+      .sort((a, b) => Number(b.weight || 1) - Number(a.weight || 1));
+    const priorityNodes = rankedNodes.filter((node) => priorityLabels.has(normalizeForComparison(node.label)));
+    const fillerNodes = rankedNodes.filter((node) => !priorityLabels.has(normalizeForComparison(node.label)));
+    const filteredNodes = priorityNodes.concat(fillerNodes).slice(0, settings.maxNodes);
+    const keptIds = new Set(filteredNodes.map((node) => node.id));
+    const filteredEdges = edges.filter((edge) => keptIds.has(edge.source) && keptIds.has(edge.target));
+
+    const clues = (source.clues || []).map((clue) => {
+      const splitEntities = [];
+      (clue.coreEntities || clue.core_entities || []).forEach((entry) => {
+        const split = splitConcatenatedEntityNames(entry);
+        if (split.length >= 2) {
+          splitEntities.push.apply(splitEntities, split);
+          return;
+        }
+        splitEntities.push(canonicalizeTerm(entry));
+      });
+      const coreEntities = uniqueStrings(splitEntities.filter((entry) => isMeaningfulEntityName(entry)));
+      const title = cleanClueTitle(clue.title) || coreEntities.slice(0, 3).join(' / ');
+      const labelSet = new Set(coreEntities.map((entry) => normalizeForComparison(entry)));
+      const mappedFocus = uniqueStrings((clue.focusNodeIds || []).flatMap((id) => resolveIds(id)))
+        .filter((id) => keptIds.has(id));
+      const titleFocus = filteredNodes
+        .filter((node) => labelSet.has(normalizeForComparison(node.label)))
+        .map((node) => node.id);
+      const focusSet = new Set(mappedFocus.concat(titleFocus));
+      const seedEdgeCount = filteredEdges.filter((edge) => focusSet.has(edge.source) && focusSet.has(edge.target)).length;
+      if (focusSet.size && seedEdgeCount === 0) {
+        filteredEdges.forEach((edge) => {
+          if (focusSet.has(edge.source) || focusSet.has(edge.target)) {
+            focusSet.add(edge.source);
+            focusSet.add(edge.target);
+          }
+        });
+      }
+      const focusNodeIds = Array.from(focusSet).filter((id) => keptIds.has(id));
+      const focusNodeSet = new Set(focusNodeIds);
+      const focusEdgeIds = filteredEdges
+        .filter((edge) => focusNodeSet.has(edge.source) && focusNodeSet.has(edge.target))
+        .map((edge) => edge.id);
+      const eventTypes = uniqueStrings((clue.eventTypes || clue.event_types || []).map(eventTypeLabel));
+      const trendSignals = uniqueStrings((clue.trendSignals || clue.trend_signals || []).map(cleanInsightSignal).filter(Boolean));
+      return Object.assign({}, clue, {
+        title: title,
+        coreEntities: coreEntities,
+        eventTypes: eventTypes,
+        trendSignals: trendSignals,
+        focusNodeIds: focusNodeIds,
+        focusEdgeIds: focusEdgeIds
+      });
+    }).filter((clue) => clue.title && clue.focusNodeIds.length >= 2);
+
+    return {
+      nodes: filteredNodes.map((node) => ({ data: node })),
+      edges: filteredEdges.map((edge) => ({ data: edge })),
+      clues: clues
+    };
   }
 
   function parseCategories(categoryString) {
@@ -1265,6 +2117,22 @@
     bindFullscreenToggle,
     isMeaningfulAnalysisTerm,
     isMeaningfulEntityName,
-    canonicalizeTerm
+    isSentenceLikeLabel,
+    canonicalizeTerm,
+    cleanClueTitle,
+    cleanInsightSignal,
+    rewriteConcatenatedMentions,
+    eventTypeLabel,
+    shortEventLabel,
+    splitConcatenatedEntityNames,
+    sanitizeGraphDataset,
+    extractKnowledgeConcepts,
+    enrichGraphWithKnowledge,
+    normalizeEdgeLabel,
+    edgeLabelPriority,
+    betterEdgeLabel,
+    buildClueJudgment,
+    buildInsightReport,
+    EVENT_TYPE_LABELS
   };
 })(window);

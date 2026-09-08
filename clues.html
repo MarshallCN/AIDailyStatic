@@ -8,14 +8,14 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <link rel="stylesheet" href="styles.css?v=20260904-1" />
+  <link rel="stylesheet" href="styles.css?v=20260904-10" />
 </head>
 <body>
   <main class="wrap insight-wrap">
     <header class="site-header">
       <div>
         <h1>AI Daily 线索</h1>
-        <div class="sub">把历史新闻中的实体、主题与来源组织成可解释图谱，并生成线索卡片与证据子图。</div>
+        <div class="sub">从新闻里抽出有层级的知识实体，把每条线索收成一句可验证的商业或技术判断。</div>
       </div>
       <nav class="site-nav" aria-label="主导航">
         <a class="nav-link" href="index.html">首页</a>
@@ -47,7 +47,7 @@
           <h2>知识图谱</h2>
           <div class="panel-actions">
             <span id="clue-graph-meta"></span>
-            <button id="clue-fullscreen-toggle" type="button">全屏</button>
+            <button id="clue-fullscreen-toggle" class="ghost-button ghost-button-compact" type="button">全屏</button>
           </div>
         </div>
         <div class="graph-canvas" id="clue-graph"></div>
@@ -86,11 +86,13 @@
   <script src="parse-news.js?v=20260319-1"></script>
   <script src="news-store.js?v=20260904-1"></script>
   <script src="kg-store.js?v=20260904-1"></script>
-  <script src="analysis-utils.js?v=20260904-2"></script>
-  <script src="kg-utils.js?v=20260904-2"></script>
+  <script src="analysis-utils.js?v=20260904-7"></script>
+  <script src="kg-utils.js?v=20260904-6"></script>
   <script src="vendor/d3.min.js"></script>
   <script src="vendor/cytoscape.min.js"></script>
-  <script src="graph-view.js?v=20260327-4"></script>
-  <script src="clues.js?v=20260904-2"></script>
+  <script src="vendor/3d-force-graph.min.js"></script>
+  <script src="graph-view.js?v=20260904-10"></script>
+  <script src="graph-3d.js?v=20260904-10"></script>
+  <script src="clues.js?v=20260904-10"></script>
 </body>
 </html>
