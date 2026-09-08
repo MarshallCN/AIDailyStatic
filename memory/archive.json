@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T17:20:30Z",
+  "updated_at": "2026-09-08T17:24:56Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -643,13 +643,13 @@
       "period_id": "2026-W32",
       "period_type": "week",
       "start_date": "2026-08-03",
-      "end_date": "2026-08-07",
-      "summary": "2026-08-03 至 2026-08-07 期间，OpenAI、Anthropic、ChatGPT 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-08",
+      "summary": "2026-08-03 至 2026-08-08 期间，OpenAI、Anthropic、ChatGPT 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "Anthropic",
         "ChatGPT",
-        "表示"
+        "SpaceX"
       ],
       "event_types": [
         "infra",
