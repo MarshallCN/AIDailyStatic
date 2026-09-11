@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T22:04:24Z",
+  "updated_at": "2026-09-11T22:04:07Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -672,13 +672,13 @@
       "period_id": "2026-W33",
       "period_type": "week",
       "start_date": "2026-08-10",
-      "end_date": "2026-08-11",
-      "summary": "2026-08-10 至 2026-08-11 期间，OpenAI、Meta、主导的攻击倍增 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-12",
+      "summary": "2026-08-10 至 2026-08-12 期间，OpenAI、Anthropic、Meta 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
+        "Anthropic",
         "Meta",
-        "主导的攻击倍增",
-        "推出新的网络模型"
+        "Gemini"
       ],
       "event_types": [
         "launch",
@@ -686,7 +686,7 @@
         "research"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、Meta、主导的攻击倍增",
+        "核心实体：OpenAI、Anthropic、Meta",
         "主事件类型：launch、infra"
       ],
       "representative_article_ids": [
