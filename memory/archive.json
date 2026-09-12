@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T22:04:07Z",
+  "updated_at": "2026-09-12T22:06:19Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -672,8 +672,8 @@
       "period_id": "2026-W33",
       "period_type": "week",
       "start_date": "2026-08-10",
-      "end_date": "2026-08-12",
-      "summary": "2026-08-10 至 2026-08-12 期间，OpenAI、Anthropic、Meta 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-13",
+      "summary": "2026-08-10 至 2026-08-13 期间，OpenAI、Anthropic、Meta 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "Anthropic",
