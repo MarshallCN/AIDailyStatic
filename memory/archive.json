@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-13T22:07:18Z",
+  "updated_at": "2026-09-14T22:03:47Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -672,13 +672,13 @@
       "period_id": "2026-W33",
       "period_type": "week",
       "start_date": "2026-08-10",
-      "end_date": "2026-08-14",
-      "summary": "2026-08-10 至 2026-08-14 期间，OpenAI、Anthropic、Meta 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-15",
+      "summary": "2026-08-10 至 2026-08-15 期间，OpenAI、Anthropic、TechCrunch 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "Anthropic",
-        "Meta",
-        "TechCrunch"
+        "TechCrunch",
+        "Meta"
       ],
       "event_types": [
         "launch",
@@ -686,7 +686,7 @@
         "research"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、Anthropic、Meta",
+        "核心实体：OpenAI、Anthropic、TechCrunch",
         "主事件类型：launch、infra"
       ],
       "representative_article_ids": [
