@@ -1838,7 +1838,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:02:59Z",
+  "generated_at": "2026-09-15T22:09:26Z",
   "analysis_window": {
     "start_date": "2026-03-17",
     "end_date": "2026-04-15",
@@ -16379,6 +16379,7 @@
         "entity:company-nvidia-ai-data-platform",
         "entity:company-nvidia-gtc",
         "entity:hardware-cpu-gpu",
+        "entity:model-nemotron-cascade",
         "entity:model-voxtral-tts",
         "entity:organization-feynman",
         "entity:organization-forbes",
@@ -16386,7 +16387,6 @@
         "entity:organization-gtc",
         "entity:organization-moe",
         "entity:organization-nemoclaw",
-        "entity:organization-nemotron-cascade",
         "entity:organization-stx",
         "entity:person-vera-rubin",
         "entity:topic-上的",
@@ -16523,7 +16523,7 @@
         "edge:entity:organization-gtc->entity:topic-可部署代理系统:infra",
         "edge:entity:organization-gtc->entity:topic-可部署性:infra",
         "edge:entity:organization-moe->entity:company-nvidia:research",
-        "edge:entity:organization-moe->entity:organization-nemotron-cascade:research",
+        "edge:entity:organization-moe->entity:model-nemotron-cascade:research",
         "edge:event:funding-entity-company-mistral->entity:company-mistral",
         "edge:event:funding-entity-company-mistral->entity:company-mistral-ai",
         "edge:event:funding-entity-company-mistral->entity:company-nvidia",
@@ -16554,8 +16554,8 @@
         "edge:event:infra-entity-organization-gtc->entity:topic-可部署代理系统",
         "edge:event:infra-entity-organization-gtc->entity:topic-可部署性",
         "edge:event:infra-entity-organization-moe->entity:company-nvidia",
+        "edge:event:infra-entity-organization-moe->entity:model-nemotron-cascade",
         "edge:event:infra-entity-organization-moe->entity:organization-moe",
-        "edge:event:infra-entity-organization-moe->entity:organization-nemotron-cascade",
         "edge:event:launch-entity-company-mistral->entity:company-mistral",
         "edge:event:launch-entity-company-mistral->entity:model-voxtral-tts",
         "edge:event:launch-entity-company-mistral->entity:topic-制语音数据快速搭",
@@ -16585,8 +16585,8 @@
         "edge:event:partnership-entity-company-google-cloud->entity:organization-moe",
         "edge:event:partnership-entity-company-google-cloud->entity:topic-基础设施升级",
         "edge:event:research-entity-organization-moe->entity:company-nvidia",
+        "edge:event:research-entity-organization-moe->entity:model-nemotron-cascade",
         "edge:event:research-entity-organization-moe->entity:organization-moe",
-        "edge:event:research-entity-organization-moe->entity:organization-nemotron-cascade",
         "edge:event:trend-entity-company-nvidia->entity:company-nvidia",
         "edge:event:trend-entity-company-nvidia->entity:topic-但市场关注点已经",
         "edge:event:trend-entity-company-nvidia->entity:topic-发布新能力",
@@ -17243,13 +17243,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-nemotron-cascade",
+              "id": "entity:model-nemotron-cascade",
               "article_ids": [
                 "2026-03-20-6"
               ],
               "label": "Nemotron-Cascade",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
               "aliases": [
                 "Nemotron-Cascade"
@@ -18621,13 +18621,13 @@
           },
           {
             "data": {
-              "id": "edge:event:research-entity-organization-moe->entity:organization-nemotron-cascade",
+              "id": "edge:event:research-entity-organization-moe->entity:model-nemotron-cascade",
               "weight": 2,
               "article_ids": [
                 "2026-03-20-6"
               ],
               "source": "event:research-entity-organization-moe",
-              "target": "entity:organization-nemotron-cascade",
+              "target": "entity:model-nemotron-cascade",
               "type": "event-entity",
               "label": "participant"
             }
@@ -18660,13 +18660,13 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-moe->entity:organization-nemotron-cascade",
+              "id": "edge:event:infra-entity-organization-moe->entity:model-nemotron-cascade",
               "weight": 2,
               "article_ids": [
                 "2026-03-20-6"
               ],
               "source": "event:infra-entity-organization-moe",
-              "target": "entity:organization-nemotron-cascade",
+              "target": "entity:model-nemotron-cascade",
               "type": "event-entity",
               "label": "participant"
             }
@@ -18686,13 +18686,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-moe->entity:organization-nemotron-cascade:research",
+              "id": "edge:entity:organization-moe->entity:model-nemotron-cascade:research",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-20-6"
               ],
               "source": "entity:organization-moe",
-              "target": "entity:organization-nemotron-cascade",
+              "target": "entity:model-nemotron-cascade",
               "type": "explicit-relation",
               "label": "research"
             }

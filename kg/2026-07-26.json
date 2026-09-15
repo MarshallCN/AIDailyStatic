@@ -805,10 +805,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-kimi",
+          "entity_id": "entity:model-kimi",
           "name": "Kimi",
           "canonical_name": "Kimi",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "Kimi"
           ],
@@ -917,9 +917,9 @@
               "role": "subject"
             },
             {
-              "entity_id": "entity:organization-kimi",
+              "entity_id": "entity:model-kimi",
               "name": "Kimi",
-              "type": "organization",
+              "type": "model",
               "role": "participant"
             },
             {
@@ -942,9 +942,9 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:ddefd1862b49",
+          "relation_id": "relation:f59303957392",
           "source_entity_id": "entity:organization-equity",
-          "target_entity_id": "entity:organization-kimi",
+          "target_entity_id": "entity:model-kimi",
           "source_name": "Equity",
           "target_name": "Kimi",
           "relation_type": "launch",
@@ -1765,7 +1765,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:24Z",
+  "generated_at": "2026-09-15T22:09:51Z",
   "analysis_window": {
     "start_date": "2026-06-27",
     "end_date": "2026-07-26",

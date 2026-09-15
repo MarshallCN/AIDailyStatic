@@ -8269,13 +8269,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce-fin",
+              "id": "entity:company-salesforce-fin",
               "article_ids": [
                 "2026-06-15-8"
               ],
               "label": "Salesforce-Fin",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "NewCore、Salesforce-Fin、Anthropic 限制、Meta AI Mode 和 Sarvam 融资共同显示企业 AI 正进入制度化阶段。",
               "aliases": [
                 "Salesforce-Fin"
@@ -17364,15 +17364,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-06-15-8->entity:organization-salesforce-fin",
+              "id": "edge:article:2026-06-15-8->entity:company-salesforce-fin",
               "weight": 0.6759999999999999,
               "article_ids": [
                 "2026-06-15-8"
               ],
               "source": "article:2026-06-15-8",
-              "target": "entity:organization-salesforce-fin",
+              "target": "entity:company-salesforce-fin",
               "type": "article-entity",
-              "label": "organization"
+              "label": "company"
             }
           },
           {

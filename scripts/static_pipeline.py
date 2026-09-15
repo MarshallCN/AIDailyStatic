@@ -69,6 +69,7 @@ ENTITY_HINTS = {
     "company": [
         "openai", "anthropic", "meta", "microsoft", "google", "nvidia", "apple", "amazon",
         "mistral", "cohere", "bytedance", "shield ai", "conntour", "hugging face", "techcrunch",
+        "salesforce", "siemens", "zhipu", "cognition", "factory", "blackstone", "sequoia", "khosla",
     ],
     "organization": [
         "university", "institute", "foundation", "committee", "senate", "government", "lab", "labs",
@@ -76,10 +77,10 @@ ENTITY_HINTS = {
     ],
     "model": [
         "gpt", "claude", "gemini", "llama", "qwen", "deepseek", "seedance", "voxtral",
-        "transcribe", "hivemind", "model",
+        "transcribe", "hivemind", "model", "nemotron", "glm", "atria", "kimi",
     ],
-    "product": ["whatsapp", "capcut", "chatgpt", "copilot", "assistant", "dreamina", "north"],
-    "tool": ["sdk", "framework", "tool", "tools", "engine", "stack", "vault", "workflow", "litellm"],
+    "product": ["whatsapp", "capcut", "chatgpt", "copilot", "assistant", "dreamina", "north", "devin", "agentforce", "hyperforce"],
+    "tool": ["sdk", "framework", "tool", "tools", "engine", "stack", "vault", "workflow", "litellm", "mcp", "a2a"],
     "hardware": ["gpu", "gpus", "h100", "b200", "rtx", "tpu", "accelerator", "chip", "data center", "datacenter"],
     "benchmark": ["benchmark", "leaderboard", "arena", "score", "eval"],
     "policy": ["policy", "regulation", "bill", "act", "soc2", "iso", "compliance", "security policy"],

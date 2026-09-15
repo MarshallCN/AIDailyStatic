@@ -1927,13 +1927,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-blackstone",
+              "id": "entity:company-blackstone",
               "article_ids": [
                 "2026-05-04-1"
               ],
               "label": "Blackstone",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "Anthropic 联合 Blackstone、Hellman & Friedman 和 Goldman Sachs 成立新企业 AI 服务公司，把 Claude 带进中型企业运营。",
               "aliases": [
                 "Blackstone"
@@ -12731,13 +12731,13 @@
           },
           {
             "data": {
-              "id": "edge:event:launch-entity-company-anthropic->entity:organization-blackstone",
+              "id": "edge:event:launch-entity-company-anthropic->entity:company-blackstone",
               "weight": 2,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "event:launch-entity-company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "event-entity",
               "label": "participant"
             }
@@ -12786,13 +12786,13 @@
           },
           {
             "data": {
-              "id": "edge:event:partnership-entity-company-anthropic->entity:organization-blackstone",
+              "id": "edge:event:partnership-entity-company-anthropic->entity:company-blackstone",
               "weight": 2,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "event:partnership-entity-company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "event-entity",
               "label": "participant"
             }
@@ -12828,13 +12828,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:company-anthropic->entity:organization-blackstone:launch",
+              "id": "edge:entity:company-anthropic->entity:company-blackstone:launch",
               "weight": 3.0,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "entity:company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "explicit-relation",
               "label": "launch"
             }

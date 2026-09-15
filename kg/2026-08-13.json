@@ -370,10 +370,10 @@
       "why_it_matters": "作为 Z.ai 开源模型 GLM-5.2 的训练后变体，Writer 表示新系统应该以低得多的价格提供部署就绪的功能。",
       "entities": [
         {
-          "entity_id": "entity:organization-glm-5-2",
+          "entity_id": "entity:model-glm-5-2",
           "name": "GLM-5.2",
           "canonical_name": "GLM-5.2",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "GLM-5.2"
           ],
@@ -484,15 +484,15 @@
       ],
       "events": [
         {
-          "event_id": "event:infra-entity-organization-glm-5-2",
+          "event_id": "event:infra-entity-model-glm-5-2",
           "event_type": "infra",
           "label": "作者引入了新的人工智能模型和升级的工具来控制代币成本",
           "summary": "作为 Z.ai 开源模型 GLM-5.2 的训练后变体，Writer 表示新系统应该以低得多的价格提供部署就绪的功能。",
           "participants": [
             {
-              "entity_id": "entity:organization-glm-5-2",
+              "entity_id": "entity:model-glm-5-2",
               "name": "GLM-5.2",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -519,15 +519,15 @@
           ]
         },
         {
-          "event_id": "event:open-source-entity-organization-glm-5-2",
+          "event_id": "event:open-source-entity-model-glm-5-2",
           "event_type": "open_source",
           "label": "作者引入了新的人工智能模型和升级的工具来控制代币成本",
           "summary": "作为 Z.ai 开源模型 GLM-5.2 的训练后变体，Writer 表示新系统应该以低得多的价格提供部署就绪的功能。",
           "participants": [
             {
-              "entity_id": "entity:organization-glm-5-2",
+              "entity_id": "entity:model-glm-5-2",
               "name": "GLM-5.2",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -556,8 +556,8 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:2448f98bed5e",
-          "source_entity_id": "entity:organization-glm-5-2",
+          "relation_id": "relation:7be6f4418a6b",
+          "source_entity_id": "entity:model-glm-5-2",
           "target_entity_id": "entity:organization-writer",
           "source_name": "GLM-5.2",
           "target_name": "Writer",
@@ -568,8 +568,8 @@
           ]
         },
         {
-          "relation_id": "relation:2759d6c4f6fe",
-          "source_entity_id": "entity:organization-glm-5-2",
+          "relation_id": "relation:3ea06fb318a0",
+          "source_entity_id": "entity:model-glm-5-2",
           "target_entity_id": "entity:organization-z-ai",
           "source_name": "GLM-5.2",
           "target_name": "Z.ai",
@@ -580,8 +580,8 @@
           ]
         },
         {
-          "relation_id": "relation:74664079665a",
-          "source_entity_id": "entity:organization-glm-5-2",
+          "relation_id": "relation:89c6b0889bd2",
+          "source_entity_id": "entity:model-glm-5-2",
           "target_entity_id": "entity:topic-低得多的价格提供",
           "source_name": "GLM-5.2",
           "target_name": "低得多的价格提供",
@@ -2123,7 +2123,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:29Z",
+  "generated_at": "2026-09-15T22:09:56Z",
   "analysis_window": {
     "start_date": "2026-07-15",
     "end_date": "2026-08-13",

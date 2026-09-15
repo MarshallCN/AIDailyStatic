@@ -6,7 +6,7 @@
     "days": 30
   },
   "overview": {
-    "headline": "2026-03-17 的线索图显示 6 条可追踪主题：Anthropic / Claude / Claude 在 / Claude.ai；DGX Spark / GPT-4o Small / NVIDIA / NemoClaw",
+    "headline": "2026-03-17 的线索图显示 6 条可追踪主题：Anthropic / Claude / Claude 在 / Claude.ai；Adobe / Agent Toolkit / DGX Spark / GPT-4o Small",
     "summary": "最近窗口中最稳定的结构不再是随机共现，而是围绕 Anthropic、Claude、Claude 在 形成的重复事件链条。",
     "key_observations": [
       "launch 信号在该主题中最集中。",
@@ -2562,25 +2562,25 @@
       ]
     },
     {
-      "theme_id": "clue:9150e1dc6fb7",
-      "title": "DGX Spark / GPT-4o Small / NVIDIA / NemoClaw",
-      "summary": "在 2026-03-02 至 2026-03-17 内，DGX Spark、GPT-4o Small、NVIDIA 围绕重复出现的事件与实体关系形成稳定线索。",
-      "conclusion": "DGX Spark、GPT-4o Small 在最近窗口内刚形成可重复验证的连接，后续最值得看它是否会继续跨源、跨天扩张。",
+      "theme_id": "clue:b9a8693c0503",
+      "title": "Adobe / Agent Toolkit / DGX Spark / GPT-4o Small",
+      "summary": "在 2026-03-02 至 2026-03-17 内，Adobe、Agent Toolkit、DGX Spark 围绕重复出现的事件与实体关系形成稳定线索。",
+      "conclusion": "Adobe、Agent Toolkit 在最近窗口内刚形成可重复验证的连接，后续最值得看它是否会继续跨源、跨天扩张。",
       "trend_signals": [
         "infra 信号在该主题中最集中。",
         "证据新闻共 6 条，主导分类为 基础设施。",
         "该主题在当前窗口内新成型，值得继续观察是否会跨天延续。"
       ],
       "core_entities": [
+        "Adobe",
+        "Agent Toolkit",
         "DGX Spark",
-        "GPT-4o Small",
-        "NVIDIA",
-        "NemoClaw"
+        "GPT-4o Small"
       ],
       "event_types": [
         "infra",
-        "open_source",
         "launch",
+        "open_source",
         "security"
       ],
       "dominant_category": "基础设施",
@@ -2940,6 +2940,145 @@
           },
           {
             "data": {
+              "id": "entity:organization-adobe",
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "label": "Adobe",
+              "type": "entity",
+              "subtype": "organization",
+              "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
+              "aliases": [
+                "Adobe"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:tool-agent-toolkit",
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "label": "Agent Toolkit",
+              "type": "entity",
+              "subtype": "tool",
+              "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
+              "aliases": [
+                "Agent Toolkit"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:organization-gtc",
+              "article_ids": [
+                "2026-03-16-0",
+                "2026-03-17-2"
+              ],
+              "label": "GTC",
+              "type": "entity",
+              "subtype": "organization",
+              "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
+              "aliases": [
+                "GTC"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:organization-sap",
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "label": "SAP",
+              "type": "entity",
+              "subtype": "organization",
+              "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
+              "aliases": [
+                "SAP"
+              ],
+              "weight": 0.764
+            }
+          },
+          {
+            "data": {
+              "id": "entity:company-salesforce",
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "label": "Salesforce",
+              "type": "entity",
+              "subtype": "company",
+              "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
+              "aliases": [
+                "Salesforce"
+              ],
+              "weight": 0.764
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-一个开源自主",
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "label": "一个开源自主",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
+              "aliases": [
+                "一个开源自主"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-代理平台",
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "label": "代理平台",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
+              "aliases": [
+                "代理平台"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "event:infra-entity-organization-adobe",
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "label": "Nvidia 推出企业 AI 代理平台，17 家财富 500 强企业首批采用",
+              "type": "event",
+              "subtype": "infra",
+              "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "event:launch-entity-organization-adobe",
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "label": "Nvidia 推出企业 AI 代理平台，17 家财富 500 强企业首批采用",
+              "type": "event",
+              "subtype": "launch",
+              "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
               "id": "article:2026-03-16-2",
               "article_ids": [
                 "2026-03-16-2"
@@ -3105,14 +3244,14 @@
           },
           {
             "data": {
-              "id": "entity:organization-nemotron",
+              "id": "entity:model-nemotron",
               "article_ids": [
                 "2026-03-16-6",
                 "2026-03-17-2"
               ],
               "label": "Nemotron",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "Nvidia 发布开源权重模型 Nemotron 3 Super，创新性地融合三种不同架构设计，在多代理系统吞吐量性能上超越 GPT-4o Small 和 Qwen 模型。",
               "aliases": [
                 "Nemotron"
@@ -3154,13 +3293,13 @@
           },
           {
             "data": {
-              "id": "entity:company-nvidia-nemotron",
+              "id": "entity:model-nvidia-nemotron",
               "article_ids": [
                 "2026-03-16-6"
               ],
               "label": "Nvidia Nemotron",
               "type": "entity",
-              "subtype": "company",
+              "subtype": "model",
               "summary": "Nvidia 发布开源权重模型 Nemotron 3 Super，创新性地融合三种不同架构设计，在多代理系统吞吐量性能上超越 GPT-4o Small 和 Qwen 模型。",
               "aliases": [
                 "Nvidia Nemotron"
@@ -3218,7 +3357,7 @@
           },
           {
             "data": {
-              "id": "event:infra-entity-organization-nemotron",
+              "id": "event:infra-entity-model-nemotron",
               "article_ids": [
                 "2026-03-16-6"
               ],
@@ -3231,7 +3370,7 @@
           },
           {
             "data": {
-              "id": "event:open-source-entity-organization-nemotron",
+              "id": "event:open-source-entity-model-nemotron",
               "article_ids": [
                 "2026-03-16-6"
               ],
@@ -3700,6 +3839,45 @@
           },
           {
             "data": {
+              "id": "edge:article:2026-03-16-0->entity:organization-adobe",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "article:2026-03-16-0",
+              "target": "entity:organization-adobe",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-16-0->entity:tool-agent-toolkit",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "article:2026-03-16-0",
+              "target": "entity:tool-agent-toolkit",
+              "type": "article-entity",
+              "label": "tool"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-16-0->entity:organization-gtc",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "article:2026-03-16-0",
+              "target": "entity:organization-gtc",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
               "id": "edge:article:2026-03-16-0->entity:company-nvidia",
               "weight": 0.764,
               "article_ids": [
@@ -3709,6 +3887,227 @@
               "target": "entity:company-nvidia",
               "type": "article-entity",
               "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-16-0->entity:organization-sap",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "article:2026-03-16-0",
+              "target": "entity:organization-sap",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-16-0->entity:company-salesforce",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "article:2026-03-16-0",
+              "target": "entity:company-salesforce",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-16-0->entity:topic-一个开源自主",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "article:2026-03-16-0",
+              "target": "entity:topic-一个开源自主",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-16-0->entity:topic-代理平台",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "article:2026-03-16-0",
+              "target": "entity:topic-代理平台",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-16-0->event:infra-entity-organization-adobe",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "article:2026-03-16-0",
+              "target": "event:infra-entity-organization-adobe",
+              "type": "article-event",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-organization-adobe->entity:organization-adobe",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "event:infra-entity-organization-adobe",
+              "target": "entity:organization-adobe",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-organization-adobe->entity:tool-agent-toolkit",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "event:infra-entity-organization-adobe",
+              "target": "entity:tool-agent-toolkit",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-organization-adobe->entity:organization-gtc",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "event:infra-entity-organization-adobe",
+              "target": "entity:organization-gtc",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-organization-adobe->entity:company-nvidia",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "event:infra-entity-organization-adobe",
+              "target": "entity:company-nvidia",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-16-0->event:launch-entity-organization-adobe",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "article:2026-03-16-0",
+              "target": "event:launch-entity-organization-adobe",
+              "type": "article-event",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-organization-adobe->entity:organization-adobe",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "event:launch-entity-organization-adobe",
+              "target": "entity:organization-adobe",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-organization-adobe->entity:tool-agent-toolkit",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "event:launch-entity-organization-adobe",
+              "target": "entity:tool-agent-toolkit",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-organization-adobe->entity:organization-gtc",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "event:launch-entity-organization-adobe",
+              "target": "entity:organization-gtc",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-organization-adobe->entity:company-nvidia",
+              "weight": 2,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "event:launch-entity-organization-adobe",
+              "target": "entity:company-nvidia",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:organization-adobe->entity:tool-agent-toolkit:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "entity:organization-adobe",
+              "target": "entity:tool-agent-toolkit",
+              "type": "explicit-relation",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:organization-adobe->entity:organization-gtc:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "entity:organization-adobe",
+              "target": "entity:organization-gtc",
+              "type": "explicit-relation",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:organization-adobe->entity:company-nvidia:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-03-16-0"
+              ],
+              "source": "entity:organization-adobe",
+              "target": "entity:company-nvidia",
+              "type": "explicit-relation",
+              "label": "infra"
             }
           },
           {
@@ -4064,15 +4463,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-6->entity:organization-nemotron",
+              "id": "edge:article:2026-03-16-6->entity:model-nemotron",
               "weight": 0.764,
               "article_ids": [
                 "2026-03-16-6"
               ],
               "source": "article:2026-03-16-6",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {
@@ -4116,15 +4515,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-6->entity:company-nvidia-nemotron",
+              "id": "edge:article:2026-03-16-6->entity:model-nvidia-nemotron",
               "weight": 0.6759999999999999,
               "article_ids": [
                 "2026-03-16-6"
               ],
               "source": "article:2026-03-16-6",
-              "target": "entity:company-nvidia-nemotron",
+              "target": "entity:model-nvidia-nemotron",
               "type": "article-entity",
-              "label": "company"
+              "label": "model"
             }
           },
           {
@@ -4168,38 +4567,38 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-6->event:infra-entity-organization-nemotron",
+              "id": "edge:article:2026-03-16-6->event:infra-entity-model-nemotron",
               "weight": 1.2,
               "article_ids": [
                 "2026-03-16-6"
               ],
               "source": "article:2026-03-16-6",
-              "target": "event:infra-entity-organization-nemotron",
+              "target": "event:infra-entity-model-nemotron",
               "type": "article-event",
               "label": "infra"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-model-nemotron->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
-              "target": "entity:organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:company-nvidia",
+              "id": "edge:event:infra-entity-model-nemotron->entity:company-nvidia",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
               "target": "entity:company-nvidia",
               "type": "event-entity",
               "label": "participant"
@@ -4207,12 +4606,12 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:organization-super",
+              "id": "edge:event:infra-entity-model-nemotron->entity:organization-super",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
               "target": "entity:organization-super",
               "type": "event-entity",
               "label": "participant"
@@ -4220,12 +4619,12 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:model-gpt-4o-small",
+              "id": "edge:event:infra-entity-model-nemotron->entity:model-gpt-4o-small",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
               "target": "entity:model-gpt-4o-small",
               "type": "event-entity",
               "label": "participant"
@@ -4233,38 +4632,38 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-6->event:open-source-entity-organization-nemotron",
+              "id": "edge:article:2026-03-16-6->event:open-source-entity-model-nemotron",
               "weight": 1.2,
               "article_ids": [
                 "2026-03-16-6"
               ],
               "source": "article:2026-03-16-6",
-              "target": "event:open-source-entity-organization-nemotron",
+              "target": "event:open-source-entity-model-nemotron",
               "type": "article-event",
               "label": "open_source"
             }
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:organization-nemotron",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
-              "target": "entity:organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:company-nvidia",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:company-nvidia",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
               "target": "entity:company-nvidia",
               "type": "event-entity",
               "label": "participant"
@@ -4272,12 +4671,12 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:organization-super",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:organization-super",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
               "target": "entity:organization-super",
               "type": "event-entity",
               "label": "participant"
@@ -4285,12 +4684,12 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:model-gpt-4o-small",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:model-gpt-4o-small",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
               "target": "entity:model-gpt-4o-small",
               "type": "event-entity",
               "label": "participant"
@@ -4298,12 +4697,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-nemotron->entity:company-nvidia:infra",
+              "id": "edge:entity:model-nemotron->entity:company-nvidia:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "entity:organization-nemotron",
+              "source": "entity:model-nemotron",
               "target": "entity:company-nvidia",
               "type": "explicit-relation",
               "label": "infra"
@@ -4311,12 +4710,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-nemotron->entity:organization-super:infra",
+              "id": "edge:entity:model-nemotron->entity:organization-super:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "entity:organization-nemotron",
+              "source": "entity:model-nemotron",
               "target": "entity:organization-super",
               "type": "explicit-relation",
               "label": "infra"
@@ -4324,12 +4723,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-nemotron->entity:model-gpt-4o-small:infra",
+              "id": "edge:entity:model-nemotron->entity:model-gpt-4o-small:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "entity:organization-nemotron",
+              "source": "entity:model-nemotron",
               "target": "entity:model-gpt-4o-small",
               "type": "explicit-relation",
               "label": "infra"
@@ -4480,13 +4879,26 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-17-2->entity:organization-nemotron",
+              "id": "edge:article:2026-03-17-2->entity:model-nemotron",
               "weight": 0.764,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "article:2026-03-17-2",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
+              "type": "article-entity",
+              "label": "model"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-17-2->entity:organization-gtc",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-17-2"
+              ],
+              "source": "article:2026-03-17-2",
+              "target": "entity:organization-gtc",
               "type": "article-entity",
               "label": "organization"
             }
@@ -4584,13 +4996,13 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-dgx-spark->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-organization-dgx-spark->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "event:infra-entity-organization-dgx-spark",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -4649,13 +5061,13 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-dgx-spark->entity:organization-nemotron",
+              "id": "edge:event:open-source-entity-organization-dgx-spark->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "event:open-source-entity-organization-dgx-spark",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -4688,13 +5100,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-dgx-spark->entity:organization-nemotron:infra",
+              "id": "edge:entity:organization-dgx-spark->entity:model-nemotron:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "entity:organization-dgx-spark",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "infra"
             }

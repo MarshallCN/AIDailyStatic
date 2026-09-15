@@ -2118,7 +2118,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:25Z",
+  "generated_at": "2026-09-15T22:09:51Z",
   "analysis_window": {
     "start_date": "2026-06-30",
     "end_date": "2026-07-29",
@@ -2229,7 +2229,6 @@
         "entity:organization-twitter",
         "entity:organization-url",
         "entity:organization-weng",
-        "entity:organization-x-mcp",
         "entity:organization-zml",
         "entity:person-andrew-dai",
         "entity:person-demis-hassabis",
@@ -2242,6 +2241,7 @@
         "entity:person-shai-morag",
         "entity:person-touring-capital",
         "entity:policy-acti",
+        "entity:tool-x-mcp",
         "entity:topic-一款发光键盘",
         "entity:topic-万美元的种子资金",
         "entity:topic-万美元资金的支持",
@@ -4307,13 +4307,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-x-mcp",
+              "id": "entity:tool-x-mcp",
               "article_ids": [
                 "2026-06-30-8"
               ],
               "label": "X MCP",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "tool",
               "summary": "Claude Sonnet 5、Etched、Amazon FDE、Acti、OKX、OpenClaw 和 X MCP 共同显示 agent 正从模型能力走向产品、芯片和协议生态。",
               "aliases": [
                 "X MCP"

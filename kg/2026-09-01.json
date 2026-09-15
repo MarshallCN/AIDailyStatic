@@ -1926,7 +1926,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:34Z",
+  "generated_at": "2026-09-15T22:10:01Z",
   "analysis_window": {
     "start_date": "2026-08-03",
     "end_date": "2026-09-01",
@@ -1998,6 +1998,7 @@
         "entity:model-google-gemini",
         "entity:model-gpt-5-6",
         "entity:model-gpt-5-6-sol",
+        "entity:model-kimi",
         "entity:model-openai-chatgpt",
         "entity:organization-astra",
         "entity:organization-chromium",
@@ -2010,7 +2011,6 @@
         "entity:organization-grok",
         "entity:organization-ibm",
         "entity:organization-instinct",
-        "entity:organization-kimi",
         "entity:organization-kitesurf",
         "entity:organization-linux",
         "entity:organization-microduck",
@@ -2309,6 +2309,7 @@
         "event:infra-entity-company-hugging-face",
         "event:infra-entity-company-openai",
         "event:infra-entity-model-chatgpt",
+        "event:infra-entity-model-kimi",
         "event:infra-entity-organization-astra",
         "event:infra-entity-organization-chromium",
         "event:infra-entity-organization-cursor",
@@ -2316,7 +2317,6 @@
         "event:infra-entity-organization-glimmer-ai",
         "event:infra-entity-organization-ibm",
         "event:infra-entity-organization-instinct",
-        "event:infra-entity-organization-kimi",
         "event:infra-entity-organization-nextslide",
         "event:infra-entity-organization-spacex",
         "event:infra-entity-topic-前沿实验室致力于",
@@ -2349,10 +2349,10 @@
         "event:security-entity-company-hugging-face",
         "event:security-entity-company-openai",
         "event:security-entity-model-chatgpt",
+        "event:security-entity-model-kimi",
         "event:security-entity-organization-astra",
         "event:security-entity-organization-daybreak",
         "event:security-entity-organization-instinct",
-        "event:security-entity-organization-kimi",
         "source:rcr-wireless-news",
         "source:techcrunch",
         "source:综合观察"
@@ -2509,9 +2509,12 @@
         "edge:entity:model-chatgpt->entity:topic-增加了适合年龄的:security",
         "edge:entity:model-chatgpt->entity:topic-安全措施:security",
         "edge:entity:model-chatgpt->entity:topic-操作系统:launch",
+        "edge:entity:model-kimi->entity:topic-测试中:security",
+        "edge:entity:model-kimi->entity:topic-用于包含实验的沙:security",
+        "edge:entity:model-kimi->entity:topic-箱配置不正确:security",
         "edge:entity:organization-astra->entity:company-openai:security",
+        "edge:entity:organization-astra->entity:model-kimi:infra",
         "edge:entity:organization-astra->entity:organization-cloudflare:infra",
-        "edge:entity:organization-astra->entity:organization-kimi:infra",
         "edge:entity:organization-astra->entity:organization-kitesurf:infra",
         "edge:entity:organization-astra->entity:topic-关键网络安全阈值:security",
         "edge:entity:organization-astra->entity:topic-力门槛:security",
@@ -2542,9 +2545,6 @@
         "edge:entity:organization-instinct->entity:topic-人工智能助手的广:security",
         "edge:entity:organization-instinct->entity:topic-但有些人表示:security",
         "edge:entity:organization-instinct->entity:topic-力会带来令人不安:security",
-        "edge:entity:organization-kimi->entity:topic-测试中:security",
-        "edge:entity:organization-kimi->entity:topic-用于包含实验的沙:security",
-        "edge:entity:organization-kimi->entity:topic-箱配置不正确:security",
         "edge:entity:organization-nextslide->entity:company-openai:infra",
         "edge:entity:organization-nextslide->entity:topic-不一致:infra",
         "edge:entity:organization-nextslide->entity:topic-代了:infra",
@@ -2633,9 +2633,13 @@
         "edge:event:infra-entity-model-chatgpt->entity:organization-go",
         "edge:event:infra-entity-model-chatgpt->entity:organization-mirendil",
         "edge:event:infra-entity-model-chatgpt->entity:topic-亿活跃的",
+        "edge:event:infra-entity-model-kimi->entity:model-kimi",
+        "edge:event:infra-entity-model-kimi->entity:topic-测试中",
+        "edge:event:infra-entity-model-kimi->entity:topic-用于包含实验的沙",
+        "edge:event:infra-entity-model-kimi->entity:topic-箱配置不正确",
+        "edge:event:infra-entity-organization-astra->entity:model-kimi",
         "edge:event:infra-entity-organization-astra->entity:organization-astra",
         "edge:event:infra-entity-organization-astra->entity:organization-cloudflare",
-        "edge:event:infra-entity-organization-astra->entity:organization-kimi",
         "edge:event:infra-entity-organization-astra->entity:organization-kitesurf",
         "edge:event:infra-entity-organization-chromium->entity:organization-chromium",
         "edge:event:infra-entity-organization-chromium->entity:organization-kitesurf",
@@ -2662,10 +2666,6 @@
         "edge:event:infra-entity-organization-instinct->entity:topic-人工智能助手的广",
         "edge:event:infra-entity-organization-instinct->entity:topic-但有些人表示",
         "edge:event:infra-entity-organization-instinct->entity:topic-力会带来令人不安",
-        "edge:event:infra-entity-organization-kimi->entity:organization-kimi",
-        "edge:event:infra-entity-organization-kimi->entity:topic-测试中",
-        "edge:event:infra-entity-organization-kimi->entity:topic-用于包含实验的沙",
-        "edge:event:infra-entity-organization-kimi->entity:topic-箱配置不正确",
         "edge:event:infra-entity-organization-nextslide->entity:company-openai",
         "edge:event:infra-entity-organization-nextslide->entity:organization-nextslide",
         "edge:event:infra-entity-organization-nextslide->entity:topic-不一致",
@@ -2805,9 +2805,9 @@
         "edge:event:research-entity-model-chatgpt->entity:company-openai",
         "edge:event:research-entity-model-chatgpt->entity:model-chatgpt",
         "edge:event:research-entity-model-chatgpt->entity:organization-mirendil",
+        "edge:event:research-entity-organization-astra->entity:model-kimi",
         "edge:event:research-entity-organization-astra->entity:organization-astra",
         "edge:event:research-entity-organization-astra->entity:organization-cloudflare",
-        "edge:event:research-entity-organization-astra->entity:organization-kimi",
         "edge:event:research-entity-organization-astra->entity:organization-kitesurf",
         "edge:event:research-entity-organization-cursor->entity:company-hugging-face",
         "edge:event:research-entity-organization-cursor->entity:company-openai",
@@ -2863,6 +2863,10 @@
         "edge:event:security-entity-model-chatgpt->entity:topic-型现在正在创作和",
         "edge:event:security-entity-model-chatgpt->entity:topic-增加了适合年龄的",
         "edge:event:security-entity-model-chatgpt->entity:topic-安全措施",
+        "edge:event:security-entity-model-kimi->entity:model-kimi",
+        "edge:event:security-entity-model-kimi->entity:topic-测试中",
+        "edge:event:security-entity-model-kimi->entity:topic-用于包含实验的沙",
+        "edge:event:security-entity-model-kimi->entity:topic-箱配置不正确",
         "edge:event:security-entity-organization-astra->entity:company-openai",
         "edge:event:security-entity-organization-astra->entity:organization-astra",
         "edge:event:security-entity-organization-astra->entity:topic-关键网络安全阈值",
@@ -2874,11 +2878,7 @@
         "edge:event:security-entity-organization-instinct->entity:organization-instinct",
         "edge:event:security-entity-organization-instinct->entity:topic-人工智能助手的广",
         "edge:event:security-entity-organization-instinct->entity:topic-但有些人表示",
-        "edge:event:security-entity-organization-instinct->entity:topic-力会带来令人不安",
-        "edge:event:security-entity-organization-kimi->entity:organization-kimi",
-        "edge:event:security-entity-organization-kimi->entity:topic-测试中",
-        "edge:event:security-entity-organization-kimi->entity:topic-用于包含实验的沙",
-        "edge:event:security-entity-organization-kimi->entity:topic-箱配置不正确"
+        "edge:event:security-entity-organization-instinct->entity:topic-力会带来令人不安"
       ],
       "graph": {
         "nodes": [
@@ -5140,14 +5140,14 @@
           },
           {
             "data": {
-              "id": "entity:organization-kimi",
+              "id": "entity:model-kimi",
               "article_ids": [
                 "2026-08-07-2",
                 "2026-08-07-7"
               ],
               "label": "Kimi",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "在 Kimi 测试中，用于包含实验的沙箱配置不正确。",
               "aliases": [
                 "Kimi"
@@ -5270,7 +5270,7 @@
           },
           {
             "data": {
-              "id": "event:security-entity-organization-kimi",
+              "id": "event:security-entity-model-kimi",
               "article_ids": [
                 "2026-08-07-2"
               ],
@@ -5283,7 +5283,7 @@
           },
           {
             "data": {
-              "id": "event:infra-entity-organization-kimi",
+              "id": "event:infra-entity-model-kimi",
               "article_ids": [
                 "2026-08-07-2"
               ],
@@ -10894,25 +10894,25 @@
           },
           {
             "data": {
-              "id": "edge:event:security-entity-organization-kimi->entity:organization-kimi",
+              "id": "edge:event:security-entity-model-kimi->entity:model-kimi",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "event:security-entity-organization-kimi",
-              "target": "entity:organization-kimi",
+              "source": "event:security-entity-model-kimi",
+              "target": "entity:model-kimi",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:security-entity-organization-kimi->entity:topic-测试中",
+              "id": "edge:event:security-entity-model-kimi->entity:topic-测试中",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "event:security-entity-organization-kimi",
+              "source": "event:security-entity-model-kimi",
               "target": "entity:topic-测试中",
               "type": "event-entity",
               "label": "participant"
@@ -10920,12 +10920,12 @@
           },
           {
             "data": {
-              "id": "edge:event:security-entity-organization-kimi->entity:topic-用于包含实验的沙",
+              "id": "edge:event:security-entity-model-kimi->entity:topic-用于包含实验的沙",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "event:security-entity-organization-kimi",
+              "source": "event:security-entity-model-kimi",
               "target": "entity:topic-用于包含实验的沙",
               "type": "event-entity",
               "label": "participant"
@@ -10933,12 +10933,12 @@
           },
           {
             "data": {
-              "id": "edge:event:security-entity-organization-kimi->entity:topic-箱配置不正确",
+              "id": "edge:event:security-entity-model-kimi->entity:topic-箱配置不正确",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "event:security-entity-organization-kimi",
+              "source": "event:security-entity-model-kimi",
               "target": "entity:topic-箱配置不正确",
               "type": "event-entity",
               "label": "participant"
@@ -10946,25 +10946,25 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-kimi->entity:organization-kimi",
+              "id": "edge:event:infra-entity-model-kimi->entity:model-kimi",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "event:infra-entity-organization-kimi",
-              "target": "entity:organization-kimi",
+              "source": "event:infra-entity-model-kimi",
+              "target": "entity:model-kimi",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-kimi->entity:topic-测试中",
+              "id": "edge:event:infra-entity-model-kimi->entity:topic-测试中",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "event:infra-entity-organization-kimi",
+              "source": "event:infra-entity-model-kimi",
               "target": "entity:topic-测试中",
               "type": "event-entity",
               "label": "participant"
@@ -10972,12 +10972,12 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-kimi->entity:topic-用于包含实验的沙",
+              "id": "edge:event:infra-entity-model-kimi->entity:topic-用于包含实验的沙",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "event:infra-entity-organization-kimi",
+              "source": "event:infra-entity-model-kimi",
               "target": "entity:topic-用于包含实验的沙",
               "type": "event-entity",
               "label": "participant"
@@ -10985,12 +10985,12 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-kimi->entity:topic-箱配置不正确",
+              "id": "edge:event:infra-entity-model-kimi->entity:topic-箱配置不正确",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "event:infra-entity-organization-kimi",
+              "source": "event:infra-entity-model-kimi",
               "target": "entity:topic-箱配置不正确",
               "type": "event-entity",
               "label": "participant"
@@ -10998,12 +10998,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-kimi->entity:topic-测试中:security",
+              "id": "edge:entity:model-kimi->entity:topic-测试中:security",
               "weight": 3.0,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "entity:organization-kimi",
+              "source": "entity:model-kimi",
               "target": "entity:topic-测试中",
               "type": "explicit-relation",
               "label": "security"
@@ -11011,12 +11011,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-kimi->entity:topic-用于包含实验的沙:security",
+              "id": "edge:entity:model-kimi->entity:topic-用于包含实验的沙:security",
               "weight": 3.0,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "entity:organization-kimi",
+              "source": "entity:model-kimi",
               "target": "entity:topic-用于包含实验的沙",
               "type": "explicit-relation",
               "label": "security"
@@ -11024,12 +11024,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-kimi->entity:topic-箱配置不正确:security",
+              "id": "edge:entity:model-kimi->entity:topic-箱配置不正确:security",
               "weight": 3.0,
               "article_ids": [
                 "2026-08-07-2"
               ],
-              "source": "entity:organization-kimi",
+              "source": "entity:model-kimi",
               "target": "entity:topic-箱配置不正确",
               "type": "explicit-relation",
               "label": "security"
@@ -11141,13 +11141,13 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-astra->entity:organization-kimi",
+              "id": "edge:event:infra-entity-organization-astra->entity:model-kimi",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-7"
               ],
               "source": "event:infra-entity-organization-astra",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "event-entity",
               "label": "participant"
             }
@@ -11193,13 +11193,13 @@
           },
           {
             "data": {
-              "id": "edge:event:research-entity-organization-astra->entity:organization-kimi",
+              "id": "edge:event:research-entity-organization-astra->entity:model-kimi",
               "weight": 2,
               "article_ids": [
                 "2026-08-07-7"
               ],
               "source": "event:research-entity-organization-astra",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "event-entity",
               "label": "participant"
             }
@@ -11232,13 +11232,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-astra->entity:organization-kimi:infra",
+              "id": "edge:entity:organization-astra->entity:model-kimi:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-08-07-7"
               ],
               "source": "entity:organization-astra",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "explicit-relation",
               "label": "infra"
             }

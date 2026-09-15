@@ -2209,10 +2209,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-sequoia",
+          "entity_id": "entity:company-sequoia",
           "name": "Sequoia",
           "canonical_name": "Sequoia",
-          "type": "organization",
+          "type": "company",
           "aliases": [
             "Sequoia"
           ],
@@ -2305,9 +2305,9 @@
               "role": "participant"
             },
             {
-              "entity_id": "entity:organization-sequoia",
+              "entity_id": "entity:company-sequoia",
               "name": "Sequoia",
-              "type": "organization",
+              "type": "company",
               "role": "participant"
             }
           ],
@@ -2340,9 +2340,9 @@
               "role": "participant"
             },
             {
-              "entity_id": "entity:organization-sequoia",
+              "entity_id": "entity:company-sequoia",
               "name": "Sequoia",
-              "type": "organization",
+              "type": "company",
               "role": "participant"
             }
           ],
@@ -2377,9 +2377,9 @@
           ]
         },
         {
-          "relation_id": "relation:76a3a653ebb4",
+          "relation_id": "relation:6f686cff577f",
           "source_entity_id": "entity:organization-cymphony",
-          "target_entity_id": "entity:organization-sequoia",
+          "target_entity_id": "entity:company-sequoia",
           "source_name": "Cymphony",
           "target_name": "Sequoia",
           "relation_type": "security",
@@ -2414,7 +2414,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:37Z",
+  "generated_at": "2026-09-15T22:10:04Z",
   "analysis_window": {
     "start_date": "2026-08-11",
     "end_date": "2026-09-09",

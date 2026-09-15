@@ -1658,10 +1658,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-nemotron",
+          "entity_id": "entity:model-nemotron",
           "name": "Nemotron",
           "canonical_name": "Nemotron",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "Nemotron"
           ],
@@ -1770,9 +1770,9 @@
               "role": "subject"
             },
             {
-              "entity_id": "entity:organization-nemotron",
+              "entity_id": "entity:model-nemotron",
               "name": "Nemotron",
-              "type": "organization",
+              "type": "model",
               "role": "participant"
             },
             {
@@ -1805,9 +1805,9 @@
               "role": "subject"
             },
             {
-              "entity_id": "entity:organization-nemotron",
+              "entity_id": "entity:model-nemotron",
               "name": "Nemotron",
-              "type": "organization",
+              "type": "model",
               "role": "participant"
             },
             {
@@ -1830,9 +1830,9 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:5327afb5aebc",
+          "relation_id": "relation:7506c588b73f",
           "source_entity_id": "entity:person-content-safety",
-          "target_entity_id": "entity:organization-nemotron",
+          "target_entity_id": "entity:model-nemotron",
           "source_name": "Content Safety",
           "target_name": "Nemotron",
           "relation_type": "infra",
@@ -1886,7 +1886,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:11Z",
+  "generated_at": "2026-09-15T22:09:38Z",
   "analysis_window": {
     "start_date": "2026-05-09",
     "end_date": "2026-06-07",

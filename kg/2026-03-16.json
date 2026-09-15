@@ -266,10 +266,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-salesforce",
+          "entity_id": "entity:company-salesforce",
           "name": "Salesforce",
           "canonical_name": "Salesforce",
-          "type": "organization",
+          "type": "company",
           "aliases": [
             "Salesforce"
           ],
@@ -450,10 +450,10 @@
       "why_it_matters": "Z.ai 推出 GLM-5-Turbo 模型，针对 AI 代理和多工具场景优化，目前闭源但计划将能力并入后续开源版本。",
       "entities": [
         {
-          "entity_id": "entity:organization-glm-5-turbo",
+          "entity_id": "entity:model-glm-5-turbo",
           "name": "GLM-5 Turbo",
           "canonical_name": "GLM-5 Turbo",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "GLM-5 Turbo",
             "GLM-5-Turbo"
@@ -566,15 +566,15 @@
       ],
       "events": [
         {
-          "event_id": "event:launch-entity-organization-glm-5-turbo",
+          "event_id": "event:launch-entity-model-glm-5-turbo",
           "event_type": "launch",
           "label": "Z.ai 发布 GLM-5 Turbo，针对代理和多工具任务优化的高效模型",
           "summary": "Z.ai 推出 GLM-5-Turbo 模型，针对 AI 代理和多工具场景优化，目前闭源但计划将能力并入后续开源版本。",
           "participants": [
             {
-              "entity_id": "entity:organization-glm-5-turbo",
+              "entity_id": "entity:model-glm-5-turbo",
               "name": "GLM-5 Turbo",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -601,15 +601,15 @@
           ]
         },
         {
-          "event_id": "event:infra-entity-organization-glm-5-turbo",
+          "event_id": "event:infra-entity-model-glm-5-turbo",
           "event_type": "infra",
           "label": "Z.ai 发布 GLM-5 Turbo，针对代理和多工具任务优化的高效模型",
           "summary": "Z.ai 推出 GLM-5-Turbo 模型，针对 AI 代理和多工具场景优化，目前闭源但计划将能力并入后续开源版本。",
           "participants": [
             {
-              "entity_id": "entity:organization-glm-5-turbo",
+              "entity_id": "entity:model-glm-5-turbo",
               "name": "GLM-5 Turbo",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -638,8 +638,8 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:10c0ef8ca312",
-          "source_entity_id": "entity:organization-glm-5-turbo",
+          "relation_id": "relation:a005d52a3794",
+          "source_entity_id": "entity:model-glm-5-turbo",
           "target_entity_id": "entity:organization-z-ai",
           "source_name": "GLM-5 Turbo",
           "target_name": "Z.ai",
@@ -650,8 +650,8 @@
           ]
         },
         {
-          "relation_id": "relation:3ce5a51423dc",
-          "source_entity_id": "entity:organization-glm-5-turbo",
+          "relation_id": "relation:8fa9571e6d7a",
+          "source_entity_id": "entity:model-glm-5-turbo",
           "target_entity_id": "entity:topic-代理和多工具场景",
           "source_name": "GLM-5 Turbo",
           "target_name": "代理和多工具场景",
@@ -662,8 +662,8 @@
           ]
         },
         {
-          "relation_id": "relation:d7b8c9f48752",
-          "source_entity_id": "entity:organization-glm-5-turbo",
+          "relation_id": "relation:312d8dd958b7",
+          "source_entity_id": "entity:model-glm-5-turbo",
           "target_entity_id": "entity:topic-任务优化的高效模",
           "source_name": "GLM-5 Turbo",
           "target_name": "任务优化的高效模",
@@ -1727,10 +1727,10 @@
       "why_it_matters": "Nvidia 发布开源权重模型 Nemotron 3 Super，创新性地融合三种不同架构设计，在多代理系统吞吐量性能上超越 GPT-4o Small 和 Qwen 模型。",
       "entities": [
         {
-          "entity_id": "entity:organization-nemotron",
+          "entity_id": "entity:model-nemotron",
           "name": "Nemotron",
           "canonical_name": "Nemotron",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "Nemotron"
           ],
@@ -1783,10 +1783,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:company-nvidia-nemotron",
+          "entity_id": "entity:model-nvidia-nemotron",
           "name": "Nvidia Nemotron",
           "canonical_name": "Nvidia Nemotron",
-          "type": "company",
+          "type": "model",
           "aliases": [
             "Nvidia Nemotron"
           ],
@@ -1841,15 +1841,15 @@
       ],
       "events": [
         {
-          "event_id": "event:infra-entity-organization-nemotron",
+          "event_id": "event:infra-entity-model-nemotron",
           "event_type": "infra",
           "label": "Nvidia Nemotron 3 Super：开源模型整合多架构设计，刷新吞吐量基准",
           "summary": "Nvidia 发布开源权重模型 Nemotron 3 Super，创新性地融合三种不同架构设计，在多代理系统吞吐量性能上超越 GPT-4o Small 和 Qwen 模型。",
           "participants": [
             {
-              "entity_id": "entity:organization-nemotron",
+              "entity_id": "entity:model-nemotron",
               "name": "Nemotron",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -1876,15 +1876,15 @@
           ]
         },
         {
-          "event_id": "event:open-source-entity-organization-nemotron",
+          "event_id": "event:open-source-entity-model-nemotron",
           "event_type": "open_source",
           "label": "Nvidia Nemotron 3 Super：开源模型整合多架构设计，刷新吞吐量基准",
           "summary": "Nvidia 发布开源权重模型 Nemotron 3 Super，创新性地融合三种不同架构设计，在多代理系统吞吐量性能上超越 GPT-4o Small 和 Qwen 模型。",
           "participants": [
             {
-              "entity_id": "entity:organization-nemotron",
+              "entity_id": "entity:model-nemotron",
               "name": "Nemotron",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -1913,8 +1913,8 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:ff82e0a004cc",
-          "source_entity_id": "entity:organization-nemotron",
+          "relation_id": "relation:56b0f6630ffe",
+          "source_entity_id": "entity:model-nemotron",
           "target_entity_id": "entity:company-nvidia",
           "source_name": "Nemotron",
           "target_name": "Nvidia",
@@ -1925,8 +1925,8 @@
           ]
         },
         {
-          "relation_id": "relation:2a1ec44ff3ac",
-          "source_entity_id": "entity:organization-nemotron",
+          "relation_id": "relation:fb313251ab82",
+          "source_entity_id": "entity:model-nemotron",
           "target_entity_id": "entity:organization-super",
           "source_name": "Nemotron",
           "target_name": "Super",
@@ -1937,8 +1937,8 @@
           ]
         },
         {
-          "relation_id": "relation:b797c58af831",
-          "source_entity_id": "entity:organization-nemotron",
+          "relation_id": "relation:a4ec6e980746",
+          "source_entity_id": "entity:model-nemotron",
           "target_entity_id": "entity:model-gpt-4o-small",
           "source_name": "Nemotron",
           "target_name": "GPT-4o Small",
@@ -4024,7 +4024,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:02:55Z",
+  "generated_at": "2026-09-15T22:09:21Z",
   "analysis_window": {
     "start_date": "2026-03-02",
     "end_date": "2026-03-16",
@@ -8502,9 +8502,9 @@
         "category:应用-产业",
         "category:开源",
         "entity:company-nvidia",
+        "entity:company-salesforce",
         "entity:organization-adobe",
         "entity:organization-gtc",
-        "entity:organization-salesforce",
         "entity:organization-sap",
         "entity:tool-agent-toolkit",
         "entity:topic-一个开源自主",
@@ -8540,9 +8540,9 @@
         "edge:article:2026-03-16-0->category:基础设施",
         "edge:article:2026-03-16-0->category:应用-产业",
         "edge:article:2026-03-16-0->entity:company-nvidia",
+        "edge:article:2026-03-16-0->entity:company-salesforce",
         "edge:article:2026-03-16-0->entity:organization-adobe",
         "edge:article:2026-03-16-0->entity:organization-gtc",
-        "edge:article:2026-03-16-0->entity:organization-salesforce",
         "edge:article:2026-03-16-0->entity:organization-sap",
         "edge:article:2026-03-16-0->entity:tool-agent-toolkit",
         "edge:article:2026-03-16-0->entity:topic-一个开源自主",
@@ -8972,13 +8972,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce",
+              "id": "entity:company-salesforce",
               "article_ids": [
                 "2026-03-16-0"
               ],
               "label": "Salesforce",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
               "aliases": [
                 "Salesforce"
@@ -9490,15 +9490,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-0->entity:organization-salesforce",
+              "id": "edge:article:2026-03-16-0->entity:company-salesforce",
               "weight": 0.764,
               "article_ids": [
                 "2026-03-16-0"
               ],
               "source": "article:2026-03-16-0",
-              "target": "entity:organization-salesforce",
+              "target": "entity:company-salesforce",
               "type": "article-entity",
-              "label": "organization"
+              "label": "company"
             }
           },
           {

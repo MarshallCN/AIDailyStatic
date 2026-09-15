@@ -932,10 +932,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:person-sequoia-capital",
+          "entity_id": "entity:company-sequoia-capital",
           "name": "Sequoia Capital",
           "canonical_name": "Sequoia Capital",
-          "type": "person",
+          "type": "company",
           "aliases": [
             "Sequoia Capital"
           ],
@@ -974,10 +974,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-sequoia",
+          "entity_id": "entity:company-sequoia",
           "name": "Sequoia",
           "canonical_name": "Sequoia",
-          "type": "organization",
+          "type": "company",
           "aliases": [
             "Sequoia"
           ],
@@ -1044,9 +1044,9 @@
               "role": "subject"
             },
             {
-              "entity_id": "entity:person-sequoia-capital",
+              "entity_id": "entity:company-sequoia-capital",
               "name": "Sequoia Capital",
-              "type": "person",
+              "type": "company",
               "role": "participant"
             },
             {
@@ -1079,9 +1079,9 @@
               "role": "subject"
             },
             {
-              "entity_id": "entity:person-sequoia-capital",
+              "entity_id": "entity:company-sequoia-capital",
               "name": "Sequoia Capital",
-              "type": "person",
+              "type": "company",
               "role": "participant"
             },
             {
@@ -1104,9 +1104,9 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:8197a1eac9a4",
+          "relation_id": "relation:623d84a2ee36",
           "source_entity_id": "entity:organization-mecka-ai",
-          "target_entity_id": "entity:person-sequoia-capital",
+          "target_entity_id": "entity:company-sequoia-capital",
           "source_name": "Mecka AI",
           "target_name": "Sequoia Capital",
           "relation_type": "infra",
@@ -2471,7 +2471,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:37Z",
+  "generated_at": "2026-09-15T22:10:05Z",
   "analysis_window": {
     "start_date": "2026-08-14",
     "end_date": "2026-09-12",

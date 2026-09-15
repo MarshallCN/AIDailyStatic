@@ -184,10 +184,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-kimi",
+          "entity_id": "entity:model-kimi",
           "name": "Kimi",
           "canonical_name": "Kimi",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "Kimi"
           ],
@@ -1521,10 +1521,10 @@
       "why_it_matters": "当天围绕 Kimi：威胁还是威胁？、今年美国停产或淘汰的所有电动汽车、Waymo 表示旧金山服务在暂停一小时后已恢复 等动态，AI 行业的产品化、基础设施投入与研究评测继续并行演进。",
       "entities": [
         {
-          "entity_id": "entity:organization-kimi",
+          "entity_id": "entity:model-kimi",
           "name": "Kimi",
           "canonical_name": "Kimi",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "Kimi"
           ],
@@ -1635,15 +1635,15 @@
       ],
       "events": [
         {
-          "event_id": "event:infra-entity-organization-kimi",
+          "event_id": "event:infra-entity-model-kimi",
           "event_type": "infra",
           "label": "观察：7 月 18 日 AI 竞争继续向产品、算力与治理纵深推进",
           "summary": "当天围绕 Kimi：威胁还是威胁？、今年美国停产或淘汰的所有电动汽车、Waymo 表示旧金山服务在暂停一小时后已恢复 等动态，AI 行业的产品化、基础设施投入与研究评测继续并行演进。",
           "participants": [
             {
-              "entity_id": "entity:organization-kimi",
+              "entity_id": "entity:model-kimi",
               "name": "Kimi",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -1670,15 +1670,15 @@
           ]
         },
         {
-          "event_id": "event:research-entity-organization-kimi",
+          "event_id": "event:research-entity-model-kimi",
           "event_type": "research",
           "label": "观察：7 月 18 日 AI 竞争继续向产品、算力与治理纵深推进",
           "summary": "当天围绕 Kimi：威胁还是威胁？、今年美国停产或淘汰的所有电动汽车、Waymo 表示旧金山服务在暂停一小时后已恢复 等动态，AI 行业的产品化、基础设施投入与研究评测继续并行演进。",
           "participants": [
             {
-              "entity_id": "entity:organization-kimi",
+              "entity_id": "entity:model-kimi",
               "name": "Kimi",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -1707,8 +1707,8 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:1fd4e16d759b",
-          "source_entity_id": "entity:organization-kimi",
+          "relation_id": "relation:d597b4f831ae",
+          "source_entity_id": "entity:model-kimi",
           "target_entity_id": "entity:organization-waymo",
           "source_name": "Kimi",
           "target_name": "Waymo",
@@ -1719,8 +1719,8 @@
           ]
         },
         {
-          "relation_id": "relation:9e650ba3cbe7",
-          "source_entity_id": "entity:organization-kimi",
+          "relation_id": "relation:5a0d5a2283d2",
+          "source_entity_id": "entity:model-kimi",
           "target_entity_id": "entity:topic-今年美国停产或淘",
           "source_name": "Kimi",
           "target_name": "今年美国停产或淘",
@@ -1731,8 +1731,8 @@
           ]
         },
         {
-          "relation_id": "relation:1c83ac48dbeb",
-          "source_entity_id": "entity:organization-kimi",
+          "relation_id": "relation:540cad836c4a",
+          "source_entity_id": "entity:model-kimi",
           "target_entity_id": "entity:topic-威胁还是威胁",
           "source_name": "Kimi",
           "target_name": "威胁还是威胁",
@@ -1763,7 +1763,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:22Z",
+  "generated_at": "2026-09-15T22:09:48Z",
   "analysis_window": {
     "start_date": "2026-06-19",
     "end_date": "2026-07-18",

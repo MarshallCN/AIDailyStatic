@@ -1879,7 +1879,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:04Z",
+  "generated_at": "2026-09-15T22:09:30Z",
   "analysis_window": {
     "start_date": "2026-04-04",
     "end_date": "2026-05-03",
@@ -1969,6 +1969,7 @@
         "entity:model-gemini-ai",
         "entity:model-gemini-assistant",
         "entity:model-gemini-for",
+        "entity:model-nemotron",
         "entity:organization-ai-hypercomputer",
         "entity:organization-ai-pentagon",
         "entity:organization-ai-roi",
@@ -1989,7 +1990,6 @@
         "entity:organization-mac",
         "entity:organization-moe",
         "entity:organization-mythos",
-        "entity:organization-nemotron",
         "entity:organization-next",
         "entity:organization-nict",
         "entity:organization-openclaw",
@@ -2463,8 +2463,8 @@
         "edge:entity:company-microsoft->entity:organization-skye:trend",
         "edge:entity:company-nvidia->entity:company-google-cloud:infra",
         "edge:entity:company-nvidia->entity:model-gemini:infra",
+        "edge:entity:company-nvidia->entity:model-nemotron:infra",
         "edge:entity:company-nvidia->entity:organization-ai-hypercomputer:infra",
-        "edge:entity:company-nvidia->entity:organization-nemotron:infra",
         "edge:entity:company-nvidia->entity:person-nano-omni:infra",
         "edge:entity:company-nvidia->entity:topic-音频:infra",
         "edge:entity:company-techcrunch->entity:topic-中的实用性提升:benchmark",
@@ -2521,7 +2521,7 @@
         "edge:entity:organization-uber->entity:topic-为自动驾驶公司提:infra",
         "edge:entity:organization-uber->entity:topic-供道路数据和运营:infra",
         "edge:entity:organization-uber->entity:topic-想把司机网络变成:infra",
-        "edge:entity:person-nano-omni->entity:organization-nemotron:security",
+        "edge:entity:person-nano-omni->entity:model-nemotron:security",
         "edge:entity:person-nano-omni->entity:organization-openclaw:security",
         "edge:entity:person-nano-omni->entity:topic-安全和政府模型访:security",
         "edge:entity:person-parallel-web-systems->entity:topic-五个月后估值达到:funding",
@@ -2611,8 +2611,8 @@
         "edge:event:infra-entity-company-nvidia->entity:company-google-cloud",
         "edge:event:infra-entity-company-nvidia->entity:company-nvidia",
         "edge:event:infra-entity-company-nvidia->entity:model-gemini",
+        "edge:event:infra-entity-company-nvidia->entity:model-nemotron",
         "edge:event:infra-entity-company-nvidia->entity:organization-ai-hypercomputer",
-        "edge:event:infra-entity-company-nvidia->entity:organization-nemotron",
         "edge:event:infra-entity-company-nvidia->entity:person-nano-omni",
         "edge:event:infra-entity-company-nvidia->entity:topic-音频",
         "edge:event:infra-entity-company-techcrunch->entity:company-techcrunch",
@@ -2757,7 +2757,7 @@
         "edge:event:open-source-entity-company-anthropic->entity:model-deepseek",
         "edge:event:open-source-entity-company-anthropic->entity:organization-comfyui",
         "edge:event:open-source-entity-company-nvidia->entity:company-nvidia",
-        "edge:event:open-source-entity-company-nvidia->entity:organization-nemotron",
+        "edge:event:open-source-entity-company-nvidia->entity:model-nemotron",
         "edge:event:open-source-entity-company-nvidia->entity:person-nano-omni",
         "edge:event:open-source-entity-company-nvidia->entity:topic-音频",
         "edge:event:open-source-entity-organization-comfyui->entity:organization-comfyui",
@@ -2845,7 +2845,7 @@
         "edge:event:security-entity-organization-pentagon->entity:organization-ai-pentagon",
         "edge:event:security-entity-organization-pentagon->entity:organization-aws",
         "edge:event:security-entity-organization-pentagon->entity:organization-pentagon",
-        "edge:event:security-entity-person-nano-omni->entity:organization-nemotron",
+        "edge:event:security-entity-person-nano-omni->entity:model-nemotron",
         "edge:event:security-entity-person-nano-omni->entity:organization-openclaw",
         "edge:event:security-entity-person-nano-omni->entity:person-nano-omni",
         "edge:event:security-entity-person-nano-omni->entity:topic-安全和政府模型访",
@@ -2873,7 +2873,7 @@
         "edge:event:trend-entity-company-techcrunch->entity:topic-更重地押注",
         "edge:event:trend-entity-organization-comfyui->entity:model-deepseek",
         "edge:event:trend-entity-organization-comfyui->entity:organization-comfyui",
-        "edge:event:trend-entity-person-nano-omni->entity:organization-nemotron",
+        "edge:event:trend-entity-person-nano-omni->entity:model-nemotron",
         "edge:event:trend-entity-person-nano-omni->entity:organization-openclaw",
         "edge:event:trend-entity-person-nano-omni->entity:person-nano-omni",
         "edge:event:trend-entity-person-nano-omni->entity:topic-安全和政府模型访",
@@ -7374,7 +7374,7 @@
           },
           {
             "data": {
-              "id": "entity:organization-nemotron",
+              "id": "entity:model-nemotron",
               "article_ids": [
                 "2026-04-25-5",
                 "2026-04-28-0",
@@ -7382,7 +7382,7 @@
               ],
               "label": "Nemotron",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "NVIDIA 与 Google Cloud 的合作把 AI Hypercomputer、Gemini、Nemotron 和物理 AI 工作负载放进同一基础设施叙事。",
               "aliases": [
                 "Nemotron"
@@ -14088,13 +14088,13 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-company-nvidia->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-company-nvidia->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-0"
               ],
               "source": "event:infra-entity-company-nvidia",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -14140,13 +14140,13 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-company-nvidia->entity:organization-nemotron",
+              "id": "edge:event:open-source-entity-company-nvidia->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-0"
               ],
               "source": "event:open-source-entity-company-nvidia",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -14179,13 +14179,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:company-nvidia->entity:organization-nemotron:infra",
+              "id": "edge:entity:company-nvidia->entity:model-nemotron:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-04-28-0"
               ],
               "source": "entity:company-nvidia",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "infra"
             }
@@ -14465,13 +14465,13 @@
           },
           {
             "data": {
-              "id": "edge:event:security-entity-person-nano-omni->entity:organization-nemotron",
+              "id": "edge:event:security-entity-person-nano-omni->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-7"
               ],
               "source": "event:security-entity-person-nano-omni",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -14517,13 +14517,13 @@
           },
           {
             "data": {
-              "id": "edge:event:trend-entity-person-nano-omni->entity:organization-nemotron",
+              "id": "edge:event:trend-entity-person-nano-omni->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-7"
               ],
               "source": "event:trend-entity-person-nano-omni",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -14556,13 +14556,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:person-nano-omni->entity:organization-nemotron:security",
+              "id": "edge:entity:person-nano-omni->entity:model-nemotron:security",
               "weight": 3.0,
               "article_ids": [
                 "2026-04-28-7"
               ],
               "source": "entity:person-nano-omni",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "security"
             }

@@ -385,10 +385,10 @@
       "why_it_matters": "WordPress.com 宣布开放 AI 代理写能力，让 MCP 客户端可直接起草、整理并管理站点内容与评论。",
       "entities": [
         {
-          "entity_id": "entity:organization-mcp",
+          "entity_id": "entity:tool-mcp",
           "name": "MCP",
           "canonical_name": "MCP",
-          "type": "organization",
+          "type": "tool",
           "aliases": [
             "MCP"
           ],
@@ -499,15 +499,15 @@
       ],
       "events": [
         {
-          "event_id": "event:launch-entity-organization-mcp",
+          "event_id": "event:launch-entity-tool-mcp",
           "event_type": "launch",
           "label": "WordPress.com 把 AI 代理从只读助手推进到可写协作者，直接开放站点内容管理能力",
           "summary": "WordPress.com 宣布开放 AI 代理写能力，让 MCP 客户端可直接起草、整理并管理站点内容与评论。",
           "participants": [
             {
-              "entity_id": "entity:organization-mcp",
+              "entity_id": "entity:tool-mcp",
               "name": "MCP",
-              "type": "organization",
+              "type": "tool",
               "role": "subject"
             },
             {
@@ -534,15 +534,15 @@
           ]
         },
         {
-          "event_id": "event:partnership-entity-organization-mcp",
+          "event_id": "event:partnership-entity-tool-mcp",
           "event_type": "partnership",
           "label": "WordPress.com 把 AI 代理从只读助手推进到可写协作者，直接开放站点内容管理能力",
           "summary": "WordPress.com 宣布开放 AI 代理写能力，让 MCP 客户端可直接起草、整理并管理站点内容与评论。",
           "participants": [
             {
-              "entity_id": "entity:organization-mcp",
+              "entity_id": "entity:tool-mcp",
               "name": "MCP",
-              "type": "organization",
+              "type": "tool",
               "role": "subject"
             },
             {
@@ -571,8 +571,8 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:dda178247b33",
-          "source_entity_id": "entity:organization-mcp",
+          "relation_id": "relation:4674b518aa90",
+          "source_entity_id": "entity:tool-mcp",
           "target_entity_id": "entity:organization-wordpress-com",
           "source_name": "MCP",
           "target_name": "WordPress.com",
@@ -583,8 +583,8 @@
           ]
         },
         {
-          "relation_id": "relation:93204f32dead",
-          "source_entity_id": "entity:organization-mcp",
+          "relation_id": "relation:93288b53030f",
+          "source_entity_id": "entity:tool-mcp",
           "target_entity_id": "entity:topic-代理从只读助手推",
           "source_name": "MCP",
           "target_name": "代理从只读助手推",
@@ -595,8 +595,8 @@
           ]
         },
         {
-          "relation_id": "relation:b5d8c875bbc2",
-          "source_entity_id": "entity:organization-mcp",
+          "relation_id": "relation:dc11706c6d39",
+          "source_entity_id": "entity:tool-mcp",
           "target_entity_id": "entity:topic-代理写能力",
           "source_name": "MCP",
           "target_name": "代理写能力",
@@ -1698,10 +1698,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-nemotron-cascade",
+          "entity_id": "entity:model-nemotron-cascade",
           "name": "Nemotron-Cascade",
           "canonical_name": "Nemotron-Cascade",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "Nemotron-Cascade"
           ],
@@ -1802,9 +1802,9 @@
               "role": "participant"
             },
             {
-              "entity_id": "entity:organization-nemotron-cascade",
+              "entity_id": "entity:model-nemotron-cascade",
               "name": "Nemotron-Cascade",
-              "type": "organization",
+              "type": "model",
               "role": "participant"
             },
             {
@@ -1837,9 +1837,9 @@
               "role": "participant"
             },
             {
-              "entity_id": "entity:organization-nemotron-cascade",
+              "entity_id": "entity:model-nemotron-cascade",
               "name": "Nemotron-Cascade",
-              "type": "organization",
+              "type": "model",
               "role": "participant"
             },
             {
@@ -1868,9 +1868,9 @@
           ]
         },
         {
-          "relation_id": "relation:77ebffc90330",
+          "relation_id": "relation:4ad013f8ea9a",
           "source_entity_id": "entity:organization-moe",
-          "target_entity_id": "entity:organization-nemotron-cascade",
+          "target_entity_id": "entity:model-nemotron-cascade",
           "source_name": "MoE",
           "target_name": "Nemotron-Cascade",
           "relation_type": "research",
@@ -2448,7 +2448,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:02:55Z",
+  "generated_at": "2026-09-15T22:09:21Z",
   "analysis_window": {
     "start_date": "2026-03-02",
     "end_date": "2026-03-20",
@@ -6219,14 +6219,14 @@
         "entity:company-nvidia",
         "entity:company-nvidia-gtc",
         "entity:company-nvidia-nemoclaw",
-        "entity:company-nvidia-nemotron",
         "entity:hardware-rtx-pc",
         "entity:model-gpt-4o-small",
+        "entity:model-nemotron",
+        "entity:model-nvidia-nemotron",
         "entity:model-qwen",
         "entity:organization-dgx-spark",
         "entity:organization-feynman",
         "entity:organization-nemoclaw",
-        "entity:organization-nemotron",
         "entity:organization-openclaw",
         "entity:organization-super",
         "entity:person-vera-rubin",
@@ -6248,14 +6248,14 @@
         "entity:topic-时延与能耗平衡",
         "entity:topic-的新一代优化方案",
         "event:infra-entity-company-nvidia",
+        "event:infra-entity-model-nemotron",
         "event:infra-entity-organization-dgx-spark",
         "event:infra-entity-organization-feynman",
         "event:infra-entity-organization-nemoclaw",
-        "event:infra-entity-organization-nemotron",
         "event:launch-entity-company-nvidia",
+        "event:open-source-entity-model-nemotron",
         "event:open-source-entity-organization-dgx-spark",
         "event:open-source-entity-organization-feynman",
-        "event:open-source-entity-organization-nemotron",
         "event:security-entity-organization-nemoclaw",
         "source:arxiv",
         "source:nvidia-blog",
@@ -6283,24 +6283,24 @@
         "edge:article:2026-03-16-6->category:基础设施",
         "edge:article:2026-03-16-6->category:开源",
         "edge:article:2026-03-16-6->entity:company-nvidia",
-        "edge:article:2026-03-16-6->entity:company-nvidia-nemotron",
         "edge:article:2026-03-16-6->entity:model-gpt-4o-small",
+        "edge:article:2026-03-16-6->entity:model-nemotron",
+        "edge:article:2026-03-16-6->entity:model-nvidia-nemotron",
         "edge:article:2026-03-16-6->entity:model-qwen",
-        "edge:article:2026-03-16-6->entity:organization-nemotron",
         "edge:article:2026-03-16-6->entity:organization-super",
         "edge:article:2026-03-16-6->entity:topic-不同架构设计",
         "edge:article:2026-03-16-6->entity:topic-创新性地融合三种",
-        "edge:article:2026-03-16-6->event:infra-entity-organization-nemotron",
-        "edge:article:2026-03-16-6->event:open-source-entity-organization-nemotron",
+        "edge:article:2026-03-16-6->event:infra-entity-model-nemotron",
+        "edge:article:2026-03-16-6->event:open-source-entity-model-nemotron",
         "edge:article:2026-03-16-6->source:venturebeat",
         "edge:article:2026-03-17-2->category:基础设施",
         "edge:article:2026-03-17-2->category:安全",
         "edge:article:2026-03-17-2->category:开源",
         "edge:article:2026-03-17-2->entity:company-nvidia",
         "edge:article:2026-03-17-2->entity:hardware-rtx-pc",
+        "edge:article:2026-03-17-2->entity:model-nemotron",
         "edge:article:2026-03-17-2->entity:organization-dgx-spark",
         "edge:article:2026-03-17-2->entity:organization-nemoclaw",
-        "edge:article:2026-03-17-2->entity:organization-nemotron",
         "edge:article:2026-03-17-2->entity:topic-展示面向本地代理",
         "edge:article:2026-03-17-2->entity:topic-推出本地代理栈",
         "edge:article:2026-03-17-2->event:infra-entity-organization-dgx-spark",
@@ -6327,25 +6327,29 @@
         "edge:entity:company-nvidia->entity:topic-关注吞吐:infra",
         "edge:entity:company-nvidia->entity:topic-协同优化进展:infra",
         "edge:entity:company-nvidia->entity:topic-博客公布:infra",
+        "edge:entity:model-nemotron->entity:company-nvidia:infra",
+        "edge:entity:model-nemotron->entity:model-gpt-4o-small:infra",
+        "edge:entity:model-nemotron->entity:organization-super:infra",
         "edge:entity:organization-dgx-spark->entity:company-nvidia:infra",
+        "edge:entity:organization-dgx-spark->entity:model-nemotron:infra",
         "edge:entity:organization-dgx-spark->entity:organization-nemoclaw:infra",
-        "edge:entity:organization-dgx-spark->entity:organization-nemotron:infra",
         "edge:entity:organization-feynman->entity:company-nvidia:infra",
         "edge:entity:organization-feynman->entity:organization-nemoclaw:infra",
         "edge:entity:organization-nemoclaw->entity:company-nvidia-nemoclaw:security",
         "edge:entity:organization-nemoclaw->entity:company-nvidia:security",
         "edge:entity:organization-nemoclaw->entity:organization-openclaw:security",
-        "edge:entity:organization-nemotron->entity:company-nvidia:infra",
-        "edge:entity:organization-nemotron->entity:model-gpt-4o-small:infra",
-        "edge:entity:organization-nemotron->entity:organization-super:infra",
         "edge:event:infra-entity-company-nvidia->entity:company-nvidia",
         "edge:event:infra-entity-company-nvidia->entity:topic-关注吞吐",
         "edge:event:infra-entity-company-nvidia->entity:topic-协同优化进展",
         "edge:event:infra-entity-company-nvidia->entity:topic-博客公布",
+        "edge:event:infra-entity-model-nemotron->entity:company-nvidia",
+        "edge:event:infra-entity-model-nemotron->entity:model-gpt-4o-small",
+        "edge:event:infra-entity-model-nemotron->entity:model-nemotron",
+        "edge:event:infra-entity-model-nemotron->entity:organization-super",
         "edge:event:infra-entity-organization-dgx-spark->entity:company-nvidia",
+        "edge:event:infra-entity-organization-dgx-spark->entity:model-nemotron",
         "edge:event:infra-entity-organization-dgx-spark->entity:organization-dgx-spark",
         "edge:event:infra-entity-organization-dgx-spark->entity:organization-nemoclaw",
-        "edge:event:infra-entity-organization-dgx-spark->entity:organization-nemotron",
         "edge:event:infra-entity-organization-feynman->entity:company-nvidia",
         "edge:event:infra-entity-organization-feynman->entity:organization-feynman",
         "edge:event:infra-entity-organization-feynman->entity:organization-nemoclaw",
@@ -6353,25 +6357,21 @@
         "edge:event:infra-entity-organization-nemoclaw->entity:company-nvidia-nemoclaw",
         "edge:event:infra-entity-organization-nemoclaw->entity:organization-nemoclaw",
         "edge:event:infra-entity-organization-nemoclaw->entity:organization-openclaw",
-        "edge:event:infra-entity-organization-nemotron->entity:company-nvidia",
-        "edge:event:infra-entity-organization-nemotron->entity:model-gpt-4o-small",
-        "edge:event:infra-entity-organization-nemotron->entity:organization-nemotron",
-        "edge:event:infra-entity-organization-nemotron->entity:organization-super",
         "edge:event:launch-entity-company-nvidia->entity:company-nvidia",
         "edge:event:launch-entity-company-nvidia->entity:topic-关注吞吐",
         "edge:event:launch-entity-company-nvidia->entity:topic-协同优化进展",
         "edge:event:launch-entity-company-nvidia->entity:topic-博客公布",
+        "edge:event:open-source-entity-model-nemotron->entity:company-nvidia",
+        "edge:event:open-source-entity-model-nemotron->entity:model-gpt-4o-small",
+        "edge:event:open-source-entity-model-nemotron->entity:model-nemotron",
+        "edge:event:open-source-entity-model-nemotron->entity:organization-super",
         "edge:event:open-source-entity-organization-dgx-spark->entity:company-nvidia",
+        "edge:event:open-source-entity-organization-dgx-spark->entity:model-nemotron",
         "edge:event:open-source-entity-organization-dgx-spark->entity:organization-dgx-spark",
         "edge:event:open-source-entity-organization-dgx-spark->entity:organization-nemoclaw",
-        "edge:event:open-source-entity-organization-dgx-spark->entity:organization-nemotron",
         "edge:event:open-source-entity-organization-feynman->entity:company-nvidia",
         "edge:event:open-source-entity-organization-feynman->entity:organization-feynman",
         "edge:event:open-source-entity-organization-feynman->entity:organization-nemoclaw",
-        "edge:event:open-source-entity-organization-nemotron->entity:company-nvidia",
-        "edge:event:open-source-entity-organization-nemotron->entity:model-gpt-4o-small",
-        "edge:event:open-source-entity-organization-nemotron->entity:organization-nemotron",
-        "edge:event:open-source-entity-organization-nemotron->entity:organization-super",
         "edge:event:security-entity-organization-nemoclaw->entity:company-nvidia",
         "edge:event:security-entity-organization-nemoclaw->entity:company-nvidia-nemoclaw",
         "edge:event:security-entity-organization-nemoclaw->entity:organization-nemoclaw",
@@ -7023,14 +7023,14 @@
           },
           {
             "data": {
-              "id": "entity:organization-nemotron",
+              "id": "entity:model-nemotron",
               "article_ids": [
                 "2026-03-16-6",
                 "2026-03-17-2"
               ],
               "label": "Nemotron",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "Nvidia 发布开源权重模型 Nemotron 3 Super，创新性地融合三种不同架构设计，在多代理系统吞吐量性能上超越 GPT-4o Small 和 Qwen 模型。",
               "aliases": [
                 "Nemotron"
@@ -7072,13 +7072,13 @@
           },
           {
             "data": {
-              "id": "entity:company-nvidia-nemotron",
+              "id": "entity:model-nvidia-nemotron",
               "article_ids": [
                 "2026-03-16-6"
               ],
               "label": "Nvidia Nemotron",
               "type": "entity",
-              "subtype": "company",
+              "subtype": "model",
               "summary": "Nvidia 发布开源权重模型 Nemotron 3 Super，创新性地融合三种不同架构设计，在多代理系统吞吐量性能上超越 GPT-4o Small 和 Qwen 模型。",
               "aliases": [
                 "Nvidia Nemotron"
@@ -7136,7 +7136,7 @@
           },
           {
             "data": {
-              "id": "event:infra-entity-organization-nemotron",
+              "id": "event:infra-entity-model-nemotron",
               "article_ids": [
                 "2026-03-16-6"
               ],
@@ -7149,7 +7149,7 @@
           },
           {
             "data": {
-              "id": "event:open-source-entity-organization-nemotron",
+              "id": "event:open-source-entity-model-nemotron",
               "article_ids": [
                 "2026-03-16-6"
               ],
@@ -7906,15 +7906,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-6->entity:organization-nemotron",
+              "id": "edge:article:2026-03-16-6->entity:model-nemotron",
               "weight": 0.764,
               "article_ids": [
                 "2026-03-16-6"
               ],
               "source": "article:2026-03-16-6",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {
@@ -7958,15 +7958,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-6->entity:company-nvidia-nemotron",
+              "id": "edge:article:2026-03-16-6->entity:model-nvidia-nemotron",
               "weight": 0.6759999999999999,
               "article_ids": [
                 "2026-03-16-6"
               ],
               "source": "article:2026-03-16-6",
-              "target": "entity:company-nvidia-nemotron",
+              "target": "entity:model-nvidia-nemotron",
               "type": "article-entity",
-              "label": "company"
+              "label": "model"
             }
           },
           {
@@ -8010,38 +8010,38 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-6->event:infra-entity-organization-nemotron",
+              "id": "edge:article:2026-03-16-6->event:infra-entity-model-nemotron",
               "weight": 1.2,
               "article_ids": [
                 "2026-03-16-6"
               ],
               "source": "article:2026-03-16-6",
-              "target": "event:infra-entity-organization-nemotron",
+              "target": "event:infra-entity-model-nemotron",
               "type": "article-event",
               "label": "infra"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-model-nemotron->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
-              "target": "entity:organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:company-nvidia",
+              "id": "edge:event:infra-entity-model-nemotron->entity:company-nvidia",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
               "target": "entity:company-nvidia",
               "type": "event-entity",
               "label": "participant"
@@ -8049,12 +8049,12 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:organization-super",
+              "id": "edge:event:infra-entity-model-nemotron->entity:organization-super",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
               "target": "entity:organization-super",
               "type": "event-entity",
               "label": "participant"
@@ -8062,12 +8062,12 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:model-gpt-4o-small",
+              "id": "edge:event:infra-entity-model-nemotron->entity:model-gpt-4o-small",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
               "target": "entity:model-gpt-4o-small",
               "type": "event-entity",
               "label": "participant"
@@ -8075,38 +8075,38 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-6->event:open-source-entity-organization-nemotron",
+              "id": "edge:article:2026-03-16-6->event:open-source-entity-model-nemotron",
               "weight": 1.2,
               "article_ids": [
                 "2026-03-16-6"
               ],
               "source": "article:2026-03-16-6",
-              "target": "event:open-source-entity-organization-nemotron",
+              "target": "event:open-source-entity-model-nemotron",
               "type": "article-event",
               "label": "open_source"
             }
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:organization-nemotron",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
-              "target": "entity:organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:company-nvidia",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:company-nvidia",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
               "target": "entity:company-nvidia",
               "type": "event-entity",
               "label": "participant"
@@ -8114,12 +8114,12 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:organization-super",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:organization-super",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
               "target": "entity:organization-super",
               "type": "event-entity",
               "label": "participant"
@@ -8127,12 +8127,12 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:model-gpt-4o-small",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:model-gpt-4o-small",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
               "target": "entity:model-gpt-4o-small",
               "type": "event-entity",
               "label": "participant"
@@ -8140,12 +8140,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-nemotron->entity:company-nvidia:infra",
+              "id": "edge:entity:model-nemotron->entity:company-nvidia:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "entity:organization-nemotron",
+              "source": "entity:model-nemotron",
               "target": "entity:company-nvidia",
               "type": "explicit-relation",
               "label": "infra"
@@ -8153,12 +8153,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-nemotron->entity:organization-super:infra",
+              "id": "edge:entity:model-nemotron->entity:organization-super:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "entity:organization-nemotron",
+              "source": "entity:model-nemotron",
               "target": "entity:organization-super",
               "type": "explicit-relation",
               "label": "infra"
@@ -8166,12 +8166,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-nemotron->entity:model-gpt-4o-small:infra",
+              "id": "edge:entity:model-nemotron->entity:model-gpt-4o-small:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "entity:organization-nemotron",
+              "source": "entity:model-nemotron",
               "target": "entity:model-gpt-4o-small",
               "type": "explicit-relation",
               "label": "infra"
@@ -8322,15 +8322,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-17-2->entity:organization-nemotron",
+              "id": "edge:article:2026-03-17-2->entity:model-nemotron",
               "weight": 0.764,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "article:2026-03-17-2",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {
@@ -8426,13 +8426,13 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-dgx-spark->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-organization-dgx-spark->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "event:infra-entity-organization-dgx-spark",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -8491,13 +8491,13 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-dgx-spark->entity:organization-nemotron",
+              "id": "edge:event:open-source-entity-organization-dgx-spark->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "event:open-source-entity-organization-dgx-spark",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -8530,13 +8530,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-dgx-spark->entity:organization-nemotron:infra",
+              "id": "edge:entity:organization-dgx-spark->entity:model-nemotron:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "entity:organization-dgx-spark",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "infra"
             }
@@ -10728,8 +10728,8 @@
       }
     },
     {
-      "clue_id": "clue:077f67223b35",
-      "title": "KV Cache / Kumiho / LoCoMo-Plus / MoE",
+      "clue_id": "clue:85e5a3dcf8bc",
+      "title": "KV Cache / Kumiho / LoCoMo-Plus / RelayCaching",
       "time_window": {
         "start_date": "2026-03-02",
         "end_date": "2026-03-20"
@@ -10738,7 +10738,7 @@
         "KV Cache",
         "Kumiho",
         "LoCoMo-Plus",
-        "MoE"
+        "RelayCaching"
       ],
       "event_types": [
         "infra",
@@ -10779,19 +10779,13 @@
         "entity:organization-kumiho",
         "entity:organization-kv-cache",
         "entity:organization-locomo-plus",
-        "entity:organization-moe",
-        "entity:organization-nemotron-cascade",
         "entity:organization-relaycaching",
         "entity:topic-上报告",
         "entity:topic-出现在",
-        "entity:topic-前沿开源模型的推",
         "entity:topic-加速多代理",
         "entity:topic-协作",
         "entity:topic-协作中复用解码期",
         "entity:topic-可将首",
-        "entity:topic-定在一起",
-        "entity:topic-宣称以",
-        "entity:topic-并同步开放模型权",
         "entity:topic-并在",
         "entity:topic-延迟最高降低",
         "entity:topic-忆架构",
@@ -10799,10 +10793,8 @@
         "entity:topic-成图原生架构",
         "event:infra-entity-organization-kumiho",
         "event:infra-entity-organization-kv-cache",
-        "event:infra-entity-organization-moe",
         "event:research-entity-organization-kumiho",
         "event:research-entity-organization-kv-cache",
-        "event:research-entity-organization-moe",
         "source:arxiv"
       ],
       "focus_edge_ids": [
@@ -10835,15 +10827,7 @@
         "edge:article:2026-03-20-6->category:基础设施",
         "edge:article:2026-03-20-6->category:开源",
         "edge:article:2026-03-20-6->category:论文",
-        "edge:article:2026-03-20-6->entity:organization-moe",
-        "edge:article:2026-03-20-6->entity:organization-nemotron-cascade",
         "edge:article:2026-03-20-6->entity:topic-出现在",
-        "edge:article:2026-03-20-6->entity:topic-前沿开源模型的推",
-        "edge:article:2026-03-20-6->entity:topic-定在一起",
-        "edge:article:2026-03-20-6->entity:topic-宣称以",
-        "edge:article:2026-03-20-6->entity:topic-并同步开放模型权",
-        "edge:article:2026-03-20-6->event:infra-entity-organization-moe",
-        "edge:article:2026-03-20-6->event:research-entity-organization-moe",
         "edge:article:2026-03-20-6->source:arxiv",
         "edge:article:2026-03-20-7->category:基础设施",
         "edge:article:2026-03-20-7->category:开源",
@@ -10856,8 +10840,6 @@
         "edge:entity:organization-kv-cache->entity:organization-relaycaching:research",
         "edge:entity:organization-kv-cache->entity:topic-出现在:research",
         "edge:entity:organization-kv-cache->entity:topic-加速多代理:research",
-        "edge:entity:organization-moe->entity:organization-nemotron-cascade:research",
-        "edge:entity:organization-moe->entity:topic-出现在:research",
         "edge:event:infra-entity-organization-kumiho->entity:organization-kumiho",
         "edge:event:infra-entity-organization-kumiho->entity:organization-locomo-plus",
         "edge:event:infra-entity-organization-kumiho->entity:topic-上报告",
@@ -10866,9 +10848,6 @@
         "edge:event:infra-entity-organization-kv-cache->entity:organization-relaycaching",
         "edge:event:infra-entity-organization-kv-cache->entity:topic-出现在",
         "edge:event:infra-entity-organization-kv-cache->entity:topic-加速多代理",
-        "edge:event:infra-entity-organization-moe->entity:organization-moe",
-        "edge:event:infra-entity-organization-moe->entity:organization-nemotron-cascade",
-        "edge:event:infra-entity-organization-moe->entity:topic-出现在",
         "edge:event:research-entity-organization-kumiho->entity:organization-kumiho",
         "edge:event:research-entity-organization-kumiho->entity:organization-locomo-plus",
         "edge:event:research-entity-organization-kumiho->entity:topic-上报告",
@@ -10876,10 +10855,7 @@
         "edge:event:research-entity-organization-kv-cache->entity:organization-kv-cache",
         "edge:event:research-entity-organization-kv-cache->entity:organization-relaycaching",
         "edge:event:research-entity-organization-kv-cache->entity:topic-出现在",
-        "edge:event:research-entity-organization-kv-cache->entity:topic-加速多代理",
-        "edge:event:research-entity-organization-moe->entity:organization-moe",
-        "edge:event:research-entity-organization-moe->entity:organization-nemotron-cascade",
-        "edge:event:research-entity-organization-moe->entity:topic-出现在"
+        "edge:event:research-entity-organization-kv-cache->entity:topic-加速多代理"
       ],
       "graph": {
         "nodes": [
@@ -11409,128 +11385,6 @@
               "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
               "subtype": "论文",
               "weight": 1
-            }
-          },
-          {
-            "data": {
-              "id": "entity:organization-moe",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "MoE",
-              "type": "entity",
-              "subtype": "organization",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "MoE"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:organization-nemotron-cascade",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "Nemotron-Cascade",
-              "type": "entity",
-              "subtype": "organization",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "Nemotron-Cascade"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-前沿开源模型的推",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "前沿开源模型的推",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "前沿开源模型的推"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-定在一起",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "定在一起",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "定在一起"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-宣称以",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "宣称以",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "宣称以"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-并同步开放模型权",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "并同步开放模型权",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "并同步开放模型权"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "event:research-entity-organization-moe",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "Nemotron-Cascade 2 登上 3 月 20 日 arXiv 新列表，NVIDIA 继续把开放权重与高密度推理能力绑定在一起",
-              "type": "event",
-              "subtype": "research",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "weight": 1.4
-            }
-          },
-          {
-            "data": {
-              "id": "event:infra-entity-organization-moe",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "Nemotron-Cascade 2 登上 3 月 20 日 arXiv 新列表，NVIDIA 继续把开放权重与高密度推理能力绑定在一起",
-              "type": "event",
-              "subtype": "infra",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "weight": 1.4
             }
           },
           {
@@ -12226,32 +12080,6 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-20-6->entity:organization-moe",
-              "weight": 0.764,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "article:2026-03-20-6",
-              "target": "entity:organization-moe",
-              "type": "article-entity",
-              "label": "organization"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-03-20-6->entity:organization-nemotron-cascade",
-              "weight": 0.764,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "article:2026-03-20-6",
-              "target": "entity:organization-nemotron-cascade",
-              "type": "article-entity",
-              "label": "organization"
-            }
-          },
-          {
-            "data": {
               "id": "edge:article:2026-03-20-6->entity:topic-出现在",
               "weight": 0.6759999999999999,
               "article_ids": [
@@ -12261,188 +12089,6 @@
               "target": "entity:topic-出现在",
               "type": "article-entity",
               "label": "topic"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-03-20-6->entity:topic-前沿开源模型的推",
-              "weight": 0.6759999999999999,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "article:2026-03-20-6",
-              "target": "entity:topic-前沿开源模型的推",
-              "type": "article-entity",
-              "label": "topic"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-03-20-6->entity:topic-定在一起",
-              "weight": 0.6759999999999999,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "article:2026-03-20-6",
-              "target": "entity:topic-定在一起",
-              "type": "article-entity",
-              "label": "topic"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-03-20-6->entity:topic-宣称以",
-              "weight": 0.6759999999999999,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "article:2026-03-20-6",
-              "target": "entity:topic-宣称以",
-              "type": "article-entity",
-              "label": "topic"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-03-20-6->entity:topic-并同步开放模型权",
-              "weight": 0.6759999999999999,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "article:2026-03-20-6",
-              "target": "entity:topic-并同步开放模型权",
-              "type": "article-entity",
-              "label": "topic"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-03-20-6->event:research-entity-organization-moe",
-              "weight": 1.2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "article:2026-03-20-6",
-              "target": "event:research-entity-organization-moe",
-              "type": "article-event",
-              "label": "research"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:research-entity-organization-moe->entity:organization-moe",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:research-entity-organization-moe",
-              "target": "entity:organization-moe",
-              "type": "event-entity",
-              "label": "subject"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:research-entity-organization-moe->entity:organization-nemotron-cascade",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:research-entity-organization-moe",
-              "target": "entity:organization-nemotron-cascade",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:research-entity-organization-moe->entity:topic-出现在",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:research-entity-organization-moe",
-              "target": "entity:topic-出现在",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-03-20-6->event:infra-entity-organization-moe",
-              "weight": 1.2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "article:2026-03-20-6",
-              "target": "event:infra-entity-organization-moe",
-              "type": "article-event",
-              "label": "infra"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-organization-moe->entity:organization-moe",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:infra-entity-organization-moe",
-              "target": "entity:organization-moe",
-              "type": "event-entity",
-              "label": "subject"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-organization-moe->entity:organization-nemotron-cascade",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:infra-entity-organization-moe",
-              "target": "entity:organization-nemotron-cascade",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-organization-moe->entity:topic-出现在",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:infra-entity-organization-moe",
-              "target": "entity:topic-出现在",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:entity:organization-moe->entity:organization-nemotron-cascade:research",
-              "weight": 3.0,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "entity:organization-moe",
-              "target": "entity:organization-nemotron-cascade",
-              "type": "explicit-relation",
-              "label": "research"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:entity:organization-moe->entity:topic-出现在:research",
-              "weight": 3.0,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "entity:organization-moe",
-              "target": "entity:topic-出现在",
-              "type": "explicit-relation",
-              "label": "research"
             }
           },
           {
@@ -12565,9 +12211,9 @@
         "category:开源",
         "category:生态",
         "category:观察",
+        "entity:company-salesforce",
         "entity:organization-adobe",
         "entity:organization-gtc",
-        "entity:organization-salesforce",
         "entity:organization-sap",
         "entity:tool-agent-toolkit",
         "entity:topic-一个开源自主",
@@ -12591,9 +12237,9 @@
       "focus_edge_ids": [
         "edge:article:2026-03-16-0->category:基础设施",
         "edge:article:2026-03-16-0->category:应用-产业",
+        "edge:article:2026-03-16-0->entity:company-salesforce",
         "edge:article:2026-03-16-0->entity:organization-adobe",
         "edge:article:2026-03-16-0->entity:organization-gtc",
-        "edge:article:2026-03-16-0->entity:organization-salesforce",
         "edge:article:2026-03-16-0->entity:organization-sap",
         "edge:article:2026-03-16-0->entity:tool-agent-toolkit",
         "edge:article:2026-03-16-0->entity:topic-一个开源自主",
@@ -13006,13 +12652,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce",
+              "id": "entity:company-salesforce",
               "article_ids": [
                 "2026-03-16-0"
               ],
               "label": "Salesforce",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
               "aliases": [
                 "Salesforce"
@@ -13387,15 +13033,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-0->entity:organization-salesforce",
+              "id": "edge:article:2026-03-16-0->entity:company-salesforce",
               "weight": 0.764,
               "article_ids": [
                 "2026-03-16-0"
               ],
               "source": "article:2026-03-16-0",
-              "target": "entity:organization-salesforce",
+              "target": "entity:company-salesforce",
               "type": "article-entity",
-              "label": "organization"
+              "label": "company"
             }
           },
           {

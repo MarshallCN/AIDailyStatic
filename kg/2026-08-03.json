@@ -2079,7 +2079,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:26Z",
+  "generated_at": "2026-09-15T22:09:53Z",
   "analysis_window": {
     "start_date": "2026-07-05",
     "end_date": "2026-08-03",
@@ -36576,8 +36576,8 @@
         "category:应用-产业",
         "category:观察",
         "category:论文",
+        "entity:model-kimi",
         "entity:organization-equity",
-        "entity:organization-kimi",
         "entity:organization-moonshot-ai",
         "entity:topic-为何呼吁业界",
         "entity:topic-今年美国停产或淘",
@@ -36597,9 +36597,9 @@
         "entity:topic-街感到恐慌",
         "entity:topic-诉讼是否会给",
         "entity:topic-速度",
-        "event:infra-entity-organization-kimi",
+        "event:infra-entity-model-kimi",
         "event:launch-entity-organization-equity",
-        "event:research-entity-organization-kimi",
+        "event:research-entity-model-kimi",
         "event:security-entity-organization-equity",
         "source:techcrunch",
         "source:综合观察"
@@ -36607,7 +36607,7 @@
       "focus_edge_ids": [
         "edge:article:2026-07-18-0->category:基础设施",
         "edge:article:2026-07-18-0->category:应用-产业",
-        "edge:article:2026-07-18-0->entity:organization-kimi",
+        "edge:article:2026-07-18-0->entity:model-kimi",
         "edge:article:2026-07-18-0->entity:topic-威胁还是威胁",
         "edge:article:2026-07-18-0->source:techcrunch",
         "edge:article:2026-07-18-1->category:基础设施",
@@ -36617,12 +36617,12 @@
         "edge:article:2026-07-18-6->category:应用-产业",
         "edge:article:2026-07-18-6->category:观察",
         "edge:article:2026-07-18-6->category:论文",
-        "edge:article:2026-07-18-6->entity:organization-kimi",
+        "edge:article:2026-07-18-6->entity:model-kimi",
         "edge:article:2026-07-18-6->entity:topic-今年美国停产或淘",
         "edge:article:2026-07-18-6->entity:topic-基础设施投入与研",
         "edge:article:2026-07-18-6->entity:topic-威胁还是威胁",
-        "edge:article:2026-07-18-6->event:infra-entity-organization-kimi",
-        "edge:article:2026-07-18-6->event:research-entity-organization-kimi",
+        "edge:article:2026-07-18-6->event:infra-entity-model-kimi",
+        "edge:article:2026-07-18-6->event:research-entity-model-kimi",
         "edge:article:2026-07-18-6->source:综合观察",
         "edge:article:2026-07-19-1->category:安全",
         "edge:article:2026-07-19-1->category:应用-产业",
@@ -36637,8 +36637,8 @@
         "edge:article:2026-07-19-1->event:security-entity-organization-equity",
         "edge:article:2026-07-19-1->source:techcrunch",
         "edge:article:2026-07-26-3->category:应用-产业",
+        "edge:article:2026-07-26-3->entity:model-kimi",
         "edge:article:2026-07-26-3->entity:organization-equity",
-        "edge:article:2026-07-26-3->entity:organization-kimi",
         "edge:article:2026-07-26-3->entity:organization-moonshot-ai",
         "edge:article:2026-07-26-3->entity:topic-似乎让硅谷和华尔",
         "edge:article:2026-07-26-3->entity:topic-在最新一期的",
@@ -36657,29 +36657,29 @@
         "edge:article:2026-08-02-2->entity:topic-速度",
         "edge:article:2026-08-02-2->event:launch-entity-organization-equity",
         "edge:article:2026-08-02-2->source:techcrunch",
-        "edge:entity:organization-equity->entity:organization-kimi:launch",
+        "edge:entity:model-kimi->entity:topic-今年美国停产或淘:infra",
+        "edge:entity:model-kimi->entity:topic-威胁还是威胁:infra",
+        "edge:entity:organization-equity->entity:model-kimi:launch",
         "edge:entity:organization-equity->entity:organization-moonshot-ai:launch",
         "edge:entity:organization-equity->entity:topic-为何呼吁业界:launch",
         "edge:entity:organization-equity->entity:topic-件和上市计划蒙上:security",
         "edge:entity:organization-equity->entity:topic-似乎让硅谷和华尔:launch",
         "edge:entity:organization-equity->entity:topic-加快人工智能发展:launch",
         "edge:entity:organization-equity->entity:topic-在最新一期的:security",
-        "edge:entity:organization-kimi->entity:topic-今年美国停产或淘:infra",
-        "edge:entity:organization-kimi->entity:topic-威胁还是威胁:infra",
-        "edge:event:infra-entity-organization-kimi->entity:organization-kimi",
-        "edge:event:infra-entity-organization-kimi->entity:topic-今年美国停产或淘",
-        "edge:event:infra-entity-organization-kimi->entity:topic-威胁还是威胁",
+        "edge:event:infra-entity-model-kimi->entity:model-kimi",
+        "edge:event:infra-entity-model-kimi->entity:topic-今年美国停产或淘",
+        "edge:event:infra-entity-model-kimi->entity:topic-威胁还是威胁",
+        "edge:event:launch-entity-organization-equity->entity:model-kimi",
         "edge:event:launch-entity-organization-equity->entity:organization-equity",
-        "edge:event:launch-entity-organization-equity->entity:organization-kimi",
         "edge:event:launch-entity-organization-equity->entity:organization-moonshot-ai",
         "edge:event:launch-entity-organization-equity->entity:topic-为何呼吁业界",
         "edge:event:launch-entity-organization-equity->entity:topic-件和上市计划蒙上",
         "edge:event:launch-entity-organization-equity->entity:topic-似乎让硅谷和华尔",
         "edge:event:launch-entity-organization-equity->entity:topic-加快人工智能发展",
         "edge:event:launch-entity-organization-equity->entity:topic-在最新一期的",
-        "edge:event:research-entity-organization-kimi->entity:organization-kimi",
-        "edge:event:research-entity-organization-kimi->entity:topic-今年美国停产或淘",
-        "edge:event:research-entity-organization-kimi->entity:topic-威胁还是威胁",
+        "edge:event:research-entity-model-kimi->entity:model-kimi",
+        "edge:event:research-entity-model-kimi->entity:topic-今年美国停产或淘",
+        "edge:event:research-entity-model-kimi->entity:topic-威胁还是威胁",
         "edge:event:security-entity-organization-equity->entity:organization-equity",
         "edge:event:security-entity-organization-equity->entity:topic-件和上市计划蒙上",
         "edge:event:security-entity-organization-equity->entity:topic-在最新一期的"
@@ -37383,7 +37383,7 @@
           },
           {
             "data": {
-              "id": "entity:organization-kimi",
+              "id": "entity:model-kimi",
               "article_ids": [
                 "2026-07-16-7",
                 "2026-07-18-0",
@@ -37392,7 +37392,7 @@
               ],
               "label": "Kimi",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "当天围绕 前 DeepMind 研究员如何在推出产品之前筹集 3 亿美元的种子前估值、Moonshot 即将推出的 Kimi 3 有望缩小与 Anthropic Opus 4.8 的差距、OpenAI 为什么要销售 ChatGPT 篮球？ 等动态，AI 行业的产品化、基础设施投入与研究评测继续并行演进。",
               "aliases": [
                 "Kimi"
@@ -37491,7 +37491,7 @@
           },
           {
             "data": {
-              "id": "event:infra-entity-organization-kimi",
+              "id": "event:infra-entity-model-kimi",
               "article_ids": [
                 "2026-07-18-6"
               ],
@@ -37504,7 +37504,7 @@
           },
           {
             "data": {
-              "id": "event:research-entity-organization-kimi",
+              "id": "event:research-entity-model-kimi",
               "article_ids": [
                 "2026-07-18-6"
               ],
@@ -37901,15 +37901,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-07-18-0->entity:organization-kimi",
+              "id": "edge:article:2026-07-18-0->entity:model-kimi",
               "weight": 0.6759999999999999,
               "article_ids": [
                 "2026-07-18-0"
               ],
               "source": "article:2026-07-18-0",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {
@@ -38031,15 +38031,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-07-18-6->entity:organization-kimi",
+              "id": "edge:article:2026-07-18-6->entity:model-kimi",
               "weight": 0.764,
               "article_ids": [
                 "2026-07-18-6"
               ],
               "source": "article:2026-07-18-6",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {
@@ -38083,38 +38083,38 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-07-18-6->event:infra-entity-organization-kimi",
+              "id": "edge:article:2026-07-18-6->event:infra-entity-model-kimi",
               "weight": 1.2,
               "article_ids": [
                 "2026-07-18-6"
               ],
               "source": "article:2026-07-18-6",
-              "target": "event:infra-entity-organization-kimi",
+              "target": "event:infra-entity-model-kimi",
               "type": "article-event",
               "label": "infra"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-kimi->entity:organization-kimi",
+              "id": "edge:event:infra-entity-model-kimi->entity:model-kimi",
               "weight": 2,
               "article_ids": [
                 "2026-07-18-6"
               ],
-              "source": "event:infra-entity-organization-kimi",
-              "target": "entity:organization-kimi",
+              "source": "event:infra-entity-model-kimi",
+              "target": "entity:model-kimi",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-kimi->entity:topic-今年美国停产或淘",
+              "id": "edge:event:infra-entity-model-kimi->entity:topic-今年美国停产或淘",
               "weight": 2,
               "article_ids": [
                 "2026-07-18-6"
               ],
-              "source": "event:infra-entity-organization-kimi",
+              "source": "event:infra-entity-model-kimi",
               "target": "entity:topic-今年美国停产或淘",
               "type": "event-entity",
               "label": "participant"
@@ -38122,12 +38122,12 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-kimi->entity:topic-威胁还是威胁",
+              "id": "edge:event:infra-entity-model-kimi->entity:topic-威胁还是威胁",
               "weight": 2,
               "article_ids": [
                 "2026-07-18-6"
               ],
-              "source": "event:infra-entity-organization-kimi",
+              "source": "event:infra-entity-model-kimi",
               "target": "entity:topic-威胁还是威胁",
               "type": "event-entity",
               "label": "participant"
@@ -38135,38 +38135,38 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-07-18-6->event:research-entity-organization-kimi",
+              "id": "edge:article:2026-07-18-6->event:research-entity-model-kimi",
               "weight": 1.2,
               "article_ids": [
                 "2026-07-18-6"
               ],
               "source": "article:2026-07-18-6",
-              "target": "event:research-entity-organization-kimi",
+              "target": "event:research-entity-model-kimi",
               "type": "article-event",
               "label": "research"
             }
           },
           {
             "data": {
-              "id": "edge:event:research-entity-organization-kimi->entity:organization-kimi",
+              "id": "edge:event:research-entity-model-kimi->entity:model-kimi",
               "weight": 2,
               "article_ids": [
                 "2026-07-18-6"
               ],
-              "source": "event:research-entity-organization-kimi",
-              "target": "entity:organization-kimi",
+              "source": "event:research-entity-model-kimi",
+              "target": "entity:model-kimi",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:research-entity-organization-kimi->entity:topic-今年美国停产或淘",
+              "id": "edge:event:research-entity-model-kimi->entity:topic-今年美国停产或淘",
               "weight": 2,
               "article_ids": [
                 "2026-07-18-6"
               ],
-              "source": "event:research-entity-organization-kimi",
+              "source": "event:research-entity-model-kimi",
               "target": "entity:topic-今年美国停产或淘",
               "type": "event-entity",
               "label": "participant"
@@ -38174,12 +38174,12 @@
           },
           {
             "data": {
-              "id": "edge:event:research-entity-organization-kimi->entity:topic-威胁还是威胁",
+              "id": "edge:event:research-entity-model-kimi->entity:topic-威胁还是威胁",
               "weight": 2,
               "article_ids": [
                 "2026-07-18-6"
               ],
-              "source": "event:research-entity-organization-kimi",
+              "source": "event:research-entity-model-kimi",
               "target": "entity:topic-威胁还是威胁",
               "type": "event-entity",
               "label": "participant"
@@ -38187,12 +38187,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-kimi->entity:topic-今年美国停产或淘:infra",
+              "id": "edge:entity:model-kimi->entity:topic-今年美国停产或淘:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-07-18-6"
               ],
-              "source": "entity:organization-kimi",
+              "source": "entity:model-kimi",
               "target": "entity:topic-今年美国停产或淘",
               "type": "explicit-relation",
               "label": "infra"
@@ -38200,12 +38200,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-kimi->entity:topic-威胁还是威胁:infra",
+              "id": "edge:entity:model-kimi->entity:topic-威胁还是威胁:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-07-18-6"
               ],
-              "source": "entity:organization-kimi",
+              "source": "entity:model-kimi",
               "target": "entity:topic-威胁还是威胁",
               "type": "explicit-relation",
               "label": "infra"
@@ -38514,15 +38514,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-07-26-3->entity:organization-kimi",
+              "id": "edge:article:2026-07-26-3->entity:model-kimi",
               "weight": 0.764,
               "article_ids": [
                 "2026-07-26-3"
               ],
               "source": "article:2026-07-26-3",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {
@@ -38618,13 +38618,13 @@
           },
           {
             "data": {
-              "id": "edge:event:launch-entity-organization-equity->entity:organization-kimi",
+              "id": "edge:event:launch-entity-organization-equity->entity:model-kimi",
               "weight": 2,
               "article_ids": [
                 "2026-07-26-3"
               ],
               "source": "event:launch-entity-organization-equity",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "event-entity",
               "label": "participant"
             }
@@ -38657,13 +38657,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-equity->entity:organization-kimi:launch",
+              "id": "edge:entity:organization-equity->entity:model-kimi:launch",
               "weight": 3.0,
               "article_ids": [
                 "2026-07-26-3"
               ],
               "source": "entity:organization-equity",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "explicit-relation",
               "label": "launch"
             }

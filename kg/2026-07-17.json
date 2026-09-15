@@ -2085,7 +2085,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:21Z",
+  "generated_at": "2026-09-15T22:09:48Z",
   "analysis_window": {
     "start_date": "2026-06-18",
     "end_date": "2026-07-17",
@@ -2163,6 +2163,7 @@
         "entity:model-claude-在",
         "entity:model-gemini-pro",
         "entity:model-gpt-5-5",
+        "entity:model-kimi",
         "entity:organization-azure",
         "entity:organization-cyber",
         "entity:organization-deepmind",
@@ -2170,7 +2171,6 @@
         "entity:organization-dune",
         "entity:organization-finra",
         "entity:organization-id",
-        "entity:organization-kimi",
         "entity:organization-lhtb",
         "entity:organization-moonshot",
         "entity:organization-mythos",
@@ -2370,8 +2370,8 @@
         "edge:article:2026-07-16-7->entity:company-anthropic",
         "edge:article:2026-07-16-7->entity:company-anthropic-opus",
         "edge:article:2026-07-16-7->entity:model-chatgpt",
+        "edge:article:2026-07-16-7->entity:model-kimi",
         "edge:article:2026-07-16-7->entity:organization-deepmind",
-        "edge:article:2026-07-16-7->entity:organization-kimi",
         "edge:article:2026-07-16-7->entity:organization-moonshot",
         "edge:article:2026-07-16-7->entity:topic-为什么要销售",
         "edge:article:2026-07-16-7->event:infra-entity-company-anthropic",
@@ -5830,13 +5830,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-kimi",
+              "id": "entity:model-kimi",
               "article_ids": [
                 "2026-07-16-7"
               ],
               "label": "Kimi",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "当天围绕 前 DeepMind 研究员如何在推出产品之前筹集 3 亿美元的种子前估值、Moonshot 即将推出的 Kimi 3 有望缩小与 Anthropic Opus 4.8 的差距、OpenAI 为什么要销售 ChatGPT 篮球？ 等动态，AI 行业的产品化、基础设施投入与研究评测继续并行演进。",
               "aliases": [
                 "Kimi"
@@ -9143,15 +9143,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-07-16-7->entity:organization-kimi",
+              "id": "edge:article:2026-07-16-7->entity:model-kimi",
               "weight": 0.764,
               "article_ids": [
                 "2026-07-16-7"
               ],
               "source": "article:2026-07-16-7",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {

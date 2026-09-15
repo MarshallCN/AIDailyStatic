@@ -284,7 +284,7 @@ python scripts/ai_daily.py validate --input draft.md
 
 它会检查：
 - `day` / `date` 是否一致
-- 是否有 7 到 10 条新闻
+- 是否有 7 到 20 条新闻
 - 是否覆盖 `应用/产业`、`论文`、`基础设施`
 - 是否至少有 1 条 `观察`
 - `category` 是否只使用固定标签

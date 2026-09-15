@@ -1879,7 +1879,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:17Z",
+  "generated_at": "2026-09-15T22:09:44Z",
   "analysis_window": {
     "start_date": "2026-06-05",
     "end_date": "2026-07-04",
@@ -1962,6 +1962,7 @@
         "entity:company-nvidia-agentperf",
         "entity:company-openai-techcrunch",
         "entity:company-pocket-meta",
+        "entity:company-salesforce-fin",
         "entity:company-techcrunch",
         "entity:company-techcrunch-mobility",
         "entity:company-tesla-fsd-techcrunch-mobility",
@@ -2003,13 +2004,11 @@
         "entity:organization-opus",
         "entity:organization-pocket",
         "entity:organization-polymarket",
-        "entity:organization-salesforce-fin",
         "entity:organization-sarvam",
         "entity:organization-slack",
         "entity:organization-superhuman",
         "entity:organization-tcs",
         "entity:organization-trump",
-        "entity:organization-x-mcp",
         "entity:organization-zuckerberg",
         "entity:person-frontier-company",
         "entity:person-john-jumper",
@@ -2017,6 +2016,7 @@
         "entity:person-project-mirage",
         "entity:person-tata-consultancy-services",
         "entity:policy-acti",
+        "entity:tool-x-mcp",
         "entity:topic-三键硬件可通过",
         "entity:topic-下文",
         "entity:topic-与企业上下文风险",
@@ -5701,13 +5701,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce-fin",
+              "id": "entity:company-salesforce-fin",
               "article_ids": [
                 "2026-06-15-8"
               ],
               "label": "Salesforce-Fin",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "NewCore、Salesforce-Fin、Anthropic 限制、Meta AI Mode 和 Sarvam 融资共同显示企业 AI 正进入制度化阶段。",
               "aliases": [
                 "Salesforce-Fin"
@@ -8675,13 +8675,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-x-mcp",
+              "id": "entity:tool-x-mcp",
               "article_ids": [
                 "2026-06-30-8"
               ],
               "label": "X MCP",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "tool",
               "summary": "Claude Sonnet 5、Etched、Amazon FDE、Acti、OKX、OpenClaw 和 X MCP 共同显示 agent 正从模型能力走向产品、芯片和协议生态。",
               "aliases": [
                 "X MCP"

@@ -1675,10 +1675,10 @@
       "why_it_matters": "X 推出托管 MCP server，让开发者更容易把 AI applications 连接到 X API。",
       "entities": [
         {
-          "entity_id": "entity:organization-mcp",
+          "entity_id": "entity:tool-mcp",
           "name": "MCP",
           "canonical_name": "MCP",
-          "type": "organization",
+          "type": "tool",
           "aliases": [
             "MCP"
           ],
@@ -1789,15 +1789,15 @@
       ],
       "events": [
         {
-          "event_id": "event:infra-entity-organization-mcp",
+          "event_id": "event:infra-entity-tool-mcp",
           "event_type": "infra",
           "label": "X 推出 MCP server，方便 AI 工具调用平台 API",
           "summary": "X 推出托管 MCP server，让开发者更容易把 AI applications 连接到 X API。",
           "participants": [
             {
-              "entity_id": "entity:organization-mcp",
+              "entity_id": "entity:tool-mcp",
               "name": "MCP",
-              "type": "organization",
+              "type": "tool",
               "role": "subject"
             },
             {
@@ -1824,15 +1824,15 @@
           ]
         },
         {
-          "event_id": "event:launch-entity-organization-mcp",
+          "event_id": "event:launch-entity-tool-mcp",
           "event_type": "launch",
           "label": "X 推出 MCP server，方便 AI 工具调用平台 API",
           "summary": "X 推出托管 MCP server，让开发者更容易把 AI applications 连接到 X API。",
           "participants": [
             {
-              "entity_id": "entity:organization-mcp",
+              "entity_id": "entity:tool-mcp",
               "name": "MCP",
-              "type": "organization",
+              "type": "tool",
               "role": "subject"
             },
             {
@@ -1861,8 +1861,8 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:d9af453a7b5c",
-          "source_entity_id": "entity:organization-mcp",
+          "relation_id": "relation:4ea47f911180",
+          "source_entity_id": "entity:tool-mcp",
           "target_entity_id": "entity:topic-推出",
           "source_name": "MCP",
           "target_name": "推出",
@@ -1873,8 +1873,8 @@
           ]
         },
         {
-          "relation_id": "relation:c3c025719e92",
-          "source_entity_id": "entity:organization-mcp",
+          "relation_id": "relation:2f054a2abb46",
+          "source_entity_id": "entity:tool-mcp",
           "target_entity_id": "entity:organization-api-x",
           "source_name": "MCP",
           "target_name": "API X",
@@ -1885,8 +1885,8 @@
           ]
         },
         {
-          "relation_id": "relation:b2a1d9edee70",
-          "source_entity_id": "entity:organization-mcp",
+          "relation_id": "relation:735539364035",
+          "source_entity_id": "entity:tool-mcp",
           "target_entity_id": "entity:organization-x-api",
           "source_name": "MCP",
           "target_name": "X API",
@@ -1930,10 +1930,10 @@
       "why_it_matters": "本周论文继续关注 agent 工具使用、身份边界和安全评测，与 OKX、OpenClaw 和 MCP server 新闻相互呼应。",
       "entities": [
         {
-          "entity_id": "entity:organization-mcp",
+          "entity_id": "entity:tool-mcp",
           "name": "MCP",
           "canonical_name": "MCP",
-          "type": "organization",
+          "type": "tool",
           "aliases": [
             "MCP"
           ],
@@ -2044,15 +2044,15 @@
       ],
       "events": [
         {
-          "event_id": "event:research-entity-organization-mcp",
+          "event_id": "event:research-entity-tool-mcp",
           "event_type": "research",
           "label": "论文：agent 经济需要身份、支付和工具协议研究",
           "summary": "本周论文继续关注 agent 工具使用、身份边界和安全评测，与 OKX、OpenClaw 和 MCP server 新闻相互呼应。",
           "participants": [
             {
-              "entity_id": "entity:organization-mcp",
+              "entity_id": "entity:tool-mcp",
               "name": "MCP",
-              "type": "organization",
+              "type": "tool",
               "role": "subject"
             },
             {
@@ -2079,15 +2079,15 @@
           ]
         },
         {
-          "event_id": "event:security-entity-organization-mcp",
+          "event_id": "event:security-entity-tool-mcp",
           "event_type": "security",
           "label": "论文：agent 经济需要身份、支付和工具协议研究",
           "summary": "本周论文继续关注 agent 工具使用、身份边界和安全评测，与 OKX、OpenClaw 和 MCP server 新闻相互呼应。",
           "participants": [
             {
-              "entity_id": "entity:organization-mcp",
+              "entity_id": "entity:tool-mcp",
               "name": "MCP",
-              "type": "organization",
+              "type": "tool",
               "role": "subject"
             },
             {
@@ -2116,8 +2116,8 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:f7e127870205",
-          "source_entity_id": "entity:organization-mcp",
+          "relation_id": "relation:2e1afe6bc79d",
+          "source_entity_id": "entity:tool-mcp",
           "target_entity_id": "entity:organization-okx",
           "source_name": "MCP",
           "target_name": "OKX",
@@ -2128,8 +2128,8 @@
           ]
         },
         {
-          "relation_id": "relation:c105290ff768",
-          "source_entity_id": "entity:organization-mcp",
+          "relation_id": "relation:0829922810a5",
+          "source_entity_id": "entity:tool-mcp",
           "target_entity_id": "entity:organization-openclaw",
           "source_name": "MCP",
           "target_name": "OpenClaw",
@@ -2140,8 +2140,8 @@
           ]
         },
         {
-          "relation_id": "relation:5a5ec65ca0ef",
-          "source_entity_id": "entity:organization-mcp",
+          "relation_id": "relation:ecec1c56a708",
+          "source_entity_id": "entity:tool-mcp",
           "target_entity_id": "entity:topic-工具使用",
           "source_name": "MCP",
           "target_name": "工具使用",
@@ -2271,10 +2271,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-x-mcp",
+          "entity_id": "entity:tool-x-mcp",
           "name": "X MCP",
           "canonical_name": "X MCP",
-          "type": "organization",
+          "type": "tool",
           "aliases": [
             "X MCP"
           ],
@@ -2434,7 +2434,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:16Z",
+  "generated_at": "2026-09-15T22:09:43Z",
   "analysis_window": {
     "start_date": "2026-06-01",
     "end_date": "2026-06-30",
@@ -2514,6 +2514,7 @@
         "entity:company-nvidia",
         "entity:company-nvidia-agentperf",
         "entity:company-openai-techcrunch",
+        "entity:company-salesforce-fin",
         "entity:company-techcrunch",
         "entity:company-techcrunch-mobility",
         "entity:company-tesla-fsd-techcrunch-mobility",
@@ -2549,19 +2550,18 @@
         "entity:organization-opus",
         "entity:organization-polymarket",
         "entity:organization-rsp",
-        "entity:organization-salesforce-fin",
         "entity:organization-sarvam",
         "entity:organization-slack",
         "entity:organization-superhuman",
         "entity:organization-tcs",
         "entity:organization-trump",
-        "entity:organization-x-mcp",
         "entity:person-john-jumper",
         "entity:person-tata-consultancy-services",
         "entity:policy-acti",
         "entity:product-whatsapp",
         "entity:product-whatsapp-business",
         "entity:product-whatsapp-business-ai",
+        "entity:tool-x-mcp",
         "entity:topic-万亿美元估值",
         "entity:topic-下回应回报争议",
         "entity:topic-下文",
@@ -2876,8 +2876,8 @@
         "edge:article:2026-06-30-8->entity:company-amazon-fde",
         "edge:article:2026-06-30-8->entity:model-claude-sonnet",
         "edge:article:2026-06-30-8->entity:organization-etched",
-        "edge:article:2026-06-30-8->entity:organization-x-mcp",
         "edge:article:2026-06-30-8->entity:policy-acti",
+        "edge:article:2026-06-30-8->entity:tool-x-mcp",
         "edge:article:2026-06-30-8->entity:topic-产品化和商业化密",
         "edge:article:2026-06-30-8->event:infra-entity-model-claude-sonnet",
         "edge:article:2026-06-30-8->event:security-entity-model-claude-sonnet",
@@ -6434,13 +6434,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce-fin",
+              "id": "entity:company-salesforce-fin",
               "article_ids": [
                 "2026-06-15-8"
               ],
               "label": "Salesforce-Fin",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "NewCore、Salesforce-Fin、Anthropic 限制、Meta AI Mode 和 Sarvam 融资共同显示企业 AI 正进入制度化阶段。",
               "aliases": [
                 "Salesforce-Fin"
@@ -9484,13 +9484,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-x-mcp",
+              "id": "entity:tool-x-mcp",
               "article_ids": [
                 "2026-06-30-8"
               ],
               "label": "X MCP",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "tool",
               "summary": "Claude Sonnet 5、Etched、Amazon FDE、Acti、OKX、OpenClaw 和 X MCP 共同显示 agent 正从模型能力走向产品、芯片和协议生态。",
               "aliases": [
                 "X MCP"
@@ -15535,15 +15535,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-06-30-8->entity:organization-x-mcp",
+              "id": "edge:article:2026-06-30-8->entity:tool-x-mcp",
               "weight": 0.6759999999999999,
               "article_ids": [
                 "2026-06-30-8"
               ],
               "source": "article:2026-06-30-8",
-              "target": "entity:organization-x-mcp",
+              "target": "entity:tool-x-mcp",
               "type": "article-entity",
-              "label": "organization"
+              "label": "tool"
             }
           },
           {

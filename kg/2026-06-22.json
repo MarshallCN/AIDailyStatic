@@ -2158,7 +2158,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:14Z",
+  "generated_at": "2026-09-15T22:09:41Z",
   "analysis_window": {
     "start_date": "2026-05-24",
     "end_date": "2026-06-22",
@@ -2231,6 +2231,7 @@
         "entity:company-meta-ai-mode",
         "entity:company-nvidia",
         "entity:company-nvidia-agentperf",
+        "entity:company-salesforce-fin",
         "entity:company-techcrunch",
         "entity:company-techcrunch-mobility",
         "entity:hardware-gpu",
@@ -2255,7 +2256,6 @@
         "entity:organization-polymarket",
         "entity:organization-pope-leo-xiv",
         "entity:organization-rsp",
-        "entity:organization-salesforce-fin",
         "entity:organization-tcs",
         "entity:organization-trump",
         "entity:organization-vatican",
@@ -7398,13 +7398,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce-fin",
+              "id": "entity:company-salesforce-fin",
               "article_ids": [
                 "2026-06-15-8"
               ],
               "label": "Salesforce-Fin",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "NewCore、Salesforce-Fin、Anthropic 限制、Meta AI Mode 和 Sarvam 融资共同显示企业 AI 正进入制度化阶段。",
               "aliases": [
                 "Salesforce-Fin"

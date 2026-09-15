@@ -1142,10 +1142,10 @@
       "why_it_matters": "一份新的 SaferAI 报告发现，Z.ai 的开放权重 GLM-5.2 接近前沿人工智能能力，但缺乏关键的安全缓解措施，这再次引发了人们对强大的开放模型可能超过治理和保障措施的担忧。",
       "entities": [
         {
-          "entity_id": "entity:organization-glm-5-2",
+          "entity_id": "entity:model-glm-5-2",
           "name": "GLM-5.2",
           "canonical_name": "GLM-5.2",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "GLM-5.2"
           ],
@@ -1256,15 +1256,15 @@
       ],
       "events": [
         {
-          "event_id": "event:security-entity-organization-glm-5-2",
+          "event_id": "event:security-entity-model-glm-5-2",
           "event_type": "security",
           "label": "开放权重人工智能模型正在赶上前沿。安全差距依然存在",
           "summary": "一份新的 SaferAI 报告发现，Z.ai 的开放权重 GLM-5.2 接近前沿人工智能能力，但缺乏关键的安全缓解措施，这再次引发了人们对强大的开放模型可能超过治理和保障措施的担忧。",
           "participants": [
             {
-              "entity_id": "entity:organization-glm-5-2",
+              "entity_id": "entity:model-glm-5-2",
               "name": "GLM-5.2",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -1291,15 +1291,15 @@
           ]
         },
         {
-          "event_id": "event:infra-entity-organization-glm-5-2",
+          "event_id": "event:infra-entity-model-glm-5-2",
           "event_type": "infra",
           "label": "开放权重人工智能模型正在赶上前沿。安全差距依然存在",
           "summary": "一份新的 SaferAI 报告发现，Z.ai 的开放权重 GLM-5.2 接近前沿人工智能能力，但缺乏关键的安全缓解措施，这再次引发了人们对强大的开放模型可能超过治理和保障措施的担忧。",
           "participants": [
             {
-              "entity_id": "entity:organization-glm-5-2",
+              "entity_id": "entity:model-glm-5-2",
               "name": "GLM-5.2",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -1328,8 +1328,8 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:bafeaea7de92",
-          "source_entity_id": "entity:organization-glm-5-2",
+          "relation_id": "relation:dbf66064c95c",
+          "source_entity_id": "entity:model-glm-5-2",
           "target_entity_id": "entity:organization-saferai",
           "source_name": "GLM-5.2",
           "target_name": "SaferAI",
@@ -1340,8 +1340,8 @@
           ]
         },
         {
-          "relation_id": "relation:c2ca29d42d49",
-          "source_entity_id": "entity:organization-glm-5-2",
+          "relation_id": "relation:2654ba2875be",
+          "source_entity_id": "entity:model-glm-5-2",
           "target_entity_id": "entity:organization-z-ai",
           "source_name": "GLM-5.2",
           "target_name": "Z.ai",
@@ -1352,8 +1352,8 @@
           ]
         },
         {
-          "relation_id": "relation:c8fe2fee2d3b",
-          "source_entity_id": "entity:organization-glm-5-2",
+          "relation_id": "relation:3feca7880765",
+          "source_entity_id": "entity:model-glm-5-2",
           "target_entity_id": "entity:topic-一份新的",
           "source_name": "GLM-5.2",
           "target_name": "一份新的",
@@ -2120,7 +2120,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:26Z",
+  "generated_at": "2026-09-15T22:09:53Z",
   "analysis_window": {
     "start_date": "2026-07-06",
     "end_date": "2026-08-04",

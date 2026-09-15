@@ -1549,13 +1549,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce-fin",
+              "id": "entity:company-salesforce-fin",
               "article_ids": [
                 "2026-06-15-8"
               ],
               "label": "Salesforce-Fin",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "NewCore、Salesforce-Fin、Anthropic 限制、Meta AI Mode 和 Sarvam 融资共同显示企业 AI 正进入制度化阶段。",
               "aliases": [
                 "Salesforce-Fin"
@@ -3179,13 +3179,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-x-mcp",
+              "id": "entity:tool-x-mcp",
               "article_ids": [
                 "2026-06-30-8"
               ],
               "label": "X MCP",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "tool",
               "summary": "Claude Sonnet 5、Etched、Amazon FDE、Acti、OKX、OpenClaw 和 X MCP 共同显示 agent 正从模型能力走向产品、芯片和协议生态。",
               "aliases": [
                 "X MCP"
@@ -5941,15 +5941,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-06-30-8->entity:organization-x-mcp",
+              "id": "edge:article:2026-06-30-8->entity:tool-x-mcp",
               "weight": 0.6759999999999999,
               "article_ids": [
                 "2026-06-30-8"
               ],
               "source": "article:2026-06-30-8",
-              "target": "entity:organization-x-mcp",
+              "target": "entity:tool-x-mcp",
               "type": "article-entity",
-              "label": "organization"
+              "label": "tool"
             }
           },
           {

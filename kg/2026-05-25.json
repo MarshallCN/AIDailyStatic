@@ -1347,7 +1347,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:09Z",
+  "generated_at": "2026-09-15T22:09:35Z",
   "analysis_window": {
     "start_date": "2026-04-26",
     "end_date": "2026-05-25",
@@ -1418,6 +1418,7 @@
         "entity:company-anthropic",
         "entity:company-anthropic-rsp",
         "entity:company-anthropic-spacex",
+        "entity:company-blackstone",
         "entity:company-google",
         "entity:company-google-cloud",
         "entity:company-google-i",
@@ -1445,6 +1446,7 @@
         "entity:model-gpt-5-5",
         "entity:model-gpt-5-5-cyber",
         "entity:model-gpt-5-5-instant",
+        "entity:model-nemotron",
         "entity:organization-agi",
         "entity:organization-ai-pentagon",
         "entity:organization-ai-powered",
@@ -1454,7 +1456,6 @@
         "entity:organization-aws",
         "entity:organization-axios",
         "entity:organization-azure",
-        "entity:organization-blackstone",
         "entity:organization-cerebras",
         "entity:organization-cerebras-ipo",
         "entity:organization-cla",
@@ -1477,7 +1478,6 @@
         "entity:organization-leader",
         "entity:organization-lovable",
         "entity:organization-may",
-        "entity:organization-nemotron",
         "entity:organization-omni",
         "entity:organization-pentagon",
         "entity:organization-pope-leo-xiv",
@@ -2182,6 +2182,7 @@
         "edge:entity:company-amazon->entity:topic-在商品页推出:launch",
         "edge:entity:company-anthropic->entity:company-anthropic-rsp:security",
         "edge:entity:company-anthropic->entity:company-anthropic-spacex:infra",
+        "edge:entity:company-anthropic->entity:company-blackstone:launch",
         "edge:entity:company-anthropic->entity:company-google:research",
         "edge:entity:company-anthropic->entity:company-nvidia:infra",
         "edge:entity:company-anthropic->entity:company-nvidia:research",
@@ -2199,7 +2200,6 @@
         "edge:entity:company-anthropic->entity:organization-axios:infra",
         "edge:entity:company-anthropic->entity:organization-axios:launch",
         "edge:entity:company-anthropic->entity:organization-axios:research",
-        "edge:entity:company-anthropic->entity:organization-blackstone:launch",
         "edge:entity:company-anthropic->entity:organization-coatue:infra",
         "edge:entity:company-anthropic->entity:organization-colossus:infra",
         "edge:entity:company-anthropic->entity:organization-creati-ai:research",
@@ -2272,7 +2272,7 @@
         "edge:entity:company-nvidia->entity:company-nvidia-ian-buck:infra",
         "edge:entity:company-nvidia->entity:company-nvidia-q1:infra",
         "edge:entity:company-nvidia->entity:model-gpt-5-5:infra",
-        "edge:entity:company-nvidia->entity:organization-nemotron:infra",
+        "edge:entity:company-nvidia->entity:model-nemotron:infra",
         "edge:entity:company-nvidia->entity:organization-reddit-ai-roundup:infra",
         "edge:entity:company-nvidia->entity:person-nano-omni:infra",
         "edge:entity:company-nvidia->entity:topic-亿美元:infra",
@@ -2445,7 +2445,7 @@
         "edge:entity:person-content-credentials->entity:company-openai:security",
         "edge:entity:person-content-credentials->entity:topic-于图像:security",
         "edge:entity:person-content-credentials->entity:topic-发布:security",
-        "edge:entity:person-nano-omni->entity:organization-nemotron:security",
+        "edge:entity:person-nano-omni->entity:model-nemotron:security",
         "edge:entity:person-nectar-social->entity:company-techcrunch:launch",
         "edge:entity:person-nectar-social->entity:topic-万美元:launch",
         "edge:entity:person-nectar-social->entity:topic-主打:launch",
@@ -2540,7 +2540,7 @@
         "edge:event:infra-entity-company-nvidia->entity:company-nvidia-ian-buck",
         "edge:event:infra-entity-company-nvidia->entity:company-nvidia-q1",
         "edge:event:infra-entity-company-nvidia->entity:model-gpt-5-5",
-        "edge:event:infra-entity-company-nvidia->entity:organization-nemotron",
+        "edge:event:infra-entity-company-nvidia->entity:model-nemotron",
         "edge:event:infra-entity-company-nvidia->entity:organization-reddit-ai-roundup",
         "edge:event:infra-entity-company-nvidia->entity:person-nano-omni",
         "edge:event:infra-entity-company-nvidia->entity:topic-亿美元",
@@ -2663,11 +2663,11 @@
         "edge:event:launch-entity-company-amazon->entity:topic-取从阅读评论转向",
         "edge:event:launch-entity-company-amazon->entity:topic-在商品页推出",
         "edge:event:launch-entity-company-anthropic->entity:company-anthropic",
+        "edge:event:launch-entity-company-anthropic->entity:company-blackstone",
         "edge:event:launch-entity-company-anthropic->entity:company-openai",
         "edge:event:launch-entity-company-anthropic->entity:company-techcrunch",
         "edge:event:launch-entity-company-anthropic->entity:model-claude",
         "edge:event:launch-entity-company-anthropic->entity:organization-axios",
-        "edge:event:launch-entity-company-anthropic->entity:organization-blackstone",
         "edge:event:launch-entity-company-anthropic->entity:organization-colossus",
         "edge:event:launch-entity-company-anthropic->entity:organization-friedman",
         "edge:event:launch-entity-company-anthropic->entity:organization-gates-foundation",
@@ -2830,7 +2830,7 @@
         "edge:event:launch-entity-product-copilot->entity:topic-付费用户超过",
         "edge:event:launch-entity-product-copilot->entity:topic-在真实使用而非只",
         "edge:event:open-source-entity-company-nvidia->entity:company-nvidia",
-        "edge:event:open-source-entity-company-nvidia->entity:organization-nemotron",
+        "edge:event:open-source-entity-company-nvidia->entity:model-nemotron",
         "edge:event:open-source-entity-company-nvidia->entity:person-nano-omni",
         "edge:event:open-source-entity-company-nvidia->entity:topic-音频",
         "edge:event:open-source-entity-company-openai->entity:company-openai",
@@ -2844,10 +2844,10 @@
         "edge:event:open-source-entity-organization-codex->entity:topic-协作讨论",
         "edge:event:open-source-entity-organization-codex->entity:topic-回应多",
         "edge:event:partnership-entity-company-anthropic->entity:company-anthropic",
+        "edge:event:partnership-entity-company-anthropic->entity:company-blackstone",
         "edge:event:partnership-entity-company-anthropic->entity:company-openai",
         "edge:event:partnership-entity-company-anthropic->entity:model-claude",
         "edge:event:partnership-entity-company-anthropic->entity:organization-axios",
-        "edge:event:partnership-entity-company-anthropic->entity:organization-blackstone",
         "edge:event:partnership-entity-company-anthropic->entity:organization-friedman",
         "edge:event:partnership-entity-company-anthropic->entity:organization-gates-foundation",
         "edge:event:partnership-entity-company-anthropic->entity:topic-亿美元合作",
@@ -5002,14 +5002,14 @@
           },
           {
             "data": {
-              "id": "entity:organization-nemotron",
+              "id": "entity:model-nemotron",
               "article_ids": [
                 "2026-04-28-0",
                 "2026-04-28-7"
               ],
               "label": "Nemotron",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "NVIDIA 发布开放多模态模型 Nemotron 3 Nano Omni，面向视觉、音频、文档和 GUI 感知型 agent。",
               "aliases": [
                 "Nemotron"
@@ -7786,13 +7786,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-blackstone",
+              "id": "entity:company-blackstone",
               "article_ids": [
                 "2026-05-04-1"
               ],
               "label": "Blackstone",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "Anthropic 联合 Blackstone、Hellman & Friedman 和 Goldman Sachs 成立新企业 AI 服务公司，把 Claude 带进中型企业运营。",
               "aliases": [
                 "Blackstone"
@@ -16009,13 +16009,13 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-company-nvidia->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-company-nvidia->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-0"
               ],
               "source": "event:infra-entity-company-nvidia",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -16061,13 +16061,13 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-company-nvidia->entity:organization-nemotron",
+              "id": "edge:event:open-source-entity-company-nvidia->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-0"
               ],
               "source": "event:open-source-entity-company-nvidia",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -16100,13 +16100,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:company-nvidia->entity:organization-nemotron:infra",
+              "id": "edge:entity:company-nvidia->entity:model-nemotron:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-04-28-0"
               ],
               "source": "entity:company-nvidia",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "infra"
             }
@@ -16547,13 +16547,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:person-nano-omni->entity:organization-nemotron:security",
+              "id": "edge:entity:person-nano-omni->entity:model-nemotron:security",
               "weight": 3.0,
               "article_ids": [
                 "2026-04-28-7"
               ],
               "source": "entity:person-nano-omni",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "security"
             }
@@ -19004,13 +19004,13 @@
           },
           {
             "data": {
-              "id": "edge:event:launch-entity-company-anthropic->entity:organization-blackstone",
+              "id": "edge:event:launch-entity-company-anthropic->entity:company-blackstone",
               "weight": 2,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "event:launch-entity-company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "event-entity",
               "label": "participant"
             }
@@ -19059,13 +19059,13 @@
           },
           {
             "data": {
-              "id": "edge:event:partnership-entity-company-anthropic->entity:organization-blackstone",
+              "id": "edge:event:partnership-entity-company-anthropic->entity:company-blackstone",
               "weight": 2,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "event:partnership-entity-company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "event-entity",
               "label": "participant"
             }
@@ -19101,13 +19101,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:company-anthropic->entity:organization-blackstone:launch",
+              "id": "edge:entity:company-anthropic->entity:company-blackstone:launch",
               "weight": 3.0,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "entity:company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "explicit-relation",
               "label": "launch"
             }

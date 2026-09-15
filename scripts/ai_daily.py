@@ -15,6 +15,9 @@ import urllib.error
 import urllib.request
 from typing import Iterable
 from urllib.parse import urljoin
+from zoneinfo import ZoneInfo
+
+DEFAULT_TZ = ZoneInfo("Europe/London")
 
 import static_pipeline
 
@@ -81,8 +84,8 @@ HISTORY_HINT_SOURCES = [
     ("TechCrunch", "https://techcrunch.com/2026/03/02/users-are-ditching-chatgpt-for-claude-heres-how-to-make-the-switch/"),
 ]
 
-DEFAULT_REQUEST_TIMEOUT = 8
-DEFAULT_COLLECT_BUDGET_SECONDS = 25
+DEFAULT_REQUEST_TIMEOUT = 12
+DEFAULT_COLLECT_BUDGET_SECONDS = 90
 
 
 class CliError(RuntimeError):
@@ -93,10 +96,10 @@ class CliError(RuntimeError):
 class CollectConfig:
     request_timeout: int = DEFAULT_REQUEST_TIMEOUT
     budget_seconds: int = DEFAULT_COLLECT_BUDGET_SECONDS
-    max_official_links: int = 12
-    max_media_links: int = 40
-    max_nvidia_links: int = 25
-    max_arxiv_items: int = 18
+    max_official_links: int = 20
+    max_media_links: int = 80
+    max_nvidia_links: int = 40
+    max_arxiv_items: int = 30
 
 
 class CollectDeadlineExceeded(RuntimeError):
@@ -167,9 +170,13 @@ def fetch_text(url: str, timeout: int = DEFAULT_REQUEST_TIMEOUT, deadline: float
         return response.read().decode(charset, "ignore")
 
 
+def today_in_default_tz() -> dt.date:
+    return dt.datetime.now(DEFAULT_TZ).date()
+
+
 def parse_target_date(raw: str | None) -> str:
     if not raw or raw == "today":
-        return dt.date.today().isoformat()
+        return today_in_default_tz().isoformat()
     try:
         return dt.date.fromisoformat(raw).isoformat()
     except ValueError as exc:
@@ -655,7 +662,9 @@ def build_compact_prompt(date_str: str, candidates: list[Candidate]) -> str:
         "",
         "硬性约束：",
         "- 只输出纯 Markdown，不要解释、前言、代码块。",
-        "- 总条数 7 到 10 条。",
+        "- 总条数 7 到 20 条。",
+        "- 采集结果只是种子，必须补充搜索；优先开放 HTML（arXiv、官方博客、TechCrunch、Reuters）。",
+        "- 付费墙/403 只试一次，立刻换源；不要因个别站点拒绝而声称无法搜索。",
         f"- 每条 date 必须是 {date_str}，除非正文明确说明“旧闻在当天继续发酵”的背景。",
         "- 固定分类仅允许：应用/产业、论文、基础设施、安全、生态、开源、观察。",
         "- 至少覆盖：应用/产业、论文、基础设施，并至少有 1 条观察。",
@@ -768,8 +777,8 @@ def validate_news(day: str, items: list[NewsItem], expected_day: str | None, str
     if expected_day and day != expected_day:
         errors.append(f"day 头部为 {day}，预期为 {expected_day}")
 
-    if strict_count and not (7 <= len(items) <= 10):
-        errors.append(f"新闻条数为 {len(items)}，预期应在 7 到 10 条之间")
+    if strict_count and not (7 <= len(items) <= 20):
+        errors.append(f"新闻条数为 {len(items)}，预期应在 7 到 20 条之间")
 
     if not any("观察" in item.category for item in items):
         errors.append("缺少至少 1 条“观察”类条目")
@@ -966,9 +975,9 @@ def cmd_validate(args: argparse.Namespace) -> int:
         input_format = "markdown"
 
     if input_format == "json":
-        day, items = load_items_from_json(raw, date_str or dt.date.today().isoformat())
+        day, items = load_items_from_json(raw, date_str or today_in_default_tz().isoformat())
     else:
-        day, items = parse_news_markdown(raw, date_str or dt.date.today().isoformat())
+        day, items = parse_news_markdown(raw, date_str or today_in_default_tz().isoformat())
 
     errors = validate_news(day, items, date_str, strict_count=not args.allow_any_count)
     if errors:
@@ -1142,7 +1151,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     collect_parser = subparsers.add_parser("collect", help="抓取当天候选新闻")
-    collect_parser.add_argument("--date", help="目标日期，格式 YYYY-MM-DD，默认 today")
+    collect_parser.add_argument("--date", help="目标日期，格式 YYYY-MM-DD，默认 Europe/London 的今天")
     collect_parser.add_argument(
         "--format",
         choices=("markdown", "json"),
@@ -1152,14 +1161,14 @@ def build_parser() -> argparse.ArgumentParser:
     collect_parser.add_argument("--output", help="可选：把结果额外写入文件")
     collect_parser.add_argument("--request-timeout", type=int, default=DEFAULT_REQUEST_TIMEOUT, help="单个网络请求超时秒数")
     collect_parser.add_argument("--budget-seconds", type=int, default=DEFAULT_COLLECT_BUDGET_SECONDS, help="整轮抓取总预算秒数；超时后跳过剩余慢源")
-    collect_parser.add_argument("--max-official-links", type=int, default=12, help="每个官方源最多检查多少链接")
-    collect_parser.add_argument("--max-media-links", type=int, default=40, help="媒体归档最多检查多少链接")
-    collect_parser.add_argument("--max-nvidia-links", type=int, default=25, help="NVIDIA 首页最多检查多少链接")
-    collect_parser.add_argument("--max-arxiv-items", type=int, default=18, help="arXiv 最多保留多少条论文")
+    collect_parser.add_argument("--max-official-links", type=int, default=20, help="每个官方源最多检查多少链接")
+    collect_parser.add_argument("--max-media-links", type=int, default=80, help="媒体归档最多检查多少链接")
+    collect_parser.add_argument("--max-nvidia-links", type=int, default=40, help="NVIDIA 首页最多检查多少链接")
+    collect_parser.add_argument("--max-arxiv-items", type=int, default=30, help="arXiv 最多保留多少条论文")
     collect_parser.set_defaults(func=cmd_collect)
 
     prompt_parser = subparsers.add_parser("prompt", help="生成给 AI 的 prompt")
-    prompt_parser.add_argument("--date", help="目标日期，格式 YYYY-MM-DD，默认 today")
+    prompt_parser.add_argument("--date", help="目标日期，格式 YYYY-MM-DD，默认 Europe/London 的今天")
     prompt_parser.add_argument(
         "--style",
         choices=("compact", "full"),
@@ -1168,10 +1177,10 @@ def build_parser() -> argparse.ArgumentParser:
     )
     prompt_parser.add_argument("--request-timeout", type=int, default=DEFAULT_REQUEST_TIMEOUT, help="单个网络请求超时秒数")
     prompt_parser.add_argument("--budget-seconds", type=int, default=DEFAULT_COLLECT_BUDGET_SECONDS, help="整轮抓取总预算秒数；超时后跳过剩余慢源")
-    prompt_parser.add_argument("--max-official-links", type=int, default=12, help="每个官方源最多检查多少链接")
-    prompt_parser.add_argument("--max-media-links", type=int, default=40, help="媒体归档最多检查多少链接")
-    prompt_parser.add_argument("--max-nvidia-links", type=int, default=25, help="NVIDIA 首页最多检查多少链接")
-    prompt_parser.add_argument("--max-arxiv-items", type=int, default=18, help="arXiv 最多保留多少条论文")
+    prompt_parser.add_argument("--max-official-links", type=int, default=20, help="每个官方源最多检查多少链接")
+    prompt_parser.add_argument("--max-media-links", type=int, default=80, help="媒体归档最多检查多少链接")
+    prompt_parser.add_argument("--max-nvidia-links", type=int, default=40, help="NVIDIA 首页最多检查多少链接")
+    prompt_parser.add_argument("--max-arxiv-items", type=int, default=30, help="arXiv 最多保留多少条论文")
     prompt_parser.set_defaults(func=cmd_prompt)
 
     validate_parser = subparsers.add_parser("validate", help="校验日报 Markdown 或 JSON")
@@ -1186,7 +1195,7 @@ def build_parser() -> argparse.ArgumentParser:
     validate_parser.add_argument(
         "--allow-any-count",
         action="store_true",
-        help="不强制限制 7 到 10 条",
+        help="不强制限制 7 到 20 条",
     )
     validate_parser.set_defaults(func=cmd_validate)
 
@@ -1202,7 +1211,7 @@ def build_parser() -> argparse.ArgumentParser:
     publish_parser.add_argument(
         "--allow-any-count",
         action="store_true",
-        help="不强制限制 7 到 10 条",
+        help="不强制限制 7 到 20 条",
     )
     publish_parser.add_argument(
         "--force",

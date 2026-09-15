@@ -4621,13 +4621,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce",
+              "id": "entity:company-salesforce",
               "article_ids": [
                 "2026-03-16-0"
               ],
               "label": "Salesforce",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
               "aliases": [
                 "Salesforce"
@@ -5139,15 +5139,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-03-16-0->entity:organization-salesforce",
+              "id": "edge:article:2026-03-16-0->entity:company-salesforce",
               "weight": 0.764,
               "article_ids": [
                 "2026-03-16-0"
               ],
               "source": "article:2026-03-16-0",
-              "target": "entity:organization-salesforce",
+              "target": "entity:company-salesforce",
               "type": "article-entity",
-              "label": "organization"
+              "label": "company"
             }
           },
           {

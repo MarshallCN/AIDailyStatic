@@ -4442,13 +4442,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-blackstone",
+              "id": "entity:company-blackstone",
               "article_ids": [
                 "2026-05-04-1"
               ],
               "label": "Blackstone",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "Anthropic 联合 Blackstone、Hellman & Friedman 和 Goldman Sachs 成立新企业 AI 服务公司，把 Claude 带进中型企业运营。",
               "aliases": [
                 "Blackstone"
@@ -11122,13 +11122,13 @@
           },
           {
             "data": {
-              "id": "edge:event:launch-entity-company-anthropic->entity:organization-blackstone",
+              "id": "edge:event:launch-entity-company-anthropic->entity:company-blackstone",
               "weight": 2,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "event:launch-entity-company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "event-entity",
               "label": "participant"
             }
@@ -11177,13 +11177,13 @@
           },
           {
             "data": {
-              "id": "edge:event:partnership-entity-company-anthropic->entity:organization-blackstone",
+              "id": "edge:event:partnership-entity-company-anthropic->entity:company-blackstone",
               "weight": 2,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "event:partnership-entity-company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "event-entity",
               "label": "participant"
             }
@@ -11219,13 +11219,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:company-anthropic->entity:organization-blackstone:launch",
+              "id": "edge:entity:company-anthropic->entity:company-blackstone:launch",
               "weight": 3.0,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "entity:company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "explicit-relation",
               "label": "launch"
             }
@@ -24772,7 +24772,7 @@
           },
           {
             "data": {
-              "id": "entity:organization-nemotron",
+              "id": "entity:model-nemotron",
               "article_ids": [
                 "2026-04-25-5",
                 "2026-04-28-0",
@@ -24780,7 +24780,7 @@
               ],
               "label": "Nemotron",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "NVIDIA 与 Google Cloud 的合作把 AI Hypercomputer、Gemini、Nemotron 和物理 AI 工作负载放进同一基础设施叙事。",
               "aliases": [
                 "Nemotron"
@@ -25497,13 +25497,13 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-company-nvidia->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-company-nvidia->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-0"
               ],
               "source": "event:infra-entity-company-nvidia",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -25549,13 +25549,13 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-company-nvidia->entity:organization-nemotron",
+              "id": "edge:event:open-source-entity-company-nvidia->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-0"
               ],
               "source": "event:open-source-entity-company-nvidia",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -25588,13 +25588,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:company-nvidia->entity:organization-nemotron:infra",
+              "id": "edge:entity:company-nvidia->entity:model-nemotron:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-04-28-0"
               ],
               "source": "entity:company-nvidia",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "infra"
             }
@@ -25627,13 +25627,13 @@
           },
           {
             "data": {
-              "id": "edge:event:security-entity-person-nano-omni->entity:organization-nemotron",
+              "id": "edge:event:security-entity-person-nano-omni->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-7"
               ],
               "source": "event:security-entity-person-nano-omni",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -25679,13 +25679,13 @@
           },
           {
             "data": {
-              "id": "edge:event:trend-entity-person-nano-omni->entity:organization-nemotron",
+              "id": "edge:event:trend-entity-person-nano-omni->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-04-28-7"
               ],
               "source": "event:trend-entity-person-nano-omni",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -25718,13 +25718,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:person-nano-omni->entity:organization-nemotron:security",
+              "id": "edge:entity:person-nano-omni->entity:model-nemotron:security",
               "weight": 3.0,
               "article_ids": [
                 "2026-04-28-7"
               ],
               "source": "entity:person-nano-omni",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "security"
             }

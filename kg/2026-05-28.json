@@ -1361,7 +1361,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:09Z",
+  "generated_at": "2026-09-15T22:09:36Z",
   "analysis_window": {
     "start_date": "2026-04-29",
     "end_date": "2026-05-28",
@@ -1431,6 +1431,7 @@
         "entity:company-anthropic",
         "entity:company-anthropic-rsp",
         "entity:company-anthropic-spacex",
+        "entity:company-blackstone",
         "entity:company-google",
         "entity:company-google-i",
         "entity:company-nvidia",
@@ -1459,7 +1460,6 @@
         "entity:model-gpt-5-5-instant",
         "entity:organization-ai-powered",
         "entity:organization-axios",
-        "entity:organization-blackstone",
         "entity:organization-cerebras",
         "entity:organization-cerebras-ipo",
         "entity:organization-cla",
@@ -2107,6 +2107,7 @@
         "edge:article:2026-05-28-4->source:综合观察",
         "edge:entity:company-anthropic->entity:company-anthropic-rsp:security",
         "edge:entity:company-anthropic->entity:company-anthropic-spacex:infra",
+        "edge:entity:company-anthropic->entity:company-blackstone:launch",
         "edge:entity:company-anthropic->entity:company-google:research",
         "edge:entity:company-anthropic->entity:company-nvidia:infra",
         "edge:entity:company-anthropic->entity:company-nvidia:research",
@@ -2125,7 +2126,6 @@
         "edge:entity:company-anthropic->entity:organization-axios:infra",
         "edge:entity:company-anthropic->entity:organization-axios:launch",
         "edge:entity:company-anthropic->entity:organization-axios:research",
-        "edge:entity:company-anthropic->entity:organization-blackstone:launch",
         "edge:entity:company-anthropic->entity:organization-coatue:infra",
         "edge:entity:company-anthropic->entity:organization-colossus:infra",
         "edge:entity:company-anthropic->entity:organization-creati-ai:research",
@@ -2523,11 +2523,11 @@
         "edge:event:infra-entity-topic-企业落地->entity:topic-的更新显示",
         "edge:event:infra-entity-topic-企业落地->entity:topic-竞争继续在产品能",
         "edge:event:launch-entity-company-anthropic->entity:company-anthropic",
+        "edge:event:launch-entity-company-anthropic->entity:company-blackstone",
         "edge:event:launch-entity-company-anthropic->entity:company-openai",
         "edge:event:launch-entity-company-anthropic->entity:model-claude",
         "edge:event:launch-entity-company-anthropic->entity:model-claude-opus",
         "edge:event:launch-entity-company-anthropic->entity:organization-axios",
-        "edge:event:launch-entity-company-anthropic->entity:organization-blackstone",
         "edge:event:launch-entity-company-anthropic->entity:organization-colossus",
         "edge:event:launch-entity-company-anthropic->entity:organization-friedman",
         "edge:event:launch-entity-company-anthropic->entity:organization-gates-foundation",
@@ -2683,10 +2683,10 @@
         "edge:event:open-source-entity-organization-codex->entity:topic-协作讨论",
         "edge:event:open-source-entity-organization-codex->entity:topic-回应多",
         "edge:event:partnership-entity-company-anthropic->entity:company-anthropic",
+        "edge:event:partnership-entity-company-anthropic->entity:company-blackstone",
         "edge:event:partnership-entity-company-anthropic->entity:company-openai",
         "edge:event:partnership-entity-company-anthropic->entity:model-claude",
         "edge:event:partnership-entity-company-anthropic->entity:organization-axios",
-        "edge:event:partnership-entity-company-anthropic->entity:organization-blackstone",
         "edge:event:partnership-entity-company-anthropic->entity:organization-friedman",
         "edge:event:partnership-entity-company-anthropic->entity:organization-gates-foundation",
         "edge:event:partnership-entity-company-anthropic->entity:topic-亿美元合作",
@@ -5459,13 +5459,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-blackstone",
+              "id": "entity:company-blackstone",
               "article_ids": [
                 "2026-05-04-1"
               ],
               "label": "Blackstone",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "Anthropic 联合 Blackstone、Hellman & Friedman 和 Goldman Sachs 成立新企业 AI 服务公司，把 Claude 带进中型企业运营。",
               "aliases": [
                 "Blackstone"
@@ -15059,13 +15059,13 @@
           },
           {
             "data": {
-              "id": "edge:event:launch-entity-company-anthropic->entity:organization-blackstone",
+              "id": "edge:event:launch-entity-company-anthropic->entity:company-blackstone",
               "weight": 2,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "event:launch-entity-company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "event-entity",
               "label": "participant"
             }
@@ -15114,13 +15114,13 @@
           },
           {
             "data": {
-              "id": "edge:event:partnership-entity-company-anthropic->entity:organization-blackstone",
+              "id": "edge:event:partnership-entity-company-anthropic->entity:company-blackstone",
               "weight": 2,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "event:partnership-entity-company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "event-entity",
               "label": "participant"
             }
@@ -15156,13 +15156,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:company-anthropic->entity:organization-blackstone:launch",
+              "id": "edge:entity:company-anthropic->entity:company-blackstone:launch",
               "weight": 3.0,
               "article_ids": [
                 "2026-05-04-1"
               ],
               "source": "entity:company-anthropic",
-              "target": "entity:organization-blackstone",
+              "target": "entity:company-blackstone",
               "type": "explicit-relation",
               "label": "launch"
             }

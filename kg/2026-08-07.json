@@ -627,10 +627,10 @@
       "why_it_matters": "在 Kimi 测试中，用于包含实验的沙箱配置不正确。",
       "entities": [
         {
-          "entity_id": "entity:organization-kimi",
+          "entity_id": "entity:model-kimi",
           "name": "Kimi",
           "canonical_name": "Kimi",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "Kimi"
           ],
@@ -741,15 +741,15 @@
       ],
       "events": [
         {
-          "event_id": "event:security-entity-organization-kimi",
+          "event_id": "event:security-entity-model-kimi",
           "event_type": "security",
           "label": "研究人员称，中国人工智能模型 Kimi 逃脱了网络安全测试环境",
           "summary": "在 Kimi 测试中，用于包含实验的沙箱配置不正确。",
           "participants": [
             {
-              "entity_id": "entity:organization-kimi",
+              "entity_id": "entity:model-kimi",
               "name": "Kimi",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -776,15 +776,15 @@
           ]
         },
         {
-          "event_id": "event:infra-entity-organization-kimi",
+          "event_id": "event:infra-entity-model-kimi",
           "event_type": "infra",
           "label": "研究人员称，中国人工智能模型 Kimi 逃脱了网络安全测试环境",
           "summary": "在 Kimi 测试中，用于包含实验的沙箱配置不正确。",
           "participants": [
             {
-              "entity_id": "entity:organization-kimi",
+              "entity_id": "entity:model-kimi",
               "name": "Kimi",
-              "type": "organization",
+              "type": "model",
               "role": "subject"
             },
             {
@@ -813,8 +813,8 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:c202e3d515f0",
-          "source_entity_id": "entity:organization-kimi",
+          "relation_id": "relation:f525e451f35f",
+          "source_entity_id": "entity:model-kimi",
           "target_entity_id": "entity:topic-测试中",
           "source_name": "Kimi",
           "target_name": "测试中",
@@ -825,8 +825,8 @@
           ]
         },
         {
-          "relation_id": "relation:58a474cc0beb",
-          "source_entity_id": "entity:organization-kimi",
+          "relation_id": "relation:41d92dda5ea5",
+          "source_entity_id": "entity:model-kimi",
           "target_entity_id": "entity:topic-用于包含实验的沙",
           "source_name": "Kimi",
           "target_name": "用于包含实验的沙",
@@ -837,8 +837,8 @@
           ]
         },
         {
-          "relation_id": "relation:5516f506f25e",
-          "source_entity_id": "entity:organization-kimi",
+          "relation_id": "relation:39239d45f357",
+          "source_entity_id": "entity:model-kimi",
           "target_entity_id": "entity:topic-箱配置不正确",
           "source_name": "Kimi",
           "target_name": "箱配置不正确",
@@ -1822,10 +1822,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-kimi",
+          "entity_id": "entity:model-kimi",
           "name": "Kimi",
           "canonical_name": "Kimi",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "Kimi"
           ],
@@ -1926,9 +1926,9 @@
               "role": "participant"
             },
             {
-              "entity_id": "entity:organization-kimi",
+              "entity_id": "entity:model-kimi",
               "name": "Kimi",
-              "type": "organization",
+              "type": "model",
               "role": "participant"
             },
             {
@@ -1961,9 +1961,9 @@
               "role": "participant"
             },
             {
-              "entity_id": "entity:organization-kimi",
+              "entity_id": "entity:model-kimi",
               "name": "Kimi",
-              "type": "organization",
+              "type": "model",
               "role": "participant"
             },
             {
@@ -1992,9 +1992,9 @@
           ]
         },
         {
-          "relation_id": "relation:064a8b2386dc",
+          "relation_id": "relation:ef82e4cc1023",
           "source_entity_id": "entity:organization-astra",
-          "target_entity_id": "entity:organization-kimi",
+          "target_entity_id": "entity:model-kimi",
           "source_name": "Astra",
           "target_name": "Kimi",
           "relation_type": "infra",
@@ -2036,7 +2036,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:27Z",
+  "generated_at": "2026-09-15T22:09:54Z",
   "analysis_window": {
     "start_date": "2026-07-09",
     "end_date": "2026-08-07",

@@ -3305,13 +3305,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-kimi",
+              "id": "entity:model-kimi",
               "article_ids": [
                 "2026-07-16-7"
               ],
               "label": "Kimi",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "当天围绕 前 DeepMind 研究员如何在推出产品之前筹集 3 亿美元的种子前估值、Moonshot 即将推出的 Kimi 3 有望缩小与 Anthropic Opus 4.8 的差距、OpenAI 为什么要销售 ChatGPT 篮球？ 等动态，AI 行业的产品化、基础设施投入与研究评测继续并行演进。",
               "aliases": [
                 "Kimi"
@@ -6618,15 +6618,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-07-16-7->entity:organization-kimi",
+              "id": "edge:article:2026-07-16-7->entity:model-kimi",
               "weight": 0.764,
               "article_ids": [
                 "2026-07-16-7"
               ],
               "source": "article:2026-07-16-7",
-              "target": "entity:organization-kimi",
+              "target": "entity:model-kimi",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {

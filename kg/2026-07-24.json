@@ -330,10 +330,10 @@
       "why_it_matters": "此次收购将 Poke 的对话风格和交互模型带给 Cognition 的编码代理 Devin，这反映出人们越来越相信 AI 助手与用户交互的方式与为用户提供支持的模型同样重要。",
       "entities": [
         {
-          "entity_id": "entity:organization-cognition",
+          "entity_id": "entity:company-cognition",
           "name": "Cognition",
           "canonical_name": "Cognition",
-          "type": "organization",
+          "type": "company",
           "aliases": [
             "Cognition"
           ],
@@ -344,10 +344,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-devin",
+          "entity_id": "entity:product-devin",
           "name": "Devin",
           "canonical_name": "Devin",
-          "type": "organization",
+          "type": "product",
           "aliases": [
             "Devin"
           ],
@@ -444,21 +444,21 @@
       ],
       "events": [
         {
-          "event_id": "event:infra-entity-organization-cognition",
+          "event_id": "event:infra-entity-company-cognition",
           "event_type": "infra",
           "label": "Cognition为何收购Poke：AI个性正在成为竞争优势",
           "summary": "此次收购将 Poke 的对话风格和交互模型带给 Cognition 的编码代理 Devin，这反映出人们越来越相信 AI 助手与用户交互的方式与为用户提供支持的模型同样重要。",
           "participants": [
             {
-              "entity_id": "entity:organization-cognition",
+              "entity_id": "entity:company-cognition",
               "name": "Cognition",
-              "type": "organization",
+              "type": "company",
               "role": "subject"
             },
             {
-              "entity_id": "entity:organization-devin",
+              "entity_id": "entity:product-devin",
               "name": "Devin",
-              "type": "organization",
+              "type": "product",
               "role": "participant"
             },
             {
@@ -479,21 +479,21 @@
           ]
         },
         {
-          "event_id": "event:acquisition-entity-organization-cognition",
+          "event_id": "event:acquisition-entity-company-cognition",
           "event_type": "acquisition",
           "label": "Cognition为何收购Poke：AI个性正在成为竞争优势",
           "summary": "此次收购将 Poke 的对话风格和交互模型带给 Cognition 的编码代理 Devin，这反映出人们越来越相信 AI 助手与用户交互的方式与为用户提供支持的模型同样重要。",
           "participants": [
             {
-              "entity_id": "entity:organization-cognition",
+              "entity_id": "entity:company-cognition",
               "name": "Cognition",
-              "type": "organization",
+              "type": "company",
               "role": "subject"
             },
             {
-              "entity_id": "entity:organization-devin",
+              "entity_id": "entity:product-devin",
               "name": "Devin",
-              "type": "organization",
+              "type": "product",
               "role": "participant"
             },
             {
@@ -516,9 +516,9 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:cfd66d0c7a6a",
-          "source_entity_id": "entity:organization-cognition",
-          "target_entity_id": "entity:organization-devin",
+          "relation_id": "relation:987784c93fbb",
+          "source_entity_id": "entity:company-cognition",
+          "target_entity_id": "entity:product-devin",
           "source_name": "Cognition",
           "target_name": "Devin",
           "relation_type": "infra",
@@ -528,8 +528,8 @@
           ]
         },
         {
-          "relation_id": "relation:396c1c339d95",
-          "source_entity_id": "entity:organization-cognition",
+          "relation_id": "relation:1e0bf936048a",
+          "source_entity_id": "entity:company-cognition",
           "target_entity_id": "entity:organization-poke",
           "source_name": "Cognition",
           "target_name": "Poke",
@@ -540,8 +540,8 @@
           ]
         },
         {
-          "relation_id": "relation:b52c08385b26",
-          "source_entity_id": "entity:organization-cognition",
+          "relation_id": "relation:e7c74354eeb6",
+          "source_entity_id": "entity:company-cognition",
           "target_entity_id": "entity:topic-助手与用户交互的",
           "source_name": "Cognition",
           "target_name": "助手与用户交互的",
@@ -2035,7 +2035,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:23Z",
+  "generated_at": "2026-09-15T22:09:50Z",
   "analysis_window": {
     "start_date": "2026-06-25",
     "end_date": "2026-07-24",

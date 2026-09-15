@@ -1445,10 +1445,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-mcp-coinbase",
+          "entity_id": "entity:tool-mcp-coinbase",
           "name": "MCP Coinbase",
           "canonical_name": "MCP Coinbase",
-          "type": "organization",
+          "type": "tool",
           "aliases": [
             "MCP Coinbase"
           ],
@@ -1557,9 +1557,9 @@
               "role": "subject"
             },
             {
-              "entity_id": "entity:organization-mcp-coinbase",
+              "entity_id": "entity:tool-mcp-coinbase",
               "name": "MCP Coinbase",
-              "type": "organization",
+              "type": "tool",
               "role": "participant"
             },
             {
@@ -1592,9 +1592,9 @@
               "role": "subject"
             },
             {
-              "entity_id": "entity:organization-mcp-coinbase",
+              "entity_id": "entity:tool-mcp-coinbase",
               "name": "MCP Coinbase",
-              "type": "organization",
+              "type": "tool",
               "role": "participant"
             },
             {
@@ -1617,9 +1617,9 @@
       ],
       "relations": [
         {
-          "relation_id": "relation:38ef64e4cef5",
+          "relation_id": "relation:aae1ced45c7b",
           "source_entity_id": "entity:organization-coinbase",
-          "target_entity_id": "entity:organization-mcp-coinbase",
+          "target_entity_id": "entity:tool-mcp-coinbase",
           "source_name": "Coinbase",
           "target_name": "MCP Coinbase",
           "relation_type": "launch",
@@ -2702,7 +2702,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:12Z",
+  "generated_at": "2026-09-15T22:09:38Z",
   "analysis_window": {
     "start_date": "2026-05-13",
     "end_date": "2026-06-11",

@@ -1875,7 +1875,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:19Z",
+  "generated_at": "2026-09-15T22:09:46Z",
   "analysis_window": {
     "start_date": "2026-06-12",
     "end_date": "2026-07-11",
@@ -1949,6 +1949,7 @@
         "entity:company-nvidia",
         "entity:company-nvidia-agentperf",
         "entity:company-openai-techcrunch",
+        "entity:company-salesforce-fin",
         "entity:model-anthropic-claude",
         "entity:model-claude",
         "entity:model-claude-desktop",
@@ -1967,12 +1968,11 @@
         "entity:organization-kpmg",
         "entity:organization-opus",
         "entity:organization-polymarket",
-        "entity:organization-salesforce-fin",
         "entity:organization-trump",
-        "entity:organization-x-mcp",
         "entity:person-john-jumper",
         "entity:person-project-mirage",
         "entity:policy-acti",
+        "entity:tool-x-mcp",
         "entity:topic-三键硬件可通过",
         "entity:topic-中期",
         "entity:topic-主导市场",
@@ -2119,8 +2119,8 @@
         "edge:article:2026-06-30-8->entity:company-amazon-fde",
         "edge:article:2026-06-30-8->entity:model-claude-sonnet",
         "edge:article:2026-06-30-8->entity:organization-etched",
-        "edge:article:2026-06-30-8->entity:organization-x-mcp",
         "edge:article:2026-06-30-8->entity:policy-acti",
+        "edge:article:2026-06-30-8->entity:tool-x-mcp",
         "edge:article:2026-06-30-8->entity:topic-产品化和商业化密",
         "edge:article:2026-06-30-8->event:infra-entity-model-claude-sonnet",
         "edge:article:2026-06-30-8->event:security-entity-model-claude-sonnet",
@@ -3863,13 +3863,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce-fin",
+              "id": "entity:company-salesforce-fin",
               "article_ids": [
                 "2026-06-15-8"
               ],
               "label": "Salesforce-Fin",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "NewCore、Salesforce-Fin、Anthropic 限制、Meta AI Mode 和 Sarvam 融资共同显示企业 AI 正进入制度化阶段。",
               "aliases": [
                 "Salesforce-Fin"
@@ -5493,13 +5493,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-x-mcp",
+              "id": "entity:tool-x-mcp",
               "article_ids": [
                 "2026-06-30-8"
               ],
               "label": "X MCP",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "tool",
               "summary": "Claude Sonnet 5、Etched、Amazon FDE、Acti、OKX、OpenClaw 和 X MCP 共同显示 agent 正从模型能力走向产品、芯片和协议生态。",
               "aliases": [
                 "X MCP"
@@ -8255,15 +8255,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-06-30-8->entity:organization-x-mcp",
+              "id": "edge:article:2026-06-30-8->entity:tool-x-mcp",
               "weight": 0.6759999999999999,
               "article_ids": [
                 "2026-06-30-8"
               ],
               "source": "article:2026-06-30-8",
-              "target": "entity:organization-x-mcp",
+              "target": "entity:tool-x-mcp",
               "type": "article-entity",
-              "label": "organization"
+              "label": "tool"
             }
           },
           {

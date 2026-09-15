@@ -1850,7 +1850,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:13Z",
+  "generated_at": "2026-09-15T22:09:39Z",
   "analysis_window": {
     "start_date": "2026-05-18",
     "end_date": "2026-06-16",
@@ -1933,6 +1933,7 @@
         "entity:company-nvidia-agentperf",
         "entity:company-nvidia-q1",
         "entity:company-nvidia-vera-cpu",
+        "entity:company-salesforce-fin",
         "entity:company-techcrunch",
         "entity:company-techcrunch-mobility",
         "entity:hardware-gpu",
@@ -1966,7 +1967,6 @@
         "entity:organization-omni",
         "entity:organization-pope-leo-xiv",
         "entity:organization-rsp",
-        "entity:organization-salesforce-fin",
         "entity:organization-search",
         "entity:organization-softbank",
         "entity:organization-spacex",
@@ -2414,7 +2414,7 @@
         "edge:article:2026-06-15-8->entity:company-anthropic",
         "edge:article:2026-06-15-8->entity:company-meta",
         "edge:article:2026-06-15-8->entity:company-meta-ai-mode",
-        "edge:article:2026-06-15-8->entity:organization-salesforce-fin",
+        "edge:article:2026-06-15-8->entity:company-salesforce-fin",
         "edge:article:2026-06-15-8->entity:topic-中期",
         "edge:article:2026-06-15-8->entity:topic-并购和政策风险集",
         "edge:article:2026-06-15-8->event:security-entity-company-anthropic",
@@ -10962,13 +10962,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce-fin",
+              "id": "entity:company-salesforce-fin",
               "article_ids": [
                 "2026-06-15-8"
               ],
               "label": "Salesforce-Fin",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "NewCore、Salesforce-Fin、Anthropic 限制、Meta AI Mode 和 Sarvam 融资共同显示企业 AI 正进入制度化阶段。",
               "aliases": [
                 "Salesforce-Fin"
@@ -19451,15 +19451,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-06-15-8->entity:organization-salesforce-fin",
+              "id": "edge:article:2026-06-15-8->entity:company-salesforce-fin",
               "weight": 0.6759999999999999,
               "article_ids": [
                 "2026-06-15-8"
               ],
               "source": "article:2026-06-15-8",
-              "target": "entity:organization-salesforce-fin",
+              "target": "entity:company-salesforce-fin",
               "type": "article-entity",
-              "label": "organization"
+              "label": "company"
             }
           },
           {
@@ -41627,7 +41627,7 @@
         "category:安全",
         "category:开源",
         "entity:company-content-safety-nvidia",
-        "entity:organization-nemotron",
+        "entity:model-nemotron",
         "entity:person-content-safety",
         "entity:topic-为多模态",
         "entity:topic-企业可定制",
@@ -41651,7 +41651,7 @@
         "edge:article:2026-06-04-2->category:安全",
         "edge:article:2026-06-04-2->category:开源",
         "edge:article:2026-06-04-2->entity:company-content-safety-nvidia",
-        "edge:article:2026-06-04-2->entity:organization-nemotron",
+        "edge:article:2026-06-04-2->entity:model-nemotron",
         "edge:article:2026-06-04-2->entity:person-content-safety",
         "edge:article:2026-06-04-2->entity:topic-为多模态",
         "edge:article:2026-06-04-2->entity:topic-供可部署的开放模",
@@ -41661,7 +41661,7 @@
         "edge:article:2026-06-06-3->category:基础设施",
         "edge:article:2026-06-06-3->category:安全",
         "edge:article:2026-06-06-3->category:开源",
-        "edge:article:2026-06-06-3->entity:organization-nemotron",
+        "edge:article:2026-06-06-3->entity:model-nemotron",
         "edge:article:2026-06-06-3->entity:person-content-safety",
         "edge:article:2026-06-06-3->entity:topic-企业可定制",
         "edge:article:2026-06-06-3->entity:topic-周末继续发酵",
@@ -41674,7 +41674,7 @@
         "edge:article:2026-06-07-6->category:基础设施",
         "edge:article:2026-06-07-6->category:安全",
         "edge:article:2026-06-07-6->category:开源",
-        "edge:article:2026-06-07-6->entity:organization-nemotron",
+        "edge:article:2026-06-07-6->entity:model-nemotron",
         "edge:article:2026-06-07-6->entity:person-content-safety",
         "edge:article:2026-06-07-6->entity:topic-动企业审核工具链",
         "edge:article:2026-06-07-6->entity:topic-审核正走向模型化",
@@ -41686,18 +41686,18 @@
         "edge:article:2026-06-07-6->event:security-entity-person-content-safety",
         "edge:article:2026-06-07-6->source:hugging-face",
         "edge:entity:person-content-safety->entity:company-content-safety-nvidia:infra",
-        "edge:entity:person-content-safety->entity:organization-nemotron:infra",
+        "edge:entity:person-content-safety->entity:model-nemotron:infra",
         "edge:entity:person-content-safety->entity:topic-企业可定制:infra",
         "edge:entity:person-content-safety->entity:topic-动企业审核工具链:infra",
         "edge:entity:person-content-safety->entity:topic-审核正走向模型化:infra",
         "edge:event:infra-entity-person-content-safety->entity:company-content-safety-nvidia",
-        "edge:event:infra-entity-person-content-safety->entity:organization-nemotron",
+        "edge:event:infra-entity-person-content-safety->entity:model-nemotron",
         "edge:event:infra-entity-person-content-safety->entity:person-content-safety",
         "edge:event:infra-entity-person-content-safety->entity:topic-企业可定制",
         "edge:event:infra-entity-person-content-safety->entity:topic-动企业审核工具链",
         "edge:event:infra-entity-person-content-safety->entity:topic-审核正走向模型化",
         "edge:event:security-entity-person-content-safety->entity:company-content-safety-nvidia",
-        "edge:event:security-entity-person-content-safety->entity:organization-nemotron",
+        "edge:event:security-entity-person-content-safety->entity:model-nemotron",
         "edge:event:security-entity-person-content-safety->entity:person-content-safety",
         "edge:event:security-entity-person-content-safety->entity:topic-企业可定制",
         "edge:event:security-entity-person-content-safety->entity:topic-动企业审核工具链",
@@ -41957,7 +41957,7 @@
           },
           {
             "data": {
-              "id": "entity:organization-nemotron",
+              "id": "entity:model-nemotron",
               "article_ids": [
                 "2026-06-04-2",
                 "2026-06-06-3",
@@ -41965,7 +41965,7 @@
               ],
               "label": "Nemotron",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "NVIDIA 在 Hugging Face 发布 Nemotron 3.5 Content Safety，为多模态、多语言内容审核提供可部署的开放模型。",
               "aliases": [
                 "Nemotron"
@@ -42322,15 +42322,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-06-04-2->entity:organization-nemotron",
+              "id": "edge:article:2026-06-04-2->entity:model-nemotron",
               "weight": 0.764,
               "article_ids": [
                 "2026-06-04-2"
               ],
               "source": "article:2026-06-04-2",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {
@@ -42402,7 +42402,7 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-person-content-safety->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-person-content-safety->entity:model-nemotron",
               "weight": 6.0,
               "article_ids": [
                 "2026-06-04-2",
@@ -42410,7 +42410,7 @@
                 "2026-06-07-6"
               ],
               "source": "event:infra-entity-person-content-safety",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -42458,7 +42458,7 @@
           },
           {
             "data": {
-              "id": "edge:event:security-entity-person-content-safety->entity:organization-nemotron",
+              "id": "edge:event:security-entity-person-content-safety->entity:model-nemotron",
               "weight": 6.0,
               "article_ids": [
                 "2026-06-04-2",
@@ -42466,7 +42466,7 @@
                 "2026-06-07-6"
               ],
               "source": "event:security-entity-person-content-safety",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -42486,7 +42486,7 @@
           },
           {
             "data": {
-              "id": "edge:entity:person-content-safety->entity:organization-nemotron:infra",
+              "id": "edge:entity:person-content-safety->entity:model-nemotron:infra",
               "weight": 9.0,
               "article_ids": [
                 "2026-06-04-2",
@@ -42494,7 +42494,7 @@
                 "2026-06-07-6"
               ],
               "source": "entity:person-content-safety",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "infra"
             }
@@ -42579,15 +42579,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-06-06-3->entity:organization-nemotron",
+              "id": "edge:article:2026-06-06-3->entity:model-nemotron",
               "weight": 0.764,
               "article_ids": [
                 "2026-06-06-3"
               ],
               "source": "article:2026-06-06-3",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {
@@ -42787,15 +42787,15 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-06-07-6->entity:organization-nemotron",
+              "id": "edge:article:2026-06-07-6->entity:model-nemotron",
               "weight": 0.764,
               "article_ids": [
                 "2026-06-07-6"
               ],
               "source": "article:2026-06-07-6",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "article-entity",
-              "label": "organization"
+              "label": "model"
             }
           },
           {

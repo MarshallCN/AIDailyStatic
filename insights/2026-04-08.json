@@ -4982,14 +4982,14 @@
       ]
     },
     {
-      "theme_id": "clue:66f74e5678c8",
+      "theme_id": "clue:e624b27d01ce",
       "title": "Adobe / Agent Toolkit / DGX Spark / Feynman",
       "summary": "在 2026-03-12 至 2026-04-08 内，Adobe、Agent Toolkit、DGX Spark 围绕重复出现的事件与实体关系形成稳定线索。",
       "conclusion": "Adobe、Agent Toolkit 仍在近期新闻中出现，但热度开始回落，接下来要观察它是暂时降温还是进入下一轮验证。",
       "trend_signals": [
         "infra 信号在该主题中最集中。",
-        "证据新闻共 22 条，主导分类为 基础设施。",
-        "相关证据由上一窗口的 10 条降至 6 条，主题热度略有回落。"
+        "证据新闻共 21 条，主导分类为 基础设施。",
+        "相关证据由上一窗口的 9 条降至 6 条，主题热度略有回落。"
       ],
       "core_entities": [
         "Adobe",
@@ -5003,17 +5003,16 @@
         "open_source",
         "trend",
         "funding",
-        "research",
         "security"
       ],
       "dominant_category": "基础设施",
       "evidence_article_ids": [
         "2026-04-05-3",
         "2026-04-04-0",
-        "2026-04-03-5",
         "2026-04-02-5",
         "2026-03-31-1",
-        "2026-03-30-3"
+        "2026-03-30-3",
+        "2026-03-26-0"
       ],
       "graph": {
         "nodes": [
@@ -5551,13 +5550,13 @@
           },
           {
             "data": {
-              "id": "entity:organization-salesforce",
+              "id": "entity:company-salesforce",
               "article_ids": [
                 "2026-03-16-0"
               ],
               "label": "Salesforce",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "company",
               "summary": "Nvidia 在 GTC 2026 发布 Agent Toolkit，一个开源自主 AI 代理构建平台，首批获得 Adobe、Salesforce、SAP 等 17 家企业采用。",
               "aliases": [
                 "Salesforce"
@@ -5766,14 +5765,14 @@
           },
           {
             "data": {
-              "id": "entity:organization-nemotron",
+              "id": "entity:model-nemotron",
               "article_ids": [
                 "2026-03-16-6",
                 "2026-03-17-2"
               ],
               "label": "Nemotron",
               "type": "entity",
-              "subtype": "organization",
+              "subtype": "model",
               "summary": "Nvidia 发布开源权重模型 Nemotron 3 Super，创新性地融合三种不同架构设计，在多代理系统吞吐量性能上超越 GPT-4o Small 和 Qwen 模型。",
               "aliases": [
                 "Nemotron"
@@ -5815,13 +5814,13 @@
           },
           {
             "data": {
-              "id": "entity:company-nvidia-nemotron",
+              "id": "entity:model-nvidia-nemotron",
               "article_ids": [
                 "2026-03-16-6"
               ],
               "label": "Nvidia Nemotron",
               "type": "entity",
-              "subtype": "company",
+              "subtype": "model",
               "summary": "Nvidia 发布开源权重模型 Nemotron 3 Super，创新性地融合三种不同架构设计，在多代理系统吞吐量性能上超越 GPT-4o Small 和 Qwen 模型。",
               "aliases": [
                 "Nvidia Nemotron"
@@ -5879,7 +5878,7 @@
           },
           {
             "data": {
-              "id": "event:infra-entity-organization-nemotron",
+              "id": "event:infra-entity-model-nemotron",
               "article_ids": [
                 "2026-03-16-6"
               ],
@@ -5892,7 +5891,7 @@
           },
           {
             "data": {
-              "id": "event:open-source-entity-organization-nemotron",
+              "id": "event:open-source-entity-model-nemotron",
               "article_ids": [
                 "2026-03-16-6"
               ],
@@ -6335,129 +6334,6 @@
           },
           {
             "data": {
-              "id": "entity:organization-moe",
-              "article_ids": [
-                "2026-03-20-6",
-                "2026-04-03-5"
-              ],
-              "label": "MoE",
-              "type": "entity",
-              "subtype": "organization",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "MoE"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:organization-nemotron-cascade",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "Nemotron-Cascade",
-              "type": "entity",
-              "subtype": "organization",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "Nemotron-Cascade"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-前沿开源模型的推",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "前沿开源模型的推",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "前沿开源模型的推"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-定在一起",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "定在一起",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "定在一起"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-宣称以",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "宣称以",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "宣称以"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-并同步开放模型权",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "并同步开放模型权",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "aliases": [
-                "并同步开放模型权"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "event:research-entity-organization-moe",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "Nemotron-Cascade 2 登上 3 月 20 日 arXiv 新列表，NVIDIA 继续把开放权重与高密度推理能力绑定在一起",
-              "type": "event",
-              "subtype": "research",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "weight": 1.4
-            }
-          },
-          {
-            "data": {
-              "id": "event:infra-entity-organization-moe",
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "label": "Nemotron-Cascade 2 登上 3 月 20 日 arXiv 新列表，NVIDIA 继续把开放权重与高密度推理能力绑定在一起",
-              "type": "event",
-              "subtype": "infra",
-              "summary": "出现在 3 月 20 日 arXiv 新列表中的 Nemotron-Cascade 2 宣称以 30B MoE、3B 激活参数实现接近前沿开源模型的推理与 agent 能力，并同步开放模型权重与训练数据。",
-              "weight": 1.4
-            }
-          },
-          {
-            "data": {
               "id": "entity:topic-不确定性保持谨慎",
               "article_ids": [
                 "2026-03-21-3"
@@ -6718,6 +6594,19 @@
                 "上的"
               ],
               "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-03-26-0",
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "label": "Mistral 推出新的开源语音生成模型",
+              "type": "article",
+              "summary": "Mistral 的开源 Voxtral TTS 让企业能用少量定制语音数据快速搭建支持多语言的语音智能体。",
+              "subtype": "应用/产业",
+              "weight": 1
             }
           },
           {
@@ -7108,30 +6997,6 @@
               "type": "article",
               "summary": "NVIDIA 宣布把 Gemma 4 优化到 RTX PC、DGX Spark 和 Jetson Orin Nano 等平台，推动更强的本地 agentic AI 部署。",
               "subtype": "基础设施",
-              "weight": 1
-            }
-          },
-          {
-            "data": {
-              "id": "article:2026-04-03-5",
-              "article_ids": [
-                "2026-04-03-5"
-              ],
-              "label": "Google 推出 Gemma 4 开放模型家族",
-              "type": "article",
-              "summary": "Google 发布 Gemma 4 家族（E2B/E4B/26B MoE/31B Dense），以 Apache 2.0 授权公开最强开源模型。",
-              "subtype": "开源",
-              "weight": 1
-            }
-          },
-          {
-            "data": {
-              "id": "source:google-ai-research",
-              "article_ids": [
-                "2026-04-03-5"
-              ],
-              "label": "Google AI Research",
-              "type": "source",
               "weight": 1
             }
           },
@@ -7595,25 +7460,25 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-model-nemotron->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
-              "target": "entity:organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:company-nvidia",
+              "id": "edge:event:infra-entity-model-nemotron->entity:company-nvidia",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
               "target": "entity:company-nvidia",
               "type": "event-entity",
               "label": "participant"
@@ -7621,12 +7486,12 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:organization-super",
+              "id": "edge:event:infra-entity-model-nemotron->entity:organization-super",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
               "target": "entity:organization-super",
               "type": "event-entity",
               "label": "participant"
@@ -7634,12 +7499,12 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-nemotron->entity:model-gpt-4o-small",
+              "id": "edge:event:infra-entity-model-nemotron->entity:model-gpt-4o-small",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:infra-entity-organization-nemotron",
+              "source": "event:infra-entity-model-nemotron",
               "target": "entity:model-gpt-4o-small",
               "type": "event-entity",
               "label": "participant"
@@ -7647,25 +7512,25 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:organization-nemotron",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
-              "target": "entity:organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:company-nvidia",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:company-nvidia",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
               "target": "entity:company-nvidia",
               "type": "event-entity",
               "label": "participant"
@@ -7673,12 +7538,12 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:organization-super",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:organization-super",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
               "target": "entity:organization-super",
               "type": "event-entity",
               "label": "participant"
@@ -7686,12 +7551,12 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-nemotron->entity:model-gpt-4o-small",
+              "id": "edge:event:open-source-entity-model-nemotron->entity:model-gpt-4o-small",
               "weight": 2,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "event:open-source-entity-organization-nemotron",
+              "source": "event:open-source-entity-model-nemotron",
               "target": "entity:model-gpt-4o-small",
               "type": "event-entity",
               "label": "participant"
@@ -7699,12 +7564,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-nemotron->entity:company-nvidia:infra",
+              "id": "edge:entity:model-nemotron->entity:company-nvidia:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "entity:organization-nemotron",
+              "source": "entity:model-nemotron",
               "target": "entity:company-nvidia",
               "type": "explicit-relation",
               "label": "infra"
@@ -7712,12 +7577,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-nemotron->entity:organization-super:infra",
+              "id": "edge:entity:model-nemotron->entity:organization-super:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "entity:organization-nemotron",
+              "source": "entity:model-nemotron",
               "target": "entity:organization-super",
               "type": "explicit-relation",
               "label": "infra"
@@ -7725,12 +7590,12 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-nemotron->entity:model-gpt-4o-small:infra",
+              "id": "edge:entity:model-nemotron->entity:model-gpt-4o-small:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-16-6"
               ],
-              "source": "entity:organization-nemotron",
+              "source": "entity:model-nemotron",
               "target": "entity:model-gpt-4o-small",
               "type": "explicit-relation",
               "label": "infra"
@@ -7777,13 +7642,13 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-dgx-spark->entity:organization-nemotron",
+              "id": "edge:event:infra-entity-organization-dgx-spark->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "event:infra-entity-organization-dgx-spark",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -7829,13 +7694,13 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-dgx-spark->entity:organization-nemotron",
+              "id": "edge:event:open-source-entity-organization-dgx-spark->entity:model-nemotron",
               "weight": 2,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "event:open-source-entity-organization-dgx-spark",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "event-entity",
               "label": "participant"
             }
@@ -7868,13 +7733,13 @@
           },
           {
             "data": {
-              "id": "edge:entity:organization-dgx-spark->entity:organization-nemotron:infra",
+              "id": "edge:entity:organization-dgx-spark->entity:model-nemotron:infra",
               "weight": 3.0,
               "article_ids": [
                 "2026-03-17-2"
               ],
               "source": "entity:organization-dgx-spark",
-              "target": "entity:organization-nemotron",
+              "target": "entity:model-nemotron",
               "type": "explicit-relation",
               "label": "infra"
             }
@@ -8273,110 +8138,6 @@
           },
           {
             "data": {
-              "id": "edge:event:research-entity-organization-moe->entity:organization-moe",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:research-entity-organization-moe",
-              "target": "entity:organization-moe",
-              "type": "event-entity",
-              "label": "subject"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:research-entity-organization-moe->entity:company-nvidia",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:research-entity-organization-moe",
-              "target": "entity:company-nvidia",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:research-entity-organization-moe->entity:organization-nemotron-cascade",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:research-entity-organization-moe",
-              "target": "entity:organization-nemotron-cascade",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-organization-moe->entity:organization-moe",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:infra-entity-organization-moe",
-              "target": "entity:organization-moe",
-              "type": "event-entity",
-              "label": "subject"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-organization-moe->entity:company-nvidia",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:infra-entity-organization-moe",
-              "target": "entity:company-nvidia",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-organization-moe->entity:organization-nemotron-cascade",
-              "weight": 2,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "event:infra-entity-organization-moe",
-              "target": "entity:organization-nemotron-cascade",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:entity:organization-moe->entity:company-nvidia:research",
-              "weight": 3.0,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "entity:organization-moe",
-              "target": "entity:company-nvidia",
-              "type": "explicit-relation",
-              "label": "research"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:entity:organization-moe->entity:organization-nemotron-cascade:research",
-              "weight": 3.0,
-              "article_ids": [
-                "2026-03-20-6"
-              ],
-              "source": "entity:organization-moe",
-              "target": "entity:organization-nemotron-cascade",
-              "type": "explicit-relation",
-              "label": "research"
-            }
-          },
-          {
-            "data": {
               "id": "edge:event:infra-entity-organization-gtc->entity:company-nvidia",
               "weight": 4.0,
               "article_ids": [
@@ -8641,6 +8402,162 @@
           },
           {
             "data": {
+              "id": "edge:article:2026-03-26-0->source:techcrunch",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "source:techcrunch",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->category:应用-产业",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "category:应用-产业",
+              "type": "article-category",
+              "label": "应用/产业"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->category:开源",
+              "weight": 1,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "category:开源",
+              "type": "article-category",
+              "label": "开源"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->entity:company-mistral",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "entity:company-mistral",
+              "type": "article-entity",
+              "label": "company"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->entity:model-voxtral-tts",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "entity:model-voxtral-tts",
+              "type": "article-entity",
+              "label": "model"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->entity:topic-制语音数据快速搭",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "entity:topic-制语音数据快速搭",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->entity:topic-建支持多语言的语",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "entity:topic-建支持多语言的语",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->entity:topic-推出新的开源语音",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "entity:topic-推出新的开源语音",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->entity:topic-生成模型",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "entity:topic-生成模型",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->entity:topic-的开源",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "entity:topic-的开源",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->entity:topic-让企业能用少量定",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "entity:topic-让企业能用少量定",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->event:open-source-entity-company-mistral",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "event:open-source-entity-company-mistral",
+              "type": "article-event",
+              "label": "open_source"
+            }
+          },
+          {
+            "data": {
               "id": "edge:event:open-source-entity-company-mistral->entity:company-mistral",
               "weight": 2,
               "article_ids": [
@@ -8689,6 +8606,19 @@
               "target": "entity:topic-建支持多语言的语",
               "type": "event-entity",
               "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-03-26-0->event:launch-entity-company-mistral",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-03-26-0"
+              ],
+              "source": "article:2026-03-26-0",
+              "target": "event:launch-entity-company-mistral",
+              "type": "article-event",
+              "label": "launch"
             }
           },
           {
@@ -9395,45 +9325,6 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-04-03-5->source:google-ai-research",
-              "weight": 1,
-              "article_ids": [
-                "2026-04-03-5"
-              ],
-              "source": "article:2026-04-03-5",
-              "target": "source:google-ai-research",
-              "type": "article-source",
-              "label": "source"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-04-03-5->category:开源",
-              "weight": 1,
-              "article_ids": [
-                "2026-04-03-5"
-              ],
-              "source": "article:2026-04-03-5",
-              "target": "category:开源",
-              "type": "article-category",
-              "label": "开源"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-04-03-5->entity:organization-moe",
-              "weight": 0.764,
-              "article_ids": [
-                "2026-04-03-5"
-              ],
-              "source": "article:2026-04-03-5",
-              "target": "entity:organization-moe",
-              "type": "article-entity",
-              "label": "organization"
-            }
-          },
-          {
-            "data": {
               "id": "edge:article:2026-04-04-0->source:techcrunch",
               "weight": 1,
               "article_ids": [
@@ -9531,14 +9422,6 @@
         },
         {
           "report_index": 8,
-          "article_id": "2026-04-03-5",
-          "title": "Google 推出 Gemma 4 开放模型家族",
-          "source": "Google AI Research",
-          "date": "2026-04-02",
-          "summary": "Google 发布 Gemma 4 家族（E2B/E4B/26B MoE/31B Dense），以 Apache 2.0 授权公开最强开源模型。"
-        },
-        {
-          "report_index": 9,
           "article_id": "2026-04-02-5",
           "title": "NVIDIA 把 Gemma 4 推向 RTX PC、DGX Spark 与边缘设备",
           "source": "NVIDIA Blog",
@@ -9546,7 +9429,7 @@
           "summary": "NVIDIA 宣布把 Gemma 4 优化到 RTX PC、DGX Spark 和 Jetson Orin Nano 等平台，推动更强的本地 agentic AI 部署。"
         },
         {
-          "report_index": 10,
+          "report_index": 9,
           "article_id": "2026-03-31-1",
           "title": "Nvidia 重写 AI 存储规则",
           "source": "Forbes",
@@ -9554,12 +9437,20 @@
           "summary": "Forbes 报道，GTC 2026 上的 Nvidia AI Data Platform 与 STX 正在将 CPU-GPU 之间的数据路径标准化，重塑 AI 存储的基础架构。"
         },
         {
-          "report_index": 11,
+          "report_index": 10,
           "article_id": "2026-03-30-3",
           "title": "Mistral 以 8.3 亿美元债务融资建设巴黎附近数据中心",
           "source": "TechCrunch",
           "date": "2026-03-30",
           "summary": "Mistral AI 通过 8.3 亿美元债务融资，在巴黎附近建设一座将搭载 Nvidia 芯片的数据中心。"
+        },
+        {
+          "report_index": 11,
+          "article_id": "2026-03-26-0",
+          "title": "Mistral 推出新的开源语音生成模型",
+          "source": "TechCrunch",
+          "date": "2026-03-26",
+          "summary": "Mistral 的开源 Voxtral TTS 让企业能用少量定制语音数据快速搭建支持多语言的语音智能体。"
         }
       ]
     },
@@ -18145,7 +18036,7 @@
           "summary": "x402 基金会在 Linux 基金会的框架下曝光成立，携 Coinbase、Stripe、Visa、Google、Microsoft 等 20 多家厂商共同打造智能体铺开所缺失的支付层。"
         },
         {
-          "report_index": 8,
+          "report_index": 25,
           "article_id": "2026-04-03-5",
           "title": "Google 推出 Gemma 4 开放模型家族",
           "source": "Google AI Research",
@@ -18153,7 +18044,7 @@
           "summary": "Google 发布 Gemma 4 家族（E2B/E4B/26B MoE/31B Dense），以 Apache 2.0 授权公开最强开源模型。"
         },
         {
-          "report_index": 25,
+          "report_index": 26,
           "article_id": "2026-04-02-4",
           "title": "Gemini API 新增 Flex 与 Priority 两档推理层",
           "source": "Google AI Blog",
@@ -21236,7 +21127,7 @@
       },
       "evidence": [
         {
-          "report_index": 26,
+          "report_index": 27,
           "article_id": "2026-04-08-6",
           "title": "观察：企业客户已经从“试点 AI”切到“重构公司”",
           "source": "OpenAI",
@@ -21244,7 +21135,7 @@
           "summary": "OpenAI 新任 CRO 在 4 月 8 日公开表示，企业客户的诉求已不再是试点工具，而是围绕 agents 与工作流重构组织。"
         },
         {
-          "report_index": 27,
+          "report_index": 28,
           "article_id": "2026-04-06-3",
           "title": "OpenAI Safety Fellowship 召集外部安全研究力量",
           "source": "OpenAI Blog",
@@ -21252,7 +21143,7 @@
           "summary": "OpenAI 公布 2026-2027 年 Safety Fellowship，面向评估、鲁棒性、隐私等领域外部人才提供资助与导师，并与 Constellation 共享办公室。"
         },
         {
-          "report_index": 28,
+          "report_index": 29,
           "article_id": "2026-04-03-6",
           "title": "观察：公开治理与开放模型正同步展开",
           "source": "OpenAI & Google",
@@ -21260,7 +21151,7 @@
           "summary": "Openness 与治理并驾齐驱，Model Spec 与 Gemma 4 同日公布说明顶尖实验室正在把行为公开化与能力开放化视为同一张路线图的一部分。"
         },
         {
-          "report_index": 29,
+          "report_index": 30,
           "article_id": "2026-04-03-4",
           "title": "OpenAI 收购 TBPN，维护 AI 叙事与沟通",
           "source": "OpenAI",
@@ -21268,7 +21159,7 @@
           "summary": "OpenAI 将每日直播节目 TBPN 纳入 Strategy 部门，既保留其编辑独立性，又借助其在行业与传播中的触点。"
         },
         {
-          "report_index": 30,
+          "report_index": 31,
           "article_id": "2026-04-03-3",
           "title": "OpenAI 推出 Safety Bug Bounty，补足滥用/安全边界",
           "source": "OpenAI",
@@ -21276,7 +21167,7 @@
           "summary": "OpenAI 在 Bugcrowd 上推出安全漏洞计划，专注发现 AI 滥用与安全风险而非传统的技术漏洞。"
         },
         {
-          "report_index": 31,
+          "report_index": 32,
           "article_id": "2026-04-03-2",
           "title": "OpenAI 细说 Model Spec 背后的理念",
           "source": "OpenAI",
@@ -21345,14 +21236,6 @@
     },
     {
       "report_index": 8,
-      "article_id": "2026-04-03-5",
-      "title": "Google 推出 Gemma 4 开放模型家族",
-      "source": "Google AI Research",
-      "date": "2026-04-02",
-      "summary": "Google 发布 Gemma 4 家族（E2B/E4B/26B MoE/31B Dense），以 Apache 2.0 授权公开最强开源模型。"
-    },
-    {
-      "report_index": 9,
       "article_id": "2026-04-02-5",
       "title": "NVIDIA 把 Gemma 4 推向 RTX PC、DGX Spark 与边缘设备",
       "source": "NVIDIA Blog",
@@ -21360,7 +21243,7 @@
       "summary": "NVIDIA 宣布把 Gemma 4 优化到 RTX PC、DGX Spark 和 Jetson Orin Nano 等平台，推动更强的本地 agentic AI 部署。"
     },
     {
-      "report_index": 10,
+      "report_index": 9,
       "article_id": "2026-03-31-1",
       "title": "Nvidia 重写 AI 存储规则",
       "source": "Forbes",
@@ -21368,12 +21251,20 @@
       "summary": "Forbes 报道，GTC 2026 上的 Nvidia AI Data Platform 与 STX 正在将 CPU-GPU 之间的数据路径标准化，重塑 AI 存储的基础架构。"
     },
     {
-      "report_index": 11,
+      "report_index": 10,
       "article_id": "2026-03-30-3",
       "title": "Mistral 以 8.3 亿美元债务融资建设巴黎附近数据中心",
       "source": "TechCrunch",
       "date": "2026-03-30",
       "summary": "Mistral AI 通过 8.3 亿美元债务融资，在巴黎附近建设一座将搭载 Nvidia 芯片的数据中心。"
+    },
+    {
+      "report_index": 11,
+      "article_id": "2026-03-26-0",
+      "title": "Mistral 推出新的开源语音生成模型",
+      "source": "TechCrunch",
+      "date": "2026-03-26",
+      "summary": "Mistral 的开源 Voxtral TTS 让企业能用少量定制语音数据快速搭建支持多语言的语音智能体。"
     },
     {
       "report_index": 12,
@@ -21481,6 +21372,14 @@
     },
     {
       "report_index": 25,
+      "article_id": "2026-04-03-5",
+      "title": "Google 推出 Gemma 4 开放模型家族",
+      "source": "Google AI Research",
+      "date": "2026-04-02",
+      "summary": "Google 发布 Gemma 4 家族（E2B/E4B/26B MoE/31B Dense），以 Apache 2.0 授权公开最强开源模型。"
+    },
+    {
+      "report_index": 26,
       "article_id": "2026-04-02-4",
       "title": "Gemini API 新增 Flex 与 Priority 两档推理层",
       "source": "Google AI Blog",
@@ -21488,7 +21387,7 @@
       "summary": "Google 为 Gemini API 增加 Flex 和 Priority 两档推理层，试图让开发者在成本、延迟与稳定性之间做更细粒度的取舍。"
     },
     {
-      "report_index": 26,
+      "report_index": 27,
       "article_id": "2026-04-08-6",
       "title": "观察：企业客户已经从“试点 AI”切到“重构公司”",
       "source": "OpenAI",
@@ -21496,7 +21395,7 @@
       "summary": "OpenAI 新任 CRO 在 4 月 8 日公开表示，企业客户的诉求已不再是试点工具，而是围绕 agents 与工作流重构组织。"
     },
     {
-      "report_index": 27,
+      "report_index": 28,
       "article_id": "2026-04-06-3",
       "title": "OpenAI Safety Fellowship 召集外部安全研究力量",
       "source": "OpenAI Blog",
@@ -21504,7 +21403,7 @@
       "summary": "OpenAI 公布 2026-2027 年 Safety Fellowship，面向评估、鲁棒性、隐私等领域外部人才提供资助与导师，并与 Constellation 共享办公室。"
     },
     {
-      "report_index": 28,
+      "report_index": 29,
       "article_id": "2026-04-03-6",
       "title": "观察：公开治理与开放模型正同步展开",
       "source": "OpenAI & Google",
@@ -21512,7 +21411,7 @@
       "summary": "Openness 与治理并驾齐驱，Model Spec 与 Gemma 4 同日公布说明顶尖实验室正在把行为公开化与能力开放化视为同一张路线图的一部分。"
     },
     {
-      "report_index": 29,
+      "report_index": 30,
       "article_id": "2026-04-03-4",
       "title": "OpenAI 收购 TBPN，维护 AI 叙事与沟通",
       "source": "OpenAI",
@@ -21520,7 +21419,7 @@
       "summary": "OpenAI 将每日直播节目 TBPN 纳入 Strategy 部门，既保留其编辑独立性，又借助其在行业与传播中的触点。"
     },
     {
-      "report_index": 30,
+      "report_index": 31,
       "article_id": "2026-04-03-3",
       "title": "OpenAI 推出 Safety Bug Bounty，补足滥用/安全边界",
       "source": "OpenAI",
@@ -21528,7 +21427,7 @@
       "summary": "OpenAI 在 Bugcrowd 上推出安全漏洞计划，专注发现 AI 滥用与安全风险而非传统的技术漏洞。"
     },
     {
-      "report_index": 31,
+      "report_index": 32,
       "article_id": "2026-04-03-2",
       "title": "OpenAI 细说 Model Spec 背后的理念",
       "source": "OpenAI",

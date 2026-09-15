@@ -1438,10 +1438,10 @@
           "provenance": "rule"
         },
         {
-          "entity_id": "entity:organization-nemotron",
+          "entity_id": "entity:model-nemotron",
           "name": "Nemotron",
           "canonical_name": "Nemotron",
-          "type": "organization",
+          "type": "model",
           "aliases": [
             "Nemotron"
           ],
@@ -1886,7 +1886,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-14T22:03:02Z",
+  "generated_at": "2026-09-15T22:09:28Z",
   "analysis_window": {
     "start_date": "2026-03-27",
     "end_date": "2026-04-25",
