@@ -1387,13 +1387,46 @@ code {
 
 @media (max-width: 980px) {
   .site-header,
-  .search-row,
   .search-section-head,
   .search-card-top,
   .term-head,
   .clue-card-head {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .search-row {
+    align-items: stretch;
+  }
+
+  .search-input-wrap,
+  .search-sort-field {
+    flex: 1 1 100%;
+    min-height: 0;
+    width: 100%;
+  }
+
+  .search-sort-field {
+    flex: 1 1 140px;
+    width: auto;
+  }
+
+  .search-row .toggle,
+  .search-row .ghost-button {
+    flex: 1 1 auto;
+    min-height: 38px;
+  }
+
+  .search-meta {
+    margin-top: 0;
+  }
+
+  .search-meta:has(#search-summary:not(.hidden)) {
+    margin-top: 8px;
+  }
+
+  .toolbar {
+    margin: 10px 0 12px;
   }
 
   .control-grid,
@@ -1425,6 +1458,11 @@ code {
 @media (max-width: 640px) {
   .wrap {
     padding: 20px 12px 44px;
+  }
+
+  .search-shell {
+    padding: 12px;
+    margin-bottom: 12px;
   }
 
   h1 {
