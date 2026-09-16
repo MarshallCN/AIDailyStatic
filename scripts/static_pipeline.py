@@ -101,6 +101,10 @@ EVENT_PATTERNS = {
 }
 
 KG_TEMPLATE_NAME = "kg-extract.md"
+KG_REVIEW_TEMPLATE_NAME = "kg-review.md"
+KG_LESSONS_NAME = "kg-lessons.md"
+KG_LESSONS_SECTION = "## 通用经验"
+KG_LESSONS_LIMIT = 25
 INSIGHT_TEMPLATE_NAME = "insights.md"
 
 
@@ -1384,12 +1388,142 @@ def prompt_article_block(articles: list[dict[str, Any]]) -> str:
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
+def read_kg_quality_log(root: pathlib.Path, limit: int = 5) -> list[dict[str, Any]]:
+    log_path = root / "kg_llm" / "quality-log.jsonl"
+    if not log_path.exists():
+        return []
+    entries: list[dict[str, Any]] = []
+    for line in log_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            entries.append(json.loads(line))
+        except json.JSONDecodeError:
+            continue
+    return entries[-limit:]
+
+
+def render_kg_quality_feedback(root: pathlib.Path, day: str) -> str:
+    """把最近一次审计结果回灌给抽取代理，让今天不再犯昨天的错。"""
+    history = [entry for entry in read_kg_quality_log(root) if entry.get("date") != day]
+    if not history:
+        return "（暂无历史审计记录，按模板要求全力抽取。）"
+    latest = history[-1]
+    lines = [
+        f"上一次审计（{latest.get('date')}）得分 {latest.get('score')} / 100，"
+        f"{'已达标' if latest.get('passed') else '未达标'}。"
+    ]
+    stats = latest.get("stats") or {}
+    if stats:
+        lines.append(
+            f"当时每篇关系 {stats.get('relations_per_article')} 条、每篇事件 {stats.get('events_per_article')} 个、"
+            f"孤立实体 {stats.get('orphan_entity_ratio')}、证据可验证率 {stats.get('evidence_verified_ratio')}。"
+        )
+    fixes = latest.get("fixes") or []
+    if fixes:
+        lines.append("必须在本次抽取中修掉的问题：")
+        lines.extend(f"- {fix}" for fix in fixes[:8])
+    if len(history) > 1:
+        trend = "、".join(f"{entry.get('date')}:{entry.get('score')}" for entry in history)
+        lines.append(f"近期得分趋势：{trend}（本次目标：不低于历史最高分）")
+    return "\n".join(lines)
+
+
 def render_kg_prompt(root: pathlib.Path, day: str) -> str:
     _, articles_by_day, _ = load_articles(root / "news")
     if day not in articles_by_day:
         raise FileNotFoundError(f"news day not found: {day}")
     template = read_template(root / "prompts", KG_TEMPLATE_NAME) or "{{ARTICLE_BLOCK}}"
-    return render_template(template, {"DATE": day, "ARTICLE_BLOCK": prompt_article_block(articles_by_day[day])})
+    lessons = read_template(root / "prompts", KG_LESSONS_NAME).strip()
+    return render_template(
+        template,
+        {
+            "DATE": day,
+            "ARTICLE_BLOCK": prompt_article_block(articles_by_day[day]),
+            "LESSONS": lessons or "（尚未积累经验条目。）",
+            "QUALITY_FEEDBACK": render_kg_quality_feedback(root, day),
+        },
+    )
+
+
+def render_kg_review_prompt(
+    root: pathlib.Path,
+    day: str,
+    *,
+    round_no: int,
+    output_path: str,
+    audit_report: str,
+    kg_llm_dir: pathlib.Path | None = None,
+) -> str:
+    _, articles_by_day, _ = load_articles(root / "news")
+    if day not in articles_by_day:
+        raise FileNotFoundError(f"news day not found: {day}")
+    payload_path = (kg_llm_dir or (root / "kg_llm")) / f"{day}.json"
+    if not payload_path.exists():
+        raise FileNotFoundError(f"kg_llm payload not found: {payload_path}")
+    template = read_template(root / "prompts", KG_REVIEW_TEMPLATE_NAME) or "{{EXTRACTION_JSON}}"
+    return render_template(
+        template,
+        {
+            "DATE": day,
+            "ROUND": str(round_no),
+            "OUTPUT_PATH": output_path,
+            "AUDIT_REPORT": audit_report.strip() or "（无审计结果）",
+            "EXTRACTION_JSON": payload_path.read_text(encoding="utf-8"),
+            "ARTICLE_BLOCK": prompt_article_block(articles_by_day[day]),
+        },
+    )
+
+
+def merge_kg_lessons(root: pathlib.Path, lessons: list[str], day: str) -> dict[str, Any]:
+    """把审稿代理提炼的规则并入经验库，去重并控制条数上限。"""
+    path = root / "prompts" / KG_LESSONS_NAME
+    if not path.exists():
+        raise FileNotFoundError(f"lessons file not found: {path}")
+
+    text = path.read_text(encoding="utf-8")
+    if KG_LESSONS_SECTION not in text:
+        raise ValueError(f"lessons file missing section: {KG_LESSONS_SECTION}")
+
+    head, _, tail = text.partition(KG_LESSONS_SECTION)
+    lines = tail.split("\n")
+    body_end = len(lines)
+    for index, line in enumerate(lines):
+        if index > 0 and line.startswith("## "):
+            body_end = index
+            break
+    body, rest = lines[:body_end], lines[body_end:]
+
+    existing = [line.strip() for line in body if line.strip().startswith("- ")]
+
+    def fingerprint(entry: str) -> str:
+        stripped = re.sub(r"^-\s*(\[\d{4}-\d{2}-\d{2}\])?\s*", "", entry)
+        stripped = re.sub(r"（触发原因：.*?）", "", stripped)
+        return re.sub(r"[^0-9a-z\u4e00-\u9fff]+", "", stripped.lower())
+
+    seen = {fingerprint(entry) for entry in existing}
+    added: list[str] = []
+    for lesson in lessons:
+        cleaned = " ".join(str(lesson or "").split()).lstrip("- ").strip()
+        if not cleaned:
+            continue
+        entry = f"- [{day}] {cleaned}"
+        key = fingerprint(entry)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        added.append(entry)
+
+    merged = existing + added
+    dropped = max(0, len(merged) - KG_LESSONS_LIMIT)
+    merged = merged[dropped:]
+
+    while rest and not rest[0].strip():
+        rest.pop(0)
+    rebuilt = [KG_LESSONS_SECTION, "", *merged, "", *rest]
+    path.write_text(head + "\n".join(rebuilt).rstrip() + "\n", encoding="utf-8", newline="\n")
+    return {"added": len(added), "dropped": dropped, "total": len(merged)}
 
 
 def render_insight_prompt(

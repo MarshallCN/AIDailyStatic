@@ -19,6 +19,7 @@ from zoneinfo import ZoneInfo
 
 DEFAULT_TZ = ZoneInfo("Europe/London")
 
+import kg_audit
 import static_pipeline
 
 
@@ -1294,6 +1295,58 @@ def cmd_kg_prompt(args: argparse.Namespace) -> int:
     return write_text_command_result(text, args.output)
 
 
+def cmd_kg_audit(args: argparse.Namespace) -> int:
+    date_str = parse_target_date(args.date)
+    report = kg_audit.audit_day(
+        ROOT,
+        date_str,
+        kg_llm_dir=pathlib.Path(args.kg_llm_dir) if args.kg_llm_dir else None,
+    )
+    if args.log:
+        kg_audit.append_quality_log(ROOT, report)
+    if args.format == "json":
+        text = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
+    else:
+        text = kg_audit.format_report(report, ROOT)
+    write_text_command_result(text, args.output)
+    return 0 if report["passed"] or not args.strict else 1
+
+
+def cmd_kg_review_prompt(args: argparse.Namespace) -> int:
+    date_str = parse_target_date(args.date)
+    kg_llm_dir = pathlib.Path(args.kg_llm_dir) if args.kg_llm_dir else None
+    try:
+        report = kg_audit.audit_day(ROOT, date_str, kg_llm_dir=kg_llm_dir)
+        audit_report = kg_audit.format_report(report, ROOT)
+    except FileNotFoundError as error:
+        audit_report = f"（审计未能运行：{error}）"
+    text = static_pipeline.render_kg_review_prompt(
+        ROOT,
+        date_str,
+        round_no=args.round,
+        output_path=args.output_path,
+        audit_report=audit_report,
+        kg_llm_dir=kg_llm_dir,
+    )
+    return write_text_command_result(text, args.output)
+
+
+def cmd_kg_lessons_update(args: argparse.Namespace) -> int:
+    date_str = parse_target_date(args.date)
+    review_path = pathlib.Path(args.review)
+    if not review_path.exists():
+        print(f"审查报告不存在：{review_path}", file=sys.stderr)
+        return 1
+    payload = json.loads(review_path.read_text(encoding="utf-8"))
+    lessons = [str(item) for item in payload.get("lessons", []) if str(item).strip()]
+    if not lessons:
+        print("本轮审查没有提炼出新规则，经验库保持不变")
+        return 0
+    stats = static_pipeline.merge_kg_lessons(ROOT, lessons, date_str)
+    print(f"经验库已更新：新增 {stats['added']} 条，淘汰 {stats['dropped']} 条，当前 {stats['total']} 条")
+    return 0
+
+
 def cmd_kg_build(args: argparse.Namespace) -> int:
     date_str, days_filter = require_date_or_all(args)
     payloads = static_pipeline.build_kg_artifacts(
@@ -1374,6 +1427,7 @@ def build_parser() -> argparse.ArgumentParser:
               python scripts/ai_daily.py validate --input news/2026-03-17.md
               python scripts/ai_daily.py publish --date 2026-03-17 --input draft.md
               python scripts/ai_daily.py kg-prompt --date 2026-03-17 > kg-prompt.md
+              python scripts/ai_daily.py kg-audit --date 2026-03-17 --log
               python scripts/ai_daily.py insight-prompt --date 2026-03-17 > insights-prompt.md
               python scripts/ai_daily.py insight-build --date 2026-03-17
               python scripts/ai_daily.py repair-static
@@ -1466,6 +1520,28 @@ def build_parser() -> argparse.ArgumentParser:
     kg_prompt_parser.add_argument("--date", required=True, help="目标日期，格式 YYYY-MM-DD")
     kg_prompt_parser.add_argument("--output", help="可选：写入 prompt 文件")
     kg_prompt_parser.set_defaults(func=cmd_kg_prompt)
+
+    kg_audit_parser = subparsers.add_parser("kg-audit", help="审计 KG 抽取质量并打分")
+    kg_audit_parser.add_argument("--date", required=True, help="目标日期，格式 YYYY-MM-DD")
+    kg_audit_parser.add_argument("--kg-llm-dir", help="可选：按天存放 KG LLM 抽取 JSON 的目录，默认 kg_llm")
+    kg_audit_parser.add_argument("--format", choices=["text", "json"], default="text", help="输出格式")
+    kg_audit_parser.add_argument("--log", action="store_true", help="把本次得分写入 kg_llm/quality-log.jsonl")
+    kg_audit_parser.add_argument("--strict", action="store_true", help="未达及格线时返回非零退出码")
+    kg_audit_parser.add_argument("--output", help="可选：写入报告文件")
+    kg_audit_parser.set_defaults(func=cmd_kg_audit)
+
+    kg_review_parser = subparsers.add_parser("kg-review-prompt", help="生成给审稿代理的 KG 审查 prompt")
+    kg_review_parser.add_argument("--date", required=True, help="目标日期，格式 YYYY-MM-DD")
+    kg_review_parser.add_argument("--round", type=int, default=1, help="第几轮审查，默认 1")
+    kg_review_parser.add_argument("--output-path", required=True, help="审稿代理应写入的审查报告路径")
+    kg_review_parser.add_argument("--kg-llm-dir", help="可选：按天存放 KG LLM 抽取 JSON 的目录，默认 kg_llm")
+    kg_review_parser.add_argument("--output", help="可选：写入 prompt 文件")
+    kg_review_parser.set_defaults(func=cmd_kg_review_prompt)
+
+    kg_lessons_parser = subparsers.add_parser("kg-lessons-update", help="把审查报告里的规则并入抽取经验库")
+    kg_lessons_parser.add_argument("--date", required=True, help="目标日期，格式 YYYY-MM-DD")
+    kg_lessons_parser.add_argument("--review", required=True, help="审稿代理产出的审查报告 JSON 路径")
+    kg_lessons_parser.set_defaults(func=cmd_kg_lessons_update)
 
     kg_build_parser = subparsers.add_parser("kg-build", help="生成静态 KG 日产物")
     kg_build_parser.add_argument("--date", help="目标日期，格式 YYYY-MM-DD")
