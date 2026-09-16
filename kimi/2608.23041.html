@@ -1,0 +1,359 @@
+<p class="faq-q"><strong>Q1</strong>: 这篇论文试图解决什么问题？</p>
+
+<div class="faq-a">
+
+该论文旨在解决 **LLM 智能体（agents）在长程（long-horizon）任务中可靠性不足** 的问题，并克服 **现有外部控制层（harness）手动设计与调优成本高昂、难以扩展** 的瓶颈。
+
+具体而言，论文聚焦于以下核心挑战：
+
+1. **长程任务中的错误累积**  
+   在需要多步推理、反复工具调用和环境交互的长程任务中，LLM 智能体即使在局部出现微小失败，这些失败也会在持续的交互过程中不断累积，最终导致整体任务失败。
+
+2. **手动 Harness 设计的局限性**  
+   虽然为 LLM 构建外部 harness（包括系统提示词、工具配置和运行时控制逻辑）已被证明能显著提升智能体的鲁棒性，但现有方法严重依赖人工设计。这要求在庞大的设计空间（prompts、工具配置、控制逻辑等）中进行昂贵的搜索，且每次评估候选 harness 都需要执行完整的长程交互轨迹，分析这些轨迹本身也极为耗时。
+
+3. **自动化优化与泛化的需求**  
+   当底层 LLM 更换或部署到新领域时，harness 需要重新适配。因此，亟需一种能够**自动、高效、可扩展地优化 harness** 的方法，使其不仅能从失败轨迹中学习，还能产生**具有持久性和泛化能力**的更新，而非仅针对单条轨迹的“热修复”。
+
+为应对上述问题，论文提出了 **AutoSaddler** 框架，其核心创新在于：
+- 将 harness 优化形式化为**基于小批量的离线学习问题**；
+- 通过**深度故障诊断（in-depth diagnosis）**、**结构化补丁生成（structured patch generation）**和**基于验证的更新选择（validation-based selection）**，实现对 prompts、tools 和 middleware 的迭代优化；
+- 在 GAIA2、SWE-Bench Pro 和 Terminal-Bench 2.0 等基准上，AutoSaddler 相比基础 harness 分别实现了 **9.0、9.6 和 10.0 个百分点**的性能提升。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q2</strong>: 有哪些相关研究？</p>
+
+<div class="faq-a">
+
+根据论文第2节，相关研究主要分布在以下五个方向：
+
+### 1. 自动提示优化（Auto Prompt Optimization）
+该方向致力于自动优化基于 LLM 的系统提示词（prompt），涵盖多种技术路径：
+- **梯度无关搜索**与**文本梯度方法**（textual-gradient and mini-batch methods）
+- **历史感知与进化优化**（history-aware and evolutionary optimization）
+- **基于规划的搜索**（planning-based search）
+- **编程抽象**（programming abstractions）与 **autodiff 风格优化**
+- **贝叶斯多提示调优**（Bayesian multi-prompt tuning）
+
+AutoSaddler 借鉴了该领域的思想，但指出 harness 优化比单纯的 prompt 优化更为广泛：长程轨迹通常需要比简单反思更深层的诊断，且搜索空间涵盖提示词、工具与运行时控制逻辑。
+
+### 2. 自我进化智能体与基于经验的改进（Self-Evolving Agents and Experience-Based Improvement）
+此类研究利用失败轨迹或经验来改进智能体，具体包括：
+- 构建经验库（libraries）、创建新工具（tools）
+- 构建记忆、技能或知识库（memory, skills, or knowledge bases）
+
+与这些通常是**在线持续学习**（online continual-learning）的方法不同，AutoSaddler 聚焦于**离线 harness 优化**，以实现对不同环境的泛化。此外，部分研究强调**自指代性**（self-referentiality），如 Darwin-Gödel Machines、Gödel agents 等；AutoSaddler 不施加此类约束，其目标是在有限 rollout 预算下改进任务智能体的外部 harness。
+
+### 3. 智能体系统与 Harness 优化（Agent Systems and Harness Optimization）
+该方向关注 LLM 系统外部层的自动优化，包括：
+- **LLM 推理超参数调优**
+- **工作流优化**（workflow optimization）
+- **将系统本身视为代码进行优化**（treating the system itself as code）
+
+近期研究进一步扩展到**完整 agent harness 的端到端优化**，代表性工作包括：
+- **Meta-Harness**：同样使用编码智能体构建端到端优化流水线，但 AutoSaddler 更强调结构化补丁与显式考虑泛化的系统训练流程。
+- **GEPA**：以提示词为中心的迭代优化基线。
+
+论文还列举了一系列**同期研究**（contemporaneous studies），从互补角度探索 harness 优化：可观测性驱动进化、诊断与弱点引导修复、贝叶斯配置搜索、历史经验再校准、自监督回顾优化、泛化导向约束进化、经验驱动测试时适应，以及 harness 与模型权重的联合优化。
+
+### 4. 智能体轨迹故障诊断与修复（Agent Trace Failure Diagnosis and Repair）
+针对长程智能体轨迹中复杂工具交互的故障诊断，现有方法主要面向**单条轨迹诊断**，且通常假设轨迹可完全放入 LLM 上下文窗口，这限制了其在极长轨迹与小批量诊断中的应用。AutoSaddler 基于 **Claude Agent SDK (CA-SDK)** 构建，利用其文件访问与上下文管理能力应对此挑战。
+
+此外，部分研究关注**轨迹级干预**以修复失败的单次运行（task-specific &quot;hot fixes&quot;）；而 AutoSaddler 的目标是产生**持久的 harness 修复**（persistent harness repairs），以改善未来的智能体行为，而非仅修复单条轨迹。
+
+### 5. LLM 驱动的进化搜索（LLM-Driven Evolutionary Search）
+AutoSaddler 的候选选择方法利用 LLM 基于探索历史选择与重组先前候选补丁，这与近期 **LLM 增强的进化算法**（LLM-augmented evolutionary algorithms）的研究方向一致。AutoSaddler 通过基于 CA-SDK 的候选选择实例化这一思想，将更专门的 LLM 驱动进化算法留给未来工作。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q3</strong>: 论文如何解决这个问题？</p>
+
+<div class="faq-a">
+
+论文通过提出 **AutoSaddler** 框架来解决自动 harness 优化问题。该方法将 harness 改进形式化为一个**离线学习问题**，通过基于小批量的迭代优化，结合失败轨迹信号逐步提升 agent 在长程任务上的可靠性。具体解决方案包含以下核心要素：
+
+---
+
+### 1. 问题形式化与优化目标
+
+论文将 harness 参数定义为三元组：
+$$\theta = (\theta_{\text{prompt}}, \theta_{\text{tool}}, \theta_{\text{middleware}}) \in \Theta$$
+分别对应系统提示词、可用工具及其接口、以及运行时控制逻辑（如 hooks 和 agent-loop 行为）。
+
+优化目标是在 rollout 预算 $K$ 的约束下，最大化任务分布 $T$ 上的期望性能：
+$$J(\theta) = \mathbb{E}_{(x,y^*)\sim T} \mathbb{E}_{(\tau,\hat{y})\sim P_\theta(\cdot|x)}[\mu(\hat{y}, y^*)]$$
+
+由于 $J(\theta)$ 无法直接观测，AutoSaddler 在有限数据集上通过经验估计进行优化，并保留开发集上表现最优的候选 harness。
+
+---
+
+### 2. 基于小批量的迭代优化循环
+
+AutoSaddler 遵循标准的小批量学习范式，每个迭代 $n$ 执行以下步骤：
+
+1. **评估**：在当前 harness $H_n$ 上评估训练小批量 $B_n$，收集执行轨迹与成败信号。
+2. **诊断与补丁（Diagnosis–Patch Session）**：分析失败轨迹，推断根因，生成结构化补丁 $\Delta\theta_n$，得到候选 harness $H&#x27;_n = H_n + \Delta\theta_n$。
+3. **同批量验证**：重新评估 $H&#x27;_n$ 在 $B_n$ 上的表现；若 $\hat{J}_{B_n}(H&#x27;_n) &gt; \hat{J}_{B_n}(H_n)$，则视为小批量改进。
+4. **泛化验证**：对通过验证的补丁，进一步在开发集 $D_{\text{dev}}$ 上评估，估计其是否超越当前小批量泛化。
+5. **反思（Reflection Session）**：对比补丁前后的轨迹，将结果分类为“已修复（fixed）”、“退化（regressed）”、“仍失败（still-failing）”、“仍通过（still-passing）”，并提取结构化教训。
+6. **进化（Evolution Session）**：将补丁描述、评估指标和教训存入 **EvoDAG**（有向无环图），并基于历史记忆合成下一个 harness $H_{n+1}$。
+
+---
+
+### 3. 深度诊断与结构化补丁生成（Diagnosis-Patch Session）
+
+区别于传统基于浅层反思的 prompt 优化，AutoSaddler 强调**深度调试**：
+
+- **证据驱动的根因分析**：Diagnosis-Patch Agent 不仅接收失败轨迹，还被赋予访问 harness 代码库 $\theta_n$ 的权限，并通过渐进式检索相关轨迹细节来应对长上下文挑战。
+- **结构化补丁空间**：补丁被严格组织为三大类别及其子类型，避免无约束编辑：
+  - **Prompt Patch**：规则添加与修改（Steering）
+  - **Tool Patch**：新工具添加、参数修改、实现修复（Capability）与工具描述修正（Steering）
+  - **Middleware Patch**：PreToolUse Hook 注入（Steering）、基础设施变更与 Agent 循环逻辑修改（Capability）
+- **Capability 与 Steering 分离**：Capability Patches 修改可执行代码或编排逻辑；Steering Patches 仅修改文本指令而不改变底层代码。两者通过 **Phased Patch Scheduling** 分阶段调度——先优先探索 Capability Patches 以补齐基础能力，后转向 Steering Patches 进行行为精调。
+
+---
+
+### 4. 泛化感知的选择机制（Reflection &amp; Evolution Sessions）
+
+为确保更新具有**持久性**而非仅针对单条轨迹的“热修复”，AutoSaddler 引入了双重选择机制：
+
+- **Reflection Session**：强制区分补丁造成的真实因果效应与 LLM 采样随机性导致的伪效应。通过比较补丁前后轨迹，系统记录哪些失败模式被解决、哪些正确行为被破坏，并特别关注开发集上的表现以判断泛化能力。
+- **EvoDAG 与 Evolution Session**：EvoDAG 以有向无环图形式累积优化历史，每个节点记录 harness 版本、性能信号与反思教训。Evolution Agent 可基于全局历史，从任意先前候选中**重组**有益组件（cherry-pick）、回退有害变更（revert）或切换基线（rebase），从而跳出局部最优，避免沉没成本谬误。
+
+---
+
+### 5. 设计原理的协同作用
+
+AutoSaddler 的有效性依赖于三个相互强化的设计原则：
+
+- **深度诊断而非浅层反思**：通过联合分析长程轨迹与 harness 源代码，实现精确的根因定位，避免基于表面现象的误判。
+- **结构化干预而非无约束编辑**：通过预定义的补丁分类与分阶段调度，引导优化过程覆盖 prompts、tools 和 middleware 的多样化改进，防止搜索过度集中于单一的 prompt 编辑。
+- **泛化感知选择而非轨迹专属修复**：通过同批量验证、开发集过滤与 EvoDAG 驱动的进化，确保保留的更新能够泛化到未见过的任务分布，而非仅过拟合到当前训练样本。
+
+通过上述机制，AutoSaddler 将 harness 优化转变为可扩展的、数据驱动的离线学习过程，在 GAIA2、SWE-Bench Pro 和 Terminal-Bench 2.0 上均实现了显著且稳健的性能提升。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q4</strong>: 论文做了哪些实验？</p>
+
+<div class="faq-a">
+
+论文在三个具有挑战性的 agent 基准上进行了系统性的实验评估，涵盖主性能对比、消融研究、效率分析及多项鲁棒性验证。具体实验内容如下：
+
+---
+
+### 1. 实验设置
+
+**基准测试与基础 Harness**
+- **GAIA2**：评估通用助手能力，使用默认的 ReAct-based agent 作为基础 harness。
+- **SWE-Bench Pro (SBP)**：面向企业级软件工程任务，使用 **SWE-agent** 作为基础 harness。
+- **Terminal-Bench 2.0 (TB2)**：涵盖系统管理、机器学习、网络安全等现实任务，使用 **Terminus 2** 作为基础 harness。
+
+**对比方法**
+- **GEPA** [1]：以提示词为中心的自动优化基线，迭代优化系统提示。
+- **Meta-Harness** [22]：将优化目标从提示词扩展到完整 agent harness，使用 CA-SDK 进行端到端系统优化。
+- **AutoSaddler 的消融变体**：
+  - w/o In-depth Diagnosis：将深度诊断替换为单次 LLM 调用的浅层反思。
+  - w/o Structured Intervention：移除补丁分类体系与分阶段调度，允许无约束编辑。
+  - w/o Generalization-Aware Selection：移除反思会话与开发集评估，仅依赖训练集结果。
+
+**数据划分**
+为严格评估泛化能力，训练/开发/测试集按**任务组**划分，而非随机划分：
+- **GAIA2**：按 Universe（不同数字人格/环境）划分。
+- **SWE-Bench Pro**：按代码仓库（Repository）划分。
+- **Terminal-Bench 2.0**：因任务数量少（89个）且无天然分组轴，采用均匀随机划分。
+
+---
+
+### 2. 主要结果（Main Results）
+
+表2和表3报告了测试集上的 Pass@1 成功率（均值±标准差，三次重复运行）：
+
+| 基准 | 基础 Harness | 最强自动基线 | AutoSaddler | 绝对提升 |
+|------|-------------|-------------|-------------|---------|
+| **GAIA2** | 53.0% | 54.6% (GEPA) | **62.0%** | +9.0 pp vs 基础; +7.4 pp vs GEPA |
+| **SWE-Bench Pro** | 37.3% | 42.5% (GEPA) | **46.9%** | +9.6 pp vs 基础; +4.4 pp vs GEPA |
+| **Terminal-Bench 2.0** | 40.0% | 43.3% (Meta-Harness) | **50.0%** | +10.0 pp vs 基础; +6.7 pp vs Meta-Harness |
+
+在 TB2 上，AutoSaddler 甚至超过了人工专家调优的 **Terminus KIRA**（47.5%），达到 50.0%。
+
+---
+
+### 3. 效率分析（Efficiency）
+
+在 GAIA2 上的优化轨迹对比（图1）显示：
+- **计算效率**：AutoSaddler 仅用约 **1,000 次任务执行**即达到 72.3% 的开发集准确率；而 GEPA 和 Meta-Harness 消耗约 2,800 次执行，分别饱和于 64.6% 和 61.5%。
+- **学习效率**：AutoSaddler 在利用 **147 条轨迹**后即达到最佳性能，约为 Meta-Harness（1,400 条轨迹）的 **1/10**。
+
+在 Terminal-Bench 2.0 上也观察到类似的效率优势（附录 H）。
+
+---
+
+### 4. 消融研究（Ablation Studies）
+
+论文通过三个研究问题（RQ）系统验证了三个核心设计原则：
+
+**RQ1：深度诊断的必要性**
+- 移除深度诊断后，GAIA2 测试性能从 **62.0% 降至 57.8%**。
+- 定量分析显示，深度诊断每步平均多调用 6.2 个工具、多访问 5.8 个文件；且累积接受的补丁数量显著高于浅层诊断（20 vs 15）。
+
+**RQ2：结构化干预的作用**
+- 移除结构化干预（包括补丁分类与分阶段调度）后，性能从 **62.0% 降至 56.9%**。
+- 无结构化干预时，91.5% 的补丁集中在简单的 Steering（文本）编辑，而高价值的 Capability 补丁（如新工具、基础设施变更）占比仅 4%；AutoSaddler 则将其提升至 25% 以上。
+- 细粒度消融（附录 F）显示，仅移除分阶段调度即导致性能降至 54.8%。
+
+**RQ3：泛化感知选择的重要性**
+- 移除泛化感知选择（无开发集过滤、无 EvoDAG 反思）后，性能从 **62.0% 暴跌至 50.6%**，为所有组件消融中下降最大。
+- 开发集行为分解（图4）表明，虽然修复率（fix rate）相近，但 AutoSaddler 的**回归率（regression rate）**呈下降趋势（-0.24 pp/iter），而消融版本呈上升趋势（+0.16 pp/iter）。
+- 细粒度消融（附录 F）显示，仅移除开发集过滤即降至 50.0%，再移除 EvoDAG 反思进一步降至 44.9%。
+
+---
+
+### 5. 鲁棒性与迁移性验证
+
+论文在附录中补充了多项额外实验：
+
+- **优化随机性（Appendix C）**：在 GAIA2 上进行独立重复优化运行，AutoSaddler 第二次运行仍达 58.6%，显著高于基线，表明增益非单一幸运轨迹所致。
+- **训练分布偏移（Appendix D）**：使用不同的训练 Universe（Universe 24 替代 29）进行优化，测试性能仍达 57.4%，比基础 harness 高 5.9 pp，证明不依赖特定训练分布。
+- **跨模型迁移（Appendix E）**：将基于 Claude Opus 4.6 优化的 harness 迁移到更弱的 Claude Haiku 4.5 上执行，AutoSaddler 仍比基础 harness 提升 **+5.6 pp**，显示出跨模型迁移能力。
+- **补丁耐久性分析（Appendix G）**：Capability Patches 与 Steering Patches 修复率相当（55% vs 58%），但 Capability Patches 的回归率显著更低（8% vs 17%），表明其更新更耐久。
+
+---
+
+### 6. 定性分析
+
+论文通过附录中的案例研究（如附录 K、M）展示了：
+- 深度诊断如何准确识别浅层反思遗漏的根因（如日历任务中的语言歧义、文件管理任务中的路径解析错误）；
+- EvoDAG 如何支持从具体失败中抽象出泛化原则（如从多次邮件回复质量问题中提炼出“积极框架优于消极禁令”的通用规则）。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q5</strong>: 有什么可以进一步探索的点？</p>
+
+<div class="faq-a">
+
+基于论文的局限性讨论与整体研究脉络，以下方向值得进一步探索：
+
+### 1. 弱监督与无监督 Harness 优化
+当前 AutoSaddler 假设存在带有标准答案（gold answers）的训练集与明确的任务级成败信号（如 pass/fail）。然而，真实部署场景中往往难以大规模获取此类标注。未来研究可探索：
+- 从轨迹层面的内在信号（如工具调用错误、执行异常、自洽性检验）中推导失败信号，替代外部标注；
+- 利用智能体环境自举（bootstrapping）合成训练数据，例如从 GAIA2 的每个用户 Universe 中自动生成任务与验证信号。
+
+### 2. 有状态（Stateful）与持续学习环境
+论文将优化范围限定于**无状态、相互独立**的任务，因此未涉及记忆（memory）与技能管理（skill curation）。扩展至以下场景具有重要价值：
+- 在长程对话或持续交互中，harness 需动态整合历史记忆；
+- 在线或持续学习设定下，harness 如何随时间累积经验并更新自身，而非离线批量优化。
+
+### 3. 跨模型与跨家族的泛化机制
+附录中的初步实验显示，针对 Claude Opus 4.6 优化的 harness 可向较弱的 Claude Haiku 4.5 迁移（+5.6 pp）。然而，这种迁移性的系统规律尚不清晰：
+- 在更广泛的 LLM 家族（如 GPT、Gemini、Claude 系列之间）验证 harness 优化的可迁移性；
+- 研究 harness 参数与模型能力之间的交互规律，甚至联合优化 harness 与模型权重（如相关工作中提到的 Co-harness [8] 与 SIA [15]）。
+
+### 4. 更高效的优化器架构与进化算法
+AutoSaddler 的 EvoDAG 已初步体现 LLM 增强的进化搜索思想，但采用的是基于 CA-SDK 的通用实现。未来可引入更专门的机制：
+- 设计针对文本化 harness 参数的专用进化算子（如语义感知交叉、基于抽象语法树的变异）；
+- 结合贝叶斯优化或超参数调优方法，进一步降低昂贵的任务级 rollout 开销。
+
+### 5. 成本与效率的再优化
+虽然 AutoSaddler 通过选择性评估显著减少了任务级 rollout 数量，但优化器侧的 LLM 调用（诊断、补丁生成、反思、进化）仍带来不可忽视的开销（附录 I 显示平均每补丁 \$14.56）。可探索：
+- 轻量级诊断模型或蒸馏后的优化器，降低对顶级 LLM 的依赖；
+- 分层验证策略，在更廉价的模拟器或部分轨迹上预筛选补丁，再执行完整评估。
+
+### 6. 治理安全与人在回路（Human-in-the-Loop）
+论文明确指出，自动修改的 harness 在部署到生产环境前应经过人工审查或额外安全验证。未来可研究：
+- 可解释的补丁报告生成，使人类审核者快速理解 harness 变更的语义与潜在影响；
+- 自动 harness 优化与红队测试（red-teaming）的闭环结合，防止优化过程中引入安全性退化或不可控行为。
+
+### 7. 自指代与元学习范式的融合
+论文在相关工作中区分了 AutoSaddler 与 Darwin-Gödel Machines、Gödel agents 等自指代系统。一个开放问题是：
+- 当优化器与任务智能体共享同一 LLM 实例时，AutoSaddler 的框架是否仍能稳定运行；
+- 将 harness 优化本身建模为可由 harness 指导的元任务，探索递归自我改进的理论边界与实用方案。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q6</strong>: 总结一下论文的主要内容</p>
+
+<div class="faq-a">
+
+该论文针对 LLM 智能体在长程（long-horizon）任务中可靠性不足、且外部控制层（harness）手动调优成本高昂的问题，提出了 **AutoSaddler**——一个自动 harness 优化框架。以下从研究动机、方法框架、核心设计与实验结论四个方面进行总结。
+
+---
+
+### 1. 研究动机
+
+LLM 智能体在多步推理与工具交互的长程任务中，局部微小错误会持续累积并导致整体失败。虽然外部 harness（系统提示词、工具配置、运行时控制逻辑）能显著提升鲁棒性，但其设计依赖人工探索庞大的参数空间，且每次评估需执行完整的交互轨迹，分析成本极高。因此，亟需一种能够自动、可扩展地优化 harness 的方法，使其产生**具有持久性与泛化能力**的更新，而非仅针对单条轨迹的临时修复。
+
+---
+
+### 2. AutoSaddler 方法框架
+
+论文将 harness 优化形式化为**基于小批量的离线学习问题**。优化空间定义为：
+$$\theta = (\theta_{\text{prompt}}, \theta_{\text{tool}}, \theta_{\text{middleware}}) \in \Theta$$
+
+目标是在 rollout 预算 $K$ 约束下，最大化任务分布上的期望性能：
+$$J(\theta) = \mathbb{E}_{(x,y^*)\sim T} \mathbb{E}_{(\tau,\hat{y})\sim P_\theta(\cdot|x)}[\mu(\hat{y}, y^*)]$$
+
+AutoSaddler 的迭代循环包含四个阶段：
+
+- **诊断与补丁（Diagnosis–Patch Session）**：分析小批量中的失败轨迹，联合审查 harness 源代码，推断根因并生成结构化补丁。
+- **同批量验证**：验证补丁是否提升当前小批量性能。
+- **泛化验证**：对改进的候选 harness 在开发集上评估，估计其是否超越当前小批量泛化。
+- **反思与进化（Reflection &amp; Evolution Session）**：对比补丁前后轨迹，提取结构化教训并存入 **EvoDAG**（有向无环图）；进化代理基于历史全局信息合成下一代 harness，支持跨候选的合并、回退与基线切换。
+
+---
+
+### 3. 三大核心设计原则
+
+论文指出，有效的 harness 优化依赖于三个相互强化的设计要素：
+
+- **深度诊断而非浅层反思**  
+  通过联合分析长程执行轨迹与 harness 代码库，精确定位失败根因，避免基于表面现象的误判。
+
+- **结构化干预而非无约束编辑**  
+  将补丁空间严格划分为 **Prompt**、**Tool**、**Middleware** 三大类，并进一步区分为 **Capability Patches**（修改可执行代码/逻辑）与 **Steering Patches**（仅修改文本指令）。通过 **Phased Patch Scheduling** 分阶段调度——先探索 Capability 以补齐基础能力，后转向 Steering 以精调行为——防止搜索过度集中于简单的提示词编辑。
+
+- **泛化感知选择而非轨迹专属修复**  
+  通过同批量验证、开发集过滤与 EvoDAG 驱动的历史感知进化，确保保留的更新能够泛化到未见任务分布，避免过拟合训练样本。反思会话强制区分补丁的真实因果效应与 LLM 采样的随机噪声。
+
+---
+
+### 4. 实验与结论
+
+论文在三个挑战性基准上评估 AutoSaddler：
+
+| 基准 | 基础 Harness | AutoSaddler | 绝对提升 |
+|------|-------------|-------------|---------|
+| **GAIA2** | 53.0% | **62.0%** | +9.0 pp |
+| **SWE-Bench Pro** | 37.3% | **46.9%** | +9.6 pp |
+| **Terminal-Bench 2.0** | 40.0% | **50.0%** | +10.0 pp |
+
+相较于最强自动基线（GEPA 或 Meta-Harness），AutoSaddler 分别领先 **7.4、4.4 和 6.7** 个百分点；在 Terminal-Bench 2.0 上甚至超过了人工专家调优的 harness。
+
+**效率方面**，AutoSaddler 在 GAIA2 上仅用约 **1,000 次任务执行**和 **147 条轨迹**即达到峰值开发性能，而基线需约 2,800 次执行和 1,400 条轨迹。
+
+**消融研究**验证了各组件的必要性：移除深度诊断、结构化干预或泛化感知选择后，性能分别下降至 57.8%、56.9% 和 50.6%。
+
+综上，该研究表明，通过将 harness 优化转变为数据驱动的离线学习过程——结合深度调试、结构化干预与显式泛化选择——能够系统性地提升长程 LLM 智能体的可靠性与性能，为自动 harness 工程提供了有前景的技术路径。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q7</strong>: 想要进一步了解论文</p>
+
+<div class="faq-a">
+
+以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是AutoSaddler%3A%20Automatic%20Harness%20Optimization%20with%20Durable%20Updates%20from%20Agent%20Execution%20Traces，链接是 https://arxiv.org/pdf/2608.23041 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2608.23041 。请以此为基础，继续回答我后面的问题。&system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&send_immediately=true" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。
+
+</div>

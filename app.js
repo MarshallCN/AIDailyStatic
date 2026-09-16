@@ -225,7 +225,7 @@
             <section class="day-card-item">
               <h2><a href="${buildDetailLink(item)}" data-detail-link="1">${escapeHtml(item.title)}</a></h2>
               <div class="meta">
-                <span>${escapeHtml(item.source)}</span>
+                ${NewsParser.sourceMetaHtml(item)}
                 ${renderCategoryTags(item.category)}
               </div>
               <div>${escapeHtml(item.summary)}</div>
@@ -242,7 +242,7 @@
         <h2><a href="${buildDetailLink(item)}" data-detail-link="1">${escapeHtml(item.title)}</a></h2>
         <div class="meta">
           <span>${escapeHtml(item.date)}</span>
-          <span>${escapeHtml(item.source)}</span>
+          ${NewsParser.sourceMetaHtml(item)}
           ${renderCategoryTags(item.category)}
         </div>
         <div>${escapeHtml(item.summary)}</div>
@@ -281,7 +281,7 @@
         <div class="search-card-top">
           <div class="meta">
             <span>${escapeHtml(item.date)}</span>
-            <span>${escapeHtml(item.source)}</span>
+            ${NewsParser.sourceMetaHtml(item)}
             ${renderCategoryTags(item.category)}
           </div>
           <div class="search-signals">${sharedParts.join('')}</div>

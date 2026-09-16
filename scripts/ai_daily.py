@@ -25,6 +25,7 @@ import static_pipeline
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PROMPTS_DIR = ROOT / "prompts"
 NEWS_DIR = ROOT / "news"
+KIMI_DIR = ROOT / "kimi"
 PROMPT_PATH = PROMPTS_DIR / "PROMPT.md"
 
 FIXED_CATEGORIES = [
@@ -158,6 +159,123 @@ def ensure_within_deadline(deadline: float | None) -> None:
 
 
 
+ARXIV_ID_RE = re.compile(
+    r"(?:arxiv\.org/(?:abs|pdf|html|e-print)/|papers\.cool/arxiv/|huggingface\.co/papers/)"
+    r"(\d{4}\.\d{4,5})(?:v\d+)?",
+    re.IGNORECASE,
+)
+
+PAPERS_COOL_CATEGORIES = (
+    ("cs.AI", "https://papers.cool/arxiv/cs.AI"),
+    ("cs.CL", "https://papers.cool/arxiv/cs.CL"),
+)
+
+
+def extract_arxiv_id(url: str) -> str:
+    match = ARXIV_ID_RE.search(str(url or ""))
+    return match.group(1) if match else ""
+
+
+def papers_cool_url(arxiv_id: str) -> str:
+    return f"https://papers.cool/arxiv/{arxiv_id}"
+
+
+def papers_cool_page_ok(html_text: str) -> bool:
+    title_match = re.search(r"<title>(.*?)</title>", html_text or "", re.IGNORECASE | re.DOTALL)
+    title = clean_html_text(title_match.group(1)) if title_match else ""
+    if re.match(r"not found\b", title, re.IGNORECASE):
+        return False
+    return "Cool Papers" in html_text or "citation_title" in html_text or "panel paper" in html_text
+
+
+def probe_papers_cool(arxiv_id: str, *, timeout: int, deadline: float | None = None) -> str | None:
+    if not arxiv_id:
+        return None
+    url = papers_cool_url(arxiv_id)
+    try:
+        html_text = fetch_text(url, timeout=timeout, deadline=deadline)
+    except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded, Exception):
+        return None
+    return url if papers_cool_page_ok(html_text) else None
+
+
+def kimi_cache_path(arxiv_id: str) -> pathlib.Path:
+    return KIMI_DIR / f"{arxiv_id}.html"
+
+
+def arxiv_ids_from_news_items(items: Iterable[NewsItem]) -> list[str]:
+    ids: list[str] = []
+    seen: set[str] = set()
+    for item in items:
+        blob = " ".join([item.url, item.source, item.title, item.summary])
+        arxiv_id = extract_arxiv_id(item.url) or extract_arxiv_id(blob)
+        if not arxiv_id and re.search(r"arxiv|papers\.cool", blob, re.IGNORECASE):
+            bare = re.search(r"\b(\d{4}\.\d{4,5})(?:v\d+)?\b", blob)
+            arxiv_id = bare.group(1) if bare else ""
+        if arxiv_id and arxiv_id not in seen:
+            seen.add(arxiv_id)
+            ids.append(arxiv_id)
+    return ids
+
+
+def fetch_kimi_progress(arxiv_id: str, *, timeout: int = DEFAULT_REQUEST_TIMEOUT) -> str:
+    try:
+        raw = fetch_text(f"https://papers.cool/arxiv/progress?paper={arxiv_id}", timeout=timeout)
+    except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded, Exception):
+        return ""
+    return str(raw or "").strip()
+
+
+def fetch_kimi_faq_html(arxiv_id: str, *, timeout: int = DEFAULT_REQUEST_TIMEOUT) -> str:
+    try:
+        html_text = fetch_text(f"https://papers.cool/arxiv/kimi?paper={arxiv_id}", timeout=timeout)
+    except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded, Exception):
+        return ""
+    if "faq-q" not in html_text:
+        return ""
+    return html_text
+
+
+def cache_kimi_for_arxiv_ids(
+    arxiv_ids: Iterable[str],
+    *,
+    force: bool = False,
+    timeout: int = DEFAULT_REQUEST_TIMEOUT,
+) -> dict[str, int]:
+    KIMI_DIR.mkdir(parents=True, exist_ok=True)
+    saved = skipped = pending = failed = 0
+    for arxiv_id in arxiv_ids:
+        path = kimi_cache_path(arxiv_id)
+        if path.exists() and not force:
+            skipped += 1
+            continue
+        if fetch_kimi_progress(arxiv_id, timeout=timeout) != "1":
+            pending += 1
+            continue
+        html_text = fetch_kimi_faq_html(arxiv_id, timeout=timeout)
+        if not html_text:
+            failed += 1
+            continue
+        path.write_text(html_text, encoding="utf-8", newline="\n")
+        saved += 1
+    return {"saved": saved, "skipped": skipped, "pending": pending, "failed": failed}
+
+
+def collect_arxiv_ids_from_news_dir(days_filter: set[str] | None = None) -> list[str]:
+    ids: list[str] = []
+    seen: set[str] = set()
+    for path in sorted(NEWS_DIR.glob("*.md")):
+        day_match = re.fullmatch(r"(\d{4}-\d{2}-\d{2})\.md", path.name)
+        if days_filter and (not day_match or day_match.group(1) not in days_filter):
+            continue
+        _, items = parse_news_markdown(path.read_text(encoding="utf-8"), day_match.group(1) if day_match else "1970-01-01")
+        for arxiv_id in arxiv_ids_from_news_items(items):
+            if arxiv_id not in seen:
+                seen.add(arxiv_id)
+                ids.append(arxiv_id)
+    return ids
+
+
 def fetch_text(url: str, timeout: int = DEFAULT_REQUEST_TIMEOUT, deadline: float | None = None) -> str:
     ensure_within_deadline(deadline)
     request = urllib.request.Request(url, headers={"User-Agent": DEFAULT_USER_AGENT})
@@ -183,14 +301,35 @@ def parse_target_date(raw: str | None) -> str:
         raise CliError(f"无效日期: {raw!r}，请使用 YYYY-MM-DD") from exc
 
 
+def candidate_dedupe_key(item: Candidate) -> str:
+    arxiv_id = extract_arxiv_id(item.url)
+    if arxiv_id:
+        return f"arxiv:{arxiv_id}"
+    return item.url.rstrip("/")
+
+
+def merge_candidate_source(existing: Candidate, incoming: Candidate) -> None:
+    incoming_source = (incoming.source or "").strip()
+    if not incoming_source:
+        return
+    existing_lower = existing.source.lower()
+    for part in re.split(r"\s*/\s*", incoming_source):
+        piece = part.strip()
+        if piece and piece.lower() not in existing_lower:
+            existing.source = f"{existing.source} / {piece}"
+            existing_lower = existing.source.lower()
+
+
 def dedupe_candidates(candidates: Iterable[Candidate]) -> list[Candidate]:
-    seen: set[str] = set()
+    seen: dict[str, Candidate] = {}
     items: list[Candidate] = []
     for item in candidates:
-        key = item.url.rstrip("/")
-        if key in seen:
+        key = candidate_dedupe_key(item)
+        existing = seen.get(key)
+        if existing is not None:
+            merge_candidate_source(existing, item)
             continue
-        seen.add(key)
+        seen[key] = item
         items.append(item)
     return items
 
@@ -560,6 +699,63 @@ def collect_arxiv(
     return results[:max_items]
 
 
+def collect_papers_cool(
+    date_str: str,
+    *,
+    timeout: int = DEFAULT_REQUEST_TIMEOUT,
+    deadline: float | None = None,
+    max_items: int = 18,
+) -> list[Candidate]:
+    results: list[Candidate] = []
+    seen_ids: set[str] = set()
+
+    for category_name, index_url in PAPERS_COOL_CATEGORIES:
+        listing_url = f"{index_url}?date={date_str}"
+        try:
+            raw = fetch_text(listing_url, timeout=timeout, deadline=deadline)
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
+            continue
+
+        date_label = re.search(r'class="date"[^>]*>(.*?)</a>', raw)
+        listed_date = clean_html_text(date_label.group(1)) if date_label else ""
+        if listed_date and listed_date != date_str:
+            continue
+
+        for paper_id in re.findall(r'<div id="(\d{4}\.\d{4,5})" class="panel paper"', raw):
+            if paper_id in seen_ids:
+                continue
+            title_match = re.search(
+                rf'id="title-{re.escape(paper_id)}"[^>]*>(.*?)</a>',
+                raw,
+                re.IGNORECASE | re.DOTALL,
+            )
+            summary_match = re.search(
+                rf'id="summary-{re.escape(paper_id)}"[^>]*>(.*?)</p>',
+                raw,
+                re.IGNORECASE | re.DOTALL,
+            )
+            if not title_match:
+                continue
+            title = clean_html_text(title_match.group(1))
+            summary = clean_html_text(summary_match.group(1)) if summary_match else ""
+            if arxiv_interest_score(title, summary) < 4:
+                continue
+            seen_ids.add(paper_id)
+            results.append(
+                Candidate(
+                    source=f"papers.cool ({category_name})",
+                    title=title,
+                    url=f"https://arxiv.org/abs/{paper_id}",
+                    date=date_str,
+                    summary=summary,
+                    kind="paper",
+                )
+            )
+
+    results.sort(key=lambda item: (-arxiv_interest_score(item.title, item.summary), item.title))
+    return results[:max_items]
+
+
 def collect_candidates(date_str: str, config: CollectConfig | None = None) -> list[Candidate]:
     config = config or CollectConfig()
     deadline = time.monotonic() + config.budget_seconds if config.budget_seconds > 0 else None
@@ -621,14 +817,30 @@ def collect_candidates(date_str: str, config: CollectConfig | None = None) -> li
         except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
             pass
     if deadline is None or time.monotonic() < deadline:
-        candidates.extend(
-            collect_arxiv(
-                date_str,
-                timeout=config.request_timeout,
-                deadline=deadline,
-                max_items=config.max_arxiv_items,
+        paper_candidates: list[Candidate] = []
+        try:
+            paper_candidates.extend(
+                collect_papers_cool(
+                    date_str,
+                    timeout=config.request_timeout,
+                    deadline=deadline,
+                    max_items=config.max_arxiv_items,
+                )
             )
-        )
+        except (urllib.error.URLError, TimeoutError, CollectDeadlineExceeded):
+            pass
+        if deadline is None or time.monotonic() < deadline:
+            paper_candidates.extend(
+                collect_arxiv(
+                    date_str,
+                    timeout=config.request_timeout,
+                    deadline=deadline,
+                    max_items=config.max_arxiv_items,
+                )
+            )
+        paper_candidates = dedupe_candidates(paper_candidates)
+        paper_candidates.sort(key=lambda item: (-arxiv_interest_score(item.title, item.summary), item.title))
+        candidates.extend(paper_candidates[: config.max_arxiv_items])
     return sort_candidates(dedupe_candidates(candidates))
 
 
@@ -663,7 +875,7 @@ def build_compact_prompt(date_str: str, candidates: list[Candidate]) -> str:
         "硬性约束：",
         "- 只输出纯 Markdown，不要解释、前言、代码块。",
         "- 总条数 7 到 20 条。",
-        "- 采集结果只是种子，必须补充搜索；优先开放 HTML（arXiv、官方博客、TechCrunch、Reuters）。",
+        "- 采集结果只是种子，必须补充搜索；优先开放 HTML（arXiv、papers.cool、官方博客、TechCrunch、Reuters）。",
         "- 付费墙/403 只试一次，立刻换源；不要因个别站点拒绝而声称无法搜索。",
         f"- 每条 date 必须是 {date_str}，除非正文明确说明“旧闻在当天继续发酵”的背景。",
         "- 固定分类仅允许：应用/产业、论文、基础设施、安全、生态、开源、观察。",
@@ -1030,6 +1242,12 @@ def cmd_publish(args: argparse.Namespace) -> int:
         print(f"KG 日产物数量：{len(rebuild_result['kg_payloads'])}")
     if rebuild_result.get("insight_reports"):
         print(f"洞察报告数量：{len(rebuild_result['insight_reports'])}")
+    kimi_stats = cache_kimi_for_arxiv_ids(arxiv_ids_from_news_items(items))
+    print(
+        "已缓存 Kimi 总结："
+        f"写入 {kimi_stats['saved']}，已有 {kimi_stats['skipped']}，"
+        f"未生成 {kimi_stats['pending']}，失败 {kimi_stats['failed']}"
+    )
     if errors:
         print("注意：已使用 --force 发布，以下校验问题仍然存在：")
         for error in errors:
@@ -1053,6 +1271,20 @@ def write_text_command_result(text: str, output: str | None) -> int:
         sys.stdout.write(text)
     elif sys.stdout.isatty():
         print(f"已写入 {output_path}")
+    return 0
+
+
+def cmd_kimi_fetch(args: argparse.Namespace) -> int:
+    if getattr(args, "all", False):
+        arxiv_ids = collect_arxiv_ids_from_news_dir()
+    elif args.date:
+        date_str = parse_target_date(args.date)
+        arxiv_ids = collect_arxiv_ids_from_news_dir({date_str})
+    else:
+        raise CliError("请提供 --date YYYY-MM-DD，或使用 --all")
+    stats = cache_kimi_for_arxiv_ids(arxiv_ids, force=bool(args.force), timeout=args.request_timeout)
+    print(f"目标 arXiv 编号：{len(arxiv_ids)}")
+    print(f"写入 {stats['saved']}，已有 {stats['skipped']}，papers.cool 尚未生成 {stats['pending']}，失败 {stats['failed']}")
     return 0
 
 
@@ -1222,6 +1454,13 @@ def build_parser() -> argparse.ArgumentParser:
     publish_parser.add_argument("--kg-llm-dir", help="可选：按天存放 KG LLM 抽取 JSON 的目录")
     publish_parser.add_argument("--insight-input-dir", help="可选：按天存放洞察 Agent JSON 输出的目录")
     publish_parser.set_defaults(func=cmd_publish)
+
+    kimi_parser = subparsers.add_parser("kimi-fetch", help="从 papers.cool 缓存已生成的 Kimi 论文 FAQ")
+    kimi_parser.add_argument("--date", help="目标日期，格式 YYYY-MM-DD")
+    kimi_parser.add_argument("--all", action="store_true", help="处理全部已发布新闻中的 arXiv 论文")
+    kimi_parser.add_argument("--force", action="store_true", help="覆盖已有 kimi/*.html 缓存")
+    kimi_parser.add_argument("--request-timeout", type=int, default=DEFAULT_REQUEST_TIMEOUT, help="单个网络请求超时秒数")
+    kimi_parser.set_defaults(func=cmd_kimi_fetch)
 
     kg_prompt_parser = subparsers.add_parser("kg-prompt", help="生成知识图谱抽取 prompt")
     kg_prompt_parser.add_argument("--date", required=True, help="目标日期，格式 YYYY-MM-DD")

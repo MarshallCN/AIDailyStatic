@@ -10,6 +10,9 @@
   const $source = document.getElementById('detail-source');
   const $body = document.getElementById('detail-body');
   const $origin = document.getElementById('detail-origin');
+  const $kimi = document.getElementById('detail-kimi');
+  const $kimiMeta = document.getElementById('detail-kimi-meta');
+  const $kimiBody = document.getElementById('detail-kimi-body');
   const $empty = document.getElementById('detail-empty');
   const $back = document.getElementById('detail-back');
 
@@ -94,19 +97,125 @@
     }
   }
 
-  function renderSource(item) {
-    const text = item.source || '原文链接';
-    const href = item.url || '#';
-    $origin.innerHTML = `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+  function renderSource(item, extraLinks) {
+    const links = [];
+    const originalHref = item.url || '#';
+    const originalLabel = item.source || '原文链接';
+    links.push({ label: originalLabel, href: originalHref });
+    (extraLinks || []).forEach((link) => {
+      if (!link || !link.href) return;
+      const already = links.some((entry) => entry.href.replace(/\/$/, '') === link.href.replace(/\/$/, ''));
+      if (!already) links.push(link);
+    });
+
+    $origin.innerHTML = `<ul class="detail-origin-list">${links.map((link) => `
+      <li class="detail-origin-item">
+        <span class="detail-origin-label">${escapeHtml(link.label)}</span>
+        <a href="${escapeHtml(link.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.href)}</a>
+      </li>
+    `).join('')}</ul>`;
+
+    $source.innerHTML = NewsParser.sourceMetaHtml(item);
+  }
+
+  function sanitizeFaqHtml(html) {
+    return String(html || '')
+      .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
+      .replace(/\son\w+\s*=\s*("[^"]*"|'[^']*')/gi, '');
+  }
+
+  function protectMath(markdown) {
+    const slots = [];
+    const protectedText = String(markdown || '').replace(/\$\$[\s\S]+?\$\$|\$(?!\$)[^$\n]+\$/g, (match) => {
+      const index = slots.length;
+      slots.push(match);
+      return `@@MATH${index}@@`;
+    });
+    return { protectedText, slots };
+  }
+
+  function restoreMath(html, slots) {
+    return String(html || '').replace(/@@MATH(\d+)@@/g, (_, index) => slots[Number(index)] || '');
+  }
+
+  function renderKimiMarkdown(markdown) {
+    const { protectedText, slots } = protectMath(markdown);
+    const parse = window.marked && (marked.parse || marked);
+    if (typeof parse !== 'function') {
+      return `<pre>${escapeHtml(markdown)}</pre>`;
+    }
+    return restoreMath(parse.call(marked, protectedText, { gfm: true, breaks: true }), slots);
+  }
+
+  function renderKimiFaq(raw) {
+    const wrap = document.createElement('div');
+    wrap.innerHTML = sanitizeFaqHtml(raw);
+    wrap.querySelectorAll('.faq-a').forEach((el) => {
+      if (/<a\s/i.test(el.innerHTML)) {
+        el.innerHTML = sanitizeFaqHtml(el.innerHTML);
+        return;
+      }
+      el.innerHTML = renderKimiMarkdown(el.textContent || '');
+    });
+    wrap.querySelectorAll('a').forEach((anchor) => {
+      anchor.setAttribute('target', '_blank');
+      anchor.setAttribute('rel', 'noopener noreferrer');
+    });
+    return wrap.innerHTML;
+  }
+
+  function typesetKimiMath() {
+    if (!window.MathJax) return Promise.resolve();
+    const ready = MathJax.startup && MathJax.startup.promise
+      ? MathJax.startup.promise
+      : Promise.resolve();
+    return ready.then(() => {
+      if (typeof MathJax.typesetPromise === 'function') {
+        return MathJax.typesetPromise([$kimiBody]);
+      }
+      return null;
+    });
+  }
+
+  function loadKimiSummary(item) {
+    const arxivId = NewsParser.extractArxivId(item.url, item.source, item.title, item.summary);
+    if (!arxivId || !$kimi || !$kimiBody) {
+      if ($kimi) $kimi.classList.add('hidden');
+      return;
+    }
+
+    const coolUrl = NewsParser.papersCoolUrl(arxivId);
+    const kimiUrl = `https://papers.cool/arxiv/kimi?paper=${encodeURIComponent(arxivId)}`;
+    $kimi.classList.remove('hidden');
+    $kimiMeta.innerHTML = `来自 <a href="${escapeHtml(coolUrl)}" target="_blank" rel="noopener noreferrer">papers.cool</a> 的 Kimi FAQ。`;
+    $kimiBody.innerHTML = '<p class="detail-kimi-status">正在加载 Kimi 总结…</p>';
+
+    fetch(withCacheVersion(`kimi/${arxivId}.html`))
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.text();
+      })
+      .catch(() => fetch(kimiUrl, { method: 'GET', cache: 'no-store' }).then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.text();
+      }))
+      .then((raw) => {
+        if (!/faq-q/.test(raw)) throw new Error('empty faq');
+        $kimiBody.innerHTML = renderKimiFaq(raw);
+        return typesetKimiMath();
+      })
+      .catch(() => {
+        $kimiBody.innerHTML = `<p class="detail-kimi-status">本地尚未缓存这篇 Kimi 总结。可打开 <a href="${escapeHtml(coolUrl)}" target="_blank" rel="noopener noreferrer">papers.cool</a> 点击 [Kimi]，或查看 <a href="${escapeHtml(kimiUrl)}" target="_blank" rel="noopener noreferrer">已生成的 FAQ</a>。</p>`;
+      });
   }
 
   function renderDetail(item) {
     $title.textContent = item.title || '无标题';
     $date.textContent = item.date || '-';
     $category.innerHTML = renderCategoryTags(item.category) || '<span class="tag">其他</span>';
-    $source.textContent = item.source || '未知来源';
     renderBody(item);
-    renderSource(item);
+    renderSource(item, NewsParser.extraSourceLinks(item));
+    loadKimiSummary(item);
     $empty.classList.add('hidden');
     $card.classList.remove('hidden');
   }

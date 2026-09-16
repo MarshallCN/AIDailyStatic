@@ -1,0 +1,366 @@
+<p class="faq-q"><strong>Q1</strong>: 这篇论文试图解决什么问题？</p>
+
+<div class="faq-a">
+
+该论文主要解决 **Vanilla On-Policy Distillation (OPD)** 中存在的两个相互关联的核心问题：
+
+### 1. Prompt-level 教师可靠性缺失导致错误监督被无条件采纳
+Vanilla OPD 对所有 prompt 统一施加教师模型的密集 token 级监督，其更新基于反向 KL 散度：
+$$ \hat{A}^{\text{OPD}}_{i,t} = \beta \, \text{sg}\left[ \log \pi_T(y_t^i \mid x, y_{&lt;t}^i) - \log \pi_\theta(y_t^i \mid x, y_{&lt;t}^i) \right] $$
+由于反向 KL 具有 **mode-seeking** 特性，它会将学生模型推向教师模型的高概率行为。当教师在某些 prompt 上表现出 &quot;自信但错误&quot;（confidently wrong）时，这种密集监督不仅无法被识别，反而会被放大并传播给学生，导致误导性更新。论文指出，教师的全局能力并不等同于其在每个具体 prompt 上的局部可靠性，而现有方法（如基于熵或师生似然一致性的分布代理）只能衡量不确定性或分布兼容性，**不能直接验证结果的正确性**。
+
+### 2. 异步 OPD 部署中教师节点的计算资源严重闲置
+在典型的异步 OPD 训练流程中，学生节点负责自回归生成 rollout，而冻结的教师节点仅对已生成的 token 进行前向评分（forward evaluation）。由于评分计算量远小于自回归解码，且必须等待学生 batch 就绪后才能开始，教师节点在大部分训练周期内处于空闲状态。论文测量显示，在 4B 模型的单次域训练中，教师节点平均 GPU 利用率仅为 **9.8%**，且在 **59%** 的测量时间内利用率低于 5%，造成大量算力浪费。
+
+---
+
+### 论文提出的解决思路
+针对上述问题，论文提出了 **Teacher-Gated On-Policy Distillation (TGOPD)**，其核心原则是：
+- **先验证，后蒸馏**：在接纳密集监督之前，于 prompt 层面通过 verifier 评分的教师探针（teacher probes）估计可靠性 $q_T(x)$；
+- **路由而非混合**：仅当可靠性检查通过（如 $q_T(x) \geq \tau$）时使用密集 OPD；否则完全改用 verifier-grounded GRPO，避免错误信号的干扰；
+- **复用闲置算力**：将教师探针的生成与异步训练循环中教师的空闲窗口重叠，从而将教师节点利用率从 9.8% 提升至 78.9%，在改善训练信号的同时减少计算浪费。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q2</strong>: 有哪些相关研究？</p>
+
+<div class="faq-a">
+
+根据论文第 5 节及相关章节的梳理，现有研究可归纳为以下四个方向：
+
+---
+
+### 1. On-Policy Distillation (OPD) 与多教师框架
+
+**基础 OPD 方法**。早期工作提出了通过 reverse-KL 进行 token 级监督的框架：
+$$ \hat{A}^{\text{OPD}}_{i,t} = \beta \, \text{sg}\left[ \log \pi_T(y_t^i \mid x, y_{&lt;t}^i) - \log \pi_\theta(y_t^i \mid x, y_{&lt;t}^i) \right] $$
+代表性工作包括 MiniLLM [5]、Agarwal 等人提出的从自生成错误中学习的 OPD 框架 [1]，以及 Thinking Machines Lab 的 OPD 系统实现 [23]。研究表明，这种密集反馈相比单条轨迹级奖励可显著提升样本效率 [23]。
+
+**多教师 OPD**。为整合多领域能力，Mimo-v2-flash [14]、MOPD [15] 和 D3-MOPD [22] 等框架将每个 prompt 路由到对应的领域专家教师，但仍无条件地使用被选中教师的密集 token 级奖励，未在 prompt 层面验证该教师的可靠性。
+
+**OPD 的失败模式分析**。近期研究指出教师信号的有用性因实例而异：当教师知识对学生不可局部利用时 [9]、学生前缀偏离教师支持状态时 [4]，或教师过强导致负迁移时 [10]，OPD 可能失效。这些工作为实例级教师选择提供了动机，但未通过重复采样的 verifier 评分来估计 prompt 级可靠性。
+
+---
+
+### 2. 基于分布信号的可靠性感知蒸馏
+
+该方向利用模型分布自身的统计量来调节监督强度，**不依赖外部 verifier 的结果验证**：
+
+- **熵感知方法**。EOPD [6] 在高熵教师 token 处引入 forward KL，以应对不确定性。PW-OPSD [12] 进一步指出，高教师熵可能同时反映&quot;非可行不确定性&quot;与&quot;良性解多样性&quot;，二者难以仅凭熵区分。
+- **信任区域与解码一致性**。TrOPD [24] 基于师生解码一致性定义 token 级信任区域：区域内使用 reverse KL，区域外使用 forward KL 及教师前缀 off-policy 指导。
+- **稳定性与兼容性优化**。REOPOLD [7] 通过混合裁剪和学生熵采样稳定隐式 token 奖励；REOPD [21] 在无外部 verifier 时，从批次级兼容性信号外推 token 奖励。ESR [29] 发现 off-policy 教师指导的位置依赖性退化无法完全由 KL 或熵解释。
+- **内部一致性代理**。GATES [20] 在无外部评分器时，利用多条采样 tutor 轨迹之间的一致性作为轨迹级可靠性代理。
+
+这些方法的共同局限在于：它们能量化不确定性、分布不匹配或优化风险，但**无法直接区分同等自信的正确与错误答案**。
+
+---
+
+### 3. 基于结果证据的可靠性感知蒸馏
+
+该方向显式引入外部反馈（如 verifier、环境奖励）来调控监督：
+
+- **轨迹级门控**。RG-OPD [2] 仅在 verifier 反馈与师生似然差距一致时保留轨迹级蒸馏，不一致的轨迹被整体丢弃。
+- **方向-幅度分解**。RLSD [26] 用环境正确性决定更新方向，同时用（自）蒸馏调节更新幅度。
+- **分支/候选评估**。SPOT [16] 在更细粒度上评估教师提出的候选分支：通过 verifier 评分的学生延续来校准局部蒸馏目标。
+- **训练前数据验证**。RAFT [3]、基于自训练的方法 [18] 以及 Speculative Knowledge Distillation [25] 等则在训练前对静态响应或 token 进行验证与筛选。
+
+---
+
+### 4. TGOPD 与现有工作的区别定位
+
+与上述研究相比，TGOPD 的核心差异体现在**验证粒度**与**决策时机**：
+
+| 维度 | 现有代表性工作 | TGOPD (本文) |
+|------|----------------|--------------|
+| **验证对象** | 单个 token [6, 24]、单个轨迹 [2]、候选分支 [16] | 重复完整教师 rollout 的聚合结果 |
+| **决策层级** | token 级或轨迹级混合/裁剪 | prompt 级硬路由（二选一） |
+| **信号关系** | 混合或加权两种监督 [26] | OPD 与 GRPO **互斥**，从不叠加 |
+| **可靠性定义** | 分布不确定性或轨迹一致性 | Verifier 通过的期望奖励 $R_T(x) = \mathbb{E}_{y\sim\pi_T}[r(x,y)]$ |
+
+简言之，现有方法或在微观层面混合信号，或依赖分布代理推断可靠性；TGOPD 则在宏观 prompt 层面通过少量 verifier 评分探针完成**结果正确性的直接验证**，并据此在密集 OPD 与 verifier-grounded GRPO 之间进行排他性路由。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q3</strong>: 论文如何解决这个问题？</p>
+
+<div class="faq-a">
+
+论文通过 **Teacher-Gated On-Policy Distillation (TGOPD)** 解决该问题，其核心原则是**在 prompt 级别先验证教师可靠性，再决定是否接纳密集监督**。具体实现分为三个层次：
+
+---
+
+### 1. Prompt 级可靠性估计：Verifier-Scored 教师探针
+
+TGOPD 将教师可靠性定义为特定 prompt 上的期望验证器奖励：
+$$ R_T(x) = \mathbb{E}_{y\sim\pi_T(\cdot|x)} \left[ r(x, y) \right] \in [0, 1] $$
+即教师采样输出通过 verifier 的概率。由于该期望无闭式解，TGOPD 令冻结教师对当前 prompt 独立生成 $K_T$ 条探针 rollout $\{\hat{y}_k\}_{k=1}^{K_T} \sim \pi_T(\cdot|x)$，用同样的 verifier 评分后得到经验通过率：
+$$ q_T(x) = \frac{1}{K_T} \sum_{k=1}^{K_T} r(x, \hat{y}_k) $$
+该估计量无偏，且直接基于任务结果而非教师自置信度或分布熵。主实验取 $K_T = 3$。
+
+---
+
+### 2. 硬门控与监督路由：二选一而非混合
+
+基于估计量 $q_T(x)$ 与阈值 $\tau \in (0,1]$（主实验取 $\tau = 2/3$），定义硬门控：
+$$ g(x) = \mathbb{1}\left[ q_T(x) \geq \tau \right] \in \{0, 1\} $$
+
+门控决定每个 prompt 的监督信号：
+
+- **门控打开**（$g(x)=1$）：教师可靠性达标，使用密集 token 级 OPD 优势：
+  $$ \hat{A}^{\text{OPD}}_{i,t} = \beta \, \text{sg}\left[ \log \pi_T(y_t^i \mid x, y_{&lt;t}^i) - \log \pi_\theta(y_t^i \mid x, y_{&lt;t}^i) \right] $$
+
+- **门控关闭**（$g(x)=0$）：教师监督被**完全撤回**，改用 verifier-grounded GRPO 作为 fallback：
+  $$ \hat{A}^{\text{GRPO}}_i = r(x, y_i) - \frac{1}{G}\sum_{j=1}^{G} r(x, y_j), \quad \hat{A}^{\text{GRPO}}_{i,t} = \hat{A}^{\text{GRPO}}_i \,\, \forall t $$
+
+最终 per-token 优势为二者之**互斥选择**：
+$$ \hat{A}^{\text{TGOPD}}_{i,t} = g(x) \, \hat{A}^{\text{OPD}}_{i,t} + (1 - g(x)) \, \hat{A}^{\text{GRPO}}_{i,t} $$
+
+该式是**选择器而非插值**：同一 prompt 上 OPD 与 GRPO 绝不同时出现。这避免了不同密度、不同来源的信号在单条轨迹内纠缠。门控关闭时，若学生 rollout 组内奖励无差异，GRPO 中心化优势为零，该 prompt 不产生更新。
+
+上述优势进入标准 PPO-clip 策略梯度目标：
+$$ L^{\text{TGOPD}}(\theta) = -\mathbb{E}_{x\sim\mathcal{D},\{y_i\}\sim\pi_{\text{old}}} \left[ \frac{1}{\sum_i |y_i|} \sum_{i=1}^{G} \sum_{t=1}^{|y_i|} \min\left( \rho_{i,t}(\theta) \hat{A}^{\text{TGOPD}}_{i,t}, \, \text{clip}(\rho_{i,t}(\theta), 1-\epsilon, 1+\epsilon) \hat{A}^{\text{TGOPD}}_{i,t} \right) \right] $$
+其中 $\rho_{i,t}(\theta) = \pi_\theta(y_t^i|x,y_{&lt;t}^i) / \pi_{\text{old}}(y_t^i|x,y_{&lt;t}^i)$。
+
+---
+
+### 3. 系统实现：复用异步循环中的闲置教师算力
+
+在异步 OPD 部署中，学生节点执行自回归解码，教师节点仅对已生成 token 做前向评分，且必须等待学生 batch 就绪。这导致教师节点天然存在大量空闲窗口（基线利用率不足 10%）。
+
+TGOPD 将探针生成与学生 rollout **并发执行**：
+- 在每个训练周期的起始，教师节点在等待学生 batch 的同时生成 $K_T$ 条探针；
+- 探针计算主要占用原本闲置的教师容量；
+- 评分前向 pass 仍对所有 prompt 执行（避免数据依赖的分支开销），但仅用于门控已打开的 prompt。
+
+实测结果表明，此举将教师节点 GPU 利用率从 **9.8%** 提升至 **78.9%**（4B 单次域），集群平均利用率从 51.5% 提升至 69.5%，而端到端 wall-clock 开销有限（35B 代码任务上平均步时增加 5.9%）。
+
+---
+
+### 4. 关键设计取舍
+
+- **Prompt 级粒度**：整条轨迹统一接受 OPD 或 GRPO，避免 token 级混合带来的有效监督依赖于任意插值权重的问题。
+- **Verifier  grounded**：以实际结果正确性 $r(x,y)$ 作为可靠性标准，而非教师置信度或分布熵等代理指标。
+- **保守撤回**：仅在审计失败的 prompt 上撤回教师信号，通过审计的 prompt 上保留完整 OPD 信号的方向与幅度。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q4</strong>: 论文做了哪些实验？</p>
+
+<div class="faq-a">
+
+论文的实验围绕 **单领域蒸馏、多领域扩展、计算效率验证** 以及 **门控机制消融** 展开，具体如下：
+
+---
+
+### 1. 实验设置
+
+- **模型规模**：在 4B（Qwen3.5-4B）与 35B（Qwen3.6-35B-A3B，MoE，3B 激活参数）两种学生规模上评估。
+- **领域与教师**：数学（MATH）、代码（CODE）、指令遵循（IF）三个独立领域。每个领域使用经 GRPO 微调后冻结的领域专家作为教师。
+- **基线方法**：
+  - Vanilla OPD（均匀应用密集 token 级监督）
+  - TrOPD（基于信任区域的 token 级自适应蒸馏）
+  - RG-OPD（仅在 verifier 与师生似然差距一致时保留轨迹级蒸馏）
+  - RLSD-style（verifier 决定更新方向，外部教师仅调节幅度）
+- **训练数据**：数学使用 DAPO-Math-17K；代码使用 CodeI/O 的 input–output 预测任务；IF 使用过滤后的 Nemotron-Cascade 2 数据。
+- **评估基准**：
+  - 数学：AIME 2025、AIME 2026（64 次采样平均）、HMMT-Feb 2025（32 次采样平均）
+  - 代码：LiveCodeBench（code generation，6 次采样 pass@1）、OJBench（C++/Python 总体聚合）
+  - IF：IFBench、IFEval
+
+---
+
+### 2. 主实验：单领域蒸馏结果
+
+在 6 个“领域 × 规模”设置中，TGOPD 全面优于 Vanilla OPD：
+
+- **代码领域增益最大**（4B 平均 +3.0，35B 平均 +2.9），与教师置信度无法区分代码 prompt 可靠性的诊断一致（AUROC 仅 0.51）。
+- **35B 代码**：所有对比蒸馏方法（Vanilla OPD、TrOPD、RG-OPD、RLSD-style）均出现**负迁移**（学生表现低于未训练基础模型）；唯有 TGOPD 实现正迁移，并在 LiveCodeBench 与 OJBench 上**超过教师本身**。
+- **4B 代码**：Vanilla OPD 仅关闭了基础模型到教师差距的 21%，而 TGOPD 关闭了 55%。
+- **RLSD-style 失效**：该基线在所有 prompt 上统一削弱教师作用，导致 14 个 in-domain 列中有 8 列低于未训练基础模型，验证了“仅在审计失败 prompt 上撤回信号”的必要性。
+
+---
+
+### 3. 扩展实验：多领域 OPD（MOPD）
+
+将 TGOPD 应用于 Multi-domain OPD（MOPD），单一学生同时学习数学、代码、IF，prompt 按领域路由至对应专家教师：
+
+- **4B**：7-benchmark 平均从 53.40 提升至 54.54（+1.14），7 列中赢 6 列。
+- **35B**：平均从 60.99 提升至 61.94（+0.95），7 列中赢 5 列。
+- 最大单列增益出现在 AIME 2026（4B +3.85）、IFBench（4B +2.94）与 OJBench（4B +0.87，35B +4.31）。
+
+---
+
+### 4. 计算效率：回收闲置教师容量
+
+在 4 种配置（4B/35B × 单领域/多领域）下测量 GPU 利用率与端到端开销：
+
+- **教师节点利用率**：
+  - 基线 Vanilla OPD：均值 5.0%–9.8%，idle（&lt;5% 利用率）占比 57%–78%。
+  - TGOPD：均值提升至 57.7%–82.8%，idle 占比降至 0%–2%。
+- **集群平均利用率**：
+  - 4B 单领域：51.5% → 69.5%（+18.0）
+  - 35B 单领域：44.5% → 56.3%（+11.8）
+  - 4B 多领域：40.8% → 53.5%（+12.7）
+  - 35B 多领域：42.9% → 51.5%（+8.6）
+- **资源争用**：Rollout 节点利用率在 Vanilla 与 TGOPD 间变化均在 ±2% 正常波动内，无持续争用。
+- **端到端开销**：35B CodeIO 对齐测量显示，TGOPD 平均步时增加 5.9%，decode 吞吐量变化 &lt;0.1%，表明探针主要复用原本闲置的算力。
+
+---
+
+### 5. 消融实验一：门控阈值 $\tau$
+
+固定探针数 $K_T = 5$，在 Qwen3.5-4B 数学域上扫描 $\tau \in \{1/5, 2/5, 3/5, 4/5, 5/5\}$（训练 99 步）：
+
+- 结果呈**倒 U 型**：
+  - $\tau = 3/5$ 时三列 benchmark（AIME 2025/2026、HMMT-Feb）均达峰值，显著优于 Vanilla OPD。
+  - $\tau \leq 2/5$ 时过滤不足，仍纳入大量低可靠性信号。
+  - $\tau \geq 4/5$ 时过度严格，HMMT-Feb 在 $\tau = 5/5$ 时甚至低于 Vanilla OPD 基线。
+- 最优解位于多数通过准则附近，与主实验默认的 $K_T=3, \tau=2/3$ 一致，说明**粗粒度可靠性决策已足够**。
+
+---
+
+### 6. 消融实验二：门控关闭后的更新策略
+
+在相同门控（$K_T=3, \tau=2/3$）下，比较门控关闭 prompt 的两种处理方式：
+
+- **GRPO fallback**（默认）：使用 verifier-grounded GRPO 更新。
+- **Mask only**：仅屏蔽 OPD 信号，该 prompt 完全不参与梯度更新。
+
+结果：
+- **单领域数学**：两种策略均优于 Vanilla OPD；GRPO fallback 平均略优（4B +1.47 vs +1.32；35B +1.24 vs +0.64）。
+- **多领域训练**：
+  - 4B：Mask only 更强（+1.57 vs +1.14）。
+  - 35B：GRPO fallback 更强（+0.95 vs +0.79）。
+- 核心结论：**阻断错误教师信号本身贡献了约 90% 的增益**，fallback 替代策略提供额外较小收益；论文最终采用 fallback 作为默认策略。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q5</strong>: 有什么可以进一步探索的点？</p>
+
+<div class="faq-a">
+
+基于论文的局限性与实验发现，以下方向值得进一步探索：
+
+---
+
+### 1. 开放端任务的可扩展验证机制
+当前 TGOPD 依赖二元自动验证器（unit tests、rule-based judge）。对于缺乏明确验证程序的开放端任务（创意写作、开放式问答、复杂多轮对话），直接估计 $R_T(x) = \mathbb{E}_{y\sim\pi_T}[r(x,y)]$ 变得不可行。未来可探索：
+- **基于模型的结果验证**：利用更强或专门训练的评判模型（judge model）作为 verifier 的替代，但需解决评判模型自身的可靠性偏差。
+- **无验证器的一致性代理**：在完全无外部反馈时，通过教师多次采样间的语义一致性或学生-教师答案分布匹配，间接推断结果可靠性，从而将 TGOPD 的思路外推至无 ground-truth 的领域。
+
+---
+
+### 2. 超越二元路由：不确定性感知的软门控
+TGOPD 采用硬门控 $g(x) \in \{0,1\}$，以阈值 $\tau$ 进行二元切分。虽然实验显示粗粒度决策已足够，但更细粒度的门控可能带来进一步收益：
+- **概率化或连续门控**：将 $g(x)$ 松弛为 $[0,1]$ 内的连续权重，依据 $q_T(x)$ 的置信度（如 $\text{Var}(q_T(x))$）动态调节 OPD 与 GRPO 的混合比例，而非互斥选择。
+- **自适应阈值**：根据训练进程、领域特性或学生当前能力动态调整 $\tau$。例如，早期训练放宽门控以利用教师信号，后期收紧以减少错误传播；或按领域分别设置 $\tau_{\text{dom}}$。
+
+---
+
+### 3. 门控失败后的监督策略精细化
+消融实验（§4.6）表明，单纯屏蔽（mask only）不可靠教师信号已贡献约 90% 的增益，而 GRPO fallback 提供边际额外收益，且最优策略随模型规模与领域变化。深入方向包括：
+- **条件性 fallback**：区分门控关闭 prompt 上的学生 rollout 奖励分布——当组内全对或全错时，GRPO 中心化优势为零，此时 mask only 与 fallback 等价；当组内存在质量差异时，GRPO 可提供相对信号。未来应显式报告这种 breakdown，并研究**按领域选择关闭门控后的策略**（如代码领域使用 verifier-grounded GRPO，数学领域采用 mask only）。
+- **学生自蒸馏或迭代修正**：在教师不可信时，不直接回退到稀疏 GRPO，而是让学生基于自身多次采样的一致性生成自监督信号。
+
+---
+
+### 4. 动态探针预算 $K_T$ 的分配
+论文固定 $K_T = 3$（主实验）或 $K_T = 5$（消融），并发现多数通过准则已足够。但统一预算可能非最优：
+- **基于先验难度的自适应采样**：对模型已知困难（如学生早期训练损失高或历史通过率低的 prompt 子集）增加 $K_T$，对简单 prompt 减少探针数以降低开销。
+- **序贯检验与早停**：将探针生成视为序贯决策过程，当累计通过/失败次数已能高置信度确定 $q_T(x)$ 相对于 $\tau$ 的位置时，提前终止探针生成，进一步压缩 wall-clock 成本。
+
+---
+
+### 5. 多教师系统中的层级可靠性路由
+TGOPD 已扩展至多领域 OPD（MOPD），但当前仅在“领域选定后的教师”上做可靠性审计。更高层次的路由可探索：
+- **跨教师竞争门控**：当多个教师可能回答同一 prompt 时（如通用教师与领域专家并存），不仅审计被选教师的可靠性，还将其与候选教师集合的探针表现对比，动态选择最可靠的教师进行蒸馏。
+- **异构能力集成**：研究不同能力谱系的教师（如强推理但弱代码，反之亦然）组合时，TGOPD 门控如何影响学生的能力边界与负迁移抑制。
+
+---
+
+### 6. 教师-学生能力差距与理论刻画
+论文观察到教师可能在某些 prompt 上“自信但错误”，且反向 KL 会放大此类错误。理论层面可深化：
+- **模式寻求风险的定量边界**：在已知教师可靠性分布 $P(R_T(x))$ 的条件下，推导 Vanilla OPD 与 TGOPD 的期望错误传播上界，量化门控在何种分布假设下带来最大收益。
+- **局部可学习性（local exploitability）的在线诊断**：除 aggregate pass rate $q_T(x)$ 外，结合学生当前策略 $\pi_\theta$ 与教师的分布距离（如 $\text{KL}(\pi_\theta \| \pi_T)$ 在 prompt 上的局部值），判断教师知识是否处于学生当前能力可吸收的范围内，避免“过强教师导致负迁移”。
+
+---
+
+### 7. 系统层面的完全 wall-clock 中性化
+虽然 TGOPD 大幅提升了教师节点利用率（9.8% → 78.9%），但 35B 实验仍存在 5.9% 的端到端步时增长。可探索：
+- **更激进的流水线重叠**：将探针生成与上一次训练步的回传重叠，或利用多流推理在单节点上并发服务探针与评分请求。
+- **探针缓存与重用**：当训练数据存在重复或相似 prompt 时，缓存历史探针结果以减少冗余解码；但需注意学生分布漂移导致的非平稳性。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q6</strong>: 总结一下论文的主要内容</p>
+
+<div class="faq-a">
+
+该论文提出了 **Teacher-Gated On-Policy Distillation (TGOPD)**，一种在策略蒸馏框架下基于 prompt 级教师可靠性验证的自适应监督方法。
+
+### 1. 研究背景与核心问题
+
+On-policy distillation (OPD) 通过 reverse-KL 散度将强教师的密集 token 级监督施加于学生自身的 rollout 上，相比稀疏的轨迹级奖励具有更高的样本效率。然而，Vanilla OPD 存在两个结构性缺陷：
+
+- **无条件信任教师信号**：reverse-KL 具有 mode-seeking 特性，会促使学生模仿教师的高概率行为。当教师在某些 prompt 上表现出&quot;自信但错误&quot;（confidently wrong）时，这种密集监督会被无条件接纳并放大，导致误导性梯度更新。分布层面的代理指标（如熵、师生似然一致性）无法直接验证结果正确性。
+- **教师节点算力严重闲置**：在异步训练流水线中，教师仅对已生成的 token 执行前向评分，其计算量远小于学生的自回归解码，导致教师节点在大部分周期内空闲（实测平均 GPU 利用率不足 10%）。
+
+### 2. 方法：TGOPD
+
+论文核心原则是 **&quot;先验证，后蒸馏&quot;**（Verify Before You Distill），在 prompt 层面检验教师可靠性，再决定是否接纳其密集监督。
+
+#### 2.1 可靠性估计与硬门控
+对输入 prompt $x$，冻结教师独立生成 $K_T$ 条探针 rollout $\{\hat{y}_k\}_{k=1}^{K_T} \sim \pi_T(\cdot|x)$，由 verifier 评分后得到经验通过率：
+$$ q_T(x) = \frac{1}{K_T} \sum_{k=1}^{K_T} r(x, \hat{y}_k) $$
+该估计量直接反映教师在特定 prompt 上的期望正确率，而非模型自信度。基于阈值 $\tau$ 构建硬门控：
+$$ g(x) = \mathbb{1}\left[ q_T(x) \geq \tau \right] \in \{0, 1\} $$
+
+#### 2.2 互斥监督路由
+门控决定每个 prompt 的更新方式，两种信号**绝不混合**：
+- **门控打开**（$g(x)=1$）：教师可靠性达标，使用密集 OPD 优势：
+  $$ \hat{A}^{\text{OPD}}_{i,t} = \beta \, \text{sg}\left[ \log \pi_T(y_t^i \mid x, y_{&lt;t}^i) - \log \pi_\theta(y_t^i \mid x, y_{&lt;t}^i) \right] $$
+- **门控关闭**（$g(x)=0$）：教师监督被完全撤回，改用 verifier-grounded GRPO 作为 fallback：
+  $$ \hat{A}^{\text{GRPO}}_i = r(x, y_i) - \frac{1}{G}\sum_{j=1}^{G} r(x, y_j), \quad \hat{A}^{\text{GRPO}}_{i,t} = \hat{A}^{\text{GRPO}}_i $$
+
+最终 per-token 优势为二者之排他选择：
+$$ \hat{A}^{\text{TGOPD}}_{i,t} = g(x) \, \hat{A}^{\text{OPD}}_{i,t} + (1 - g(x)) \, \hat{A}^{\text{GRPO}}_{i,t} $$
+
+#### 2.3 系统实现：复用闲置算力
+探针生成与学生 rollout 并发执行，主要占用异步流水线中教师节点原本空闲的窗口。此举将教师节点利用率从 **9.8%** 提升至 **78.9%**，在改善信号质量的同时减少了计算浪费。
+
+### 3. 实验结果
+
+论文在 4B（Qwen3.5-4B）与 35B（Qwen3.6-35B-A3B）两种规模、数学/代码/指令遵循三个领域上进行了系统验证。
+
+- **单领域蒸馏**：TGOPD 在所有 6 个领域×规模设置上均优于 Vanilla OPD。代码领域增益最大（4B 平均 +3.0，35B 平均 +2.9），这与代码任务上教师置信度几乎无法区分可靠性的诊断（AUROC 0.51）一致。在 35B 代码任务上，所有对比蒸馏方法均导致负迁移，唯有 TGOPD 实现正迁移并**超过教师本身**。
+- **多领域蒸馏（MOPD）**：将 TGOPD 应用于多教师联合训练，4B 与 35B 的七项 benchmark 平均分别提升 **+1.14** 与 **+0.95**，证明 prompt 级门控可直接扩展至多领域路由场景。
+- **计算效率**：教师节点空闲时间从 57–78% 降至 0–2%；集群平均利用率提升 8.6–18.0 个百分点；端到端 wall-clock 开销仅 5.9%。
+- **消融实验**：
+  - 阈值 $\tau$ 在多数通过准则（$\tau \approx 3/5 \sim 2/3$）附近呈现 broad optimum，表明粗粒度可靠性判断已足够。
+  - 对比门控关闭后的&quot;完全屏蔽&quot;与&quot;GRPO fallback&quot;，发现**单纯阻断错误教师信号即贡献约 90% 的性能增益**，GRPO fallback 提供额外边际收益。
+
+### 4. 结论
+
+TGOPD 通过在 prompt 层面以 verifier-scored 教师探针直接验证结果正确性，实现了对密集 OPD 监督的选择性准入。该方法有效抑制了&quot;自信但错误&quot;的教师信号传播，同时利用异步流水线中的闲置教师算力提升了整体训练效率，为可靠且高效的 on-policy 蒸馏提供了新的范式。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q7</strong>: 想要进一步了解论文</p>
+
+<div class="faq-a">
+
+以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Verify%20Before%20You%20Distill%3A%20Prompt-Level%20Teacher%20Gating%20for%20On-Policy%20Distillation，链接是 https://arxiv.org/pdf/2609.02998 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2609.02998 。请以此为基础，继续回答我后面的问题。&system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&send_immediately=true" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。
+
+</div>

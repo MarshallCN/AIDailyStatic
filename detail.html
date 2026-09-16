@@ -7,7 +7,17 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <link rel="stylesheet" href="styles.css?v=20260327-2" />
+  <link rel="stylesheet" href="styles.css?v=20260916-3" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      startup: { typeset: false }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <main class="wrap detail-wrap">
@@ -35,6 +45,12 @@
 
       <section id="detail-body" class="detail-body"></section>
 
+      <section id="detail-kimi" class="detail-kimi hidden">
+        <h2>Kimi 总结</h2>
+        <p class="detail-kimi-meta" id="detail-kimi-meta"></p>
+        <div id="detail-kimi-body" class="detail-kimi-body"></div>
+      </section>
+
       <section class="detail-origin">
         <h2>来源</h2>
         <div id="detail-origin"></div>
@@ -45,7 +61,8 @@
   </main>
 
   <script src="news/manifest.js?v=20260319"></script>
-  <script src="parse-news.js?v=20260319-1"></script>
-  <script src="detail.js?v=20260319-1"></script>
+  <script src="vendor/marked.min.js"></script>
+  <script src="parse-news.js?v=20260916-2"></script>
+  <script src="detail.js?v=20260916-4"></script>
 </body>
 </html>

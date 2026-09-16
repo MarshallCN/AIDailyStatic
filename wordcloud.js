@@ -202,7 +202,7 @@
               <h4><a href="${AnalysisUtils.buildDetailLink(item, getCurrentPage())}">${AnalysisUtils.highlightText(item.title, [termEntry.term])}</a></h4>
               <div class="meta">
                 <span>${escapeHtml(item.date)}</span>
-                <span>${escapeHtml(item.source)}</span>
+                ${NewsParser.sourceMetaHtml(item)}
                 ${item.category ? AnalysisUtils.parseCategories(item.category).map((category) => `<span class="tag">${escapeHtml(category)}</span>`).join('') : ''}
               </div>
               <p>${AnalysisUtils.highlightText(AnalysisUtils.extractSnippet(item.summary || item.detail, [termEntry.term], 150), [termEntry.term])}</p>

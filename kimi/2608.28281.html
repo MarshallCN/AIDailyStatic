@@ -1,0 +1,433 @@
+<p class="faq-q"><strong>Q1</strong>: 这篇论文试图解决什么问题？</p>
+
+<div class="faq-a">
+
+这篇论文旨在解决**如何独立、可靠地评估大语言模型作为“循环控制器”（Controller）在长程代码生成任务中的决策质量**这一核心问题。具体而言，其针对的挑战可归纳为以下几点：
+
+---
+
+### 1. **现有基准无法区分“控制器能力”与“执行器能力”**
+传统的端到端代码智能体基准测试（如 SWE-bench 等）通常评估完整的编码系统（模型 + 工具 + 控制逻辑）。在这种设定下，一次任务的成功或失败既可能源于底层编码智能体（Worker）的代码能力，也可能源于外层循环控制（Controller）的调度与决策质量。现有方法无法将这两种因素解耦，因此**无法单独衡量模型作为“运行时控制器”的优劣**。
+
+---
+
+### 2. **长程循环控制中的典型失效模式**
+在 Loop Engineering 实践中，即便底层编码智能体能力较强，外层循环仍可能在多轮交互中出现系统性失误，例如：
+- **信任过时的进度记录**，导致对任务完成状态产生误判；
+- **跳过必要的验证步骤**，使局部通过而全局要求未满足；
+- **预算分配失当**，将计算资源耗费在错误方向；
+- **过早终止**，在任务尚未达到安全提交标准时便停止运行。
+
+论文指出，这些失效并非源于 Worker 的代码编写能力不足，而是源于 Controller 对动态运行状态的解读与下一步决策失误。
+
+---
+
+### 3. **缺乏针对“模型即管理者”的标准化评估协议**
+现有工作多聚焦于最终代码补丁或完整智能体系统的评估，而缺少一种**控制变量式的协议**：固定 Worker 模型、工具链、执行环境与评估器，仅替换外层 Controller 模型，从而直接比较不同模型在“决定下一步做什么、何时验证、何时停止”上的表现。
+
+---
+
+### 解决方案：LoopArena 基准
+为应对上述问题，论文提出 **LoopArena**，其设计目标包括：
+- **将控制能力与编码能力解耦**：通过固定 Worker 与执行环境，仅评估 Controller 模型的循环决策；
+- **三级互补评估**：从低成本单点决策（Type I）、中等成本任务切片（Type II）到完整长程任务（Type III），在不同执行开销下评估控制质量；
+- **量化控制带来的成本与收益**：在保持与全任务评估高度一致的模型排序（Spearman’s $\rho = 0.9747$）的同时，将评估成本平均降低 **64.4%**。
+
+简言之，该论文试图填补“**如何科学评估模型在长程编码任务中作为外层循环控制器的能力**”这一空白，使 Loop Engineering 中的运行时控制成为可直接测量和比较的对象。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q2</strong>: 有哪些相关研究？</p>
+
+<div class="faq-a">
+
+根据论文第6节及相关章节的综述，相关研究主要分布在以下四个方向，此外还涉及LoopArena直接依赖的数据源基准：
+
+---
+
+### 1. 端到端编码智能体基准测试
+这类基准测试关注完整编码系统（模型、工具、环境、评估器）的最终产出，其评估对象是“整个智能体能否完成任务”。
+
+- **Issue修复与代码生成**：SWE-bench (Jimenez et al., 2024) 及其变体——包括 SWE-bench Verified (OpenAI, 2024)、Multi-SWE-bench (Zan et al., 2025)、SWE-Bench Pro (Deng et al., 2025)——衡量语言模型解决真实GitHub问题的能力。
+- **长程与演进任务**：FeatBench (Chen et al., 2025)、LongCLI-Bench (Feng et al., 2026)、SlopCodeBench (Orlanski et al., 2026) 和 BeyondSWE (Chen et al., 2026a) 将评估范围扩展到功能实现、长程迭代开发以及跨仓库的软件工程任务。
+- **数据质量与污染控制**：针对数据泄漏、记忆化及任务设计缺陷的研究 (Matton et al., 2024; Riddell et al., 2024; Liang et al., 2025; Zhu et al., 2025; Jain et al., 2025; Badertdinov et al., 2025) 提升了基准构建的严谨性标准。
+
+LoopArena与这类工作的核心区别在于：它将**编码执行器（Worker）固定**，使评估目标从“完整系统”转向“外层控制器的决策能力”。
+
+---
+
+### 2. 脚手架（Harness）与循环工程（Loop Engineering）
+这类研究关注编码智能体周围的工具配置、上下文策略、状态表示与控制逻辑。
+
+- **完整配置对比**：Harness-Bench (Yao et al., 2026) 和 LoopsBench (Li et al., 2026) 比较不同的“模型–脚手架”组合。
+- **可编辑与可进化脚手架**：Natural-Language Agent Harnesses (Pan et al., 2026) 使运行级策略可通过自然语言编辑；Meta-Harness (Lee et al., 2026) 与 HarnessX (Chen et al., 2026b) 从执行轨迹中修改脚手架代码或组件。
+- **管理者–执行者分离架构**：LongHorizon-Harness (Ma et al., 2026) 通过管理者–执行者–审计者循环外化任务状态管理；ManagerWorker (Liu, 2026) 研究一个模型指挥另一个模型的组织结构。
+- **工程实践概念**：Loop Engineering (Osmani, 2026; MSV, 2026) 提出围绕编码智能体设计循环以组织开发工作。
+
+LoopArena将上述“管理者–执行者分离”思想转化为可直接评估的对象：固定Worker与接口，**仅比较Controller模型**在运行时的循环控制表现。
+
+---
+
+### 3. 过程评估与反馈机制
+这类研究聚焦于交互过程中的单步质量、反馈利用与中间决策评估。
+
+- **交互式基准**：AgentBench (Liu et al., 2024)、$\tau$-bench (Yao et al., 2025)、$\tau^2$-Bench (Barres et al., 2025)、WebArena (Zhou et al., 2024) 和 MobilityBench (Song et al., 2026) 评估多轮工具使用与环境交互。
+- **过程监督与奖励**：过程级监督工作 (Lightman et al., 2024; Uesato et al., 2022; Cobbe et al., 2021) 对记录轨迹中的单步决策进行评分；后续的过程奖励基准如 Math-Shepherd (Wang et al., 2024a)、ProcessBench (Zheng et al., 2025) 和 PRMBench (Song et al., 2025) 进一步细化步骤级质量评估。
+- **仓库探索与工具使用**：SWE-Explore (Zhang et al., 2026a)、AgentAtlas (Mazaheri and Mazaheri, 2026)、TRAIL (Deshpande et al., 2025) 和 AgentProcessBench (Fan et al., 2026) 关注编码智能体的探索轨迹与工具使用过程。
+- **批评家与自我修正**：Reflexion (Shinn et al., 2023)、Self-Refine (Madaan et al., 2023)、LLM Critics (McAleese et al., 2024) 及相关研究 (Huang et al., 2024; Olausson et al., 2024) 利用反馈支持模型进行再尝试或修订。
+- **基于执行的学习与强化**：GPG (Chu et al., 2026) 通过结果反馈改进推理；Tree Search (Ji et al., 2025)
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q3</strong>: 论文如何解决这个问题？</p>
+
+<div class="faq-a">
+
+论文通过提出 **LoopArena** 基准测试框架，将“模型作为运行时控制器”的能力从完整的编码智能体系统中解耦出来，使其成为可直接测量和比较的对象。具体解决方法涵盖以下六个方面：
+
+---
+
+### 1. 核心范式：固定执行器，评估控制器
+
+LoopArena 采用**双智能体结构**，将被测模型置于 **Controller（控制器）** 角色，而底层编码工作则由一个**固定且共享的 Worker（执行器）**完成。通过固定 Worker 的模型版本、工具链、执行环境与评估器，任何任务表现的差异都可归因于 Controller 的决策质量，而非编码能力的差异。
+
+---
+
+### 2. 可复现的控制循环协议
+
+论文设计了一个严格的控制循环，确保 Controller 只能通过结构化指令影响任务进程，不能直接访问代码仓库或工具：
+
+- **内循环（Inner Loop）**：Worker 在其指定的片段内执行编码、调试和验证，遵循标准的 ReAct 循环。
+- **外循环（Outer Loop）**：每次 Worker 完成片段并交还控制权后，系统创建一个临时的 **Reporter** 代理。Reporter 使用只读工具检查工作区，生成四部分事实摘要（任务上下文、已完成工作、验证证据、遗留问题）。
+- **Evidence Packet**：系统确定性地将 Reporter 摘要及其引用的 Worker 对话封装为结构化、只读的证据包，提交给 Controller。
+- **Loop Contract**：Controller 阅读 Evidence Packet 后，输出结构化契约，决定下一步是 **advance（推进）**、**verify（验证）** 还是 **stop（停止）**。该契约被转换为 Worker 的下一条指令，或直接触发任务评估。
+
+此协议确保 Controller 的决策完全基于对运行状态的解读，而非直接操作环境。
+
+---
+
+### 3. 结构化决策接口：Evidence Packet 与 Loop Contract
+
+为消除提示工程与格式解析带来的噪声，LoopArena 对 Controller 的输入输出进行严格结构化：
+
+- **输入**：Evidence Packet 包含整体任务目标、当前状态摘要、验证证据、未解决问题、剩余预算及引用的原始 Worker 对话。
+- **输出**：Loop Contract 要求 Controller 在 `advance` 或 `verify` 时提供明确的目标、上下文、要求产出、禁止动作、完成条件、保护不变量及验收条件；在 `stop` 时需提供基于证据的终止理由。
+
+这种结构化接口使不同 Controller 模型的决策在相同信息条件下可比。
+
+---
+
+### 4. 三级互补评估设置（Type I / II / III）
+
+为在评估精度与执行成本之间取得平衡，论文设计了三种互补设置：
+
+- **Type I：Contract 选择**  
+  在冻结的控制点，Controller 接收 Evidence Packet 并从四个候选 Loop Contract 中选择最优项。正确选项通过在基准构建阶段执行四个候选并比较下游结果预先确定。评估新 Controller 仅需一次四选一响应，**无需任何 Worker 执行**，实现极低成本诊断。
+
+- **Type II：任务切片**  
+  从完整任务中选取一个连贯阶段，从预先准备的中间工作区开始评估。Controller–Worker 循环仅需完成该阶段， evaluator 检查累计到该阶段的全部要求。此设置在**保留闭环执行与评估**的同时，将平均推理成本降低 **64.4%**。
+
+- **Type III：完整任务**  
+  从原始仓库状态和任务描述开始，Controller 管理从初始调研到实现、验证、终止的完整长程运行。这是最终的端到端评估标准。
+
+三种设置形成成本–精度的连续谱：Type I 用于低成本定位单点决策缺陷，Type II 用于中等成本比较运行时控制策略，Type III 用于完整任务验证。
+
+---
+
+### 5. 严格的控制变量与对照基线
+
+为保证比较的科学性，LoopArena 在所有可执行设置中固定以下要素：
+
+- Worker 模型与配置（Qwen3.7-Plus）
+- Reporter 配置与提示模板
+- 编码工具集与运行时限
+- 任务规格、起始工作区与官方评估器
+- 控制接口（Evidence Packet 与 Loop Contract 的 Schema）
+
+此外，论文引入两个共享参考策略作为对照：
+
+- **无控制（No control）**：Worker 一次性接收任务指令后自主运行到底，无外层循环干预。
+- **固定控制（Fixed control）**：每个控制点都确定性复述原始任务目标，不做状态自适应调整。
+
+这使得 Controller 模型的自适应状态依赖决策可以与“无指导”和“机械重复目标”两种基线进行直接对比。
+
+---
+
+### 6. 经验验证：成本与排序一致性
+
+论文通过实验证明该框架的有效性：
+
+- **成本效率**：Type II 相较于其配对的 Type III，在保持可执行闭环的前提下，平均降低估计推理成本 **64.4%**。
+- **排序一致性**：在主要评估标准（Core criterion）下，Type II 与 Type III 的 Controller 排序高度一致，Spearman 秩相关系数达：
+  $$ \rho_{\text{II,III}} = 0.9747 $$
+  这表明 Type II 可作为 Type III 的可靠低成本代理。
+- **性能空间**：Type III 上最优 Controller 的严格成功率（Strict Success Rate）仅为 **24.69%**，表明长程循环控制仍有巨大提升空间；同时，固定控制在 Type III 上未能超越无控制基线，证明**状态自适应指导对完整长程任务至关重要**。
+
+通过上述设计，LoopArena 将原本内嵌于完整系统中的“循环控制能力”提取为独立、可量化、可复现的评估对象。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q4</strong>: 论文做了哪些实验？</p>
+
+<div class="faq-a">
+
+论文通过三类互补实验设置（Type I、Type II、Type III）系统评估了模型作为运行时循环控制器的能力，并辅以多维度的诊断分析。具体实验内容如下：
+
+---
+
+### 1. 实验配置
+
+#### 1.1 评估对象与基线
+- **Controller 模型**：在全部三种设置中评估了 5 个模型，包括 Qwen3.7-Plus、DeepSeek-V4-Flash-0731、GLM 5.2、GPT-5.5 和 Claude Opus 4.8。
+- **共享 Worker**：所有可执行实验（Type II 与 Type III）固定使用 **Qwen3.7-Plus** 作为 Worker，Reporter 亦采用相同配置。
+- **参考策略**：
+  - **No control（无控制）**：Worker 一次性接收任务指令后自主运行，无外层循环干预。
+  - **Fixed control（固定控制）**：每个控制点确定性复述原始任务目标，不做状态自适应调整；用于检验“单纯重复目标”是否足够。
+
+#### 1.2 执行范围与重复次数
+- **Type I**：90 道执行验证过的选择题，每题要求 Controller 从 4 个候选 Loop Contract 中选出最优项；每个 Controller 每题回答一次。
+- **Type II**：27 个任务切片（11 个来自 SCBench，16 个来自 BeyondSWE），每个 Controller 每个任务运行 $K=3$ 次。
+- **Type III**：27 个与 Type II 配对的全任务，同样每个任务运行 $K=3$ 次。
+- 参考策略（No control / Fixed control）的轨迹在每个任务上收集一次，跨所有 Controller 比较复用。
+
+---
+
+### 2. 主实验结果（Main Results）
+
+实验围绕 **Contract Accuracy（Type I）**、**Strict Success Rate（Type II/III）** 与 **估计推理成本** 三个核心指标展开，结果汇总于表 2。
+
+#### 2.1 Type I：单点 Contract 选择
+- 所有 Controller 的 **Invalid Rate 均为 0%**，所有回答均可解析为单一选项。
+- Contract Accuracy 分布：
+  - GPT-5.5：**87.78%**（最高）
+  - DeepSeek-V4-Flash-0731：**77.78%**
+  - Claude Opus 4.8：**76.67%**
+  - GLM 5.2：**74.44%**
+  - Qwen3.7-Plus：**72.22%**
+- 确定性捷径基线（如均匀随机、多数位置、最短候选等）准确率均低于 31.11%，远低于任何 Controller，表明该任务无法通过简单表面线索解决。
+
+#### 2.2 Type II：任务切片上的可执行控制
+- **Strict Success Rate (SSR)**：
+  - GPT-5.5：**51.85%**（最高）
+  - Qwen3.7-Plus / Claude Opus 4.8：**48.15%**
+  - Fixed control：**46.91%**
+  - DeepSeek-V4-Flash-0731：**45.68%**
+  - No control：**39.51%**
+  - GLM 5.2：**37.04%**
+- **平均估计推理成本**：GLM 5.2 最低（\$1.63/次），DeepSeek-V4-Flash-0731 次之（\$2.10/次），GPT-5.5（\$5.00）与 Claude Opus 4.8（\$5.87）较高。
+
+#### 2.3 Type III：完整任务上的端到端控制
+- **Strict Success Rate** 整体显著低于 Type II，表明长程全任务控制难度更高：
+  - GPT-5.5：**24.69%**（最高）
+  - Qwen3.7-Plus：**23.46%**
+  - Claude Opus 4.8：**20.99%**
+  - DeepSeek-V4-Flash-0731：**19.75%**
+  - GLM 5.2：**16.05%**
+  - Fixed control / No control：**18.52%**（两者持平）
+- **平均估计推理成本**：GLM 5.2（\$4.86）与 Qwen3.7-Plus（\$6.89）相对较低；GPT-5.5（\$18.84）与 Claude Opus 4.8（\$16.82）成本显著更高。
+
+---
+
+### 3. Type II 与 Type III 的配对比较实验
+
+为验证 Type II 是否能作为 Type III 的低成本替代，论文进行了配对一致性分析：
+
+- **成本削减**：配对 Type II 相对于 Type III 的平均估计推理成本降低 **64.4%**。
+- **排序一致性**：基于主要 Core criterion 的 Controller 排序，Type II 与 Type III 的 Spearman 秩相关系数达到：
+  $$ \rho_{\text{II,III}} = 0.9747 $$
+  在所有被评估的 5 个 Controller 中，没有任何一对在两种设置下发生严格顺序反转；仅有一对存在并列。这支持 Type II 在保持相似排序的同时显著降低评估开销。
+
+---
+
+### 4. 诊断与敏感性分析
+
+#### 4.1 输出限制与协议失败（附录 F.3）
+- 统计了 Controller 响应触及 20,480 token 输出上限的情况。在 167 次使用 DeepSeek 或 GLM 作为 Controller 的 Type II/III 评估中：
+  - GLM 5.2 在 Type III 中 **75.93%** 的评估至少发生一次输出限制，且 **20.39%** 的 Controller 调用触及上限。
+  - DeepSeek-V4-Flash-0731 的输出限制发生率显著更低（Type III 中 26.09% 的评估受影响）。
+- 这些上限命中与无效 Contract 解析被计为协议失败，纳入失败统计。
+
+#### 4.2 SCBench 评分标准敏感性（附录 F.3）
+- 对比了三种 SCBench 成功标准：
+  - **All checks**：Type II SSR 范围 28.40%–33.33%，Type III 16.05%–17.28%，$\rho = 0.1481$；
+  - **All non-error checks**：Type II 30.86%–35.80%，Type III 16.05%–17.28%，$\rho = -0.2962$；
+  - **Core checks（主标准）**：Type II 37.04%–51.85%，Type III 16.05%–24.69%，$\rho = 0.9747$。
+- 仅 Core checks 标准下，Type II 与 Type III 保持高排序一致性，验证了主标准的选择合理性。
+
+#### 4.3 运行稳定性与来源分解（附录 F.3）
+- **运行间稳定性**：统计了每个任务在 3 次重复中成功次数的分布（0/3、1/3、2/3、3/3）。多数任务要么 3 次全失败，要么 3 次全成功，表明结果具有一定稳定性，但也存在部分任务处于中间状态。
+- **来源分解**：分别统计了 SCBench 与 BeyondSWE 子集的成功率。例如，GLM 5.2 在 Type II 的 SCBench 上仅 8/33（24.2%），但在 BeyondSWE 上达 22/48（45.8%），显示出明显的来源差异。
+
+---
+
+### 5. 基准构建验证实验
+
+- **Type I 答案稳定性**：每个问题的正确选项通过在基准构建阶段从同一恢复状态执行 4 个候选 Contract，并在两个预声明的匹配重播计划（不同随机种子）下验证。只有当两个计划识别出**相同的唯一胜者**时，问题才被保留；否则被拒绝。90 个保留问题均通过此双重验证。
+- **Type II 切片有效性**：每个任务切片的起始工作区必须至少失败一个该阶段引入的要求，且源提供的完成状态必须通过该阶段所有预期要求。
+
+综上，实验体系从**静态单点决策**、**中等成本切片闭环**到**高成本全任务端到端**三个层面，配合参考策略、捷径基线、输出限制诊断与评分敏感性分析，构成了对“模型作为循环控制器”能力的系统性实证检验。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q5</strong>: 有什么可以进一步探索的点？</p>
+
+<div class="faq-a">
+
+基于论文的局限性与实验结果，以下几方面可作为后续深入探索的方向：
+
+---
+
+### 1. **架构与组织形式的扩展**
+- **多 Worker 与异构 Worker 设置**：当前 LoopArena 采用单一的 Controller–Worker 结构。可探索一个 Controller 协调多个专用 Worker（如实现、测试、审查分离），或异构 Worker（不同模型/工具链）场景下的控制策略。
+- **分层与分布式循环控制**：研究多级 Controller（例如顶层策略 Controller 与底层战术 Controller）或去中心化的智能体协作循环，而非单点集中式决策。
+- **其他软件工程领域**：将三设置框架扩展至数据科学流水线、机器学习实验管理、基础设施即代码（IaC）、文档生成与维护等需要长程迭代的任务。
+
+---
+
+### 2. **跨领域与跨任务泛化**
+- **非软件领域的 Loop Engineering**：论文指出，将 Type I/II/III 设计应用于编码之外的领域（如科学研究、商业流程自动化）需要领域特定的任务构建与可执行评估器。如何系统性地迁移该范式是一个开放问题。
+- **跨 Worker 泛化**：当前 Worker 被固定为 Qwen3.7-Plus。若更换为不同能力的 Worker（例如从 GPT-4 级降至更小模型，或特定领域微调模型），Controller 的最优策略是否会改变？Controller 能否“适应”不同 Worker 的误差模式？
+
+---
+
+### 3. **Reporter 组件的深入分析与优化**
+- **Reporter 误差传播**：Controller 的决策完全依赖 Reporter 生成的事实摘要。当前固定了 Reporter 模型，但 Reporter 的遗漏、误解或过度概括会系统性误导 Controller。可量化 Reporter 的准确率与 Controller 最终成功率之间的因果关系。
+- **多模态与交互式证据**：当前 Reporter 仅使用文本和静态只读工具。可探索允许 Reporter 运行轻量级诊断命令（但保持只读），或利用代码差异（diff）可视化等多模态信息来降低摘要失真。
+
+---
+
+### 4. **长程失败的根因与信用分配**
+- **从单点决策到端到端衰减**：实验显示 Type I Contract Accuracy 可达 **87.78%**（GPT-5.5），但对应 Type III Strict Success Rate 仅 **24.69%**。这一巨大差距表明，长程控制中存在显著的**错误累积与复合失效**机制。需要系统性分析：是早期错误无法恢复？还是中期验证缺失？抑或是终止条件过于宽松？
+- **过程级信用分配**：开发过程奖励模型（Process Reward Model）或执行轨迹上的反事实分析，定位在完整任务中对最终失败影响最大的关键控制节点。
+
+---
+
+### 5. **成本效率与推理优化**
+- **动态预算与早停策略**：当前采用固定回合/时间上限。可训练 Controller 根据任务复杂度与中间证据动态分配 Worker 预算，或在早期识别不可行路径以减少资源浪费。
+- **轻量级 Controller 设计**：GPT-5.5 与 Claude Opus 4.8 在 Type III 上成本高达 **\$18.84/run** 与 **\$16.82/run**，而 GLM 5.2 仅需 **\$4.86/run**。研究如何通过蒸馏、投机执行或分层路由，使小模型 Controller 达到接近大模型的控制效果。
+
+---
+
+### 6. **输出接口与协议效率**
+- **结构化输出的瓶颈**：实验观察到 GLM 5.2 在 Type III 中 **20.39%** 的 Controller 调用触及 20,480 token 输出上限，且超过 **75%** 的评估受此问题影响。这表明当前的 Loop Contract schema 对特定模型过于冗长。可探索更紧凑的协议语言、分层 schema 或允许 Controller 发出高层意图由下游解析为具体指令。
+- **Controller 的“工具化”**：当前 Controller 无任何工具。可研究赋予 Controller 只读查询能力（如检索历史决策、相似任务案例）是否能在不破坏评估隔离性的前提下提升决策质量。
+
+---
+
+### 7. **基于 LoopArena 的训练与强化学习**
+- **监督微调（SFT）**：利用 Type I 的 90 个执行验证问题及 Type II/III 的成功轨迹，训练专门化的 Controller 模型，使其学会在特定 Evidence Packet 下选择或生成更优的 Loop Contract。
+- **强化学习（RL）**：将 Type II/III 的可执行环境与任务评估器作为奖励信号，对 Controller 进行端到端强化学习。LoopArena 的固定 Worker 与明确控制接口为此提供了稳定的训练环境。
+- **自我对弈与数据合成**：利用强 Controller 生成合成轨迹，扩充 Type I 候选库；或通过模型自我博弈（self-play）自动发现更困难的长程控制场景。
+
+---
+
+### 8. **人机协同的混合控制**
+- **人在回路（Human-in-the-loop）的边界**：探索 Controller 在何时应请求人类确认，而非自主决策。Type I 框架可扩展为包含“咨询人类”作为第五选项，评估模型对自身不确定性的校准能力。
+- **可解释性与可控性**：提升 Controller rationale 的可解释性，使人类开发者能够理解为何选择特定下一步，进而允许对 Loop Engineering 过程进行更精细的人工审计与修正。
+
+---
+
+### 9. **更丰富的评估指标**
+- **部分成功与渐进奖励**：当前 Strict Success Rate 为二元指标。长程任务中可定义阶段性部分奖励（如完成度、代码质量、测试覆盖率增量），以更细粒度地刻画 Controller 的改进空间。
+- **鲁棒性与对抗评估**：对 Evidence Packet 注入轻微扰动（如 Reporter 摘要中的事实错误），测试 Controller 对噪声的鲁棒性，量化其抗误导能力。
+
+---
+
+### 10. **基准本身的扩充与持续更新**
+- **动态任务库**：当前 27 个全任务规模有限。建立随时间增长的动态基准，纳入更多样化的仓库规模、技术栈与任务类型（如安全修复、性能优化、重构）。
+- **自动化构造流水线**：进一步自动化 Type I 问题的挖掘、候选生成与双计划重播验证流程，降低人工审核负担，实现大规模扩展。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q6</strong>: 总结一下论文的主要内容</p>
+
+<div class="faq-a">
+
+LoopArena 是一篇提出新型基准测试框架的论文，旨在将大语言模型作为**长程编码任务的运行时循环控制器（Controller）**的能力独立出来进行系统化评估。以下是论文的核心内容：
+
+---
+
+### 1. 研究动机与核心问题
+现有编码智能体基准（如 SWE-bench 等）通常评估端到端的完整系统（模型 + 工具 + 脚手架），无法区分最终任务成败是源于底层编码智能体的能力，还是源于外层循环控制器的决策质量。随着 **Loop Engineering（循环工程）** 实践的兴起——即开发者通过设计外层循环来监控进度、分配工作、运行检查并决定下一步动作——业界迫切需要一种能够**单独评估“模型作为管理者”的决策能力**的基准。
+
+---
+
+### 2. LoopArena 的核心设计
+
+#### 双智能体架构与严格隔离
+论文采用**固定执行器、可变控制器**的范式：
+- **Worker（执行器）**：固定的编码智能体，拥有所有代码工具，负责实际的内循环（Inner Loop）编码工作。
+- **Controller（控制器）**：被评估的模型，负责外循环（Outer Loop）决策，**无任何代码工具或仓库访问权限**，只能通过结构化指令影响 Worker。
+
+#### 控制循环协议
+1. Worker 完成一个工作片段后，系统创建临时的 **Reporter** 代理，基于只读工具生成事实摘要。
+2. 系统将摘要与引用的 Worker 对话打包为**结构化 Evidence Packet**。
+3. Controller 阅读 Packet 后，输出 **Loop Contract**，决定下一步是 **advance（推进）**、**verify（验证）** 还是 **stop（停止）**。
+4. 系统将该契约渲染为 Worker 的下一条指令，形成闭环。
+
+---
+
+### 3. 三级互补评估设置
+为平衡评估精度与执行成本，论文设计了三种设置：
+
+- **Type I：Contract 选择**  
+  在冻结的控制点，Controller 从四个候选 Loop Contract 中选出最优项。正确选项通过在构建阶段执行全部候选并比较下游结果预先确定。评估新模型时**无需任何 Worker 执行**，成本极低。
+
+- **Type II：任务切片**  
+  从完整任务中截取一个连贯阶段，从预先准备的中间状态开始，要求 Controller–Worker 循环完成该阶段。保留闭环执行与可执行评估，但成本显著降低。
+
+- **Type III：完整任务**  
+  从原始仓库状态和任务描述开始，评估 Controller 管理从调研、实现、验证到终止的完整长程运行。这是最终的端到端评估标准。
+
+---
+
+### 4. 主要实验结果
+
+#### 全任务控制仍极具挑战性
+在 Type III 上，5 个被测 Controller 的 **Strict Success Rate** 范围为 **16.05%–24.69%**（最佳为 GPT-5.5 的 24.69%），表明长程循环控制仍有巨大提升空间。
+
+#### 状态自适应指导至关重要
+**Fixed control**（每个控制点机械复述原始目标）在 Type II 上略高于 No control，但在 Type III 上与 **No control** 持平（均为 18.52%），未能超越模型 Controller。这说明对于完整长程任务，仅重复目标而不根据运行状态自适应调整是不够的。
+
+#### Type II 可作为 Type III 的高效代理
+- **成本**：Type II 相较配对的 Type III，平均估计推理成本降低 **64.4%**。
+- **排序一致性**：两种设置下的 Controller 排序高度一致，Spearman 秩相关系数达：
+  $$ \rho_{\text{II,III}} = 0.9747 $$
+  无严格顺序反转，表明 Type II 能在显著降低开销的同时保留全任务评估的排序信息。
+
+#### 单点决策诊断
+Type I Contract Accuracy 最高达 **87.78%**（GPT-5.5），且所有确定性捷径基线（如随机、位置偏好、长度偏好等）均低于 31%，验证了该测试需要真正的理解与推理，而非表面线索。
+
+---
+
+### 5. 贡献总结
+- **明确评估对象**：首次将“模型作为循环控制器”从完整的编码智能体系统中解耦，使其成为直接可测量、可比较的对象。
+- **受控比较协议**：通过固定 Worker、工具链、环境与评估器，确保不同 Controller 模型之间的公平比较。
+- **三级评估体系**：从低成本单点决策（Type I）、中等成本切片闭环（Type II）到高成本端到端任务（Type III），支持在不同资源约束下诊断和比较循环控制能力。
+
+---
+
+### 6. 局限与展望
+论文指出，当前工作聚焦于单仓库代码任务及 Controller–Worker 双智能体结构。未来可扩展至多 Worker 协作、其他软件工程领域乃至非编码领域，并进一步探索基于 LoopArena 的 Controller 训练与强化学习。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q7</strong>: 想要进一步了解论文</p>
+
+<div class="faq-a">
+
+以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是LoopArena%3A%20Benchmarking%20Models%20as%20Runtime%20Controllers%20for%20Loop%20Engineering，链接是 https://arxiv.org/pdf/2608.28281 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2608.28281 。请以此为基础，继续回答我后面的问题。&system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&send_immediately=true" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。
+
+</div>

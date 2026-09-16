@@ -1,0 +1,301 @@
+<p class="faq-q"><strong>Q1</strong>: 这篇论文试图解决什么问题？</p>
+
+<div class="faq-a">
+
+这篇论文旨在解决**推测解码（Speculative Decoding）及其相关生成-精炼框架中固定草稿模型（draft model）无法持续适应目标模型（target model）分布而导致的加速性能瓶颈问题**。
+
+具体而言，论文识别并试图解决以下几个关键问题：
+
+### 1. 固定草稿模型的局限性
+现有推测解码方法通常采用**离线训练**方式获得一个强力的草稿模型，并在部署阶段保持其参数固定。然而，由于草稿模型与目标模型之间存在显著的**容量差距**（capacity gap），即 $|V| \gg |W|$（目标模型参数空间远大于草稿模型），固定的草稿模型难以全面捕捉目标模型在所有知识领域上的分布特征。这导致面对多样化的用户输入时，草稿模型对目标分布 $p_v(\cdot|x)$ 的近似质量下降，进而产生**较短的接受长度**（shorter acceptance lengths）和**降低的加速比**（diminished speedup）。
+
+### 2. 验证反馈的系统性利用缺失
+推测解码的验证过程本身提供了**零成本的交互式反馈**（interactive feedback）：当目标模型验证草稿序列时，它精确地揭示了草稿在何处偏离了目标分布。现有研究（如OSD）已开始探索此类反馈，但主要存在以下局限：
+- **特定场景限制**：现有方法多为特定任务（如token级错误反馈）设计的临时性（ad-hoc）算法，难以推广到更广泛场景（如推理任务中的偏好对学习）。
+- **缺乏理论指导**：尚未建立算法更新策略与系统加速性能之间的形式化联系，无法从理论上保证持续改进的效果。
+
+### 3. 在线适应的理论与算法框架缺失
+论文提出将生成-精炼框架形式化为**在线学习（online learning）**问题，建立&quot;草稿提交-反馈提供-草稿适应&quot;（draft commits–feedback provides–draft adapts）的进化循环。为此，需要解决：
+- **理论连接缺失**：建立在线学习性能指标（动态遗憾，dynamic regret）与推测系统加速率 $\gamma$ 之间的形式化关系。论文证明加速率满足：
+$$\gamma \geq \tilde{\Omega}\left(\frac{1-1/k}{(\alpha k+1)\sqrt{\text{Reg}_T/T}}\right)$$
+其中 $\text{Reg}_T$ 为动态遗憾，$k$ 为候选长度，$\alpha$ 为推理时间比。这表明**降低遗憾可直接提升加速率**。
+- **系统性算法设计**：利用现代在线学习技术（如乐观在线学习、在线集成学习）开发能够持续利用反馈进化草稿模型的通用算法，而非针对特定场景的临时方案。
+
+### 4. 非平稳环境下的适应性挑战
+在开放世界部署中，用户输入分布可能随时间发生偏移（domain shift）。单一学习率的在线梯度下降（OGD）难以同时适应快速变化和缓慢变化的环境。论文通过**在线集成学习（online ensemble learning）**解决此问题，维护多个具有不同学习率的草稿模型，并通过元学习器（meta learner）自适应地组合它们，以应对环境非平稳性（non-stationarity）。
+
+综上所述，论文的核心贡献在于提出 **OnlineSPEC** 框架，首次将推测解码与在线学习理论统一，通过系统性地利用验证反馈持续进化草稿模型，从而突破固定模型的性能瓶颈，在保持输出质量的同时实现更高的推理加速（最高达24%的额外加速）。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q2</strong>: 有哪些相关研究？</p>
+
+<div class="faq-a">
+
+根据论文内容，相关研究主要涵盖以下三个维度：
+
+## 1. 生成-精炼框架（Generation-Refinement Framework）
+
+该框架包含推测解码、级联解码和多Token预测三类方法，其核心挑战均为如何通过轻量级模型生成候选序列并经目标模型验证/精炼以实现加速。
+
+### 推测解码（Speculative Decoding）
+- **基础方法**：基于小模型生成候选序列并经目标模型并行验证的经典工作（Leviathan et al., 2023; Chen et al., 2023）。
+- **特征级与树状结构方法**：EAGLE（Li et al., 2024b）通过特征级自回归和Token条件化起草实现高效采样；EAGLE-2（Li et al., 2024a）引入动态草稿树；EAGLE-3（Li et al., 2025）采用直接Token预测与多层特征融合。
+- **多候选与自适应方法**：Lookahead Decoding（Fu et al., 2024）利用Jacobi轨迹构建n-gram池；SpecTR（Sun et al., 2023）将草稿选择建模为最优传输问题；MCSD（Yang et al., 2024）批量采样多候选序列；BanditSpec（Hou et al., 2025）与HedgeSpec（Liu et al., 2025b）分别通过多臂老虎机与对冲算法自适应选择超参数或草稿模型。
+- **在线适应方法**：OSD（Liu et al., 2024b）通过知识蒸馏周期性更新草稿模型；ATLAS（Wang et al., 2025）采用双推测器架构适应工作负载分布；DVI（Bhansali &amp; Heck, 2025）将验证器决策转化为强化学习信号进行在线更新。
+
+### 级联解码（Cascade Decoding）
+- **模型级联**：通过置信度机制将困难输入延迟至大模型处理，如Wang et al. (2022)、Varshney &amp; Baral (2022)的模型级联策略，以及FrugalGPT（Chen et al., 2024）的自适应路由策略。
+- **与推测解码结合**：Narasimhan et al. (2025)将级联解码与推测执行结合以优化成本-质量权衡。
+
+### 多Token预测（Multi-token Prediction, MTP）
+- **并行解码头**：Medusa（Cai et al., 2024）通过额外解码头并行预测多Token；Hydra（Ankner et al., 2024）引入顺序依赖的草稿头，使每头基于前序草稿Token而非仅验证后的隐藏状态进行预测。
+- **Jacobi解码与一致性模型**：CLLM（Kou et al., 2024）利用Jacobi解码训练模型从任意中间状态一致预测不动点；DeepSeek-V3（Liu et al., 2024a）采用顺序MTP模块保持完整因果链。
+
+## 2. 在线学习（Online Learning）
+
+论文将推测解码形式化为在线学习问题，其理论基础来源于以下方向：
+
+### 在线凸优化（Online Convex Optimization）
+- **基础算法**：在线梯度下降（OGD）（Zinkevich, 2003）及其推广形式在线镜像下降（OMD）（Orabona, 2019），在凸函数上达到$O(\sqrt{T})$静态遗憾。
+- **理论基础**：Cesa-Bianchi &amp; Lugosi (2006)、Hazan (2016)建立了在线学习的理论框架。
+
+### 自适应在线学习（Adaptive Online Learning）
+- **乐观在线学习（Optimistic Online Learning）**：Rakhlin &amp; Sridharan (2013)提出利用历史信息构建预测性提示（hints）的两步更新策略；Wei &amp; Luo (2018)将其应用于对抗性老虎机；Zhao et al. (2024)将其扩展至动态遗憾最小化。
+
+### 非平稳在线学习（Non-stationary Online Learning）
+- **动态遗憾最小化**：Zhang et al. (2018)提出相对于时变比较器的动态遗憾概念；Besbes et al. (2015)研究非平稳随机优化。
+- **在线集成框架（Online Ensemble）**：Zhao et al. (2024, 2025)通过维护多学习率基学习器池与元算法自适应组合，实现对环境非平稳性的最优适应；Cutkosky (2020)与Zhang et al. (2022)采用序列集成方法聚合多基学习器输出。
+
+## 3. 强化学习中的推测解码
+
+近期研究开始探索推测解码在强化学习训练中的应用，主要关注如何通过推测解码加速策略模型的推出（rollout）阶段：
+- **ReSpec**（Chen et al., 2025）、**Spec-RL**（Liu et al., 2025a）与**SRT**（Chang et al., 2026）等研究针对策略模型在训练过程中持续演化的特性，探讨如何保持草稿模型与目标策略的对齐。
+
+论文指出，与上述工作相比，现有方法多针对特定场景（如Token级反馈、离线蒸馏、系统级流量适应）设计，缺乏统一理论框架连接算法更新与加速性能；而OnlineSPEC通过在线学习范式首次建立了动态遗憾与加速率之间的形式化联系，并提供了可系统性整合多种在线学习技术的通用框架。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q3</strong>: 论文如何解决这个问题？</p>
+
+<div class="faq-a">
+
+论文通过提出 **OnlineSPEC**（Speculative Decoding via Online Learning）框架，将推测解码形式化为在线学习问题，从而系统性地解决了固定草稿模型无法持续适应目标分布的难题。具体解决方案包括以下四个层面：
+
+### 1. 范式转换：建立&quot;草稿-目标&quot;交互的在线学习模型
+
+论文将生成-精炼过程重新建模为** rounds 迭代的在线博弈**：
+
+- **玩家（Player）**：草稿模型 $w_t \in \mathcal{W}$，在每一轮提交决策（生成草稿序列）。
+- **环境（Environment）**：目标模型 $v \in \mathcal{V}$，提供验证反馈（损失函数 $f_t$）。
+- **反馈循环**：形成&quot;草稿提交（draft commits）→反馈提供（feedback provides）→草稿适应（draft adapts）&quot;的闭环。
+
+在此框架下，验证过程提供的交互式反馈（即草稿与目标分布的偏差）被形式化为在线损失函数：
+$$
+f_t(w) = -\mathbb{E}_{x \sim p_v(\cdot|x)}[\log q_w(x|x)]
+$$
+
+### 2. 理论奠基：连接动态遗憾与加速率
+
+论文首次建立了**在线学习性能与系统加速率之间的定量关系**。定义动态遗憾（dynamic regret）为与时变比较器 $\{w_t^\star\}_{t=1}^T$ 的累积差距：
+$$
+\text{Reg}_T \triangleq \sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(w_t^\star)
+$$
+
+**定理 1（加速率界限）**：在假设1（条件分布独立同分布）下，加速率 $\gamma$ 满足：
+$$
+\gamma \geq \tilde{\Omega}\left(\frac{1-1/k}{(\alpha k+1)\sqrt{\text{Reg}_T/T}}\right)
+$$
+其中 $k$ 为候选长度，$\alpha = a/A$ 为草稿与目标模型的推理时间比。
+
+该定理表明：**降低在线算法的动态遗憾可直接提升推测解码的加速率**。这为通过在线学习技术持续改进草稿模型提供了理论依据。
+
+### 3. 算法实例化：三类在线学习技术
+
+基于 OnlineSPEC 框架，论文设计了三种具体的算法实例，分别对应不同的在线学习策略：
+
+#### (1) Online-LR：在线梯度下降与偏好学习
+针对推理任务中反馈为偏好对（preference pairs）而非Token级错误的场景，将在线梯度下降（OGD）与直接偏好优化（DPO）结合：
+$$
+f_t(w_t) = -\sum_{(x,y_w,y_l)\sim \mathcal{S}_t} \log \sigma\left(\beta L(y_w) - \beta L(y_l)\right)
+$$
+其中 $L(y) \triangleq \log\frac{\pi_{w_t}(y|x)}{\pi_{\text{ref}}(y|x)}$。该算法在路径长度 $P_T \triangleq \sum_{t=1}^T \|w_{t+1}^\star - w_t^\star\|_2$ 较小的平滑环境中，达到 $\text{Reg}_T \leq O(\sqrt{T}(1+P_T))$ 的遗憾界。
+
+#### (2) Opt-Hydra：乐观在线学习
+利用**乐观在线学习（Optimistic Online Learning）**技术，通过历史梯度构建预测性提示（hints）指导更新：
+$$
+w_t = \Pi_{\mathcal{W}}[\tilde{w}_t - \eta h_t]; \quad \tilde{w}_{t+1} = \Pi_{\mathcal{W}}[\tilde{w}_t - \eta \nabla f_t(w_t)]
+$$
+其中 $h_t = \nabla f_{t-1}(w_{t-1})$ 作为对当前梯度的预测。当提示误差 $\delta_T = \sum_{t=1}^T \|h_t - \nabla f_t(w_t)\|_2^2$ 较小时，遗憾界改进为 $\text{Reg}_T \leq O(\sqrt{1+\delta_T}(1+P_T))$，显著优于标准OGD。
+
+#### (3) Ens-Eagle：在线集成学习
+针对开放世界中输入分布可能剧烈变化（非平稳环境）的挑战，采用**在线集成框架（Online Ensemble）**：
+- **基学习器池**：维护 $N = O(\log T)$ 个具有几何级数学习率 $\{\eta_i\}_{i=1}^N$ 的草稿模型（草稿头）。
+- **元学习器**：使用Hedge算法自适应组合基学习器输出：
+  $$
+  w_t = \sum_{i=1}^N p_t^i \cdot w_t^i, \quad p_t^i \propto \exp\left(-\varepsilon \sum_{s=1}^{t-1} f_s(w_s^i)\right)
+  $$
+该算法在非平稳环境下达到 $\text{Reg}_T \leq \tilde{O}(\sqrt{T(1+P_T)})$ 的遗憾界，相比单一学习率方法对路径长度 $P_T$ 的依赖更弱。
+
+### 4. 部署优化：异步训练与持续进化
+
+为解决在线训练带来的计算开销，论文采用**异步更新策略**：
+- 草稿模型的训练更新在独立设备（如独立GPU）上异步执行，与推理流水线解耦。
+- 更新后的参数定期同步至推理服务器，确保推理服务不受训练延迟影响。
+
+通过上述设计，OnlineSPEC 实现了在7个基准测试和3个基础模型上的持续性能提升，相比离线基线最高获得 **24% 的额外加速**，同时保持输出质量不变。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q4</strong>: 论文做了哪些实验？</p>
+
+<div class="faq-a">
+
+论文在**7个基准数据集**和**3个基础模型**上进行了全面实验，旨在回答三个核心研究问题（Q1：离线方法是否会退化及反馈的必要性；Q2：OnlineSPEC能否与现有SOTA方法结合实现更好加速；Q3：超参数选择的影响）。
+
+## 1. 实验设置
+
+### 数据集
+涵盖数学推理、代码生成和金融问答等多领域：
+- **数学推理**：GSM8K、MATH、MMLU（数学子集）
+- **代码生成**：Code-Search-Python、Spider（Text-to-SQL）、MBPP
+- **金融问答**：Alpaca-finance
+
+### 目标模型（Target Models）
+- lmsys/Vicuna-7B-v1.3
+- meta-llama/Llama-2-7B-Chat  
+- Qwen/Qwen3-8B
+
+### 对比方法（Contenders）
+- **离线基线**：Vanilla SD、Hydra、EAGLE、EAGLE-3、LR（Lookahead Reasoning）
+- **在线适应基线**：OSD（Online Speculative Decoding）
+- **朴素组合**：OSD-Hydra、OSD-EAGLE、OSD-EAGLE-3、OSD-LR（直接将OSD的在线蒸馏机制应用于现有框架）
+- **本文方法**：Online-LR、Opt-Hydra、Ens-EAGLE、Ens-EAGLE-3
+
+### 评估指标
+- **加速比**（Speedup）：相对于标准自回归解码的wall-clock时间加速比
+- **平均接受长度**（AVGLEN）：草稿序列被目标模型平均接受的token数
+- **任务性能**（Accuracy/Solve Rate）：各基准上的准确率或通过@1（pass@1）指标
+
+## 2. 主要实验结果
+
+### (1) 在线梯度下降与偏好学习（Table 1 &amp; Table 2）
+- **常规推理任务**（Table 1）：在Vicuna-7B和Llama-2-7B上，OnlineSPEC的实例（Opt-Hydra、Ens-EAGLE、Ens-EAGLE-3）相比离线基线和OSD组合方法，在Spider、Code-Search-Python等数据集上实现了**最高24%的加速提升**（如Ens-EAGLE在Vicuna-7B的GSM8K上达到1.41×，而OSD-EAGLE为1.28×）。
+- **推理任务**（Table 2）：在Qwen3-8B配对Qwen3-0.6B-Base的设定下，Online-LR采用DPO风格损失，在GSM8K上达到14.71的平均接受长度（1.41×加速），显著优于离线LR（13.25）和OSD-LR（12.57），同时保持准确率（92.88% vs 91.04%）。
+
+### (2) 乐观在线学习（Figure 3a, Table 1）
+- **Opt-Hydra**在Vicuna-7B的Alpaca-Finance上达到**1.55×加速**，相比Hydra基线（1.00×）和OSD-Hydra（1.25×）有显著提升。
+- 时序演化图显示，随着在线步骤增加，TPS（每秒token数）持续上升，验证了乐观更新利用历史梯度提示的有效性。
+
+### (3) 在线集成学习（Figure 3b-c, Table 1）
+- **Ens-EAGLE**和**Ens-Eagle-3**在多个数据集上稳定优于单一学习率的OSD组合方法。例如，在Llama-2-7B的Spider上，Ens-EAGLE达到1.61×加速，而OSD-EAGLE为1.46×。
+
+### (4) 超参数分析（Table 3）
+- **学习率影响**：固定单一学习率（如OSD-Hydra使用η=0.5, 0.8, 1.0, 1.5）性能波动大，而Opt-Hydra和Ens-EAGLE通过自适应机制（乐观提示或多学习率集成）避免了手动调参的敏感性。
+- **在线步数T的影响**：随着T从1000增加到4000，Opt-Hydra的加速比从1.10×提升至1.26×，验证了理论预测（Theorem 1：加速率随T增加而提升）。
+
+### (5) 训练开销分析（Table 4）
+- 即使在**同步计算训练开销**的设定下，Ens-EAGLE-3（含训练）在Code-Search上仍达到1.07×加速，Opt-Hydra（含训练）在Alpaca-Finance上达到1.05×加速，表明效率增益超过训练成本。
+
+## 3. 附录中的额外实验
+
+论文附录提供了更详细的实验证据：
+- **详细时序演化**（Figures 4-10）：展示了所有方法在GSM8K、Spider、Code-Search、Alpaca-Finance等数据集上，平均接受长度和TPS随时间（步数t）的变化曲线，证明OnlineSPEC方法随时间持续改进。
+- **不同基础模型**：补充了Llama-2-7B-Chat上的完整对比实验（Figures 7-9），验证了方法在不同架构上的泛化性。
+
+总体而言，实验系统验证了OnlineSPEC框架的有效性：通过在线学习持续利用验证反馈，能够突破离线训练草稿模型的性能瓶颈，在保持生成质量的同时实现显著且持续的推理加速。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q5</strong>: 有什么可以进一步探索的点？</p>
+
+<div class="faq-a">
+
+基于论文内容，以下是可以进一步探索的研究方向：
+
+### 1. 组合乐观学习与集成学习
+论文在附录C.3中指出，为简化分析，Optimistic Online Learning（Opt-Hydra）与Online Ensemble Learning（Ens-Eagle）被分别独立考虑。然而，这两者可以进一步结合（如借鉴Sword++算法），在集成框架的元学习器和基学习器中同时引入乐观更新。这种组合既能利用历史梯度信息捕捉时间局部性，又能通过多模型集成对冲剧烈分布偏移，有望实现更优的动态遗憾界和加速率，但会带来额外的算法复杂度。
+
+### 2. 老虎机在线学习的深度整合
+论文提及BanditSpec和MetaSD等工作将推测解码中的超参数选择建模为多臂老虎机问题（附录C.2）。未来可在线SPEC框架内深度融合**老虎机在线学习**技术，特别是在仅能获得部分反馈（如仅观察特定查询点的损失值）的场景下，利用UCB或EXP3等算法自适应选择草稿模型或超参数配置，实现更细粒度的在线适应。
+
+### 3. 在线强化学习中的推测解码优化
+针对on-policy RL训练中策略模型持续演化导致的分布漂移问题（附录C.4），OnlineSPEC框架可进一步扩展至**强化学习推出（rollout）加速**。关键挑战在于设计能够实时适应策略模型参数更新的草稿模型在线学习机制，确保在策略梯度计算过程中保持高接受率，从而显著降低RL训练的计算瓶颈。
+
+### 4. 自适应候选长度机制
+附录C.1从理论上推导了最优候选长度 $k = \Theta\left(\frac{1}{\alpha(1-\text{Acc}_t)}\right)$ 应随草稿模型准确率 $\text{Acc}_t$ 和推理时间比 $\alpha$ 动态调整。未来工作可探索**在线自适应调整 $k$** 的实用算法，根据当前草稿模型的实时表现动态增减候选token数，而非使用固定长度，以最大化理论加速比。
+
+### 5. 非凸与非平稳环境下的理论深化
+当前理论分析基于在线凸优化假设（Assumption 2）和条件分布i.i.d.假设（Assumption 1）。未来可探索：
+- **非凸在线学习理论**：针对神经网络参数空间的非凸性，建立基于局部收敛或平稳点收敛的保证。
+- **弱化分布假设**：在更弱的序列依赖或非平稳条件下（如混合过程、对抗性环境）建立加速率界限。
+- **计算复杂度分析**：量化在线更新步骤的计算开销与推理加速收益之间的帕累托最优权衡。
+
+### 6. 多模态与跨模态生成任务
+论文实验主要集中于文本生成与推理任务。未来可将OnlineSPEC扩展至**多模态推测解码**（如语音-语言模型、视觉-语言模型），利用跨模态验证反馈（如语音编码器与文本解码器之间的对齐信号）设计相应的在线损失函数，探索模态间分布对齐的在线学习机制。
+
+### 7. 高效异步训练与模型压缩
+尽管论文提及通过异步训练缓解在线更新开销（附录B.2），但可进一步结合**模型量化、知识蒸馏剪枝或低秩适配（LoRA）**等技术，在保持草稿模型适应性的同时降低在线训练的内存与计算成本，特别适用于边缘设备或资源受限的部署环境。
+
+### 8. 元学习与终身学习视角
+将OnlineSPEC与**元学习（meta-learning）**或**终身学习（lifelong learning）**结合，使草稿模型不仅适应当前目标模型的分布，还能积累跨任务、跨领域的先验知识，实现更快速的 few-shot 适应，减少对在线样本数量的依赖。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q6</strong>: 总结一下论文的主要内容</p>
+
+<div class="faq-a">
+
+本文提出 **OnlineSPEC** 框架，旨在通过在线学习范式系统性解决推测解码（Speculative Decoding）中固定草稿模型（draft model）无法持续适应目标模型（target model）分布而导致的加速性能瓶颈问题。
+
+### 核心问题与观察
+现有推测解码方法通常离线训练草稿模型并在部署时固定其参数。由于草稿与目标模型间存在显著容量差距（$|\mathcal{V}| \gg |\mathcal{W}|$），固定模型难以全面捕捉目标分布，导致接受长度缩短与加速比下降。关键观察在于：**验证过程本身提供了零成本的交互式反馈**——目标模型在验证时精确揭示了草稿分布与目标分布的偏差，形成&quot;草稿提交–反馈提供–草稿适应&quot;的自然进化循环，这与在线学习（online learning）范式高度契合。
+
+### 理论贡献
+论文首次建立了推测系统加速率与在线学习动态遗憾（dynamic regret）之间的形式化联系。定义动态遗憾为：
+$$\text{Reg}_T \triangleq \sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(w_t^\star)$$
+其中 $f_t$ 为交叉熵损失，$w_t^\star$ 为时变最优草稿模型。在条件分布独立同分布假设下，加速率 $\gamma$ 满足：
+$$\gamma \geq \tilde{\Omega}\left(\frac{1-1/k}{(\alpha k+1)\sqrt{\text{Reg}_T/T}}\right)$$
+其中 $k$ 为候选长度，$\alpha$ 为草稿与目标模型推理时间比。该定理表明：**通过在线学习降低动态遗憾可直接提升系统加速率**，为持续利用反馈进化草稿模型提供了理论依据。
+
+### 算法框架与实例化
+基于 OnlineSPEC 框架，论文提出了三种结合现代在线学习技术的算法实例：
+
+1. **Online-LR**：针对推理任务中反馈为偏好对（preference pairs）的场景，将在线梯度下降（OGD）与直接偏好优化（DPO）结合，在路径长度 $P_T$ 较小的环境中达到 $O(\sqrt{T}(1+P_T))$ 的遗憾界。
+
+2. **Opt-Hydra**：引入**乐观在线学习（optimistic online learning）**，利用历史梯度 $\nabla f_{t-1}(w_{t-1})$ 作为预测性提示（hint）指导更新：
+   $$w_t = \Pi_{\mathcal{W}}[\tilde{w}_t - \eta h_t]; \quad \tilde{w}_{t+1} = \Pi_{\mathcal{W}}[\tilde{w}_t - \eta \nabla f_t(w_t)]$$
+   当提示误差 $\delta_T$ 较小时，遗憾界改进为 $O(\sqrt{1+\delta_T}(1+P_T))$，显著优于标准OGD。
+
+3. **Ens-Eagle**：针对开放世界中的非平稳环境（输入分布随时间偏移），采用**在线集成学习（online ensemble learning）**，维护 $N=O(\log T)$ 个具有几何级数学习率的基学习器，并通过Hedge元学习器自适应组合其输出，达到 $\tilde{O}(\sqrt{T(1+P_T)})$ 的遗憾界，有效对冲分布偏移。
+
+### 实验验证
+在涵盖数学推理（GSM8K、MATH、MMLU）、代码生成（Spider、Code-Search-Python、MBPP）和金融问答（Alpaca-finance）的7个基准数据集上，使用Vicuna-7B、Llama-2-7B和Qwen3-8B三个基础模型进行验证。结果表明：
+- 相比离线基线及朴素的OSD组合方法，OnlineSPEC方法在保持输出质量的同时，**最高实现24%的额外加速**（如Ens-EAGLE在GSM8K上达到1.41×加速，对比OSD-EAGLE的1.28×）。
+- 时序演化分析显示，随着在线步骤 $T$ 增加，系统吞吐量（TPS）持续提升，验证了持续进化的有效性。
+- 即使计入在线训练开销，方法仍保持净加速收益。
+
+### 意义
+OnlineSPEC首次将推测解码与在线学习理论统一，突破了固定草稿模型的性能瓶颈，为利用验证反馈持续优化推理加速提供了系统性的理论框架与实用算法工具包。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q7</strong>: 想要进一步了解论文</p>
+
+<div class="faq-a">
+
+以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是When%20Drafts%20Evolve%3A%20Speculative%20Decoding%20Meets%20Online%20Learning，链接是 https://arxiv.org/pdf/2603.12617 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2603.12617 。请以此为基础，继续回答我后面的问题。&system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&send_immediately=true" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。
+
+</div>

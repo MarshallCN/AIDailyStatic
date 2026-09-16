@@ -700,7 +700,7 @@
         '<div class="meta">',
         '<span>', escapeHtml(item.id), '</span>',
         '<span>', escapeHtml(item.date), '</span>',
-        '<span>', escapeHtml(item.source), '</span>',
+        NewsParser.sourceMetaHtml(item),
         AnalysisUtils.parseCategories(item.category).map(function (category) {
           return '<span class="tag">' + escapeHtml(category) + '</span>';
         }).join(''),

@@ -118,9 +118,57 @@
     }));
   }
 
+  function extractArxivId() {
+    const text = Array.prototype.slice.call(arguments).join(' ');
+    const hosted = String(text || '').match(
+      /(?:arxiv\.org\/(?:abs|pdf|html|e-print)\/|papers\.cool\/arxiv\/|huggingface\.co\/papers\/)(\d{4}\.\d{4,5})(?:v\d+)?/i
+    );
+    if (hosted) return hosted[1];
+    if (!/arxiv|papers\.cool/i.test(text)) return '';
+    const bare = String(text || '').match(/\b(\d{4}\.\d{4,5})(?:v\d+)?\b/);
+    return bare ? bare[1] : '';
+  }
+
+  function papersCoolUrl(arxivId) {
+    return arxivId ? `https://papers.cool/arxiv/${arxivId}` : '';
+  }
+
+  function extraSourceLinks(item) {
+    const record = item || {};
+    const arxivId = extractArxivId(record.url, record.source, record.title, record.summary);
+    if (!arxivId) return [];
+    if (/papers\.cool\/arxiv\//i.test(record.url || '')) return [];
+    return [{ label: 'papers.cool', href: papersCoolUrl(arxivId) }];
+  }
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function sourceMetaHtml(item) {
+    const record = item || {};
+    const extra = extraSourceLinks(record);
+    const parts = [`<span>${escapeHtml(record.source || '未知来源')}</span>`];
+    extra.forEach((link) => {
+      parts.push(
+        `<a class="source-extra-link" href="${escapeHtml(link.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`
+      );
+    });
+    return parts.join('<span class="detail-source-sep"> · </span>');
+  }
+
   global.NewsParser = {
     parseDayFromFile,
     parseNewsMarkdown,
-    normalizeItems
+    normalizeItems,
+    extractArxivId,
+    papersCoolUrl,
+    extraSourceLinks,
+    sourceMetaHtml
   };
 })(window);

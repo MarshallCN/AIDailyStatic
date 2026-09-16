@@ -24,7 +24,7 @@
 2. 优先使用一手来源：官方博客、官方新闻稿、官方文档、论文原文/arXiv、公司官网、研究机构官网。
 3. 如必须使用二手媒体，只使用高可信且通常可抓取全文的科技媒体（如 TechCrunch、Reuters、The Verge），并保持克制表述。
 4. 采集脚本结果只是种子，必须补充搜索并探索更多网站；不要因为个别页面拒绝访问就停止。
-5. 优先抓开放 HTML：arXiv abs、OpenAI/Anthropic/Hugging Face/NVIDIA 博客。Bloomberg、The Information、WSJ、NYT、FT、LinkedIn、X 默认跳过。一次 403/付费墙/Cloudflare 后立刻换源，不要重试同一主机。
+5. 优先抓开放 HTML：arXiv abs、papers.cool（cs.AI / cs.CL 列表与 `/arxiv/<id>`）、OpenAI/Anthropic/Hugging Face/NVIDIA 博客。Bloomberg、The Information、WSJ、NYT、FT、LinkedIn、X 默认跳过。一次 403/付费墙/Cloudflare 后立刻换源，不要重试同一主机。
 6. 不要编造信息，不要使用无法验证的说法；来源不可靠时宁可不收录。
 
 [三、筛选标准]
