@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-16",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "主要问题在 2026-09-16-8：把 Anthropic 的 Amodei 错误关联到 OpenAI 构成事实错误；另有若干证据不支撑的关系与事件重复切分。整体抽取密度和覆盖较好，但语义错配足以要求修订。",
+  "findings": [
+    {
+      "article_id": "2026-09-16-8",
+      "severity": "high",
+      "problem": "关系 \"Amodei --affiliated_with--> OpenAI\"（evidence \"Amodei 呼吁为前沿降速\"）是事实错误：文中的 Amodei（Dario Amodei，Anthropic 的 CEO）与 OpenAI 毫无隶属关系，原文把它与 Meta 的 Zuckerberg 并列、分别代表降速/独立评估两派立场，且证据句本身也不支撑任何隶属关系。把 Anthropic 的 CEO 挂到 OpenAI 名下会让图谱讲出相反的故事。",
+      "fix": "删除该 affiliated_with 关系。Amodei 的隶属关系原文未说明，不得凭常识补全；如需保留人物引用，仅作为降速派的表态者，不指向 OpenAI。"
+    },
+    {
+      "article_id": "2026-09-16-8",
+      "severity": "medium",
+      "problem": "关系 \"DeepMind Institute --affiliated_with--> Google DeepMind\" 的 evidence 是 \"Google DeepMind 把 AGI 定义为\"，这个证据句只说明 DeepMind 对 AGI 的定义，并不支撑研究所与 DeepMind 之间的隶属/归属关系；且 DeepMind Institute 是 Legg 与多方\"共同宣布成立\"的，用单边 affiliated_with 也不够准确。",
+      "fix": "改为反映共同成立的关系（如 DeepMind Institute --founded_by--> Shane Legg 并给出共同成立证据），或删掉归属不明的 affiliated_with；不要用与主旨无关的定义句充当证据。"
+    },
+    {
+      "article_id": "2026-09-16-4",
+      "severity": "medium",
+      "problem": "事件切分过度：第三个事件 \"Reuters 独家披露把代理恶意活动时间线提前约两个月\"（type=trend）与第一个事件 \"OpenAI 失控代理于 5 月劫持 Hugging Face 账户并侦察\" 讲的是同一事实——时间线提前约两个月就是事件一的全部内容，属于重复切分；且把媒体/报道方 Reuters 作为 trend 事件的 subject 参与者也属于事件类型误用。",
+      "fix": "删除第三个事件，其\"时间线提前两个月\"的信息已由事件一承担；不要让报道方作为独立事实事件的参与者主体，也不要为同一事实单列一个 trend 事件。"
+    },
+    {
+      "article_id": "2026-09-16-10",
+      "severity": "medium",
+      "problem": "关系 \"Cursor --uses--> AIUC-1\" 方向与语义错误：evidence \"其客户包括 Cursor...\" 只说明 Cursor 是 AIUC 的认证客户，并非 Cursor 使用 AIUC-1 标准；实际是 AIUC 用 AIUC-1 对 Cursor 这类代理产品做约 5000 项对抗测试认证。把客户说成\"使用标准的主动方\"颠倒了认证关系。",
+      "fix": "改为 \"AIUC --certifies--> Cursor\"（或 AIUC 对 Cursor 的代理做认证），evidence 用客户清单；不要保留 Cursor --uses--> AIUC-1。"
+    },
+    {
+      "article_id": "2026-09-16-3",
+      "severity": "medium",
+      "problem": "关系 \"AEMA --developed_by--> NVIDIA\" 方向正确但量纲偏颇：AEMA 是由 NVIDIA、Emerald AI、Google 三方共同成立的联盟（原文\"与 Emerald AI、Google 共同成立\"），把联盟归为 NVIDIA 单方 developed_by 会误导为 NVIDIA 独自创建。",
+      "fix": "改用体现共同创始的关系，或补上三方的共同成立关系（NVIDIA/Emerald AI/Google 均 members/founders of AEMA），并让 evidence 覆盖\"共同成立\"的事实，而非单方 developed_by。"
+    },
+    {
+      "article_id": "2026-09-16-8",
+      "severity": "medium",
+      "problem": "关系 \"Google DeepMind --subsidiary_of--> Google\" 的 evidence 是 \"Google DeepMind 联合创始人\"，该证据句不支撑子公司关系（这是行业常识，原文未提及）。整条关系依赖图谱外的背景知识而非原文证据。",
+      "fix": "要么找到原文中能支撑 Google DeepMind 隶属 Google 的表述作为证据，要么删除这条没有原文依据的关系；不要把行业常识当成已给出的事实写入 evidence。"
+    }
+  ],
+  "lessons": [
+    "判断人物隶属关系严格以原文为准，不得凭常识或行业知识补全 affiliated_with（原文未写明就删除该关系），尤其小心把 Anthropic 的 Amodei 之类误归到 OpenAI。",
+    "对多方共同成立/共建的实体（联盟、研究所、标准）不用单方 developed_by 概括，应逐方给出共同成立或成员关系。",
+    "同一事实的\"报道/披露\"不得另立为独立事件以免重复切分，报道方媒体也不应作为事实事件的参与者主体。"
+  ]
+}

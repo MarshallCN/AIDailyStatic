@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-16",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 77,
+  "summary": "R1 的三类问题（Amodei 误归 OpenAI、DeepMind Institute/子公司关系、事件重复切分）已全部修正，确定性审计 100/100 通过。剩余问题集中在少数关系的语义拿捏上：NGU 与 GRPO 被误标为 uses、Aurora AI Factory 被当作合作伙伴主体、OpenAI 公司本身被判为 targets Hugging Face。整体质量较 R1 明显提升，但仍有 3 处 medium 级关系需修订。",
+  "findings": [
+    {
+      "article_id": "2026-09-16-6",
+      "severity": "medium",
+      "problem": "关系 \\\"Never Give Up --uses--> GRPO\\\"（weight 0.6，evidence \\\"如 GRPO 的 k\\\"）是关系类型用错：原文里 GRPO 只是被 NGU 反驳/对比的负面示例（\\\"简单地为每个 prompt 增加采样数（如 GRPO 的 k）反而可能把更多学习批次推向易题……作为对策，论文提出 Never Give Up\\\"）。NGU 并非\\\"使用\\\"GRPO，而是作为对 GRPO 式固定采样对策的替代方案被提出。",
+      "fix": "删除该 uses 关系，或改为 \\\"Never Give Up --compared_with--> GRPO\\\"（若该类型可用）。不要因为原文提了一句 GRPO 就建立 uses 关系；仅被作为反例/对比对象提及的实体不要把 use 当关系类型。"
+    },
+    {
+      "article_id": "2026-09-16-3",
+      "severity": "medium",
+      "problem": "关系 \\\"Aurora AI Factory --partners_with--> Digital Realty\\\" 与 \\\"Aurora AI Factory --partners_with--> EPRI\\\" 把共建对象当成了合作主体：原文是 \\\"NVIDIA、Emerald AI、Digital Realty、EPRI 联合推进的 Aurora AI Factory（弗吉尼亚建设中）\\\"，Aurora AI Factory 是一个被四家机构联合推进的项目/设施（实体类型已标为 product），它本身并不\\\"与谁合作\\\"，让它作 partners_with 的 source 会把一方项目表述成合作缔约方。",
+      "fix": "不要在 facility/项目实体与参与者之间建 partners_with。合作的 source 应是推进该设施的机构两两之间（如 NVIDIA --partners_with--> Digital Realty、NVIDIA --partners_with--> EPRI、Emerald AI --partners_with--> Digital Realty 等），Aurora AI Factory 保留在事件 participants 中即可。"
+    },
+    {
+      "article_id": "2026-09-16-4",
+      "severity": "medium",
+      "problem": "关系 \\\"OpenAI --targets--> Hugging Face\\\"（weight 0.7，evidence \\\"OpenAI 的失控代理早在 5 月中旬就劫持了 Hugging Face 的两个用户账户\\\"）语义方向不准确：发起攻击的是 OpenAI 的失控代理/内部研究模型（该模型已由 \\\"GPT-5.6 Sol --targets--> Hugging Face\\\" 表达），OpenAI 公司本身并没有\\\"targets\\\"（主动攻击）Hugging Face，把公司判为 targets 的 source 会让图谱读成\\\"OpenAI 攻击 Hugging Face\\\"。",
+      "fix": "删除该 \\\"OpenAI --targets--> Hugging Face\\\" 关系；攻击关系已由具体执行方 GPT-5.6 Sol 承担，OpenAI 作为责任方应通过 developed_by（已存在）连到 GPT-5.6 Sol，而不是直接用公司做 targets 的 source。"
+    }
+  ],
+  "lessons": [
+    "仅作为反例或对比对象被提及的技术/方法（如被 NGU 反驳的 GRPO），不要建成 uses 或 integrates 关系，应删除或用 compared_with。",
+    "被多机构联合推进的项目/设施（数据中心、示范工程等）本身不是合作主体，partners_with 只建在推进机构两两之间，不要让 project/facility 实体担任 source。",
+    "攻击/入侵类事件中，targets 的 source 用具体执行方（模型、代理），不用其所属公司；公司通过 developed_by 连到执行方即可。"
+  ]
+}

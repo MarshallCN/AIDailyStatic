@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-16",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "抽取整体扎实、数字与证据高度吻合，但存在 4 条以上 medium 级问题：两处关系类型用错（DeepMind Institute 用 developed_by、Aurora AI Factory 误标为 product）、一篇出现证据引错的无根据实体（Google）、以及事件切分重复（8 号文两个 trend 事件重叠），因此判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-09-16-8",
+      "severity": "medium",
+      "problem": "关系 DeepMind Institute --developed_by--> Shane Legg 关系类型用错。成立机构是『被某人创立』，不是『由谁开发』，且同轮 3 号文对 AEMA 已正确使用 founded_by，此处同类场景却用了 developed_by，造成图谱类型不一致。",
+      "fix": "将关系改为 DeepMind Institute --founded_by--> Shane Legg，证据保留『他当天共同宣布成立 DeepMind Institute』。"
+    },
+    {
+      "article_id": "2026-09-16-8",
+      "severity": "medium",
+      "problem": "实体 Google（type company）被错误抽取，其 evidence 是『Google DeepMind 把 AGI 定义为』——该句只提及 Google DeepMind，并不存在独立的 Google 主体。凭空新增一个带错误证据的 Google 实体，若与 3 号文里真实的 Google 合并会误导跨文章连通。",
+      "fix": "删除独立实体 Google；本文中 AGI 定义主体应归入 Google DeepMind，或直接删去。"
+    },
+    {
+      "article_id": "2026-09-16-8",
+      "severity": "medium",
+      "problem": "事件切分重复：事件 2『Legg 警告能力不能跑在安全前面』与事件 3『减速之争中 Legg 站能力不得跑在安全前面一侧』表述同一观点（Legg 警告类似、都覆盖降速立场），被拆成两个重叠的 trend 事件，滋生冗余。",
+      "fix": "合并为单个 trend 事件，聚焦『Legg 警告能力不能跑在安全前面，并在降速之争中站在 Amodei 一侧』，ID 与参与者取并集。"
+    },
+    {
+      "article_id": "2026-09-16-3",
+      "severity": "medium",
+      "problem": "实体 Aurora AI Factory 类型误标为 product。原文明确它是弗吉尼亚建设中的数据中心/工厂（基础设施），标成 product 会让图谱误把设施当产品。",
+      "fix": "将 Aurora AI Factory 的 type 改为 infrastructure/facility（或与现有设施类一致的类型），并同步修正参与事件中的类型标注。"
+    },
+    {
+      "article_id": "2026-09-16-0",
+      "severity": "medium",
+      "problem": "关系 Claude --developed_by--> Anthropic 所引证据是『Claude 会根据任务自动调用所需能力』，仅描述能力，不支撑 developed_by 这一断言——证据存在但支撑的是另一回事。",
+      "fix": "改为引用能支撑归属的证据（如『Anthropic 于 9 月 16 日宣布把 Claude…合并』），或更换证据串。"
+    },
+    {
+      "article_id": "2026-09-16-6",
+      "severity": "medium",
+      "problem": "GRPO 类型误标为 tool（它是 RL 训练方法/采样方法，不是工具），且关系 Never Give Up --compared_with--> GRPO 过强——原文只把 GRPO 作为采样数 k 的背景参照提一句（『如 GRPO 的 k』），谈不上与 NGU 直接对比。",
+      "fix": "将 GRPO type 改为 method/algorithm；弱化关系为 references 或直接删除该 compared_with 关系，证据『如 GRPO 的 k』无法支撑对比断言。"
+    },
+    {
+      "article_id": "2026-09-16-10",
+      "severity": "medium",
+      "problem": "实体 AIUC-1 类型误标为 policy，而原文它是一套认证标准/测试框架（SOC 2 审计思路下的 AIUC-1 标准），不是政策。",
+      "fix": "将 AIUC-1 的 type 改为 standard/certification（与现有类型体系一致的类别），并同步事件中的标注。"
+    },
+    {
+      "article_id": "2026-09-16-1",
+      "severity": "low",
+      "problem": "事件『OpenAI 把 ChatGPT Ads 接入 HubSpot 与 Shopify』用了 partnership 类型，但这是产品集成接入（推出/发布的动作），不是两家公司间结成合作关系的 partnership，类型被拔高。",
+      "fix": "将该事件类型改为 integration 或 launch，材料描述保持为集成接入动作。"
+    },
+    {
+      "article_id": "2026-09-16-9",
+      "severity": "low",
+      "problem": "关系 Work at the Frontier --uses--> ChatGPT 语义牵强——论文不是『使用』ChatGPT 这个产品，而是『分析』ChatGPT 的消息数据。",
+      "fix": "改用更贴切的关系（如 analyzes / based_on），或将证据聚焦到『分析超 150 万条与工作相关的 ChatGPT 消息』。"
+    }
+  ],
+  "lessons": [
+    "成立联盟、机构、学院的新闻中，机构作为 target 使用 founded_by（谁创立了它），不要用 developed_by 兜底。",
+    "数据中心、工厂等设施主体不要标注为 product；认证标准、测试框架不要标注为 policy，先核对主体真实类别再定 type。",
+    "不要把同一主体在同一新闻中的同类观点拆成多个重复事件；主题一致的 trend 事件应合并。"
+  ]
+}
