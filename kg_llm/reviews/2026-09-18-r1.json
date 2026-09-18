@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-18",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "抽取总体扎实、指标与证据对齐良好，但存在一条由共同出现在上下文中而捏造的跨文章关系（JarvisGUI 与 Muse），以及多处投资人刻画残缺（Crusoe 漏掉卡塔尔投资局/Radical Ventures、Factory 漏掉 Blackstone 的投资关系）和关系类型错配（RISC-V 对英伟达、Anthropic 对 Faculty 的 funds 目标不准确）。",
+  "findings": [
+    {
+      "article_id": "2026-09-18-9",
+      "severity": "high",
+      "problem": "关系 \"JarvisGUI --targets--> Muse\" 不成立。原文只在第三段把 \"Meta Muse、Apple 驱动浏览器等动作齐发\" 当作\u201c基准为何及时\u201d的上下文铺垫，JarvisGUI 并不针对 Muse 这个产品；证据行 {\"Meta Muse、Apple 驱动浏览器等动作齐发\"} 是共同出现，不是 JarvisGUI 对 Muse 的直接关系，属于\u201c提到≠关系\u201d型错误。",
+      "fix": "删除这条 \"JarvisGUI --targets--> Muse\" 关系。Muse 实体可保留以维持跨文章连通（它与 Meta 的 developed_by 关系来自其他文章，可保留），但不要为它在本篇编造与 JarvisGUI 的边。"
+    },
+    {
+      "article_id": "2026-09-18-3",
+      "severity": "medium",
+      "problem": "投资人刻画残缺且不均衡：原文参投名单为 \u201cFounders Fund、GIC、英伟达、卡塔尔投资局、Radical Ventures、TPG 等\u201d，抽取抽出了 TPG、GIC、Founders Fund 却漏掉了 卡塔尔投资局（Qatar Investment Authority）和 Radical Ventures；同一句话里的投资人被选择性抽取，图谱的资本表刻画不一致。",
+      "fix": "补齐 \"卡塔尔投资局 --invests_in--> Crusoe\" 与 \"Radical Ventures --invests_in--> Crusoe\" 两条关系，并把两个实体加入 entities 列表（类型 organization），证据引用 \u201cFounders Fund、GIC、英伟达、卡塔尔投资局、Radical Ventures、TPG 等参投\u201d。"
+    },
+    {
+      "article_id": "2026-09-18-4",
+      "severity": "medium",
+      "problem": "Blackstone 在原文既是被投方投资人（\u201c投资者包括 Blackstone、Khosla Ventures\u201d）又是客户（\u201c客户横跨英伟达、Blackstone\u201d），但抽取只保留了 \u201cFactory --supplies--> Blackstone\u201d 的客户关系，漏掉了 Blackstone 的投资人身份；与同一篇已抽取 Khosla、Sequoia 的 invests_in 相比不一致。",
+      "fix": "补一条 \"Blackstone --invests_in--> Factory\" 关系，证据引用 \u201c投资者包括 Blackstone、Khosla Ventures\u201d，使其与其余投资人关系对齐。"
+    },
+    {
+      "article_id": "2026-09-18-1",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --funds--> Faculty\" 的方向/目标不准确：其证据 \u201cAnthropic 将直接资助埃森哲的工作\u201d 支撑的是 Anthropic 资助 埃森哲（Accenture）的工作，而不是资助 Faculty 本身；Faculty 是埃森哲旗下的执行方，把资助对象落到 Faculty 上属于目标走样。",
+      "fix": "把关系目标改为 Accenture：\"Anthropic --funds--> Accenture\"，证据保留 \u201cAnthropic 将直接资助埃森哲的工作\u201d；若想保留 Faculty 节点，可另用 \u201cFaculty --part_of--> Accenture\u201d 说明其归属，不要再把 funds 指向 Faculty。"
+    },
+    {
+      "article_id": "2026-09-18-7",
+      "severity": "medium",
+      "problem": "关系 \"RISC-V --competes_with--> NVIDIA\" 类型错配、表述不准：RISC-V 是开放指令集（topic），NVIDIA 是公司（company）；原文说的是 RISC-V \u201c区别于传统专有指令集（如 x86、英伟达系）\u201d，即架构层面与专有指令集的对比，不是架构与公司直接竞争，competes_with 通常应限定在同级别主体之间。",
+      "fix": "删掉或改写这条关系：不要用 \u201cRISC-V --competes_with--> NVIDIA\u201d。可将竞争限定在同类主体（如 RISC-V 与 x86 指令集之间），或改用更精确的表述（如 EVAS 智能 --competes_with--> 传统专有指令集系），避免 topic 对 company 的错配竞争边。"
+    },
+    {
+      "article_id": "2026-09-18-0",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --targets--> Claude\" 证据薄弱、类型含糊：证据 \u201cAI 在多大程度上参与构建下一代自身\u201d 描述的是 Anthropic 在测量/监测 Claude 在前沿研发中的参与度，不是 \u201cAnthropic 针对 Claude\u201d 的产品化目标；targets 用在这里语义不准确，容易误导成 Anthropic 在开发面向 Claude 的产品。",
+      "fix": "把该边改为更能反映事实的关系（如 \u201cAnthropic --monitors--> Claude\u201d 或 \u201cAnthropic --measures--> Claude\u201d），若关系类型表中没有合适项，宁可删除，也不要用 targets 承担\u201c测量/监督\u201d的语义。"
+    },
+    {
+      "article_id": "2026-09-18-9",
+      "severity": "low",
+      "problem": "实体 \u201c开源 GUI 智能体\u201d 类型标成 model 错配：原文讨论的是 GUI 智能体/代理（agent）这一类别，不是某个具体模型，把它标为 model 与图谱中模型实体的语义不符。",
+      "fix": "把 \u201c开源 GUI 智能体\u201d 的类型改为 topic 或 agent，避免与具体的 model 实体（如 Claude、Qwen-Omni）混为一类。"
+    },
+    {
+      "article_id": "2026-09-18-8",
+      "severity": "low",
+      "problem": "metric \u201c被投毒营销脚本扩散的网站数 超过 10 万个\u201d 与本文核心事件（Hacktron 借 Claude 攻 OpenAI）不是同一事件，而是该汇编同一天披露的另一条独立安全信号，挂在本篇 metrics 下会误导读者把它算作 Hacktron 事件的数据。",
+      "fix": "删除或从本文 metrics 中移出这条 \u201c被投毒营销脚本扩散的网站数\u201d；若确要保留，应在 metrics 名字里标明它属于汇编中提及的其他独立事件，并在 summary 里区分。"
+    }
+  ],
+  "lessons": [
+    "共同出现不等于关系：仅在上下文中被提及、用于铺垫\u201c为何某基准/产品及时\u201d的主体（如 Meta Muse、Apple 驱动浏览器），不要据此建立 targets/partners 等直接关系，除非原文明确断言两者之间存在关系。",
+    "融资新闻中须完整抽取同一句话/同一名单中的所有投资人（联合领投与参投都算），不能选择性抽取一部分而漏掉另一部分，否则图谱对资本表的刻画残缺且不均衡。",
+    "competes_with 只用于同级别主体之间（公司与公司、架构与架构）；用架构（如 RISC-V）对比包含该架构的公司（如英伟达）时，应改用更精确的表述或删除，避免 topic 对 company 的错配竞争边。"
+  ]
+}

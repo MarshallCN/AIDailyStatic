@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T00:19:29Z",
+  "updated_at": "2026-09-18T22:42:27Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -701,8 +701,8 @@
       "period_id": "2026-W34",
       "period_type": "week",
       "start_date": "2026-08-17",
-      "end_date": "2026-08-18",
-      "summary": "2026-08-17 至 2026-08-18 期间，OpenAI、Nvidia、据中心开发商投资 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-19",
+      "summary": "2026-08-17 至 2026-08-19 期间，OpenAI、Nvidia、据中心开发商投资 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "Nvidia",

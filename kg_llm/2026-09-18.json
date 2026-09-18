@@ -1,0 +1,573 @@
+{
+  "date": "2026-09-18",
+  "articles": [
+    {
+      "article_id": "2026-09-18-0",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 本周四发布了三组"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Claude 在 Anthropic 内部研发工作中的参与度正在快速上升"]},
+        {"name": "Leon Amodei", "type": "person", "aliases": [], "confidence": 0.8, "evidence": ["连同 Leon Amodei 近期对前沿减速的呼吁"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Anthropic 发布三组衡量 AI 自我发展节奏的公开指标",
+          "summary": "Anthropic 发布可公开追踪 AI 参与构建下一代自身的程度、代理监督干预能力、资源分配三组指标。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Anthropic 本周四发布了三组可公开追踪\u201cAI 自我发展节奏\u201d的指标"]
+        },
+        {
+          "type": "trend",
+          "label": "Claude 主导的研发占比在六个月内从 0 升至 26%",
+          "summary": "按 Anthropic 的\u201c主导\u201d口径，Claude 主导的研发占比 2 月还是 0，6 个月后已到 26%，另有约 90% 研发工作与 Claude 协作完成。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["该比例在 2 月还是 0，6 个月后已到 26%"]
+        },
+        {
+          "type": "policy",
+          "label": "Anthropic 呼吁同行公开可比较的研发参与度指标",
+          "summary": "Anthropic 呼吁其他 AI 开发者采用可比较的公开方法论定期披露同类指标，作为判断是否逼近递归式自我改进的依据。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["它呼吁其他 AI 开发者采用可比较的公开方法论定期披露"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.95, "evidence": ["Anthropic says its model Claude is helping to build the next version of itself"]},
+        {"source": "Leon Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.8, "evidence": ["连同 Leon Amodei 近期对前沿减速的呼吁"]}
+      ],
+      "metrics": [
+        {"name": "Claude 主导研发占比（8 月）", "value": "26%"},
+        {"name": "Claude 主导研发占比（2 月）", "value": "0"},
+        {"name": "与 Claude 协作完成的研发占比", "value": "约 90%"},
+        {"name": "同时从事研发与工程工作的代理数", "value": "约 30,000 个"},
+        {"name": "8 月被拦截的代理决策占比", "value": "0.002%（约 1/47,000）"},
+        {"name": "离线监控每周标记的转录数", "value": "约 10 万份"}
+      ],
+      "why_it_matters": "AI 研发参与度第一次有了可公开测量的基准，把\u201c递归式自我改进\u201d从科幻叙事拉进可审计的现实，模型加速自身发展从此成为能被同行对照的行业标尺。"
+    },
+    {
+      "article_id": "2026-09-18-1",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 9 月 18 日宣布与埃森哲建立"]},
+        {"name": "Accenture", "type": "company", "aliases": ["埃森哲"], "confidence": 0.9, "evidence": ["与埃森哲建立\u201c嵌入式评价\u201d合作伙伴关系"]},
+        {"name": "Faculty", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["由埃森哲旗下专门做 AI 的 Faculty 主导"]},
+        {"name": "Dario Amodei", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["由 Anthropic CEO Dario Amodei"]},
+        {"name": "METR", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["正在与 METR 等非营利评价机构探讨"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "Anthropic 与埃森哲建立嵌入式评价合作",
+          "summary": "由埃森哲旗下 Faculty 主导组建派驻 Anthropic 内部的独立评价者团队，做红队测试、对齐评估与安全护栏检验。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Accenture", "type": "company", "role": "partner"},
+            {"name": "Faculty", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["Anthropic 9 月 18 日宣布与埃森哲建立\u201c嵌入式评价\u201d合作伙伴关系"]
+        },
+        {
+          "type": "partnership",
+          "label": "Anthropic 与埃森哲预计各投入至少 10 亿美元建设嵌入式评价能力",
+          "summary": "双方预计未来五年各投入至少 10 亿美元，Anthropic 在过渡期直接资助埃森哲的工作。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Accenture", "type": "company", "role": "partner"},
+            {"name": "Faculty", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["双方预计未来五年各投入至少 10 亿美元建设相关能力"]
+        }
+      ],
+      "relations": [
+        {"source": "Faculty", "target": "Accenture", "type": "part_of", "weight": 0.9, "evidence": ["由埃森哲旗下专门做 AI 的 Faculty 主导"]},
+        {"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.85, "evidence": ["由 Anthropic CEO Dario Amodei"]},
+        {"source": "Accenture", "target": "Anthropic", "type": "partners_with", "weight": 0.9, "evidence": ["Anthropic 9 月 18 日宣布与埃森哲建立\u201c嵌入式评价\u201d合作伙伴关系"]},
+        {"source": "Anthropic", "target": "Accenture", "type": "funds", "weight": 0.8, "evidence": ["Anthropic 将直接资助埃森哲的工作"]},
+        {"source": "Faculty", "target": "Anthropic", "type": "evaluates", "weight": 0.7, "evidence": ["对模型做红队测试、开展对齐评估、检验模型安全护栏"]}
+      ],
+      "metrics": [
+        {"name": "双方各自五年投入", "value": "至少 10 亿美元"},
+        {"name": "合作期限", "value": "五年"}
+      ],
+      "why_it_matters": "\u201c谁来看住 AI 公司\u201d的治理答案第一次实体化成一个派驻实验室内部的常驻组织，第三方监督从构想落地为有资金与内部权限支撑的机构。"
+    },
+    {
+      "article_id": "2026-09-18-2",
+      "entities": [
+        {"name": "华为", "type": "company", "aliases": ["Huawei"], "confidence": 0.95, "evidence": ["华为轮值主席在 HUAWEI CONNECT 2026"]},
+        {"name": "Ascend 960", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["最核心的是 Ascend 960 超节点"]},
+        {"name": "Atlas 960", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["基于近封装光学（NPO）技术的 Atlas 960 系统"]},
+        {"name": "SuperPoD", "type": "hardware", "aliases": [], "confidence": 0.8, "evidence": ["号称全球首个 NPO 基 SuperPoD"]},
+        {"name": "NPO", "type": "topic", "aliases": ["近封装光学"], "confidence": 0.85, "evidence": ["基于近封装光学（NPO）技术"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.9, "evidence": ["对英伟达在中国市场主导地位的正面挑战"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "华为发布 Ascend 960 超节点与两款面向 2027 年的新 AI 芯片",
+          "summary": "华为在 HUAWEI CONNECT 2026 发布 Ascend 960 超节点，单个超节点可互联多达 4,096 个 AI 处理器，并同步推进两款面向 2027 年的新 AI 芯片。",
+          "participants": [
+            {"name": "华为", "type": "company", "role": "subject"},
+            {"name": "Ascend 960", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["最核心的是 Ascend 960 超节点：单个超节点可把多达 4,096 个 AI 处理器互联成一体"]
+        },
+        {
+          "type": "infra",
+          "label": "华为展示全球首个 NPO 基 SuperPoD 集群",
+          "summary": "华为展示基于近封装光学技术的 Atlas 960 系统，号称全球首个 NPO 基 SuperPoD，用封装级光互联缓解大规模集群带宽与功耗瓶颈。",
+          "participants": [
+            {"name": "华为", "type": "company", "role": "subject"},
+            {"name": "Atlas 960", "type": "hardware", "role": "object"},
+            {"name": "SuperPoD", "type": "hardware", "role": "object"},
+            {"name": "NPO", "type": "topic", "role": "partner"}
+          ],
+          "evidence": ["号称全球首个 NPO 基 SuperPoD"]
+        }
+      ],
+      "relations": [
+        {"source": "Ascend 960", "target": "华为", "type": "developed_by", "weight": 0.9, "evidence": ["最核心的是 Ascend 960 超节点"]},
+        {"source": "Atlas 960", "target": "华为", "type": "developed_by", "weight": 0.9, "evidence": ["基于近封装光学（NPO）技术的 Atlas 960 系统"]},
+        {"source": "SuperPoD", "target": "华为", "type": "developed_by", "weight": 0.85, "evidence": ["号称全球首个 NPO 基 SuperPoD"]},
+        {"source": "Atlas 960", "target": "NPO", "type": "uses", "weight": 0.85, "evidence": ["基于近封装光学（NPO）技术"]},
+        {"source": "SuperPoD", "target": "NPO", "type": "built_on", "weight": 0.8, "evidence": ["号称全球首个 NPO 基 SuperPoD"]},
+        {"source": "华为", "target": "NVIDIA", "type": "competes_with", "weight": 0.9, "evidence": ["对英伟达在中国市场主导地位的正面挑战"]}
+      ],
+      "metrics": [
+        {"name": "单个超节点互联的 AI 处理器数", "value": "多达 4,096 个"},
+        {"name": "面向 2027 年商用的新 AI 芯片数", "value": "两款"}
+      ],
+      "why_it_matters": "华为从\u201c替代采购\u201d转向\u201c自建供应链+主权算力\u201d，英伟达受限的空档正是 Ascend 生态卡位的机会，算力主权叙事在芯片层再次落子，且 NPO 这类异构互联也可能反向影响全球 AI 数据中心组网。"
+    },
+    {
+      "article_id": "2026-09-18-3",
+      "entities": [
+        {"name": "Crusoe", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Crusoe 宣布完成其 F 轮的首个 39 亿美元融资"]},
+        {"name": "Atreides Management", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Atreides Management、Mubadala Capital 与 Valor Equity Partners 联合领投"]},
+        {"name": "Mubadala Capital", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Atreides Management、Mubadala Capital 与 Valor Equity Partners 联合领投"]},
+        {"name": "Valor Equity Partners", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Atreides Management、Mubadala Capital 与 Valor Equity Partners 联合领投"]},
+        {"name": "GIC", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["Founders Fund、GIC、英伟达"]},
+        {"name": "Founders Fund", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["Founders Fund、GIC、英伟达"]},
+        {"name": "TPG", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["Radical Ventures、TPG 等参投"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.9, "evidence": ["Founders Fund、GIC、英伟达"]},
+        {"name": "Crusoe Spark", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["模块化的 Crusoe Spark 设施"]},
+        {"name": "Crusoe Cloud", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["Crusoe Cloud 扩容"]},
+        {"name": "卡塔尔投资局", "type": "organization", "aliases": ["Qatar Investment Authority"], "confidence": 0.85, "evidence": ["Founders Fund、GIC、英伟达、卡塔尔投资局、Radical Ventures、TPG 等参投"]},
+        {"name": "Radical Ventures", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Founders Fund、GIC、英伟达、卡塔尔投资局、Radical Ventures、TPG 等参投"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Crusoe 完成 39 亿美元 F 轮融资、估值 309 亿美元",
+          "summary": "Crusoe 完成 F 轮首个 39 亿美元融资、投后估值 309 亿美元，Atreides、Mubadala、Valor 联合领投，英伟达、GIC、Founders Fund、TPG 参投。",
+          "participants": [
+            {"name": "Crusoe", "type": "company", "role": "object"},
+            {"name": "Atreides Management", "type": "organization", "role": "funder"},
+            {"name": "Mubadala Capital", "type": "organization", "role": "funder"},
+            {"name": "Valor Equity Partners", "type": "organization", "role": "funder"},
+            {"name": "NVIDIA", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["Crusoe 宣布完成其 F 轮的首个 39 亿美元融资，投后估值达 309 亿美元"]
+        }
+      ],
+      "relations": [
+        {"source": "Atreides Management", "target": "Crusoe", "type": "invests_in", "weight": 0.9, "evidence": ["Atreides Management、Mubadala Capital 与 Valor Equity Partners 联合领投"]},
+        {"source": "Mubadala Capital", "target": "Crusoe", "type": "invests_in", "weight": 0.9, "evidence": ["Mubadala Capital 与 Valor Equity Partners 联合领投"]},
+        {"source": "Valor Equity Partners", "target": "Crusoe", "type": "invests_in", "weight": 0.9, "evidence": ["Valor Equity Partners 联合领投"]},
+        {"source": "NVIDIA", "target": "Crusoe", "type": "invests_in", "weight": 0.85, "evidence": ["Founders Fund、GIC、英伟达"]},
+        {"source": "GIC", "target": "Crusoe", "type": "invests_in", "weight": 0.85, "evidence": ["Founders Fund、GIC、英伟达"]},
+        {"source": "Founders Fund", "target": "Crusoe", "type": "invests_in", "weight": 0.85, "evidence": ["Founders Fund、GIC、英伟达"]},
+        {"source": "TPG", "target": "Crusoe", "type": "invests_in", "weight": 0.85, "evidence": ["Radical Ventures、TPG 等参投"]},
+        {"source": "Crusoe Spark", "target": "Crusoe", "type": "developed_by", "weight": 0.8, "evidence": ["模块化的 Crusoe Spark 设施"]},
+        {"source": "Crusoe Cloud", "target": "Crusoe", "type": "developed_by", "weight": 0.8, "evidence": ["Crusoe Cloud 扩容"]},
+        {"source": "卡塔尔投资局", "target": "Crusoe", "type": "invests_in", "weight": 0.85, "evidence": ["Founders Fund、GIC、英伟达、卡塔尔投资局、Radical Ventures、TPG 等参投"]},
+        {"source": "Radical Ventures", "target": "Crusoe", "type": "invests_in", "weight": 0.85, "evidence": ["Founders Fund、GIC、英伟达、卡塔尔投资局、Radical Ventures、TPG 等参投"]}
+      ],
+      "metrics": [
+        {"name": "Crusoe F 轮融资", "value": "39 亿美元"},
+        {"name": "Crusoe 投后估值", "value": "309 亿美元"},
+        {"name": "平台合约价值", "value": "超 1400 亿美元"},
+        {"name": "平台合约容量", "value": "超 6 吉瓦"},
+        {"name": "已投运容量", "value": "约 1 吉瓦"}
+      ],
+      "why_it_matters": "一级市场对稀缺 AI 基础设施的定价正从软件逻辑切换到电信/能源式的项目金融逻辑，资本从押注模型能力转向\u201c让算力经济可用\u201d的更硬基础设施层。"
+    },
+    {
+      "article_id": "2026-09-18-4",
+      "entities": [
+        {"name": "Factory", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["San Francisco 的 Factory 刚以 50 亿美元估值完成 2 亿美元融资"]},
+        {"name": "Droids", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["核心产品是被称为 Droids 的自主编码代理"]},
+        {"name": "Factory Router", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["新版本加入了 Factory Router 组件"]},
+        {"name": "Matan Grinberg", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["由 Matan Grinberg 与 Eno Reyes 于 2023 年创立"]},
+        {"name": "Eno Reyes", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["由 Matan Grinberg 与 Eno Reyes 于 2023 年创立"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.9, "evidence": ["客户横跨英伟达、Blackstone"]},
+        {"name": "Adobe", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Adobe、T-Mobile 等"]},
+        {"name": "Blackstone", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["投资者包括 Blackstone、Khosla Ventures"]},
+        {"name": "Khosla Ventures", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["投资者包括 Blackstone、Khosla Ventures"]},
+        {"name": "Sequoia", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Sequoia、Insight Partners、NEAA 等"]},
+        {"name": "Insight Partners", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Sequoia、Insight Partners、NEAA 等"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Factory 以 50 亿美元估值完成 2 亿美元融资",
+          "summary": "Factory 以 50 亿美元估值完成 2 亿美元融资，投资者包括 Blackstone、Khosla Ventures、Sequoia、Insight Partners 等，五个月内估值翻 3.3 倍。",
+          "participants": [
+            {"name": "Factory", "type": "company", "role": "object"},
+            {"name": "Blackstone", "type": "organization", "role": "funder"},
+            {"name": "Khosla Ventures", "type": "organization", "role": "funder"},
+            {"name": "Sequoia", "type": "organization", "role": "funder"},
+            {"name": "Insight Partners", "type": "organization", "role": "funder"}
+          ],
+          "evidence": ["San Francisco 的 Factory 刚以 50 亿美元估值完成 2 亿美元融资"]
+        },
+        {
+          "type": "launch",
+          "label": "Factory 推出自动路由的 Factory Router 组件",
+          "summary": "Factory 新版加入 Factory Router，自动把任务路由到合适模型，称可削减 60% 以上 token 开支并保持前沿级性能。",
+          "participants": [
+            {"name": "Factory", "type": "company", "role": "subject"},
+            {"name": "Factory Router", "type": "product", "role": "object"}
+          ],
+          "evidence": ["新版本加入了 Factory Router 组件"]
+        },
+        {
+          "type": "trend",
+          "label": "软件开发从编码助手转向受治理的软件工厂",
+          "summary": "Factory 用协同代理舰队 Droids 覆盖编写、测试、审查、运维全流程，把企业导向受治理的可持续运营的软件工厂。",
+          "participants": [
+            {"name": "Factory", "type": "company", "role": "subject"},
+            {"name": "Droids", "type": "product", "role": "object"}
+          ],
+          "evidence": ["把企业从\u201c单个编码代理\u201d推向受治理的、可持续运营的\u201c软件工厂\u201d"]
+        }
+      ],
+      "relations": [
+        {"source": "Droids", "target": "Factory", "type": "developed_by", "weight": 0.9, "evidence": ["核心产品是被称为 Droids 的自主编码代理"]},
+        {"source": "Factory Router", "target": "Factory", "type": "developed_by", "weight": 0.85, "evidence": ["新版本加入了 Factory Router 组件"]},
+        {"source": "Matan Grinberg", "target": "Factory", "type": "affiliated_with", "weight": 0.85, "evidence": ["由 Matan Grinberg 与 Eno Reyes 于 2023 年创立"]},
+        {"source": "Eno Reyes", "target": "Factory", "type": "affiliated_with", "weight": 0.85, "evidence": ["由 Matan Grinberg 与 Eno Reyes 于 2023 年创立"]},
+        {"source": "Khosla Ventures", "target": "Factory", "type": "invests_in", "weight": 0.9, "evidence": ["投资者包括 Blackstone、Khosla Ventures"]},
+        {"source": "Sequoia", "target": "Factory", "type": "invests_in", "weight": 0.9, "evidence": ["Sequoia、Insight Partners、NEAA 等"]},
+        {"source": "Blackstone", "target": "Factory", "type": "invests_in", "weight": 0.9, "evidence": ["投资者包括 Blackstone、Khosla Ventures"]},
+        {"source": "Factory", "target": "NVIDIA", "type": "supplies", "weight": 0.8, "evidence": ["客户横跨英伟达、Blackstone"]},
+        {"source": "Factory", "target": "Adobe", "type": "supplies", "weight": 0.8, "evidence": ["Adobe、T-Mobile 等"]}
+      ],
+      "metrics": [
+        {"name": "Factory 融资", "value": "2 亿美元"},
+        {"name": "Factory 估值", "value": "50 亿美元"},
+        {"name": "五个月前估值", "value": "15 亿美元"},
+        {"name": "五个月估值增幅", "value": "3.3 倍"},
+        {"name": "router 削减 token 开支", "value": "60% 以上"},
+        {"name": "累计融资", "value": "超 4 亿美元"}
+      ],
+      "why_it_matters": "编码代理从\u201c单点助手\u201d升级为受治理、可度量的\u201c软件工厂\u201d，企业采纳 AI 编码的瓶颈从能力焦虑转向治理与度量，估值暴涨印证资本对\u201cAI 接管软件开发\u201d的押注与分歧并存。"
+    },
+    {
+      "article_id": "2026-09-18-5",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Meta 的 AI 助手应用 Muse 本周推出 Mac 版"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["AI 助手应用 Muse 本周推出 Mac 版"]},
+        {"name": "扎克伯格", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Meta CEO 扎克伯格发布 Mac 版时"]},
+        {"name": "Instinct", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["Muse 与另一家明星代理公司 Instinct 同时推出了"]},
+        {"name": "Textportium", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["Textportium 的前身 Poke"]},
+        {"name": "Poke", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["Textportium 的前身 Poke 被 Cognition 收购"]},
+        {"name": "Cognition", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Textportium 的前身 Poke 被 Cognition 收购"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Meta 推出 Muse Mac 版并可直接在原装应用内代办操作",
+          "summary": "Muse Mac 版可调取文件、消息、日历、备忘录与邮件并在原生应用内采取行动，访问选择加入、敏感动作前征求批准。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Meta 的 AI 助手应用 Muse 本周推出 Mac 版"]
+        },
+        {
+          "type": "acquisition",
+          "label": "Cognition 收购 Textportium 前身 Poke",
+          "summary": "Textportium 的前身 Poke 被 Cognition 收购，被视为\u201cAI 人格成为竞争壁垒\u201d的标志。",
+          "participants": [
+            {"name": "Cognition", "type": "company", "role": "subject"},
+            {"name": "Poke", "type": "product", "role": "object"},
+            {"name": "Textportium", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Textportium 的前身 Poke 被 Cognition 收购"]
+        },
+        {
+          "type": "trend",
+          "label": "消费级 AI 代理从对话助手转向接管设备操作的持久代理",
+          "summary": "Muse 与 Instinct 同时推出语音拨打电话能力，消费端 AI 代理赛道正整体向持久代理迁移。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"},
+            {"name": "Instinct", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["整个消费端 AI 代理赛道正从\u201c对话助手\u201d向\u201c能接管你设备操作的持久代理\u201d迁移"]
+        }
+      ],
+      "relations": [
+        {"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["Meta 的 AI 助手应用 Muse 本周推出 Mac 版"]},
+        {"source": "扎克伯格", "target": "Meta", "type": "affiliated_with", "weight": 0.85, "evidence": ["Meta CEO 扎克伯格发布 Mac 版时"]},
+        {"source": "Cognition", "target": "Poke", "type": "acquires", "weight": 0.85, "evidence": ["Textportium 的前身 Poke 被 Cognition 收购"]},
+        {"source": "Muse", "target": "Instinct", "type": "competes_with", "weight": 0.8, "evidence": ["Muse 与另一家明星代理公司 Instinct 同时推出了\u201c语音拨打电话\u201d的能力"]}
+      ],
+      "metrics": [
+        {"name": "Muse 上线平台状态", "value": "美国 App Store 榜首"}
+      ],
+      "why_it_matters": "当代理能直接在原生应用里跨文件、跨日历、跨消息执行任务，应用内导航与 SaaS 交互范式可能被重写，权限与批准设计成为决定代理是\u201c管家\u201d还是\u201c越权者\u201d的信任分水岭。"
+    },
+    {
+      "article_id": "2026-09-18-6",
+      "entities": [
+        {"name": "Mantic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["英国 AI 初创 Mantic 完成 2500 万美元融资"]},
+        {"name": "Metaculus", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["在知名的公共预测平台 Metaculus 上得到验证"]},
+        {"name": "超人类 AI 预测", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["方向是\u201c超人类\u201d的 AI 预测能力"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Mantic 完成 2500 万美元融资押注超人类预测",
+          "summary": "英国 AI 初创 Mantic 完成 2500 万美元融资，目标是构建在预测平台上已证明优于人类专家的超人类 AI 预测模型。",
+          "participants": [
+            {"name": "Mantic", "type": "company", "role": "object"},
+            {"name": "Metaculus", "type": "organization", "role": "benchmark"}
+          ],
+          "evidence": ["英国 AI 初创 Mantic 完成 2500 万美元融资"]
+        },
+        {
+          "type": "research",
+          "label": "Mantic 的预测能力在公共预测平台 Metaculus 上得到验证",
+          "summary": "Mantic 专注于让大模型在概率预测与决策上超过人类专家，其能力在知名的公共预测平台 Metaculus 上得到验证。",
+          "participants": [
+            {"name": "Mantic", "type": "company", "role": "subject"},
+            {"name": "Metaculus", "type": "organization", "role": "benchmark"},
+            {"name": "超人类 AI 预测", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["在知名的公共预测平台 Metaculus 上得到验证"]
+        }
+      ],
+      "relations": [
+        {"source": "Mantic", "target": "Metaculus", "type": "evaluated_on", "weight": 0.85, "evidence": ["在知名的公共预测平台 Metaculus 上得到验证"]},
+        {"source": "Mantic", "target": "超人类 AI 预测", "type": "targets", "weight": 0.8, "evidence": ["方向是\u201c超人类\u201d的 AI 预测能力"]}
+      ],
+      "metrics": [
+        {"name": "Mantic 融资", "value": "2500 万美元"}
+      ],
+      "why_it_matters": "\u201cAI 从回答转向判断与预测\u201d开始被一级市场买单，预测型 AI 把评估不确定性的能力产品化，但预测会反向影响事件概率,\u201c自我实现\u201d风险随之进入产品化视野。"
+    },
+    {
+      "article_id": "2026-09-18-7",
+      "entities": [
+        {"name": "EVAS 智能", "type": "company", "aliases": ["EVAS Intelligence"], "confidence": 0.9, "evidence": ["EVAS 智能的 A 轮颇具代表性"]},
+        {"name": "RISC-V", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["基于 RISC-V 架构的云端 AI 芯片"]},
+        {"name": "x86", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["区别于传统专有指令集（如 x86、英伟达系）"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "EVAS 智能完成近 20 亿元融资、估值接近 150 亿元",
+          "summary": "EVAS 智能的 A 轮募得近 20 亿元人民币、投后估值逼近约 150 亿元，主攻基于 RISC-V 架构的云端 AI 芯片。",
+          "participants": [
+            {"name": "EVAS 智能", "type": "company", "role": "object"}
+          ],
+          "evidence": ["公司募得近 20 亿元人民币，投后估值逼近约 150 亿元"]
+        }
+      ],
+      "relations": [
+        {"source": "EVAS 智能", "target": "RISC-V", "type": "built_on", "weight": 0.9, "evidence": ["基于 RISC-V 架构的云端 AI 芯片"]},
+        {"source": "RISC-V", "target": "x86", "type": "competes_with", "weight": 0.8, "evidence": ["区别于传统专有指令集（如 x86、英伟达系）"]}
+      ],
+      "metrics": [
+        {"name": "EVAS 智能融资", "value": "近 20 亿元人民币"},
+        {"name": "EVAS 智能投后估值", "value": "接近 150 亿元"}
+      ],
+      "why_it_matters": "开放指令集 RISC-V 正凭借规模化生态尝试补足软件栈，推断\u201c云端 AI 算力由单一架构主导\u201d的格局走向\u201c开放指令集+主权算力+多异构互联\u201d，能否落地取决于生态而非产能叙事。"
+    },
+    {
+      "article_id": "2026-09-18-8",
+      "entities": [
+        {"name": "Hacktron", "type": "organization", "aliases": ["Hacktron AI"], "confidence": 0.88, "evidence": ["Hacktron AI 的安全研究者在一次授权的安全调查中"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["借助 Anthropic 的 Claude 辅助利用"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["借助 Anthropic 的 Claude 辅助利用"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["涉及 OpenAI 员工讨论论坛"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["抵达多名 OpenAI 员工的 ChatGPT 账号"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Hacktron 借助 Claude 攻破多名 OpenAI 员工账号",
+          "summary": "Hacktron 在授权调查中借 Claude 辅助利用 OpenAI 员工论坛的攻击路径，抵达多名员工的 ChatGPT 账号，并通过漏洞赏金上报、OpenAI 已处理。",
+          "participants": [
+            {"name": "Hacktron", "type": "organization", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["最终抵达多名 OpenAI 员工的 ChatGPT 账号"]
+        },
+        {
+          "type": "trend",
+          "label": "生成式 AI 拉低攻防门槛、攻击面蔓延到代理编排层",
+          "summary": "研究者用 LLM 辅助编排漏洞利用路径，AI 既是新的攻击杠杆也是拉低门槛的放大器，攻击面从人类运维蔓延到代理编排层。",
+          "participants": [
+            {"name": "Hacktron", "type": "organization", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["AI 既是新的攻击杠杆，也是拉低攻击门槛的放大器"]
+        }
+      ],
+      "relations": [
+        {"source": "Hacktron", "target": "Claude", "type": "uses", "weight": 0.9, "evidence": ["借助 Anthropic 的 Claude 辅助利用"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["借助 Anthropic 的 Claude 辅助利用"]},
+        {"source": "Hacktron", "target": "OpenAI", "type": "targets", "weight": 0.9, "evidence": ["抵达多名 OpenAI 员工的 ChatGPT 账号"]},
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["抵达多名 OpenAI 员工的 ChatGPT 账号"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "把复杂攻击路径串联起来从需要多年经验的安全专家下降到普通研究者，攻击面蔓延到代理编排层，防御若不引入 AI 化监控，攻防不对称只会扩大。"
+    },
+    {
+      "article_id": "2026-09-18-9",
+      "entities": [
+        {"name": "JarvisGUI", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["这篇论文提出 JarvisGUI：一个动态基准"]},
+        {"name": "arXiv", "type": "organization", "aliases": ["Arxiv"], "confidence": 0.9, "evidence": ["JarvisGUI——用动态任务组合评测"]},
+        {"name": "开源 GUI 智能体", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["即便最先进的开源 GUI 智能体"]},
+        {"name": "Meta", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Meta Muse、Apple 驱动浏览器等动作齐发"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Meta Muse、Apple 驱动浏览器等动作齐发"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "JarvisGUI 提出评测横跨多设备 GUI 智能体的动态基准",
+          "summary": "JarvisGUI 把 GUI 任务形式化为输入-输出变换，自动组合出多步、跨设备工作流，在 Android、Windows、Ubuntu 的虚拟环境中动态评测智能体。",
+          "participants": [
+            {"name": "JarvisGUI", "type": "paper", "role": "subject"},
+            {"name": "开源 GUI 智能体", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["这篇论文提出 JarvisGUI：一个动态基准"]
+        },
+        {
+          "type": "benchmark",
+          "label": "JarvisGUI 揭示开源 GUI 智能体在跨设备协调上的能力缺口",
+          "summary": "评测发现主流开源 GUI 智能体在状态迁移感知、跨平台推理与长程依赖管理上表现挣扎，单设备高分不能转化为真实可用性。",
+          "participants": [
+            {"name": "JarvisGUI", "type": "paper", "role": "subject"},
+            {"name": "开源 GUI 智能体", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["即便最先进的开源 GUI 智能体，也在\u201c对状态传递/迁移的感知\u201d\u201c跨平台情境推理\u201d\u201c长程依赖管理\u201d上表现挣扎"]
+        }
+      ],
+      "relations": [
+        {"source": "JarvisGUI", "target": "arXiv", "type": "published_on", "weight": 0.8, "evidence": ["arXiv"]},
+        {"source": "开源 GUI 智能体", "target": "JarvisGUI", "type": "evaluated_on", "weight": 0.9, "evidence": ["即便最先进的开源 GUI 智能体，也在\u201c对状态传递/迁移的感知\u201d"]},
+        {"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.85, "evidence": ["Meta Muse、Apple 驱动浏览器等动作齐发"]}
+      ],
+      "metrics": [
+        {"name": "评测覆盖的操作系统数", "value": "Android、Windows、Ubuntu 多个"}
+      ],
+      "why_it_matters": "当 GUI/计算机操作代理快速产品化时，\u201c能在多端接力完成一件事\u201d被提升为智能体的硬指标，单设备高分不再是真实可用性的代理标准。"
+    },
+    {
+      "article_id": "2026-09-18-10",
+      "entities": [
+        {"name": "ConvMem", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["这篇论文的 ConvMem 用另一种思路解决该问题"]},
+        {"name": "arXiv", "type": "organization", "aliases": ["Arxiv"], "confidence": 0.9, "evidence": ["ConvMem——把长上下文推理改写成"]},
+        {"name": "分层卷积", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["把长上下文推理改写为围绕一个查询的分层卷积"]},
+        {"name": "RULER-HotpotQA", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在 RULER-HotpotQA 与 RULER-2WikiMultiHopQA 上显示"]},
+        {"name": "RULER-2WikiMultiHopQA", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在 RULER-HotpotQA 与 RULER-2WikiMultiHopQA 上显示"]},
+        {"name": "MemAgent", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["这类顺序式方法（如 MemAgent）"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "ConvMem 提出免训练分层卷积长上下文记忆框架",
+          "summary": "ConvMem 把被问题提示过的 LLM 当作卷积核对文本片段做层级摘要，把线性推理链压缩成对数树，支持大规模并行且无需训练。",
+          "participants": [
+            {"name": "ConvMem", "type": "paper", "role": "subject"},
+            {"name": "分层卷积", "type": "topic", "role": "object"},
+            {"name": "MemAgent", "type": "model", "role": "object"}
+          ],
+          "evidence": ["它把长上下文推理改写为围绕一个查询的分层卷积"]
+        },
+        {
+          "type": "benchmark",
+          "label": "ConvMem 在 RULER 基准上胜过既有免训练基线",
+          "summary": "实验在 RULER-HotpotQA 与 RULER-2WikiMultiHopQA 上显示 ConvMem 优于既有免训练基线，并因摆脱 RL 训练避开过拟合陷阱。",
+          "participants": [
+            {"name": "ConvMem", "type": "paper", "role": "subject"},
+            {"name": "RULER-HotpotQA", "type": "benchmark", "role": "benchmark"},
+            {"name": "RULER-2WikiMultiHopQA", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 RULER-HotpotQA 与 RULER-2WikiMultiHopQA 上显示，ConvMem 优于既有免训练基线"]
+        }
+      ],
+      "relations": [
+        {"source": "ConvMem", "target": "arXiv", "type": "published_on", "weight": 0.8, "evidence": ["ConvMem——把长上下文推理改写成"]},
+        {"source": "ConvMem", "target": "分层卷积", "type": "built_on", "weight": 0.85, "evidence": ["把长上下文推理改写为围绕一个查询的分层卷积"]},
+        {"source": "ConvMem", "target": "RULER-HotpotQA", "type": "evaluated_on", "weight": 0.85, "evidence": ["在 RULER-HotpotQA 与 RULER-2WikiMultiHopQA 上显示"]},
+        {"source": "ConvMem", "target": "RULER-2WikiMultiHopQA", "type": "evaluated_on", "weight": 0.85, "evidence": ["在 RULER-HotpotQA 与 RULER-2WikiMultiHopQA 上显示"]},
+        {"source": "ConvMem", "target": "MemAgent", "type": "compared_with", "weight": 0.7, "evidence": ["这类顺序式方法（如 MemAgent）"]}
+      ],
+      "metrics": [
+        {"name": "评测的 RULER 数据集数", "value": "2 个"}
+      ],
+      "why_it_matters": "长上下文是代理与 RAG 能否长期工作的底层瓶颈，免训练、可并行的 ConvMem 若在更长上下文上成立，会直接降低企业长程 RAG 与代理记忆的延迟与基础设施成本。"
+    },
+    {
+      "article_id": "2026-09-18-11",
+      "entities": [
+        {"name": "Nuha-Speech", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["针对这一空白，Nuha-Speech 从三条线建立阿拉伯语通用语音大模型"]},
+        {"name": "arXiv", "type": "organization", "aliases": ["Arxiv"], "confidence": 0.9, "evidence": ["Nuha-Speech——为阿拉伯语构建通用语音大模型"]},
+        {"name": "Qwen-Omni", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["基于不同规模的 Qwen-Omni 变体做有监督微调"]},
+        {"name": "TTS", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["用含情绪转换的 TTS 合成 2 万条"]},
+        {"name": "阿拉伯语", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["为阿拉伯语构建通用语音大模型"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Nuha-Speech 构建阿拉伯语通用语音大模型",
+          "summary": "Nuha-Speech 从数据集构建、模型训练、系统评测三方面为阿拉伯语建立通用语音大模型，基于 Qwen-Omni 微调。",
+          "participants": [
+            {"name": "Nuha-Speech", "type": "paper", "role": "subject"},
+            {"name": "Qwen-Omni", "type": "model", "role": "object"},
+            {"name": "阿拉伯语", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["针对这一空白，Nuha-Speech 从三条线建立阿拉伯语通用语音大模型"]
+        },
+        {
+          "type": "research",
+          "label": "Nuha-Speech 构建超 150 万样本的阿拉伯语语音问答语料库",
+          "summary": "Nuha-Speech 构建包含超 150 万训练样本的阿拉伯语语音问答语料库，并用含情绪转换的 TTS 合成 2 万条情感样本。",
+          "participants": [
+            {"name": "Nuha-Speech", "type": "paper", "role": "subject"},
+            {"name": "TTS", "type": "topic", "role": "object"},
+            {"name": "阿拉伯语", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["包含超过 150 万训练样本的大规模阿拉伯语语音问答（Speech Question-Answering, SQA）语料库"]
+        }
+      ],
+      "relations": [
+        {"source": "Nuha-Speech", "target": "arXiv", "type": "published_on", "weight": 0.8, "evidence": ["Nuha-Speech——为阿拉伯语构建通用语音大模型"]},
+        {"source": "Nuha-Speech", "target": "Qwen-Omni", "type": "fine_tuned_from", "weight": 0.9, "evidence": ["基于不同规模的 Qwen-Omni 变体做有监督微调"]},
+        {"source": "Nuha-Speech", "target": "TTS", "type": "uses", "weight": 0.8, "evidence": ["用含情绪转换的 TTS 合成 2 万条"]},
+        {"source": "Nuha-Speech", "target": "阿拉伯语", "type": "targets", "weight": 0.85, "evidence": ["为阿拉伯语构建通用语音大模型"]}
+      ],
+      "metrics": [
+        {"name": "阿拉伯语语音问答训练样本数", "value": "超过 150 万"},
+        {"name": "合成情感样本数", "value": "2 万条"},
+        {"name": "覆盖的情感类别数", "value": "愤怒、开心、悲伤、中性四类"}
+      ],
+      "why_it_matters": "给缺数据的阿拉伯语补语音基础设施本身就是意义所在，合成与自建语料趟出一条可复现低资源路径,语音助手与服务覆盖盲区之争开始落到具体语言社区。"
+    }
+  ]
+}

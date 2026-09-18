@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-18",
+  "round": 3,
+  "verdict": "accept",
+  "quality_score": 88,
+  "summary": "抽取全局准确：所有融资方向（投资方->被投方）、收购方向（Cognition->Poke）、developed_by/uses/partners_with 关系均与原文一致，metrics 数字逐条可溯源，无事实错误或方向翻转。仅有两处中等级语义瑕疵：RISC-V 与 x86 的'区别于'被外推成竞争关系，以及论文类文章把背景提及的 Meta/Muse 当作实体并建关系。",
+  "findings": [
+    {
+      "article_id": "2026-09-18-7",
+      "severity": "medium",
+      "problem": "关系 'RISC-V --competes_with--> x86' 证据不足。原文只说 RISC-V '区别于传统专有指令集（如 x86、英伟达系）的另一条路线'，这是'定位差异/替代路线'的描述，并未声明 RISC-V 与 x86 存在直接竞争或对抗关系，competes_with 属于过度外推。",
+      "fix": "删除 'RISC-V --competes_with--> x86' 关系，或改用更弱的'与……存在替代替代关系'类表述（若关系集支持 alternative_to 之类则用之）；只有当原文明确陈述竞争/对抗时才建 competes_with。"
+    },
+    {
+      "article_id": "2026-09-18-9",
+      "severity": "medium",
+      "problem": "实体 'Meta'、'Muse' 及其关系 'Muse --developed_by--> Meta' 来自论文正文里的一句背景提及（'Meta Muse、Apple 驱动浏览器等动作齐发'），与本文主角 JarvisGUI 无任何实质关系，属于'把提到了当成关系'，为这篇论文图谱注入无关实体。",
+      "fix": "从本论文文章移除 'Meta'、'Muse' 及其 developed_by 关系（或仅保留为不带关系的提及），论文主体只保留 JarvisGUI、开源 GUI 智能体与 arXiv 相关实体。若为跨文章连通 Meta/Muse，也不应以论文文章作为载体建立与本论文主体无关的边。"
+    }
+  ],
+  "lessons": [
+    "'区别于/作为另一条路线/替代选择'这类定位性表述不能外推为 competes_with，只有原文明确陈述竞争或对抗时才建立竞争类关系，否则删除或使用更松的关系。",
+    "论文类文章中仅作背景语境顺带提及的产品与公司（如论述动机时提到的其他产品）与论文主体没有实质关系，不应作为实体抽取或在其间建立关系，避免'提到了'冒充'有关系'。"
+  ]
+}
