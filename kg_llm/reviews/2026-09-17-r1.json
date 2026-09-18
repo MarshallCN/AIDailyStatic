@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-17",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 70,
+  "summary": "实体、指标、事件覆盖总体完整，但有两处高问题：两篇论文都把 arXiv 误当作者（authored_by 指向 arXiv，arXiv 是预印本仓库而非作者），以及 YC 对 Braintrust/LangChain/Judgment Labs 的 invests_in 缺乏证据支撑（原文只称 YC 资助 106 家可观测性公司、另列三家融资，未指认 YC 投资这三家）。另有 partners_with、regulates、invests_in 若干关系类型偏宽。",
+  "findings": [
+    {
+      "article_id": "2026-09-17-6",
+      "severity": "high",
+      "problem": "关系 \"Emergence World --authored_by--> arXiv\"（证据 arXiv 论文 2609.17320）错在把 arXiv 当成作者。arXiv 是论文预印本发布平台，不撰写任何论文；该关系断言了\"Emergence World 由 arXiv 撰写\"这一不成立的事实。",
+      "fix": "删除 authored_by 指向 arXiv 的关系，改用 published_on 或 deposited_in（如 \"Emergence World --published_on--> arXiv\"），或把 arXiv 归为平台/载体而非作者；论文的真实作者在原文中未给出，不应虚构。"
+    },
+    {
+      "article_id": "2026-09-17-7",
+      "severity": "high",
+      "problem": "关系 \"RIR --authored_by--> arXiv\"（证据 arXiv 论文 2609.18304）与 2026-09-17-6 同一类错误：arXiv 是发布平台不是作者，断言 RIR 由 arXiv 撰写不成立。",
+      "fix": "同 2026-09-17-6：改用 published_on/deposited_in 指向 arXiv，或删除该关系，不要用 authored_by 连到 arXiv。"
+    },
+    {
+      "article_id": "2026-09-17-1",
+      "severity": "high",
+      "problem": "关系 \"YC --invests_in--> Braintrust\"、\"YC --invests_in--> LangChain\"、\"YC --invests_in--> Judgment Labs\" 均以\"YC 近年资助了 106 家 AI 可观测性公司\"为证据，但原文只说 YC 资助了 106 家可观测性公司，随后另起一句称\"Braintrust、LangChain、Judgment Labs 等已融资数亿美元\"——并未说明这三家是 YC 资助的那 106 家之一。证据支撑的是\"YC 广泛资助可观测性公司\"，不是 YC 具体投资这三家，属过度归因。",
+      "fix": "删除这三条 YC invests_in 关系，或补上能直接指认 YC 投资这三家的原文证据；若只保留笼统表述，把\"YC 资助 106 家可观测性公司\"留在事件/metrics 描述里，不要落成对具体公司的投资边。"
+    },
+    {
+      "article_id": "2026-09-17-8",
+      "severity": "medium",
+      "problem": "关系 \"Google --partners_with--> Claude\" 和 \"Google --partners_with--> ChatGPT\" 断言 Google 与两个助手建立合作关系，但原文是 Google 通过 MCP 把 Home 主设备\"开放给\"Claude 与 ChatGPT 接入，属生态开放/互操作接入，不是双边合作关系，partners_with 抬高为合伙关系。",
+      "fix": "改为表述接入/开放的关系类型（如 provides_access_to、integrates_with），或以 \"Google Home --uses--> MCP\" 承载接入事实；不要用 partners_with 表达单向开放接入。"
+    },
+    {
+      "article_id": "2026-09-17-3",
+      "severity": "medium",
+      "problem": "关系 \"联合国 --regulates--> Data Commons\" 用 regulates 表示联合国与 Data Commons 的关系，但原文说数据平台\"托管在一个由联合国治理的实例上\"，即联合国治理的是承载数据的实例/数据治理，而非监管 Data Commons 这个产品平台，regulates 范围过度。",
+      "fix": "改为更贴近原文的关系类型，如 governs / hosts（联合国治理该实例），或 \"联合国 --uses--> Data Commons\"；避免把联合国对数据的治理误写成对 Data Commons 产品的监管。"
+    },
+    {
+      "article_id": "2026-09-17-5",
+      "severity": "medium",
+      "problem": "关系 \"METI --invests_in--> FRONTia\"、\"NEDO --invests_in--> FRONTia\" 把政府部委对国家级项目的拨款写成 invests_in。原文是 METI/NEDO 给 FRONTia 项目首年拨款 3873 亿日元、五年上限 1 万亿日元，属政府财政资助/拨款而非投资关系，invests_in 类型不当。",
+      "fix": "改为 funds / provides_grant（政府资助项目），或把 FRONTia 作为被资助对象、关系类型用资助语义而非 invests_in。"
+    }
+  ],
+  "lessons": [
+    "arXiv 是论文预印本发布平台而非作者；论文与 arXiv 的关系用 published_on 或 deposited_in，不要把 arXiv 作为 authored_by 的 target。",
+    "投资类断言必须有证据直接指向该投资方与特定被投方；'某机构资助了 N 家公司'这类笼统句不能推出它投资了文中列出的每一家具体公司。",
+    "把平台/设备'开放给某助手接入'写成关系时用接入/开放语义（provides_access_to/integrates_with），不要用 partners_with 表达单向开放；政府给项目拨款用 funds 语义而非 invests_in。"
+  ]
+}

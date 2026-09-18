@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-17",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "本轮已修复 r1 的两处 high（arXiv 误当作者、YC 对三家具体公司过度归因）及 partners_with/regulates/invests_in 若干关系类型，全文事实与数字逐条核对零差错（六个失当案例、106 家、6000 个 abliteration 模型、200 万颗 GPU、3873 亿日元、27,500 颗 Rubin、16 天/85 万调用/500 亿 token、1.38 美元/小时等均与原文一致），跨文章实体连通良好（OpenAI、Hugging Face、NVIDIA、Rubin、LLM 代理、arXiv 命名一致）。遗留 4 条 medium，集中在关系/事件类型的语义错用而非事实错误：三类攻击向量被挂上 evaluated_on 关系、具名基准被当作事件类型、研发部门写成 subsidiary_of、趋势事件参与者过度归因。因 medium 超过 2 条，判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-09-17-6",
+      "severity": "medium",
+      "problem": "关系 \\\"LLM 代理 --evaluated_on--> 间接提示注入\\\"、\\\"LLM 代理 --evaluated_on--> 错误信息\\\"、\\\"LLM 代理 --evaluated_on--> 私有代理记忆\\\" 三类方向/类型错用。间接提示注入、错误信息、私有代理记忆是作用到系统上的应激/攻击事件类型，不是代理被\\\"评测于其上的\\\"基准或数据集；evaluated_on 语义（如评测模型在某基准上）在此不成立。而且这三项同时又被列为事件 2 的 participants（topic 角色），同一内容既当关系目标又当事件参与者，属规则所指\\\"把事件类型当成关系类型\\\"。",
+      "fix": "删除这三条 evaluated_on 关系，让三类攻击仅作为事件 type 或 events[1].participants（object 角色）承载\\\"系统被三类压力事件压测\\\"这一事实；若确要落边，以被攻方为 source、攻击事件为 target 使用 exposed_to/subjected_to 类语义（如 Emergence World --subjected_to--> 间接提示注入），不要从 LLM 代理指向这三类攻击并用 evaluated_on。"
+    },
+    {
+      "article_id": "2026-09-17-7",
+      "severity": "medium",
+      "problem": "事件 2 \\\"RIR 在多个长时程基准上一致提升任务表现\\\" 的 type 被标为 \\\"benchmark\\\"。benchmark 是评测载体/数据集的名称，不是事件的行为类别；这会把\\\"评测工具\\\"与\\\"事件类型\\\"混为一谈（规则 3：不要把事件类型与关系/评测类别混淆）。",
+      "fix": "把事件的 type 改为行为类别，如 \\\"research\\\" 或 \\\"evaluation\\\"（该事件本质是 RIR 的评测结果），并在事件的 label/summary/metrics 里保留\\\"在三个长时程基准上\\\"作为评测载体描述即可。"
+    },
+    {
+      "article_id": "2026-09-17-2",
+      "severity": "medium",
+      "problem": "关系 \\\"Base Labs --subsidiary_of--> Baseten\\\"（证据 \\\"正式启用其研究部门 Base Labs\\\"）类型不当。Base Labs 是 Baseten 内部启用的研究部门（research division），并非独立注册的法人子公司，subsidiary_of 暗示独立公司实体，与原文\\\"研究部门\\\"不符，会误导图谱把 Base Labs 读成一个独立公司。",
+      "fix": "改为表达\\\"部门/分支从属\\\"的关系类型（如 part_of / division_of），或保留 relation 而把源实体标注为 Baseten 的部门；subsidiary_of 仅在原文明确出现独立子公司实体时使用。"
+    },
+    {
+      "article_id": "2026-09-17-1",
+      "severity": "medium",
+      "problem": "事件 2 \\\"让另一个 AI 监督代理成为治理失控代理的主流答案\\\"（trend）的 participants 列入了 OpenAI(subject)、Hugging Face(object)、Ryan Greenblatt/Redwood Research/Simon Willison(partner) 五个主体，但该事件证据仅为 \\\"再放一个 AI 在循环里\\\"。这句只支撑\\\"答案是再放一个 AI 监督\\\"这一结论，并不表明 OpenAI、Hugging Face、红木等是这个\\\"趋势事件\\\"的参与者；OpenAI/HF 在此文中是被引用的讨论对象（OpenAI 模型曾骗打分 AI、HF 代理规模案例），把它们列为该趋势事件的 subject/object 属\\\"共同出现/被提及时当成事件参与者\\\"的过度归因。",
+      "fix": "把该 trend 事件的 participants 缩减到证据真正支撑的对象（可只保留作为监督方案的 AI 主题，或留空 participants），把 OpenAI、Hugging Face、Redwood、Simon Willison 各自被引用的事实（模型联合骗打分 AI、HF 事件规模、独立审计靠 AI、专家警告）落成有具体证据支撑的独立事件或关系，而不是塞进这一个趋势事件。"
+    }
+  ],
+  "lessons": [
+    "笔记注入、错误信息、私有记忆泄露等应激/攻击点是作用于系统的事件类别，作事件 type 或事件 participants 的 object 即可，不要把这类攻击向量另建为独立 topic 实体并给被攻方挂 evaluated_on 关系（evaluated_on 只用于评测模型在某个基准上的关系）。",
+    "事件 type 用行为类别（launch/research/partnership/funding/trend/security/infra 等），不要用具名评测载体（benchmark、数据集名）当事件类型，评测载体只在 label/summary/metrics 中描述。",
+    "公司内部启用的研究/研发部门用 part_of/division_of 表达从属，不要用 subsidiary_of（后者仅用于明确为独立法人的子公司），避免图谱把内部部门误读成独立公司。"
+  ]
+}
