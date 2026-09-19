@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T22:42:27Z",
+  "updated_at": "2026-09-19T22:47:56Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -701,13 +701,13 @@
       "period_id": "2026-W34",
       "period_type": "week",
       "start_date": "2026-08-17",
-      "end_date": "2026-08-19",
-      "summary": "2026-08-17 至 2026-08-19 期间，OpenAI、Nvidia、据中心开发商投资 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-20",
+      "summary": "2026-08-17 至 2026-08-20 期间，OpenAI、亿美元、Nvidia 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
+        "亿美元",
         "Nvidia",
-        "据中心开发商投资",
-        "Groq"
+        "ChatGPT"
       ],
       "event_types": [
         "infra",
@@ -715,7 +715,7 @@
         "research"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、Nvidia、据中心开发商投资",
+        "核心实体：OpenAI、亿美元、Nvidia",
         "主事件类型：infra、launch"
       ],
       "representative_article_ids": [

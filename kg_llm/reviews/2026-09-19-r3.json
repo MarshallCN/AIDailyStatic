@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-19",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "抽取整体扎实，实体/关系大多正确支撑证据。主要问题是 19-8 遗漏了军事行动的核心对象「中国」这一实体，使图谱失去故事的另一半；另有 19-7 的 DMI 重复 founded_by、19-10 把事件公开渠道误作论文发表平台两处关系问题。",
+  "findings": [
+    {
+      "article_id": "2026-09-19-8",
+      "severity": "high",
+      "problem": "遗漏核心主体「中国」。原文事件全部围绕「针对中国船只的武装行动」「险些引发与中国的冲突」展开，行动的对象是中国船只，但 entity/relation 中完全没有「中国」这个实体，图谱只记录了行动方（美军/SOCOM），丢失了故事的被作用对象与地缘政治框架。",
+      "fix": "新增实体「中国」（type: country，evidence 引用『针对中国船只的武装行动』及『险些引发潜在的中美冲突』），并建立关系如 美军 --targets--> 中国（或把中国加入该 security 事件的 participant，role: object），让图谱能读成『美军针对中国的行动因 AI 幻觉情报被叫停』的完整事实。"
+    },
+    {
+      "article_id": "2026-09-19-7",
+      "severity": "medium",
+      "problem": "关系重复计数：DMI 同时挂了两条 founded_by —— DMI --founded_by--> Google 和 DMI --founded_by--> Google DeepMind，且原文明说的是『Google 与 Google DeepMind 的研究者成立』，发起方是两机构的研究者而非机构本身，两条边把同一发起事件重复计了两次。",
+      "fix": "合并为一条：保留 DMI --founded_by--> Google DeepMind（或改由「研究者 affiliated_with」关系承载成立动作），删除对 Google 的重复 founded_by 边；event participants 中也不必把 Google 与 Google DeepMind 并列重复列为 subject。"
+    },
+    {
+      "article_id": "2026-09-19-10",
+      "severity": "medium",
+      "problem": "关系类型不当：『复制(copying) --published_on--> collusion.wiki』。原文说的是事件记录于 2026-09-04 由四位研究者『通过 collusion.wiki 公开』，collusion.wiki 是这次野外协作事件的公开渠道，不是论文的发表平台；论文发表平台是 arXiv（该条已有 published_on）。",
+      "fix": "删除或改掉这条 published_on：保留 复制 --published_on--> arXiv，把与 collusion.wiki 的关系改为 references / documents（记录事件公开渠道），不要用 published_on 混淆『事件公开渠道』与『论文发表平台』。"
+    },
+    {
+      "article_id": "2026-09-19-2",
+      "severity": "medium",
+      "problem": "遗漏提出法案的主体「众议院」。原文明确『今年夏天……众议院提出《中断开关法案》……该提案本周在参议院被快速否决』，立法链条的两个立法机构只抽出了参议院（rejects），漏掉了提出方众议院，关系只剩半条。",
+      "fix": "新增实体「众议院」（type: organization），并建立 众议院 --proposes（或 introduces）--> 中断开关法案 的关系，与既有的 参议院 --rejects--> 中断开关法案 形成完整的『众议院提出－参议院否决』立法链条。"
+    }
+  ],
+  "lessons": [
+    "军事与地缘事件新闻中，行动所针对的国家/实体是故事的核心主体，必须抽为实体并与行动方建立关系（如 targets），不能只抽取行动方。",
+    "当机构与其子公司共同作为发起方时，founded_by 只挂一条（挂在母公司或子公司其一，或改由发起的研究者承载），不要对同一发起事件生成重复边。",
+    "区分『论文发表平台』（arXiv/期刊/会议，用 published_on）与『事件公开渠道』（博客/wiki/报告页面，用 references/documents），不要把事件公开渠道误作论文发表平台。"
+  ]
+}

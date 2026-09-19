@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-19",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "整体抽取质量高、实体与证据基本对齐，但存在系统性关系方向错误：'founded_by' 在 2026-09-19-0 与 2026-09-19-7 均把被创立者放在 target 位，导致读过成相反事实；另有事件切分过粗、核心关系稀疏、历史从属误用为中等级问题。",
+  "findings": [
+    {
+      "article_id": "2026-09-19-7",
+      "severity": "high",
+      "problem": "关系 'Google --founded_by--> DMI' 与 'Google DeepMind --founded_by--> DMI' 方向反了。按本图谱对被动关系的约定（对比同篇的 'held-out 评测 --developed_by--> DMI' 及 'Gemini --developed_by--> Google'，source 是被动作/被创立方），'X --founded_by--> Y' 应读作'X 由 Y 创立'；现写法读作 'Google 由 DMI 创立'、'Google DeepMind 由 DMI 创立'，与原文'Google 与 Google DeepMind 的研究者成立 DMI' 完全相反。",
+      "fix": "改为 'DMI --founded_by--> Google' 与 'DMI --founded_by--> Google DeepMind'，把被创立的 DMI 放到 source 位。"
+    },
+    {
+      "article_id": "2026-09-19-0",
+      "severity": "medium",
+      "problem": "关系 '特朗普 --founded_by--> AI 部队' 方向反了，被动读法下应理解成'特朗普由 AI 部队创立'，与原文（特朗普宣布组建 AI 部队）相反，也与 founded_by 的被动约定（source 为被创立者）不符。",
+      "fix": "改为 'AI 部队 --founded_by--> 特朗普'；若坚持把特朗普当主语发起方，应改用主动语义关系（如 announced_founding / leads），而不是被动型 founded_by。"
+    },
+    {
+      "article_id": "2026-09-19-3",
+      "severity": "medium",
+      "problem": "事件 2 'Dario Amodei 发表呼吁全球放缓的公开长文' 把两件独立动作压成一个事件：Dario Amodei 个人的 'We Must Pace the Frontier' 长文，与 Anthropic×埃森哲的'嵌入式评价'商业合作，主体与机制都不同，只因同属'安全承诺'主题被合并进一个 type=policy 事件。",
+      "fix": "拆成两个事件：'Dario Amodei 发表呼吁放缓的前沿长文'（policy，主体 Amodei）与 'Anthropic 与 Accenture 宣布嵌入式评价合作'（partnership/eco，主体为 Anthropic 与 Accenture 双方）。"
+    },
+    {
+      "article_id": "2026-09-19-2",
+      "severity": "medium",
+      "problem": "两处：①事件 3 'OpenAI 披露 6 起模型行为' 把 Mark Nitzberg、Raj Rajamani 列为 context 参与者，但二人谈论的是'中断开关缺乏实际可行性'，与 OpenAI 行为事件主题无关，应归属'中断开关'语境；②本篇 12 个实体仅 2 条关系，核心立法链（参议院、中断开关法案、加州州长、国土安全部）之间完全没有关系边，图谱基本不连通。",
+      "fix": "把 Nitzberg、Rajamani 从 OpenAI 行为事件中移除，或归入'中断开关'主题事件；并补充立法链核心关系，如 '参议院 --rejects--> 中断开关法案'、'Gavin Newsom --signs--> 行政令'，使法律主体在图谱中有边可循。"
+    },
+    {
+      "article_id": "2026-09-19-6",
+      "severity": "medium",
+      "problem": "关系 'Diogo Almeida --affiliated_with--> OpenAI' 依据只是'2022 年 OpenAI 论文领衔作者之一'，而原文明确称其是'前 OpenAI 研究者'、已离开并创立 TypeSafe AI；affiliated_with 暗示当前从属，该证据在时间与现状上都不支撑。",
+      "fix": "删除该 affiliated_with 关系；如需表达来历，改用历史从属语义（如 previously_at / worked_at 标注 2022 年），或只保留 Almeida 与 TypeSafe 的 affiliated_with。"
+    }
+  ],
+  "lessons": [
+    "方向约定：'developed_by'、'founded_by'、'affiliated_with' 这类被动关系始终读作'source 由 target 开发/创立/雇佣'，必须把被创立/被开发/被隶属的主体放在 source 位、动作方放在 target 位；组织成立与某人组建某群体类新闻最容易把这两个位置写反。",
+    "同一主体的多个不同动作（如个人的公开呼吁 vs 公司的商业合作）即使同属一个主题，也要拆成独立事件，不要因主题一致就压进同一事件。",
+    "对'前员工/前研究者'不要用 affiliated_with（暗示当前从属）表示历史关系；原文未声明当前任职时，改用 previously_at 等历史语义或干脆不建立从属关系。"
+  ]
+}
