@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-20",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "本份抽取在事实、数字与关系方向上整体扎实（索引44、600B/27B、1M上下文、7000亿美元、79%、4亿美元、60/100、79/20刺玩偶等关键指标全部与原文核对一致，无幻觉）。主要问题集中在连通性不完整：RoboHarm 被测的三个模型中只有 GPT-6 Astra 建了 evaluated_on 边；实体粒度（Mythos 等能力层级被当独立 model）与事件类型（高管控表态被判为 launch）也需校正。",
+  "findings": [
+    {
+      "article_id": "2026-09-20-4",
+      "severity": "medium",
+      "problem": "RoboHarm 基准实际评测了三组模型（GPT-6 Astra、Claude Fable 5.1、MolmoAct2），事件与指标里三者的结果都有收录，但 relations 里只给 GPT-6 Astra 建了 \"evaluated_on --> RoboHarm\" 边，Claude Fable 5.1 与 MolmoAct2 与基准之间没有任何 evaluated_on 关系，导致被评测对象的连通不完整。",
+      "fix": "为其余两个被测模型同样补建 \"Claude Fable 5.1 --evaluated_on--> RoboHarm\" 和 \"MolmoAct2 --evaluated_on--> RoboHarm\" 两条关系，evidence 引用各自的拒绝/完成数据（如 \"Claude Fable 5.1 拒绝全部20次刺玩偶请求\"、\"MolmoAct2 从未拒绝且只完成6/100\"）。"
+    },
+    {
+      "article_id": "2026-09-20-1",
+      "severity": "medium",
+      "problem": "实体 Mythos 被标为 type=model，但原文明确它是“面向普通用户的 Fable 模型中封禁的能力对应的模型层级（Mythos、Opus、Sonnet）”，三者是同一 Fable 模型内的能力层级（tier），并非独立发布的模型；且 Opus、Sonnet 与 Mythos 同层级却未被抽取。实体类型错配会导致图谱误把能力层级当成独立模型。",
+      "fix": "将 Mythos 的 type 从 model 改为 \"model_tier\"（或归属父模型 Fable），并在实体证据里同时保留 Opus、Sonnet；若判定三者均应入图，则把 Opus、Sonnet 也一并抽为同类实体，保持层级粒度一致。"
+    },
+    {
+      "article_id": "2026-09-20-6",
+      "severity": "medium",
+      "problem": "事件一被标为 type=launch、label 是 \"Ternus 宣称 iPhone 是智能个人枢纽\"——这是苹果新 CEO 在首次产品活动上的表态/演讲，并非发布新品，用 launch 事件类型不准确，会与真正的产品发布混淆。",
+      "fix": "将该事件类型从 launch 改为 trend（或 policy/commentary），label 保留现有表述即可；仅在确有新品发布的事件（如 J490）上使用 launch 类型。"
+    },
+    {
+      "article_id": "2026-09-20-0",
+      "severity": "low",
+      "problem": "关系 \"第三方独立评估 --targets--> Anthropic\" 把 Dario Amodei 的“主张”固化成一条已确立的评估关系。原文仅是倡导独立第三方评估机构进驻实验室、监督安全事故，是拟议/呼吁，并非现存的针对 Anthropic 的评估对象关系。",
+      "fix": "保留实体即可；若保留边，将其来源锚定到主张主体（Dario Amodei --近系/主张--> 第三方独立评估 进驻 Anthropic 实验室），不要在 \"第三方独立评估\" 与 \"Anthropic\" 之间直接建 targets 边，或删除该边。"
+    },
+    {
+      "article_id": "2026-09-20-3",
+      "severity": "low",
+      "problem": "同一篇 Dream-RSI 论文同时抽了 \"Google\" 与 \"Google DeepMind\" 两个独立 author 实体并分别建了 authored_by 边，但 DeepMind 现已是 Google DeepMind、隶属 Google 体系，原文来源标题即 \"Google / DeepMind\"。两者并存造成归属粒度不一致，影响跨文章规范化。",
+      "fix": "统一为单一规范作者实体（建议保留 Google DeepMind 作为论文出品方，或明确 Google 为其母公司关系），不要同一论文挂着两个并列 author 实体；如需保留母公司信息，单独建 Google --owns/母公司--> Google DeepMind 的边。"
+    }
+  ],
+  "lessons": [
+    "评测基准类新闻中，凡是在同一基准上被测的每一个模型/系统都要分别建立到该基准的 evaluated_on 关系，不能只给其中之一建边。",
+    "同一产品线内的能力层级（如某模型内的 Mythos/Opus/Sonnet 层）不要抽成独立的 type=model 实体，除非原文明确它们是独立发布的模型；用 model_tier 类并归入父模型。",
+    "高管在产品活动上的表态/演讲事件，若未发布新品，事件类型不要用 launch，改用 trend/policy/commentary。"
+  ]
+}

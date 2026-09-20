@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-20",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "整体覆盖与数字都准确，但存在一处关系方向颠倒的高危错误（article 5 的 developed_by 边），以及多处把'主张/计划'当成既成事实或误用关系类型的中等错误，需修订后才可发布。",
+  "findings": [
+    {
+      "article_id": "2026-09-20-5",
+      "severity": "high",
+      "problem": "关系 \"EUCLYD --developed_by--> craftwerk\" 方向/对象颠倒。全图其余所有 developed_by 边均为 制品(source) --developed_by--> 开发方(target)（如 GPT-6 Astra --developed_by--> OpenAI、Step 5 Preview --developed_by--> StepFun、MolmoAct2 --developed_by--> Ai2）。此边把 source 写成公司 EUCLYD、target 写成制品 craftwerk，语义变成'EUCLYD 由 craftwerk 开发'，与原文（EUCLYD 开发推出 craftwerk）相反。",
+      "fix": "改为 craftwerk --developed_by--> EUCLYD（与其它 developed_by 边方向一致）；若坚持公司作主语，则改用 develops：EUCLYD --develops--> craftwerk。"
+    },
+    {
+      "article_id": "2026-09-20-0",
+      "severity": "medium",
+      "problem": "关系 \"第三方独立评估 --regulates--> Anthropic\" 把 Dario Amodei 的'主张/呼吁'当成既成事实。原文只说 Dario '主张独立第三方评估机构进驻实验室、监督安全事故'，且明确此计划'细节模糊、远未落地'（谁付费、谁有权叫停都未定）。不存在现行监管关系，regulates 是对未来请求状态的错误断言。",
+      "fix": "删除该 regulates 边；若想保留该信息，应体现'倡议'而非'监管'语义（如第三方独立评估 关联 Dario Amodei / Anthropic 的 context 参与者，或 type 改用主张/requires 一类），不得用 regulates 断言现实监管。"
+    },
+    {
+      "article_id": "2026-09-20-1",
+      "severity": "medium",
+      "problem": "关系 \"LSVP --integrates--> Mythos\" 类型不当。LSVP 是一个'向通过筛选的科研人员分级开放 Mythos、Opus、Sonnet 等模型层级'的验证计划，不是'整合'Mythos 的产品；integrates 误述了 LSVP 与模型的关系（计划授予访问权限，而非集成模型）。",
+      "fix": "删除该边，或改用能表达'分级授予模型访问权限'的类型（如 grants_access_to：LSVP --grants_access_to--> Mythos）；LSVP 与 Anthropic 的 released_by 边保留。"
+    },
+    {
+      "article_id": "2026-09-20-3",
+      "severity": "medium",
+      "problem": "关系 \"Google DeepMind --subsidiary_of--> Google\" 的证据不支撑该隶属关系。证据仅'Google 与 DeepMind 研究者提出 Dream-RSI'，是并列署名共现，证明不了一家是另一家子公司；按审查标准，证据存在但支撑的是另一回事，同样算错。",
+      "fix": "删除这条无证据支撑的 subsidiary_of 边；Google 与 Google DeepMind 同为共同作者已由两条 authored_by 边表达，不必额外推导隶属关系。"
+    },
+    {
+      "article_id": "2026-09-20-7",
+      "severity": "medium",
+      "problem": "信息贫乏：metrics 仅收录了'上线日期 9 月 18 日'，而全文核心论点是'Qwen3.8-Omni-Flash 以更低价格匹配 Gemini Flash 多模态基准'——这条构成文章主要价值的'匹配基准 + 更低定价'事实却完全没进 metrics。",
+      "fix": "补入核心指标，如 'Qwen3.8-Omni-Flash 相对 Gemini Flash 定价'（更低/具体差距）与'匹配 Gemini Flash'的多模态基准这一事实；去掉或弱化与文章主旨关系不大的上线日期。"
+    }
+  ],
+  "lessons": [
+    "制品到开发方的关系一律写 source=制品、target=公司、type=developed_by，严禁让公司充当 source 产生'制品反向'的误读；全篇同一关系类型的方向必须一致。",
+    "仅当主张或呼吁已落地为现实约束时才断言 regulates/royalty 等规制类关系；原文只是倡议监督时，用倡议/关联语义或删除该边，不得把请求中的未来状态写成既成事实。",
+    "组织隶属关系（如 subsidiary_of）必须有明确支撑；仅以并列署名或共同作者出现不足以构成隶属，删去无证据的隶属边。"
+  ]
+}

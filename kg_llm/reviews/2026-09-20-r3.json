@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-20",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "无 high 级幻觉，关键数字（7000亿美元、79%、4亿美元、索引44、600B/27B、1M、60/100、2次拒绝、300次试验）、关系方向、事件切分与跨文章实体规范化经逐条核对均正确，R2 指出的 RoboHarm evaluated_on 缺失、Mythos 实体粒度、article-6 launch 类型、article-0 targets 边也已修复。剩余问题集中在中低度：多处把\"共同出现\"固化为竞争/子属关系而其 evidence 不支撑，Apple 竞争关系漏掉原文列出的 Anthropic 造成不一致，LSVP 类型错配为 product，连通性仍有个别缺环，共 3 条 medium。",
+  "findings": [
+    {
+      "article_id": "2026-09-20-0",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --competes_with--> OpenAI\"（weight 0.6）的 evidence 是 \"这些公司（OpenAI、Anthropic 等）\"。原文里这句只是在对讨论\"主动减速\"治理结构的主体做并列枚举（OpenAI、Anthropic 等都在为\"减速\"发声），通篇没有任何表述两方竞争语义。这是典型的\"共同出现不等于有关系\"——evidence 存在但支撑的是别的事。",
+      "fix": "删除该 competes_with 关系；若不删，必须替换 evidence 为原文中真正表述 Anthropic 与 OpenAI 竞争语义的句子，否则不要保留。不要用并列枚举句作为竞争关系的证据。"
+    },
+    {
+      "article_id": "2026-09-20-6",
+      "severity": "medium",
+      "problem": "竞争关系建得不一致且证据错位：原文明确 \"OpenAI、Google 与 Anthropic 都在用 Agent、耳机、眼镜或家庭设备争夺'谁是你的默认 AI 界面'\"——三方都是苹果在\"入口之争\"中的竞争者，但抽取只给 Apple 建了与 OpenAI、Google 的 competes_with 边，漏掉 Anthropic；且 Apple--competes_with-->Google 的 evidence 用的是 \"苹果选择把入口定义为 iPhone\"（这句讲的是苹果自身策略，不支撑与 Google 的竞争）。",
+      "fix": "补建 \"Apple --competes_with--> Anthropic\"，并把 Apple 与 OpenAI/Google/Anthropic 三条竞争边的 evidence 统一改为原文争夺\"默认 AI 界面\"的句子（\"当 OpenAI、Google 与 Anthropic 都在用 Agent、耳机、眼镜或家庭设备争夺...\"），对原文列出的竞争者三方保持一致，不要只用与竞争无关的引文作证。"
+    },
+    {
+      "article_id": "2026-09-20-1",
+      "severity": "medium",
+      "problem": "实体 LSVP 被标为 type=product，但原文定义它是\"生命科学验证计划（LSVP）\"——一个面向科研人员分级开放模型权限的验证程序/倡议，并非交付的产品。类型错配会把一个治理程序误当成产品，影响图谱语义（也与此前对 Mythos 等能力层级的粒度修正思路不一致）。",
+      "fix": "将 LSVP 的 type 从 product 改为 program/initiative（若本体无此类型，用 topic 或最贴近的类型），保留 evidence \"Anthropic 同周还发布了'生命科学验证计划（LSVP）'\"。不要在同一个图谱里把\"计划/验证程序\"标成 product。"
+    },
+    {
+      "article_id": "2026-09-20-3",
+      "severity": "low",
+      "problem": "关系 \"Google DeepMind --subsidiary_of--> Google\" 本身事实正确，但其 evidence 仍是 \"Google 与 DeepMind 研究者提出 Dream-RSI\"——这是合著背景，无法支撑\"子属关系\"这一断言（且恰好是 R2 要求把两个 author 实体分开后的父属边）。evidence 与它支撑的断言不匹配。",
+      "fix": "保留该 subsidiary_of 边，但把 evidence 换成能说明 DeepMind 隶属 Google 体系的表述（原文标题即 'Google / DeepMind'、DeepMind 现已并入 Google DeepMind）；不要用\"双方共同提出论文\"作为子属关系的证据。"
+    },
+    {
+      "article_id": "2026-09-20-7",
+      "severity": "low",
+      "problem": "本篇抽了实体 Step 5 Preview 和 GPT-5.6 Sol，但没有抽其生产者 StepFun，也没有 Step 5 Preview 的 developed_by 关系；StepFun 在 article 2 已是规范实体，本篇应能据此跨文章连通。当前 Step 5 Preview 在本篇无任何关联边，弱化了两篇文章之间的连通。",
+      "fix": "补抽实体 StepFun（type=company，aliases 可含\"阶跃星辰\"）并建 \"Step 5 Preview --developed_by--> StepFun\"，evidence 引用原文 \"StepFun 的 Step 5 Preview 同日以 Sol 七分之一的价格\"；利用跨文章已规范的主体建立连通。"
+    }
+  ],
+  "lessons": [
+    "多个主体在同一句/段里被并列枚举（如'这些公司（OpenAI、Anthropic 等）'）只表示共同出现，不构成竞争或合作；仅在原文明确表述竞争/合作语义时才建立相应关系，否则删掉，不要把枚举句当证据。",
+    "原文明确列出多方争夺同一角色或市场（如'OpenAI、Google 与 Anthropic 都在争夺默认 AI 界面'）时，竞争关系必须覆盖所列全部主体且用争夺语作证据，不要漏掉其中一方，也不要拿与竞争无关的引文（如单方自身策略）作证。",
+    "'×计划'、'×验证程序'（如 LSVP、评测计划）这类倡议/项目性质的主体不要标成 product，应使用 program/initiative（或 topic）等更贴切的类型。"
+  ]
+}

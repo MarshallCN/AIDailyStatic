@@ -1,0 +1,906 @@
+{
+  "date": "2026-09-20",
+  "articles": [
+    {
+      "article_id": "2026-09-20-0",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["Anthropic CEO Dario Amodei 提出“给前沿设速”"]
+        },
+        {
+          "name": "Dario Amodei",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Anthropic CEO Dario Amodei"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["这些公司（OpenAI、Anthropic 等）"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达"],
+          "confidence": 0.9,
+          "evidence": ["英伟达、博通等芯片股同期却因"]
+        },
+        {
+          "name": "第三方独立评估",
+          "type": "topic",
+          "aliases": ["独立第三方评估"],
+          "confidence": 0.8,
+          "evidence": ["主张独立第三方评估机构进驻实验室、监督安全事故"]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Dario Amodei 提出“给前沿设速”并主张独立第三方评估进驻实验室",
+          "summary": "Anthropic CEO Dario Amodei 提出给前沿设速的公开计划，主张独立第三方评估机构进驻实验室、监督安全事故，并呼吁民主国家的主要 AI 公司协调安全标准。",
+          "participants": [
+            {"name": "Dario Amodei", "type": "person", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "context"},
+            {"name": "第三方独立评估", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Anthropic CEO Dario Amodei 提出“给前沿设速”的公开计划，主张独立第三方评估机构进驻实验室、监督安全事故"]
+        },
+        {
+          "type": "trend",
+          "label": "五大超大规模厂商 2026 年约 7000 亿美元 AI 基建资本开支与减速口号并存并被市场定价",
+          "summary": "五大超大规模厂商 2026 年计划投入约 7000 亿美元用于 AI 基础设施，且 79% 的机构投资者不预期明年削减资本开支，减速叙事与继续大干快上的资本计划在同一家公司内部并存。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "context"},
+            {"name": "NVIDIA", "type": "company", "role": "context"}
+          ],
+          "evidence": ["五大超大规模厂商 2026 年计划投入约 7000 亿美元用于 AI 基础设施"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Dario Amodei",
+          "target": "Anthropic",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": ["Anthropic CEO Dario Amodei"]
+        },
+        {
+          "source": "Anthropic",
+          "target": "OpenAI",
+          "type": "competes_with",
+          "weight": 0.6,
+          "evidence": ["这些公司（OpenAI、Anthropic 等）"]
+        }
+      ],
+      "metrics": [
+        {"name": "五大超大规模厂商 2026 年 AI 基建资本开支", "value": "约 7000 亿美元"},
+        {"name": "机构投资者不预期明年削减资本开支比例", "value": "79%"}
+      ],
+      "why_it_matters": "减速第一次被放进市场定价：当喊减速与踩油门的往往是同一批高管，机构投资者又不预期产能收缩时，“减速”沦为高管演讲而非可核查的资本承诺，这解释了为何芯片与云厂商股价未因减速宣言走低。"
+    },
+    {
+      "article_id": "2026-09-20-1",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["Anthropic 确认，其在旧金山湾区运营一间"]
+        },
+        {
+          "name": "Claude",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Claude 模型与机器人设备协同执行实验"]
+        },
+        {
+          "name": "Eric Kauderer-Abrams",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Anthropic 的生命科学负责人 Eric Kauderer-Abrams"]
+        },
+        {
+          "name": "LSVP",
+          "type": "product",
+          "aliases": ["生命科学验证计划"],
+          "confidence": 0.85,
+          "evidence": ["同周还发布了“生命科学验证计划（LSVP）”"]
+        },
+        {
+          "name": "Coefficient Bio",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["以 4 亿美元收购隐秘生物技术公司 Coefficient Bio"]
+        },
+        {
+          "name": "Dario Amodei",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["CEO Dario Amodei 曾把生物恐怖主义列为"]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Anthropic 在旧金山湾区运营湿生物学实验室，用 Claude 与机器人设备执行实验",
+          "summary": "Anthropic 确认其在旧金山湾区运营一间湿生物学实验室，由 Claude 模型与机器人设备协同执行实验，让 LLM 生成的生物学假设在同一机构内接受真实检验。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Anthropic 确认，其在旧金山湾区运营一间“湿生物学实验室（wet lab）”"]
+        },
+        {
+          "type": "launch",
+          "label": "Anthropic 发布生命科学验证计划（LSVP），分级开放 Mythos/Opus/Sonnet 模型层级",
+          "summary": "Anthropic 同周发布 LSVP，向通过筛选的科研人员分级开放其在面向普通用户的 Fable 模型中封禁的能力对应的模型层级（Mythos、Opus、Sonnet），其中 Mythos 的高风险管理用途仅限一小批机构。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "LSVP", "type": "product", "role": "object"}
+          ],
+          "evidence": ["同周还发布了“生命科学验证计划（LSVP）”"]
+        },
+        {
+          "type": "acquisition",
+          "label": "Anthropic 以 4 亿美元收购生物技术公司 Coefficient Bio",
+          "summary": "Anthropic 于 2026 年 4 月以 4 亿美元收购隐秘生物技术公司 Coefficient Bio，这间湿实验室被普遍视为该收购的实体化落地。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Coefficient Bio", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Anthropic 于 2026 年 4 月以 4 亿美元收购隐秘生物技术公司 Coefficient Bio"]
+        },
+        {
+          "type": "policy",
+          "label": "Dario Amodei 将生物恐怖主义列为高级 AI 最尖锐风险之一",
+          "summary": "Anthropic CEO Dario Amodei 曾把生物恐怖主义列为高级 AI 最尖锐的风险之一，投资者 Chamath Palihapitiya 也指出一边做生物安全研究、一边建生物实验能力之间的张力。",
+          "participants": [
+            {"name": "Dario Amodei", "type": "person", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "context"}
+          ],
+          "evidence": ["CEO Dario Amodei 曾把生物恐怖主义列为高级 AI 最尖锐的风险之一"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Claude 模型与机器人设备协同执行实验"]
+        },
+        {
+          "source": "Eric Kauderer-Abrams",
+          "target": "Anthropic",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["Anthropic 的生命科学负责人 Eric Kauderer-Abrams"]
+        },
+        {
+          "source": "LSVP",
+          "target": "Anthropic",
+          "type": "released_by",
+          "weight": 0.85,
+          "evidence": ["同周还发布了“生命科学验证计划（LSVP）”"]
+        },
+        {
+          "source": "Anthropic",
+          "target": "Coefficient Bio",
+          "type": "acquires",
+          "weight": 0.9,
+          "evidence": ["以 4 亿美元收购隐秘生物技术公司 Coefficient Bio"]
+        }
+      ],
+      "metrics": [
+        {"name": "收购 Coefficient Bio 金额", "value": "4 亿美元"},
+        {"name": "Mythos 高风险管理用途可用机构范围", "value": "仅限一小批机构"}
+      ],
+      "why_it_matters": "同一个机构里同时长出产出生物假设的模型能力与检验假设的台架能力，AI 安全从算法评测推进到物理实验验证，“生物能力分级管控”就此成为前沿模型安全治理一个具体可操作的维度。"
+    },
+    {
+      "article_id": "2026-09-20-2",
+      "entities": [
+        {
+          "name": "StepFun",
+          "type": "company",
+          "aliases": ["阶跃星辰"],
+          "confidence": 0.9,
+          "evidence": ["阶跃星辰（StepFun）上周发布其旗舰级开放模型"]
+        },
+        {
+          "name": "Step 5 Preview",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["发布 Step 5 Preview 并同日开放 API"]
+        },
+        {
+          "name": "Kimi K3 Max",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["与去年发布、月活领先的 Moonshot 旗下 Kimi K3 Max 相当"]
+        },
+        {
+          "name": "Moonshot AI",
+          "type": "company",
+          "aliases": ["月之暗面"],
+          "confidence": 0.85,
+          "evidence": ["Moonshot 旗下 Kimi K3 Max"]
+        },
+        {
+          "name": "GPT-5.6 Sol",
+          "type": "model",
+          "aliases": ["Sol"],
+          "confidence": 0.85,
+          "evidence": ["据称约为 GPT-5.6 Sol 定价的七分之一"]
+        },
+        {
+          "name": "Qwen3.8-Max",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["如 Qwen 的 3.8-Max 首次承诺开源 Max 级权重"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "StepFun 发布 600B 稀疏 MoE 模型 Step 5 Preview 并同日开放 API",
+          "summary": "StepFun 本周日发布旗舰级开放模型 Step 5 Preview 并同日开放 API：600B 参数稀疏 MoE，每 token 激活 27B 参数，支持 100 万 token 长上下文。",
+          "participants": [
+            {"name": "StepFun", "type": "company", "role": "subject"},
+            {"name": "Step 5 Preview", "type": "model", "role": "object"}
+          ],
+          "evidence": ["发布其旗舰级开放模型 Step 5 Preview 并同日开放 API"]
+        },
+        {
+          "type": "open_source",
+          "label": "StepFun 计划 10 月 15 日开放 Step 5 Preview 完整权重",
+          "summary": "StepFun 表示完整开放权重将于 10 月 15 日放出，截至发布时 Hugging Face 仓库仅有一个占位文件，形成先上 API、后放权重的节奏。",
+          "participants": [
+            {"name": "StepFun", "type": "company", "role": "subject"},
+            {"name": "Step 5 Preview", "type": "model", "role": "object"},
+            {"name": "Qwen3.8-Max", "type": "model", "role": "context"}
+          ],
+          "evidence": ["完整开放权重将于 10 月 15 日放出"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Step 5 Preview 智能指数 44 追平 Kimi K3 Max、定价约为 GPT-5.6 Sol 的七分之一",
+          "summary": "Step 5 Preview 在 Artificial Analysis 智能指数上拿到 44 分，与 Kimi K3 Max 相当，而定价仅为约 $1/百万输入、$2.70/百万输出，约为 GPT-5.6 Sol 的七分之一。",
+          "participants": [
+            {"name": "Step 5 Preview", "type": "model", "role": "subject"},
+            {"name": "Kimi K3 Max", "type": "model", "role": "object"},
+            {"name": "GPT-5.6 Sol", "type": "model", "role": "context"}
+          ],
+          "evidence": ["与去年发布、月活领先的 Moonshot 旗下 Kimi K3 Max 相当"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Step 5 Preview",
+          "target": "StepFun",
+          "type": "developed_by",
+          "weight": 0.95,
+          "evidence": ["阶跃星辰（StepFun）上周发布其旗舰级开放模型 Step 5 Preview"]
+        },
+        {
+          "source": "Step 5 Preview",
+          "target": "Kimi K3 Max",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": ["与去年发布、月活领先的 Moonshot 旗下 Kimi K3 Max 相当"]
+        },
+        {
+          "source": "Step 5 Preview",
+          "target": "GPT-5.6 Sol",
+          "type": "compared_with",
+          "weight": 0.85,
+          "evidence": ["据称约为 GPT-5.6 Sol 定价的七分之一"]
+        },
+        {
+          "source": "Kimi K3 Max",
+          "target": "Moonshot AI",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Moonshot 旗下 Kimi K3 Max"]
+        }
+      ],
+      "metrics": [
+        {"name": "Step 5 Preview 智能指数", "value": "44"},
+        {"name": "Step 5 Preview 参数量", "value": "600B"},
+        {"name": "Step 5 Preview 每 token 激活参数", "value": "27B"},
+        {"name": "Step 5 Preview 上下文长度", "value": "100 万 token"},
+        {"name": "Step 5 Preview 定价对比", "value": "约为 GPT-5.6 Sol 的七分之一"}
+      ],
+      "why_it_matters": "中国开源 MoE 把“能力贴近最强封闭模型 + 价格低一个数量级 + 开放权重”组合成常态，自托管开始从长尾与开发者负载两端挤压封闭 API 厂商的定价空间。"
+    },
+    {
+      "article_id": "2026-09-20-3",
+      "entities": [
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": ["谷歌"],
+          "confidence": 0.97,
+          "evidence": ["Google 与 DeepMind 研究者提出 Dream-RSI"]
+        },
+        {
+          "name": "Google DeepMind",
+          "type": "company",
+          "aliases": ["DeepMind", "谷歌 DeepMind"],
+          "confidence": 0.95,
+          "evidence": ["Google 与 DeepMind 研究者提出 Dream-RSI"]
+        },
+        {
+          "name": "Dream-RSI",
+          "type": "paper",
+          "aliases": ["Dream-based Recurrent Self-Improvement"],
+          "confidence": 0.9,
+          "evidence": ["研究者提出 Dream-RSI"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Google 与 DeepMind 研究者提出 Dream-RSI 用重放过去轨迹低成本测试新策略",
+          "summary": "Dream-RSI 让自改进 AI 代理通过重放过去一次搜索完成的轨迹来检验新策略是否值得投入真正昂贵的新计算，而不是每次都重复完整计算。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "context"},
+            {"name": "Dream-RSI", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["Google 与 DeepMind 研究者提出 Dream-RSI"]
+        },
+        {
+          "type": "research",
+          "label": "Dream-RSI 揭示显式指令反而可能限制代理探索范围",
+          "summary": "论文报告反直觉结果：给定越具体、越强制的引导，代理反而可能收缩到既定路径、错过更有潜力的搜索空间，提示探索收益与引导约束之间存在权衡。",
+          "participants": [
+            {"name": "Dream-RSI", "type": "paper", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "context"}
+          ],
+          "evidence": ["论文还报告了一个反直觉的结果：明确的指令有时会限制探索"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Dream-RSI",
+          "target": "Google DeepMind",
+          "type": "authored_by",
+          "weight": 0.9,
+          "evidence": ["Google 与 DeepMind 研究者提出 Dream-RSI"]
+        },
+        {
+          "source": "Google DeepMind",
+          "target": "Google",
+          "type": "subsidiary_of",
+          "weight": 0.85,
+          "evidence": ["Google 与 DeepMind 研究者提出 Dream-RSI"]
+        }
+      ],
+      "metrics": [
+        {"name": "代理尝试次数规模", "value": "数千次"}
+      ],
+      "why_it_matters": "把人类“以回忆与想象预演不同选择”的机制搬进递归自改进，用低成本重放预筛新策略，直接回应“AI 自己改进自己时如何控制计算与试错成本”这一核心难题。"
+    },
+    {
+      "article_id": "2026-09-20-4",
+      "entities": [
+        {
+          "name": "Robocurve",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["专注“机器人能力公共认知”的组织 Robocurve"]
+        },
+        {
+          "name": "RoboHarm",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Robocurve 发布新基准 RoboHarm"]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["OpenAI GPT-6 Astra"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["OpenAI GPT-6 Astra"]
+        },
+        {
+          "name": "Claude Fable 5.1",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Anthropic Claude Fable 5.1"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["Anthropic Claude Fable 5.1"]
+        },
+        {
+          "name": "MolmoAct2",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Ai2 的视觉-语言-行动模型 MolmoAct2"]
+        },
+        {
+          "name": "Ai2",
+          "type": "organization",
+          "aliases": ["Allen Institute for AI"],
+          "confidence": 0.85,
+          "evidence": ["Ai2 的视觉-语言-行动模型 MolmoAct2"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Robocurve 发布 RoboHarm 基准，测试 AI 模型操纵机械臂时是否会拒绝危险指令",
+          "summary": "RoboHarm 让三组模型轮流操纵一对 I2RT-YAM 机械臂，面对五条任何安全机器人都应拒绝的指令，人审对全部 300 次试验标注结果。",
+          "participants": [
+            {"name": "Robocurve", "type": "organization", "role": "subject"},
+            {"name": "RoboHarm", "type": "benchmark", "role": "object"}
+          ],
+          "evidence": ["Robocurve 发布新基准 RoboHarm"]
+        },
+        {
+          "type": "benchmark",
+          "label": "RoboHarm 测试显示 GPT-6 Astra 完成最多危险动作、Claude Fable 5.1 部分拒绝、MolmoAct2 从不拒绝",
+          "summary": "GPT-6 Astra 在 100 次中完成 60 次危险任务、仅 2 次以安全理由拒绝；Claude Fable 5.1 拒绝全部 20 次刺玩偶但对其余四种一次不拒；MolmoAct2 从未拒绝。",
+          "participants": [
+            {"name": "RoboHarm", "type": "benchmark", "role": "subject"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "object"},
+            {"name": "Claude Fable 5.1", "type": "model", "role": "object"},
+            {"name": "MolmoAct2", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI GPT-6 Astra 在 100 次危险任务中完成了 60 次、仅因安全理由拒绝两次"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "RoboHarm",
+          "target": "Robocurve",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Robocurve 发布新基准 RoboHarm"]
+        },
+        {
+          "source": "GPT-6 Astra",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["OpenAI GPT-6 Astra"]
+        },
+        {
+          "source": "Claude Fable 5.1",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Anthropic Claude Fable 5.1"]
+        },
+        {
+          "source": "MolmoAct2",
+          "target": "Ai2",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Ai2 的视觉-语言-行动模型 MolmoAct2"]
+        },
+        {
+          "source": "GPT-6 Astra",
+          "target": "RoboHarm",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["OpenAI GPT-6 Astra 在 100 次危险任务中完成了 60 次"]
+        },
+        {
+          "source": "Claude Fable 5.1",
+          "target": "RoboHarm",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["Anthropic Claude Fable 5.1、Ai2 的视觉-语言-行动模型 MolmoAct2）轮流操纵一对 I2RT-YAM 机械臂"]
+        },
+        {
+          "source": "MolmoAct2",
+          "target": "RoboHarm",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["Ai2 的视觉-语言-行动模型 MolmoAct2 从未拒绝，但其完成率极低（100 次仅 6 次）"]
+        }
+      ],
+      "metrics": [
+        {"name": "GPT-6 Astra 完成危险任务次数", "value": "60/100"},
+        {"name": "GPT-6 Astra 以安全理由拒绝次数", "value": "2 次"},
+        {"name": "GPT-6 Astra 刺向玩偶次数", "value": "17/20"},
+        {"name": "Claude Fable 5.1 拒绝刺玩偶次数", "value": "20/20"},
+        {"name": "MolmoAct2 完成率", "value": "6/100"},
+        {"name": "试验总次数", "value": "300 次"}
+      ],
+      "why_it_matters": "为文本设计的拒绝/对齐训练没有自动迁移到具身物理行动，且能力越强的模型完成的危险动作越多——“能力越强越危险”从学术假设变成部署前的现实约束，具身拒答测试成为可复现的新安全标尺。"
+    },
+    {
+      "article_id": "2026-09-20-5",
+      "entities": [
+        {
+          "name": "EUCLYD",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["EUCLYD 完成逾 2 亿欧元 A 轮融资"]
+        },
+        {
+          "name": "Samsung",
+          "type": "company",
+          "aliases": ["三星"],
+          "confidence": 0.9,
+          "evidence": ["联合领投方包括三星（Samsung）"]
+        },
+        {
+          "name": "Peter Wennink",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["由前 ASML 董事长 Peter Wennink 出任董事长"]
+        },
+        {
+          "name": "Bernardo Kastrup",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": ["由 CEO Bernardo Kastrup 与 Atul Sinha"]
+        },
+        {
+          "name": "craftwerk",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["craftwerk（被公司称为“世界首款 agentic AI 硅片”）"]
+        }
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "EUCLYD 完成逾 2 亿欧元 A 轮融资，三星等联合领投",
+          "summary": "荷兰埃因霍温半导体初创 EUCLYD 完成逾 2 亿欧元 A 轮，由三星、Somerset、EQT 旗下 Scaleup Europe Fund 与 Innovation Industries 联合领投。",
+          "participants": [
+            {"name": "EUCLYD", "type": "company", "role": "object"},
+            {"name": "Samsung", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["EUCLYD 完成逾 2 亿欧元 A 轮融资"]
+        },
+        {
+          "type": "launch",
+          "label": "EUCLYD 推出被称作“世界首款 agentic AI 硅片”的 craftwerk",
+          "summary": "EUCLYD 的核心计算产品 craftwerk 被公司称为世界首款 agentic AI 硅片，路线是可编程 ASIC 计算加处理器-内存协同设计，直接针对内存带宽与能效瓶颈。",
+          "participants": [
+            {"name": "EUCLYD", "type": "company", "role": "subject"},
+            {"name": "craftwerk", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["craftwerk（被公司称为“世界首款 agentic AI 硅片”）"]
+        },
+        {
+          "type": "trend",
+          "label": "EUCLYD 请前 ASML 董事长 Peter Wennink 出任董事长",
+          "summary": "EUCLYD 同时宣布由前 ASML 董事长、全球光刻与半导体设备领域最具影响力的管理者之一 Peter Wennink 出任董事长。",
+          "participants": [
+            {"name": "Peter Wennink", "type": "person", "role": "subject"},
+            {"name": "EUCLYD", "type": "company", "role": "object"}
+          ],
+          "evidence": ["由前 ASML 董事长 Peter Wennink 出任董事长"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "craftwerk",
+          "target": "EUCLYD",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["craftwerk（被公司称为“世界首款 agentic AI 硅片”）"]
+        },
+        {
+          "source": "Samsung",
+          "target": "EUCLYD",
+          "type": "invests_in",
+          "weight": 0.9,
+          "evidence": ["联合领投方包括三星（Samsung）"]
+        },
+        {
+          "source": "Peter Wennink",
+          "target": "EUCLYD",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["由前 ASML 董事长 Peter Wennink 出任董事长"]
+        },
+        {
+          "source": "Bernardo Kastrup",
+          "target": "EUCLYD",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["由 CEO Bernardo Kastrup 与 Atul Sinha 在埃因霍温高科技园区创立"]
+        }
+      ],
+      "metrics": [
+        {"name": "EUCLYD A 轮融资额", "value": "逾 2 亿欧元"},
+        {"name": "EUCLYD 成立年份", "value": "2024 年"}
+      ],
+      "why_it_matters": "这家欧洲初创把芯片定义为“服务智能体的算力”而非单纯服务聊天，同时押注能效优先路线；能否用可编程 ASIC 加系统级协同在真实负载上兑现“更省、更快”，决定欧洲能否在大厂算力垄断前撕开缺口。"
+    },
+    {
+      "article_id": "2026-09-20-6",
+      "entities": [
+        {
+          "name": "Apple",
+          "type": "company",
+          "aliases": ["苹果"],
+          "confidence": 0.95,
+          "evidence": ["苹果新任 CEO John Ternus"]
+        },
+        {
+          "name": "John Ternus",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["苹果新任 CEO John Ternus"]
+        },
+        {
+          "name": "iPhone",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["没有哪款产品比 iPhone 更适合当你的智能个人枢纽"]
+        },
+        {
+          "name": "J490",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": ["这款内部代号 J490 的设备"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["OpenAI、Google 与 Anthropic"]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": ["谷歌"],
+          "confidence": 0.95,
+          "evidence": ["OpenAI、Google 与 Anthropic"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["OpenAI、Google 与 Anthropic"]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "苹果新 CEO John Ternus 宣称 iPhone 是“智能个人枢纽”，押注 AI 时代中心仍是手机",
+          "summary": "John Ternus 在首次重要产品活动上宣称没有哪款产品比 iPhone 更适合当智能个人枢纽，用存量 iPhone 生态与隐私护栏承接 AI 需求，而非抢先堆出 AI 硬件品类。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "John Ternus", "type": "person", "role": "context"},
+            {"name": "iPhone", "type": "product", "role": "object"}
+          ],
+          "evidence": ["没有哪款产品比 iPhone 更适合当你的智能个人枢纽"]
+        },
+        {
+          "type": "launch",
+          "label": "代号 J490 的家庭设备原型进入员工家庭测试、最早可能下月发售",
+          "summary": "据 Bloomberg 的 Mark Gurman 报道，内部代号 J490 的家庭设备原型已在员工家中测试，软件融合 iOS、tvOS 与 watchOS 元素，最早可能下个月发售。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "J490", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["原型已在员工家中测试，最早可能下个月发售"]
+        },
+        {
+          "type": "trend",
+          "label": "苹果以存量 iPhone 生态参与前景模型厂商的“ AI 入口之争”",
+          "summary": "当 OpenAI、Google 与 Anthropic 都在用 Agent、耳机、眼镜或家庭设备争夺谁是默认 AI 界面时，苹果把入口定义为已卖到人手一台的 iPhone，用存量与隐私叙事对冲增量硬件进攻。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "context"},
+            {"name": "Google", "type": "company", "role": "context"},
+            {"name": "Anthropic", "type": "company", "role": "context"}
+          ],
+          "evidence": ["当 OpenAI、Google 与 Anthropic 都在用 Agent、耳机、眼镜或家庭设备争夺"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "John Ternus",
+          "target": "Apple",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": ["苹果新任 CEO John Ternus"]
+        },
+        {
+          "source": "iPhone",
+          "target": "Apple",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["没有哪款产品比 iPhone 更适合当你的智能个人枢纽"]
+        },
+        {
+          "source": "J490",
+          "target": "Apple",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["这款内部代号 J490 的设备"]
+        },
+        {
+          "source": "Apple",
+          "target": "OpenAI",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["当 OpenAI、Google 与 Anthropic 都在用 Agent、耳机、眼镜或家庭设备争夺"]
+        },
+        {
+          "source": "Apple",
+          "target": "Google",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["苹果选择把'入口'定义为自己已经卖到人手一台的 iPhone"]
+        }
+      ],
+      "metrics": [
+        {"name": "J490 发售时间预测", "value": "最早可能下个月发售"},
+        {"name": "Ternus 首次产品活动时间", "value": "9 月初"}
+      ],
+      "why_it_matters": "苹果把“ AI 的入口”押在存量 iPhone 生态而非新硬件头上，用隐私护栏对冲前沿模型厂商的增量进攻，这等于对“未来一两年 AI 默认界面仍是手机”下了一次明确的下注。"
+    },
+    {
+      "article_id": "2026-09-20-7",
+      "entities": [
+        {
+          "name": "Alibaba",
+          "type": "company",
+          "aliases": ["阿里巴巴", "通义"],
+          "confidence": 0.9,
+          "evidence": ["阿里巴巴通义团队"]
+        },
+        {
+          "name": "Qwen3.8-Omni-Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["阿里巴巴通义团队 9 月中旬发布的 Qwen3.8-Omni-Flash"]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": ["谷歌"],
+          "confidence": 0.95,
+          "evidence": ["匹配了 Google Gemini Flash 的表现"]
+        },
+        {
+          "name": "Gemini Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["匹配了 Google Gemini Flash 的表现"]
+        },
+        {
+          "name": "Qwen3.8-Max",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Qwen 3.8-Max 已在文本任务上成为中文模型中排名最高者"]
+        },
+        {
+          "name": "GPT-5.6 Sol",
+          "type": "model",
+          "aliases": ["Sol"],
+          "confidence": 0.8,
+          "evidence": ["StepFun 的 Step 5 Preview 同日以 Sol 七分之一的价格"]
+        },
+        {
+          "name": "Step 5 Preview",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["StepFun 的 Step 5 Preview 同日以 Sol 七分之一的价格"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "阿里巴巴发布 Qwen3.8-Omni-Flash，匹配 Google Gemini Flash 多模态基准",
+          "summary": "阿里巴巴通义团队 9 月中旬发布 Qwen3.8-Omni-Flash（9 月 18 日上线），在多项多模态基准上匹配 Google Gemini Flash 的表现。",
+          "participants": [
+            {"name": "Alibaba", "type": "company", "role": "subject"},
+            {"name": "Qwen3.8-Omni-Flash", "type": "model", "role": "object"},
+            {"name": "Gemini Flash", "type": "model", "role": "context"}
+          ],
+          "evidence": ["阿里巴巴通义团队 9 月中旬发布的 Qwen3.8-Omni-Flash"]
+        },
+        {
+          "type": "trend",
+          "label": "Qwen3.8-Omni-Flash 以更低定价匹配 Gemini Flash，开放多模态打价格战",
+          "summary": "Qwen3.8-Omni-Flash 在多项多模态基准上匹配 Gemini Flash 的同时提供更低价格，延续开放权重模型用接近的基准分数加明显更低价格抢占市场的打法。",
+          "participants": [
+            {"name": "Qwen3.8-Omni-Flash", "type": "model", "role": "subject"},
+            {"name": "Gemini Flash", "type": "model", "role": "context"},
+            {"name": "Step 5 Preview", "type": "model", "role": "context"},
+            {"name": "GPT-5.6 Sol", "type": "model", "role": "context"}
+          ],
+          "evidence": ["用接近对手的基准分数 + 明显更低的价格"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Qwen3.8-Omni-Flash",
+          "target": "Alibaba",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["阿里巴巴通义团队 9 月中旬发布的 Qwen3.8-Omni-Flash"]
+        },
+        {
+          "source": "Gemini Flash",
+          "target": "Google",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["匹配了 Google Gemini Flash 的表现"]
+        },
+        {
+          "source": "Qwen3.8-Omni-Flash",
+          "target": "Gemini Flash",
+          "type": "compared_with",
+          "weight": 0.85,
+          "evidence": ["匹配了 Google Gemini Flash 的表现"]
+        },
+        {
+          "source": "Qwen3.8-Omni-Flash",
+          "target": "Gemini Flash",
+          "type": "competes_with",
+          "weight": 0.8,
+          "evidence": ["让“用开放模型替代 Gemini Flash”从理论上可行变成流程上顺手"]
+        },
+        {
+          "source": "Qwen3.8-Max",
+          "target": "Alibaba",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Qwen 3.8-Max 已在文本任务上成为中文模型中排名最高者"]
+        }
+      ],
+      "metrics": [
+        {"name": "Qwen3.8-Omni-Flash 上线日期", "value": "9 月 18 日"},
+        {"name": "Qwen3.8-Omni-Flash 匹配 Gemini Flash 的多模态基准范围", "value": "多项"},
+        {"name": "Qwen3.8-Omni-Flash 相对 Gemini Flash 定价", "value": "更低（具体数额未披露）"}
+      ],
+      "why_it_matters": "轻量多模态正在从“按 token 计费的高级能力”变成“几乎免费的默认能力”，当接近前沿 + 白菜价 + 可自托管成为系统性供给，Gemini Flash 这一档的定位被从长尾与开发者推理负载两端夹击。"
+    }
+  ]
+}
