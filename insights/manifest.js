@@ -1,5 +1,5 @@
 window.INSIGHT_MANIFEST = {
-  version: '20260920225155',
+  version: '20260921061848',
   files: [
     '2026-09-20.json',
     '2026-09-19.json',
