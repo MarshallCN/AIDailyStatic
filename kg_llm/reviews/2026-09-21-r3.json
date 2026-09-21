@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-21",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "抽取整体忠实度高，逐条核对原文未发现事实错误、数字走样或关系方向反置，证据基本支撑所附断言。主要问题集中在关系类型与实体卫生：targets 被用于表达\"敦促美国牵头\"这类呼吁关系而语义走样；2026-09-21-10 把纯假设句里提及的 OpenAI/Anthropic 抽成无边幽灵实体；metrics 混入非指标的凑数条目；个别事件出现双 subject/双 object。",
+  "findings": [
+    {
+      "article_id": "2026-09-21-0",
+      "severity": "medium",
+      "problem": "关系 \"OpenAI --targets--> 美国\" 的类型用错：原文是 OpenAI 敦促/呼吁美国牵头制定先进 AI 国际标准，重任放在美国这边的\"领导\"动作上，不是\"OpenAI 瞄准美国\"。targets 在此读成\"OpenAI 指向/瞄准美国\"，与真实语义（OpenAI 向美国提出诉求）不符，且把事件里的\"呼吁\"意义降级成含糊的\"指向\"。",
+      "fix": "删去或改写这条关系：改用表达\"呼吁/请求\"的关系类型（如 calls_on 或 urges_to_lead），或直接删边并把\"OpenAI 呼吁美国牵头\"留在事件 participants/evidence 里，不要用 targets 承载劝说类动作。"
+    },
+    {
+      "article_id": "2026-09-21-10",
+      "severity": "medium",
+      "problem": "OpenAI、Anthropic 两个实体仅出自一个未发生的未来设想句（\"一旦 AMI 明天宣布……其他实验室、新实验室乃至 OpenAI/Anthropic 都会立刻扑进来\"），全文没有任何连接它们的真实边，属于\"提到了\"被当成实体的幽灵节点；同时 metrics 里的\"世界模型赛道主角数 = 两大玩家\"不是可度量指标，是凑数的套话条目。",
+      "fix": "删除 OpenAI、Anthropic 这两个无边实体（或明确标注 speculative 并从图谱剔除，它们不提供任何可验证信息）；删除 metrics 中\"世界模型赛道主角数\"一条。"
+    },
+    {
+      "article_id": "2026-09-21-5",
+      "severity": "medium",
+      "problem": "事件 1（id 2026-09-21-5 的第一个事件）的 participants 把 DSX MaxLPS 和 Conductor 同时标为 role=\"object\"，一个事件出现并列双主 object，语义不明；且全篇缺少连接 Conductor 与硅谷电力公司（SVP）这条核心\"响应降载\"关系——Conductor 在圣克拉拉响应 SVP 信号把功耗从 4MW 压到 3MW 是全篇最硬的数字，却没有一条边体现两家之间的关系。",
+      "fix": "为事件 1 区分单一主 object（建议保留 Conductor 为 object 或把 DSX MaxLPS 降为 context），明确 subject/object 唯一；补充一条 Conductor --responds_to/works_with--> 硅谷电力公司 的关系，证据用\"SVP 发出超过 200 次需求响应信号、Conductor 每次成功自动响应\"。"
+    }
+  ],
+  "lessons": [
+    "呼吁/敦促类动作：source 敦促 target 去做某事时，不要用 targets 关系（会读成\"指向/瞄准\"），应选表达劝说/请求的关系类型如 calls_on，或不放边只保留在事件里。",
+    "只出现在假设句或未来设想里（\"一旦 X 发布，连 A/B 也会扑进来\"）而没有任何真实边的主体，不要抽成实体，剔除以免幽灵实体污染跨文章连通与计数。",
+    "metrics 只能收可度量的数字参数，不要放\"主角数/类别数\"这类对原文的复述式凑数条目。"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-21",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "抽取整体高度忠实：实体、事件、关键数字与原文逐条对得上，未见硬性幻觉或核心关系方向颠倒。但存在 3-4 处 medium 级问题，集中在关系类型用错与评测主体归属错配（SVP 与 Conductor 被画成合作、骨干模型 Qwen3-32B 被当作 SkillTraj 的评测主体、DSX Ready 与 DSX 平台的 integrates 方向相反），按\"宁可 revise\"标准需一轮修订。",
+  "findings": [
+    {
+      "article_id": "2026-09-21-5",
+      "severity": "medium",
+      "problem": "关系 \"硅谷电力公司 --partners_with--> Conductor\" 类型用错。原文语境是：SVP 作为电网公用事业向某 AI 设施发出需求响应信号，Conductor（Emerald AI 的软件）自动响应、把站点功耗从 4MW 压到 3MW。这是\"公用事业发出信号 → 设施/软件自动响应\"的单向信号-响应关系，不构成对等的公司级合作，且 partners_with 的对象是产品 Conductor 而非一家公司。",
+      "fix": "删除或改写该关系：不要用 partners_with 把公用事业与软件产品画成合作。可改为 \"硅谷电力公司 --signal_to--> 设施（或 Conductor）\" 表示需求响应信号，或直接删掉，把语义留在事件 Conductor 响应 SVP 信号里，避免误导读者认为 SVP 与 Emerald AI 建立了对等合作。"
+    },
+    {
+      "article_id": "2026-09-21-7",
+      "severity": "medium",
+      "problem": "关系 \"Qwen3-32B --evaluated_on--> SkillTraj\" 主体归属错配。原文明确是 Gavel 在 SkillTraj 四个场景上领先 8.6–21.9 分（证据引的就是这一句），Qwen3-32B 只是 Gavel 的骨干模型。评测对象是 Gavel（以 Qwen3-32B 运行），不是 Qwen3-32B 本身；把骨干模型当作被评测主体，会把图的故事讲歪成\"Qwen3-32B 在某基准上拿了分\"。",
+      "fix": "删除 \"Qwen3-32B --evaluated_on--> SkillTraj\"，保留已有的 \"Gavel --evaluated_on--> SkillTraj\"；Qwen3-32B 只用现有 built_on 关系表达为 Gavel 的骨干即可。检查同类事件，确保评测主体统一写成论文/系统（Gavel）而非其骨干模型。"
+    },
+    {
+      "article_id": "2026-09-21-4",
+      "severity": "medium",
+      "problem": "关系 \"DSX Ready --integrates--> DSX AI 工厂平台\" 语义与方向颠倒。原文说 DSX Ready\"是 DSX AI 工厂平台的一个配套环节\"——即认证/合格程序是平台体系的一个组成部分，不是 DSX Ready 去\"集成\"平台。integrates 暗示 DSX Ready 主动把平台并入自己，与事实相反。",
+      "fix": "把该关系改为表示\"组成/配套\"的方向：\"DSX Ready --is_part_of--> DSX AI 工厂平台\"（或平台包含该认证程序），并描述为配套环节而非集成行为。"
+    },
+    {
+      "article_id": "2026-09-21-2",
+      "severity": "low",
+      "problem": "关系 \"Qwen Research License Agreement --deprecates--> Apache 2.0\" 关系类型用词不当。事实是 Qwen-Image-2.1 首次放弃 Apache 2.0、改用研究许可，即新许可取代了该系列此前默认的开源许；deprecates 暗示被废弃的是 Apache 2.0 这个协议本身（该协议仍在被广泛使用，并未废弃），语义走样。",
+      "fix": "不要用 deprecates 声明两个许可之间的替代。改为在模型层面表达许可切换，例如 \"Qwen-Image-2.1 --licensed_under--> Qwen Research License Agreement\" 并配以 \"Apache 2.0\" 作为被弃用的历史许可语境，或在事件中记录替换关系，避免给通用开源协议标注\"被弃用\"。"
+    }
+  ],
+  "lessons": [
+    "评测类新闻中，evaluated_on 的主体应是被评测的论文/系统本身（Gavel、QART 等），骨干 LLM 只是其运行配置的一部分，不要把骨干模型当成被评测对象。",
+    "电网/公用事业情境里，公用事业向设施发出的需求响应是'信号→响应'关系，不要把它画成对等的 partners_with，尤其当对象是软件产品而非公司时。",
+    "认证/合格程序是其依托平台的一个配套环节，应表达为 is_part_of/组成关系；不要用 integrates——那表示该系统主动去集成别的东西，方向相反。"
+  ]
+}
