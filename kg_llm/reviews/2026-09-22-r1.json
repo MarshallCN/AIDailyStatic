@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-22",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "抽取整体信息量高、证据扎实，但存在跨文章核心模型命名不统一（Claude Opus 5 与 Opus 5 被当成两个实体，割裂图谱连通），且个别关系把行业性证据定向到具体公司（Alibaba--uses-->NVIDIA、美国--restricts-->Alibaba），并把'更便宜'错写成'replaces'，precision 需要修订。",
+  "findings": [
+    {
+      "article_id": "2026-09-22-1",
+      "severity": "high",
+      "problem": "规范名不统一割裂核心实体：同一模型在 2026-09-22-0 里命名为\"Claude Opus 5\"、在 2026-09-22-1 与 2026-09-22-6 里命名为\"Opus 5\"（aliases 均为空），图谱无法把三篇文章中这个被反复对比的前沿模型打通，跨文章共享被破坏。原始新闻里两处（\"追平 Claude Opus 5\"与\"比 Opus 5 低约 40%\"）指的是同一个模型。",
+      "fix": "三篇统一为同一个规范名（建议\"Claude Opus 5\"），把\"Opus 5\"放入 aliases；2026-09-22-1 和 2026-09-22-6 的该实体改为 Claude Opus 5，保证跨文章连通。"
+    },
+    {
+      "article_id": "2026-09-22-2",
+      "severity": "medium",
+      "problem": "关系证据与主体不匹配：\"Alibaba --uses--> NVIDIA\" 用证据\"中国前沿模型训练仍大量依赖英伟达芯片\"支撑，但原文这句话描述的是中国前沿模型训练的行业整体状况（分析师的宏观背景），并没有说 Alibaba 自身依赖英伟达。证据存在但支撑的是行业而非 Alibaba 这个 subject。",
+      "fix": "不要把它写成 Alibaba 的定向关系；要么删除该边，要么把 subject 改为行业/中国实体（如\"中国前沿模型产业\"），或注明是行业观察而非 Alibaba 行为。"
+    },
+    {
+      "article_id": "2026-09-22-2",
+      "severity": "medium",
+      "problem": "关系证据与 target 不匹配：\"美国 --restricts--> Alibaba\" 用证据\"美方禁令阻止了最强芯片进入中国\"支撑，但禁令针对的是进入中国（行业整体），原文并未说禁令专门针对 Alibaba。把 Alibaba 作为 target 是改写走样。",
+      "fix": "target 改为\"中国\"及其 AI 行业实体；若保留对 Alibaba 的表述需原文有 Alibaba 受禁令影响的直接证据，否则删除该边。"
+    },
+    {
+      "article_id": "2026-09-22-1",
+      "severity": "medium",
+      "problem": "关系类型用错：\"Claude Opus 5.5 --replaces--> Opus 5\" 用证据\"运行成本比 Opus 5 低约 40%\"支撑，但原文从未说 Opus 5 被下线或替代——Opus 5.5 是一个新增的平价档位家族模型（首个 5.5 家族），与 Opus 5 并存。\"更便宜\"不等于\"替代\"。",
+      "fix": "把该边改为表达成本比较的关系（如 cheaper_than / lower_cost_than），仅在有明确的\"退役/被取代\"声明时才使用 replaces。"
+    },
+    {
+      "article_id": "2026-09-22-4",
+      "severity": "medium",
+      "problem": "重复且类型失当：\"NSP --replaces--> 静态 SP\" 与已存在的 \"NSP --outperforms--> 静态 SP\" 语义重复，而 'replaces' 暗示 NSP 是静态 SP 的直接下位替代；原文只证明 NSP 在吞吐上高于静态 SP，没有说静态 SP 被淘汰。",
+      "fix": "删除 \"NSP --replaces--> 静态 SP\" 这条边，保留 outperforms；同类比较任务里只保留一条最具支撑的关系。"
+    },
+    {
+      "article_id": "2026-09-22-2",
+      "severity": "medium",
+      "problem": "遗漏重要主体：原文明确写了\"美国官员刚指责阿里与 DeepSeek 从美国前沿模型中'不当获取'知识（FBI、NSA、CISA 称中国公司挖了 ChatGPT、Gemini、Claude、Grok 等）\"，DeepSeek 是这条同日敏感事件中的核心被点名主体，且与本文\"华盛顿出口限制\"主线直接相关，未被抽为实体。",
+      "fix": "补抽 DeepSeek 实体，并视需要为该指控事件建一条边/事件（DeepSeek 与 Alibaba 同被指控，关系可并入本文安全/政策语境）。"
+    },
+    {
+      "article_id": "2026-09-22-0",
+      "severity": "low",
+      "problem": "关系类型过宽：\"GPT-6 Sol --outperforms--> Claude Opus 5\" 用 AutomationBench 的成本胜出作证据，但同篇在 OSWorld 2.0 上原文是\"几乎追平\"（60.5% 对 60.3%），outperforms 会把本应精确的对比读成全面超越。",
+      "fix": "把该边收窄为成本维度（如 outperforms_on_cost 或 cheaper_than），或用 OSWorld 的对等关系平衡表述，避免单一成本证据撑起\"全面胜过\"。"
+    },
+    {
+      "article_id": "2026-09-22-7",
+      "severity": "low",
+      "problem": "实体有但缺边：Stripe 被抽为实体并出现在 Shopify 事件的 participant 里（role partner），但没有对应关系边；事件文本本身就写了\"与 Stripe 的支付/一次性虚拟卡集成也在推进\"，是可支撑成边的合著/合作内容。",
+      "fix": "为 Stripe 补一条边（如 Stripe --partners_with--> Meta 或 Stripe --integrated_with--> Muse），或用它把它与 Shop Pay 结算事件连接起来。"
+    }
+  ],
+  "lessons": [
+    "同一模型、公司或基准在多篇文章中出现时必须使用统一的规范名，把其它拼写放入 aliases，保证图谱跨文章连通。",
+    "当证据描述的是行业整体（如中国前沿模型训练、美方禁令对华）而非某个具体公司时，不要把公司作为关系的 subject/target；证据只支持行业观察就删除定向边或改用行业/国家实体。",
+    "成本对比不要用'replaces'表达；'replaces'只用于明确的下线或替代声明，更便宜应使用 cheaper_than / lower_cost_than 等成本类关系。"
+  ]
+}

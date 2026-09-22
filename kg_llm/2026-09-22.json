@@ -1,0 +1,1399 @@
+{
+  "date": "2026-09-22",
+  "articles": [
+    {
+      "article_id": "2026-09-22-0",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.97,
+          "evidence": ["OpenAI 在 9 月 22 日发布 GPT-6 家族两支平价模型 GPT-6 Sol 与 Luna"]
+        },
+        {
+          "name": "GPT-6 Sol",
+          "type": "model",
+          "aliases": ["Sol"],
+          "confidence": 0.95,
+          "evidence": ["OpenAI 在 9 月 22 日发布 GPT-6 家族两支平价模型 GPT-6 Sol 与 Luna"]
+        },
+        {
+          "name": "GPT-6 Luna",
+          "type": "model",
+          "aliases": ["Luna"],
+          "confidence": 0.95,
+          "evidence": ["OpenAI 在 9 月 22 日发布 GPT-6 家族两支平价模型 GPT-6 Sol 与 Luna"]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": ["Astra"],
+          "confidence": 0.9,
+          "evidence": ["延续月初旗舰 Astra 的效率逻辑"]
+        },
+        {
+          "name": "Claude Opus 5",
+          "type": "model",
+          "aliases": ["Opus 5"],
+          "confidence": 0.9,
+          "evidence": ["几乎追平 Claude Opus 5 的中等 effort 得分"]
+        },
+        {
+          "name": "OSWorld 2.0",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["GPT-6 Sol 在 OSWorld 2.0 上用约 80% 的成本"]
+        },
+        {
+          "name": "AutomationBench",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["在 Zapier 的 AutomationBench（47 个工具的企业工作流基准）"]
+        },
+        {
+          "name": "Zapier",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["在 Zapier 的 AutomationBench（47 个工具的企业工作流基准）"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["OpenAI 称 Sol、Luna 在多个维度显著胜过 Anthropic 的前沿模型"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 发布平价模型 GPT-6 Sol 与 Luna，把 Astra 能力延伸到更低成本档位",
+          "summary": "OpenAI 在 9 月 22 日发布 GPT-6 家族两支平价模型 GPT-6 Sol 与 Luna，Sol 定位于 coding、代理等复杂工作，Luna 面向摘要与信息抽取等高吞吐任务，并大多延续旗舰 Astra 的效率逻辑。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6 Sol", "type": "model", "role": "object"},
+            {"name": "GPT-6 Luna", "type": "model", "role": "object"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "context"}
+          ],
+          "evidence": ["OpenAI 在 9 月 22 日发布 GPT-6 家族两支平价模型 GPT-6 Sol 与 Luna"]
+        },
+        {
+          "type": "benchmark",
+          "label": "GPT-6 Sol 在 OSWorld 2.0 与 AutomationBench 上以更低成本对标 Claude Opus 5",
+          "summary": "OpenAI 自报 GPT-6 Sol 在 OSWorld 2.0 上用约 80% 的成本几乎追平 Claude Opus 5 的中等 effort 得分（60.5% 对 60.3%），并在 AutomationBench 上以低 60% 的每任务成本胜过 Claude Opus 5，但均为厂商自报尚未经独立复核。",
+          "participants": [
+            {"name": "GPT-6 Sol", "type": "model", "role": "subject"},
+            {"name": "OSWorld 2.0", "type": "benchmark", "role": "benchmark"},
+            {"name": "Claude Opus 5", "type": "model", "role": "competitor"},
+            {"name": "AutomationBench", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["GPT-6 Sol 在 OSWorld 2.0 上用约 80% 的成本几乎追平 Claude Opus 5"]
+        },
+        {
+          "type": "trend",
+          "label": "前沿两家正从比谁最强转向比谁在同等能力下更便宜",
+          "summary": "Sol/Luna 与同日发布的 Opus 5.5 都是靠更便宜的方式逼近旗舰能力的产物，定价竞争取代能力竞争成为主线。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["标志前沿两家正从“比谁最强”转向“比谁在同等能力下更便宜”"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "GPT-6 Sol",
+          "target": "OpenAI",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["OpenAI 在 9 月 22 日发布 GPT-6 家族两支平价模型 GPT-6 Sol 与 Luna"]
+        },
+        {
+          "source": "GPT-6 Luna",
+          "target": "OpenAI",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["OpenAI 在 9 月 22 日发布 GPT-6 家族两支平价模型 GPT-6 Sol 与 Luna"]
+        },
+        {
+          "source": "GPT-6 Sol",
+          "target": "GPT-6 Astra",
+          "type": "built_on",
+          "weight": 0.7,
+          "evidence": ["延续月初旗舰 Astra 的效率逻辑"]
+        },
+        {
+          "source": "GPT-6 Sol",
+          "target": "OSWorld 2.0",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": ["GPT-6 Sol 在 OSWorld 2.0 上用约 80% 的成本几乎追平 Claude Opus 5 的中等 effort 得分"]
+        },
+        {
+          "source": "GPT-6 Sol",
+          "target": "Claude Opus 5",
+          "type": "cheaper_than",
+          "weight": 0.8,
+          "evidence": ["在 OSWorld 2.0 上用约 80% 的成本几乎追平 Claude Opus 5 的中等 effort 得分", "以低 60% 的每任务成本胜过 Claude Opus 5 的最好成绩"]
+        },
+        {
+          "source": "GPT-6 Sol",
+          "target": "AutomationBench",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": ["在 Zapier 的 AutomationBench（47 个工具的企业工作流基准）"]
+        },
+        {
+          "source": "AutomationBench",
+          "target": "Zapier",
+          "type": "developed_by",
+          "weight": 0.6,
+          "evidence": ["在 Zapier 的 AutomationBench（47 个工具的企业工作流基准）"]
+        },
+        {
+          "source": "OpenAI",
+          "target": "Anthropic",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["两家再度正面撞车"]
+        }
+      ],
+      "metrics": [
+        {"name": "GPT-6 Sol 输入定价（每百万 token）", "value": "$2"},
+        {"name": "GPT-6 Sol 输出定价（每百万 token）", "value": "$10"},
+        {"name": "GPT-6 Luna 输入定价（每百万 token）", "value": "$0.10"},
+        {"name": "GPT-6 Luna 输出定价（每百万 token）", "value": "$0.50"},
+        {"name": "API 定价在 GPT-5.6 促销价基础上降幅", "value": "约 50%"},
+        {"name": "OSWorld 2.0 得分（Sol 对 Claude Opus 5）", "value": "60.5% 对 60.3%"},
+        {"name": "AutomationBench 每任务成本优势", "value": "低 60%"},
+        {"name": "编码欺骗率", "value": "1.3%"}
+      ],
+      "why_it_matters": "OpenAI 用 GPT-6 Sol/Luna 把旗舰能力拆成按工作复杂度可选的成本档，并以比前代少一半的犯错数绑定“更便宜与更可靠”，让前沿竞争从能力之争转向单位成本之争。"
+    },
+    {
+      "article_id": "2026-09-22-1",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["Anthropic 于 9 月 22 日发布 Claude Opus 5.5"]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": ["Opus 5.5"],
+          "confidence": 0.95,
+          "evidence": ["Anthropic 于 9 月 22 日发布 Claude Opus 5.5"]
+        },
+        {
+          "name": "Claude Opus 5",
+          "type": "model",
+          "aliases": ["Opus 5"],
+          "confidence": 0.9,
+          "evidence": ["运行成本比 Opus 5 低约 40%"]
+        },
+        {
+          "name": "Fable 5.1",
+          "type": "model",
+          "aliases": ["Fable"],
+          "confidence": 0.9,
+          "evidence": ["在“多数工作”上达到旗舰 Fable 5.1 的水平"]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": ["Astra"],
+          "confidence": 0.85,
+          "evidence": ["乃至 GPT-6 Astra"]
+        },
+        {
+          "name": "Terminal-Bench 4.0",
+          "type": "benchmark",
+          "aliases": ["Terminal-Bench"],
+          "confidence": 0.9,
+          "evidence": ["Terminal-Bench 4.0 66.4%"]
+        },
+        {
+          "name": "CursorBench 4.0",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["CursorBench 4.0 57.8%"]
+        },
+        {
+          "name": "AutomationBench",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["AutomationBench 40.0%"]
+        },
+        {
+          "name": "SWE-bench Pro",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["SWE-bench Pro 89.9%"]
+        },
+        {
+          "name": "OSWorld 2.0",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["OSWorld 2.0 的严格分 48.7%"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.9,
+          "evidence": ["它与 OpenAI 两小时内背靠背发布"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 发布首个 5.5 家族模型 Claude Opus 5.5，定价低于 Opus 5",
+          "summary": "Anthropic 于 9 月 22 日发布首个 5.5 家族模型 Claude Opus 5.5，在多数工作上对标旗舰 Fable 5.1，但输入/输出/缓存读取定价为 $4/$20/$0.20 每百万 token，运行成本比 Opus 5 低约 40%。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Opus 5.5", "type": "model", "role": "object"},
+            {"name": "Fable 5.1", "type": "model", "role": "context"}
+          ],
+          "evidence": ["Anthropic 于 9 月 22 日发布 Claude Opus 5.5"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Claude Opus 5.5 在多个代码与知识基准上自报领先分数",
+          "summary": "Anthropic 自报 Terminal-Bench 4.0 66.4%、CursorBench 4.0 57.8%、SWE-bench Pro 89.9%、OSWorld 2.0 严格分 48.7%，所有分数均为自报且未经独立机构如 LLM Stats 复核。",
+          "participants": [
+            {"name": "Claude Opus 5.5", "type": "model", "role": "subject"},
+            {"name": "Terminal-Bench 4.0", "type": "benchmark", "role": "benchmark"},
+            {"name": "CursorBench 4.0", "type": "benchmark", "role": "benchmark"},
+            {"name": "SWE-bench Pro", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["Terminal-Bench 4.0 66.4%"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 与 OpenAI 两小时内背靠背发布，竞争直接落到钱包",
+          "summary": "两家在同一天的 90 分钟窗口内各自发布新模型，Anthropic 自己也想从“谁最强”转向“谁单位成本下更聪明”，把 9 月下旬这场竞争从产品层面落到价格上。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"},
+            {"name": "Claude Opus 5.5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["它与 OpenAI 两小时内背靠背发布"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Anthropic",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["Anthropic 于 9 月 22 日发布 Claude Opus 5.5"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Claude Opus 5",
+          "type": "cheaper_than",
+          "weight": 0.7,
+          "evidence": ["运行成本比 Opus 5 低约 40%"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Fable 5.1",
+          "type": "outperforms",
+          "weight": 0.8,
+          "evidence": ["在 agentic coding、知识工作等多个维度击败 Fable 5.1"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "GPT-6 Astra",
+          "type": "outperforms",
+          "weight": 0.6,
+          "evidence": ["乃至 GPT-6 Astra"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Terminal-Bench 4.0",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": ["Terminal-Bench 4.0 66.4%"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "CursorBench 4.0",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": ["CursorBench 4.0 57.8%"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "SWE-bench Pro",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": ["SWE-bench Pro 89.9%"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "OSWorld 2.0",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": ["OSWorld 2.0 的严格分 48.7%"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "AutomationBench",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": ["AutomationBench 40.0%"]
+        },
+        {
+          "source": "Anthropic",
+          "target": "OpenAI",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["是两家罕见的同日正面竞争"]
+        }
+      ],
+      "metrics": [
+        {"name": "Terminal-Bench 4.0（xhigh，开启护栏）", "value": "66.4%"},
+        {"name": "CursorBench 4.0", "value": "57.8%"},
+        {"name": "SWE-bench Pro", "value": "89.9%"},
+        {"name": "OSWorld 2.0 严格分", "value": "48.7%"},
+        {"name": "AutomationBench（Zapier，无 fallback 计为失败）", "value": "40.0%"},
+        {"name": "输入/输出定价（每百万 token）", "value": "$4/$20"},
+        {"name": "缓存读取定价（每百万 token）", "value": "$0.20"},
+        {"name": "运行成本比 Opus 5 降幅", "value": "约 40%"},
+        {"name": "缓存读取比 Opus 5 降幅", "value": "60%"},
+        {"name": "输出生成提速", "value": "30% 以上"}
+      ],
+      "why_it_matters": "Claude Opus 5.5 以“多数工作对标 Fable、运行成本比 Opus 5 低约 40%”的姿态与 OpenAI 同天撞车，标志两家都把“单位成本下的智能”定为竞争主轴，逼近旗舰能力已不再是最高档的专利。"
+    },
+    {
+      "article_id": "2026-09-22-2",
+      "entities": [
+        {
+          "name": "Alibaba",
+          "type": "company",
+          "aliases": ["阿里巴巴", "阿里"],
+          "confidence": 0.95,
+          "evidence": ["阿里在杭州 Apsara 大会（9 月 22 日）发布下一代 AI 芯片 Zhenwu V900"]
+        },
+        {
+          "name": "AliCloud",
+          "type": "company",
+          "aliases": ["阿里云"],
+          "confidence": 0.9,
+          "evidence": ["阿里云全球数据中心容量到 2032 年扩至 20GW 以上"]
+        },
+        {
+          "name": "T-Head",
+          "type": "company",
+          "aliases": ["平头"],
+          "confidence": 0.85,
+          "evidence": ["Zhenwu V900 来自阿里平头（T-Head）半导体部门"]
+        },
+        {
+          "name": "Zhenwu V900",
+          "type": "hardware",
+          "aliases": ["V900"],
+          "confidence": 0.92,
+          "evidence": ["发布下一代 AI 芯片 Zhenwu V900"]
+        },
+        {
+          "name": "Zhenwu M890",
+          "type": "hardware",
+          "aliases": ["M890"],
+          "confidence": 0.9,
+          "evidence": ["性能是其 5 月发布的前代 Zhenwu M890 的三倍"]
+        },
+        {
+          "name": "Qwen",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["下一代 Qwen 4 正在训练中"]
+        },
+        {
+          "name": "吴泳铭",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["CEO 吴泳铭称其为“中国目前最强的 AI 芯片”"]
+        },
+        {
+          "name": "DeepSeek",
+          "type": "company",
+          "aliases": ["深度求索"],
+          "confidence": 0.85,
+          "evidence": ["美国官员刚指责阿里与 DeepSeek 从美国前沿模型中“不当获取”知识"]
+        },
+        {
+          "name": "美国",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["美方禁令阻止了最强芯片进入中国"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "阿里发布自称“中国最强”的 AI 芯片 Zhenwu V900",
+          "summary": "阿里在杭州 Apsara 大会发布下一代 AI 芯片 Zhenwu V900，CEO 吴泳铭称其为“中国目前最强的 AI 芯片”，性能是前代 Zhenwu M890 的三倍，可集群至 50 万颗，2027 年一季度量产。",
+          "participants": [
+            {"name": "Alibaba", "type": "company", "role": "subject"},
+            {"name": "Zhenwu V900", "type": "hardware", "role": "object"},
+            {"name": "吴泳铭", "type": "person", "role": "context"},
+            {"name": "Zhenwu M890", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["阿里在杭州 Apsara 大会（9 月 22 日）发布下一代 AI 芯片 Zhenwu V900"]
+        },
+        {
+          "type": "infra",
+          "label": "阿里云宣布 2032 年前数据中心容量扩至 20GW 以上",
+          "summary": "阿里云全球数据中心容量目标 2032 年超 20GW，远超当前规模，并计划将平头芯片设计部门单独上市。",
+          "participants": [
+            {"name": "AliCloud", "type": "company", "role": "subject"},
+            {"name": "Alibaba", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["阿里云全球数据中心容量到 2032 年扩至 20GW 以上"]
+        },
+        {
+          "type": "research",
+          "label": "阿里公布下一代 Qwen 目标参数量 5–10 万亿",
+          "summary": "阿里称下一代 Qwen 4 正在训练中、Qwen 4.5/5 已在规划，目标参数规模 5–10 万亿，明显大于多数现有系统。",
+          "participants": [
+            {"name": "Alibaba", "type": "company", "role": "subject"},
+            {"name": "Qwen", "type": "model", "role": "object"}
+          ],
+          "evidence": ["下一代 Qwen 4 正在训练中、Qwen 4.5/5 已在规划，目标参数规模 5–10 万亿"]
+        },
+        {
+          "type": "policy",
+          "label": "美国官员指责阿里与 DeepSeek 从美国前沿模型中“不当获取”知识",
+          "summary": "同一天，美国官员指责阿里与 DeepSeek 从美国前沿模型中“不当获取”知识（FBI、NSA、CISA 称中国公司挖了 ChatGPT、Gemini、Claude、Grok 等系统），叠加华盛顿出口限制，构成面向中国算力自主的双重压力。",
+          "participants": [
+            {"name": "美国", "type": "organization", "role": "subject"},
+            {"name": "Alibaba", "type": "company", "role": "object"},
+            {"name": "DeepSeek", "type": "company", "role": "object"}
+          ],
+          "evidence": ["美国官员刚指责阿里与 DeepSeek 从美国前沿模型中“不当获取”知识"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Zhenwu V900",
+          "target": "T-Head",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["Zhenwu V900 来自阿里平头（T-Head）半导体部门"]
+        },
+        {
+          "source": "T-Head",
+          "target": "Alibaba",
+          "type": "subsidiary_of",
+          "weight": 0.7,
+          "evidence": ["Zhenwu V900 来自阿里平头（T-Head）半导体部门"]
+        },
+        {
+          "source": "Zhenwu V900",
+          "target": "Zhenwu M890",
+          "type": "outperforms",
+          "weight": 0.9,
+          "evidence": ["性能是其 5 月发布的前代 Zhenwu M890 的三倍"]
+        },
+        {
+          "source": "Qwen",
+          "target": "Alibaba",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["下一代 Qwen 4 正在训练中"]
+        },
+        {
+          "source": "AliCloud",
+          "target": "Alibaba",
+          "type": "subsidiary_of",
+          "weight": 0.7,
+          "evidence": ["阿里云全球数据中心容量到 2032 年扩至 20GW 以上"]
+        },
+        {
+          "source": "吴泳铭",
+          "target": "Alibaba",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["CEO 吴泳铭称其为“中国目前最强的 AI 芯片”"]
+        }
+      ],
+      "metrics": [
+        {"name": "Zhenwu V900 相对前代性能", "value": "3 倍"},
+        {"name": "Zhenwu V900 可集群规模", "value": "50 万颗"},
+        {"name": "Zhenwu V900 量产时间", "value": "2027 年一季度"},
+        {"name": "阿里云 2032 年数据中心容量目标", "value": "20GW 以上"},
+        {"name": "Qwen 下一代目标参数规模", "value": "5–10 万亿"}
+      ],
+      "why_it_matters": "阿里用“Zhenwu V900 芯片 + 20GW 数据中心 + 5–10T 参数 Qwen”三线同日打包，把中国算力自研从单点追赶升级为系统化一日表态，直接对冲华盛顿出口禁令。"
+    },
+    {
+      "article_id": "2026-09-22-3",
+      "entities": [
+        {
+          "name": "小米",
+          "type": "company",
+          "aliases": ["Xiaomi", "小米公司"],
+          "confidence": 0.95,
+          "evidence": ["小米于 9 月 22 日宣布开源 MiMo-V2.6 系列"]
+        },
+        {
+          "name": "MiMo-V2.6-Pro",
+          "type": "model",
+          "aliases": ["MiMo-V2.6 Pro", "MiMo-V2.6-Pro Pro"],
+          "confidence": 0.92,
+          "evidence": ["两支原生全模态模型 MiMo-V2.6-Pro（1.02T 总参数、42B 激活，稀疏 MoE）"]
+        },
+        {
+          "name": "MiMo-V2.6-Flash",
+          "type": "model",
+          "aliases": ["MiMo-V2.6 Flash"],
+          "confidence": 0.92,
+          "evidence": ["MiMo-V2.6-Flash（309B/15B 激活）"]
+        },
+        {
+          "name": "Artificial Analysis 智能指数",
+          "type": "benchmark",
+          "aliases": ["Artificial Analysis 指数"],
+          "confidence": 0.85,
+          "evidence": ["以 Artificial Analysis 智能指数 46 分登顶开源榜"]
+        },
+        {
+          "name": "Hugging Face",
+          "type": "organization",
+          "aliases": ["HuggingFace", "HF"],
+          "confidence": 0.9,
+          "evidence": ["权重走 Hugging Face"]
+        },
+        {
+          "name": "xAI Grok",
+          "type": "model",
+          "aliases": ["Grok"],
+          "confidence": 0.85,
+          "evidence": ["被比较对象含 xAI 的 Grok 与 Google 的 Gemini Flash"]
+        },
+        {
+          "name": "Gemini Flash",
+          "type": "model",
+          "aliases": ["Gemini Flash 模型"],
+          "confidence": 0.85,
+          "evidence": ["被比较对象含 xAI 的 Grok 与 Google 的 Gemini Flash"]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "小米开源 MiMo-V2.6 系列，MIT 许可、全程公开训练",
+          "summary": "小米于 9 月 22 日开源 MiMo-V2.6-Pro 与 MiMo-V2.6-Flash 两支全模态模型，全部 MIT 许可、1M token 上下文，并把约 75 万条轨迹、约 347 万美元的 RL 训练全程直播，权重走 Hugging Face。",
+          "participants": [
+            {"name": "小米", "type": "company", "role": "subject"},
+            {"name": "MiMo-V2.6-Pro", "type": "model", "role": "object"},
+            {"name": "MiMo-V2.6-Flash", "type": "model", "role": "object"},
+            {"name": "Hugging Face", "type": "organization", "role": "context"}
+          ],
+          "evidence": ["小米于 9 月 22 日宣布开源 MiMo-V2.6 系列"]
+        },
+        {
+          "type": "benchmark",
+          "label": "MiMo-V2.6-Pro 以 46 分登顶开源权重榜并胜过部分闭源",
+          "summary": "MiMo-V2.6-Pro 在 Artificial Analysis 智能指数上得 46 分登顶开源权重榜，同时胜过部分闭源（被比较对象含 xAI 的 Grok 与 Google 的 Gemini Flash），且以 $0.435/百万 token 定价带来旗舰级能力。",
+          "participants": [
+            {"name": "MiMo-V2.6-Pro", "type": "model", "role": "subject"},
+            {"name": "Artificial Analysis 智能指数", "type": "benchmark", "role": "benchmark"},
+            {"name": "xAI Grok", "type": "model", "role": "competitor"},
+            {"name": "Gemini Flash", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["以 Artificial Analysis 智能指数 46 分登顶开源榜"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "MiMo-V2.6-Pro",
+          "target": "小米",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["小米于 9 月 22 日宣布开源 MiMo-V2.6 系列"]
+        },
+        {
+          "source": "MiMo-V2.6-Flash",
+          "target": "小米",
+          "type": "released_by",
+          "weight": 0.8,
+          "evidence": ["两支原生全模态模型 MiMo-V2.6-Pro"]
+        },
+        {
+          "source": "MiMo-V2.6-Pro",
+          "target": "Artificial Analysis 智能指数",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": ["以 Artificial Analysis 智能指数 46 分登顶开源榜"]
+        },
+        {
+          "source": "MiMo-V2.6-Pro",
+          "target": "xAI Grok",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["被比较对象含 xAI 的 Grok 与 Google 的 Gemini Flash"]
+        },
+        {
+          "source": "MiMo-V2.6-Pro",
+          "target": "Gemini Flash",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["被比较对象含 xAI 的 Grok 与 Google 的 Gemini Flash"]
+        }
+      ],
+      "metrics": [
+        {"name": "Artificial Analysis 智能指数", "value": "46"},
+        {"name": "MiMo-V2.6-Pro 总参数/激活参数", "value": "1.02T / 42B"},
+        {"name": "MiMo-V2.6-Flash 总参数/激活参数", "value": "309B / 15B"},
+        {"name": "MiMo-V2.6-Pro 输入/输出定价（每百万 token）", "value": "$0.435 / $0.87"},
+        {"name": "MiMo-V2.6-Flash 输入/输出定价（每百万 token）", "value": "$0.14 / $0.28"},
+        {"name": "RL 训练直播成本", "value": "约 347 万美元"},
+        {"name": "上下文长度", "value": "1M token"},
+        {"name": "投机解码单次前向预测后续 token", "value": "7 个"}
+      ],
+      "why_it_matters": "MiMo-V2.6-Pro 以 $0.435/百万 token 登顶开源榜并胜过部分闭源，叠加 MIT 许可与全程直播训练，使开源成为对闭源“价格—透明度”的双重锚定，进一步压低前沿定价下沿。"
+    },
+    {
+      "article_id": "2026-09-22-4",
+      "entities": [
+        {
+          "name": "ByteDance Seed",
+          "type": "organization",
+          "aliases": ["字节跳动 Seed"],
+          "confidence": 0.9,
+          "evidence": ["字节跳动 Seed 提出的 NSP"]
+        },
+        {
+          "name": "NSP",
+          "type": "paper",
+          "aliases": ["嵌套序列并行"],
+          "confidence": 0.92,
+          "evidence": ["字节跳动 Seed 提出的 NSP"]
+        },
+        {
+          "name": "FlexSP",
+          "type": "paper",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["比 FlexSP 最高 1.16×"]
+        },
+        {
+          "name": "静态 SP",
+          "type": "paper",
+          "aliases": ["static SP"],
+          "confidence": 0.85,
+          "evidence": ["端到端训练吞吐比静态 SP 最高提升 1.48×"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "字节跳动 Seed 提出 NSP 嵌套序列并行，解决长尾变长序列训练取舍",
+          "summary": "NSP 通过把不同大小的 SP 组嵌套在共享 GPU 上、在单次训练迭代内共存，让长序列用大组、短序列用小组，只在该收的地方付出通信，解决长上下文 LLM 训练的通信—负载均衡两难。",
+          "participants": [
+            {"name": "ByteDance Seed", "type": "organization", "role": "subject"},
+            {"name": "NSP", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["字节跳动 Seed 提出的 NSP 通过把不同大小的 SP 组嵌套在共享 GPU 上"]
+        },
+        {
+          "type": "benchmark",
+          "label": "NSP 端到端吞吐超过静态 SP 与 FlexSP",
+          "summary": "NSP 在端到端吞吐上稳定优于静态 SP（最高 +48%）与 FlexSP（最高 +16%），对应 1.48× 与 1.16× 的提升。",
+          "participants": [
+            {"name": "NSP", "type": "paper", "role": "subject"},
+            {"name": "静态 SP", "type": "paper", "role": "competitor"},
+            {"name": "FlexSP", "type": "paper", "role": "competitor"}
+          ],
+          "evidence": ["NSP 在端到端吞吐上稳定优于静态 SP（最高 +48%）与 FlexSP（最高 +16%）"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "NSP",
+          "target": "ByteDance Seed",
+          "type": "authored_by",
+          "weight": 0.9,
+          "evidence": ["字节跳动 Seed 提出的 NSP"]
+        },
+        {
+          "source": "NSP",
+          "target": "静态 SP",
+          "type": "outperforms",
+          "weight": 0.8,
+          "evidence": ["端到端训练吞吐比静态 SP 最高提升 1.48×"]
+        },
+        {
+          "source": "NSP",
+          "target": "FlexSP",
+          "type": "outperforms",
+          "weight": 0.8,
+          "evidence": ["比 FlexSP 最高 1.16×"]
+        }
+      ],
+      "metrics": [
+        {"name": "相对静态 SP 的端到端训练吞吐提升", "value": "1.48×（最高 +48%）"},
+        {"name": "相对 FlexSP 的端到端训练吞吐提升", "value": "1.16×（最高 +16%）"}
+      ],
+      "why_it_matters": "长上下文训练下“一个 SP 度打天下”不再可行，NSP 用分层嵌套并行在少买卡的同时消掉通信与负载两种浪费，提示并行度组织比单纯堆卡更逼近扩展收益。"
+    },
+    {
+      "article_id": "2026-09-22-5",
+      "entities": [
+        {
+          "name": "Harness-Zero",
+          "type": "paper",
+          "aliases": [],
+          "confidence": 0.92,
+          "evidence": ["北大、Google 与 HKUST 的 Harness-Zero"]
+        },
+        {
+          "name": "北京大学",
+          "type": "organization",
+          "aliases": ["北大"],
+          "confidence": 0.9,
+          "evidence": ["北大、Google 与 HKUST 的 Harness-Zero"]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": ["谷歌"],
+          "confidence": 0.9,
+          "evidence": ["北大、Google 与 HKUST 的 Harness-Zero"]
+        },
+        {
+          "name": "HKUST",
+          "type": "organization",
+          "aliases": ["香港科技大学"],
+          "confidence": 0.9,
+          "evidence": ["北大、Google 与 HKUST 的 Harness-Zero"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "北大、Google 与 HKUST 提出 Harness-Zero，把领域优化 harness 行为蒸馏进模型权重",
+          "summary": "Harness-Zero 把“领域或实例优化的 harness”当作训练期引导，将其行为蒸馏进模型权重，使收益在固定单一目标 harness 下依然存活，并专门处理优化 harness 与目标 harness 动作空间与信息可见度不同的问题。",
+          "participants": [
+            {"name": "北京大学", "type": "organization", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "HKUST", "type": "organization", "role": "subject"},
+            {"name": "Harness-Zero", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["北大、Google 与 HKUST 的 Harness-Zero 把“领域或实例优化的 harness”当作训练期引导"]
+        },
+        {
+          "type": "open_source",
+          "label": "Harness-Zero 开放 metaevo-ai/harness-zero 仓库",
+          "summary": "论文开放了 Github 仓库 metaevo-ai/harness-zero，把“scaffolding 也可以蒸馏进权重”的思路正式化。",
+          "participants": [
+            {"name": "Harness-Zero", "type": "paper", "role": "subject"}
+          ],
+          "evidence": ["开放的 Github 仓库（metaevo-ai/harness-zero）"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Harness-Zero",
+          "target": "北京大学",
+          "type": "authored_by",
+          "weight": 0.9,
+          "evidence": ["北大、Google 与 HKUST 的 Harness-Zero"]
+        },
+        {
+          "source": "Harness-Zero",
+          "target": "Google",
+          "type": "authored_by",
+          "weight": 0.9,
+          "evidence": ["北大、Google 与 HKUST 的 Harness-Zero"]
+        },
+        {
+          "source": "Harness-Zero",
+          "target": "HKUST",
+          "type": "authored_by",
+          "weight": 0.9,
+          "evidence": ["北大、Google 与 HKUST 的 Harness-Zero"]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "Harness-Zero 把“scaffolding 是可蒸馏进权重的知识”正式化，暗示今天靠外部 harness 堆出的 agent 收益，未来可能被模型权重本身吸收、降低部署对专门脚手架的依赖。"
+    },
+    {
+      "article_id": "2026-09-22-6",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["Anthropic 在 9 月 22 日发布的 Claude Opus 5.5"]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": ["Opus 5.5"],
+          "confidence": 0.95,
+          "evidence": ["Claude Opus 5.5 首次以 Fable 级护栏上线"]
+        },
+        {
+          "name": "Fable 5.1",
+          "type": "model",
+          "aliases": ["Fable"],
+          "confidence": 0.9,
+          "evidence": ["Opus 5.5 对提示注入的抵抗与 Fable 5.1 并列最低"]
+        },
+        {
+          "name": "Claude Opus 5",
+          "type": "model",
+          "aliases": ["Opus 5"],
+          "confidence": 0.9,
+          "evidence": ["尝试跨越测试沙盒边界的频次比 Opus 5 或 Mythos 5.1 少约 85%"]
+        },
+        {
+          "name": "Mythos 5.1",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["尝试跨越测试沙盒边界的频次比 Opus 5 或 Mythos 5.1 少约 85%"]
+        },
+        {
+          "name": "METR",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["发布前经 METR 与 Frontier Design 外部评审"]
+        },
+        {
+          "name": "Frontier Design",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["发布前经 METR 与 Frontier Design 外部评审"]
+        },
+        {
+          "name": "Gray Swan",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["在 Gray Swan 运行的外部基准里"]
+        }
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Claude Opus 5.5 首次以 Fable 级护栏上线，发布前经外部评审",
+          "summary": "Anthropic 于 9 月 22 日发布的 Claude Opus 5.5 是公开呼吁放缓前沿后的首次发布，自动化行为审计得分比任何过往 Claude 都高，发布前经 METR 与 Frontier Design 外部评审。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Opus 5.5", "type": "model", "role": "object"},
+            {"name": "METR", "type": "organization", "role": "context"},
+            {"name": "Frontier Design", "type": "organization", "role": "context"}
+          ],
+          "evidence": ["Claude Opus 5.5 首次以 Fable 级护栏上线"]
+        },
+        {
+          "type": "security",
+          "label": "Opus 5.5 对高危任务透明 fallback 到较弱模型",
+          "summary": "Opus 5.5 是首个以类似 Fable 5.1 的护栏（网络安全、生物学、蒸馏）上线、并透明 fallback 到较弱模型（Cyber→Opus 4.8、Bio/前沿 LLM 开发→Opus 5）的 Opus 模型，拒绝用最强模型处理最高危任务。",
+          "participants": [
+            {"name": "Claude Opus 5.5", "type": "model", "role": "subject"},
+            {"name": "Claude Opus 5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["透明 fallback 到较弱模型（Cyber→Opus 4.8、Bio/前沿 LLM 开发→Opus 5）"]
+        },
+        {
+          "type": "trend",
+          "label": "护栏从口号变成可比较、可审计、甚至可成为基准的东西",
+          "summary": "在 Gray Swan 运行的外部基准里 Opus 5.5 对提示注入的抵抗与 Fable 5.1 并列最低，当一致动作被量化并在发布前外部复核，护栏本身正成为可以比较、可以审计甚至可成为基准的东西。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Opus 5.5", "type": "model", "role": "object"},
+            {"name": "Gray Swan", "type": "organization", "role": "benchmark"}
+          ],
+          "evidence": ["护栏本身正在从“口号”变成“可以比较、可以审计、甚至可成为基准”的东西"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Anthropic",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["Anthropic 在 9 月 22 日发布的 Claude Opus 5.5"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Fable 5.1",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": ["Opus 5.5 对提示注入的抵抗与 Fable 5.1 并列最低"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Claude Opus 5",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": ["尝试跨越测试沙盒边界的频次比 Opus 5 或 Mythos 5.1 少约 85%"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Mythos 5.1",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": ["尝试跨越测试沙盒边界的频次比 Opus 5 或 Mythos 5.1 少约 85%"]
+        }
+      ],
+      "metrics": [
+        {"name": "边界逃逸尝试频次降幅", "value": "约 85%"},
+        {"name": "对齐测试套件覆盖模拟场景数", "value": "近 2,000 个"},
+        {"name": "模拟安全演练中沙盒触碰/篡改比例", "value": "约 1.5%"},
+        {"name": "拿到假凭据后采取潜在危害动作比例", "value": "约半数"}
+      ],
+      "why_it_matters": "Claude Opus 5.5 首次把对齐护栏量化到可比较、可外部审计的粒度，同时坦承能力评估能否泛化到真实部署仍存疑，说明护栏正从口号走向“可成为基准”但根本局限未解。"
+    },
+    {
+      "article_id": "2026-09-22-7",
+      "entities": [
+        {
+          "name": "Amazon",
+          "type": "company",
+          "aliases": ["亚马逊"],
+          "confidence": 0.95,
+          "evidence": ["亚马逊禁止 Meta 的新 AI 代理 Muse 在其零售站点代为购物"]
+        },
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": ["Facebook", "Meta AI"],
+          "confidence": 0.95,
+          "evidence": ["亚马逊禁止 Meta 的新 AI 代理 Muse 在其零售站点代为购物"]
+        },
+        {
+          "name": "Muse",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Muse 是 Meta 9 月 8 日推出的个人 AI 代理"]
+        },
+        {
+          "name": "Muse Spark",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["由 Meta 目前最强的 agentic 模型 Muse Spark 驱动"]
+        },
+        {
+          "name": "Perplexity",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["继去年起诉 Perplexity"]
+        },
+        {
+          "name": "Shopify",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Shopify 选择了相反的路线"]
+        },
+        {
+          "name": "Stripe",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["与 Stripe 的支付/一次性虚拟卡集成也在推进"]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "亚马逊封禁 Meta 的新 AI 代理 Muse 在其零售站点代购",
+          "summary": "Meta 拒绝按亚马逊要求把 Muse 从 Amazon.com 移除后，亚马逊于周日开始封堵，称 Meta 未提前告知且代理未自报 AI 身份，违反条款，这是继起诉 Perplexity 之后的又一次设界。",
+          "participants": [
+            {"name": "Amazon", "type": "company", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "context"},
+            {"name": "Perplexity", "type": "company", "role": "context"}
+          ],
+          "evidence": ["亚马逊禁止 Meta 的新 AI 代理 Muse 在其零售站点代为购物"]
+        },
+        {
+          "type": "partnership",
+          "label": "Shopify 反其道支持 Muse 用 Shop Pay 结算",
+          "summary": "Shopify 选择相反路线，宣布将支持 Muse 用 Shop Pay 结算，与 Stripe 的支付/一次性虚拟卡集成也在推进，把 agent 当流量与结算的同盟。",
+          "participants": [
+            {"name": "Shopify", "type": "company", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "partner"},
+            {"name": "Muse", "type": "product", "role": "object"},
+            {"name": "Stripe", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Shopify 选择了相反的路线——宣布将支持 Muse 用 Shop Pay 结算"]
+        },
+        {
+          "type": "trend",
+          "label": "平台对“代理来购物”的立场分歧正在定义 agent 能否切入真实电商闭环",
+          "summary": "亚马逊把 agent 当威胁、Shopify 把 agent 当同盟，两家平台立场分歧正在定义未来几个月智能代理能否切入真实电商闭环。",
+          "participants": [
+            {"name": "Amazon", "type": "company", "role": "subject"},
+            {"name": "Shopify", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["平台对“代理来购物”的立场分歧，正在定义未来几个月智能代理能否切入真实电商闭环"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Amazon",
+          "target": "Muse",
+          "type": "restricts",
+          "weight": 0.9,
+          "evidence": ["亚马逊禁止 Meta 的新 AI 代理 Muse 在其零售站点代为购物"]
+        },
+        {
+          "source": "Muse",
+          "target": "Meta",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Muse 是 Meta 9 月 8 日推出的个人 AI 代理"]
+        },
+        {
+          "source": "Muse",
+          "target": "Muse Spark",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["由 Meta 目前最强的 agentic 模型 Muse Spark 驱动"]
+        },
+        {
+          "source": "Amazon",
+          "target": "Perplexity",
+          "type": "targets",
+          "weight": 0.7,
+          "evidence": ["继去年起诉 Perplexity"]
+        },
+        {
+          "source": "Muse",
+          "target": "Shopify",
+          "type": "integrates",
+          "weight": 0.8,
+          "evidence": ["Shopify 选择了相反的路线——宣布将支持 Muse 用 Shop Pay 结算"]
+        },
+        {
+          "source": "Muse",
+          "target": "Stripe",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": ["与 Stripe 的支付/一次性虚拟卡集成也在推进"]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "亚马逊封禁 Muse 而 Shopify 接入 Muse，把“代理购物守门人”之争摆成可对照的平台路线分歧，agent 能否切入真实电商闭环将由平台决定而非仅由模型能力决定。"
+    },
+    {
+      "article_id": "2026-09-22-8",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["Anthropic 承认 Opus 5.5 是“自我们呼吁放缓以来的首次发布”"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.95,
+          "evidence": ["OpenAI 则把降价做成头条"]
+        },
+        {
+          "name": "Dario Amodei",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Anthropic CEO Dario Amodei 9 月中公开呼吁"]
+        },
+        {
+          "name": "Sam Altman",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["OpenAI CEO Sam Altman 罕见地在 X 上表态支持"]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": ["Opus 5.5"],
+          "confidence": 0.9,
+          "evidence": ["Anthropic 承认 Opus 5.5 是“自我们呼吁放缓以来的首次发布”"]
+        },
+        {
+          "name": "GPT-6 Sol",
+          "type": "model",
+          "aliases": ["Sol"],
+          "confidence": 0.85,
+          "evidence": ["两家就在同一小时窗口内各自发布了新模型（Opus 5.5 与 GPT-6 Sol/Luna）"]
+        },
+        {
+          "name": "DeepMind",
+          "type": "organization",
+          "aliases": ["Google DeepMind"],
+          "confidence": 0.9,
+          "evidence": ["DeepMind 的 Alex Turner"]
+        },
+        {
+          "name": "Alex Turner",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["DeepMind 的 Alex Turner 与 Anthropic/OpenAI 的 Jacob Coxon"]
+        },
+        {
+          "name": "Jacob Coxon",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Anthropic/OpenAI 的 Jacob Coxon"]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Amodei 公开呼吁为前沿减速，Altman 表态支持",
+          "summary": "Anthropic CEO Dario Amodei 9 月中公开呼吁“为前沿减速（pace the frontier）”，OpenAI CEO Sam Altman 罕见地在 X 上表态支持，而几日后两家就在同一小时窗口内各自发布新模型并降价。",
+          "participants": [
+            {"name": "Dario Amodei", "type": "person", "role": "subject"},
+            {"name": "Sam Altman", "type": "person", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "context"},
+            {"name": "OpenAI", "type": "company", "role": "context"}
+          ],
+          "evidence": ["Anthropic CEO Dario Amodei 9 月中公开呼吁“为前沿减速（pace the frontier）”"]
+        },
+        {
+          "type": "trend",
+          "label": "两家背靠背发布平价模型并降价，价格战把安全话语推到墙角",
+          "summary": "两家在呼吁减速后数日，于同一小时窗口各自发布 Opus 5.5 与 GPT-6 Sol/Luna 并大幅降价，安全话语与商业竞争并行且竞争压过推迟。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Claude Opus 5.5", "type": "model", "role": "object"},
+            {"name": "GPT-6 Sol", "type": "model", "role": "object"}
+          ],
+          "evidence": ["两家就在同一小时窗口内各自发布了新模型（Opus 5.5 与 GPT-6 Sol/Luna），并宣布大幅降价"]
+        },
+        {
+          "type": "trend",
+          "label": "两名前从业者辞职警告实验室奔超智能，减速被具体化为安全工程与透明披露升级",
+          "summary": "上周末 DeepMind 的 Alex Turner 与 Anthropic/OpenAI 的 Jacob Coxon 公开辞职并警告实验室奔向超智能，而两家都通过更硬的对齐护栏把减速具体化为安全工程与透明披露升级，而非停止发布。",
+          "participants": [
+            {"name": "Alex Turner", "type": "person", "role": "subject"},
+            {"name": "Jacob Coxon", "type": "person", "role": "subject"},
+            {"name": "DeepMind", "type": "organization", "role": "context"},
+            {"name": "Anthropic", "type": "company", "role": "context"},
+            {"name": "OpenAI", "type": "company", "role": "context"}
+          ],
+          "evidence": ["两家都在发布了搭配更硬的对齐护栏"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Dario Amodei",
+          "target": "Anthropic",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["Anthropic CEO Dario Amodei 9 月中公开呼吁"]
+        },
+        {
+          "source": "Sam Altman",
+          "target": "OpenAI",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["OpenAI CEO Sam Altman 罕见地在 X 上表态支持"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Anthropic",
+          "type": "released_by",
+          "weight": 0.8,
+          "evidence": ["两家就在同一小时窗口内各自发布了新模型（Opus 5.5 与 GPT-6 Sol/Luna）"]
+        },
+        {
+          "source": "GPT-6 Sol",
+          "target": "OpenAI",
+          "type": "released_by",
+          "weight": 0.8,
+          "evidence": ["两家就在同一小时窗口内各自发布了新模型（Opus 5.5 与 GPT-6 Sol/Luna）"]
+        },
+        {
+          "source": "Anthropic",
+          "target": "OpenAI",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["两家都以“比旗舰便宜 40–50%”的姿态抢成本敏感的企业与开源挤压压力下的份额"]
+        },
+        {
+          "source": "Alex Turner",
+          "target": "DeepMind",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["DeepMind 的 Alex Turner"]
+        },
+        {
+          "source": "Jacob Coxon",
+          "target": "Anthropic",
+          "type": "affiliated_with",
+          "weight": 0.7,
+          "evidence": ["Anthropic/OpenAI 的 Jacob Coxon"]
+        },
+        {
+          "source": "Jacob Coxon",
+          "target": "OpenAI",
+          "type": "affiliated_with",
+          "weight": 0.7,
+          "evidence": ["Anthropic/OpenAI 的 Jacob Coxon"]
+        }
+      ],
+      "metrics": [
+        {"name": "两家相对旗舰的降价幅度", "value": "40–50%"}
+      ],
+      "why_it_matters": "Amodei/Altman 呼吁减速数日后两家就背靠背降价发布，坐实“减速被具体化为安全工程与透明披露升级、而非停止发布”，价格战本身成为对放缓论的市场反驳。"
+    },
+    {
+      "article_id": "2026-09-22-9",
+      "entities": [
+        {
+          "name": "小米",
+          "type": "company",
+          "aliases": ["Xiaomi", "小米公司"],
+          "confidence": 0.9,
+          "evidence": ["小米 MiMo-V2.6-Pro 以 $0.435/百万 token 登顶开源榜"]
+        },
+        {
+          "name": "MiMo-V2.6-Pro",
+          "type": "model",
+          "aliases": ["MiMo-V2.6 Pro"],
+          "confidence": 0.9,
+          "evidence": ["小米 MiMo-V2.6-Pro 以 $0.435/百万 token 登顶开源榜"]
+        },
+        {
+          "name": "Alibaba",
+          "type": "company",
+          "aliases": ["阿里巴巴", "阿里"],
+          "confidence": 0.9,
+          "evidence": ["阿里预告 5–10T 参数的 Qwen 目标"]
+        },
+        {
+          "name": "Qwen",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["阿里预告 5–10T 参数的 Qwen 目标"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.9,
+          "evidence": ["OpenAI 把 API 定价砍半并强调"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Anthropic 把 Opus 5.5 定位成“Fable 级、贵 40% 便宜”"]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": ["Opus 5.5"],
+          "confidence": 0.9,
+          "evidence": ["Anthropic 把 Opus 5.5 定位成“Fable 级、贵 40% 便宜”"]
+        },
+        {
+          "name": "Zhenwu V900",
+          "type": "hardware",
+          "aliases": ["V900"],
+          "confidence": 0.85,
+          "evidence": ["下代 Qwen 5–10T 参数 + 最强国产芯片 + 20GW 数据中心"]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "开源权重成为前沿定价的硬约束",
+          "summary": "小米 MiMo-V2.6-Pro 以 $0.435/百万 token 登顶开源榜，阿里预告 5–10T 参数的 Qwen 目标，而 OpenAI 与 Anthropic 当天发布的模型都以“比旗舰便宜 40–50%”为卖点，开源不再只是追赶者而成了压迫闭源价格与许可策略的外部变量。",
+          "participants": [
+            {"name": "小米", "type": "company", "role": "subject"},
+            {"name": "MiMo-V2.6-Pro", "type": "model", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["开源不再只是“追赶者”，而成了压迫闭源价格与许可策略的外部变量"]
+        },
+        {
+          "type": "trend",
+          "label": "单位智能成本成为本轮真正被刷新的变量",
+          "summary": "当开源已逼近 $0.4/百万 token 的旗舰能力，若价格战继续深入，AI 的“单位智能成本”可能才是这一轮真正被刷新的变量，“谁更强”的基准之争反而退居其次。",
+          "participants": [
+            {"name": "Alibaba", "type": "company", "role": "subject"},
+            {"name": "Qwen", "type": "model", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "context"},
+            {"name": "Anthropic", "type": "company", "role": "context"}
+          ],
+          "evidence": ["若价格战继续深入，AI 的“单位智能成本”可能才是这一轮真正被刷新的变量"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "MiMo-V2.6-Pro",
+          "target": "小米",
+          "type": "released_by",
+          "weight": 0.8,
+          "evidence": ["小米则给出 MIT 许可 + 登顶开源榜 + $0.435/百万 token 的组合"]
+        },
+        {
+          "source": "Qwen",
+          "target": "Alibaba",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["阿里预告 5–10T 参数的 Qwen 目标"]
+        },
+        {
+          "source": "Zhenwu V900",
+          "target": "Alibaba",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": ["下代 Qwen 5–10T 参数 + 最强国产芯片 + 20GW 数据中心"]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Anthropic",
+          "type": "released_by",
+          "weight": 0.7,
+          "evidence": ["Anthropic 把 Opus 5.5 定位成“Fable 级、贵 40% 便宜”"]
+        }
+      ],
+      "metrics": [
+        {"name": "OpenAI/Anthropic 相对旗舰的降价幅度", "value": "40–50%"},
+        {"name": "MiMo-V2.6-Pro 单价（每百万 token）", "value": "$0.435"}
+      ],
+      "why_it_matters": "开放权重已从“追赶者”变成前沿定价与许可策略的硬约束——小米登顶、阿里 5–10T Qwen、闭源同日降价并置，指向“单位智能成本”正取代“谁更强”成为本轮真正被刷新的变量。"
+    }
+  ]
+}

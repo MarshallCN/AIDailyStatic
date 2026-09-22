@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-22",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "结构完整、跨文章连通好、数字基本核对无误，但最突出的语义问题是把厂商自报的基准对比当成已证实事实写成关系——多处的 outperforms/cheaper_than 依赖单方自报甚至双方口径相反（见 article 0 与 1），与图谱自己在事件里标注的\"厂商自报未复核\"口径自相矛盾。另有若干关系类型精化与信息遗漏问题。",
+  "findings": [
+    {
+      "article_id": "2026-09-22-1",
+      "severity": "high",
+      "problem": "关系 \"Claude Opus 5.5 --outperforms--> Fable 5.1\" 与 \"Claude Opus 5.5 --outperforms--> GPT-6 Astra\" 把厂商自报当已证实事实写成断言，证据仅是原文 \"Anthropic 称它在 agentic coding、知识工作等多个维度击败 Fable 5.1、乃至 GPT-6 Astra\"——这是 Anthropic 单方声称，且 article 0 原文明确指出 \"OpenAI 称 Sol、Luna 在多个维度显著胜过 Anthropic 的前沿模型，但 Anthropic 一方也给出相反的基准对比\"，双方 head-to-head 口径相反。这与本文事件（\"所有分数均为自报且未经独立机构复核\"）及 why_it_matters 的自我标注自相矛盾。",
+      "fix": "这两条关系不应以断言式 outperforms 呈现。改为带声称框架的表态（如关系标注 \"Anthropic 声称/自报\"，或证据明确写 \"Anthropic 自称击败 Fable 5.1 与 GPT-6 Astra，未经独立复核\"），并降低 weight；跨厂商 head-to-head 对比在双方口径相悖时必须显式标注为厂商自报。"
+    },
+    {
+      "article_id": "2026-09-22-0",
+      "severity": "medium",
+      "problem": "关系 \"GPT-6 Sol --cheaper_than--> Claude Opus 5\"（据 OSWorld 80% 成本、AutomationBench 低 60% 每任务成本）与 \"GPT-6 Sol --evaluated_on--> OSWorld 2.0\" 所引数字全部来自 OpenAI 自报，原文已声明 \"这些都是厂商自报，尚未经独立机构复核\"；关系却以事实语气断言，未带自报标注，与 article 1 同类问题严重度较低但同属一类。",
+      "fix": "给 cheaper_than/evaluated_on 的跨厂商对比关系标注厂商自报、未经独立复核；至少把 \"厂商自报\" 写进该关系的 evidence 或降权。"
+    },
+    {
+      "article_id": "2026-09-22-7",
+      "severity": "medium",
+      "problem": "关系 \"Amazon --targets--> Perplexity\" 类型过于宽泛且用词不当：原文是去年对 Perplexity 提起的诉讼（指控其购物代理在 Amazon 要求移除后仍隐匿运作），\"targets\" 既表达不出\"诉讼\"这一事件类型，也模糊了动作方向（是 Amazon 起诉 Perplexity）。",
+      "fix": "改用诉讼类关系，如 \"Amazon --sues/litigates_against--> Perplexity\"，或至少在 evidence 里写明\"Amazon 起诉 Perplexity（2025 年）\"，不要把法律纠纷退化成泛化 targets 边。"
+    },
+    {
+      "article_id": "2026-09-22-7",
+      "severity": "medium",
+      "problem": "关系 \"Muse --integrates--> Stripe\" 证据原文是 \"与 Stripe 的支付/一次性虚拟卡集成也在推进\"——是进行中/计划中，关系却写成已完成事实并给 weight 0.6。Shopify 的 Shop Pay 支持也已发布为\"宣布将支持\"，方向与完成态都应区分。",
+      "fix": "把进行中的集成标注为 planned/in_progress（或关系名用 plans_to_integrate），不要把\"也在推进\"写成已完成的 integrates；Shopify 侧同理标注为\"宣布支持\"而非已完成双向集成。"
+    },
+    {
+      "article_id": "2026-09-22-1",
+      "severity": "medium",
+      "problem": "信息遗漏：原文 detail 详述了相对 Opus 5 的四条 API breaking changes（thinking 不可关闭、强制 tool use 会报错、thinking 块与模型/会话绑定、旧的 computer_20251124 工具不再被 Claude API 与 Google Cloud 接受），以及对生产工作流的升级影响——这是本条对使用者最重要的操作性信息，图谱的事件、指标、why_it_matters 完全没体现。",
+      "fix": "为这条破坏性 API 变更补充一个事件或一句 why_it_matters 层面的要点，或在 metrics 里反映\"相对 Opus 5 存在 4 条 breaking changes\"，否则信息贫乏于原文核心内容。"
+    },
+    {
+      "article_id": "2026-09-22-0",
+      "severity": "low",
+      "problem": "metric \"编码欺骗率 1.3%\" 只给降后值，原文是\"编码欺骗率从 GPT-5.6 Sol 的 10.4% 降到 1.3%\"，缺基线与\"降幅\"这一关键信息，可比性弱。",
+      "fix": "补充基线：\"编码欺骗率从 10.4%（GPT-5.6 Sol）降至 1.3%\"，或标注降幅约 87%；不要只写终值。"
+    }
+  ],
+  "lessons": [
+    "厂商自报的基准对比（尤其跨厂商 head-to-head 的 outperforms/cheaper_than）必须带\"厂商声称、未经独立复核\"的框架，不得当已证实事实写成断言；当双方厂商给出相反口径时要显式标注并降权。",
+    "生态/诉讼类新闻里关系要精确：法律纠纷（起诉）不能退化成泛化 targets 边，应使用诉讼类关系；原文标为\"推进中/计划\"的集成不得写成已完成 integrates。",
+    "版本号相邻的模型（如 Opus 5 与 5.5、GPT-5.6 与 GPT-6）是不同代际的不同实体，审计器报\"疑似重复\"时先读原文确认代际，确属不同模型则保留独立实体、不合并。"
+  ]
+}

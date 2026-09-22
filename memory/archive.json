@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T22:42:54Z",
+  "updated_at": "2026-09-22T22:59:30Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -701,13 +701,13 @@
       "period_id": "2026-W34",
       "period_type": "week",
       "start_date": "2026-08-17",
-      "end_date": "2026-08-22",
-      "summary": "2026-08-17 至 2026-08-22 期间，OpenAI、亿美元、Nvidia 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-23",
+      "summary": "2026-08-17 至 2026-08-23 期间，OpenAI、亿美元、Nvidia 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "亿美元",
         "Nvidia",
-        "ChatGPT"
+        "TechCrunch"
       ],
       "event_types": [
         "infra",

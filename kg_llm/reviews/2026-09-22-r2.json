@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-22",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "整体抽取扎实、证据可验证性高，但存在一处指标张冠李戴（把 OpenAI/Anthropic 相对旗舰的 40–50% 降价误挂在小米名下）、一处把观察类社论判断硬编码成实体竞争关系、以及若干关系过度推断与实体类型不一致。",
+  "findings": [
+    {
+      "article_id": "2026-09-22-9",
+      "severity": "high",
+      "problem": "metric \"小米相对旗舰的降价幅度 40–50%\" 是张冠李戴。原文中的 40–50% 明确指 OpenAI 与 Anthropic 当天发布模型\"以'比旗舰便宜 40–50%'为卖点\"，是两家美系闭源厂商相对自己旗舰的降幅，并非小米相对旗舰的降价；小米的参照是 $0.435/百万 token 单价。把该数字挂到小米名下构成事实错误，会在图上讲出错误的故事。",
+      "fix": "将该 metric 改为 \"OpenAI/Anthropic 相对旗舰的降价幅度 40–50%\"（或删除、改由 article 8 承载），事件与 why_it_matters 中不要把 40–50% 归给小米；小米的降价事实应保留 $0.435/百万 token 这一项即可。"
+    },
+    {
+      "article_id": "2026-09-22-1",
+      "severity": "medium",
+      "problem": "AutomationBench 已抽为实体（evidence \"AutomationBench 40.0%\"），但全篇没有任何一条关系边指向它，也没有把 40.0% 写入 metrics，成为一条孤立实体的同时丢失了源文明确给出的关键自报基准分（AutomationBench 40.0%，Zapier，无 fallback 模型计为失败）。",
+      "fix": "补一条 Claude Opus 5.5 --evaluated_on--> AutomationBench 关系，并把 \"AutomationBench 40.0%（Zapier，无 fallback 计为失败）\" 加入该篇 metrics。"
+    },
+    {
+      "article_id": "2026-09-22-7",
+      "severity": "medium",
+      "problem": "关系 \"Shopify --partners_with--> Meta\" 过度推断。原文只说 Shopify 宣布将支持 Muse 用 Shop Pay 结算，这是对 Muse 这一产品/结算方式的接入支持，并没有两人公司（Shopify 与 Meta）达成合作伙伴关系的表述，company 层面的 partners_with 言过其实。",
+      "fix": "改为 Muse --integrates_with--> Shopify（由 Muse 接入 Shop Pay 结算），或改为 Shopify --supports--> Muse，不要把产品级结算支持升级成公司间的 partners_with。"
+    },
+    {
+      "article_id": "2026-09-22-4",
+      "severity": "medium",
+      "problem": "实体类型不一致且错配：FlexSP 被标为 tool、静态 SP 被标为 topic，但二者是同类的序列并行策略/方法（FlexSP 是动态 SP 系统，静态 SP 是静态并行度方法），都是技术与方法概念而非工具或主题，同一篇文章中并列的同质概念必须统一类型。",
+      "fix": "将 FlexSP 与 静态 SP 统一为同一类型（method/technique，沿用本图谱对技术概念的既有约定），并把 FlexSP 从 tool 改过来。"
+    },
+    {
+      "article_id": "2026-09-22-3",
+      "severity": "medium",
+      "problem": "关系 \"小米 --competes_with--> OpenAI\" 与 \"小米 --competes_with--> Anthropic\" 证据不足：引用的证据\"把开源变成一种对闭源'定价—透明度'的双重挤压\"是对开源趋势的社论性判断，原文并没有小米与 OpenAI/Anthropic 直接竞争的事实表述，把观察类文章的论断硬编码成实体竞争关系会让图谱把趋势当事实。同名问题也出现在 2026-09-22-9 的 \"小米 --competes_with--> OpenAI/Anthropic\"。",
+      "fix": "删除这两条 competes_with（或降为 compared_with / 以更有针对性的事实证据支撑），把\"开源挤压闭源定价\"只保留在 why_it_matters 层面，不当作 小米 与 具体某家公司的直接竞争关系。"
+    }
+  ],
+  "lessons": [
+    "跨篇核对同一数字的归属主体：当一篇文章把某降幅/比例与其主体绑定，抽取 metrics 和关系时必须确认该数字属于谁，观察类文章里\"A 的降幅\"与\"B 对 A 的参照\"不能混挂。",
+    "抽了实体就要闭环：若把某个基准/分数对象抽为实体，就应补上它在该篇的关系边和关键分值（evaluated_on + metrics），避免孤立实体和源文关键数字丢失。",
+    "社论性判断（如对开源趋势\"构成压制\"）不能硬编码成实体间的事实关系（competes_with 等仅当原文明确说两方直接竞争时才使用），否则删去或降为 compared_with，并改为 company/产品层面的直接证据。"
+  ]
+}
