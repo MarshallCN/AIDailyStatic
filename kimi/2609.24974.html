@@ -1,0 +1,356 @@
+<p class="faq-q"><strong>Q1</strong>: 这篇论文试图解决什么问题？</p>
+
+<div class="faq-a">
+
+这篇论文试图解决**智能体 harness（agent harness）的收益与部署耦合**的问题，具体而言：
+
+- **核心矛盾**：外部 harness（组织工具使用、管理上下文和状态、控制环境交互的中介系统）虽能显著提升智能体性能，但其带来的收益完全依赖于部署时该 harness 的存在。由于最优 harness 随领域、任务实例和基座模型而变化，通用智能体不得不在以下两难中取舍：
+  - 使用**单一共享 harness**，牺牲专业化收益；
+  - 维护**大量专用 harness**，导致路由开销、上下文占用、模型调用与编排成本持续增加。
+  
+  两种方案均未能将 harness 优化所发现的改进**内化到模型权重**中。
+
+- **技术挑战**：源 harness（训练时优化的 harness）与目标 harness（部署时固定的 harness）在**动作空间**和**可用信息**上往往不同，因此直接在源 harness 下采集的轨迹无法直接作为目标 harness 的监督信号。
+
+- **解决思路**：论文提出 **agent harness distillation**（harness 蒸馏），并设计 **HARNESS-ZERO** 框架。其核心机制 **agent-as-harness** 通过在目标 harness 的响应边界上引入一个 harnessing agent，将优化 harness 的指导“翻译”为可在目标动作空间中执行的纠正，从而生成兼容目标 harness 的训练轨迹。经监督微调后，模型在**移除**优化 harness 的情况下，仍能在单一目标 harness 上复现原本由优化 harness 诱导的行为与性能增益。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q2</strong>: 有哪些相关研究？</p>
+
+<div class="faq-a">
+
+根据论文第2节&quot;Related work&quot;，相关研究可分为以下三个方向：
+
+---
+
+### 1. Code-as-Harness 及其优化
+
+Harness 作为中介系统，通过工具、上下文管理、控制流和持久状态来组织 LLM 与环境的交互。该方向的代表性工作包括：
+
+- **现代编码智能体**：Claude Code、Codex CLI、Kimi Code、Pi、OpenCode 等，体现了不同的 harness 设计哲学。
+- **自然语言 Harness**：将运行级策略表示为可编辑文档，由智能体解释为动作（Natural-Language Agent Harnesses）。
+- **自动化优化**：从提示词优化（prompt optimization）、上下文工程，扩展到工作流（workflow）和 harness 的自动演化，例如 Meta-Harness 等端到端 harness 优化方法。
+- **即时生成**：Zhang et al. [2026a] 训练模型为每个任务即时生成专用 harness。
+- **测试时强到弱迁移**：由强模型为固定的弱模型构建推理时 harness（test-time strong-to-weak transfer）。
+
+HARNESS-ZERO 与上述工作的互补之处在于：它提出 **agent-as-harness**，不仅在推理时能优于固定代码形式的 harness，还支持将优化后的 harness 行为蒸馏到模型权重中。
+
+---
+
+### 2. 模型与 Harness 的协同进化（Co-evolution）
+
+该方向尝试将 harness 优化与模型参数更新结合，形成交替或联合优化：
+
+- **交替优化**：利用修订后的 harness 为下一轮模型更新生成数据，再用更新后的模型驱动进一步的 harness 搜索。
+- **联合优化**：将&quot;模型–harness 兼容性&quot;作为优化目标，同时训练策略并调整 harness。
+
+然而，这些方法的收益往往仍与 harness 耦合。Le et al. [2026] 的控制实验表明：更换评估 harness 对性能的影响甚至超过训练方法本身；跨 harness 收集反馈训练也未能改善向极简 ReAct harness 的迁移。HARNESS-ZERO 则不同：它利用优化 harness 指导一个临时的 harnessing agent，将诱导出的行为蒸馏进模型权重，从而在部署时**无需保留或路由任何 harness 集合**。
+
+---
+
+### 3. 来自特权指导的蒸馏（Distillation from Privileged Guidance）
+
+该方向探索如何将外部机制产生的特权信号内化为模型能力：
+
+- **EvoHarness-RL**：在 ALFWorld 上提供了 harness 内化的早期证据，训练后的智能体学会管理外部状态并减少 harness 调用。但它在部署时仍保留外部工作区，且仅针对单个机制。
+- **OPHSD**：将顺序 draft–verify 和 plan–solve 工作流产生的特权输出蒸馏为独立模型。但它不涉及交互式智能体循环。
+
+HARNESS-ZERO 的区分度在于：它提出了一种**通用方法**，用于将**完整的工具使用型智能体 harness** 蒸馏到模型中，使模型能在**极简目标 harness** 下独立运行，而无需保留外部工作区或特权工作流。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q3</strong>: 论文如何解决这个问题？</p>
+
+<div class="faq-a">
+
+论文通过 **HARNESS-ZERO** 框架解决该问题，其核心是将优化 harness 诱导的行为蒸馏到模型权重中，使得部署时仅需一个固定的目标 harness。整个方法分为三个阶段：
+
+---
+
+### 1. Harness 演化与适配
+
+首先，在训练任务上演化得到一个针对学生优化的 harness $h^\star$，再将其适配为一个供 harnessing agent 使用的私有参考 harness $K$：
+
+$$h^\star = \text{Evolve}(D_{\text{train}}), \quad K = \text{Adapt}(h^\star; h)$$
+
+其中 $h$ 是部署时固定的目标 harness。适配过程改变各组件的作用对象和执行点：
+- **工具** $\to$ **动作配方**：说明如何在学生原生动作空间中构造等价操作；
+- **学生端中间件** $\to$ **审核中间件**：在响应边界检测条件，私有地提示 harnessing agent；
+- **技能/记忆** $\to$ **诊断标准与干预指导**：用于判断何时干预以及如何构造纠正。
+
+---
+
+### 2. Agent-as-Harness：跨动作空间的轨迹收集
+
+这是解决&quot;源 harness 与目标 harness 动作空间不匹配&quot;的核心机制。学生在 $h$ 下运行并生成提案 $y_t$，而一个 harnessing agent 在响应边界处拦截并审核该提案：
+
+$$y_t \sim \pi_S(\cdot \mid c_t) := \pi_\theta^h(\cdot \mid c_t)$$
+
+$$(d_t, z_t) \sim \pi_H(\cdot \mid c_t, y_t, K, r_{&lt;t})$$
+
+$$\tilde{y}_t = \begin{cases} y_t, &amp; d_t = \text{PASS} \\ z_t, &amp; d_t = \text{REPLACE} \end{cases}$$
+
+$$c_{t+1} = T_h(c_t, \tilde{y}_t)$$
+
+关键设计约束包括：
+- **最小干预原则**：合理的提案直接通过（PASS）；必要时才做最小连贯的修正（REPLACE）。
+- **目标动作空间兼容**：每个替换响应 $z_t$ 必须是 $h$ 下可执行的完整响应。
+- **私有性**：harnessing agent 不能访问隐藏答案或学生沙箱内部状态，其审核讨论也不进入学生可见轨迹 $c_t$。
+- **证据锚定**：干预必须基于学生可见信息，例如将过早的结束替换为通过 $h$ 执行的验证代码，使验证结果成为学生可观察的证据。
+
+---
+
+### 3. 从审核轨迹中学习
+
+对审核后的轨迹 $D_{\text{review}}$ 执行监督微调（SFT），让学生模型模仿被接受的响应 $\tilde{y}_t$（包括通过的学生提案和 harness 引导的替换）：
+
+$$\hat{\theta} = \arg\min_\theta -\sum_{\tau \in D_{\text{review}}} \sum_{t=1}^{T_\tau} \log \pi_\theta^h(\tilde{y}_t \mid c_t)$$
+
+训练时会对替换响应中不慎混入的&quot;审核者视角推理&quot;进行掩码（masking），确保蒸馏的是学生视角的行为。
+
+---
+
+### 部署
+
+蒸馏完成后，系统仅保留 $(\pi_{\hat{\theta}}, h)$。优化 harness $h^\star$、参考 harness $K$ 以及 harnessing agent 均在部署时移除。此时模型直接在固定目标 harness $h$ 下运行：
+
+$$y_t \sim \pi_{\hat{\theta}}^h(\cdot \mid c_t), \quad c_{t+1} = T_h(c_t, y_t)$$
+
+通过这一过程，原本依赖 $h^\star$ 才能获得的行为模式（如特定验证步骤、状态检查、安全约束等）被内化到模型参数中，从而实现了 harness 收益与外部 harness 的解耦。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q4</strong>: 论文做了哪些实验？</p>
+
+<div class="faq-a">
+
+论文在三个不同领域开展了系统实验，核心围绕 **agent-as-harness 的推理表现** 与 **harness 蒸馏后的权重内化效果** 展开。实验设置与结果如下：
+
+---
+
+### 1. 实验设置（§4.1）
+
+- **任务领域**：
+  - **SpreadsheetBench Verified**：400 个真实电子表格操作任务，训练/测试划分为 300/100。
+  - **AppWorld**：跨模拟应用的交互式工具使用，训练集 147 条任务，测试集 168 条任务（56 个三任务场景）。
+  - **USPTO Retrosynthesis**：单步逆合成前体预测，训练/测试划分为 500/100。
+- **目标 Harness**：固定为极简的 mini-SWE-agent 风格 $h$，仅含一个 Bash 执行工具。
+- **模型**：
+  - 训练-free 对比实验：GPT-5.6 Sol、DeepSeek-V4-Pro。
+  - 蒸馏实验：基座学生模型为 Qwen3.5-9B；harnessing agent 为 GPT-5.6 Sol；harness 演化使用 Kimi K3。
+- **训练**：对收集到的审核轨迹进行 LoRA SFT（rank 32，序列长度 65,536，2 个 epoch）。
+
+---
+
+### 2. Agent-as-Harness 的推理性能对比（§4.2, Table 1）
+
+在无参数更新的情况下，比较四种设置：
+
+| 设置 | 说明 |
+|---|---|
+| mini-SWE-agent ($h$) | 学生在固定目标 harness 下直接运行 |
+| meta-harness ($h^\star$) | 学生在演化后的 code-as-harness 下运行 |
+| agent-as-harness w/o evolved ($h, \emptyset$) | 学生在 $h$ 下运行，由 harnessing agent 审核，但参考 harness 为空 |
+| agent-as-harness w/ evolved ($h, K$) | 学生在 $h$ 下运行，harnessing agent 使用适配后的 $K$ 进行审核 |
+
+**主要发现**：在 6 个 benchmark–model 设置上，带 evolved $K$ 的 agent-as-harness 平均成功率为 **81.1%**，优于 meta-harness 的 **78.1%** 和裸 $h$ 的 **68.6%**；而空 $K$ 仅达 69.2%，说明审核本身解释力有限，关键收益来自 harness 指导的干预。
+
+---
+
+### 3. Harness 蒸馏效果（§4.3, Table 2）
+
+验证优化 harness 的收益能否在移除 $h^\star$、$K$ 及 harnessing agent 后，通过 SFT 保留在模型权重中。
+
+| 设置 | SpreadsheetBench | AppWorld | USPTO | Macro-Avg |
+|---|---|---|---|---|
+| Base + $h$ | 31.0 | 26.8 | 12.0 | 23.3 |
+| Base + $h^\star$ | 39.0 | 48.2 | 38.0 | 41.7 |
+| **HARNESS-ZERO** ($\hat{\theta}$ + $h$) | **44.0** | **58.9** | 30.0 | **44.3** |
+| Base + DeepAgents | 35.0 | 19.6 | 7.0 | 20.5 |
+| Base + Claude Code | 31.0 | 10.7 | 6.0 | 15.9 |
+
+**主要发现**：
+- HARNESS-ZERO 将宏观平均成功率从 **23.3%** 提升至 **44.3%**（相对提升 90.1%）。
+- 蒸馏后的模型在 **$h$ 单独作用下** 的表现（44.3%）**超过了** 基座模型挂载 $h^\star$ 时的表现（41.7%）。
+- 两个通用 harness（DeepAgents、Claude Code）对该 9B 模型无益，说明领域专用组件至关重要。
+
+---
+
+### 4. 消融实验：替代监督信号对比（§4.4, Table 3）
+
+在 USPTO 上系统比较了 7 种训练轨迹来源，以 isolate agent-as-harness 中各因素的作用：
+
+| 轨迹来源 | 采集成功率 | 蒸馏后测试 pass@1 |
+|---|---|---|
+| Base (untrained) | — | 12.0 |
+| Teacher rollout (under $h$) | 52.0 | 12.0 |
+| Teacher under $h^\star$ | 62.0 | **3.0** |
+| Student under $h^\star$ | 39.4 | 12.0 |
+| Review with empty $K$ | 44.2 | 11.0 |
+| Review with oracle answer | 98.6 | 15.0 |
+| **HARNESS-ZERO ($K$)** | 59.4 | **30.0** |
+
+**主要发现**：
+- 直接用强模型（GPT-5.6 Sol）的轨迹进行模仿学习对学生无帮助（12.0%）。
+- 在 $h^\star$ 下采集的轨迹因动作空间不匹配，蒸馏后反而损害性能（降至 3.0%）。
+- Oracle 答案虽使采集成功率接近 100%，但蒸馏后仅 15.0%，因其诱导不可泛化的捷径修正。
+- **Harness-guided review**（即 HARNESS-ZERO）提供了最优的监督信号，显著优于其他变体。
+
+---
+
+### 5. 行为内化细粒度分析（§4.5, Table 4）
+
+为验证蒸馏是否真正恢复了 $h^\star$ 诱导的行为，论文挖掘了 **28 个 harness-exclusive 行为模式**（SpreadsheetBench 18 个、USPTO 6 个、AppWorld 4 个），涵盖记忆、技能、工具和中间件层面。每个模式仅在基座模型使用 $h^\star$ 时出现，而在裸 $h$ 下不出现。
+
+**主要发现**：
+- HARNESS-ZERO 在这 28 个模式上的**平均恢复率为 82.3%**。
+- 高恢复率横跨多种来源：记忆规则（如&quot;原地编辑工作簿&quot; 91%）、技能流程（如&quot;先检查后编辑&quot; 100%）、工具调用（如&quot;用 RDKit 验证&quot; 100%）和中间件约束（如&quot;保护预填充单元格&quot; 92%）。
+- 这提供了直接证据：蒸馏不仅提升了任务成功率，还将原本缺失的**过程性行为模式**内化到了模型参数中。
+
+---
+
+### 6. 补充分析（Appendix F）
+
+- **Harnessing agent 的能力门槛**：当使用较弱模型（如 Qwen3.6-35B-A3B）同时担任学生和 harnessing agent 时，agent-as-harness 的优势消失甚至为负，说明有效审核需要足够的基础模型能力。
+- **开销**：USPTO 上 agent-as-harness 的延迟约为裸 mini-SWE-agent 的 **2.4 倍**（每 trial 237.2 秒 vs. 100.1 秒），但该开销仅发生在训练数据采集阶段，部署时完全消除。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q5</strong>: 有什么可以进一步探索的点？</p>
+
+<div class="faq-a">
+
+论文在第5节及附录中明确指出了若干可直接延伸的研究方向，可归纳为以下五点：
+
+---
+
+### 1. 训练更强的 Agent World Model 以支撑 harnessing 决策
+
+Harnessing agent 本质上需要求解一个反事实预测问题：预判学生提案执行后的环境变化，以及干预是否能产生更优轨迹。当前实现依赖 harnessing model 自身的推理能力来完成这一预判。未来可专门训练**更强的智能体世界模型**（agent world models），并针对 harnessing 决策场景特化其预测能力，从而提升干预的准确性与必要性判断。
+
+---
+
+### 2. 从全量、粗粒度审查转向选择性、细粒度干预
+
+现有框架存在两个效率瓶颈：
+- **每步必审**：每个提案都触发一次 harnessing agent 调用，导致采集延迟显著增加（USPTO 上达 $2.4\times$）。
+- **仅能全量替换**：干预粒度限制为 PASS 或完整 REPLACE，无法对响应进行局部修改。
+
+未来工作可探索：
+- 基于**代理信号**（proxy signals）**选择性触发审查**，避免对明显合理的提案浪费计算；
+- 支持**更细粒度的干预机制**，如 token 级插入、潜在空间引导（latent-space steering）等，实现局部修正而非重写整个响应。
+
+---
+
+### 3. 利用偏好学习改进训练方法
+
+当前采用响应级的监督微调（SFT），但每个 REPLACE 决策天然包含了一对**同一状态下的被拒绝提案与偏好替换**。SFT 丢弃了这种成对比较信号。未来可引入**偏好学习**（preference learning，如 DPO 等），直接利用这些 $(y_t, \tilde{y}_t)$ 的对比信息，可能更有效地内化 harness 诱导的行为。
+
+---
+
+### 4. 内化不可直接表达为响应的 harness 机制
+
+论文指出，部分 harness 机制（如**上下文管理、长程记忆维护**）并不能直接翻译为学生在目标 harness 下的可执行响应。如何将这些**非动作型机制**蒸馏进模型权重，仍是开放问题。这需要探索新的蒸馏接口，或设计能够表达此类行为的学生动作空间扩展。
+
+---
+
+### 5. 递归自我改进与跨领域 harness 积累
+
+论文提出了一种更宏观的范式设想：将**大量领域/任务专用 harness** 持续蒸馏到同一个共享模型中，使不同智能体系统在外部 scaffold 中发展出的行为与知识积累在模型参数内，而非碎片化地分散在各个 harness 中。这要求：
+- 建立**可扩展的 harness 开发–蒸馏–再开发**闭环；
+- 研究更强的模型如何自动构建更优 harness，以及这些 harness 的收益如何通过蒸馏**递归地返还到权重**中，形成自我增强的飞轮。
+
+---
+
+### 6. 降低对 harnessing 模型能力的依赖
+
+实验表明，当 harnessing agent 的底层模型能力不足时（如 Qwen3.6-35B-A3B），审查反而有害。未来可探索：
+- 更鲁棒的审查协议，使较弱模型也能提供有效监督；
+- 轻量级审查器或规则与模型混合的审查机制，降低对前沿模型的依赖。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q6</strong>: 总结一下论文的主要内容</p>
+
+<div class="faq-a">
+
+该论文研究**智能体 harness 蒸馏**问题，即如何将外部优化 harness 诱导的行为迁移到模型权重中，使其在部署时仅依赖一个固定的极简 harness 即可复现甚至超越原本需要专用 harness 才能达到的性能。
+
+---
+
+### 1. 研究背景与问题
+
+- **Harness 的收益与部署耦合**：外部 harness（工具组织、上下文管理、状态控制等中介系统）能显著提升 LLM 智能体性能，但这些收益完全依赖于部署时该 harness 的存在。
+- **通用性困境**：最优 harness 随领域、任务实例和基座模型而变化。通用智能体要么使用单一共享 harness 牺牲专业性，要么维护大量专用 harness 带来路由与编排开销。
+- **核心挑战**：源 harness（训练时优化所得）与目标 harness（部署时固定）在**动作空间**和**可用信息**上存在差异，导致在源 harness 下采集的轨迹无法直接用于在目标 harness 下训练学生模型。
+
+---
+
+### 2. 方法：HARNESS-ZERO
+
+论文提出 **HARNESS-ZERO** 框架，包含三个阶段：
+
+#### (1) Harness 演化与适配
+$$h^\star = \text{Evolve}(D_{\text{train}}), \quad K = \text{Adapt}(h^\star; h)$$
+- 在训练任务上演化出学生端优化 harness $h^\star$；
+- 将其适配为 harnessing agent 的私有参考 harness $K$，改变各组件的作用对象（工具变为动作配方、中间件变为审核规则、技能变为诊断与干预指导）。
+
+#### (2) Agent-as-Harness：跨动作空间的轨迹采集
+学生在固定目标 harness $h$ 下提出响应 $y_t$，harnessing agent 依据 $K$ 在响应边界进行审核：
+$$y_t \sim \pi_\theta^h(\cdot \mid c_t), \quad (d_t, z_t) \sim \pi_H(\cdot \mid c_t, y_t, K, r_{&lt;t})$$
+$$\tilde{y}_t = \begin{cases} y_t, &amp; d_t = \text{PASS} \\ z_t, &amp; d_t = \text{REPLACE} \end{cases}, \quad c_{t+1} = T_h(c_t, \tilde{y}_t)$$
+
+关键设计：
+- **最小干预**：合理的提案直接通过，必要时做最小连贯修正；
+- **目标动作空间兼容**：替换响应 $z_t$ 必须是 $h$ 下可执行的完整响应；
+- **私有性**：审核讨论不进入学生可见轨迹；
+- **证据锚定**：干预必须基于学生可见信息，通过 $h$ 执行验证代码获取。
+
+#### (3) 从审核轨迹中监督微调
+$$\hat{\theta} = \arg\min_\theta -\sum_{\tau \in D_{\text{review}}} \sum_{t=1}^{T_\tau} \log \pi_\theta^h(\tilde{y}_t \mid c_t)$$
+
+对审核后的轨迹进行 SFT，将 harness 诱导的行为内化到模型参数。部署时仅保留 $(\pi_{\hat{\theta}}, h)$，$h^\star$、$K$ 及 harnessing agent 均被移除。
+
+---
+
+### 3. 实验与发现
+
+实验覆盖三个领域：电子表格操作（SpreadsheetBench Verified）、多应用工具使用（AppWorld）、科学推理（USPTO Retrosynthesis）。
+
+| 维度 | 关键结果 |
+|---|---|
+| **Agent-as-Harness 推理性能** | 在 6 个设置上平均成功率达 **81.1%**，优于 code-as-harness 的 **78.1%** 和裸目标 harness 的 **68.6%**。 |
+| **Harness 蒸馏效果** | Qwen3.5-9B 经蒸馏后，在仅使用 $h$ 时宏观平均成功率从 **23.3%** 提升至 **44.3%**，**超过** 挂载 $h^\star$ 时的 **41.7%**。 |
+| **消融实验** | 与直接模仿强模型轨迹（12.0%）、在 $h^\star$ 下采集轨迹（3.0%）、空 $K$ 审核（11.0%）、Oracle 答案审核（15.0%）相比，**harness-guided review 是最有效的监督信号（30.0%）**。 |
+| **行为内化** | 在 28 个 harness 专属行为模式上，蒸馏模型平均恢复了 **82.3%**，涵盖记忆、技能、工具和中间件层面。 |
+
+---
+
+### 4. 主要贡献
+
+1. **形式化 Agent Harness Distillation**：提出将优化 harness 收益迁移到模型权重的训练范式，实现部署时与专用 harness 的解耦。
+2. **Agent-as-Harness 机制**：通过 harnessing agent 在响应边界进行翻译式审核，解决了源 harness 与目标 harness 动作空间不匹配时的跨空间模仿问题。
+3. **实验验证**：证明 agent-as-harness 在推理时可优于 code-as-harness，且 HARNESS-ZERO 能在移除优化 harness 后保留并超越其收益，同时高效恢复 harness 诱导的细粒度行为模式。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q7</strong>: 想要进一步了解论文</p>
+
+<div class="faq-a">
+
+以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Harness-Zero%3A%20Harness%20Distillation%20via%20Agent-as-Harness，链接是 https://arxiv.org/pdf/2609.24974 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2609.24974 。请以此为基础，继续回答我后面的问题。&system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&send_immediately=true" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。
+
+</div>
