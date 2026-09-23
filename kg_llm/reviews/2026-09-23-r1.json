@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-23",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "实体覆盖、数字指标与事件切分整体扎实，但存在一条凭空制造的公司冲突关系（OpenAI targets Hugging Face），以及若干证据与断言错配的关系边（Muse uses macOS、UK targets G20、事件2证据不支撑标签），会让图谱讲出原文没有的故事。",
+  "findings": [
+    {
+      "article_id": "2026-09-23-8",
+      "severity": "high",
+      "problem": "关系 \"OpenAI --targets--> Hugging Face\"（weight 0.3）证据为\"被指 rogue OpenAI 程序入侵其服务器\"。原文只在顺带介绍 Hugging Face CEO 时提到其服务器最近被一个\"rogue OpenAI 程序\"入侵（source detail: \"包括最近被指 rogue OpenAI 程序入侵其服务器的 Hugging Face CEO\"），全文从未声称 OpenAI 这家公司攻击或敌视 Hugging Face。这条有向 \"targets\" 边把语境顺带提及加工成 OpenAI 对 HF 的攻击/对抗关系，会误导读者，属于原文不存在的虚构关系（且主语从\"rogue 程序\"偷换为\"OpenAI 公司\"）。",
+      "fix": "删除该关系边。若认为值得保留，只能作为非有向的语境备注，不能以 \"OpenAI --targets--> Hugging Face\" 形式入图；单靠顺带提及不足以建立有向冲突关系。"
+    },
+    {
+      "article_id": "2026-09-23-7",
+      "severity": "medium",
+      "problem": "关系 \"Muse --uses--> macOS\"（weight 0.4）的证据是\"macOS 安全专家\"，该证据描述的是 Patrick Wardle 的身份（macOS 安全专家），与\"Muse 运行在 macOS 上\"这一断言无关——证据存在但支撑的是另一回事。",
+      "fix": "要么给这条边换成直接支撑\"Muse 客户端在 macOS 上运行\"的原义证据（如描述本地客户端/听写端点在桌面运行的句子），要么删除该关系；不要用第三方身份描述充当产品使用某系统的证据。"
+    },
+    {
+      "article_id": "2026-09-23-9",
+      "severity": "medium",
+      "problem": "关系 \"United Kingdom --targets--> G20\"（weight 0.6）类型用错。原文是说英国将在 2027 年担任 G20 轮值主席并借此推动全球标准（source: \"将在 2027 年担任 G20 轮值主席期间推动...\"），G20 是英国即将主持的对象，不是被 targeting 的攻击/指向目标——\"targets\" 让图读成\"英国以 G20 为目标（攻击）\"的错故事。",
+      "fix": "删除该关系，或改用能表达\"英国将于 2027 年轮值主持 G20\"的关系类型（如 chairs/leads）；不要用面向目标型的关系类型（targets）表示机构角色的承接。"
+    },
+    {
+      "article_id": "2026-09-23-1",
+      "severity": "medium",
+      "problem": "trend 事件外的标签\"AI 前沿以巨额算力开支换取规模、把盈利推迟\"与其第二条 evidence\"美国或全球利率/风险偏好/监管\"不匹配——利率/风险偏好/监管说的是定价对宏观信号的敏感性，不能支撑\"巨额算力开支换取规模\"的标签；证据与所附断言对不上。",
+      "fix": "把该事件的 evidence 收紧为真正讨论算力开支/盈利推迟的原文句子（如\"用巨额算力开支换取规模、把盈利推迟\"），删除或替换掉\"美国或全球利率/风险偏好/监管\"这条不支撑标签的证据。"
+    }
+  ],
+  "lessons": [
+    "语境顺带提及（如某主体'被某程序入侵'）不等于主体间存在关系：不要据此建立有向冲突/攻击边（如 targets），原文未明确声称的对抗关系一律丢弃，而不是把顺带信息加工成关系。",
+    "每条关系的 evidence 必须直接支撑所附断言：不能用描述第三方身份或环境背景的句子（如'某人是 X 的安全专家'）充当'某产品 uses 某系统'这类断言的证据。",
+    "对轮值/主持类机构角色（如担任 G20 主席）不要使用面向攻击/指向目标的 relation type（targets）；没有合适类型时应删边而非错配关系类型。"
+  ]
+}

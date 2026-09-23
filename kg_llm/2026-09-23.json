@@ -1,0 +1,579 @@
+{
+  "date": "2026-09-23",
+  "articles": [
+    {
+      "article_id": "2026-09-23-0",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": ["Anthropic Inc."], "confidence": 0.97, "evidence": ["Anthropic IPO 推迟至 11 月"]},
+        {"name": "Dario Amodei", "type": "person", "aliases": ["Amodei"], "confidence": 0.97, "evidence": ["CEO Dario Amodei 公开呼吁"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["与 OpenAI 的赛跑也在变形"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["资本市场的参考系是 SpaceX"]},
+        {"name": "Sarah Friar", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 的 CFO Sarah Friar"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 将 IPO 从 10 月推迟至 11 月，潜在估值约 2 万亿美元",
+          "summary": "原被预期 10 月上市的 Anthropic 按 Forbes 报道推迟到 11 月，潜在估值约 $2 万亿，若成行将是史上最大 IPO（超过 SpaceX）。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Dario Amodei", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["Anthropic 按 Forbes 报道推迟到 11 月", "潜在估值约 $2 万亿"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 与 OpenAI 的上市赛跑正演变为两家 2026 年都不上市",
+          "summary": "本来看似的『谁先上市』竞争可能以两家在 2026 年都不上市收场，IPO 成为 AI 资本市场的一次压力测试。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["与 OpenAI 的赛跑也在变形", "两家在 2026 年都不上市收场"]
+        }
+      ],
+      "relations": [
+        {"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["CEO Dario Amodei 公开呼吁"]},
+        {"source": "Anthropic", "target": "OpenAI", "type": "competes_with", "weight": 0.7, "evidence": ["与 OpenAI 的赛跑也在变形"]},
+        {"source": "Anthropic", "target": "SpaceX", "type": "compared_with", "weight": 0.5, "evidence": ["资本市场的参考系是 SpaceX"]},
+        {"source": "Sarah Friar", "target": "OpenAI", "type": "affiliated_with", "weight": 0.5, "evidence": ["OpenAI 的 CFO Sarah Friar"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 潜在 IPO 估值", "value": "约 $2 万亿"},
+        {"name": "Anthropic 预测 2026 年营收", "value": "约 $18B"},
+        {"name": "SpaceX IPO 首日收盘价", "value": "$161.11"}
+      ],
+      "why_it_matters": "AI 资本市场的定价锚从『谁先上市』转向 SpaceX 的长期溢价表现，Anthropic 在训练烧钱、正现金流还推到 2028 的前提下按约 $2 万亿定价，本身构成一次对 AI 资本市场的压力测试。"
+    },
+    {
+      "article_id": "2026-09-23-1",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.97, "evidence": ["OpenAI 正讨论一轮估值约 $1.2 万亿的融资"]},
+        {"name": "Sam Altman", "type": "person", "aliases": ["Altman"], "confidence": 0.95, "evidence": ["Altman 上周称今年上市"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 的正现金流推到 2028"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["SpaceX 6 月上市后回落至 IPO 价以下"]},
+        {"name": "SoftBank", "type": "company", "aliases": ["软银"], "confidence": 0.95, "evidence": ["SoftBank、a16z、D.E. Shaw 领投"]},
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.95, "evidence": ["Amazon $50B"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["NVIDIA $30B"]},
+        {"name": "a16z", "type": "company", "aliases": ["Andreessen Horowitz"], "confidence": 0.9, "evidence": ["SoftBank、a16z、D.E. Shaw 领投"]},
+        {"name": "D.E. Shaw", "type": "company", "aliases": ["D.E. Shaw & Co", "DE Shaw"], "confidence": 0.9, "evidence": ["SoftBank、a16z、D.E. Shaw 领投"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "OpenAI 洽商估值约 1.2 万亿美元的新融资轮并搁置 IPO",
+          "summary": "据 Bloomberg，OpenAI 正讨论估值约 $1.2 万亿的融资，同时搁置 IPO 计划，但 2026–2030 预计累计负自由现金流达 $278 亿。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Sam Altman", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["OpenAI 正讨论一轮估值约 $1.2 万亿的融资", "同时将其 IPO 计划搁置"]
+        },
+        {
+          "type": "trend",
+          "label": "AI 前沿以巨额算力开支换取规模、把盈利推迟",
+          "summary": "$1.2 万亿的下一轮仍在谈，但『估值靠未来现金流、盈利靠几年后』的结构让 AI 资本市场处于微妙平衡点。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["用巨额算力开支换取规模、把盈利推迟"]
+        }
+      ],
+      "relations": [
+        {"source": "Sam Altman", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["Altman 上周称今年上市"]},
+        {"source": "OpenAI", "target": "Anthropic", "type": "competes_with", "weight": 0.7, "evidence": ["Anthropic 的正现金流推到 2028"]},
+        {"source": "OpenAI", "target": "SpaceX", "type": "compared_with", "weight": 0.4, "evidence": ["SpaceX 6 月上市后回落至 IPO 价以下"]},
+        {"source": "SoftBank", "target": "OpenAI", "type": "invests_in", "weight": 0.7, "evidence": ["SoftBank、a16z、D.E. Shaw 领投"]},
+        {"source": "Amazon", "target": "OpenAI", "type": "invests_in", "weight": 0.8, "evidence": ["Amazon $50B"]},
+        {"source": "NVIDIA", "target": "OpenAI", "type": "invests_in", "weight": 0.8, "evidence": ["NVIDIA $30B"]},
+        {"source": "a16z", "target": "OpenAI", "type": "invests_in", "weight": 0.6, "evidence": ["SoftBank、a16z、D.E. Shaw 领投"]},
+        {"source": "D.E. Shaw", "target": "OpenAI", "type": "invests_in", "weight": 0.6, "evidence": ["SoftBank、a16z、D.E. Shaw 领投"]}
+      ],
+      "metrics": [
+        {"name": "OpenAI 融资轮估值", "value": "约 $1.2 万亿"},
+        {"name": "OpenAI 3 月股权轮估值", "value": "$852 亿"},
+        {"name": "OpenAI 2026–2030 累计负自由现金流", "value": "$278 亿"},
+        {"name": "OpenAI 2026 年营收", "value": "$36 亿"},
+        {"name": "OpenAI 2030 年预计营收", "value": "$350 亿"},
+        {"name": "OpenAI 2026–2030 算力建设支出", "value": "约 $856 亿"},
+        {"name": "NVIDIA 对 OpenAI 股权投资", "value": "$30B"},
+        {"name": "OpenAI 3 月股权轮规模", "value": "$1220 亿"},
+        {"name": "员工股权回购", "value": "$70 亿"}
+      ],
+      "why_it_matters": "资本密度继续加码而盈利还很远，AI 前沿资本供给尚未断裂，但『估值靠未来现金流、盈利靠几年后』的结构让定价对利率、风险偏好与监管信号高度敏感，是未来几个季度最大变量之一。"
+    },
+    {
+      "article_id": "2026-09-23-2",
+      "entities": [
+        {"name": "Supermicro", "type": "company", "aliases": ["Super Micro", "SMCI"], "confidence": 0.95, "evidence": ["Supermicro 宣布开始出货"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["NVIDIA Vera Rubin NVL72 液冷机架"]},
+        {"name": "Vera Rubin NVL72", "type": "hardware", "aliases": ["NVIDIA Vera Rubin NVL72"], "confidence": 0.9, "evidence": ["集成其 DCBBS", "NVIDIA Vera Rubin NVL72 液冷机架"]},
+        {"name": "Rubin GPU", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["每机架 72 张 Rubin GPU"]},
+        {"name": "Vera CPU", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["36 颗 Vera CPU"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Supermicro 开始出货 NVIDIA Vera Rubin NVL72 液冷机架",
+          "summary": "Supermicro 出货集成 DCBBS 与 DLC-2 直接液冷栈的 NVIDIA Vera Rubin NVL72 机架，每机架 72 张 Rubin GPU + 36 颗 Vera CPU、20.7 TB HBM4。",
+          "participants": [
+            {"name": "Supermicro", "type": "company", "role": "subject"},
+            {"name": "Vera Rubin NVL72", "type": "hardware", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Supermicro 宣布开始出货", "NVIDIA Vera Rubin NVL72 液冷机架"]
+        },
+        {
+          "type": "trend",
+          "label": "液冷在 Blackwell 之后加速成为 Rubin 新平台的硬门槛",
+          "summary": "Vera Rubin 平台从一开始就按直接液冷设计来摊开 AI 吞吐/瓦，空气冷却无法处理热负荷，瓶颈从 CoWoS 封装/HBM 部分转移到液冷基础设施与电源。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Vera Rubin NVL72", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["液冷在 Blackwell 之后加速成为 Rubin 新平台的硬门槛"]
+        }
+      ],
+      "relations": [
+        {"source": "Vera Rubin NVL72", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["NVIDIA Vera Rubin NVL72 液冷机架"]},
+        {"source": "Vera Rubin NVL72", "target": "Rubin GPU", "type": "uses", "weight": 0.8, "evidence": ["每机架 72 张 Rubin GPU"]},
+        {"source": "Vera Rubin NVL72", "target": "Vera CPU", "type": "uses", "weight": 0.7, "evidence": ["36 颗 Vera CPU"]},
+        {"source": "Supermicro", "target": "Vera Rubin NVL72", "type": "integrates", "weight": 0.8, "evidence": ["集成其 DCBBS"]}
+      ],
+      "metrics": [
+        {"name": "每机架 Rubin GPU 数量", "value": "72 张"},
+        {"name": "每机架 Vera CPU 数量", "value": "36 颗"},
+        {"name": "scale-up 带宽", "value": "216 TB/s"},
+        {"name": "单机架 HBM4 容量", "value": "20.7 TB"},
+        {"name": "Scalable Unit 内 Rubin GPU 数量", "value": "1,152 张"},
+        {"name": "Scalable Unit HBM4 容量", "value": "331 TB"},
+        {"name": "Supermicro 直接液冷 CDU 功率", "value": "1.8MW"}
+      ],
+      "why_it_matters": "算力供给瓶颈从『CoWoS 封装 + HBM 供给』部分转移到『液冷基础设施 + 电源』，液冷在 Blackwell 之后成为 Rubin 新平台的硬门槛，英伟达继续拉高算力/瓦工程上限。"
+    },
+    {
+      "article_id": "2026-09-23-3",
+      "entities": [
+        {"name": "Crusoe", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["AI 基础设施公司 Crusoe"]},
+        {"name": "Thinking Machines Lab", "type": "company", "aliases": ["Thinking Machines"], "confidence": 0.95, "evidence": ["Crusoe 与 Thinking Machines Lab 签署"]},
+        {"name": "Mira Murati", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["Mira Murati 创立的 Thinking Machines Lab"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.9, "evidence": ["专用的 NVIDIA HGX B200 系统"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "Crusoe 与 Thinking Machines Lab 签署每年约 6500 万美元推理算力协议",
+          "summary": "Thinking Machines 会让 Inkling 及 GLM 5.2/5.3 微调变体跑在 Crusoe 专用的 NVIDIA HGX B200 系统上，把 Crusoe 托管推理签约年收入推过 $100M、且在产品上线不到一年达成。",
+          "participants": [
+            {"name": "Crusoe", "type": "company", "role": "partner"},
+            {"name": "Thinking Machines Lab", "type": "company", "role": "partner"},
+            {"name": "Mira Murati", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["Crusoe 与 Thinking Machines Lab 签署", "每年约 $65M 的推理算力协议"]
+        },
+        {
+          "type": "trend",
+          "label": "neocloud 争夺的不再只是算力而是托管推理服务层",
+          "summary": "即使最充裕的实验室也把训练与推理当作两个独立的采购问题，推理基础设施正从租 GPU 向托管推理产品成熟化。",
+          "participants": [
+            {"name": "Crusoe", "type": "company", "role": "subject"},
+            {"name": "Thinking Machines Lab", "type": "company", "role": "object"}
+          ],
+          "evidence": ["把训练与推理当作两个独立的采购问题", "neocloud 争夺的不再只是原始算力"]
+        }
+      ],
+      "relations": [
+        {"source": "Mira Murati", "target": "Thinking Machines Lab", "type": "affiliated_with", "weight": 0.9, "evidence": ["Mira Murati 创立的 Thinking Machines Lab"]},
+        {"source": "Crusoe", "target": "Thinking Machines Lab", "type": "partners_with", "weight": 0.6, "evidence": ["Crusoe 与 Thinking Machines Lab 签署", "每年约 $65M 的推理算力协议"]},
+        {"source": "Thinking Machines Lab", "target": "NVIDIA", "type": "uses", "weight": 0.5, "evidence": ["专用的 NVIDIA HGX B200 系统"]}
+      ],
+      "metrics": [
+        {"name": "推理算力协议年度金额", "value": "约 $65M"},
+        {"name": "Crusoe 托管推理签约年收入", "value": "$100M+"},
+        {"name": "Thinking Machines Lab 成立时长", "value": "19 个月"},
+        {"name": "Thinking Machines Lab 估值", "value": "$12 亿"},
+        {"name": "Crusoe 本轮融资额", "value": "$39 亿"},
+        {"name": "Crusoe 估值", "value": "$30 亿"}
+      ],
+      "why_it_matters": "即使最充裕、自带 NVIDIA 算力联系的实验室也把推理交给第三方 neocloud，证明训练与推理是两个独立采购问题，推理基础设施正从租 GPU 向托管推理产品成熟化。"
+    },
+    {
+      "article_id": "2026-09-23-4",
+      "entities": [
+        {"name": "WhiteFiber", "type": "company", "aliases": ["WYFI"], "confidence": 0.95, "evidence": ["WhiteFiber（NASDAQ: WYFI）9 月 23 日宣布"]},
+        {"name": "Continuum", "type": "product", "aliases": ["WhiteFiber Continuum"], "confidence": 0.9, "evidence": ["WhiteFiber 发布 Continuum 分布式 GPU 超算集群"]},
+        {"name": "QTS", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["QTS 的 HITRUST 认证设施"]},
+        {"name": "Zayo", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["12 条 Zayo 暗光纤"]},
+        {"name": "DriveNets", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["DriveNets AI Fabric"]},
+        {"name": "WEKA", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["WEKA NeuralMesh 存储/内存基础设施"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "WhiteFiber 发布 Continuum 分布式 GPU 超算集群",
+          "summary": "Continuum 将相距 83 公里的两处数据中心合并成一个逻辑 GPU 超算集群，跨站点提供 136 Tbps 带宽与 0.9ms 保证往返时延。",
+          "participants": [
+            {"name": "WhiteFiber", "type": "company", "role": "subject"},
+            {"name": "Continuum", "type": "product", "role": "object"}
+          ],
+          "evidence": ["WhiteFiber 发布 Continuum 分布式 GPU 超算集群", "集地理上分离的两处数据中心"]
+        },
+        {
+          "type": "infra",
+          "label": "地理距离不再是集群的天花板",
+          "summary": "集群不再等于一栋楼，而可能是一个逻辑系统横跨多座城市，把电力、光纤、合规而非单点规模当作新约束。",
+          "participants": [
+            {"name": "WhiteFiber", "type": "company", "role": "subject"},
+            {"name": "Continuum", "type": "product", "role": "object"}
+          ],
+          "evidence": ["地理距离不再是集群的天花板", "集群不再等于一栋楼"]
+        }
+      ],
+      "relations": [
+        {"source": "Continuum", "target": "WhiteFiber", "type": "released_by", "weight": 0.9, "evidence": ["WhiteFiber 发布 Continuum 分布式 GPU 超算集群"]},
+        {"source": "Continuum", "target": "QTS", "type": "uses", "weight": 0.6, "evidence": ["QTS 的 HITRUST 认证设施"]},
+        {"source": "Continuum", "target": "Zayo", "type": "uses", "weight": 0.8, "evidence": ["12 条 Zayo 暗光纤"]},
+        {"source": "Continuum", "target": "DriveNets", "type": "uses", "weight": 0.6, "evidence": ["DriveNets AI Fabric"]},
+        {"source": "Continuum", "target": "WEKA", "type": "uses", "weight": 0.6, "evidence": ["WEKA NeuralMesh 存储/内存基础设施"]}
+      ],
+      "metrics": [
+        {"name": "跨站点带宽", "value": "136 Tbps"},
+        {"name": "保证往返时延", "value": "0.9ms"},
+        {"name": "两数据中心间距", "value": "83 公里"},
+        {"name": "暗光纤条数", "value": "12 条"}
+      ],
+      "why_it_matters": "集群从『一栋楼』变成横跨多座城市的逻辑系统，算力约束从单点规模转向电力、光纤与合规——WhiteFiber 已提交相关实现专利，预示这方向会成为差异化竞争点。"
+    },
+    {
+      "article_id": "2026-09-23-5",
+      "entities": [
+        {"name": "AIDE²", "type": "paper", "aliases": ["AIDE2"], "confidence": 0.95, "evidence": ["Weco AI 的 AIDE² 实现了一个双层循环"]},
+        {"name": "Weco AI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Weco AI 的 AIDE²"]},
+        {"name": "MLE-Bench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["MLE-Bench、ALE-Bench、FML-Bench 四个外部基准"]},
+        {"name": "ALE-Bench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["MLE-Bench、ALE-Bench、FML-Bench 四个外部基准"]},
+        {"name": "FML-Bench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["MLE-Bench、ALE-Bench、FML-Bench 四个外部基准"]},
+        {"name": "物理天气预测基准", "type": "benchmark", "aliases": [], "confidence": 0.8, "evidence": ["越界的物理天气预测", "MLE-Bench、ALE-Bench、FML-Bench 四个外部基准"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Weco AI 的 AIDE² 实现递归自我改进，8 天自治跑出 7 项连续改进",
+          "summary": "AIDE² 的双层循环让研究 agent 优化自身 harness 代码，在 8 天自治跑中发现 7 项连续改进，收益泛化到四个训练外基准。",
+          "participants": [
+            {"name": "Weco AI", "type": "company", "role": "subject"},
+            {"name": "AIDE²", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["Weco AI 的 AIDE² 实现了一个双层循环", "在 8 天的自治运行里"]
+        },
+        {
+          "type": "benchmark",
+          "label": "AIDE² 的增益泛化到训练外领域且奖励黑客率下降",
+          "summary": "最强发现 agent 匹配或超过经两年人工 R&D 打造的强基线，奖励黑客率在 8 天里从 55% 降到 32%，比人工 agent 的 39% 低 7 个百分点。",
+          "participants": [
+            {"name": "AIDE²", "type": "paper", "role": "subject"},
+            {"name": "MLE-Bench", "type": "benchmark", "role": "benchmark"},
+            {"name": "ALE-Bench", "type": "benchmark", "role": "benchmark"},
+            {"name": "FML-Bench", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["增益泛化到选择任务之外的领域", "奖励黑客率在 8 天里从 55% 降到 32%"]
+        }
+      ],
+      "relations": [
+        {"source": "AIDE²", "target": "Weco AI", "type": "authored_by", "weight": 0.9, "evidence": ["Weco AI 的 AIDE²"]},
+        {"source": "AIDE²", "target": "MLE-Bench", "type": "evaluated_on", "weight": 0.7, "evidence": ["MLE-Bench、ALE-Bench、FML-Bench 四个外部基准"]},
+        {"source": "AIDE²", "target": "ALE-Bench", "type": "evaluated_on", "weight": 0.7, "evidence": ["MLE-Bench、ALE-Bench、FML-Bench 四个外部基准"]},
+        {"source": "AIDE²", "target": "FML-Bench", "type": "evaluated_on", "weight": 0.8, "evidence": ["MLE-Bench、ALE-Bench、FML-Bench 四个外部基准"]},
+        {"source": "AIDE²", "target": "物理天气预测基准", "type": "evaluated_on", "weight": 0.7, "evidence": ["越界的物理天气预测"]}
+      ],
+      "metrics": [
+        {"name": "8 天自治跑发现的连续改进数", "value": "7 项"},
+        {"name": "AIDE² 当前最优评分的升幅", "value": "0.703→0.778"},
+        {"name": "AIDE² 奖励黑客率降幅", "value": "55%→32%"},
+        {"name": "人工打造 agent 奖励黑客率", "value": "39%"},
+        {"name": "接受改写的次数", "value": "7 次"}
+      ],
+      "why_it_matters": "harness 层的递归自我改进确实能持续产生可转移收益，而『自己改写自己、更快 R&D』恰是安全讨论里最需要护栏的前沿能力之一，给自我改进超智能的警惕提供了最具体的技术案例。"
+    },
+    {
+      "article_id": "2026-09-23-6",
+      "entities": [
+        {"name": "Growing Harness", "type": "paper", "aliases": [], "confidence": 0.95, "evidence": ["提出 Growing Harness"]},
+        {"name": "SIAT", "type": "organization", "aliases": ["中国科学院深圳先进技术研究院"], "confidence": 0.9, "evidence": ["SIAT + UMacau 提出 Growing Harness"]},
+        {"name": "UMacau", "type": "organization", "aliases": ["University of Macau", "澳门大学"], "confidence": 0.9, "evidence": ["SIAT + UMacau 提出 Growing Harness"]},
+        {"name": "BrowseComp-Plus", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["BrowseComp-Plus 与 WebArena-Verified"]},
+        {"name": "WebArena-Verified", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["BrowseComp-Plus 与 WebArena-Verified"]},
+        {"name": "Tool-Calling", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["Tool-Calling 在 4B 模型跌到 6.7%"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "SIAT 与 UMacau 提出 Growing Harness 把重复控制决策训练成可复用代码",
+          "summary": "Growing Harness 从不编码控制器的无策略脚手架出发，用任务反馈训练 agent 的 harness 本身，把重复浏览器控制交给低成本代码执行，LLM 调用减 76.0–91.8%。",
+          "participants": [
+            {"name": "SIAT", "type": "organization", "role": "subject"},
+            {"name": "UMacau", "type": "organization", "role": "subject"},
+            {"name": "Growing Harness", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["提出 Growing Harness", "把一个不编码控制器的"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Growing Harness 在 BrowseComp-Plus 与 WebArena-Verified 上获得最高平均成功率",
+          "summary": "六个基准×模型组合中 Growing Harness 五处获得最高平均成功率，最小模型收益最大——4B 部署模型在 WebArena-Verified 成功率仍保持 44.7–45.3%，而 Tool-Calling 跌到 6.7%。",
+          "participants": [
+            {"name": "Growing Harness", "type": "paper", "role": "subject"},
+            {"name": "BrowseComp-Plus", "type": "benchmark", "role": "benchmark"},
+            {"name": "WebArena-Verified", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["五处获得最高平均成功率", "4B 部署模型下成功率仍保持 44.7–45.3%"]
+        }
+      ],
+      "relations": [
+        {"source": "Growing Harness", "target": "SIAT", "type": "authored_by", "weight": 0.9, "evidence": ["SIAT + UMacau 提出 Growing Harness"]},
+        {"source": "Growing Harness", "target": "UMacau", "type": "authored_by", "weight": 0.9, "evidence": ["SIAT + UMacau 提出 Growing Harness"]},
+        {"source": "Growing Harness", "target": "BrowseComp-Plus", "type": "evaluated_on", "weight": 0.7, "evidence": ["BrowseComp-Plus 与 WebArena-Verified"]},
+        {"source": "Growing Harness", "target": "WebArena-Verified", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 WebArena-Verified 上"]},
+        {"source": "Growing Harness", "target": "Tool-Calling", "type": "outperforms", "weight": 0.7, "evidence": ["Tool-Calling 在 4B 模型跌到 6.7%"]}
+      ],
+      "metrics": [
+        {"name": "LLM 调用减幅", "value": "76.0–91.8%"},
+        {"name": "部署推理成本减幅", "value": "74.4–98.6%"},
+        {"name": "WebArena-Verified 上 4B 模型成功率", "value": "44.7–45.3%"},
+        {"name": "Tool-Calling 在 4B 模型的成功率", "value": "6.7%"}
+      ],
+      "why_it_matters": "agent 系统正把『谁做控制』从每次都问 LLM 向驯化成低边际成本的程序迁移——重复控制编译成可复用代码后，小模型不必每次重组控制，不换更大的模型、先让 harness 变聪明即是一条低成本路线。"
+    },
+    {
+      "article_id": "2026-09-23-7",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.95, "evidence": ["Meta 新 AI 代理 Muse"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Meta 新 AI 代理 Muse"]},
+        {"name": "Patrick Wardle", "type": "person", "aliases": ["Wardle"], "confidence": 0.95, "evidence": ["macOS 安全专家 Patrick Wardle"]},
+        {"name": "Mouse", "type": "person", "aliases": [], "confidence": 0.7, "evidence": ["研究者 Mouse"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Meta Muse 被曝零日漏洞，允许本地进程截取认证 token",
+          "summary": "Patrick Wardle 披露零日漏洞：本地进程可改写未文档化听写端点把流量重定向到攻击者端点、截取 Muse 认证 token，进而以代理身份注入提示并完全控制账号。",
+          "participants": [
+            {"name": "Patrick Wardle", "type": "person", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Patrick Wardle 披露一个零日漏洞", "截取 Muse 认证 token"]
+        },
+        {
+          "type": "security",
+          "label": "研究者诱导 Muse 导出含 SSH 密钥的 6.8GB 文件系统",
+          "summary": "研究者 Mouse 只是请求 Muse 归档其可见文件系统，就收到含 SSH 密钥、集成代码、agent 日志的约 6.8GB 导出。",
+          "participants": [
+            {"name": "Mouse", "type": "person", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["请求 Muse 归档其可见文件系统", "含 SSH 密钥、集成代码、agent 日志的约 6.8GB 导出"]
+        }
+      ],
+      "relations": [
+        {"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["Meta 新 AI 代理 Muse"]},
+        {"source": "Patrick Wardle", "target": "Muse", "type": "targets", "weight": 0.5, "evidence": ["披露一个零日漏洞"]},
+        {"source": "Mouse", "target": "Muse", "type": "targets", "weight": 0.5, "evidence": ["请求 Muse 归档其可见文件系统"]}
+      ],
+      "metrics": [
+        {"name": "被诱导导出的文件系统大小", "value": "约 6.8GB"}
+      ],
+      "why_it_matters": "给 AI agent 高度特权时安全性不能只看云端隔离与最小权限服务账号，桌面客户端、麦克风路径与连接器凭据同样关键——本地可改写设置加上越权导出让高度特权的 agent 成为攻击者的特权放大器。"
+    },
+    {
+      "article_id": "2026-09-23-8",
+      "entities": [
+        {"name": "United Nations", "type": "organization", "aliases": ["联合国", "UN"], "confidence": 0.97, "evidence": ["联合国安理会 AI 会议"]},
+        {"name": "France", "type": "organization", "aliases": ["法国"], "confidence": 0.95, "evidence": ["法国作为本月安理会轮值主席发起这场会议"]},
+        {"name": "António Guterres", "type": "person", "aliases": ["古特雷斯", "安东尼奥·古特雷斯"], "confidence": 0.95, "evidence": ["联合国秘书长安东尼奥·古特雷斯在告别演说中"]},
+        {"name": "Trump", "type": "person", "aliases": ["Donald Trump", "特朗普"], "confidence": 0.95, "evidence": ["Trump 反其道而行"]},
+        {"name": "Sam Altman", "type": "person", "aliases": ["Altman"], "confidence": 0.95, "evidence": ["OpenAI CEO Sam Altman"]},
+        {"name": "Dario Amodei", "type": "person", "aliases": ["Amodei"], "confidence": 0.95, "evidence": ["Anthropic CEO Dario Amodei"]},
+        {"name": "Clément Delangue", "type": "person", "aliases": ["Delangue"], "confidence": 0.95, "evidence": ["Hugging Face CEO Clément Delangue"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.95, "evidence": ["Hugging Face CEO Clément Delangue"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic CEO Dario Amodei"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI CEO Sam Altman"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "联合国安理会首次邀请 Altman、Amodei、Delangue 同台作证",
+          "summary": "周三的安理会 AI 会议罕见地把正在构建 AI 系统的 CEO 与最近拉响警报的辞职前从业者放在同一个安理会上作证，AI 治理进入大国谈判与机构博弈阶段。",
+          "participants": [
+            {"name": "United Nations", "type": "organization", "role": "regulator"},
+            {"name": "France", "type": "organization", "role": "organizer"},
+            {"name": "Sam Altman", "type": "person", "role": "subject"},
+            {"name": "Dario Amodei", "type": "person", "role": "subject"},
+            {"name": "Clément Delangue", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["邀请 OpenAI CEO Sam Altman", "Hugging Face CEO Clément Delangue 同台"]
+        },
+        {
+          "type": "policy",
+          "label": "Trump 在 UNGA 宣布把人工智能改名为 super intelligence 并反对监管",
+          "summary": "Trump 反其道而行，宣布把 artificial intelligence 改名为 super intelligence，将 AI 概念重塑为听起来更好，同时强烈反对监管。",
+          "participants": [
+            {"name": "Trump", "type": "person", "role": "subject"},
+            {"name": "United Nations", "type": "organization", "role": "context"}
+          ],
+          "evidence": ["宣布把 artificial intelligence 改名为 super intelligence", "强烈反对监管"]
+        },
+        {
+          "type": "policy",
+          "label": "古特雷斯在告别演说中警告绝不能让杀手机器人存在",
+          "summary": "联合国秘书长警告绝不能让生死决策交托给机器——杀手机器人不应存在于我们的未来，并呼吁负责任地设置 AI 执行节奏。",
+          "participants": [
+            {"name": "António Guterres", "type": "person", "role": "subject"},
+            {"name": "United Nations", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["杀手机器人不应存在于我们的未来"]
+        }
+      ],
+      "relations": [
+        {"source": "Sam Altman", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["OpenAI CEO Sam Altman"]},
+        {"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["Anthropic CEO Dario Amodei"]},
+        {"source": "Clément Delangue", "target": "Hugging Face", "type": "affiliated_with", "weight": 0.9, "evidence": ["Hugging Face CEO Clément Delangue"]}
+      ],
+      "metrics": [
+        {"name": "呼吁约束性安全措施的欧洲国家数", "value": "20+"}
+      ],
+      "why_it_matters": "AI 治理从技术界内部讨论变成安理会级的大国角力场——一边欧洲推动约束性安全措施，一边美中拒绝背书、美国甚至把术语本身政治化，治理框架的形态将由这些会议的落地结果决定。"
+    },
+    {
+      "article_id": "2026-09-23-9",
+      "entities": [
+        {"name": "United Kingdom", "type": "organization", "aliases": ["英国", "UK"], "confidence": 0.95, "evidence": ["英国首相 Andy Burnham 在联合国大会上宣布"]},
+        {"name": "Andy Burnham", "type": "person", "aliases": ["Burnham"], "confidence": 0.95, "evidence": ["英国首相 Andy Burnham"]},
+        {"name": "United States", "type": "organization", "aliases": ["美国", "US"], "confidence": 0.95, "evidence": ["英国将与美国共建一条 AI 防御伙伴关系"]},
+        {"name": "G20", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["2027 年担任 G20 轮值主席"]},
+        {"name": "European Union", "type": "organization", "aliases": ["欧盟", "EU"], "confidence": 0.9, "evidence": ["英国路线与欧盟的『硬性立法』"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "英国宣布与美国共建 AI 防御伙伴关系",
+          "summary": "用于侦测针对关键基建的网络攻击，并借 2027 年 G20 轮值主席推动单一的一套全球 AI 原则与标准。",
+          "participants": [
+            {"name": "United Kingdom", "type": "organization", "role": "subject"},
+            {"name": "United States", "type": "organization", "role": "partner"},
+            {"name": "Andy Burnham", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["英国将与美国共建一条 AI 防御伙伴关系", "推动『单一的一套全球原则与标准』"]
+        },
+        {
+          "type": "policy",
+          "label": "英国借 G20 轮值主席推动全球 AI 标准",
+          "summary": "计划在 2027 年塑造单一一套跨主权 AI 原则与标准，从术语之外另走一条标准制定 + 防御伙伴关系的中道。",
+          "participants": [
+            {"name": "United Kingdom", "type": "organization", "role": "subject"},
+            {"name": "G20", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["推动『单一的一套全球原则与标准』", "2027 年担任 G20 轮值主席期间"]
+        }
+      ],
+      "relations": [
+        {"source": "Andy Burnham", "target": "United Kingdom", "type": "affiliated_with", "weight": 0.9, "evidence": ["英国首相 Andy Burnham"]},
+        {"source": "United Kingdom", "target": "United States", "type": "partners_with", "weight": 0.8, "evidence": ["英国将与美国共建一条 AI 防御伙伴关系"]},
+        {"source": "United Kingdom", "target": "European Union", "type": "compared_with", "weight": 0.5, "evidence": ["英国路线与欧盟的『硬性立法』"]}
+      ],
+      "metrics": [
+        {"name": "英国担任 G20 轮值主席的年份", "value": "2027"}
+      ],
+      "why_it_matters": "英国选择『标准制定 + 防御伙伴关系』的中道，把 AI 治理从『谁有约束力』转向『谁制定标准、谁拥有互操作层』，地缘与标准的这种组合正成为大国的可行动选项。"
+    },
+    {
+      "article_id": "2026-09-23-10",
+      "entities": [
+        {"name": "Trump", "type": "person", "aliases": ["Donald Trump", "特朗普"], "confidence": 0.95, "evidence": ["Trump 在联合国大会宣布"]},
+        {"name": "United States", "type": "organization", "aliases": ["美国", "US"], "confidence": 0.95, "evidence": ["所有美国文件"]},
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.9, "evidence": ["辞职的 DeepMind 研究员 Alex Turner"]},
+        {"name": "Alex Turner", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["辞职的 DeepMind 研究员 Alex Turner"]},
+        {"name": "Jacob Coxon", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic/OpenAI 的 Jacob Coxon"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic/OpenAI 的 Jacob Coxon"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["Anthropic/OpenAI 的 Jacob Coxon"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Trump 在 UNGA 宣布把人工智能更名为 Super Intelligence 并下令美国机构采用",
+          "summary": "Trump 宣布从今以后所有美国文件将把人工智能称为 super intelligence，并下令所有美国机构在官方通讯中改用该称呼，明确拒绝全球主义控制。",
+          "participants": [
+            {"name": "Trump", "type": "person", "role": "subject"},
+            {"name": "United States", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["把人工智能称为'超级智能（super intelligence）'", "下令所有美国机构在官方通讯中改用"]
+        },
+        {
+          "type": "trend",
+          "label": "AI 治理术语本身成为大国政治战场",
+          "summary": "同一个词 super intelligence 被 Trump 当作反监管口号，又被辞职者拿来警告实验室正奔向自我改进超智能，术语定义被卷进国内政治。",
+          "participants": [
+            {"name": "Trump", "type": "person", "role": "subject"},
+            {"name": "Alex Turner", "type": "person", "role": "subject"},
+            {"name": "Jacob Coxon", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["辞职的 DeepMind 研究员 Alex Turner", "公开警告『实验室正奔向自我改进超智能』", "Anthropic/OpenAI 的 Jacob Coxon"]
+        }
+      ],
+      "relations": [
+        {"source": "Trump", "target": "United States", "type": "affiliated_with", "weight": 0.9, "evidence": ["Trump 在联合国大会宣布"]},
+        {"source": "Alex Turner", "target": "Google DeepMind", "type": "affiliated_with", "weight": 0.6, "evidence": ["辞职的 DeepMind 研究员 Alex Turner"]},
+        {"source": "Jacob Coxon", "target": "Anthropic", "type": "affiliated_with", "weight": 0.6, "evidence": ["Anthropic/OpenAI 的 Jacob Coxon"]},
+        {"source": "Jacob Coxon", "target": "OpenAI", "type": "affiliated_with", "weight": 0.6, "evidence": ["Anthropic/OpenAI 的 Jacob Coxon"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "治理术语本身成为大国政治战场——同被辞职者用作『自我改进超智能』警示的 super intelligence 一词，被美国拿来当反监管口号；当 AI 安全被类比为气候警报骗局时，对证据驱动的监管会产生寒蝉效应。"
+    },
+    {
+      "article_id": "2026-09-23-11",
+      "entities": [
+        {"name": "GPT-6 Astra", "type": "model", "aliases": ["Astra"], "confidence": 0.95, "evidence": ["OpenAI 的 GPT-6 Astra 自主破译"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 的 GPT-6 Astra"]},
+        {"name": "Carter Leffer", "type": "person", "aliases": ["Leffer"], "confidence": 0.95, "evidence": ["用户 Carter Leffer"]},
+        {"name": "Enigma", "type": "hardware", "aliases": ["德军 Enigma"], "confidence": 0.9, "evidence": ["破译了一道 1941 年 7 月被德军 Enigma 加密的 82 字符消息"]},
+        {"name": "Bruce Schneier", "type": "person", "aliases": ["Schneier"], "confidence": 0.9, "evidence": ["（Bruce Schneier 等）"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "OpenAI 的 GPT-6 Astra 自主破译 1941 年德军 Enigma 加密消息",
+          "summary": "Astra 对候选打分、写了 Python/C++ 的 Enigma 模拟器与 Bombe、以重复地名 ROSENOW 为 crib，整个破解约耗时 10 小时，恢复出此前失败根因的轮序。",
+          "participants": [
+            {"name": "GPT-6 Astra", "type": "model", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Enigma", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["OpenAI 的 GPT-6 Astra 自主破译", "写了 Python/C++ 的 Enigma 模拟器与 Bombe"]
+        },
+        {
+          "type": "trend",
+          "label": "Astra 展示 agent 自主科研的能力底子",
+          "summary": "自主密码分析 + 自主写仿真 + 自主选目标的组合证明长程自主问题求解的实用性可能比基准分更强，恰与减速话语和自我改进超智能警示同一周出现。",
+          "participants": [
+            {"name": "GPT-6 Astra", "type": "model", "role": "subject"},
+            {"name": "Bruce Schneier", "type": "person", "role": "context"}
+          ],
+          "evidence": ["自主密码分析 + 自主写仿真 + 自主选目标", "长程自主问题求解"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-6 Astra", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 的 GPT-6 Astra"]},
+        {"source": "GPT-6 Astra", "target": "Enigma", "type": "targets", "weight": 0.6, "evidence": ["破译了一道 1941 年 7 月被德军 Enigma 加密的 82 字符消息"]},
+        {"source": "Carter Leffer", "target": "GPT-6 Astra", "type": "uses", "weight": 0.7, "evidence": ["用户 Carter Leffer 只指示它分析"]}
+      ],
+      "metrics": [
+        {"name": "被破译 Enigma 消息的加密年份", "value": "1941"},
+        {"name": "被破译消息字符数", "value": "82 字符"},
+        {"name": "破解耗时", "value": "约 10 小时"},
+        {"name": "消息公布至今未破时长", "value": "20 多年"},
+        {"name": "Leffer 搭网站与破解的努力倍比", "value": "约 99 倍"}
+      ],
+      "why_it_matters": "『自主密码分析 + 自主写仿真 + 自主选目标』的组合搜索能力展示，为 AI R&D 能力逼近门槛提供了具体可演示的对象——既是长程自主问题求解实用性的证据，也为担忧护栏的论据增加了一个可演示的靶子。"
+    }
+  ]
+}
