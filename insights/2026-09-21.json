@@ -272,9 +272,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
-                "2026-09-21-5"
+                "2026-09-21-5",
+                "2026-09-21-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -4252,7 +4254,7 @@
                 "2026-09-06-8",
                 "2026-09-08-7"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "infra",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -4265,7 +4267,7 @@
               "article_ids": [
                 "2026-09-06-0"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "launch",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -5363,7 +5365,7 @@
               "label": "Jensen Huang",
               "type": "entity",
               "subtype": "person",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "Jensen Huang"
               ],
@@ -5376,10 +5378,10 @@
               "article_ids": [
                 "2026-09-08-7"
               ],
-              "label": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+              "label": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
               "type": "event",
               "subtype": "trend",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "weight": 1.4
             }
           },
@@ -19582,7 +19584,7 @@
               "label": "Accenture",
               "type": "entity",
               "subtype": "organization",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Accenture"
               ],
@@ -19599,7 +19601,7 @@
               "label": "Google Cloud",
               "type": "entity",
               "subtype": "company",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Google Cloud"
               ],
@@ -19615,7 +19617,7 @@
               "label": "前向部署工程师",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "前向部署工程师"
               ],
@@ -19631,7 +19633,7 @@
               "label": "上的差距",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "上的差距"
               ],
@@ -19647,7 +19649,7 @@
               "label": "以缩小在部署瓶颈",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "以缩小在部署瓶颈"
               ],
@@ -19663,7 +19665,7 @@
               "label": "合作为抓手",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "合作为抓手"
               ],
@@ -19679,7 +19681,7 @@
               "label": "押注",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "押注"
               ],
@@ -19695,7 +19697,7 @@
               "label": "模式来推动企业",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "模式来推动企业"
               ],
@@ -19711,7 +19713,7 @@
               "label": "Google Cloud 以 Accenture 合作为抓手，追赶企业 AI 落地部署之战",
               "type": "event",
               "subtype": "infra",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "weight": 1.4
             }
           },
@@ -19724,7 +19726,7 @@
               "label": "Google Cloud 以 Accenture 合作为抓手，追赶企业 AI 落地部署之战",
               "type": "event",
               "subtype": "launch",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "weight": 1.4
             }
           },
@@ -19876,7 +19878,7 @@
               "label": "NVIDIA CEO",
               "type": "entity",
               "subtype": "company",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "NVIDIA CEO"
               ],
@@ -32469,9 +32471,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
-                "2026-09-21-5"
+                "2026-09-21-5",
+                "2026-09-21-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -37516,9 +37520,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
-                "2026-09-21-5"
+                "2026-09-21-5",
+                "2026-09-21-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -42536,9 +42542,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
-                "2026-09-21-5"
+                "2026-09-21-5",
+                "2026-09-21-11"
               ],
               "label": "基础设施",
               "type": "category",

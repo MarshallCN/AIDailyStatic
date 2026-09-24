@@ -23,7 +23,7 @@
       "conclusion": "-Voice、AGI 仍在近期新闻中出现，但热度开始回落，接下来要观察它是暂时降温还是进入下一轮验证。",
       "trend_signals": [
         "launch 信号在该主题中最集中。",
-        "证据新闻共 192 条，主导分类为 应用/产业。",
+        "证据新闻共 193 条，主导分类为 应用/产业。",
         "相关证据由上一窗口的 230 条降至 6 条，主题热度略有回落。"
       ],
       "core_entities": [
@@ -497,9 +497,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
                 "2026-09-21-5",
+                "2026-09-21-11",
                 "2026-09-22-2",
                 "2026-09-23-2",
                 "2026-09-23-3",
@@ -5650,7 +5652,8 @@
                 "2026-09-04-7",
                 "2026-09-10-4",
                 "2026-09-11-0",
-                "2026-09-13-3"
+                "2026-09-13-3",
+                "2026-09-19-11"
               ],
               "label": "DeepSeek",
               "type": "entity",
@@ -6664,7 +6667,7 @@
                 "2026-09-06-8",
                 "2026-09-08-7"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "infra",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -6677,7 +6680,7 @@
               "article_ids": [
                 "2026-09-06-0"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "launch",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -8320,7 +8323,7 @@
               "label": "Accenture",
               "type": "entity",
               "subtype": "organization",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Accenture"
               ],
@@ -8337,7 +8340,7 @@
               "label": "Google Cloud",
               "type": "entity",
               "subtype": "company",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Google Cloud"
               ],
@@ -8353,7 +8356,7 @@
               "label": "前向部署工程师",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "前向部署工程师"
               ],
@@ -8369,7 +8372,7 @@
               "label": "上的差距",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "上的差距"
               ],
@@ -8385,7 +8388,7 @@
               "label": "以缩小在部署瓶颈",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "以缩小在部署瓶颈"
               ],
@@ -8401,7 +8404,7 @@
               "label": "合作为抓手",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "合作为抓手"
               ],
@@ -8417,7 +8420,7 @@
               "label": "押注",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "押注"
               ],
@@ -8433,7 +8436,7 @@
               "label": "模式来推动企业",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "模式来推动企业"
               ],
@@ -8449,7 +8452,7 @@
               "label": "Google Cloud 以 Accenture 合作为抓手，追赶企业 AI 落地部署之战",
               "type": "event",
               "subtype": "infra",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "weight": 1.4
             }
           },
@@ -8462,7 +8465,7 @@
               "label": "Google Cloud 以 Accenture 合作为抓手，追赶企业 AI 落地部署之战",
               "type": "event",
               "subtype": "launch",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "weight": 1.4
             }
           },
@@ -8630,7 +8633,7 @@
               "label": "Jensen Huang",
               "type": "entity",
               "subtype": "person",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "Jensen Huang"
               ],
@@ -8647,7 +8650,7 @@
               "label": "NVIDIA CEO",
               "type": "entity",
               "subtype": "company",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "NVIDIA CEO"
               ],
@@ -8660,10 +8663,10 @@
               "article_ids": [
                 "2026-09-08-7"
               ],
-              "label": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+              "label": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
               "type": "event",
               "subtype": "trend",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "weight": 1.4
             }
           },
@@ -10849,22 +10852,6 @@
               "summary": "DeepSeek 发布 DeepSeek-V4.1-Flash——其新架构家族中最小、也是首个具备原生多模态视觉理解的模型，552B 总参数的 MoE、Causal-Encoder-Decoder（CED）设计，支持百万 token 上下文，以 MIT 许可证开源。",
               "aliases": [
                 "Causal-Encoder-Decoder"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:model-deepseek-v4-1-flash",
-              "article_ids": [
-                "2026-09-13-3"
-              ],
-              "label": "DeepSeek-V4.1-Flash",
-              "type": "entity",
-              "subtype": "model",
-              "summary": "DeepSeek 发布 DeepSeek-V4.1-Flash——其新架构家族中最小、也是首个具备原生多模态视觉理解的模型，552B 总参数的 MoE、Causal-Encoder-Decoder（CED）设计，支持百万 token 上下文，以 MIT 许可证开源。",
-              "aliases": [
-                "DeepSeek-V4.1-Flash"
               ],
               "weight": 1.0
             }
@@ -18069,7 +18056,7 @@
               ],
               "label": "应用/产业：OpenAI 洽商估值约 $1.2 万亿的新融资轮——IPO 搁置、2026–2030 预计负自由现金流达 $278 亿",
               "type": "article",
-              "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\\\"不明智\\\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。",
+              "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\"不明智\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。",
               "subtype": "应用/产业",
               "weight": 1
             }
@@ -18262,7 +18249,7 @@
               ],
               "label": "生态：联合国安理会 9/23 召开 AI 会议——Altman、Amodei、Hugging Face CEO 同台，CEO 与辞职者并陈",
               "type": "article",
-              "summary": "本周联合国大会 AI 议题达到顶点：联合国秘书长安东尼奥·古特雷斯在告别演说中警告\\\"绝不能让生死决策交托给机器——杀手机器人不应存在于我们的未来\\\"，并呼吁为 AI 负责任地设置'负责任的 AI 执行节奏'。周二的 UNGA 上，Trump 反其道而行，宣布把 'artificial intelligence' 改名为 'super intelligence'，将 AI 概念重塑为'听起来更好、更准确'，同时强烈反对监管。而周三（9/23）的联合国安理会 AI 会议更罕见地邀请 OpenAI CEO Sam Altman、Anthropic CEO Dario Amodei、Hugging Face CEO Clément Delangue 同台。",
+              "summary": "本周联合国大会 AI 议题达到顶点：联合国秘书长安东尼奥·古特雷斯在告别演说中警告\"绝不能让生死决策交托给机器——杀手机器人不应存在于我们的未来\"，并呼吁为 AI 负责任地设置'负责任的 AI 执行节奏'。周二的 UNGA 上，Trump 反其道而行，宣布把 'artificial intelligence' 改名为 'super intelligence'，将 AI 概念重塑为'听起来更好、更准确'，同时强烈反对监管。而周三（9/23）的联合国安理会 AI 会议更罕见地邀请 OpenAI CEO Sam Altman、Anthropic CEO Dario Amodei、Hugging Face CEO Clément Delangue 同台。",
               "subtype": "生态",
               "weight": 1
             }
@@ -18463,7 +18450,7 @@
               ],
               "label": "生态：英国宣布与美国共建 AI 防御伙伴关系 + 借 2027 年 G20 轮值主席推动全球 AI 标准",
               "type": "article",
-              "summary": "英国首相 Andy Burnham 在联合国大会上宣布：英国将与美国共建一条 AI 防御伙伴关系，用于侦测针对关键基建的网络攻击；并将在 2027 年担任 G20 轮值主席期间推动\\\"单一的一套全球原则与标准\\\"，以确保 AI 开发的透明与可靠（\\\"为 AI 开发设一套全球原则与标准，以保证研究所需透明与可访问性\\\"）。在 AI 治理被美中拒绝背书的大背景下，英国试图以自律+标准制定的路线扮演桥梁角色。",
+              "summary": "英国首相 Andy Burnham 在联合国大会上宣布：英国将与美国共建一条 AI 防御伙伴关系，用于侦测针对关键基建的网络攻击；并将在 2027 年担任 G20 轮值主席期间推动\"单一的一套全球原则与标准\"，以确保 AI 开发的透明与可靠（\"为 AI 开发设一套全球原则与标准，以保证研究所需透明与可访问性\"）。在 AI 治理被美中拒绝背书的大背景下，英国试图以自律+标准制定的路线扮演桥梁角色。",
               "subtype": "生态",
               "weight": 1
             }
@@ -18504,9 +18491,9 @@
               "article_ids": [
                 "2026-09-23-10"
               ],
-              "label": "观察：Trump 在 UNGA 宣布把 AI 更名为 \\\"Super Intelligence\\\"——治理术语本身成为大国政治战场",
+              "label": "观察：Trump 在 UNGA 宣布把 AI 更名为 \"Super Intelligence\"——治理术语本身成为大国政治战场",
               "type": "article",
-              "summary": "美国时间周二，Trump 在联合国大会宣布：\\\"从今以后，所有美国文件——也希望全世界——都将把人工智能称为'超级智能（super intelligence）'，因为它更准确。\\\"他把人工智能的\\\"超智能\\\"标签建立在\\\"强调其不是假的/不真实的\\\"之上，并明确表示美国\\\"完全拒绝任何试图构建全球主义计划来控制人工智能\\\"。随后他还下令所有美国机构在官方通讯中改用\\\"super intelligence / SI\\\"。",
+              "summary": "美国时间周二，Trump 在联合国大会宣布：\"从今以后，所有美国文件——也希望全世界——都将把人工智能称为'超级智能（super intelligence）'，因为它更准确。\"他把人工智能的\"超智能\"标签建立在\"强调其不是假的/不真实的\"之上，并明确表示美国\"完全拒绝任何试图构建全球主义计划来控制人工智能\"。随后他还下令所有美国机构在官方通讯中改用\"super intelligence / SI\"。",
               "subtype": "观察",
               "weight": 1
             }
@@ -18650,7 +18637,7 @@
               "article_ids": [
                 "2026-09-23-11"
               ],
-              "label": "观察：GPT-6 Astra 自主破译 1941 年德军 Enigma 消息——\\\"agent 自主科研\\\"的能力展示与安全警示并存",
+              "label": "观察：GPT-6 Astra 自主破译 1941 年德军 Enigma 消息——\"agent 自主科研\"的能力展示与安全警示并存",
               "type": "article",
               "summary": "OpenAI 的 GPT-6 Astra 自主破译了一道 1941 年 7 月被德军 Enigma 加密的 82 字符消息（MVUEH）——这道消息自 2005 年公布以来 20 多年未破。用户 Carter Leffer 只指示它分析 Crypto Cellar Research 上的未破 Enigma 消息，Astra 自己对候选打分、写了 Python/C++ 的 Enigma 模拟器与 Bombe、以重复地名 ROSENOW 为 crib，最终恢复出当年其他流量皆不同的轮序（这正是此前失败的根因），整个破解约耗时 10 小时。",
               "subtype": "观察",
@@ -29583,19 +29570,6 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-ced->entity:model-deepseek-v4-1-flash",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-13-3"
-              ],
-              "source": "event:infra-entity-organization-ced",
-              "target": "entity:model-deepseek-v4-1-flash",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
               "id": "edge:event:open-source-entity-organization-ced->entity:organization-ced",
               "weight": 2,
               "article_ids": [
@@ -29635,19 +29609,6 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-ced->entity:model-deepseek-v4-1-flash",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-13-3"
-              ],
-              "source": "event:open-source-entity-organization-ced",
-              "target": "entity:model-deepseek-v4-1-flash",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
               "id": "edge:entity:organization-ced->entity:organization-causal-encoder-decoder:infra",
               "weight": 3.0,
               "article_ids": [
@@ -29668,19 +29629,6 @@
               ],
               "source": "entity:organization-ced",
               "target": "entity:model-deepseek",
-              "type": "explicit-relation",
-              "label": "infra"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:entity:organization-ced->entity:model-deepseek-v4-1-flash:infra",
-              "weight": 3.0,
-              "article_ids": [
-                "2026-09-13-3"
-              ],
-              "source": "entity:organization-ced",
-              "target": "entity:model-deepseek-v4-1-flash",
               "type": "explicit-relation",
               "label": "infra"
             }
@@ -37331,7 +37279,7 @@
           "title": "生态：英国宣布与美国共建 AI 防御伙伴关系 + 借 2027 年 G20 轮值主席推动全球 AI 标准",
           "source": "AFP",
           "date": "2026-09-23",
-          "summary": "英国首相 Andy Burnham 在联合国大会上宣布：英国将与美国共建一条 AI 防御伙伴关系，用于侦测针对关键基建的网络攻击；并将在 2027 年担任 G20 轮值主席期间推动\\\"单一的一套全球原则与标准\\\"，以确保 AI 开发的透明与可靠（\\\"为 AI 开发设一套全球原则与标准，以保证研究所需透明与可访问性\\\"）。在 AI 治理被美中拒绝背书的大背景下，英国试图以自律+标准制定的路线扮演桥梁角色。"
+          "summary": "英国首相 Andy Burnham 在联合国大会上宣布：英国将与美国共建一条 AI 防御伙伴关系，用于侦测针对关键基建的网络攻击；并将在 2027 年担任 G20 轮值主席期间推动\"单一的一套全球原则与标准\"，以确保 AI 开发的透明与可靠（\"为 AI 开发设一套全球原则与标准，以保证研究所需透明与可访问性\"）。在 AI 治理被美中拒绝背书的大背景下，英国试图以自律+标准制定的路线扮演桥梁角色。"
         },
         {
           "report_index": 2,
@@ -37339,7 +37287,7 @@
           "title": "生态：联合国安理会 9/23 召开 AI 会议——Altman、Amodei、Hugging Face CEO 同台，CEO 与辞职者并陈",
           "source": "Euronews",
           "date": "2026-09-23",
-          "summary": "本周联合国大会 AI 议题达到顶点：联合国秘书长安东尼奥·古特雷斯在告别演说中警告\\\"绝不能让生死决策交托给机器——杀手机器人不应存在于我们的未来\\\"，并呼吁为 AI 负责任地设置'负责任的 AI 执行节奏'。周二的 UNGA 上，Trump 反其道而行，宣布把 'artificial intelligence' 改名为 'super intelligence'，将 AI 概念重塑为'听起来更好、更准确'，同时强烈反对监管。而周三（9/23）的联合国安理会 AI 会议更罕见地邀请 OpenAI CEO Sam Altman、Anthropic CEO Dario Amodei、Hugging Face CEO Clément Delangue 同台。"
+          "summary": "本周联合国大会 AI 议题达到顶点：联合国秘书长安东尼奥·古特雷斯在告别演说中警告\"绝不能让生死决策交托给机器——杀手机器人不应存在于我们的未来\"，并呼吁为 AI 负责任地设置'负责任的 AI 执行节奏'。周二的 UNGA 上，Trump 反其道而行，宣布把 'artificial intelligence' 改名为 'super intelligence'，将 AI 概念重塑为'听起来更好、更准确'，同时强烈反对监管。而周三（9/23）的联合国安理会 AI 会议更罕见地邀请 OpenAI CEO Sam Altman、Anthropic CEO Dario Amodei、Hugging Face CEO Clément Delangue 同台。"
         },
         {
           "report_index": 3,
@@ -37352,7 +37300,7 @@
         {
           "report_index": 4,
           "article_id": "2026-09-23-11",
-          "title": "观察：GPT-6 Astra 自主破译 1941 年德军 Enigma 消息——\\\"agent 自主科研\\\"的能力展示与安全警示并存",
+          "title": "观察：GPT-6 Astra 自主破译 1941 年德军 Enigma 消息——\"agent 自主科研\"的能力展示与安全警示并存",
           "source": "Schneier on Security / DECODER",
           "date": "2026-09-23",
           "summary": "OpenAI 的 GPT-6 Astra 自主破译了一道 1941 年 7 月被德军 Enigma 加密的 82 字符消息（MVUEH）——这道消息自 2005 年公布以来 20 多年未破。用户 Carter Leffer 只指示它分析 Crypto Cellar Research 上的未破 Enigma 消息，Astra 自己对候选打分、写了 Python/C++ 的 Enigma 模拟器与 Bombe、以重复地名 ROSENOW 为 crib，最终恢复出当年其他流量皆不同的轮序（这正是此前失败的根因），整个破解约耗时 10 小时。"
@@ -37360,10 +37308,10 @@
         {
           "report_index": 5,
           "article_id": "2026-09-23-10",
-          "title": "观察：Trump 在 UNGA 宣布把 AI 更名为 \\\"Super Intelligence\\\"——治理术语本身成为大国政治战场",
+          "title": "观察：Trump 在 UNGA 宣布把 AI 更名为 \"Super Intelligence\"——治理术语本身成为大国政治战场",
           "source": "AFP / Breaking Defense",
           "date": "2026-09-23",
-          "summary": "美国时间周二，Trump 在联合国大会宣布：\\\"从今以后，所有美国文件——也希望全世界——都将把人工智能称为'超级智能（super intelligence）'，因为它更准确。\\\"他把人工智能的\\\"超智能\\\"标签建立在\\\"强调其不是假的/不真实的\\\"之上，并明确表示美国\\\"完全拒绝任何试图构建全球主义计划来控制人工智能\\\"。随后他还下令所有美国机构在官方通讯中改用\\\"super intelligence / SI\\\"。"
+          "summary": "美国时间周二，Trump 在联合国大会宣布：\"从今以后，所有美国文件——也希望全世界——都将把人工智能称为'超级智能（super intelligence）'，因为它更准确。\"他把人工智能的\"超智能\"标签建立在\"强调其不是假的/不真实的\"之上，并明确表示美国\"完全拒绝任何试图构建全球主义计划来控制人工智能\"。随后他还下令所有美国机构在官方通讯中改用\"super intelligence / SI\"。"
         },
         {
           "report_index": 6,
@@ -37371,7 +37319,7 @@
           "title": "应用/产业：OpenAI 洽商估值约 $1.2 万亿的新融资轮——IPO 搁置、2026–2030 预计负自由现金流达 $278 亿",
           "source": "24/7 Wall St / Bloomberg",
           "date": "2026-09-23",
-          "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\\\"不明智\\\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。"
+          "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\"不明智\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。"
         }
       ]
     },
@@ -37638,9 +37586,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
                 "2026-09-21-5",
+                "2026-09-21-11",
                 "2026-09-22-2",
                 "2026-09-23-2",
                 "2026-09-23-3",
@@ -40153,7 +40103,7 @@
               ],
               "label": "应用/产业：OpenAI 洽商估值约 $1.2 万亿的新融资轮——IPO 搁置、2026–2030 预计负自由现金流达 $278 亿",
               "type": "article",
-              "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\\\"不明智\\\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。",
+              "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\"不明智\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。",
               "subtype": "应用/产业",
               "weight": 1
             }
@@ -43614,7 +43564,7 @@
           "title": "应用/产业：OpenAI 洽商估值约 $1.2 万亿的新融资轮——IPO 搁置、2026–2030 预计负自由现金流达 $278 亿",
           "source": "24/7 Wall St / Bloomberg",
           "date": "2026-09-23",
-          "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\\\"不明智\\\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。"
+          "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\"不明智\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。"
         },
         {
           "report_index": 8,
@@ -45095,9 +45045,9 @@
               "article_ids": [
                 "2026-09-23-7"
               ],
-              "label": "安全：Meta Muse 被曝零日漏洞 + 可被诱导导出 6.8GB 文件系统——\\\"特权放大器\\\"的双重安全教训",
+              "label": "安全：Meta Muse 被曝零日漏洞 + 可被诱导导出 6.8GB 文件系统——\"特权放大器\"的双重安全教训",
               "type": "article",
-              "summary": "两条针对 Meta 新 AI 代理 Muse 的安全发现几乎同时落地：其一，macOS 安全专家 Patrick Wardle 披露一个零日漏洞——任何本地运行的应用或终端命令，都能改写 Muse 客户端一段未文档化的设置（endo_voyager_dictation_endpoint），从而把听写流量重定向到攻击者端点、截取 Muse 认证 token，进而以代理身份注入提示并完全控制账号（Meta 称其为\\\"非远程利用\\\"）。其二，研究者 Mouse 请求 Muse 归档其可见文件系统，竟收到含 SSH 密钥、集成代码、agent 日志的约 6.8GB 导出。",
+              "summary": "两条针对 Meta 新 AI 代理 Muse 的安全发现几乎同时落地：其一，macOS 安全专家 Patrick Wardle 披露一个零日漏洞——任何本地运行的应用或终端命令，都能改写 Muse 客户端一段未文档化的设置（endo_voyager_dictation_endpoint），从而把听写流量重定向到攻击者端点、截取 Muse 认证 token，进而以代理身份注入提示并完全控制账号（Meta 称其为\"非远程利用\"）。其二，研究者 Mouse 请求 Muse 归档其可见文件系统，竟收到含 SSH 密钥、集成代码、agent 日志的约 6.8GB 导出。",
               "subtype": "安全",
               "weight": 1
             }
@@ -46786,10 +46736,10 @@
         {
           "report_index": 11,
           "article_id": "2026-09-23-7",
-          "title": "安全：Meta Muse 被曝零日漏洞 + 可被诱导导出 6.8GB 文件系统——\\\"特权放大器\\\"的双重安全教训",
+          "title": "安全：Meta Muse 被曝零日漏洞 + 可被诱导导出 6.8GB 文件系统——\"特权放大器\"的双重安全教训",
           "source": "Ars Technica",
           "date": "2026-09-23",
-          "summary": "两条针对 Meta 新 AI 代理 Muse 的安全发现几乎同时落地：其一，macOS 安全专家 Patrick Wardle 披露一个零日漏洞——任何本地运行的应用或终端命令，都能改写 Muse 客户端一段未文档化的设置（endo_voyager_dictation_endpoint），从而把听写流量重定向到攻击者端点、截取 Muse 认证 token，进而以代理身份注入提示并完全控制账号（Meta 称其为\\\"非远程利用\\\"）。其二，研究者 Mouse 请求 Muse 归档其可见文件系统，竟收到含 SSH 密钥、集成代码、agent 日志的约 6.8GB 导出。"
+          "summary": "两条针对 Meta 新 AI 代理 Muse 的安全发现几乎同时落地：其一，macOS 安全专家 Patrick Wardle 披露一个零日漏洞——任何本地运行的应用或终端命令，都能改写 Muse 客户端一段未文档化的设置（endo_voyager_dictation_endpoint），从而把听写流量重定向到攻击者端点、截取 Muse 认证 token，进而以代理身份注入提示并完全控制账号（Meta 称其为\"非远程利用\"）。其二，研究者 Mouse 请求 Muse 归档其可见文件系统，竟收到含 SSH 密钥、集成代码、agent 日志的约 6.8GB 导出。"
         },
         {
           "report_index": 12,
@@ -47033,9 +46983,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
                 "2026-09-21-5",
+                "2026-09-21-11",
                 "2026-09-22-2",
                 "2026-09-23-2",
                 "2026-09-23-3",
@@ -49209,7 +49161,7 @@
       "conclusion": "A17B、AliCloud 仍在近期新闻中出现，但热度开始回落，接下来要观察它是暂时降温还是进入下一轮验证。",
       "trend_signals": [
         "infra 信号在该主题中最集中。",
-        "证据新闻共 8 条，主导分类为 基础设施。",
+        "证据新闻共 9 条，主导分类为 基础设施。",
         "相关证据由上一窗口的 226 条降至 6 条，主题热度略有回落。"
       ],
       "core_entities": [
@@ -49534,9 +49486,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
                 "2026-09-21-5",
+                "2026-09-21-11",
                 "2026-09-22-2",
                 "2026-09-23-2",
                 "2026-09-23-3",
@@ -49641,6 +49595,23 @@
               "summary": "Qwen 团队披露 Qwen3.8-Flash-Next：125B 总参、每 token 激活 6B，在约九分之一训练 FLOPs 下接近上一代 397B-A17B 旗舰。",
               "aliases": [
                 "A17B"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:organization-flops",
+              "article_ids": [
+                "2026-09-01-4",
+                "2026-09-02-4"
+              ],
+              "label": "FLOPs",
+              "type": "entity",
+              "subtype": "organization",
+              "summary": "Qwen 团队披露 Qwen3.8-Flash-Next：125B 总参、每 token 激活 6B，在约九分之一训练 FLOPs 下接近上一代 397B-A17B 旗舰。",
+              "aliases": [
+                "FLOPs"
               ],
               "weight": 1.0
             }
@@ -50343,7 +50314,7 @@
               ],
               "label": "应用/产业：Anthropic IPO 推迟至 11 月——潜在估值约 $2 万亿、或为史上最大 IPO，零售资金涌入 pre-IPO 基金",
               "type": "article",
-              "summary": "原被市场预期 10 月上市的 Anthropic，IPO 按 Forbes 报道推迟到 11 月。潜在估值约 $2 万亿，如果成行将是史上最大 IPO（超过 SpaceX 今年 6 月 $75B、$1.77 万亿的纪录）。CEO Dario Amodei 公开呼吁\\\"为前沿减速\\\"的言论与上市节奏之间的张力，叠加零售投资者涌入高收费 pre-IPO 基金的现象，让这轮上市本身成为对 AI 资本市场的一次压力测试。",
+              "summary": "原被市场预期 10 月上市的 Anthropic，IPO 按 Forbes 报道推迟到 11 月。潜在估值约 $2 万亿，如果成行将是史上最大 IPO（超过 SpaceX 今年 6 月 $75B、$1.77 万亿的纪录）。CEO Dario Amodei 公开呼吁\"为前沿减速\"的言论与上市节奏之间的张力，叠加零售投资者涌入高收费 pre-IPO 基金的现象，让这轮上市本身成为对 AI 资本市场的一次压力测试。",
               "subtype": "应用/产业",
               "weight": 1
             }
@@ -50372,6 +50343,19 @@
               "target": "entity:organization-a17b",
               "type": "event-entity",
               "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-organization-a17b->entity:organization-flops",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-01-4"
+              ],
+              "source": "event:infra-entity-organization-a17b",
+              "target": "entity:organization-flops",
+              "type": "event-entity",
+              "label": "participant"
             }
           },
           {
@@ -50415,6 +50399,19 @@
           },
           {
             "data": {
+              "id": "edge:event:research-entity-organization-a17b->entity:organization-flops",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-01-4"
+              ],
+              "source": "event:research-entity-organization-a17b",
+              "target": "entity:organization-flops",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
               "id": "edge:event:research-entity-organization-a17b->entity:model-qwen",
               "weight": 2,
               "article_ids": [
@@ -50437,6 +50434,19 @@
               "target": "entity:topic-激活",
               "type": "event-entity",
               "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:organization-a17b->entity:organization-flops:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-09-01-4"
+              ],
+              "source": "entity:organization-a17b",
+              "target": "entity:organization-flops",
+              "type": "explicit-relation",
+              "label": "infra"
             }
           },
           {
@@ -51490,7 +51500,7 @@
           "title": "应用/产业：Anthropic IPO 推迟至 11 月——潜在估值约 $2 万亿、或为史上最大 IPO，零售资金涌入 pre-IPO 基金",
           "source": "Forbes",
           "date": "2026-09-23",
-          "summary": "原被市场预期 10 月上市的 Anthropic，IPO 按 Forbes 报道推迟到 11 月。潜在估值约 $2 万亿，如果成行将是史上最大 IPO（超过 SpaceX 今年 6 月 $75B、$1.77 万亿的纪录）。CEO Dario Amodei 公开呼吁\\\"为前沿减速\\\"的言论与上市节奏之间的张力，叠加零售投资者涌入高收费 pre-IPO 基金的现象，让这轮上市本身成为对 AI 资本市场的一次压力测试。"
+          "summary": "原被市场预期 10 月上市的 Anthropic，IPO 按 Forbes 报道推迟到 11 月。潜在估值约 $2 万亿，如果成行将是史上最大 IPO（超过 SpaceX 今年 6 月 $75B、$1.77 万亿的纪录）。CEO Dario Amodei 公开呼吁\"为前沿减速\"的言论与上市节奏之间的张力，叠加零售投资者涌入高收费 pre-IPO 基金的现象，让这轮上市本身成为对 AI 资本市场的一次压力测试。"
         },
         {
           "report_index": 23,
@@ -51535,264 +51545,38 @@
       ]
     },
     {
-      "theme_id": "clue:7829f2c667b9",
-      "title": "Active Compute Fabric / Cornelis / GPU / Lambda",
-      "summary": "在 2026-08-25 至 2026-09-23 内，Active Compute Fabric、Cornelis、GPU 围绕重复出现的事件与实体关系形成稳定线索。",
-      "conclusion": "Active Compute Fabric、Cornelis 仍在近期新闻中出现，但热度开始回落，接下来要观察它是暂时降温还是进入下一轮验证。",
+      "theme_id": "clue:c3e50880fe10",
+      "title": "DeepSeek-V4.1-Flash / Engram / GiB / InferenceX",
+      "summary": "在 2026-08-25 至 2026-09-23 内，DeepSeek-V4.1-Flash、Engram、GiB 围绕重复出现的事件与实体关系形成稳定线索。",
+      "conclusion": "DeepSeek-V4.1-Flash、Engram 仍在近期新闻中出现，但热度开始回落，接下来要观察它是暂时降温还是进入下一轮验证。",
       "trend_signals": [
         "infra 信号在该主题中最集中。",
-        "证据新闻共 8 条，主导分类为 基础设施。",
+        "证据新闻共 10 条，主导分类为 基础设施。",
         "相关证据由上一窗口的 222 条降至 6 条，主题热度略有回落。"
       ],
       "core_entities": [
-        "Active Compute Fabric",
-        "Cornelis",
-        "GPU",
-        "Lambda"
+        "DeepSeek-V4.1-Flash",
+        "Engram",
+        "GiB",
+        "InferenceX"
       ],
       "event_types": [
         "infra",
         "benchmark",
-        "funding",
-        "launch"
+        "launch",
+        "research"
       ],
       "dominant_category": "基础设施",
       "evidence_article_ids": [
-        "2026-09-23-4",
-        "2026-09-22-4",
-        "2026-09-21-5",
-        "2026-09-17-4",
-        "2026-09-14-3",
-        "2026-09-06-0"
+        "2026-09-21-8",
+        "2026-09-21-3",
+        "2026-09-21-11",
+        "2026-09-20-2",
+        "2026-09-19-11",
+        "2026-09-15-10"
       ],
       "graph": {
         "nodes": [
-          {
-            "data": {
-              "id": "source:techcrunch",
-              "article_ids": [
-                "2026-08-25-0",
-                "2026-08-25-1",
-                "2026-08-25-2",
-                "2026-08-25-3",
-                "2026-08-25-4",
-                "2026-08-25-5",
-                "2026-08-26-0",
-                "2026-08-26-1",
-                "2026-08-26-2",
-                "2026-08-26-3",
-                "2026-08-26-4",
-                "2026-08-26-5",
-                "2026-08-27-0",
-                "2026-08-27-1",
-                "2026-08-27-2",
-                "2026-08-27-3",
-                "2026-08-27-4",
-                "2026-08-27-5",
-                "2026-08-28-0",
-                "2026-08-28-1",
-                "2026-08-28-2",
-                "2026-08-28-3",
-                "2026-08-28-4",
-                "2026-08-29-0",
-                "2026-08-29-1",
-                "2026-08-29-3",
-                "2026-08-30-0",
-                "2026-08-30-1",
-                "2026-08-30-2",
-                "2026-08-30-4",
-                "2026-08-31-0",
-                "2026-08-31-1",
-                "2026-08-31-2",
-                "2026-08-31-3",
-                "2026-08-31-4",
-                "2026-09-01-0",
-                "2026-09-01-1",
-                "2026-09-01-2",
-                "2026-09-01-3",
-                "2026-09-02-0",
-                "2026-09-02-1",
-                "2026-09-02-2",
-                "2026-09-02-3",
-                "2026-09-03-1",
-                "2026-09-03-2",
-                "2026-09-03-3",
-                "2026-09-03-4",
-                "2026-09-03-5",
-                "2026-09-03-6",
-                "2026-09-04-0",
-                "2026-09-04-1",
-                "2026-09-04-2",
-                "2026-09-05-0",
-                "2026-09-05-1",
-                "2026-09-06-3",
-                "2026-09-08-1",
-                "2026-09-08-5",
-                "2026-09-09-3",
-                "2026-09-09-4",
-                "2026-09-09-5",
-                "2026-09-09-7",
-                "2026-09-09-8",
-                "2026-09-10-1",
-                "2026-09-10-2",
-                "2026-09-10-3",
-                "2026-09-10-9",
-                "2026-09-11-2",
-                "2026-09-11-3",
-                "2026-09-11-5",
-                "2026-09-11-8",
-                "2026-09-11-9",
-                "2026-09-12-3",
-                "2026-09-13-5",
-                "2026-09-14-1",
-                "2026-09-14-2",
-                "2026-09-14-3",
-                "2026-09-14-4",
-                "2026-09-15-2",
-                "2026-09-16-10",
-                "2026-09-17-0",
-                "2026-09-17-1",
-                "2026-09-17-2",
-                "2026-09-17-3",
-                "2026-09-18-5",
-                "2026-09-19-0",
-                "2026-09-19-4",
-                "2026-09-21-10",
-                "2026-09-22-0"
-              ],
-              "label": "TechCrunch",
-              "type": "source",
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "category:应用-产业",
-              "article_ids": [
-                "2026-08-25-0",
-                "2026-08-25-1",
-                "2026-08-25-2",
-                "2026-08-25-3",
-                "2026-08-25-4",
-                "2026-08-25-5",
-                "2026-08-25-7",
-                "2026-08-26-0",
-                "2026-08-26-1",
-                "2026-08-26-2",
-                "2026-08-26-3",
-                "2026-08-26-5",
-                "2026-08-26-7",
-                "2026-08-27-0",
-                "2026-08-27-2",
-                "2026-08-27-3",
-                "2026-08-27-4",
-                "2026-08-27-5",
-                "2026-08-27-7",
-                "2026-08-28-0",
-                "2026-08-28-2",
-                "2026-08-28-3",
-                "2026-08-28-4",
-                "2026-08-28-8",
-                "2026-08-29-0",
-                "2026-08-29-1",
-                "2026-08-29-2",
-                "2026-08-29-6",
-                "2026-08-30-0",
-                "2026-08-30-1",
-                "2026-08-30-2",
-                "2026-08-30-3",
-                "2026-08-30-4",
-                "2026-08-30-6",
-                "2026-08-31-0",
-                "2026-08-31-1",
-                "2026-08-31-2",
-                "2026-08-31-3",
-                "2026-08-31-6",
-                "2026-09-01-0",
-                "2026-09-01-1",
-                "2026-09-01-2",
-                "2026-09-01-3",
-                "2026-09-01-6",
-                "2026-09-02-1",
-                "2026-09-02-2",
-                "2026-09-02-3",
-                "2026-09-02-6",
-                "2026-09-03-0",
-                "2026-09-03-1",
-                "2026-09-03-2",
-                "2026-09-03-3",
-                "2026-09-03-4",
-                "2026-09-03-5",
-                "2026-09-03-8",
-                "2026-09-04-1",
-                "2026-09-04-2",
-                "2026-09-04-3",
-                "2026-09-04-7",
-                "2026-09-05-0",
-                "2026-09-05-1",
-                "2026-09-05-2",
-                "2026-09-06-0",
-                "2026-09-06-1",
-                "2026-09-06-2",
-                "2026-09-06-3",
-                "2026-09-06-5",
-                "2026-09-06-6",
-                "2026-09-06-8",
-                "2026-09-07-4",
-                "2026-09-07-6",
-                "2026-09-07-7",
-                "2026-09-08-0",
-                "2026-09-08-1",
-                "2026-09-08-7",
-                "2026-09-09-0",
-                "2026-09-09-3",
-                "2026-09-09-4",
-                "2026-09-09-7",
-                "2026-09-09-8",
-                "2026-09-10-1",
-                "2026-09-10-2",
-                "2026-09-10-3",
-                "2026-09-10-9",
-                "2026-09-11-2",
-                "2026-09-11-3",
-                "2026-09-11-5",
-                "2026-09-12-0",
-                "2026-09-12-2",
-                "2026-09-12-3",
-                "2026-09-12-4",
-                "2026-09-13-4",
-                "2026-09-13-5",
-                "2026-09-13-6",
-                "2026-09-13-8",
-                "2026-09-14-0",
-                "2026-09-14-1",
-                "2026-09-14-2",
-                "2026-09-14-5",
-                "2026-09-15-2",
-                "2026-09-15-3",
-                "2026-09-15-4",
-                "2026-09-15-7",
-                "2026-09-16-0",
-                "2026-09-16-1",
-                "2026-09-17-8",
-                "2026-09-18-4",
-                "2026-09-18-5",
-                "2026-09-18-6",
-                "2026-09-19-3",
-                "2026-09-19-6",
-                "2026-09-20-1",
-                "2026-09-20-6",
-                "2026-09-21-9",
-                "2026-09-22-0",
-                "2026-09-22-1",
-                "2026-09-23-0",
-                "2026-09-23-1"
-              ],
-              "label": "应用/产业",
-              "type": "category",
-              "weight": 1.0
-            }
-          },
           {
             "data": {
               "id": "category:基础设施",
@@ -51892,9 +51676,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
                 "2026-09-21-5",
+                "2026-09-21-11",
                 "2026-09-22-2",
                 "2026-09-23-2",
                 "2026-09-23-3",
@@ -51903,6 +51689,184 @@
               "label": "基础设施",
               "type": "category",
               "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "category:开源",
+              "article_ids": [
+                "2026-08-25-3",
+                "2026-08-25-7",
+                "2026-08-26-0",
+                "2026-08-26-7",
+                "2026-08-27-3",
+                "2026-08-27-7",
+                "2026-08-28-4",
+                "2026-08-28-8",
+                "2026-08-29-4",
+                "2026-09-03-0",
+                "2026-09-03-6",
+                "2026-09-03-8",
+                "2026-09-05-5",
+                "2026-09-09-5",
+                "2026-09-10-5",
+                "2026-09-11-0",
+                "2026-09-11-1",
+                "2026-09-13-3",
+                "2026-09-15-10",
+                "2026-09-17-2",
+                "2026-09-17-8",
+                "2026-09-18-9",
+                "2026-09-20-2",
+                "2026-09-21-2",
+                "2026-09-21-3",
+                "2026-09-22-3",
+                "2026-09-22-9"
+              ],
+              "label": "开源",
+              "type": "category",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:organization-inferencex",
+              "article_ids": [
+                "2026-08-25-5"
+              ],
+              "label": "InferenceX",
+              "type": "entity",
+              "subtype": "organization",
+              "summary": "在 SemiAnalysis 的 InferenceX 基准测试上进行测试，Jalapeño 比当前最先进的技术注册了更多的每个用户令牌和每千瓦的吞吐量。",
+              "aliases": [
+                "InferenceX"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:organization-semianalysis",
+              "article_ids": [
+                "2026-08-25-5",
+                "2026-09-19-11",
+                "2026-09-21-11"
+              ],
+              "label": "SemiAnalysis",
+              "type": "entity",
+              "subtype": "organization",
+              "summary": "在 SemiAnalysis 的 InferenceX 基准测试上进行测试，Jalapeño 比当前最先进的技术注册了更多的每个用户令牌和每千瓦的吞吐量。",
+              "aliases": [
+                "SemiAnalysis",
+                "Semianalysis"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-个用户令牌和每千",
+              "article_ids": [
+                "2026-08-25-5"
+              ],
+              "label": "个用户令牌和每千",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "在 SemiAnalysis 的 InferenceX 基准测试上进行测试，Jalapeño 比当前最先进的技术注册了更多的每个用户令牌和每千瓦的吞吐量。",
+              "aliases": [
+                "个用户令牌和每千"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-基准测试上进行测",
+              "article_ids": [
+                "2026-08-25-5"
+              ],
+              "label": "基准测试上进行测",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "在 SemiAnalysis 的 InferenceX 基准测试上进行测试，Jalapeño 比当前最先进的技术注册了更多的每个用户令牌和每千瓦的吞吐量。",
+              "aliases": [
+                "基准测试上进行测"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-术注册了更多的每",
+              "article_ids": [
+                "2026-08-25-5"
+              ],
+              "label": "术注册了更多的每",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "在 SemiAnalysis 的 InferenceX 基准测试上进行测试，Jalapeño 比当前最先进的技术注册了更多的每个用户令牌和每千瓦的吞吐量。",
+              "aliases": [
+                "术注册了更多的每"
+              ],
+              "weight": 0.764
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-比当前最先进的技",
+              "article_ids": [
+                "2026-08-25-5"
+              ],
+              "label": "比当前最先进的技",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "在 SemiAnalysis 的 InferenceX 基准测试上进行测试，Jalapeño 比当前最先进的技术注册了更多的每个用户令牌和每千瓦的吞吐量。",
+              "aliases": [
+                "比当前最先进的技"
+              ],
+              "weight": 0.764
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-瓦的吞吐量",
+              "article_ids": [
+                "2026-08-25-5"
+              ],
+              "label": "瓦的吞吐量",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "在 SemiAnalysis 的 InferenceX 基准测试上进行测试，Jalapeño 比当前最先进的技术注册了更多的每个用户令牌和每千瓦的吞吐量。",
+              "aliases": [
+                "瓦的吞吐量"
+              ],
+              "weight": 0.764
+            }
+          },
+          {
+            "data": {
+              "id": "event:infra-entity-organization-inferencex",
+              "article_ids": [
+                "2026-08-25-5"
+              ],
+              "label": "基准显示 OpenAI Jalapeño 芯片面向大规模高效推理",
+              "type": "event",
+              "subtype": "infra",
+              "summary": "在 SemiAnalysis 的 InferenceX 基准测试上进行测试，Jalapeño 比当前最先进的技术注册了更多的每个用户令牌和每千瓦的吞吐量。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "event:benchmark-entity-organization-inferencex",
+              "article_ids": [
+                "2026-08-25-5"
+              ],
+              "label": "基准显示 OpenAI Jalapeño 芯片面向大规模高效推理",
+              "type": "event",
+              "subtype": "benchmark",
+              "summary": "在 SemiAnalysis 的 InferenceX 基准测试上进行测试，Jalapeño 比当前最先进的技术注册了更多的每个用户令牌和每千瓦的吞吐量。",
+              "weight": 1.4
             }
           },
           {
@@ -51988,852 +51952,851 @@
           },
           {
             "data": {
-              "id": "entity:organization-lambda",
+              "id": "entity:organization-kv",
               "article_ids": [
-                "2026-08-28-3",
-                "2026-09-21-5"
+                "2026-09-02-4",
+                "2026-09-19-11",
+                "2026-09-21-11"
               ],
-              "label": "Lambda",
+              "label": "KV",
               "type": "entity",
               "subtype": "organization",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "summary": "SMELT 在匹配每 token FLOPs、非嵌入参数和 KV 缓存后，让 MoE Transformer 中间层循环两次，训练算力节省约 6.8% 到 18%。",
               "aliases": [
-                "Lambda"
+                "KV"
               ],
               "weight": 1.0
             }
           },
           {
             "data": {
-              "id": "entity:topic-云公司",
+              "id": "entity:organization-moe",
               "article_ids": [
-                "2026-08-28-3"
+                "2026-09-12-6",
+                "2026-09-13-3",
+                "2026-09-15-10",
+                "2026-09-20-2",
+                "2026-09-21-3",
+                "2026-09-21-8",
+                "2026-09-21-11"
               ],
-              "label": "云公司",
+              "label": "MoE",
               "type": "entity",
-              "subtype": "topic",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "subtype": "organization",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
               "aliases": [
-                "云公司"
+                "MoE"
               ],
               "weight": 1.0
             }
           },
           {
             "data": {
-              "id": "entity:hardware-gpu",
+              "id": "entity:organization-t1",
               "article_ids": [
-                "2026-08-28-3",
-                "2026-08-29-1",
-                "2026-09-06-0",
-                "2026-09-14-3",
-                "2026-09-17-4",
-                "2026-09-22-4",
-                "2026-09-23-4"
+                "2026-09-12-6"
               ],
-              "label": "GPU",
+              "label": "T1",
               "type": "entity",
-              "subtype": "hardware",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "subtype": "organization",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
               "aliases": [
-                "GPU"
+                "T1"
               ],
               "weight": 1.0
             }
           },
           {
             "data": {
-              "id": "entity:topic-亿美元债务购买英",
+              "id": "entity:topic-次工具调用",
               "article_ids": [
-                "2026-08-28-3"
+                "2026-09-12-6"
               ],
-              "label": "亿美元债务购买英",
+              "label": "次工具调用",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
               "aliases": [
-                "亿美元债务购买英"
+                "次工具调用"
               ],
               "weight": 1.0
             }
           },
           {
             "data": {
-              "id": "entity:topic-亿美元短期私募债",
+              "id": "entity:topic-论文提出",
               "article_ids": [
-                "2026-08-28-3"
+                "2026-09-12-6"
               ],
-              "label": "亿美元短期私募债",
+              "label": "论文提出",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
               "aliases": [
-                "亿美元短期私募债"
+                "论文提出"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-以强化学习训练",
+              "article_ids": [
+                "2026-09-12-6"
+              ],
+              "label": "以强化学习训练",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
+              "aliases": [
+                "以强化学习训练"
               ],
               "weight": 0.6759999999999999
             }
           },
           {
             "data": {
-              "id": "entity:topic-伟达芯片",
+              "id": "entity:topic-单任务可进行超过",
               "article_ids": [
-                "2026-08-28-3"
+                "2026-09-12-6"
               ],
-              "label": "伟达芯片",
+              "label": "单任务可进行超过",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
               "aliases": [
-                "伟达芯片"
+                "单任务可进行超过"
               ],
               "weight": 0.6759999999999999
             }
           },
           {
             "data": {
-              "id": "entity:topic-再获",
+              "id": "entity:topic-奖励信号",
               "article_ids": [
-                "2026-08-28-3"
+                "2026-09-12-6"
               ],
-              "label": "再获",
+              "label": "奖励信号",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
               "aliases": [
-                "再获"
+                "奖励信号"
               ],
               "weight": 0.6759999999999999
             }
           },
           {
             "data": {
-              "id": "entity:topic-显示",
+              "id": "entity:topic-实际执行结果作为",
               "article_ids": [
-                "2026-08-28-3"
+                "2026-09-12-6"
               ],
-              "label": "显示",
+              "label": "实际执行结果作为",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
               "aliases": [
-                "显示"
+                "实际执行结果作为"
               ],
               "weight": 0.6759999999999999
             }
           },
           {
             "data": {
-              "id": "event:infra-entity-organization-lambda",
+              "id": "event:infra-entity-organization-moe",
               "article_ids": [
-                "2026-08-28-3"
+                "2026-09-12-6"
               ],
-              "label": "GPU 云公司 Lambda 再获 10 亿美元债务购买英伟达芯片",
+              "label": "论文：T1——面向长程任务的终端智能体强化学习，122B MoE 真实操作系统环境",
               "type": "event",
               "subtype": "infra",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
               "weight": 1.4
             }
           },
           {
             "data": {
-              "id": "event:benchmark-entity-organization-lambda",
+              "id": "event:research-entity-organization-moe",
               "article_ids": [
-                "2026-08-28-3"
+                "2026-09-12-6"
               ],
-              "label": "GPU 云公司 Lambda 再获 10 亿美元债务购买英伟达芯片",
+              "label": "论文：T1——面向长程任务的终端智能体强化学习，122B MoE 真实操作系统环境",
+              "type": "event",
+              "subtype": "research",
+              "summary": "论文提出 T1，一个 122B 总参数、以强化学习训练、操控云端沙箱中真实 shell 的 MoE 模型，单任务可进行超过 300 次工具调用，并以任务自带的 verifier 实际执行结果作为奖励信号。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "entity:model-deepseek-v4-1-flash",
+              "article_ids": [
+                "2026-09-13-3",
+                "2026-09-19-11"
+              ],
+              "label": "DeepSeek-V4.1-Flash",
+              "type": "entity",
+              "subtype": "model",
+              "summary": "DeepSeek 发布 DeepSeek-V4.1-Flash——其新架构家族中最小、也是首个具备原生多模态视觉理解的模型，552B 总参数的 MoE、Causal-Encoder-Decoder（CED）设计，支持百万 token 上下文，以 MIT 许可证开源。",
+              "aliases": [
+                "DeepSeek-V4.1-Flash"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-09-15-10",
+              "article_ids": [
+                "2026-09-15-10"
+              ],
+              "label": "开源：上海 AI Lab 静默开源 744B 参数智能体模型 Atria Dawn Preview，MIT 许可、以 GLM-5.2 为底座",
+              "type": "article",
+              "summary": "上海人工智能实验室低调开源 Atria Dawn Preview——一个以 MIT 许可发布的 744B 参数、约 40B 活跃的智能体 MoE 模型，基于 Zhipu 的 GLM-5.2 后训练，面向科研与工程长流程，配套技术报告已上 arXiv。",
+              "subtype": "开源",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:hugging-face-上海人工智能实验室",
+              "article_ids": [
+                "2026-09-15-10"
+              ],
+              "label": "Hugging Face（上海人工智能实验室）",
+              "type": "source",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-09-19-11",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+              "type": "article",
+              "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+              "subtype": "基础设施",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:semianalysis",
+              "article_ids": [
+                "2026-09-19-11",
+                "2026-09-21-11"
+              ],
+              "label": "Semianalysis",
+              "type": "source",
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:organization-engram",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "Engram",
+              "type": "entity",
+              "subtype": "organization",
+              "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+              "aliases": [
+                "Engram"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:organization-gib",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "GiB",
+              "type": "entity",
+              "subtype": "organization",
+              "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+              "aliases": [
+                "GiB"
+              ],
+              "weight": 1.0
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-从而把稀缺的高带",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "从而把稀缺的高带",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+              "aliases": [
+                "从而把稀缺的高带"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-做成可预取的嵌入",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "做成可预取的嵌入",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+              "aliases": [
+                "做成可预取的嵌入"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "event:infra-entity-model-deepseek-v4-1-flash",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+              "type": "event",
+              "subtype": "infra",
+              "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "event:benchmark-entity-model-deepseek-v4-1-flash",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
               "type": "event",
               "subtype": "benchmark",
-              "summary": "Lambda 获得约 10 亿美元短期私募债务，用于采购将租给微软的英伟达芯片，显示 AI 算力扩张正高度依赖杠杆。",
+              "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
               "weight": 1.4
             }
           },
           {
             "data": {
-              "id": "entity:topic-周围的互连",
+              "id": "article:2026-09-20-2",
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-20-2"
               ],
-              "label": "周围的互连",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "财报后的新叙事认为，随着算力进入吉瓦级，英伟达在 GPU 周围的互连、编排和系统层优势比单芯片性能更难被替代。",
-              "aliases": [
-                "周围的互连"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-延伸到整机编排",
-              "article_ids": [
-                "2026-08-29-1"
-              ],
-              "label": "延伸到整机编排",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "财报后的新叙事认为，随着算力进入吉瓦级，英伟达在 GPU 周围的互连、编排和系统层优势比单芯片性能更难被替代。",
-              "aliases": [
-                "延伸到整机编排"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-比单芯片性能更难",
-              "article_ids": [
-                "2026-08-29-1"
-              ],
-              "label": "比单芯片性能更难",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "财报后的新叙事认为，随着算力进入吉瓦级，英伟达在 GPU 周围的互连、编排和系统层优势比单芯片性能更难被替代。",
-              "aliases": [
-                "比单芯片性能更难"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-编排和系统层优势",
-              "article_ids": [
-                "2026-08-29-1"
-              ],
-              "label": "编排和系统层优势",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "财报后的新叙事认为，随着算力进入吉瓦级，英伟达在 GPU 周围的互连、编排和系统层优势比单芯片性能更难被替代。",
-              "aliases": [
-                "编排和系统层优势"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-英伟达在",
-              "article_ids": [
-                "2026-08-29-1"
-              ],
-              "label": "英伟达在",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "财报后的新叙事认为，随着算力进入吉瓦级，英伟达在 GPU 周围的互连、编排和系统层优势比单芯片性能更难被替代。",
-              "aliases": [
-                "英伟达在"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-英伟达的优势正在",
-              "article_ids": [
-                "2026-08-29-1"
-              ],
-              "label": "英伟达的优势正在",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "财报后的新叙事认为，随着算力进入吉瓦级，英伟达在 GPU 周围的互连、编排和系统层优势比单芯片性能更难被替代。",
-              "aliases": [
-                "英伟达的优势正在"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-被替代",
-              "article_ids": [
-                "2026-08-29-1"
-              ],
-              "label": "被替代",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "财报后的新叙事认为，随着算力进入吉瓦级，英伟达在 GPU 周围的互连、编排和系统层优势比单芯片性能更难被替代。",
-              "aliases": [
-                "被替代"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "event:infra-entity-hardware-gpu",
-              "article_ids": [
-                "2026-08-29-1"
-              ],
-              "label": "英伟达的优势正在从 GPU 延伸到整机编排",
-              "type": "event",
-              "subtype": "infra",
-              "summary": "财报后的新叙事认为，随着算力进入吉瓦级，英伟达在 GPU 周围的互连、编排和系统层优势比单芯片性能更难被替代。",
-              "weight": 1.4
-            }
-          },
-          {
-            "data": {
-              "id": "event:launch-entity-hardware-gpu",
-              "article_ids": [
-                "2026-08-29-1"
-              ],
-              "label": "英伟达的优势正在从 GPU 延伸到整机编排",
-              "type": "event",
-              "subtype": "launch",
-              "summary": "财报后的新叙事认为，随着算力进入吉瓦级，英伟达在 GPU 周围的互连、编排和系统层优势比单芯片性能更难被替代。",
-              "weight": 1.4
-            }
-          },
-          {
-            "data": {
-              "id": "source:arxiv",
-              "article_ids": [
-                "2026-09-04-4",
-                "2026-09-04-5",
-                "2026-09-04-6",
-                "2026-09-15-8",
-                "2026-09-16-5",
-                "2026-09-16-6",
-                "2026-09-16-7",
-                "2026-09-17-6",
-                "2026-09-17-7",
-                "2026-09-18-9",
-                "2026-09-18-10",
-                "2026-09-18-11",
-                "2026-09-19-10",
-                "2026-09-22-4",
-                "2026-09-22-5",
-                "2026-09-23-5",
-                "2026-09-23-6"
-              ],
-              "label": "arXiv",
-              "type": "source",
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "article:2026-09-06-0",
-              "article_ids": [
-                "2026-09-06-0"
-              ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "开源：StepFun 发布 Step 5 Preview——600B 稀疏 MoE 以 GPT-5.6 Sol 七分之一的价格打到 Kimi K3 Max 同级",
               "type": "article",
-              "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
-              "subtype": "基础设施",
+              "summary": "阶跃星辰（StepFun）于 9 月 20 日正式发布 Step 5 Preview 并同日开放 API：这是一款 600B 参数的稀疏 MoE 模型，每 token 激活 27B 参数、支持 1M 上下文；Artificial Analysis 给其智能指数为 44，追平 Kimi K3 Max，而定价仅 $1/百万输入 token、$2.70/百万输出 token（缓存折扣 95%）——约为 GPT-5.6 Sol 的七分之一。完整开源权重将于 10 月 15 日放出。",
+              "subtype": "开源",
               "weight": 1
             }
           },
           {
             "data": {
-              "id": "source:the-next-web",
+              "id": "source:ai-weekly-转述-artificial-analysis",
               "article_ids": [
-                "2026-09-06-0"
+                "2026-09-20-2"
               ],
-              "label": "The Next Web",
+              "label": "AI Weekly（转述 Artificial Analysis）",
               "type": "source",
               "weight": 1
             }
           },
           {
             "data": {
-              "id": "article:2026-09-14-3",
+              "id": "article:2026-09-21-3",
               "article_ids": [
-                "2026-09-14-3"
+                "2026-09-21-3"
               ],
-              "label": "基础设施：AI 基础设施公司 Cornelis 融资 2.05 亿美元，发布 Active Compute Fabric 直接挑战英伟达",
+              "label": "开源：上海 AI 实验室放出自研 744B 开源 agentic 模型 Atria Dawn Preview（MIT 许可）——但要靠 vendor 自报分与沉默发布",
               "type": "article",
-              "summary": "AI 基础设施公司 Cornelis 完成 2.05 亿美元融资，并发布名为 Active Compute Fabric 的网络技术——针对大量 GPU 时间浪费在等待数据到达的现实，试图以网络侧创新撼动英伟达在算力体系中的主导地位。",
-              "subtype": "基础设施",
+              "summary": "上海 AI 实验室（internlm 组织）发布 Atria Dawn Preview：一个建立在 GLM-5.2（744B MoE 基础模型）之上的开源 agentic 模型，MIT 许可、256K 上下文，面向长时程 agent 任务（发现/创造/交付/网络防御四维）。发布节奏非常规——HF 仓库 9 月 11 日上线、无博客无定价，技术报告《Atria Dawn: The Dawn of Agentic Superintelligence》（arXiv:2609.15818，143 位作者）9 月 14 日才跟进。所有基准分均为厂商自报，尚无独立机构验证；HF CEO 称中国开放模型\"显然占主导\"、或于 2026 年底至 2027 年追平前沿，正是这一潮流的又一注脚。",
+              "subtype": "开源",
               "weight": 1
             }
           },
           {
             "data": {
-              "id": "entity:policy-active-compute-fabric",
+              "id": "source:techjack-solutions-ai-weekly-模型卡转述",
               "article_ids": [
-                "2026-09-14-3"
+                "2026-09-21-3"
               ],
-              "label": "Active Compute Fabric",
-              "type": "entity",
-              "subtype": "policy",
-              "summary": "AI 基础设施公司 Cornelis 完成 2.05 亿美元融资，并发布名为 Active Compute Fabric 的网络技术——针对大量 GPU 时间浪费在等待数据到达的现实，试图以网络侧创新撼动英伟达在算力体系中的主导地位。",
-              "aliases": [
-                "Active Compute Fabric"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:organization-cornelis",
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "label": "Cornelis",
-              "type": "entity",
-              "subtype": "organization",
-              "summary": "AI 基础设施公司 Cornelis 完成 2.05 亿美元融资，并发布名为 Active Compute Fabric 的网络技术——针对大量 GPU 时间浪费在等待数据到达的现实，试图以网络侧创新撼动英伟达在算力体系中的主导地位。",
-              "aliases": [
-                "Cornelis"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-基础设施公司",
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "label": "基础设施公司",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "AI 基础设施公司 Cornelis 完成 2.05 亿美元融资，并发布名为 Active Compute Fabric 的网络技术——针对大量 GPU 时间浪费在等待数据到达的现实，试图以网络侧创新撼动英伟达在算力体系中的主导地位。",
-              "aliases": [
-                "基础设施公司"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:topic-体系中的主导地位",
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "label": "体系中的主导地位",
-              "type": "entity",
-              "subtype": "topic",
-              "summary": "AI 基础设施公司 Cornelis 完成 2.05 亿美元融资，并发布名为 Active Compute Fabric 的网络技术——针对大量 GPU 时间浪费在等待数据到达的现实，试图以网络侧创新撼动英伟达在算力体系中的主导地位。",
-              "aliases": [
-                "体系中的主导地位"
-              ],
-              "weight": 0.6759999999999999
-            }
-          },
-          {
-            "data": {
-              "id": "event:infra-entity-policy-active-compute-fabric",
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "label": "基础设施：AI 基础设施公司 Cornelis 融资 2.05 亿美元，发布 Active Compute Fabric 直接挑战英伟达",
-              "type": "event",
-              "subtype": "infra",
-              "summary": "AI 基础设施公司 Cornelis 完成 2.05 亿美元融资，并发布名为 Active Compute Fabric 的网络技术——针对大量 GPU 时间浪费在等待数据到达的现实，试图以网络侧创新撼动英伟达在算力体系中的主导地位。",
-              "weight": 1.4
-            }
-          },
-          {
-            "data": {
-              "id": "event:funding-entity-policy-active-compute-fabric",
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "label": "基础设施：AI 基础设施公司 Cornelis 融资 2.05 亿美元，发布 Active Compute Fabric 直接挑战英伟达",
-              "type": "event",
-              "subtype": "funding",
-              "summary": "AI 基础设施公司 Cornelis 完成 2.05 亿美元融资，并发布名为 Active Compute Fabric 的网络技术——针对大量 GPU 时间浪费在等待数据到达的现实，试图以网络侧创新撼动英伟达在算力体系中的主导地位。",
-              "weight": 1.4
-            }
-          },
-          {
-            "data": {
-              "id": "article:2026-09-17-4",
-              "article_ids": [
-                "2026-09-17-4"
-              ],
-              "label": "基础设施：AWS 与 NVIDIA 深化合作，宣布 2027-2028 年在 AWS 上再部署 200 万颗 GPU 支撑代理与物理 AI",
-              "type": "article",
-              "summary": "AWS 与 NVIDIA 宣布大幅扩展战略合作，计划在 2027-2028 年于 AWS 全球基础设施再部署 200 万颗 Blackwell Ultra、Rubin 与 Rubin Ultra GPU，覆盖 AI 工厂，深化 agentic AI 与物理 AI 的算力供给。",
-              "subtype": "基础设施",
-              "weight": 1
-            }
-          },
-          {
-            "data": {
-              "id": "source:storagenewsletter-nvidia-aws-官方新闻稿",
-              "article_ids": [
-                "2026-09-17-4"
-              ],
-              "label": "StorageNewsletter（NVIDIA/AWS 官方新闻稿）",
+              "label": "TechJack Solutions / AI Weekly（模型卡转述）",
               "type": "source",
               "weight": 1
             }
           },
           {
             "data": {
-              "id": "article:2026-09-21-5",
+              "id": "article:2026-09-21-8",
               "article_ids": [
-                "2026-09-21-5"
+                "2026-09-21-8"
               ],
-              "label": "基础设施：NVIDIA 用\"软件搬电\"对冲 AI 数据中心功耗墙——DSX MaxLPS 在同等电力下提升 24% token 吞吐",
+              "label": "论文：Edge0——35B 稀疏 MoE\"住在 SSD 里\"，用训练好的预路由在普通 24GB 桌面跑出约 20 token/s",
               "type": "article",
-              "summary": "NVIDIA 在 9 月中旬密集披露其 DSX 软件/基础设施平台在 AI 数据中心电力管理上的早期成果：一类软件在电网承压时迁移算力负载（Emerald AI Conductor 在圣克拉拉响应硅谷电力公司信号，把站点功耗从 4MW 压到 3MW，且优先推理任务不掉）；另一类（DSX MaxLPS）在服务器间重分配功率以在固定总电力内提高产出——Lambda 在五个机架、19 个节点的 HGX B200 集群上，用原本只够 16 个满载节点的电力跑满 19 个节点，集群 token 吞吐从约 400 万/秒提到 500 万/秒（+24%）。NVIDIA 的论点明确：电力而非芯片，正在成为 AI 数据中心扩张的主要约束。",
-              "subtype": "基础设施",
-              "weight": 1
-            }
-          },
-          {
-            "data": {
-              "id": "source:datacenter-news-nvidia-blog",
-              "article_ids": [
-                "2026-09-21-5"
-              ],
-              "label": "datacenter.news / NVIDIA Blog",
-              "type": "source",
-              "weight": 1
-            }
-          },
-          {
-            "data": {
-              "id": "article:2026-09-22-4",
-              "article_ids": [
-                "2026-09-22-4"
-              ],
-              "label": "论文：字节跳动 Seed 提出 NSP（嵌套序列并行）——以共享 GPU 上的嵌套分组解决长尾变长序列训练的通信—负载均衡取舍达 1.48×",
-              "type": "article",
-              "summary": "长上下文 LLM 训练面临\"单一序列并行度无法同时适配长短序列\"的两难——SP 度设小则少数长序列严重失衡，设大则占主导的短序列付出过高通信代价。字节跳动 Seed 提出的 NSP 通过把不同大小的 SP 组嵌套在共享 GPU 上、在单次训练迭代内共存，让长序列用大组、短序列用小组，只在该收的地方付出通信，端到端训练吞吐比静态 SP 最高提升 1.48×、比 FlexSP 最高 1.16×。",
+              "summary": "AutoArk 团队提出 Edge0：一个流式 MoE 推理引擎，让 35B 级专家权重\"住在 SSD 上、按需 mmap 流进内存\"，并用一个\"预路由（prerouter）\"——每层一个小头，提前一个 token 预测下一层的路由，且预测结果直接当作路由本身（staged 专家集 = 路由集，什么都不丢弃）——让磁盘读取躲在前向计算之后，从而消除逐层磁盘延迟造成的停顿。配合一个\"未合并\"的恢复 LoRA（补偿 int4 量化与路由替换的精度损失），Edge0 在单张 24GB 机器上以约 20 token/s 服务 35B MoE、峰值活跃内存 3GiB，五个公开基准上距其 fp16 教师仅差几分；8B 档也能跑，框架、权重、适配器全部开放。",
               "subtype": "论文",
               "weight": 1
             }
           },
           {
             "data": {
-              "id": "source:pr-newswire",
+              "id": "source:arxiv-2609-18063",
               "article_ids": [
-                "2026-09-23-2",
-                "2026-09-23-4"
+                "2026-09-21-8"
               ],
-              "label": "PR Newswire",
+              "label": "arXiv 2609.18063",
               "type": "source",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-09-21-11",
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "label": "基础设施：Semianalysis 拆解推理\"token 工厂\"——MoE 时代瓶颈在数据搬运而非算力，KV 可移动性与调度成为竞争力来源",
+              "type": "article",
+              "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+              "subtype": "基础设施",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-混合专家",
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "label": "混合专家",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+              "aliases": [
+                "混合专家"
+              ],
               "weight": 1.0
             }
           },
           {
             "data": {
-              "id": "article:2026-09-23-4",
+              "id": "entity:topic-一起",
               "article_ids": [
-                "2026-09-23-4"
+                "2026-09-21-11"
               ],
-              "label": "基础设施：WhiteFiber 发布 Continuum 分布式 GPU 超算集群——跨数据中心 136 Tbps、0.9ms 延迟，首个商用跨站点集群架构",
-              "type": "article",
-              "summary": "WhiteFiber（NASDAQ: WYFI）9 月 23 日宣布 Continuum 商用上市：把地理上分离的两处数据中心（QTS 的 HITRUST 认证设施，相距 83 公里）通过 12 条 Zayo 暗光纤合并成一个逻辑 GPU 超算集群，跨站点提供 136 Tbps 带宽与 0.9ms 保证往返时延，由 DriveNets AI Fabric 与 WEKA NeuralMesh 存储/内存基础设施支撑。WhiteFiber 已为底层实现申请了专利。",
-              "subtype": "基础设施",
-              "weight": 1
+              "label": "一起",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+              "aliases": [
+                "一起"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-上哪些张量活跃",
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "label": "上哪些张量活跃",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+              "aliases": [
+                "上哪些张量活跃"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-为竞争力来源",
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "label": "为竞争力来源",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+              "aliases": [
+                "为竞争力来源"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "entity:topic-什么数据必须贴在",
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "label": "什么数据必须贴在",
+              "type": "entity",
+              "subtype": "topic",
+              "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+              "aliases": [
+                "什么数据必须贴在"
+              ],
+              "weight": 0.6759999999999999
+            }
+          },
+          {
+            "data": {
+              "id": "event:infra-entity-organization-kv",
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "label": "基础设施：Semianalysis 拆解推理\"token 工厂\"——MoE 时代瓶颈在数据搬运而非算力，KV 可移动性与调度成为竞争力来源",
+              "type": "event",
+              "subtype": "infra",
+              "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+              "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "event:launch-entity-organization-kv",
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "label": "基础设施：Semianalysis 拆解推理\"token 工厂\"——MoE 时代瓶颈在数据搬运而非算力，KV 可移动性与调度成为竞争力来源",
+              "type": "event",
+              "subtype": "launch",
+              "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+              "weight": 1.4
             }
           }
         ],
         "edges": [
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-lambda->entity:organization-lambda",
+              "id": "edge:event:infra-entity-organization-inferencex->entity:organization-inferencex",
               "weight": 2,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "event:infra-entity-organization-lambda",
-              "target": "entity:organization-lambda",
+              "source": "event:infra-entity-organization-inferencex",
+              "target": "entity:organization-inferencex",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-lambda->entity:topic-云公司",
+              "id": "edge:event:infra-entity-organization-inferencex->entity:organization-semianalysis",
               "weight": 2,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "event:infra-entity-organization-lambda",
-              "target": "entity:topic-云公司",
+              "source": "event:infra-entity-organization-inferencex",
+              "target": "entity:organization-semianalysis",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-lambda->entity:hardware-gpu",
+              "id": "edge:event:infra-entity-organization-inferencex->entity:topic-个用户令牌和每千",
               "weight": 2,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "event:infra-entity-organization-lambda",
-              "target": "entity:hardware-gpu",
+              "source": "event:infra-entity-organization-inferencex",
+              "target": "entity:topic-个用户令牌和每千",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-lambda->entity:topic-亿美元债务购买英",
+              "id": "edge:event:infra-entity-organization-inferencex->entity:topic-基准测试上进行测",
               "weight": 2,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "event:infra-entity-organization-lambda",
-              "target": "entity:topic-亿美元债务购买英",
+              "source": "event:infra-entity-organization-inferencex",
+              "target": "entity:topic-基准测试上进行测",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:benchmark-entity-organization-lambda->entity:organization-lambda",
+              "id": "edge:event:benchmark-entity-organization-inferencex->entity:organization-inferencex",
               "weight": 2,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "event:benchmark-entity-organization-lambda",
-              "target": "entity:organization-lambda",
+              "source": "event:benchmark-entity-organization-inferencex",
+              "target": "entity:organization-inferencex",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:benchmark-entity-organization-lambda->entity:topic-云公司",
+              "id": "edge:event:benchmark-entity-organization-inferencex->entity:organization-semianalysis",
               "weight": 2,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "event:benchmark-entity-organization-lambda",
-              "target": "entity:topic-云公司",
+              "source": "event:benchmark-entity-organization-inferencex",
+              "target": "entity:organization-semianalysis",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:benchmark-entity-organization-lambda->entity:hardware-gpu",
+              "id": "edge:event:benchmark-entity-organization-inferencex->entity:topic-个用户令牌和每千",
               "weight": 2,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "event:benchmark-entity-organization-lambda",
-              "target": "entity:hardware-gpu",
+              "source": "event:benchmark-entity-organization-inferencex",
+              "target": "entity:topic-个用户令牌和每千",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:benchmark-entity-organization-lambda->entity:topic-亿美元债务购买英",
+              "id": "edge:event:benchmark-entity-organization-inferencex->entity:topic-基准测试上进行测",
               "weight": 2,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "event:benchmark-entity-organization-lambda",
-              "target": "entity:topic-亿美元债务购买英",
+              "source": "event:benchmark-entity-organization-inferencex",
+              "target": "entity:topic-基准测试上进行测",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:entity:organization-lambda->entity:topic-云公司:infra",
+              "id": "edge:entity:organization-inferencex->entity:organization-semianalysis:infra",
               "weight": 3.0,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "entity:organization-lambda",
-              "target": "entity:topic-云公司",
+              "source": "entity:organization-inferencex",
+              "target": "entity:organization-semianalysis",
               "type": "explicit-relation",
               "label": "infra"
             }
           },
           {
             "data": {
-              "id": "edge:entity:organization-lambda->entity:hardware-gpu:infra",
+              "id": "edge:entity:organization-inferencex->entity:topic-个用户令牌和每千:infra",
               "weight": 3.0,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "entity:organization-lambda",
-              "target": "entity:hardware-gpu",
+              "source": "entity:organization-inferencex",
+              "target": "entity:topic-个用户令牌和每千",
               "type": "explicit-relation",
               "label": "infra"
             }
           },
           {
             "data": {
-              "id": "edge:entity:organization-lambda->entity:topic-亿美元债务购买英:infra",
+              "id": "edge:entity:organization-inferencex->entity:topic-基准测试上进行测:infra",
               "weight": 3.0,
               "article_ids": [
-                "2026-08-28-3"
+                "2026-08-25-5"
               ],
-              "source": "entity:organization-lambda",
-              "target": "entity:topic-亿美元债务购买英",
+              "source": "entity:organization-inferencex",
+              "target": "entity:topic-基准测试上进行测",
               "type": "explicit-relation",
               "label": "infra"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-hardware-gpu->entity:hardware-gpu",
+              "id": "edge:event:infra-entity-organization-moe->entity:organization-moe",
               "weight": 2,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "event:infra-entity-hardware-gpu",
-              "target": "entity:hardware-gpu",
+              "source": "event:infra-entity-organization-moe",
+              "target": "entity:organization-moe",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-hardware-gpu->entity:topic-周围的互连",
+              "id": "edge:event:infra-entity-organization-moe->entity:organization-t1",
               "weight": 2,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "event:infra-entity-hardware-gpu",
-              "target": "entity:topic-周围的互连",
+              "source": "event:infra-entity-organization-moe",
+              "target": "entity:organization-t1",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-hardware-gpu->entity:topic-延伸到整机编排",
+              "id": "edge:event:infra-entity-organization-moe->entity:topic-次工具调用",
               "weight": 2,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "event:infra-entity-hardware-gpu",
-              "target": "entity:topic-延伸到整机编排",
+              "source": "event:infra-entity-organization-moe",
+              "target": "entity:topic-次工具调用",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-hardware-gpu->entity:topic-比单芯片性能更难",
+              "id": "edge:event:infra-entity-organization-moe->entity:topic-论文提出",
               "weight": 2,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "event:infra-entity-hardware-gpu",
-              "target": "entity:topic-比单芯片性能更难",
+              "source": "event:infra-entity-organization-moe",
+              "target": "entity:topic-论文提出",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:launch-entity-hardware-gpu->entity:hardware-gpu",
+              "id": "edge:event:research-entity-organization-moe->entity:organization-moe",
               "weight": 2,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "event:launch-entity-hardware-gpu",
-              "target": "entity:hardware-gpu",
+              "source": "event:research-entity-organization-moe",
+              "target": "entity:organization-moe",
               "type": "event-entity",
               "label": "subject"
             }
           },
           {
             "data": {
-              "id": "edge:event:launch-entity-hardware-gpu->entity:topic-周围的互连",
+              "id": "edge:event:research-entity-organization-moe->entity:organization-t1",
               "weight": 2,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "event:launch-entity-hardware-gpu",
-              "target": "entity:topic-周围的互连",
+              "source": "event:research-entity-organization-moe",
+              "target": "entity:organization-t1",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:launch-entity-hardware-gpu->entity:topic-延伸到整机编排",
+              "id": "edge:event:research-entity-organization-moe->entity:topic-次工具调用",
               "weight": 2,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "event:launch-entity-hardware-gpu",
-              "target": "entity:topic-延伸到整机编排",
+              "source": "event:research-entity-organization-moe",
+              "target": "entity:topic-次工具调用",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:event:launch-entity-hardware-gpu->entity:topic-比单芯片性能更难",
+              "id": "edge:event:research-entity-organization-moe->entity:topic-论文提出",
               "weight": 2,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "event:launch-entity-hardware-gpu",
-              "target": "entity:topic-比单芯片性能更难",
+              "source": "event:research-entity-organization-moe",
+              "target": "entity:topic-论文提出",
               "type": "event-entity",
               "label": "participant"
             }
           },
           {
             "data": {
-              "id": "edge:entity:hardware-gpu->entity:topic-周围的互连:infra",
+              "id": "edge:entity:organization-moe->entity:organization-t1:infra",
               "weight": 3.0,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "entity:hardware-gpu",
-              "target": "entity:topic-周围的互连",
+              "source": "entity:organization-moe",
+              "target": "entity:organization-t1",
               "type": "explicit-relation",
               "label": "infra"
             }
           },
           {
             "data": {
-              "id": "edge:entity:hardware-gpu->entity:topic-延伸到整机编排:infra",
+              "id": "edge:entity:organization-moe->entity:topic-次工具调用:infra",
               "weight": 3.0,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "entity:hardware-gpu",
-              "target": "entity:topic-延伸到整机编排",
+              "source": "entity:organization-moe",
+              "target": "entity:topic-次工具调用",
               "type": "explicit-relation",
               "label": "infra"
             }
           },
           {
             "data": {
-              "id": "edge:entity:hardware-gpu->entity:topic-比单芯片性能更难:infra",
+              "id": "edge:entity:organization-moe->entity:topic-论文提出:infra",
               "weight": 3.0,
               "article_ids": [
-                "2026-08-29-1"
+                "2026-09-12-6"
               ],
-              "source": "entity:hardware-gpu",
-              "target": "entity:topic-比单芯片性能更难",
+              "source": "entity:organization-moe",
+              "target": "entity:topic-论文提出",
               "type": "explicit-relation",
               "label": "infra"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-06-0->source:the-next-web",
+              "id": "edge:article:2026-09-15-10->source:hugging-face-上海人工智能实验室",
               "weight": 1,
               "article_ids": [
-                "2026-09-06-0"
+                "2026-09-15-10"
               ],
-              "source": "article:2026-09-06-0",
-              "target": "source:the-next-web",
+              "source": "article:2026-09-15-10",
+              "target": "source:hugging-face-上海人工智能实验室",
               "type": "article-source",
               "label": "source"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-06-0->category:基础设施",
+              "id": "edge:article:2026-09-15-10->category:开源",
               "weight": 1,
               "article_ids": [
-                "2026-09-06-0"
+                "2026-09-15-10"
               ],
-              "source": "article:2026-09-06-0",
+              "source": "article:2026-09-15-10",
+              "target": "category:开源",
+              "type": "article-category",
+              "label": "开源"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-15-10->category:基础设施",
+              "weight": 1,
+              "article_ids": [
+                "2026-09-15-10"
+              ],
+              "source": "article:2026-09-15-10",
               "target": "category:基础设施",
               "type": "article-category",
               "label": "基础设施"
@@ -52841,389 +52804,402 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-09-06-0->category:应用-产业",
-              "weight": 1,
-              "article_ids": [
-                "2026-09-06-0"
-              ],
-              "source": "article:2026-09-06-0",
-              "target": "category:应用-产业",
-              "type": "article-category",
-              "label": "应用/产业"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-06-0->entity:hardware-gpu",
+              "id": "edge:article:2026-09-15-10->entity:organization-moe",
               "weight": 0.764,
               "article_ids": [
-                "2026-09-06-0"
+                "2026-09-15-10"
               ],
-              "source": "article:2026-09-06-0",
-              "target": "entity:hardware-gpu",
-              "type": "article-entity",
-              "label": "hardware"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-14-3->source:techcrunch",
-              "weight": 1,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "article:2026-09-14-3",
-              "target": "source:techcrunch",
-              "type": "article-source",
-              "label": "source"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-14-3->category:基础设施",
-              "weight": 1,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "article:2026-09-14-3",
-              "target": "category:基础设施",
-              "type": "article-category",
-              "label": "基础设施"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-14-3->entity:policy-active-compute-fabric",
-              "weight": 0.764,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "article:2026-09-14-3",
-              "target": "entity:policy-active-compute-fabric",
-              "type": "article-entity",
-              "label": "policy"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-14-3->entity:organization-cornelis",
-              "weight": 0.764,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "article:2026-09-14-3",
-              "target": "entity:organization-cornelis",
+              "source": "article:2026-09-15-10",
+              "target": "entity:organization-moe",
               "type": "article-entity",
               "label": "organization"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-14-3->entity:hardware-gpu",
-              "weight": 0.764,
+              "id": "edge:article:2026-09-19-11->source:semianalysis",
+              "weight": 1,
               "article_ids": [
-                "2026-09-14-3"
+                "2026-09-19-11"
               ],
-              "source": "article:2026-09-14-3",
-              "target": "entity:hardware-gpu",
-              "type": "article-entity",
-              "label": "hardware"
+              "source": "article:2026-09-19-11",
+              "target": "source:semianalysis",
+              "type": "article-source",
+              "label": "source"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-14-3->entity:topic-基础设施公司",
-              "weight": 0.764,
+              "id": "edge:article:2026-09-19-11->category:基础设施",
+              "weight": 1,
               "article_ids": [
-                "2026-09-14-3"
+                "2026-09-19-11"
               ],
-              "source": "article:2026-09-14-3",
-              "target": "entity:topic-基础设施公司",
-              "type": "article-entity",
-              "label": "topic"
+              "source": "article:2026-09-19-11",
+              "target": "category:基础设施",
+              "type": "article-category",
+              "label": "基础设施"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-14-3->entity:topic-体系中的主导地位",
+              "id": "edge:article:2026-09-19-11->entity:model-deepseek-v4-1-flash",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "entity:model-deepseek-v4-1-flash",
+              "type": "article-entity",
+              "label": "model"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->entity:organization-engram",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "entity:organization-engram",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->entity:organization-gib",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "entity:organization-gib",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->entity:organization-kv",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "entity:organization-kv",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->entity:organization-semianalysis",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "entity:organization-semianalysis",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->entity:topic-从而把稀缺的高带",
               "weight": 0.6759999999999999,
               "article_ids": [
-                "2026-09-14-3"
+                "2026-09-19-11"
               ],
-              "source": "article:2026-09-14-3",
-              "target": "entity:topic-体系中的主导地位",
+              "source": "article:2026-09-19-11",
+              "target": "entity:topic-从而把稀缺的高带",
               "type": "article-entity",
               "label": "topic"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-14-3->event:infra-entity-policy-active-compute-fabric",
-              "weight": 1.2,
+              "id": "edge:article:2026-09-19-11->entity:topic-做成可预取的嵌入",
+              "weight": 0.6759999999999999,
               "article_ids": [
-                "2026-09-14-3"
+                "2026-09-19-11"
               ],
-              "source": "article:2026-09-14-3",
-              "target": "event:infra-entity-policy-active-compute-fabric",
-              "type": "article-event",
-              "label": "infra"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-policy-active-compute-fabric->entity:policy-active-compute-fabric",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "event:infra-entity-policy-active-compute-fabric",
-              "target": "entity:policy-active-compute-fabric",
-              "type": "event-entity",
-              "label": "subject"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-policy-active-compute-fabric->entity:organization-cornelis",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "event:infra-entity-policy-active-compute-fabric",
-              "target": "entity:organization-cornelis",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-policy-active-compute-fabric->entity:hardware-gpu",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "event:infra-entity-policy-active-compute-fabric",
-              "target": "entity:hardware-gpu",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:infra-entity-policy-active-compute-fabric->entity:topic-基础设施公司",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "event:infra-entity-policy-active-compute-fabric",
-              "target": "entity:topic-基础设施公司",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-14-3->event:funding-entity-policy-active-compute-fabric",
-              "weight": 1.2,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "article:2026-09-14-3",
-              "target": "event:funding-entity-policy-active-compute-fabric",
-              "type": "article-event",
-              "label": "funding"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:funding-entity-policy-active-compute-fabric->entity:policy-active-compute-fabric",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "event:funding-entity-policy-active-compute-fabric",
-              "target": "entity:policy-active-compute-fabric",
-              "type": "event-entity",
-              "label": "subject"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:funding-entity-policy-active-compute-fabric->entity:organization-cornelis",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "event:funding-entity-policy-active-compute-fabric",
-              "target": "entity:organization-cornelis",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:funding-entity-policy-active-compute-fabric->entity:hardware-gpu",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "event:funding-entity-policy-active-compute-fabric",
-              "target": "entity:hardware-gpu",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:event:funding-entity-policy-active-compute-fabric->entity:topic-基础设施公司",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "event:funding-entity-policy-active-compute-fabric",
-              "target": "entity:topic-基础设施公司",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:entity:policy-active-compute-fabric->entity:organization-cornelis:infra",
-              "weight": 3.0,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "entity:policy-active-compute-fabric",
-              "target": "entity:organization-cornelis",
-              "type": "explicit-relation",
-              "label": "infra"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:entity:policy-active-compute-fabric->entity:hardware-gpu:infra",
-              "weight": 3.0,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "entity:policy-active-compute-fabric",
-              "target": "entity:hardware-gpu",
-              "type": "explicit-relation",
-              "label": "infra"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:entity:policy-active-compute-fabric->entity:topic-基础设施公司:infra",
-              "weight": 3.0,
-              "article_ids": [
-                "2026-09-14-3"
-              ],
-              "source": "entity:policy-active-compute-fabric",
-              "target": "entity:topic-基础设施公司",
-              "type": "explicit-relation",
-              "label": "infra"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-17-4->source:storagenewsletter-nvidia-aws-官方新闻稿",
-              "weight": 1,
-              "article_ids": [
-                "2026-09-17-4"
-              ],
-              "source": "article:2026-09-17-4",
-              "target": "source:storagenewsletter-nvidia-aws-官方新闻稿",
-              "type": "article-source",
-              "label": "source"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-17-4->category:基础设施",
-              "weight": 1,
-              "article_ids": [
-                "2026-09-17-4"
-              ],
-              "source": "article:2026-09-17-4",
-              "target": "category:基础设施",
-              "type": "article-category",
-              "label": "基础设施"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-17-4->entity:hardware-gpu",
-              "weight": 0.764,
-              "article_ids": [
-                "2026-09-17-4"
-              ],
-              "source": "article:2026-09-17-4",
-              "target": "entity:hardware-gpu",
+              "source": "article:2026-09-19-11",
+              "target": "entity:topic-做成可预取的嵌入",
               "type": "article-entity",
-              "label": "hardware"
+              "label": "topic"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-21-5->source:datacenter-news-nvidia-blog",
+              "id": "edge:article:2026-09-19-11->event:infra-entity-model-deepseek-v4-1-flash",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "event:infra-entity-model-deepseek-v4-1-flash",
+              "type": "article-event",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-model-deepseek-v4-1-flash->entity:model-deepseek-v4-1-flash",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "event:infra-entity-model-deepseek-v4-1-flash",
+              "target": "entity:model-deepseek-v4-1-flash",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-model-deepseek-v4-1-flash->entity:organization-engram",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "event:infra-entity-model-deepseek-v4-1-flash",
+              "target": "entity:organization-engram",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-model-deepseek-v4-1-flash->entity:organization-gib",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "event:infra-entity-model-deepseek-v4-1-flash",
+              "target": "entity:organization-gib",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-model-deepseek-v4-1-flash->entity:organization-kv",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "event:infra-entity-model-deepseek-v4-1-flash",
+              "target": "entity:organization-kv",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->event:benchmark-entity-model-deepseek-v4-1-flash",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "event:benchmark-entity-model-deepseek-v4-1-flash",
+              "type": "article-event",
+              "label": "benchmark"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:benchmark-entity-model-deepseek-v4-1-flash->entity:model-deepseek-v4-1-flash",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "event:benchmark-entity-model-deepseek-v4-1-flash",
+              "target": "entity:model-deepseek-v4-1-flash",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:benchmark-entity-model-deepseek-v4-1-flash->entity:organization-engram",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "event:benchmark-entity-model-deepseek-v4-1-flash",
+              "target": "entity:organization-engram",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:benchmark-entity-model-deepseek-v4-1-flash->entity:organization-gib",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "event:benchmark-entity-model-deepseek-v4-1-flash",
+              "target": "entity:organization-gib",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:benchmark-entity-model-deepseek-v4-1-flash->entity:organization-kv",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "event:benchmark-entity-model-deepseek-v4-1-flash",
+              "target": "entity:organization-kv",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:model-deepseek-v4-1-flash->entity:organization-engram:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "entity:model-deepseek-v4-1-flash",
+              "target": "entity:organization-engram",
+              "type": "explicit-relation",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:model-deepseek-v4-1-flash->entity:organization-gib:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "entity:model-deepseek-v4-1-flash",
+              "target": "entity:organization-gib",
+              "type": "explicit-relation",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:model-deepseek-v4-1-flash->entity:organization-kv:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "entity:model-deepseek-v4-1-flash",
+              "target": "entity:organization-kv",
+              "type": "explicit-relation",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-20-2->source:ai-weekly-转述-artificial-analysis",
               "weight": 1,
               "article_ids": [
-                "2026-09-21-5"
+                "2026-09-20-2"
               ],
-              "source": "article:2026-09-21-5",
-              "target": "source:datacenter-news-nvidia-blog",
+              "source": "article:2026-09-20-2",
+              "target": "source:ai-weekly-转述-artificial-analysis",
               "type": "article-source",
               "label": "source"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-21-5->category:基础设施",
+              "id": "edge:article:2026-09-20-2->category:开源",
               "weight": 1,
               "article_ids": [
-                "2026-09-21-5"
+                "2026-09-20-2"
               ],
-              "source": "article:2026-09-21-5",
-              "target": "category:基础设施",
+              "source": "article:2026-09-20-2",
+              "target": "category:开源",
               "type": "article-category",
-              "label": "基础设施"
+              "label": "开源"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-21-5->entity:organization-lambda",
+              "id": "edge:article:2026-09-20-2->entity:organization-moe",
               "weight": 0.764,
               "article_ids": [
-                "2026-09-21-5"
+                "2026-09-20-2"
               ],
-              "source": "article:2026-09-21-5",
-              "target": "entity:organization-lambda",
+              "source": "article:2026-09-20-2",
+              "target": "entity:organization-moe",
               "type": "article-entity",
               "label": "organization"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-22-4->source:arxiv",
+              "id": "edge:article:2026-09-21-3->source:techjack-solutions-ai-weekly-模型卡转述",
               "weight": 1,
               "article_ids": [
-                "2026-09-22-4"
+                "2026-09-21-3"
               ],
-              "source": "article:2026-09-22-4",
-              "target": "source:arxiv",
+              "source": "article:2026-09-21-3",
+              "target": "source:techjack-solutions-ai-weekly-模型卡转述",
               "type": "article-source",
               "label": "source"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-22-4->category:论文",
+              "id": "edge:article:2026-09-21-3->category:开源",
               "weight": 1,
               "article_ids": [
-                "2026-09-22-4"
+                "2026-09-21-3"
               ],
-              "source": "article:2026-09-22-4",
+              "source": "article:2026-09-21-3",
+              "target": "category:开源",
+              "type": "article-category",
+              "label": "开源"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-3->entity:organization-moe",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-09-21-3"
+              ],
+              "source": "article:2026-09-21-3",
+              "target": "entity:organization-moe",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-8->source:arxiv-2609-18063",
+              "weight": 1,
+              "article_ids": [
+                "2026-09-21-8"
+              ],
+              "source": "article:2026-09-21-8",
+              "target": "source:arxiv-2609-18063",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-8->category:论文",
+              "weight": 1,
+              "article_ids": [
+                "2026-09-21-8"
+              ],
+              "source": "article:2026-09-21-8",
               "target": "category:论文",
               "type": "article-category",
               "label": "论文"
@@ -53231,38 +53207,38 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-09-22-4->entity:hardware-gpu",
+              "id": "edge:article:2026-09-21-8->entity:organization-moe",
               "weight": 0.764,
               "article_ids": [
-                "2026-09-22-4"
+                "2026-09-21-8"
               ],
-              "source": "article:2026-09-22-4",
-              "target": "entity:hardware-gpu",
+              "source": "article:2026-09-21-8",
+              "target": "entity:organization-moe",
               "type": "article-entity",
-              "label": "hardware"
+              "label": "organization"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-23-4->source:pr-newswire",
+              "id": "edge:article:2026-09-21-11->source:semianalysis",
               "weight": 1,
               "article_ids": [
-                "2026-09-23-4"
+                "2026-09-21-11"
               ],
-              "source": "article:2026-09-23-4",
-              "target": "source:pr-newswire",
+              "source": "article:2026-09-21-11",
+              "target": "source:semianalysis",
               "type": "article-source",
               "label": "source"
             }
           },
           {
             "data": {
-              "id": "edge:article:2026-09-23-4->category:基础设施",
+              "id": "edge:article:2026-09-21-11->category:基础设施",
               "weight": 1,
               "article_ids": [
-                "2026-09-23-4"
+                "2026-09-21-11"
               ],
-              "source": "article:2026-09-23-4",
+              "source": "article:2026-09-21-11",
               "target": "category:基础设施",
               "type": "article-category",
               "label": "基础设施"
@@ -53270,15 +53246,275 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-09-23-4->entity:hardware-gpu",
+              "id": "edge:article:2026-09-21-11->entity:organization-kv",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "article:2026-09-21-11",
+              "target": "entity:organization-kv",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-11->entity:organization-moe",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "article:2026-09-21-11",
+              "target": "entity:organization-moe",
+              "type": "article-entity",
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-11->entity:topic-混合专家",
+              "weight": 0.764,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "article:2026-09-21-11",
+              "target": "entity:topic-混合专家",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-11->entity:organization-semianalysis",
               "weight": 0.6759999999999999,
               "article_ids": [
-                "2026-09-23-4"
+                "2026-09-21-11"
               ],
-              "source": "article:2026-09-23-4",
-              "target": "entity:hardware-gpu",
+              "source": "article:2026-09-21-11",
+              "target": "entity:organization-semianalysis",
               "type": "article-entity",
-              "label": "hardware"
+              "label": "organization"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-11->entity:topic-一起",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "article:2026-09-21-11",
+              "target": "entity:topic-一起",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-11->entity:topic-上哪些张量活跃",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "article:2026-09-21-11",
+              "target": "entity:topic-上哪些张量活跃",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-11->entity:topic-为竞争力来源",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "article:2026-09-21-11",
+              "target": "entity:topic-为竞争力来源",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-11->entity:topic-什么数据必须贴在",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "article:2026-09-21-11",
+              "target": "entity:topic-什么数据必须贴在",
+              "type": "article-entity",
+              "label": "topic"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-11->event:infra-entity-organization-kv",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "article:2026-09-21-11",
+              "target": "event:infra-entity-organization-kv",
+              "type": "article-event",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-organization-kv->entity:organization-kv",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "event:infra-entity-organization-kv",
+              "target": "entity:organization-kv",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-organization-kv->entity:organization-moe",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "event:infra-entity-organization-kv",
+              "target": "entity:organization-moe",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-organization-kv->entity:topic-混合专家",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "event:infra-entity-organization-kv",
+              "target": "entity:topic-混合专家",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:infra-entity-organization-kv->entity:organization-semianalysis",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "event:infra-entity-organization-kv",
+              "target": "entity:organization-semianalysis",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-21-11->event:launch-entity-organization-kv",
+              "weight": 1.2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "article:2026-09-21-11",
+              "target": "event:launch-entity-organization-kv",
+              "type": "article-event",
+              "label": "launch"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-organization-kv->entity:organization-kv",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "event:launch-entity-organization-kv",
+              "target": "entity:organization-kv",
+              "type": "event-entity",
+              "label": "subject"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-organization-kv->entity:organization-moe",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "event:launch-entity-organization-kv",
+              "target": "entity:organization-moe",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-organization-kv->entity:topic-混合专家",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "event:launch-entity-organization-kv",
+              "target": "entity:topic-混合专家",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:event:launch-entity-organization-kv->entity:organization-semianalysis",
+              "weight": 2,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "event:launch-entity-organization-kv",
+              "target": "entity:organization-semianalysis",
+              "type": "event-entity",
+              "label": "participant"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:organization-kv->entity:organization-moe:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "entity:organization-kv",
+              "target": "entity:organization-moe",
+              "type": "explicit-relation",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:organization-kv->entity:topic-混合专家:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "entity:organization-kv",
+              "target": "entity:topic-混合专家",
+              "type": "explicit-relation",
+              "label": "infra"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:entity:organization-kv->entity:organization-semianalysis:infra",
+              "weight": 3.0,
+              "article_ids": [
+                "2026-09-21-11"
+              ],
+              "source": "entity:organization-kv",
+              "target": "entity:organization-semianalysis",
+              "type": "explicit-relation",
+              "label": "infra"
             }
           }
         ]
@@ -53286,51 +53522,51 @@
       "evidence": [
         {
           "report_index": 27,
-          "article_id": "2026-09-23-4",
-          "title": "基础设施：WhiteFiber 发布 Continuum 分布式 GPU 超算集群——跨数据中心 136 Tbps、0.9ms 延迟，首个商用跨站点集群架构",
-          "source": "PR Newswire",
-          "date": "2026-09-23",
-          "summary": "WhiteFiber（NASDAQ: WYFI）9 月 23 日宣布 Continuum 商用上市：把地理上分离的两处数据中心（QTS 的 HITRUST 认证设施，相距 83 公里）通过 12 条 Zayo 暗光纤合并成一个逻辑 GPU 超算集群，跨站点提供 136 Tbps 带宽与 0.9ms 保证往返时延，由 DriveNets AI Fabric 与 WEKA NeuralMesh 存储/内存基础设施支撑。WhiteFiber 已为底层实现申请了专利。"
+          "article_id": "2026-09-21-8",
+          "title": "论文：Edge0——35B 稀疏 MoE\"住在 SSD 里\"，用训练好的预路由在普通 24GB 桌面跑出约 20 token/s",
+          "source": "arXiv 2609.18063",
+          "date": "2026-09-21",
+          "summary": "AutoArk 团队提出 Edge0：一个流式 MoE 推理引擎，让 35B 级专家权重\"住在 SSD 上、按需 mmap 流进内存\"，并用一个\"预路由（prerouter）\"——每层一个小头，提前一个 token 预测下一层的路由，且预测结果直接当作路由本身（staged 专家集 = 路由集，什么都不丢弃）——让磁盘读取躲在前向计算之后，从而消除逐层磁盘延迟造成的停顿。配合一个\"未合并\"的恢复 LoRA（补偿 int4 量化与路由替换的精度损失），Edge0 在单张 24GB 机器上以约 20 token/s 服务 35B MoE、峰值活跃内存 3GiB，五个公开基准上距其 fp16 教师仅差几分；8B 档也能跑，框架、权重、适配器全部开放。"
+        },
+        {
+          "report_index": 25,
+          "article_id": "2026-09-21-3",
+          "title": "开源：上海 AI 实验室放出自研 744B 开源 agentic 模型 Atria Dawn Preview（MIT 许可）——但要靠 vendor 自报分与沉默发布",
+          "source": "TechJack Solutions / AI Weekly（模型卡转述）",
+          "date": "2026-09-21",
+          "summary": "上海 AI 实验室（internlm 组织）发布 Atria Dawn Preview：一个建立在 GLM-5.2（744B MoE 基础模型）之上的开源 agentic 模型，MIT 许可、256K 上下文，面向长时程 agent 任务（发现/创造/交付/网络防御四维）。发布节奏非常规——HF 仓库 9 月 11 日上线、无博客无定价，技术报告《Atria Dawn: The Dawn of Agentic Superintelligence》（arXiv:2609.15818，143 位作者）9 月 14 日才跟进。所有基准分均为厂商自报，尚无独立机构验证；HF CEO 称中国开放模型\"显然占主导\"、或于 2026 年底至 2027 年追平前沿，正是这一潮流的又一注脚。"
         },
         {
           "report_index": 28,
-          "article_id": "2026-09-22-4",
-          "title": "论文：字节跳动 Seed 提出 NSP（嵌套序列并行）——以共享 GPU 上的嵌套分组解决长尾变长序列训练的通信—负载均衡取舍达 1.48×",
-          "source": "arXiv",
-          "date": "2026-09-22",
-          "summary": "长上下文 LLM 训练面临\"单一序列并行度无法同时适配长短序列\"的两难——SP 度设小则少数长序列严重失衡，设大则占主导的短序列付出过高通信代价。字节跳动 Seed 提出的 NSP 通过把不同大小的 SP 组嵌套在共享 GPU 上、在单次训练迭代内共存，让长序列用大组、短序列用小组，只在该收的地方付出通信，端到端训练吞吐比静态 SP 最高提升 1.48×、比 FlexSP 最高 1.16×。"
-        },
-        {
-          "report_index": 8,
-          "article_id": "2026-09-21-5",
-          "title": "基础设施：NVIDIA 用\"软件搬电\"对冲 AI 数据中心功耗墙——DSX MaxLPS 在同等电力下提升 24% token 吞吐",
-          "source": "datacenter.news / NVIDIA Blog",
+          "article_id": "2026-09-21-11",
+          "title": "基础设施：Semianalysis 拆解推理\"token 工厂\"——MoE 时代瓶颈在数据搬运而非算力，KV 可移动性与调度成为竞争力来源",
+          "source": "Semianalysis",
           "date": "2026-09-21",
-          "summary": "NVIDIA 在 9 月中旬密集披露其 DSX 软件/基础设施平台在 AI 数据中心电力管理上的早期成果：一类软件在电网承压时迁移算力负载（Emerald AI Conductor 在圣克拉拉响应硅谷电力公司信号，把站点功耗从 4MW 压到 3MW，且优先推理任务不掉）；另一类（DSX MaxLPS）在服务器间重分配功率以在固定总电力内提高产出——Lambda 在五个机架、19 个节点的 HGX B200 集群上，用原本只够 16 个满载节点的电力跑满 19 个节点，集群 token 吞吐从约 400 万/秒提到 500 万/秒（+24%）。NVIDIA 的论点明确：电力而非芯片，正在成为 AI 数据中心扩张的主要约束。"
+          "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。"
         },
         {
           "report_index": 29,
-          "article_id": "2026-09-17-4",
-          "title": "基础设施：AWS 与 NVIDIA 深化合作，宣布 2027-2028 年在 AWS 上再部署 200 万颗 GPU 支撑代理与物理 AI",
-          "source": "StorageNewsletter（NVIDIA/AWS 官方新闻稿）",
-          "date": "2026-09-17",
-          "summary": "AWS 与 NVIDIA 宣布大幅扩展战略合作，计划在 2027-2028 年于 AWS 全球基础设施再部署 200 万颗 Blackwell Ultra、Rubin 与 Rubin Ultra GPU，覆盖 AI 工厂，深化 agentic AI 与物理 AI 的算力供给。"
+          "article_id": "2026-09-20-2",
+          "title": "开源：StepFun 发布 Step 5 Preview——600B 稀疏 MoE 以 GPT-5.6 Sol 七分之一的价格打到 Kimi K3 Max 同级",
+          "source": "AI Weekly（转述 Artificial Analysis）",
+          "date": "2026-09-20",
+          "summary": "阶跃星辰（StepFun）于 9 月 20 日正式发布 Step 5 Preview 并同日开放 API：这是一款 600B 参数的稀疏 MoE 模型，每 token 激活 27B 参数、支持 1M 上下文；Artificial Analysis 给其智能指数为 44，追平 Kimi K3 Max，而定价仅 $1/百万输入 token、$2.70/百万输出 token（缓存折扣 95%）——约为 GPT-5.6 Sol 的七分之一。完整开源权重将于 10 月 15 日放出。"
         },
         {
           "report_index": 30,
-          "article_id": "2026-09-14-3",
-          "title": "基础设施：AI 基础设施公司 Cornelis 融资 2.05 亿美元，发布 Active Compute Fabric 直接挑战英伟达",
-          "source": "TechCrunch",
-          "date": "2026-09-14",
-          "summary": "AI 基础设施公司 Cornelis 完成 2.05 亿美元融资，并发布名为 Active Compute Fabric 的网络技术——针对大量 GPU 时间浪费在等待数据到达的现实，试图以网络侧创新撼动英伟达在算力体系中的主导地位。"
+          "article_id": "2026-09-19-11",
+          "title": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+          "source": "Semianalysis",
+          "date": "2026-09-19",
+          "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。"
         },
         {
           "report_index": 31,
-          "article_id": "2026-09-06-0",
-          "title": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
-          "source": "The Next Web",
-          "date": "2026-09-06",
-          "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。"
+          "article_id": "2026-09-15-10",
+          "title": "开源：上海 AI Lab 静默开源 744B 参数智能体模型 Atria Dawn Preview，MIT 许可、以 GLM-5.2 为底座",
+          "source": "Hugging Face（上海人工智能实验室）",
+          "date": "2026-09-15",
+          "summary": "上海人工智能实验室低调开源 Atria Dawn Preview——一个以 MIT 许可发布的 744B 参数、约 40B 活跃的智能体 MoE 模型，基于 Zhipu 的 GLM-5.2 后训练，面向科研与工程长流程，配套技术报告已上 arXiv。"
         }
       ]
     }
@@ -53342,7 +53578,7 @@
       "title": "生态：英国宣布与美国共建 AI 防御伙伴关系 + 借 2027 年 G20 轮值主席推动全球 AI 标准",
       "source": "AFP",
       "date": "2026-09-23",
-      "summary": "英国首相 Andy Burnham 在联合国大会上宣布：英国将与美国共建一条 AI 防御伙伴关系，用于侦测针对关键基建的网络攻击；并将在 2027 年担任 G20 轮值主席期间推动\\\"单一的一套全球原则与标准\\\"，以确保 AI 开发的透明与可靠（\\\"为 AI 开发设一套全球原则与标准，以保证研究所需透明与可访问性\\\"）。在 AI 治理被美中拒绝背书的大背景下，英国试图以自律+标准制定的路线扮演桥梁角色。"
+      "summary": "英国首相 Andy Burnham 在联合国大会上宣布：英国将与美国共建一条 AI 防御伙伴关系，用于侦测针对关键基建的网络攻击；并将在 2027 年担任 G20 轮值主席期间推动\"单一的一套全球原则与标准\"，以确保 AI 开发的透明与可靠（\"为 AI 开发设一套全球原则与标准，以保证研究所需透明与可访问性\"）。在 AI 治理被美中拒绝背书的大背景下，英国试图以自律+标准制定的路线扮演桥梁角色。"
     },
     {
       "report_index": 2,
@@ -53350,7 +53586,7 @@
       "title": "生态：联合国安理会 9/23 召开 AI 会议——Altman、Amodei、Hugging Face CEO 同台，CEO 与辞职者并陈",
       "source": "Euronews",
       "date": "2026-09-23",
-      "summary": "本周联合国大会 AI 议题达到顶点：联合国秘书长安东尼奥·古特雷斯在告别演说中警告\\\"绝不能让生死决策交托给机器——杀手机器人不应存在于我们的未来\\\"，并呼吁为 AI 负责任地设置'负责任的 AI 执行节奏'。周二的 UNGA 上，Trump 反其道而行，宣布把 'artificial intelligence' 改名为 'super intelligence'，将 AI 概念重塑为'听起来更好、更准确'，同时强烈反对监管。而周三（9/23）的联合国安理会 AI 会议更罕见地邀请 OpenAI CEO Sam Altman、Anthropic CEO Dario Amodei、Hugging Face CEO Clément Delangue 同台。"
+      "summary": "本周联合国大会 AI 议题达到顶点：联合国秘书长安东尼奥·古特雷斯在告别演说中警告\"绝不能让生死决策交托给机器——杀手机器人不应存在于我们的未来\"，并呼吁为 AI 负责任地设置'负责任的 AI 执行节奏'。周二的 UNGA 上，Trump 反其道而行，宣布把 'artificial intelligence' 改名为 'super intelligence'，将 AI 概念重塑为'听起来更好、更准确'，同时强烈反对监管。而周三（9/23）的联合国安理会 AI 会议更罕见地邀请 OpenAI CEO Sam Altman、Anthropic CEO Dario Amodei、Hugging Face CEO Clément Delangue 同台。"
     },
     {
       "report_index": 3,
@@ -53363,7 +53599,7 @@
     {
       "report_index": 4,
       "article_id": "2026-09-23-11",
-      "title": "观察：GPT-6 Astra 自主破译 1941 年德军 Enigma 消息——\\\"agent 自主科研\\\"的能力展示与安全警示并存",
+      "title": "观察：GPT-6 Astra 自主破译 1941 年德军 Enigma 消息——\"agent 自主科研\"的能力展示与安全警示并存",
       "source": "Schneier on Security / DECODER",
       "date": "2026-09-23",
       "summary": "OpenAI 的 GPT-6 Astra 自主破译了一道 1941 年 7 月被德军 Enigma 加密的 82 字符消息（MVUEH）——这道消息自 2005 年公布以来 20 多年未破。用户 Carter Leffer 只指示它分析 Crypto Cellar Research 上的未破 Enigma 消息，Astra 自己对候选打分、写了 Python/C++ 的 Enigma 模拟器与 Bombe、以重复地名 ROSENOW 为 crib，最终恢复出当年其他流量皆不同的轮序（这正是此前失败的根因），整个破解约耗时 10 小时。"
@@ -53371,10 +53607,10 @@
     {
       "report_index": 5,
       "article_id": "2026-09-23-10",
-      "title": "观察：Trump 在 UNGA 宣布把 AI 更名为 \\\"Super Intelligence\\\"——治理术语本身成为大国政治战场",
+      "title": "观察：Trump 在 UNGA 宣布把 AI 更名为 \"Super Intelligence\"——治理术语本身成为大国政治战场",
       "source": "AFP / Breaking Defense",
       "date": "2026-09-23",
-      "summary": "美国时间周二，Trump 在联合国大会宣布：\\\"从今以后，所有美国文件——也希望全世界——都将把人工智能称为'超级智能（super intelligence）'，因为它更准确。\\\"他把人工智能的\\\"超智能\\\"标签建立在\\\"强调其不是假的/不真实的\\\"之上，并明确表示美国\\\"完全拒绝任何试图构建全球主义计划来控制人工智能\\\"。随后他还下令所有美国机构在官方通讯中改用\\\"super intelligence / SI\\\"。"
+      "summary": "美国时间周二，Trump 在联合国大会宣布：\"从今以后，所有美国文件——也希望全世界——都将把人工智能称为'超级智能（super intelligence）'，因为它更准确。\"他把人工智能的\"超智能\"标签建立在\"强调其不是假的/不真实的\"之上，并明确表示美国\"完全拒绝任何试图构建全球主义计划来控制人工智能\"。随后他还下令所有美国机构在官方通讯中改用\"super intelligence / SI\"。"
     },
     {
       "report_index": 6,
@@ -53382,7 +53618,7 @@
       "title": "应用/产业：OpenAI 洽商估值约 $1.2 万亿的新融资轮——IPO 搁置、2026–2030 预计负自由现金流达 $278 亿",
       "source": "24/7 Wall St / Bloomberg",
       "date": "2026-09-23",
-      "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\\\"不明智\\\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。"
+      "summary": "据 Bloomberg，OpenAI 正讨论一轮估值约 $1.2 万亿的融资（高于 3 月 $852 亿的折合估值），同时将其 IPO 计划搁置（Altman 上周称今年上市\"不明智\"）。但财务账很重：2026–2030 预计累计负自由现金流 $278 亿，营收预计从 2026 年 $36 亿增至 2030 年 $350 亿，同期预计在算力建设上花费约 $856 亿。"
     },
     {
       "report_index": 7,
@@ -53419,10 +53655,10 @@
     {
       "report_index": 11,
       "article_id": "2026-09-23-7",
-      "title": "安全：Meta Muse 被曝零日漏洞 + 可被诱导导出 6.8GB 文件系统——\\\"特权放大器\\\"的双重安全教训",
+      "title": "安全：Meta Muse 被曝零日漏洞 + 可被诱导导出 6.8GB 文件系统——\"特权放大器\"的双重安全教训",
       "source": "Ars Technica",
       "date": "2026-09-23",
-      "summary": "两条针对 Meta 新 AI 代理 Muse 的安全发现几乎同时落地：其一，macOS 安全专家 Patrick Wardle 披露一个零日漏洞——任何本地运行的应用或终端命令，都能改写 Muse 客户端一段未文档化的设置（endo_voyager_dictation_endpoint），从而把听写流量重定向到攻击者端点、截取 Muse 认证 token，进而以代理身份注入提示并完全控制账号（Meta 称其为\\\"非远程利用\\\"）。其二，研究者 Mouse 请求 Muse 归档其可见文件系统，竟收到含 SSH 密钥、集成代码、agent 日志的约 6.8GB 导出。"
+      "summary": "两条针对 Meta 新 AI 代理 Muse 的安全发现几乎同时落地：其一，macOS 安全专家 Patrick Wardle 披露一个零日漏洞——任何本地运行的应用或终端命令，都能改写 Muse 客户端一段未文档化的设置（endo_voyager_dictation_endpoint），从而把听写流量重定向到攻击者端点、截取 Muse 认证 token，进而以代理身份注入提示并完全控制账号（Meta 称其为\"非远程利用\"）。其二，研究者 Mouse 请求 Muse 归档其可见文件系统，竟收到含 SSH 密钥、集成代码、agent 日志的约 6.8GB 导出。"
     },
     {
       "report_index": 12,
@@ -53510,7 +53746,7 @@
       "title": "应用/产业：Anthropic IPO 推迟至 11 月——潜在估值约 $2 万亿、或为史上最大 IPO，零售资金涌入 pre-IPO 基金",
       "source": "Forbes",
       "date": "2026-09-23",
-      "summary": "原被市场预期 10 月上市的 Anthropic，IPO 按 Forbes 报道推迟到 11 月。潜在估值约 $2 万亿，如果成行将是史上最大 IPO（超过 SpaceX 今年 6 月 $75B、$1.77 万亿的纪录）。CEO Dario Amodei 公开呼吁\\\"为前沿减速\\\"的言论与上市节奏之间的张力，叠加零售投资者涌入高收费 pre-IPO 基金的现象，让这轮上市本身成为对 AI 资本市场的一次压力测试。"
+      "summary": "原被市场预期 10 月上市的 Anthropic，IPO 按 Forbes 报道推迟到 11 月。潜在估值约 $2 万亿，如果成行将是史上最大 IPO（超过 SpaceX 今年 6 月 $75B、$1.77 万亿的纪录）。CEO Dario Amodei 公开呼吁\"为前沿减速\"的言论与上市节奏之间的张力，叠加零售投资者涌入高收费 pre-IPO 基金的现象，让这轮上市本身成为对 AI 资本市场的一次压力测试。"
     },
     {
       "report_index": 23,
@@ -53546,43 +53782,43 @@
     },
     {
       "report_index": 27,
-      "article_id": "2026-09-23-4",
-      "title": "基础设施：WhiteFiber 发布 Continuum 分布式 GPU 超算集群——跨数据中心 136 Tbps、0.9ms 延迟，首个商用跨站点集群架构",
-      "source": "PR Newswire",
-      "date": "2026-09-23",
-      "summary": "WhiteFiber（NASDAQ: WYFI）9 月 23 日宣布 Continuum 商用上市：把地理上分离的两处数据中心（QTS 的 HITRUST 认证设施，相距 83 公里）通过 12 条 Zayo 暗光纤合并成一个逻辑 GPU 超算集群，跨站点提供 136 Tbps 带宽与 0.9ms 保证往返时延，由 DriveNets AI Fabric 与 WEKA NeuralMesh 存储/内存基础设施支撑。WhiteFiber 已为底层实现申请了专利。"
+      "article_id": "2026-09-21-8",
+      "title": "论文：Edge0——35B 稀疏 MoE\"住在 SSD 里\"，用训练好的预路由在普通 24GB 桌面跑出约 20 token/s",
+      "source": "arXiv 2609.18063",
+      "date": "2026-09-21",
+      "summary": "AutoArk 团队提出 Edge0：一个流式 MoE 推理引擎，让 35B 级专家权重\"住在 SSD 上、按需 mmap 流进内存\"，并用一个\"预路由（prerouter）\"——每层一个小头，提前一个 token 预测下一层的路由，且预测结果直接当作路由本身（staged 专家集 = 路由集，什么都不丢弃）——让磁盘读取躲在前向计算之后，从而消除逐层磁盘延迟造成的停顿。配合一个\"未合并\"的恢复 LoRA（补偿 int4 量化与路由替换的精度损失），Edge0 在单张 24GB 机器上以约 20 token/s 服务 35B MoE、峰值活跃内存 3GiB，五个公开基准上距其 fp16 教师仅差几分；8B 档也能跑，框架、权重、适配器全部开放。"
     },
     {
       "report_index": 28,
-      "article_id": "2026-09-22-4",
-      "title": "论文：字节跳动 Seed 提出 NSP（嵌套序列并行）——以共享 GPU 上的嵌套分组解决长尾变长序列训练的通信—负载均衡取舍达 1.48×",
-      "source": "arXiv",
-      "date": "2026-09-22",
-      "summary": "长上下文 LLM 训练面临\"单一序列并行度无法同时适配长短序列\"的两难——SP 度设小则少数长序列严重失衡，设大则占主导的短序列付出过高通信代价。字节跳动 Seed 提出的 NSP 通过把不同大小的 SP 组嵌套在共享 GPU 上、在单次训练迭代内共存，让长序列用大组、短序列用小组，只在该收的地方付出通信，端到端训练吞吐比静态 SP 最高提升 1.48×、比 FlexSP 最高 1.16×。"
+      "article_id": "2026-09-21-11",
+      "title": "基础设施：Semianalysis 拆解推理\"token 工厂\"——MoE 时代瓶颈在数据搬运而非算力，KV 可移动性与调度成为竞争力来源",
+      "source": "Semianalysis",
+      "date": "2026-09-21",
+      "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。"
     },
     {
       "report_index": 29,
-      "article_id": "2026-09-17-4",
-      "title": "基础设施：AWS 与 NVIDIA 深化合作，宣布 2027-2028 年在 AWS 上再部署 200 万颗 GPU 支撑代理与物理 AI",
-      "source": "StorageNewsletter（NVIDIA/AWS 官方新闻稿）",
-      "date": "2026-09-17",
-      "summary": "AWS 与 NVIDIA 宣布大幅扩展战略合作，计划在 2027-2028 年于 AWS 全球基础设施再部署 200 万颗 Blackwell Ultra、Rubin 与 Rubin Ultra GPU，覆盖 AI 工厂，深化 agentic AI 与物理 AI 的算力供给。"
+      "article_id": "2026-09-20-2",
+      "title": "开源：StepFun 发布 Step 5 Preview——600B 稀疏 MoE 以 GPT-5.6 Sol 七分之一的价格打到 Kimi K3 Max 同级",
+      "source": "AI Weekly（转述 Artificial Analysis）",
+      "date": "2026-09-20",
+      "summary": "阶跃星辰（StepFun）于 9 月 20 日正式发布 Step 5 Preview 并同日开放 API：这是一款 600B 参数的稀疏 MoE 模型，每 token 激活 27B 参数、支持 1M 上下文；Artificial Analysis 给其智能指数为 44，追平 Kimi K3 Max，而定价仅 $1/百万输入 token、$2.70/百万输出 token（缓存折扣 95%）——约为 GPT-5.6 Sol 的七分之一。完整开源权重将于 10 月 15 日放出。"
     },
     {
       "report_index": 30,
-      "article_id": "2026-09-14-3",
-      "title": "基础设施：AI 基础设施公司 Cornelis 融资 2.05 亿美元，发布 Active Compute Fabric 直接挑战英伟达",
-      "source": "TechCrunch",
-      "date": "2026-09-14",
-      "summary": "AI 基础设施公司 Cornelis 完成 2.05 亿美元融资，并发布名为 Active Compute Fabric 的网络技术——针对大量 GPU 时间浪费在等待数据到达的现实，试图以网络侧创新撼动英伟达在算力体系中的主导地位。"
+      "article_id": "2026-09-19-11",
+      "title": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+      "source": "Semianalysis",
+      "date": "2026-09-19",
+      "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。"
     },
     {
       "report_index": 31,
-      "article_id": "2026-09-06-0",
-      "title": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
-      "source": "The Next Web",
-      "date": "2026-09-06",
-      "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。"
+      "article_id": "2026-09-15-10",
+      "title": "开源：上海 AI Lab 静默开源 744B 参数智能体模型 Atria Dawn Preview，MIT 许可、以 GLM-5.2 为底座",
+      "source": "Hugging Face（上海人工智能实验室）",
+      "date": "2026-09-15",
+      "summary": "上海人工智能实验室低调开源 Atria Dawn Preview——一个以 MIT 许可发布的 744B 参数、约 40B 活跃的智能体 MoE 模型，基于 Zhipu 的 GLM-5.2 后训练，面向科研与工程长流程，配套技术报告已上 arXiv。"
     }
   ],
   "memory_refs": {

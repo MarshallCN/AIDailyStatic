@@ -4186,7 +4186,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-23T22:38:02Z",
+  "generated_at": "2026-09-24T22:39:01Z",
   "analysis_window": {
     "start_date": "2026-08-18",
     "end_date": "2026-09-16",
@@ -9365,7 +9365,7 @@
                 "2026-09-06-8",
                 "2026-09-08-7"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "infra",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -9378,7 +9378,7 @@
               "article_ids": [
                 "2026-09-06-0"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "launch",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -10454,7 +10454,7 @@
               "label": "Jensen Huang",
               "type": "entity",
               "subtype": "person",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "Jensen Huang"
               ],
@@ -10467,10 +10467,10 @@
               "article_ids": [
                 "2026-09-08-7"
               ],
-              "label": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+              "label": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
               "type": "event",
               "subtype": "trend",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "weight": 1.4
             }
           },
@@ -23908,7 +23908,7 @@
               "label": "Google Cloud",
               "type": "entity",
               "subtype": "company",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Google Cloud"
               ],
@@ -23925,7 +23925,7 @@
               "label": "NVIDIA CEO",
               "type": "entity",
               "subtype": "company",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "NVIDIA CEO"
               ],

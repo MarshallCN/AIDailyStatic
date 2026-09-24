@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-24",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "整体准确、证据可验证、跨文章连通良好，但存在多处关系类型过度外推：\"伙伴关系/监管关系\"被建立在共同出现或立法诉求而非实证明的合作与已生效监管之上，一处理论上的 subsidiary_of 其证据并不支撑该断言，且遗漏了至少一篇新闻的核心行为主体。无事实性幻觉与方向颠倒，但 medium 级问题超过 2 条，判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-09-24-8",
+      "severity": "medium",
+      "problem": "关系 \"PrismML --partners_with--> Qualcomm\"（weight 0.6）证据为 \"为骁龙芯片发布模型是朝这一愿景迈出的一步\"。原文只说 Qualcomm 在骁龙峰会上\"展示了\"PrismML 的二值化 Bonsai LLM、PrismML 为骁龙芯片发布模型，通篇没有声明两者存在合作关系——被芯片厂商在活动上展示不等于伙伴关系，属于\"共同出现被当成合作\"的过度外推。",
+      "fix": "删除或替换该 partners_with 关系。若要保留语义，应改用更贴原文的事实边如 \"Qualcomm --showcases--> Bonsai\"（若图谱支持），或直接描述该展示作为事件而非合作；无证据支撑则删除 partners_with。"
+    },
+    {
+      "article_id": "2026-09-24-5",
+      "severity": "medium",
+      "problem": "关系 \"美国国会 --regulates--> OpenAI\"（weight 0.5）证据为 \"呼吁尽快通过全面的联邦AI监管\"。原文只是 23 州总检察长联合致信国会、呼吁/要求通过联邦 AI 监管，联邦监管尚未生效——把\"呼吁立法\"建成已生效的 regulates 关系不成立，会让人误读为国会目前正在监管 OpenAI。",
+      "fix": "删除该 regulates 边，或改为表达诉求的语义（如 \"seeks_to_regulate\" 若图谱支持）；更合适的做法是把这次的致信建为 policy 事件（已存在），并让 AGs 致信国会这一诉求承担叙事，而不用 regulates 关系断言既成事实。"
+    },
+    {
+      "article_id": "2026-09-24-6",
+      "severity": "medium",
+      "problem": "关系 \"Google DeepMind --subsidiary_of--> Alphabet\" 所附证据为 \"Alphabet 股价因投资者对Meta 新Muse 硬件\"——这句证据讲的是股价下跌，与 Google DeepMind 是 Alphabet 子公司的关系毫无关联，属于\"证据存在但支撑的是另一回事\"。原文也确实没有表述 DeepMind 与 Alphabet 的从属关系。",
+      "fix": "该关系在本文中无证据支撑，应删除。若规则要求保留常识性子公司关系，则必须替换为能支撑该断言的证据；但按 evidence-backed 原则，本文未声明此关系，建议删除。"
+    },
+    {
+      "article_id": "2026-09-24-1",
+      "severity": "medium",
+      "problem": "遗漏了本文的核心行为主体：澳大利亚总理 Anthony Albanese（\"总理级问责\"、向 Altman 表达\"极度关切\"、披露事件的关键人物）以及三个攻击目标之一 Data USA（数据可视化工具）都没有被抽取为实体。事件 1 的 participants 只有 Transluce 和 OpenAI，故事核心的\"总理披露延误引发问责\"缺了主角，三个目标也只覆盖到政府和卫生统计门户两个。",
+      "fix": "新增实体 \"Anthony Albanese\"（person，澳大利亚总理，aliases 可含 Albanese）并加入安全事件参与者、以 affiliated_with 关联主干图；新增 \"Data USA\" 实体（tool 或 organization）作为第三个攻击目标加入事件 1 的 participants 与 targets 关系。"
+    },
+    {
+      "article_id": "2026-09-24-2",
+      "severity": "medium",
+      "problem": "关系 \"ART --developed_by--> Anthropic\" 语义错误：原文的 ART（阵列关联逆转录酶）是自然界本就存在、被 Claude 智能体\"自主发现/描述\"的酶系统，不是 Anthropic 制造出来的——用 developed_by 会让人误读为 Anthropic 开发了这套系统。另外实体 \"ART\" 的类型标注为 product 也错配，酶系统不是产品。",
+      "fix": "把关系改为 \"ART --discovered_by--> Anthropic\"（或 described_by）；把实体 ART 的类型从 product 改为研究产物/发现类（如 research_finding、concept 或 biological_system 依图谱类型表），并相应校准 confidence。"
+    },
+    {
+      "article_id": "2026-09-24-2",
+      "severity": "low",
+      "problem": "事件 0 的 label 写\"约950个Claude智能体在21小时自主检索中\"，但 summary 与原文均为 21.5 小时，前后不一致且丢失了 0.5；同理 label 未提到 2.156 亿 token。",
+      "fix": "统一 label 与 summary 为\"21.5 小时\"并补上 token 消耗，确保时间数字与原文一致。"
+    }
+  ],
+  "lessons": [
+    "只在原文明确声明合作为 partnership/alliance 时才使用 partners_with；被某活动或峰会\"展示其产品/模型\"的厂商与被展示方之间没有证据构成伙伴关系，应改用 events 或展示类语义，不要因共同出现而建 partners_with。",
+    "不要把\"呼吁/要求/致信促成立法\"的诉求建成已生效的 regulates 关系；当原文只表达监管请求或立法进程尚未生效时，把该内容建为 policy 事件或使用尝试/寻求类关系，regulates 仅用于既成的、正在实施的监管。",
+    "distinguish discovered_by 与 developed_by：当实体在原文中是自然界既存、被\"发现/描述\"的对象（酶系统、现象、物种等）而非被制造/开发的产物时，使用 discovered_by/described_by，勿用 developed_by；并避免把该类对象误标成 product。"
+  ]
+}

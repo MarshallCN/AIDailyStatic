@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-24",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "前两轮发现已基本修好（LeRobot 集成方向、ART discovered_by、Albanese/Data USA 补全、Meta 趋势事件删除等），无事实性幻觉与方向颠倒，证据可验证、跨文章连通良好。剩余问题集中在实体规范名把不同主体合并、以及把'反例引用/名次并列'外推成 compared_with 比较关系，共 3 条 medium，需修订后发布。",
+  "findings": [
+    {
+      "article_id": "2026-09-24-5",
+      "severity": "medium",
+      "problem": "实体 \"美国\"（aliases: US/美）被用于承载本文的 23 州总检察长（连同哥伦比亚特区、美属萨摩亚，跨两党的州级执法官员）致信国会事件，其规范名与 2026-09-24-0 中的 \"美国\"（联邦政府，Michael Kratsios/特朗普政府'完全拒绝'国际治理的立场）完全相同。两个指代不同行为主体、且政治立场相反的节点会被合并成同一个 '美国'，导致图谱上出现一个既拒绝国际治理、又主动要求联邦 AI 监管的自相矛盾主体——这是把一个规范名误用于两个不同 actor 的合并错误。",
+      "fix": "为本次事件的行动方新建独立实体（如 \"美国各州总检察长\"，type organization，aliases 可含 23州总检察长/州总检察长、DCs、萨摩亚），并让该实体承担致信国会的 subject；不要复用 09-24-0 中代表联邦政府的 \"美国\" 节点及其 aliases，避免两篇的政治立场挂在同一主体上。"
+    },
+    {
+      "article_id": "2026-09-24-9",
+      "severity": "medium",
+      "problem": "关系 \"Feather Robotics --compared_with--> Tesla\"（evidence: \"你不能买一台Tesla机器人、直接在它之上开发\"）与 \"Feather Robotics --compared_with--> Unitree\"（evidence: \"Feather 借鉴了Unitree 等中国机器人公司的打法\"）。Tesla 只在联合创始人 Hoa Mai 的引述里被当作反例对比（'你不能买一台…'），并非直接比较 Feather 与 Tesla 两款产品/两家公司；Unitree 仅是 Feather 借鉴其打法（进入美国市场策略）的参照对象。两者都属于'被提及/被引用'而非'相互比较'，与既有'共同出现不等于关系''对比参照对象勿臆造比较'规则冲突。",
+      "fix": "删除这两条 compared_with 边：Tesla 与 Unitree 保留在事件/why_it_matters 语境中即可，不为其在本文与 Feather 建立可断言的比较或合作关系；若图谱支持，Unitree 至多可用 borrows_from（借鉴打法），但绝不能是 compared_with。"
+    },
+    {
+      "article_id": "2026-09-24-4",
+      "severity": "medium",
+      "problem": "关系 \"Google Cloud --compared_with--> Azure\"（evidence: \"Google Cloud 升入Gold 档\" + \"Azure 退到Silver\"）。这两句是同一份评测中两家各自独立的档位变动（一升一降），原文并没有把 Google Cloud 与 Azure 直接比较的表述；这只是同处一份排名报告中的并列，属于'同被枚举/同被评测即视为关系'的过度外推，与 compared_with 要求的直接比较语义不符。",
+      "fix": "删除该 compared_with 边（或有表达'同被某评测评级'的语义类型再使用）；两家档位运动的事实保留在 trend 事件的 summary/why_it_matters 中即可，不必在此两实体间建立比较边。Nebius--compared_with-->CoreWeave 因原文有'与CoreWeave 并列 Platinum 档'的直接并列表述可保留。"
+    },
+    {
+      "article_id": "2026-09-24-1",
+      "severity": "low",
+      "problem": "关系 \"Sam Altman --affiliated_with--> OpenAI\"（weight 0.5）所附证据为 \"并向Altman 表达\"——这句只说明 Albanese 向 Altman 表达了关切，本身并不支撑'Altman 隶属 OpenAI'这一断言；属'证据存在但支撑的是另一回事'。同时实体 \"Medicare Statistics Reporting Service\" 被标为 product，而它是澳大利亚政府运营的卫生统计门户（web service），不是可售卖的产品。",
+      "fix": "要么为该 affiliated_with 换用能直接支撑从属关系的证据（如原文其他明确出现 'OpenAI CEO' 的表述），要么因本文证据不足而降权处理或删除该边；把 Medicare Statistics Reporting Service 的类型从 product 改为 service（或政府门户/信息系统类），不要标成 product。"
+    }
+  ],
+  "lessons": [
+    "当同一个规范名（如'美国'）在不同新闻中实际指代不同行为主体（联邦政府 vs 各州总检察长）甚至政治立场相反时，必须拆成两个独立实体并各自命名，不能共用一个规范名节点，否则会把互相矛盾的行为挂在同一主体上。",
+    "原文只是把 X 作为反例引用（'你不能买一台X…'）或作为打法借鉴来源（'借鉴了Y的打法'），或两家仅因同处一份评测排名各自升降（一家升入Gold、另一家退到Silver）时，都不构成 X/Y 之间的 compared_with 比较关系——仅在原文对双方做直接比较时才建立比较类边，被提及/被并列不产生关系。"
+  ]
+}

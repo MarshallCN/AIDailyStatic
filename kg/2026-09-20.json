@@ -2869,7 +2869,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-23T22:38:04Z",
+  "generated_at": "2026-09-24T22:39:03Z",
   "analysis_window": {
     "start_date": "2026-08-22",
     "end_date": "2026-09-20",
@@ -2906,7 +2906,7 @@
       "summary": "在 2026-08-22 至 2026-09-20 内，-Voice、AGI、AI GPU 围绕重复出现的事件与实体关系形成稳定线索。",
       "trend_signals": [
         "infra 信号在该主题中最集中。",
-        "证据新闻共 176 条，主导分类为 应用/产业。",
+        "证据新闻共 177 条，主导分类为 应用/产业。",
         "相关证据由上一窗口的 231 条降至 6 条，主题热度略有回落。"
       ],
       "change": {
@@ -3006,7 +3006,6 @@
         "entity:model-claude-已",
         "entity:model-claude-用",
         "entity:model-deepseek",
-        "entity:model-deepseek-v4-1-flash",
         "entity:model-gemini",
         "entity:model-gemini-3",
         "entity:model-gemini-3-8-live",
@@ -4385,7 +4384,6 @@
         "edge:entity:organization-astra->entity:topic-同时该模型因关键:security",
         "edge:entity:organization-b-capital->entity:company-goodfire:trend",
         "edge:entity:organization-base-labs->entity:company-baseten:trend",
-        "edge:entity:organization-ced->entity:model-deepseek-v4-1-flash:infra",
         "edge:entity:organization-ced->entity:model-deepseek:infra",
         "edge:entity:organization-ced->entity:organization-causal-encoder-decoder:infra",
         "edge:entity:organization-chrome->entity:company-google:security",
@@ -4792,7 +4790,6 @@
         "edge:event:infra-entity-organization-astra->entity:topic-不透明循环",
         "edge:event:infra-entity-organization-astra->entity:topic-会削弱思维链可监",
         "edge:event:infra-entity-organization-ced->entity:model-deepseek",
-        "edge:event:infra-entity-organization-ced->entity:model-deepseek-v4-1-flash",
         "edge:event:infra-entity-organization-ced->entity:organization-causal-encoder-decoder",
         "edge:event:infra-entity-organization-ced->entity:organization-ced",
         "edge:event:infra-entity-organization-clementine->entity:organization-ai-instacart",
@@ -5112,7 +5109,6 @@
         "edge:event:open-source-entity-organization-astra->entity:organization-astra",
         "edge:event:open-source-entity-organization-astra->entity:organization-crusoe",
         "edge:event:open-source-entity-organization-ced->entity:model-deepseek",
-        "edge:event:open-source-entity-organization-ced->entity:model-deepseek-v4-1-flash",
         "edge:event:open-source-entity-organization-ced->entity:organization-causal-encoder-decoder",
         "edge:event:open-source-entity-organization-ced->entity:organization-ced",
         "edge:event:open-source-entity-person-clem-delangue->entity:company-hugging-face",
@@ -12172,7 +12168,8 @@
                 "2026-09-04-7",
                 "2026-09-10-4",
                 "2026-09-11-0",
-                "2026-09-13-3"
+                "2026-09-13-3",
+                "2026-09-19-11"
               ],
               "label": "DeepSeek",
               "type": "entity",
@@ -13176,7 +13173,7 @@
                 "2026-09-06-8",
                 "2026-09-08-7"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "infra",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -13189,7 +13186,7 @@
               "article_ids": [
                 "2026-09-06-0"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "launch",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -14814,7 +14811,7 @@
               "label": "Accenture",
               "type": "entity",
               "subtype": "organization",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Accenture"
               ],
@@ -14831,7 +14828,7 @@
               "label": "Google Cloud",
               "type": "entity",
               "subtype": "company",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Google Cloud"
               ],
@@ -14847,7 +14844,7 @@
               "label": "前向部署工程师",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "前向部署工程师"
               ],
@@ -14863,7 +14860,7 @@
               "label": "上的差距",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "上的差距"
               ],
@@ -14879,7 +14876,7 @@
               "label": "以缩小在部署瓶颈",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "以缩小在部署瓶颈"
               ],
@@ -14895,7 +14892,7 @@
               "label": "合作为抓手",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "合作为抓手"
               ],
@@ -14911,7 +14908,7 @@
               "label": "押注",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "押注"
               ],
@@ -14927,7 +14924,7 @@
               "label": "模式来推动企业",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "模式来推动企业"
               ],
@@ -14943,7 +14940,7 @@
               "label": "Google Cloud 以 Accenture 合作为抓手，追赶企业 AI 落地部署之战",
               "type": "event",
               "subtype": "infra",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "weight": 1.4
             }
           },
@@ -14956,7 +14953,7 @@
               "label": "Google Cloud 以 Accenture 合作为抓手，追赶企业 AI 落地部署之战",
               "type": "event",
               "subtype": "launch",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "weight": 1.4
             }
           },
@@ -15107,7 +15104,7 @@
               "label": "Jensen Huang",
               "type": "entity",
               "subtype": "person",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "Jensen Huang"
               ],
@@ -15124,7 +15121,7 @@
               "label": "NVIDIA CEO",
               "type": "entity",
               "subtype": "company",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "NVIDIA CEO"
               ],
@@ -15137,10 +15134,10 @@
               "article_ids": [
                 "2026-09-08-7"
               ],
-              "label": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+              "label": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
               "type": "event",
               "subtype": "trend",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "weight": 1.4
             }
           },
@@ -17305,22 +17302,6 @@
               "summary": "DeepSeek 发布 DeepSeek-V4.1-Flash——其新架构家族中最小、也是首个具备原生多模态视觉理解的模型，552B 总参数的 MoE、Causal-Encoder-Decoder（CED）设计，支持百万 token 上下文，以 MIT 许可证开源。",
               "aliases": [
                 "Causal-Encoder-Decoder"
-              ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "entity:model-deepseek-v4-1-flash",
-              "article_ids": [
-                "2026-09-13-3"
-              ],
-              "label": "DeepSeek-V4.1-Flash",
-              "type": "entity",
-              "subtype": "model",
-              "summary": "DeepSeek 发布 DeepSeek-V4.1-Flash——其新架构家族中最小、也是首个具备原生多模态视觉理解的模型，552B 总参数的 MoE、Causal-Encoder-Decoder（CED）设计，支持百万 token 上下文，以 MIT 许可证开源。",
-              "aliases": [
-                "DeepSeek-V4.1-Flash"
               ],
               "weight": 1.0
             }
@@ -35619,19 +35600,6 @@
           },
           {
             "data": {
-              "id": "edge:event:infra-entity-organization-ced->entity:model-deepseek-v4-1-flash",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-13-3"
-              ],
-              "source": "event:infra-entity-organization-ced",
-              "target": "entity:model-deepseek-v4-1-flash",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
               "id": "edge:event:open-source-entity-organization-ced->entity:organization-ced",
               "weight": 2,
               "article_ids": [
@@ -35671,19 +35639,6 @@
           },
           {
             "data": {
-              "id": "edge:event:open-source-entity-organization-ced->entity:model-deepseek-v4-1-flash",
-              "weight": 2,
-              "article_ids": [
-                "2026-09-13-3"
-              ],
-              "source": "event:open-source-entity-organization-ced",
-              "target": "entity:model-deepseek-v4-1-flash",
-              "type": "event-entity",
-              "label": "participant"
-            }
-          },
-          {
-            "data": {
               "id": "edge:entity:organization-ced->entity:organization-causal-encoder-decoder:infra",
               "weight": 3.0,
               "article_ids": [
@@ -35704,19 +35659,6 @@
               ],
               "source": "entity:organization-ced",
               "target": "entity:model-deepseek",
-              "type": "explicit-relation",
-              "label": "infra"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:entity:organization-ced->entity:model-deepseek-v4-1-flash:infra",
-              "weight": 3.0,
-              "article_ids": [
-                "2026-09-13-3"
-              ],
-              "source": "entity:organization-ced",
-              "target": "entity:model-deepseek-v4-1-flash",
               "type": "explicit-relation",
               "label": "infra"
             }
@@ -46340,6 +46282,7 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5"
               ],
               "label": "基础设施",
@@ -48280,6 +48223,7 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5"
               ],
               "label": "基础设施",
@@ -50353,6 +50297,7 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5"
               ],
               "label": "基础设施",
@@ -52246,6 +52191,7 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5"
               ],
               "label": "基础设施",
@@ -53843,8 +53789,8 @@
     }
   ],
   "graph_stats": {
-    "node_count": 2717,
-    "edge_count": 6402,
+    "node_count": 2725,
+    "edge_count": 6425,
     "clue_count": 6
   }
 }

@@ -121,6 +121,17 @@
       ],
       "summary": "TechCrunch AI 编辑 Russell Brandom 在 All In 会议上主持了一场世界模型专题讨论，发现这个赛道正弥漫着刻意的沉默：两大玩家——Yann LeCun 的 AMI Labs 与李飞飞的 World Labs——都积累了大量的融资与热度，却在\"到底做什么商业化\"上讳莫如深。AMI Labs 联合创始人、世界模型 VP Michael Rabbat 被追问产品计划时回应\"等我们准备好了再谈\"，副总裁甚至称仍在\"研究与构建阶段\"；连数据供应商 Physicl 的 CEO Alex de Vigan 都承认不知道客户在用它挖的数据造什么，\"要是知道我们在做什么，我们能造出更有用的数据\"。Brandom 用刘慈欣的\"黑暗森林\"来概括这种群体逻辑。",
       "url": "https://techcrunch.com/2026/09/20/world-model-companies-are-keeping-a-lot-of-secrets/"
+    },
+    {
+      "article_id": "2026-09-21-11",
+      "title": "基础设施：Semianalysis 拆解推理\"token 工厂\"——MoE 时代瓶颈在数据搬运而非算力，KV 可移动性与调度成为竞争力来源",
+      "source": "Semianalysis",
+      "date": "2026-09-21",
+      "category": [
+        "基础设施"
+      ],
+      "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+      "url": "internal:semianalysis/2026-09-21__computation-and-data-movement-for__member-visible"
     }
   ],
   "signal_records": [
@@ -4702,9 +4713,263 @@
           "funding"
         ]
       }
+    },
+    {
+      "article_id": "2026-09-21-11",
+      "title": "基础设施：Semianalysis 拆解推理\"token 工厂\"——MoE 时代瓶颈在数据搬运而非算力，KV 可移动性与调度成为竞争力来源",
+      "source": "Semianalysis",
+      "date": "2026-09-21",
+      "category": [
+        "基础设施"
+      ],
+      "url": "internal:semianalysis/2026-09-21__computation-and-data-movement-for__member-visible",
+      "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+      "why_it_matters": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+      "entities": [
+        {
+          "entity_id": "entity:organization-kv",
+          "name": "KV",
+          "canonical_name": "KV",
+          "type": "organization",
+          "aliases": [
+            "KV"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "KV"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:organization-moe",
+          "name": "MoE",
+          "canonical_name": "MoE",
+          "type": "organization",
+          "aliases": [
+            "MoE"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "MoE"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-混合专家",
+          "name": "混合专家",
+          "canonical_name": "混合专家",
+          "type": "topic",
+          "aliases": [
+            "混合专家"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "混合专家"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:organization-semianalysis",
+          "name": "Semianalysis",
+          "canonical_name": "Semianalysis",
+          "type": "organization",
+          "aliases": [
+            "Semianalysis"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "Semianalysis"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-一起",
+          "name": "一起",
+          "canonical_name": "一起",
+          "type": "topic",
+          "aliases": [
+            "一起"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "一起"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-上哪些张量活跃",
+          "name": "上哪些张量活跃",
+          "canonical_name": "上哪些张量活跃",
+          "type": "topic",
+          "aliases": [
+            "上哪些张量活跃"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "上哪些张量活跃"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-为竞争力来源",
+          "name": "为竞争力来源",
+          "canonical_name": "为竞争力来源",
+          "type": "topic",
+          "aliases": [
+            "为竞争力来源"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "为竞争力来源"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-什么数据必须贴在",
+          "name": "什么数据必须贴在",
+          "canonical_name": "什么数据必须贴在",
+          "type": "topic",
+          "aliases": [
+            "什么数据必须贴在"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "什么数据必须贴在"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:infra-entity-organization-kv",
+          "event_type": "infra",
+          "label": "基础设施：Semianalysis 拆解推理\"token 工厂\"——MoE 时代瓶颈在数据搬运而非算力，KV 可移动性与调度成为竞争力来源",
+          "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+          "participants": [
+            {
+              "entity_id": "entity:organization-kv",
+              "name": "KV",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:organization-moe",
+              "name": "MoE",
+              "type": "organization",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-混合专家",
+              "name": "混合专家",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:organization-semianalysis",
+              "name": "Semianalysis",
+              "type": "organization",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。"
+          ]
+        },
+        {
+          "event_id": "event:launch-entity-organization-kv",
+          "event_type": "launch",
+          "label": "基础设施：Semianalysis 拆解推理\"token 工厂\"——MoE 时代瓶颈在数据搬运而非算力，KV 可移动性与调度成为竞争力来源",
+          "summary": "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。",
+          "participants": [
+            {
+              "entity_id": "entity:organization-kv",
+              "name": "KV",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:organization-moe",
+              "name": "MoE",
+              "type": "organization",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:topic-混合专家",
+              "name": "混合专家",
+              "type": "topic",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:organization-semianalysis",
+              "name": "Semianalysis",
+              "type": "organization",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:adbeaa8eede8",
+          "source_entity_id": "entity:organization-kv",
+          "target_entity_id": "entity:organization-moe",
+          "source_name": "KV",
+          "target_name": "MoE",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。"
+          ]
+        },
+        {
+          "relation_id": "relation:2016f5cf6852",
+          "source_entity_id": "entity:organization-kv",
+          "target_entity_id": "entity:topic-混合专家",
+          "source_name": "KV",
+          "target_name": "混合专家",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。"
+          ]
+        },
+        {
+          "relation_id": "relation:99b01336a580",
+          "source_entity_id": "entity:organization-kv",
+          "target_entity_id": "entity:organization-semianalysis",
+          "source_name": "KV",
+          "target_name": "Semianalysis",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "Semianalysis 这篇内部稿用\"数据搬运\"重新框定推理服务：混合专家（MoE）改变了每个 token 上哪些张量活跃、什么数据必须贴在一起、哪条链路需要强本地带宽，并把一次推理拆成 prefill、midfill、decode attention、decode experts 四个算力强度与带宽诉求各异的阶段——服务的真正问题不是\"生成 token\"，而是存储、网络、编排与调度如何连接这些阶段、共同决定有效吞吐。"
+          ]
+        }
+      ],
+      "metrics": [],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "KV",
+          "MoE",
+          "混合专家",
+          "Semianalysis",
+          "一起",
+          "上哪些张量活跃",
+          "为竞争力来源",
+          "什么数据必须贴在"
+        ],
+        "rule_event_types": [
+          "infra",
+          "launch"
+        ]
+      }
     }
   ],
-  "generated_at": "2026-09-23T22:38:04Z",
+  "generated_at": "2026-09-24T22:39:04Z",
   "analysis_window": {
     "start_date": "2026-08-23",
     "end_date": "2026-09-21",
@@ -6058,9 +6323,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
-                "2026-09-21-5"
+                "2026-09-21-5",
+                "2026-09-21-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -10038,7 +10305,7 @@
                 "2026-09-06-8",
                 "2026-09-08-7"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "infra",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -10051,7 +10318,7 @@
               "article_ids": [
                 "2026-09-06-0"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "launch",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -11149,7 +11416,7 @@
               "label": "Jensen Huang",
               "type": "entity",
               "subtype": "person",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "Jensen Huang"
               ],
@@ -11162,10 +11429,10 @@
               "article_ids": [
                 "2026-09-08-7"
               ],
-              "label": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+              "label": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
               "type": "event",
               "subtype": "trend",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "weight": 1.4
             }
           },
@@ -26434,7 +26701,7 @@
               "label": "Accenture",
               "type": "entity",
               "subtype": "organization",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Accenture"
               ],
@@ -26451,7 +26718,7 @@
               "label": "Google Cloud",
               "type": "entity",
               "subtype": "company",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Google Cloud"
               ],
@@ -26467,7 +26734,7 @@
               "label": "前向部署工程师",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "前向部署工程师"
               ],
@@ -26483,7 +26750,7 @@
               "label": "上的差距",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "上的差距"
               ],
@@ -26499,7 +26766,7 @@
               "label": "以缩小在部署瓶颈",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "以缩小在部署瓶颈"
               ],
@@ -26515,7 +26782,7 @@
               "label": "合作为抓手",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "合作为抓手"
               ],
@@ -26531,7 +26798,7 @@
               "label": "押注",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "押注"
               ],
@@ -26547,7 +26814,7 @@
               "label": "模式来推动企业",
               "type": "entity",
               "subtype": "topic",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "模式来推动企业"
               ],
@@ -26563,7 +26830,7 @@
               "label": "Google Cloud 以 Accenture 合作为抓手，追赶企业 AI 落地部署之战",
               "type": "event",
               "subtype": "infra",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "weight": 1.4
             }
           },
@@ -26576,7 +26843,7 @@
               "label": "Google Cloud 以 Accenture 合作为抓手，追赶企业 AI 落地部署之战",
               "type": "event",
               "subtype": "launch",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "weight": 1.4
             }
           },
@@ -26728,7 +26995,7 @@
               "label": "NVIDIA CEO",
               "type": "entity",
               "subtype": "company",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "NVIDIA CEO"
               ],
@@ -39618,9 +39885,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
-                "2026-09-21-5"
+                "2026-09-21-5",
+                "2026-09-21-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -44775,9 +45044,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
-                "2026-09-21-5"
+                "2026-09-21-5",
+                "2026-09-21-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -49954,9 +50225,11 @@
                 "2026-09-18-7",
                 "2026-09-18-11",
                 "2026-09-19-5",
+                "2026-09-19-11",
                 "2026-09-20-5",
                 "2026-09-21-4",
-                "2026-09-21-5"
+                "2026-09-21-5",
+                "2026-09-21-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -51603,8 +51876,8 @@
     }
   ],
   "graph_stats": {
-    "node_count": 2800,
-    "edge_count": 6575,
+    "node_count": 2816,
+    "edge_count": 6621,
     "clue_count": 6
   }
 }

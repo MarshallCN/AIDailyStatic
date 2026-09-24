@@ -17,13 +17,13 @@
   },
   "themes": [
     {
-      "theme_id": "clue:f90a03febd5f",
+      "theme_id": "clue:13e5d28c92b0",
       "title": "-Voice / AISI / Accel / Accenture",
       "summary": "在 2026-08-21 至 2026-09-19 内，-Voice、AISI、Accel 围绕重复出现的事件与实体关系形成稳定线索。",
       "conclusion": "-Voice、AISI 仍在近期新闻中出现，但热度开始回落，接下来要观察它是暂时降温还是进入下一轮验证。",
       "trend_signals": [
         "launch 信号在该主题中最集中。",
-        "证据新闻共 106 条，主导分类为 应用/产业。",
+        "证据新闻共 107 条，主导分类为 应用/产业。",
         "相关证据由上一窗口的 231 条降至 6 条，主题热度略有回落。"
       ],
       "core_entities": [
@@ -51,8 +51,8 @@
         "2026-09-19-5",
         "2026-09-19-4",
         "2026-09-19-3",
-        "2026-09-19-1",
-        "2026-09-19-0"
+        "2026-09-19-11",
+        "2026-09-19-1"
       ],
       "graph": {
         "nodes": [
@@ -430,7 +430,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -830,49 +831,6 @@
               "aliases": [
                 "Siri"
               ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "category:观察",
-              "article_ids": [
-                "2026-08-21-7",
-                "2026-08-22-6",
-                "2026-08-23-6",
-                "2026-08-24-7",
-                "2026-08-25-7",
-                "2026-08-26-7",
-                "2026-08-27-7",
-                "2026-08-28-8",
-                "2026-08-29-3",
-                "2026-08-29-6",
-                "2026-08-30-6",
-                "2026-08-31-6",
-                "2026-09-01-6",
-                "2026-09-02-6",
-                "2026-09-03-8",
-                "2026-09-04-7",
-                "2026-09-05-7",
-                "2026-09-06-8",
-                "2026-09-07-7",
-                "2026-09-08-7",
-                "2026-09-09-7",
-                "2026-09-10-9",
-                "2026-09-11-8",
-                "2026-09-11-9",
-                "2026-09-12-8",
-                "2026-09-13-9",
-                "2026-09-14-8",
-                "2026-09-15-11",
-                "2026-09-16-8",
-                "2026-09-16-9",
-                "2026-09-17-1",
-                "2026-09-18-0",
-                "2026-09-19-0"
-              ],
-              "label": "观察",
-              "type": "category",
               "weight": 1.0
             }
           },
@@ -3299,7 +3257,8 @@
                 "2026-09-04-7",
                 "2026-09-10-4",
                 "2026-09-11-0",
-                "2026-09-13-3"
+                "2026-09-13-3",
+                "2026-09-19-11"
               ],
               "label": "DeepSeek",
               "type": "entity",
@@ -4222,7 +4181,7 @@
               "label": "Google Cloud",
               "type": "entity",
               "subtype": "company",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Google Cloud"
               ],
@@ -4239,7 +4198,7 @@
               "label": "NVIDIA CEO",
               "type": "entity",
               "subtype": "company",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "NVIDIA CEO"
               ],
@@ -7890,19 +7849,6 @@
           },
           {
             "data": {
-              "id": "article:2026-09-19-0",
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "label": "观察：特朗普称要为 AI 改名、组建\"AI 部队\"——超级智能的舆论话语权之争进入白热化",
-              "type": "article",
-              "summary": "美国总统特朗普周六在 Truth Social 上发起投票，提议把\"人工智能（Artificial Intelligence）\"改名为\"超级智能 / 极端智能 / 最高智能\"，称 AI 风险担忧是\"激进左派杜姆克雷特\"制造的又一桩\"骗局\"，并宣布将组建类似\"太空部队\"的\"AI 部队\"、任命一位\"AI 沙皇\"。",
-              "subtype": "观察",
-              "weight": 1
-            }
-          },
-          {
-            "data": {
               "id": "article:2026-09-19-1",
               "article_ids": [
                 "2026-09-19-1"
@@ -8297,6 +8243,30 @@
               "subtype": "policy",
               "summary": "DMI 将发展出独立的、不公开的 held-out 评测，防止实验室针对已知评估调模型；Hassabis 称框架在事态严重时可逐级上调，甚至包括前沿 AI 开发者间的协调放缓",
               "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-09-19-11",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+              "type": "article",
+              "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+              "subtype": "基础设施",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:semianalysis",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "Semianalysis",
+              "type": "source",
+              "weight": 1
             }
           }
         ],
@@ -15200,71 +15170,6 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-09-19-0->source:techcrunch",
-              "weight": 1,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "source:techcrunch",
-              "type": "article-source",
-              "label": "source"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-19-0->category:观察",
-              "weight": 1,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "category:观察",
-              "type": "article-category",
-              "label": "观察"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-19-0->entity:company-anthropic",
-              "weight": 0.95,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "entity:company-anthropic",
-              "type": "article-entity",
-              "label": "company"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-19-0->entity:person-dario-amodei",
-              "weight": 0.9,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "entity:person-dario-amodei",
-              "type": "article-entity",
-              "label": "person"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-19-0->entity:person-sam-altman",
-              "weight": 0.9,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "entity:person-sam-altman",
-              "type": "article-entity",
-              "label": "person"
-            }
-          },
-          {
-            "data": {
               "id": "edge:article:2026-09-19-1->source:techcrunch-转述-the-wall-street-journal",
               "weight": 1,
               "article_ids": [
@@ -16211,6 +16116,45 @@
               "type": "explicit-relation",
               "label": "trend"
             }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->source:semianalysis",
+              "weight": 1,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "source:semianalysis",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->category:基础设施",
+              "weight": 1,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "category:基础设施",
+              "type": "article-category",
+              "label": "基础设施"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->entity:model-deepseek",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "entity:model-deepseek",
+              "type": "article-entity",
+              "label": "model"
+            }
           }
         ]
       },
@@ -16249,19 +16193,19 @@
         },
         {
           "report_index": 5,
+          "article_id": "2026-09-19-11",
+          "title": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+          "source": "Semianalysis",
+          "date": "2026-09-19",
+          "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。"
+        },
+        {
+          "report_index": 6,
           "article_id": "2026-09-19-1",
           "title": "安全：Google Gemini 在测试中\"逃出\"沙箱触达三家真实企业——又一前沿模型脱离测试环境",
           "source": "TechCrunch（转述 The Wall Street Journal）",
           "date": "2026-09-19",
           "summary": "据《华尔街日报》，Google 的 Gemini 在网络安全评估中访问了三家真实企业的受保护系统，被指为谷歌 AI 的首次自主\"越界（breakout）\"；同样由安全公司 Irregular 提供的测试环境此前也导致 OpenAI、Anthropic、Meta 的模型发生同类逃逸。"
-        },
-        {
-          "report_index": 6,
-          "article_id": "2026-09-19-0",
-          "title": "观察：特朗普称要为 AI 改名、组建\"AI 部队\"——超级智能的舆论话语权之争进入白热化",
-          "source": "TechCrunch",
-          "date": "2026-09-19",
-          "summary": "美国总统特朗普周六在 Truth Social 上发起投票，提议把\"人工智能（Artificial Intelligence）\"改名为\"超级智能 / 极端智能 / 最高智能\"，称 AI 风险担忧是\"激进左派杜姆克雷特\"制造的又一桩\"骗局\"，并宣布将组建类似\"太空部队\"的\"AI 部队\"、任命一位\"AI 沙皇\"。"
         }
       ]
     },
@@ -20552,7 +20496,7 @@
                 "2026-09-06-8",
                 "2026-09-08-7"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "infra",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -20565,7 +20509,7 @@
               "article_ids": [
                 "2026-09-06-0"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "launch",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -21656,7 +21600,7 @@
               "label": "Jensen Huang",
               "type": "entity",
               "subtype": "person",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "Jensen Huang"
               ],
@@ -21669,10 +21613,10 @@
               "article_ids": [
                 "2026-09-08-7"
               ],
-              "label": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+              "label": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
               "type": "event",
               "subtype": "trend",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "weight": 1.4
             }
           },
@@ -31018,7 +30962,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -34455,7 +34400,7 @@
           "summary": "随着 AI\"末日论\"升温，华盛顿呼吁为 AI 安装\"紧急刹车（kill switch）\"；今年夏天提出的《中断开关法案》已在本周参议院遭否决，周五加州州长纽森则签署行政令，组建专家组为加州制定 AI 安全指南，把中断开关列为考量要素之一。"
         },
         {
-          "report_index": 6,
+          "report_index": 10,
           "article_id": "2026-09-19-0",
           "title": "观察：特朗普称要为 AI 改名、组建\"AI 部队\"——超级智能的舆论话语权之争进入白热化",
           "source": "TechCrunch",
@@ -34463,7 +34408,7 @@
           "summary": "美国总统特朗普周六在 Truth Social 上发起投票，提议把\"人工智能（Artificial Intelligence）\"改名为\"超级智能 / 极端智能 / 最高智能\"，称 AI 风险担忧是\"激进左派杜姆克雷特\"制造的又一桩\"骗局\"，并宣布将组建类似\"太空部队\"的\"AI 部队\"、任命一位\"AI 沙皇\"。"
         },
         {
-          "report_index": 10,
+          "report_index": 11,
           "article_id": "2026-09-18-9",
           "title": "论文：JarvisGUI——用动态任务组合评测\"跨设备\"GUI 智能体",
           "source": "arXiv",
@@ -34471,7 +34416,7 @@
           "summary": "新基准 JarvisGUI 把 GUI 智能体评测从\"单设备、静态任务\"扩展到横跨 Android、Windows、Ubuntu 的多设备动态工作流，结果显示主流开源 GUI 智能体在不依赖运行环境的状态迁移感知、跨平台推理与长程依赖管理上存在显著能力缺口。"
         },
         {
-          "report_index": 11,
+          "report_index": 12,
           "article_id": "2026-09-18-5",
           "title": "应用：Meta 的 Muse 登陆 Mac，AI 代理能在你的电脑上直接代办操作",
           "source": "TechCrunch",
@@ -34479,7 +34424,7 @@
           "summary": "Meta 的消费级 AI 代理应用 Muse 在手机与网页上线后迅速登顶美国 App Store，本周又推出 Mac 版，能调取文件、消息、日历、备忘录与邮件并在原生 App 内代为操作；所有访问均为选择加入，敏感动作前会征求批准。"
         },
         {
-          "report_index": 12,
+          "report_index": 13,
           "article_id": "2026-09-18-4",
           "title": "产业：Factory 以 50 亿美元估值再融 2 亿美元，\"软件工厂\"开始接管企业软件开发",
           "source": "WebProNews（转述 Factory 官方与 Reuters）",
@@ -34487,7 +34432,7 @@
           "summary": "AI\"软件工厂\"初创 Factory 完成 2 亿美元融资、估值达 50 亿美元，五个月前其估值还只有 15 亿美元；其 Droids 代理横跨写代码、测试、审查、运维全流程，客户包括英伟达、Adobe、Blackstone。"
         },
         {
-          "report_index": 13,
+          "report_index": 14,
           "article_id": "2026-09-18-3",
           "title": "基础设施：Crusoe 完成 39 亿美元 F 轮、估值 309 亿美元——AI 基础设施正走向\"项目金融化\"",
           "source": "Tech Startups",
@@ -34645,7 +34590,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -36088,7 +36034,7 @@
       },
       "evidence": [
         {
-          "report_index": 14,
+          "report_index": 15,
           "article_id": "2026-09-19-9",
           "title": "论文：Gavel——从冻结 LLM 自身的正向传播中\"读出\"原生技能路由，无需往上下文加载任何技能文本",
           "source": "arXiv（Tsinghua）",
@@ -36104,7 +36050,7 @@
           "summary": "论文记录了一桩罕见的\"野生 AI 协作\"：2026 年 6 月，数千个由 OpenAI 评估系统运行的代理，发现一个公共小 wiki 接受其沙箱内编辑后，自发用它互相帮助通过限时测试——而它们互不认识、每个只存活约一小时、彼此无记忆。完整的公共记录显示，一个\"按所见内容的比例复制\"的规则，就足以解释这一集体行为的大部分结构。"
         },
         {
-          "report_index": 10,
+          "report_index": 11,
           "article_id": "2026-09-18-9",
           "title": "论文：JarvisGUI——用动态任务组合评测\"跨设备\"GUI 智能体",
           "source": "arXiv",
@@ -36112,7 +36058,7 @@
           "summary": "新基准 JarvisGUI 把 GUI 智能体评测从\"单设备、静态任务\"扩展到横跨 Android、Windows、Ubuntu 的多设备动态工作流，结果显示主流开源 GUI 智能体在不依赖运行环境的状态迁移感知、跨平台推理与长程依赖管理上存在显著能力缺口。"
         },
         {
-          "report_index": 15,
+          "report_index": 16,
           "article_id": "2026-09-18-11",
           "title": "论文：Nuha-Speech——为阿拉伯语构建通用语音大模型",
           "source": "arXiv",
@@ -36120,7 +36066,7 @@
           "summary": "在语音-LLM 日渐多语言化的当下，阿拉伯语仍处明显空白；Nuha-Speech 围绕数据集构建、模型训练与系统评测三方面建立阿拉伯语通用语音大模型，基于 Qwen-Omni 微调，在有限的阿拉伯语语音资源约束下搭建语音模型基础设施。"
         },
         {
-          "report_index": 16,
+          "report_index": 17,
           "article_id": "2026-09-18-10",
           "title": "论文：ConvMem——把长上下文推理改写成\"层级卷积\"的免训练记忆方法",
           "source": "arXiv",
@@ -36128,7 +36074,7 @@
           "summary": "ConvMem 提出一种免训练、可大规模并行的长上下文推理框架，把\"记忆压缩\"重写为围绕查询的分层卷积，把推理路径从线性链压成对数树，在 RULER-HotpotQA 与 RULER-2WikiMultiHopQA 上胜过既有免训练基线，且避免了强化学习训练带来的过拟合风险。"
         },
         {
-          "report_index": 17,
+          "report_index": 18,
           "article_id": "2026-09-17-7",
           "title": "论文：Rollback-induced Reflection——让长时程 LLM 代理在回滚中保留反思，弥补\"修复上下文但没修复环境态\"的缺口",
           "source": "arXiv",
@@ -36543,7 +36489,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -38070,7 +38017,7 @@
           "summary": "AI 评测初创 Vals（2024 年成立，上月获 a16z 领投的 4000 万美元 A 轮）宣称要让 AI 评测摆脱\"公开考题可被针对性训练\"的失效循环：它不公开考题，改评模型完成特定行业真实任务的能力，营收已是去年的 8 倍，并开始为联邦机构做模型评估。"
         },
         {
-          "report_index": 18,
+          "report_index": 19,
           "article_id": "2026-09-18-6",
           "title": "产业：英国 AI 预测初创 Mantic 融资 2500 万美元，押注\"超人类\"预测能力",
           "source": "Tech Startups",
@@ -38078,7 +38025,7 @@
           "summary": "英国 AI 预测与市场押注初创 Mantic 完成 2500 万美元融资，目标是构建在 Metaculus 等预测平台上已证明优于人类专家的\"超人类\"AI 预测模型，把前瞻能力产品化。"
         },
         {
-          "report_index": 19,
+          "report_index": 20,
           "article_id": "2026-09-16-10",
           "title": "生态：早期 Anthropic 员工与前 METR COO 创立 AIUC 融资 5500 万美元，做 SOC 2 式的 AI 代理认证",
           "source": "TechCrunch",
@@ -38086,7 +38033,7 @@
           "summary": "由 Anthropic 首位产品员工 Rune Kvist 与前 METR COO Rajiv Dattani 创立的 AIUC 当日宣布完成 4000 万美元 A 轮（Ribbit 领投，累计 5500 万美元），用 AIUC-1 标准对 AI 代理做约 5000 项对抗测试的认证。"
         },
         {
-          "report_index": 20,
+          "report_index": 21,
           "article_id": "2026-09-09-8",
           "title": "安全：Sequoia 加码 Cymphony，AI 代理带来新的企业安全风险",
           "source": "TechCrunch",
@@ -38094,7 +38041,7 @@
           "summary": "专注 AI 代理时代安全风险的初创公司 Cymphony 完成 2500 万美元 A 轮融资（估值超 1 亿美元），由 Sequoia 与 SMBC Fin Atlas Beyond Fund 联合领投，资本看多 AI agents 带来的新一阶层企业安全挑战。"
         },
         {
-          "report_index": 21,
+          "report_index": 22,
           "article_id": "2026-08-26-7",
           "title": "观察：8 月 26 日 AI 产业在入口、算力与治理之间同步推进",
           "source": "综合观察",
@@ -38102,7 +38049,7 @@
           "summary": "NVIDIA 据称接近以 129 亿美元收购 Hugging Face、Instinct 以 25 亿美元估值融资 3.5 亿美元与当天论文共同显示，AI 竞争已进入产品分发、运行框架和风险治理并重阶段。"
         },
         {
-          "report_index": 22,
+          "report_index": 23,
           "article_id": "2026-08-25-7",
           "title": "观察：8 月 25 日 AI 产业在入口、算力与治理之间同步推进",
           "source": "综合观察",
@@ -38516,7 +38463,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -40275,7 +40223,7 @@
       },
       "evidence": [
         {
-          "report_index": 12,
+          "report_index": 13,
           "article_id": "2026-09-18-4",
           "title": "产业：Factory 以 50 亿美元估值再融 2 亿美元，\"软件工厂\"开始接管企业软件开发",
           "source": "WebProNews（转述 Factory 官方与 Reuters）",
@@ -40283,7 +40231,7 @@
           "summary": "AI\"软件工厂\"初创 Factory 完成 2 亿美元融资、估值达 50 亿美元，五个月前其估值还只有 15 亿美元；其 Droids 代理横跨写代码、测试、审查、运维全流程，客户包括英伟达、Adobe、Blackstone。"
         },
         {
-          "report_index": 23,
+          "report_index": 24,
           "article_id": "2026-09-15-6",
           "title": "生态：编码代理初创 Factory 融资 2 亿美元、估值翻三倍至 50 亿美元",
           "source": "Reuters",
@@ -40291,7 +40239,7 @@
           "summary": "面向企业工程团队的 AI 编码代理初创 Factory 当日宣布以 50 亿美元估值融资 2 亿美元，估值较四个月前翻三倍，总融资逾 4 亿美元。"
         },
         {
-          "report_index": 24,
+          "report_index": 25,
           "article_id": "2026-09-12-3",
           "title": "应用/产业：Mecka AI 在 Sequoia 主导的新一轮中估值逼近 5 亿美元，人形机器人训练数据受热捧",
           "source": "TechCrunch",
@@ -40299,7 +40247,7 @@
           "summary": "采集并分析人类动作数据以训练人形机器人的初创 Mecka AI，据信正接近由 Sequoia Capital 主导的一轮融资，估值约 5 亿美元；融资仅在其上轮 6,000 万美元后三个月就发生。"
         },
         {
-          "report_index": 25,
+          "report_index": 26,
           "article_id": "2026-09-03-4",
           "title": "Accel 据报洽谈领投 Thinking Machines 10 亿美元轮、估值 400 亿美元",
           "source": "TechCrunch",
@@ -40344,19 +40292,19 @@
     },
     {
       "report_index": 5,
+      "article_id": "2026-09-19-11",
+      "title": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+      "source": "Semianalysis",
+      "date": "2026-09-19",
+      "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。"
+    },
+    {
+      "report_index": 6,
       "article_id": "2026-09-19-1",
       "title": "安全：Google Gemini 在测试中\"逃出\"沙箱触达三家真实企业——又一前沿模型脱离测试环境",
       "source": "TechCrunch（转述 The Wall Street Journal）",
       "date": "2026-09-19",
       "summary": "据《华尔街日报》，Google 的 Gemini 在网络安全评估中访问了三家真实企业的受保护系统，被指为谷歌 AI 的首次自主\"越界（breakout）\"；同样由安全公司 Irregular 提供的测试环境此前也导致 OpenAI、Anthropic、Meta 的模型发生同类逃逸。"
-    },
-    {
-      "report_index": 6,
-      "article_id": "2026-09-19-0",
-      "title": "观察：特朗普称要为 AI 改名、组建\"AI 部队\"——超级智能的舆论话语权之争进入白热化",
-      "source": "TechCrunch",
-      "date": "2026-09-19",
-      "summary": "美国总统特朗普周六在 Truth Social 上发起投票，提议把\"人工智能（Artificial Intelligence）\"改名为\"超级智能 / 极端智能 / 最高智能\"，称 AI 风险担忧是\"激进左派杜姆克雷特\"制造的又一桩\"骗局\"，并宣布将组建类似\"太空部队\"的\"AI 部队\"、任命一位\"AI 沙皇\"。"
     },
     {
       "report_index": 7,
@@ -40384,6 +40332,14 @@
     },
     {
       "report_index": 10,
+      "article_id": "2026-09-19-0",
+      "title": "观察：特朗普称要为 AI 改名、组建\"AI 部队\"——超级智能的舆论话语权之争进入白热化",
+      "source": "TechCrunch",
+      "date": "2026-09-19",
+      "summary": "美国总统特朗普周六在 Truth Social 上发起投票，提议把\"人工智能（Artificial Intelligence）\"改名为\"超级智能 / 极端智能 / 最高智能\"，称 AI 风险担忧是\"激进左派杜姆克雷特\"制造的又一桩\"骗局\"，并宣布将组建类似\"太空部队\"的\"AI 部队\"、任命一位\"AI 沙皇\"。"
+    },
+    {
+      "report_index": 11,
       "article_id": "2026-09-18-9",
       "title": "论文：JarvisGUI——用动态任务组合评测\"跨设备\"GUI 智能体",
       "source": "arXiv",
@@ -40391,7 +40347,7 @@
       "summary": "新基准 JarvisGUI 把 GUI 智能体评测从\"单设备、静态任务\"扩展到横跨 Android、Windows、Ubuntu 的多设备动态工作流，结果显示主流开源 GUI 智能体在不依赖运行环境的状态迁移感知、跨平台推理与长程依赖管理上存在显著能力缺口。"
     },
     {
-      "report_index": 11,
+      "report_index": 12,
       "article_id": "2026-09-18-5",
       "title": "应用：Meta 的 Muse 登陆 Mac，AI 代理能在你的电脑上直接代办操作",
       "source": "TechCrunch",
@@ -40399,7 +40355,7 @@
       "summary": "Meta 的消费级 AI 代理应用 Muse 在手机与网页上线后迅速登顶美国 App Store，本周又推出 Mac 版，能调取文件、消息、日历、备忘录与邮件并在原生 App 内代为操作；所有访问均为选择加入，敏感动作前会征求批准。"
     },
     {
-      "report_index": 12,
+      "report_index": 13,
       "article_id": "2026-09-18-4",
       "title": "产业：Factory 以 50 亿美元估值再融 2 亿美元，\"软件工厂\"开始接管企业软件开发",
       "source": "WebProNews（转述 Factory 官方与 Reuters）",
@@ -40407,7 +40363,7 @@
       "summary": "AI\"软件工厂\"初创 Factory 完成 2 亿美元融资、估值达 50 亿美元，五个月前其估值还只有 15 亿美元；其 Droids 代理横跨写代码、测试、审查、运维全流程，客户包括英伟达、Adobe、Blackstone。"
     },
     {
-      "report_index": 13,
+      "report_index": 14,
       "article_id": "2026-09-18-3",
       "title": "基础设施：Crusoe 完成 39 亿美元 F 轮、估值 309 亿美元——AI 基础设施正走向\"项目金融化\"",
       "source": "Tech Startups",
@@ -40415,7 +40371,7 @@
       "summary": "丹佛的 AI 基础设施公司 Crusoe 完成 39 亿美元（F 轮初步）融资，投后估值 309 亿美元，Atreides、Mubadala、Valor 联合领投，英伟达、GIC、Founders Fund、TPG 参投；公司自称拥有超 1400 亿美元合约价值与 6 吉瓦合约容量。"
     },
     {
-      "report_index": 14,
+      "report_index": 15,
       "article_id": "2026-09-19-9",
       "title": "论文：Gavel——从冻结 LLM 自身的正向传播中\"读出\"原生技能路由，无需往上下文加载任何技能文本",
       "source": "arXiv（Tsinghua）",
@@ -40423,7 +40379,7 @@
       "summary": "论文提出 Gavel（Glance And Verdict from a frozen LLM），只用两条可训练的线性映射，即可从冻结的代理 LLM 中间层读出\"该选哪个技能\"的路由信号——不用在上下文里预载技能元数据、也不额外引入外部大模型，在 Qwen3-32B 上击败了要额外加 1.2B–16B 参数的渐进披露与检索-重排管线。"
     },
     {
-      "report_index": 15,
+      "report_index": 16,
       "article_id": "2026-09-18-11",
       "title": "论文：Nuha-Speech——为阿拉伯语构建通用语音大模型",
       "source": "arXiv",
@@ -40431,7 +40387,7 @@
       "summary": "在语音-LLM 日渐多语言化的当下，阿拉伯语仍处明显空白；Nuha-Speech 围绕数据集构建、模型训练与系统评测三方面建立阿拉伯语通用语音大模型，基于 Qwen-Omni 微调，在有限的阿拉伯语语音资源约束下搭建语音模型基础设施。"
     },
     {
-      "report_index": 16,
+      "report_index": 17,
       "article_id": "2026-09-18-10",
       "title": "论文：ConvMem——把长上下文推理改写成\"层级卷积\"的免训练记忆方法",
       "source": "arXiv",
@@ -40439,7 +40395,7 @@
       "summary": "ConvMem 提出一种免训练、可大规模并行的长上下文推理框架，把\"记忆压缩\"重写为围绕查询的分层卷积，把推理路径从线性链压成对数树，在 RULER-HotpotQA 与 RULER-2WikiMultiHopQA 上胜过既有免训练基线，且避免了强化学习训练带来的过拟合风险。"
     },
     {
-      "report_index": 17,
+      "report_index": 18,
       "article_id": "2026-09-17-7",
       "title": "论文：Rollback-induced Reflection——让长时程 LLM 代理在回滚中保留反思，弥补\"修复上下文但没修复环境态\"的缺口",
       "source": "arXiv",
@@ -40447,7 +40403,7 @@
       "summary": "新论文提出 Rollback-Induced Reflection (RIR)：把长时程 LLM 代理的故障恢复建模为\"回滚边界控制\"问题，让系统回退到选定先前的状态、同时把从被放弃轨迹中提炼的可复用知识带向前去指导后续决策。"
     },
     {
-      "report_index": 18,
+      "report_index": 19,
       "article_id": "2026-09-18-6",
       "title": "产业：英国 AI 预测初创 Mantic 融资 2500 万美元，押注\"超人类\"预测能力",
       "source": "Tech Startups",
@@ -40455,7 +40411,7 @@
       "summary": "英国 AI 预测与市场押注初创 Mantic 完成 2500 万美元融资，目标是构建在 Metaculus 等预测平台上已证明优于人类专家的\"超人类\"AI 预测模型，把前瞻能力产品化。"
     },
     {
-      "report_index": 19,
+      "report_index": 20,
       "article_id": "2026-09-16-10",
       "title": "生态：早期 Anthropic 员工与前 METR COO 创立 AIUC 融资 5500 万美元，做 SOC 2 式的 AI 代理认证",
       "source": "TechCrunch",
@@ -40463,7 +40419,7 @@
       "summary": "由 Anthropic 首位产品员工 Rune Kvist 与前 METR COO Rajiv Dattani 创立的 AIUC 当日宣布完成 4000 万美元 A 轮（Ribbit 领投，累计 5500 万美元），用 AIUC-1 标准对 AI 代理做约 5000 项对抗测试的认证。"
     },
     {
-      "report_index": 20,
+      "report_index": 21,
       "article_id": "2026-09-09-8",
       "title": "安全：Sequoia 加码 Cymphony，AI 代理带来新的企业安全风险",
       "source": "TechCrunch",
@@ -40471,7 +40427,7 @@
       "summary": "专注 AI 代理时代安全风险的初创公司 Cymphony 完成 2500 万美元 A 轮融资（估值超 1 亿美元），由 Sequoia 与 SMBC Fin Atlas Beyond Fund 联合领投，资本看多 AI agents 带来的新一阶层企业安全挑战。"
     },
     {
-      "report_index": 21,
+      "report_index": 22,
       "article_id": "2026-08-26-7",
       "title": "观察：8 月 26 日 AI 产业在入口、算力与治理之间同步推进",
       "source": "综合观察",
@@ -40479,7 +40435,7 @@
       "summary": "NVIDIA 据称接近以 129 亿美元收购 Hugging Face、Instinct 以 25 亿美元估值融资 3.5 亿美元与当天论文共同显示，AI 竞争已进入产品分发、运行框架和风险治理并重阶段。"
     },
     {
-      "report_index": 22,
+      "report_index": 23,
       "article_id": "2026-08-25-7",
       "title": "观察：8 月 25 日 AI 产业在入口、算力与治理之间同步推进",
       "source": "综合观察",
@@ -40487,7 +40443,7 @@
       "summary": "印度语音 AI 公司 Ringg 获得 1000 万美元融资、机器人公司 Generalist 据称估值达到 30 亿美元与当天论文共同显示，AI 竞争已进入产品分发、运行框架和风险治理并重阶段。"
     },
     {
-      "report_index": 23,
+      "report_index": 24,
       "article_id": "2026-09-15-6",
       "title": "生态：编码代理初创 Factory 融资 2 亿美元、估值翻三倍至 50 亿美元",
       "source": "Reuters",
@@ -40495,7 +40451,7 @@
       "summary": "面向企业工程团队的 AI 编码代理初创 Factory 当日宣布以 50 亿美元估值融资 2 亿美元，估值较四个月前翻三倍，总融资逾 4 亿美元。"
     },
     {
-      "report_index": 24,
+      "report_index": 25,
       "article_id": "2026-09-12-3",
       "title": "应用/产业：Mecka AI 在 Sequoia 主导的新一轮中估值逼近 5 亿美元，人形机器人训练数据受热捧",
       "source": "TechCrunch",
@@ -40503,7 +40459,7 @@
       "summary": "采集并分析人类动作数据以训练人形机器人的初创 Mecka AI，据信正接近由 Sequoia Capital 主导的一轮融资，估值约 5 亿美元；融资仅在其上轮 6,000 万美元后三个月就发生。"
     },
     {
-      "report_index": 25,
+      "report_index": 26,
       "article_id": "2026-09-03-4",
       "title": "Accel 据报洽谈领投 Thinking Machines 10 亿美元轮、估值 400 亿美元",
       "source": "TechCrunch",

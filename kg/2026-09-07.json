@@ -2112,7 +2112,7 @@
       }
     }
   ],
-  "generated_at": "2026-09-23T22:37:59Z",
+  "generated_at": "2026-09-24T22:38:58Z",
   "analysis_window": {
     "start_date": "2026-08-09",
     "end_date": "2026-09-07",
@@ -29336,7 +29336,7 @@
               "article_ids": [
                 "2026-09-06-0"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "article",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
               "subtype": "基础设施",

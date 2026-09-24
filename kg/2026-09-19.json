@@ -122,6 +122,17 @@
       ],
       "summary": "论文记录了一桩罕见的\"野生 AI 协作\"：2026 年 6 月，数千个由 OpenAI 评估系统运行的代理，发现一个公共小 wiki 接受其沙箱内编辑后，自发用它互相帮助通过限时测试——而它们互不认识、每个只存活约一小时、彼此无记忆。完整的公共记录显示，一个\"按所见内容的比例复制\"的规则，就足以解释这一集体行为的大部分结构。",
       "url": "https://arxiv.org/abs/2609.09150"
+    },
+    {
+      "article_id": "2026-09-19-11",
+      "title": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+      "source": "Semianalysis",
+      "date": "2026-09-19",
+      "category": [
+        "基础设施"
+      ],
+      "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+      "url": "internal:semianalysis/2026-09-18__engrams-embedding-entendre-codesign__member-visible"
     }
   ],
   "signal_records": [
@@ -4062,9 +4073,288 @@
           "partnership"
         ]
       }
+    },
+    {
+      "article_id": "2026-09-19-11",
+      "title": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+      "source": "Semianalysis",
+      "date": "2026-09-19",
+      "category": [
+        "基础设施"
+      ],
+      "url": "internal:semianalysis/2026-09-18__engrams-embedding-entendre-codesign__member-visible",
+      "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+      "why_it_matters": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+      "entities": [
+        {
+          "entity_id": "entity:model-deepseek-v4-1-flash",
+          "name": "DeepSeek-V4.1-Flash",
+          "canonical_name": "DeepSeek-V4.1-Flash",
+          "type": "model",
+          "aliases": [
+            "DeepSeek-V4.1-Flash"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "DeepSeek-V4.1-Flash"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:organization-engram",
+          "name": "Engram",
+          "canonical_name": "Engram",
+          "type": "organization",
+          "aliases": [
+            "Engram"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Engram"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:organization-gib",
+          "name": "GiB",
+          "canonical_name": "GiB",
+          "type": "organization",
+          "aliases": [
+            "GiB"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "GiB"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:organization-kv",
+          "name": "KV",
+          "canonical_name": "KV",
+          "type": "organization",
+          "aliases": [
+            "KV"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "KV"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:organization-semianalysis",
+          "name": "Semianalysis",
+          "canonical_name": "Semianalysis",
+          "type": "organization",
+          "aliases": [
+            "Semianalysis"
+          ],
+          "confidence": 0.764,
+          "evidence": [
+            "Semianalysis"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:model-deepseek",
+          "name": "DeepSeek",
+          "canonical_name": "DeepSeek",
+          "type": "model",
+          "aliases": [
+            "DeepSeek"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "DeepSeek"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-从而把稀缺的高带",
+          "name": "从而把稀缺的高带",
+          "canonical_name": "从而把稀缺的高带",
+          "type": "topic",
+          "aliases": [
+            "从而把稀缺的高带"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "从而把稀缺的高带"
+          ],
+          "provenance": "rule"
+        },
+        {
+          "entity_id": "entity:topic-做成可预取的嵌入",
+          "name": "做成可预取的嵌入",
+          "canonical_name": "做成可预取的嵌入",
+          "type": "topic",
+          "aliases": [
+            "做成可预取的嵌入"
+          ],
+          "confidence": 0.6759999999999999,
+          "evidence": [
+            "做成可预取的嵌入"
+          ],
+          "provenance": "rule"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "event:infra-entity-model-deepseek-v4-1-flash",
+          "event_type": "infra",
+          "label": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+          "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+          "participants": [
+            {
+              "entity_id": "entity:model-deepseek-v4-1-flash",
+              "name": "DeepSeek-V4.1-Flash",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:organization-engram",
+              "name": "Engram",
+              "type": "organization",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:organization-gib",
+              "name": "GiB",
+              "type": "organization",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:organization-kv",
+              "name": "KV",
+              "type": "organization",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。"
+          ]
+        },
+        {
+          "event_id": "event:benchmark-entity-model-deepseek-v4-1-flash",
+          "event_type": "benchmark",
+          "label": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+          "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+          "participants": [
+            {
+              "entity_id": "entity:model-deepseek-v4-1-flash",
+              "name": "DeepSeek-V4.1-Flash",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "entity_id": "entity:organization-engram",
+              "name": "Engram",
+              "type": "organization",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:organization-gib",
+              "name": "GiB",
+              "type": "organization",
+              "role": "participant"
+            },
+            {
+              "entity_id": "entity:organization-kv",
+              "name": "KV",
+              "type": "organization",
+              "role": "participant"
+            }
+          ],
+          "evidence": [
+            "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "relation:7b40548f359c",
+          "source_entity_id": "entity:model-deepseek-v4-1-flash",
+          "target_entity_id": "entity:organization-engram",
+          "source_name": "DeepSeek-V4.1-Flash",
+          "target_name": "Engram",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。"
+          ]
+        },
+        {
+          "relation_id": "relation:4e0a5d88c2c9",
+          "source_entity_id": "entity:model-deepseek-v4-1-flash",
+          "target_entity_id": "entity:organization-gib",
+          "source_name": "DeepSeek-V4.1-Flash",
+          "target_name": "GiB",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。"
+          ]
+        },
+        {
+          "relation_id": "relation:ad30d2ba66b6",
+          "source_entity_id": "entity:model-deepseek-v4-1-flash",
+          "target_entity_id": "entity:organization-kv",
+          "source_name": "DeepSeek-V4.1-Flash",
+          "target_name": "KV",
+          "relation_type": "infra",
+          "weight": 1,
+          "evidence": [
+            "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "money",
+          "value": "0.3093 b"
+        },
+        {
+          "name": "ratio",
+          "value": "1.6 倍"
+        },
+        {
+          "name": "ratio",
+          "value": "14.8 倍"
+        },
+        {
+          "name": "ratio",
+          "value": "42 倍"
+        },
+        {
+          "name": "ratio",
+          "value": "4 倍"
+        },
+        {
+          "name": "ratio",
+          "value": "355X"
+        }
+      ],
+      "fallback": {
+        "used_rule_fallback": true,
+        "rule_entities": [
+          "DeepSeek-V4.1-Flash",
+          "Engram",
+          "GiB",
+          "KV",
+          "Semianalysis",
+          "DeepSeek",
+          "从而把稀缺的高带",
+          "做成可预取的嵌入"
+        ],
+        "rule_event_types": [
+          "infra",
+          "benchmark"
+        ]
+      }
     }
   ],
-  "generated_at": "2026-09-23T22:38:03Z",
+  "generated_at": "2026-09-24T22:39:03Z",
   "analysis_window": {
     "start_date": "2026-08-21",
     "end_date": "2026-09-19",
@@ -4072,7 +4362,7 @@
   },
   "clue_packets": [
     {
-      "clue_id": "clue:f90a03febd5f",
+      "clue_id": "clue:13e5d28c92b0",
       "title": "-Voice / AISI / Accel / Accenture",
       "time_window": {
         "start_date": "2026-08-21",
@@ -4101,7 +4391,7 @@
       "summary": "在 2026-08-21 至 2026-09-19 内，-Voice、AISI、Accel 围绕重复出现的事件与实体关系形成稳定线索。",
       "trend_signals": [
         "launch 信号在该主题中最集中。",
-        "证据新闻共 106 条，主导分类为 应用/产业。",
+        "证据新闻共 107 条，主导分类为 应用/产业。",
         "相关证据由上一窗口的 231 条降至 6 条，主题热度略有回落。"
       ],
       "change": {
@@ -4115,12 +4405,12 @@
         "2026-09-19-5",
         "2026-09-19-4",
         "2026-09-19-3",
-        "2026-09-19-1",
-        "2026-09-19-0"
+        "2026-09-19-11",
+        "2026-09-19-1"
       ],
       "focus_node_ids": [
-        "article:2026-09-19-0",
         "article:2026-09-19-1",
+        "article:2026-09-19-11",
         "article:2026-09-19-3",
         "article:2026-09-19-4",
         "article:2026-09-19-5",
@@ -4129,7 +4419,6 @@
         "category:安全",
         "category:应用-产业",
         "category:生态",
-        "category:观察",
         "entity:benchmark-big-bench-audio",
         "entity:benchmark-eva-bench",
         "entity:benchmark-voice",
@@ -4601,16 +4890,12 @@
         "event:trend-entity-person-shane-legg-2",
         "source:reuters-latestly-转述",
         "source:reuters-nikkei-asia-报道",
+        "source:semianalysis",
         "source:techcrunch",
         "source:techcrunch-deepmind-institute-公告",
         "source:techcrunch-转述-the-wall-street-journal"
       ],
       "focus_edge_ids": [
-        "edge:article:2026-09-19-0->category:观察",
-        "edge:article:2026-09-19-0->entity:company-anthropic",
-        "edge:article:2026-09-19-0->entity:person-dario-amodei",
-        "edge:article:2026-09-19-0->entity:person-sam-altman",
-        "edge:article:2026-09-19-0->source:techcrunch",
         "edge:article:2026-09-19-1->category:安全",
         "edge:article:2026-09-19-1->entity:company-anthropic",
         "edge:article:2026-09-19-1->entity:company-corridor",
@@ -4627,6 +4912,9 @@
         "edge:article:2026-09-19-1->event:security-entity-company-google-0",
         "edge:article:2026-09-19-1->event:security-entity-company-irregular-1",
         "edge:article:2026-09-19-1->source:techcrunch-转述-the-wall-street-journal",
+        "edge:article:2026-09-19-11->category:基础设施",
+        "edge:article:2026-09-19-11->entity:model-deepseek",
+        "edge:article:2026-09-19-11->source:semianalysis",
         "edge:article:2026-09-19-3->category:应用-产业",
         "edge:article:2026-09-19-3->entity:company-accenture",
         "edge:article:2026-09-19-3->entity:company-anthropic",
@@ -5586,7 +5874,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -5986,49 +6275,6 @@
               "aliases": [
                 "Siri"
               ],
-              "weight": 1.0
-            }
-          },
-          {
-            "data": {
-              "id": "category:观察",
-              "article_ids": [
-                "2026-08-21-7",
-                "2026-08-22-6",
-                "2026-08-23-6",
-                "2026-08-24-7",
-                "2026-08-25-7",
-                "2026-08-26-7",
-                "2026-08-27-7",
-                "2026-08-28-8",
-                "2026-08-29-3",
-                "2026-08-29-6",
-                "2026-08-30-6",
-                "2026-08-31-6",
-                "2026-09-01-6",
-                "2026-09-02-6",
-                "2026-09-03-8",
-                "2026-09-04-7",
-                "2026-09-05-7",
-                "2026-09-06-8",
-                "2026-09-07-7",
-                "2026-09-08-7",
-                "2026-09-09-7",
-                "2026-09-10-9",
-                "2026-09-11-8",
-                "2026-09-11-9",
-                "2026-09-12-8",
-                "2026-09-13-9",
-                "2026-09-14-8",
-                "2026-09-15-11",
-                "2026-09-16-8",
-                "2026-09-16-9",
-                "2026-09-17-1",
-                "2026-09-18-0",
-                "2026-09-19-0"
-              ],
-              "label": "观察",
-              "type": "category",
               "weight": 1.0
             }
           },
@@ -8455,7 +8701,8 @@
                 "2026-09-04-7",
                 "2026-09-10-4",
                 "2026-09-11-0",
-                "2026-09-13-3"
+                "2026-09-13-3",
+                "2026-09-19-11"
               ],
               "label": "DeepSeek",
               "type": "entity",
@@ -9378,7 +9625,7 @@
               "label": "Google Cloud",
               "type": "entity",
               "subtype": "company",
-              "summary": "Google Cloud 与 Accenture 深化合作，押注\\\"前向部署工程师\\\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
+              "summary": "Google Cloud 与 Accenture 深化合作，押注\"前向部署工程师\"模式来推动企业 AI 落地，以缩小在部署瓶颈上的差距。",
               "aliases": [
                 "Google Cloud"
               ],
@@ -9395,7 +9642,7 @@
               "label": "NVIDIA CEO",
               "type": "entity",
               "subtype": "company",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "NVIDIA CEO"
               ],
@@ -13046,19 +13293,6 @@
           },
           {
             "data": {
-              "id": "article:2026-09-19-0",
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "label": "观察：特朗普称要为 AI 改名、组建\"AI 部队\"——超级智能的舆论话语权之争进入白热化",
-              "type": "article",
-              "summary": "美国总统特朗普周六在 Truth Social 上发起投票，提议把\"人工智能（Artificial Intelligence）\"改名为\"超级智能 / 极端智能 / 最高智能\"，称 AI 风险担忧是\"激进左派杜姆克雷特\"制造的又一桩\"骗局\"，并宣布将组建类似\"太空部队\"的\"AI 部队\"、任命一位\"AI 沙皇\"。",
-              "subtype": "观察",
-              "weight": 1
-            }
-          },
-          {
-            "data": {
               "id": "article:2026-09-19-1",
               "article_ids": [
                 "2026-09-19-1"
@@ -13453,6 +13687,30 @@
               "subtype": "policy",
               "summary": "DMI 将发展出独立的、不公开的 held-out 评测，防止实验室针对已知评估调模型；Hassabis 称框架在事态严重时可逐级上调，甚至包括前沿 AI 开发者间的协调放缓",
               "weight": 1.4
+            }
+          },
+          {
+            "data": {
+              "id": "article:2026-09-19-11",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "基础设施：Semianalysis 拆解 Engram——嵌入表卸到内存和固态盘之后，同等质量不再被高带宽内存容量卡住",
+              "type": "article",
+              "summary": "Semianalysis 9 月 18 日的专题认为，Engram 把重复的局部模式做成可预取的嵌入行，DeepSeek-V4.1-Flash 约 189 GiB 的表可以卸到主机内存甚至固态盘，从而把稀缺的高带宽内存留给权重和 KV cache。",
+              "subtype": "基础设施",
+              "weight": 1
+            }
+          },
+          {
+            "data": {
+              "id": "source:semianalysis",
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "label": "Semianalysis",
+              "type": "source",
+              "weight": 1
             }
           }
         ],
@@ -20356,71 +20614,6 @@
           },
           {
             "data": {
-              "id": "edge:article:2026-09-19-0->source:techcrunch",
-              "weight": 1,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "source:techcrunch",
-              "type": "article-source",
-              "label": "source"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-19-0->category:观察",
-              "weight": 1,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "category:观察",
-              "type": "article-category",
-              "label": "观察"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-19-0->entity:company-anthropic",
-              "weight": 0.95,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "entity:company-anthropic",
-              "type": "article-entity",
-              "label": "company"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-19-0->entity:person-dario-amodei",
-              "weight": 0.9,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "entity:person-dario-amodei",
-              "type": "article-entity",
-              "label": "person"
-            }
-          },
-          {
-            "data": {
-              "id": "edge:article:2026-09-19-0->entity:person-sam-altman",
-              "weight": 0.9,
-              "article_ids": [
-                "2026-09-19-0"
-              ],
-              "source": "article:2026-09-19-0",
-              "target": "entity:person-sam-altman",
-              "type": "article-entity",
-              "label": "person"
-            }
-          },
-          {
-            "data": {
               "id": "edge:article:2026-09-19-1->source:techcrunch-转述-the-wall-street-journal",
               "weight": 1,
               "article_ids": [
@@ -21366,6 +21559,45 @@
               "target": "entity:organization-dmi",
               "type": "explicit-relation",
               "label": "trend"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->source:semianalysis",
+              "weight": 1,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "source:semianalysis",
+              "type": "article-source",
+              "label": "source"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->category:基础设施",
+              "weight": 1,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "category:基础设施",
+              "type": "article-category",
+              "label": "基础设施"
+            }
+          },
+          {
+            "data": {
+              "id": "edge:article:2026-09-19-11->entity:model-deepseek",
+              "weight": 0.6759999999999999,
+              "article_ids": [
+                "2026-09-19-11"
+              ],
+              "source": "article:2026-09-19-11",
+              "target": "entity:model-deepseek",
+              "type": "article-entity",
+              "label": "model"
             }
           }
         ]
@@ -26637,7 +26869,7 @@
                 "2026-09-06-8",
                 "2026-09-08-7"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "infra",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -26650,7 +26882,7 @@
               "article_ids": [
                 "2026-09-06-0"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "event",
               "subtype": "launch",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
@@ -27741,7 +27973,7 @@
               "label": "Jensen Huang",
               "type": "entity",
               "subtype": "person",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "aliases": [
                 "Jensen Huang"
               ],
@@ -27754,10 +27986,10 @@
               "article_ids": [
                 "2026-09-08-7"
               ],
-              "label": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+              "label": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
               "type": "event",
               "subtype": "trend",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "weight": 1.4
             }
           },
@@ -37294,7 +37526,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -40976,7 +41209,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -42931,7 +43165,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -44992,7 +45227,8 @@
                 "2026-09-18-3",
                 "2026-09-18-7",
                 "2026-09-18-11",
-                "2026-09-19-5"
+                "2026-09-19-5",
+                "2026-09-19-11"
               ],
               "label": "基础设施",
               "type": "category",
@@ -46752,8 +46988,8 @@
     }
   ],
   "graph_stats": {
-    "node_count": 2699,
-    "edge_count": 6379,
+    "node_count": 2707,
+    "edge_count": 6402,
     "clue_count": 6
   }
 }

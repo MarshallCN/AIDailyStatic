@@ -4314,9 +4314,9 @@
               "article_ids": [
                 "2026-09-08-7"
               ],
-              "label": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+              "label": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
               "type": "article",
-              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
+              "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。",
               "subtype": "观察",
               "weight": 1
             }
@@ -8820,10 +8820,10 @@
         {
           "report_index": 3,
           "article_id": "2026-09-08-7",
-          "title": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+          "title": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
           "source": "Electronic Times（报道 NVIDIA/OpenAI）等",
           "date": "2026-09-08",
-          "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。"
+          "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。"
         },
         {
           "report_index": 4,
@@ -21354,7 +21354,7 @@
               "article_ids": [
                 "2026-09-06-0"
               ],
-              "label": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+              "label": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
               "type": "article",
               "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。",
               "subtype": "基础设施",
@@ -22426,7 +22426,7 @@
         {
           "report_index": 19,
           "article_id": "2026-09-06-0",
-          "title": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+          "title": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
           "source": "The Next Web",
           "date": "2026-09-06",
           "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。"
@@ -27405,10 +27405,10 @@
     {
       "report_index": 3,
       "article_id": "2026-09-08-7",
-      "title": "观察：Jensen Huang 称\\\"AGI 时代已来\\\"，AI 股票与市场情绪随 Astra 反弹",
+      "title": "观察：Jensen Huang 称\"AGI 时代已来\"，AI 股票与市场情绪随 Astra 反弹",
       "source": "Electronic Times（报道 NVIDIA/OpenAI）等",
       "date": "2026-09-08",
-      "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\\\"AGI 时代已经到来\\\"，此前因\\\"AI 峰值论\\\"受挫的市场情绪随之反弹，AI 硬件股票大涨。"
+      "summary": "在 OpenAI 发布 GPT-6 Astra 后，NVIDIA CEO 黄仁勋宣称\"AGI 时代已经到来\"，此前因\"AI 峰值论\"受挫的市场情绪随之反弹，AI 硬件股票大涨。"
     },
     {
       "report_index": 4,
@@ -27533,7 +27533,7 @@
     {
       "report_index": 19,
       "article_id": "2026-09-06-0",
-      "title": "黄仁勋：\\\"AGI 已到来\\\"，还有 40 万块 GPU 在路上",
+      "title": "黄仁勋：\"AGI 已到来\"，还有 40 万块 GPU 在路上",
       "source": "The Next Web",
       "date": "2026-09-06",
       "summary": "黄仁勋在 X 上称 GPT-6 Astra 的训练意味着\"AGI 已到来\"，并预告还有 40 万块 GPU 上线。"
