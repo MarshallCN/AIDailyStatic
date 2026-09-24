@@ -27,6 +27,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 PROMPTS_DIR = ROOT / "prompts"
 NEWS_DIR = ROOT / "news"
 KIMI_DIR = ROOT / "kimi"
+SEMIANALYSIS_DIR = pathlib.Path("/root/Semianalysis/Reports-MD")
+SEMIANALYSIS_NAME_RE = re.compile(
+    r"^(?P<date>\d{4}-\d{2}-\d{2})__(?P<slug>.+?)__member-visible(?:__\d+)?\.md$"
+)
+SEMIANALYSIS_EXCERPT_LIMIT = 14000
 PROMPT_PATH = PROMPTS_DIR / "PROMPT.md"
 
 FIXED_CATEGORIES = [
@@ -915,6 +920,24 @@ def build_compact_prompt(date_str: str, candidates: list[Candidate]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def unescape_news_text(value: str) -> str:
+    text = str(value or "")
+    if "\\" not in text:
+        return text
+    for _ in range(3):
+        nxt = (
+            text.replace(r"\"", '"')
+            .replace(r"\'", "'")
+            .replace(r"\n", "\n")
+            .replace(r"\t", "\t")
+            .replace(r"\\", "\\")
+        )
+        if nxt == text:
+            break
+        text = nxt
+    return text
+
+
 def normalize_line_endings(value: str) -> str:
     return value.replace("\r\n", "\n").replace("\r", "\n")
 
@@ -962,13 +985,13 @@ def parse_news_markdown(raw: str, fallback_day: str) -> tuple[str, list[NewsItem
         categories = [part.strip() for part in read_field(block, "category").split(",") if part.strip()]
         items.append(
             NewsItem(
-                title=title_match.group(1).strip() if title_match else "无标题",
-                source=read_field(block, "source"),
+                title=unescape_news_text(title_match.group(1).strip() if title_match else "无标题"),
+                source=unescape_news_text(read_field(block, "source")),
                 date=read_field(block, "date") or day,
                 category=categories,
                 url=read_field(block, "url"),
-                summary=read_field(block, "summary"),
-                detail=detail_paragraphs,
+                summary=unescape_news_text(read_field(block, "summary")),
+                detail=[unescape_news_text(paragraph) for paragraph in detail_paragraphs],
             )
         )
     return day, items
@@ -1011,8 +1034,14 @@ def validate_news(day: str, items: list[NewsItem], expected_day: str | None, str
             errors.append(f"{prefix} 缺少 detail")
         if expected_day and item.date != actual_day:
             errors.append(f"{prefix} 的 date 为 {item.date}，预期为 {actual_day}")
-        if len(item.detail) < 2 or len(item.detail) > 4:
-            errors.append(f"{prefix} 的 detail 段落数为 {len(item.detail)}，预期为 2 到 4 段")
+        is_semianalysis = item.source.strip().lower() == "semianalysis"
+        min_detail, max_detail = (3, 6) if is_semianalysis else (2, 4)
+        if len(item.detail) < min_detail or len(item.detail) > max_detail:
+            errors.append(f"{prefix} 的 detail 段落数为 {len(item.detail)}，预期为 {min_detail} 到 {max_detail} 段")
+        if is_semianalysis and not item.url.startswith("internal:semianalysis/"):
+            errors.append(f"{prefix} 是 Semianalysis 专题，url 必须是 internal:semianalysis/<稿件文件名不含扩展名>，不要写公开链接")
+        if is_semianalysis and re.search(r"https?://", " ".join([item.summary, *item.detail, item.url])):
+            errors.append(f"{prefix} 的 Semianalysis 专题不能出现公开链接")
         if "\n" in item.summary:
             errors.append(f"{prefix} 的 summary 不是单句单行")
 
@@ -1076,13 +1105,13 @@ def load_items_from_json(raw: str, expected_day: str) -> tuple[str, list[NewsIte
 
         items.append(
             NewsItem(
-                title=str(item.get("title", "")).strip(),
-                source=str(item.get("source", "")).strip(),
+                title=unescape_news_text(str(item.get("title", "")).strip()),
+                source=unescape_news_text(str(item.get("source", "")).strip()),
                 date=str(item.get("date", day)).strip(),
                 category=[str(part).strip() for part in category if str(part).strip()],
                 url=str(item.get("url", "")).strip(),
-                summary=str(item.get("summary", "")).strip(),
-                detail=[str(part).strip() for part in detail if str(part).strip()],
+                summary=unescape_news_text(str(item.get("summary", "")).strip()),
+                detail=[unescape_news_text(str(part).strip()) for part in detail if str(part).strip()],
             )
         )
 
@@ -1132,6 +1161,149 @@ def build_collect_config(args: argparse.Namespace) -> CollectConfig:
         max_arxiv_items=args.max_arxiv_items,
     )
 
+
+
+def list_semianalysis_reports(directory: pathlib.Path) -> list[dict[str, object]]:
+    reports: list[dict[str, object]] = []
+    if not directory.is_dir():
+        return reports
+    for path in directory.glob("*.md"):
+        match = SEMIANALYSIS_NAME_RE.match(path.name)
+        if not match:
+            continue
+        reports.append(
+            {
+                "date": match.group("date"),
+                "stem": path.stem,
+                "path": path,
+                "mtime": path.stat().st_mtime,
+            }
+        )
+    reports.sort(key=lambda item: (str(item["date"]), float(item["mtime"])), reverse=True)
+    return reports
+
+
+def semianalysis_already_covered(stem: str, news_dir: pathlib.Path) -> bool:
+    needle = f"internal:semianalysis/{stem}"
+    for path in news_dir.glob("*.md"):
+        try:
+            text = path.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        if needle in text:
+            return True
+    return False
+
+
+def extract_semianalysis_excerpt(path: pathlib.Path, limit: int = SEMIANALYSIS_EXCERPT_LIMIT) -> dict[str, str]:
+    title = ""
+    subtitle = ""
+    authors = ""
+    published = ""
+    chunks: list[str] = []
+    size = 0
+    with path.open(encoding="utf-8", errors="replace") as handle:
+        for raw_line in handle:
+            line = raw_line.strip()
+            if not line or line == "---":
+                if chunks and not chunks[-1].endswith("\n\n"):
+                    chunks.append("\n")
+                continue
+            if "data:image" in line or line.startswith("!["):
+                continue
+            if len(line) > 500 and " " not in line[:120]:
+                continue
+            if line.startswith("- Source:"):
+                continue
+            if line.startswith("# ") and not title:
+                title = line[2:].strip()
+                continue
+            if line.startswith("- Published:"):
+                published = line.split(":", 1)[1].strip()
+                continue
+            if line.startswith("- Subtitle:"):
+                subtitle = line.split(":", 1)[1].strip()
+                continue
+            if line.startswith("- Authors:"):
+                authors = line.split(":", 1)[1].strip()
+                continue
+            piece = line + "\n"
+            if size + len(piece) > limit:
+                break
+            chunks.append(piece)
+            size += len(piece)
+    return {
+        "title": title,
+        "subtitle": subtitle,
+        "authors": authors,
+        "published": published,
+        "excerpt": "".join(chunks).strip(),
+    }
+
+
+def brief_semianalysis_report(report: dict[str, object]) -> dict[str, object]:
+    path = report["path"]
+    assert isinstance(path, pathlib.Path)
+    stem = str(report["stem"])
+    meta = extract_semianalysis_excerpt(path)
+    return {
+        "id": stem,
+        "published": meta["published"] or str(report["date"]),
+        "title": meta["title"],
+        "subtitle": meta["subtitle"],
+        "authors": meta["authors"],
+        "internal_url": f"internal:semianalysis/{stem}",
+        "source": "Semianalysis",
+        "excerpt": meta["excerpt"],
+    }
+
+
+def latest_uncovered_semianalysis(news_dir: pathlib.Path, directory: pathlib.Path) -> dict[str, object] | None:
+    reports = list_semianalysis_reports(directory)
+    if not reports:
+        return None
+    latest = reports[0]
+    if semianalysis_already_covered(str(latest["stem"]), news_dir):
+        return None
+    return brief_semianalysis_report(latest)
+
+
+def semianalysis_report_by_stem(directory: pathlib.Path, stem: str) -> dict[str, object] | None:
+    needle = stem.removesuffix(".md")
+    for report in list_semianalysis_reports(directory):
+        if report["stem"] == needle:
+            return report
+    return None
+
+
+def cmd_semianalysis_brief(args: argparse.Namespace) -> int:
+    directory = pathlib.Path(args.dir) if args.dir else SEMIANALYSIS_DIR
+    if args.stem:
+        found = semianalysis_report_by_stem(directory, args.stem)
+        if found is None:
+            payload = {"status": "none", "reason": f"找不到稿件：{args.stem}"}
+            text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+            return write_text_command_result(text, args.output)
+        if semianalysis_already_covered(str(found["stem"]), NEWS_DIR):
+            payload = {"status": "none", "reason": "这篇已经写进过新闻，不要再总结一次。"}
+            text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+            return write_text_command_result(text, args.output)
+        report = brief_semianalysis_report(found)
+    else:
+        report = latest_uncovered_semianalysis(NEWS_DIR, directory)
+    if report is None:
+        payload = {
+            "status": "none",
+            "reason": "目录里最新一篇 Semianalysis 已经写进过新闻，或目录里没有稿件。今天不要再加 Semianalysis 专题。",
+        }
+    else:
+        payload = {
+            "status": "pending",
+            "reason": "最新一篇还没总结过。今天的日报里单独加一条专题，写详细一点，source 只写 Semianalysis，url 用 internal_url，不要写公开链接。",
+            "report": report,
+        }
+    text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+    return write_text_command_result(text, args.output)
 
 
 def cmd_collect(args: argparse.Namespace) -> int:
@@ -1452,6 +1624,15 @@ def build_parser() -> argparse.ArgumentParser:
     collect_parser.add_argument("--max-nvidia-links", type=int, default=40, help="NVIDIA 首页最多检查多少链接")
     collect_parser.add_argument("--max-arxiv-items", type=int, default=30, help="arXiv 最多保留多少条论文")
     collect_parser.set_defaults(func=cmd_collect)
+
+    semianalysis_parser = subparsers.add_parser(
+        "semianalysis-brief",
+        help="列出尚未写进新闻的最新一篇 Semianalysis 内部稿",
+    )
+    semianalysis_parser.add_argument("--dir", help="稿件目录，默认 /root/Semianalysis/Reports-MD")
+    semianalysis_parser.add_argument("--stem", help="指定某一篇的文件名（可带或不带 .md）；日常自动任务不要传，默认只取最新未写过的一篇")
+    semianalysis_parser.add_argument("--output", help="可选：写入 JSON 文件")
+    semianalysis_parser.set_defaults(func=cmd_semianalysis_brief)
 
     prompt_parser = subparsers.add_parser("prompt", help="生成给 AI 的 prompt")
     prompt_parser.add_argument("--date", help="目标日期，格式 YYYY-MM-DD，默认 Europe/London 的今天")

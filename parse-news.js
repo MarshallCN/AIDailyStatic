@@ -14,6 +14,24 @@
     return String(value || '').replace(/\r\n?/g, '\n');
   }
 
+  function unescapeNewsText(value) {
+    let text = String(value || '');
+    if (!text.includes('\\')) return text;
+
+    // Hermes / JSON 转义常会把 \" \' \\ 原样写进标题和摘要。
+    for (let i = 0; i < 3; i += 1) {
+      const next = text
+        .replace(/\\"/g, '"')
+        .replace(/\\'/g, "'")
+        .replace(/\\n/g, '\n')
+        .replace(/\\t/g, '\t')
+        .replace(/\\\\/g, '\\');
+      if (next === text) break;
+      text = next;
+    }
+    return text;
+  }
+
   function parseCategories(categoryString) {
     return String(categoryString || '')
       .split(',')
@@ -51,17 +69,17 @@
         });
       const minIndent = indents.length ? Math.min.apply(null, indents) : 0;
 
-      return lines
+      return unescapeNewsText(lines
         .map(line => line.slice(Math.min(minIndent, line.length)))
         .join('\n')
-        .trim();
+        .trim());
     }
 
-    return normalized
+    return unescapeNewsText(normalized
       .split('\n')
       .map(line => line.trim())
       .join('\n')
-      .trim();
+      .trim());
   }
 
   function parseDayFromFile(fileName) {
@@ -91,7 +109,7 @@
       const summary = readField(block, 'summary');
 
       return {
-        title: titleMatch ? titleMatch[1].trim() : '无标题',
+        title: unescapeNewsText(titleMatch ? titleMatch[1].trim() : '无标题'),
         source: readField(block, 'source') || '未知来源',
         date: readField(block, 'date') || day,
         category: normalizeCategoryString(readField(block, 'category'), summary),
@@ -108,12 +126,12 @@
     return (items || []).map((item, idx) => ({
       id: `${day}-${idx}`,
       day,
-      title: item.title || '无标题',
-      source: item.source || '未知来源',
+      title: unescapeNewsText(item.title || '无标题'),
+      source: unescapeNewsText(item.source || '未知来源'),
       date: item.date || day,
       category: normalizeCategoryString(item.category, item.summary),
-      summary: item.summary || '',
-      detail: item.detail || '',
+      summary: unescapeNewsText(item.summary || ''),
+      detail: unescapeNewsText(item.detail || ''),
       url: item.url || '#'
     }));
   }

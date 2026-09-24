@@ -108,6 +108,24 @@ KG_LESSONS_LIMIT = 25
 INSIGHT_TEMPLATE_NAME = "insights.md"
 
 
+def unescape_news_text(value: str) -> str:
+    text = str(value or "")
+    if "\\" not in text:
+        return text
+    for _ in range(3):
+        nxt = (
+            text.replace(r"\"", '"')
+            .replace(r"\'", "'")
+            .replace(r"\n", "\n")
+            .replace(r"\t", "\t")
+            .replace(r"\\", "\\")
+        )
+        if nxt == text:
+            break
+        text = nxt
+    return text
+
+
 def normalize_line_endings(value: str) -> str:
     return str(value or "").replace("\r\n", "\n").replace("\r", "\n")
 
@@ -220,13 +238,17 @@ def parse_news_markdown(raw: str, fallback_day: str) -> tuple[str, list[dict[str
         detail = read_field(block, "detail")
         items.append(
             {
-                "title": title_match.group(1).strip() if title_match else "无标题",
-                "source": read_field(block, "source"),
+                "title": unescape_news_text(title_match.group(1).strip() if title_match else "无标题"),
+                "source": unescape_news_text(read_field(block, "source")),
                 "date": read_field(block, "date") or day,
                 "category": parse_categories(read_field(block, "category")),
                 "url": read_field(block, "url"),
-                "summary": read_field(block, "summary"),
-                "detail": [paragraph.strip() for paragraph in re.split(r"\n\s*\n", detail) if paragraph.strip()],
+                "summary": unescape_news_text(read_field(block, "summary")),
+                "detail": [
+                    unescape_news_text(paragraph.strip())
+                    for paragraph in re.split(r"\n\s*\n", detail)
+                    if paragraph.strip()
+                ],
             }
         )
     return day, items

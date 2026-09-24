@@ -97,23 +97,36 @@
     }
   }
 
+  function isPublicUrl(url) {
+    return /^https?:\/\//i.test(String(url || ''));
+  }
+
   function renderSource(item, extraLinks) {
     const links = [];
-    const originalHref = item.url || '#';
+    const originalHref = item.url || '';
     const originalLabel = item.source || '原文链接';
-    links.push({ label: originalLabel, href: originalHref });
+    if (isPublicUrl(originalHref)) {
+      links.push({ label: originalLabel, href: originalHref });
+    }
     (extraLinks || []).forEach((link) => {
       if (!link || !link.href) return;
       const already = links.some((entry) => entry.href.replace(/\/$/, '') === link.href.replace(/\/$/, ''));
       if (!already) links.push(link);
     });
 
-    $origin.innerHTML = `<ul class="detail-origin-list">${links.map((link) => `
+    const originSection = $origin ? $origin.closest('section') : null;
+    if (!links.length) {
+      if ($origin) $origin.innerHTML = '';
+      if (originSection) originSection.classList.add('hidden');
+    } else {
+      if (originSection) originSection.classList.remove('hidden');
+      $origin.innerHTML = `<ul class="detail-origin-list">${links.map((link) => `
       <li class="detail-origin-item">
         <span class="detail-origin-label">${escapeHtml(link.label)}</span>
         <a href="${escapeHtml(link.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.href)}</a>
       </li>
     `).join('')}</ul>`;
+    }
 
     $source.innerHTML = NewsParser.sourceMetaHtml(item);
   }
