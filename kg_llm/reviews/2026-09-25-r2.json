@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-25",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "图谱总体扎实、数字与关系方向大多准确，确定审计满分。主要问题是论文方法实体 \"Interaction Aware Compression for Long Horizon Reasoning\" 被标成泛化的 topic 且把与知名会议同名的 ICLR 直接写入 aliases，存在未来误合并成 ICLR 会议主体的风险；另有个别事件把多个独立事实打包、以及若干所有权关系的引文支撑的是推广而非开发动作。无高危事实错误，建议 revise 一轮修整后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-09-25-4",
+      "severity": "medium",
+      "problem": "实体 \"Interaction Aware Compression for Long Horizon Reasoning\" 被标为 type=\"topic\" 且 aliases 直接写成 [\"ICLR\"]（第 9 篇 2026-09-25-9 复用了同一个名称和 aliases）。该方法是一个具体、可在基准上评测的压缩技术，不是泛化主题，类型错配；更关键的是 ICLR 是顶级机器学习会议 International Conference on Learning Representations 的通用缩写，把缩称写进方法实体的 aliases，会让未来新闻中出现的 \"ICLR 投稿/论文被接收\" 与该压缩方法误合并成同一实体。事件标签里已明确写了 \"此为论文方法名，非 ICLR 会议\"，与实体 aliases 的设法自相矛盾。",
+      "fix": "把 \"Interaction Aware Compression for Long Horizon Reasoning\" 改为具体的方法/技术类实体类型（不要用 topic），并从 2026-09-25-4 与 2026-09-25-9 两处实体的 aliases 中删除 \"ICLR\"（不要在 aliases 里放入与知名会议撞名、会引发误合并的缩写）。"
+    },
+    {
+      "article_id": "2026-09-25-3",
+      "severity": "medium",
+      "problem": "事件 \"Meta 自研推理芯片 MTIA 450/500 与 Iris，并延长与 Broadcom 的芯片合作至2029年\" 把多个相互独立的事实主体压进一个事件：MTIA 450 交付测试、MTIA 500 设计、Iris 本月启动制造、台积电交付12颗、与 Broadcom 的合作延期。同时 \"MTIA 450 首日测试\" 已被单列为另一个事件，与该打包事件里 450 交付测试的部分相互重复。",
+      "fix": "拆分为两个独立事件：(1) 芯片研发/交付（MTIA 450/500/Iris + 台积电交付12颗）；(2) Meta 与 Broadcom 的自研AI芯片合作延至2029年。删除与 \"MTIA 450 首日测试\" 事件的重复表述。"
+    },
+    {
+      "article_id": "2026-09-25-1",
+      "severity": "medium",
+      "problem": "关系 \"Muse --developed_by--> Meta\"（weight 0.9）所附 evidence 是 \"Meta 借助 Meta Connect 大会全力推广 AI 应用 Muse\"——引文表述的是推广/宣传动作，并不支撑 developed_by 所断言的开发所有权（证据存在但支撑的是另一回事）。同类问题见 2026-09-25-0 的 \"Autopilot --developed_by--> Microsoft\"，其 evidence \"Autopilot 是这次的真正重点\" 同样没有开发语义。",
+      "fix": "为 developed_by/released_by 类所有权关系改用明确表达\"推出/开发/发布/由…打造\"的原文引文；若原文只有推广类动作，应把关系改成 promotes/pushes 类型或下调到低权重，而不是用推广引文去支撑开发关系（2026-09-25-0 的 Autopilot 边也照此处理）。"
+    }
+  ],
+  "lessons": [
+    "论文提出的具体可评测方法（压缩算法、记忆系统等）不要标注为泛化的 topic 类型，应使用能承载方法的类型（tool/technique）；若方法缩写与知名会议或已有实体撞名（如 ICLR），不要把该缩写写进实体的 aliases，以免与其他主体误合并。",
+    "基础设施/研发类新闻中，若同一篇含芯片交付、合作延期、设备制造等多个不同事实主体，应拆成独立事件，不要把它们压进一个事件，也不要让独立单列的事件与其重复。",
+    "支撑 developed_by/released_by 等所有权关系的证据必须是明确表达\"推出/开发/发布\"的原文，不能用\"推广/宣传\"类动作的引文顶替；推广类引文只能支撑 promotes/pushes 类关系或用于低权重，不能支撑开发关系。"
+  ]
+}

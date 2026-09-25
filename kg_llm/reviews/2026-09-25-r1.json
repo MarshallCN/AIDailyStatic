@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-25",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "总体忠实度高、关键数字全部有据可依，但存在两类系统性问题：一是把论文正文中'同一主线/相互印证'的多篇工作错配成比较关系（compared_with 类型滥用），二是把论文方法名 ICLR 以裸缩写入图、与知名 ICLR 会议存在撞名合并风险；另外 swallowed 了 2 条证据与断言不匹配的趋势边和 1 处事件切分不当。无不可逆的事实性硬错，但中等问题共 6 条，超过 2 条上限，判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-09-25-4",
+      "severity": "medium",
+      "problem": "实体 'ICLR'（type=topic, aliases 含全称）是论文为 'Interaction Aware Compression for Long Horizon Reasoning' 起的紧凑方法名，但裸缩写 'ICLR' 与知名的 ICLR 会议/venue 完全撞名。在图谱与后续期刊到知识库的跨篇连接中，该复用名极易让'方法 ICLR'与'会议 ICLR'被合并成同一实体，污染整张图的连接性。",
+      "fix": "将主标签改为完整名 'Interaction Aware Compression for Long Horizon Reasoning'，把 'ICLR' 降为 alias，并在 evidence 中注明'此为论文方法名，非 ICLR 会议'，杜绝与会议实体合并。"
+    },
+    {
+      "article_id": "2026-09-25-4",
+      "severity": "medium",
+      "problem": "关系 'ICLR --compared_with--> Growing Harness' 类型错误。原文只是说该文与 Growing Harness、各种显式记忆系统'构成同一主线'，这是研究路线上的相关/佐证关系，并非论文之间做了对比评测；用 compared_with 夸大成一种平等对照。",
+      "fix": "删除这条 compared_with 边，或改用更弱的相关关系（如 related_to）并写明依据是'同主线'而非对比；不要把'同属一条研究线'当作'相互比较'。"
+    },
+    {
+      "article_id": "2026-09-25-2",
+      "severity": "medium",
+      "problem": "关系 'Anthropic --partners_with--> Nscale'（weight 0.5）证据是'Nscale 西弗吉尼亚数据中心 450 亿美元'，这是一条既往前交易、属于本文背景铺垫，并非本文建立的新关系；把它抽成当前关系会从背景上下文错误地引入低权、难验证的边。",
+      "fix": "删除该 partners_with 边；如确需保留 Nscale，应在事件里作为背景提及而非作为一个事件/关系主体，或将其 evidence 标注为'既往交易背景'并显著降权。"
+    },
+    {
+      "article_id": "2026-09-25-5",
+      "severity": "medium",
+      "problem": "关系 'Jev-Mem --built_on--> System-One' 类型错配。System-One/System-Two 是论文受其启发的认知架构概念（System-One/System-Two 认知划分），不是 Jev-Mem 字面意义上'构建在其上'的组件或库；built_on 会读成 Jev-Mem 依赖/继承 System-One，扭曲原文。",
+      "fix": "改用 'inspired_by' 或直接删除该边，把 System-One 仅作为 topic 提及；不要把抽象概念/方法论当作可被 'built on' 的实现组件。"
+    },
+    {
+      "article_id": "2026-09-25-9",
+      "severity": "medium",
+      "problem": "关系 'Agentic Reasoning Survey --compared_with--> ICLR' 与 '--compared_with--> Jev-Mem' 类型错误。原文说的是这些工作'相互印证'、构成同一主线，是佐证/关联关系而非综述对这些工作做了对比；compared_with 被当作'共同出现在同一主线'的兜底。",
+      "fix": "将两条 compared_with 改为 weaker 的 related/佐证语义（如 related_to，依据为'相互印证'），避免图上读成'综述与 ICLR/Jev-Mem 做了横向对比评测'的错误故事。"
+    },
+    {
+      "article_id": "2026-09-25-9",
+      "severity": "medium",
+      "problem": "事件 '本周另两篇 RPMem 与 MemoryAthena 聚焦记忆来源的跨会话与生成式方案' 把两篇贡献不同的独立论文合并成一个事件——RPMem（跨会话参数记忆）与 MemoryAthena（检索 vs 生成记忆、轻量因果路由）是两篇独立工作，揉进一个事件会丢失各自的独立贡献。",
+      "fix": "拆成两个独立事件（RPMem 一篇、MemoryAthena 一篇），各自带 research 类型与自己的 participant/evidence；分别列出它们的 arXiv 号以便后期验证。"
+    },
+    {
+      "article_id": "2026-09-25-1",
+      "severity": "medium",
+      "problem": "关系 'Muse --developed_by--> Meta' 的 evidence 是 'Meta 借助 Meta Connect 大会全力推广 AI 应用 Muse'——这条证据支撑的是'推广/营销'行为，并不直接支撑'开发'（developed_by）。证据与断言行为不匹配（推广≠开发）。",
+      "fix": "换成能直接支撑开发者关系的证据（如'Meta 全力押注 Muse'或补充 Muse 系 Meta 开发的依据），或将关系降为 'promoted_by'；否则整条 developed_by 悬在一条宣传性证据上。"
+    }
+  ],
+  "lessons": [
+    "当论文为方法起的紧凑缩写名与知名会议/机构/基准撞名（如方法名 ICLR 与国际 ICLR 会议）时，主标签必须用完整描述性名称并把缩写放进 aliases 消歧，防止图中两个不同实体被合并。",
+    "论文正文把多篇工作归为'同一主线/相互印证/共同解法'时，表示的是相关或佐证，不是对比评测；不要用 compared_with，改用电子的相关/佐证关系，避免夸大。",
+    "关系的 evidence 必须直接支撑断言本身（推广不等于开发、背景提及不等于新关系）；当 evidence 只证明推广/营销或属既往交易背景时，要么改用对应关系类型，要么删去该边。"
+  ]
+}

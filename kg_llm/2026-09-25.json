@@ -1,0 +1,598 @@
+{
+  "date": "2026-09-25",
+  "articles": [
+    {
+      "article_id": "2026-09-25-0",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.97, "evidence": ["Microsoft 推出 Copilot"]},
+        {"name": "Copilot", "type": "product", "aliases": ["超级应用"], "confidence": 0.95, "evidence": ["微软正式发布重构版 Copilot"]},
+        {"name": "Autopilot", "type": "product", "aliases": ["Scout 云端版本"], "confidence": 0.9, "evidence": ["把此前在 Build 发布的个人助理 Scout 更名为 Autopilot"]},
+        {"name": "Scout", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["把此前在 Build 发布的个人助理 Scout 更名为 Autopilot"]},
+        {"name": "GitHub Copilot", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["底层复用 GitHub Copilot 技术"]},
+        {"name": "Charles Lamanna", "type": "person", "aliases": ["Lamanna"], "confidence": 0.85, "evidence": ["负责工作 Copilot 高管的 Charles Lamanna"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "微软发布重构版 Copilot 超级应用，整合 Chat + Code + Autopilot",
+          "summary": "微软周五正式发布重构版 Copilot，把聊天（Home）、编码（Code）、智能体（Autopilot）三类能力整合进一个界面，明确转向工作场景的 AI。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Copilot", "type": "product", "role": "object"}
+          ],
+          "evidence": ["微软正式发布重构版 Copilot", "把聊天、编码、智能体整合进"]
+        },
+        {
+          "type": "launch",
+          "label": "微软将个人助理 Scout 更名为云端智能体 Autopilot，在企业租户内持续运行",
+          "summary": "Autopilot 是企业租户内拥有身份、记忆、计算机和工作区的云端智能体，可夜间持续运行，强调工作自动化而非个人伴侣。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Autopilot", "type": "product", "role": "object"},
+            {"name": "Scout", "type": "product", "role": "object"}
+          ],
+          "evidence": ["把此前在 Build 发布的个人助理 Scout 更名为 Autopilot", "可在你入睡时持续运行"]
+        },
+        {
+          "type": "trend",
+          "label": "微软把 Copilot 定位为面向工作的新操作系统，与个人助理路线划界",
+          "summary": "负责工作 Copilot 的高管 Charles Lamanna 称不做个人伴侣型 Copilot，Nadella 称之为面向工作的新操作系统，个人助手之争与工作自动化之争重新划线。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Charles Lamanna", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["我们正把 Copilot 建成一个跨越每种模型、每种形态、每个任务的工作OS"]
+        }
+      ],
+      "relations": [
+        {"source": "Copilot", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["微软正式发布重构版 Copilot"]},
+        {"source": "Autopilot", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["把此前在 Build 发布的个人助理 Scout 更名为 Autopilot"]},
+        {"source": "Autopilot", "target": "Scout", "type": "replaces", "weight": 0.8, "evidence": ["把此前在 Build 发布的个人助理 Scout 更名为 Autopilot"]},
+        {"source": "Copilot", "target": "GitHub Copilot", "type": "built_on", "weight": 0.7, "evidence": ["底层复用 GitHub Copilot 技术"]},
+        {"source": "Charles Lamanna", "target": "Microsoft", "type": "affiliated_with", "weight": 0.8, "evidence": ["负责工作 Copilot 高管的 Charles Lamanna"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "微软把筹码从'个人伴侣'整体迁移到'工作自动化'，并用按用量计费把智能体与既有订阅解耦——个人助理之争的主动权交给了 OpenAI、Google 与 Meta，工作AI成为唯一与'任务完成'强绑定的赛道。"
+    },
+    {
+      "article_id": "2026-09-25-1",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.97, "evidence": ["Meta 借助 Meta Connect 大会全力推广 AI 应用 Muse"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["Muse 的势头在 Meta 的全力推广下继续攀升"]},
+        {"name": "Sensor Tower", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Sensor Tower 估算"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["是 ChatGPT 首发头10天（约24%）的两倍多"]},
+        {"name": "Claude", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Claude 和 Grok 在上线期下载增长反而下滑"]},
+        {"name": "Grok", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["Claude 和 Grok 在上线期下载增长反而下滑"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["Anthropic、OpenAI 尚无对等的消费者重押动作"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["Anthropic、OpenAI 尚无对等的消费者重押动作"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Muse 累计下载超340万，自9月18日起稳居美区 App Store 榜首",
+          "summary": "Sensor Tower 估算 Muse 累计下载超340万，自9月18日登顶美区 App Store、9月19日登顶 Google Play 后持续保持，Meta Connect 后日活单日上涨27%。",
+          "participants": [
+            {"name": "Muse", "type": "product", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Sensor Tower", "type": "organization", "role": "subject"}
+          ],
+          "evidence": ["下载量已超340万", "自9月18日登顶美区 App Store 后一直保持首位", "Muse 的日活单日上涨27%"]
+        },
+        {
+          "type": "launch",
+          "label": "Meta 用交叉导流推广 Muse 并公布视频聊天等新功能",
+          "summary": "Meta 沿用推广 Threads 的交叉导流打法，向 Facebook、Instagram 用户投放广告，并在 Meta Connect 公布 Muse 头像视频聊天、Mac 端等即将到来的功能。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["向 Facebook、Instagram 用户投放广告", "用 Muse 头像视频聊天"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 与 OpenAI 尚无对等的消费者重押动作，Muse 率先跑通个人大模型代理的大众路径",
+          "summary": "以'工具式 AI + Meta 亿万级流量'两条腿，Muse 第一个跑通个人大模型代理从技术 demo 到大众应用的路径，而 Anthropic、OpenAI 尚无对等的消费者重押动作。",
+          "participants": [
+            {"name": "Muse", "type": "product", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Anthropic、OpenAI 尚无对等的消费者重押动作"]
+        }
+      ],
+      "relations": [
+        {"source": "Meta", "target": "Muse", "type": "promotes", "weight": 0.8, "evidence": ["Meta 借助 Meta Connect 大会全力推广 AI 应用 Muse"]},
+        {"source": "Muse", "target": "ChatGPT", "type": "compared_with", "weight": 0.6, "evidence": ["是 ChatGPT 首发头10天（约24%）的两倍多"]},
+        {"source": "Muse", "target": "Claude", "type": "compared_with", "weight": 0.55, "evidence": ["Claude 和 Grok 在上线期下载增长反而下滑"]},
+        {"source": "Muse", "target": "Grok", "type": "compared_with", "weight": 0.55, "evidence": ["Claude 和 Grok 在上线期下载增长反而下滑"]}
+      ],
+      "metrics": [
+        {"name": "Muse 累计下载量", "value": "超340万"},
+        {"name": "Meta Connect 后 Muse 日活单日涨幅", "value": "27%"},
+        {"name": "Muse 上线头两周下载量", "value": "约280万"},
+        {"name": "Muse 上线期日均环比增速", "value": "55%"},
+        {"name": "ChatGPT 首发头10天下载增速", "value": "约24%"},
+        {"name": "Apptopia 估算 Muse 下载量", "value": "430万"},
+        {"name": "Appfigures 估算 Muse 下载量", "value": "230万"}
+      ],
+      "why_it_matters": "消费者智能体应用首次由'原生流量+工具式AI'两条腿跑成大众产品，Muse 把下载曲线推到 ChatGPT 首发增速的两倍多，而 Anthropic/OpenAI 尚未在消费者端对等应战——个人大模型代理的赛道底线被 Meta 重新划定。"
+    },
+    {
+      "article_id": "2026-09-25-2",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 承诺在七年内向 Akamai 云基础设施支付约116亿美元"]},
+        {"name": "Akamai", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 承诺在七年内向 Akamai 云基础设施支付约116亿美元"]}
+              ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "Anthropic 与 Akamai 达成 116 亿美元七年云交易",
+          "summary": "据 Akamai 证券文件，Anthropic 承诺七年内向 Akamai 云基础设施支付约116亿美元以支撑 CPU 负载增长，是 Akamai 历史上最大合同。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Akamai", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Anthropic 承诺在七年内向 Akamai 云基础设施支付约116亿美元"]
+        },
+        {
+          "type": "funding",
+          "label": "Akamai 向 Anthropic 发行最高约5%流通股的认股权证",
+          "summary": "Akamai 以指定价格 $111.33/股向 Anthropic 发行最高约5%流通股的认股权证，约2%随首笔付款立即行权，交易最多可再扩至90亿美元、总潜在承诺约200亿美元。",
+          "participants": [
+            {"name": "Akamai", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Akamai 向 Anthropic 发行认股权证", "购买最高约5%的流通股"]
+        },
+        {
+          "type": "infra",
+          "label": "Akamai 预计为这笔合同资本支出约55亿美元，2026年资本开支增加约17亿美元",
+          "summary": "Akamai 为这笔合同预计资本支出约55亿美元，2026年资本开支将因此增加约17亿美元（预购内存等供应链组件），但收入要到2027年下半年才开始产生。",
+          "participants": [
+            {"name": "Akamai", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Akamai 为这笔合同预计资本支出约55亿美元", "2026年资本开支将因此增加约17亿美元"]
+        }
+      ],
+      "relations": [
+        {"source": "Akamai", "target": "Anthropic", "type": "supplies", "weight": 0.9, "evidence": ["Anthropic 承诺在七年内向 Akamai 云基础设施支付约116亿美元"]},
+        {"source": "Anthropic", "target": "Akamai", "type": "partners_with", "weight": 0.8, "evidence": ["Anthropic 承诺在七年内向 Akamai 云基础设施支付约116亿美元"]},
+        {"source": "Anthropic", "target": "Akamai", "type": "invests_in", "weight": 0.6, "evidence": ["Akamai 向 Anthropic 发行认股权证"]}
+      ],
+      "metrics": [
+        {"name": "Akamai 七年云交易总额", "value": "约116亿美元"},
+        {"name": "认股权证最高流通股比例", "value": "约5%"},
+        {"name": "Nscale 西弗吉尼亚数据中心交易", "value": "450亿美元"},
+        {"name": "Akamai 为合同预计资本支出", "value": "约55亿美元"},
+        {"name": "Akamai 2026年资本开支增幅", "value": "约17亿美元"},
+        {"name": "交易潜在总额上限", "value": "约200亿美元"},
+        {"name": "Akamai 股价盘后涨幅", "value": "超22%"}
+      ],
+      "why_it_matters": "Anthropic 把整块推理负载外包给传统 CDN/边缘云而非 GPU 超大规模云，表明'推理'的真实构成是大量高吞吐、低峰值的 CPU 工作——'分布式AI基础设施'由此成为资本结构上真正可被押注的下一块蛋糕。"
+    },
+    {
+      "article_id": "2026-09-25-3",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.97, "evidence": ["Meta 2026年计划的1450亿美元资本开支上限"]},
+        {"name": "Alphabet", "type": "company", "aliases": ["Google母公司"], "confidence": 0.9, "evidence": ["Alphabet、Amazon、Meta、Microsoft 四家2026年在AI上的总投入预计约7300亿美元"]},
+        {"name": "Amazon", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Alphabet、Amazon、Meta、Microsoft 四家2026年在AI上的总投入预计约7300亿美元"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.9, "evidence": ["Alphabet、Amazon、Meta、Microsoft 四家2026年在AI上的总投入预计约7300亿美元"]},
+        {"name": "MTIA 450 (Arke)", "type": "hardware", "aliases": ["Arke"], "confidence": 0.9, "evidence": ["Meta 自研推理芯片 MTIA 450（代号 Arke）"]},
+        {"name": "MTIA 500 (Astrid)", "type": "hardware", "aliases": ["Astrid"], "confidence": 0.85, "evidence": ["代号 Astrid 的 MTIA 500"]},
+        {"name": "Iris", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["启动另一款代号 Iris 的AI芯片制造"]},
+        {"name": "台积电", "type": "company", "aliases": ["TSMC"], "confidence": 0.9, "evidence": ["12颗已由台积电交付"]},
+        {"name": "Broadcom", "type": "company", "aliases": ["博通"], "confidence": 0.9, "evidence": ["Meta 已把与 Broadcom 的自研AI芯片合作延至2029年"]},
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.9, "evidence": ["首日测试就跑 Meta 自家模型与 DeepSeek、阿里模型"]},
+        {"name": "Alibaba", "type": "company", "aliases": ["阿里", "阿里巴巴"], "confidence": 0.9, "evidence": ["首日测试就跑 Meta 自家模型与 DeepSeek、阿里模型"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Meta 2026年计划1450亿美元资本开支，超过除美中俄外所有国家军费",
+          "summary": "Meta 2026年资本开支上限1450亿美元，超过除美中俄三国外全球所有国家的年度军费预算，较2025年近乎翻倍；Alphabet、Amazon、Meta、Microsoft 四家AI总投入预计约7300亿美元。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Alphabet", "type": "company", "role": "object"},
+            {"name": "Amazon", "type": "company", "role": "object"},
+            {"name": "Microsoft", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Meta 2026年计划的1450亿美元资本开支上限", "超过了除美中俄三国外全球所有国家的年度军费预算", "四家2026年在AI上的总投入预计约7300亿美元"]
+        },
+        {
+          "type": "infra",
+          "label": "Meta 自研推理芯片 MTIA 450/500 与 Iris，台积电交付12颗",
+          "summary": "Meta 自研 MTIA 450（Arke）已交付测试、MTIA 500（Astrid）设计中、9月启动 Iris 制造，12颗已由台积电交付。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "MTIA 450 (Arke)", "type": "hardware", "role": "object"},
+            {"name": "MTIA 500 (Astrid)", "type": "hardware", "role": "object"},
+            {"name": "Iris", "type": "hardware", "role": "object"},
+            {"name": "台积电", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Meta 自研推理芯片 MTIA 450（代号 Arke）", "代号 Astrid 的 MTIA 500", "启动另一款代号 Iris 的AI芯片制造", "12颗已由台积电交付"]
+        },
+        {
+          "type": "partnership",
+          "label": "Meta 延长与 Broadcom 的自研AI芯片合作至2029年",
+          "summary": "Meta 已把与 Broadcom 的自研AI芯片合作延至2029年。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Broadcom", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Meta 已把与 Broadcom 的自研AI芯片合作延至2029年"]
+        },
+        {
+          "type": "benchmark",
+          "label": "MTIA 450 首日测试运行 Meta 自家模型与 DeepSeek、阿里模型，结果与仿真吻合",
+          "summary": "MTIA 450 首日测试就跑 Meta 自家模型与 DeepSeek、阿里模型，结果与仿真吻合（误差约2–3%）。",
+          "participants": [
+            {"name": "MTIA 450 (Arke)", "type": "hardware", "role": "subject"},
+            {"name": "DeepSeek", "type": "company", "role": "object"},
+            {"name": "Alibaba", "type": "company", "role": "object"}
+          ],
+          "evidence": ["首日测试就跑 Meta 自家模型与 DeepSeek、阿里模型"]
+        },
+        {
+          "type": "trend",
+          "label": "Meta Q2 经营利润率从43%压到31%，AI基建资本饥渴与股东回报正面碰撞",
+          "summary": "Meta Q2 自由现金流同比下滑、经营利润率从43%压到31%，AI基建的资本饥渴正在与股东回报正面碰撞。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["经营利润率从43%压到31%"]
+        }
+      ],
+      "relations": [
+        {"source": "MTIA 450 (Arke)", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["Meta 自研推理芯片 MTIA 450（代号 Arke）"]},
+        {"source": "MTIA 500 (Astrid)", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["代号 Astrid 的 MTIA 500"]},
+        {"source": "Iris", "target": "Meta", "type": "developed_by", "weight": 0.8, "evidence": ["启动另一款代号 Iris 的AI芯片制造"]},
+        {"source": "台积电", "target": "Meta", "type": "supplies", "weight": 0.8, "evidence": ["12颗已由台积电交付"]},
+        {"source": "Meta", "target": "Broadcom", "type": "partners_with", "weight": 0.8, "evidence": ["Meta 已把与 Broadcom 的自研AI芯片合作延至2029年"]}
+      ],
+      "metrics": [
+        {"name": "Meta 2026年资本开支上限", "value": "1450亿美元"},
+        {"name": "Meta 2026年总费用上限", "value": "1690亿美元"},
+        {"name": "四巨头2026年AI总投入预估", "value": "约7300亿美元"},
+        {"name": "MTIA 450 首日测试误差", "value": "约2–3%"},
+        {"name": "Meta 经营利润率变化", "value": "43%压到31%"},
+        {"name": "Meta 累计算力", "value": "接近20吉瓦"}
+      ],
+      "why_it_matters": "1450亿美元的资本饥渴在 Q2 已率先压倒经营利润率（43%→31%），'社交公司→云巨头'的跳跃第一次以单季金额级的方式正面撞上股东回报——Meta 成了全网'AI是否过度投资'争论的量级样本。"
+    },
+    {
+      "article_id": "2026-09-25-4",
+      "entities": [
+        {"name": "When Can Agents Forget Their Reasoning?", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["一项题为“When Can Agents Forget Their Reasoning?”的工作"]},
+        {"name": "Interaction Aware Compression for Long Horizon Reasoning", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["ICLR（Interaction Aware Compression for Long Horizon Reasoning）"]},
+        {"name": "WorkBuddyBench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在260个 WorkBuddyBench 任务上"]},
+        {"name": "CoT", "type": "topic", "aliases": ["静态链式思考"], "confidence": 0.8, "evidence": ["它与静态 CoT 压缩的根本不同"]},
+        {"name": "Growing Harness", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["（Growing Harness 把重复控制固化成代码、各种显式记忆系统）构成同一主线"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 Interaction Aware Compression（ICLR）免训练在线推理压缩法，按熵删除低价值推理",
+          "summary": "论文提出 ICLR（Interaction Aware Compression for Long Horizon Reasoning）——此为论文方法名，非 ICLR 会议——用冻结代理模型估计推理块熵并优先压缩低熵块，同时保留动作、工具调用和观测。",
+          "participants": [
+            {"name": "When Can Agents Forget Their Reasoning?", "type": "paper", "role": "subject"},
+            {"name": "Interaction Aware Compression for Long Horizon Reasoning", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["ICLR（Interaction Aware Compression for Long Horizon Reasoning）是一种免训练的在线方法"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Interaction Aware Compression（ICLR）在 WorkBuddyBench 上平均奖励提升且 token 显著下降",
+          "summary": "在260个WorkBuddyBench任务上平均奖励从0.699升至0.718，输入/output/cache读token分别减少25.5%、14.4%、33.3%。",
+          "participants": [
+            {"name": "Interaction Aware Compression for Long Horizon Reasoning", "type": "tool", "role": "subject"},
+            {"name": "WorkBuddyBench", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在260个 WorkBuddyBench 任务上，平均奖励从0.699升至0.718"]
+        }
+      ],
+      "relations": [
+        {"source": "Interaction Aware Compression for Long Horizon Reasoning", "target": "WorkBuddyBench", "type": "evaluated_on", "weight": 0.9, "evidence": ["在260个 WorkBuddyBench 任务上，平均奖励从0.699升至0.718"]},
+        {"source": "Interaction Aware Compression for Long Horizon Reasoning", "target": "CoT", "type": "compared_with", "weight": 0.7, "evidence": ["它与静态 CoT 压缩的根本不同"]},
+        {"source": "Interaction Aware Compression for Long Horizon Reasoning", "target": "Growing Harness", "type": "related_to", "weight": 0.4, "evidence": ["这与本周多篇代理论文（Growing Harness 把重复控制固化成代码、各种显式记忆系统）构成同一主线"]}
+      ],
+      "metrics": [
+        {"name": "WorkBuddyBench 平均奖励", "value": "0.699升至0.718"},
+        {"name": "输入token减少", "value": "25.5%"},
+        {"name": "输出token减少", "value": "14.4%"},
+        {"name": "cache读token减少", "value": "33.3%"},
+        {"name": "派生状态仅存于推理时未来行为风险率", "value": "67.3%"},
+        {"name": "派生状态外部化后未来行为风险率", "value": "36.2%"}
+      ],
+      "why_it_matters": "首次把'删除历史推理'当作会反噬未来的动态动作而非静态裁剪来建模，并用量化证据证明'外部化状态'能显著降低行为风险——智能体推理的价值从'存什么'转向'信息存在哪里'，为上下文压缩立了新的正确性标准。"
+    },
+    {
+      "article_id": "2026-09-25-5",
+      "entities": [
+        {"name": "Jev-Mem", "type": "tool", "aliases": [], "confidence": 0.92, "evidence": ["德州大学达拉斯分校团队提出 Jev-Mem"]},
+        {"name": "德州大学达拉斯分校", "type": "organization", "aliases": ["UT Dallas"], "confidence": 0.9, "evidence": ["德州大学达拉斯分校团队提出 Jev-Mem"]},
+        {"name": "System-One", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["全部交给一个专用 System-One 控制器"]},
+        {"name": "LoCoMo", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 LoCoMo 上取得 LLM-as-a-Judge 总分0.777"]},
+        {"name": "A-MEM", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["对比 A-MEM、MemoryOS 的3000秒+"]},
+        {"name": "MemoryOS", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["对比 A-MEM、MemoryOS 的3000秒+"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Jev-Mem 把智能体记忆的组织与检索交给专用 System-One 控制面",
+          "summary": "受 System-One/System-Two 启发，Jev-Mem 将记忆分型、冗余过滤、查询路由、检索预算分配等高频决策交给专用 System-One 控制器，System Two 只在需要复杂推理时被调用。",
+          "participants": [
+            {"name": "Jev-Mem", "type": "tool", "role": "subject"},
+            {"name": "德州大学达拉斯分校", "type": "organization", "role": "subject"},
+            {"name": "System-One", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["把高频、结构化的记忆控制决策", "全部交给一个专用 System-One 控制器"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Jev-Mem 在 LoCoMo 上取得最高准确率、记忆构建提速6.6倍",
+          "summary": "Jev-Mem 在 LoCoMo 上 LLM-as-a-Judge 总分0.777（较最强基线相对提升11.0%），总记忆构建158秒，是最快竞争记忆系统的6.6倍提速，平均查询延迟0.93秒。",
+          "participants": [
+            {"name": "Jev-Mem", "type": "tool", "role": "subject"},
+            {"name": "LoCoMo", "type": "benchmark", "role": "benchmark"},
+            {"name": "A-MEM", "type": "tool", "role": "object"},
+            {"name": "MemoryOS", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["在 LoCoMo 上取得 LLM-as-a-Judge 总分0.777", "是最快竞争记忆系统的6.6倍提速", "对比 A-MEM、MemoryOS 的3000秒+"]
+        }
+      ],
+      "relations": [
+        {"source": "Jev-Mem", "target": "德州大学达拉斯分校", "type": "developed_by", "weight": 0.9, "evidence": ["德州大学达拉斯分校团队提出 Jev-Mem"]},
+        {"source": "Jev-Mem", "target": "LoCoMo", "type": "evaluated_on", "weight": 0.9, "evidence": ["在 LoCoMo 上取得 LLM-as-a-Judge 总分0.777"]},
+        {"source": "Jev-Mem", "target": "A-MEM", "type": "compared_with", "weight": 0.5, "evidence": ["对比 A-MEM、MemoryOS 的3000秒+"]},
+        {"source": "Jev-Mem", "target": "MemoryOS", "type": "compared_with", "weight": 0.5, "evidence": ["对比 A-MEM、MemoryOS 的3000秒+"]}
+      ],
+      "metrics": [
+        {"name": "LoCoMo LLM-as-a-Judge 总分", "value": "0.777"},
+        {"name": "较最强基线相对提升", "value": "11.0%"},
+        {"name": "总记忆构建时间", "value": "158秒"},
+        {"name": "记忆构建提速", "value": "6.6倍"},
+        {"name": "平均查询延迟", "value": "0.93秒"},
+        {"name": "比最强记忆基线延迟降低", "value": "36.7%"}
+      ],
+      "why_it_matters": "把'记忆控制'从生成推理里整体剥离成专用、确定性的 System-One 系统层，证明昂贵生成在记忆路径上是可替换的——'System One 热潮'由此落到智能体记忆这个最具体的子系统和一个可开源的实现上。"
+    },
+    {
+      "article_id": "2026-09-25-6",
+      "entities": [
+        {"name": "Gambit", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Gambit 证实"]},
+        {"name": "Hermes", "type": "tool", "aliases": [], "confidence": 0.92, "evidence": ["Hermes 担任编排层"]},
+        {"name": "Strix", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Strix 承担漏洞扫描"]},
+        {"name": "Cairn", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Cairn 负责自主端到端利用"]},
+        {"name": "OpenRouter", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["全部通过 OpenRouter 按量接入"]},
+        {"name": "Claude Opus 4.6", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["全部通过 OpenRouter 按量接入 Claude Opus 4.6、GLM 5.2、DeepSeek V4 Pro / V4.1 Flash 等模型"]},
+        {"name": "GLM 5.2", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["全部通过 OpenRouter 按量接入 Claude Opus 4.6、GLM 5.2、DeepSeek V4 Pro / V4.1 Flash 等模型"]},
+        {"name": "DeepSeek V4 Pro", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["DeepSeek V4 Pro / V4.1 Flash 等模型"]},
+        {"name": "DeepSeek V4.1 Flash", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["DeepSeek V4 Pro / V4.1 Flash 等模型"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "攻击者用 Hermes/Strix/Cairn 三款开源智能体攻陷27+家企业、窃取超60万张卡",
+          "summary": "Gambit 重构了整场行动：中文操作者用 Hermes（编排）、Strix（扫描）、Cairn（利用）三款开源agent，攻陷含财富500强酒店、美国大型航空在内的27+家企业，窃取超60万张未过期银行卡记录。",
+          "participants": [
+            {"name": "Gambit", "type": "organization", "role": "subject"},
+            {"name": "Hermes", "type": "tool", "role": "object"},
+            {"name": "Strix", "type": "tool", "role": "object"},
+            {"name": "Cairn", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Hermes 担任编排层", "Strix 承担漏洞扫描", "Cairn 负责自主端到端利用", "在至少27家确认被侵"]
+        },
+        {
+          "type": "security",
+          "label": "攻击全程通过 OpenRouter 接入前沿模型，单次扫描平均仅25.46美元",
+          "summary": "攻击通过 OpenRouter 按量接入 Claude Opus 4.6、GLM 5.2、DeepSeek V4 Pro/V4.1 Flash 等模型，单次完整扫描平均仅25.46美元，四周AI算力账单约7006美元。",
+          "participants": [
+            {"name": "Hermes", "type": "tool", "role": "subject"},
+            {"name": "OpenRouter", "type": "organization", "role": "object"},
+            {"name": "Claude Opus 4.6", "type": "model", "role": "object"},
+            {"name": "GLM 5.2", "type": "model", "role": "object"},
+            {"name": "DeepSeek V4 Pro", "type": "model", "role": "object"},
+            {"name": "DeepSeek V4.1 Flash", "type": "model", "role": "object"}
+          ],
+          "evidence": ["全部通过 OpenRouter 按量接入", "每次完整扫描平均仅25.46美元"]
+        }
+      ],
+      "relations": [
+        {"source": "Hermes", "target": "OpenRouter", "type": "uses", "weight": 0.8, "evidence": ["全部通过 OpenRouter 按量接入"]},
+        {"source": "Hermes", "target": "Strix", "type": "uses", "weight": 0.8, "evidence": ["Hermes 担任编排层"]},
+        {"source": "Hermes", "target": "Cairn", "type": "uses", "weight": 0.8, "evidence": ["Cairn 负责自主端到端利用"]},
+        {"source": "Hermes", "target": "Claude Opus 4.6", "type": "uses", "weight": 0.5, "evidence": ["全部通过 OpenRouter 按量接入 Claude Opus 4.6、GLM 5.2、DeepSeek V4 Pro / V4.1 Flash 等模型"]}
+      ],
+      "metrics": [
+        {"name": "单次完整扫描平均成本", "value": "25.46美元"},
+        {"name": "四周AI算力账单", "value": "约7006美元"},
+        {"name": "整场行动总成本估算", "value": "约1.2万–1.8万美元"},
+        {"name": "确认被侵企业数", "value": "27+家"},
+        {"name": "外泄银行卡记录", "value": "超60万张"},
+        {"name": "Strix 漏洞扫描规模", "value": "138台主机跑146次"}
+      ],
+      "why_it_matters": "这是'失控智能体'第一次以受利益驱动的真实攻击形态被完整量化——合法开源框架+按量模型让单次攻击成本降到25美元，'自动化让复杂攻击廉价可规模化'从警告变成可复制的现实，蓝队手里的防御工具与黑产流水线之间只剩一个盈利动机的距离。"
+    },
+    {
+      "article_id": "2026-09-25-7",
+      "entities": [
+        {"name": "Moonshot AI", "type": "company", "aliases": ["月之暗面", "Kimi 团队"], "confidence": 0.95, "evidence": ["Moonshot AI 发布 K2.6"]},
+        {"name": "Kimi K2.6", "type": "model", "aliases": ["K2.6"], "confidence": 0.95, "evidence": ["Moonshot AI 发布 K2.6，作为其开源旗舰模型的最新更新"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.92, "evidence": ["权重托管于 Hugging Face"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.85, "evidence": ["这与 OpenAI/Anthropic 本轮的降价"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["这与 OpenAI/Anthropic 本轮的降价"]},
+        {"name": "GPT-5.4", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["对标或优于 GPT-5.4、Claude Opus 4.6 等闭源模型"]},
+        {"name": "Claude Opus 4.6", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["对标或优于 GPT-5.4、Claude Opus 4.6 等闭源模型"]},
+        {"name": "OpenRouter", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["如 OpenRouter 定价更低"]},
+        {"name": "Kimi Code", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Kimi Code 工具上线"]},
+        {"name": "Fireworks AI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["首发接入 Fireworks AI、Cloudflare Workers AI 等伙伴"]},
+        {"name": "SWE-Bench Verified", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["编码侧 SWE-Bench Verified 80.2%"]},
+        {"name": "vLLM", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["针对 vLLM、SGLang、KTransformers 等推理引擎优化"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Moonshot AI 开源多模态智能体模型 Kimi K2.6，权重托管于 Hugging Face",
+          "summary": "Moonshot AI 发布开源旗舰更新 K2.6，多模态、面向长程编码与智能体群，权重托管于 Hugging Face（修改版MIT许可），并在 Kimi.com、移动App、API、Kimi Code 上线。",
+          "participants": [
+            {"name": "Moonshot AI", "type": "company", "role": "subject"},
+            {"name": "Kimi K2.6", "type": "model", "role": "object"},
+            {"name": "Hugging Face", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Moonshot AI 发布 K2.6", "权重托管于 Hugging Face（修改版 MIT 许可）"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Kimi K2.6 公布代理与编码跑分，官方称对标或优于 GPT-5.4、Claude Opus 4.6 等闭源模型",
+          "summary": "官方基准：SWE-Bench Verified 80.2%、SWE-Bench Pro 58.6%、BrowseComp 83.2% 等，官方称较 K2.5 提升并对标或优于 GPT-5.4、Claude Opus 4.6 等闭源模型（厂商口径，未独立复核）。",
+          "participants": [
+            {"name": "Kimi K2.6", "type": "model", "role": "subject"},
+            {"name": "SWE-Bench Verified", "type": "benchmark", "role": "benchmark"},
+            {"name": "GPT-5.4", "type": "model", "role": "object"},
+            {"name": "Claude Opus 4.6", "type": "model", "role": "object"}
+          ],
+          "evidence": ["编码侧 SWE-Bench Verified 80.2%", "部分代理与编码任务对标或优于 GPT-5.4、Claude Opus 4.6 等闭源模型"]
+        },
+        {
+          "type": "trend",
+          "label": "中国开源模型群像持续挤压前沿闭源模型定价权",
+          "summary": "继 DeepSeek、阿里 Qwen、智谱 GLM、腾讯 Hy4、小米 MiMo 之后，Moonshot 以 K2.6 推进开源前沿，多家中国实验室同时开源高质量模型持续挤压闭源定价权，与 OpenAI/Anthropic 降价、OpenRouter 开源token占比上升是同一枚硬币的两面。",
+          "participants": [
+            {"name": "Moonshot AI", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "OpenRouter", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["多家中国实验室同时开源高质量模型，正持续挤压前沿闭源模型的定价权"]
+        }
+      ],
+      "relations": [
+        {"source": "Kimi K2.6", "target": "Moonshot AI", "type": "released_by", "weight": 0.9, "evidence": ["Moonshot AI 发布 K2.6，作为其开源旗舰模型的最新更新"]},
+        {"source": "Kimi K2.6", "target": "SWE-Bench Verified", "type": "evaluated_on", "weight": 0.9, "evidence": ["编码侧 SWE-Bench Verified 80.2%"]},
+        {"source": "Kimi K2.6", "target": "GPT-5.4", "type": "compared_with", "weight": 0.4, "evidence": ["部分代理与编码任务对标或优于 GPT-5.4、Claude Opus 4.6 等闭源模型"]},
+        {"source": "Kimi K2.6", "target": "Claude Opus 4.6", "type": "compared_with", "weight": 0.4, "evidence": ["部分代理与编码任务对标或优于 GPT-5.4、Claude Opus 4.6 等闭源模型"]},
+        {"source": "Moonshot AI", "target": "Fireworks AI", "type": "partners_with", "weight": 0.6, "evidence": ["首发接入 Fireworks AI、Cloudflare Workers AI 等伙伴"]},
+        {"source": "Kimi K2.6", "target": "Kimi Code", "type": "integrates", "weight": 0.7, "evidence": ["即时在 Kimi.com、移动App、API 与 Kimi Code 工具上线"]},
+        {"source": "Kimi K2.6", "target": "vLLM", "type": "uses", "weight": 0.6, "evidence": ["针对 vLLM、SGLang、KTransformers 等推理引擎优化"]}
+      ],
+      "metrics": [
+        {"name": "SWE-Bench Verified 得分", "value": "80.2%"},
+        {"name": "SWE-Bench Pro 得分", "value": "58.6%"},
+        {"name": "BrowseComp 得分", "value": "83.2%"},
+        {"name": "HLE-Full (工具) 得分", "value": "54.0%"},
+        {"name": "Terminal-Bench 2.0 得分", "value": "66.7%"}
+      ],
+      "why_it_matters": "Moonshot 用 K2.6 把'多模态+长程代理+智能体群'完整摊到开源轨道，且官方口径对标闭源旗舰——中国开源阵营首次在多模态智能体形态上整体逼近前沿定价，'开源挤压前沿闭源'从价格战升级为能力面的正面竞争。"
+    },
+    {
+      "article_id": "2026-09-25-8",
+      "entities": [
+        {"name": "美国", "type": "organization", "aliases": ["白宫", "特朗普政府", "华盛顿"], "confidence": 0.9, "evidence": ["白宫通过国家网络办公室主任下达指令"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["OpenAI 与 Anthropic 的最新前沿模型"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["OpenAI 与 Anthropic 的最新前沿模型"]},
+        {"name": "Claude Mythos 5.1", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["其 Claude Mythos 5.1 发布时声明"]},
+        {"name": "英国AI安全研究所", "type": "organization", "aliases": ["AISI", "英国AISI"], "confidence": 0.9, "evidence": ["从英国AI安全研究所（AISI）手里收回了多年来的早期访问特权"]},
+        {"name": "英国", "type": "organization", "aliases": ["UK"], "confidence": 0.9, "evidence": ["英国首相 Andy Burnham"]},
+        {"name": "Andy Burnham", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["英国首相 Andy Burnham 本周在联合国强调"]},
+        {"name": "NSA", "type": "organization", "aliases": ["美国国家安全局"], "confidence": 0.85, "evidence": ["由 NSA 参与的分类基准流程"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "白宫要求 OpenAI、Anthropic 在向英国测试机构交付前沿模型前先让美方审查",
+          "summary": "白宫通过国家网络办公室主任下达指令，要求 OpenAI 与 Anthropic 在华盛顿审查完成前不要将最新前沿模型交给英国安全测试机构。",
+          "participants": [
+            {"name": "美国", "type": "organization", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "英国AI安全研究所", "type": "organization", "role": "object"},
+            {"name": "NSA", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["OpenAI 与 Anthropic 的最新前沿模型，在华盛顿审查完成前不要交给英国的安全测试机构"]
+        },
+        {
+          "type": "policy",
+          "label": "Anthropic 在 Claude Mythos 5.1 发布时遵守指令，从 AISI 收回早期访问特权",
+          "summary": "Anthropic 已先服从：其 Claude Mythos 5.1 发布时声明系统仅对一组美国组织开放，从英国AI安全研究所手里收回了多年来的早期访问特权。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Mythos 5.1", "type": "model", "role": "object"},
+            {"name": "英国AI安全研究所", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["其 Claude Mythos 5.1 发布时声明该系统仅对一组美国组织开放", "从英国AI安全研究所（AISI）手里收回了多年来的早期访问特权"]
+        },
+        {
+          "type": "policy",
+          "label": "英国首相 Andy Burnham 强调与美方和前沿实验室协调合作",
+          "summary": "英国首相 Andy Burnham 在联合国强调该研究所与美方和前沿实验室手拉手合作，并把AI置于英国G20议程核心，主张协调而非竞争。",
+          "participants": [
+            {"name": "Andy Burnham", "type": "person", "role": "subject"},
+            {"name": "英国", "type": "organization", "role": "subject"},
+            {"name": "英国AI安全研究所", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["该研究所与美方和前沿实验室手拉手合作"]
+        }
+      ],
+      "relations": [
+        {"source": "美国", "target": "OpenAI", "type": "regulates", "weight": 0.8, "evidence": ["OpenAI 与 Anthropic 的最新前沿模型，在华盛顿审查完成前不要交给英国的安全测试机构"]},
+        {"source": "美国", "target": "Anthropic", "type": "regulates", "weight": 0.8, "evidence": ["OpenAI 与 Anthropic 的最新前沿模型，在华盛顿审查完成前不要交给英国的安全测试机构"]},
+        {"source": "Claude Mythos 5.1", "target": "Anthropic", "type": "released_by", "weight": 0.8, "evidence": ["其 Claude Mythos 5.1 发布时声明"]},
+        {"source": "Anthropic", "target": "美国", "type": "complies_with", "weight": 0.7, "evidence": ["Anthropic 已先服从"]},
+        {"source": "Anthropic", "target": "英国AI安全研究所", "type": "restricts", "weight": 0.7, "evidence": ["从英国AI安全研究所（AISI）手里收回了多年来的早期访问特权"]},
+        {"source": "Andy Burnham", "target": "英国", "type": "affiliated_with", "weight": 0.8, "evidence": ["英国首相 Andy Burnham 本周在联合国强调"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "前沿AI的跨境评测协作首次被主权国家的'先审后交'逻辑打断——美方要求自家审查先于盟友，英国以'协调'姿态回避正面冲突，'减速论'滑向了治理碎片化：谁能先审最有决定权，而不是谁治理得最科学。"
+    },
+    {
+      "article_id": "2026-09-25-9",
+      "entities": [
+        {"name": "Agentic Reasoning Survey", "type": "paper", "aliases": ["Agentic Reasoning"], "confidence": 0.9, "evidence": ["这篇早先发布但持续被引用的综述把代理式推理"]},
+        {"name": "Interaction Aware Compression for Long Horizon Reasoning", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["（与本周 ICLR、Growing Harness、Jev-Mem、RPMem 等相互印证）"]},
+        {"name": "Jev-Mem", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["（与本周 ICLR、Growing Harness、Jev-Mem、RPMem 等相互印证）"]},
+        {"name": "RPMem", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["RPMem（arXiv 2609.23466）提出生命周期无关的跨会话参数记忆"]},
+        {"name": "MemoryAthena", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["MemoryAthena（arXiv 2609.25853）则研究"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Agentic Reasoning Survey 把代理式推理定义为范式转移，系统梳理闭环能力",
+          "summary": "综述把代理式推理定义为一种范式转移：LLM 能自主规划、行动、学习，并把规划、行动、观察、反思、记忆管理梳理成统一闭环框架，与本周 ICLR、Jev-Mem 等相互印证。",
+          "participants": [
+            {"name": "Agentic Reasoning Survey", "type": "paper", "role": "subject"},
+            {"name": "Interaction Aware Compression for Long Horizon Reasoning", "type": "tool", "role": "object"},
+            {"name": "Jev-Mem", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["把“代理式推理（Agentic Reasoning）”定义为一种范式转移", "与本周 ICLR、Growing Harness、Jev-Mem、RPMem 等相互印证"]
+        },
+        {
+          "type": "research",
+          "label": "RPMem 提出生命周期无关的跨会话参数记忆（arXiv 2609.23466）",
+          "summary": "RPMem（arXiv 2609.23466）提出生命周期无关的跨会话参数记忆，聚焦跨会话复用的参数级记忆方案。",
+          "participants": [
+            {"name": "RPMem", "type": "paper", "role": "subject"},
+            {"name": "Agentic Reasoning Survey", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["RPMem（arXiv 2609.23466）提出生命周期无关的跨会话参数记忆"]
+        },
+        {
+          "type": "research",
+          "label": "MemoryAthena 研究记忆来源：从存储检索还是生成（arXiv 2609.25853）",
+          "summary": "MemoryAthena（arXiv 2609.25853）研究记忆是从存储检索还是生成，构成记忆作为最占篇幅的代理子主题之一。",
+          "participants": [
+            {"name": "MemoryAthena", "type": "paper", "role": "subject"},
+            {"name": "Agentic Reasoning Survey", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["MemoryAthena（arXiv 2609.25853）则研究"]
+        }
+      ],
+      "relations": [
+        {"source": "Agentic Reasoning Survey", "target": "Interaction Aware Compression for Long Horizon Reasoning", "type": "related_to", "weight": 0.4, "evidence": ["与本周 ICLR、Growing Harness、Jev-Mem、RPMem 等相互印证"]},
+        {"source": "Agentic Reasoning Survey", "target": "Jev-Mem", "type": "related_to", "weight": 0.4, "evidence": ["与本周 ICLR、Growing Harness、Jev-Mem、RPMem 等相互印证"]},
+        {"source": "Agentic Reasoning Survey", "target": "RPMem", "type": "related_to", "weight": 0.4, "evidence": ["与本周 ICLR、Growing Harness、Jev-Mem、RPMem 等相互印证"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "一篇综述把'代理式推理'收束为闭环范式，而本周 ICLR、Jev-Mem、RPMem、MemoryAthena 在同一主线上把'控制与记忆从推理中搬出去'——领域第一次出现统一的路线图话语，成为理解2026年代中期'从对话模型到自主智能体'过渡的可读地图。"
+    }
+  ]
+}

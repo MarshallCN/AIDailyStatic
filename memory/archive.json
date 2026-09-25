@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T22:39:14Z",
+  "updated_at": "2026-09-25T22:54:48Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -730,21 +730,21 @@
       "period_id": "2026-W35",
       "period_type": "week",
       "start_date": "2026-08-24",
-      "end_date": "2026-08-25",
-      "summary": "2026-08-24 至 2026-08-25 期间，OpenAI、Hugging Face、TechCrunch 主要围绕 infra、security 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-26",
+      "summary": "2026-08-24 至 2026-08-26 期间，Hugging Face、OpenAI、Instinct 主要围绕 infra、security 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
-        "OpenAI",
         "Hugging Face",
-        "TechCrunch",
-        "到产品入口"
+        "OpenAI",
+        "Instinct",
+        "TechCrunch"
       ],
       "event_types": [
         "infra",
         "security",
-        "funding"
+        "launch"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、Hugging Face、TechCrunch",
+        "核心实体：Hugging Face、OpenAI、Instinct",
         "主事件类型：infra、security"
       ],
       "representative_article_ids": [
