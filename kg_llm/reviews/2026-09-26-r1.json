@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-26",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "抽取整体扎实、指标齐全，但存在一处硬性事实错误（Rita Lin 被错挂到 DC 巡回法院），另有若干关系类型/方向与当事人层级失准，以及用共同出现拼出的弱关系。建议修订后发布。",
+  "findings": [
+    {
+      "article_id": "2026-09-26-2",
+      "severity": "high",
+      "problem": "关系 \"Rita Lin --affiliated_with--> 美国哥伦比亚特区巡回上诉法院\" 是事实错误：原文明确 Rita Lin 是「加州北区法官」（Northern District of California），她在另一部《国防采购法》案中裁定更广泛禁令违法，与 DC 巡回法院不是同一法院。把北区法官挂到 DC 巡回法院名下会让图谱讲错管辖归属。",
+      "fix": "删除或改挂该 affiliated_with 关系：新增/使用「加州北区联邦地区法院」这一实体，关系改为 \"Rita Lin --affiliated_with--> 加州北区联邦地区法院\"（或直接标注其隶属法院是加州北区而非 DC 巡回法院）。"
+    },
+    {
+      "article_id": "2026-09-26-5",
+      "severity": "medium",
+      "problem": "关系 \"GPT-6 Astra --compared_with--> Claude Opus 5\"（weight 0.6）不成立：其所引证据「另有一则明文已知但密码未破」根本不含对比含义。原文里两则密文是二人用不同模型分别独立破解，并未在同一基准上直接比较。共同出现在同一篇报道里不等于 compared_with。",
+      "fix": "删除该 compared_with 关系；若要保留两者同属「破解二战 Enigma 密文」的框架，应改用能被原文明确支撑的关系类型（如共用事件 research），或分别保留 GPT-6 Astra 与 Claude Opus 5 各自对密文的破解事件，勿建直接对比边。"
+    },
+    {
+      "article_id": "2026-09-26-8",
+      "severity": "medium",
+      "problem": "关系 \"Hy4 preview --uses--> vLLM\"（weight 0.7）是关系类型用错：原文是「开发者可下载权重后用 vLLM 或 SGLang 自托管」，是别人用 vLLM 来 serving 该模型，Hy4 preview 本身并不 use vLLM。把 serving/部署框架当成被模型使用的工具会误导图语义。",
+      "fix": "改为表达「可自托管」的关系（如 available_on 指向 serving 栈），或直接删除该边；不要建 model --uses--> 部署框架 的关系。同理检查虚拟机/镜像等其他条目是否同样误用 uses。"
+    },
+    {
+      "article_id": "2026-09-26-0",
+      "severity": "medium",
+      "problem": "关系 \"美国 --regulates--> 司法部\" 方向与语义失准：原文是「特朗普指定司法部为主要护栏/执行机构」，即行政机关（白宫/特朗普政府）委托司法部充当监管执行者，而非「美国监管司法部」这种上下级自指的表述。该边读不成一句正确事实。",
+      "fix": "改为反映真实意图：\"Donald Trump/白宫（美国政府） --designates 或 --authorizes--> 司法部\"，或表达「司法部 --enforces--> AI 监管」。不要让 regulate 指向政府内部的下属执法部门。"
+    },
+    {
+      "article_id": "2026-09-26-10",
+      "severity": "medium",
+      "problem": "第二个事件把 Transluce 列为参与者（object），但该事件标签与事实是「OpenAI 触达智能体外泄 53 张图片」；Transluce 只是「另有一则报道与它之前的记录一致」，仅是佐证，与本次外泄事件无直接关系。将佐证机构挂进事件主体会让事件归因混乱。",
+      "fix": "把 Transluce 从该事件 participants 中移除，或另建一条能由原文明确支撑的关系（如 Transluce --confirmed/--related_to--> 该探测行为）。不要因同一篇里出现就当作事件直接参与者。"
+    }
+  ],
+  "lessons": [
+    "affiliated_with 等关系的 target 必须是该主体实际隶属的机构，不能用同一篇报道里附近出现的其他机构名（如不同法院、不同公司）兜底；先精确到原文所指的机构实体。",
+    "模型/系统与其 serving 或部署用的框架（如 vLLM、SGLang）之间不要建 uses 关系；「开发者用某框架自托管」应表达为 available_on 或删除该边。",
+    "两个主体（模型/系统/机构）在同一篇里共同出现不等于 compared_with；只有原文明确做了对比或同一评测并列时才能建该关系，且所引证据必须能支撑对比本身。"
+  ]
+}

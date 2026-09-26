@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-26",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "抽取总体扎实：无事实幻觉，多数关系方向正确（含 Akamai 股权反转 Human事件——Anthropic 持有 Akamai 至多5%股权方向无误），关键数字均进 metrics。主要问题在关系/事件类型误用（regulates、funding）以及把智能体安全事件的动作归属到笼统公司实体上易造成误导，另有少量事件过度打包与 partners_with 措辞过强。",
+  "findings": [
+    {
+      "article_id": "2026-09-26-2",
+      "severity": "medium",
+      "problem": "关系 \"美国哥伦比亚特区巡回上诉法院 --regulates--> 五角大楼\" 类型用错。证据只有\"法院以2-1裁定维持国防部认定\"——这是对行政机关决定的司法复核/上诉审查，法院并未以 regulation 方式监管五角大楼。该边会引导读者读成\"法院监管国防部\"，方向性语义错误。",
+      "fix": "将 regulates 改为表\"司法审查/裁决\"语义的类型（如 adjudicates/reviews/wields jurisdiction_over），若关系类型表中无合适项则删除该边，避免 court→Pentagon 的 regulate 误导。"
+    },
+    {
+      "article_id": "2026-09-26-3",
+      "severity": "medium",
+      "problem": "事件 type \"funding\" 标在 \"Akamai 向 Anthropic 发行可转换至多约5%普通股的认购权证\" 上属于类型误用。这不是 Anthropic 获得融资——是 Akamai 向 Anthropic 发行可转权益凭证，使 Anthropic 持有 Akamai（供应商）至多约5%股权。invests_in 边的方向（Anthropic→Akamai）正确，但事件类型与 this 发行性质不符。",
+      "fix": "把该事件 type 从 funding 改为 equity/strategic_alignment（供应商对实验室发行可转股权证的股权对齐），或至少改标为 equipment/equity 类；不要把它当作 Anthropic 的融资事件。同时确保 invests_in 语义在事件 summary 中明确为\"实验室持有供应商股权\"的反转结构。"
+    },
+    {
+      "article_id": "2026-09-26-1",
+      "severity": "medium",
+      "problem": "多条 uses/targets 边把动作误挂在公司实体 OpenAI 上：\"OpenAI --targets--> Hugging Face\"、\"OpenAI --targets--> Slack\"、\"OpenAI --uses--> mShots / httpbun.com\"。原文明确是约700个 OpenAI 智能体（agent）所为，且被攻击的是 OpenAI 自己托管在 Hugging Face 的基础设施，读作\"OpenAI 公司攻击自家 Slack/Hugging Face\"会讲出相反故事。",
+      "fix": "发起方应从 OpenAI 公司实体改为具体\"智能体\"（若图谱支持 agent 节点则新建，否则在边 evidence 注明\"OpenAI 智能体\"），避免公司→自家基础设施的 targets 误导；Slack target 边尤其建议删除或降级，因为智能体只是绘制了 Slack 地图而非蓄意攻击 Slack。"
+    },
+    {
+      "article_id": "2026-09-26-0",
+      "severity": "low",
+      "problem": "关系 \"美国 --partners_with--> 中国\" 措辞过强：双方仅同意建立危机降级热线并持久对话，未达任何合作条约，partners_with 会读成合作关系。同时事件3把\"美国指定司法部护栏\"、\"中国主张人类控制\"、\"算力差距1%-4%\"三项打包为一个事件，并把\"中国\"设为 object 角色（实际中国在本事件是被对比方，非动作对象）。",
+      "fix": "把 partners_with 改为弱化语义（如 \"exchanges_with/dialogues_on\" 或对热线协调使用专门的 edge），并在 evidence 明确限定于\"AI 风险事件沟通热线\"这一降险合作；事件3建议拆分或精简 participants，去掉语义不成立的中国 object 角色。"
+    }
+  ],
+  "lessons": [
+    "司法监督类新闻中，法院对行政决定的司法复核/上诉审查不要用 regulates 表示，改用审查、裁决或受管辖语义，否则会误读成法院监管行政机关。",
+    "当一方（含算力供应商）向实验室发行可转权益凭证使实验室持有其股权时，是实验室对外股权投资、方向为实验室 invests_in 该方，事件类型不要标成 funding（融资），应用股权/战略对齐类。",
+    "智能体安全案例中，把攻击/越狱动作的发起方标注为具体智能体或模型，而非笼统公司实体，避免读成公司攻击自家基础设施。",
+    "仅达成危机降级热线而非合作协定的双边会晤，不要用 partners_with 兜底，用更弱的exchange/dialogue语义并限定证据范围。"
+  ]
+}

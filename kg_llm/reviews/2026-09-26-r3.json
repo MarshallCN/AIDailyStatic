@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-26",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "语义上整体准确、无明确幻觉，尤其是 2026-09-26-3 把'实验室反持供应商股权'这一反转方向抓对了、2026-09-26-1 的逃逸链重建与数字核对无误；主要问题集中在关系与事件建模不对称：同案被拆成互相重叠的两个事件，同一证据只对部分实体建边，以及'服务关系'误用了'算力供应'类关系。",
+  "findings": [
+    {
+      "article_id": "2026-09-26-2",
+      "severity": "medium",
+      "problem": "事件切分不当且类型误配：事件1是法庭裁定、事件2被标为 type=trend 但内容里混入了法庭动作'驳回了越权、任意专断、违宪三项抗辩'，又混入 Anthropic 拒绝条款的背景和'军方仍可规避 Claude'的后续。两个事件都在讲同一桩 DC 巡回法院裁决，相互重叠，事件2把'驳回抗辩'这一法庭动作错放进 trend 类型。",
+      "fix": "把'驳回三项抗辩'并入事件1（同一裁决，policy/legal 类型），将 Anthropic 拒绝 all lawful uses 条款单独保留为事件2并更正其类型（争议/背景），删去'军方仍可规避'这类与裁决无关的后续表述，避免两个事件重复覆盖同一事实。"
+    },
+    {
+      "article_id": "2026-09-26-10",
+      "severity": "medium",
+      "problem": "关系建模不对称且类型误用：证据'多起涉及 OpenAI、Anthropic、Meta、Google 智能体'对四家公司同样成立，却只为 OpenAI、Anthropic 建了 Irregular --tests--> 边，Meta 和 Google 被抽成实体却漏建该关系；同时 Irregular --supplies--> 英国政府 误用算力供应关系，原文只是为客户做前沿模型压力测试（服务关系），与 2026-09-26-3 里 Akamai --supplies--> Anthropic 的'供应算力基础设施'语义不同。",
+      "fix": "为 Meta、Google 各补一条与 OpenAI/Anthropic 一致的 Irregular --tests--> 关系；将 --supplies--> 英国政府 改为'提供压力测试/评测服务'语义的关系（或明确限定为服务供应），不要让同一关系类型同时承载算力供应与评测服务两种语义。"
+    },
+    {
+      "article_id": "2026-09-26-2",
+      "severity": "medium",
+      "problem": "实体类型错配且与其余文章不一致：Claude 被标为 product，而本图谱在 2026-09-26-5、-7、-9 中把 Claude Opus 5 等同类模型统一标为 model。同属 Claude 家族的实体在跨文章时类型不一致，阻碍图谱把它们连成'模型'这一类。",
+      "fix": "把 article 2026-09-26-2 中 Claude 的类型由 product 改为 model（与 2026-09-26-5/-7/-9 的 Claude 家族一致）；若确有产品线意图，应在命名上区分（例如标注为 Claude 产品线）并统一全局规范。"
+    },
+    {
+      "article_id": "2026-09-26-5",
+      "severity": "medium",
+      "problem": "关系类型用错 + 关键事实遗漏：'Carter Leffen --uses--> GPT-6 Astra' 与 'Jack Willis --uses--> Claude Opus 5' 并存，但 Carter 是'指示(directs)/引导'模型自主研究而非像 Jack 那样作为分析师使用它，'uses' 抹平了二者差异；且原文强调的'仍剩七则密文未破'（Weierud 的核心反证）未进入 metrics 或事件，导致 why_it_matters 里'仍未达到无辅助破解'的论断在图谱主体里缺乏支撑边。",
+      "fix": "把 Carter Leffen --uses--> GPT-6 Astra 改为更贴切的'directs/guides'或改写为'指示其自主研究'的表述，与 Jack Willis 的 'uses' 区分；在 metrics 增加'未破解密文数：7则'（或纳入事件 summary），为'无辅助破解尚未实现'的定性提供证据支撑。"
+    }
+  ],
+  "lessons": [
+    "同一司法案件的裁定结论、被驳回的抗辩与争议条款应合并为单一 legal/policy 事件，或用明确不同的事件类型区分，不要拆成两个相互重叠、重复覆盖同一事实的事件。",
+    "当一条证据并列支撑多个实体的同一关系时，必须为全部这些实体一致地建边——抽出实体却漏建对应关系会造成证据不对称。",
+    "关系类型要与语义精确匹配：为客户提供压力测试/评测是服务关系，不要复用 compute 供应（如 supplies）类关系；也不要让去指导自主研究的动作与分析师'使用'模型共用同一个 uses 边。"
+  ]
+}
