@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-27",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "本轮已妥善消化第 1 轮意见：article 0 的对比改为节点级 compared_with、article 3 去掉 SynthID 归属边、article 2 合并为单一 launch、article 10 统一用 released_by。现状总体扎实，数值与关系方向均核对无误；剩余问题集中在把虚拟化/隔离执行设施错标为 hardware 的实体类型错误、个别 uses 方向与开发归属边的证据不匹配，以及 article 10 把同一次产品发布拆成两个同源 launch 事件。",
+  "findings": [
+    {
+      "article_id": "2026-09-27-4",
+      "severity": "medium",
+      "problem": "实体类型错配：把「容器」与「微虚拟机（microVM）」两个实体标注为 type=hardware。原文里它们是论文列出的四类执行后端（直接函数调用、容器、microVM、全虚拟机）中的软件虚拟化隔离技术，不是物理硬件；把软件虚拟化设施归为 hardware 会污染图谱的类型语义。",
+      "fix": "把「容器」与「微虚拟机」的 type 改为 tool/technology/infra（同一天 DSec 的 uses 边语义才成立），并建议把未抽出的「直接函数调用」与「全虚拟机」也补为同类实体以完整呈现四类后端。"
+    },
+    {
+      "article_id": "2026-09-27-5",
+      "severity": "medium",
+      "problem": "实体类型错配：把「用户专属云虚拟机」标注为 type=hardware。原文描述它是一个存放智能体数据的独立云环境（虚拟化计算资源），不是硬件；这是与 article 4 相同的「把软件虚拟化当硬件」的重复型错误。",
+      "fix": "将「用户专属云虚拟机」的 type 改为 infra/tool/resource；若图谱无更细类型则至少不能归为 hardware，以保证虚拟化类实体类型全局一致。"
+    },
+    {
+      "article_id": "2026-09-27-10",
+      "severity": "medium",
+      "problem": "事件切分不当：Azure SRE Agent 的 GA 发布与其企业级能力（VNet、细粒度权限、GitHub Enterprise 支持）被拆成两个 launch 事件，而后者本质是同一次产品发布附带的能力补丁，与第 1 轮已指出的 Copilot 发布会拆分属同一重复模式，造成同一产品同源事件冗余。",
+      "fix": "合并为单一 launch 事件（Azure SRE Agent 转正 GA，含 VNet/GitHub Enterprise/细粒度权限等企业级特性写入 summary）；仅当某子能力有独立于本次发布的显著信号时才单列，否则不要为同一产品同一 release 拆两个 launch。"
+    },
+    {
+      "article_id": "2026-09-27-0",
+      "severity": "low",
+      "problem": "开发归属边证据不匹配且与对比语义重复：TSMC N3P、TSMC N2 两条 \"--developed_by--> TSMC\" 所挂 evidence 都是密度对比句（「18A 在峰值密度上并未领先 TSMC N3P、N2 或三星 SF2」），并未写明 TSMC 是这些节点的开发方；N3E 的 evidence 也只是「Xe3 GPU 采用 TSMC N3E」。这些边与既有 compared_with 语义重叠。",
+      "fix": "为准入：N3P/N2/N3E 的 developed_by evidence 换成明确写出发明方/工艺归属的原文（如「TSMC 的 N3E」），无此类原文的边直接删除，避免与 compared_with 重复、也让证据真正支撑断言。"
+    },
+    {
+      "article_id": "2026-09-27-3",
+      "severity": "low",
+      "problem": "关系方向/主语错位：\"Gemini 3.8 Live --uses--> Agent Development Kit\" 与原文不符——原文是开发者「可以把 Gemini Live API 与 Agent Development Kit 对接」来构建智能体，主语是开发者/产品而非模型本身；把「模型 uses 开发工具包」读反了参与角色。",
+      "fix": "把该边改为 \"Agent Development Kit --integrates--> Gemini 3.8 Live\"（工具包对接模型），或删去并仅在事件 summary 中说明开发者可对接 ADK；不要保留「模型 uses 开发工具」的反向表述。"
+    },
+    {
+      "article_id": "2026-09-27-6",
+      "severity": "low",
+      "problem": "重复冗余关系：\"OpenAI --uses--> GPT-6 Astra\" 与已有 \"GPT-6 Astra --released_by--> OpenAI\" 指向同一对主体且语义重复，不能同时保留两条近义边，稀释图谱精度。",
+      "fix": "删除 OpenAI --uses--> GPT-6 Astra 这条边，仅保留 GPT-6 Astra --released_by--> OpenAI；若需表达「OpenAI 自身部署 Astra」应有独立原文支撑。"
+    },
+    {
+      "article_id": "2026-09-27-9",
+      "severity": "low",
+      "problem": "关系类型用错：\"AgentSpec --built_on--> 投机解码\" 近乎套话——AgentSpec 本身就是一种面向智能体的投机解码方法，把「方法 built_on 其所属的通用概念」建成边不产生信息量，属于把「属于/属于类的概念」当成实质关系。",
+      "fix": "删除 AgentSpec --built_on--> 投机解码 这条边（投机解码作为 topic 实体在事件 evidence 中说明即可），避免与概念本身的自指关系污染连通度量。"
+    }
+  ],
+  "lessons": [
+    "虚拟化与隔离执行设施（容器、microVM、全虚拟机、专属云虚拟机）不是 hardware，用 tool/technology/infra 标注；软件虚拟化类实体不得归为硬件类型。",
+    "developed_by 关系必须挂明确写出发明方/开发方（如「TSMC 的 N3E 工艺」）的原文证据；仅在对比句中被提及的节点不得挂 developed_by，与 compared_with 语义重复的开发归属边应删除。",
+    "「模型 --uses--> 开发工具/平台」的方向常反：通常是开发者用工具（如 ADK）包装在模型上构建应用，关系主语应是开发者/产品而非模型本身，方向写反的 uses 边应改为 integrates_with 或删除。"
+  ]
+}

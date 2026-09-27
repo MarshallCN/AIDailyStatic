@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-27",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "未发现事实编造或关系方向反转，主体事实与数字基本可溯源；主要问题集中在语义类型与事件边界：把「观点一致」误抽成 compared_with、把学术会议 CICAI 标成 organization 并用了 published_on、Muse 事件把旧漏洞背景与新漏洞修复揉成一条，另有若干弱证据与错别字。",
+  "findings": [
+    {
+      "article_id": "2026-09-27-9",
+      "severity": "medium",
+      "problem": "关系 \"AgentSpec --compared_with--> SoL-Pi\" 类型用错。原文只说「与同日 NVIDIA 的 SoL-Pi 一起，指向同一个判断：harness 与 serving 层才是规模化智能体的主战场」——这是两家观点一致、互为印证，不是两个对象被放在一起比较。用 compared_with 让图谱读成「AgentSpec 与 SoL-Pi 被对比」，与原文引导的方向相反。",
+      "fix": "删除该 compared_with 关系；若想保留这条信息，应改用表达「观点一致/互相印证」的关系类型（如 agrees_with 或 aligns_with），或干脆不抽关系，把「同日 NVIDIA 推出 SoL-Pi 指向同一判断」留在事件的 summary 里。"
+    },
+    {
+      "article_id": "2026-09-27-5",
+      "severity": "medium",
+      "problem": "事件 2 标签「此前研究者曾演示可诱导 Muse 泄出 6.8GB 文件」与其首要证据（「Meta 已做出回应，在 Muse 产品内加入更醒目的安全警示并修复漏洞」）不是同一件事：标签讲的是上一周（旧）的 6.8GB 泄出演示，证据讲的是本周 Meta 对漏洞的修复回应，而本周真正新的漏洞（可访问专属虚拟机的当前事件）已被放进事件 1。把「过去的背景演示」当成本周新事件的标签主体，又让事件 2 与事件 1 的边界重叠、事实主线（Meta 本周修补专属虚拟机漏洞）被弱化。",
+      "fix": "把事件 2 改造成本周的「Meta 对 Muse 漏洞的响应」事件（标签如「Meta 在 Muse 内加入更醒目的安全警示并推送修复」），证据用原文对应句；把 6.8GB 泄出作为背景/metrics 归入说明而非事件标签主体，避免把旧事件报成新事件的标题。"
+    },
+    {
+      "article_id": "2026-09-27-8",
+      "severity": "medium",
+      "problem": "实体 \"CICAI\" 类型打成 organization，但 CICAI 2026 是学术会议（conference/event），不是公司或组织；且其关系用了 published_on（发布平台语义），与原文「被 CICAI 2026 接收」（接收语态）不符。",
+      "fix": "把 CICAI 的实体类型改为 conference 或 event；将其关系类型由 published_on 改为 accepted_at（或 featured_at）以表达「论文被会议接收」。"
+    },
+    {
+      "article_id": "2026-09-27-0",
+      "severity": "low",
+      "problem": "关系 \"PowerVia --developed_by--> Intel\" 的 evidence 只复述 PowerVia 的机制（「把电源网络从拥挤的正面金属层搬到晶体管背面」），这段引文本身不说明 PowerVia 由 Intel 开发，证据支撑的是机制描述而非 development 关系。",
+      "fix": "改用能体现归属的原文证据，如「Intel 的 PowerVia 方案里，正面信号栈为 M0–M14」的「Intel 的」表述，使 evidence 直接支持 developed_by。"
+    },
+    {
+      "article_id": "2026-09-27-7",
+      "severity": "low",
+      "problem": "关系 \"LeakScale --published_on--> arXiv\" 的 evidence「一篇提交于 9 月 23 日的论文提出 LeakScale 干预框架」没有出现 arXiv，无法支撑「发表在 arXiv」这一断言。",
+      "fix": "换用含 arXiv 的证据（来源地址 arxiv.org/abs/2609.27176 或 source 字段「arXiv」），或为 published_on 补一条具体证据。"
+    },
+    {
+      "article_id": "2026-09-27-5",
+      "severity": "low",
+      "problem": "why_it_matters 中把「Meta」误写为「Mate」（「Mate 一边高调推 Muse」）。",
+      "fix": "改为「Meta」，保持实体规范名与全文一致。"
+    },
+    {
+      "article_id": "2026-09-27-2",
+      "severity": "low",
+      "problem": "实体「纳德拉」的英文别名「Satya Nadella」「Nadella」在原文中并不存在（原文仅写作「纳德拉」）——英文别名属补充性拼写，且该拼写为常见错误变体（Microsoft CEO 正确拼写为 Satya Nadella）。",
+      "fix": "核对后修正为正确的英文拼写，或直接去掉这两个英文别名，仅保留中文规范名「纳德拉」。"
+    },
+    {
+      "article_id": "2026-09-27-2",
+      "severity": "low",
+      "problem": "事件标签「拆分为 Home/Code/Autopilot 三大体验」与原文「围绕四个能力重构了这款 AI 办公助手」数量不一致。",
+      "fix": "核对原文能力清单后，将标签改为准确的数量表述（原文列出 Home、Code、Autopilot 三类显名体验，可注明 Managed Runtime 或直接改成「三大体验」并同步确认与原文一致）。"
+    }
+  ],
+  "lessons": [
+    "学术会议、竞赛等场合名（如 CICAI、NeurIPS）实体类型应标为 conference/event，不要标成 organization；「被会议接收」的语义用 accepted_at/featured_at，不要用 published_on 这类发布平台关系。",
+    "原文「与 X 一起指向同一判断」「结论一致」这类观点呼应，不等于两者被比较，禁用 compared_with 连接仅互相印证的实体；compared_with 只用于原文明确把双方放在一起做对比的场合。",
+    "事件标签描述的事实必须与其首要 evidence 指向同一件事：旧事件（如上周的漏洞演示）只作背景/metrics 归入说明，不要把它当成本周新事件的标签主体，避免旧背景与新事实揉成一条边界不清的事件。"
+  ]
+}

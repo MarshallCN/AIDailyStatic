@@ -1,0 +1,1199 @@
+{
+  "date": "2026-09-27",
+  "articles": [
+    {
+      "article_id": "2026-09-27-0",
+      "entities": [
+        {
+          "name": "Intel",
+          "type": "company",
+          "aliases": ["英特尔"],
+          "confidence": 0.93,
+          "evidence": ["Panther Lake 是 Intel 18A 工艺的首颗客户端芯片"]
+        },
+        {
+          "name": "Panther Lake",
+          "type": "product",
+          "aliases": ["PTL"],
+          "confidence": 0.9,
+          "evidence": ["Panther Lake 是 Intel 18A 工艺的首颗客户端芯片"]
+        },
+        {
+          "name": "18A",
+          "type": "hardware",
+          "aliases": ["Intel 18A"],
+          "confidence": 0.92,
+          "evidence": ["Panther Lake 是 Intel 18A 工艺的首颗客户端芯片"]
+        },
+        {
+          "name": "PowerVia",
+          "type": "hardware",
+          "aliases": ["BSPDN", "背供电"],
+          "confidence": 0.9,
+          "evidence": ["PowerVia 把电源网络从拥挤的正面金属层搬到晶体管背面"]
+        },
+        {
+          "name": "RibbonFET",
+          "type": "hardware",
+          "aliases": ["全环绕栅极晶体管"],
+          "confidence": 0.88,
+          "evidence": ["第二代全环绕栅极（GAA）晶体管 RibbonFET"]
+        },
+        {
+          "name": "Foveros-S",
+          "type": "hardware",
+          "aliases": ["Foveros S"],
+          "confidence": 0.88,
+          "evidence": ["Foveros-S 先进封装整合计算/GPU/IO 三种晶粒"]
+        },
+        {
+          "name": "SemiAnalysis",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["SemiAnalysis 的 STEEL 拆解实验室"]
+        },
+        {
+          "name": "TSMC",
+          "type": "company",
+          "aliases": ["台积电"],
+          "confidence": 0.9,
+          "evidence": ["18A 在峰值密度上并未领先 TSMC N3P、N2 或三星 SF2"]
+        },
+        {
+          "name": "Samsung SF2",
+          "type": "hardware",
+          "aliases": ["三星 SF2"],
+          "confidence": 0.88,
+          "evidence": ["以三星 SF2——具备 GAA 但不含 BSPD 的现役代工节点——作为对照基准"]
+        },
+        {
+          "name": "TSMC N3E",
+          "type": "hardware",
+          "aliases": ["N3E"],
+          "confidence": 0.88,
+          "evidence": ["18A 计算逻辑与 TSMC N3E GPU 逻辑密度相近"]
+        },
+        {
+          "name": "TSMC N3P",
+          "type": "hardware",
+          "aliases": ["N3P"],
+          "confidence": 0.88,
+          "evidence": ["18A 在峰值密度上并未领先 TSMC N3P、N2 或三星 SF2"]
+        },
+        {
+          "name": "TSMC N2",
+          "type": "hardware",
+          "aliases": ["N2"],
+          "confidence": 0.88,
+          "evidence": ["18A 在峰值密度上并未领先 TSMC N3P、N2 或三星 SF2"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "SemiAnalysis STEEL 实验室拆解 Intel 首颗 18A 客户端芯片 Panther Lake",
+          "summary": "SemiAnalysis 的 STEEL 拆解实验室对 PTL-U、PTL-H 与 X-tier（3x8H）做剖片，逐段解析 18A 从晶体管到布线的完整材料栈，包括 PowerVia 背供电、RibbonFET 与 Foveros-S 三项前端技术。",
+          "participants": [
+            {"name": "SemiAnalysis", "type": "organization", "role": "subject"},
+            {"name": "Panther Lake", "type": "product", "role": "object"},
+            {"name": "Intel", "type": "company", "role": "object"}
+          ],
+          "evidence": [
+            "对 Intel 首款 18A 客户端芯片 Panther Lake 做了全面拆解",
+            "SemiAnalysis 的 STEEL 拆解实验室"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Panther Lake 的 18A 逻辑密度与 TSMC、三星节点对标",
+          "summary": "实测 Panther Lake 的 18A 计算逻辑与 TSMC N3E GPU 逻辑密度相近，但峰值密度未领先 TSMC N3P、N2 或三星 SF2；文章以三星 SF2 作为对照基准。",
+          "participants": [
+            {"name": "Panther Lake", "type": "product", "role": "subject"},
+            {"name": "TSMC N3E", "type": "hardware", "role": "benchmark"},
+            {"name": "TSMC N3P", "type": "hardware", "role": "benchmark"},
+            {"name": "TSMC N2", "type": "hardware", "role": "benchmark"},
+            {"name": "Samsung SF2", "type": "hardware", "role": "benchmark"}
+          ],
+          "evidence": [
+            "18A 在峰值密度上并未领先 TSMC N3P、N2 或三星 SF2",
+            "以三星 SF2——具备 GAA 但不含 BSPD 的现役代工节点——作为对照基准"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Panther Lake",
+          "target": "Intel",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Panther Lake 是 Intel 18A 工艺的首颗客户端芯片"]
+        },
+        {
+          "source": "Panther Lake",
+          "target": "18A",
+          "type": "built_on",
+          "weight": 0.9,
+          "evidence": ["Panther Lake 是 Intel 18A 工艺的首颗客户端芯片"]
+        },
+        {
+          "source": "Panther Lake",
+          "target": "PowerVia",
+          "type": "uses",
+          "weight": 0.9,
+          "evidence": ["PowerVia 把电源网络从拥挤的正面金属层搬到晶体管背面"]
+        },
+        {
+          "source": "Panther Lake",
+          "target": "Foveros-S",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["Foveros-S 先进封装整合计算/GPU/IO 三种晶粒"]
+        },
+        {
+          "source": "Panther Lake",
+          "target": "RibbonFET",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["第二代全环绕栅极（GAA）晶体管 RibbonFET"]
+        },
+        {
+          "source": "PowerVia",
+          "target": "Intel",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["PowerVia 把电源网络从拥挤的正面金属层搬到晶体管背面"]
+        },
+        {
+          "source": "18A",
+          "target": "TSMC N3E",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": ["18A 计算逻辑与 TSMC N3E GPU 逻辑密度相近"]
+        },
+        {
+          "source": "18A",
+          "target": "TSMC N3P",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": ["18A 在峰值密度上并未领先 TSMC N3P、N2 或三星 SF2"]
+        },
+        {
+          "source": "18A",
+          "target": "TSMC N2",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": ["18A 在峰值密度上并未领先 TSMC N3P、N2 或三星 SF2"]
+        },
+        {
+          "source": "TSMC N3E",
+          "target": "TSMC",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["高端 Xe3 GPU 仍是 12 核 GT2 晶粒、采用 TSMC N3E"]
+        },
+        
+        {
+          "source": "18A",
+          "target": "Samsung SF2",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": ["以三星 SF2——具备 GAA 但不含 BSPD 的现役代工节点——作为对照基准"]
+        }
+      ],
+      "metrics": [
+        {"name": "正面信号栈层数", "value": "M0–M14"},
+        {"name": "背面电源栈层数", "value": "BM0–BM5"},
+        {"name": "高端 Xe3 GPU 晶粒核数", "value": "GT2 / 12 核"}
+      ],
+      "why_it_matters": "Intel 把「制造复兴」从多年言说落地为已出货实硅片——但密度对标显示 18A 峰值并未领先 N3P/N2/SF2，真正差异化来自 PowerVia 背供电与互连材料（Nb 阻挡层）而非晶体管本身，这决定其对成本与能效建立可规模化优势的成色，也牵动北美先进逻辑代工的产能格局。"
+    },
+    {
+      "article_id": "2026-09-27-1",
+      "entities": [
+        {
+          "name": "Bill Gates",
+          "type": "person",
+          "aliases": ["盖茨", "比尔·盖茨"],
+          "confidence": 0.93,
+          "evidence": ["微软联合创始人盖茨"]
+        },
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": ["微软", "MSFT"],
+          "confidence": 0.92,
+          "evidence": ["微软联合创始人盖茨"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["Anthropic、OpenAI、DeepMind、微软、xAI 等对手 CEO 罕见联合呼吁放缓前沿 AI 开发"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.88,
+          "evidence": ["Anthropic、OpenAI、DeepMind、微软、xAI 等对手 CEO 罕见联合呼吁放缓前沿 AI 开发"]
+        },
+        {
+          "name": "Donald Trump",
+          "type": "person",
+          "aliases": ["特朗普"],
+          "confidence": 0.9,
+          "evidence": ["反对者以特朗普为代表"]
+        },
+        {
+          "name": "Jacob Coxon",
+          "type": "person",
+          "aliases": ["考克森"],
+          "confidence": 0.85,
+          "evidence": ["前 Anthropic 研究员 Jacob Coxon 警告 AI 可能在本十年末前造成灾难"]
+        },
+        {
+          "name": "Evan Hubinger",
+          "type": "person",
+          "aliases": ["胡宾格"],
+          "confidence": 0.85,
+          "evidence": ["Anthropic 对齐科学负责人 Evan Hubinger 称十年内发生此类事件的概率超过 10%"]
+        },
+        {
+          "name": "美国国会",
+          "type": "organization",
+          "aliases": ["国会"],
+          "confidence": 0.88,
+          "evidence": ["呼吁国会立法建立 AI 护栏"]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "盖茨呼吁美国国会立法建立 AI 护栏",
+          "summary": "盖茨在 NBC「Meet the Press」节目呼吁国会立法建立 AI 护栏，直言没谁认为自我监管就够了，承认不反对某个时刻的开关但其他保障不落地也不够。",
+          "participants": [
+            {"name": "Bill Gates", "type": "person", "role": "subject"},
+            {"name": "美国国会", "type": "organization", "role": "object"}
+          ],
+          "evidence": [
+            "呼吁国会立法建立 AI 护栏",
+            "直言「没谁认为自我监管就够了」"
+          ]
+        },
+        {
+          "type": "policy",
+          "label": "Anthropic、OpenAI、微软等前沿 CEO 罕见联合呼吁放缓前沿 AI 开发",
+          "summary": "继 Anthropic、OpenAI、DeepMind、微软、xAI 等对手 CEO 联合呼吁放缓前沿 AI 开发之后，盖茨以产业元老身份下场，把立法呼声推向新高；特朗普则斥这类立法呼吁为「骗局」。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Donald Trump", "type": "person", "role": "competitor"}
+          ],
+          "evidence": [
+            "Anthropic、OpenAI、DeepMind、微软、xAI 等对手 CEO 罕见联合呼吁放缓前沿 AI 开发",
+            "反对者以特朗普为代表"
+          ]
+        },
+        {
+          "type": "policy",
+          "label": "前沿实验室研究员为 AI 灾难风险附上时间线与概率",
+          "summary": "前 Anthropic 研究员 Jacob Coxon 警告 AI 可能在本十年末前造成灾难，Anthropic 对齐科学负责人 Evan Hubinger 称十年内发生此类事件的概率超过 10%。",
+          "participants": [
+            {"name": "Jacob Coxon", "type": "person", "role": "subject"},
+            {"name": "Evan Hubinger", "type": "person", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": [
+            "前 Anthropic 研究员 Jacob Coxon 警告 AI 可能在本十年末前造成灾难",
+            "Anthropic 对齐科学负责人 Evan Hubinger 称十年内发生此类事件的概率超过 10%"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bill Gates",
+          "target": "Microsoft",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": ["微软联合创始人盖茨"]
+        },
+        {
+          "source": "Jacob Coxon",
+          "target": "Anthropic",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["前 Anthropic 研究员 Jacob Coxon"]
+        },
+        {
+          "source": "Evan Hubinger",
+          "target": "Anthropic",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["Anthropic 对齐科学负责人 Evan Hubinger"]
+        }
+      ],
+      "metrics": [
+        {"name": "Evan Hubinger 对十年内 AI 灾难事件的概率评估", "value": "超过 10%"}
+      ],
+      "why_it_matters": "盖茨以微软联合创始人的元老身份下场，把「自我监管不够」从边缘论调推向主流，并与特朗普「管制让中国得利」的叙事正面交锋——AI 治理之争正从技术风险演变为中美竞争的话语战，而多份本十年末前灾难时间线与超过 10% 的概率评估把抽象的「失控风险」量化成了可定价的命题。"
+    },
+    {
+      "article_id": "2026-09-27-2",
+      "entities": [
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": ["微软", "MSFT"],
+          "confidence": 0.93,
+          "evidence": ["微软 9 月 25 日发布重新设计后的 Copilot"]
+        },
+        {
+          "name": "Microsoft 365 Copilot",
+          "type": "product",
+          "aliases": ["Copilot"],
+          "confidence": 0.9,
+          "evidence": ["Microsoft 365 Copilot 付费席位超过 3000 万"]
+        },
+        {
+          "name": "Autopilot",
+          "type": "product",
+          "aliases": ["持久化智能体"],
+          "confidence": 0.9,
+          "evidence": ["被称作 Autopilot 的持久化智能体"]
+        },
+        {
+          "name": "Scout",
+          "type": "product",
+          "aliases": ["Scout 个人智能体"],
+          "confidence": 0.85,
+          "evidence": ["先前「Scout」个人智能体计划的继承者"]
+        },
+        {
+          "name": "Entra",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["每个 Autopilot 智能体获得独立的 Entra 身份"]
+        },
+        {
+          "name": "纳德拉",
+          "type": "person",
+          "aliases": ["Satya Nadella", "Nadella"],
+          "confidence": 0.9,
+          "evidence": ["微软 CEO 纳德拉给出数据"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "微软发布重新设计的 Copilot，拆分为 Home/Code/Autopilot 三大体验",
+          "summary": "微软 9 月 25 日发布重新设计后的 Copilot，围绕统一 Home 工作区、可自然语言搭建应用的 Code 构建器与持久化智能体 Autopilot 重构这款 AI 办公助手；Autopilot 是先前 Scout 个人智能体计划的继承者，每个智能体获得独立的 Entra 身份、专属邮箱与日历并在组织架构图中占位，以自己身份行动而非借用用户凭据。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Microsoft 365 Copilot", "type": "product", "role": "object"},
+            {"name": "Autopilot", "type": "product", "role": "object"},
+            {"name": "Entra", "type": "product", "role": "object"}
+          ],
+          "evidence": [
+            "微软 9 月 25 日发布重新设计后的 Copilot",
+            "被称作 Autopilot 的持久化智能体",
+            "每个 Autopilot 智能体获得独立的 Entra 身份"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Microsoft 365 Copilot",
+          "target": "Microsoft",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["微软 9 月 25 日发布重新设计后的 Copilot"]
+        },
+        {
+          "source": "Autopilot",
+          "target": "Microsoft",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["被称作 Autopilot 的持久化智能体"]
+        },
+        {
+          "source": "Autopilot",
+          "target": "Entra",
+          "type": "integrates",
+          "weight": 0.85,
+          "evidence": ["每个 Autopilot 智能体获得独立的 Entra 身份"]
+        },
+        {
+          "source": "Autopilot",
+          "target": "Scout",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": ["先前「Scout」个人智能体计划的继承者"]
+        },
+        {
+          "source": "纳德拉",
+          "target": "Microsoft",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["微软 CEO 纳德拉给出数据"]
+        }
+      ],
+      "metrics": [
+        {"name": "Microsoft 365 Copilot 付费席位", "value": "超过 3000 万"},
+        {"name": "Azure 年度营收突破额", "value": "首次突破 1000 亿美元"}
+      ],
+      "why_it_matters": "企业 AI 的对话范式从「每问一答」转向「两次会话之间持续执行已授权工作」，且把「智能体必须有可见身份、行为可观测」当作第一原则——Copilot 真正被重构成一个有身份、可审计的软件同事，而治理层（权限委托、记忆边界、日志回溯）取代模型流利度成为 3000 万席位上能否落地的胜负手。"
+    },
+    {
+      "article_id": "2026-09-27-3",
+      "entities": [
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": ["谷歌", "Google Inc.", "Google Cloud"],
+          "confidence": 0.92,
+          "evidence": ["谷歌把在 Cloud Next 2026 上预览的 Gemini 3.8 Live with Live Avatar 正式向企业开放"]
+        },
+        {
+          "name": "Gemini 3.8 Live",
+          "type": "model",
+          "aliases": ["Gemini 3.8 Live with Live Avatar"],
+          "confidence": 0.93,
+          "evidence": ["底层仍是 Gemini 3.8 Live 的原生语音转语音架构"]
+        },
+        {
+          "name": "Live Avatar",
+          "type": "product",
+          "aliases": ["Live Avatar 视频形象"],
+          "confidence": 0.9,
+          "evidence": ["谷歌把在 Cloud Next 2026 上预览的 Gemini 3.8 Live with Live Avatar 正式向企业开放"]
+        },
+        {
+          "name": "Agent Development Kit",
+          "type": "tool",
+          "aliases": ["ADK"],
+          "confidence": 0.85,
+          "evidence": ["可以把 Gemini Live API 与 Agent Development Kit 对接"]
+        },
+        {
+          "name": "SynthID",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["生成的音视频流内含不可感知的 SynthID 水印"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.88,
+          "evidence": ["语音接口正成为谷歌、OpenAI、Anthropic 争夺消费者与企业入口的下一战场"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["语音接口正成为谷歌、OpenAI、Anthropic 争夺消费者与企业入口的下一战场"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "谷歌将 Gemini 3.8 Live with Live Avatar 全面上市",
+          "summary": "Google Cloud 把在 Cloud Next 2026 上预览的 Gemini 3.8 Live with Live Avatar 正式向企业开放，底层仍是原生语音转语音架构，支持异步工具调用，可在欧盟与美国端点获得预置吞吐与合规治理。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 3.8 Live", "type": "model", "role": "object"},
+            {"name": "Live Avatar", "type": "product", "role": "object"}
+          ],
+          "evidence": ["谷歌把在 Cloud Next 2026 上预览的 Gemini 3.8 Live with Live Avatar 正式向企业开放"]
+        },
+        {
+          "type": "trend",
+          "label": "语音接口成为谷歌、OpenAI、Anthropic 争夺企业入口的下一战场",
+          "summary": "语音接口正成为谷歌、OpenAI、Anthropic 争夺消费者与企业入口的下一战场——谷歌四个月内连发多款 Flash 与 Live 模型，用快速迭代回应竞争白热化。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "competitor"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"}
+          ],
+          "evidence": [
+            "语音接口正成为谷歌、OpenAI、Anthropic 争夺消费者与企业入口的下一战场",
+            "谷歌四个月内连发多款 Flash 与 Live 模型"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Gemini 3.8 Live",
+          "target": "Google",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["谷歌把在 Cloud Next 2026 上预览的 Gemini 3.8 Live with Live Avatar 正式向企业开放"]
+        },
+        {
+          "source": "Live Avatar",
+          "target": "Google",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["谷歌把在 Cloud Next 2026 上预览的 Gemini 3.8 Live with Live Avatar 正式向企业开放"]
+        },
+        {
+          "source": "Live Avatar",
+          "target": "Gemini 3.8 Live",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["底层仍是 Gemini 3.8 Live 的原生语音转语音架构"]
+        },
+        {
+          "source": "Agent Development Kit",
+          "target": "Gemini 3.8 Live",
+          "type": "integrates",
+          "weight": 0.8,
+          "evidence": ["可以把 Gemini Live API 与 Agent Development Kit 对接"]
+        },
+        {
+          "source": "Gemini 3.8 Live",
+          "target": "SynthID",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": ["生成的音视频流内含不可感知的 SynthID 水印"]
+        },
+        {
+          "source": "Google",
+          "target": "OpenAI",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["语音接口正成为谷歌、OpenAI、Anthropic 争夺消费者与企业入口的下一战场"]
+        },
+        {
+          "source": "Google",
+          "target": "Anthropic",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["语音接口正成为谷歌、OpenAI、Anthropic 争夺消费者与企业入口的下一战场"]
+        }
+      ],
+      "metrics": [
+        {"name": "自定义 Live Avatar 形象的启用门槛", "value": "白名单 + 身份验证"}
+      ],
+      "why_it_matters": "语音接口从纯音频升级到「可见形象」——Google 把实时语音与响应式视频打包成企业入口，把战场从「能不能说」推高到「能不能像人一样在场」，同时用白名单与不可感知 SynthID 水印在开放与防冒充之间设闸，语音智能体的竞争点从语音质量转向「边说边做事」的异步与形象层。"
+    },
+    {
+      "article_id": "2026-09-27-4",
+      "entities": [
+        {
+          "name": "DeepSeek",
+          "type": "company",
+          "aliases": ["深度求索"],
+          "confidence": 0.93,
+          "evidence": ["DeepSeek 披露其生产级 DSec 沙箱平台"]
+        },
+        {
+          "name": "DSec",
+          "type": "tool",
+          "aliases": ["DSec 沙箱平台"],
+          "confidence": 0.9,
+          "evidence": ["DeepSeek 披露其生产级 DSec 沙箱平台"]
+        },
+        {
+          "name": "容器",
+          "type": "tool",
+          "aliases": ["container", "容器后端"],
+          "confidence": 0.8,
+          "evidence": ["论文列出四类后端——直接函数调用、容器、微虚拟机（microVM）与全虚拟机"]
+        },
+        {
+          "name": "微虚拟机",
+          "type": "tool",
+          "aliases": ["microVM"],
+          "confidence": 0.85,
+          "evidence": ["论文列出四类后端——直接函数调用、容器、微虚拟机（microVM）与全虚拟机"]
+        },
+        {
+          "name": "直接函数调用",
+          "type": "tool",
+          "aliases": ["函数调用后端"],
+          "confidence": 0.8,
+          "evidence": ["论文列出四类后端——直接函数调用、容器、微虚拟机（microVM）与全虚拟机"]
+        },
+        {
+          "name": "全虚拟机",
+          "type": "tool",
+          "aliases": ["full VM", "全虚拟化"],
+          "confidence": 0.8,
+          "evidence": ["论文列出四类后端——直接函数调用、容器、微虚拟机（microVM）与全虚拟机"]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "DeepSeek 披露生产级 DSec 沙箱平台，每日支撑约 300 万个执行环境",
+          "summary": "DeepSeek 披露生产级 DSec 沙箱平台：系统每天服务约 300 万个沙箱环境、峰时并发超 38 万个、峰值创建吞吐超过每秒 5000 个，把沙箱从安全控制上升为训练、强化学习、评测与生产共用的执行基座。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "DSec", "type": "tool", "role": "object"}
+          ],
+          "evidence": [
+            "DeepSeek 披露其生产级 DSec 沙箱平台",
+            "系统每天服务约 300 万个沙箱环境、峰时并发超 38 万个、峰值创建吞吐超过每秒 5000 个"
+          ]
+        },
+        {
+          "type": "infra",
+          "label": "DSec 以四类后端统一供给智能体训练、强化学习与评测",
+          "summary": "DSec 把直接函数调用、容器、微虚拟机与全虚拟机四类后端放进统一沙箱接口，调用方按工作负载需求请求环境，而不是绑死在某一种隔离技术上。",
+          "participants": [
+            {"name": "DSec", "type": "tool", "role": "subject"},
+            {"name": "直接函数调用", "type": "tool", "role": "object"},
+            {"name": "容器", "type": "tool", "role": "object"},
+            {"name": "微虚拟机", "type": "tool", "role": "object"},
+            {"name": "全虚拟机", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["论文列出四类后端——直接函数调用、容器、微虚拟机（microVM）与全虚拟机"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "DSec",
+          "target": "DeepSeek",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["DeepSeek 披露其生产级 DSec 沙箱平台"]
+        },
+        {
+          "source": "DeepSeek",
+          "target": "DSec",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["上升为训练、强化学习、评测与生产智能体负载共用的执行基座"]
+        },
+        {
+          "source": "DSec",
+          "target": "容器",
+          "type": "uses",
+          "weight": 0.75,
+          "evidence": ["论文列出四类后端——直接函数调用、容器、微虚拟机（microVM）与全虚拟机"]
+        },
+        {
+          "source": "DSec",
+          "target": "微虚拟机",
+          "type": "uses",
+          "weight": 0.75,
+          "evidence": ["论文列出四类后端——直接函数调用、容器、微虚拟机（microVM）与全虚拟机"]
+        },
+        {
+          "source": "DSec",
+          "target": "直接函数调用",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": ["论文列出四类后端——直接函数调用、容器、微虚拟机（microVM）与全虚拟机"]
+        },
+        {
+          "source": "DSec",
+          "target": "全虚拟机",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": ["论文列出四类后端——直接函数调用、容器、微虚拟机（microVM）与全虚拟机"]
+        }
+      ],
+      "metrics": [
+        {"name": "每日沙箱环境数", "value": "约 300 万个"},
+        {"name": "峰时并发数", "value": "超 38 万个"},
+        {"name": "峰值创建吞吐", "value": "每秒超 5000 个"}
+      ],
+      "why_it_matters": "沙箱从窄义安全控制蜕变为训练—评测共用的「智能体执行平面」，成为前沿实验室新的工程护城河——300 万/天且峰值每秒 5000 个的吞吐说明智能体规模化瓶颈正从模型本身转向执行环境的隔离、可观测与快速重置工程，安全的一半在环境而非模型。"
+    },
+    {
+      "article_id": "2026-09-27-5",
+      "entities": [
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": ["Facebook", "Meta AI"],
+          "confidence": 0.93,
+          "evidence": ["Meta 已做出回应，在 Muse 产品内加入更醒目的安全警示并修复漏洞"]
+        },
+        {
+          "name": "Muse",
+          "type": "product",
+          "aliases": ["Muse 智能体"],
+          "confidence": 0.9,
+          "evidence": ["9 月新品 Muse（AI 智能体）"]
+        },
+        {
+          "name": "用户专属云虚拟机",
+          "type": "tool",
+          "aliases": ["专属虚拟机"],
+          "confidence": 0.85,
+          "evidence": ["访问用户的「专属虚拟机」——即一个存放智能体数据的独立云环境"]
+        }
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "外部研究者经 Meta bug 赏金计划发现 Muse 可访问用户专属虚拟机的漏洞",
+          "summary": "一位外界研究员通过 Meta 的 bug 赏金计划提交了对 9 月新品 Muse（AI 智能体）的漏洞发现：该缺陷可能让攻击者访问存放智能体数据的用户专属云虚拟机，进而触及邮箱、文件等敏感个人信息。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["一位外界研究员通过 Meta 的 bug 赏金计划提交了对 9 月新品 Muse（AI 智能体）的漏洞发现"]
+        },
+        {
+          "type": "security",
+          "label": "此前研究者曾演示可诱导 Muse 泄出 6.8GB 文件（含 SSH 密钥）",
+          "summary": "此前的同类隐患曾在 9 月被研究者演示可诱导 Muse 泄出 6.8GB 文件（含 SSH 密钥），本周 Meta 在 Muse 内加入更醒目的安全警示并推送修复。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": [
+            "Meta 已做出回应，在 Muse 产品内加入更醒目的安全警示并修复漏洞",
+            "此前的同类隐患曾在 9 月被研究者演示可诱导 Muse 泄出 6.8GB 文件（含 SSH 密钥）"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Muse",
+          "target": "Meta",
+          "type": "released_by",
+          "weight": 0.85,
+          "evidence": ["9 月新品 Muse（AI 智能体）"]
+        },
+        {
+          "source": "Muse",
+          "target": "用户专属云虚拟机",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["访问用户的「专属虚拟机」——即一个存放智能体数据的独立云环境"]
+        }
+      ],
+      "metrics": [
+        {"name": "此前演示中 Muse 可被诱导泄出的文件体积", "value": "6.8GB"}
+      ],
+      "why_it_matters": "一周内第二次给旗舰智能体打补丁，把「影子 AI 数据暴露面」从安全团队的担忧变成已发生的事故——厂商一边高调把连向个人邮箱/文件的消费级智能体推向工作场所，一边反复缝合零日，安全验证与补丁节奏明显落后于铺开速度。"
+    },
+    {
+      "article_id": "2026-09-27-6",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["Anthropic 将 IPO 从 10 月推迟到 11 月"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.9,
+          "evidence": ["竞争对手 OpenAI（GPT-6 Astra 在企业端持续起量"]
+        },
+        {
+          "name": "SpaceX",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["将超越 SpaceX 760 亿美元、成为史上最大 IPO"]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": ["Astra"],
+          "confidence": 0.88,
+          "evidence": ["竞争对手 OpenAI（GPT-6 Astra 在企业端持续起量"]
+        },
+        {
+          "name": "投行",
+          "type": "organization",
+          "aliases": ["承销投行"],
+          "confidence": 0.85,
+          "evidence": ["投行希望公司先交出完整的三季度业绩"]
+        }
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 将 IPO 从 10 月推迟到 11 月，瞄准约 2 万亿美元估值",
+          "summary": "据报道 Anthropic 将 IPO 从 10 月推迟到 11 月，仍寻求约 2 万亿美元估值与至多 1000 亿美元募资，并锁定约 150 亿美元信贷额度作缓冲；这是六周内上市时间表的第二次推迟。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "投行", "type": "organization", "role": "object"}
+          ],
+          "evidence": [
+            "Anthropic 将 IPO 从 10 月推迟到 11 月",
+            "投行希望公司先交出完整的三季度业绩",
+            "已锁定约 150 亿美元信贷额度作缓冲"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI 以 GPT-6 Astra 挤压 Anthropic 企业份额叙事",
+          "summary": "竞争对手 OpenAI（GPT-6 Astra）在企业端持续起量、并传将提前发新款应战，正挤压 Anthropic 的企业市场份额叙事；AI 估值泡沫论也借 SpaceX 之后再次抬头。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["竞争对手 OpenAI（GPT-6 Astra 在企业端持续起量、并传将提前发新款应战）"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Anthropic",
+          "target": "OpenAI",
+          "type": "competes_with",
+          "weight": 0.8,
+          "evidence": ["竞争对手 OpenAI（GPT-6 Astra 在企业端持续起量"]
+        },
+        {
+          "source": "Anthropic",
+          "target": "SpaceX",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": ["将超越 SpaceX 760 亿美元、成为史上最大 IPO"]
+        },
+        {
+          "source": "GPT-6 Astra",
+          "target": "OpenAI",
+          "type": "released_by",
+          "weight": 0.85,
+          "evidence": ["竞争对手 OpenAI（GPT-6 Astra 在企业端持续起量"]
+        }
+      ],
+      "metrics": [
+        {"name": "Anthropic IPO 目标估值", "value": "约 2 万亿美元"},
+        {"name": "Anthropic IPO 募资上限", "value": "至多 1000 亿美元"},
+        {"name": "Anthropic 年底前年化营收预期", "value": "突破 1100 亿美元"},
+        {"name": "Anthropic 信贷额度缓冲", "value": "约 150 亿美元"},
+        {"name": "SpaceX IPO 募资额（对照）", "value": "760 亿美元"},
+        {"name": "估值倍数压缩", "value": "约 30 倍 → 约 18 倍 P/S"},
+        {"name": "年化营收增长", "value": "2025 年底 90 亿 → 2026 年 7 月底 650 亿美元（七倍以上）"}
+      ],
+      "why_it_matters": "六周内二度推迟且估值倍数从约 30 倍压到约 18 倍，说明投行宁可用三季度实绩替代预测来定价上市——在 AI 估值泡沫论抬头与 OpenAI 挤压企业份额的双重压力下，「推迟」被包装成「给投资者更低倍数」的反泡沫叙事，11 月只是暂行而非铁定日期。"
+    },
+    {
+      "article_id": "2026-09-27-7",
+      "entities": [
+        {
+          "name": "LeakScale",
+          "type": "paper",
+          "aliases": ["LeakScale 干预框架"],
+          "confidence": 0.92,
+          "evidence": ["一篇提交于 9 月 23 日的论文提出 LeakScale 干预框架"]
+        },
+        {
+          "name": "arXiv",
+          "type": "organization",
+          "aliases": ["Arxiv"],
+          "confidence": 0.9,
+          "evidence": ["arXiv"]
+        },
+        {
+          "name": "反事实度量",
+          "type": "topic",
+          "aliases": ["counterfactual"],
+          "confidence": 0.85,
+          "evidence": ["只有反事实（counterfactual）才能量化这一接触带来的性能贡献"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "LeakScale 提出干预框架为「接触」与「影响」拆开做因果度量",
+          "summary": "LeakScale 把来源追踪能证明接触发生、但只有反事实才能量化性能贡献这两个常被混为一谈的问题拆开，用可干预框架度量基准曝光对得分的真实影响。",
+          "participants": [
+            {"name": "LeakScale", "type": "paper", "role": "subject"},
+            {"name": "反事实度量", "type": "topic", "role": "object"}
+          ],
+          "evidence": [
+            "一篇提交于 9 月 23 日的论文提出 LeakScale 干预框架",
+            "来源追踪（provenance）能证明接触发生，但只有反事实（counterfactual）才能量化这一接触带来的性能贡献"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "基准曝光在所有模型-域组合上带来 +7.17 至 +27.31 个百分点准确率增益",
+          "summary": "实验覆盖 2,048 个任务族、两个模型族、两个可执行域、262,144 次生成，曝光在每一组模型-域组合上都提升准确率，增益从 +7.17 到 +27.31 个百分点不等。",
+          "participants": [
+            {"name": "LeakScale", "type": "paper", "role": "subject"},
+            {"name": "反事实度量", "type": "topic", "role": "benchmark"}
+          ],
+          "evidence": [
+            "曝光在每一组模型-域组合上都提升了准确率，增益从 +7.17 到 +27.31 个百分点不等",
+            "研究覆盖 2,048 个任务族、两个模型族、两个可执行域、262,144 次生成"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "LeakScale",
+          "target": "arXiv",
+          "type": "published_on",
+          "weight": 0.85,
+          "evidence": ["一篇提交于 9 月 23 日的论文提出 LeakScale 干预框架"]
+        },
+        {
+          "source": "LeakScale",
+          "target": "反事实度量",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["只有反事实（counterfactual）才能量化这一接触带来的性能贡献"]
+        }
+      ],
+      "metrics": [
+        {"name": "覆盖任务族数量", "value": "2,048 个"},
+        {"name": "曝光带来的准确率增益范围", "value": "+7.17 至 +27.31 个百分点"},
+        {"name": "生成样本总数", "value": "262,144 次"},
+        {"name": "覆盖模型族数量", "value": "两个"}
+      ],
+      "why_it_matters": "把「榜单分」第一次拆成「能力 + 曝光」两个可独立度量的分量——当污染不仅能证明而且能量化贡献时，依赖排行榜做模型采买的团队终于能回答「报告分数有多少是真实能力」，这动摇了对基准分数信任的基础并改写污染讨论的走向。"
+    },
+    {
+      "article_id": "2026-09-27-8",
+      "entities": [
+        {
+          "name": "SafeToken",
+          "type": "paper",
+          "aliases": ["起始拒绝修复锚"],
+          "confidence": 0.9,
+          "evidence": ["并提出 SafeToken：仅在推理起始注入一个学习到的连续锚"]
+        },
+        {
+          "name": "ORC",
+          "type": "topic",
+          "aliases": ["Onset Refusal Collapse", "起始拒绝崩溃"],
+          "confidence": 0.88,
+          "evidence": ["称为「起始拒绝崩溃（ORC）」"]
+        },
+        {
+          "name": "CICAI",
+          "type": "organization",
+          "aliases": ["CICAI 2026"],
+          "confidence": 0.88,
+          "evidence": ["被 CICAI 2026 接收"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文把安全崩溃定位到首个生成词元的 ORC 机制",
+          "summary": "论文从词元级位置分析拒绝动态，发现 LRM 面对有害查询时拒绝相关信号在首个生成词元处急剧下降，称其为 Onset Refusal Collapse（ORC），即模型从理解切换到生成的临界瞬间发生瞬时崩溃。",
+          "participants": [
+            {"name": "SafeToken", "type": "paper", "role": "subject"},
+            {"name": "ORC", "type": "topic", "role": "object"}
+          ],
+          "evidence": [
+            "论文把大型推理模型（LRM）在处理有害查询时拒绝信号暴跌的机制定位到推理起始点的首个生成词元",
+            "称为「起始拒绝崩溃（ORC）」"
+          ]
+        },
+        {
+          "type": "research",
+          "label": "SafeToken 以单嵌入干预缓解 ORC 并保留推理效用",
+          "summary": "SafeToken 仅在推理起始注入一个学习到的连续安全锚，尽管只更新单个词元嵌入，仍能实质缓解 ORC、提升有害查询基准上的安全表现，并在大体上保留推理效用。",
+          "participants": [
+            {"name": "SafeToken", "type": "paper", "role": "subject"},
+            {"name": "ORC", "type": "topic", "role": "object"}
+          ],
+          "evidence": [
+            "并提出 SafeToken：仅在推理起始注入一个学习到的连续锚",
+            "尽管只更新单个词元嵌入，SafeToken 仍能实质缓解 ORC"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "SafeToken",
+          "target": "ORC",
+          "type": "targets",
+          "weight": 0.9,
+          "evidence": ["并提出 SafeToken：仅在推理起始注入一个学习到的连续锚"]
+        },
+        {
+          "source": "SafeToken",
+          "target": "CICAI",
+          "type": "published_on",
+          "weight": 0.8,
+          "evidence": ["被 CICAI 2026 接收"]
+        }
+      ],
+      "metrics": [
+        {"name": "SafeToken 更新的词元嵌入量", "value": "单个"}
+      ],
+      "why_it_matters": "把「对齐随模型发狂而失效」的笼统叙事拆成首个生成词元处的可定位机制，并证明单点嵌入修正即可显著恢复防护——安全修复的粒度从「重训全模型」降到「动一个词元」，对长链推理驱动的 agent 工作负载而言，安全窗口恰在推理最开头。"
+    },
+    {
+      "article_id": "2026-09-27-9",
+      "entities": [
+        {
+          "name": "AgentSpec",
+          "type": "paper",
+          "aliases": [],
+          "confidence": 0.92,
+          "evidence": ["AgentSpec 全面超越现有 SOTA"]
+        },
+        {
+          "name": "投机解码",
+          "type": "topic",
+          "aliases": ["speculative decoding"],
+          "confidence": 0.9,
+          "evidence": ["论文系统分析后发现现役投机解码随批量增大而严重退化"]
+        },
+        {
+          "name": "vLLM",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["在 vLLM 上对五种不同负载、四种不同模型家族评估"]
+        },
+        {
+          "name": "SoL-Pi",
+          "type": "product",
+          "aliases": ["NVIDIA SoL-Pi"],
+          "confidence": 0.7,
+          "evidence": ["与同日 NVIDIA 的 SoL-Pi 一起"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文剖析投机解码随批量增大退化的机制并定位两个瓶颈",
+          "summary": "论文系统拆解后找到两个主导瓶颈：投机词元的高拒绝率（批量增大时验证开销吞掉收益）与动态词元预算利用不足；AgentSpec 提出结构隔离起草与冗余感知预算分配对症解决。",
+          "participants": [
+            {"name": "AgentSpec", "type": "paper", "role": "subject"},
+            {"name": "投机解码", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["论文系统分析后发现现役投机解码随批量增大而严重退化"]
+        },
+        {
+          "type": "benchmark",
+          "label": "AgentSpec 在 vLLM 上五种负载四种模型家族全面超越 SOTA",
+          "summary": "AgentSpec 以结构隔离起草把投机约束在语义连贯工作流段内、以冗余感知预算分配提升各批量推理效率，在 vLLM 上对五种不同负载、四种不同模型家族评估，全面超越现有 SOTA。",
+          "participants": [
+            {"name": "AgentSpec", "type": "paper", "role": "subject"},
+            {"name": "vLLM", "type": "tool", "role": "object"}
+          ],
+          "evidence": [
+            "在 vLLM 上对五种不同负载、四种不同模型家族评估",
+            "AgentSpec 全面超越现有 SOTA"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "AgentSpec",
+          "target": "vLLM",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["在 vLLM 上对五种不同负载、四种不同模型家族评估"]
+        },
+        {
+          "source": "AgentSpec",
+          "target": "SoL-Pi",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["与同日 NVIDIA 的 SoL-Pi 一起，指向同一个判断"]
+        }
+      ],
+      "metrics": [
+        {"name": "评估负载数量", "value": "五种"},
+        {"name": "评估模型家族数量", "value": "四种"}
+      ],
+      "why_it_matters": "投机解码在批量变大时收益被高拒绝率与预算利用不足吞掉，AgentSpec 用「按工作流结构切段起草」与「冗余感知预算」把 agent 推理提速重新工程化——与同日 NVIDIA 的 SoL-Pi 指向同一判断：规模化智能体的主战场在 harness 与 serving 层，而非模型本身。"
+    },
+    {
+      "article_id": "2026-09-27-10",
+      "entities": [
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": ["微软", "MSFT"],
+          "confidence": 0.93,
+          "evidence": ["微软宣布 Azure SRE Agent（站点可靠性工程师智能体）转正 GA"]
+        },
+        {
+          "name": "Azure SRE Agent",
+          "type": "product",
+          "aliases": ["SRE Agent", "站点可靠性工程师智能体"],
+          "confidence": 0.9,
+          "evidence": ["微软宣布 Azure SRE Agent（站点可靠性工程师智能体）转正 GA"]
+        },
+        {
+          "name": "Azure",
+          "type": "product",
+          "aliases": ["Microsoft Azure"],
+          "confidence": 0.88,
+          "evidence": ["微软宣布 Azure SRE Agent（站点可靠性工程师智能体）转正 GA"]
+        },
+        {
+          "name": "GitHub Enterprise",
+          "type": "product",
+          "aliases": ["GitHub"],
+          "confidence": 0.88,
+          "evidence": ["原生支持 GitHub Enterprise"]
+        },
+        {
+          "name": "VNet",
+          "type": "tool",
+          "aliases": ["虚拟网络"],
+          "confidence": 0.85,
+          "evidence": ["VNet 集成让智能体跑在私有网络边界内"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "微软将 Azure SRE Agent 推向全面上市",
+          "summary": "微软宣布 Azure SRE Agent 转正 GA，并借 Build 2026 补丁推进企业级能力：自动完成事件分流、加速根因分析、执行受治理限制的缓解动作，把 24/7 常见事件识别的重复性工作从工程团队卸下，压降平均修复时长（MTTR）；同时以 VNet 集成让智能体跑在私有网络边界内、细粒度权限模型设定「允许/询问/拒绝」规则、原生支持 GitHub Enterprise，把黑箱授权拆成可审计可吊销的策略。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Azure SRE Agent", "type": "product", "role": "object"},
+            {"name": "Azure", "type": "product", "role": "object"},
+            {"name": "GitHub Enterprise", "type": "product", "role": "object"},
+            {"name": "VNet", "type": "tool", "role": "object"}
+          ],
+          "evidence": [
+            "微软宣布 Azure SRE Agent（站点可靠性工程师智能体）转正 GA",
+            "VNet 集成让智能体跑在私有网络边界内",
+            "原生支持 GitHub Enterprise"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Azure SRE Agent",
+          "target": "Microsoft",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["微软宣布 Azure SRE Agent（站点可靠性工程师智能体）转正 GA"]
+        },
+        {
+          "source": "Azure SRE Agent",
+          "target": "GitHub Enterprise",
+          "type": "integrates",
+          "weight": 0.8,
+          "evidence": ["原生支持 GitHub Enterprise"]
+        },
+        {
+          "source": "Azure SRE Agent",
+          "target": "VNet",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["VNet 集成让智能体跑在私有网络边界内"]
+        }
+      ],
+      "metrics": [
+        {"name": "常见事件识别的运维时间覆盖", "value": "24/7"}
+      ],
+      "why_it_matters": "运维智能体从「对话工具」升级为带身份、私有网络边界、细粒度权限与可审计策略的持久化一等公民——与 Copilot Autopilot 同周落地说明微软把「治理层能否被采购方接受」当作智能体产品化的胜负手，模型流利度已不是卖点。"
+    }
+  ]
+}

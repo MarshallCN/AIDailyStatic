@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-27",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "抽取整体扎实：事实准确、实体类型基本正确、指标齐全、跨文章规范名一致（Microsoft/Anthropic/OpenAI 三篇统一）。但存在关系与证据不匹配、对比目标错配到公司而非具体节点，以及同一发布会被人为切分重叠成两个事件，达不到直接发布标准。",
+  "findings": [
+    {
+      "article_id": "2026-09-27-0",
+      "severity": "medium",
+      "problem": "对比关系把目标错配到公司而非具体节点：关系 \"18A --compared_with--> TSMC\" 所指证据是「18A 在峰值密度上并未领先 TSMC N3P、N2 或三星 SF2」，原文对比的对象是具体工艺节点 N3P/N2/SF2，不是 TSMC 这家公司。同时文章的核心密度对标节点（TSMC N3E / N3P / N2）没有建立对应实体，关键的技术差值信息在图上缺失，只剩一个笼统的 company 级边。",
+      "fix": "新增工艺节点实体（如 TSMC N3E、TSMC N3P、TSMC N2，type=hardware/工艺节点），把对比边改为 \"18A --compared_with--> N3P / N2 / Samsung SF2\" 这类节点对节点的边，TSMC 不作为对比靶点单列；benchmark 事件的参与者也相应换成具体节点而非公司。"
+    },
+    {
+      "article_id": "2026-09-27-3",
+      "severity": "medium",
+      "problem": "关系 \"SynthID --developed_by--> Google\" 与其证据不匹配：所引证据只有「生成的音视频流内含不可感知的 SynthID 水印」，这条原文只说明 SynthID 被用作水印，并未声明 SynthID 是谷歌开发。证据支撑的是「使用/部署 SynthID」，不是「谷歌开发了 SynthID」，属于证据存在但支撑的是另一回事。",
+      "fix": "把该关系的 type 改为能从原文直接读出的语义（如 \"Gemini 3.8 Live / 谷歌 的音视频流 --embeds_or_uses--> SynthID\"），并把 evidence 换为能支撑使用含义的原文；若确要保留 developed_by，必须找到原文对 SynthID 出处的明确表述，否则降权或删除该归属边。"
+    },
+    {
+      "article_id": "2026-09-27-2",
+      "severity": "medium",
+      "problem": "事件切分重复：同一场发布会（9 月 25 日 Copilot 大改版）被拆成 \"微软发布重新设计的 Copilot，拆分为 Home/Code/Autopilot 三大体验\" 和 \"Autopilot 持久化智能体登场\" 两个 launch 事件，而前者的 summary 已把 Autopilot 列为三大体验之一、后者的主角又是 Autopilot，两个事件高度重叠、知识冗余。",
+      "fix": "合并为单一 launch 事件（Copilot 大改版，含 Home/Code/Autopilot 三大部分）；Autopilot 的独立 Entra 身份、专属邮箱日历、组织占位等机制细节并入该事件的 summary，不要拆成第二个同源 launch 事件。仅当子产品携带独立于发布的显著信号（如单独的里程碑/发布渠道）时才单列。"
+    },
+    {
+      "article_id": "2026-09-27-10",
+      "severity": "low",
+      "problem": "关系证据不支撑断言且存在重复关系类型：\"Azure SRE Agent --uses--> Azure\"（weight 0.8）所引证据是「微软宣布 Azure SRE Agent 转正 GA」，这条只说明发布，并不支撑「该智能体 uses Azure」；同时 Azure SRE Agent 对 Microsoft 同时挂了 released_by 与 developed_by 两条、证据几乎相同（article 5 的 Muse 也有同样的 released_by/developed_by 双挂），属冗余重复。",
+      "fix": "为 uses-Azure 换一条能支撑从属/运行关系的原文证据，或直接删除该边；released_by 与 developed_by 对同一 source-target 对只保留一条（建议保留 released_by），避免同义双边稀释图。"
+    }
+  ],
+  "lessons": [
+    "工艺/产品对比关系（compared_with）必须指向具体的被比对象（工艺节点、型号），不能缩到其母公司或家族实体（如 TSMC），并让被比对象建立为独立实体。",
+    "每条关系所挂的 evidence 必须能直接支撑其关系类型与方向：developed_by 不能挂只描述功效、外观或使用方式的原文；证据只证明「被使用/部署」时不要建归属边。",
+    "同一次发布会推出的多个子产品应合并为一个 launch 事件；仅当某子产品携带独立于发布本身的显著信号时才单列，且避免成员与总事件重叠造成同主体多事件重复。"
+  ]
+}
