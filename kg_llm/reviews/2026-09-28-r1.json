@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-28",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "整体事实核对与关系方向大多正确，但存在两处 evidence 不支撑的 built_on 假关系（JEV-27B 与 Claude Sonnet 5.5 都被错误标成基于前代模型构建），会污染图语义；另有背书关系缺失、实体命名与类型错配等若干中等问题。",
+  "findings": [
+    {
+      "article_id": "2026-09-28-5",
+      "severity": "high",
+      "problem": "关系 \"JEV-27B --built_on--> JEV-9B\" 是被证据支撑的另一件事。原文 \"这是 JEV-9B 之后该公司的第二个 System 1+2 开源模型\" 只说明二者是同一配方下的先后两款模型，并不能推出 JEV-27B 基于 JEV-9B 构建；JEV-27B 真正的基座是 Qwen3.8-27B（该 built_on 边已存在）。此边会让图谱误读成 JEV-27B 继承自 JEV-9B。",
+      "fix": "删除 \"JEV-27B --built_on--> JEV-9B\" 这条边；若关系词表支持，改为 successor_of（后继）语义，证据改写为\"同一 Blocks of Experts 配方下继 JEV-9B 之后的第二款 System 1+2 模型\"。built_on 只保留给 Qwen3.8-27B 这条真正的基座边。"
+    },
+    {
+      "article_id": "2026-09-28-0",
+      "severity": "high",
+      "problem": "关系 \"Claude Sonnet 5.5 --built_on--> Claude Sonnet 5\" 同样把版本先后误当成基座继承。原文证据 \"与上一代 Sonnet 5 相比\" 以及 \"继 Opus 5.5 之后的又一次中端升级\" 都只说明 Sonnet 5.5 是 Sonnet 5 的后继，没有任何内容表明 Sonnet 5.5 基于 Sonnet 5 构建。built_on 应保留给真正的基座模型关系（对照 JEV on Qwen）。",
+      "fix": "删除 \"Claude Sonnet 5.5 --built_on--> Claude Sonnet 5\"，或改为 successor_of/版本继承语义（若词表支持）；不要用 built_on 表示\"前代/后继\"。"
+    },
+    {
+      "article_id": "2026-09-28-3",
+      "severity": "medium",
+      "problem": "Anthropic、Microsoft、Arm、Oracle、SpaceX 等实体在 launch 事件里被列为 partner 参与者，但没有任何一条边连接它们与 Open Agent Safety Platform，图谱因此讲不出本文的核心故事——数十家公司背书该开源平台、而 OpenAI 缺席。孤立地出现背书者实体且不带边属于信息缺失。",
+      "fix": "为这些背书公司各加一条到 Open Agent Safety Platform 的 endorses（或 supports/back）关系，证据用 \"Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案\"；同时把 OpenAI 不在背书之列这一事实性信息至少写入相关事件的 summary/evidence，避免缺席信号丢失。"
+    },
+    {
+      "article_id": "2026-09-28-8",
+      "severity": "medium",
+      "problem": "实体名 \"科学代码检索增强系统\" 用描述性短语代替了论文/系统的专有名称，且 aliases 里塞进 \"完全本地的小模型编码 agent\" 这种概念性表述（并非同一主体的别名）。这样的规范名无法跨文章连通，也会污染实体语义。",
+      "fix": "用论文/系统的实际专有名称作为 canonical name，不要把描述短语当名称；从 aliases 移除 \"完全本地的小模型编码 agent\" 这类概念描述，如需保留可放到事件的 summary 里。"
+    },
+    {
+      "article_id": "2026-09-28-3",
+      "severity": "medium",
+      "problem": "实体类型不一致：Vera（专用 CPU）被判为 product，而同文的 BlueField-4（DPU 芯片）被判为 hardware，二者都是处理器硬件却用了不同类型，跨文章（2026-09-28-3 与 -9）同样保持了这个不一致，会破坏类型结构的一致性。",
+      "fix": "把 Vera 的类型统一改为 hardware（它是面向 agentic AI 的专用 CPU，与 BlueField-4 DPU 同类）；若维持 product，则 BlueField-4 也应改为 product，确保同类处理器类型一致。"
+    },
+    {
+      "article_id": "2026-09-28-1",
+      "severity": "medium",
+      "problem": "acquisition 事件把李飞飞列为 role=object 的参与者，语义上会读成\"李飞飞是收购对象\"。实际上被收购的目标是 World Labs 公司本身，李飞飞是随之加入 AMD 出任执行副总裁兼首席科学家，并非收购标的。",
+      "fix": "把李飞飞从 acquisition 事件的 object 参与者中移出，或将其 role 改为 hire/join（被聘请、加入）语义，明确收购目标是 World Labs；李飞飞与 AMD 的关系已由 \"李飞飞 --affiliated_with--> AMD\" 正确表达。"
+    }
+  ],
+  "lessons": [
+    "版本/后继关系不要写成 built_on：built_on 只用于真正以某模型为基座的情况；仅凭\"上一代/第 N 款\"表述应使用 successor_of 或删除该边。",
+    "当若干公司（或个人）事件里被列为背书/参与者却没有任何关系时，说明抽取漏了边：背书（endorses/supports）是有价值的明确关系，不要只挂在 participants 里而不建模。",
+    "实体命名用专有名词（论文/产品真名），不要把描述性短语当名称，也不要往 aliases 里塞概念性表述（如\"完全本地的小模型编码 agent\"）。"
+  ]
+}

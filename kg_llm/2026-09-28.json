@@ -1,0 +1,1357 @@
+{
+  "date": "2026-09-28",
+  "articles": [
+    {
+      "article_id": "2026-09-28-0",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["Anthropic 于 9 月 28 日发布 Claude Sonnet 5.5"]
+        },
+        {
+          "name": "Claude Sonnet 5.5",
+          "type": "model",
+          "aliases": ["Sonnet 5.5"],
+          "confidence": 0.93,
+          "evidence": ["Anthropic 于 9 月 28 日发布 Claude Sonnet 5.5"]
+        },
+        {
+          "name": "Claude Sonnet 5",
+          "type": "model",
+          "aliases": ["Sonnet 5", "上一代 Sonnet 5"],
+          "confidence": 0.9,
+          "evidence": ["与上一代 Sonnet 5 相比"]
+        },
+        {
+          "name": "Opus 5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["网络安全能力与 Opus 5 相当"]
+        },
+        {
+          "name": "Opus 5.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["继 Opus 5.5 之后的又一次中端升级"]
+        },
+        {
+          "name": "Terminal-Bench 4.0",
+          "type": "benchmark",
+          "aliases": ["Terminal-Bench"],
+          "confidence": 0.9,
+          "evidence": ["在 Terminal-Bench 4.0 智能体编程测试中拿到 70.6%"]
+        },
+        {
+          "name": "GDPval-AA",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["在跨 44 个职业的 GDPval-AA 上拿到 1,844 分"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 发布 Claude Sonnet 5.5，首次为 Sonnet 配备前沿级网络战防护",
+          "summary": "Anthropic 于 9 月 28 日发布 Claude Sonnet 5.5，运行速度快 30% 以上、单任务成本最多低 30%，定价为每百万输入 token 2 美元、每百万输出 token 10 美元；它首次成为配备前沿风格网络战防护的 Sonnet 模型，带以前只保留给最强模型的限制上线，还是第一款带推理提取分类器的 Sonnet。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Sonnet 5.5", "type": "model", "role": "object"}
+          ],
+          "evidence": [
+            "Anthropic 于 9 月 28 日发布 Claude Sonnet 5.5",
+            "第一次有 Sonnet 以这种方式发布"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Claude Sonnet 5.5 在 Terminal-Bench 4.0 与 GDPval-AA 上的成绩",
+          "summary": "Sonnet 5.5 在 Terminal-Bench 4.0 智能体编程测试拿到 70.6%，对比 Sonnet 5 的 10.3% 与更贵 Opus 5.5 的 66.4%；在跨 44 个职业的 GDPval-AA 上拿到 1,844 分，接近 Opus 5.5 的 1,846。",
+          "participants": [
+            {"name": "Claude Sonnet 5.5", "type": "model", "role": "subject"},
+            {"name": "Terminal-Bench 4.0", "type": "benchmark", "role": "benchmark"},
+            {"name": "GDPval-AA", "type": "benchmark", "role": "benchmark"},
+            {"name": "Opus 5.5", "type": "model", "role": "competitor"},
+            {"name": "Claude Sonnet 5", "type": "model", "role": "competitor"}
+          ],
+          "evidence": [
+            "在 Terminal-Bench 4.0 智能体编程测试中拿到 70.6%",
+            "在跨 44 个职业的 GDPval-AA 上拿到 1,844 分"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude Sonnet 5.5",
+          "target": "Anthropic",
+          "type": "released_by",
+          "weight": 0.95,
+          "evidence": ["Anthropic 于 9 月 28 日发布 Claude Sonnet 5.5"]
+        },
+        {
+          "source": "Claude Sonnet 5.5",
+          "target": "Terminal-Bench 4.0",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": ["在 Terminal-Bench 4.0 智能体编程测试中拿到 70.6%"]
+        },
+        {
+          "source": "Claude Sonnet 5.5",
+          "target": "GDPval-AA",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["在跨 44 个职业的 GDPval-AA 上拿到 1,844 分"]
+        },
+        {
+          "source": "Claude Sonnet 5.5",
+          "target": "Claude Sonnet 5",
+          "type": "outperforms",
+          "weight": 0.8,
+          "evidence": ["对比 Sonnet 5 的 10.3%"]
+        },
+        {
+          "source": "Claude Sonnet 5.5",
+          "target": "Opus 5.5",
+          "type": "compared_with",
+          "weight": 0.75,
+          "evidence": ["与更贵 Opus 5.5 的 66.4%"]
+        },
+        {
+          "source": "Claude Sonnet 5.5",
+          "target": "Opus 5",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": ["网络安全能力与 Opus 5 相当"]
+        }
+      ],
+      "metrics": [
+        {"name": "Claude Sonnet 5.5 相对 Sonnet 5 的运行速度提升", "value": "30% 以上"},
+        {"name": "Claude Sonnet 5.5 相对 Sonnet 5 的单任务成本降幅", "value": "最多低 30%"},
+        {"name": "Claude Sonnet 5.5 定价（每百万输入 token）", "value": "2 美元"},
+        {"name": "Claude Sonnet 5.5 定价（每百万输出 token）", "value": "10 美元"},
+        {"name": "Terminal-Bench 4.0 得分（Claude Sonnet 5.5）", "value": "70.6%"},
+        {"name": "Terminal-Bench 4.0 得分（Claude Sonnet 5）", "value": "10.3%"},
+        {"name": "Terminal-Bench 4.0 得分（Opus 5.5）", "value": "66.4%"},
+        {"name": "GDPval-AA 得分（Claude Sonnet 5.5）", "value": "1,844 分"},
+        {"name": "GDPval-AA 得分（Opus 5.5）", "value": "1,846"},
+        {"name": "GDPval-AA 覆盖职业数", "value": "44 个"}
+      ],
+      "why_it_matters": "前沿安全能力的「下放」比性能数字更值得注意——Sonnet 第一次带着只为最强模型保留的越狱限制上线，说明厂商开始以安全带宽而非能力上限定价中端模型；同时 Terminal-Bench 上 70.6% 对 10.3% 的跨越式差距，与「该模型并未推进能力前沿」的说辞并置，安全与能力叙事首次在同一款 Sonnet 上脱钩。"
+    },
+    {
+      "article_id": "2026-09-28-1",
+      "entities": [
+        {
+          "name": "AMD",
+          "type": "company",
+          "aliases": ["超威"],
+          "confidence": 0.95,
+          "evidence": ["AMD 于 9 月 28 日宣布以 82 亿美元收购李飞飞创办的 World Labs"]
+        },
+        {
+          "name": "World Labs",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": ["AMD 于 9 月 28 日宣布以 82 亿美元收购李飞飞创办的 World Labs"]
+        },
+        {
+          "name": "李飞飞",
+          "type": "person",
+          "aliases": ["Fei-Fei Li"],
+          "confidence": 0.93,
+          "evidence": ["李飞飞创办的 World Labs"]
+        },
+        {
+          "name": "Nvidia",
+          "type": "company",
+          "aliases": ["英伟达", "NVIDIA"],
+          "confidence": 0.92,
+          "evidence": ["挑战手握 Cosmos 开源世界模型生态的 Nvidia"]
+        },
+        {
+          "name": "Marble",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["World Labs 首款产品 Marble"]
+        }
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "AMD 以 82 亿美元收购世界模型公司 World Labs",
+          "summary": "AMD 于 9 月 28 日宣布以 82 亿美元收购李飞飞创办的 World Labs，交易预计年底前完成、尚待监管批准，李飞飞将加入 AMD 担任执行副总裁兼首席科学家。",
+          "participants": [
+            {"name": "AMD", "type": "company", "role": "subject"},
+            {"name": "World Labs", "type": "company", "role": "object"}
+          ],
+          "evidence": [
+            "AMD 于 9 月 28 日宣布以 82 亿美元收购李飞飞创办的 World Labs"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "AMD 借 World Labs 挑战 Nvidia 的 Cosmos 世界模型生态",
+          "summary": "收购后 AMD 将获得世界模型能力，挑战手握 Cosmos 开源世界模型生态的 Nvidia；世界模型被视为把生成式 AI 落到机器人的关键，Marble 主打娱乐体验与机器人训练仿真。",
+          "participants": [
+            {"name": "AMD", "type": "company", "role": "subject"},
+            {"name": "World Labs", "type": "company", "role": "object"},
+            {"name": "Nvidia", "type": "company", "role": "competitor"},
+            {"name": "Marble", "type": "product", "role": "object"}
+          ],
+          "evidence": [
+            "收购后 AMD 将获得世界模型能力，挑战手握 Cosmos 开源世界模型生态的 Nvidia",
+            "World Labs 首款产品 Marble"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "AMD",
+          "target": "World Labs",
+          "type": "acquires",
+          "weight": 0.95,
+          "evidence": ["AMD 于 9 月 28 日宣布以 82 亿美元收购李飞飞创办的 World Labs"]
+        },
+        {
+          "source": "李飞飞",
+          "target": "AMD",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["李飞飞将加入 AMD，担任执行副总裁兼首席科学家"]
+        },
+        {
+          "source": "李飞飞",
+          "target": "World Labs",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": ["李飞飞创办的 World Labs"]
+        },
+        {
+          "source": "Marble",
+          "target": "World Labs",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["World Labs 首款产品 Marble"]
+        },
+        {
+          "source": "AMD",
+          "target": "Nvidia",
+          "type": "competes_with",
+          "weight": 0.8,
+          "evidence": ["挑战手握 Cosmos 开源世界模型生态的 Nvidia"]
+        }
+      ],
+      "metrics": [
+        {"name": "AMD 收购 World Labs 的交易金额", "value": "82 亿美元"},
+        {"name": "交易预期完成时间", "value": "年底前"}
+      ],
+      "why_it_matters": "世界模型第一次被硅谷大算力厂商以 82 亿美元整单收入麾下——AMD 借此从纯文本/视频模型供应商跨进机器人合成数据供给链，把与 Nvidia Cosmos 的竞争从芯片层交到模型生态层；在算力与主权之外，谁掌握「可落地的物理世界模拟」正在成为机器人时代的入局门票。"
+    },
+    {
+      "article_id": "2026-09-28-2",
+      "entities": [
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": ["Facebook", "Meta AI"],
+          "confidence": 0.95,
+          "evidence": ["Meta 于周一宣布推出 \"Meta Enterprise Platform\""]
+        },
+        {
+          "name": "Meta Enterprise Platform",
+          "type": "product",
+          "aliases": ["Enterprise Platform"],
+          "confidence": 0.9,
+          "evidence": ["Meta 于周一宣布推出 \"Meta Enterprise Platform\""]
+        },
+        {
+          "name": "Muse",
+          "type": "product",
+          "aliases": ["Muse 助手"],
+          "confidence": 0.9,
+          "evidence": ["本月早些时候发布的个人 AI 助手 Muse"]
+        },
+        {
+          "name": "Meta Business Agent",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Meta Business Agent、Muse API、Muse Code 等"]
+        },
+        {
+          "name": "Muse API",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Meta Business Agent、Muse API、Muse Code 等"]
+        },
+        {
+          "name": "Muse Code",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Meta Business Agent、Muse API、Muse Code 等"]
+        },
+        {
+          "name": "Chirantan Desai",
+          "type": "person",
+          "aliases": ["CJ Desai", "Chirantan CJ Desai"],
+          "confidence": 0.88,
+          "evidence": ["数据库巨头 MongoDB 的 CEO Chirantan \"CJ\" Desai"]
+        },
+        {
+          "name": "MongoDB",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["数据库巨头 MongoDB 的 CEO Chirantan \"CJ\" Desai"]
+        },
+        {
+          "name": "Dev Ittycheria",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["任命原 CEO Dev Ittycheria 为临时首席执行"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Meta 发布企业级 AI 平台 Meta Enterprise Platform",
+          "summary": "Meta 于周一宣布推出面向企业与开发者的新 AI 业务 Meta Enterprise Platform，把个人 AI 助手 Muse、Meta Business Agent、Muse API、Muse Code 等整套技术栈打包给企业。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Meta Enterprise Platform", "type": "product", "role": "object"},
+            {"name": "Muse", "type": "product", "role": "object"},
+            {"name": "Meta Business Agent", "type": "product", "role": "object"},
+            {"name": "Muse API", "type": "product", "role": "object"},
+            {"name": "Muse Code", "type": "product", "role": "object"}
+          ],
+          "evidence": [
+            "Meta 于周一宣布推出 \"Meta Enterprise Platform\"",
+            "Meta Business Agent、Muse API、Muse Code 等"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "Meta 挖角 MongoDB CEO Chirantan Desai 领导企业 AI 业务",
+          "summary": "为掌管新业务，Meta 直接挖角数据库巨头 MongoDB 的 CEO Chirantan \"CJ\" Desai；受 CEO 突离消息影响，MongoDB 股价一度下跌超 17%，任命原 CEO Dev Ittycheria 为临时首席执行官。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Chirantan Desai", "type": "person", "role": "object"},
+            {"name": "MongoDB", "type": "company", "role": "object"},
+            {"name": "Dev Ittycheria", "type": "person", "role": "object"}
+          ],
+          "evidence": [
+            "Meta 直接挖角数据库巨头 MongoDB 的 CEO Chirantan \"CJ\" Desai",
+            "任命原 CEO Dev Ittycheria 为临时首席执行"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Meta Enterprise Platform",
+          "target": "Meta",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["Meta 于周一宣布推出 \"Meta Enterprise Platform\""]
+        },
+        {
+          "source": "Meta Enterprise Platform",
+          "target": "Muse",
+          "type": "integrates",
+          "weight": 0.85,
+          "evidence": ["本月早些时候发布的个人 AI 助手 Muse"]
+        },
+        {
+          "source": "Meta Enterprise Platform",
+          "target": "Meta Business Agent",
+          "type": "integrates",
+          "weight": 0.8,
+          "evidence": ["Meta Business Agent、Muse API、Muse Code 等"]
+        },
+        {
+          "source": "Meta Enterprise Platform",
+          "target": "Muse API",
+          "type": "integrates",
+          "weight": 0.8,
+          "evidence": ["Meta Business Agent、Muse API、Muse Code 等"]
+        },
+        {
+          "source": "Meta Enterprise Platform",
+          "target": "Muse Code",
+          "type": "integrates",
+          "weight": 0.8,
+          "evidence": ["Meta Business Agent、Muse API、Muse Code 等"]
+        },
+        {
+          "source": "Chirantan Desai",
+          "target": "Meta",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["为掌管该业务，Meta 直接挖角数据库巨头 MongoDB 的 CEO Chirantan \"CJ\" Desai"]
+        },
+        {
+          "source": "Chirantan Desai",
+          "target": "MongoDB",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["数据库巨头 MongoDB 的 CEO Chirantan \"CJ\" Desai"]
+        },
+        {
+          "source": "Dev Ittycheria",
+          "target": "MongoDB",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["任命原 CEO Dev Ittycheria 为临时首席执行"]
+        }
+      ],
+      "metrics": [
+        {"name": "MongoDB 股价受 CEO 突离消息影响的跌幅", "value": "超 17%"}
+      ],
+      "why_it_matters": "Meta 把 AI 商业化从单点助手升级为一整包企业平台，并第一次用「外部 CEO」而非产品负责人来经营它——对企业 AI 阵营而言，能跨行业吸引 MongoDB CEO 标志着 Meta 正在把 AI 从研究摊子转成有定价权的业务线，而 MongoDB 股价单日跌超 17% 说明平台公司的 CEO 仍是其估值脊柱。"
+    },
+    {
+      "article_id": "2026-09-28-3",
+      "entities": [
+        {
+          "name": "Nvidia",
+          "type": "company",
+          "aliases": ["英伟达", "NVIDIA"],
+          "confidence": 0.95,
+          "evidence": ["Nvidia 于周一发布 Open Agent Safety Platform"]
+        },
+        {
+          "name": "Open Agent Safety Platform",
+          "type": "product",
+          "aliases": ["Open Agent Safety Platform 平台"],
+          "confidence": 0.9,
+          "evidence": ["Nvidia 于周一发布 Open Agent Safety Platform"]
+        },
+        {
+          "name": "OpenShell",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["OpenShell 是控制 agent 可访问范围的开源运行时软件"]
+        },
+        {
+          "name": "Sentry",
+          "type": "tool",
+          "aliases": ["Sentry 硬件看门狗"],
+          "confidence": 0.85,
+          "evidence": ["Sentry 则是运行在 Nvidia BlueField-4 DPU 上的独立监控系统"]
+        },
+        {
+          "name": "BlueField-4",
+          "type": "hardware",
+          "aliases": ["BlueField-4 DPU"],
+          "confidence": 0.88,
+          "evidence": ["运行在 Nvidia BlueField-4 DPU 上的独立监控系统"]
+        },
+        {
+          "name": "Vera",
+          "type": "hardware",
+          "aliases": ["Vera CPU"],
+          "confidence": 0.85,
+          "evidence": ["面向 AI 代理的专用 CPU Vera"]
+        },
+        {
+          "name": "黄仁勋",
+          "type": "person",
+          "aliases": ["Jensen Huang"],
+          "confidence": 0.9,
+          "evidence": ["CEO 黄仁勋在 CNBC 采访中表示"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        },
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": ["微软", "MSFT"],
+          "confidence": 0.88,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        },
+        {
+          "name": "Arm",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        },
+        {
+          "name": "Oracle",
+          "type": "company",
+          "aliases": ["甲骨文"],
+          "confidence": 0.85,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        },
+        {
+          "name": "SpaceX",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Nvidia 发布 Open Agent Safety Platform，获多家公司背书支持",
+          "summary": "Nvidia 于周一发布 Open Agent Safety Platform，用 OpenShell 开源软件边界加上运行于 BlueField-4 DPU 上的 Sentry 硬件看门狗，毫秒级隔离越界 agent；该方案获 Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司背书支持，但 OpenAI 不在列。",
+          "participants": [
+            {"name": "Nvidia", "type": "company", "role": "subject"},
+            {"name": "Open Agent Safety Platform", "type": "product", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "partner"},
+            {"name": "Microsoft", "type": "company", "role": "partner"},
+            {"name": "Arm", "type": "company", "role": "partner"},
+            {"name": "Oracle", "type": "company", "role": "partner"},
+            {"name": "SpaceX", "type": "company", "role": "partner"}
+          ],
+          "evidence": [
+            "Nvidia 于周一发布 Open Agent Safety Platform",
+            "Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"
+          ]
+        },
+        {
+          "type": "infra",
+          "label": "Sentry 在 BlueField-4 DPU 上提供隔离行为视图并毫秒级隔离越界 agent",
+          "summary": "把安全监控放到独立处理器上、而非 agent 运行的 CPU/GPU，可提供隔离的 agent 行为视图；Nvidia 称 Sentry 能持续监控并在数毫秒内隔离企图越界的 agent。",
+          "participants": [
+            {"name": "Nvidia", "type": "company", "role": "subject"},
+            {"name": "Sentry", "type": "tool", "role": "object"},
+            {"name": "BlueField-4", "type": "hardware", "role": "object"},
+            {"name": "OpenShell", "type": "tool", "role": "object"}
+          ],
+          "evidence": [
+            "Sentry 则是运行在 Nvidia BlueField-4 DPU 上的独立监控系统",
+            "在数毫秒内\"隔离企图越界的 agent\""
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Open Agent Safety Platform",
+          "target": "Nvidia",
+          "type": "released_by",
+          "weight": 0.95,
+          "evidence": ["Nvidia 于周一发布 Open Agent Safety Platform"]
+        },
+        {
+          "source": "Open Agent Safety Platform",
+          "target": "OpenShell",
+          "type": "uses",
+          "weight": 0.9,
+          "evidence": ["OpenShell 是控制 agent 可访问范围的开源运行时软件"]
+        },
+        {
+          "source": "Open Agent Safety Platform",
+          "target": "Sentry",
+          "type": "uses",
+          "weight": 0.9,
+          "evidence": ["Sentry 则是运行在 Nvidia BlueField-4 DPU 上的独立监控系统"]
+        },
+        {
+          "source": "Sentry",
+          "target": "BlueField-4",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["Sentry 则是运行在 Nvidia BlueField-4 DPU 上的独立监控系统"]
+        },
+        {
+          "source": "OpenShell",
+          "target": "Vera",
+          "type": "runs_on",
+          "weight": 0.75,
+          "evidence": ["将运行 OpenShell"]
+        },
+        {
+          "source": "Open Agent Safety Platform",
+          "target": "Anthropic",
+          "type": "supports",
+          "weight": 0.7,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        },
+        {
+          "source": "Open Agent Safety Platform",
+          "target": "Microsoft",
+          "type": "supports",
+          "weight": 0.7,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        },
+        {
+          "source": "Open Agent Safety Platform",
+          "target": "Arm",
+          "type": "supports",
+          "weight": 0.7,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        },
+        {
+          "source": "Open Agent Safety Platform",
+          "target": "Oracle",
+          "type": "supports",
+          "weight": 0.7,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        },
+        {
+          "source": "Open Agent Safety Platform",
+          "target": "SpaceX",
+          "type": "supports",
+          "weight": 0.7,
+          "evidence": ["Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案"]
+        }
+      ],
+      "metrics": [
+        {"name": "Nvidia 股票回购计划规模", "value": "1500 亿美元"},
+        {"name": "Sentry 隔离越界 agent 的延迟", "value": "数毫秒"}
+      ],
+      "why_it_matters": "把 agent 安全搬进独立硬件（BlueField-4 DPU + 面向 agentic AI 的 Vera CPU）而非留在模型/软件层，是安全工程从「给软件打补丁」转向「构建常设独立守卫」的分水岭——它获含 Anthropic、Microsoft、SpaceX 在内的数十家背书却独缺 OpenAI，揭示「让 agent 别跑出边界」正成为不依赖单一模型厂商的基建共识，而同日 1500 亿美元回购表明 Nvidia 视此为长期赛道而非一次性项目。"
+    },
+    {
+      "article_id": "2026-09-28-4",
+      "entities": [
+        {
+          "name": "H 公司",
+          "type": "company",
+          "aliases": ["H Company", "Hcompany"],
+          "confidence": 0.85,
+          "evidence": ["H 公司于 9 月 28 日发布 Holo4 系列 agentic 模型"]
+        },
+        {
+          "name": "Holo4",
+          "type": "model",
+          "aliases": ["Holo4 系列"],
+          "confidence": 0.92,
+          "evidence": ["H 公司于 9 月 28 日发布 Holo4 系列 agentic 模型"]
+        },
+        {
+          "name": "Holotron4 Nano",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["并同步放出 Holotron4 Nano"]
+        },
+        {
+          "name": "Opus 5.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["对比 Opus 5.5 的 81.8%"]
+        },
+        {
+          "name": "OSWorld 2.0",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["在最大难度基准 OSWorld 2.0 上"]
+        },
+        {
+          "name": "AutomationBench",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["在 API 场景的 AutomationBench 上同样逼近前沿"]
+        },
+        {
+          "name": "Agentic Task Factory",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": ["其背后的\"Agentic Task Factory\"用文档自动搭建交互环境与可验证任务"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "H 公司发布 Holo4 系列通用计算机使用 agent 模型",
+          "summary": "H 公司于 9 月 28 日发布 Holo4 系列 agentic 模型，含 27B 稠密版与 35B-A3B MoE 两个尺寸，并同步放出 Holotron4 Nano；同一模型内整合 GUI 点击、写代码、MCP 与 API 调用，可跨桌面、网页、Android、代码沙箱和业务 API 工作。",
+          "participants": [
+            {"name": "H 公司", "type": "company", "role": "subject"},
+            {"name": "Holo4", "type": "model", "role": "object"},
+            {"name": "Holotron4 Nano", "type": "model", "role": "object"}
+          ],
+          "evidence": [
+            "H 公司于 9 月 28 日发布 Holo4 系列 agentic 模型",
+            "并同步放出 Holotron4 Nano"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Holo4 27B 在 OSWorld 2.0 以远低于前沿闭源模型的成本逼近成绩",
+          "summary": "在最大难度基准 OSWorld 2.0 上，27B 拿下 61.7%，对比 Opus 5.5 的 81.8%；在 API 场景的 AutomationBench 上同样逼近前沿，而参数量低数个数量级、单任务成本低得多。",
+          "participants": [
+            {"name": "Holo4", "type": "model", "role": "subject"},
+            {"name": "OSWorld 2.0", "type": "benchmark", "role": "benchmark"},
+            {"name": "Opus 5.5", "type": "model", "role": "competitor"}
+          ],
+          "evidence": [
+            "在最大难度基准 OSWorld 2.0 上，27B 拿下 61.7%",
+            "对比 Opus 5.5 的 81.8%"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Holo4",
+          "target": "H 公司",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["H 公司于 9 月 28 日发布 Holo4 系列 agentic 模型"]
+        },
+        {
+          "source": "Holo4",
+          "target": "OSWorld 2.0",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": ["在最大难度基准 OSWorld 2.0 上，27B 拿下 61.7%"]
+        },
+        {
+          "source": "Holo4",
+          "target": "AutomationBench",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": ["在 API 场景的 AutomationBench 上同样逼近前沿"]
+        },
+        {
+          "source": "Holo4",
+          "target": "Opus 5.5",
+          "type": "compared_with",
+          "weight": 0.75,
+          "evidence": ["对比 Opus 5.5 的 81.8%"]
+        },
+        {
+          "source": "Holo4",
+          "target": "Agentic Task Factory",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": ["其背后的\"Agentic Task Factory\"用文档自动搭建交互环境与可验证任务"]
+        }
+      ],
+      "metrics": [
+        {"name": "Holo4 稠密版参数量", "value": "27B"},
+        {"name": "Holo4 MoE 版参数量", "value": "35B-A3B"},
+        {"name": "OSWorld 2.0 得分（Holo4 27B）", "value": "61.7%"},
+        {"name": "OSWorld 2.0 得分（Opus 5.5）", "value": "81.8%"},
+        {"name": "Holo4 权重发布精度", "value": "BF16、FP8、NVFP4 与 4-bit GGUF"}
+      ],
+      "why_it_matters": "一个 27B 开源模型用同一套权重横跨桌面、网页、安卓与 API 四种接口，逼近 81.8% 的闭源前沿并低数个数量级成本，第一次把「多接口 agent」从按平台换模型的工程摊子压缩成单模型能力——开源 agentic 模型的竞争点正从单接口跑分转向「一模型多接口」的泛化，正在改写企业对托管 agent 的采购门槛。"
+    },
+    {
+      "article_id": "2026-09-28-5",
+      "entities": [
+        {
+          "name": "AutoTrust AI",
+          "type": "company",
+          "aliases": ["AutoTrust"],
+          "confidence": 0.9,
+          "evidence": ["新加坡 AutoTrust AI 于 9 月 28 日发布 JEV-27B"]
+        },
+        {
+          "name": "JEV-27B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": ["新加坡 AutoTrust AI 于 9 月 28 日发布 JEV-27B"]
+        },
+        {
+          "name": "Qwen3.8-27B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["在一个冻结的 Qwen3.8-27B 骨干之上"]
+        },
+        {
+          "name": "NVIDIA B200",
+          "type": "hardware",
+          "aliases": ["B200"],
+          "confidence": 0.88,
+          "evidence": ["模型可在客户自有基础设施的单张 NVIDIA B200 上运行"]
+        },
+        {
+          "name": "JEV-9B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["这是 JEV-9B 之后该公司的第二个 System 1+2 开源模型"]
+        },
+        {
+          "name": "JevBench",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["JEV-27B 报出 JevBench 88.70%"]
+        },
+        {
+          "name": "Kev",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Kev 83.75%"]
+        },
+        {
+          "name": "OpenJev text",
+          "type": "benchmark",
+          "aliases": ["OpenJev"],
+          "confidence": 0.85,
+          "evidence": ["OpenJev text 73.89%"]
+        },
+        {
+          "name": "Nimble",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Nimble 92.91%"]
+        },
+        {
+          "name": "VitaminC",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["VitaminC 77.46%"]
+        },
+        {
+          "name": "MASSIVE-en",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["MASSIVE-en 87.71%"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "AutoTrust AI 发布 Apache-2.0 开源决策模型 JEV-27B",
+          "summary": "新加坡 AutoTrust AI 于 9 月 28 日发布 JEV-27B，一个 Apache-2.0 开源权重模型，专为 AI agent 工作流中高频、结构化的决策场景设计，同时保留底层模型的完整生成与推理路径，模型可在客户自有基础设施的单张 NVIDIA B200 上运行。",
+          "participants": [
+            {"name": "AutoTrust AI", "type": "company", "role": "subject"},
+            {"name": "JEV-27B", "type": "model", "role": "object"}
+          ],
+          "evidence": [
+            "新加坡 AutoTrust AI 于 9 月 28 日发布 JEV-27B",
+            "它能在单次前向中回答是/否、多选与 0–5 评分题"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "JEV-27B 在六组公开文本决策基准上报告成绩",
+          "summary": "JEV-27B 报出 JevBench 88.70%、Kev 83.75%、OpenJev text 73.89%、Nimble 92.91%、VitaminC 77.46%、MASSIVE-en 87.71%，等权六组均值 84.07%。",
+          "participants": [
+            {"name": "JEV-27B", "type": "model", "role": "subject"},
+            {"name": "JevBench", "type": "benchmark", "role": "benchmark"},
+            {"name": "Kev", "type": "benchmark", "role": "benchmark"},
+            {"name": "OpenJev text", "type": "benchmark", "role": "benchmark"},
+            {"name": "Nimble", "type": "benchmark", "role": "benchmark"},
+            {"name": "VitaminC", "type": "benchmark", "role": "benchmark"},
+            {"name": "MASSIVE-en", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": [
+            "JEV-27B 报出 JevBench 88.70%、Kev 83.75%、OpenJev text 73.89%、Nimble 92.91%、VitaminC 77.46%、MASSIVE-en 87.71%"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "JEV-27B",
+          "target": "AutoTrust AI",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["新加坡 AutoTrust AI 于 9 月 28 日发布 JEV-27B"]
+        },
+        {
+          "source": "JEV-27B",
+          "target": "Qwen3.8-27B",
+          "type": "built_on",
+          "weight": 0.9,
+          "evidence": ["在一个冻结的 Qwen3.8-27B 骨干之上"]
+        },
+        {
+          "source": "JEV-27B",
+          "target": "NVIDIA B200",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["模型可在客户自有基础设施的单张 NVIDIA B200 上运行"]
+        },
+        {
+          "source": "JEV-27B",
+          "target": "JevBench",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["JEV-27B 报出 JevBench 88.70%"]
+        },
+        {
+          "source": "JEV-27B",
+          "target": "Kev",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["Kev 83.75%"]
+        },
+        {
+          "source": "JEV-27B",
+          "target": "OpenJev text",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["OpenJev text 73.89%"]
+        },
+        {
+          "source": "JEV-27B",
+          "target": "Nimble",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["Nimble 92.91%"]
+        },
+        {
+          "source": "JEV-27B",
+          "target": "VitaminC",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["VitaminC 77.46%"]
+        },
+        {
+          "source": "JEV-27B",
+          "target": "MASSIVE-en",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["MASSIVE-en 87.71%"]
+        }
+      ],
+      "metrics": [
+        {"name": "JEV-27B 决策块参数量", "value": "约 1.089 亿参数（占全模型约 0.4%）"},
+        {"name": "JEV-27B 决策块训练耗时", "value": "约 9.2 个 B200 小时"},
+        {"name": "决策块关闭时与基座逐字节一致的 HumanEval 补全数", "value": "164 个"},
+        {"name": "JevBench 得分", "value": "88.70%"},
+        {"name": "Kev 得分", "value": "83.75%"},
+        {"name": "OpenJev text 得分", "value": "73.89%"},
+        {"name": "Nimble 得分", "value": "92.91%"},
+        {"name": "VitaminC 得分", "value": "77.46%"},
+        {"name": "MASSIVE-en 得分", "value": "87.71%"},
+        {"name": "六组基准等权均值", "value": "84.07%"}
+      ],
+      "why_it_matters": "在冻结的 Qwen3.8-27B 骨干上加一个只占 0.4% 参数的决策块、用单张 B200 自托管，把「快结构化决策 + 慢深度生成」并进一套 System 1/2 权重——这提示开源决策层的边际成本正趋近于零，自托管 agent 把「要不要、评几分」这类高频决策从云端模型手里剥离出来，是开源下沉到私有基础设施的又一个可复制配方，也让「让 agent 决定而非写长篇」成为可行的产品路线。"
+    },
+    {
+      "article_id": "2026-09-28-6",
+      "entities": [
+        {
+          "name": "HUMAIN",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["HUMAIN——沙特主权财富基金 PIF 旗下公司——于 9 月宣布推出 humain-m3"]
+        },
+        {
+          "name": "PIF",
+          "type": "organization",
+          "aliases": ["沙特主权财富基金", "沙特主权基金"],
+          "confidence": 0.88,
+          "evidence": ["沙特主权财富基金 PIF 旗下公司"]
+        },
+        {
+          "name": "MiniMax",
+          "type": "company",
+          "aliases": ["MiniMax Community License"],
+          "confidence": 0.88,
+          "evidence": ["并与中国 AI 实验室 MiniMax 合作开发"]
+        },
+        {
+          "name": "humain-m3",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": ["推出 humain-m3，一个 428B 参数的阿拉伯语大模型"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "HUMAIN 推出 428B 阿拉伯语模型 humain-m3",
+          "summary": "HUMAIN 于 9 月宣布推出 humain-m3，一个 428B 参数的阿拉伯语大模型，采用 MoE 架构，目前通过 HUMAIN Node 平台提供研究预览；计划在完成安全训练与对齐后于 2026 年 10 月以 MiniMax Community License 开放权重。",
+          "participants": [
+            {"name": "HUMAIN", "type": "company", "role": "subject"},
+            {"name": "humain-m3", "type": "model", "role": "object"}
+          ],
+          "evidence": [
+            "HUMAIN——沙特主权财富基金 PIF 旗下公司——于 9 月宣布推出 humain-m3",
+            "一个 428B 参数的阿拉伯语大模型"
+          ]
+        },
+        {
+          "type": "partnership",
+          "label": "HUMAIN 与 MiniMax 合作开发 humain-m3",
+          "summary": "humain-m3 由沙特主权基金委托、并与中国 AI 实验室 MiniMax 合作开发，延续了海湾主权基金直接下场做阿拉伯语前沿模型、与中国实验室合作获取技术底座的主权 AI 趋势；模型权重将基于 MiniMax Community License 发布。",
+          "participants": [
+            {"name": "HUMAIN", "type": "company", "role": "subject"},
+            {"name": "MiniMax", "type": "company", "role": "partner"},
+            {"name": "PIF", "type": "organization", "role": "partner"},
+            {"name": "humain-m3", "type": "model", "role": "object"}
+          ],
+          "evidence": [
+            "并与中国 AI 实验室 MiniMax 合作开发",
+            "模型权重将基于 MiniMax Community License 发布"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "HUMAIN",
+          "target": "PIF",
+          "type": "subsidiary_of",
+          "weight": 0.9,
+          "evidence": ["HUMAIN——沙特主权财富基金 PIF 旗下公司"]
+        },
+        {
+          "source": "humain-m3",
+          "target": "HUMAIN",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["HUMAIN——沙特主权财富基金 PIF 旗下公司——于 9 月宣布推出 humain-m3"]
+        },
+        {
+          "source": "humain-m3",
+          "target": "MiniMax",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["并与中国 AI 实验室 MiniMax 合作开发"]
+        },
+        {
+          "source": "HUMAIN",
+          "target": "MiniMax",
+          "type": "partners_with",
+          "weight": 0.85,
+          "evidence": ["并与中国 AI 实验室 MiniMax 合作开发"]
+        }
+      ],
+      "metrics": [
+        {"name": "humain-m3 参数量", "value": "428B"},
+        {"name": "humain-m3 架构", "value": "MoE"},
+        {"name": "模型权重计划开放时间", "value": "2026 年 10 月"}
+      ],
+      "why_it_matters": "沙特主权基金不是采购、而是直接下场合作研发 428B 阿拉伯语模型，且技术底座来自中国实验室——「主权 AI」从「买模型」演进为「共建模型」，把稀缺语种的模型能力变成了地缘资产，也标志着海湾资金与中国开源的结合开始产出可公开权重的实体成果，框定了阿拉伯语大模型这条此前欠饱和的前沿赛道。"
+    },
+    {
+      "article_id": "2026-09-28-7",
+      "entities": [
+        {
+          "name": "Looped Flows",
+          "type": "paper",
+          "aliases": ["循环流", "looped flows"],
+          "confidence": 0.9,
+          "evidence": ["论文提出\"循环流\"（Looped Flows）"]
+        },
+        {
+          "name": "循环模型",
+          "type": "topic",
+          "aliases": ["循环状态"],
+          "confidence": 0.85,
+          "evidence": ["\"循环模型\"通过在推理时反复更新隐状态实现测试时缩放"]
+        },
+        {
+          "name": "ARC-AGI-1",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["ARC-AGI-1 测试精度 58.8%"]
+        },
+        {
+          "name": "ARC-AGI-2",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["ARC-AGI-2 12.2%"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 Looped Flows，用局部去噪目标实现循环概率流的推理时缩放",
+          "summary": "作者提出 looped flows，用逐步降低的噪声水平与共享噪声绕开循环模型训练时梯度只覆盖少数几步的困境，推理被表述为对被学习去噪器参数化的概率流速度做积分，可在更细时间网格上付出更多计算来解更难的问题。",
+          "participants": [
+            {"name": "Looped Flows", "type": "paper", "role": "subject"},
+            {"name": "循环模型", "type": "topic", "role": "object"}
+          ],
+          "evidence": [
+            "作者提出 looped flows",
+            "\"循环模型\"通过在推理时反复更新隐状态实现测试时缩放"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Looped Flows 在六个推理基准上超过此前最优，ARC-AGI-1 达到 58.8%",
+          "summary": "在包含两个多解基准的六个推理基准上，looped flows 整体超过此前最优循环模型，ARC-AGI-1 测试精度 58.8%、ARC-AGI-2 12.2%。",
+          "participants": [
+            {"name": "Looped Flows", "type": "paper", "role": "subject"},
+            {"name": "ARC-AGI-1", "type": "benchmark", "role": "benchmark"},
+            {"name": "ARC-AGI-2", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": [
+            "ARC-AGI-1 测试精度 58.8%、ARC-AGI-2 12.2%",
+            "在包含两个\"多解基准\"的六个推理基准上"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Looped Flows",
+          "target": "ARC-AGI-1",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": ["ARC-AGI-1 测试精度 58.8%"]
+        },
+        {
+          "source": "Looped Flows",
+          "target": "ARC-AGI-2",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": ["ARC-AGI-2 12.2%"]
+        },
+        {
+          "source": "Looped Flows",
+          "target": "循环模型",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": ["\"循环模型\"通过在推理时反复更新隐状态实现测试时缩放"]
+        }
+      ],
+      "metrics": [
+        {"name": "ARC-AGI-1 测试精度", "value": "58.8%"},
+        {"name": "ARC-AGI-2 测试精度", "value": "12.2%"}
+      ],
+      "why_it_matters": "用循环概率流把「推理期更多计算」做成通用机制、而不再靠堆参数，为测试时缩放开辟了独立于参数量轴的新路径——58.8% 的 ARC-AGI-1 说明在固定参数下通过加深推理时间网格也能换取难题能力，这会让算力投放的边际价值从训练逐步转向推理，是对「更大模型必更聪明」前提的一次机制性松绑。"
+    },
+    {
+      "article_id": "2026-09-28-8",
+      "entities": [
+        {
+          "name": "Retrieval-Augmented Generation for Scientific Code Understanding",
+          "type": "paper",
+          "aliases": ["科学代码检索增强系统", "检索增强系统"],
+          "confidence": 0.85,
+          "evidence": ["作者开发了一个面向科学代码理解的检索增强系统"]
+        },
+        {
+          "name": "Claude Code",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Claude Code 或 Codex 这类编码助手"]
+        },
+        {
+          "name": "IPPL",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["覆盖 C++ 科学代码库 IPPL、含 11 类 100 题的基准"]
+        },
+        {
+          "name": "9B 本地模型",
+          "type": "model",
+          "aliases": ["9B 模型"],
+          "confidence": 0.7,
+          "evidence": ["一个 9B 模型拿到最高平均分 0.795"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出把重计算挪到离线索引、做完全本地小模型编码 agent 的检索增强系统",
+          "summary": "作者开发了一个面向科学代码理解的检索增强系统，把昂贵的离线消化阶段——结构解析、图构建、LLM 生成实体解释、嵌入——与轻量的在线问答阶段严格分开，让 9B 小模型在私有环境中做有依据、面向仓库的编码 agent。",
+          "participants": [
+            {"name": "Retrieval-Augmented Generation for Scientific Code Understanding", "type": "paper", "role": "subject"},
+            {"name": "9B 本地模型", "type": "model", "role": "object"},
+            {"name": "Claude Code", "type": "product", "role": "competitor"}
+          ],
+          "evidence": [
+            "作者开发了一个面向科学代码理解的检索增强系统",
+            "把计算负担从推理端挪走，做一个有用的本地编码 agent"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "9B 模型在 IPPL 上跨 7 个作答模型拿到最高平均分 0.795",
+          "summary": "系统在一个覆盖 C++ 科学代码库 IPPL、含 11 类 100 题的基准上评测，答案由独立前沿模型作为裁判打分；跨 7 个作答模型，一个 9B 模型拿到最高平均分 0.795，胜过同路径更大的模型。",
+          "participants": [
+            {"name": "Retrieval-Augmented Generation for Scientific Code Understanding", "type": "paper", "role": "subject"},
+            {"name": "9B 本地模型", "type": "model", "role": "object"},
+            {"name": "IPPL", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": [
+            "一个 9B 模型拿到最高平均分 0.795",
+            "覆盖 C++ 科学代码库 IPPL、含 11 类 100 题的基准"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Retrieval-Augmented Generation for Scientific Code Understanding",
+          "target": "IPPL",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": ["覆盖 C++ 科学代码库 IPPL、含 11 类 100 题的基准"]
+        },
+        {
+          "source": "Retrieval-Augmented Generation for Scientific Code Understanding",
+          "target": "Claude Code",
+          "type": "compared_with",
+          "weight": 0.75,
+          "evidence": ["胜过把同一模型塞进 Claude Code 检索架构的效果"]
+        },
+        {
+          "source": "Retrieval-Augmented Generation for Scientific Code Understanding",
+          "target": "9B 本地模型",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": ["一个 9B 模型拿到最高平均分 0.795"]
+        }
+      ],
+      "metrics": [
+        {"name": "跨作答模型拿到最高平均分", "value": "0.795"},
+        {"name": "IPPL 基准覆盖类目数", "value": "11 类"},
+        {"name": "IPPL 基准题目数", "value": "100 题"},
+        {"name": "作答模型数量", "value": "7 个"}
+      ],
+      "why_it_matters": "把计算负担从推理端搬到离线索引后，9B 模型反超同路径更大模型并胜过 Claude Code 检索架构——首次为主张「harness/上下文工程决定 agent 质量」提供直接反例证据，也让隐私敏感的私有科学代码有了不依赖云端巨模型的落地路径，答案质量与模型大小的解耦在这里第一次落到可复制的工程配方上。"
+    },
+    {
+      "article_id": "2026-09-28-9",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.92,
+          "evidence": ["Anthropic 首次让 Claude Sonnet 5.5 携带此前只保留给 Opus 的前沿级网络战防护"]
+        },
+        {
+          "name": "Claude Sonnet 5.5",
+          "type": "model",
+          "aliases": ["Sonnet 5.5"],
+          "confidence": 0.93,
+          "evidence": ["Anthropic 首次让 Claude Sonnet 5.5 携带此前只保留给 Opus 的前沿级网络战防护"]
+        },
+        {
+          "name": "Nvidia",
+          "type": "company",
+          "aliases": ["英伟达", "NVIDIA"],
+          "confidence": 0.92,
+          "evidence": ["Nvidia 给出的回答最\"工程化\""]
+        },
+        {
+          "name": "Sentry",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["运行在 BlueField-4 DPU 上的 Sentry 看门狗"]
+        },
+        {
+          "name": "BlueField-4",
+          "type": "hardware",
+          "aliases": ["BlueField-4 DPU"],
+          "confidence": 0.88,
+          "evidence": ["运行在 BlueField-4 DPU 上的 Sentry 看门狗"]
+        },
+        {
+          "name": "Vera",
+          "type": "hardware",
+          "aliases": ["Vera CPU"],
+          "confidence": 0.85,
+          "evidence": ["为 agentic AI 专门打造的 Vera CPU"]
+        },
+        {
+          "name": "OpenShell",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["配 OpenShell 开源软件边界"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.85,
+          "evidence": ["却不是 OpenAI"]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Anthropic 与 Nvidia 同日把 agent 安全当作产品卖点，OpenAI 缺席背书",
+          "summary": "单看 9 月 28 日一天，两家最重量级公司同时把 agent 逃逸/安全当成了产品级卖点——Anthropic 首次让 Claude Sonnet 5.5 携带此前只保留给 Opus 的前沿级网络战防护，Nvidia 则拿出把安全移到独立硬件的方案；Nvidia 方案获 Anthropic、Microsoft 等背书，却不是 OpenAI。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Nvidia", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": [
+            "两家最重量级公司同时把\"agent 逃逸/安全\"当成了产品级卖点",
+            "却不是 OpenAI"
+          ]
+        },
+        {
+          "type": "infra",
+          "label": "Nvidia 把 agent 安全从模型/软件层移到独立硬件的 Sentry 看门狗",
+          "summary": "Nvidia 把安全从模型/软件层彻底移出，放到运行在 BlueField-4 DPU 上的 Sentry 看门狗与为 agentic AI 专门打造的 Vera CPU，配 OpenShell 开源软件边界，毫秒级隔离越界 agent。",
+          "participants": [
+            {"name": "Nvidia", "type": "company", "role": "subject"},
+            {"name": "Sentry", "type": "tool", "role": "object"},
+            {"name": "BlueField-4", "type": "hardware", "role": "object"},
+            {"name": "Vera", "type": "hardware", "role": "object"},
+            {"name": "OpenShell", "type": "tool", "role": "object"}
+          ],
+          "evidence": [
+            "运行在 BlueField-4 DPU 上的 Sentry 看门狗",
+            "毫秒级隔离越界 agent"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude Sonnet 5.5",
+          "target": "Anthropic",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": ["Anthropic 首次让 Claude Sonnet 5.5 携带此前只保留给 Opus 的前沿级网络战防护"]
+        },
+        {
+          "source": "Sentry",
+          "target": "BlueField-4",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["运行在 BlueField-4 DPU 上的 Sentry 看门狗"]
+        },
+        {
+          "source": "OpenShell",
+          "target": "Vera",
+          "type": "runs_on",
+          "weight": 0.75,
+          "evidence": ["为 agentic AI 专门打造的 Vera CPU，配 OpenShell 开源软件边界"]
+        },
+        {
+          "source": "Anthropic",
+          "target": "Nvidia",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": ["分歧只是路径——是补丁式给模型加阀门（Anthropic），还是把守卫移到模型之外的独立硬件层（Nvidia）"]
+        }
+      ],
+      "metrics": [
+        {"name": "推理提取研究覆盖的公开 agent 轨迹数", "value": "6,708 条"},
+        {"name": "推理提取研究解码出的思考块数量", "value": "31 万条"},
+        {"name": "推理提取研究还原出的 API key 数量", "value": "62 组"},
+        {"name": "推理提取研究还原出的密码数量", "value": "33 个"},
+        {"name": "推理提取研究还原出的私钥数量", "value": "7 把"}
+      ],
+      "why_it_matters": "同一天两家最重公司同时把「agent 逃逸」当产品卖点，分歧只在路径——Anthropic 给模型加阀门 vs Nvidia 把守卫移到独立硬件——而 OpenAI 缺席背书本身即是信号：「边界可控」正取代「能力有多强」成为 agent 化执行层的先决工程前提，与上周「执行层基建重建」主线一脉相承，预示安全从软件补丁升维为系统/硬件层的常设守卫。"
+    }
+  ]
+}

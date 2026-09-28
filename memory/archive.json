@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T06:19:13Z",
+  "updated_at": "2026-09-28T22:52:49Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -730,11 +730,11 @@
       "period_id": "2026-W35",
       "period_type": "week",
       "start_date": "2026-08-24",
-      "end_date": "2026-08-28",
-      "summary": "2026-08-24 至 2026-08-28 期间，Hugging Face、OpenAI、Anthropic 主要围绕 infra、security 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-08-29",
+      "summary": "2026-08-24 至 2026-08-29 期间，OpenAI、Hugging Face、Anthropic 主要围绕 infra、security 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
-        "Hugging Face",
         "OpenAI",
+        "Hugging Face",
         "Anthropic",
         "Instinct"
       ],
@@ -744,7 +744,7 @@
         "launch"
       ],
       "trend_signals": [
-        "核心实体：Hugging Face、OpenAI、Anthropic",
+        "核心实体：OpenAI、Hugging Face、Anthropic",
         "主事件类型：infra、security"
       ],
       "representative_article_ids": [

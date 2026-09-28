@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-28",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "事实、数字、关系方向整体准确，无幻觉，跨文章连通良好。主要问题是 2026-09-28-3 把厂商「支持使用该开源方案」的背书误抽成了 5 条 partners_with 合作关系，与 09-6 真「合作开发」形成对比，属性错配会讲出错误的合作关系故事；另有 OpenShell→Vera 的运行方向与一处跨文章指标重复待修。",
+  "findings": [
+    {
+      "article_id": "2026-09-28-3",
+      "severity": "high",
+      "problem": "5 条关系 Open Agent Safety Platform --partners_with--> Anthropic/Arm/Microsoft/Oracle/SpaceX 用错了关系类型。原文表述为「Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案」「该平台获得了广泛行业背书」，这是背书/采用（adoption），不是双向合作。对照 09-6 的「并与中国 AI 实验室 MiniMax 合作开发」才是真正的协作，后者用 partners_with 正确；把「支持/背书」也标成 partners_with 会让图谱误读成这五家公司与 Nvidia 是合作伙伴关系。",
+      "fix": "把 09-3 这 5 条 partners_with 改为表示背书/支持的关系类型（如 supports / endorses / backs），evidence 保持「支持使用该开源方案」；若架构不支持该类型，则删除这 5 条边并在事件中保留「获数十家公司背书、OpenAI 缺席」的表述即可。不要用 partners_with 兜底背书类关系。"
+    },
+    {
+      "article_id": "2026-09-28-3",
+      "severity": "medium",
+      "problem": "关系 OpenShell --uses--> Vera 方向/类型不准。原文为「面向 AI 代理的专用 CPU Vera……将运行 OpenShell」，即 OpenShell 运行在 Vera 这一宿主机之上；当前的是 OpenShell 指向 Vera 的 uses，且所用 evidence「面向 AI 代理的专用 CPU Vera」本身并未指明 OpenShell 与 Vera 的连接关系。2026-09-28-9 存在同一条相同问题。",
+      "fix": "把 09-3 与 09-9 中的 OpenShell --uses--> Vera 改为 OpenShell --runs_on--> Vera（或 Vera --runs--> OpenShell），evidence 用原文「Vera……将运行 OpenShell」。"
+    },
+    {
+      "article_id": "2026-09-28-0",
+      "severity": "medium",
+      "problem": "指标「推理提取研究解码出的思考块数量 31 万条」同时出现在 09-0 与 09-9 的 metrics 中，且该指标取自一篇独立的研究（8 月从公开 agent 轨迹解码思考块的推理提取研究），属于推理提取研究的承载事项，与 09-0 的 Claude Sonnet 5.5 模型本体只是顺带提及（Sonnet 是首款带该分类器的模型），重复放置会稀释指标归属。",
+      "fix": "仅在 09-9（推理提取研究完整指标 6,708/31万/62/33/7 所在处）保留这条指标；09-0 若需体现该特性，改为在事件/why_it_matters 中说明 Sonnet 5.5 是首款带推理提取分类器的模型，不再重复记入 metrics。"
+    }
+  ],
+  "lessons": [
+    "当原文只用「支持使用」「背书」「数十家采用该开源方案」这类措辞时，是背书/采用而非双向合作，不要用 partners_with；partners_with 仅保留给「合作开发」「联合研发」等明确双向协作的表述。",
+    "「某硬件将运行某软件」这类表述，软件是被运行方、硬件是宿主机，应写成 软件 --runs_on--> 硬件 或其反向，不要写成 软件 --uses--> 硬件，且 evidence 必须真实指明清两者关系。",
+    "同一研究/指标若由独立的报告或研究文章完整承载，就只在承载它的那篇文章记入 metrics，不要因为被另一篇发布类文章顺带提及就又复制一份。"
+  ]
+}

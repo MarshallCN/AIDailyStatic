@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-28",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 72,
+  "summary": "上一轮的 built_on 误用、OpenShell→Vera 运行方向、背书关系类型、Metrics 跨文章重复等均已修复，但背书关系在改对了类型的同时把方向写反了：5 条 Open Agent Safety Platform --supports--> 厂商 与 evidence 相反，整句读成「平台支持厂商」。另有 JEV-27B--uses-->B200 的能力误当依赖、MiniMax 别名混入许可证名两处中等问题。",
+  "findings": [
+    {
+      "article_id": "2026-09-28-3",
+      "severity": "high",
+      "problem": "5 条背书关系 Open Agent Safety Platform --supports--> Anthropic/Arm/Microsoft/Oracle/SpaceX 方向反了。关系类型已从 partners_with 改对为 supports，但它把背书主体放到了 target；evidence 原文「Anthropic、Arm、Microsoft、Oracle、SpaceX 等数十家公司支持使用该开源方案」清楚说明是这些厂商在支持该平台，而非平台在支持厂商，当前写法会读成「Open Agent Safety Platform 支持 Anthropic」。",
+      "fix": "把源和目标对调为 Anthropic --supports--> Open Agent Safety Platform（其余四家同理），或改为平台被背书的语义（如：目标公司改为主语，关系写 company --supports--> Open Agent Safety Platform）。保持 supports 类型即可，只调方向，并让 evidence 指向「数十家公司支持使用该开源方案」的原文。"
+    },
+    {
+      "article_id": "2026-09-28-5",
+      "severity": "medium",
+      "problem": "关系 JEV-27B --uses--> NVIDIA B200 把「可以在其上运行」的能力误当成依赖。原文「模型可在客户自有基础设施的单张 NVIDIA B200 上运行」说明 B200 是 JEV-27B 的宿主机/部署目标，是一条可运行性（runs_on）边，不是模型依赖 B200 才能工作的 uses 依赖。这与 09-3/09-9 刚修正的 OpenShell--Vera 属于同一类能力/依赖混淆。",
+      "fix": "改为 JEV-27B --runs_on--> NVIDIA B200（或 NVIDIA B200 --runs--> JEV-27B），即按「模型可运行在单张 B200 上」处理；仅在原文表述成技术依赖（如「基于 B200 训练/由 B200 加速」）时才保留 uses。"
+    },
+    {
+      "article_id": "2026-09-28-6",
+      "severity": "medium",
+      "problem": "实体 MiniMax 的 aliases 里塞进了「MiniMax Community License」，把许可证名称当作公司主体的别名。MiniMax Community License 是 humain-m3 权重的发布许可条款，与公司 MiniMax 不是同一身份，混淆会把「授权协议」与「主体公司」合并成一个实体，污染语义并可能阻断未来对许可证本身的建模。",
+      "fix": "从 MiniMax 的 aliases 中移除「MiniMax Community License」；如确有必要，把许可证作为独立实体（type 可为 license/term）抽出，或在事件 summary 中单独说明「权重将基于 MiniMax Community License 发布」，不要把它当作公司的别名。"
+    }
+  ],
+  "lessons": [
+    "背书/支持关系的主体是背书方：当原文是「A 公司支持使用该方案/获 A 背书」时，A 是 source、被背书的方案/组织是 target，写 company --supports--> platform 而非 platform --supports--> company，direction 必须与 evidence 的主动方一致。",
+    "「模型可在某硬件上运行」「某软件将运行在某硬件上」是可运行性描述，应建模为 runs_on（软件是 source、宿主硬件是 target），不要写成 uses；uses 只保留给原文构成真实技术依赖的情况。",
+    "许可证名（如某某 Community License）是授权条款而非其授权主体，不要作为公司/产品的 alias 合并；如需建模应抽为独立实体或仅在事件文本中说明。"
+  ]
+}
