@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-29",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 73,
+  "summary": "抽取整体扎实——实体覆盖广、多数关系方向与证据吻合、关键数字大多进了 metrics，GPT-6 Astra 与 GPT-6.1 Astra 被正确区分为不同实体。主要问题集中在：一处事实数字在 why_it_matters 中被写错（五分之一写成半价）、一篇里相互独立的动作被压成一个事件、serving 引擎与模型的关系被过度断言为 uses、以及 Anthropic IPO 招股书警示这一重要事实漏抽为事件。",
+  "findings": [
+    {
+      "article_id": "2026-09-29-0",
+      "severity": "medium",
+      "problem": "why_it_matters 写「OpenAI 用『半价近 Astra』把价格战直接推给 agent 工作负载」，但原文明确是「标准输入与输出 token 价格只有 Astra 的五分之一」，「半价」与 evidence/metrics 里的数字（五分之一）不符，属于事实性改写走样，会误导读者以为 Sol 只比 Astra 便宜一半。",
+      "fix": "把 why_it_matters 中的「半价近 Astra」改为「五分之一价格近 Astra」或「以 1/5 价格逼近 Astra」，总结性字段里的关键数字必须与 evidence 完全一致。"
+    },
+    {
+      "article_id": "2026-09-29-8",
+      "severity": "medium",
+      "problem": "第二个 launch 事件「Pro 500 绑定 Ultrafast 极速档并削减 200 美元档额度」把两个相互独立的事实压成一个事件：(a) 新 Pro 500 档绑定 Ultrafast、(b) 对既有 200 美元 Pro 档的整体降额与取消 5 小时窗口。二者受事对象不同、叙事逻辑不同，合并后事件标签与 participants 混在一起，无法单独溯源。",
+      "fix": "拆成两个事件：一个 launch 描述「Pro 500 绑定 Ultrafast 极速档」（participants 含 Ultrafast）；另一个独立事件（type 用 changes/policy）描述「OpenAI 削减 200 美元 Pro 档用量（20 倍到 10 倍 Plus、GPT-6 Pro 消息 200 到 100）并取消 5 小时窗口」，各自带独立 evidence 与 metrics。"
+    },
+    {
+      "article_id": "2026-09-29-9",
+      "severity": "medium",
+      "problem": "关系「GLM-5.3 --uses--> vLLM」的证据只有「引擎优化（vLLM/ATOM/TileRT）」这一碎片。原文是说报告用 vLLM/ATOM/TileRT 等 serving 引擎评测/服务 GLM-5.x，并未断言 GLM-5.3 模型本身依赖 vLLM；把「被这些引擎评测」改写成模型 uses 某引擎是过度断言，且 vLLM、ATOM、TileRT、HiSparse 在文中的地位是 serving 引擎而非模型依赖项，reads 如同把评测配置当成模型依赖。",
+      "fix": "把该关系类型从 uses 改为 evaluated_on（与「GLM-5.3 --evaluated_on--> InferenceX」一致），或直接删除；若保留则需补一句能证明模型运行依赖该引擎的 evidence，否则不要用 uses。"
+    },
+    {
+      "article_id": "2026-09-29-4",
+      "severity": "medium",
+      "problem": "原文一个重要独立事实「Anthropic 计划在 IPO 招股书中警示投资人高级 AI 或带来『灾难性或存在性风险』」只被抽成了 entities 里的 evidence（Anthropic 实体挂在它上面），没有对应的事件。这是与视频证词并列的一条实质治理信息，缺失会让该篇的事件覆盖显得贫乏。",
+      "fix": "新增一个 type 为 policy/security 的事件，subject 为 Anthropic，label 如「Anthropic 计划在 IPO 招股书中警示高级 AI 的灾难性/存在性风险」，evidence 引用招股书相关原文。"
+    },
+    {
+      "article_id": "2026-09-29-3",
+      "severity": "low",
+      "problem": "第一个 security 事件里 Saachi Jain 的 participants role 被标为 object，但 Jain 是发布声明/发言的安全主管（动作的 source/说话者），不是被动作作用的受事对象；role 标注会使图谱把说话人当成事件对象。",
+      "fix": "将 Saachi Jain 的 role 改为 source（或 speaker），只保留 GPT-6.1 Astra 作为 object，与「OpenAI 暂缓发布」的动作主体/受事对齐。"
+    },
+    {
+      "article_id": "2026-09-29-4",
+      "severity": "low",
+      "problem": "第二个 trend 事件「OpenAI 首席科学家与一位 Anthropic 联合创始人联名发文」的 participants 只列了公司 OpenAI/Anthropic，而实际联名的主体是个人（OpenAI 首席科学家、一名 Anthropic 联合创始人）；且该事件 summary 把「本周」的联名与「同日暂缓 GPT-6.1 Astra」的对照写入，事实本身成立但参与方粒度不准。",
+      "fix": "若原文未给出二人姓名，保留标签里的指称即可，但 participants 不应把个体动作归到公司实体上；建议把 participants 粒度改为具体人士或仅保留 OpenAI/Anthropic 作为背景，并在 summary 中说明联名者是个人而非公司主体。"
+    }
+  ],
+  "lessons": [
+    "同一篇文章里相互独立、受事对象不同的多个动作（如新订阅档上线 vs 对既有低档次降额）必须拆成独立事件各带 evidence，不要合并进单个事件。",
+    "报告类/评测类原文中用多个 serving 引擎评测或服务某模型时，模型与引擎的关系用 evaluated_on 或 benchmarked_on，不要写成 uses——除非原文明确说明模型运行依赖该引擎。",
+    "总结性字段（why_it_matters、summary、label）中的关键数字必须与正文 evidence/metrics 完全一致，不得改写（如五分之一不等于半价）。"
+  ]
+}

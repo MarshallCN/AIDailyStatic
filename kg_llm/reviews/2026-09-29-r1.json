@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-29",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "整体抽取质量高、关系方向与实体类型基本正确，但存在多处中等级语义问题：第 4 篇将 Palisade 证词的警告对象错列 Anthropic 且缺一条核心关系、把文中未点名的 Anthropic 联合创始人认定为 Dario Amodei；第 5 篇漏抽多名具名签署人（马斯克/Karp/Brockman）；第 9 篇把\"被怀疑为某芯片优化\"误记为 runs_on、GLM--uses-->vLLM 证据弱。合计中等问题超过 2 条，故判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-09-29-4",
+      "severity": "medium",
+      "problem": "事件 1（Palisade 证词）的 participants 把 Anthropic 列为 warning 的对象之一，但原文仅说证词来自\"数十名现职与前 OpenAI、Google DeepMind 研究员\"，被警告对象在句子中指这些研究员所属/指向的公司，Anthropic 只在另一句\"Anthropic 计划在 IPO 招股书中警示投资人\"中单独出现，不属于本证词事件的参与者。",
+      "fix": "从事件 1 的 participants 中移除 Anthropic，只保留 Palisade Research（subject）、OpenAI、Google DeepMind（object）；把 Anthropic 的 IPO 警示单独处理或并入 trend 事件，不要混进证词事件。"
+    },
+    {
+      "article_id": "2026-09-29-4",
+      "severity": "medium",
+      "problem": "实体 Dario Amodei 的证据字段写\"一位 Anthropic 联合创始人本周也联名发文\"，但原文从未点名这位联名联合创始人是谁（只用\"一位\"指代），据此把该人物认定为 Dario Amodei 属于无据推断，且 Sam Altman 的 affiliated_with 证据\"Sam Altman 与 Anthropic CEO Dario Amodei 等业界领袖接连呼吁\"来自第 3 篇背景，未在本篇出现。",
+      "fix": "要么给 Dario Amodei 换用本篇确实成立的证据（若无则删除该实体在本篇的 affiliated 关系），要么新增\"一位（未具名）Anthropic 联合创始人\"占位说明，不得把未具名者直接归为 Dario Amodei。"
+    },
+    {
+      "article_id": "2026-09-29-4",
+      "severity": "medium",
+      "problem": "这篇的主线——Palisade Research 收集证词、数十名现职/前研究员警告 OpenAI 与 Google DeepMind 仓促推进自改进系统——只有事件没有关系边，relations 仅剩 3 条 affiliated_with 边，核心事实在图上无法被\"读到\"。",
+      "fix": "补一条表达\"警告/发声\"的关系，如 researchers --warns--> OpenAI / Google DeepMind（或 Palisade Research --surfaces_testimony_for--> OpenAI），并保留 evidence=视频证词来源，避免主力关系缺失导致信息贫乏。"
+    },
+    {
+      "article_id": "2026-09-29-5",
+      "severity": "medium",
+      "problem": "协议的核心主体是 31 位具名签署人，但原文列出的午宴出席者有多名未抽成实体：Elon Musk（马斯克）、Palantir 的 Karp、OpenAI 的 Brockman 均未出现，导致签署事件参与者不全。",
+      "fix": "补抽 Elon Musk、Palantir（company）+ Alex Karp（person）、Greg Brockman（person，OpenAI）等具名出席者及其 affiliated_with 关系，使事件 participants 与原文列名一致；同时注意细节正文写 OpenAI 出席者是 Brockman 而摘要写 Altman，需以正文为准并避免重复建缩略名实体。"
+    },
+    {
+      "article_id": "2026-09-29-9",
+      "severity": "medium",
+      "problem": "关系 GLM-5.3 --runs_on--> Moore Threads MTT S4000 语义错配：原文只说 GLM-5 的算术强度约 120.8 FLOP/B\"被怀疑是为 Moore Threads MTT S4000（约 128 FLOP/B）优化\"，即针对该芯片特性做架构调优（且是推测），并非该模型实际运行在 S4000 上。",
+      "fix": "把该关系类型改为 optimized_for（或 designed_for），证据改为\"被怀疑是为 Moore Threads MTT S4000 优化\"，并据此保留低权重量级（≤0.6），明确标注推测性，不要写成确定的运行关系。"
+    },
+    {
+      "article_id": "2026-09-29-9",
+      "severity": "low",
+      "problem": "关系 GLM-5.3 --uses--> vLLM 证据\"vLLM 让首个 decode 步骤走一致的 CUDA graph 路径\"描述的是 vLLM 引擎自身内部优化，并未直接说明 GLM-5.3 使用 vLLM；model--uses-->serving 引擎的方向与证据脱节。",
+      "fix": "把该关系改为可验证的表述（如备注 vLLM 为 GLM-5 的 serving 引擎，仅当原文有\"vLLM serving GLM\"之类表述），否则删除该边，避免证据支撑另一回事。"
+    },
+    {
+      "article_id": "2026-09-29-7",
+      "severity": "low",
+      "problem": "事件 2（RRSI 刷分）参与者给 Google 的 role 标为 \"partner\"，但 RRSI 正是 Google 与高校提出的论文，Google 是作者/提出方而非合作观察方，与角色语义不符。",
+      "fix": "把该事件中 Google 的 role 改为 subject（提出方/作者）或直接只在关系 authorized_by 体现，不要标 partner。"
+    },
+    {
+      "article_id": "2026-09-29-8",
+      "severity": "low",
+      "problem": "实体 GPT-6.1 Sol 的证据填了\"目前先在 GPT-6 Astra 上可用\"，这句话讲的是 Ultrafast 极速档当前只在 Astra 上可用、Sol 版本即将推出，通篇并未直接描述 Sol，Sol 在本篇仅作为\"即将推出\"的配属被带过，证据与实体不匹配。",
+      "fix": "若保留该实体，把证据改为\"Sol 版本即将推出\"（Ultrafast 的后续版本）；若与本篇主线无关可考虑删除，避免用别家的证据支撑 Sol 实体。"
+    },
+    {
+      "article_id": "2026-09-29-3",
+      "severity": "low",
+      "problem": "事件 2 只覆盖了 Hugging Face 入侵一例，原文另含\"上周澳洲总理宣布失控的 OpenAI agent 6 月黑进政府网站\"这一并列越界事实，未作事件或至少度量收录。",
+      "fix": "在事件 2 summary 中补入澳洲政府网站入侵这一并列背景事实，或单列实体/度量，避免同一越界事实被漏掉。"
+    }
+  ],
+  "lessons": [
+    "集合性事件（签署、证词、联名、出席）要把原文逐一列名的全部主体都抽成实体并补相应关系，不要只抽知名者而漏掉其余具名者。",
+    "对未具名主体（如\"一位联合创始人\"、\"某高管\"），不得自行认定为某个具体人物，人物实体身份必须有原文明确姓名支撑。",
+    "对\"被怀疑为某芯片/硬件优化\"\"疑似针对…调优\"这类推测性表述，用 optimized_for 类关系并用低权重标注，不要记成确定的 runs_on 运行关系。"
+  ]
+}

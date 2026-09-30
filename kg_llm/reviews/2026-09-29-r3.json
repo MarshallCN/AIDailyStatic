@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-29",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 68,
+  "summary": "抽取的证据扎实、数字大多进了 metrics、关系方向基本正确，但存在一个高风险的跨文章实体合并隐患——GPT-6 Astra（已发布旗舰，Dots 运行其上）与 GPT-6.1 Astra（被暂缓的下一代）共用别名 Astra，会使图谱把两款不同模型张冠李戴。另有若干中等问题：一篇事件摘要把 TPOT 22ms 的改进张冠李戴给 TileRT（原文实为 vLLM）、ART 实体类型标错，以及多条先轮已指出的问题（五分之一写成半价、uses vLLM 过度断言、$200 档降额被并入事件）仍未修正。",
+  "findings": [
+    {
+      "article_id": "2026-09-29-3",
+      "severity": "high",
+      "problem": "跨文章实体别名冲突：本文的「GPT-6.1 Astra」（被 OpenAI 因安全暂缓的下一代，未发布）设置了 aliases 包含 Astra，而 2026-09-29-0、-1、-8 里的「GPT-6 Astra」（已发布、Dots 运行其上的旗舰）也设置 aliases 包含 Astra。两者基名不同、语义完全不同，但若图谱按别名做跨文章实体合并，会把「已发布的旗舰」和「被扣下的下一代」合并成同一实体，从而让图读出「Dots 跑在被暂缓的模型上」的错误故事。",
+      "fix": "给 GPT-6.1 Astra 使用与 GPT-6 Astra 互不冲突的别名（如 6.1 Astra，或干脆删除 Astra 别名），并全局检查确保 GPT-6 Astra 与 GPT-6.1 Astra 不共享任何 alias 或规范名，保证跨文章解析时两者始终是独立实体。"
+    },
+    {
+      "article_id": "2026-09-29-0",
+      "severity": "medium",
+      "problem": "why_it_matters 写「OpenAI 用『半价近 Astra』」，但本文自己的 metrics 与 evidence 明确是「标准输入/输出 token 价格只有 Astra 的五分之一」；「半价」与「五分之一」是两回事，属于总结字段改写走样（该问题在第 2 轮已指出，仍未修正），会误导读者以为 Sol 只比 Astra 便宜一半。",
+      "fix": "把 why_it_matters 中的「半价近 Astra」改为「以五分之一价格逼近 Astra」，总结字段关键数字必须与 evidence/metrics 完全一致。"
+    },
+    {
+      "article_id": "2026-09-29-9",
+      "severity": "medium",
+      "problem": "第二个事件（benchmark「serving 引擎与芯片间成本/吞吐的对比」）的 summary 写「TileRT 把平均 TPOT 压到 22ms」，但原文明确是 vLLM 做到的：「vLLM 让首个 decode 步骤走一致的 CUDA graph 路径，把平均 TPOT 从约 40ms 压到 22ms」；TileRT 的卖点是把解码编译成单一持久化内核、优先单用户低延迟（P90 交互性 2 倍）。事件摘要把该指标张冠李戴给了邻近提到的另一引擎，且与本文自己 metrics 里「vLLM 将平均 TPOT 压缩」自相矛盾。",
+      "fix": "把事件 2 summary 中的「TileRT 把平均 TPOT 压到 22ms」改为「vLLM 把平均 TPOT 从约 40ms 压到 22ms」，TileRT 的贡献改为其原文主张（FP8 TileRT MI355X 的 P90 交互性优势），与 metrics 保持一致。"
+    },
+    {
+      "article_id": "2026-09-29-6",
+      "severity": "medium",
+      "problem": "实体「ART」的 type 被标为 paper，但 ART 是一套被自主发现的生物学酶系统（array-associated reverse transcriptases，阵列关联逆转录酶），是研究对象而非论文/报告；实体类型错配会污染图谱对节点语义的理解，且本文另有建档的 research 事件。",
+      "fix": "把 ART 的 type 改为能代表可被发现的科研对象的类型（如 biological_system / finding / discovery），而非 paper；若确有论文载体可另建论文实体，勿与发现本体合并。"
+    },
+    {
+      "article_id": "2026-09-29-4",
+      "severity": "medium",
+      "problem": "两条关系「Palisade Research warns OpenAI」与「Palisade Research warns Google DeepMind」把警告的发出者归给了 Palisade Research；原文是「数十名现职与前 OpenAI、Google DeepMind 研究员」经 Palisade 收集并分享视频证词来警告公司，Palisade 只是收集/分发平台，警告的语义主体是研究院士本身。关系把平台当成警告者，方向语义不成立。",
+      "fix": "把警告关系的 source 改为院士（或新建「研究员群体」实体），Palisade 的角色改为 collects/disseminates（如「OpenAI 研究员 warns OpenAI」或「Palisade disseminates 证词」）；不要在缺少证据的情况下把 Palisade 写为警告主体。"
+    },
+    {
+      "article_id": "2026-09-29-9",
+      "severity": "medium",
+      "problem": "关系「GLM-5.3 uses vLLM」的证据仅「引擎优化（vLLM/ATOM/TileRT）」一个碎片，原文是把 vLLM/ATOM/TileRT 作为评测/服务 GLM-5.x 的 serving 引擎，并未断言模型运行依赖 vLLM；把「被这些引擎评测/服务」写成模型 uses 引擎是过度断言（第 2 轮已指出，仍未修正）。",
+      "fix": "把该关系类型从 uses 改为 evaluated_on（与 InferenceX 一致）或直接删除；uses 仅用于原文明确说明模型运行依赖该组件的情况。"
+    },
+    {
+      "article_id": "2026-09-29-8",
+      "severity": "medium",
+      "problem": "第二个 launch 事件「Pro 500 绑定 Ultrafast 极速档并削减 $200 档额度」仍把两个受事对象不同、叙事独立的动作压成一个事件：(a) 新 Pro 500 绑定 Ultrafast、(b) 对既有 $200 档降额与取消 5 小时窗口（第 2 轮已指出，仍未拆分）。合并后 participants 混在一起、无法单独溯源。",
+      "fix": "拆为两个事件：launch「Pro 500 绑定 Ultrafast 极速档」（participants 含 Ultrafast）；另一个独立事件（type 用 policy/changes）描述「OpenAI 削减 $200 Pro 档用量（20 倍到 10 倍 Plus、200 条到 100 条）并取消 5 小时窗口」，各带独立 evidence 与 metrics。"
+    },
+    {
+      "article_id": "2026-09-29-9",
+      "severity": "low",
+      "problem": "关系「GLM-5.3 optimized_for Moore Threads MTT S4000」把原文的推测「被怀疑是为 Moore Threads MTT S4000（约 128 FLOP/B）优化」作为一条关系边写入图谱；原文是存疑判断、尚未证实，weight=0.5 缓解了部分，但仍是把推测固化为确定图边。",
+      "fix": "删除该关系，或在 summary 中明确标注为低置信推测（含「被怀疑」字样），不要把它作为确定性的 optimized_for 边发布。"
+    }
+  ],
+  "lessons": [
+    "同一天/同一公司同时被提及多个同基名的不同模型（如 GPT-6 Astra 与 GPT-6.1 Astra）时，模型别名必须彼此唯一、不得共用，否则跨文章实体合并会张冠李戴并讲出相反的故事。",
+    "报告/评测类原文里具体的数字指标（如 TPOT、吞吐提升）必须归因到原文明确写出的那个组件（引擎或芯片），不要把数字张冠李戴给邻近提到的其他组件；事实数字要与 metrics 一致。",
+    "当原文用「被怀疑」「尚未证明」「可能」等措辞表达推测而非事实时，不要把它固化为确定性的关系边，或必须显式标注为低置信推测。"
+  ]
+}
