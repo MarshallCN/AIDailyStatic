@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-30",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "第 1 轮审查指出的大部分问题已在第 2 版修正：删除了\"英国AI安全研究所 --restricts--> GPT-6 Astra\"（方向与类型都错），\"UI-Venus-2 --authored_by--> 蚂蚁集团\"已改为 developed_by，\"complies_with\"改为\"targets\"，并补上了 Instinct 作为对标对象。GPT-6.1 Astra 与 GPT-6 Astra 依审计提示仍保持为独立实体，正确。剩余问题集中在几处关系类型/方向的精确性：NVIDIA--supplies-->CoreWeave 是证据不支持的过度推断，OpenAI 对自家模型的\"取消发布\"再用 restricts 表述欠妥，协议与签署方的关系仍偏\"强制\"语义。",
+  "findings": [
+    {
+      "article_id": "2026-09-30-8",
+      "severity": "medium",
+      "problem": "关系 \"NVIDIA --supplies--> CoreWeave\"（weight 0.7）所附证据只是 \"NVIDIA 与 CoreWeave 的合作\"，原文仅陈述双方围绕 Vera Rubin 平台打通 Agentic AI 从训练到生产的闭环，通篇没有\"NVIDIA 向 CoreWeave 供货\"的表述。supplies 是一个比合作更具体、更强的断言，共同合作的证据支撑不了它，属过度推断。",
+      "fix": "删除 \"NVIDIA --supplies--> CoreWeave\" 这条关系；该合作已由 \"CoreWeave --partners_with--> NVIDIA\"（weight 0.9）完整覆盖。除非原文明确写出供应关系（如交付芯片/算力），否则不要用 supplies。"
+    },
+    {
+      "article_id": "2026-09-30-4",
+      "severity": "medium",
+      "problem": "关系 \"OpenAI --restricts--> GPT-6.1 Astra\" 用 restricts 表示\"取消原定 10 月的发布\"。这与第 1 轮对 restricts 用法的批评（restricts 只适用于对运行中事物的限制，且易被误读为第三方施加的权力）方向一致：OpenAI 这里实际做的是\"搁置/取消发布\"，不是对已上线模型的约束管控。",
+      "fix": "改用表示取消/搁置发布的关系类型（如 shelves / cancels / postpones），若无此类型则保留用词但降低权重并把 evidence 明确写成\"取消原定 10 月发布的 GPT-6.1 Astra\"，必要时在关系旁标注\"发布被搁置\"，避免与第三方执行限制混为一谈。"
+    },
+    {
+      "article_id": "2026-09-30-6",
+      "severity": "low",
+      "problem": "实体 Joe Gebbia 的 relation \"Joe Gebbia --affiliated_with--> America.gov\"（weight 0.8）语义偏松：原文说他是 Airbnb 联合创始人、现任首席设计官，牵头打造 America.gov 门户——他负责构建这个产品，并非作为成员隶属于这个门户。affiliated_with 一般用于人与组织/机构的关系。",
+      "fix": "若关系集支持，用 \"Joe Gebbia --leads/built--> America.gov\"；若无此类型，将 affiliated_with 的目标改为其所属的行政机构（白宫/行政层）或注明\"首席设计官、牵头打造\"，更贴合原文。"
+    },
+    {
+      "article_id": "2026-09-30-5",
+      "severity": "low",
+      "problem": "六家公司的 \"白宫超级智能协议 --targets--> X\" 从第 1 轮的 complies_with 改成 targets 虽有进步，但语义上仍偏\"协议施加于某公司\"。原文强调这是\"道义上有约束力但法律上不可执行\"的自愿协议，各公司是主动签署承诺四项自我管控措施，主动方向是\"签署/承诺\"而非被动\"被 targeting\"。",
+      "fix": "改用能表达主动签署/承诺的方向，如 \"X --signs/subsribes_to--> 白宫超级智能协议\"（source 为各公司、target 为协议）；若沿用 --targets-->，则在 evidence 中更明确写出\"各公司自愿签署承诺自管\"，降低其义务强度。"
+    }
+  ],
+  "lessons": [
+    "对芯片厂与云厂商的合作新闻，只有原文明确提出供货/交付关系时才用 supplies；仅凭\"合作/围绕某平台打通\"推断出的供应关系不要落为 supplies，宁可用已确认的 partners_with 或删除。",
+    "表示模型发布被取消或搁置（如 GPT-6.1 Astra 未按原计划发布）时，用 shelves/cancels/postpones 类关系，不要用 restricts——restricts 只适用于对运行中事物的限制，且易被读成第三方对模型的执行权力。",
+    "自愿、法律上不可执行的协议中，公司方与协议之间的关系应表示为公司\"签署/承诺\"（signs/commits_to），不要把义务画成协议对公司的强制 targeting。"
+  ]
+}

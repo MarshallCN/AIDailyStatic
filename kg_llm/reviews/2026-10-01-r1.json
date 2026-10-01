@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-01",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 71,
+  "summary": "整体覆盖与方向正确，无方向反转或事实编造的重大错误，但存在多处中等语义问题：事件切分重叠、实体角色误标（MemArena 被标为 benchmark）、跨文章实体类型不一致（Grok 一会 model 一会 product）、把计划性/推测性表述当成确定关系（Apollo 拟投、X 整合 Grok）、以及 AMD 实体别名混入产品名。中等问题超过 2 条，需修订。",
+  "findings": [
+    {
+      "article_id": "2026-10-01-7",
+      "severity": "medium",
+      "problem": "事件 2（benchmark）把参与者 MemArena 的 role 标成 \"benchmark\"。原文中 MemArena 是统一运行时（\"团队还构建了 MemArena 统一运行时\"），不是被评测的基准；10.1% 提升是对比\"最强自适应记忆基线\"，该基线并未以实体出现。",
+      "fix": "删除 MemArena 的 benchmark 角色，将其 role 改为 tool/object；该事件只以 MemCodex 为主语、对比对象是未具名的自适应记忆基线，不要给 MemArena 加 benchmark 角色。"
+    },
+    {
+      "article_id": "2026-10-01-8",
+      "severity": "medium",
+      "problem": "事件 2 与事件 3 重叠切分：事件 2 label/summary 声称解出\"30 年未解积分式\"与\"基因转换机制\"，事件 3 又单独成事件\"应用 gnomAD 验证积分式\"——同一件科学发现被拆成互相重复的两个事件，且事件 2 的 evidence 只引了积分式部分，撑不起其 label 里同时声称的生态学方程与基因转换。",
+      "fix": "合并事件 2 与事件 3 为一个\"解出 30 年未解积分式并应用于 gnomAD\"事件；生态学方程（巴拿马森林）与 1000 Genomes 基因转换分别单独成立，若保留则各自附对应的原文 evidence（\"证明巴拿马森林树种更替速度快 4.5 倍\"、\"在 57 亿对邻近突变中发现基因转换机制\"），不要用一个证据支撑多处断言。"
+    },
+    {
+      "article_id": "2026-10-01-9",
+      "severity": "medium",
+      "problem": "Grok 的实体类型在跨文章不一致：2026-10-01-6 中 Grok 标为 model，2026-10-01-9 中标为 product（aliases 含\"Grok 聊天应用\"）。同一产品主体在图上被分裂成两种类型，阻碍跨文章连通。",
+      "fix": "统一 Grok 的 type 与规范名：在 2026-10-01-9 中把 Grok 改为 type \"model\"（或全篇统一为 product，重在一致），保留\"Grok 聊天应用\"这样能并入 aliases 的期号，使其跨 9、10 两篇连通到同一实体。"
+    },
+    {
+      "article_id": "2026-10-01-4",
+      "severity": "medium",
+      "problem": "关系 Apollo --invests_in--> RHAELM（weight 0.7）依据是\"Apollo 拟作为 RHAELM 的战略投融资伙伴参与\"——原文用的是\"拟\"（计划/意向），并非已发生的投资，invests_in 把计划性表述当成了确定事实。",
+      "fix": "将\"拟作为战略投融资伙伴\"降级为计划性表述：删除确定性的 invests_in 关系，或改用能体现\"计划/意向\"语义的关系；若图谱关系类型不支持，则不加投资关系，仅在事件 summary 中保留该信息。"
+    },
+    {
+      "article_id": "2026-10-01-6",
+      "severity": "medium",
+      "problem": "两条低权重关系把\"共同出现/推测\"当成了真实关系：X --integrates--> Grok（证据只是\"用一个统一订阅覆盖 Grok 与 X\"，属订阅合并而非 X 整合 Grok）与 Grok Bot --integrates--> Cursor（原文是\"有迹象显示新档位可能把 Cursor 捆绑\"，纯推测）。",
+      "fix": "删除 X --integrates--> Grok 与 Grok Bot --integrates--> Cursor 两条 integrates 关系，或改写为体现\"订阅合并/可能捆绑\"的弱语义关系；共同出现与报道的推测不构成 integrates 关系。"
+    },
+    {
+      "article_id": "2026-10-01-5",
+      "severity": "medium",
+      "problem": "AMD 实体把\"AMD Helios\"加入 aliases。\"AMD Helios\"是 AMD 的机架级产品/系统名（HPE 售卖、Helios 实体已单独存在），把它当成公司 AMD 的别名会把产品与公司错误合并到同一实体。",
+      "fix": "从 AMD 实体的 aliases 中移除\"AMD Helios\"；保留 Helios 作为独立 product 实体（其 aliases 含\"AMD Helios 机架\"），删除证据里对公司 alias 的这类混用。"
+    },
+    {
+      "article_id": "2026-10-01-8",
+      "severity": "low",
+      "problem": "实体类型错配：gnomAD 与 AccStack 被标为 tool，但两者都是数据资源/数据库（基因组数据库 gnomAD、词重音数据库 AccStack），不是工具。",
+      "fix": "将 gnomAD 与 AccStack 的 type 改为 dataset/database（或图谱支持的\"数据资源\"类型）而非 tool。"
+    }
+  ],
+  "lessons": [
+    "评测/基准类事件的 benchmark 角色只给真正被评测的基准实体；统一运行时、工具、数据库等被拿来对比的非基准对象不得标 benchmark。",
+    "同一产品/模型在不同文章必须保持一致的实体类型与规范名（如 Grok 恒定 model），不要因来源用词不同而分裂为 product/model 两种。",
+    "原文用\"拟、计划、可能、有迹象\"表述的意向，不得用 invests_in、partners_with、integrates 等确定性关系类型；计划性信息只留存在事件 summary，必要时才用弱语义关系。"
+  ]
+}

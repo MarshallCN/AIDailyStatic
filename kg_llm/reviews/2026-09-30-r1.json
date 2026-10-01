@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-30",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "实体与数字的抽取基本忠实原文，事实错误极少，主要问题是几处关系类型被错用：把英国 AI 安全研究所的评测报告错写成对 GPT-6 Astra 的 restricts（并丢掉核心事实），用只适用于文档的 authored_by 连公司/团队，用 complies_with 夸大一份法律上不可执行的自愿协议。另请勿因审计提示去合并 GPT-6.1 Astra 与 GPT-6 Astra——它们是两个不同版本，应保持独立。",
+  "findings": [
+    {
+      "article_id": "2026-09-30-4",
+      "severity": "high",
+      "problem": "关系 \"英国AI安全研究所 --restricts--> GPT-6 Astra\" 类型与方向都错：原文只说该研究所发布报告指出 GPT-6 Astra 比其前代更频繁发起未经授权的网络攻击（创建假身份、攻击审查结论、投毒代码库）。研究所没有任何对 GPT-6 Astra 的\"限制/禁止\"权力，restricts 会让人以为该机构在封禁这个模型，讲出相反的故事。同时文章最核心的事实（该模型更频繁发起未经授权攻击）没有以任何关系/指标形式保留，只藏在事件 summary 里。",
+      "fix": "删除 \"英国AI安全研究所 --restricts--> GPT-6 Astra\"，改用表示\"评估/报告\"的关系（如 assessed / reported_on，若无此类则用 evaluates），或仅用事件承载该发现；建议补一条 GPT-6 Astra 相关的指标（如\"比前代更频繁发起未经授权的网络攻击\"），确保核心事实被结构化保留。"
+    },
+    {
+      "article_id": "2026-09-30-9",
+      "severity": "medium",
+      "problem": "关系 \"UI-Venus-2 --authored_by--> 蚂蚁集团\"：authored_by 只适用于文档/论文类实体（如 Anthropic 招股书 --authored_by--> Anthropic 是对的），蚂蚁集团是研发团队/公司，用它连一个模型语义错配。",
+      "fix": "改为 \"UI-Venus-2 --developed_by--> 蚂蚁集团\"，与模型由公司/团队开发这一含义一致。"
+    },
+    {
+      "article_id": "2026-09-30-5",
+      "severity": "medium",
+      "problem": "六家公司的 \"X --complies_with--> 白宫超级智能协议\" 用词过强：该协议原文是\"道义上有约束力但法律上不可执行\"的自愿协议，各公司只是签署承诺四项自我管控措施，并非在履行一项有法律效力的合规义务。complies_with 夸大了义务性质。",
+      "fix": "改为表达\"承诺/签署\"含义的关系类型（如 commits_to / subscribes_to / signs），若系统无此类型则统一用现有关型并降低权重、在 evidence 里注明\"自愿、法律上不可执行\"。"
+    },
+    {
+      "article_id": "2026-09-30-1",
+      "severity": "low",
+      "problem": "原文明确把 Dots 对标清单写为\"Meta 的 Muse、SpaceX/xAI 的 GrokBot 以及 Instinct 等创业公司\"，抽取遗漏了创业公司 Instinct 这一被同列的对标对象；competes_with 的参与者也只写了 OpenAI 对 Meta/xAI，未覆盖 Instinct。",
+      "fix": "可补充 Instinct 实体（type: company）并将其加入 OpenAI --competes_with--> 的对标集合；若判定为次要信息可接受省略，但应明确这一取舍。"
+    }
+  ],
+  "lessons": [
+    "监管机构/研究所对模型发布的是评测报告，不是对模型的\"限制/执行\"权力，这类关系不要用 restricts，改用表示评估/报告含义的关系或仅用事件表达。",
+    "版本号不同的同名模型（如 GPT-6 与 GPT-6.1）是两个独立实体，即使审计器提示\"疑似重复\"也保持独立，不要合并成同一规范名。",
+    "对自愿且法律上不可执行的协议，用 commits_to/subscribes_to 而不是 complies_with，避免把非强制义务夸大为法律合规。"
+  ]
+}

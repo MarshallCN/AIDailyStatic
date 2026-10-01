@@ -1,0 +1,583 @@
+{
+  "date": "2026-10-01",
+  "articles": [
+    {
+      "article_id": "2026-10-01-0",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.97, "evidence": ["Google 发布旗舰模型 Gemini 4 Argon"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": ["Argon"], "confidence": 0.97, "evidence": ["Google 发布旗舰模型 Gemini 4 Argon"]},
+        {"name": "DeepSWE v1.1", "type": "benchmark", "aliases": ["DeepSWE"], "confidence": 0.9, "evidence": ["在 DeepSWE v1.1（77.9%）"]},
+        {"name": "CWE-bench v1", "type": "benchmark", "aliases": ["CWE-bench"], "confidence": 0.9, "evidence": ["CWE-bench v1（68%）"]},
+        {"name": "Vals Index", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["Vals Index"]},
+        {"name": "Wiz", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["Wiz 已通过其 Scan for Good 计划"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google 发布旗舰模型 Gemini 4 Argon",
+          "summary": "Google 发布输出 token 上限提升到 100 万的旗舰模型 Gemini 4 Argon，主打长程软件工程、企业知识工作与网络防护。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google 发布旗舰模型 Gemini 4 Argon"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Argon 在 DeepSWE v1.1 等基准上达新 SOTA",
+          "summary": "Argon 在 DeepSWE v1.1（77.9%）、Vals Index、CWE-bench v1（68%）等基准上均刷新纪录。",
+          "participants": [
+            {"name": "Gemini 4 Argon", "type": "model", "role": "subject"},
+            {"name": "DeepSWE v1.1", "type": "benchmark", "role": "benchmark"},
+            {"name": "CWE-bench v1", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 DeepSWE v1.1（77.9%）、Vals Index、CWE-bench v1（68%）等基准上均达新 SOTA"]
+        },
+        {
+          "type": "security",
+          "label": "Wiz 用 Gemini 4 Argon 为全球医院软件发现高危漏洞",
+          "summary": "Wiz 通过 Scan for Good 计划用 Argon 发现此前前沿模型漏掉的医院软件高危漏洞。",
+          "participants": [
+            {"name": "Wiz", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Wiz 已通过其 Scan for Good 计划用它为全球医院软件发现此前前沿模型漏掉的高危漏洞"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Argon", "target": "Google", "type": "developed_by", "weight": 0.95, "evidence": ["Google 发布旗舰模型 Gemini 4 Argon"]},
+        {"source": "Gemini 4 Argon", "target": "DeepSWE v1.1", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 DeepSWE v1.1（77.9%）"]},
+        {"source": "Gemini 4 Argon", "target": "CWE-bench v1", "type": "evaluated_on", "weight": 0.8, "evidence": ["CWE-bench v1（68%）"]},
+        {"source": "Gemini 4 Argon", "target": "Vals Index", "type": "evaluated_on", "weight": 0.7, "evidence": ["Vals Index"]},
+        {"source": "Wiz", "target": "Gemini 4 Argon", "type": "uses", "weight": 0.8, "evidence": ["Wiz 已通过其 Scan for Good 计划用它为全球医院软件发现此前前沿模型漏掉的高危漏洞"]}
+      ],
+      "metrics": [
+        {"name": "Gemini 4 Argon 输出 token 上限", "value": "100 万（1M）"},
+        {"name": "输入定价", "value": "$2/M"},
+        {"name": "输出定价", "value": "$10/M"},
+        {"name": "DeepSWE v1.1 得分", "value": "77.9%"},
+        {"name": "CWE-bench v1 得分", "value": "68%"},
+        {"name": "子程序时空资源优化提升", "value": "比基线好 40%"},
+        {"name": "释放数据中心内存", "value": "超 300 TiB"}
+      ],
+      "why_it_matters": "旗舰模型的首发不再拼对话能力，而押注超长输出执行智能：1M 输出 token 把模型从问答工具变成可自主跑完长程任务的执行引擎，且走受信任伙伴加政府监管护栏的渐进放量路线。"
+    },
+    {
+      "article_id": "2026-10-01-1",
+      "entities": [
+        {"name": "xAI", "type": "company", "aliases": ["SpaceXAI", "Musk 的 xAI"], "confidence": 0.97, "evidence": ["xAI 把过剩 GPU 出租给 Anthropic、Google"]},
+        {"name": "Anthropic", "type": "company", "aliases": ["最大租户"], "confidence": 0.97, "evidence": ["最大租户是 Anthropic"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 紧随其后"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.97, "evidence": ["近 55 万块 NVIDIA GPU"]},
+        {"name": "Colossus 1 旧集群", "type": "hardware", "aliases": ["Colossus 1"], "confidence": 0.9, "evidence": ["老旧的 Colossus 1 留下大量闲置硅片"]},
+        {"name": "Colossus 2 新集群", "type": "hardware", "aliases": ["Colossus 2"], "confidence": 0.9, "evidence": ["训练负载迁往更新的 Colossus 2 后"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "xAI 把大半 Colossus 硬件出租给 Anthropic、Google 等直接竞争对手",
+          "summary": "xAI 近 55 万块 NVIDIA GPU 利用率约 11%，把训练集群变为面向 Anthropic、Google 的大规模租赁业务。",
+          "participants": [
+            {"name": "xAI", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "Google", "type": "company", "role": "object"}
+          ],
+          "evidence": ["xAI 把过剩 GPU 出租给 Anthropic、Google"]
+        },
+        {
+          "type": "infra",
+          "label": "Anthropic 包下 Colossus 1 全部约 22 万块 GPU",
+          "summary": "Anthropic 签下多年协议包下 Colossus 1 全部约 22 万块 GPU，月费约 12.5 亿美元，持续到 2029 年 5 月。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Colossus 1 旧集群", "type": "hardware", "role": "object"},
+            {"name": "xAI", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["最大租户是 Anthropic——签下多年协议包下 Colossus 1 全部约 22 万块 GPU"]
+        },
+        {
+          "type": "infra",
+          "label": "Google 在 Colossus 2 锁定约 11 万块 GPU",
+          "summary": "Google 在 Colossus 2 锁定约 11 万块 GPU，交易 2026 年 10 月启动，月费约 9.2 亿美元。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Colossus 2 新集群", "type": "hardware", "role": "object"},
+            {"name": "xAI", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Google 紧随其后，在 Colossus 2 锁定约 11 万块 GPU"]
+        }
+      ],
+      "relations": [
+        {"source": "xAI", "target": "Anthropic", "type": "supplies", "weight": 0.95, "evidence": ["最大租户是 Anthropic——签下多年协议包下 Colossus 1 全部约 22 万块 GPU"]},
+        {"source": "xAI", "target": "Google", "type": "supplies", "weight": 0.85, "evidence": ["Google 紧随其后，在 Colossus 2 锁定约 11 万块 GPU"]},
+        {"source": "Anthropic", "target": "Colossus 1 旧集群", "type": "uses", "weight": 0.8, "evidence": ["包下 Colossus 1 全部约 22 万块 GPU"]},
+        {"source": "Google", "target": "Colossus 2 新集群", "type": "uses", "weight": 0.8, "evidence": ["在 Colossus 2 锁定约 11 万块 GPU"]},
+        {"source": "xAI", "target": "NVIDIA", "type": "uses", "weight": 0.7, "evidence": ["近 55 万块 NVIDIA GPU"]}
+      ],
+      "metrics": [
+        {"name": "xAI NVIDIA GPU 规模", "value": "约 55 万块"},
+        {"name": "GPU 利用率", "value": "约 11%"},
+        {"name": "Anthropic 包下 Colossus 1 GPU", "value": "约 22 万块，月费约 12.5 亿美元"},
+        {"name": "Google 锁定 Colossus 2 GPU", "value": "约 11 万块，月费约 9.2 亿美元"},
+        {"name": "未披露客户每月付款", "value": "约 11.1 亿美元"},
+        {"name": "年底 GPU 规模目标", "value": "120 万块以上"},
+        {"name": "电力容量", "value": "超 2 GW"},
+        {"name": "孟菲斯运营年化收入", "value": "接近 100 亿美元"}
+      ],
+      "why_it_matters": "xAI 把训练集群从自有模型底座转变为面向直接竞争对手的租赁资产，标志着算力过剩时代闲置硅片变现成为实验室新现金流模型，也让 xAI 从模型公司兼作算力批发商。"
+    },
+    {
+      "article_id": "2026-10-01-2",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 将 Claude for Government 推向正式可用"]},
+        {"name": "Claude for Government", "type": "product", "aliases": ["Government 平台"], "confidence": 0.95, "evidence": ["Anthropic 将 Claude for Government 推向正式可用"]},
+        {"name": "Claude Code CLI", "type": "tool", "aliases": ["Claude Code"], "confidence": 0.92, "evidence": ["Claude Code 命令行界面"]},
+        {"name": "Claude for Microsoft 365", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["Claude for Microsoft 365"]},
+        {"name": "FedRAMP High", "type": "policy", "aliases": ["FedRAMP"], "confidence": 0.92, "evidence": ["运行在符合联邦风险与授权管理计划（FedRAMP）\"High\"标准的环境中"]},
+        {"name": "GSA", "type": "organization", "aliases": ["美国总务管理局"], "confidence": 0.9, "evidence": ["其与 GSA 的 OneGov 协议已延长"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 将 Claude for Government 推向正式可用",
+          "summary": "Claude for Government 从 7 月公测转为 GA，运行于 FedRAMP High 环境，面向联邦与州机构开放，计费改为按用量。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude for Government", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Anthropic 将 Claude for Government 推向正式可用"]
+        },
+        {
+          "type": "policy",
+          "label": "Claude for Government 运行于 FedRAMP High 合规环境",
+          "summary": "平台运行在符合 FedRAMP High 标准的环境中，可部署到标准移动设备管理基础设施上。",
+          "participants": [
+            {"name": "Claude for Government", "type": "product", "role": "subject"},
+            {"name": "FedRAMP High", "type": "policy", "role": "regulator"}
+          ],
+          "evidence": ["运行在符合联邦风险与授权管理计划（FedRAMP）\"High\"标准的环境中"]
+        },
+        {
+          "type": "launch",
+          "label": "Anthropic 同步推出 Claude Code CLI 与 Claude for Microsoft 365",
+          "summary": "同一治理框架下推出两款早期访问产品：Claude Code 命令行界面与 Claude for Microsoft 365。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Code CLI", "type": "tool", "role": "object"},
+            {"name": "Claude for Microsoft 365", "type": "product", "role": "object"}
+          ],
+          "evidence": ["同一治理框架下还有两款早期访问产品：Claude Code 命令行界面与 Claude for Microsoft 365"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude for Government", "target": "Anthropic", "type": "released_by", "weight": 0.9, "evidence": ["Anthropic 将 Claude for Government 推向正式可用"]},
+        {"source": "Claude for Government", "target": "FedRAMP High", "type": "complies_with", "weight": 0.9, "evidence": ["运行在符合联邦风险与授权管理计划（FedRAMP）\"High\"标准的环境中"]},
+        {"source": "Claude Code CLI", "target": "Anthropic", "type": "released_by", "weight": 0.8, "evidence": ["Claude Code 命令行界面"]},
+        {"source": "Claude for Microsoft 365", "target": "Anthropic", "type": "released_by", "weight": 0.8, "evidence": ["Claude for Microsoft 365"]},
+        {"source": "Anthropic", "target": "GSA", "type": "partners_with", "weight": 0.7, "evidence": ["其与 GSA 的 OneGov 协议已延长至 10 月 31 日"]}
+      ],
+      "metrics": [
+        {"name": "Claude for Government 优惠价", "value": "$1/用户 (9 月 30 日到期)"},
+        {"name": "OneGov 协议延长至", "value": "10 月 31 日"}
+      ],
+      "why_it_matters": "Anthropic 把企业 AI 送进政府采购制度化轨道：FedRAMP High 的 GA 与直接签约通道让联邦部署从试点转正，计费从按席位改为按用量，政府 AI 从实验走向规模化采购。"
+    },
+    {
+      "article_id": "2026-10-01-3",
+      "entities": [
+        {"name": "Armadin", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Armadin 周四宣布完成 2.555 亿美元 B 轮融资"]},
+        {"name": "Kevin Mandia", "type": "person", "aliases": ["Mandia"], "confidence": 0.95, "evidence": ["公司由 Mandiant 创始人 Kevin Mandia 创办"]},
+        {"name": "Mandiant", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["公司由 Mandiant 创始人 Kevin Mandia 创办"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Armadin 完成 2.555 亿美元 B 轮融资，估值超 25 亿美元",
+          "summary": "AI 网络安全初创 Armadin 完成 B 轮融资，估值超 25 亿美元，总融资累计 4.45 亿美元。",
+          "participants": [
+            {"name": "Armadin", "type": "company", "role": "subject"},
+            {"name": "Kevin Mandia", "type": "person", "role": "partner"}
+          ],
+          "evidence": ["Armadin 周四宣布完成 2.555 亿美元 B 轮融资，估值超 25 亿美元"]
+        },
+        {
+          "type": "trend",
+          "label": "安全领域从用 AI 防御转向用 AI 代理模拟攻击者找出漏洞",
+          "summary": "公司主打用 AI 代理训练定位安全漏洞，把进攻性自主代理当作安全测试与防御的核心工具。",
+          "participants": [
+            {"name": "Armadin", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["把进攻性自主代理当作安全测试与防御的核心工具"]
+        }
+      ],
+      "relations": [
+        {"source": "Kevin Mandia", "target": "Mandiant", "type": "affiliated_with", "weight": 0.8, "evidence": ["公司由 Mandiant 创始人 Kevin Mandia 创办"]},
+        {"source": "Kevin Mandia", "target": "Armadin", "type": "affiliated_with", "weight": 0.8, "evidence": ["公司由 Mandiant 创始人 Kevin Mandia 创办"]}
+      ],
+      "metrics": [
+        {"name": "B 轮融资金额", "value": "2.555 亿美元"},
+        {"name": "估值", "value": "超 25 亿美元"},
+        {"name": "累计总融资", "value": "4.45 亿美元"}
+      ],
+      "why_it_matters": "资本正把攻方范式推成主流：安全估值从用 AI 防守转向用自主代理模拟攻击者找漏洞，攻击性代理成为 25 亿加美元估值的定价核心。"
+    },
+    {
+      "article_id": "2026-10-01-4",
+      "entities": [
+        {"name": "JERA", "type": "company", "aliases": ["日本最大电力公司"], "confidence": 0.95, "evidence": ["JERA、Dell 与 RHAELM 签署谅解备忘录"]},
+        {"name": "Dell Technologies", "type": "company", "aliases": ["Dell"], "confidence": 0.95, "evidence": ["JERA、Dell 与 RHAELM 签署谅解备忘录"]},
+        {"name": "RHAELM", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["JERA、Dell 与 RHAELM 签署谅解备忘录"]},
+        {"name": "千叶项目", "type": "topic", "aliases": ["Chiba"], "confidence": 0.9, "evidence": ["首个落地项目是千叶热电站旁的千叶项目"]},
+        {"name": "Apollo", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Apollo 拟作为 RHAELM 的战略投融资伙伴参与"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "JERA、Dell 与 RHAELM 签署 MoU 共建国家级 AI 基础设施框架",
+          "summary": "三方打造标准化、可重复、可扩展的 AI 基础设施构建框架，整合电力、机架级算力与数据中心交付能力；战略投融资伙伴 Apollo 拟参与。",
+          "participants": [
+            {"name": "JERA", "type": "company", "role": "subject"},
+            {"name": "Dell Technologies", "type": "company", "role": "partner"},
+            {"name": "RHAELM", "type": "company", "role": "partner"},
+            {"name": "Apollo", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["JERA、Dell 与 RHAELM 签署谅解备忘录"]
+        },
+        {
+          "type": "infra",
+          "label": "三方落地千叶 AI 基础设施项目（400MW）",
+          "summary": "首个落地的千叶项目由 JERA 提供高达 400 MW 表后电力，总投资预计超 150 亿美元，目标 2028 年前后投产。",
+          "participants": [
+            {"name": "JERA", "type": "company", "role": "subject"},
+            {"name": "千叶项目", "type": "topic", "role": "object"},
+            {"name": "RHAELM", "type": "company", "role": "partner"},
+            {"name": "Dell Technologies", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["首个落地项目是千叶热电站旁的千叶项目，由 JERA 提供高达 400 MW 的表后电力"]
+        }
+      ],
+      "relations": [
+        {"source": "JERA", "target": "Dell Technologies", "type": "partners_with", "weight": 0.9, "evidence": ["JERA、Dell 与 RHAELM 签署谅解备忘录"]},
+        {"source": "JERA", "target": "RHAELM", "type": "partners_with", "weight": 0.9, "evidence": ["JERA、Dell 与 RHAELM 签署谅解备忘录"]},
+        {"source": "Dell Technologies", "target": "RHAELM", "type": "partners_with", "weight": 0.85, "evidence": ["JERA、Dell 与 RHAELM 签署谅解备忘录"]}
+      ],
+      "metrics": [
+        {"name": "千叶项目表后电力", "value": "400 MW"},
+        {"name": "千叶项目总投资", "value": "超 150 亿美元（2.3 万亿日元）"},
+        {"name": "并网目标投产时间", "value": "2028 年前后"}
+      ],
+      "why_it_matters": "日本把国家级 AI 基建做成电力加算力可复制的标准化框架而非逐项目定制，主权算力部署正在变成以电力供给能力为枢纽的整机生意。"
+    },
+    {
+      "article_id": "2026-10-01-5",
+      "entities": [
+        {"name": "HPE", "type": "company", "aliases": ["Hewlett Packard Enterprise"], "confidence": 0.95, "evidence": ["HPE 拿下其 AMD Helios 系统的首个订单"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["HPE 拿下其 AMD Helios 系统的首个订单"]},
+        {"name": "Helios", "type": "product", "aliases": ["AMD Helios 机架"], "confidence": 0.92, "evidence": ["Vultr 支付 12 亿美元采购这套机架级 AI 系统"]},
+        {"name": "Vultr", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["Vultr 支付 12 亿美元采购这套机架级 AI 系统"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["与 NVIDIA 在 AI 基础设施的机架与网络层展开正面竞争"]},
+        {"name": "AMD Instinct MI455X", "type": "hardware", "aliases": ["Instinct MI455X", "MI455X"], "confidence": 0.9, "evidence": ["每个机架含 72 块 AMD Instinct MI455X GPU"]},
+        {"name": "Meta", "type": "company", "aliases": ["Facebook"], "confidence": 0.9, "evidence": ["Meta 已部署 6 GW AMD GPU"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "HPE 获得 AMD Helios 首个订单：Vultr 以 12 亿美元采购",
+          "summary": "HPE 拿下 AMD Helios 系统首个订单，Vultr 支付 12 亿美元采购机架级 AI 系统，每机架含 72 块 MI455X。",
+          "participants": [
+            {"name": "HPE", "type": "company", "role": "subject"},
+            {"name": "Helios", "type": "product", "role": "object"},
+            {"name": "Vultr", "type": "company", "role": "partner"},
+            {"name": "AMD", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["HPE 拿下其 AMD Helios 系统的首个订单：Vultr 支付 12 亿美元采购"]
+        },
+        {
+          "type": "trend",
+          "label": "AMD 借 Helios 首次提供机架级 NVIDIA 替代方案",
+          "summary": "AMD 借此首次提供机架级替代方案，与 NVIDIA 在 AI 基础设施的机架与网络层展开正面竞争。",
+          "participants": [
+            {"name": "AMD", "type": "company", "role": "subject"},
+            {"name": "Helios", "type": "product", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["AMD 借此首次提供机架级替代方案，与 NVIDIA 在 AI 基础设施的机架与网络层展开正面竞争"]
+        }
+      ],
+      "relations": [
+        {"source": "Helios", "target": "AMD", "type": "developed_by", "weight": 0.9, "evidence": ["HPE 拿下其 AMD Helios 系统的首个订单"]},
+        {"source": "HPE", "target": "Vultr", "type": "supplies", "weight": 0.9, "evidence": ["Vultr 支付 12 亿美元采购这套机架级 AI 系统"]},
+        {"source": "AMD", "target": "NVIDIA", "type": "competes_with", "weight": 0.8, "evidence": ["与 NVIDIA 在 AI 基础设施的机架与网络层展开正面竞争"]},
+        {"source": "Helios", "target": "AMD Instinct MI455X", "type": "uses", "weight": 0.85, "evidence": ["每个机架含 72 块 AMD Instinct MI455X GPU"]},
+        {"source": "Vultr", "target": "Helios", "type": "uses", "weight": 0.85, "evidence": ["Vultr 支付 12 亿美元采购这套机架级 AI 系统"]},
+        {"source": "Meta", "target": "AMD", "type": "uses", "weight": 0.8, "evidence": ["Meta 已部署 6 GW AMD GPU"]}
+      ],
+      "metrics": [
+        {"name": "Vultr 采购金额", "value": "12 亿美元"},
+        {"name": "每机架 GPU 数", "value": "72 块 MI455X"},
+        {"name": "Meta 部署 AMD GPU 规模", "value": "6 GW"}
+      ],
+      "why_it_matters": "AMD 首次在同一个机架内给出 GPU 加以太网网络的整体替代，AI 数据中心从 NVIDIA 单极真正进入双供应商格局，且由 HPE 分销渠道落地。"
+    },
+    {
+      "article_id": "2026-10-01-6",
+      "entities": [
+        {"name": "xAI", "type": "company", "aliases": ["SpaceXAI"], "confidence": 0.92, "evidence": ["SpaceXAI 正考虑用一个统一订阅覆盖 Grok 聊天机器人与社交网络 X"]},
+        {"name": "Grok", "type": "model", "aliases": ["Grok 聊天机器人"], "confidence": 0.92, "evidence": ["覆盖 Grok 聊天机器人与社交网络 X"]},
+        {"name": "X", "type": "product", "aliases": ["社交网络 X"], "confidence": 0.9, "evidence": ["覆盖 Grok 聊天机器人与社交网络 X"]},
+        {"name": "Grok Bot", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["包含可代为执行任务的 AI 代理 Grok Bot"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "xAI 拟合并 Grok 与 X 订阅为四个档位",
+          "summary": "彭博报道 SpaceXAI 正考虑用一个四档订阅覆盖 Grok 与 X，简化当前的七个方案，用于摊薄攀升的算力成本。",
+          "participants": [
+            {"name": "xAI", "type": "company", "role": "subject"},
+            {"name": "Grok", "type": "model", "role": "object"},
+            {"name": "X", "type": "product", "role": "object"}
+          ],
+          "evidence": ["SpaceXAI 正考虑用一个统一订阅覆盖 Grok 聊天机器人与社交网络 X"]
+        },
+        {
+          "type": "trend",
+          "label": "xAI 用自主代理 Grok Bot 作为付费溢价抓手",
+          "summary": "顶部 Ultra 档每月 100 美元，包含可代为执行任务的 AI 代理 Grok Bot；低价入口扩基础用户、代理与高额取溢价。",
+          "participants": [
+            {"name": "xAI", "type": "company", "role": "subject"},
+            {"name": "Grok Bot", "type": "product", "role": "object"}
+          ],
+          "evidence": ["包含可代为执行任务的 AI 代理 Grok Bot"]
+        }
+      ],
+      "relations": [
+        {"source": "Grok", "target": "xAI", "type": "developed_by", "weight": 0.9, "evidence": ["覆盖 Grok 聊天机器人与社交网络 X"]},
+        {"source": "Grok Bot", "target": "xAI", "type": "developed_by", "weight": 0.9, "evidence": ["Grok Bot 是 8 月推出的自主代理"]}
+      ],
+      "metrics": [
+        {"name": "Ultra 档月费", "value": "$100/月"},
+        {"name": "Lite 档月费", "value": "$8/月"},
+        {"name": "SuperGrok Heavy 月费", "value": "$300"},
+        {"name": "合并前订阅方案数", "value": "七个"}
+      ],
+      "why_it_matters": "算力成本攀升迫使 xAI 把七个订阅合并为四档，用自主代理 Grok Bot 作为溢价抓手，把机器人加社交加编码打包成单一订阅来摊薄前沿模型成本。"
+    },
+    {
+      "article_id": "2026-10-01-7",
+      "entities": [
+        {"name": "MemCodex", "type": "paper", "aliases": [], "confidence": 0.95, "evidence": ["MemCodex 把经验组织成四类可执行记忆程序"]},
+        {"name": "MemArena", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["团队还构建了 MemArena 统一运行时"]},
+        {"name": "Darwin Gödel Machine", "type": "topic", "aliases": ["Darwin Gödel"], "confidence": 0.85, "evidence": ["其进化机制受 Darwin Gödel Machine 与 HyperAgents 启发"]},
+        {"name": "HyperAgents", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["其进化机制受 Darwin Gödel Machine 与 HyperAgents 启发"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "MemCodex 提出可自编程的分层记忆系统，让语言代理自我进化记忆",
+          "summary": "MemCodex 把经验组织成四类可执行记忆程序，用开放式程序进化自动改写各层的构建、索引、检索与路由。",
+          "participants": [
+            {"name": "MemCodex", "type": "paper", "role": "subject"},
+            {"name": "MemArena", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["MemCodex 把经验组织成四类可执行记忆程序——摘要、关系知识、可复用技能与潜在记忆"]
+        },
+        {
+          "type": "benchmark",
+          "label": "MemCodex 平均任务成功率比最强自适应记忆基线高 10.1%",
+          "summary": "MemCodex 相比最强自适应记忆基线平均任务成功率提升 10.1%，上下文 token 减少 3.4 倍、推理快 2.1 倍。",
+          "participants": [
+            {"name": "MemCodex", "type": "paper", "role": "subject"},
+            {"name": "MemArena", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["MemCodex 相比最强自适应记忆基线平均任务成功率提升 10.1%"]
+        }
+      ],
+      "relations": [
+        {"source": "MemCodex", "target": "MemArena", "type": "uses", "weight": 0.9, "evidence": ["团队还构建了 MemArena 统一运行时"]},
+        {"source": "MemCodex", "target": "Darwin Gödel Machine", "type": "built_on", "weight": 0.7, "evidence": ["其进化机制受 Darwin Gödel Machine 与 HyperAgents 启发"]},
+        {"source": "MemCodex", "target": "HyperAgents", "type": "built_on", "weight": 0.7, "evidence": ["其进化机制受 Darwin Gödel Machine 与 HyperAgents 启发"]}
+      ],
+      "metrics": [
+        {"name": "平均任务成功率提升", "value": "10.1%"},
+        {"name": "上下文 token 减少", "value": "3.4 倍"},
+        {"name": "推理速度提升", "value": "快 2.1 倍"}
+      ],
+      "why_it_matters": "记忆系统把如何组织经验本身变成可程序进化与重写的对象，代理记忆从固定管线升格为随任务自适应组合的层结构，这是长程 agent 的新地基。"
+    },
+    {
+      "article_id": "2026-10-01-8",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 推出 BootLoops"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["让 Claude 承担跨多个生物与社会科学领域的精确定量计算"]},
+        {"name": "BootLoops", "type": "tool", "aliases": [], "confidence": 0.92, "evidence": ["Anthropic 推出 BootLoops"]},
+        {"name": "Matthew Schwartz", "type": "person", "aliases": ["Schwartz"], "confidence": 0.95, "evidence": ["哈佛教授 Matthew Schwartz 在 Anthropic 客座文章中介绍 BootLoops"]},
+        {"name": "Harvard", "type": "organization", "aliases": ["哈佛"], "confidence": 0.9, "evidence": ["哈佛教授 Matthew Schwartz"]},
+        {"name": "gnomAD", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["并应用于 gnomAD"]},
+        {"name": "AccStack", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["产出覆盖 6072 种语言的词重音数据库 AccStack"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Anthropic 推出 BootLoops，让 Claude 解决 Claude 形状的定量科学问题",
+          "summary": "Harvard 教授 Matthew Schwartz 客座介绍 BootLoops 工具包，让 Claude 承担跨多个科学领域的精确定量计算。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "BootLoops", "type": "tool", "role": "object"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Anthropic 推出 BootLoops：让 Claude 解决\"Claude 形状\"的定量科学问题"]
+        },
+        {
+          "type": "research",
+          "label": "团队用 BootLoops 解出 30 年未解积分式并应用于 gnomAD",
+          "summary": "团队用数学物理方法解出自然选择塑造稀有突变的 30 年未解积分式，并应用于 gnomAD 数据库。",
+          "participants": [
+            {"name": "Matthew Schwartz", "type": "person", "role": "subject"},
+            {"name": "BootLoops", "type": "tool", "role": "object"},
+            {"name": "Claude", "type": "model", "role": "object"},
+            {"name": "gnomAD", "type": "product", "role": "object"}
+          ],
+          "evidence": ["用数学物理方法解出自然选择塑造稀有突变的一个 30 年未解积分式并应用于 gnomAD"]
+        },
+        {
+          "type": "research",
+          "label": "Claude 解出生态学方程，证明巴拿马森林树种更替更快",
+          "summary": "Claude 识别出生态学家 Etienne 的方程并解出，证明巴拿马 Barro Colorado 岛森林的树种更替速度比中性理论允许的快 4.5 倍。",
+          "participants": [
+            {"name": "Matthew Schwartz", "type": "person", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["证明巴拿马 Barro Colorado 岛森林的树种更替速度比中性理论允许的快 4.5 倍"]
+        },
+        {
+          "type": "research",
+          "label": "Claude 在 1000 Genomes 发现基因转换机制",
+          "summary": "Claude 在 1000 Genomes 计划的 57 亿对邻近突变中发现基因转换机制。",
+          "participants": [
+            {"name": "Matthew Schwartz", "type": "person", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["在 1000 Genomes 计划的 57 亿对邻近突变中发现基因转换机制"]
+        },
+        {
+          "type": "open_source",
+          "label": "团队构建 AI 数据编辑并产出词重音数据库 AccStack",
+          "summary": "把五本顶刊 4452 篇论文的复现包从商业工具移植到开源代码，产出覆盖 6072 种语言的 AccStack 数据库。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "AccStack", "type": "product", "role": "object"}
+          ],
+          "evidence": ["产出覆盖 6072 种语言的词重音数据库 AccStack"]
+        }
+      ],
+      "relations": [
+        {"source": "BootLoops", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 推出 BootLoops"]},
+        {"source": "BootLoops", "target": "Claude", "type": "uses", "weight": 0.9, "evidence": ["让 Claude 承担跨多个生物与社会科学领域的精确定量计算"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.85, "evidence": ["让 Claude 承担跨多个生物与社会科学领域的精确定量计算"]},
+        {"source": "Matthew Schwartz", "target": "Harvard", "type": "affiliated_with", "weight": 0.85, "evidence": ["哈佛教授 Matthew Schwartz 在 Anthropic 客座文章中介绍 BootLoops"]}
+      ],
+      "metrics": [
+        {"name": "巴拿马森林树种更替速度", "value": "比中性理论允许的快 4.5 倍"},
+        {"name": "复现包迁移论文数", "value": "4452 篇"},
+        {"name": "AccStack 覆盖语言数", "value": "6072 种"},
+        {"name": "1000 Genomes 邻近突变对", "value": "57 亿对"}
+      ],
+      "why_it_matters": "LLM 的角色从作答预设问题转向重写一段他人可复用的计算工序，用数学物理方法解开 30 年未解积分式等具体难题，科学智能开始由专家引导模型逼近前沿。"
+    },
+    {
+      "article_id": "2026-10-01-9",
+      "entities": [
+        {"name": "xAI", "type": "company", "aliases": ["Musk 的 xAI"], "confidence": 0.95, "evidence": ["域名 dot.com 属于 Musk 的 xAI"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 的常驻代理 Dots 上线后"]},
+        {"name": "Dots", "type": "product", "aliases": ["OpenAI Dots"], "confidence": 0.92, "evidence": ["OpenAI 的常驻代理 Dots 上线后"]},
+        {"name": "Grok", "type": "model", "aliases": ["Grok 聊天应用"], "confidence": 0.92, "evidence": ["跳转到其 Grok 聊天应用下载页"]},
+        {"name": "dot.com", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["域名 dot.com 属于 Musk 的 xAI 并跳转到其 Grok 聊天应用下载页"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "xAI 的 dot.com 域名跳转到 Grok，疑似暗讽 OpenAI 的 Dots",
+          "summary": "域名 dot.com 属 xAI 并跳转到 Grok 应用下载页，被广泛解读为对 OpenAI 常驻代理 Dots 的暗讽（也可能只是捕获拼写错误流量）。",
+          "participants": [
+            {"name": "xAI", "type": "company", "role": "subject"},
+            {"name": "dot.com", "type": "product", "role": "object"},
+            {"name": "Grok", "type": "model", "role": "object"},
+            {"name": "Dots", "type": "product", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["域名 dot.com 属于 Musk 的 xAI，并跳转到其 Grok 聊天应用下载页"]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI 常驻代理 Dots 上线，把与 xAI 的竞争推向域名层面",
+          "summary": "Dots 上线后网络上出现域名反转插曲，把 OpenAI 与 xAI 在常驻代理赛道上的竞争延伸到域名层面的公关角力。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Dots", "type": "product", "role": "object"},
+            {"name": "xAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["OpenAI 的常驻代理 Dots 上线后，一个意外反转在网络上发酵"]
+        }
+      ],
+      "relations": [
+        {"source": "Dots", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["OpenAI 的常驻代理 Dots 上线后"]},
+        {"source": "Grok", "target": "xAI", "type": "developed_by", "weight": 0.85, "evidence": ["跳转到其 Grok 聊天应用下载页"]},
+        {"source": "Grok", "target": "Dots", "type": "competes_with", "weight": 0.5, "evidence": ["把 OpenAI 与 xAI 在\"常驻代理\"赛道上的竞争，从产品层面延伸到了域名层面的公关角力"]},
+        {"source": "xAI", "target": "OpenAI", "type": "competes_with", "weight": 0.7, "evidence": ["把 OpenAI 与 xAI 在\"常驻代理\"赛道上的竞争，从产品层面延伸到了域名层面的公关角力"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "xAI 与 OpenAI 在常驻代理赛道的竞争延伸进域名层面的公关角力，反映头部实验室把抢占名称、话术造势纳入产品发布的后置博弈。"
+    },
+    {
+      "article_id": "2026-10-01-10",
+      "entities": [
+        {"name": "xAI", "type": "company", "aliases": ["SpaceXAI"], "confidence": 0.95, "evidence": ["SpaceXAI 发布 Grok 4.7"]},
+        {"name": "Grok Bot", "type": "product", "aliases": ["Bots"], "confidence": 0.95, "evidence": ["Grok Bot 的更新把 Bots 进一步推进软件开发工作流"]},
+        {"name": "Cursor", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["编码任务可交接给 Cursor"]},
+        {"name": "GitHub", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["GitHub 与 Origin 插件让 Bots 管理拉取请求"]},
+        {"name": "Origin", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["GitHub 与 Origin 插件让 Bots 管理拉取请求"]},
+        {"name": "Grok 4.7", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["SpaceXAI 发布 Grok 4.7"]},
+        {"name": "Dots", "type": "product", "aliases": ["OpenAI Dots"], "confidence": 0.85, "evidence": ["与 OpenAI Dots、Meta Muse 等竞争"]},
+        {"name": "Muse", "type": "product", "aliases": ["Meta Muse"], "confidence": 0.85, "evidence": ["与 OpenAI Dots、Meta Muse 等竞争"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Grok Bot 扩展软件构建能力，接入 Cursor、GitHub 与 Origin",
+          "summary": "Grok Bot 编码任务可交接给 Cursor，GitHub 与 Origin 插件让 Bots 管理拉取请求，并开放自家工程团队的 Bot 模板。",
+          "participants": [
+            {"name": "xAI", "type": "company", "role": "subject"},
+            {"name": "Grok Bot", "type": "product", "role": "object"},
+            {"name": "Cursor", "type": "product", "role": "object"},
+            {"name": "GitHub", "type": "organization", "role": "object"},
+            {"name": "Origin", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Grok Bot 的更新把 Bots 进一步推进软件开发工作流：编码任务可交接给 Cursor，GitHub 与 Origin 插件让 Bots 管理拉取请求"]
+        },
+        {
+          "type": "launch",
+          "label": "xAI 发布 Grok 4.7，自称迄今写代码最强的模型",
+          "summary": "此次扩展紧随 SpaceXAI 发布 Grok 4.7，被其称为迄今写代码最强的模型。",
+          "participants": [
+            {"name": "xAI", "type": "company", "role": "subject"},
+            {"name": "Grok 4.7", "type": "model", "role": "object"}
+          ],
+          "evidence": ["此次扩展紧随 SpaceXAI 发布 Grok 4.7——被其称为迄今写代码最强的模型"]
+        }
+      ],
+      "relations": [
+        {"source": "Grok Bot", "target": "Cursor", "type": "integrates", "weight": 0.9, "evidence": ["编码任务可交接给 Cursor"]},
+        {"source": "Grok Bot", "target": "GitHub", "type": "integrates", "weight": 0.85, "evidence": ["GitHub 与 Origin 插件让 Bots 管理拉取请求"]},
+        {"source": "Grok Bot", "target": "Origin", "type": "integrates", "weight": 0.85, "evidence": ["GitHub 与 Origin 插件让 Bots 管理拉取请求"]},
+        {"source": "Grok 4.7", "target": "xAI", "type": "developed_by", "weight": 0.85, "evidence": ["SpaceXAI 发布 Grok 4.7"]},
+        {"source": "Grok Bot", "target": "xAI", "type": "developed_by", "weight": 0.9, "evidence": ["Grok Bot 是 8 月推出的自主代理"]},
+        {"source": "Grok Bot", "target": "Dots", "type": "competes_with", "weight": 0.7, "evidence": ["与 OpenAI Dots、Meta Muse 等竞争"]},
+        {"source": "Grok Bot", "target": "Muse", "type": "competes_with", "weight": 0.7, "evidence": ["与 OpenAI Dots、Meta Muse 等竞争"]}
+      ],
+      "metrics": [
+        {"name": "Grok Bot 处理支持工单价格", "value": "$0.20"}
+      ],
+      "why_it_matters": "xAI 把 Bots 从演示推成可复用工程自动化：用 Cursor 交接、PR 管理与模板化覆盖软件开发工作流更大环节，直接向 OpenAI Dots、Meta Muse 的始终在线代理赛道施压。"
+    }
+  ]
+}

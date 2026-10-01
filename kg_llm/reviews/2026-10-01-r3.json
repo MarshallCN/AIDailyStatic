@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-01",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "本轮已修复 r2 的多数问题（捏造的 NVIDIA--supplies-->xAI 与 built_on-->Claude 已删、事件类型改对、Apollo 已补、误归属已清），事实与方向基本准确。仍存少量语义瑕疵：built_on 把\"受启发\"夸大为架构依赖、数据库类资源被标成 product、以及把聊天模型 Grok 当成与 Dots 竞争的代理主体。",
+  "findings": [
+    {
+      "article_id": "2026-10-01-7",
+      "severity": "medium",
+      "problem": "关系 \"MemCodex --built_on--> Darwin Gödel Machine\" 和 \"MemCodex --built_on--> HyperAgents\" 过度断言。原文证据是 \"其进化机制受 Darwin Gödel Machine 与 HyperAgents 启发\"——\"受启发\"（inspired by）只说明思想来源，不代表 MemCodex 构建在它们之上；built_on 暗示架构/运行时依赖，图画出来是叠床架屋而非演化借鉴。",
+      "fix": "若图谱有表达\"启发/借鉴/引用\"的弱关系类型则改为该类型；否则删除这两条 built_on 关系。不要用 built_on 表达\"inspired by\"。"
+    },
+    {
+      "article_id": "2026-10-01-8",
+      "severity": "medium",
+      "problem": "实体类型错配：gnomAD 与 AccStack 被标为 \"product\"。原文中 gnomAD 是人类基因组变异数据库、AccStack 是覆盖 6072 种语言的词重音数据库，均为数据集/数据资源，不是商业产品；事件中也把二者当分析对象。",
+      "fix": "将 gnomAD 与 AccStack 的实体类型改为 database/dataset（若 schema 有），否则统一归类为 dataset，并保持与\"分析对象\"的语义一致，不要当作 product。"
+    },
+    {
+      "article_id": "2026-10-01-9",
+      "severity": "medium",
+      "problem": "关系 \"Grok --competes_with--> Dots\" 主体错配且与第 10 篇重复。原文把竞争定位在\"常驻代理\"赛道（xAI 的常驻代理是 Grok Bot，不是聊天模型 Grok）；Grok 作为聊天模型并不与同为常驻代理的 Dots 直接竞争。且第 10 篇已用 \"Grok Bot --competes_with--> Dots\" 承载同一竞争对，导致同一语义被两次建模且主体不一致。",
+      "fix": "删除 \"Grok --competes_with--> Dots\" 这条关系，统一用明确的代理主体承载竞争（Grok Bot --competes_with--> Dots，或仅保留组织级 xAI --competes_with--> OpenAI）。Grok 与 Dots 之间无直接竞争，不要挂关系。"
+    },
+    {
+      "article_id": "2026-10-01-9",
+      "severity": "low",
+      "problem": "实体类型标签欠妥：\"dot.com\" 被标为 \"product\"，它实际是一个域名（URL 资源），不是产品；且事件 2 \"OpenAI 常驻代理 Dots 上线\" 把背景性引用（Dots 上线是本文的上下文而非本文新闻主题）提升为以 OpenAI 为主语的主事件，讲偏了故事重点。",
+      "fix": "将 dot.com 的类型改为 domain/web 资源类（若无对应类型可标为 web_property），不要用 product；删除或以\"背景事实\"处理 Dots 上线事件，保留本文主线（dot.com 域名跳转与竞争角力）即可。"
+    },
+    {
+      "article_id": "2026-10-01-8",
+      "severity": "low",
+      "problem": "事件切分偏碎：第 8 篇拆出 5 个事件，其中 4 个（30 年积分式、生态学方程、基因转换、AI 数据编辑）都是 Claude/BootLoops 同一批研究产出的并列例子，事件 2 与事件 5 等其他事件在参与者与主题上高度重叠，边界不清晰。",
+      "fix": "把同一研究成果的分支例子（解积分式/生态学方程/基因转换）合并为一个\"Claude 解出多个尘封科学难题\"事件，各自的关键数字（4.5 倍、57 亿对等）留在 metrics 中即可，避免单篇过度碎片化。"
+    }
+  ],
+  "lessons": [
+    "把\"受启发于\"(inspired by)建模成关系时，应选用引用/借鉴类弱关系，不要用 built_on 这类暗示架构或运行时依赖的强关系，否则夸大主体间关系。",
+    "数据库、数据集、语料库等分析对象资源不该标成 product，应归为 dataset/database 类型，并保持与\"被分析对象\"的语义一致。",
+    "代理产品与其母体聊天模型是不同的实体：竞争、能力归属等关系必须挂在具体产品（如 Grok Bot）上，不要拿聊天模型（Grok）替身建模，避免同一竞争对被多篇用不一致主体重复建模。"
+  ]
+}
