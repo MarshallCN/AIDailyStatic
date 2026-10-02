@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-02",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "抽取整体准确、指标/证据朴素可信，未发现确凿的 high 级事实错误。主要问题集中在点 3、5、6：关系类型与原文事实强度不匹配（FTC 调查被标成 regulates、政府机构误用 subsidiary_of、'探讨合作'被当成 partners_with），以及 Qwen 两个不同型号被合并进单一实体。",
+  "findings": [
+    {
+      "article_id": "2026-10-02-3",
+      "severity": "medium",
+      "problem": "事件2 label'FTC 调查在行业转向自我监管之前已启动'声称的是调查启动的时间线（Ferguson 早于白宫自愿协议启动），但该事件的 evidence 只引了'将把\"安全工具\"变成\"执法证据\"的源头'——那一段说的是 METR 被纳入调查，并不支撑时间线断言。证据存在但支撑的是另一回事。",
+      "fix": "把该事件的 evidence 换成能支撑时间线断言的原文，例如'FTC 主席 Andrew Ferguson 在数周前、即行业转向自我监管之前就启动了调查——一天前各 CEO 才在白宫签署自愿、非约束性的安全协议'；或者干脆把该事件重新概括为'METR 作为独立评估方被纳入调查'，与现有 evidence 对齐。"
+    },
+    {
+      "article_id": "2026-10-02-3",
+      "severity": "medium",
+      "problem": "三处关系'FTC --regulates--> OpenAI/Anthropic/METR'把一次'调查'（原文明确'这是一项调查而非结论，目前尚无对任何公司的指控'）当成既有'监管'关系。regulates 暗示已是确立的监管关系，与'调查'的事实强度不符。",
+      "fix": "将 FTC 与这三者的关系改为 investigation/investigates 类（或标注为'调查对象'），不要用 regulates；只有确切的既有监管才用 regulates。"
+    },
+    {
+      "article_id": "2026-10-02-4",
+      "severity": "medium",
+      "problem": "关系'OpenAI --partners_with--> 澳大利亚政府'的 evidence 是'已就代理型 AI 的识别、披露与响应机制与澳大利亚探讨合作'。原文只是'探讨合作'（接洽/讨论），并未构成已建立的合作关系，partners_with 夸大了关系强度。",
+      "fix": "删除 partners_with，或改标为弱化的'讨论/接洽合作'类关系；若保留，至少把 evidence 保留为'探讨合作'的原文措辞，不要暗示合作关系已经成立。"
+    },
+    {
+      "article_id": "2026-10-02-4",
+      "severity": "medium",
+      "problem": "关系'NSW 国家公园与野生动物管理局 --subsidiary_of--> 澳大利亚政府'与'Medicare --subsidiary_of--> 澳大利亚政府'错误：两者是政府职能机构/隶属政府的公共服务（州管理局、医保门户），不是公司的子公司，subsidiary_of（子公司关系）语义不当。",
+      "fix": "改用 part_of 或 affiliated_with 表达政府隶属关系，不要用 subsidiary_of。"
+    },
+    {
+      "article_id": "2026-10-02-7",
+      "severity": "medium",
+      "problem": "实体'Qwen'的 aliases 混列 Qwen3.8-27B 与 Qwen3.5-9B 两个不同的基础模型，把它们合并进了家族名'Qwen'；而本篇 Clef 基于 27B、Clef-flash 基于 9B，是两个可区分的基础模型。同时与第 8 篇单列的 Qwen3.5-2B 规范名不一致（Qwen / Qwen3.5-2B），同家族不同型号无法跨文章区分与连通。",
+      "fix": "把 Qwen3.8-27B 与 Qwen3.5-9B 拆成独立模型实体（分别标 name=Qwen3.8-27B / Qwen3.5-9B），不要合并进家族名并混列在 aliases 里；跨文章对模型型号使用一致的全名规范（Qwen3.8-27B/Qwen3.5-9B/Qwen3.5-2B），使第 7、8 篇的 Qwen 型号能正确连通或正确区分。"
+    }
+  ],
+  "lessons": [
+    "模型/基准的版本型号（如 Qwen3.8-27B、Qwen3.5-9B）是不同的实体，不要合并进家族名并把版本混列进 aliases；跨文章对型号使用一致的全名，按型号区分而不是按家族合并。",
+    "政府职能机构与公共服务（州管理局、医保门户）不是公司子公司，表达其隶属政府时用 part_of 或 affiliated_with，不要用 subsidiary_of。",
+    "关系类型要与原文事实强度一致：'调查'不是'监管'，'探讨合作/讨论'不是已成立的 partners_with，事件的 evidence 必须能支撑其标签所声称的内容（如时间线要有对应原文）。"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T22:54:23Z",
+  "updated_at": "2026-10-02T22:57:36Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -759,13 +759,13 @@
       "period_id": "2026-W36",
       "period_type": "week",
       "start_date": "2026-08-31",
-      "end_date": "2026-09-01",
-      "summary": "2026-08-31 至 2026-09-01 期间，OpenAI、亿美元、Instagram 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-09-02",
+      "summary": "2026-08-31 至 2026-09-02 期间，OpenAI、Astra、亿美元 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
+        "Astra",
         "亿美元",
-        "Instagram",
-        "Astra"
+        "Instagram"
       ],
       "event_types": [
         "infra",
@@ -773,7 +773,7 @@
         "security"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、亿美元、Instagram",
+        "核心实体：OpenAI、Astra、亿美元",
         "主事件类型：infra、launch"
       ],
       "representative_article_ids": [

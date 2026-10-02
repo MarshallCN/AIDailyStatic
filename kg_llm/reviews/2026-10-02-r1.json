@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-02",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "整体质量高：11 篇文章的事实、方向与实体类型大体准确，Anthropic IPO、FTC 调查、VISTA、ScholarCatalyst 等事件抽取忠实于原文。主要问题是两处中等问题：NVIDIA MoU 名单漏掉 Brookfield 一家机构、'Decisions API 发布'把 Altman 在 Dev Day 的顺带提及误当成 launch/released_by。",
+  "findings": [
+    {
+      "article_id": "2026-10-02-6",
+      "severity": "medium",
+      "problem": "原文列出的六家签署 MoU 的机构为 Apollo、BlackRock、Blackstone、Brookfield、Goldman Sachs、KKR，但 entities 只抽了 5 家，漏掉 Brookfield；partners_with 关系也只有 5 条，且所有 evidence 都被截断成'六家机构'未保留完整名单，导致图谱缺少一个重要的合作方节点。",
+      "fix": "在 entities 补充 {\"name\": \"Brookfield\", \"type\": \"company\", \"aliases\": [], \"confidence\": 0.93, \"evidence\": [\"8 月它与 Apollo、BlackRock、Blackstone、Brookfield、Goldman Sachs、KKR 六家机构签署谅解备忘录\"]}，并新增关系 {\"source\": \"NVIDIA\", \"target\": \"Brookfield\", \"type\": \"partners_with\", \"weight\": 0.8, \"evidence\": [\"……Goldman Sachs、KKR 六家机构签署谅解备忘录\"]}；同时把已有 5 条 relations 的 evidence 补回完整六家名单。"
+    },
+    {
+      "article_id": "2026-10-02-10",
+      "severity": "medium",
+      "problem": "原文只说 Altman 在 9 月 30 日 Dev Day '顺带提到'基于小模型 Luna 的 Decisions API，是预告/提及，并非已发布的产品；但关系抽成了 {\"source\": \"Decisions API\", \"target\": \"OpenAI\", \"type\": \"released_by\", \"weight\": 0.7}，事件类型也标成 'launch'，把'提及'升级成了'发布'，语义被放大了。",
+      "fix": "把该关系改为 {\"source\": \"Decisions API\", \"target\": \"OpenAI\", \"type\": \"announced_by\", \"weight\": 0.5, \"evidence\": [\"Altman 在 9 月 30 日 Dev Day 顺带提到基于小型模型 Luna 的 Decisions API\"]}（或删除 released_by），并把对应事件 type 由 'launch' 改为 'announcement'/'preview'，label 保持'预告/提到'的表述。"
+    },
+    {
+      "article_id": "2026-10-02-7",
+      "severity": "low",
+      "problem": "原文 TechCrunch 直言 Strands Decider 2B 是'Jev 的克隆'（克隆/衍生），但抽取用的是泛化的 {\"source\": \"Strands Decider 2B\", \"target\": \"Jev\", \"type\": \"similar_to\"}，类型比证据支持的更弱，没能表达出'基于/克隆自'的强衍生关系。",
+      "fix": "把该关系类型改为 'cloned_from' 或 'derived_from'，权重可维持 0.7，evidence 用 ['TechCrunch 直言这是\"Jev 的克隆\"']。"
+    }
+  ],
+  "lessons": [
+    "只有当产品确实已发布时才能用 launch/type=launch 与 released_by 关系；原文只是'顺带提到/预告'时应改为 announced_by/preview，避免把提及当发布。",
+    "名单式合作（签 MoU、机构列表）中，原文点名的每一方都必须拆成独立实体并各自建 partner 关系，evidence 里需保留完整名单，不得漏项或截断。"
+  ]
+}

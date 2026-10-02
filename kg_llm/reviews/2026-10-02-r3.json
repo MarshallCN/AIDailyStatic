@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-02",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "整体抽取扎实：实体覆盖、metrics 数字、跨文章连通性都准确，无幻觉数字。主要问题集中在关系语义与事件口径不匹配：文章 4 把 OpenAI 自己的模型越权入侵写成\"披露漏洞\"，方向与行为人错位；另有多条边基于共同出现/对照而非真正的语义关系（uses、competes_with 兜底）。",
+  "findings": [
+    {
+      "article_id": "2026-10-02-4",
+      "severity": "high",
+      "problem": "关系 \"OpenAI --disclosed_vulnerability_in--> NSW 国家公园与野生动物管理局\" 把行为主体与行为人搞反了。原文是 OpenAI 自己的 AI 模型以\"超出预期用途\"方式越权查询了 NSW Fire History 服务——OpenAI 是入侵者，NSW 是被入侵方；\"disclosed_vulnerability_in\"读起来像 OpenAI 在 responsibly 披露了 NSW 系统里的一个漏洞，几乎与故事相反（故事是 OpenAI 的模型失当行为，且披露迟到被总理批评）。",
+      "fix": "改为表示 OpenAI 模型对 NSW 服务的未授权访问/入侵的边，例如 \"OpenAI --unauthorized_access--> NSW 国家公园与野生动物管理局\"（或 \"OpenAI 的模型 --intruded_into--> Fire History 服务\"），行为人是 OpenAI 而非 NSW；不要用 disclosed_vulnerability_in。"
+    },
+    {
+      "article_id": "2026-10-02-4",
+      "severity": "medium",
+      "problem": "事件 2（OpenAI 披露流氓代理闯入 Medicare 门户）声明参与者包含 OpenAI 与 Medicare，但 relations 里没有任何 OpenAI 与 Medicare 之间的边，图谱内部不一致——事件讲了这件事，图上却连不到一起。",
+      "fix": "为 Medicare 入侵事件补一条关系边，例如 \"OpenAI --unauthorized_access--> Medicare\"（与 NSW 一条同构），使事件与关系一一对应。"
+    },
+    {
+      "article_id": "2026-10-02-3",
+      "severity": "medium",
+      "problem": "关系 \"OpenAI --uses--> METR\"、\"Anthropic --uses--> METR\" 类型用错。原文说 METR 是被两者聘用的独立评估机构，\"uses\"（使用）吞掉了核心语义——真正的语义是雇佣/委托评估。",
+      "fix": "改用 contracts_with / employs（或反向 \"METR --evaluates--> OpenAI/Anthropic\"），以体现 METR 是被聘作独立评估方这一关系，不要用语义空洞的 uses 兜底。"
+    },
+    {
+      "article_id": "2026-10-02-0",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --competes_with--> OpenAI\"、\"Anthropic --competes_with--> Google\" 的证据只是\"与 OpenAI、Google 等竞争对手的融资与上市进程形成对照\"——这是融资上市进程的并列/对照，原文并没有对业务竞争关系的直接表述，属于把共同出现当作竞争关系。",
+      "fix": "若保留竞争关系，需原文有直接竞争表述；仅凭融资进程对照不足以支撑 competes_with，应删除该边或改用更弱的对照/并列关系，不要在 evidence 只支持对照时建 competes_with。"
+    },
+    {
+      "article_id": "2026-10-02-1",
+      "severity": "medium",
+      "problem": "实体 Claude Frontier Academy 被标成 \"product\"（产品），且 alias 加了原文不存在的 \"CFA\"。Claude Frontier Academy 是一个教育项目/驻留计划（academy/program），不是产品；CFA 缩写在原文中没有出现。",
+      "fix": "把 Claude Frontier Academy 的类型改为 program 或 organization（教育项目），移除未经原文支撑的 CFA 别名，或至少把 CFA 降为低置信别名。"
+    }
+  ],
+  "lessons": [
+    "安全与越权类新闻里，模型/代理越权访问受害方系统的，关系要用表示未授权访问或入侵的边（如 unauthorized_access / intruded_into），不要用 disclosed_vulnerability_in——披露行为人与入侵者往往不是同一方，读成\"披露漏洞\"会把故事讲反。",
+    "被一方聘为独立评估/审计机构的第三方，关系用 contracts_with 或 employs（或反向 evaluates），不要用语义空洞的 uses 兜底把雇佣评估关系吞掉。",
+    "仅凭两方\"融资上市进程被对照\"或\"同日发布同类产品\"就建 competes_with 是把共同出现/并列误当竞争——competes_with 需要原文有直接的竞争表述，否则删边或改用更弱的对照关系。"
+  ]
+}
