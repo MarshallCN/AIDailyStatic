@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-03",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "整体关系方向与证据基本正确、跨文章规范名一致性好，但第 2 篇观察稿抽了 13 个实体却 0 条关系，被完全隔离在图谱外且丢失其核心论点；另有 HBM 供货关系过度声明、事件被大量非离散 trend 事件注水两个结构性问题，并需否决审计器把两个不同 CVE 合并的建议。",
+  "findings": [
+    {
+      "article_id": "2026-10-03-2",
+      "severity": "high",
+      "problem": "这篇文章有 13 个实体（Kolibri、ds4、RTX Spark、NVIDIA、OpenAI、AMD、Broadcom、Microsoft、Oracle、Project Lighthouse 等）却抽了 0 条关系，导致本文完全被隔离在图谱之外，也丢掉了其中心论点——本地侧（Kolibri/ds4/RTX Spark）与云端侧（OpenAI 26GW、Oracle Project Lighthouse）形成的对比与聚合关系。确定性审计器已指出本文关系不足，本轮仍未补。",
+      "fix": "补齐关键边：RTX Spark --developed_by--> NVIDIA；NVIDIA/AMD/Broadcom --supplies--> OpenAI（或 OpenAI --composes_of--> 三者）；Project Lighthouse --developed_by/owned_by--> Oracle；并把\"本地 vs 云\"的对比用跨实体边显式表达（如 Kolibri/ds4 与 OpenAI 26GW 之间的对比/对照关系），让本文实体接入图谱、复现其主线判断。"
+    },
+    {
+      "article_id": "2026-10-03-3",
+      "severity": "medium",
+      "problem": "关系 \"Samsung --supplies--> OpenAI\" 与 \"SK hynix --supplies--> OpenAI\" 的证据只是\"与三星、SK 海力士在高带宽内存上争取优先级\"，原文语义是寻求/商谈 HBM 优先级，并非已落地的供货安排，\"supplies\" 属于过度声明，证据不支撑该断言。",
+      "fix": "改为更弱且如实的关系类型（如 \"negotiating_with\"）或删除这两条；若确要保留 supplies，必须改挂原文实际给出的供货事实——但原文未给出类似事实，故推荐删除或降级。"
+    },
+    {
+      "article_id": "2026-10-03-8",
+      "severity": "medium",
+      "problem": "确定性审计器建议把 CVE-2026-102489 与 CVE-2026-102490 当作重复实体合并为同一规范名，但这两个是互相独立的不同漏洞：前者为会话劫持可致远程代码执行，后者为本地提权可升到 root。合并会造成事实错误，当前抽取把它们分开反而是正确的。",
+      "fix": "保持 CVE-2026-102489 与 CVE-2026-102490 为两个独立实体，不要合并；这是对审计器\"疑似重复\"判断的否决，抽取代理应维持现状。"
+    },
+    {
+      "article_id": "2026-10-03-3",
+      "severity": "medium",
+      "problem": "事件切分不当并过度使用非离散的 trend 事件：本文 event1（组合 26GW 多厂商盘子）与 event2（与 Broadcom 联合开发定制 ASIC）内容重叠、被切成两个事件；同类现象还出现在 2026-10-03-1 event3、2026-10-03-2、2026-10-03-4 event3、2026-10-03-10，把大量分析性叙述（\"互为印证\"\"训练压 NVIDIA\"\"HN 登顶\"）抽成事件，使全图事件数注水到 29。",
+      "fix": "只在有独立、可指称的事实动作时才建事件；把 26GW 与 Broadcom 定制 ASIC 两个重叠事件合并为一个；将纯分析/评论性内容（策略解读、登顶讨论）降级到 why_it_matters，不单列为 event。"
+    },
+    {
+      "article_id": "2026-10-03-3",
+      "severity": "low",
+      "problem": "关系 \"Jalapeño --developed_by--> OpenAI\" 表述不完整，该推理 ASIC 是 OpenAI 与 Broadcom 联合开发（Broadcom 管制造、以太网络与互连），只挂 OpenAI 一侧不准确。",
+      "fix": "补充 \"Jalapeño --developed_by（联合）--> Broadcom\"，或把该关系改为联合开发表述，使两个开发方都可见。"
+    },
+    {
+      "article_id": "2026-10-03-7",
+      "severity": "low",
+      "problem": "论文实体命名为描述性占位\"RLVR 语言漂移论文\"，没有真实标识（arxiv 编号 2610.02015 在 URL 中可见），既不符合规范名惯例，也无法与后续引用或重访连通。",
+      "fix": "用论文即可识别标识命名（如以标题核心词或 \"arxiv/2610.02015\" 命名实体），并把 arxiv 编号写入 aliases，证据里带上编号。"
+    }
+  ],
+  "lessons": [
+    "观察/综述类聚合多主体的文章必须抽关系边（对比、组成、供应 from-to），其中心论点往往正是实体之间的关系本身；只列实体会把该文章隔离出图谱。",
+    "供应/投资关系只能建立在原文明确给出的供给或投资事实上；\"争取优先级\"\"潜在商谈\"这类未落地意图不得抽成 supplies/invests_in。",
+    "审计器标出的\"疑似重复实体\"须先人工核对是否真同指（如不同 CVE 代表不同漏洞）；确属不同实体的绝不合并，并在审查报告写明否决理由。"
+  ]
+}

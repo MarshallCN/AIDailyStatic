@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-03",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "结构完整、证据可验证率高，但跨文章把多个不同的自主代理错误合并成同一个\"AI 代理\"实体，让图读出\"攻击 DIVD 的代理同时也在扫美政府网站\"的虚假故事；另有多处关系类型误用（Hugging Face 被当作发布方、Ataraxos 被当作超过 DeepMind），且观察稿与专稿重复抽取了同一批关系。",
+  "findings": [
+    {
+      "article_id": "2026-10-03-8 / 2026-10-03-9",
+      "severity": "high",
+      "problem": "第 8 篇（攻击 DIVD 的代理）与第 9 篇（扫描美加政府网站的代理）都把主体抽成同一个规范名实体 \"AI 代理\"（type: tool），导致图谱把两个来源毫无关联的代理合并为一：8 篇里它是利用 Zammad 零日链攻破荷兰协调机构的攻击者，9 篇里它是狂发 20 万次请求的良性抓取型/扫描代理（且 9 篇内部还用同一个节点混入了 OpenAI 已确认的模型代理，三者并不是同一主体）。合并后图会读成\"攻击 DIVD 的代理同时也在扫美政府网站\"，原文并无此论断，属于过度合并、扭曲故事。",
+      "fix": "拆成独立且区分命名的实体：第 8 篇改为 \"DIVD 攻击代理\"（或直接以\"攻击者代理\"命名，type: tool 或 agent），第 9 篇改为 \"政府站点扫描代理\"（或\"Transluce 代理\"），OpenAI 确认的代理单独保留并约束在 AITuple OpenAI--deploys-->该代理上；不要用同一个\"AI 代理\"节点跨文章承接，除非正文明确二者是同一主体。"
+    },
+    {
+      "article_id": "2026-10-03-0",
+      "severity": "medium",
+      "problem": "关系 \"Kolibri --released_by--> Hugging Face\" 类型误用：原文是 Aleph Alpha 把全权重以 Apache 2.0 许可\"放\"到 Hugging Face 托管，Hugging Face 是发布/托管平台而非出品方，把它当作 released_by 会让图读成\"Kolibri 由 Hugging Face 发布\"。",
+      "fix": "改为 \"Kolibri --released_on--> Hugging Face\"（或 hosted_on），出品关系保留为已有的 \"Kolibri --released_by--> Aleph Alpha\"；若关系类型表里没有平台类关系，可删除该边，避免与 Aleph Alpha 的 released_by 语义冲突。"
+    },
+    {
+      "article_id": "2026-10-03-6",
+      "severity": "medium",
+      "problem": "关系 \"Ataraxos --outperforms--> DeepMind\" 与证据不匹配：原文只说\"此前 DeepMind 用重金也没攻下的据点\"，DeepMind 并没有参赛、也不是被击败的对手；outperforms 会把图读成\"Ataraxos 在一场对局里胜过 DeepMind\"，这是对原文的过度引申。",
+      "fix": "删除该 outperforms 边（或改用不含对抗含义的关系，如 \"Ataraxos --exceeds--> DeepMind\" 指\"超出 DeepMind 先前未竟的努力\"）；与 DeepMind 的对抗性对比在本篇并不成立，Pim Niemeijer 才是被 outperforms 的正确对象。"
+    },
+    {
+      "article_id": "2026-10-03-2",
+      "severity": "medium",
+      "problem": "第 2 篇是\"观察/综述\"稿，却把第 0/1/3/4/5 篇专稿里已经抽过的事实各自又抽了一遍（Kolibri --released_by--> Aleph Alpha、NVIDIA/AMD/Broadcom --supplies--> OpenAI、RTX Spark --developed_by--> NVIDIA、DeepSeek V4 Flash --runs_on--> 128GB Mac 等），同一事实被重复计入关系权重，稀释了图的区分度。",
+      "fix": "综述稿只新抽它独有的汇总性实体与关系（如\"本地云上两极\"这条趋势本身），对已被专稿覆盖的\"Kolibri 发布\"\"OpenAI 26GW 供应\"等关系做去重：要么跳过不抽，要么在 relation 上标注来源是引用而非独立事实，避免重复计数。"
+    },
+    {
+      "article_id": "2026-10-03-5",
+      "severity": "medium",
+      "problem": "关系 \"Project Lighthouse --uses--> American Transmission Company\" 语义松散：项目是要接入 ATC 新建的高压互联线路，而该线路尚未建成、且整个事情卡在 PSC 审批上；把\"需要等待接入 ATC 的线路\"简写成 PL--uses-->ATC 会读成\"项目正在使用 ATC\"，与文本实际状态不符。",
+      "fix": "改为更准确的依赖/受影响关系（如 Project Lighthouse --depends_on--> American Transmission Company，指其交付依赖 ATC 的新建互联线路），或写明\"依赖 ATC 新建的高压互联线路\"的表述；不要用表示正在使用状态的 uses。"
+    }
+  ],
+  "lessons": [
+    "不要把不同文章里的不同无名/自主代理合并成同一个实体，除非正文明确指出是同一主体；否则用区分性命名并各自独立成节点。",
+    "平台类主体（Hugging Face、arXiv、Hacker News 等）是托管/发布载体而非出品方，模型或论文发布用 released_on/hosted_on/published_on，不要用 released_by 指向平台。",
+    "当一篇文章是综述/观察稿而复述其他专稿事实时，对已被对应专稿覆盖的关系做去重或标注为引用，避免同一事实在同一图的多个节点间被重复计数。"
+  ]
+}

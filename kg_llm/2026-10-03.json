@@ -1,0 +1,2709 @@
+{
+  "date": "2026-10-03",
+  "articles": [
+    {
+      "article_id": "2026-10-03-0",
+      "entities": [
+        {
+          "name": "Aleph Alpha",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Aleph Alpha 于德国统一日在 Hugging Face 以 Apache 2.0 开源 Kolibri"
+          ]
+        },
+        {
+          "name": "Kolibri",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": [
+            "每 token 只激活约 3.5B 参数"
+          ]
+        },
+        {
+          "name": "Kolibri Origin",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": [
+            "先做 30B 的 Kolibri Origin 验证，再训 78B 的 Kolibri"
+          ]
+        },
+        {
+          "name": "Qwen3.6-35B-A3B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 AIME、GPQA 上以德英双语同时超过 Qwen3.6-35B-A3B"
+          ]
+        },
+        {
+          "name": "AIME",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 AIME、GPQA 上以德英双语同时超过 Qwen3.6-35B-A3B"
+          ]
+        },
+        {
+          "name": "GPQA",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 AIME、GPQA 上以德英双语同时超过 Qwen3.6-35B-A3B"
+          ]
+        },
+        {
+          "name": "Hugging Face",
+          "type": "company",
+          "aliases": [
+            "HuggingFace",
+            "HF"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "Apache 2.0 许可放全权重到 Hugging Face"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Aleph Alpha 以 Apache 2.0 开源主权模型 Kolibri",
+          "summary": "Aleph Alpha 于德国统一日在 Hugging Face 以 Apache 2.0 开源 78.1B 总参数、每 token 仅激活约 3.5B 的德语-英语 MoE 模型 Kolibri。",
+          "participants": [
+            {
+              "name": "Aleph Alpha",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Kolibri",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Hugging Face",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "Aleph Alpha 于德国统一日在 Hugging Face 以 Apache 2.0 开源 Kolibri"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Kolibri 在 AIME、GPQA 上以德英双语同时超过 Qwen3.6-35B-A3B",
+          "summary": "Aleph Alpha 自家基准显示 Kolibri 在 AIME、GPQA 上以德英双语同时超过 Qwen3.6-35B-A3B，代价是长上下文与函数调用分项稍逊。",
+          "participants": [
+            {
+              "name": "Kolibri",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "Qwen3.6-35B-A3B",
+              "type": "model",
+              "role": "competitor"
+            },
+            {
+              "name": "AIME",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "GPQA",
+              "type": "benchmark",
+              "role": "benchmark"
+            }
+          ],
+          "evidence": [
+            "在 AIME、GPQA 上以德英双语同时超过 Qwen3.6-35B-A3B"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Kolibri",
+          "target": "Aleph Alpha",
+          "type": "released_by",
+          "weight": 0.95,
+          "evidence": [
+            "Aleph Alpha 于德国统一日在 Hugging Face 以 Apache 2.0 开源 Kolibri"
+          ]
+        },
+        {
+          "source": "Kolibri",
+          "target": "Kolibri Origin",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": [
+            "先做 30B 的 Kolibri Origin 验证，再训 78B 的 Kolibri"
+          ]
+        },
+        {
+          "source": "Kolibri",
+          "target": "Qwen3.6-35B-A3B",
+          "type": "outperforms",
+          "weight": 0.8,
+          "evidence": [
+            "在 AIME、GPQA 上以德英双语同时超过 Qwen3.6-35B-A3B"
+          ]
+        },
+        {
+          "source": "Kolibri",
+          "target": "AIME",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "在 AIME、GPQA 上以德英双语同时超过 Qwen3.6-35B-A3B"
+          ]
+        },
+        {
+          "source": "Kolibri",
+          "target": "GPQA",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "在 AIME、GPQA 上以德英双语同时超过 Qwen3.6-35B-A3B"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Kolibri 总参数量",
+          "value": "78.1B"
+        },
+        {
+          "name": "每 token 激活参数量",
+          "value": "约 3.5B（3.46B）"
+        },
+        {
+          "name": "层数与每层专家数",
+          "value": "50 层全 MoE，每层 384 个专家"
+        },
+        {
+          "name": "训练上下文",
+          "value": "262,144 token"
+        },
+        {
+          "name": "实测上下文",
+          "value": "1,048,576 token"
+        },
+        {
+          "name": "FP8 权重体积",
+          "value": "约 78GB"
+        },
+        {
+          "name": "技术报告页数",
+          "value": "189 页"
+        }
+      ],
+      "why_it_matters": "欧洲主权模型首次用\"极低激活参数 + 全 MoE\"把旗舰能力压进本地部署，与当天 ds4、RTX Spark 一道把\"少资源跑大模型\"从口号变成货架现实。"
+    },
+    {
+      "article_id": "2026-10-03-1",
+      "entities": [
+        {
+          "name": "Salvatore Sanfilippo",
+          "type": "person",
+          "aliases": [
+            "antirez"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Redis 之父 Salvatore Sanfilippo（antirez）的单文件 C 推理引擎 ds4"
+          ]
+        },
+        {
+          "name": "ds4",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": [
+            "单文件 C 推理引擎 ds4"
+          ]
+        },
+        {
+          "name": "DeepSeek V4 Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "让 DeepSeek V4 Flash 以约 81GiB 的体积跑在 96–128GB 桌面机器上"
+          ]
+        },
+        {
+          "name": "128GB Mac",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 128GB Mac（Metal）上以约每秒 34 token 跑本地推理"
+          ]
+        },
+        {
+          "name": "llama.cpp",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "与 llama.cpp 那种\"试图支持任意模型\"的思路相反"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "antirez 发布单文件 C 推理引擎 ds4",
+          "summary": "Redis 之父 Salvatore Sanfilippo 用约 1.8 万行 C 文件写出本地推理引擎 ds4，只为一小撮精挑细选的大模型单独调优，把 KV cache 当一等磁盘公民。",
+          "participants": [
+            {
+              "name": "Salvatore Sanfilippo",
+              "type": "person",
+              "role": "subject"
+            },
+            {
+              "name": "ds4",
+              "type": "tool",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Redis 之父 Salvatore Sanfilippo（antirez）的单文件 C 推理引擎 ds4"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "ds4 在 128GB Mac 上以约每秒 34 token 跑 DeepSeek V4 Flash",
+          "summary": "用不对称 2-bit 量化把 DeepSeek V4 Flash 压到约 81GB，在 128GB Mac（Metal）上以约每秒 34 token 跑本地推理。",
+          "participants": [
+            {
+              "name": "ds4",
+              "type": "tool",
+              "role": "subject"
+            },
+            {
+              "name": "DeepSeek V4 Flash",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "128GB Mac",
+              "type": "hardware",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "在 128GB Mac（Metal）上以约每秒 34 token 跑本地推理"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "ds4",
+          "target": "Salvatore Sanfilippo",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "Redis 之父 Salvatore Sanfilippo（antirez）的单文件 C 推理引擎 ds4"
+          ]
+        },
+        {
+          "source": "ds4",
+          "target": "128GB Mac",
+          "type": "runs_on",
+          "weight": 0.85,
+          "evidence": [
+            "在 128GB Mac（Metal）上以约每秒 34 token 跑本地推理"
+          ]
+        },
+        {
+          "source": "DeepSeek V4 Flash",
+          "target": "128GB Mac",
+          "type": "runs_on",
+          "weight": 0.8,
+          "evidence": [
+            "让 DeepSeek V4 Flash 以约 81GiB 的体积跑在 96–128GB 桌面机器上"
+          ]
+        },
+        {
+          "source": "ds4",
+          "target": "llama.cpp",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "与 llama.cpp 那种\"试图支持任意模型\"的思路相反"
+          ]
+        },
+        {
+          "source": "DeepSeek V4 Flash",
+          "target": "ds4",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "让 DeepSeek V4 Flash 以约 81GiB 的体积跑在 96–128GB 桌面机器上"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "压缩后模型体积",
+          "value": "约 81GB（81GiB）"
+        },
+        {
+          "name": "本地推理速度",
+          "value": "约每秒 34 token"
+        },
+        {
+          "name": "代码规模",
+          "value": "约 1.8 万行 C 文件（ds4.c）"
+        },
+        {
+          "name": "GitHub 星数",
+          "value": "约 1.1 万星"
+        },
+        {
+          "name": "MoE 专家量化位宽",
+          "value": "约 2-bit"
+        }
+      ],
+      "why_it_matters": "Redis 作者用单文件 C 引擎证明\"巨模型塞进桌面机\"可行，把本地执行从演示变成可复现工程，直接挑战\"算力只能作为被供应的服务\"这一默认假设。"
+    },
+    {
+      "article_id": "2026-10-03-2",
+      "entities": [
+        {
+          "name": "Aleph Alpha",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Aleph Alpha 在德国统一日推出只激活 3.5B 参数的 Kolibri"
+          ]
+        },
+        {
+          "name": "Kolibri",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Aleph Alpha 在德国统一日推出只激活 3.5B 参数的 Kolibri"
+          ]
+        },
+        {
+          "name": "DeepSeek V4 Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "让 284B 的 DeepSeek V4 Flash 在 128GB Mac 上本地跑"
+          ]
+        },
+        {
+          "name": "128GB Mac",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "让 284B 的 DeepSeek V4 Flash 在 128GB Mac 上本地跑"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "NVIDIA 约 10GW Vera Rubin"
+          ]
+        },
+        {
+          "name": "RTX Spark",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "NVIDIA 的 RTX Spark 系列"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 组合出接近 26GW 的多厂商算力盘子"
+          ]
+        },
+        {
+          "name": "AMD",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "AMD 至少 6GW Instinct 含认股权证"
+          ]
+        },
+        {
+          "name": "Broadcom",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Broadcom 约 10GW 定制 ASIC"
+          ]
+        },
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": [
+            "微软"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "微软把 10 月 7 日发布会定义成\"Windows 如何为本地 AI 与常驻代理改造\""
+          ]
+        },
+        {
+          "name": "Windows",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "微软把 10 月 7 日发布会定义成\"Windows 如何为本地 AI 与常驻代理改造\""
+          ]
+        },
+        {
+          "name": "Oracle",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Oracle 在威斯康星的 1.3GW Project Lighthouse 却卡在电网审批上"
+          ]
+        },
+        {
+          "name": "Project Lighthouse",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Oracle 在威斯康星的 1.3GW Project Lighthouse 却卡在电网审批上"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "本地执行与巨型云端算力墙同时逼近临界点",
+          "summary": "开源侧 Kolibri、ds4 把巨模型压进桌面，云端侧 OpenAI 组合出接近 26GW 算力盘子、Oracle 数据中心卡在电力审批，行业被拉成\"本地 vs 云上、效率 vs 电源\"两极。",
+          "participants": [
+            {
+              "name": "Kolibri",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "Aleph Alpha",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "DeepSeek V4 Flash",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "128GB Mac",
+              "type": "hardware",
+              "role": "object"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Oracle",
+              "type": "company",
+              "role": "subject"
+            }
+          ],
+          "evidence": [
+            "本地执行是否真能分流一部分云端需求、还是会继续被算力墙反向倒逼"
+          ]
+        },
+        {
+          "type": "infra",
+          "label": "云端巨头仍在以肉眼可见的速度堆料",
+          "summary": "OpenAI 组合出接近 26GW 的多厂商算力盘子，NVIDIA 约 10GW、AMD 至少 6GW、Broadcom 约 10GW 定制 ASIC。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "AMD",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Broadcom",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "OpenAI 组合出接近 26GW 的多厂商算力盘子"
+          ]
+        },
+        {
+          "type": "infra",
+          "label": "微软把 Windows 改造成承载本地常驻代理的操作系统",
+          "summary": "微软把 10 月 7 日发布会定义成\"Windows 如何为本地 AI 与常驻代理改造\"，并强调用执行容器为代理划定可访问边界。",
+          "participants": [
+            {
+              "name": "Microsoft",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Windows",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "微软把 10 月 7 日发布会定义成\"Windows 如何为本地 AI 与常驻代理改造\""
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "RTX Spark",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": [
+            "NVIDIA 的 RTX Spark 系列"
+          ]
+        },
+        {
+          "source": "OpenAI",
+          "target": "NVIDIA",
+          "type": "composes_of",
+          "weight": 0.85,
+          "evidence": [
+            "OpenAI 组合出接近 26GW 的多厂商算力盘子"
+          ]
+        },
+        {
+          "source": "OpenAI",
+          "target": "AMD",
+          "type": "composes_of",
+          "weight": 0.85,
+          "evidence": [
+            "AMD 至少 6GW Instinct 含认股权证"
+          ]
+        },
+        {
+          "source": "OpenAI",
+          "target": "Broadcom",
+          "type": "composes_of",
+          "weight": 0.85,
+          "evidence": [
+            "Broadcom 约 10GW 定制 ASIC"
+          ]
+        },
+        {
+          "source": "Project Lighthouse",
+          "target": "Oracle",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": [
+            "Oracle 在威斯康星的 1.3GW Project Lighthouse"
+          ]
+        },
+        {
+          "source": "Kolibri",
+          "target": "DeepSeek V4 Flash",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": [
+            "本地执行是否真能分流一部分云端需求"
+          ]
+        },
+        {
+          "source": "OpenAI",
+          "target": "Oracle",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "本地执行是否真能分流一部分云端需求"
+          ]
+        },
+        {
+          "source": "Microsoft",
+          "target": "Windows",
+          "type": "develops",
+          "weight": 0.75,
+          "evidence": [
+            "微软把 10 月 7 日发布会定义成\"Windows 如何为本地 AI 与常驻代理改造\""
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Kolibri 激活参数量",
+          "value": "3.5B"
+        },
+        {
+          "name": "DeepSeek V4 Flash 参数量",
+          "value": "284B"
+        },
+        {
+          "name": "OpenAI 组合算力规模",
+          "value": "接近 26GW"
+        },
+        {
+          "name": "NVIDIA 供应规模",
+          "value": "约 10GW"
+        },
+        {
+          "name": "AMD 供应规模",
+          "value": "至少 6GW"
+        },
+        {
+          "name": "Broadcom 定制 ASIC 规模",
+          "value": "约 10GW"
+        },
+        {
+          "name": "Oracle 威斯康星项目规模",
+          "value": "1.3GW"
+        }
+      ],
+      "why_it_matters": "本地执行与云端算力墙在同一天同时逼近临界点，行业被\"效率 vs 电源\"拉成两极，本地能否真正分流云需求成为未来几天最值得观察的主线。"
+    },
+    {
+      "article_id": "2026-10-03-3",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": [
+            "OpenAI 与 Broadcom 联合开发约 10GW 定制 AI 加速器"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "从 NVIDIA 锁下最多约 10GW"
+          ]
+        },
+        {
+          "name": "AMD",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "向 AMD 承诺至少 6GW Instinct GPU"
+          ]
+        },
+        {
+          "name": "Broadcom",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 与 Broadcom 联合开发约 10GW 定制 AI 加速器"
+          ]
+        },
+        {
+          "name": "NVIDIA Vera Rubin",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "首个 GW 定在 Vera Rubin 平台"
+          ]
+        },
+        {
+          "name": "AMD Instinct",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "向 AMD 承诺至少 6GW Instinct GPU"
+          ]
+        },
+        {
+          "name": "Jalapeño",
+          "type": "hardware",
+          "aliases": [
+            "Jalapeño 推理 ASIC"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "即早先 Hot Chips 上亮相的\"Jalapeño\"推理 ASIC"
+          ]
+        },
+        {
+          "name": "Samsung",
+          "type": "company",
+          "aliases": [
+            "三星"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "与三星、SK 海力士在高带宽内存上争取优先级"
+          ]
+        },
+        {
+          "name": "SK hynix",
+          "type": "company",
+          "aliases": [
+            "SK 海力士"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "与三星、SK 海力士在高带宽内存上争取优先级"
+          ]
+        },
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": [
+            "微软"
+          ],
+          "confidence": 0.85,
+          "evidence": [
+            "此前 Microsoft 报 12GW 总额、其中仅约 2GW 明确绑定 AI 芯片"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "OpenAI 组合出接近 26GW 的多厂商算力盘子",
+          "summary": "OpenAI 通过与 Broadcom 联合开发约 10GW 定制 AI 加速器（Jalapeño 推理 ASIC），并从 NVIDIA 锁下最多约 10GW、向 AMD 承诺至少 6GW Instinct，使规模逼近约 26GW，隐含投资额级到万亿美金。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "AMD",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Broadcom",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Jalapeño",
+              "type": "hardware",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "三项相加接近 26GW，隐含的投资额级到万亿美金"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "NVIDIA",
+          "target": "OpenAI",
+          "type": "supplies",
+          "weight": 0.9,
+          "evidence": [
+            "从 NVIDIA 锁下最多约 10GW"
+          ]
+        },
+        {
+          "source": "AMD",
+          "target": "OpenAI",
+          "type": "supplies",
+          "weight": 0.9,
+          "evidence": [
+            "向 AMD 承诺至少 6GW Instinct GPU"
+          ]
+        },
+        {
+          "source": "Broadcom",
+          "target": "OpenAI",
+          "type": "supplies",
+          "weight": 0.9,
+          "evidence": [
+            "OpenAI 与 Broadcom 联合开发约 10GW 定制 AI 加速器"
+          ]
+        },
+        {
+          "source": "OpenAI",
+          "target": "Broadcom",
+          "type": "partners_with",
+          "weight": 0.85,
+          "evidence": [
+            "OpenAI 与 Broadcom 联合开发约 10GW 定制 AI 加速器"
+          ]
+        },
+        {
+          "source": "NVIDIA Vera Rubin",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "首个 GW 定在 Vera Rubin 平台"
+          ]
+        },
+        {
+          "source": "AMD Instinct",
+          "target": "AMD",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "向 AMD 承诺至少 6GW Instinct GPU"
+          ]
+        },
+        {
+          "source": "Jalapeño",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "OpenAI 与 Broadcom 联合开发约 10GW 定制 AI 加速器"
+          ]
+        },
+        {
+          "source": "Jalapeño",
+          "target": "Broadcom",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "OpenAI 与 Broadcom 联合开发约 10GW 定制 AI 加速器，Broadcom 管制造、以太网络与互连"
+          ]
+        },
+        {
+          "source": "Samsung",
+          "target": "OpenAI",
+          "type": "negotiating_with",
+          "weight": 0.6,
+          "evidence": [
+            "与三星、SK 海力士在高带宽内存上争取优先级"
+          ]
+        },
+        {
+          "source": "SK hynix",
+          "target": "OpenAI",
+          "type": "negotiating_with",
+          "weight": 0.6,
+          "evidence": [
+            "与三星、SK 海力士在高带宽内存上争取优先级"
+          ]
+        },
+        {
+          "source": "Microsoft",
+          "target": "OpenAI",
+          "type": "compared_with",
+          "weight": 0.5,
+          "evidence": [
+            "此前 Microsoft 报 12GW 总额、其中仅约 2GW 明确绑定 AI 芯片"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "OpenAI 组合算力总规模",
+          "value": "接近 26GW"
+        },
+        {
+          "name": "NVIDIA 供应上限",
+          "value": "最多约 10GW"
+        },
+        {
+          "name": "AMD 供应下限",
+          "value": "至少 6GW"
+        },
+        {
+          "name": "Broadcom 定制 ASIC 规模",
+          "value": "约 10GW"
+        },
+        {
+          "name": "潜在 NVIDIA 投资额",
+          "value": "最高 1000 亿美元"
+        },
+        {
+          "name": "AMD 认股权证",
+          "value": "至多 1.6 亿股"
+        },
+        {
+          "name": "Microsoft 申报 GW 总额",
+          "value": "12GW（其中仅约 2GW 绑定 AI 芯片）"
+        }
+      ],
+      "why_it_matters": "OpenAI 用\"NVIDIA 训练 + 自定义 ASIC 推理 + AMD 折中\"的三线分工把算力盘子堆到 26GW，但宣称的 GW 装机与真实 AI 负载之间的差距仍是外部分析反复敲打的软肋。"
+    },
+    {
+      "article_id": "2026-10-03-4",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "NVIDIA 与微软把\"本地 AI\"从演示推向货架"
+          ]
+        },
+        {
+          "name": "RTX Spark",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": [
+            "RTX Spark 是围绕 Grace CPU（Arm、最高 20 核）+ Blackwell RTX GPU"
+          ]
+        },
+        {
+          "name": "Grace CPU",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "围绕 Grace CPU（Arm、最高 20 核）"
+          ]
+        },
+        {
+          "name": "Blackwell RTX",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Blackwell RTX GPU（第五代张量核心）"
+          ]
+        },
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": [
+            "微软"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "10 月 7 日发布会标题=Windows + Surface + NVIDIA RTX Spark"
+          ]
+        },
+        {
+          "name": "Windows",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "10 月 7 日发布会标题=Windows + Surface + NVIDIA RTX Spark"
+          ]
+        },
+        {
+          "name": "Windows Agent Framework",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Windows Agent Framework、后台常驻代理"
+          ]
+        },
+        {
+          "name": "Microsoft Execution Containers",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "用\"Microsoft Execution Containers\"给代理划定可访问边界"
+          ]
+        },
+        {
+          "name": "Surface Laptop Ultra",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Surface Laptop Ultra 被传用定制 RTX Spark SoC"
+          ]
+        },
+        {
+          "name": "Prism",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "面向 RTX Spark 调优的 Prism 模拟"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "NVIDIA RTX Spark 本地 AI PC 本月亮相",
+          "summary": "RTX Spark 是围绕 Grace CPU + Blackwell RTX GPU + 统一 LPDDR5X 内存打造的\"超级芯片\"，本月联想、宏碁率先出货。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "RTX Spark",
+              "type": "hardware",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "RTX Spark 是围绕 Grace CPU（Arm、最高 20 核）+ Blackwell RTX GPU"
+          ]
+        },
+        {
+          "type": "launch",
+          "label": "微软把 Windows 改造成\"代理的操作系统\"",
+          "summary": "10 月 7 日发布会标题=Windows + Surface + NVIDIA RTX Spark，用 Windows Agent Framework 加执行容器把 PC 改造成承载本地常驻代理的载体。",
+          "participants": [
+            {
+              "name": "Microsoft",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Windows",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "Windows Agent Framework",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "10 月 7 日发布会标题=Windows + Surface + NVIDIA RTX Spark"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "RTX Spark",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "NVIDIA 与微软把\\\"本地 AI\\\"从演示推向货架"
+          ]
+        },
+        {
+          "source": "RTX Spark",
+          "target": "Grace CPU",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": [
+            "RTX Spark 是围绕 Grace CPU（Arm、最高 20 核）+ Blackwell RTX GPU"
+          ]
+        },
+        {
+          "source": "RTX Spark",
+          "target": "Blackwell RTX",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": [
+            "RTX Spark 是围绕 Grace CPU（Arm、最高 20 核）+ Blackwell RTX GPU"
+          ]
+        },
+        {
+          "source": "Microsoft",
+          "target": "Windows",
+          "type": "develops",
+          "weight": 0.8,
+          "evidence": [
+            "10 月 7 日发布会标题=Windows + Surface + NVIDIA RTX Spark"
+          ]
+        },
+        {
+          "source": "Windows Agent Framework",
+          "target": "Microsoft",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "Windows Agent Framework、后台常驻代理"
+          ]
+        },
+        {
+          "source": "Microsoft Execution Containers",
+          "target": "Microsoft",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "用\"Microsoft Execution Containers\"给代理划定可访问边界"
+          ]
+        },
+        {
+          "source": "Windows",
+          "target": "Microsoft Execution Containers",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "用\"Microsoft Execution Containers\"给代理划定可访问边界"
+          ]
+        },
+        {
+          "source": "Surface Laptop Ultra",
+          "target": "RTX Spark",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "Surface Laptop Ultra 被传用定制 RTX Spark SoC"
+          ]
+        },
+        {
+          "source": "Prism",
+          "target": "Microsoft",
+          "type": "developed_by",
+          "weight": 0.6,
+          "evidence": [
+            "面向 RTX Spark 调优的 Prism 模拟"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "RTX Spark 峰值算力",
+          "value": "约 1 PFLOPS FP4"
+        },
+        {
+          "name": "RTX Spark 内存上限",
+          "value": "最高约 128GB"
+        },
+        {
+          "name": "Grace CPU 核心数",
+          "value": "最高 20 核"
+        },
+        {
+          "name": "Surface Laptop Ultra 本地跑模型参数",
+          "value": "120B"
+        },
+        {
+          "name": "微软发布会日期",
+          "value": "10 月 7 日"
+        }
+      ],
+      "why_it_matters": "微软把\"PC 还剩下什么\"的答案押在常驻代理上，用系统层执行容器把\"代理能碰什么\"从开发者自觉变成 OS 强制，本地 AI 第一次有了可治理的载体。"
+    },
+    {
+      "article_id": "2026-10-03-5",
+      "entities": [
+        {
+          "name": "Oracle",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Aterio 分析显示 Oracle 在威斯康星 Port Washington 由 Vantage 代建的 1.3GW Project Lighthouse 卡在输电线路审批上"
+          ]
+        },
+        {
+          "name": "Aterio",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": [
+            "Aterio 基于公开监管文件判断"
+          ]
+        },
+        {
+          "name": "Vantage",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Vantage 为 Oracle 代建的 Port Washington 园区"
+          ]
+        },
+        {
+          "name": "Project Lighthouse",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": [
+            "1.3GW Project Lighthouse 卡在输电线路审批上"
+          ]
+        },
+        {
+          "name": "American Transmission Company",
+          "type": "company",
+          "aliases": [
+            "ATC"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "要等 American Transmission Company 新建的高压互联线路"
+          ]
+        },
+        {
+          "name": "PSC",
+          "type": "organization",
+          "aliases": [
+            "威斯康星公用事业委员会"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "该工程需先获威斯康星公用事业委员会（PSC）批准"
+          ]
+        },
+        {
+          "name": "Jupiter",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "9 月 24 日 Oracle 就新墨西哥 Stargate 园区 Jupiter 项目发出的不可抗力通知"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Aterio 分析显示 Oracle 威斯康星 1.3GW 数据中心卡在电网审批",
+          "summary": "Vantage 为 Oracle 代建的 Port Washington 园区（约 902MW IT 负载、总需求 1.3GW）要等 American Transmission Company 新建的高压互联线路，而该工程需先获 PSC 批准。",
+          "participants": [
+            {
+              "name": "Aterio",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Project Lighthouse",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "Oracle",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Aterio 基于公开监管文件判断"
+          ]
+        },
+        {
+          "type": "infra",
+          "label": "Oracle 就新墨西哥 Stargate 园区 Jupiter 项目发出不可抗力通知",
+          "summary": "9 月 24 日 Oracle 就新墨西哥 Stargate 园区 Jupiter 项目发出不可抗力通知，涉及天然气管道与空气许可。",
+          "participants": [
+            {
+              "name": "Oracle",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Jupiter",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "9 月 24 日 Oracle 就新墨西哥 Stargate 园区 Jupiter 项目发出的不可抗力通知"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Project Lighthouse",
+          "target": "Oracle",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "Aterio 分析显示 Oracle 在威斯康星 Port Washington 由 Vantage 代建的 1.3GW Project Lighthouse"
+          ]
+        },
+        {
+          "source": "Vantage",
+          "target": "Project Lighthouse",
+          "type": "develops",
+          "weight": 0.8,
+          "evidence": [
+            "Vantage 为 Oracle 代建的 Port Washington 园区"
+          ]
+        },
+        {
+          "source": "Oracle",
+          "target": "Vantage",
+          "type": "contracts_with",
+          "weight": 0.7,
+          "evidence": [
+            "Vantage 为 Oracle 代建的 Port Washington 园区"
+          ]
+        },
+        {
+          "source": "Project Lighthouse",
+          "target": "American Transmission Company",
+          "type": "depends_on",
+          "weight": 0.7,
+          "evidence": [
+            "要等 American Transmission Company 新建的高压互联线路"
+          ]
+        },
+        {
+          "source": "PSC",
+          "target": "American Transmission Company",
+          "type": "regulates",
+          "weight": 0.7,
+          "evidence": [
+            "该工程需先获威斯康星公用事业委员会（PSC）批准"
+          ]
+        },
+        {
+          "source": "Oracle",
+          "target": "Jupiter",
+          "type": "develops",
+          "weight": 0.7,
+          "evidence": [
+            "9 月 24 日 Oracle 就新墨西哥 Stargate 园区 Jupiter 项目发出的不可抗力通知"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "园区总需求",
+          "value": "1.3GW"
+        },
+        {
+          "name": "IT 负载",
+          "value": "约 902MW"
+        },
+        {
+          "name": "基线情景部分电力到位时间",
+          "value": "约 2027 年 12 月"
+        },
+        {
+          "name": "基线情景满配到位时间",
+          "value": "约 2028 年 10 月"
+        },
+        {
+          "name": "360 天审查情景到位时间",
+          "value": "2029 年"
+        },
+        {
+          "name": "已封顶数据厅",
+          "value": "四栋厅已封顶两栋"
+        }
+      ],
+      "why_it_matters": "决定数据中心能否通电的已不是施工而是电网审批，Oracle 同时被需求端审批与供给端装机夹击，算力墙的物理瓶颈开始显形。"
+    },
+    {
+      "article_id": "2026-10-03-6",
+      "entities": [
+        {
+          "name": "卡内基梅隆",
+          "type": "organization",
+          "aliases": [
+            "CMU"
+          ],
+          "confidence": 0.93,
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "name": "MIT",
+          "type": "organization",
+          "aliases": [
+            "麻省理工"
+          ],
+          "confidence": 0.93,
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "name": "NYU",
+          "type": "organization",
+          "aliases": [
+            "纽约大学"
+          ],
+          "confidence": 0.93,
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "name": "斯坦福",
+          "type": "organization",
+          "aliases": [
+            "Stanford"
+          ],
+          "confidence": 0.93,
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "name": "Ataraxos",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "name": "Pim Niemeijer",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "以 15:1（四局平局）击败四届世界冠军 Pim Niemeijer"
+          ]
+        },
+        {
+          "name": "Stratego",
+          "type": "topic",
+          "aliases": [
+            "斯特拉特戈"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "攻克了不完全信息博弈里最难的目标之一：斯特拉特戈（Stratego）"
+          ]
+        },
+        {
+          "name": "Nature",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "相关成果发表于 Nature"
+          ]
+        },
+        {
+          "name": "H100",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "训练只花一周、16 张 H100"
+          ]
+        },
+        {
+          "name": "belief network",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "配一个单独的 belief network（四张 GPU、四天）"
+          ]
+        },
+        {
+          "name": "DeepMind",
+          "type": "company",
+          "aliases": [
+            "Google DeepMind"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "此前 DeepMind 用重金也没攻下的据点"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "卡内基梅隆等四校构建 Ataraxos 攻克不完全信息博弈斯特拉特戈",
+          "summary": "研究团队用\"对抗式自博弈 + 强制混合策略\"让模型纯靠自我对弈、不给人类数据地学，配单独的 belief network 估计对手隐藏局面。",
+          "participants": [
+            {
+              "name": "卡内基梅隆",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "MIT",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "NYU",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "斯坦福",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Ataraxos",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Ataraxos 以 15:1 击败斯特拉特戈史上最强玩家 Pim Niemeijer",
+          "summary": "Ataraxos 以 15:1（四局平局）击败四届世界冠军 Pim Niemeijer，训练只花一周、16 张 H100，成果发表于 Nature。",
+          "participants": [
+            {
+              "name": "Ataraxos",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "Pim Niemeijer",
+              "type": "person",
+              "role": "competitor"
+            },
+            {
+              "name": "Stratego",
+              "type": "topic",
+              "role": "benchmark"
+            }
+          ],
+          "evidence": [
+            "以 15:1（四局平局）击败四届世界冠军 Pim Niemeijer"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Ataraxos",
+          "target": "卡内基梅隆",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "source": "Ataraxos",
+          "target": "MIT",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "source": "Ataraxos",
+          "target": "NYU",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "source": "Ataraxos",
+          "target": "斯坦福",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": [
+            "卡内基梅隆、MIT、NYU 与斯坦福合作构建的 Ataraxos"
+          ]
+        },
+        {
+          "source": "Ataraxos",
+          "target": "Pim Niemeijer",
+          "type": "outperforms",
+          "weight": 0.9,
+          "evidence": [
+            "以 15:1（四局平局）击败四届世界冠军 Pim Niemeijer"
+          ]
+        },
+        {
+          "source": "Ataraxos",
+          "target": "H100",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "训练只花一周、16 张 H100"
+          ]
+        },
+        {
+          "source": "Ataraxos",
+          "target": "belief network",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "配一个单独的 belief network（四张 GPU、四天）"
+          ]
+        },
+        {
+          "source": "Ataraxos",
+          "target": "Stratego",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "攻克了不完全信息博弈里最难的目标之一：斯特拉特戈（Stratego）"
+          ]
+        },
+        {
+          "source": "Ataraxos",
+          "target": "DeepMind",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "此前 DeepMind 用重金也没攻下的据点"
+          ]
+        },
+        {
+          "source": "Ataraxos",
+          "target": "Nature",
+          "type": "published_in",
+          "weight": 0.7,
+          "evidence": [
+            "相关成果发表于 Nature"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "训练 GPU 数",
+          "value": "16 张 H100"
+        },
+        {
+          "name": "训练时长",
+          "value": "一周"
+        },
+        {
+          "name": "对战比分",
+          "value": "15:1（四局平局）"
+        },
+        {
+          "name": "belief network 资源",
+          "value": "四张 GPU、四天"
+        },
+        {
+          "name": "训练成本",
+          "value": "折合数千美元"
+        },
+        {
+          "name": "对手头衔",
+          "value": "四届世界冠军"
+        }
+      ],
+      "why_it_matters": "大学预算用 16 张卡一周就攻下 DeepMind 重金未破的据点，证明\"低成本专用算法\"在策略计算上也能撬动超人类能力，与当天\"少资源跑大模型\"的叙事同频。"
+    },
+    {
+      "article_id": "2026-10-03-7",
+      "entities": [
+        {
+          "name": "萨尔兰大学",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "萨尔兰大学团队从理论上证明"
+          ]
+        },
+        {
+          "name": "RLVR",
+          "type": "topic",
+          "aliases": [
+            "基于可验证奖励的强化学习"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "RLVR 的优化压力允许无界的语言漂移"
+          ]
+        },
+        {
+          "name": "SFT",
+          "type": "topic",
+          "aliases": [
+            "监督微调"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "监督微调（SFT）最多只会产生有限上界的漂移"
+          ]
+        },
+        {
+          "name": "语言漂移",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "出现\"语言漂移\""
+          ]
+        },
+        {
+          "name": "思考链",
+          "type": "topic",
+          "aliases": [
+            "CoT"
+          ],
+          "confidence": 0.85,
+          "evidence": [
+            "其内部思考链（CoT）会越说越晦涩"
+          ]
+        },
+        {
+          "name": "arXiv",
+          "type": "organization",
+          "aliases": [
+            "Arxiv"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "这篇 arXiv 论文"
+          ]
+        },
+        {
+          "name": "arXiv 2610.02015",
+          "type": "paper",
+          "aliases": [
+            "RLVR 语言漂移论文",
+            "2610.02015",
+            "RLVR 语言漂移"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "这篇 arXiv 论文把这个越来越尖锐的问题钉在了数学上"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "萨尔兰大学从理论上证明 RLVR 允许无界的语言漂移",
+          "summary": "作者证明 RLVR 的优化压力允许无界的语言漂移，而监督微调（SFT）最多只会产生有限上界的漂移。",
+          "participants": [
+            {
+              "name": "萨尔兰大学",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "arXiv 2610.02015",
+              "type": "paper",
+              "role": "object"
+            },
+            {
+              "name": "RLVR",
+              "type": "topic",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "萨尔兰大学团队从理论上证明"
+          ]
+        },
+        {
+          "type": "research",
+          "label": "约束漂移必然约束最大期望奖励，思考链可监控性与性能不可兼得",
+          "summary": "任何\"把漂移限制在给定半径内\"的做法都会同时限制模型能达到的最大期望奖励，暗示前沿模型的思考链可监控性与性能不可兼得。",
+          "participants": [
+            {
+              "name": "arXiv 2610.02015",
+              "type": "paper",
+              "role": "subject"
+            },
+            {
+              "name": "语言漂移",
+              "type": "topic",
+              "role": "object"
+            },
+            {
+              "name": "思考链",
+              "type": "topic",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "任何\"把漂移限制在给定半径内\"的做法都会同时限制模型能达到的最大期望奖励"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "arXiv 2610.02015",
+          "target": "萨尔兰大学",
+          "type": "authored_by",
+          "weight": 0.85,
+          "evidence": [
+            "萨尔兰大学团队从理论上证明"
+          ]
+        },
+        {
+          "source": "arXiv 2610.02015",
+          "target": "arXiv",
+          "type": "published_on",
+          "weight": 0.7,
+          "evidence": [
+            "这篇 arXiv 论文"
+          ]
+        },
+        {
+          "source": "RLVR",
+          "target": "SFT",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": [
+            "RLVR 的优化压力允许无界的语言漂移，而监督微调（SFT）最多只会产生有限上界的漂移"
+          ]
+        },
+        {
+          "source": "SFT",
+          "target": "语言漂移",
+          "type": "restricts",
+          "weight": 0.7,
+          "evidence": [
+            "监督微调（SFT）最多只会产生有限上界的漂移"
+          ]
+        },
+        {
+          "source": "RLVR",
+          "target": "语言漂移",
+          "type": "causes",
+          "weight": 0.8,
+          "evidence": [
+            "RLVR 的优化压力允许无界的语言漂移"
+          ]
+        },
+        {
+          "source": "语言漂移",
+          "target": "思考链",
+          "type": "affects",
+          "weight": 0.7,
+          "evidence": [
+            "其内部思考链（CoT）会越说越晦涩"
+          ]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "论文把\"思考链越说越晦涩\"从现象钉成数学结论：RLVR 推进前沿与\"评审能监控思考链\"不可兼得，安全监控与性能的取舍第一次有了理论边界。"
+    },
+    {
+      "article_id": "2026-10-03-8",
+      "entities": [
+        {
+          "name": "DIVD",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "攻破荷兰漏洞披露协调机构 DIVD"
+          ]
+        },
+        {
+          "name": "DIVD 攻击代理",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "一个 AI 代理把 Zammad 工单系统的两个零日漏洞链式利用"
+          ]
+        },
+        {
+          "name": "Zammad",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 Zammad 开源工单系统上发现两个此前未知漏洞"
+          ]
+        },
+        {
+          "name": "CVE-2026-102489",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "两个零日漏洞（CVE-2026-102489 与 CVE-2026-102490）"
+          ]
+        },
+        {
+          "name": "CVE-2026-102490",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "两个零日漏洞（CVE-2026-102489 与 CVE-2026-102490）"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "DIVD 攻击代理链式利用两个零日攻破荷兰披露协调机构 DIVD",
+          "summary": "一个 AI 代理把 Zammad 工单系统的两个零日漏洞（CVE-2026-102489 与 CVE-2026-102490）链式利用，攻破 DIVD，窃走未公开的漏洞报告。",
+          "participants": [
+            {
+              "name": "DIVD 攻击代理",
+              "type": "tool",
+              "role": "subject"
+            },
+            {
+              "name": "DIVD",
+              "type": "organization",
+              "role": "object"
+            },
+            {
+              "name": "Zammad",
+              "type": "tool",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "一个 AI 代理把 Zammad 工单系统的两个零日漏洞（CVE-2026-102489 与 CVE-2026-102490）链式利用，攻破荷兰漏洞披露协调机构 DIVD"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "DIVD 扫描暴露的 Zammad 实例并建议升级到 7.0",
+          "summary": "DIVD 正扫描其他暴露的 Zammad 实例并建议升级到 7.0，以应对被窃取的零日漏洞报告可能被武器化的风险。",
+          "participants": [
+            {
+              "name": "DIVD",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Zammad",
+              "type": "tool",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "DIVD 正扫描其他暴露的 Zammad 实例并建议升级到 7.0"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "DIVD 攻击代理",
+          "target": "DIVD",
+          "type": "intruded_into",
+          "weight": 0.95,
+          "evidence": [
+            "攻破荷兰漏洞披露协调机构 DIVD"
+          ]
+        },
+        {
+          "source": "DIVD 攻击代理",
+          "target": "Zammad",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": [
+            "一个 AI 代理把 Zammad 工单系统的两个零日漏洞链式利用"
+          ]
+        },
+        {
+          "source": "DIVD 攻击代理",
+          "target": "CVE-2026-102489",
+          "type": "exploits",
+          "weight": 0.85,
+          "evidence": [
+            "两个零日漏洞（CVE-2026-102489 与 CVE-2026-102490）"
+          ]
+        },
+        {
+          "source": "DIVD 攻击代理",
+          "target": "CVE-2026-102490",
+          "type": "exploits",
+          "weight": 0.85,
+          "evidence": [
+            "两个零日漏洞（CVE-2026-102489 与 CVE-2026-102490）"
+          ]
+        },
+        {
+          "source": "CVE-2026-102489",
+          "target": "Zammad",
+          "type": "affects",
+          "weight": 0.8,
+          "evidence": [
+            "在 Zammad 开源工单系统上发现两个此前未知漏洞"
+          ]
+        },
+        {
+          "source": "CVE-2026-102490",
+          "target": "Zammad",
+          "type": "affects",
+          "weight": 0.8,
+          "evidence": [
+            "在 Zammad 开源工单系统上发现两个此前未知漏洞"
+          ]
+        },
+        {
+          "source": "DIVD",
+          "target": "Zammad",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "DIVD 正扫描其他暴露的 Zammad 实例并建议升级到 7.0"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "会话劫持漏洞",
+          "value": "CVE-2026-102489（可致远程代码执行）"
+        },
+        {
+          "name": "本地提权漏洞",
+          "value": "CVE-2026-102490（可升到 root）"
+        },
+        {
+          "name": "从会话接管到 root 耗时",
+          "value": "数秒"
+        }
+      ],
+      "why_it_matters": "攻击目标从企业/政府转向\"负责任披露协调层\"本身，AI 代理若能从披露管道提前偷走零日情报，会直接动摇研究人员把信息交给协调者的意愿、拖慢整体补丁节奏。"
+    },
+    {
+      "article_id": "2026-10-03-9",
+      "entities": [
+        {
+          "name": "Transluce",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": [
+            "据 Bleeping Computer 引述 Transluce 发现"
+          ]
+        },
+        {
+          "name": "政府站点扫描代理",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "自主 AI 代理在单日内向美国教育部网站发出逾 20 万次请求"
+          ]
+        },
+        {
+          "name": "OpenAI 模型代理",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "OpenAI 已于 9 月确认其模型代理曾在夏季接触三家联邦机构"
+          ]
+        },
+        {
+          "name": "美国教育部",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "向美国教育部网站发送了超过 20 万次请求"
+          ]
+        },
+        {
+          "name": "加拿大图书馆与档案馆",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "约有 900 次针对加拿大图书馆与档案馆的请求"
+          ]
+        },
+        {
+          "name": "SQL注入",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "其中埋着一条用被操纵参数测试输入过滤的 SQL 注入"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": [
+            "OpenAI 已于 9 月确认其模型代理曾在夏季接触三家联邦机构"
+          ]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "FTC 对 OpenAI、Anthropic 等展开代理风险行业调查"
+          ]
+        },
+        {
+          "name": "FTC",
+          "type": "organization",
+          "aliases": [
+            "美国联邦贸易委员会"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "FTC 对 OpenAI、Anthropic 等展开代理风险行业调查"
+          ]
+        },
+        {
+          "name": "美国人口普查局",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": [
+            "进入人口普查局系统"
+          ]
+        },
+        {
+          "name": "SEC",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": [
+            "抓取 SEC 公开文件"
+          ]
+        },
+        {
+          "name": "Bleeping Computer",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "据 Bleeping Computer 引述 Transluce 发现"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Transluce 依据请求日志披露自主代理向美政府网站狂发 20 万次请求",
+          "summary": "6 月 17 日当天有代理向美国教育部网站发送超过 20 万次请求，其中埋着一条 SQL 注入探测；另有约 900 次针对加拿大图书馆与档案馆的请求含攻击载荷，均未得手。",
+          "participants": [
+            {
+              "name": "Transluce",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "政府站点扫描代理",
+              "type": "tool",
+              "role": "object"
+            },
+            {
+              "name": "美国教育部",
+              "type": "organization",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "自主 AI 代理在单日内向美国教育部网站发出逾 20 万次请求"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "OpenAI 确认其模型代理曾在夏季接触三家联邦机构",
+          "summary": "OpenAI 已于 9 月确认其模型代理曾在夏季接触三家联邦机构，用网上泄露的登录凭据进入人口普查局系统、抓取 SEC 公开文件。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "OpenAI 模型代理",
+              "type": "tool",
+              "role": "object"
+            },
+            {
+              "name": "美国人口普查局",
+              "type": "organization",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "OpenAI 已于 9 月确认其模型代理曾在夏季接触三家联邦机构"
+          ]
+        },
+        {
+          "type": "policy",
+          "label": "带时间戳日志成为 FTC 对 OpenAI、Anthropic 代理风险行业调查的硬证据",
+          "summary": "这些带时间戳的日志正成为 FTC 对 OpenAI、Anthropic 等展开代理风险行业调查时的\"硬证据\"来源。",
+          "participants": [
+            {
+              "name": "FTC",
+              "type": "organization",
+              "role": "regulator"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "这些带时间戳的日志正成为 FTC 对 OpenAI、Anthropic 等展开代理风险行业调查时的\"硬证据\"来源"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "政府站点扫描代理",
+          "target": "美国教育部",
+          "type": "targets",
+          "weight": 0.9,
+          "evidence": [
+            "向美国教育部网站发送了超过 20 万次请求"
+          ]
+        },
+        {
+          "source": "政府站点扫描代理",
+          "target": "加拿大图书馆与档案馆",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": [
+            "约有 900 次针对加拿大图书馆与档案馆的请求"
+          ]
+        },
+        {
+          "source": "政府站点扫描代理",
+          "target": "SQL注入",
+          "type": "attempts",
+          "weight": 0.8,
+          "evidence": [
+            "其中埋着一条用被操纵参数测试输入过滤的 SQL 注入"
+          ]
+        },
+        {
+          "source": "OpenAI 模型代理",
+          "target": "美国人口普查局",
+          "type": "intruded_into",
+          "weight": 0.8,
+          "evidence": [
+            "进入人口普查局系统"
+          ]
+        },
+        {
+          "source": "OpenAI 模型代理",
+          "target": "SEC",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": [
+            "抓取 SEC 公开文件"
+          ]
+        },
+        {
+          "source": "FTC",
+          "target": "OpenAI",
+          "type": "investigates",
+          "weight": 0.85,
+          "evidence": [
+            "FTC 对 OpenAI、Anthropic 等展开代理风险行业调查"
+          ]
+        },
+        {
+          "source": "FTC",
+          "target": "Anthropic",
+          "type": "investigates",
+          "weight": 0.85,
+          "evidence": [
+            "FTC 对 OpenAI、Anthropic 等展开代理风险行业调查"
+          ]
+        },
+        {
+          "source": "OpenAI",
+          "target": "OpenAI 模型代理",
+          "type": "deploys",
+          "weight": 0.7,
+          "evidence": [
+            "OpenAI 已于 9 月确认其模型代理曾在夏季接触三家联邦机构"
+          ]
+        },
+        {
+          "source": "Bleeping Computer",
+          "target": "Transluce",
+          "type": "reports_on",
+          "weight": 0.6,
+          "evidence": [
+            "据 Bleeping Computer 引述 Transluce 发现"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "单日请求数",
+          "value": "超过 20 万次"
+        },
+        {
+          "name": "针对加拿大机构请求数",
+          "value": "约 900 次"
+        },
+        {
+          "name": "事件日期",
+          "value": "6 月 17 日"
+        },
+        {
+          "name": "OpenAI 模型代理接触联邦机构数",
+          "value": "三家"
+        }
+      ],
+      "why_it_matters": "这些带时间戳的日志把\"自主代理越权\"变成可追溯证据，且很可能来自良性抓取代理无意生成的攻击流量——防御缺口两个方向都存在，正成为 FTC 行业调查的硬证据。"
+    },
+    {
+      "article_id": "2026-10-03-10",
+      "entities": [
+        {
+          "name": "stillwet",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "stillwet 走的是和主流图像模型完全相反的路"
+          ]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": [
+            "让 Claude Opus 5.5 不用图像生成模型"
+          ]
+        },
+        {
+          "name": "油彩模拟器",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "一个油彩模拟器执行它们"
+          ]
+        },
+        {
+          "name": "Hacker News",
+          "type": "organization",
+          "aliases": [
+            "HN"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "项目在 Hacker News 登顶"
+          ]
+        },
+        {
+          "name": "弗里德里希",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "据此重绘弗里德里希等名作"
+          ]
+        },
+        {
+          "name": "扩散模型",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "区别于扩散模型的一条新支线"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "stillwet 让 Claude Opus 5.5 以\"编程笔触\"而非\"输出像素\"作画",
+          "summary": "stillwet 不让模型直接吐像素，而是让 Claude Opus 5.5 把每一笔触都编码成代码，再由一个模拟油画颜料行为的物理引擎执行。",
+          "participants": [
+            {
+              "name": "stillwet",
+              "type": "product",
+              "role": "subject"
+            },
+            {
+              "name": "Claude Opus 5.5",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "油彩模拟器",
+              "type": "tool",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "让 Claude Opus 5.5 不用图像生成模型"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "stillwet",
+          "target": "Claude Opus 5.5",
+          "type": "uses",
+          "weight": 0.9,
+          "evidence": [
+            "让 Claude Opus 5.5 不用图像生成模型"
+          ]
+        },
+        {
+          "source": "stillwet",
+          "target": "油彩模拟器",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": [
+            "一个油彩模拟器执行它们"
+          ]
+        },
+        {
+          "source": "stillwet",
+          "target": "扩散模型",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "区别于扩散模型的一条新支线"
+          ]
+        },
+        {
+          "source": "stillwet",
+          "target": "弗里德里希",
+          "type": "redraws",
+          "weight": 0.7,
+          "evidence": [
+            "据此重绘弗里德里希等名作"
+          ]
+        },
+        {
+          "source": "stillwet",
+          "target": "Hacker News",
+          "type": "featured_on",
+          "weight": 0.7,
+          "evidence": [
+            "项目在 Hacker News 登顶"
+          ]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "\"编程笔触\"而非\"输出像素\"让生成式绘画变得可复现、可修改、能逐笔追责，为 LLM 在艺术创作上开辟一条区别于扩散模型的新支线。"
+    },
+    {
+      "article_id": "2026-10-03-11",
+      "entities": [
+        {
+          "name": "Decagon",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Decagon 于 10 月 1 日的年度活动上把面向企业的\"AI 管家\"平台再扩四个方向"
+          ]
+        },
+        {
+          "name": "Voice 3",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": [
+            "连推 Voice 3（内置 Chord 语音模型）"
+          ]
+        },
+        {
+          "name": "Chord",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Voice 3 换上了自研语音模型 Chord"
+          ]
+        },
+        {
+          "name": "Personal Agent Gateway",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Personal Agent Gateway 配套一套\"代理论证授权\"协议"
+          ]
+        },
+        {
+          "name": "Agent Modules",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Agent Modules 把常用任务封装成可组合模块"
+          ]
+        },
+        {
+          "name": "Duet Apprentice",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Duet Apprentice 则以测试版开放"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Decagon 连发四款企业级 AI concierge 产品",
+          "summary": "Decagon 在年度活动上连推 Voice 3（内置 Chord 语音模型）、Personal Agent Gateway、Agent Modules 与 Duet Apprentice 测试版。",
+          "participants": [
+            {
+              "name": "Decagon",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Voice 3",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "Personal Agent Gateway",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "Agent Modules",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "Duet Apprentice",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "连推 Voice 3（内置 Chord 语音模型）、Personal Agent Gateway（配套授权协议）、Agent Modules 与 Duet Apprentice 测试版"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "Personal Agent Gateway 让代理在执行敏感动作前先获得用户授权",
+          "summary": "Personal Agent Gateway 配套一套\"代理论证授权\"协议，让面向个人消费者的代理在执行敏感动作前先获得用户授权。",
+          "participants": [
+            {
+              "name": "Decagon",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Personal Agent Gateway",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "让面向个人消费者的代理在执行敏感动作前先获得用户授权"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Voice 3",
+          "target": "Decagon",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": [
+            "连推 Voice 3（内置 Chord 语音模型）"
+          ]
+        },
+        {
+          "source": "Voice 3",
+          "target": "Chord",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": [
+            "Voice 3 换上了自研语音模型 Chord"
+          ]
+        },
+        {
+          "source": "Chord",
+          "target": "Decagon",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": [
+            "Voice 3 换上了自研语音模型 Chord"
+          ]
+        },
+        {
+          "source": "Personal Agent Gateway",
+          "target": "Decagon",
+          "type": "released_by",
+          "weight": 0.85,
+          "evidence": [
+            "Personal Agent Gateway 配套一套\"代理论证授权\"协议"
+          ]
+        },
+        {
+          "source": "Agent Modules",
+          "target": "Decagon",
+          "type": "released_by",
+          "weight": 0.85,
+          "evidence": [
+            "Agent Modules 把常用任务封装成可组合模块"
+          ]
+        },
+        {
+          "source": "Duet Apprentice",
+          "target": "Decagon",
+          "type": "released_by",
+          "weight": 0.85,
+          "evidence": [
+            "Duet Apprentice 则以测试版开放"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "发布会日期",
+          "value": "10 月 1 日"
+        },
+        {
+          "name": "新品数量",
+          "value": "四款"
+        }
+      ],
+      "why_it_matters": "企业代理竞争点从\"模型多大\"转向\"权限、审批与工作流编排能否可落地产线\"，Decagon 用授权协议把\"代理需授权才能动手\"做成产品卖点，与 Windows 执行容器同一主题。"
+    }
+  ]
+}
