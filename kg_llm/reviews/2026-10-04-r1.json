@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-04",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "结构完整、跨文章连通良好（Google/Gemini 4 Argon、OpenAI/Dots、Meta/Muse 均跨篇一致），但存在多处「把招聘提及量/争议声明当成实际使用关系」的关系类型错误（第5、3篇），以及把外部评论者写成事件参与者、把拟议政策建模成已生效关系的问题。",
+  "findings": [
+    {
+      "article_id": "2026-10-04-5",
+      "severity": "high",
+      "problem": "关系 \"华尔街银行 --uses--> LangGraph / LlamaIndex / RAG\" 的证据只是这些技能在招聘 JD 中的「提及量」增长（679%/291%/259%），原文从未说银行「实际使用」这些工具。这是把「招聘需求/技能提及」当成「实际使用」，属于共同出现不等于有关系的典型误用。",
+      "fix": "将这三条关系类型从 uses 改为反映「招聘/技能需求」的关系（如 seeks_skills_in / demands_skill_in），或直接删除并把 679%/291%/259% 仅作为 metrics 记录；不要用 uses 断言银行正在使用这些工具。"
+    },
+    {
+      "article_id": "2026-10-04-3",
+      "severity": "medium",
+      "problem": "关系 \"ChatGPT --uses--> 全盘访问\" 的证据是「ChatGPT Mac 应用被发现以明文存储聊天记录」，这与全盘访问毫无关系（明文存储是另一独立安全事件）；\"Muse --uses--> 全盘访问\" 的证据只是「这一变化直接源于 Meta Muse 引发的争议」，而原文明确这是 Meta 否认的争议声明（需用户同时开启全盘访问权限和 Messages 连接器）。两条 uses 关系均缺乏支撑。",
+      "fix": "删除 \"ChatGPT --uses--> 全盘访问\"（证据无关）；将 \"Muse --uses--> 全盘访问\" 改为反映「需用户显式授权/有争议地要求」的关系类型（如 requests/requires_permission），并在证据中注明这是 Meta 否认的声明而非既定事实。"
+    },
+    {
+      "article_id": "2026-10-04-3",
+      "severity": "medium",
+      "problem": "事件2 \"苹果收紧全盘访问直接源于 Meta Muse 与 ChatGPT 明文存储争议\" 的 participants 把 Meta、Muse、ChatGPT、Patrick Wardle 四个互相独立的主体塞进同一事件，且把外部评论者 Patrick Wardle 标为 role \"partner\"。他只是在文中发表技术评论，并非该政策事件的参与方。",
+      "fix": "将 Patrick Wardle 从 participants 中移除（外部评论者不应作为事件参与方）；把该事件拆成两个独立事件（分别对应「Muse 争议」与「ChatGPT 明文存储」两条线索），各只保留直接相关的主体，不要合并成单一 security 事件。"
+    },
+    {
+      "article_id": "2026-10-04-8",
+      "severity": "medium",
+      "problem": "关系 \"Clef --outperforms--> Jev\" 与 \"Clef-flash --outperforms--> Jev\" 的证据只支撑「延迟更快」（Clef 209ms、Clef-flash 39ms vs Jev 524ms），outperforms 语义过强，暗示整体质量/能力更优，而原文只有延迟对比，未断言整体胜出。",
+      "fix": "将 outperforms 改为按证据限定的关系类型（如 faster_than / lower_latency_than），或在证据中明确该优势仅指中位延迟，避免过度宣称整体性能超越。"
+    },
+    {
+      "article_id": "2026-10-04-4",
+      "severity": "medium",
+      "problem": "关系 \"美国 --restricts--> 中国晶圆厂\" 的证据是「前美国官员据此敦促美国及其盟友切断进一步出口」，这是仍在呼吁的拟议政策而非已生效规定，且实际限制对象是 ASML 对华浸没式 DUV 出口通道，不是直接「限制中国晶圆厂」本身。",
+      "fix": "将该关系改为反映「拟议/呼吁中的出口管制」的表述（如把对象改为 ASML/浸没式 DUV 对华出口，或标注为 proposed/urged 而非已生效的 restricts），避免把尚未落地的政策当成既定事实关系。"
+    }
+  ],
+  "lessons": [
+    "招聘/技能需求类新闻中，技能或软件在招聘 JD 里的「提及量/需求上升」不支持该行业「实际使用」该工具的实体关系，应用反映需求的关系类型（如 seeks_skills_in / demands_skill_in），不要用 uses。",
+    "安全争议/因果类新闻中，不要把外部评论者写入事件 participants（role 只给真正行动的主体），也不要在一个事件里塞入多个互相独立的争议线索，应各自拆成独立事件。",
+    "当原文是「官员呼吁/拟议中的政策」（如敦促实施出口禁令）而非已生效规定时，不要把它建模为已发生的 restricts 关系，应在关系类型或证据中体现拟议性与不确定性。"
+  ]
+}

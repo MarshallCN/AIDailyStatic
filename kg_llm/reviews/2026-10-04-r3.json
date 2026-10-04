@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-04",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "抽取已修复前两轮的大部分问题（LangGraph/LlamaIndex 改用 seeks_skills_in、outperforms 改 faster_than、事件切分合并、Clef-flash 入 participants、2024/2025 购入量齐全、前向部署工程师补为实体），关系方向与证据整体属实。残留主问题集中在 2026-10-04-3：为背景提及的 Meta/Muse 建立 developed_by 与 requires_permission 时，evidence 串引的是苹果政策因果表述（「这一变化直接源于 Meta Muse 引发的争议」），并不支撑这两条关系本身；另有 2026-10-04-6 漏掉了双盲 AI 评估试点、Fairwind 等非模型类安全/评估主体。",
+  "findings": [
+    {
+      "article_id": "2026-10-04-3",
+      "severity": "high",
+      "problem": "关系 「Muse --developed_by--> Meta」的证据只写着「这一变化直接源于 Meta Muse 引发的争议」。该原文取自苹果收紧全盘访问策略的因果语境，只说明苹果政策受到 Muse 争议触发，完全不构成「Meta 开发了 Muse」这一 developed_by 断言的证据。Muse 与 Meta 在本篇仅是背景提及，用一条与本关系无关的因果句子支撑 mem 开发关系，属于「证据存在但支撑的是另一回事」的典型错误。",
+      "fix": "删除该关系。本篇原文未描述任何 Muse 的开发主体，跨文章事实不等于在本篇有据，应按证据缺失处理；若确要保留跨文章连通，至少在证据中换成能直接读出开发关系的有效原文（本篇没有），否则别在本篇建立这条 developed_by 边。"
+    },
+    {
+      "article_id": "2026-10-04-3",
+      "severity": "medium",
+      "problem": "关系 「Muse --requires_permission--> 全盘访问」的证据同样只是「这一变化直接源于 Meta Muse 引发的争议」，是苹果政策的归因陈述，不直接支撑「Muse 需要全盘访问权限」这一关系。原文确实提到读取 Messages 需要开启 macOS 全盘访问权限，但那是 Meta 否认 Jason Aten 指控时的回应措辞，且当前证据串引的是苹果政策的因果，与关系语义错位。",
+      "fix": "若保留该关系，把 evidence 改为原文中直接表述该断言的部分，即「读取 Messages 需用户同时开启 macOS 全盘访问权限和 Messages 连接器」，并注明这是 Meta 对争议的否认性回应而非既定事实；否则删除这条边。"
+    },
+    {
+      "article_id": "2026-10-04-6",
+      "severity": "medium",
+      "problem": "遗漏重要主体：原文明确提到 DeepMind 启动全球首个双盲 AI 评估试点、并推出面向政府和企业的主动网络防御项目 Fairwind，二者是与 Gemini 模型发布并列的标志性安全/评估/防御举措。但本条实体与事件全部聚焦模型发布和 Gemini 4 Argon 的开放策略，未抽取双盲评估试点与 Fairwind 这两个非模型主体，why_it_matters 也只讲模型放行节奏，遗漏了评估方法论与主动防御这两条信号。",
+      "fix": "补一个 policy/research 事件（如「DeepMind 启动全球首个双盲 AI 评估试点并推出主动网络防御项目 Fairwind」），把双盲评估试点与 Fairwind 作为事件 participants/相关实体抽入，并在 why_it_matters 反映评估与防御维度。"
+    },
+    {
+      "article_id": "2026-10-04-6",
+      "severity": "low",
+      "problem": "关系 「Google DeepMind --subsidiary_of--> Google」的证据仍只是实体名「DeepMind 还启动了全球首个双盲 AI 评估试点」，该证据只说明 DeepMind 存在与此活动，不支持「从属 Google」这一语义；上一轮审查已指出，仍未修正。",
+      "fix": "补一段能说明 Google 与 DeepMind 隶属关系的原文，或在证据中明确二者隶属而不只是各自活动的事实；无法支撑则降级去掉该关系。"
+    }
+  ],
+  "lessons": [
+    "当某主体只在新闻中作为背景或相关事件被提及、而非本条的动作主体时，不要为它在本篇建立 developed_by 等实质关系，也不要把它所在段落的因果表述（如「该变化源于 X 引发的争议」）当作支持该关系的证据；关系证据必须读自本条原文能直接读出该断言的句子。",
+    "月度回顾/汇总类稿件除抽取领衔模型发布外，还应把文中非模型的标志性举措（如首个双盲评估试点、专项防御项目）独立成事件或补为主体，不能只聚焦模型而漏掉安全/评估侧信号。",
+    "为「某主体 A 由 B 开发/隶属 B」这类从属或开发关系提供证据时，该证据必须来自能直接读出开发或隶属语义的原文，活动性、归因性或因果性表述都不是有效证据。"
+  ]
+}

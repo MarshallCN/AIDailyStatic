@@ -1,0 +1,544 @@
+{
+  "date": "2026-10-04",
+  "articles": [
+    {
+      "article_id": "2026-10-04-0",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 在帮助中心发布了一份 FAQ"]},
+        {"name": "Dots", "type": "product", "aliases": [], "confidence": 0.97, "evidence": ["说明其“Dots”常驻智能体可以访问什么"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["插件连接在 Dots、ChatGPT、ChatGPT Work 和 Codex 之间共享"]},
+        {"name": "ChatGPT Work", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["插件连接在 Dots、ChatGPT、ChatGPT Work 和 Codex 之间共享"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["ChatGPT Work 和 Codex 之间共享"]},
+        {"name": "Plugins", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["统一在 ChatGPT 的 Plugins 页管理"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "OpenAI 发布 Dots 常驻智能体的隐私与安全 FAQ",
+          "summary": "OpenAI 在帮助中心发布 FAQ，明确 Dots 智能体可访问与保留的内容、权限继承机制、记忆双向流动及分级审批等安全边界。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Dots", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 在帮助中心发布了一份 FAQ"]
+        },
+        {
+          "type": "security",
+          "label": "Dots 采用分级审批与 Auto-review 安全检查设计",
+          "summary": "Dots 对改密码、转账等最敏感操作要求用户接手，Auto-review 在动作执行前对照指令与安全要求检查，并把网页、邮件或文档中的指令当作内容而非授权。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Dots", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Auto-review 系统会在动作执行前对照指令与安全要求检查"]
+        }
+      ],
+      "relations": [
+        {"source": "Dots", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 于 10 月 3 日发布 Dots 智能体的隐私与安全 FAQ"]},
+        {"source": "Dots", "target": "ChatGPT", "type": "integrates", "weight": 0.8, "evidence": ["插件连接在 Dots、ChatGPT、ChatGPT Work 和 Codex 之间共享"]},
+        {"source": "Dots", "target": "ChatGPT Work", "type": "integrates", "weight": 0.7, "evidence": ["插件连接在 Dots、ChatGPT、ChatGPT Work 和 Codex 之间共享"]},
+        {"source": "Dots", "target": "Codex", "type": "integrates", "weight": 0.7, "evidence": ["ChatGPT Work 和 Codex 之间共享"]},
+        {"source": "Dots", "target": "Plugins", "type": "uses", "weight": 0.6, "evidence": ["插件连接在 Dots、ChatGPT、ChatGPT Work 和 Codex 之间共享，统一在 ChatGPT 的 Plugins 页管理"]},
+        {"source": "OpenAI", "target": "Dots", "type": "restricts", "weight": 0.7, "evidence": ["哪些操作必须由用户介入"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "常驻智能体的权限与记忆边界首次以公开规则形式固化，把“智能体能看到什么、保留什么”从厂商自由裁量变成可审计、可验证的承诺。"
+    },
+    {
+      "article_id": "2026-10-04-1",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 安全系统团队负责人 David Robinson 本周辞职"]},
+        {"name": "David Robinson", "type": "person", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI 安全系统团队负责人 David Robinson 本周辞职"]},
+        {"name": "6.1 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["内部搁置了代号 6.1 Astra 的模型"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "OpenAI 安全负责人 David Robinson 辞职并公开批评公司安全文化",
+          "summary": "OpenAI 安全系统团队负责人 David Robinson 辞职，并在 The Atlantic 撰文批评公司的安全文化“破碎且令人深感担忧”。",
+          "participants": [
+            {"name": "David Robinson", "type": "person", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["他在 The Atlantic 发表文章《I Quit OpenAI Because Its Culture Is Broken》"]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI 内部搁置模型 6.1 Astra",
+          "summary": "OpenAI 上周以安全与对齐节奏为由，内部搁置了代号 6.1 Astra 的模型，本周安全负责人又公开批评公司安全机制。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "6.1 Astra", "type": "model", "role": "object"}
+          ],
+          "evidence": ["内部搁置了代号 6.1 Astra 的模型"]
+        }
+      ],
+      "relations": [
+        {"source": "David Robinson", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["OpenAI 安全系统团队负责人"]},
+        {"source": "6.1 Astra", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["内部搁置了代号 6.1 Astra 的模型"]},
+        {"source": "OpenAI", "target": "6.1 Astra", "type": "restricts", "weight": 0.7, "evidence": ["内部搁置了代号 6.1 Astra 的模型"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "安全负责人的公开出走把“加速商业化与对齐节奏的张力”从传闻变成第一人称实锤，外界对 OpenAI 安全治理的信任成本正在上升。"
+    },
+    {
+      "article_id": "2026-10-04-2",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.95, "evidence": ["Meta 的个人智能体 Muse 增长迅猛"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.97, "evidence": ["Meta 的个人智能体 Muse 增长迅猛"]},
+        {"name": "Dots", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["是 Meta 对 OpenAI Dots、苹果等个人智能体赛道的正面回应"]},
+        {"name": "Jason Aten", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["科技专栏作者 Jason Aten 声称"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Muse 达到 500 万下载的速度比 ChatGPT 更快"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Meta 个人智能体 Muse 周活突破 300 万、下载超 500 万",
+          "summary": "据 The Information 援引的内部数据，Muse 周活跃用户超 300 万、日活超 100 万，下载量达 500 万。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["每周至少使用一次 Muse 的用户超过 300 万"]
+        },
+        {
+          "type": "security",
+          "label": "Jason Aten 声称 Muse 同步了其超 18.7 万条私人 iMessage 记录",
+          "summary": "科技专栏作者 Jason Aten 声称 Muse 同步了他超 18.7 万条私人 iMessage 记录，而 Meta 予以否认，称读取 Messages 需用户同时开启全盘访问权限。",
+          "participants": [
+            {"name": "Jason Aten", "type": "person", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["声称 Muse 同步了他超 18.7 万条私人 iMessage 记录"]
+        }
+      ],
+      "relations": [
+        {"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.95, "evidence": ["Meta 的个人智能体 Muse"]},
+        {"source": "Muse", "target": "Meta", "type": "released_by", "weight": 0.8, "evidence": ["Muse 于 9 月 8 日发布"]},
+        {"source": "Muse", "target": "Dots", "type": "competes_with", "weight": 0.7, "evidence": ["是 Meta 对 OpenAI Dots、苹果等个人智能体赛道的正面回应"]},
+        {"source": "Muse", "target": "ChatGPT", "type": "compared_with", "weight": 0.6, "evidence": ["Muse 达到 500 万下载的速度比 ChatGPT 更快"]}
+      ],
+      "metrics": [
+        {"name": "Muse 周活跃用户", "value": "300 万"},
+        {"name": "Muse 日活跃用户", "value": "100 万"},
+        {"name": "Muse 累计下载量", "value": "500 万"},
+        {"name": "Jason Aten 称被同步的 iMessage 记录数", "value": "18.7 万条"}
+      ],
+      "why_it_matters": "个人智能体增长曲线开始由消费级分发（广告加预装）而非高端口碑驱动，苹果、Meta、OpenAI 在同一条赛道上比拼用户规模。"
+    },
+    {
+      "article_id": "2026-10-04-3",
+      "entities": [
+        {"name": "Apple", "type": "company", "aliases": ["苹果", "苹果公司"], "confidence": 0.97, "evidence": ["苹果在开发者新闻中宣布"]},
+        {"name": "全盘访问", "type": "tool", "aliases": ["Full Disk Access"], "confidence": 0.95, "evidence": ["将为 macOS 的“全盘访问”权限引入新的控制措施"]},
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.9, "evidence": ["这一变化直接源于 Meta Muse 引发的争议"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["这一变化直接源于 Meta Muse 引发的争议"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI ChatGPT Mac 应用被发现以明文存储聊天记录"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["也与 OpenAI ChatGPT Mac 应用被发现以明文存储聊天记录有关"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "苹果收紧 macOS 全盘访问权限并为 AI 智能体设立新门槛",
+          "summary": "苹果在开发者新闻中宣布为 macOS 的“全盘访问”权限引入新的控制措施，未来任何希望获得该权限的应用都必须通过一次“非常明确的用户操作”重新申请，而非依赖早先一次性的授权，并称这类访问的风险随 AI 智能体增强而大幅上升。这一变化直接源于 Meta Muse 引发的 iMessage 同步争议，也与 OpenAI ChatGPT Mac 应用被发现以明文存储聊天记录有关。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "全盘访问", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["将为 macOS 的“全盘访问”权限引入新的控制措施"]
+        }
+      ],
+      "relations": [
+        {"source": "Apple", "target": "全盘访问", "type": "regulates", "weight": 0.9, "evidence": ["将为 macOS 的“全盘访问”权限引入新的控制措施"]},
+        {"source": "Muse", "target": "全盘访问", "type": "requires_permission", "weight": 0.6, "evidence": ["这一变化直接源于 Meta Muse 引发的争议"]},
+        {"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["这一变化直接源于 Meta Muse 引发的争议"]},
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["OpenAI ChatGPT Mac 应用被发现以明文存储聊天记录"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "操作系统厂商开始把“全盘访问”从一次性授权收紧为需用户显式确认的高危操作，AI 智能体获取系统级数据权限的门槛被系统性抬高。"
+    },
+    {
+      "article_id": "2026-10-04-4",
+      "entities": [
+        {"name": "中国晶圆厂", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["中国晶圆厂截至 2026 年初已累计获得约 343 台浸没式深紫外（DUV）光刻系统"]},
+        {"name": "ASML", "type": "company", "aliases": ["阿斯麦"], "confidence": 0.95, "evidence": ["购入约 90 台 ASML NXT:1980i 机型"]},
+        {"name": "浸没式 DUV 光刻机", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["囤积 343 台浸没式 DUV 光刻机"]},
+        {"name": "美国", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["前美国官员据此敦促美国及其盟友切断进一步出口"]},
+        {"name": "Centre for Technology & Statecraft", "type": "organization", "aliases": ["CTS"], "confidence": 0.9, "evidence": ["华盛顿智库 Centre for Technology & Statecraft（CTS）9 月底发布报告"]},
+        {"name": "Nicholas Brown", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["前美国出口管制官员 Nicholas Brown"]},
+        {"name": "Saif Khan", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["前白宫/商务部技术政策顾问 Saif Khan"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "CTS 报告称中国晶圆厂囤积 343 台浸没式 DUV 光刻机",
+          "summary": "华盛顿智库 CTS 报告称中国晶圆厂截至 2026 年初已累计获得约 343 台浸没式 DUV 光刻系统，足以制造 7nm 逻辑芯片和 AI 处理器所需先进内存。",
+          "participants": [
+            {"name": "Centre for Technology & Statecraft", "type": "organization", "role": "subject"},
+            {"name": "中国晶圆厂", "type": "organization", "role": "object"},
+            {"name": "Nicholas Brown", "type": "person", "role": "partner"},
+            {"name": "Saif Khan", "type": "person", "role": "partner"}
+          ],
+          "evidence": ["中国晶圆厂截至 2026 年初已累计获得约 343 台浸没式深紫外（DUV）光刻系统"]
+        },
+        {
+          "type": "policy",
+          "label": "美国官员敦促对浸没式 DUV 出口实施全面封锁",
+          "summary": "报告为华盛顿关于是否对中国实施“全面封锁”浸没式 DUV 出口的辩论提供新数据，前美国官员据此敦促美国及其盟友切断进一步出口。",
+          "participants": [
+            {"name": "美国", "type": "organization", "role": "subject"},
+            {"name": "中国晶圆厂", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["前美国官员据此敦促美国及其盟友切断进一步出口"]
+        }
+      ],
+      "relations": [
+        {"source": "美国", "target": "浸没式 DUV 光刻机", "type": "targets", "weight": 0.8, "evidence": ["前美国官员据此敦促美国及其盟友切断进一步出口"]},
+        {"source": "ASML", "target": "中国晶圆厂", "type": "supplies", "weight": 0.8, "evidence": ["购入约 90 台 ASML NXT:1980i 机型"]},
+        {"source": "中国晶圆厂", "target": "浸没式 DUV 光刻机", "type": "uses", "weight": 0.9, "evidence": ["中国芯片制造商高度依赖部分仍不受出口禁令限制的浸没式 DUV 系统"]}
+      ],
+      "metrics": [
+        {"name": "囤积浸没式 DUV 光刻机总数", "value": "343 台"},
+        {"name": "2024 年购入 ASML NXT:1980i 机型", "value": "90 台"},
+        {"name": "2025 年购入 ASML NXT:1980i 机型", "value": "89 台"},
+        {"name": "2024 年 DUV 购入金额", "value": "130 亿美元"}
+      ],
+      "why_it_matters": "中国晶圆厂用数量而非先进制程补足光刻短板，浸没式 DUV 成为中美出口管制下一阶段最可能的角力点。"
+    },
+    {
+      "article_id": "2026-10-04-5",
+      "entities": [
+        {"name": "Draup", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["招聘数据公司 Draup 提供给 CNBC 的独家分析"]},
+        {"name": "Vijay Swaminathan", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Draup CEO Vijay Swaminathan"]},
+        {"name": "华尔街银行", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["今年华尔街银行 AI 相关岗位招聘同比增长 49%"]},
+        {"name": "LangGraph", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["LangGraph（多步 AI 工作流框架）提及量增长 679%"]},
+        {"name": "LlamaIndex", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["LlamaIndex 增长 291%"]},
+        {"name": "RAG", "type": "topic", "aliases": ["检索增强生成"], "confidence": 0.85, "evidence": ["检索增强生成（RAG）增长 259%"]},
+        {"name": "前向部署工程师", "type": "topic", "aliases": ["forward-deployed engineers"], "confidence": 0.85, "evidence": ["招聘正从模型构建者扩展到“前向部署工程师”"]},
+        {"name": "治理技能", "type": "topic", "aliases": ["负责任 AI", "风险与控制"], "confidence": 0.8, "evidence": ["治理类技能（负责任 AI、风险与控制）的提及量也在快速上升"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "华尔街对智能体编排技能需求一年暴涨 1721%",
+          "summary": "Draup 提供给 CNBC 的分析显示，华尔街银行招聘中“智能体编排”技能的提及量一年暴涨 1721%，成为最热门的金融 AI 技能。",
+          "participants": [
+            {"name": "Draup", "type": "company", "role": "subject"},
+            {"name": "华尔街银行", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["“智能体编排”（agent orchestration，即设计多个智能体协同完成任务的技能）的提及量一年暴涨 1721%"]
+        },
+        {
+          "type": "trend",
+          "label": "华尔街招聘转向任务导向的智能体系统",
+          "summary": "金融机构正从“聊天机器人”转向嵌入具体业务的、任务导向的智能体系统，LangGraph、LlamaIndex 与 RAG 相关技能需求快速上升。",
+          "participants": [
+            {"name": "华尔街银行", "type": "organization", "role": "subject"},
+            {"name": "LangGraph", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["金融机构正从“聊天机器人”转向嵌入具体业务的、任务导向的智能体系统"]
+        }
+      ],
+      "relations": [
+        {"source": "Vijay Swaminathan", "target": "Draup", "type": "affiliated_with", "weight": 0.9, "evidence": ["Draup CEO Vijay Swaminathan"]},
+        {"source": "华尔街银行", "target": "LangGraph", "type": "seeks_skills_in", "weight": 0.7, "evidence": ["LangGraph（多步 AI 工作流框架）提及量增长 679%"]},
+        {"source": "华尔街银行", "target": "LlamaIndex", "type": "seeks_skills_in", "weight": 0.6, "evidence": ["LlamaIndex 增长 291%"]},
+        {"source": "华尔街银行", "target": "RAG", "type": "seeks_skills_in", "weight": 0.6, "evidence": ["检索增强生成（RAG）增长 259%"]},
+        {"source": "华尔街银行", "target": "前向部署工程师", "type": "hires", "weight": 0.6, "evidence": ["招聘正从模型构建者扩展到“前向部署工程师”"]},
+        {"source": "华尔街银行", "target": "治理技能", "type": "seeks_skills_in", "weight": 0.5, "evidence": ["治理类技能（负责任 AI、风险与控制）的提及量也在快速上升"]}
+      ],
+      "metrics": [
+        {"name": "智能体编排技能提及量一年增幅", "value": "1721%"},
+        {"name": "华尔街 AI 相关岗位招聘数量", "value": "139,819 个"},
+        {"name": "生成式 AI 经理中位底薪", "value": "19 万美元"},
+        {"name": "LangGraph 提及量一年增幅", "value": "679%"},
+        {"name": "LlamaIndex 提及量一年增幅", "value": "291%"},
+        {"name": "RAG 提及量一年增幅", "value": "259%"}
+      ],
+      "why_it_matters": "招聘数据把“智能体”从概念喊话变成可量化的人才需求，金融机构对任务导向智能体的投入已进入执行期，而治理技能被并进同一职级体系。"
+    },
+    {
+      "article_id": "2026-10-04-6",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.97, "evidence": ["Google 官方博客发布 2026 年 9 月 AI 进展回顾"]},
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.9, "evidence": ["DeepMind 还启动了全球首个双盲 AI 评估试点"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": [], "confidence": 0.97, "evidence": ["领衔的是旗舰模型 Gemini 4 Argon"]},
+        {"name": "Gemini 3.8 Flash", "type": "model", "aliases": [], "confidence": 0.93, "evidence": ["9 月 Google 还发布了 Gemini 3.8 Flash"]},
+        {"name": "Gemini 3.8 Live", "type": "model", "aliases": [], "confidence": 0.93, "evidence": ["Gemini 3.8 Live 及 Live Extended Thinking"]},
+        {"name": "WeatherNext 3", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["以及天气模型 WeatherNext 3"]},
+        {"name": "AlphaGenome Atlas", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["AlphaGenome Atlas（人类基因组每个可能 DNA 碱基变化的预测图谱）"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google 发布 9 月 AI 月度回顾，领衔旗舰模型 Gemini 4 Argon",
+          "summary": "Google 官方博客发布 2026 年 9 月 AI 进展回顾，领衔的是具备更强复杂任务推理能力的旗舰模型 Gemini 4 Argon。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["领衔的是旗舰模型 Gemini 4 Argon"]
+        },
+        {
+          "type": "launch",
+          "label": "Google 9 月发布 Gemini 3.8 Flash、Gemini 3.8 Live 与 WeatherNext 3",
+          "summary": "9 月 Google 还发布了 Gemini 3.8 Flash 与 3.8 Flash Cyber、Gemini 3.8 Live、Live Avatar 及天气模型 WeatherNext 3 等。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 3.8 Flash", "type": "model", "role": "object"},
+            {"name": "Gemini 3.8 Live", "type": "model", "role": "object"}
+          ],
+          "evidence": ["9 月 Google 还发布了 Gemini 3.8 Flash 与 3.8 Flash Cyber"]
+        },
+        {
+          "type": "policy",
+          "label": "Gemini 4 Argon 仅向受信任防御者与 Google 内部团队开放",
+          "summary": "Gemini 4 Argon 目前仅向受信任的网络安全防御者和 Google 内部团队开放，尚未公开，将先向付费 API 客户和 Google AI Ultra 订阅者开放。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Gemini 4 Argon 目前仅向受信任的网络安全防御者和 Google 内部团队开放"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Argon", "target": "Google", "type": "developed_by", "weight": 0.9, "evidence": ["领衔的是旗舰模型 Gemini 4 Argon"]},
+        {"source": "Gemini 3.8 Flash", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["9 月 Google 还发布了 Gemini 3.8 Flash"]},
+        {"source": "Gemini 3.8 Live", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["Gemini 3.8 Live 及 Live Extended Thinking"]},
+        {"source": "WeatherNext 3", "target": "Google", "type": "developed_by", "weight": 0.7, "evidence": ["以及天气模型 WeatherNext 3"]},
+        {"source": "AlphaGenome Atlas", "target": "Google DeepMind", "type": "developed_by", "weight": 0.7, "evidence": ["AlphaGenome Atlas（人类基因组每个可能 DNA 碱基变化的预测图谱）"]},
+        {"source": "Google DeepMind", "target": "Google", "type": "subsidiary_of", "weight": 0.9, "evidence": ["DeepMind 还启动了全球首个双盲 AI 评估试点"]},
+        {"source": "Google", "target": "Gemini 4 Argon", "type": "restricts", "weight": 0.7, "evidence": ["Gemini 4 Argon 目前仅向受信任的网络安全防御者和 Google 内部团队开放"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "Google 把“先防护内部与受信任防御者、再开放付费客户”的安全放行节奏写进官方月度总结，旗舰模型发布与安全对齐的先后次序被正式结构化。"
+    },
+    {
+      "article_id": "2026-10-04-7",
+      "entities": [
+        {"name": "Bilibili", "type": "company", "aliases": ["哔哩哔哩"], "confidence": 0.95, "evidence": ["Bilibili 的 Index LLM 团队开源了 Index-Translate 翻译模型家族"]},
+        {"name": "Index-Translate-35B-A3B", "type": "model", "aliases": [], "confidence": 0.97, "evidence": ["旗舰预览版 Index-Translate-35B-A3B 是混合专家（MoE）模型"]},
+        {"name": "Qwen3.5", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["基于 Qwen3.5 骨干"]},
+        {"name": "FLORES", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["模型宣称在 FLORES 上取得 0.8794 的 COMET-22 分数"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Bilibili 以 Apache 2.0 开源 Index-Translate 翻译模型家族",
+          "summary": "Bilibili Index LLM 团队开源 Index-Translate 翻译模型家族，旗舰预览版 Index-Translate-35B-A3B 为 35B 总参数、激活 3B 的 MoE 模型，覆盖 150 种文本语言。",
+          "participants": [
+            {"name": "Bilibili", "type": "company", "role": "subject"},
+            {"name": "Index-Translate-35B-A3B", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Bilibili 的 Index LLM 团队开源了 Index-Translate 翻译模型家族"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Index-Translate-35B-A3B 在 FLORES 上取得 0.8794 的 COMET-22 分数",
+          "summary": "模型宣称在 FLORES 上取得 0.8794 的 COMET-22 分数，低资源语言对离题率为 2.4%，为对比组中最低。",
+          "participants": [
+            {"name": "Index-Translate-35B-A3B", "type": "model", "role": "subject"},
+            {"name": "FLORES", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["模型宣称在 FLORES 上取得 0.8794 的 COMET-22 分数"]
+        }
+      ],
+      "relations": [
+        {"source": "Index-Translate-35B-A3B", "target": "Bilibili", "type": "developed_by", "weight": 0.9, "evidence": ["Bilibili 的 Index LLM 团队开源了 Index-Translate 翻译模型家族"]},
+        {"source": "Index-Translate-35B-A3B", "target": "Qwen3.5", "type": "built_on", "weight": 0.8, "evidence": ["基于 Qwen3.5 骨干"]},
+        {"source": "Index-Translate-35B-A3B", "target": "FLORES", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 FLORES 上取得 0.8794 的 COMET-22 分数"]}
+      ],
+      "metrics": [
+        {"name": "Index-Translate-35B-A3B 总参数", "value": "35B"},
+        {"name": "Index-Translate-35B-A3B 激活参数", "value": "3B"},
+        {"name": "覆盖文本语言", "value": "150 种"},
+        {"name": "FLORES COMET-22 分数", "value": "0.8794"},
+        {"name": "低资源语言对离题率", "value": "2.4%"},
+        {"name": "多语言中间训练 token", "value": "1677.7 亿"}
+      ],
+      "why_it_matters": "MoE 激活仅 3B 的翻译模型在常规基准追赶 100B 级模型，参数效率成为开源翻译的新竞争维度，也延续了 10 月初 Apache 2.0 开源潮。"
+    },
+    {
+      "article_id": "2026-10-04-8",
+      "entities": [
+        {"name": "Cloudflare", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Cloudflare 发布其首批自主训练的决策模型"]},
+        {"name": "Clef", "type": "model", "aliases": [], "confidence": 0.97, "evidence": ["决策模型 Clef（27B）和 Clef-flash（9B）"]},
+        {"name": "Clef-flash", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["决策模型 Clef（27B）和 Clef-flash（9B）"]},
+        {"name": "TypeSafe", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["决策模型与 TypeSafe 的 Jev 同类"]},
+        {"name": "Jev", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["决策模型与 TypeSafe 的 Jev 同类"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Cloudflare 发布开源决策模型 Clef 与 Clef-flash",
+          "summary": "Cloudflare 发布其首批自主训练的决策模型 Clef（27B）和 Clef-flash（9B），并已在 Workers AI 上线。",
+          "participants": [
+            {"name": "Cloudflare", "type": "company", "role": "subject"},
+            {"name": "Clef", "type": "model", "role": "object"},
+            {"name": "Clef-flash", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Cloudflare 发布其首批自主训练的决策模型 Clef（27B）和 Clef-flash（9B）"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Clef-flash 中位延迟约 39 毫秒，快于 Jev 的 524 毫秒",
+          "summary": "Cloudflare 报告 Clef-flash 中位延迟约 39 毫秒、Clef 约 209 毫秒，快于 Jev 的 524 毫秒，且 API 与 Jev 完全兼容。",
+          "participants": [
+            {"name": "Clef", "type": "model", "role": "subject"},
+            {"name": "Clef-flash", "type": "model", "role": "subject"},
+            {"name": "Jev", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["Clef-flash 中位延迟约 39 毫秒、Clef 约 209 毫秒，快于 Jev 的 524 毫秒"]
+        }
+      ],
+      "relations": [
+        {"source": "Clef", "target": "Cloudflare", "type": "developed_by", "weight": 0.9, "evidence": ["Cloudflare 发布其首批自主训练的决策模型"]},
+        {"source": "Clef-flash", "target": "Cloudflare", "type": "developed_by", "weight": 0.85, "evidence": ["Cloudflare 发布其首批自主训练的决策模型"]},
+        {"source": "Clef", "target": "Jev", "type": "faster_than", "weight": 0.7, "evidence": ["Clef 约 209 毫秒，快于 Jev 的 524 毫秒"]},
+        {"source": "Clef-flash", "target": "Jev", "type": "faster_than", "weight": 0.7, "evidence": ["Clef-flash 中位延迟约 39 毫秒、Clef 约 209 毫秒，快于 Jev 的 524 毫秒"]},
+        {"source": "Jev", "target": "TypeSafe", "type": "developed_by", "weight": 0.8, "evidence": ["决策模型与 TypeSafe 的 Jev 同类"]},
+        {"source": "Clef", "target": "Jev", "type": "competes_with", "weight": 0.7, "evidence": ["挑战 TypeSafe 的 Jev"]}
+      ],
+      "metrics": [
+        {"name": "Clef-flash 中位延迟", "value": "39 毫秒"},
+        {"name": "Clef 中位延迟", "value": "209 毫秒"},
+        {"name": "Jev 中位延迟", "value": "524 毫秒"},
+        {"name": "Clef 上下文窗口", "value": "64K"},
+        {"name": "Clef-flash 最低显存", "value": "41GB"},
+        {"name": "Clef 最低显存", "value": "85GB"}
+      ],
+      "why_it_matters": "决策模型把“输出概率而非文本”做成可即插即用的替代品，AI 智能体的单次决策从需解析文本的推理事件，变成毫秒级、无文本解析的直接行动。"
+    },
+    {
+      "article_id": "2026-10-04-9",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.97, "evidence": ["OpenAI 正洽谈新一轮至少 300 亿美元的融资"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["重新超过长期竞争对手 Anthropic"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["已与 NVIDIA 达成部署至少 10GW AI 数据中心"]},
+        {"name": "Dots", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["与 Dots 常驻智能体的发布"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "OpenAI 拟融资至少 300 亿美元，估值约 1.4 万亿美元",
+          "summary": "据彭博社报道，OpenAI 正洽谈新一轮至少 300 亿美元的融资，寻求约 1.4 万亿美元的估值，将重新超过 Anthropic 的最新私募估值。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["OpenAI 正洽谈新一轮至少 300 亿美元的融资"]
+        },
+        {
+          "type": "partnership",
+          "label": "OpenAI 与 NVIDIA 达成至少 10GW AI 数据中心战略合作",
+          "summary": "OpenAI 已与 NVIDIA 达成部署至少 10GW AI 数据中心、NVIDIA 最高投资 1000 亿美元的战略合作，为推迟 IPO 的同时扩张计算基础设施提供资本缓冲。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["已与 NVIDIA 达成部署至少 10GW AI 数据中心"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "Anthropic", "type": "competes_with", "weight": 0.8, "evidence": ["重新超过长期竞争对手 Anthropic"]},
+        {"source": "OpenAI", "target": "NVIDIA", "type": "partners_with", "weight": 0.8, "evidence": ["已与 NVIDIA 达成部署至少 10GW AI 数据中心、NVIDIA 最高投资 1000 亿美元的战略合作"]},
+        {"source": "NVIDIA", "target": "OpenAI", "type": "invests_in", "weight": 0.7, "evidence": ["NVIDIA 最高投资 1000 亿美元"]},
+        {"source": "Dots", "target": "OpenAI", "type": "released_by", "weight": 0.5, "evidence": ["与 Dots 常驻智能体的发布"]}
+      ],
+      "metrics": [
+        {"name": "OpenAI 本轮融资目标", "value": "300 亿美元"},
+        {"name": "OpenAI 估值", "value": "1.4 万亿美元"},
+        {"name": "NVIDIA 最高投资额", "value": "1000 亿美元"},
+        {"name": "NVIDIA 数据中心部署规模", "value": "10GW"},
+        {"name": "OpenAI 周活跃用户", "value": "700 亿"}
+      ],
+      "why_it_matters": "OpenAI 一边借 1.4 万亿估值融资扩张算力、一边应对安全治理与人事动荡，商业化扩张与安全对齐两条线同时提速的分裂格局成为焦点。"
+    },
+    {
+      "article_id": "2026-10-04-10",
+      "entities": [
+        {"name": "OverForge", "type": "paper", "aliases": [], "confidence": 0.97, "evidence": ["论文《OverForge: Reasoning Through Strategies and Tactics Helps Cooperative Lifelong Adaptation》提出一种免训练的分层架构"]},
+        {"name": "OvercookedV2", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 OvercookedV2 中"]},
+        {"name": "PCM", "type": "tool", "aliases": ["前额叶皮层模块"], "confidence": 0.9, "evidence": ["一个元认知“前额叶皮层模块”（PCM）通过形成策略-动作分支"]},
+        {"name": "扁平 LLM 基线", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["而扁平 LLM 基线只有 3 份"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "OverForge 提出分层策略-战术架构实现协作式终身适应",
+          "summary": "OverForge 是免训练的分层架构，将智能体持久协作策略与战术执行分离，策略层负责角色与分工推理，战术层在伙伴为条件的世界模型内推理动作，由 PCM 耦合两层。",
+          "participants": [
+            {"name": "OverForge", "type": "paper", "role": "subject"},
+            {"name": "PCM", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["论文《OverForge: Reasoning Through Strategies and Tactics Helps Cooperative Lifelong Adaptation》提出一种免训练的分层架构"]
+        },
+        {
+          "type": "benchmark",
+          "label": "OverForge 在 OvercookedV2 做出 7 份汤，远超扁平 LLM 基线的 3 份",
+          "summary": "在 OvercookedV2 的连通厨房里 OverForge 做出 7 份汤，而扁平 LLM 基线只有 3 份，且能保持已商定的角色并采纳陌生伙伴提出的角色。",
+          "participants": [
+            {"name": "OverForge", "type": "paper", "role": "subject"},
+            {"name": "OvercookedV2", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 OvercookedV2 中，OverForge 在连通厨房里做出 7 份汤，而扁平 LLM 基线只有 3 份"]
+        }
+      ],
+      "relations": [
+        {"source": "OverForge", "target": "OvercookedV2", "type": "evaluated_on", "weight": 0.9, "evidence": ["在 OvercookedV2 中"]},
+        {"source": "OverForge", "target": "PCM", "type": "uses", "weight": 0.8, "evidence": ["一个元认知“前额叶皮层模块”（PCM）通过形成策略-动作分支"]},
+        {"source": "OverForge", "target": "扁平 LLM 基线", "type": "outperforms", "weight": 0.8, "evidence": ["做出 7 份汤，而扁平 LLM 基线只有 3 份"]}
+      ],
+      "metrics": [
+        {"name": "OverForge 在连通厨房做出的汤数", "value": "7 份"},
+        {"name": "扁平 LLM 基线做出汤数", "value": "3 份"}
+      ],
+      "why_it_matters": "把策略与战术两层分离并以元认知模块解耦，提供了一条免训练即可提升多智能体长时程协作的路径，指向更可解释的智能体协调架构。"
+    },
+    {
+      "article_id": "2026-10-04-11",
+      "entities": [
+        {"name": "Armadin", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["AI 黑客初创公司 Armadin 完成 2.555 亿美元 B 轮融资"]},
+        {"name": "a16z", "type": "company", "aliases": ["Andreessen Horowitz"], "confidence": 0.9, "evidence": ["由 a16z 和 Accel 联合领投"]},
+        {"name": "Accel", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["由 a16z 和 Accel 联合领投"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.95, "evidence": ["Google 的 Gemini 4 Argon 宣称可自主发现、验证并修补软件漏洞"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Google 的 Gemini 4 Argon 宣称"]},
+        {"name": "CWE-bench v1", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 CWE-bench v1 上取得 68% 的并列最高分"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Armadin 完成 2.555 亿美元 B 轮融资",
+          "summary": "由 Mandiant 创始人创立的 AI 黑客初创公司 Armadin 完成 2.555 亿美元 B 轮融资，本轮由 a16z 和 Accel 联合领投。",
+          "participants": [
+            {"name": "Armadin", "type": "company", "role": "subject"},
+            {"name": "a16z", "type": "company", "role": "funder"},
+            {"name": "Accel", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["AI 黑客初创公司 Armadin 完成 2.555 亿美元 B 轮融资"]
+        },
+        {
+          "type": "trend",
+          "label": "AI 攻防成为安全行业投资主线",
+          "summary": "该融资与 Google Gemini 4 Argon 的自主漏洞修补能力形成呼应，资本正同时流向“用 AI 防守”和“用 AI 进攻”两个方向。",
+          "participants": [
+            {"name": "Armadin", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "object"}
+          ],
+          "evidence": ["资本正同时流向“用 AI 防守”和“用 AI 进攻”两个方向"]
+        }
+      ],
+      "relations": [
+        {"source": "a16z", "target": "Armadin", "type": "invests_in", "weight": 0.8, "evidence": ["由 a16z 和 Accel 联合领投"]},
+        {"source": "Accel", "target": "Armadin", "type": "invests_in", "weight": 0.8, "evidence": ["由 a16z 和 Accel 联合领投"]},
+        {"source": "Gemini 4 Argon", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["Google 的 Gemini 4 Argon 宣称"]},
+        {"source": "Gemini 4 Argon", "target": "CWE-bench v1", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 CWE-bench v1 上取得 68% 的并列最高分"]}
+      ],
+      "metrics": [
+        {"name": "Armadin B 轮融资额", "value": "2.555 亿美元"},
+        {"name": "Gemini 4 Argon 在 CWE-bench v1 得分", "value": "68%"}
+      ],
+      "why_it_matters": "资本同时押注“用 AI 进攻”与“用 AI 防守”两端，AI 攻防的军备竞赛正式成为安全行业最受关注的投资主题之一。"
+    }
+  ]
+}
