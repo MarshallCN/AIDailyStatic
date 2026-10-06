@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T22:39:52Z",
+  "updated_at": "2026-10-06T23:33:20Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -759,8 +759,8 @@
       "period_id": "2026-W36",
       "period_type": "week",
       "start_date": "2026-08-31",
-      "end_date": "2026-09-05",
-      "summary": "2026-08-31 至 2026-09-05 期间，OpenAI、亿美元、Astra 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-09-06",
+      "summary": "2026-08-31 至 2026-09-06 期间，OpenAI、亿美元、Astra 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "亿美元",

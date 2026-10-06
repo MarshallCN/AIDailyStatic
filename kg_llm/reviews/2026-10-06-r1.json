@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-06",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 72,
+  "summary": "事实与指标整体扎实、证据可核，但存在一处竞争关系目标层级错配（产品对置到母公司公司实体），并有多处跨文章规范名不一致（Astra/GPT-6 Astra、ChatGPT Dots/Dots）导致图谱无法连通；另有多条 invests_in 关系以「背书/支持」这类非投资表述作证据，类型偏强。",
+  "findings": [
+    {
+      "article_id": "2026-10-06-5",
+      "severity": "high",
+      "problem": "关系 \"ChatGPT Dots --competes_with--> Meta\" 的目标实体层级错配：ChatGPT Dots 是个人代理产品，其竞争对象应是 Meta 的同类产品 Muse（原文『以 Meta Muse、Instinct、ChatGPT Dots 为代表的个人代理』），把产品与母公司公司实体对置，读出来是「Dots 与 Meta 公司竞争」，语义错误，且与本篇及其他篇的产品对产品竞争建模（Underdog/Wajo --competes_with--> Muse/Instinct）不一致。",
+      "fix": "改为 \"ChatGPT Dots --competes_with--> Muse\"（与 article 6/7 用 Muse/Instinct 作为竞争对手的建模保持一致）；若同时保留对 Meta 的关联，应表达为 \"ChatGPT Dots --developed_by--> OpenAI\" 类的产品归属关系。"
+    },
+    {
+      "article_id": "2026-10-06-0",
+      "severity": "medium",
+      "problem": "跨文章规范名不一致导致图谱无法连通：同一 OpenAI 模型在 article 0 记为 \"Astra\"、在 article 3 记为 \"GPT-6 Astra\"；同一产品在 article 5 记为 \"ChatGPT Dots\"、在 article 6 与 article 7 记为 \"Dots\"。这会分裂成不同实体，跨文章共享连通统计失真。",
+      "fix": "统一主名（如 default 用全名 \"GPT-6 Astra\" 与 \"ChatGPT Dots\"，把 \"Astra\"、\"Dots\" 作为 aliases），或反向统一到简称；确保同一模型/产品在所有文章使用同一规范主名加 aliases。"
+    },
+    {
+      "article_id": "2026-10-06-0",
+      "severity": "medium",
+      "problem": "关系 \"Opus 5.5 --outperforms--> GPT-6.1 Sol\" 的关系类型与证据不符：证据是『Anthropic 的 API 等价价值全面高出约 5 倍』，比较的是两个订阅计划在同等价位下的 API 等价价值（经济价值），而非模型能力/基准成绩；用 outperforms 会让读者读成「Opus 5.5 模型能力碾压 GPT-6.1 Sol」，语义被放大。",
+      "fix": "把该关系的语义收敛为订阅价值对比（如改用价值/成本对比类关系，source 设为 Anthropic、target 设为 OpenAI），或在保留模型间关系时补充模型能力类证据；不要用模型能力的 outperforms 承载订阅经济价值对比。"
+    },
+    {
+      "article_id": "2026-10-06-1",
+      "severity": "medium",
+      "problem": "关系 \"NVIDIA --invests_in--> Reflection AI\" 的证据只有『获英伟达背书』，「背书」只表明英伟达认可/站台，不等于确认投资，invests_in 断言偏强。",
+      "fix": "若原文确无明确注资表述，改证据为更贴合的背书表述，或把关系降级为背书/支持类（如 backed_by）；只有当原文写明「投资/注资/领投一轮」时才用 invests_in。"
+    },
+    {
+      "article_id": "2026-10-06-6",
+      "severity": "medium",
+      "problem": "关系 \"Jeff Dean --invests_in--> Wajo\" 与 \"Gokul Rajaram --invests_in--> Wajo\" 的证据是『获 Jeff Dean 与 Gokul Rajaram 支持』，「支持」仅表达背书/认可，不保证是资本投入，invests_in 类型偏强（article 0 的 NVIDIA 同样问题）。",
+      "fix": "将这两条关系改为背书/支持类（backed_by / supports），或补充原文中明确为投资/注资的表述后再使用 invests_in。"
+    },
+    {
+      "article_id": "2026-10-06-13",
+      "severity": "medium",
+      "problem": "同类实体类型不一致：同为云服务/云平台客户，CoreWeave、Google Cloud、Oracle OCI、Nebius 被标为 company，而 Azure 被标为 product。同一类对象应统一类型，避免图谱计算与合并时把 Azure 与其它云厂商降格对待。",
+      "fix": "将 \"Azure\" 的类型由 product 改为 company（或与 Google Cloud/Oracle OCI 采用同一一致类型），并检查同为部署客户的其他实体类型保持一致。"
+    }
+  ],
+  "lessons": [
+    "竞争/合作关系两端必须是同一层级实体：产品与产品、公司与公司，不要把产品连到其母公司的公司实体上作为 competitors。",
+    "同一模型/产品跨文章要用统一规范主名并让全名作 aliases（如 GPT-6 Astra/Astra、ChatGPT Dots/Dots），保证跨文章连通。",
+    "invests_in 只在原文有明确投资/注资/领投表述时使用；『背书』『支持』只能表达背书/支持类关系。"
+  ]
+}

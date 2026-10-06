@@ -1,0 +1,1978 @@
+{
+  "date": "2026-10-06",
+  "articles": [
+    {
+      "article_id": "2026-10-06-0",
+      "entities": [
+        {
+          "name": "SemiAnalysis",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["SemiAnalysis 发布了一份对各大 AI 订阅计划的系统性「限额压力测试」"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["Anthropic 的 API 等价价值全面高出约 5 倍"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.97,
+          "evidence": ["OpenAI 的 GPT-6.1 Sol"]
+        },
+        {
+          "name": "Opus 5.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Anthropic 的 Opus 5.5"]
+        },
+        {
+          "name": "GPT-6.1 Sol",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["OpenAI 的 GPT-6.1 Sol"]
+        },
+        {
+          "name": "Fable 5.1",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["尤其 Fable 5.1"]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": ["Astra"],
+          "confidence": 0.9,
+          "evidence": ["新 $500 档的 Astra 用量"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "SemiAnalysis 对各大 AI 订阅计划做限额压力测试",
+          "summary": "SemiAnalysis 用精心设计的实验对 Anthropic、OpenAI、Meta、SpaceXAI、MiniMax、Moonshot、Z.ai 等主流 AI 订阅计划的限额做压力测试，逐步反推各计划、模型、token 类型的实际计价率。",
+          "participants": [
+            {"name": "SemiAnalysis", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["SemiAnalysis 发布了一份对各大 AI 订阅计划的系统性「限额压力测试」"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Anthropic 订阅的 API 等价价值整体高出 OpenAI 约 5 倍",
+          "summary": "在日常主力模型档位 OpenAI 的 GPT-6.1 Sol 对比 Anthropic 的 Opus 5.5，Anthropic 提供的 API 等价价值全面高出约 5 倍，即便只比较可获得的 token 数量差距依然巨大。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"},
+            {"name": "Opus 5.5", "type": "model", "role": "object"},
+            {"name": "GPT-6.1 Sol", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["Anthropic 提供的 API 等价价值全面高出约 5 倍"]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI 将 $200 档价值腰斩并新推出 $500 档",
+          "summary": "OpenAI 上周把 $200/月计划的 API 等价价值整体腰斩并新推出 $500 档，新 $500 档的 Astra 用量只比旧 $200 档多 21%；而 Anthropic 通过为高级模型保留更低隐含额度来逐步削减补贴。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"},
+            {"name": "Fable 5.1", "type": "model", "role": "object"}
+          ],
+          "evidence": ["其 $200/月计划 API 等价价值被整体腰斩，并新推出 $500 档"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "GPT-6.1 Sol",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["OpenAI 的 GPT-6.1 Sol"]
+        },
+        {
+          "source": "Opus 5.5",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Anthropic 的 Opus 5.5"]
+        },
+        {
+          "source": "Fable 5.1",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["尤其 Fable 5.1"]
+        },
+        {
+          "source": "GPT-6 Astra",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["新 $500 档的 Astra 用量"]
+        },
+        {
+          "source": "Opus 5.5",
+          "target": "GPT-6.1 Sol",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": ["Anthropic 提供的 API 等价价值全面高出约 5 倍"]
+        },
+        {
+          "source": "Anthropic",
+          "target": "OpenAI",
+          "type": "competes_with",
+          "weight": 0.8,
+          "evidence": ["同等价位下 Anthropic 的 API 等价价值普遍比 OpenAI 高出约 5 倍"]
+        }
+      ],
+      "metrics": [
+        {"name": "Anthropic 相对 OpenAI 的同等价位 API 等价价值倍数", "value": "约 5 倍"},
+        {"name": "订阅额度占 OpenAI/Anthropic 营收比例", "value": "约 10%"},
+        {"name": "订阅额度消耗的推理算力占比", "value": "超过 40%"},
+        {"name": "订阅额度对每 MW 混合收入的拉低幅度", "value": "约 3600 万美元"},
+        {"name": "OpenAI 新 $500 档相对旧 $200 档的 Astra 用量增幅", "value": "21%"},
+        {"name": "Anthropic 计划相对第三方包装商的限额慷慨倍数", "value": "9 倍"},
+        {"name": "计价反推误差上限", "value": "±5%"}
+      ],
+      "why_it_matters": "订阅定价从营销问题变为隐藏的算力定价变量——OpenAI 用贬低旧档价值推动升级，Anthropic 用含蓄补贴对冲，两条路径暴露了订阅经济作为算力财务模型的结构性分歧。"
+    },
+    {
+      "article_id": "2026-10-06-1",
+      "entities": [
+        {
+          "name": "Reflection AI",
+          "type": "company",
+          "aliases": ["Reflection"],
+          "confidence": 0.97,
+          "evidence": ["Reflection AI 官宣其首个开源权重模型 Beam"]
+        },
+        {
+          "name": "Beam",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["Reflection AI 官宣其首个开源权重模型 Beam"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.97,
+          "evidence": ["获英伟达背书"]
+        },
+        {
+          "name": "Misha Laskin",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["前 Google DeepMind 研究员 Misha Laskin 与 Ioannis Antonoglou 创立"]
+        },
+        {
+          "name": "Ioannis Antonoglou",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["前 Google DeepMind 研究员 Misha Laskin 与 Ioannis Antonoglou 创立"]
+        },
+        {
+          "name": "GLM-5.2",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["在高级推理基准上与 GLM-5.2 相当"]
+        },
+        {
+          "name": "Qwen 3.8-Max",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["接近 Qwen 3.8-Max"]
+        },
+        {
+          "name": "SWE-Bench Verified",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["SWE-Bench Verified 80.9"]
+        },
+        {
+          "name": "Terminal-Bench v2.1",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["Terminal-Bench v2.1 80.1"]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Reflection AI 发布首个开源权重模型 Beam",
+          "summary": "Reflection AI 官宣首个开源权重模型 Beam，一款 501B 总参数、23B 激活的稀疏 MoE，权重、技术报告与模型卡将以 Apache 2.0 许可发布。",
+          "participants": [
+            {"name": "Reflection AI", "type": "company", "role": "subject"},
+            {"name": "Beam", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Reflection AI 官宣其首个开源权重模型 Beam"]
+        },
+        {
+          "type": "research",
+          "label": "Beam 以高算力强化学习为扩展轴训练",
+          "summary": "团队在 1.05 万块 NVIDIA GB300 上跑 4 周 RL，生成超过 1 亿次 rollout，使用约 13 亿个沙箱与 100 万个环境，维持平均 11 万并发 rollout。",
+          "participants": [
+            {"name": "Reflection AI", "type": "company", "role": "subject"},
+            {"name": "Beam", "type": "model", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["在 1.05 万块 NVIDIA GB300 上跑了 4 周 RL"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Beam 在推理基准上与 GLM-5.2 相当、接近 Qwen 3.8-Max",
+          "summary": "Beam 在高级推理基准上与 GLM-5.2 相当，用 3–4 倍更少的推理算力；SWE-Bench Verified 80.9、Terminal-Bench v2.1 80.1。",
+          "participants": [
+            {"name": "Beam", "type": "model", "role": "subject"},
+            {"name": "GLM-5.2", "type": "model", "role": "competitor"},
+            {"name": "Qwen 3.8-Max", "type": "model", "role": "competitor"},
+            {"name": "SWE-Bench Verified", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在高级推理基准上与 GLM-5.2 相当"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Beam",
+          "target": "Reflection AI",
+          "type": "developed_by",
+          "weight": 0.95,
+          "evidence": ["Reflection AI 官宣其首个开源权重模型 Beam"]
+        },
+        {
+          "source": "Beam",
+          "target": "SWE-Bench Verified",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": ["SWE-Bench Verified 80.9"]
+        },
+        {
+          "source": "Beam",
+          "target": "Terminal-Bench v2.1",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": ["Terminal-Bench v2.1 80.1"]
+        },
+        {
+          "source": "Beam",
+          "target": "GLM-5.2",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": ["在高级推理基准上与 GLM-5.2 相当"]
+        },
+        {
+          "source": "Beam",
+          "target": "Qwen 3.8-Max",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": ["接近 Qwen 3.8-Max（一款 2T+ 参数的模型）"]
+        },
+        {
+          "source": "Beam",
+          "target": "NVIDIA",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["在 1.05 万块 NVIDIA GB300 上"]
+        },
+        {
+          "source": "Misha Laskin",
+          "target": "Reflection AI",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": ["前 Google DeepMind 研究员 Misha Laskin 与 Ioannis Antonoglou 创立"]
+        },
+        {
+          "source": "Ioannis Antonoglou",
+          "target": "Reflection AI",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": ["前 Google DeepMind 研究员 Misha Laskin 与 Ioannis Antonoglou 创立"]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "Reflection AI",
+          "type": "supports",
+          "weight": 0.6,
+          "evidence": ["获英伟达背书"]
+        }
+      ],
+      "metrics": [
+        {"name": "Beam 总参数", "value": "501B"},
+        {"name": "Beam 激活参数", "value": "23B"},
+        {"name": "Reflection AI 估值", "value": "约 250 亿美元"},
+        {"name": "训练用 NVIDIA GB300 数量", "value": "1.05 万块"},
+        {"name": "RL 训练时长", "value": "4 周"},
+        {"name": "RL rollout 生成次数", "value": "超过 1 亿次"},
+        {"name": "训练最长 context", "value": "256K"},
+        {"name": "沙箱使用量", "value": "约 13 亿个"},
+        {"name": "高质量环境数量", "value": "100 万个"},
+        {"name": "平均并发 rollout", "value": "11 万"},
+        {"name": "Beam 在 SWE-Bench Verified 得分", "value": "80.9"},
+        {"name": "Beam 在 Terminal-Bench v2.1 得分", "value": "80.1"},
+        {"name": "Beam 相对同级模型节省的推理算力倍数", "value": "3–4 倍"},
+        {"name": "Qwen 3.8-Max 总参数", "value": "2T+"}
+      ],
+      "why_it_matters": "西方开源自救不再靠追参数量，而是把「高算力强化学习」当作真正的扩展轴，用更少的推理算力对齐中国开源旗舰，把训练算法与推理效率确立为新一轮开源竞争的关键变量。"
+    },
+    {
+      "article_id": "2026-10-06-2",
+      "entities": [
+        {
+          "name": "Aleph Alpha",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["Aleph Alpha 发布其首个公开模型 Kolibri 1"]
+        },
+        {
+          "name": "Kolibri 1",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["Aleph Alpha 发布其首个公开模型 Kolibri 1"]
+        },
+        {
+          "name": "欧盟 AI 法案",
+          "type": "policy",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["以欧盟《AI 法案》"]
+        },
+        {
+          "name": "数据主权",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["数据主权"]
+        },
+        {
+          "name": "Hugging Face",
+          "type": "company",
+          "aliases": ["HuggingFace", "HF"],
+          "confidence": 0.9,
+          "evidence": ["权重以 Apache 2.0 许可发布在 Hugging Face"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.95,
+          "evidence": ["768 块 NVIDIA B200"]
+        },
+        {
+          "name": "AIME 2026",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["AIME 2026 96.0%"]
+        },
+        {
+          "name": "GPQA Diamond",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["GPQA Diamond 84.3%"]
+        },
+        {
+          "name": "LiveCodeBench",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["LiveCodeBench 85.9%"]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Aleph Alpha 发布主权开源模型 Kolibri 1",
+          "summary": "Aleph Alpha 于德国统一日发布首个公开模型 Kolibri 1，一款双语（德/英）MoE transformer，约 78.1B 总参数、每个 token 激活约 3.46B，权重以 Apache 2.0 许可发布。",
+          "participants": [
+            {"name": "Aleph Alpha", "type": "company", "role": "subject"},
+            {"name": "Kolibri 1", "type": "model", "role": "object"},
+            {"name": "Hugging Face", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Aleph Alpha 发布其首个公开模型 Kolibri 1"]
+        },
+        {
+          "type": "policy",
+          "label": "Kolibri 1 以欧盟法规与本地基础设施支撑数据主权",
+          "summary": "模型完全在德国与芬兰本地基础设施上训练，企业可自行部署避免把数据交给外部云，开发以欧盟《AI 法案》、实践准则和 GDPR 为约束。",
+          "participants": [
+            {"name": "Aleph Alpha", "type": "company", "role": "subject"},
+            {"name": "Kolibri 1", "type": "model", "role": "object"},
+            {"name": "欧盟 AI 法案", "type": "policy", "role": "regulator"},
+            {"name": "数据主权", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["以欧盟《AI 法案》"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Kolibri 1 公布 AIME 与编码基准得分",
+          "summary": "公司公布 AIME 2026 96.0%、GPQA Diamond 84.3%、LiveCodeBench 85.9%，选 78B 而非 123B 变体纯粹出于服务成本。",
+          "participants": [
+            {"name": "Kolibri 1", "type": "model", "role": "subject"},
+            {"name": "AIME 2026", "type": "benchmark", "role": "benchmark"},
+            {"name": "GPQA Diamond", "type": "benchmark", "role": "benchmark"},
+            {"name": "LiveCodeBench", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["AIME 2026 96.0%"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Kolibri 1",
+          "target": "Aleph Alpha",
+          "type": "developed_by",
+          "weight": 0.95,
+          "evidence": ["Aleph Alpha 发布其首个公开模型 Kolibri 1"]
+        },
+        {
+          "source": "Kolibri 1",
+          "target": "AIME 2026",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": ["AIME 2026 96.0%"]
+        },
+        {
+          "source": "Kolibri 1",
+          "target": "GPQA Diamond",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": ["GPQA Diamond 84.3%"]
+        },
+        {
+          "source": "Kolibri 1",
+          "target": "LiveCodeBench",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": ["LiveCodeBench 85.9%"]
+        },
+        {
+          "source": "Kolibri 1",
+          "target": "欧盟 AI 法案",
+          "type": "complies_with",
+          "weight": 0.85,
+          "evidence": ["以欧盟《AI 法案》"]
+        },
+        {
+          "source": "Kolibri 1",
+          "target": "NVIDIA",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["768 块 NVIDIA B200"]
+        },
+        {
+          "source": "Aleph Alpha",
+          "target": "数据主权",
+          "type": "supports",
+          "weight": 0.7,
+          "evidence": ["主权是其核心卖点"]
+        }
+      ],
+      "metrics": [
+        {"name": "Kolibri 1 总参数", "value": "约 78.1B"},
+        {"name": "Kolibri 1 每 token 激活参数", "value": "约 3.46B"},
+        {"name": "Kolibri 1 训练 context", "value": "262,144"},
+        {"name": "Kolibri 1 验证 context", "value": "100 万 token"},
+        {"name": "每层专家数", "value": "384 个专家加 1 个共享专家"},
+        {"name": "每 token 路由激活专家数", "value": "6 个"},
+        {"name": "Kolibri 1 激活率", "value": "约 4.4%"},
+        {"name": "训练用 NVIDIA B200 数量", "value": "768 块"},
+        {"name": "德语文本占预训练数据比例", "value": "约 23%"},
+        {"name": "预训练数据总量", "value": "约 20 万亿 token"},
+        {"name": "德/英/代码预训练数据比例", "value": "约 62.5%/23.9%/13.6%"},
+        {"name": "Kolibri 1 在 AIME 2026 得分", "value": "96.0%"},
+        {"name": "Kolibri 1 在 GPQA Diamond 得分", "value": "84.3%"},
+        {"name": "Kolibri 1 在 LiveCodeBench 得分", "value": "85.9%"},
+        {"name": "Kolibri 1 FP8 存储体积", "value": "约 78GB"},
+        {"name": "RTX Pro 6000 上 FP8 推理速度", "value": "约 170 tokens/s"}
+      ],
+      "why_it_matters": "主权 AI 不再靠算法差异而是靠「训练流程全部本土掌控 + 欧盟法规合规」构建卖点，Aleph Alpha 用德语母语推理与自行部署把数据主权做成开源模型的核心属性，给欧洲受监管行业一个可自我托管的落点。"
+    },
+    {
+      "article_id": "2026-10-06-3",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.97,
+          "evidence": ["OpenAI 宣布首个「计算机使用」研究合作伙伴 Ironclad"]
+        },
+        {
+          "name": "Ironclad",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["OpenAI 宣布首个「计算机使用」研究合作伙伴 Ironclad"]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["GPT-6 Astra 在 11 项任务上得分比 GPT-5.6 Sol 高 32%"]
+        },
+        {
+          "name": "GPT-5.6 Sol",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["GPT-6 Astra 在 11 项任务上得分比 GPT-5.6 Sol 高 32%"]
+        }
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "OpenAI 与 Ironclad 合作推进计算机使用研究",
+          "summary": "OpenAI 宣布首个计算机使用研究合作伙伴 Ironclad，把真实专业工作流转化为研究与评测任务，Ironclad 提供托管环境供模型练习，OpenAI 构建合成任务并用强化学习改进。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Ironclad", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["OpenAI 宣布首个「计算机使用」研究合作伙伴 Ironclad"]
+        },
+        {
+          "type": "benchmark",
+          "label": "GPT-6 Astra 在 11 项 Ironclad 任务上得分显著更高",
+          "summary": "在这 11 项研究任务上 GPT-6 Astra 平均得分 55.0%（对比 GPT-5.6 Sol 的 41.6%），估计单次尝试耗时从 37.0 分钟降至 19.2 分钟。",
+          "participants": [
+            {"name": "GPT-6 Astra", "type": "model", "role": "subject"},
+            {"name": "GPT-5.6 Sol", "type": "model", "role": "competitor"},
+            {"name": "OpenAI", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["GPT-6 Astra 在 11 项任务上得分比 GPT-5.6 Sol 高 32%"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "OpenAI",
+          "target": "Ironclad",
+          "type": "partners_with",
+          "weight": 0.9,
+          "evidence": ["OpenAI 宣布首个「计算机使用」研究合作伙伴 Ironclad"]
+        },
+        {
+          "source": "GPT-6 Astra",
+          "target": "GPT-5.6 Sol",
+          "type": "outperforms",
+          "weight": 0.9,
+          "evidence": ["GPT-6 Astra 在 11 项任务上得分比 GPT-5.6 Sol 高 32%"]
+        },
+        {
+          "source": "GPT-6 Astra",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["OpenAI 则构建合成训练任务并用强化学习改进"]
+        }
+      ],
+      "metrics": [
+        {"name": "GPT-6 Astra 相对 GPT-5.6 Sol 的得分提升", "value": "32%"},
+        {"name": "Ironclad 研究任务数", "value": "11 项"},
+        {"name": "GPT-6 Astra 平均得分", "value": "55.0%"},
+        {"name": "GPT-5.6 Sol 平均得分", "value": "41.6%"},
+        {"name": "GPT-6 Astra 单次尝试估时", "value": "19.2 分钟"},
+        {"name": "GPT-5.6 Sol 单次尝试估时", "value": "37.0 分钟"},
+        {"name": "经验用户完成单任务时长区间", "value": "30–40 分钟"},
+        {"name": "单项任务评判标准条数", "value": "8 到 50 条"}
+      ],
+      "why_it_matters": "模型是否安全可用不再只看基准分，而是看它能否在真实多步业务流程中守规则、校验产出——「人类监督 + 模型校验」成为计算机使用落地的硬前提，决定了软件公司敢把多少工作交办给代理。"
+    },
+    {
+      "article_id": "2026-10-06-4",
+      "entities": [
+        {
+          "name": "Sierra",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["AI 客服公司 Sierra 提出并牵头一个行业协议"]
+        },
+        {
+          "name": "个人代理协议",
+          "type": "policy",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Sierra 联合 Meta、Genesys、Instinct、Rocket、Shopify、Stripe、Walmart 等共同开发「个人代理协议（Personal Agent Protocol）」"]
+        },
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": ["Facebook", "Meta AI"],
+          "confidence": 0.97,
+          "evidence": ["个人代理（如 Meta 的 Muse、Instinct 等）"]
+        },
+        {
+          "name": "Muse",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["个人代理（如 Meta 的 Muse、Instinct 等）"]
+        },
+        {
+          "name": "Genesys",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sierra 联合 Meta、Genesys、Instinct、Rocket、Shopify、Stripe、Walmart 等共同开发"]
+        },
+        {
+          "name": "Instinct",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["个人代理（如 Meta 的 Muse、Instinct 等）"]
+        },
+        {
+          "name": "Rocket",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sierra 联合 Meta、Genesys、Instinct、Rocket、Shopify、Stripe、Walmart 等共同开发"]
+        },
+        {
+          "name": "Shopify",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sierra 联合 Meta、Genesys、Instinct、Rocket、Shopify、Stripe、Walmart 等共同开发"]
+        },
+        {
+          "name": "Stripe",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sierra 联合 Meta、Genesys、Instinct、Rocket、Shopify、Stripe、Walmart 等共同开发"]
+        },
+        {
+          "name": "Walmart",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sierra 联合 Meta、Genesys、Instinct、Rocket、Shopify、Stripe、Walmart 等共同开发"]
+        }
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "Sierra 牵头开发个人代理协议并联合 Meta、Stripe 等共同站台",
+          "summary": "AI 客服公司 Sierra 牵头行业协议「个人代理协议」，为个人代理如何与企业网站、API 及自有代理交互建立标准，参与方包括 Meta、Genesys、Instinct、Rocket、Shopify、Stripe 和 Walmart。",
+          "participants": [
+            {"name": "Sierra", "type": "company", "role": "subject"},
+            {"name": "个人代理协议", "type": "policy", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "partner"},
+            {"name": "Shopify", "type": "company", "role": "partner"},
+            {"name": "Stripe", "type": "company", "role": "partner"},
+            {"name": "Walmart", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Sierra 联合 Meta、Genesys、Instinct、Rocket、Shopify、Stripe、Walmart 等共同开发「个人代理协议（Personal Agent Protocol）」"]
+        },
+        {
+          "type": "policy",
+          "label": "协议确立消费者授权与企业设参的双轨规则",
+          "summary": "协议核心原则是消费者决定给个人代理授予多少访问权、企业为代理行为设置参数，企业可通过现有网站、API 或部署自有代理作为对接口，而非被动挡住代理流量。",
+          "participants": [
+            {"name": "个人代理协议", "type": "policy", "role": "subject"},
+            {"name": "Sierra", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["企业也可以部署一个自己的代理作为对接口，而不是被动地「挡」住代理流量"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "个人代理协议",
+          "target": "Sierra",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["AI 客服公司 Sierra 提出并牵头一个行业协议"]
+        },
+        {
+          "source": "Sierra",
+          "target": "Meta",
+          "type": "partners_with",
+          "weight": 0.85,
+          "evidence": ["参与方包括 Meta"]
+        },
+        {
+          "source": "Sierra",
+          "target": "Genesys",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["Genesys"]
+        },
+        {
+          "source": "Sierra",
+          "target": "Shopify",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["Shopify"]
+        },
+        {
+          "source": "Sierra",
+          "target": "Stripe",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["Stripe"]
+        },
+        {
+          "source": "Sierra",
+          "target": "Walmart",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["Walmart"]
+        },
+        {
+          "source": "Sierra",
+          "target": "Rocket",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["Rocket"]
+        },
+        {
+          "source": "Sierra",
+          "target": "Instinct",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["Instinct"]
+        },
+        {
+          "source": "Muse",
+          "target": "Meta",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Meta 的 Muse"]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "当「代理 vs 网站」的对抗成为行业痛点，Sierra 用一份多方站台的标准把对抗变成协作——从支付、电商、客服到社交的整条生态第一次为个人代理的准入规则站到同一侧。"
+    },
+    {
+      "article_id": "2026-10-06-5",
+      "entities": [
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": ["Facebook", "Meta AI"],
+          "confidence": 0.97,
+          "evidence": ["Meta Muse"]
+        },
+        {
+          "name": "Muse",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["Meta Muse、Instinct、ChatGPT Dots"]
+        },
+        {
+          "name": "Instinct",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Meta Muse、Instinct、ChatGPT Dots"]
+        },
+        {
+          "name": "ChatGPT Dots",
+          "type": "product",
+          "aliases": ["Dots"],
+          "confidence": 0.9,
+          "evidence": ["Meta Muse、Instinct、ChatGPT Dots"]
+        },
+        {
+          "name": "Delta",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Delta 关于禁止自动程序、爬虫访问其网站的条款被指阻碍代理订票"]
+        },
+        {
+          "name": "United",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["United 的 ToS 也禁止任何机器人、爬虫或自动手段复制其网站内容"]
+        },
+        {
+          "name": "Yelp",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Yelp 则明确表示"]
+        },
+        {
+          "name": "Walmart",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Muse 在沃尔玛官网无法完成购物"]
+        },
+        {
+          "name": "Cloudflare",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Cloudflare 等 CDN 被怀疑正在干扰 Muse 的流量"]
+        },
+        {
+          "name": "Sierra",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sierra 联合 Meta、Shopify、Stripe 等推出「个人代理协议」"]
+        },
+        {
+          "name": "Shopify",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sierra 联合 Meta、Shopify、Stripe 等推出「个人代理协议」"]
+        },
+        {
+          "name": "Stripe",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sierra 联合 Meta、Shopify、Stripe 等推出「个人代理协议」"]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "越来越多网站把个人 AI 代理挡在门外",
+          "summary": "TechCrunch 调查显示 Delta、United、Yelp、Walmart 等要么禁止机器流量、要么要求付费接入其数据，个人代理商业化落地遭遇「网站准入」这一硬瓶颈。",
+          "participants": [
+            {"name": "Muse", "type": "product", "role": "object"},
+            {"name": "ChatGPT Dots", "type": "product", "role": "object"},
+            {"name": "Delta", "type": "company", "role": "subject"},
+            {"name": "United", "type": "company", "role": "subject"},
+            {"name": "Yelp", "type": "company", "role": "subject"},
+            {"name": "Walmart", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["越来越多网站通过条款、反机器流量策略和 CDN 设置把它们挡在门外"]
+        },
+        {
+          "type": "policy",
+          "label": "Cloudflare 改变 AI 爬虫默认设置干扰 Muse 流量",
+          "summary": "Cloudflare 自 9 月 15 日起改变 AI 爬虫默认设置，允许网站主在屏蔽 AI 训练与放行其他机器人之间选择，被怀疑把原本屏蔽 AI 的站点转向屏蔽所有代理。",
+          "participants": [
+            {"name": "Cloudflare", "type": "company", "role": "subject"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Cloudflare 等 CDN 被怀疑正在干扰 Muse 的流量"]
+        },
+        {
+          "type": "partnership",
+          "label": "Sierra 联合 Meta、Shopify、Stripe 推出个人代理协议",
+          "summary": "为把「对抗」变成「协作」，Sierra 联合 Meta、Shopify、Stripe 推出一套双方都能接受的标准协议，被引为破解网站准入难题的可能路径。",
+          "participants": [
+            {"name": "Sierra", "type": "company", "role": "subject"},
+            {"name": "Shopify", "type": "company", "role": "partner"},
+            {"name": "Stripe", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Sierra 联合 Meta、Shopify、Stripe 等推出「个人代理协议」"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Delta",
+          "target": "Muse",
+          "type": "restricts",
+          "weight": 0.85,
+          "evidence": ["Delta 关于禁止自动程序、爬虫访问其网站的条款被指阻碍代理订票"]
+        },
+        {
+          "source": "United",
+          "target": "Muse",
+          "type": "restricts",
+          "weight": 0.85,
+          "evidence": ["United 的 ToS 也禁止任何机器人、爬虫或自动手段复制其网站内容"]
+        },
+        {
+          "source": "Yelp",
+          "target": "Muse",
+          "type": "restricts",
+          "weight": 0.8,
+          "evidence": ["Yelp 则明确表示"]
+        },
+        {
+          "source": "Walmart",
+          "target": "Muse",
+          "type": "restricts",
+          "weight": 0.8,
+          "evidence": ["Muse 在沃尔玛官网无法完成购物"]
+        },
+        {
+          "source": "Cloudflare",
+          "target": "Muse",
+          "type": "restricts",
+          "weight": 0.85,
+          "evidence": ["Cloudflare 等 CDN 被怀疑正在干扰 Muse 的流量"]
+        },
+        {
+          "source": "Muse",
+          "target": "Meta",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Meta Muse"]
+        },
+        {
+          "source": "ChatGPT Dots",
+          "target": "Muse",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["ChatGPT Dots 为代表的个人代理"]
+        }
+      ],
+      "metrics": [
+        {"name": "Cloudflare 改变 AI 爬虫默认设置生效日期", "value": "9 月 15 日"}
+      ],
+      "why_it_matters": "个人代理的胜负不再只在模型能力，而在于「谁能被网站许可进入」——规则、ToS 和 CDN 设置正在反客为主，成为决定代理能否替用户办事的分发瓶颈。"
+    },
+    {
+      "article_id": "2026-10-06-6",
+      "entities": [
+        {
+          "name": "Wajo",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["维诺德·科斯拉押注的是前 Google/DeepMind 工程师 Shivani Poddar 创办的 Wajo"]
+        },
+        {
+          "name": "Vinod Khosla",
+          "type": "person",
+          "aliases": ["科斯拉", "维诺德·科斯拉"],
+          "confidence": 0.95,
+          "evidence": ["维诺德·科斯拉押注的是前 Google/DeepMind 工程师 Shivani Poddar 创办的 Wajo"]
+        },
+        {
+          "name": "Shivani Poddar",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["前 Google/DeepMind 工程师 Shivani Poddar 创办的 Wajo"]
+        },
+        {
+          "name": "Fo",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Wajo 的 Fo 代理"]
+        },
+        {
+          "name": "Jeff Dean",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["获 Jeff Dean 与 Gokul Rajaram 支持"]
+        },
+        {
+          "name": "Gokul Rajaram",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["获 Jeff Dean 与 Gokul Rajaram 支持"]
+        },
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": ["Facebook", "Meta AI"],
+          "confidence": 0.9,
+          "evidence": ["Meta 的 Muse"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.9,
+          "evidence": ["OpenAI 的 Dots"]
+        },
+        {
+          "name": "Muse",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Meta 的 Muse"]
+        },
+        {
+          "name": "Instinct",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Wajo 的 Fo 代理工作方式与 Muse/Instinct 类似"]
+        },
+        {
+          "name": "ChatGPT Dots",
+          "type": "product",
+          "aliases": ["Dots"],
+          "confidence": 0.9,
+          "evidence": ["OpenAI 的 Dots"]
+        }
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Vinod Khosla 押注 Wajo 以「信任优先」打个人代理市场",
+          "summary": "维诺德·科斯拉押注前 Google/DeepMind 工程师 Shivani Poddar 创办的 Wajo，理由是信任——代理替你行动，因此信任最重要，Wajo 被刻意架构为信任与安全优先。",
+          "participants": [
+            {"name": "Vinod Khosla", "type": "person", "role": "funder"},
+            {"name": "Wajo", "type": "company", "role": "object"}
+          ],
+          "evidence": ["维诺德·科斯拉押注的是前 Google/DeepMind 工程师 Shivani Poddar 创办的 Wajo"]
+        },
+        {
+          "type": "launch",
+          "label": "Wajo 的 Fo 代理上线并主打架构级隐私",
+          "summary": "Wajo 的 Fo 代理可跨 iMessage 与 WhatsApp 行动，能用虚拟信用卡替用户付款、可信联系人名单等架构级设计保障隐私，自 9 月底上线以来增长 10 倍。",
+          "participants": [
+            {"name": "Wajo", "type": "company", "role": "subject"},
+            {"name": "Fo", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Wajo 的 Fo 代理工作方式与 Muse/Instinct 类似"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Vinod Khosla",
+          "target": "Wajo",
+          "type": "invests_in",
+          "weight": 0.9,
+          "evidence": ["维诺德·科斯拉押注的是前 Google/DeepMind 工程师 Shivani Poddar 创办的 Wajo"]
+        },
+        {
+          "source": "Shivani Poddar",
+          "target": "Wajo",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": ["前 Google/DeepMind 工程师 Shivani Poddar 创办的 Wajo"]
+        },
+        {
+          "source": "Fo",
+          "target": "Wajo",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Wajo 的 Fo 代理"]
+        },
+        {
+          "source": "Jeff Dean",
+          "target": "Wajo",
+          "type": "supports",
+          "weight": 0.6,
+          "evidence": ["获 Jeff Dean 与 Gokul Rajaram 支持"]
+        },
+        {
+          "source": "Gokul Rajaram",
+          "target": "Wajo",
+          "type": "supports",
+          "weight": 0.6,
+          "evidence": ["获 Jeff Dean 与 Gokul Rajaram 支持"]
+        },
+        {
+          "source": "Muse",
+          "target": "Meta",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Meta 的 Muse"]
+        },
+        {
+          "source": "ChatGPT Dots",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["OpenAI 的 Dots"]
+        },
+        {
+          "source": "Wajo",
+          "target": "Muse",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["这是 Muse 或 Instinct 所不具备的"]
+        },
+        {
+          "source": "Wajo",
+          "target": "Instinct",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["这是 Muse 或 Instinct 所不具备的"]
+        }
+      ],
+      "metrics": [
+        {"name": "Wajo 使用覆盖国家数", "value": "107 个国家"},
+        {"name": "Wajo 自 9 月底上线以来增长倍数", "value": "10 倍"}
+      ],
+      "why_it_matters": "当各个人代理的能力趋同，科斯拉押注「信任从第零天建立」并把隐私做进架构而非事后补救——个人代理的竞争坐标正从峰值能力切换到数据可信度，而这恰恰是巨头产品最难逆转的设计选择。"
+    },
+    {
+      "article_id": "2026-10-06-7",
+      "entities": [
+        {
+          "name": "Underdog",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["一款名为 Underdog 的新品把「隐私」当成首要卖点加入战局"]
+        },
+        {
+          "name": "Instinct",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["迄今最注重隐私的 Instinct/Muse 竞品"]
+        },
+        {
+          "name": "Muse",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Meta 四周前刚按 $0/$20/$100 三档推出 Muse"]
+        },
+        {
+          "name": "ChatGPT Dots",
+          "type": "product",
+          "aliases": ["Dots"],
+          "confidence": 0.9,
+          "evidence": ["OpenAI 的 Dots 与 Instinct 等各据一方"]
+        },
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": ["Facebook", "Meta AI"],
+          "confidence": 0.9,
+          "evidence": ["Meta 四周前刚按 $0/$20/$100 三档推出 Muse"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.9,
+          "evidence": ["OpenAI 的 Dots 与 Instinct 等各据一方"]
+        },
+        {
+          "name": "Wajo",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["与 Wajo「信任从第零天建立」的哲学同一方向"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "硅谷神童推出主打隐私的个人智能代理 Underdog",
+          "summary": "一款名为 Underdog 的新品把隐私当作首要卖点，被 TechCrunch 称为迄今最注重隐私的 Instinct/Muse 竞品，直指竞争对手在数据掌控与透明性上的短板。",
+          "participants": [
+            {"name": "Underdog", "type": "product", "role": "subject"},
+            {"name": "Instinct", "type": "product", "role": "competitor"},
+            {"name": "Muse", "type": "product", "role": "competitor"}
+          ],
+          "evidence": ["一款名为 Underdog 的新品把「隐私」当成首要卖点加入战局"]
+        },
+        {
+          "type": "trend",
+          "label": "个人代理之战从比能力转向比隐私与可信",
+          "summary": "个人代理能读到消息、替付款、管理生活，用户对谁能看到、谁能留存极度敏感，市场从「比谁的能力强」转向「比谁更可信、更不出卖用户」。",
+          "participants": [
+            {"name": "Underdog", "type": "product", "role": "subject"},
+            {"name": "Wajo", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["市场从「比谁的能力强」转向「比谁更可信、更不出卖用户」"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Underdog",
+          "target": "Instinct",
+          "type": "competes_with",
+          "weight": 0.85,
+          "evidence": ["迄今最注重隐私的 Instinct/Muse 竞品"]
+        },
+        {
+          "source": "Underdog",
+          "target": "Muse",
+          "type": "competes_with",
+          "weight": 0.85,
+          "evidence": ["迄今最注重隐私的 Instinct/Muse 竞品"]
+        },
+        {
+          "source": "Muse",
+          "target": "Meta",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Meta 四周前刚按 $0/$20/$100 三档推出 Muse"]
+        },
+        {
+          "source": "ChatGPT Dots",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["OpenAI 的 Dots 与 Instinct 等各据一方"]
+        },
+        {
+          "source": "Underdog",
+          "target": "Wajo",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["与 Wajo「信任从第零天建立」的哲学同一方向"]
+        }
+      ],
+      "metrics": [
+        {"name": "Muse 定价三档", "value": "$0/$20/$100"}
+      ],
+      "why_it_matters": "隐私从营销词变成个人代理的切分变量——新玩家不再试图比拼能力，而是靠「更不卖数据」在巨头夹缝里分羹，这直接拉高了已有代理产品在数据透明性上的底线。"
+    },
+    {
+      "article_id": "2026-10-06-8",
+      "entities": [
+        {
+          "name": "Hark",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Brett Adcock 的机器人/代理公司 Hark"]
+        },
+        {
+          "name": "Brett Adcock",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Brett Adcock 的机器人/代理公司 Hark"]
+        },
+        {
+          "name": "Hark Pro",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["先发布了软件形态的个人代理 Hark Pro"]
+        },
+        {
+          "name": "Handoff",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["一个名为 Handoff 的云端系统负责记忆"]
+        },
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": ["Facebook", "Meta AI"],
+          "confidence": 0.9,
+          "evidence": ["Meta 一个月前上线的 Muse"]
+        },
+        {
+          "name": "Muse",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Meta 一个月前上线的 Muse"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Hark 在硬件上市前先发软件代理 Hark Pro",
+          "summary": "Brett Adcock 的 Hark 在首款设备预计 2027 上市前一年推出网页/iOS/Android 个人代理 Hark Pro，可购杂货、订车、付账单，免费并提供 $20 与 $100 两档订阅。",
+          "participants": [
+            {"name": "Hark", "type": "company", "role": "subject"},
+            {"name": "Hark Pro", "type": "product", "role": "object"}
+          ],
+          "evidence": ["先发布了软件形态的个人代理 Hark Pro"]
+        },
+        {
+          "type": "trend",
+          "label": "Hark Pro 定价与功能对标 Muse 标志同质化",
+          "summary": "Hark Pro 定价阶梯 $0/$20/$100 与 Meta 一个月前上线的 Muse 完全一致，功能高度重叠，个人代理正迅速同质化至「帮我过日子」的标准功能集。",
+          "participants": [
+            {"name": "Hark", "type": "company", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "competitor"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["其定价阶梯（$0/$20/$100）与 Meta 一个月前上线的 Muse 完全一致"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Hark Pro",
+          "target": "Hark",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["先发布了软件形态的个人代理 Hark Pro"]
+        },
+        {
+          "source": "Hark Pro",
+          "target": "Handoff",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["一个名为 Handoff 的云端系统负责记忆"]
+        },
+        {
+          "source": "Brett Adcock",
+          "target": "Hark",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": ["Brett Adcock 的机器人/代理公司 Hark"]
+        },
+        {
+          "source": "Hark Pro",
+          "target": "Muse",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": ["定价阶梯（$0/$20/$100）与 Meta 一个月前上线的 Muse 完全一致"]
+        }
+      ],
+      "metrics": [
+        {"name": "Hark Pro 定价三档", "value": "$0/$20/$100"},
+        {"name": "Hark 首批设备上市年份", "value": "2027"},
+        {"name": "Hark Pro 可同时驱动的浏览器数", "value": "最多 6 个"}
+      ],
+      "why_it_matters": "Hark 用软件先把常规差事跑通、再等硬件落地，说明个人代理的标配功能正快速同质化——竞争坐标转向渠道、信任与执行可靠性，差异化体验得靠硬件与记忆架构另起战线。"
+    },
+    {
+      "article_id": "2026-10-06-9",
+      "entities": [
+        {
+          "name": "Flai",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Flai 一年前还只是三个人"]
+        },
+        {
+          "name": "Ari Polakof",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["CEO Ari Polakof 透露"]
+        },
+        {
+          "name": "Base1",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["由自动化公司 Base1 领投的融资"]
+        }
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Flai 完成约 2700 万美元融资，由 Base1 领投",
+          "summary": "Flai 题材融资约 2700 万美元、由自动化公司 Base1 领投，公司营收一年增长 20 倍，成为垂直行业 + 代理化落地的具体案例。",
+          "participants": [
+            {"name": "Base1", "type": "company", "role": "funder"},
+            {"name": "Flai", "type": "company", "role": "object"}
+          ],
+          "evidence": ["完成了一轮约 2700 万美元、由自动化公司 Base1 领投的融资"]
+        },
+        {
+          "type": "infra",
+          "label": "Flai 的 AI 每月预约约 5 万次到店服务",
+          "summary": "Flai 与美国前 50 大经销商集团中的 10 余家合作，AI 被用于接单、客户互动、外拨并调度预约，每月约 5 万次到店预约。",
+          "participants": [
+            {"name": "Flai", "type": "company", "role": "subject"},
+            {"name": "Ari Polakof", "type": "person", "role": "object"}
+          ],
+          "evidence": ["每月约 5 万次到店预约"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Base1",
+          "target": "Flai",
+          "type": "invests_in",
+          "weight": 0.9,
+          "evidence": ["由自动化公司 Base1 领投"]
+        },
+        {
+          "source": "Ari Polakof",
+          "target": "Flai",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": ["CEO Ari Polakof 透露"]
+        }
+      ],
+      "metrics": [
+        {"name": "Flai 每月到店预约数", "value": "约 5 万次"},
+        {"name": "合作覆盖的美国前 50 经销商集团数", "value": "10 余家"},
+        {"name": "Flai 营收一年增长倍数", "value": "20 倍"},
+        {"name": "Flai 融资规模", "value": "约 2700 万美元"}
+      ],
+      "why_it_matters": "企业侧代理化不追求能力头条而是追求可度量结果（预约量、转化、营收）与系统集成可靠性——B 端把重复结构化沟通真正交办给 AI，成为与消费级个人代理并行的第二条落地主线。"
+    },
+    {
+      "article_id": "2026-10-06-10",
+      "entities": [
+        {
+          "name": "验证式学习框架",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["这篇论文研究 LLM 能否以「由验证器把关」的方式参与编译器优化"]
+        },
+        {
+          "name": "Alive2",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["用 Alive2（形式等价性验证器）对每个候选改写做符号验证"]
+        },
+        {
+          "name": "Wyvern",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["系统先用 Wyvern 优化器生成已验证的训练样例"]
+        },
+        {
+          "name": "LLVM",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["以 LLVM IR 中的 lazification"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出以验证器把关 LLM 编译器优化的框架",
+          "summary": "一篇 arXiv 论文微调代码中心 LLM 学习 LLVM lazification 变换，用 Alive2 做形式等价性检查，只有证明语义保持的改写才被接受，失败触发重新生成。",
+          "participants": [
+            {"name": "验证式学习框架", "type": "topic", "role": "subject"},
+            {"name": "Alive2", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["这篇论文研究 LLM 能否以「由验证器把关」的方式参与编译器优化"]
+        },
+        {
+          "type": "research",
+          "label": "验证式学习框架复现核心优化行为且无语义违规",
+          "summary": "在 LLVM 测试集上微调模型复现了核心优化行为并应用更少的变换，9.8% 样例达到或超越 Wyvern 的运行时，且未观察到任何语义违规，验证开销有界、收敛稳定。",
+          "participants": [
+            {"name": "验证式学习框架", "type": "topic", "role": "subject"},
+            {"name": "Wyvern", "type": "tool", "role": "competitor"}
+          ],
+          "evidence": ["在 9.8% 的样例中该学习系统达到或超越其运行时，且未观察到任何语义违规"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "验证式学习框架",
+          "target": "Alive2",
+          "type": "uses",
+          "weight": 0.9,
+          "evidence": ["用 Alive2（形式等价性验证器）对每个候选改写做符号验证"]
+        },
+        {
+          "source": "验证式学习框架",
+          "target": "Wyvern",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["系统先用 Wyvern 优化器生成已验证的训练样例"]
+        },
+        {
+          "source": "验证式学习框架",
+          "target": "LLVM",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": ["以 LLVM IR 中的 lazification"]
+        },
+        {
+          "source": "验证式学习框架",
+          "target": "Wyvern",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": ["其运行时，且未观察到任何语义违规"]
+        }
+      ],
+      "metrics": [
+        {"name": "学习系统达到或超越 Wyvern 运行时的样例占比", "value": "9.8%"}
+      ],
+      "why_it_matters": "「生成与正确性分离」让生成式组件能借助确定性验证以可控风险进入关键基础设施——生成负责广度、验证负责边界，与人类监督校验策略、以及用形式验证支撑 AI 生成代码的趋势同向。"
+    },
+    {
+      "article_id": "2026-10-06-11",
+      "entities": [
+        {
+          "name": "AM Intelligence",
+          "type": "company",
+          "aliases": ["AMI"],
+          "confidence": 0.97,
+          "evidence": ["AM Intelligence（AMI，由清洁能源公司 Greenko 创始人设立的 AI 基础设施平台）宣布两笔新的确定性"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.97,
+          "evidence": ["各约 1 万块 NVIDIA Rubin GPU"]
+        },
+        {
+          "name": "Vera Rubin NVL72",
+          "type": "hardware",
+          "aliases": ["Rubin"],
+          "confidence": 0.95,
+          "evidence": ["全部以 NVIDIA Vera Rubin NVL72 机架级系统落地"]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "AM Intelligence 追加两笔约 2 万块 NVIDIA Rubin GPU 订单",
+          "summary": "AM Intelligence 宣布两笔新的 firm and binding 订单各约 1 万块 NVIDIA Rubin GPU，投向印度与马来西亚的 AI 工厂扩建，约 70 MW 容量计划 2027 年第二季度交付。",
+          "participants": [
+            {"name": "AM Intelligence", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"},
+            {"name": "Vera Rubin NVL72", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["AM Intelligence（AMI，由清洁能源公司 Greenko 创始人设立的 AI 基础设施平台）宣布两笔新的确定性"]
+        },
+        {
+          "type": "trend",
+          "label": "AMI 将 Rubin 容量扩至约 2.9 万块 GPU、近 100 MW",
+          "summary": "最新订单使已承诺的 Vera Rubin 容量达到约 2.9 万块 GPU、接近 100 MW，未来 15 个月计划再投放约 300 MW、对应资本开支超过 200 亿美元。",
+          "participants": [
+            {"name": "AM Intelligence", "type": "company", "role": "subject"},
+            {"name": "Vera Rubin NVL72", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["其已承诺的 Vera Rubin 容量达到约 2.9 万块 GPU、接近 100 MW"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "NVIDIA",
+          "target": "AM Intelligence",
+          "type": "supplies",
+          "weight": 0.9,
+          "evidence": ["各约 1 万块 NVIDIA Rubin GPU"]
+        },
+        {
+          "source": "AM Intelligence",
+          "target": "Vera Rubin NVL72",
+          "type": "uses",
+          "weight": 0.9,
+          "evidence": ["全部以 NVIDIA Vera Rubin NVL72 机架级系统落地"]
+        }
+      ],
+      "metrics": [
+        {"name": "新增 NVIDIA Rubin GPU 订单总量", "value": "约 2 万块"},
+        {"name": "已承诺 Vera Rubin 容量 GPU 数", "value": "约 2.9 万块"},
+        {"name": "已承诺 Vera Rubin 容量兆瓦数", "value": "接近 100 MW"},
+        {"name": "AMI 全球开发管线规模", "value": "约 400 MW"},
+        {"name": "新增容量部署地", "value": "约 70 MW 部署在印度和马来西亚"},
+        {"name": "交付安排", "value": "2027 年第二季度"},
+        {"name": "首批 100 MW 承诺投资", "value": "约 60 亿美元"},
+        {"name": "未来 15 个月再投放算力", "value": "约 300 MW"},
+        {"name": "对应资本开支", "value": "超过 200 亿美元"},
+        {"name": "8 月首批 Rubin 订单数", "value": "9000 块"}
+      ],
+      "why_it_matters": "AMI 把 2.9 万颗 Rubin 押注印度与马来西亚，加上交付排在北美以外最早、最大批——南亚正成为美国算力厂争抢的主权 AI 新高地，算力采购进入「代际跳档 + 主权落地」阶段。"
+    },
+    {
+      "article_id": "2026-10-06-12",
+      "entities": [
+        {
+          "name": "xAI",
+          "type": "company",
+          "aliases": ["SpaceXAI"],
+          "confidence": 0.9,
+          "evidence": ["SpaceXAI 能源负责人称"]
+        },
+        {
+          "name": "埃隆·马斯克",
+          "type": "person",
+          "aliases": ["马斯克"],
+          "confidence": 0.95,
+          "evidence": ["马斯克称 Colossus 2"]
+        },
+        {
+          "name": "Colossus 2",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Colossus 2 已在冲击算力极限"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.9,
+          "evidence": ["已部署 11 万块 GB200 与 44 万块 GB300"]
+        },
+        {
+          "name": "GB300",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["44 万块 GB300"]
+        },
+        {
+          "name": "Megapack",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["数百个特斯拉 Megapack 共同托底"]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": ["谷歌", "Google Inc."],
+          "confidence": 0.9,
+          "evidence": ["Google 6 月签下约 11 万块 GPU"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Anthropic 也拿下可观容量"]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Colossus 2 突破约 1 GW，计划年底超 120 万块英伟达芯片",
+          "summary": "马斯克称孟菲斯附近训练集群已部署 11 万块 GB200 与 44 万块 GB300，计划 12 月底超过 120 万块，现场依靠临电燃机与约 720 个特斯拉 Megapack 托底。",
+          "participants": [
+            {"name": "xAI", "type": "company", "role": "subject"},
+            {"name": "Colossus 2", "type": "hardware", "role": "object"},
+            {"name": "GB300", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["Colossus 2 已在冲击算力极限"]
+        },
+        {
+          "type": "trend",
+          "label": "Colossus 2 向 Google、Anthropic 开放成商用超级计算机",
+          "summary": "曾为 Grok 内部训练资源的 Colossus 2 如今向 Google、Anthropic 开放，Google 签下约 11 万块 GPU、月约 9.2 亿美元，Anthropic 拿下月租约 12.5 亿美元的容量。",
+          "participants": [
+            {"name": "xAI", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "partner"},
+            {"name": "Anthropic", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["如今已是向 Google、Anthropic 开放的「商用超级计算机」"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Colossus 2",
+          "target": "xAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["这个曾是 Grok 内部训练资源"]
+        },
+        {
+          "source": "xAI",
+          "target": "GB300",
+          "type": "uses",
+          "weight": 0.9,
+          "evidence": ["44 万块 GB300"]
+        },
+        {
+          "source": "xAI",
+          "target": "Megapack",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["数百个特斯拉 Megapack 共同托底"]
+        },
+        {
+          "source": "xAI",
+          "target": "Google",
+          "type": "supplies",
+          "weight": 0.9,
+          "evidence": ["Google 6 月签下约 11 万块 GPU"]
+        },
+        {
+          "source": "xAI",
+          "target": "Anthropic",
+          "type": "supplies",
+          "weight": 0.9,
+          "evidence": ["Anthropic 也拿下可观容量"]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "xAI",
+          "type": "supplies",
+          "weight": 0.85,
+          "evidence": ["已部署 11 万块 GB200 与 44 万块 GB300"]
+        },
+        {
+          "source": "埃隆·马斯克",
+          "target": "xAI",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["马斯克称 Colossus 2"]
+        }
+      ],
+      "metrics": [
+        {"name": "Colossus 2 单点规模", "value": "突破约 1 GW"},
+        {"name": "年底英伟达芯片目标", "value": "超过 120 万块"},
+        {"name": "已部署 GB200 数量", "value": "11 万块"},
+        {"name": "已部署 GB300 数量", "value": "44 万块"},
+        {"name": "下周将上线 GB300 数量", "value": "22 万块"},
+        {"name": "单点 IT 负载", "value": "约 946 MW"},
+        {"name": "全园区峰值功耗", "value": "超过 1.2 GW"},
+        {"name": "表后储能", "value": "约 2000 MW"},
+        {"name": "储能容量", "value": "3.3 GWh"},
+        {"name": "Epoch AI 估 Colossus 2 已沉淀资本", "value": "约 358 亿美元"},
+        {"name": "达更高目标的资本规模", "value": "可到 580 亿美元"},
+        {"name": "Google 签约 GPU 数", "value": "约 11 万块"},
+        {"name": "Google 每月支付额", "value": "约 9.2 亿美元"},
+        {"name": "Anthropic 月租赁额", "value": "约 12.5 亿美元"},
+        {"name": "第三个客户自 12 月起每月支付额", "value": "11.1 亿美元"}
+      ],
+      "why_it_matters": "算力扩展的最硬约束已从芯片供给变成电力与融资——Colossus 2 靠临电燃机与约 720 个 Megapack 突破 1 GW，同时把训练资源商业化卖给 Google、Anthropic，印证「算力即电力 + 资本」的新赛点。"
+    },
+    {
+      "article_id": "2026-10-06-13",
+      "entities": [
+        {
+          "name": "摩根士丹利",
+          "type": "company",
+          "aliases": ["Morgan Stanley"],
+          "confidence": 0.95,
+          "evidence": ["摩根士丹利重新把英伟达放回其最高置信度半导体首选位置"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.97,
+          "evidence": ["摩根士丹利重新把英伟达放回其最高置信度半导体首选位置"]
+        },
+        {
+          "name": "Blackwell",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Blackwell Ultra 驱动当前部署"]
+        },
+        {
+          "name": "Vera Rubin",
+          "type": "hardware",
+          "aliases": ["Rubin"],
+          "confidence": 0.9,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "name": "CoreWeave",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "name": "Google Cloud",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "name": "Azure",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "name": "Oracle OCI",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "name": "Nebius",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "name": "Apollo",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "name": "BlackRock",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "name": "Blackstone",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "name": "Brookfield",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "name": "高盛",
+          "type": "company",
+          "aliases": ["Goldman Sachs"],
+          "confidence": 0.9,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "name": "KKR",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "摩根士丹利重新将英伟达列为半导体首选",
+          "summary": "摩根士丹利把英伟达放回最高置信度半导体首选位置，判断瓶颈正从芯片供给转向数据中心电力、施工与融资，英伟达多元客户结构使其能优先调配系统到有电有设施的地区。",
+          "participants": [
+            {"name": "摩根士丹利", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "object"}
+          ],
+          "evidence": ["摩根士丹利重新把英伟达放回其最高置信度半导体首选位置"]
+        },
+        {
+          "type": "infra",
+          "label": "NVIDIA 牵头联合多方资本筹建 5000 亿美元 AI 基建融资平台",
+          "summary": "NVIDIA 牵头联合 Apollo、BlackRock、Blackstone、Brookfield、高盛、KKR 筹建 5000 亿美元第三方 AI 基建融资平台，与瓶颈转向电力与融资的判断相互印证。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Apollo", "type": "company", "role": "partner"},
+            {"name": "BlackRock", "type": "company", "role": "partner"},
+            {"name": "Blackstone", "type": "company", "role": "partner"},
+            {"name": "Brookfield", "type": "company", "role": "partner"},
+            {"name": "高盛", "type": "company", "role": "partner"},
+            {"name": "KKR", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Blackwell",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Blackwell Ultra 驱动当前部署"]
+        },
+        {
+          "source": "Vera Rubin",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "source": "CoreWeave",
+          "target": "Vera Rubin",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "source": "Google Cloud",
+          "target": "Vera Rubin",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "source": "Azure",
+          "target": "Vera Rubin",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "source": "Oracle OCI",
+          "target": "Vera Rubin",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "source": "Nebius",
+          "target": "Vera Rubin",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["Vera Rubin 平台则在 CoreWeave、Google Cloud、Azure、Oracle OCI、Nebius 等客户进入量产"]
+        },
+        {
+          "source": "Apollo",
+          "target": "NVIDIA",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "source": "BlackRock",
+          "target": "NVIDIA",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "source": "Blackstone",
+          "target": "NVIDIA",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "source": "Brookfield",
+          "target": "NVIDIA",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "source": "高盛",
+          "target": "NVIDIA",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        },
+        {
+          "source": "KKR",
+          "target": "NVIDIA",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["NVIDIA 牵头联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 筹建 5000 亿美元第三方 AI 基建融资平台"]
+        }
+      ],
+      "metrics": [
+        {"name": "NVIDIA 2027 财年 Q2 营收", "value": "962 亿美元"},
+        {"name": "NVIDIA 营收同比增幅", "value": "106%"},
+        {"name": "数据中心营收", "value": "约 890 亿美元"},
+        {"name": "数据中心营收占总营收比例", "value": "约 93%"},
+        {"name": "NVIDIA Q3 营收指引", "value": "约 1080 亿美元"},
+        {"name": "第三方 AI 基建融资平台规模", "value": "5000 亿美元"}
+      ],
+      "why_it_matters": "英伟达再次登顶半导体首选，但银行点破瓶颈已变成电力、施工与融资而非芯片供给——「算力即电力 + 资本」成为下一阶段的真正赛点，连芯片巨头都要联合 5000 亿美元融资平台来对冲物理基建约束。"
+    }
+  ]
+}

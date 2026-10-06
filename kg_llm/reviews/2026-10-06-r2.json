@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-06",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "最主要问题是 developed_by 关系在多篇发生方向反转：2026-10-06-6 与 -7 把 Meta/OpenAI 设为 source、Muse/ChatGPT Dots 设为 target，读到「Meta 由 Muse 开发」，且与 -4/-5 的正确方向相反，破坏跨文章连通；另有实体类型错配（协议标成 product）与伙伴关系抽取不完整等次等问题。",
+  "findings": [
+    {
+      "article_id": "2026-10-06-6",
+      "severity": "high",
+      "problem": "developed_by 关系方向反了。2026-10-06-6 中两条关系「Meta --developed_by--> Muse」和「OpenAI --developed_by--> ChatGPT Dots」被抽成 source=公司、target=产品，读作「Meta 由 Muse 开发」；同文件里 Fo --developed_by--> Wajo 又是正确的 source=产品 方向，说明不一致。且与 -4/-5 中 Muse --developed_by--> Meta 的正确方向完全相反。",
+      "fix": "把两条关系改为「Muse --developed_by--> Meta」「ChatGPT Dots --developed_by--> OpenAI」（source 是被开发的模型/产品，target 是其所属公司），并保证全篇与 -4/-5 同一方向。"
+    },
+    {
+      "article_id": "2026-10-06-7",
+      "severity": "high",
+      "problem": "与 -6 相同的 developed_by 方向反转：Meta --developed_by--> Muse 与 OpenAI --developed_by--> ChatGPT Dots 都读成「公司由产品开发」，且与 -4/-5 的正确方向冲突，导致同一事实在图谱里出现两个相反表述。",
+      "fix": "改为「Muse --developed_by--> Meta」「ChatGPT Dots --developed_by--> OpenAI」，与其余文章统一为「模型/产品 → 公司」。"
+    },
+    {
+      "article_id": "2026-10-06-5",
+      "severity": "medium",
+      "problem": "关系「ChatGPT Dots --competes_with--> Meta」类型/层级错配：ChatGPT Dots 是个人代理产品，Meta 是公司，来源语境是「Meta Muse、Instinct、ChatGPT Dots 为代表的个人代理」互相竞争，产品不应直接与公司竞争，且与 -4/-5 把 Muse/Instinct 作为竞品对象的口径不一致。",
+      "fix": "改为「ChatGPT Dots --competes_with--> Muse」（Meta 的个人代理产品），或在事件层面表达所有个人代理（Muse/Instinct/ChatGPT Dots）互为竞品，而不是一个产品竞争一个公司。"
+    },
+    {
+      "article_id": "2026-10-06-4",
+      "severity": "medium",
+      "problem": "原文明列参与方包含 Meta、Genesys、Instinct、Rocket、Shopify、Stripe、Walmart 共 7 家，但 partners_with 只抽了 Meta、Genesys、Shopify、Stripe、Walmart 而漏掉 Rocket 和 Instinct；第二个事件的 participants 又把 Instinct 列为 object（Instinct 在此协议中是参与方而非被驱动物），角色与原文不符。",
+      "fix": "补齐 Sierra --partners_with--> Rocket 与 Sierra --partners_with--> Instinct 两条关系，与其余参与方一致；policy 事件的 object 不应是 Instinct，应删除该多余 participant 或改用协议本身为主题。"
+    },
+    {
+      "article_id": "2026-10-06-13",
+      "severity": "medium",
+      "problem": "5000 亿美元融资平台由 NVIDIA 牵头联合 Apollo、BlackRock、Blackstone、Brookfield、高盛、KKR 共 7 方，但 partners_with 只为 Apollo 和高盛建了边，其余 5 家（与 NVIDIA 同为共建方）被丢，对同一事件的参与方关系抽取不一致。",
+      "fix": "为该平台的每个具名共建方（BlackRock、Blackstone、Brookfield、KKR）补建与 NVIDIA 的 partners_with 关系，或全部省略边并在事件 participants 中统一列出，避免只抽其中两家的不一致。"
+    }
+  ],
+  "lessons": [
+    "developed_by 关系中 source 必须是被开发的对象（模型/产品/硬件），target 是其所属公司；同一产品概念（如 Muse、ChatGPT Dots）在多篇文章里必须固定同一方向，杜绝「公司 --developed_by--> 产品」的反转。",
+    "同一事件中并列出现的多个具名参与方，能类比的每一条边都要一视同仁地抽齐（如共建方、协议参与方），只挑其中一两个会破坏图谱的一致性和完整性。",
+    "标准、协议、法规这类抽象主体不要标成 product，按其协议/标准性质来建模，且事件 participant 的 role 要与该主体在原文中的实际角色对应。"
+  ]
+}
