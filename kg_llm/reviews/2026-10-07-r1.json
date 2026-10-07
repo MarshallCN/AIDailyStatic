@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-07",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 72,
+  "summary": "抽取整体扎实：实体/事件/metrics 覆盖与证据可验证度都很好。主要问题集中在关系方向与类型、事件参与方角色的标注错误上——研究类把被研究的模型误写成 evaluated_on 研究本体、融资事件把未参与本轮的原有股东 NVIDIA 标成本轮 funder、把 Lean 形式化关联错误挂到审阅论文的人身上；另有若干证据与断言不匹配。",
+  "findings": [
+    {
+      "article_id": "2026-10-07-11",
+      "severity": "high",
+      "problem": "关系 Gemini 3.7 Flash --evaluated_on--> 功能-安全缺口纵向研究 方向/类型用反。evaluated_on 表示「X 在基准 Y 上被评测」，而这里是纵向研究以 Gemini 3.7 Flash 为被测对象之一，方向应是研究评测/覆盖该模型，不是模型跑在「研究」这个基准上（研究不是基准）。",
+      "fix": "把该关系改为 功能-安全缺口纵向研究 --targets/compares--> Gemini 3.7 Flash（证据为「个别模型（如 Gemini 3.7 Flash）反而是例外」），或直接删除并在该研究的事件参与者里保留 Gemini 3.7 Flash 作为被评测对象。"
+    },
+    {
+      "article_id": "2026-10-07-6",
+      "severity": "high",
+      "problem": "funding 事件「Lambda 拟以约 145 亿美元投前估值融资最多 40 亿美元」的 participants 里把 NVIDIA 标成 role=funder。原文只说本轮由 Coatue 与 Blackstone 领投，NVIDIA 只是既有参股股东，并未参与本轮 40 亿美元注资，标成 funder 是事实错误。",
+      "fix": "从该 funding 事件的 participants 中删除 NVIDIA（或把其 role 改为非本轮出资的既有股东，如 investor/backer），本轮 funder 只保留 Coatue 与 Blackstone；NVIDIA 与该融资的关系保留在 relations 里已有的 NVIDIA --invests_in--> Lambda 即可。"
+    },
+    {
+      "article_id": "2026-10-07-7",
+      "severity": "medium",
+      "problem": "关系 Kevin Buzzard --uses--> Lean 与原文不符。原文是「只有 1 篇用 Lean 做了形式化验证」，Lean 是被用在该篇论文的形式化证明上，不是被 Buzzard 使用；把工具挂到审阅评论论文的人身上是错误对象。同问题也出现在 2026-10-07-14。",
+      "fix": "把 Lean 的关联对象改为被验证的论文——例如 722 篇数学论文 --verified_with--> Lean（证据「仅 1 篇用 Lean 做了形式化验证」），删除 Kevin Buzzard --uses--> Lean；2026-10-07-14 做同样修正。"
+    },
+    {
+      "article_id": "2026-10-07-4",
+      "severity": "medium",
+      "problem": "关系 Windows 11 --runs_on--> RTX Spark 的证据不支撑断言。所引证据「并让 Windows 11 原生支持模型上下文协议（MCP）与沙箱化 Agent Workspaces」讲的是 MCP/沙箱特性，与「Windows 运行于 RTX Spark 硬件」无关。",
+      "fix": "删除该关系或替换为真正支持它的证据（RTX Spark 是运行 Windows 的本地 AI PC）；若保留 runs_on，方向应为 软件系统运行于硬件,但当前证据无法支撑，建议删除以避免无据边。"
+    },
+    {
+      "article_id": "2026-10-07-1",
+      "severity": "medium",
+      "problem": "Claude Haiku 5.5 与 GPT-6 Luna 之间同时存在 competes_with(0.85) 与 compared_with(0.7) 两条关系，且证据高度重复（同为价格对齐），属对同一事实的冗余双关。",
+      "fix": "保留语义更强的 competes_with 并引用「首发价与 OpenAI 的 GPT-6 Luna 对齐」，删除重复的 compared_with 关系。"
+    },
+    {
+      "article_id": "2026-10-07-12",
+      "severity": "medium",
+      "problem": "关系 自愿性 AI 安全协议 --incorporates--> 加州 AI 审计规则 语义过强。原文是协议吸收的两项条款（内部管控+独立外部审计）正是加州规则的核心，而非该协议「纳入/整合」了加州那条审计规则本尊。",
+      "fix": "改用较弱的共享/呼应关系，如 自愿性 AI 安全协议 --shares_provision_with--> 加州 AI 审计规则（证据「这两点也正是加州上月通过的首部州级独立审计规则的核心」），或改为 加利福尼亚州规则。"
+    },
+    {
+      "article_id": "2026-10-07-5",
+      "severity": "medium",
+      "problem": "关系 Cerebras --competes_with--> NVIDIA 的证据过弱：原文只说「Cerebras 股价因此造挫」，并未直接说两者构成竞争关系；competes_with 是从股价下跌反推的合作式关系，属证据与断言不匹配。",
+      "fix": "若保留，需补充能支撑竞争的证据（如 Cerebras 同为低时延推理服务商、订单依赖 OpenAI）；否则降权或删除，仅在该新闻的事件层面体现 Cerebras 承压。"
+    }
+  ],
+  "lessons": [
+    "研究类新闻中 evaluated_on 只能表示「X 在基准/数据集 Y 上被评测」；若主体是研究对象而非基准，关系方向应写成 研究 --targets/compares--> 主体，切勿写成主体 evaluated_on 研究。",
+    "融资类事件中，funder/investor 角色只允许放本轮实际注资的领投与参投方；原有股东若未参与本轮，不要进入本轮事件的 funder 角色，其股东关系放在独立 invests_in 关系里。",
+    "形式化验证/工具类新闻中，工具（如 Lean）的关联必须挂在被验证的对象（论文/定理）上，用 verified_with 之类关系，不要挂到审阅或评论该工具输出的人身上。"
+  ]
+}

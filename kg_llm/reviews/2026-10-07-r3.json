@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-07",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "实体、事件与指标整体扎实，跨文章规范名一致（GPT-6 Luna、Claude Haiku 5.5、722 篇数学论文等连通良好）。主要问题集中在关系层：722 篇论文被写成集合级 verified_with Lean 与证据矛盾、两个模型名被不当合并为别名、replaces 与 benchmark 事件类型使用不当。",
+  "findings": [
+    {
+      "article_id": "2026-10-07-7",
+      "severity": "high",
+      "problem": "关系 \"722 篇数学论文 --verified_with--> Lean\" 与它自己附带的证据直接矛盾：证据写的是「只有 1 篇用 Lean 做了形式化验证」，但关系把整个 722 篇集合表述为已用 Lean 验证。这正好颠倒了文章的核心信息——原文强调绝大多数论文未形式化验证。",
+      "fix": "删除集合级的 verified_with 关系，或改为针对具体单篇的关系（如新增单篇论文实体 --verified_with--> Lean，证据为「只有 1 篇用 Lean 做了形式化验证」），确保关系与证据一致：集合中仅个别成员被验证时不得写成集合级已验证。"
+    },
+    {
+      "article_id": "2026-10-07-14",
+      "severity": "medium",
+      "problem": "与 2026-10-07-7 相同的问题重复出现：关系 \"722 篇数学论文 --verified_with--> Lean\" 的证据是「仅 1 篇有 Lean 形式化保证」，但关系把整个集合写成已验证，与文章「多数未形式化验证」的主旨相反。",
+      "fix": "删除该集合级 verified_with 关系，改为仅对那 1 篇具体论文建立 verified_with Lean 的关系，或直接删掉这条关系，避免集合级表述造成误导。"
+    },
+    {
+      "article_id": "2026-10-07-5",
+      "severity": "medium",
+      "problem": "实体 \"GPT-6 Astra Ultrafast\" 的 aliases 里合并了 \"GPT-6.1 Sol Ultrafast\"。原文中 \"GPT-6.1 Sol Ultrafast\" 出现在传言里（「究竟跑在哪家硬件上」），而英伟达确认的是 \"GPT-6 Astra Ultrafast\"，文章并未明确二者是同一模型，把它们合并为同一实体的别名属于不当合并。",
+      "fix": "除非原文明确二者为同一模型，否则将 GPT-6.1 Sol Ultrafast 保留为独立实体或从 aliases 中移除，避免把传言命名的变体与确认命名的变体错误合并成一个。"
+    },
+    {
+      "article_id": "2026-10-07-1",
+      "severity": "medium",
+      "problem": "两处问题：(1) 关系 \"Claude Haiku 5.5 --replaces--> Haiku 4.5\" 的证据是「典型负载的平均运行成本比去年的 Haiku 4.5 下降约 75%」，这只是成本对比，原文并未说 Haiku 5.5 取代 Haiku 4.5，replaces 关系证据不成立；(2) 事件 \"Claude Haiku 5.5 下调 API 价格约九成并对标 GPT-6 Luna\" 被标为 benchmark，但这是定价发布，不是评测/基准测试。",
+      "fix": "把 replaces 改为 compared_with（证据为成本对比），或删除该关系；把该事件类型从 benchmark 改为 launch 或 pricing，benchmark 只保留给真正的评测/基准测试。"
+    },
+    {
+      "article_id": "2026-10-07-9",
+      "severity": "medium",
+      "problem": "关系 \"EESD --uses--> DeepSeek\" 语义含糊：EESD 是一篇论文/方法，DeepSeek 是模型，原文是「DeepSeek/RunBugRun 配对研究」「DeepSeek/CodeARC 的 all-tests Pass@1」，即方法在 DeepSeek 模型上评测，而非 EESD 使用了 DeepSeek。该关系没有抓到真实语义。",
+      "fix": "改为更能表达语义的关系，例如 DeepSeek --evaluated_on--> CodeARC / RunBugRun（已有），并删除或改写 \"EESD --uses--> DeepSeek\"，或改为 EESD --evaluates--> DeepSeek 这类明确表述。"
+    }
+  ],
+  "lessons": [
+    "验证/审计类关系（如 verified_with、audited_with）必须与证据一致：集合中仅个别成员被验证时，只能对具体成员建立该关系，不得写成集合级已验证。",
+    "价格发布、定价对标属于 launch/pricing 类事件，不要标成 benchmark；benchmark 只用于评测或基准测试。",
+    "把传言中命名的模型变体与确认中命名的模型合并为同一实体前，需原文明确二者为同一模型，否则保留为独立实体。"
+  ]
+}

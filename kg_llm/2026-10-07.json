@@ -1,0 +1,1736 @@
+{
+  "date": "2026-10-07",
+  "articles": [
+    {
+      "article_id": "2026-10-07-0",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.97,
+          "evidence": ["OpenAI 于 10 月 7 日起把 GPT-6 与名为 Intelligent UI 的交互式界面能力向 ChatGPT 全部层级滚动上线"]
+        },
+        {
+          "name": "GPT-6",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["OpenAI 表示，GPT-6 学会了用「文本、视觉与交互元素」共同组织回答"]
+        },
+        {
+          "name": "Intelligent UI",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["GPT-6 与名为 Intelligent UI 的交互式界面能力向 ChatGPT 全部层级滚动上线"]
+        },
+        {
+          "name": "GPT-6 Sol",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["面向 Plus/Pro/Business/Enterprise 的服务由 GPT-6 Sol 驱动"]
+        },
+        {
+          "name": "GPT-6 Luna",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["免费与 Go 层使用 GPT-6 Luna"]
+        },
+        {
+          "name": "GPT-5.6 Medium",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["GPT-6 Extra High 的首次回答速度与 GPT-5.6 Medium 相当"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 将 GPT-6 与 Intelligent UI 铺开至全部 ChatGPT 层级",
+          "summary": "OpenAI 于 10 月 7 日起把 GPT-6 与名为 Intelligent UI 的交互式界面能力向 ChatGPT 全部层级滚动上线，付费层当天可用、免费与 Go 层次日跟进，面向付费层的服务由 GPT-6 Sol 驱动、免费与 Go 层使用 GPT-6 Luna。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6", "type": "model", "role": "object"},
+            {"name": "Intelligent UI", "type": "product", "role": "object"},
+            {"name": "GPT-6 Sol", "type": "model", "role": "object"},
+            {"name": "GPT-6 Luna", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI 于 10 月 7 日起把 GPT-6 与名为 Intelligent UI 的交互式界面能力向 ChatGPT 全部层级滚动上线"]
+        },
+        {
+          "type": "benchmark",
+          "label": "GPT-6 通过边想边答实现更快首答并维持更高综合得分",
+          "summary": "内部评测中 GPT-6 Extra High 的首次回答速度与 GPT-5.6 Medium 相当、综合得分却更高；需要联网时 GPT-6 Instant 平均比 GPT-5.6 Instant 早 44% 开始作答。",
+          "participants": [
+            {"name": "GPT-6", "type": "model", "role": "subject"},
+            {"name": "GPT-5.6 Medium", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["GPT-6 Instant 平均比 GPT-5.6 Instant 早 44% 开始作答"]
+        },
+        {
+          "type": "security",
+          "label": "GPT-6 强化对高风险滥用与跨多轮自适应攻击的抵抗力",
+          "summary": "OpenAI 表示 GPT-6 吸收了 Astra 相对 GPT-5.6 Sol 的安全改进，并针对网络攻击、生物威胁与暴力等高风险滥用强化训练，尤其提高对跨多轮自适应攻击的抵抗力。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6", "type": "model", "role": "object"}
+          ],
+          "evidence": ["尤其提高了对「跨多轮自适应攻击」的抵抗力"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "GPT-6",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["OpenAI 表示，GPT-6 学会了用「文本、视觉与交互元素」共同组织回答"]
+        },
+        {
+          "source": "Intelligent UI",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["GPT-6 与名为 Intelligent UI 的交互式界面能力向 ChatGPT 全部层级滚动上线"]
+        },
+        {
+          "source": "GPT-6",
+          "target": "Intelligent UI",
+          "type": "integrates",
+          "weight": 0.8,
+          "evidence": ["GPT-6 学会了用「文本、视觉与交互元素」共同组织回答"]
+        },
+        {
+          "source": "GPT-6 Sol",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["面向 Plus/Pro/Business/Enterprise 的服务由 GPT-6 Sol 驱动"]
+        },
+        {
+          "source": "GPT-6 Luna",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["免费与 Go 层使用 GPT-6 Luna"]
+        },
+        {
+          "source": "GPT-6",
+          "target": "GPT-5.6 Medium",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["GPT-6 Extra High 的首次回答速度与 GPT-5.6 Medium 相当"]
+        }
+      ],
+      "metrics": [
+        {"name": "GPT-6 Instant 较 GPT-5.6 Instant 提早开始作答比例", "value": "44%"}
+      ],
+      "why_it_matters": "边想边答让「等待时间」本身成为被训练的指标,交互界面与答案在提问时刻同时渐进生成——OpenAI 正把默认对话体验重新定义为差异化战场,而非只拼最终答案质量。"
+    },
+    {
+      "article_id": "2026-10-07-1",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["Anthropic 发布其最便宜、最快的小模型 Claude Haiku 5.5"]
+        },
+        {
+          "name": "Claude Haiku 5.5",
+          "type": "model",
+          "aliases": ["claude-haiku-5-5"],
+          "confidence": 0.97,
+          "evidence": ["Anthropic 发布其最便宜、最快的小模型 Claude Haiku 5.5"]
+        },
+        {
+          "name": "Sonnet 5.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sonnet 5.5 的缓存费用下调"]
+        },
+        {
+          "name": "Haiku 4.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["典型负载的平均运行成本比去年的 Haiku 4.5 下降约 75%"]
+        },
+        {
+          "name": "GPT-6 Luna",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["与 OpenAI 的 GPT-6 Luna 完全一致"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 发布最便宜最快的小模型 Claude Haiku 5.5",
+          "summary": "Anthropic 发布 Haiku 系列首个带「可调 effort」等级的模型 Claude Haiku 5.5，速度做到 Anthropic 家族里仅次 Opus「Fast Mode」的水平，并在自有平台、AWS（Bedrock）、Google Cloud 与 Azure 全线可用。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Haiku 5.5", "type": "model", "role": "object"},
+            {"name": "GPT-6 Luna", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["Anthropic 发布其最便宜、最快的小模型 Claude Haiku 5.5"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Claude Haiku 5.5 下调 API 价格约九成并对标 GPT-6 Luna",
+          "summary": "推理预算在 10 万 token 以内时 token 价格下调约 90%，每百万输入 0.10 美元、每百万输出 0.50 美元起步，与 OpenAI 的 GPT-6 Luna 完全一致，典型负载平均运行成本较去年 Haiku 4.5 下降约 75%。",
+          "participants": [
+            {"name": "Claude Haiku 5.5", "type": "model", "role": "subject"},
+            {"name": "GPT-6 Luna", "type": "model", "role": "competitor"},
+            {"name": "Haiku 4.5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["推理预算在 10 万 token 以内时 token 价格下调约 90%"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude Haiku 5.5",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.95,
+          "evidence": ["Anthropic 发布其最便宜、最快的小模型 Claude Haiku 5.5"]
+        },
+        {
+          "source": "Claude Haiku 5.5",
+          "target": "GPT-6 Luna",
+          "type": "competes_with",
+          "weight": 0.85,
+          "evidence": ["与 OpenAI 的 GPT-6 Luna 完全一致"]
+        },
+        {
+          "source": "Claude Haiku 5.5",
+          "target": "Haiku 4.5",
+          "type": "replaces",
+          "weight": 0.8,
+          "evidence": ["典型负载的平均运行成本比去年的 Haiku 4.5 下降约 75%"]
+        },
+        {
+          "source": "Sonnet 5.5",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["发布还附带两项对成本敏感用户的优惠：Sonnet 5.5 的缓存费用下调"]
+        }
+      ],
+      "metrics": [
+        {"name": "Claude Haiku 5.5 每百万输入 token 价格", "value": "0.10 美元"},
+        {"name": "Claude Haiku 5.5 每百万输出 token 价格", "value": "0.50 美元"},
+        {"name": "token 价格下调幅度", "value": "约 90%"},
+        {"name": "典型负载平均运行成本较 Haiku 4.5 降幅", "value": "约 75%"}
+      ],
+      "why_it_matters": "把最便宜的小模型直接裁到与旗舰竞品同价并配按量积分补贴,说明 Anthropic 的竞争重心已转向高用量、重复性负载的单位成本——小模型成为抢量入口而非入门级陪跑。"
+    },
+    {
+      "article_id": "2026-10-07-2",
+      "entities": [
+        {
+          "name": "Google DeepMind",
+          "type": "company",
+          "aliases": ["DeepMind", "谷歌 DeepMind"],
+          "confidence": 0.97,
+          "evidence": ["Google DeepMind 于 10 月 6 日发布 Nano Banana 2.1 模型卡"]
+        },
+        {
+          "name": "Nano Banana 2.1",
+          "type": "model",
+          "aliases": ["Nano Banana"],
+          "confidence": 0.95,
+          "evidence": ["Google DeepMind 于 10 月 6 日发布 Nano Banana 2.1 模型卡"]
+        },
+        {
+          "name": "Gemini 3.6 Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Nano Banana 2.1 基于 Gemini 3.6 Flash 构建"]
+        },
+        {
+          "name": "Google Search",
+          "type": "product",
+          "aliases": ["谷歌搜索", "搜索 AI 模式"],
+          "confidence": 0.9,
+          "evidence": ["把生成能力塞进搜索框"]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": ["谷歌", "Google Inc."],
+          "confidence": 0.9,
+          "evidence": ["把 Gemini 3 家族这代图像生成模型正式分发到谷歌搜索的 AI 模式里"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google DeepMind 将 Nano Banana 2.1 分发到谷歌搜索 AI 模式",
+          "summary": "Google DeepMind 于 10 月 6 日发布 Nano Banana 2.1 模型卡，把 Gemini 3 家族这代图像生成模型正式分发到谷歌搜索的 AI 模式里，分发渠道覆盖 Gemini App、AI Studio、Gemini API、Google Ads、Flow 与 Stitch。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Nano Banana 2.1", "type": "model", "role": "object"},
+            {"name": "Google Search", "type": "product", "role": "object"}
+          ],
+          "evidence": ["把 Gemini 3 家族这代图像生成模型正式分发到谷歌搜索的 AI 模式里"]
+        },
+        {
+          "type": "trend",
+          "label": "搜索从检索入口向创作入口演进",
+          "summary": "把生成能力塞进搜索框，用户不用切换工具就能在查询结果里得到可编辑的视觉内容，搜索引擎开始直接承担图像生成任务。",
+          "participants": [
+            {"name": "Google Search", "type": "product", "role": "subject"},
+            {"name": "Nano Banana 2.1", "type": "model", "role": "object"}
+          ],
+          "evidence": ["是搜索从检索入口向创作入口演进的又一步"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Nano Banana 2.1",
+          "target": "Google DeepMind",
+          "type": "developed_by",
+          "weight": 0.95,
+          "evidence": ["Google DeepMind 于 10 月 6 日发布 Nano Banana 2.1"]
+        },
+        {
+          "source": "Nano Banana 2.1",
+          "target": "Gemini 3.6 Flash",
+          "type": "built_on",
+          "weight": 0.85,
+          "evidence": ["Nano Banana 2.1 基于 Gemini 3.6 Flash 构建"]
+        },
+        {
+          "source": "Google Search",
+          "target": "Nano Banana 2.1",
+          "type": "integrates",
+          "weight": 0.85,
+          "evidence": ["把 Gemini 3 家族这代图像生成模型正式分发到谷歌搜索的 AI 模式里"]
+        },
+        {
+          "source": "Google DeepMind",
+          "target": "Google",
+          "type": "subsidiary_of",
+          "weight": 0.85,
+          "evidence": ["把 Gemini 3 家族这代图像生成模型正式分发到谷歌搜索的 AI 模式里"]
+        }
+      ],
+      "metrics": [
+        {"name": "Nano Banana 2.1 上下文窗口", "value": "最高一百万 token"}
+      ],
+      "why_it_matters": "一贯由检索定义的搜索入口现在直接承担图像生成,并靠 Flash 系小模型做量级分发,说明多模态能力正从旗舰展示变成搜索引擎的默认功能成本,搜索从查询工具变成创作入口。"
+    },
+    {
+      "article_id": "2026-10-07-3",
+      "entities": [
+        {
+          "name": "Healthleap",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["Healthleap 完成 3800 万美元融资"]
+        },
+        {
+          "name": "住院患者风险预警",
+          "type": "topic",
+          "aliases": ["临床预警"],
+          "confidence": 0.85,
+          "evidence": ["把应该被更密切关注的病人提前拎出来"]
+        },
+        {
+          "name": "电子病历",
+          "type": "topic",
+          "aliases": ["EMR"],
+          "confidence": 0.85,
+          "evidence": ["模型能否从电子病历、生命体征与护理记录中提前识别"]
+        }
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Healthleap 完成 3800 万美元融资",
+          "summary": "医疗 AI 创业公司 Healthleap 完成 3800 万美元融资，具体领投方与估值细节暂未充分展开，垂直医疗 AI 仍是投资人愿意买单的赛段。",
+          "participants": [
+            {"name": "Healthleap", "type": "company", "role": "subject"},
+            {"name": "住院患者风险预警", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Healthleap 完成 3800 万美元融资"]
+        },
+        {
+          "type": "infra",
+          "label": "Healthleap 用 AI 标记需重点关注的住院患者",
+          "summary": "Healthleap 的产品路线围绕把应该被更密切关注的病人提前拎出来展开，从电子病历、生命体征与护理记录中提前识别状态可能恶化的病人，帮助医院把有限人力调度到最需要的地方。",
+          "participants": [
+            {"name": "Healthleap", "type": "company", "role": "subject"},
+            {"name": "电子病历", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["把应该被更密切关注的病人提前拎出来"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Healthleap",
+          "target": "住院患者风险预警",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": ["Healthleap 的产品路线即围绕「把应该被更密切关注的病人提前拎出来」展开"]
+        },
+        {
+          "source": "Healthleap",
+          "target": "电子病历",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": ["模型能否从电子病历、生命体征与护理记录中提前识别"]
+        }
+      ],
+      "metrics": [
+        {"name": "Healthleap 本轮融资规模", "value": "3800 万美元"}
+      ],
+      "why_it_matters": "在通用 agent 估值缩水的当下，一个可量化到住院时长与抢救响应时间的垂直场景仍能轻松拿到 3800 万美元——投资人买单的是可验证的结果而非泛化能力。"
+    },
+    {
+      "article_id": "2026-10-07-4",
+      "entities": [
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": ["微软", "MSFT"],
+          "confidence": 0.97,
+          "evidence": ["微软与英伟达把六月的 RTX Spark 超级芯片变成在售硬件"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.97,
+          "evidence": ["微软与英伟达把六月的 RTX Spark 超级芯片变成在售硬件"]
+        },
+        {
+          "name": "RTX Spark",
+          "type": "hardware",
+          "aliases": ["RTX Spark 本地 AI PC"],
+          "confidence": 0.95,
+          "evidence": ["RTX Spark 是把数据中心级的 Grace Blackwell 超芯片缩小到桌面"]
+        },
+        {
+          "name": "Windows 11",
+          "type": "product",
+          "aliases": ["Windows"],
+          "confidence": 0.9,
+          "evidence": ["Windows 11 把 MCP 作为一等公民的 OS 特性原生支持"]
+        },
+        {
+          "name": "MCP",
+          "type": "tool",
+          "aliases": ["模型上下文协议", "Model Context Protocol"],
+          "confidence": 0.9,
+          "evidence": ["Windows 11 把 MCP 作为一等公民的 OS 特性原生支持"]
+        },
+        {
+          "name": "Agent Workspaces",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Agent Workspaces 把 agent 放进独立的沙箱账号与虚拟桌面"]
+        },
+        {
+          "name": "Aion 1.0 Instruct",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["并预置三款全端侧模型：Aion 1.0 Instruct"]
+        },
+        {
+          "name": "Aion 1.0 Plan",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["Aion 1.0 Plan（推理与工具调用）"]
+        },
+        {
+          "name": "MAI Code Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["MAI Code Flash（代码补全）"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "微软与英伟达发布 RTX Spark 本地 AI PC",
+          "summary": "微软与英伟达把六月的 RTX Spark 超级芯片变成在售硬件，S2 档约 $2,999、S3 顶配约 $7,000，Surface Laptop Ultra 与伙伴机型即日起接受预订，十月下旬交付。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "RTX Spark", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["微软与英伟达发布 RTX Spark 本地 AI PC"]
+        },
+        {
+          "type": "infra",
+          "label": "Windows 11 原生支持 MCP 与沙箱化 Agent Workspaces",
+          "summary": "Windows 11 把 MCP 作为一等公民的 OS 特性原生支持，Agent Workspaces 把 agent 放进独立的沙箱账号与虚拟桌面，配合 Execution Containers 与 OpenShell 运行时把 agent 可达范围收进可控边界。",
+          "participants": [
+            {"name": "Windows 11", "type": "product", "role": "subject"},
+            {"name": "MCP", "type": "tool", "role": "object"},
+            {"name": "Agent Workspaces", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Windows 11 把 MCP 作为一等公民的 OS 特性原生支持"]
+        },
+        {
+          "type": "launch",
+          "label": "微软为 RTX Spark 预置三款全端侧模型",
+          "summary": "微软重建部分任务调度器以铺满 20 个 Arm 核，并预置三款全端侧模型：Aion 1.0 Instruct、Aion 1.0 Plan（推理与工具调用）与 MAI Code Flash（代码补全）。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Aion 1.0 Instruct", "type": "model", "role": "object"},
+            {"name": "Aion 1.0 Plan", "type": "model", "role": "object"},
+            {"name": "MAI Code Flash", "type": "model", "role": "object"}
+          ],
+          "evidence": ["并预置三款全端侧模型"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "RTX Spark",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["微软与英伟达把六月的 RTX Spark 超级芯片变成在售硬件"]
+        },
+        {
+          "source": "Microsoft",
+          "target": "NVIDIA",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["微软与英伟达发布 RTX Spark 本地 AI PC"]
+        },
+        {
+          "source": "Windows 11",
+          "target": "MCP",
+          "type": "integrates",
+          "weight": 0.9,
+          "evidence": ["Windows 11 把 MCP 作为一等公民的 OS 特性原生支持"]
+        },
+        {
+          "source": "Windows 11",
+          "target": "Agent Workspaces",
+          "type": "integrates",
+          "weight": 0.85,
+          "evidence": ["Agent Workspaces 把 agent 放进独立的沙箱账号与虚拟桌面"]
+        },
+        {
+          "source": "Aion 1.0 Instruct",
+          "target": "Microsoft",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["并预置三款全端侧模型：Aion 1.0 Instruct"]
+        },
+        {
+          "source": "Aion 1.0 Plan",
+          "target": "Microsoft",
+          "type": "developed_by",
+          "weight": 0.75,
+          "evidence": ["Aion 1.0 Plan（推理与工具调用）"]
+        },
+        {
+          "source": "MAI Code Flash",
+          "target": "Microsoft",
+          "type": "developed_by",
+          "weight": 0.75,
+          "evidence": ["MAI Code Flash（代码补全）"]
+        }
+      ],
+      "metrics": [
+        {"name": "RTX Spark 本地 AI PC 起售价", "value": "约 $2,999"},
+        {"name": "RTX Spark S3 顶配价", "value": "约 $7,000"},
+        {"name": "RTX Spark 功耗", "value": "约 80W"},
+        {"name": "RTX Spark 可装载模型参数规模", "value": "120B"},
+        {"name": "RTX Spark 统一内存上限", "value": "128GB LPDDR5X"}
+      ],
+      "why_it_matters": "把数据中心级芯片压进约 80W 的笔记本并让 Windows 把 agent 的可达范围收进沙箱,是在算力时租涨价与 DRAM 紧张的背景下用本地设备对冲云端成本的结构性转向,本地不再是离线兜底而是主权负载主赛场。"
+    },
+    {
+      "article_id": "2026-10-07-5",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.97,
+          "evidence": ["英伟达发文确认 OpenAI 的低时延服务变体 GPT-6 Astra Ultrafast 由其 Blackwell GPU 在生产环境驱动"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.97,
+          "evidence": ["英伟达发文确认 OpenAI 的低时延服务变体 GPT-6 Astra Ultrafast"]
+        },
+        {
+          "name": "GPT-6 Astra Ultrafast",
+          "type": "model",
+          "aliases": ["GPT-6.1 Sol Ultrafast"],
+          "confidence": 0.9,
+          "evidence": ["英伟达发文确认 OpenAI 的低时延服务变体 GPT-6 Astra Ultrafast 由其 Blackwell GPU 在生产环境驱动"]
+        },
+        {
+          "name": "Blackwell",
+          "type": "hardware",
+          "aliases": ["Blackwell GPU"],
+          "confidence": 0.9,
+          "evidence": ["Blackwell GPU 已在生产环境运行 OpenAI 的整个超高速服务层"]
+        },
+        {
+          "name": "DGX Spark",
+          "type": "hardware",
+          "aliases": ["DGX Spark 桌面机"],
+          "confidence": 0.9,
+          "evidence": ["同一份十月计划还包含 64GB DGX Spark 桌面机"]
+        },
+        {
+          "name": "Cerebras",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Cerebras 股价因此造挫"]
+        },
+        {
+          "name": "CoreWeave",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["向英伟达参股的 CoreWeave 支付最多 40 亿美元"]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "英伟达确认 GPT-6 Astra Ultrafast 由 Blackwell 驱动",
+          "summary": "在传言发酵、Cerebras 股价造挫之后，英伟达发文确认 Blackwell GPU 已在生产环境运行 OpenAI 的整个超高速服务层，并经 OpenAI API 对合格的 ChatGPT Work 与 Codex 用户可用。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "GPT-6 Astra Ultrafast", "type": "model", "role": "object"},
+            {"name": "Blackwell", "type": "hardware", "role": "object"},
+            {"name": "Cerebras", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["Blackwell GPU 已在生产环境运行 OpenAI 的整个超高速服务层"]
+        },
+        {
+          "type": "launch",
+          "label": "英伟达公布 64GB DGX Spark 桌面机定价 $4,999",
+          "summary": "同一份十月计划还包含 64GB DGX Spark 桌面机，定价 $4,999、10 月 23 日发货，同时现存 128GB 型号涨价至 $6,950。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "DGX Spark", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["同一份十月计划还包含 64GB DGX Spark 桌面机，定价 $4,999"]
+        },
+        {
+          "type": "partnership",
+          "label": "OpenAI 承诺向英伟达参股的 CoreWeave 支付最多 40 亿美元",
+          "summary": "英伟达披露 OpenAI 已承诺在 2029 年 4 月前就一份协议向英伟达参股的 CoreWeave 支付最多 40 亿美元。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "CoreWeave", "type": "company", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["向英伟达参股的 CoreWeave 支付最多 40 亿美元"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "GPT-6 Astra Ultrafast",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["英伟达发文确认 OpenAI 的低时延服务变体 GPT-6 Astra Ultrafast"]
+        },
+        {
+          "source": "GPT-6 Astra Ultrafast",
+          "target": "Blackwell",
+          "type": "runs_on",
+          "weight": 0.9,
+          "evidence": ["Blackwell GPU 已在生产环境运行 OpenAI 的整个超高速服务层"]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "OpenAI",
+          "type": "supplies",
+          "weight": 0.85,
+          "evidence": ["Blackwell GPU 已在生产环境运行 OpenAI 的整个超高速服务层"]
+        },
+        {
+          "source": "DGX Spark",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["同一份十月计划还包含 64GB DGX Spark 桌面机"]
+        },
+        {
+          "source": "OpenAI",
+          "target": "CoreWeave",
+          "type": "contracts_with",
+          "weight": 0.8,
+          "evidence": ["向英伟达参股的 CoreWeave 支付最多 40 亿美元"]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "CoreWeave",
+          "type": "invests_in",
+          "weight": 0.7,
+          "evidence": ["英伟达参股的 CoreWeave"]
+        }
+      ],
+      "metrics": [
+        {"name": "64GB DGX Spark 定价", "value": "$4,999"},
+        {"name": "128GB DGX Spark 上调后价格", "value": "$6,950"},
+        {"name": "OpenAI 承诺向 CoreWeave 支付上限", "value": "40 亿美元"}
+      ],
+      "why_it_matters": "当低时延旗舰负载被官方锤实跑在自家机架上,英伟达同时证明自己是 GPT 流量的事实底座——把对手 Cerebras 挤到订单高度依赖 OpenAI 的被动位置,而内存供给取代芯片产能成为下一年真正瓶颈。"
+    },
+    {
+      "article_id": "2026-10-07-6",
+      "entities": [
+        {
+          "name": "Lambda",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["英伟达参股的 AI 云计算公司 Lambda 拟在 2027 年计划 IPO 前完成最多 40 亿美元的最后一轮融资"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.97,
+          "evidence": ["英伟达参股的 AI 云计算公司 Lambda"]
+        },
+        {
+          "name": "Coatue",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["由 Coatue 与 Blackstone 领投"]
+        },
+        {
+          "name": "Blackstone",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["由 Coatue 与 Blackstone 领投"]
+        }
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Lambda 拟以约 145 亿美元投前估值融资最多 40 亿美元",
+          "summary": "据路透援引知情人士，Lambda 正以约 145 亿美元投前估值募集最高 40 亿美元，作为上市前收官轮，由 Coatue 与 Blackstone 领投。",
+          "participants": [
+            {"name": "Lambda", "type": "company", "role": "subject"},
+            {"name": "Coatue", "type": "company", "role": "funder"},
+            {"name": "Blackstone", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["Lambda 正以约 145 亿美元投前估值募集最高 40 亿美元"]
+        },
+        {
+          "type": "trend",
+          "label": "英伟达背书的 neocloud 正处估值与收入同步扩张窗口",
+          "summary": "在英伟达确认 GPT-6 高速档由 Blackwell 驱动、HBM 供给紧张的背景下，拿到 GPU 供货与英伟达背书的 neocloud 正处在估值与收入同步扩张的窗口，单位算力价格上行是这轮融资叙事的外围支撑。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Lambda", "type": "company", "role": "object"}
+          ],
+          "evidence": ["拿到 GPU 供货与英伟达背书的 neocloud 正处在估值与收入同步扩张的窗口"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "NVIDIA",
+          "target": "Lambda",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": ["英伟达参股的 AI 云计算公司 Lambda"]
+        },
+        {
+          "source": "Coatue",
+          "target": "Lambda",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": ["Lambda 正以约 145 亿美元投前估值募集最高 40 亿美元，由 Coatue 与 Blackstone 领投"]
+        },
+        {
+          "source": "Blackstone",
+          "target": "Lambda",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": ["由 Coatue 与 Blackstone 领投"]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "Lambda",
+          "type": "supplies",
+          "weight": 0.7,
+          "evidence": ["拿到 GPU 供货与英伟达背书"]
+        }
+      ],
+      "metrics": [
+        {"name": "Lambda 融资规模上限", "value": "40 亿美元"},
+        {"name": "Lambda 投前估值", "value": "约 145 亿美元"},
+        {"name": "Nebius 十月起单位算力价格涨幅", "value": "17–21%"}
+      ],
+      "why_it_matters": "英伟达同时攥着芯片供货、持股与上市叙事的 neocloud,把算力套现路径资本化——在 DRAM 紧俏、单位算力涨价的窗口,这类参股渠道成了英伟达在自营算力外的第二增长通道。"
+    },
+    {
+      "article_id": "2026-10-07-7",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.97,
+          "evidence": ["OpenAI 这次换打「广度」：一次性扔出 722 篇论文"]
+        },
+        {
+          "name": "内部前沿模型",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["只称其为「内部前沿模型」"]
+        },
+        {
+          "name": "722 篇数学论文",
+          "type": "paper",
+          "aliases": ["722 篇论文"],
+          "confidence": 0.9,
+          "evidence": ["一次性扔出 722 篇论文"]
+        },
+        {
+          "name": "arXiv",
+          "type": "organization",
+          "aliases": ["Arxiv"],
+          "confidence": 0.95,
+          "evidence": ["而非学术预印本 arXiv"]
+        },
+        {
+          "name": "Kevin Buzzard",
+          "type": "person",
+          "aliases": ["Buzzard"],
+          "confidence": 0.9,
+          "evidence": ["帝国理工的 Kevin Buzzard 更审慎"]
+        },
+        {
+          "name": "Francis Johnson",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["伦敦大学学院学者 Francis Johnson"]
+        },
+        {
+          "name": "Lean",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["只有 1 篇用 Lean 做了形式化验证"]
+        },
+        {
+          "name": "帝国理工",
+          "type": "organization",
+          "aliases": ["Imperial College"],
+          "confidence": 0.9,
+          "evidence": ["帝国理工的 Kevin Buzzard 更审慎"]
+        },
+        {
+          "name": "伦敦大学学院",
+          "type": "organization",
+          "aliases": ["UCL"],
+          "confidence": 0.9,
+          "evidence": ["伦敦大学学院学者 Francis Johnson"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "OpenAI 一次性发布 722 篇数学论文",
+          "summary": "OpenAI 以未指名其名的内部前沿模型一次性发布 722 篇数学论文，发布在更像代码仓库的 GitHub 而非学术预印本 arXiv，证明或证伪一批开放问题。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "内部前沿模型", "type": "model", "role": "object"},
+            {"name": "722 篇数学论文", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["OpenAI 这次换打「广度」：一次性扔出 722 篇论文"]
+        },
+        {
+          "type": "research",
+          "label": "Kevin Buzzard 审慎评估 722 篇论文：相关 30 篇仅 7 篇印象深刻、1 篇有 Lean 形式化",
+          "summary": "帝国理工的 Kevin Buzzard 对这批论文保持审慎：数论方向与他相关的 30 篇里只有 7 篇让他觉得令人印象深刻，且只有 1 篇用 Lean 做了形式化验证，其余须等专家逐字核查或补出 Lean 证明。",
+          "participants": [
+            {"name": "722 篇数学论文", "type": "paper", "role": "object"},
+            {"name": "Kevin Buzzard", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["数论方向与他相关的 30 篇里只有 7 篇让他觉得令人印象深刻，且只有 1 篇用 Lean 做了形式化验证"]
+        },
+        {
+          "type": "research",
+          "label": "Francis Johnson 惊叹并认可被解出的 Wall's D(2) 难题",
+          "summary": "伦敦大学学院学者 Francis Johnson 为此钻研了 25 年的 Wall's D(2) 问题是这批论文解出的问题之一，他说「我很惊讶它做到这么快，但不惊讶它做到了」——是惊叹与认可而非审慎。",
+          "participants": [
+            {"name": "722 篇数学论文", "type": "paper", "role": "object"},
+            {"name": "Francis Johnson", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["我很惊讶它做到这么快，但不惊讶它做到了"]
+        },
+        {
+          "type": "trend",
+          "label": "论文发在 GitHub 而非 arXiv，arXiv 同周宣布上传限额",
+          "summary": "这批论文发在更像代码仓库的 GitHub，而非学术预印本 arXiv；而正是在本周，arXiv 宣布引入上传限额以遏制「低价值」提交的泛滥。",
+          "participants": [
+            {"name": "722 篇数学论文", "type": "paper", "role": "subject"},
+            {"name": "arXiv", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["这批论文发在更像代码仓库的 GitHub，而非学术预印本 arXiv"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "内部前沿模型",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["公司没有透露是哪个模型，只称其为「内部前沿模型」"]
+        },
+        {
+          "source": "722 篇数学论文",
+          "target": "OpenAI",
+          "type": "authored_by",
+          "weight": 0.9,
+          "evidence": ["OpenAI 这次换打「广度」：一次性扔出 722 篇论文"]
+        },
+        {
+          "source": "Kevin Buzzard",
+          "target": "帝国理工",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["帝国理工的 Kevin Buzzard 更审慎"]
+        },
+        {
+          "source": "Francis Johnson",
+          "target": "伦敦大学学院",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["伦敦大学学院学者 Francis Johnson"]
+        },
+        {
+          "source": "722 篇数学论文",
+          "target": "Lean",
+          "type": "verified_with",
+          "weight": 0.7,
+          "evidence": ["只有 1 篇用 Lean 做了形式化验证"]
+        }
+      ],
+      "metrics": [
+        {"name": "OpenAI 一次性发布数学论文数", "value": "722 篇"},
+        {"name": "与 Kevin Buzzard 相关的数论论文数", "value": "30 篇"},
+        {"name": "Buzzard 认为令人印象深刻的篇数", "value": "7 篇"},
+        {"name": "用 Lean 形式化验证的篇数", "value": "1 篇"},
+        {"name": "上一轮解 Navier-Stokes 问题所用算力", "value": "约 1500 万美元"}
+      ],
+      "why_it_matters": "当模型能一次批量产出 722 项数学「发现」,可信度不再由出处名气背书,而开始取决于是否附带可机器检查的证明——模型产出的规模与人类验证容量的缺口,正把「宣称正确」与「被验证正确」掰成两个市场。"
+    },
+    {
+      "article_id": "2026-10-07-8",
+      "entities": [
+        {
+          "name": "AssemState",
+          "type": "paper",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["清华大学等提出的 AssemState"]
+        },
+        {
+          "name": "清华大学",
+          "type": "organization",
+          "aliases": ["Tsinghua"],
+          "confidence": 0.9,
+          "evidence": ["清华大学等提出的 AssemState"]
+        },
+        {
+          "name": "MLLM 三维空间推理",
+          "type": "topic",
+          "aliases": ["MLLM 的空间关系推理"],
+          "confidence": 0.85,
+          "evidence": ["弥补 MLLM 的三维空间推理短板"]
+        },
+        {
+          "name": "仿真的释放测试",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["并通过基于仿真的释放测试验证物理可行性"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "清华大学提出 AssemState 做零样本家具装配",
+          "summary": "AssemState 用锚点引导把说明书页拆成单部件操作、再用仿真释放测试的迭代后态反馈修正 6D 位姿，零样本框架把装配树恢复的 F1 提到 62.80%。",
+          "participants": [
+            {"name": "AssemState", "type": "paper", "role": "subject"},
+            {"name": "清华大学", "type": "organization", "role": "subject"},
+            {"name": "仿真的释放测试", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["清华大学等提出的 AssemState"]
+        },
+        {
+          "type": "benchmark",
+          "label": "AssemState 把装配树恢复 F1 从 38.58% 提到 62.80%",
+          "summary": "相比此前最强基线，装配树恢复的 F1 从 38.58% 提升到 62.80%、Tree Exact Match 从 28.24% 提升到 53.92%，迭代修正把评审接受的操作从 0 提高到 5.3%。",
+          "participants": [
+            {"name": "AssemState", "type": "paper", "role": "subject"},
+            {"name": "MLLM 三维空间推理", "type": "topic", "role": "competitor"}
+          ],
+          "evidence": ["装配树恢复的 F1 从 38.58% 提升到 62.80%"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "AssemState",
+          "target": "清华大学",
+          "type": "authored_by",
+          "weight": 0.9,
+          "evidence": ["清华大学等提出的 AssemState"]
+        },
+        {
+          "source": "AssemState",
+          "target": "MLLM 三维空间推理",
+          "type": "targets",
+          "weight": 0.7,
+          "evidence": ["弥补 MLLM 的三维空间推理短板"]
+        },
+        {
+          "source": "AssemState",
+          "target": "仿真的释放测试",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": ["并通过基于仿真的释放测试验证物理可行性"]
+        }
+      ],
+      "metrics": [
+        {"name": "装配树恢复 F1 提升", "value": "38.58% → 62.80%"},
+        {"name": "Tree Exact Match 提升", "value": "28.24% → 53.92%"},
+        {"name": "迭代修正后评审接受操作占比变化", "value": "0 → 5.3%"},
+        {"name": "平均 Chamfer 距离变化", "value": "5.4111 → 1.7744"},
+        {"name": "独立评估的部件级操作数", "value": "243 个"}
+      ],
+      "why_it_matters": "六维位姿上「看得见并不等于放得对」的局限暴露 MLLM 空间关系推理的真实缺口,说明零样本物理交互的提升有明确上限,通用模型的物理常识仍是硬短板。"
+    },
+    {
+      "article_id": "2026-10-07-9",
+      "entities": [
+        {
+          "name": "EESD",
+          "type": "paper",
+          "aliases": ["Effective-Evidence Self-Distillation"],
+          "confidence": 0.9,
+          "evidence": ["论文提出 Effective-Evidence Self-Distillation（EESD）"]
+        },
+        {
+          "name": "DeepSeek",
+          "type": "company",
+          "aliases": ["深度求索"],
+          "confidence": 0.9,
+          "evidence": ["在主推的 DeepSeek/RunBugRun 配对研究中"]
+        },
+        {
+          "name": "RunBugRun",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["在主推的 DeepSeek/RunBugRun 配对研究中"]
+        },
+        {
+          "name": "CodeARC",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["DeepSeek/CodeARC 的 all-tests Pass@1"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 EESD 提升编码 agent 的自我纠正",
+          "summary": "EESD 把执行反馈的支持度与证据质量分开表示，用带不确定性惩罚的 Dirichlet 伪计数对抗训练的自蒸馏权重，让编码 agent 从自身纠正中学得更稳。",
+          "participants": [
+            {"name": "EESD", "type": "paper", "role": "subject"},
+            {"name": "DeepSeek", "type": "company", "role": "object"}
+          ],
+          "evidence": ["论文提出 Effective-Evidence Self-Distillation（EESD）"]
+        },
+        {
+          "type": "benchmark",
+          "label": "EESD 把 DeepSeek/CodeARC 的 all-tests Pass@1 从 15.0% 提升到 20.4%",
+          "summary": "主推的 DeepSeek/RunBugRun 配对研究中 argmax 预测在全部 3000 个例子上一致，一轮纠正学习后 DeepSeek/CodeARC 的 all-tests Pass@1 从 15.0% 提升到 20.4%。",
+          "participants": [
+            {"name": "EESD", "type": "paper", "role": "subject"},
+            {"name": "DeepSeek", "type": "company", "role": "object"},
+            {"name": "CodeARC", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["一轮纠正学习后 DeepSeek/CodeARC 的 all-tests Pass@1 从 15.0% 提升到 20.4%"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "EESD",
+          "target": "DeepSeek",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": ["在主推的 DeepSeek/RunBugRun 配对研究中"]
+        },
+        {
+          "source": "DeepSeek",
+          "target": "RunBugRun",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": ["在主推的 DeepSeek/RunBugRun 配对研究中"]
+        },
+        {
+          "source": "DeepSeek",
+          "target": "CodeARC",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": ["DeepSeek/CodeARC 的 all-tests Pass@1"]
+        }
+      ],
+      "metrics": [
+        {"name": "NLL 下降幅度（观测 1→8 条）", "value": "55.0%–59.3%"},
+        {"name": "DeepSeek/CodeARC all-tests Pass@1 提升", "value": "15.0% → 20.4%"},
+        {"name": "RunBugRun 配对研究样本数", "value": "3000 个"}
+      ],
+      "why_it_matters": "把「这条纠错该背多重」从启发式变成可量化的概率建模,首次给「agent 该从自己错误里学多少」提供一个数值杠杆——自我纠错从此成为可调的超参而非玄学。"
+    },
+    {
+      "article_id": "2026-10-07-10",
+      "entities": [
+        {
+          "name": "ParanoiaEval",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["新基准 ParanoiaEval 首次系统评估编码 agent 的风险处置能力"]
+        },
+        {
+          "name": "风险处置框架",
+          "type": "topic",
+          "aliases": ["规避–转移–缓解–接受"],
+          "confidence": 0.85,
+          "evidence": ["ParanoiaEval 把软件工程里成熟的风险处置框架"]
+        },
+        {
+          "name": "编码 agent 风险处置能力",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["新基准 ParanoiaEval 首次系统评估编码 agent 的风险处置能力"]
+        },
+        {
+          "name": "任务能力",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": ["更强的任务能力并不保证更恰当的风险处理"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "ParanoiaEval 首次系统评估编码 agent 的风险处置能力",
+          "summary": "新基准 ParanoiaEval 把软件工程里成熟的风险处置框架（规避–转移–缓解–接受）落到编码 agent 场景，构造 200 个证据受控的成对仓库级任务并配专门的风险处置违规度量。",
+          "participants": [
+            {"name": "ParanoiaEval", "type": "benchmark", "role": "subject"},
+            {"name": "编码 agent 风险处置能力", "type": "topic", "role": "object"},
+            {"name": "风险处置框架", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["新基准 ParanoiaEval 首次系统评估编码 agent 的风险处置能力"]
+        },
+        {
+          "type": "benchmark",
+          "label": "ParanoiaEval 发现 11.2%–58.7% 的运行出现不必要防御性工作",
+          "summary": "在 8 个代表性模型上即便有明确证据，11.2%–58.7% 的运行仍出现不必要的风险处置，且更强的任务能力并不保证更恰当的风险处理。",
+          "participants": [
+            {"name": "ParanoiaEval", "type": "benchmark", "role": "subject"},
+            {"name": "编码 agent 风险处置能力", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["11.2%–58.7% 的运行仍出现不必要的风险处置"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "ParanoiaEval",
+          "target": "风险处置框架",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["ParanoiaEval 把软件工程里成熟的风险处置框架（规避–转移–缓解–接受）落到编码 agent 场景"]
+        },
+        {
+          "source": "ParanoiaEval",
+          "target": "编码 agent 风险处置能力",
+          "type": "targets",
+          "weight": 0.85,
+          "evidence": ["新基准 ParanoiaEval 首次系统评估编码 agent 的风险处置能力"]
+        },
+        {
+          "source": "编码 agent 风险处置能力",
+          "target": "任务能力",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["更强的任务能力并不保证更恰当的风险处理"]
+        }
+      ],
+      "metrics": [
+        {"name": "不必要的风险处置发生比例区间", "value": "11.2%–58.7%"},
+        {"name": "ParanoiaEval 构造的成对仓库级任务数", "value": "200 个"},
+        {"name": "代表性模型评测数", "value": "8 个"}
+      ],
+      "why_it_matters": "把「风险处理是否得当」立为独立于任务能力的能力维度,意味着更强的模型并不自动更安全——对 agent 化开发的评估体系需要从只看功能达标转向同时度量风险行为。"
+    },
+    {
+      "article_id": "2026-10-07-11",
+      "entities": [
+        {
+          "name": "功能-安全缺口纵向研究",
+          "type": "paper",
+          "aliases": ["LLM 生成代码功能-安全缺口研究"],
+          "confidence": 0.85,
+          "evidence": ["这项研究把功能性与安全性放到同一条时间线上对比"]
+        },
+        {
+          "name": "Gemini 3.7 Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["个别模型（如 Gemini 3.7 Flash）反而是例外"]
+        },
+        {
+          "name": "LLM 生成代码",
+          "type": "topic",
+          "aliases": ["LLM 代码助手"],
+          "confidence": 0.85,
+          "evidence": ["评估 LLM 代码助手通常只盯「能不能跑通」"]
+        },
+        {
+          "name": "ParanoiaEval",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["与 ParanoiaEval 的结论互为镜像"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "纵向研究发现功能-安全缺口并不随模型更新必然收窄",
+          "summary": "一项对 LLM 生成代码的纵向研究把功能性与安全性放到同一条时间线上对比，结论是多数新模型功能更强但安全风险并不自动收敛，个别模型（如 Gemini 3.7 Flash）反而是例外。",
+          "participants": [
+            {"name": "功能-安全缺口纵向研究", "type": "paper", "role": "subject"},
+            {"name": "Gemini 3.7 Flash", "type": "model", "role": "object"},
+            {"name": "LLM 生成代码", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["功能与安全表现之间的「缺口」并不必然收窄"]
+        },
+        {
+          "type": "benchmark",
+          "label": "LLM 生成代码功能-安全缺口与 ParanoiaEval 结论互为镜像",
+          "summary": "研究呼应一个被反复印证的事实：强任务能力与恰当的安全行为是两回事——与 ParanoiaEval 的结论互为镜像，安全的评估应是系统设计时的硬约束与显式输入。",
+          "participants": [
+            {"name": "功能-安全缺口纵向研究", "type": "paper", "role": "subject"},
+            {"name": "ParanoiaEval", "type": "benchmark", "role": "competitor"}
+          ],
+          "evidence": ["与 ParanoiaEval 的结论互为镜像"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "功能-安全缺口纵向研究",
+          "target": "LLM 生成代码",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": ["这项研究把功能性与安全性放到同一条时间线上对比"]
+        },
+        {
+          "source": "功能-安全缺口纵向研究",
+          "target": "Gemini 3.7 Flash",
+          "type": "targets",
+          "weight": 0.75,
+          "evidence": ["个别模型（如 Gemini 3.7 Flash）反而是例外"]
+        },
+        {
+          "source": "功能-安全缺口纵向研究",
+          "target": "ParanoiaEval",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["与 ParanoiaEval 的结论互为镜像"]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "把「更安全」从「更强功能」的副产品里剥出来作为独立指标追踪,意味着迭代发布必须在功能与安全两条线上同步验证——否则新模型的功能红利会被放大的安全风险吃掉。"
+    },
+    {
+      "article_id": "2026-10-07-12",
+      "entities": [
+        {
+          "name": "美国政府",
+          "type": "organization",
+          "aliases": ["特朗普政府"],
+          "confidence": 0.9,
+          "evidence": ["美国政府以「展示回应关切但不设限制」的方式落下一份协议"]
+        },
+        {
+          "name": "自愿性 AI 安全协议",
+          "type": "policy",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议"]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.97,
+          "evidence": ["特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议"]
+        },
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": ["Facebook", "Meta AI"],
+          "confidence": 0.97,
+          "evidence": ["特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议"]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": ["谷歌", "Google Inc."],
+          "confidence": 0.97,
+          "evidence": ["特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.97,
+          "evidence": ["特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议"]
+        },
+        {
+          "name": "SpaceX",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议"]
+        },
+        {
+          "name": "加州 AI 审计规则",
+          "type": "policy",
+          "aliases": ["加州州级独立审计规则"],
+          "confidence": 0.85,
+          "evidence": ["这两点也正是加州上月通过的首部州级独立审计规则的核心"]
+        },
+        {
+          "name": "特朗普",
+          "type": "person",
+          "aliases": ["Donald Trump"],
+          "confidence": 0.9,
+          "evidence": ["特朗普称之为「道德约束」"]
+        },
+        {
+          "name": "Sam Altman",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Sam Altman 公开表示"]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "特朗普政府与六家公司签署自愿性 AI 安全协议",
+          "summary": "特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议，承诺采用稳健的内部管控与独立外部审计，但文件里没有对违反行为设任何惩罚。",
+          "participants": [
+            {"name": "美国政府", "type": "organization", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "object"},
+            {"name": "Google", "type": "company", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "object"},
+            {"name": "SpaceX", "type": "company", "role": "object"}
+          ],
+          "evidence": ["特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议"]
+        },
+        {
+          "type": "policy",
+          "label": "安全监管路线分歧显性化：Altman 轻触式 vs Anthropic 前沿减速",
+          "summary": "Sam Altman 公开表示世界应为了技术的收益接纳一些坏事发生、坚持轻触式监管；Anthropic 则呼吁为前沿减速，自愿协议能否在中期选举前安抚选民仍是悬而未决的问题。",
+          "participants": [
+            {"name": "Sam Altman", "type": "person", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["Sam Altman 公开表示「世界应为了技术的收益接纳一些坏事发生」"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "自愿性 AI 安全协议",
+          "target": "美国政府",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["特朗普政府与英伟达、SpaceX、OpenAI、Anthropic、Meta、Google 六家公司签署自愿性 AI 安全协议"]
+        },
+        {
+          "source": "OpenAI",
+          "target": "自愿性 AI 安全协议",
+          "type": "complies_with",
+          "weight": 0.85,
+          "evidence": ["六家公司承诺采用「稳健的内部管控」"]
+        },
+        {
+          "source": "Anthropic",
+          "target": "自愿性 AI 安全协议",
+          "type": "complies_with",
+          "weight": 0.85,
+          "evidence": ["六家公司承诺采用「稳健的内部管控」"]
+        },
+        {
+          "source": "Meta",
+          "target": "自愿性 AI 安全协议",
+          "type": "complies_with",
+          "weight": 0.85,
+          "evidence": ["六家公司承诺采用「稳健的内部管控」"]
+        },
+        {
+          "source": "Google",
+          "target": "自愿性 AI 安全协议",
+          "type": "complies_with",
+          "weight": 0.85,
+          "evidence": ["六家公司承诺采用「稳健的内部管控」"]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "自愿性 AI 安全协议",
+          "type": "complies_with",
+          "weight": 0.8,
+          "evidence": ["六家公司承诺采用「稳健的内部管控」"]
+        },
+        {
+          "source": "SpaceX",
+          "target": "自愿性 AI 安全协议",
+          "type": "complies_with",
+          "weight": 0.8,
+          "evidence": ["六家公司承诺采用「稳健的内部管控」"]
+        },
+        {
+          "source": "自愿性 AI 安全协议",
+          "target": "加州 AI 审计规则",
+          "type": "shares_provision_with",
+          "weight": 0.7,
+          "evidence": ["这两点也正是加州上月通过的首部州级独立审计规则的核心"]
+        },
+        {
+          "source": "特朗普",
+          "target": "美国政府",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["特朗普称之为「道德约束」"]
+        },
+        {
+          "source": "Sam Altman",
+          "target": "OpenAI",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["Sam Altman 公开表示"]
+        }
+      ],
+      "metrics": [
+        {"name": "签署协议的公司数", "value": "6 家"}
+      ],
+      "why_it_matters": "用「道德约束」而非强制规则回应公众 AI 忧虑,把内部管控与独立外部审计做成自愿条款——行政分支的轻触式监管试图在中期选举前以仪式感替代约束力,把真正的验证责任留给了市场。"
+    },
+    {
+      "article_id": "2026-10-07-13",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.97,
+          "evidence": ["OpenAI 把 GPT-6 配网红交互界面铺到全部层级的 ChatGPT"]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.97,
+          "evidence": ["Anthropic 用小模型 Haiku 5.5 把 API 价下调约 90%"]
+        },
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": ["微软", "MSFT"],
+          "confidence": 0.97,
+          "evidence": ["微软与英伟达把本地 AI PC 打到 $2,999"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达", "Nvidia"],
+          "confidence": 0.97,
+          "evidence": ["微软与英伟达把本地 AI PC 打到 $2,999"]
+        },
+        {
+          "name": "GPT-6",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["OpenAI 把 GPT-6 配网红交互界面铺到全部层级的 ChatGPT"]
+        },
+        {
+          "name": "Claude Haiku 5.5",
+          "type": "model",
+          "aliases": ["Haiku 5.5"],
+          "confidence": 0.95,
+          "evidence": ["Anthropic 用小模型 Haiku 5.5 把 API 价下调约 90%"]
+        },
+        {
+          "name": "GPT-6 Luna",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["Anthropic 把 Haiku 5.5 的 token 价直接对标 GPT-6 Luna"]
+        },
+        {
+          "name": "RTX Spark",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["微软/英伟达的 RTX Spark 把 120B 级模型装进一台约 80W 的笔记本"]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "应用层同一天上演价格战：GPT-6 全量铺开、Haiku 5.5 降价九成、本地 PC 进场",
+          "summary": "同一天里 OpenAI 把 GPT-6 配网红交互界面铺到全部层级的 ChatGPT，Anthropic 用小模型 Haiku 5.5 把 API 价下调约 90%，微软与英伟达把本地 AI PC 打到 $2,999。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["OpenAI 把 GPT-6 配网红交互界面铺到全部层级的 ChatGPT，Anthropic 用小模型 Haiku 5.5 把 API 价下调约 90%，微软与英伟达把本地 AI PC 打到 $2,999"]
+        },
+        {
+          "type": "trend",
+          "label": "推理的物理分布被主动重排，本地 PC 承载隐私低时延负载",
+          "summary": "微软/英伟达的 RTX Spark 把 120B 级模型装进一台约 80W 的笔记本，并让 Windows 原生承载 MCP 与沙箱化 agent——本地不再只是离线兜底，而成了隐私、延迟与合规敏感负载的主赛场。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "RTX Spark", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["推理的物理分布正在被主动重排"]
+        },
+        {
+          "type": "trend",
+          "label": "竞争重心从 benchmark 打榜转向成本、延迟与集成深度",
+          "summary": "能力差距本身的叙事让位给单位智能的价格曲线与智能触及面，云端旗舰负责无上限能力，本地与廉价小模型负责高频、私密、低时延的日常。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["竞争重心从 benchmark 打榜转移到成本、延迟与集成深度"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "GPT-6",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["OpenAI 把 GPT-6 配网红交互界面铺到全部层级的 ChatGPT"]
+        },
+        {
+          "source": "Claude Haiku 5.5",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": ["Anthropic 用小模型 Haiku 5.5 把 API 价下调约 90%"]
+        },
+        {
+          "source": "Claude Haiku 5.5",
+          "target": "GPT-6 Luna",
+          "type": "competes_with",
+          "weight": 0.8,
+          "evidence": ["Anthropic 把 Haiku 5.5 的 token 价直接对标 GPT-6 Luna"]
+        },
+        {
+          "source": "RTX Spark",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["微软/英伟达的 RTX Spark 把 120B 级模型装进一台约 80W 的笔记本"]
+        },
+        {
+          "source": "Microsoft",
+          "target": "NVIDIA",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": ["微软与英伟达把本地 AI PC 打到 $2,999"]
+        },
+        {
+          "source": "Anthropic",
+          "target": "OpenAI",
+          "type": "competes_with",
+          "weight": 0.85,
+          "evidence": ["前沿竞争的密度正在从「谁更强」滑向「每 token 便宜多少、哪里都能算」"]
+        }
+      ],
+      "metrics": [
+        {"name": "Claude Haiku 5.5 每百万 token 价格", "value": "$0.10/$0.50"},
+        {"name": "RTX Spark 本地 AI PC 起售价", "value": "$2,999"},
+        {"name": "RTX Spark 功耗", "value": "约 80W"},
+        {"name": "RTX Spark 可装载模型参数规模", "value": "120B"}
+      ],
+      "why_it_matters": "能力差距的叙事让位给单位智能的价格曲线与智能触及面——前台小模型负责高频低价、本地 PC 负责私密低时延,谁把智能做到像水电一样摸得到,谁就掌握下一阶段话语权,云端旗舰退守无上限能力。"
+    },
+    {
+      "article_id": "2026-10-07-14",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": ["Open AI"],
+          "confidence": 0.97,
+          "evidence": ["OpenAI 一次性放出 722 项数学发现"]
+        },
+        {
+          "name": "arXiv",
+          "type": "organization",
+          "aliases": ["Arxiv"],
+          "confidence": 0.95,
+          "evidence": ["arXiv 宣布引入上传限额以遏制「低价值」提交"]
+        },
+        {
+          "name": "Kevin Buzzard",
+          "type": "person",
+          "aliases": ["Buzzard"],
+          "confidence": 0.9,
+          "evidence": ["帝国理工的 Buzzard 给出了冷静的拆解"]
+        },
+        {
+          "name": "Lean",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["仅 1 篇有 Lean 形式化保证"]
+        },
+        {
+          "name": "帝国理工",
+          "type": "organization",
+          "aliases": ["Imperial College"],
+          "confidence": 0.9,
+          "evidence": ["帝国理工的 Buzzard"]
+        },
+        {
+          "name": "722 篇数学论文",
+          "type": "paper",
+          "aliases": ["722 项数学发现", "722 篇论文"],
+          "confidence": 0.9,
+          "evidence": ["OpenAI 一次性放出 722 项数学发现"]
+        },
+        {
+          "name": "数学论文上传",
+          "type": "topic",
+          "aliases": ["论文上传"],
+          "confidence": 0.8,
+          "evidence": ["arXiv 宣布引入上传限额以遏制「低价值」提交"]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "OpenAI 一次性放出 722 篇数学论文而多数未形式化验证",
+          "summary": "OpenAI 一次性放出 722 篇数学论文，其中多数尚未形式化验证、仅个位数让人印象深刻；帝国理工的 Buzzard 给出冷静拆解——30 篇里 7 篇出色、仅 1 篇有 Lean 保证。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "722 篇数学论文", "type": "paper", "role": "object"},
+            {"name": "Kevin Buzzard", "type": "person", "role": "object"}
+          ],
+          "evidence": ["OpenAI 一次性放出 722 项数学发现"]
+        },
+        {
+          "type": "policy",
+          "label": "arXiv 引入上传限额以遏制低价值提交",
+          "summary": "正是本周，arXiv 宣布引入上传限额以遏制「低价值」提交的泛滥，数学是模型可自动生成、且结果可机器判定的重灾区；生成量与审校量之间的剪刀差正在显性化。",
+          "participants": [
+            {"name": "arXiv", "type": "organization", "role": "subject"},
+            {"name": "数学论文上传", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["arXiv 宣布引入上传限额以遏制「低价值」提交"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "722 篇数学论文",
+          "target": "OpenAI",
+          "type": "authored_by",
+          "weight": 0.9,
+          "evidence": ["OpenAI 一次性放出 722 项数学发现"]
+        },
+        {
+          "source": "Kevin Buzzard",
+          "target": "帝国理工",
+          "type": "affiliated_with",
+          "weight": 0.85,
+          "evidence": ["帝国理工的 Buzzard 给出了冷静的拆解"]
+        },
+        {
+          "source": "722 篇数学论文",
+          "target": "Lean",
+          "type": "verified_with",
+          "weight": 0.7,
+          "evidence": ["仅 1 篇有 Lean 形式化保证"]
+        },
+        {
+          "source": "arXiv",
+          "target": "数学论文上传",
+          "type": "restricts",
+          "weight": 0.7,
+          "evidence": ["arXiv 宣布引入上传限额以遏制「低价值」提交"]
+        }
+      ],
+      "metrics": [
+        {"name": "与 Buzzard 领域相关的论文数", "value": "30 篇"},
+        {"name": "Buzzard 认为出色的篇数", "value": "7 篇"},
+        {"name": "有 Lean 形式化保证的篇数", "value": "1 篇"},
+        {"name": "OpenAI 上一轮解题算力", "value": "1500 万美元"}
+      ],
+      "why_it_matters": "当机器能生成百万级数学「成果」,论文分量的锚点从作者名气转向是否附带可机器检查的证明——AI 可靠性的瓶颈不再是能不能做出来,而是如何让人相信它是对的,验证体系成为给成果定价的一方。"
+    }
+  ]
+}
