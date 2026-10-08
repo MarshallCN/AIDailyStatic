@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-08",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "上一轮指出的关系类型/实体类型错误已全部修正,本轮事实、数字、关系方向与证据支撑总体扎实,无幻觉或方向反置。剩余问题集中在实体规范名治理:同一产品跨文章命名不一(Copilot 与 GitHub Copilot、Windows 11 与 Windows)、Gemini at Work 被误收进产品别名、Anthropic 与自己的使用政策在图里失连,并有一处 OpenAI--uses-->Lean 证据错位与一处 why_it_matters 数字矛盾。命名不一旦超过 2 条 medium,故判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-10-08-0",
+      "severity": "medium",
+      "problem": "实体 Gemini Agent 的 aliases 里混入了「Gemini at Work」,但 Gemini at Work 2026 是发布该产品的发布会/活动名,不是产品别名。把它收进产品别名会把事件归属错挂到产品上,影响跨文章合并与查询。",
+      "fix": "从 Gemini Agent 的 aliases 中删除「Gemini at Work」,必要时为发布会单独立一个事件/活动实体;产品别名只保留对产品的自指(如 worker agent/coworker agent)。"
+    },
+    {
+      "article_id": "2026-10-08-4（另见 2026-10-08-6）",
+      "severity": "medium",
+      "problem": "同一 Microsoft 面向用户的 AI 助手在产品规范名上不一致:第 4 篇命名为「Copilot」且 aliases 还写了「Windows Copilot」,第 6 篇命名为「GitHub Copilot」(aliases 含 Copilot)。两条规范名使同一产品在两张图里无法合并连通,且「Windows Copilot」是另一个不同产品,不应作为别名。",
+      "fix": "两篇统一规范名为「GitHub Copilot」、aliases 统一为「Copilot」,并删除第 4 篇错误的别名「Windows Copilot」。"
+    },
+    {
+      "article_id": "2026-10-08-4（另见 2026-10-08-13）",
+      "severity": "medium",
+      "problem": "同一操作系统产品在第 4 篇命名为「Windows 11」、第 13 篇命名为「Windows」,规范名不一致导致跨文章无法连通同一实体。",
+      "fix": "统一规范名为「Windows 11」并在两篇的 aliases 保留「Windows」;第 13 篇的实体名改为「Windows 11」。"
+    },
+    {
+      "article_id": "2026-10-08-2",
+      "severity": "medium",
+      "problem": "本篇核心对象「Anthropic 2026 版使用政策」只与 Claude 建立了 targets/restricts 关系,却没有和发布方 Anthropic 建立任何关系,导致政策实体与该篇真正主体在图中失连,孤悬在 Claude 一侧。",
+      "fix": "新增关系 Anthropic --published--> Anthropic 2026 版使用政策(或用 released_by/promulgated),并建议把关键数字「11 月 12 日生效」补进 metrics,让政策实体的出边与入边齐全。"
+    },
+    {
+      "article_id": "2026-10-08-14",
+      "severity": "low",
+      "problem": "关系 OpenAI --uses--> Lean 的证据「仅约 42% 的顶层结果带 Lean 形式化证明」描述的是成果中 Lean 形式化证明的占比,不能直接支撑「OpenAI 使用 Lean」这一行为断言,证据与断言错位。",
+      "fix": "改用直指「OpenAI 数学仓库产出 Lean 形式化证明」的证据,或将关系改为 OpenAI --publishes--> Lean 形式化证明并配对应证据;拿不出更直接证据就删除该弱关系。"
+    },
+    {
+      "article_id": "2026-10-08-1",
+      "severity": "low",
+      "problem": "why_it_matters 写「募到半个亿美元并保住独立」,与正文及 metrics 的「超过 5 亿美元」矛盾——半个亿美元(约 5000 万)比实际金额低一个数量级,会误导读者。",
+      "fix": "改为「募得超过 5 亿美元并保住独立」,与 metrics 及原文数字保持一致。"
+    }
+  ],
+  "lessons": [
+    "同一产品实体跨文章必须采用同一规范名并让 aliases 一致(如统一为 GitHub Copilot、别名含 Copilot),禁止在不同文章分别以 Copilot 与 GitHub Copilot、Windows 11 与 Windows 命名同一对象。",
+    "不要把发布会/会议/活动名(如 Gemini at Work 2026)收进产品实体的 aliases,产品名与活动名必须分属不同实体。",
+    "政策、产品、规范等『被发布物』实体必须与其发布方建立 published/released_by 关系,不能只挂在被影响对象上,否则核心主体在该篇图内失连。"
+  ]
+}

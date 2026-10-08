@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T23:08:03Z",
+  "updated_at": "2026-10-08T22:56:54Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -788,22 +788,22 @@
       "period_id": "2026-W37",
       "period_type": "week",
       "start_date": "2026-09-07",
-      "end_date": "2026-09-07",
-      "summary": "2026-09-07 至 2026-09-07 期间，OpenAI、Anthropic、DSEwiki 主要围绕 infra、security 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-09-08",
+      "summary": "2026-09-07 至 2026-09-08 期间，OpenAI、Anthropic、DSEwiki 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "Anthropic",
         "DSEwiki",
-        "RSP"
+        "Google"
       ],
       "event_types": [
         "infra",
-        "security",
-        "launch"
+        "launch",
+        "security"
       ],
       "trend_signals": [
         "核心实体：OpenAI、Anthropic、DSEwiki",
-        "主事件类型：infra、security"
+        "主事件类型：infra、launch"
       ],
       "representative_article_ids": [
         "2026-09-07-0",

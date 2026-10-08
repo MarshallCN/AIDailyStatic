@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-08",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "事实核对与数字(承诺额、Metrics、论文撤回数量、基准准确率)大都准确、关系方向正确,但存在系统性关系类型错用(将 Genesis Mission 的算力/工具承诺一律标成 invests_in)与实体类型错配(把影响力行动标为 policy),另有解雇事件动词、观察篇证据不匹配等 medium 问题,需修订后发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-08-5",
+      "severity": "high",
+      "problem": "全部 11 条关系(NVIDIA/AMD/OpenAI/Anthropic/Google/AMP/Emerald AI/AWS/Armada/Crusoe/美光 → Genesis Mission)都用了 invests_in,但原文两次强调这些是「承诺/积分」而非现金——算力时租、模型访问、云服务的折价,不是股权投资,连 event 类型都正确地用了 partnership。用 invests_in 会把履行义务式的非现金捐助误讲成股权融资(与 2026-10-08-1 的 Manus 真实融资混为一类)。",
+      "fix": "将这 11 条关系类型从 invests_in 改为 supports 或 pledges_to(或 partners_with),保留现有证据与方向;仅对 Manus 这类真实现金融资使用 invests_in。"
+    },
+    {
+      "article_id": "2026-10-08-10",
+      "severity": "medium",
+      "problem": "实体「俄罗斯虚假门面影响力行动」与「伊朗虚假门面影响力行动」被标为 type=policy;二者是隐蔽影响力行动/门面实体(false-front actors),不是政策或使用条款,与 2026-10-08-2 的「Anthropic 2026 版使用政策」根本不是同类。",
+      "fix": "将这两个实体类型改为 topic(或 organization/actor),不要用 policy;policy 类型只保留给真正的政策/条款文档实体。"
+    },
+    {
+      "article_id": "2026-10-08-11",
+      "severity": "medium",
+      "problem": "关系 OpenAI --targets--> 三名安全研究员 用 targets 表达解雇,语义失真——targets 暗示针对/攻击,而事实是终止雇佣(terminated/fired);佐证也只说「证实解雇」。",
+      "fix": "改用 fired/terminated 关系(或 incident 语义)表达解雇,不要把人事处置写成目标性攻击。"
+    },
+    {
+      "article_id": "2026-10-08-13",
+      "severity": "medium",
+      "problem": "观察篇的关系证据与断言不匹配:如 Gemini Agent --released_by--> Google 的证据写的是「Google 给 agent 发了一个『员工席位』」(支撑的是身份治理而非发布), Execution Containers --released_by--> Microsoft 的证据「为 agent 建起沙箱」同样不直接支撑 released_by。该篇是综述性观察,复用了文章 0/4 的边却给了弱证据。",
+      "fix": "对观察篇每条非新增关系要么替换为直指原文的发布证据,要么直接删除重复边(该关系已在 2026-10-08-0/4 建立),只在原文确述「发布」时保留 released_by。"
+    },
+    {
+      "article_id": "2026-10-08-6",
+      "severity": "low",
+      "problem": "关系 MAI-Code-1.1 Flash --uses--> Surface Laptop Ultra 与 --uses--> RTX Spark 的 uses 语义不当——是模型部署/运行在这些设备上,不是模型在「使用」硬件;且该上下文里 RTX Spark 只是对照的本地 AI PC 系列之一,非核心对象。",
+      "fix": "将 uses 改为 runs_on/deployed_on(或保留为低weight的 targets),并明确证据指向「128GB 统一内存的本地 AI PC」而非把 Surface/RTX 当作模型直接操作对象。"
+    }
+  ],
+  "lessons": [
+    "非现金的算力积分/工具承诺、折价云资源等 pledging 类新闻,不用 invests_in;invests_in 仅保留给真实股权或现金融资,改用 supports/pledges_to/partners_with。",
+    "影响力行动、门面实体、虚假组织等 actor 不要标为 policy;policy 类型只用于政策/使用条款等文档类实体。",
+    "解雇/终止/封禁类人事或处置事件用 fired/dismissed/banned 语义,不要用 targets(仅用于目标性攻击或排查对象)。"
+  ]
+}

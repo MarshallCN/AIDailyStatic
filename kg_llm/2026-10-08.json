@@ -1,0 +1,611 @@
+{
+  "date": "2026-10-08",
+  "articles": [
+    {
+      "article_id": "2026-10-08-0",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.97, "evidence": ["Google 在 Gemini at Work 2026 推出「通用 worker agent」Gemini Agent"]},
+        {"name": "Gemini Agent", "type": "product", "aliases": ["coworker agent", "worker agent"], "confidence": 0.9, "evidence": ["Gemini Agent 把分散的助手与专用工具收敛成一个统一的"]},
+        {"name": "Google Workspace", "type": "product", "aliases": ["Workspace"], "confidence": 0.9, "evidence": ["每种 coworker agent 会拿到一个完整的 Workspace 账号"]},
+        {"name": "Microsoft 365", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["它还接入 Microsoft 365、Slack"]},
+        {"name": "Slack", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["它还接入 Microsoft 365、Slack"]},
+        {"name": "Agent Sandbox", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["agent 运行在 Agent Sandbox 中"]},
+        {"name": "Agent Gateway", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["流量经过 Agent Gateway"]},
+        {"name": "MCP", "type": "topic", "aliases": ["MCP server"], "confidence": 0.7, "evidence": ["和任意 MCP server"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google 在 Gemini at Work 2026 推出企业级通用智能体 Gemini Agent",
+          "summary": "Google 发布常驻 coworker agent，拥有独立 Workspace 账号、邮箱、日历与目录席位，在 Google/Microsoft 365/Slack 间以独立身份跨应用工作，并跑在 Agent Sandbox 中、流量经过 Agent Gateway。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini Agent", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Google 在 Gemini at Work 2026 推出「通用 worker agent」Gemini Agent"]
+        },
+        {
+          "type": "trend",
+          "label": "Google 为 coworker agent 建立密码学认证的独立身份层",
+          "summary": "每种 coworker agent 拿到一个完整的 Workspace 账号，以『自己的身份而非你的身份』行动，每次动作写入审计日志并归属于该 agent 而非某个具体的人。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini Agent", "type": "product", "role": "object"},
+            {"name": "Google Workspace", "type": "product", "role": "object"}
+          ],
+          "evidence": ["每个 agent 都有「密码学认证的身份，像员工一样被治理，采用最小权限」"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini Agent", "target": "Google", "type": "released_by", "weight": 0.95, "evidence": ["Google 在 Gemini at Work 2026 推出「通用 worker agent」Gemini Agent"]},
+        {"source": "Gemini Agent", "target": "Google Workspace", "type": "integrates", "weight": 0.9, "evidence": ["每种 coworker agent 会拿到一个完整的 Workspace 账号"]},
+        {"source": "Gemini Agent", "target": "Microsoft 365", "type": "integrates", "weight": 0.8, "evidence": ["它还接入 Microsoft 365、Slack"]},
+        {"source": "Gemini Agent", "target": "Slack", "type": "integrates", "weight": 0.8, "evidence": ["它还接入 Microsoft 365、Slack"]},
+        {"source": "Gemini Agent", "target": "Agent Sandbox", "type": "uses", "weight": 0.85, "evidence": ["agent 运行在 Agent Sandbox 中"]},
+        {"source": "Gemini Agent", "target": "Agent Gateway", "type": "uses", "weight": 0.8, "evidence": ["流量经过 Agent Gateway"]},
+        {"source": "Gemini Agent", "target": "MCP", "type": "integrates", "weight": 0.7, "evidence": ["和任意 MCP server"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "agent 从「无记名的 prompt 工具」被重构为拥有目录身份、密码学认证与审计归属的治理单元，身份层由此成为智能体产品下一个定价与授权的战场。"
+    },
+    {
+      "article_id": "2026-10-08-1",
+      "entities": [
+        {"name": "Manus", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["中国通用 agent 厂商 Manus 在本轮获得超过 5 亿美元融资"]},
+        {"name": "Boyu Capital", "type": "company", "aliases": ["博裕资本"], "confidence": 0.9, "evidence": ["由博裕资本（Boyu Capital）和 IDG 资本领投"]},
+        {"name": "IDG Capital", "type": "company", "aliases": ["IDG"], "confidence": 0.9, "evidence": ["由博裕资本（Boyu Capital）和 IDG 资本领投"]},
+        {"name": "腾讯", "type": "company", "aliases": ["Tencent"], "confidence": 0.9, "evidence": ["腾讯、高瓴（HSG）与真格基金跟进"]},
+        {"name": "高瓴", "type": "company", "aliases": ["HSG", "Hillhouse", "高瓴资本"], "confidence": 0.9, "evidence": ["腾讯、高瓴（HSG）与真格基金跟进"]},
+        {"name": "真格基金", "type": "company", "aliases": ["ZhenFund"], "confidence": 0.9, "evidence": ["腾讯、高瓴（HSG）与真格基金跟进"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Manus 完成由博裕资本与 IDG 领投的超 5 亿美元融资",
+          "summary": "通用 agent 厂商 Manus 获得超过 5 亿美元融资，博裕资本与 IDG 领投，腾讯、高瓴与真格基金跟进，是发改委禁止外资投资后的首个融资轮。",
+          "participants": [
+            {"name": "Manus", "type": "company", "role": "subject"},
+            {"name": "Boyu Capital", "type": "company", "role": "funder"},
+            {"name": "IDG Capital", "type": "company", "role": "funder"},
+            {"name": "腾讯", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["获得超过 5 亿美元融资，由博裕资本（Boyu Capital）和 IDG 资本领投"]
+        }
+      ],
+      "relations": [
+        {"source": "Boyu Capital", "target": "Manus", "type": "invests_in", "weight": 0.9, "evidence": ["由博裕资本（Boyu Capital）和 IDG 资本领投"]},
+        {"source": "IDG Capital", "target": "Manus", "type": "invests_in", "weight": 0.9, "evidence": ["由博裕资本（Boyu Capital）和 IDG 资本领投"]},
+        {"source": "腾讯", "target": "Manus", "type": "invests_in", "weight": 0.8, "evidence": ["腾讯、高瓴（HSG）与真格基金跟进"]},
+        {"source": "高瓴", "target": "Manus", "type": "invests_in", "weight": 0.8, "evidence": ["腾讯、高瓴（HSG）与真格基金跟进"]},
+        {"source": "真格基金", "target": "Manus", "type": "invests_in", "weight": 0.7, "evidence": ["腾讯、高瓴（HSG）与真格基金跟进"]}
+      ],
+      "metrics": [
+        {"name": "Manus 本轮融资额", "value": "超过 5 亿美元"},
+        {"name": "被逆转的 Meta 拟收购金额", "value": "约 20 亿美元"}
+      ],
+      "why_it_matters": "一桩被发改委叫停的外资收购以标的公司募得超过 5 亿美元并保住独立收场，说明跨境资本被堵住后本土 agent 头部已转向吸收国内资本，通用 agent 是当前最集中的融资落点。"
+    },
+    {
+      "article_id": "2026-10-08-2",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 公布自 11 月 12 日生效的新版使用政策"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["明确禁止用户对 Claude 施加「持续且无必要」的残忍或虐待性行为"]},
+        {"name": "Anthropic 2026 版使用政策", "type": "policy", "aliases": ["2026 版使用政策"], "confidence": 0.85, "evidence": ["Anthropic 的 2026 版使用政策把「人如何对待 AI」写成了硬性条款"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Anthropic 公布 2026 版使用政策，禁止对 Claude 的持续且无必要的残忍行为",
+          "summary": "从 11 月 12 日起，Anthropic 的新版使用政策明确禁止对 Claude 施加持续的、无谓的残忍与虐待性行为，并收紧武器、监控、欺骗性宣传与自主硬件相关条款。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Anthropic 2026 版使用政策", "type": "policy", "role": "object"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["明确禁止用户对 Claude 施加「持续且无必要」的残忍或虐待性行为"]
+        }
+      ],
+      "relations": [
+        {"source": "Anthropic 2026 版使用政策", "target": "Claude", "type": "targets", "weight": 0.9, "evidence": ["禁止对 Claude 进行持续的、无谓的残忍与虐待性行为"]},
+        {"source": "Anthropic 2026 版使用政策", "target": "Claude", "type": "restricts", "weight": 0.85, "evidence": ["明确禁止用户对 Claude 施加「持续且无必要」的残忍或虐待性行为"]},
+        {"source": "Anthropic", "target": "Anthropic 2026 版使用政策", "type": "published", "weight": 0.95, "evidence": ["Anthropic 公布自 11 月 12 日生效的新版使用政策"]}
+      ],
+      "metrics": [
+        {"name": "新版使用政策生效日", "value": "11 月 12 日"}
+      ],
+      "why_it_matters": "「AI 的情感边界」第一次成为用户协议里的明文义务，触发对模型的情感虐待从伦理议题变成可执行条款，执行细则未公开给解读留下空间。"
+    },
+    {
+      "article_id": "2026-10-08-3",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.97, "evidence": ["OpenAI 发布 Decisions API"]},
+        {"name": "Decisions API", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 发布 Decisions API"]},
+        {"name": "gpt-6-luna", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["在 gpt-6-luna 上运行"]},
+        {"name": "Responses API", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["约比 Responses API 快十倍"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 推出把复杂评估压成 yes/no 的 Decisions API",
+          "summary": "Decisions API 把评估/路由/筛选收敛为 yes/no 概率或分类选择，输入每百万 token 0.10 美元、输出免费，速度快约十倍，在 gpt-6-luna 上公开测试。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Decisions API", "type": "product", "role": "object"},
+            {"name": "gpt-6-luna", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI 发布 Decisions API，把复杂的评估与判断压缩为 yes/no"]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI 用薄 Decisions API 抢高吞吐低单价增量",
+          "summary": "把大模型当分类器/判定器的高频负载做成薄 API，与 Anthropic Haiku 5.5 降价、大量调用走便宜且快的模型是同一战线。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Decisions API", "type": "product", "role": "object"}
+          ],
+          "evidence": ["与缺席共存的 Anthropic Haiku 5.5 降价、大量调用走便宜且快的模型是同一条战线"]
+        }
+      ],
+      "relations": [
+        {"source": "Decisions API", "target": "OpenAI", "type": "released_by", "weight": 0.95, "evidence": ["OpenAI 发布 Decisions API"]},
+        {"source": "Decisions API", "target": "gpt-6-luna", "type": "built_on", "weight": 0.85, "evidence": ["目前仅限 gpt-6-luna 公开测试"]},
+        {"source": "Decisions API", "target": "Responses API", "type": "compared_with", "weight": 0.8, "evidence": ["约比 Responses API 快十倍"]}
+      ],
+      "metrics": [
+        {"name": "Decisions API 输入价格", "value": "每百万 token 0.10 美元"},
+        {"name": "Decisions API 相对 Responses API 的速度提升", "value": "约十倍"}
+      ],
+      "why_it_matters": "OpenAI 给「大模型当分类器」提供标准化薄接口，印证高吞吐低单价的判断负载与开放生成分道扬镳，代价是推理过程对可解释性的让渡。"
+    },
+    {
+      "article_id": "2026-10-08-4",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.97, "evidence": ["微软在 Windows 11 上提出「混合智能（Hybrid Intelligence）」"]},
+        {"name": "Windows 11", "type": "product", "aliases": ["Windows"], "confidence": 0.9, "evidence": ["微软在 Windows 11 上提出「混合智能（Hybrid Intelligence）」"]},
+        {"name": "Execution Containers", "type": "tool", "aliases": ["Execution Container"], "confidence": 0.85, "evidence": ["Execution Containers 面向 AI agent 沙箱化，现已全面可用"]},
+        {"name": "GitHub Copilot", "type": "product", "aliases": ["Copilot"], "confidence": 0.85, "evidence": ["本地 Copilot 与云端 Agent 不再是非此即彼"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "微软公布 Windows「混合智能」并让 Execution Containers 全面可用",
+          "summary": "微软把 AI 任务按成本、隐私与延迟路由到本地或云端，Windows 扮演路由与安全隔离角色，用于沙箱化 agent 的 Execution Containers 已全面可用。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Windows 11", "type": "product", "role": "object"},
+            {"name": "Execution Containers", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Execution Containers 面向 AI agent 沙箱化，现已全面可用"]
+        }
+      ],
+      "relations": [
+        {"source": "Execution Containers", "target": "Microsoft", "type": "released_by", "weight": 0.95, "evidence": ["Execution Containers 面向 AI agent 沙箱化，现已全面可用"]},
+        {"source": "Windows 11", "target": "Execution Containers", "type": "integrates", "weight": 0.9, "evidence": ["用 Windows Execution Containers 为 agent 建起沙箱"]},
+        {"source": "Windows 11", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["微软在 Windows 11 上提出「混合智能（Hybrid Intelligence）」"]},
+        {"source": "GitHub Copilot", "target": "Microsoft", "type": "developed_by", "weight": 0.85, "evidence": ["本地 Copilot 与云端 Agent 不再是非此即彼"]}
+      ],
+      "metrics": [
+        {"name": "本地推进的 MAI-Code 构建规模", "value": "137B 级"}
+      ],
+      "why_it_matters": "「本地还是云端」从开发者/运维的判断题变成操作系统默认提供的路由能力，身份与沙箱由平台层统一接管，AI 任务的治理被收进 OS。"
+    },
+    {
+      "article_id": "2026-10-08-5",
+      "entities": [
+        {"name": "美国白宫", "type": "organization", "aliases": ["白宫"], "confidence": 0.9, "evidence": ["白宫在科学峰会上公布"]},
+        {"name": "Genesis Mission", "type": "policy", "aliases": ["Genesis 使命"], "confidence": 0.85, "evidence": ["11 家行业伙伴向 Genesis Mission 承诺 24 亿美元的「超级智能用于科学」算力积分与 AI 工具"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.97, "evidence": ["英伟达 10 亿美元领跑"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["AMD 5 亿美元"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI 2 亿美元"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 与 Google 各 1.5 亿美元"]},
+        {"name": "Google", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 与 Google 各 1.5 亿美元"]},
+        {"name": "AMP", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["AMP 与 Emerald AI 各 1 亿美元"]},
+        {"name": "Emerald AI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["AMP 与 Emerald AI 各 1 亿美元"]},
+        {"name": "AWS", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["AWS、Armada、Crusoe 与美光各 5000 万美元"]},
+        {"name": "Armada", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["AWS、Armada、Crusoe 与美光各 5000 万美元"]},
+        {"name": "Crusoe", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["AWS、Armada、Crusoe 与美光各 5000 万美元"]},
+        {"name": "美光", "type": "company", "aliases": ["Micron"], "confidence": 0.85, "evidence": ["AWS、Armada、Crusoe 与美光各 5000 万美元"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "11 家公司向 Genesis Mission 承诺 24 亿美元算力积分与 AI 工具",
+          "summary": "白宫在科学峰会上宣布，英伟达、AMD、OpenAI、Anthropic、Google 等 11 家伙伴向 Genesis Mission 承诺 24 亿美元的算力积分与 AI 工具，用于支撑超 15 个联邦科学机构。",
+          "participants": [
+            {"name": "美国白宫", "type": "organization", "role": "subject"},
+            {"name": "Genesis Mission", "type": "policy", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"},
+            {"name": "AMD", "type": "company", "role": "partner"},
+            {"name": "OpenAI", "type": "company", "role": "partner"},
+            {"name": "Anthropic", "type": "company", "role": "partner"},
+            {"name": "Google", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["11 家行业伙伴向 Genesis Mission 承诺 24 亿美元的「超级智能用于科学」算力积分与 AI 工具"]
+        },
+        {
+          "type": "trend",
+          "label": "算力成为连接企业、联邦研究与地缘政治的硬通货",
+          "summary": "AI 巨头以算力积分换影响科学议程的话语权，政府以峰会为厂商背书，谁掌握算力分配谁就在定义下一阶段科学发现的节奏。",
+          "participants": [
+            {"name": "美国白宫", "type": "organization", "role": "subject"},
+            {"name": "Genesis Mission", "type": "policy", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["算力已成为连接企业、联邦研究与地缘政治的硬通货"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "Genesis Mission", "type": "partners_with", "weight": 0.9, "evidence": ["英伟达 10 亿美元领跑"]},
+        {"source": "AMD", "target": "Genesis Mission", "type": "partners_with", "weight": 0.9, "evidence": ["AMD 5 亿美元"]},
+        {"source": "OpenAI", "target": "Genesis Mission", "type": "partners_with", "weight": 0.9, "evidence": ["OpenAI 2 亿美元"]},
+        {"source": "Anthropic", "target": "Genesis Mission", "type": "partners_with", "weight": 0.85, "evidence": ["Anthropic 与 Google 各 1.5 亿美元"]},
+        {"source": "Google", "target": "Genesis Mission", "type": "partners_with", "weight": 0.85, "evidence": ["Anthropic 与 Google 各 1.5 亿美元"]},
+        {"source": "AMP", "target": "Genesis Mission", "type": "partners_with", "weight": 0.8, "evidence": ["AMP 与 Emerald AI 各 1 亿美元"]},
+        {"source": "Emerald AI", "target": "Genesis Mission", "type": "partners_with", "weight": 0.8, "evidence": ["AMP 与 Emerald AI 各 1 亿美元"]},
+        {"source": "AWS", "target": "Genesis Mission", "type": "partners_with", "weight": 0.8, "evidence": ["AWS、Armada、Crusoe 与美光各 5000 万美元"]},
+        {"source": "Armada", "target": "Genesis Mission", "type": "partners_with", "weight": 0.8, "evidence": ["AWS、Armada、Crusoe 与美光各 5000 万美元"]},
+        {"source": "Crusoe", "target": "Genesis Mission", "type": "partners_with", "weight": 0.8, "evidence": ["AWS、Armada、Crusoe 与美光各 5000 万美元"]},
+        {"source": "美光", "target": "Genesis Mission", "type": "partners_with", "weight": 0.8, "evidence": ["AWS、Armada、Crusoe 与美光各 5000 万美元"]}
+      ],
+      "metrics": [
+        {"name": "11 家公司向 Genesis Mission 承诺总额", "value": "24 亿美元"},
+        {"name": "NVIDIA 承诺额", "value": "10 亿美元"},
+        {"name": "AMD 承诺额", "value": "5 亿美元"},
+        {"name": "OpenAI 承诺额", "value": "2 亿美元"},
+        {"name": "Anthropic 与 Google 各自承诺额", "value": "各 1.5 亿美元"},
+        {"name": "AMP 与 Emerald AI 各自承诺额", "value": "各 1 亿美元"},
+        {"name": "AWS、Armada、Crusoe 与美光各自承诺额", "value": "各 5000 万美元"},
+        {"name": "Genesis Mission 联邦资金背书", "value": "50 亿美元"}
+      ],
+      "why_it_matters": "民营算力以承诺积分而非现金的形式注入联邦科研，说明算力分配权已成为影响科学议程、连通企业/政府/地缘政治的枢纽，兑现节奏本身是折价面。"
+    },
+    {
+      "article_id": "2026-10-08-6",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.97, "evidence": ["微软把自家的编码模型 MAI-Code-1.1 Flash"]},
+        {"name": "MAI-Code-1.1 Flash", "type": "model", "aliases": ["MAI-Code"], "confidence": 0.9, "evidence": ["微软把自家的编码模型 MAI-Code-1.1 Flash（137B 参数）做成 3-bit 量化本地构建"]},
+        {"name": "GitHub Copilot", "type": "product", "aliases": ["Copilot"], "confidence": 0.9, "evidence": ["GitHub Copilot 被设计为把符合条件的任务交接给本地模型执行"]},
+        {"name": "Surface Laptop Ultra", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["如同日预售的 Surface Laptop Ultra / RTX Spark 系列"]},
+        {"name": "RTX Spark", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["如同日预售的 Surface Laptop Ultra / RTX Spark 系列"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "微软发布 MAI-Code-1.1 Flash 的 3-bit 本地构建",
+          "summary": "137B 参数编码模型做成 3-bit 量化本地构建，面向支持 128GB 统一内存的本地 AI PC，GitHub Copilot 把符合条件任务交接给本地模型，形成云端默认、本地接棒的混合编排。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "MAI-Code-1.1 Flash", "type": "model", "role": "object"},
+            {"name": "GitHub Copilot", "type": "product", "role": "partner"}
+          ],
+          "evidence": ["微软把自家的编码模型 MAI-Code-1.1 Flash（137B 参数）做成 3-bit 量化本地构建"]
+        },
+        {
+          "type": "trend",
+          "label": "模型下放到桌面，DRAM 配置被推高成为新的稀缺品",
+          "summary": "75GB 起步的模型驻留叠加多 agent 并发，让个人工作站内存成为下一个算力瓶颈，与 DRAM 供给紧张的行业判断互相印证。",
+          "participants": [
+            {"name": "MAI-Code-1.1 Flash", "type": "model", "role": "object"},
+            {"name": "Surface Laptop Ultra", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["128GB 统一内存、75GB 起步的模型驻留、叠加多 agent 并发，让个人工作站的 DRAM 配置一下子被推高"]
+        }
+      ],
+      "relations": [
+        {"source": "MAI-Code-1.1 Flash", "target": "Microsoft", "type": "developed_by", "weight": 0.95, "evidence": ["微软把自家的编码模型 MAI-Code-1.1 Flash（137B 参数）"]},
+        {"source": "MAI-Code-1.1 Flash", "target": "Microsoft", "type": "released_by", "weight": 0.9, "evidence": ["微软把自家的编码模型 MAI-Code-1.1 Flash（137B 参数）做成 3-bit 量化本地构建"]},
+        {"source": "GitHub Copilot", "target": "MAI-Code-1.1 Flash", "type": "integrates", "weight": 0.9, "evidence": ["GitHub Copilot 被设计为把符合条件的任务交接给本地模型执行"]},
+        {"source": "MAI-Code-1.1 Flash", "target": "Surface Laptop Ultra", "type": "runs_on", "weight": 0.8, "evidence": ["明确指向配备 128GB 统一内存的本地 AI PC（如同日预售的 Surface Laptop Ultra / RTX Spark 系列）"]},
+        {"source": "MAI-Code-1.1 Flash", "target": "RTX Spark", "type": "runs_on", "weight": 0.8, "evidence": ["明确指向配备 128GB 统一内存的本地 AI PC（如同日预售的 Surface Laptop Ultra / RTX Spark 系列）"]},
+        {"source": "GitHub Copilot", "target": "Microsoft", "type": "developed_by", "weight": 0.85, "evidence": ["GitHub Copilot 被设计为把符合条件的任务交接给本地模型执行"]}
+      ],
+      "metrics": [
+        {"name": "MAI-Code-1.1 Flash 参数量", "value": "137B"},
+        {"name": "本地构建量化位数", "value": "3-bit"},
+        {"name": "跑满上下文所需内存", "value": "约 75GB"},
+        {"name": "本地 AI PC 统一内存", "value": "128GB"}
+      ],
+      "why_it_matters": "137B 级编码模型被压到可在个人机驻留，说明本地 AI PC 叙事从「推理小模型」延伸到「前沿编码」，DRAM 随之成为新一轮稀缺品下的算力瓶颈。"
+    },
+    {
+      "article_id": "2026-10-08-7",
+      "entities": [
+        {"name": "RECAST", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["RECAST 的关键转向是，把「证据构造」当作一个顺序决策过程"]},
+        {"name": "RouterLM", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["轻量的 RouterLM 迭代式地选择并调用各种检索/计算原语"]},
+        {"name": "Qwen3.5-9B", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["训练过的 Qwen3.5-9B RouterLM"]},
+        {"name": "CompilerLM", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["让冻结的 CompilerLM 把定制操作翻译成可执行代码"]},
+        {"name": "AnswerLM", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["把接受的证据交给冻结的 AnswerLM 产出最终答案"]},
+        {"name": "Gemini 3.5 Flash", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["免训练的 Gemini 3.5 Flash RouterLM"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "RECAST 论文把 RAG 证据构造改成顺序决策",
+          "summary": "论文提出 RECAST，把「证据构造」当作顺序决策过程，轻量 RouterLM 迭代调用各类检索/计算原语，必要时让 CompilerLM 把操作翻译成可执行代码。",
+          "participants": [
+            {"name": "RECAST", "type": "tool", "role": "subject"},
+            {"name": "RouterLM", "type": "model", "role": "object"}
+          ],
+          "evidence": ["RECAST 的关键转向是，把「证据构造」当作一个顺序决策过程"]
+        },
+        {
+          "type": "benchmark",
+          "label": "RECAST 在六个异构基准取得 75.6% 平均成功率",
+          "summary": "训练过的 Qwen3.5-9B RouterLM 以 75.6% 平均成功率超过最强大规模基线 15.9 个百分点，并优于免训练的 Gemini 3.5 Flash 版本 5.0 个百分点。",
+          "participants": [
+            {"name": "RECAST", "type": "tool", "role": "subject"},
+            {"name": "RouterLM", "type": "model", "role": "object"}
+          ],
+          "evidence": ["RECAST 在六个异构基准族上取得 75.6% 的平均成功率"]
+        }
+      ],
+      "relations": [
+        {"source": "RECAST", "target": "RouterLM", "type": "uses", "weight": 0.9, "evidence": ["轻量的 RouterLM 迭代式地选择并调用各种检索/计算原语"]},
+        {"source": "RECAST", "target": "CompilerLM", "type": "uses", "weight": 0.8, "evidence": ["让冻结的 CompilerLM 把定制操作翻译成可执行代码"]},
+        {"source": "RECAST", "target": "AnswerLM", "type": "uses", "weight": 0.8, "evidence": ["把接受的证据交给冻结的 AnswerLM 产出最终答案"]},
+        {"source": "RouterLM", "target": "Qwen3.5-9B", "type": "built_on", "weight": 0.85, "evidence": ["训练过的 Qwen3.5-9B RouterLM"]},
+        {"source": "RouterLM", "target": "Gemini 3.5 Flash", "type": "outperforms", "weight": 0.8, "evidence": ["比免训练的 Gemini 3.5 Flash RouterLM 高出 5.0 个百分点"]}
+      ],
+      "metrics": [
+        {"name": "RECAST 在六个异构基准的平均成功率", "value": "75.6%"},
+        {"name": "相对最强大规模基线的提升", "value": "15.9 个百分点"},
+        {"name": "Qwen3.5-9B 相对免训练 Gemini 3.5 Flash 的提升", "value": "5.0 个百分点"},
+        {"name": "三个留存基准上的再提升", "value": "15.0%"}
+      ],
+      "why_it_matters": "「用计算换准确」被显式塞进检索管线，证据构造从检索优先转向计算优先，为答案藏在一堆源里的长程异构任务提供了一条新路。"
+    },
+    {
+      "article_id": "2026-10-08-8",
+      "entities": [
+        {"name": "HSS", "type": "benchmark", "aliases": ["Humanity's Sixth Sense", "第六感基准"], "confidence": 0.85, "evidence": ["ScaleAI 与 Elorian 提出 Humanity's Sixth Sense（HSS）基准"]},
+        {"name": "ScaleAI", "type": "company", "aliases": ["Scale"], "confidence": 0.9, "evidence": ["ScaleAI 与 Elorian 提出"]},
+        {"name": "Elorian", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["ScaleAI 与 Elorian 提出"]},
+        {"name": "GPT-6-astra", "type": "model", "aliases": ["GPT-6 astra"], "confidence": 0.9, "evidence": ["最强模型 GPT-6-astra 即便在最高推理强度下也仅 53.6%"]}
+      ],
+      "events": [
+        {
+          "type": "benchmark",
+          "label": "HSS 基准测试人类直觉视觉推理，大幅碾压前沿模型",
+          "summary": "Humanity's Sixth Sense 基准考察从一瞥中恢复隐含结构的能力，人类准确率 93.1%，最强模型 GPT-6-astra 即便最高推理强度也只有 53.6%。",
+          "participants": [
+            {"name": "ScaleAI", "type": "company", "role": "subject"},
+            {"name": "Elorian", "type": "company", "role": "subject"},
+            {"name": "HSS", "type": "benchmark", "role": "object"},
+            {"name": "GPT-6-astra", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["受试人类准确率达 93.1%，而最强模型 GPT-6-astra 即使在最高推理 effort 下也只有 53.6%"]
+        }
+      ],
+      "relations": [
+        {"source": "HSS", "target": "ScaleAI", "type": "authored_by", "weight": 0.9, "evidence": ["ScaleAI 与 Elorian 提出 Humanity's Sixth Sense（HSS）基准"]},
+        {"source": "HSS", "target": "Elorian", "type": "authored_by", "weight": 0.9, "evidence": ["ScaleAI 与 Elorian 提出"]},
+        {"source": "GPT-6-astra", "target": "HSS", "type": "evaluated_on", "weight": 0.85, "evidence": ["最强模型 GPT-6-astra 即便在最高推理强度下也仅 53.6%"]}
+      ],
+      "metrics": [
+        {"name": "HSS 人类准确率", "value": "93.1%"},
+        {"name": "GPT-6-astra 在最高推理强度下的准确率", "value": "53.6%"}
+      ],
+      "why_it_matters": "前沿模型在编程数学上很能打却在人类「秒懂」的直觉视觉任务上掉队，说明认知层面仍缺一块视觉直觉——这恰是把它放进物理世界与人协作最需要的。"
+    },
+    {
+      "article_id": "2026-10-08-9",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Google 与学者提出 Secure-CUA"]},
+        {"name": "Secure-CUA", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Secure-CUA 把安全要求一刀切地落到「决策 + 执行」两个层面"]},
+        {"name": "Vanilla-CUA", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["比无防护的 Vanilla-CUA（55.12%）几乎没有损失"]},
+        {"name": "CaMeL-CUA", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["并远胜此前的最强防御 CaMeL-CUA（13.17%）"]},
+        {"name": "WebArena", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在 400 个 WebArena 任务"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Google 提出用「每次动作」安全事务约束不可信内容的 Secure-CUA",
+          "summary": "Secure-CUA 在接触任何不可信内容前为每个动作承诺显式动作事务，屏蔽不可信区域、用隔离查询模型逐个求值，逐步满足决策与执行两层安全要求。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Secure-CUA", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Google 与学者提出 Secure-CUA"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Secure-CUA 以几乎无损的任务成功率显著优于此前防御",
+          "summary": "在 400 个 WebArena 任务、三个前沿模型、5 个种子上共 6000 条轨迹的评估里，Secure-CUA 平均成功率 53.55%，比无防护 Vanilla-CUA（55.12%）几乎没有损失，并远胜 CaMeL-CUA（13.17%）。",
+          "participants": [
+            {"name": "Secure-CUA", "type": "tool", "role": "subject"},
+            {"name": "WebArena", "type": "benchmark", "role": "benchmark"},
+            {"name": "CaMeL-CUA", "type": "tool", "role": "competitor"}
+          ],
+          "evidence": ["Secure-CUA 平均任务成功率为 53.55%"]
+        }
+      ],
+      "relations": [
+        {"source": "Secure-CUA", "target": "Google", "type": "developed_by", "weight": 0.9, "evidence": ["Google 与学者提出 Secure-CUA"]},
+        {"source": "Secure-CUA", "target": "CaMeL-CUA", "type": "outperforms", "weight": 0.9, "evidence": ["并远胜此前的最强防御 CaMeL-CUA（13.17%）"]},
+        {"source": "Secure-CUA", "target": "Vanilla-CUA", "type": "compared_with", "weight": 0.8, "evidence": ["比无防护的 Vanilla-CUA（55.12%）几乎没有损失"]},
+        {"source": "Secure-CUA", "target": "WebArena", "type": "evaluated_on", "weight": 0.85, "evidence": ["在 400 个 WebArena 任务"]}
+      ],
+      "metrics": [
+        {"name": "Secure-CUA 平均任务成功率", "value": "53.55%"},
+        {"name": "无防护 Vanilla-CUA 平均任务成功率", "value": "55.12%"},
+        {"name": "此前最强防御 CaMeL-CUA 任务成功率", "value": "13.17%"},
+        {"name": "评估 WebArena 任务数", "value": "400"},
+        {"name": "评估执行轨迹总数", "value": "6000 条"}
+      ],
+      "why_it_matters": "它回答「拦不可信内容能否不赔上任务完成率」——用逐步显式隔离可信/不可信数据流几乎无损地挡住攻击，说明 agent 安全可以内建而非事后加装。"
+    },
+    {
+      "article_id": "2026-10-08-10",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI 于 10 月 8 日披露封禁两起利用 ChatGPT 支持所谓「虚假门面」实体的隐蔽影响力操作"]},
+        {"name": "俄罗斯虚假门面影响力行动", "type": "topic", "aliases": ["俄罗斯行动"], "confidence": 0.8, "evidence": ["俄罗斯行动被评定为该机构干扰过的首个 Category 5 案例"]},
+        {"name": "伊朗虚假门面影响力行动", "type": "topic", "aliases": ["伊朗行动"], "confidence": 0.8, "evidence": ["伊朗行动为 Category 4"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "OpenAI 封禁两起源自俄罗斯与伊朗的隐蔽影响力行动",
+          "summary": "OpenAI 披露封禁两起用 ChatGPT 支撑「虚假门面」实体的误导性影响力操作，俄罗斯案被评为首个 Category 5、伊朗案为 Category 4，处置以识别加封禁为主。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "俄罗斯虚假门面影响力行动", "type": "topic", "role": "object"},
+            {"name": "伊朗虚假门面影响力行动", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["OpenAI 于 10 月 8 日披露封禁两起利用 ChatGPT 支持所谓「虚假门面」实体的隐蔽影响力操作"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "俄罗斯虚假门面影响力行动", "type": "restricts", "weight": 0.9, "evidence": ["俄罗斯行动被评定为该机构干扰过的首个 Category 5 案例"]},
+        {"source": "OpenAI", "target": "伊朗虚假门面影响力行动", "type": "restricts", "weight": 0.9, "evidence": ["伊朗行动为 Category 4"]},
+        {"source": "OpenAI", "target": "俄罗斯虚假门面影响力行动", "type": "targets", "weight": 0.85, "evidence": ["OpenAI 于 10 月 8 日披露封禁两起利用 ChatGPT 支持所谓「虚假门面」实体的隐蔽影响力操作"]}
+      ],
+      "metrics": [
+        {"name": "俄罗斯行动的 IO Breakout 级别", "value": "Category 5"},
+        {"name": "伊朗行动的 IO Breakout 级别", "value": "Category 4"},
+        {"name": "伊朗假记者人设数量", "value": "七个"}
+      ],
+      "why_it_matters": "AI 生成的「可信门面」越来越难肉眼辨认，主流模型厂应对路径是识别加封禁而非容量级拦截，跨平台交叉验证与多信号排查的责任随之加重。"
+    },
+    {
+      "article_id": "2026-10-08-11",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI 证实解雇了三名从事安全研究的研究员"]},
+        {"name": "三名安全研究员", "type": "person", "aliases": [], "confidence": 0.75, "evidence": ["OpenAI 证实解雇了三名从事安全研究的研究员"]},
+        {"name": "外部 AI 安全组织", "type": "organization", "aliases": [], "confidence": 0.7, "evidence": ["被分享给了一个未具名的外部 AI 安全组织"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "OpenAI 因不当外传敏感信息解雇三名安全研究员",
+          "summary": "OpenAI 证实解雇三名安全研究员，理由是不当处理发送给某个未具名外部 AI 安全组织的敏感信息，接收方身份与关键细节均未公开。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "三名安全研究员", "type": "person", "role": "object"},
+            {"name": "外部 AI 安全组织", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["OpenAI 证实解雇了三名从事安全研究的研究员"]
+        }
+      ],
+      "relations": [
+        {"source": "三名安全研究员", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["OpenAI 证实解雇了三名从事安全研究的研究员"]},
+        {"source": "OpenAI", "target": "三名安全研究员", "type": "fired", "weight": 0.8, "evidence": ["OpenAI 证实解雇了三名从事安全研究的研究员"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "因安全信息外泄而解雇揭示前沿实验室对敏感安全情报的严格圈子化，但关键事实的缺席使任何对是否反应过当的判断都只能是猜测。"
+    },
+    {
+      "article_id": "2026-10-08-12",
+      "entities": [
+        {"name": "ICANN", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["ICANN 于 10 月 7 日公布了 2026 轮新通用顶级域（gTLD）申请"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI 和 Meta 都在争夺者之列"]},
+        {"name": "Meta", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI 和 Meta 都在争夺者之列"]},
+        {"name": "agent 顶级域", "type": "topic", "aliases": [".agent", "agent gTLD"], "confidence": 0.85, "evidence": ["OpenAI 与 Meta 均申请了 .agent"]},
+        {"name": ".agi", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": [".agi 也引发争夺（OpenAI 是申请者之一）"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "ICANN 公布 2026 轮 gTLD 申请，OpenAI 与 Meta 同场争夺 .agent",
+          "summary": "ICANN 公布来自 481 个申请者的 1615 份新通用顶级域申请，OpenAI 与 Meta 均申请 .agent，.agi 与 .asi 同样竞争激烈。",
+          "participants": [
+            {"name": "ICANN", "type": "organization", "role": "subject"},
+            {"name": "agent 顶级域", "type": "topic", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"},
+            {"name": "Meta", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["ICANN 于 10 月 7 日公布了 2026 轮新通用顶级域（gTLD）申请"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "Meta", "type": "competes_with", "weight": 0.85, "evidence": [".agent——OpenAI 和 Meta 都在争夺者之列"]},
+        {"source": "OpenAI", "target": "agent 顶级域", "type": "targets", "weight": 0.9, "evidence": ["OpenAI 与 Meta 均申请了 .agent"]},
+        {"source": "Meta", "target": "agent 顶级域", "type": "targets", "weight": 0.9, "evidence": ["OpenAI 与 Meta 均申请了 .agent"]},
+        {"source": "OpenAI", "target": ".agi", "type": "targets", "weight": 0.8, "evidence": [".agi 也引发争夺（OpenAI 是申请者之一）"]},
+        {"source": "ICANN", "target": "agent 顶级域", "type": "regulates", "weight": 0.7, "evidence": ["ICANN 于 10 月 7 日公布了 2026 轮新通用顶级域（gTLD）申请"]}
+      ],
+      "metrics": [
+        {"name": "ICANN 2026 轮 gTLD 申请总数", "value": "1615 份"},
+        {"name": "申请人数量", "value": "481 个"},
+        {"name": "OpenAI 申请字符串数", "value": "15 个"},
+        {"name": "Meta 申请字符串数", "value": "21 个"}
+      ],
+      "why_it_matters": "为 agent 保留专属域名命名空间，说明 DNS 正在被拿来给 AI 主体预留本体，智能体身份是 OpenAI 与 Meta 都想提前占位的战略资产。"
+    },
+    {
+      "article_id": "2026-10-08-13",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Google 让企业级 coworker agent 拥有独立的邮箱、日历、Drive 与目录身份"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.97, "evidence": ["微软让 Windows 用 Execution Containers 为 agent 建沙箱并做本地/云端路由"]},
+        {"name": "Gemini Agent", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Google 给 agent 发了一个「员工席位」"]},
+        {"name": "Execution Containers", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["微软则在同一窗口用 Windows Execution Containers 为 agent 建起沙箱"]},
+        {"name": "Windows 11", "type": "product", "aliases": ["Windows"], "confidence": 0.85, "evidence": ["微软让 Windows 用 Execution Containers 为 agent 建沙箱并做本地/云端路由"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["甚至 Anthropic 同日把「对 Claude 的残忍行为」写进使用政策"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["把「对 Claude 的残忍行为」写进使用政策"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "智能体的身份与沙箱在同一天双双落地",
+          "summary": "Google 给 agent 送身份与 Directory 席位、微软给 agent 建沙箱做路由、Anthropic 为 Claude 设人格边界，智能体从无状态工具被重构为有身份、有边界、可审计的治理单元。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Gemini Agent", "type": "product", "role": "object"},
+            {"name": "Execution Containers", "type": "tool", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["一个给身份，一个给边界，恰好构成「agent 可问责」的两根支柱"]
+        }
+      ],
+      "relations": [
+        {"source": "Windows 11", "target": "Execution Containers", "type": "integrates", "weight": 0.9, "evidence": ["微软让 Windows 用 Execution Containers 为 agent 建沙箱并做本地/云端路由"]},
+        {"source": "Windows 11", "target": "Microsoft", "type": "developed_by", "weight": 0.85, "evidence": ["微软让 Windows 用 Execution Containers 为 agent 建沙箱并做本地/云端路由"]},
+        {"source": "Anthropic", "target": "Claude", "type": "restricts", "weight": 0.8, "evidence": ["甚至 Anthropic 同日把「对 Claude 的残忍行为」写进使用政策"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "身份加沙箱同日叠加上线，标志智能体从「更强的工具」转向「受治理的员工般的实体」，真正难点不是给能力而是让行为对组织可问责。"
+    },
+    {
+      "article_id": "2026-10-08-14",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI 数学仓库因一个符号错误撤回三篇论文"]},
+        {"name": "人工数学协会", "type": "organization", "aliases": ["Association for Human Mathematics", "AHM"], "confidence": 0.85, "evidence": ["「人工数学协会」（Association for Human Mathematics）声明称"]},
+        {"name": "Lean", "type": "tool", "aliases": ["Lean 证明"], "confidence": 0.9, "evidence": ["带有 Lean 形式化证明"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "OpenAI 数学仓库因一个符号错误撤回三篇论文",
+          "summary": "一个符号错误使一个 stabilization-trace cancellation 论证失效，三篇论文被撤下、14 篇被修订、13 篇只更新引用，顶层结果带 Lean 形式化证明的比例仅约 42%。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Lean", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["OpenAI 数学仓库因一个符号错误撤回三篇论文"]
+        },
+        {
+          "type": "trend",
+          "label": "人工数学协会呼吁数学家停止与 OpenAI 合作",
+          "summary": "协会称一次性放出 700 多个文件不是治学示范而是权力展示，呼吁数学家停止与 OpenAI 合作，AI 生成数学的可验证性危机集中爆发。",
+          "participants": [
+            {"name": "人工数学协会", "type": "organization", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["呼吁「数学家停止与 OpenAI 合作」"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "Lean", "type": "uses", "weight": 0.8, "evidence": ["OpenAI 数学仓库的顶层结果带 Lean 形式化证明（仅约 42%）"]},
+        {"source": "人工数学协会", "target": "OpenAI", "type": "targets", "weight": 0.9, "evidence": ["呼吁「数学家停止与 OpenAI 合作」"]}
+      ],
+      "metrics": [
+        {"name": "一次性放出数学手稿数", "value": "722 篇"},
+        {"name": "顶层结果 Lean 形式化比例", "value": "约 42%（300/719）"},
+        {"name": "被撤回论文数", "value": "三篇"},
+        {"name": "被修订论文数", "value": "14 篇"},
+        {"name": "仅更新引用论文数", "value": "13 篇"}
+      ],
+      "why_it_matters": "规模来了验证体系没跟上，机器批量产出的未验证结果让可信度不再随规模增长而是成为规模的敌人，最大实验室与最大数学组织公开交恶把验证缺口摆上台面。"
+    }
+  ]
+}

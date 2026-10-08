@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-08",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "总体抽取证据扎实、数值逐条与原文吻合、关系方向均正确，无硬性事实错误；主要问题是 07 篇将『同一框架两种 backbone 的 RouterLM 配置对比』误画成『RouterLM 胜过 Gemini 3.5 Flash 模型』的比较关系，会让图谱讲出方向被放大的错误故事，另有匿名占位实体与若干事件参与者不完整等中低级问题。",
+  "findings": [
+    {
+      "article_id": "2026-10-08-7",
+      "severity": "high",
+      "problem": "关系 \"RouterLM --outperforms--> Gemini 3.5 Flash\"（weight 0.8）把比较对象搞混。原文说的是『训练过的 Qwen3.5-9B RouterLM 比免训练的 Gemini 3.5 Flash RouterLM 高出 5.0 个百分点』——这是同一套 RouterLM 框架的两种实现/配置（Qwen3.5-9B 版本 vs Gemini 3.5 Flash 版本）之间的对比，并非『RouterLM 这个框架胜过 Gemini 3.5 Flash 这个基础模型』。抽取把 target 建成独立 model 实体 \"Gemini 3.5 Flash\"，使边读起来像『一个小路由模型打败了前沿大模型』，方向被放大、与事实不符。同时 \"RouterLM --built_on--> Qwen3.5-9B\" 暗示两者是两个不同节点，而实际上 Qwen3.5-9B 就是被训练 RouterLM 的 backbone 标识。",
+      "fix": "把比较改为两个 RouterLM 配置之间的对比：建立 \"Qwen3.5-9B RouterLM\" --outperforms--> \"Gemini 3.5 Flash RouterLM\" 的关系（或至少把 evidence 中的『RouterLM』限定为该配置），不要用独立的 \"Gemini 3.5 Flash\"（基础模型）当 target；并把 \"RouterLM --built_on--> Qwen3.5-9B\" 调整为明确 Qwen3.5-9B 是该被训练 RouterLM 的 backbone，避免 RouterLM 与 Qwen3.5-9B 被当成两个互不相关的新节点。"
+    },
+    {
+      "article_id": "2026-10-08-11",
+      "severity": "medium",
+      "problem": "实体 \"三名安全研究员\"（type=person）与 \"外部 AI 安全组织\"（type=organization）是匿名/聚合指称，没有名字、没有稳定可引用身份，无法在图中与其他文章连通或追踪，其上的 \"affiliated_with\"/\"fired\" 边在本篇之外没有复用价值，拉低实体精度。",
+      "fix": "移除这两个占位实体节点，只保留 OpenAI 为实体，把已解雇人数与『传给未具名外部 AI 安全组织』等信息写进事件 summary/metrics（如 metric『被解雇研究员数=3』），不再为匿名指称生成带类型实体。"
+    },
+    {
+      "article_id": "2026-10-08-1",
+      "severity": "low",
+      "problem": "funding 事件的 participants 只列了 Manus、博裕（Boyu）、IDG、腾讯，遗漏了同一事件 summary 中点名的跟进方 高瓴 与 真格基金——它们已在 relations 中作为 invests_in 出现，导致事件参与者清单与已抽取关系不一致、不完整。",
+      "fix": "在 funding 事件的 participants 中补上 高瓴 与 真格基金（role=funder），与 5 条 invests_in 关系保持一致。"
+    },
+    {
+      "article_id": "2026-10-08-5",
+      "severity": "low",
+      "problem": "partnership 事件的 participants 只列了 NVIDIA、AMD、OpenAI、Anthropic、Google 5 家公司，遗漏了同一份公告中承诺出资的 AMP、Emerald AI、AWS、Armada、Crusoe、美光 6 家；它们仅出现在 relations/metrics 里，使『11 家联盟』这一核心事实在事件层级不完整。",
+      "fix": "在 partnership 事件 participants 中补全剩余 6 家（role=partner），或至少补上 AMP、Emerald AI、AWS、Armada、Crusoe、美光，与 relations 中 11 条 partners_with 边对应。"
+    },
+    {
+      "article_id": "2026-10-08-4",
+      "severity": "low",
+      "problem": "事件 type 用了 \"infra\"，而同一天、同类别的微软发布文章（2026-10-08-6）用的是 \"launch\"，事件类型口径不一致，且偏离其他发布类事件的常用取值，会导致同类动作跨文章被标成不同事件类型、分类割裂。",
+      "fix": "将 2026-10-08-4 的事件类型统一为 \"launch\"（或与 2026-10-08-6 选择相同的取值），保证同日同类发布的分类口径一致。"
+    }
+  ],
+  "lessons": [
+    "比较关系（outperforms/compared_with）的 source 与 target 必须是具体的实现配置，不要把『同一系统的不同 backbone 版本』拆成一个框架名加一个基础模型名再连边；如 Qwen3.5-9B RouterLM 与 Gemini 3.5 Flash RouterLM 应作为两个配置端点进行比较。",
+    "匿名或聚合指称（『三名研究员』『未具名外部组织』）不要建成带类型的实体节点，保留在事件描述与 metric 里即可，避免产生无法连通、无可复用的占位节点。"
+  ]
+}
