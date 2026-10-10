@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-10",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "抽取整体语义质量较高：跨文章命名一致（NVIDIA、Anthropic、reward hacking、评估即生产均连通），关键数字大多进 metrics 且与原文逐条对得上，事件切分合理。主要问题集中在几处关系的证据不支撑断言、一处客户关系用错了关系类型，以及一条被点名的 DOE 国家实验室主体缺抽。",
+  "findings": [
+    {
+      "article_id": "2026-10-10-5",
+      "severity": "medium",
+      "problem": "关系 Vera Rubin --developed_by--> NVIDIA 引用的证据是「与 Vera Rubin NVL72 等 NVIDIA GPU 机架并排工作」，这条证据只描述 Sobeka 并列共存的部署场景，并未给出「Vera Rubin 由 NVIDIA 开发」的归属关系；同理文中同类边 AI GPU --developed_by--> NVIDIA（2026-10-10-6）的证据也只引用 NVIDIA 的论点陈述，同样不支撑归属断言。",
+      "fix": "为 developed_by 关系换用直接支持归属的证据，如原文明确把 Vera Rubin 称作「NVIDIA GPU 机架」的部分；在抽取时把证据截取到能确证归属的那句，不要用并存/并举的描述冒充归属证据。如果原文确实没有支撑归属的句子，就删除该边或降为更弱的事实关系。"
+    },
+    {
+      "article_id": "2026-10-10-3",
+      "severity": "medium",
+      "problem": "关系 Hone --supplies--> Modal（weight 0.5）类型使用不当：Modal 在原文中是 Hone 的「早期客户」（早期客户包括 Cognition 与 AI 推理初创 Modal），是被服务方，语义方向不是 Hone 向 Modal「供应某种组件」。supplies 读起来会把 Modal 当成 Hone 的上游供货对象，与事实相反。",
+      "fix": "改用 serves（或 partners_with，若原文支持时）并指向「Hone 服务其客户 Modal」的方向；证据保持「早期客户包括……Modal」。若不愿增加新关系类型，可直接删除该边，因为原文只提到客户关系、没有可支撑的更强动作。"
+    },
+    {
+      "article_id": "2026-10-10-4",
+      "severity": "medium",
+      "problem": "原文明确点名「NVIDIA 将为 DOE 的阿贡、洛斯阿拉莫斯与劳伦斯伯克利国家实验室供应『不少于七台』新超算」，但劳伦斯伯克利（Lawrence Berkeley）没有被抽为实体，导致被点名的三个 DOE 实验室只抽出了两个，事件参与者与 supplies 关系链条残缺。",
+      "fix": "补抽实体「Lawrence Berkeley National Laboratory」（organization，含别名 劳伦斯伯克利国家实验室），并加入其被 NVIDIA 供应超算的事实/证据；如原文对其具体机型无更多信息，可只保留 NVIDIA --supplies--> 该实验室这一条关系。"
+    },
+    {
+      "article_id": "2026-10-10-12",
+      "severity": "low",
+      "problem": "实体「中国」类型标成 organization，但原文主体是作为国家/地域的「中国」（介绍其国策、监管体制、开发者集体），国家不是组织，类型与语义不符；同类主体如欧盟也用组织承载处理，跨文章时类型漂移会影响实体归并。",
+      "fix": "将「中国」「欧盟」这类地域-国家主体改用能与图谱类型体系兼容的类型（若体系有 country/region，用之；否则统一约定为 organization 并在 aliases 标注国别），确保同一主体在不同文章里类型一致，避免被误并入公司/机构实体。"
+    },
+    {
+      "article_id": "2026-10-10-1",
+      "severity": "low",
+      "problem": "「失对齐报告」实体类型标为 paper，但它是 OpenAI 的 alignment.openai.com 报告/披露页面，并非学术论文；类型错配会在跨文章对比时与真正的 arXiv 论文混为一谈。",
+      "fix": "若类型体系没有 report/webpage，统一把此类实验室官方披露页标成 paper 之外的既有类型（如 report），并与 nums 中同类型主体保持一致命名；不要与 arXiv 论文共用 paper 类型。"
+    }
+  ],
+  "lessons": [
+    "为 developed_by 关系配证据时，证据必须直接支持归属关系（如「NVIDIA GPU 机架」），不要引用「并列共存」或「论点陈述」的描述冒充归属断言；原文无归属证据就删除该边。",
+    "「早期客户包括 X」这类客户关系用 serves（提供方→客户方向）或恰当事有支撑的关系承载，不要用 supplies 或 partners_with 兜底，方向与类型都要与事实一致。",
+    "原文点名的每个机构级主体（如国家实验室、监管机构）都应抽为独立实体，并至少给出一条可读的边，禁止只抽部分主体造成命名组织缺漏。"
+  ]
+}

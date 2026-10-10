@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-10",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "抽取整体扎实：14 篇全覆盖、跨文章实体连通良好（Anthropic/OpenAI/Claude/reward hacking/评估即生产/Ecology/OnTrack/Vera Rubin 等规范名一致），未发现事实虚构、数字走样或关系方向反置。主要问题集中在关系类型选择上：客户被当合作伙伴、共同参与融资被当 partnership、模型版本演进被误用 compared_with，另有同篇事件切分重叠。均为 medium 级，无 high 级问题，建议修订后发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-10-3",
+      "severity": "medium",
+      "problem": "关系 \"Hone --partners_with--> Modal\" 证据不足、类型错配。原文仅称 Modal 是 \"早期客户\"（\"早期客户包括 Cognition 与 AI 推理初创 Modal\"），没有任何合作描述；Cognition 项原文有 \"与 Cognition 的合作聚焦帮其做市场拓展\" 可支撑 partners_with，但 Modal 仅是客户关系却被归为合作伙伴。事件 \"Cognition 与 Modal 成为 Hone 的早期客户\" 的 type 也标成 partnership，把纯粹的客户关系当成合作。",
+      "fix": "删除 \"Hone --partners_with--> Modal\"（或改为 serves/clients 类关系并给出相应依据）；保留 \"Hone --partners_with--> Cognition\"。将 \"Cognition 与 Modal 成为早期客户\" 事件的 type 改为 business/客户 类而非 partnership，或把 Modal 从 participants 中移除。"
+    },
+    {
+      "article_id": "2026-10-10-6",
+      "severity": "medium",
+      "problem": "关系 \"NVIDIA --partners_with--> Apollo\" 和 \"NVIDIA --partners_with--> BlackRock\" 证据不足。原文只说明 \"Apollo/BlackRock 等六大机构参与的 5000 亿融资平台\"，即这些机构参与了一个融资平台，并未直接描述 NVIDIA 与每一家机构之间的合作动作，把\"共同出现在同一融资平台\"当作双方 partnership 属于过度推断（weight 也仅 0.5，说明抽取代理自己信心不足）。",
+      "fix": "删除 Nike 与 Apollo、BlackRock 的 partner 关系（以及事件 2 中把 SpaceX/Apollo/BlackRock 标为 partner 的角色），除非原文另有明确双方合作描述；如确需保留，将关系改为机构参与同一融资平台的中性表述（如 participates_in 指向平台本身），不要直接连 NVIDIA 与单家机构。"
+    },
+    {
+      "article_id": "2026-10-10-10",
+      "severity": "medium",
+      "problem": "关系 \"Qwen-Image-2.1 --compared_with--> Qwen-Image\" 类型用错：证据是许可证从初代 Qwen-Image 的 Apache 2.0 收窄为 research-only，这是版本继承/许可变更，不是能力或性能对比，compared_with 不适用。",
+      "fix": "将 Qwen-Image-2.1 与 Qwen-Image 的关系改为体现版本继承的关系（如 built_on / 派生自 previous version），与关系 \"Qwen-Image-2.1-Turbo --built_on--> Qwen-Image-2.1\" 保持同一关系体系；compared_with 仅保留在确实做能力/性能对比的场景。"
+    },
+    {
+      "article_id": "2026-10-10-4",
+      "severity": "medium",
+      "problem": "事件切分重叠：infra 类事件 2（\"NVIDIA 为 DOE 供应不少于七台新超算\"，evidence 为供应七台）与事件 3（\"NVIDIA 与 Oracle 共建 10 万 Blackwell 的 Solstice\"）讲的是同一批交付中的同一台机器，Solstice 本就是那\"七台\"之一，被拆成两个事件导致重复。",
+      "fix": "将 Solstice 的细节并入事件 2（\"NVIDIA 为 DOE 供应七台新超算\"，其中阿贡获与 Oracle 共建的 Solstice\"），拆分叙述但保留为一个事件；或若保留两个，明确事件 3 是事件 2 的一个实例并加从属关系，避免读者以为它们是两笔独立交付。"
+    }
+  ],
+  "lessons": [
+    "客户关系用 serves/clients 类关系而非 partners_with：原文仅称某实体为\"早期客户\"时，只证明服务关系，除非另有明确合作动作描述才用 partners_with。",
+    "共同出现在同一融资平台或同一报道语境不等于双方合作关系，partners_with 必须要有原文明确的双方合作断言支撑，不能靠共同出现推断。",
+    "模型/产品版本之间的演进关系（继承、许可变更、派生）用 built_on / 派生类关系表达，不要把版本继承误用为 compared_with；compared_with 仅用于明确的能力或性能对比。"
+  ]
+}

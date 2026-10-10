@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-10",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 86,
+  "summary": "r1 指出的问题基本已修复：Hone 与 Modal 的 partners_with 已删除、NVIDIA 与 Apollo/BlackRock 的过度 partner 关系已移除、Qwen-Image-2.1 与初代的 compared_with 已改成 built_on、Article 4 的 Solstice 事件重叠已并入单事件。本轮未发现事实虚构、数字走样或关系方向反置，仅剩两处 medium 级证据/类型瑕疵：Genesis Mission 被写成 partners_with、Qwen-Image-2.1 的 built_on 仍拿许可证变更当证据。图谱质量很高，接近可直接发布，但按保守标准仍建议再修一轮。",
+  "findings": [
+    {
+      "article_id": "2026-10-10-4",
+      "severity": "medium",
+      "problem": "关系 \"NVIDIA --partners_with--> Genesis Mission\" (weight 0.7) 类型用错。支撑证据仅仅是 NVIDIA 承诺 10 亿美元「与特朗普政府的 Genesis Mission 挂钩」——这是一次资金承诺与政府倡议的定向关联/政策对齐，不是 NVIDIA 与 Genesis Mission 之间任何正式合作安排，partners_with 夸大了它们的实质性关系，会让读者误读为双方有双向合作契约。",
+      "fix": "不要把资金承诺与政府倡议的「挂钩」（关联、对齐）写成 partners_with。若类型集中无 aligns_with 类关系，应删除该 partners_with 边，把 Genesis Mission 仅作为政策背景主体保留在事件/why_it_matters 中，不要建立 NVIDIA 与它之间的合作类边；只有原文存在明确双方合作动作时才用 partners_with。"
+    },
+    {
+      "article_id": "2026-10-10-10",
+      "severity": "medium",
+      "problem": "关系 \"Qwen-Image-2.1 --built_on--> Qwen-Image\" (weight 0.5) 的证据仍与断言不匹配。r1 已把类型从 compared_with 改成 built_on，但 evidence 依然引用「2.1 把许可证从初代 Qwen-Image 的 Apache 2.0 收窄为 research-only」——这是许可证变更，不是架构或版本继承的证据；原文对初代 Qwen-Image 与 2.1 的全部关联也只有这一处许可证对比，没有任何「2.1 基于初代构建」的表述，因而该 built_on 边证据不足。",
+      "fix": "由于原文没有任何支撑「2.1 由初代 Qwen-Image 派生/构建」的技术沿革描述，建议删除这条 built_on 边（或否则补上能证明架构/版本继承的真实证据）；许可证从 Apache 2.0 收窄为 research-only 这一事实应只体现在 policy 类事件或度量里，不要当作 built_on 的依据。"
+    }
+  ],
+  "lessons": [
+    "资金或算力承诺「与政府倡议/使命挂钩」不代表 partnership：partners_with 必须要有原文明确的双方合作动作，政策对齐或定向关联用 aligns_with 类关系，或在无此类关系时删除该边、保留主体于事件中。",
+    "built_on/继承类关系的 evidence 必须指向架构、版本或技术沿革；仅凭许可证变更、发布日期等无关内容不能充当继承关系的依据，类型改正后证据必须一并纠正。"
+  ]
+}
