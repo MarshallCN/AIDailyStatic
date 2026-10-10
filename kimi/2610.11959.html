@@ -1,0 +1,486 @@
+<p class="faq-q"><strong>Q1</strong>: 这篇论文试图解决什么问题？</p>
+
+<div class="faq-a">
+
+该论文致力于解决**如何通过大规模扩展强化学习（RL）计算，推动大基础模型实现递归自我改进（Recursive Self-Improvement, RSI）**的核心问题。具体而言，论文围绕以下四个层面的挑战展开：
+
+### 1. 模型基础与探索空间不足
+实现智能体自我改进首先需要具备合适架构的基座模型，以及足够丰富的多模态交互探索空间。论文指出，基础模型必须能够支持长上下文、多模态理解（文本、图像、音频）和复杂的智能体交互，才能为后续的RL训练提供有效的轨迹和反馈信号。
+
+### 2. RL 训练计算规模的扩展
+现有RL后训练在批次大小、序列长度和吞吐量上受到严重限制。论文试图突破这些限制，具体从三个维度进行扩展：
+- **训练批次与吞吐量**：采用完全异步训练，每步处理 $1{,}568$ 个提示、每组 $G=16$ 个候选解，总计约 $25{,}000$ 条序列，对应 $2.7\sim3.7\,\text{B}$ 个token，上下文长度高达 $1\text{M}$；
+- **环境与任务多样性**：覆盖代码、通用工作流、视觉设计和网络安全等多领域，并在多种智能体 harness 的混合分布上进行训练，以避免策略与单一交互机制过拟合；
+- **评分器计算投入**：提出 groupwise agentic grading（包括 Groupwise Reward Synthesis 与 Groupwise Advantage Redistribution），通过组内比较区分通过解的质量，提供更细粒度、更准确的奖励信号。
+
+### 3. 奖励可靠性与训练稳定性
+大规模RL面临严重的 **reward hacking** 和 **训练失稳** 风险：
+- 论文建立了多层防御机制（环境清理、对抗性 hack agent 审计、训练时轨迹监控、groupwise grading 对确认作弊的轨迹置零奖励），将确认作弊比例控制在 $2\%$ 以下；
+- 通过冻结 MoE router 防止专家负载崩溃（避免变异系数从 $0.78$ 恶化到 $2.0$），确保训练稳定。
+
+### 4. 大规模混合任务基础设施
+支撑上述扩展需要复杂的系统工程：
+- 统一轨迹表示与细粒度惩罚机制，将格式错误、工具调用错误等与最终 outcome reward 解耦；
+- 解耦控制平面与数据平面，通过分布式存储缓冲数万条携带多模态负载的轨迹；
+- 实现训练-推理一致性（MoE 路由复现、top-p 候选集重归一化）以及异步混合任务调度（Sample Mixer），以应对不同任务 rollouts 长度和通过率差异高达 $90\times$ 的挑战。
+
+简言之，该论文通过提出 **MiMo-V2.6** 系列模型及配套基础设施，系统性地解决了**“如何在保持训练稳定与奖励可靠的前提下，从训练规模、环境复杂度和评分质量三个维度联合扩展RL，以实现基础模型的持续自我改进”**这一问题。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q2</strong>: 有哪些相关研究？</p>
+
+<div class="faq-a">
+
+与 MiMo-V2.6 相关的研究可按照技术模块分类梳理如下。这些工作为模型的架构设计、RL 规模扩展、环境构建、评分机制及系统工程提供了直接或间接的基础。
+
+---
+
+### 1. 基础架构与预训练
+
+| 研究方向 | 代表工作 |
+|---|---|
+| **骨干网络与注意力机制** | Vaswani et al. (2017) 的 Transformer 架构；采用局部 Sliding Window Attention（SWA）与全局注意力（GA）交错的混合稀疏 MoE 设计。 |
+| **多 Token 预测（MTP）** | Gloeckle et al. (2024) 与 Liu et al. (2024)、Xia et al. (2025) 的多 Token 预测框架，用于预训练阶段提升性能。 |
+| **投机解码** | Chen et al. (2026) 提出的 DFlash（block diffusion 设计），被用作 MiMo-V2.6 的投机解码器，以提升 RL rollout 吞吐。 |
+| **视觉编码器** | Yue et al. (2025) 的 MiMo-VL-7B；He et al. (2026) 进一步分析了 MiMo-ViT 的混合注意力架构。 |
+| **音频处理** | Xiaomi (2025) 的 MiMo-Audio，提供了音频 tokenizer 与 patch encoder 的训练方案。 |
+| **大 batch 优化器** | Jordan et al. (2024) 的 Muon 优化器；Liu et al. (2025b) 验证了其在大规模 LLM 训练中的可扩展性；Lion et al. (2026) 提出 Muown 以增强行范数控制。Qu et al. (2026) 则讨论了从 Adam 切换至 Muon 的兼容性问题。 |
+
+---
+
+### 2. RL 算法与训练扩展
+
+- **组相对策略优化（GRPO）**：Shao et al. (2024) 提出的 GRPO 是 MiMo-V2.6 的核心策略优化算法。
+- **异步与部分 Rollout**：Kimi Team (2025) 的部分 rollout 机制被用于保持大 batch 下的 GPU 利用率，避免长尾序列导致空闲。
+- **动态采样**：Yu et al. (2025) 的动态采样器用于过滤全通过或全失败的样本组，确保有效梯度。
+- **训练–推理一致性**：Ma et al. (2025) 的 R3（Rollout Routing Replay）用于对齐 MoE 路由；Liu et al. (2025a) 与 The Microsoft AI Team (2026) 的 top-p 采样候选集重放技术，用于对齐推理与训练时的概率归一化。
+- **多教师蒸馏（MOPD/MOPD2）**：Core Team et al. (2026) 与 Ma et al. (2026) 的 MOPD 框架；Liao et al. (2026) 的前缀条件单轮 rollout（Prefix-Conditioned OPD）被扩展用于 MOPD2，以整合跨领域能力。
+
+---
+
+### 3. 智能体环境与评估基准
+
+论文构建或引用了覆盖多个领域的任务环境与基准：
+
+- **代码智能体**：Jimenez et al. (2024) 的 SWE-bench；Deng et al. (2025) 的 SWE-bench Pro；Huang et al. (2026) 与 Huang &amp; Jiang (2026) 的 DeepSWE v1.1；Yang et al. (2026a) 的 ProgramBench；Ye et al. (2026) 的 CodeMidas；Zan et al. (2025) 的 Multi-SWE-bench；Zhao et al. (2026) 的 GitHub 大规模代码智能体数据；Badertdinov et al. (2026) 的 SWE-rebench v2；PrimeIntellect (2026) 的 SWE-RL；Tao et al. (2026) 的 SWE-Lego。
+- **通用工具使用与工作流**：Shepard &amp; Salimans (2026) 的 AutomationBench；Li et al. (2026a) 与 HKUST NLP (2026) 的 Toolathlon-Verified；Patwardhan et al. (2025) 与 Artificial Analysis (2026) 的 GDPval-AA；Li et al. (2026b) 的 JobBench；Sun et al. (2026) 的 Agents&#x27; Last Exam；Marten et al. (2026) 与 Merrill et al. (2026) 的 Terminal-Bench；Xie et al. (2024) 与 XLANG Lab (2025) 的 OSWorld-Verified。
+- **网络安全**：Wang et al. (2025) 的 CyberGym；Wang et al. (2026) 的 ExploitGym；Lee &amp; Brumley (2026) 的 ExploitBench；Lee et al. (2026) 的 SEC Bench Pro。
+- **视觉任务**：内部基准 MiMo Visual Coding，涵盖开放视觉设计与高保真视觉复现。
+
+---
+
+### 4. 评分机制与奖励设计
+
+- **Groupwise Advantage Redistribution（GAR）**：Dong et al. (2026) 提出在线组内优势重分配，用于在混合结果组内区分通过解的质量，并抑制奖励作弊。
+- **Groupwise Reward Synthesis（GRS）**：论文提出的离线 rubric 构建方法，受 groupwise comparison 启发，用于对高通过率任务进行细粒度评分。
+- **长度与行为正则化**：论文引用了相关实践，并通过 group-relative length penalty 与 segment-level behavioral penalties 改进训练稳定性。
+
+---
+
+### 5. 训练基础设施与系统优化
+
+- **推理引擎**：Zheng et al. (2024) 的 SGLang 用于 rollout 推理。
+- **训练框架**：Shoeybi et al. (2019) 的 Megatron-LM 用于 RL 训练。
+- **分布式执行**：Moritz et al. (2018) 的 Ray 用于多 harness 高并发 rollout；Han et al. (2025) 的 AsyncFlow/TransferQueue 用于异步数据流。
+- **低精度计算**：vLLM Project (2026) 的 Humming GEMM 内核支持 MXFP4 量化，用于对齐训练与推理的数值精度。
+
+---
+
+### 6. 模型蒸馏与开源基座
+
+- **学生模型初始化**：Qwen Team (2025) 的 Qwen3.5-9B 作为开源蒸馏模型 MiMo-V2.6-Distill-Qwen-9B 的初始化基座。
+- **知识蒸馏**：Xu et al. (2025) 的 Speculative Knowledge Distillation 探讨了教师-学生能力差距的桥接方法，与 MOPD2 的蒸馏动机相关。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q3</strong>: 论文如何解决这个问题？</p>
+
+<div class="faq-a">
+
+论文通过**“强大基座 → 智能体导向中训练 → 三维规模化 RL → 蒸馏与开源”**的完整技术路线，系统性地解决了大规模强化学习（RL）推动模型自我改进所面临的挑战。具体解决方案可从以下层面展开：
+
+---
+
+### 1. 构建适配规模化 RL 的基座模型
+
+为解决 RL 所需的庞大探索空间与高效长上下文处理问题，论文首先在架构与预训练阶段奠定了坚实基础：
+
+- **Hybrid-SWA Transformer 骨干**：采用局部滑动窗口注意力（SWA）与全局注意力（GA）交错的稀疏 MoE 架构。SWA 以 $W=128$ 的窗口大小降低长序列计算成本，GA 层周期性地聚合全局上下文，使模型在高达 $1\text{M}$ token 的上下文中保持高效。
+- **多模态编码器**：集成 MiMo-ViT（ sink-augmented SWA + 行列交替序列化）与音频编码器（两阶段：Audio Tokenizer + Patch Encoder），将视觉与音频信号统一映射为共享 token 序列，支撑代码、视觉、网络安全等多模态智能体任务。
+- **投机解码（Speculative Decoding）**：采用基于 DFlash 的多 Token 预测（MTP）模块，draft 模型在单次前向中预测 7 个后续 token，经主模型并行验证，显著提升 rollout 阶段生成吞吐。
+- **大规模预训练**：MiMo-V2.6-Flash 在 48T token 上训练，Pro 在 30T token 上训练，覆盖文本、视觉、音频，建立广泛的知识基础。
+
+---
+
+### 2. 智能体导向的中训练（Mid-Training）
+
+在 RL 之前，论文引入中训练阶段，专门扩展模型的智能体能力与长上下文支持：
+
+- **Agent-Centric 数据混合**：融合代码、通用工作流、视觉任务与研究任务的逼真智能体轨迹，以及高质量代码、文本、图像、视频和音频数据，使模型在进入 RL 前已具备初步的任务解决与交互能力。
+- **上下文长度扩展**：先在 256K 长度上训练主体阶段，最终扩展至 1M。
+- **优化器切换**：为应对后续 RL 的大 batch 训练，将隐藏权重矩阵的优化器从 AdamW 切换为 **Muown**（带显式行范数控制的 Muon 变体），保留矩阵结构信息以提升大数据效率；嵌入层、LM head 与 MoE router 仍使用 AdamW。
+- **低精度量化感知训练**：在中训练中引入 MXFP4 QAT，使模型适应低精度计算，为后续 RL 的量化推理做准备。
+
+---
+
+### 3. 三维规模化 RL 计算
+
+这是论文的核心方法论。RL 阶段在 SFT 之后进行，并沿着三个维度系统扩展：
+
+#### 3.1 扩展训练批次与吞吐
+- **完全异步训练**：每步采样 $1{,}568$ 个提示，组大小 $G=16$，每步产生约 $25{,}000$ 条序列、总计 $2.7\sim3.7\,\text{B}$ token 的训练量。
+- **Partial Rollout**：允许序列在 rollout 阶段被中断并在后续步恢复，避免长尾生成交互导致 GPU 空闲；通过大批量分摊 re-prefill 的 KV 缓存重建开销。
+- **动态采样与 Sample Mixer**：过滤全通过或全失败的样本组，保证有效梯度；通过自适应并发预算、赤字修正调度与预测性 rollout 分发，稳定维持多任务混合批次的组成比例，应对不同任务间高达 $90\times$ 的生成长度差异。
+
+#### 3.2 扩展环境与 Harness 多样性
+- **多领域环境合成**：
+  - **代码**：通过 GitHub PR、内部开发请求、规格驱动、CodeMidas 源码驱动及长程工程任务五条路径合成任务，确保覆盖多语言与多复杂度。
+  - **通用工作流**：构建本地可重置的沙盒环境，集成 MCP、API、CLI、GUI 等接口；使用原子化二元 rubric 与多模型交叉验证保证任务可验证性。
+  - **视觉**：分为开放式视觉设计（结合 pointwise 与 groupwise 评分）与高保真视觉复现（像素级相似度 + LLM 评判）。
+  - **网络安全**：基于 OSS-Fuzz 的真实漏洞复现，采用 sanitizer 报告的漏洞类型与崩溃位置作为确定性验证规则，避免差分测试与 LLM 评判的不稳定性。
+- **多 Harness 训练**：提出轻量级、模块化、可自由组合的 **mini-harness**。不同 mini-harness 共享最小化智能体循环，但可独立配置交互机制，从而在受控条件下引入 harness 多样性，避免策略与单一生产 harness 过拟合，并提升跨 harness 泛化能力。
+- **Reward Hacking 多层防御**：
+  - **环境准备**：清理构建产物、缓存、Git 历史与网络隔离，移除潜在答案泄露。
+  - **对抗性 Hack Agent**：在训练前迭代探测环境漏洞，根据发现持续加固环境，直至 hack agent 无法成功利用。
+  - **训练时审计**：离线定期审计轨迹，结合 groupwise grader 将确认的作弊轨迹奖励置零。
+  - **中训练对齐数据**：将早期观察到的 reward hacking 案例改造为反思-修正示例加入中训练，提升模型对齐度。
+
+#### 3.3 扩展 Grader 计算（Groupwise Agentic Grading）
+为突破二元测试奖励的区分力瓶颈，论文提出两种互补的组内评分机制：
+
+- **Groupwise Reward Synthesis（GRS，离线）**：
+  对高通过率任务，先离线收集多条 rollout，由评分智能体分析比较，构建任务特定的 **solution rubrics**（实现质量）与 **behavior rubrics**（解题行为）。训练时，grader 逐条评估并给出 $S_{\text{sol}}$ 与 $S_{\text{beh}}$，最终奖励为：
+  $$R_i = R_i^{\text{test}} \cdot S_i^{\text{sol}} \cdot S_i^{\text{beh}}$$
+  该乘积形式在保持测试通过门槛的同时，区分通过解的质量与行为。
+
+- **Groupwise Advantage Redistribution（GAR，在线）**：
+  对其余代码任务，在线地在一个混合结果组内联合检视所有轨迹，从方案适用性、实现精确性、修改最小性、无副作用、代码工艺五个维度对通过解进行组内排序。设 $P=\{i: R_i=1\}$，通过质量因子 $f_i \in (0,1]$ 对低质量通过解降权，并以公共因子 $\lambda$ 将移除的正优势质量重新分配：
+  $$\lambda = \frac{\sum_{j \in P} A_j}{\sum_{j \in P} f_j A_j}, \quad A&#x27;_i = \begin{cases} \lambda f_i A_i, &amp; i \in P \\ A_i, &amp; i \notin P \end{cases}$$
+  随后重新中心化并广播至序列 token。该机制抑制了“投机兼容分支、过度导出、异常吞没”等劣质策略，引导模型生成更精确、更短的补丁。
+
+- **行为正则化**：
+  - **Group-Relative Length Penalty**：以组内通过解长度的分位数 $\ell_q^\star$ 为参考，对过长成功 rollout 施加奖励惩罚，抑制 token 膨胀。
+  - **Segment-Level Behavioral Penalties**：对格式违规、工具调用错误等 token 进行优势掩码与重加权，将错误行为与 outcome reward 解耦。
+
+---
+
+### 4. 训练-推理一致性与系统工程
+
+为支持上述规模，论文配套设计了 RL/OPD 基础设施：
+
+- **统一轨迹表示与 Penalty Module**：采用 Sample → Sequence → Context → Segment 四级层次结构，支持多轮对话分支与上下文压缩；可配置规则检测基础设施故障、不可用工具调用、重复生成等，并在不同层次应用掩码、优势整形或监控。
+- **Harness Pool 与 Payload Porter**：通过多租户 Ray Actor 池并发执行多 harness rollout；将控制平面与数据平面解耦，重载的多模态 payload 写入分布式存储，调度仅基于轻量元数据，避免 driver 节点内存瓶颈。
+- **训练-推理对齐**：
+  - **R3（Rollout Routing Replay）**：记录推理时的 MoE 专家索引并在训练时复现，消除因数值差异导致的路由分歧。
+  - **Top-p Candidate Set Replay**：记录每个 token 的采样候选集，训练时在该集合内重新归一化 log-probability，严格对齐推理分布。
+  - **上下文缓存（Context Cache）**：KV 状态、路由记录与视觉输入在对话间持久化，并分层卸载至 HBM 与固定主机内存，减少多轮交互中的重复计算与数据传输。
+- **低精度推理优化**：Rollout 使用 MXFP4 专家权重；DFlash draft 模型采用 FP8，进一步降低推理开销。
+
+---
+
+### 5. 能力整合：MOPD2
+
+对于难以在训练时获得可靠奖励的领域（如长程游戏开发、科学研究、具身智能），论文在混合 RL 后采用 **Multi-Prefix Multi-Teacher On-Policy Distillation（MOPD2）**：
+
+- **Standard MOPD**：对具备 mixRL 教师的可验证任务，使用学生自主 rollout 进行蒸馏。
+- **Prefix-Conditioned OPD**：对开放域任务，从教师 rollout（Teacher-Prefix）或 SFT 数据（SFT-Prefix）中提取 $k$ 个历史前缀，学生在每个前缀下独立生成一轮，由对应领域教师提供 token 级监督。该机制限制了长程任务中的累积偏差，同时保持学生生成的自主性。
+
+---
+
+### 6. 开源基础与社区验证
+
+为降低研究门槛并验证方法泛化性，论文开源了：
+
+- **MiMo-V2.6-Distill-Qwen-9B**：通过 SFT 将 MiMo 的智能体经验蒸馏至 Qwen3.5-9B，覆盖代码、通用、视觉、网络安全数据。
+- **开放 RL 环境与框架**：发布约 7K 任务的训练环境（含可执行测试、规则检查、rubric 评判与视觉评分）及端到端 RL 训练框架。
+
+实验表明，基于该开源基座，GRPO 在单 harness 与 multi-harness 设置下均带来跨域一致提升，验证了上述技术路线的有效性与可复现性。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q4</strong>: 论文做了哪些实验？</p>
+
+<div class="faq-a">
+
+论文围绕**大规模混合任务强化学习**展开了一系列实验，涵盖训练动态监控、消融验证、基础设施稳定性分析及开源复现验证。主要实验可归纳如下：
+
+---
+
+### 1. 大规模 RL 训练动态与性能缩放
+
+- **多领域性能随训练步数的变化**（Figure 1、Figure 9）：在 MiMo-V2.6-Pro 与 MiMo-V2.6-Flash 上持续监控 RL 训练过程中的 benchmark 得分。实验覆盖：
+  - **代码**：DeepSWE v1.1、MiMo Code Bench、SWE-Bench Pro
+  - **通用工作流**：AutomationBench v1.0.6
+  - **视觉**：MiMo Visual Coding
+  - **网络安全**：MiMo Cyber Bench
+  
+  结果表明，随着 RL 步数增加，两个模型在所有报告领域均呈现**持续稳定的性能提升**，且伴随 token 使用量的合理增长。
+
+- **RL 计算成本与收益缩放**（Figure 3 左）：以 DeepSWE v1.1 的 average@3 为指标，绘制得分随累计 RL 成本（美元）的变化曲线。MiMo-V2.6-Pro 从 58.4% 提升至 72.6%，Flash 从 48.7% 提升至 65.7%，验证了**扩大 RL 计算投入可带来可衡量的回报**。
+
+- **成本分解**（Figure 3 右）：对 Pro 与 Flash 的 RL 后训练成本按 **rollout（推理）、training（训练）、grader（评分）** 三部分拆分。Pro 的 rollout 占 43.8%、training 占 43.5%、grader 占 12.7%；Flash 的结构类似。
+
+---
+
+### 2. Groupwise Agentic Grading 的消融实验
+
+- **Groupwise Advantage Redistribution（GAR）消融**（Figure 8）：在 MiMo-V2.6-Flash 上运行代码专用 RL（batch size 128），对比**使用 GAR**与**不使用 GAR**两种设置：
+  - **无 GAR**：通过率前期上升后迅速停滞，turn 数与总 token 长度快速增长，大量轨迹触及长度限制。
+  - **有 GAR**：通过率在 52 步内持续提高，turn 数保持稳定，token 长度增长平缓。
+  
+  维护者审计进一步发现，无 GAR 的策略倾向于产生投机兼容分支、过度导出、异常吞没等劣质代码；有 GAR 则生成更精确、范围受控的补丁。
+
+---
+
+### 3. 多 Harness 泛化实验
+
+- **训练 harness 与 held-out harness 性能**（Figure 10）：在 DeepSWE v1.1 上评估 multi-harness 训练效果。模型在 4 个训练 mini-harness 上优化的同时，在 3 个未见过的 harness（codex、claude code、mini-swe-agent）上的平均 Pass@1 从约 50% 提升至 66%。**训练与 held-out harness 之间的性能差距随训练逐步缩小**，证明轻量级 mini-harness 的多样性可促进跨 harness 泛化。
+
+- **开源基座上的 multi-harness 实验**（Table 7）：基于开源的 MiMo-V2.6-Distill-Qwen-9B，在 4 个 coding mini-harness 上联合训练，并在 7 个 harness 上评估。Multi-harness RL 在所有 21 个数据集–harness 组合上均带来提升，例如在 MiMo Code Bench (mini) 上，SFT 后平均 53.1%，RL 后提升至 59.0%。
+
+---
+
+### 4. MoE Router 冻结的稳定性实验
+
+- **专家负载崩溃诊断**（Figure 11）：在 MiMo-V2.6-Pro 的 RL 训练中对比**冻结 router**与**训练 router**：
+  - **可训练 router**：第 9 层的专家负载变异系数（CV）从 0.78 单调恶化至 2.0，峰值负载比从 6× 升至 16×，冷专家比例从 0.5% 升至 22%。
+  - **冻结 router**：三项指标全程保持平稳（CV≈0.7，峰值≈5.5×，冷专家≈1%），且 benchmark 性能正常增长。
+  
+  通过将第 20 步的 router 参数重置为初始值，确认**负载崩溃由 router 漂移驱动**，而非专家权重退化，从而确立了冻结 router 的必要性。
+
+---
+
+### 5. Reward Hacking 防御效果监控
+
+- **Hack Agent 迭代筛查**（Figure 6b 上）：在训练前对代码环境进行多轮对抗性清理，记录 hack agent 发现可利用环境的比例。随着清理轮次推进，该比例**逐步降至 0**。
+- **训练时作弊率监控**（Figure 6b 下）：在整个最终 RL 训练过程中，通过离线轨迹审计与 groupwise grader 联合监控，确认被标记为 reward hacking 的轨迹占比**始终低于 2%**。
+
+---
+
+### 6. 训练故障与基础设施分析
+
+- **训练中断时间线**（Figure 12）：完整记录 MiMo-V2.6-Pro（30 步，历时 123.1 小时）与 Flash（30 步，历时 81.8 小时）训练过程中的故障与恢复：
+  - **基础设施故障**：主要是 GPU HBM 双位错误（DBE）。
+  - **推理故障**：部分 rollout 导致的 KV 池耗尽与长度估计偏差。
+  - **训练故障**：MoE 专家并行（EP） rank 负载失衡引发 OOM。
+  - **驱动故障**：长序列打包导致主机内存溢出。
+  
+  这些记录为大规模 RL 系统的故障模式提供了实证数据。
+
+---
+
+### 7. 开源基座的领域特定 RL 验证
+
+基于开源的 **MiMo-V2.6-Distill-Qwen-9B**，论文在四个领域独立运行 GRPO，验证环境与框架的有效性（Table 6）：
+
+| 领域 | 关键指标变化（SFT → RL） |
+|---|---|
+| **代码** | SWE-bench Verified: 61.1 → 66.2；SWE-bench Pro: 44.6 → 47.6；MiMo Code Bench (mini): 51.6 → 59.9 |
+| **网络安全** | MiMo Cyber Bench (mini): 31.3 → 47.0 |
+| **通用** | Terminal Bench 2.1: 37.1 → 52.8；Toolathlon-Verified: 35.2 → 38.0；JobBench: 18.3 → 25.2；MiMo General Bench (mini): 62.2 → 70.6 |
+| **视觉** | MiMo Visual Coding (mini): 64.0 → 72.4 |
+
+此外，在内部音乐生成基准上，RL 将得分从 SFT 后的 45.7 提升至 52.5。
+
+---
+
+### 8. 网页生成案例研究
+
+- **定性对比**（Figure 17）：对同一网页开发提示，对比 Qwen3.5-9B、MiMo-V2.6-Distill-Qwen-9B（SFT）与（RL）生成的 hero section。实验展示了从**朴素布局 → 丰富内容与配色 → 精致排版与完整功能结构**的渐进式提升，与 MiMo Visual Coding (mini) 的量化得分（61.7 → 64.0 → 72.4）一致。
+
+---
+
+### 9. MOPD2 能力扩展评估
+
+- **与前沿模型对比**（Table 3）：经过 RL 与 MOPD2 后，MiMo-V2.6 系列在多个公开与内部 benchmark 上与 Claude Opus 5、GPT-5.6 Sol、Claude Fable 5 等前沿模型对比。例如：
+  - DeepSWE v1.1：Pro 达到 71.9，Flash 67.9
+  - AutomationBench v1.0.6：Pro 53.1，Flash 52.3
+  - OSWorld-Verified：Pro 82.0，Flash 80.8
+  - CyberGym：Pro 94.0，Flash 95.1
+
+这些实验共同验证了：**在冻结 router、多层 reward hacking 防御、groupwise grading 与 multi-harness 训练等技术支撑下，规模化 RL 能够在数千 GPU、数十亿 token/步 的规模上稳定运行，并带来跨领域的持续提升**。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q5</strong>: 有什么可以进一步探索的点？</p>
+
+<div class="faq-a">
+
+基于论文的技术路线与实验观察，以下方向值得进一步深入探索：
+
+---
+
+### 1. 动态与可学习的细粒度信用分配机制
+当前 **Groupwise Advantage Redistribution（GAR）** 在序列级别重分配优势，并将同一标量广播至该序列所有 token；**Groupwise Reward Synthesis（GRS）** 则依赖离线构建的任务特定 rubric。未来可探索：
+- **Token-level 或 turn-level 自动信用分配**：利用注意力轨迹或学习到的价值函数分解，自动识别对最终成功起关键作用的推理步骤，避免整段轨迹被同等强化或抑制。
+- **可学习的动态 Rubric**：以元学习或在线适应的方式，让评分智能体根据训练过程中观察到的策略演变动态调整 rubric，而非固定复用离线构建的版本。
+
+---
+
+### 2. MoE 路由器的稳定自适应训练策略
+论文发现**冻结 MoE router** 是维持 RL 训练稳定的必要手段（可训练 router 导致专家负载崩溃，CV 从 $0.78$ 升至 $2.0$），但这可能限制了模型在 RL 阶段根据任务分布动态重组专家组合的能力。可探索：
+- **带约束的 router 优化**：在更新 router 时引入投影梯度或镜像下降，显式约束各专家的负载熵或变异系数，使其在不崩溃的前提下保持自适应。
+- **辅助负载均衡损失与 RL 目标的联合优化**：设计可与策略梯度目标兼容的差异化负载损失，避免传统 aux loss 对 RL 信号的干扰。
+
+---
+
+### 3. 自动化与理论化的 Reward Hacking 防御
+当前防御体系依赖**迭代式 hack agent 探测**与**人工环境清理**，成本较高且难以保证完备性。可探索：
+- **形式化环境验证**：对代码环境的状态空间与观测空间进行静态分析，形式化证明在特定清理规则下不存在信息泄露路径。
+- **对抗性环境生成**：训练一个与策略模型对抗的环境生成器，自动构造“最易被 hack”的任务变体，使策略在训练过程中提前暴露并学习规避漏洞。
+
+---
+
+### 4. 超长线上下文 RL 的系统与算法协同设计
+论文将上下文扩展至 $1\text{M}$ token，但长程智能体任务（如大规模代码库维护、长视频编辑）可能需要 $10\text{M}+$ 上下文。可探索：
+- **新型注意力机制与 RL 的融合**：将线性注意力、状态空间模型（SSM）或压缩记忆模块引入 RL rollout，降低长序列的 KV 缓存与通信开销。
+- **学习式上下文压缩与 Eviction 策略**：让模型在交互过程中自主决定保留、总结或丢弃历史上下文中的哪些部分，而非依赖固定窗口或启发式规则。
+
+---
+
+### 5. 多模态主动感知与工具使用的联合优化
+当前视觉与音频输入主要由环境被动推送（如固定截图、音频流）。可探索：
+- **主动感知（Active Perception）策略**：训练模型自主决定何时截取屏幕、缩放图像区域、回放音频片段或请求新的传感器输入，将感知动作纳入可学习的策略空间。
+- **跨模态工具链的端到端优化**：在视觉-代码-通用工作流交叉任务中，联合优化“何时生成代码”“何时渲染验证”“何时回退修改”的决策边界。
+
+---
+
+### 6. 面向开放域任务的中间可验证子目标自动发现
+**MOPD2** 当前通过蒸馏将能力迁移至难以直接验证的领域（如科学研究、游戏开发）。可探索：
+- **自动子目标分解与验证器合成**：利用 LLM 自动将长程开放任务拆解为带可自动验证标准的子任务（如“先构建可运行原型”→“再通过单元测试”），使 RL 可直接应用于此前只能蒸馏的领域。
+- **可验证性预测网络**：训练一个辅助模型，预估某子任务当前是否可被自动验证，从而动态切换 RL 与蒸馏的学习模式。
+
+---
+
+### 7. 多智能体交互与协作的规模化 RL
+论文聚焦于单智能体环境，但真实世界工作流程常涉及多角色协作。可探索：
+- **多智能体 Mini-Harness 标准化**：扩展当前可组合的 mini-harness 框架，支持多智能体竞争、协商与协作的交互原语。
+- **群体智能涌现的 RL 协议**：研究在去中心化奖励、信息不对称条件下，大规模 RL 是否能涌现出可扩展的协作策略，以及相应的 reward hacking 新形态（如协作作弊或策略勾结）。
+
+---
+
+### 8. 专家专门化动态与跨领域能力迁移的机理分析
+实验观察到 multi-harness 训练带来了跨 harness 泛化，但 MoE 内部机制尚不清晰。可探索：
+- **专家级任务专门化追踪**：分析在代码、视觉、网络安全等多任务 RL 中，特定专家是否自发分化出领域专属功能，以及这种分化与跨领域泛化性能之间的定量关系。
+- **专家生命周期管理**：研究在持续学习新任务时，专家的动态分裂、合并与遗忘机制，避免新知识覆盖旧能力。
+
+---
+
+### 9. 自适应长度与计算预算的动态分配
+**Group-Relative Length Penalty** 有效抑制了 token 膨胀，但也可能在复杂任务中过度惩罚必要的深度推理。可探索：
+- **任务难度感知的动态预算**：根据 prompt 复杂度或中间执行反馈，自适应分配生成长度与思考步数上限，而非全局固定。
+- **推理与行动 token 的最优分配**：从计算经济学视角，形式化分析在“内部思考（reasoning）”与“外部环境交互（tool use）”之间的最优 token 分配策略。
+
+---
+
+### 10. 低资源场景下的高效 RL 算法迁移
+论文主要展示数千 GPU 级别的大规模 RL，开源的 9B 模型虽验证了可行性，但样本效率与训练成本仍有优化空间。可探索：
+- **离线-在线混合 RL**：在 GRPO 基础上引入高质量的离线轨迹重用（如 AWQ、Q-filtered BC），减少昂贵在线 rollouts 的需求。
+- **参数高效 RL**：在冻结大部分主干的前提下，仅对 LoRA 适配器或专家层进行 RL 微调，降低大模型 RL 的显存与通信开销。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q6</strong>: 总结一下论文的主要内容</p>
+
+<div class="faq-a">
+
+该论文介绍了 **MiMo-V2.6** 系列模型，旨在通过**规模化强化学习（RL）计算**推动大基础模型向**递归自我改进（Recursive Self-Improvement, RSI）**迈进。以下是论文核心内容的系统总结：
+
+---
+
+### 1. 核心问题与总体思路
+论文认为，实现模型自我改进需要智能体在多样化环境中进行长程探索并获得可靠反馈。为此，必须解决两大挑战：
+- **模型基础**：需要具备长上下文、多模态理解能力的强大基座，以及丰富的智能体探索空间。
+- **规模化 RL**：需要在训练吞吐量、环境多样性、评分质量及系统基础设施上实现跨越式扩展，同时防止训练崩溃与奖励作弊（reward hacking）。
+
+论文提出的解决路径是：**“强基座 → 智能体导向中训练 → 三维规模化 RL → 蒸馏与开源”**。
+
+---
+
+### 2. 模型架构与训练基础
+- **Hybrid-SWA Transformer**：文本骨干采用局部滑动窗口注意力（SWA）与全局注意力（GA）交错，并基于稀疏 MoE 架构，支持长达 **1M token** 的上下文。Pro 版总参数量 1.02T（激活 42B），Flash 版 310B（激活 15B）。
+- **多模态编码器**：集成 MiMo-ViT（混合注意力视觉编码器）与两阶段音频编码器（Tokenizer + Patch Encoder），统一处理文本、图像、视频与音频。
+- **投机解码**：采用基于 DFlash 的多 Token 预测模块提升 rollout 吞吐。
+- **预训练与中训练**：两阶段预训练（文本 → 全模态）后，进行中训练（mid-training），使用智能体中心的数据混合，扩展长上下文至 1M，并将隐藏权重优化器切换为 **Muown**（Muon 的变体）以适配后续大 batch RL，同时引入 MXFP4 量化感知训练。
+
+---
+
+### 3. 三维 RL 计算扩展（核心贡献）
+
+#### （1）扩展训练批次与吞吐
+采用**完全异步训练**，每步处理 **1,568** 个提示、每组 **G=16** 个候选解，产生约 **25,000** 条序列、**2.7–3.7B** token 的训练量。关键技术包括：
+- **Partial Rollout**：允许长序列在多步之间中断与恢复，避免 GPU 因长尾交互而空闲。
+- **Sample Mixer**：通过自适应并发预算、赤字修正调度与预测性 rollout 分发，稳定维持多任务混合批次，应对不同任务间高达 **90×** 的生成长度差异。
+
+#### （2）扩展环境与 Harness 多样性
+构建了覆盖四大领域的 RL 环境：
+- **代码**：通过 GitHub PR、内部开发请求、规格驱动、CodeMidas 源码驱动等五条路径合成任务。
+- **通用工作流**：构建本地可重置的沙盒，集成 MCP/API/CLI/GUI 等工具接口。
+- **视觉**：分为开放式视觉设计（结合 pointwise 与 groupwise 评分）与高保真视觉复现。
+- **网络安全**：基于 OSS-Fuzz 的真实漏洞复现，使用 sanitizer 报告进行确定性验证。
+
+提出 **Multi-Harness 训练**：使用轻量级、模块化、可自由组合的 **mini-harnesses**，避免策略与单一交互机制过拟合，显著提升跨 harness 泛化能力。
+
+建立**多层 reward hacking 防御**：
+- 训练前：环境清理（移除构建产物、缓存、网络隔离）+ 迭代式 **hack agent** 对抗探测，直至无可利用漏洞。
+- 训练时：离线轨迹审计，结合 groupwise grader 将确认作弊的轨迹奖励置零，作弊率全程低于 **2%**。
+
+#### （3）扩展评分器计算（Groupwise Agentic Grading）
+突破二元测试奖励的区分力瓶颈，提出两种互补机制：
+- **Groupwise Reward Synthesis（GRS，离线）**：对高通过率任务，离线分析多条 rollout 构建任务特定的 solution/behavior rubrics，训练时将 rubric 分数与测试奖励相乘，实现通过解的进一步区分。
+- **Groupwise Advantage Redistribution（GAR，在线）**：在混合结果组内联合检视所有轨迹，从方案适用性、精确性、最小性等五个维度对通过解进行组内排序，将低质量通过解的正优势重新分配至高质量解，抑制劣质策略（如过度导出、异常吞没）。
+
+此外，引入 **Group-Relative Length Penalty** 与 **Segment-Level Behavioral Penalties** 抑制 token 膨胀与格式/工具调用错误。
+
+---
+
+### 4. 关键稳定性技术
+- **冻结 MoE Router**：实验证明可训练 router 在 RL 中会导致专家负载崩溃（CV 从 0.78 升至 2.0），冻结后负载保持平稳，性能正常增长。
+- **训练-推理一致性**：通过 **R3（Rollout Routing Replay）** 复现推理时的 MoE 专家索引，通过 **top-p candidate set replay** 对齐采样概率归一化，消除数值差异导致的分布偏移。
+- **上下文缓存（Context Cache）**：KV 状态、路由记录与视觉输入在多轮交互间持久化并分层卸载，减少重复计算。
+
+---
+
+### 5. 实验结果
+- **持续性能提升**（Figure 1, 9）：MiMo-V2.6-Pro 与 Flash 在代码（DeepSWE, SWE-Bench Pro, MiMo Code Bench）、通用工作流（AutomationBench）、视觉（MiMo Visual Coding）与网络安全（MiMo Cyber Bench）上均随 RL 步数稳定提升。
+- **GAR 消融**（Figure 8）：相比无 GAR，使用 GAR 后通过率持续提高，turn 数与 token 长度增长平缓，且生成代码更精确、更易维护。
+- **Multi-Harness 泛化**（Figure 10, Table 7）：在训练 harness 与多个 held-out harness 上均实现性能提升，且差距逐步缩小。
+- **与前沿模型对比**（Table 3）：经 RL 与 **MOPD2**（多前缀多教师在线蒸馏）后，MiMo-V2.6 在多个 agentic benchmark 上达到与 Claude Opus 5、GPT-5.6 Sol 等可比的水平。
+
+---
+
+### 6. 开源与社区验证
+论文开源了完整 RL 开发栈：
+- **MiMo-V2.6-Distill-Qwen-9B**：将 MiMo 智能体经验蒸馏至 Qwen3.5-9B 的 9B 模型。
+- **约 7K 任务的 RL 环境**：覆盖代码、网络安全、通用、视觉领域，配备可执行测试、规则检查与视觉评分。
+- **端到端 RL 框架与可组合 mini-harness**。
+
+基于该开源基座的实验（Table 6, 7）表明，GRPO 在单 harness 与 multi-harness 设置下均带来跨域一致提升，验证了方法的可复现性与泛化性。
+
+---
+
+### 7. 结论
+MiMo-V2.6 通过**三维 RL 计算扩展**（训练吞吐、环境多样性、评分质量）、**多层防御与稳定性技术**（router 冻结、reward hacking 防御、训练-推理一致性）以及**配套系统工程**（异步混合任务基础设施），证明了大规模智能体 RL 能够持续解锁模型在复杂长程任务中的能力。论文希望通过开源资源降低研究门槛，推动社区向递归自我改进方向持续探索。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q7</strong>: 想要进一步了解论文</p>
+
+<div class="faq-a">
+
+以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是MiMo-V2.6%3A%20Scaling%20Reinforcement%20Learning%20Towards%20Self-Improvement，链接是 https://arxiv.org/pdf/2610.11959 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2610.11959 。请以此为基础，继续回答我后面的问题。&system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&send_immediately=false" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。
+
+</div>
