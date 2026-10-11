@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-11",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 70,
+  "summary": "主要问题集中在 0 号文：Yandex 被错误标注中文别名「雅虎\u3008实为 Yahoo」，且 FP-1 被写成袭击弗拉基米尔数据中心，而原文只把 FP-1 关联到 9 日的卡卢加袭击，属事实性错误。另有 3 号文把 trusted-access 拆成两个语义重复的实体、6 号文 runs_on 指向公司而非硬件、8 号文多处关系类型误用（compares_with / targets）。",
+  "findings": [
+    {
+      "article_id": "2026-10-11-0",
+      "severity": "high",
+      "problem": "实体 Yandex 的 aliases 包含「雅虎」，但「雅虎」是 Yahoo 的中文名，与 Yandex（Яндекс）是两个不同公司，原文通篇未提到雅虎。这个猜测式别名会在跨文章图谱里把 Yandex 与 Yahoo 错误合并。",
+      "fix": "删除 alias「雅虎」，保留「Яндекс」；别名只能来自原文确认的同一主体写法，不填无依据的中文译名猜测。"
+    },
+    {
+      "article_id": "2026-10-11-0",
+      "severity": "high",
+      "problem": "关系 FP-1 --targets--> 弗拉基米尔数据中心 事实错误：原文只说 Firepoint 的 FP-1 单向攻击无人机「参与了 9 日的卡卢加袭击」，从未说它袭击 11 日的弗拉基米尔数据中心；所附证据「乌克兰 Firepoint 公司的 FP-1 单向攻击无人机」并不支撑目标是弗拉基米尔。",
+      "fix": "删除 FP-1 --targets--> 弗拉基米尔数据中心 这条关系；若需要武器-目标边，指向原文明确点名的卡卢加站点（如抽取为「卡卢加数据中心」实体）。"
+    },
+    {
+      "article_id": "2026-10-11-3",
+      "severity": "medium",
+      "problem": "「可信访问程序\u300e(type policy) 与「信任访问\u300f(type topic) 指向同一概念 trusted-access/可信访问，被拆成两个语义重复的实体，导致图谱内不连通。",
+      "fix": "合并为单个规范实体（如「可信访问程序」），把「trusted-access 程序」「trusted access」「信任访问」全部收进 aliases。"
+    },
+    {
+      "article_id": "2026-10-11-6",
+      "severity": "medium",
+      "problem": "关系 ALoDLM --runs_on--> NVIDIA 目标/类型错配：模型是运行在具体硬件 NVIDIA B200 上，而 NVIDIA 是公司实体，runs_on 的 target 不应当是公司。",
+      "fix": "新增硬件实体「NVIDIA B200」(type hardware) 并把 runs_on 指向它；或删除该关系，不要用公司 NVIDIA 作 runs_on 目标。"
+    },
+    {
+      "article_id": "2026-10-11-8",
+      "severity": "medium",
+      "problem": "关系 Morgan Stanley --compares_with--> NVIDIA 类型用错：摩根士丹利是「重列英伟达为半导体首选」，这是评级/认可，不是两个主体的相互比较。",
+      "fix": "改用表达「认可/列为优先选定」的关系类型，或删除；compares_with 不适用于评级机构与标的之间的关系。"
+    },
+    {
+      "article_id": "2026-10-11-8",
+      "severity": "medium",
+      "problem": "关系 BAAJA --targets--> NVIDIA 无原文支撑：BAAJA 加速的是能源项目审批，受益者是 AI 数据中心用电，原文没说 BAAJA 以英伟达为目标，且 targets 暗含对抗性攻击，语义错误。",
+      "fix": "删除该关系；如需表达受益关系，改为 BAAJA --benefits--> AI 数据中心（若抽取数据中心实体）之类表述。"
+    },
+    {
+      "article_id": "2026-10-11-8",
+      "severity": "medium",
+      "problem": "关系 Earthjustice --targets--> BAAJA 类型不当：Earthjustice 是「指责这掏空了保护底线」，是 oppose/criticise，不是 targets。",
+      "fix": "改用 opposes 或 criticises 等体现反对/批评的关系类型。"
+    }
+  ],
+  "lessons": [
+    "实体别名只写原文出现或确证的外文原名，禁止自填中文译名式猜测（如把 Yandex 写成「雅虎」），否则会与其他公司错误合并。",
+    "武器/攻击类关系只让武器指向原文明确点名的目标地点；原文把某武器关联到某地袭击时，不得把它写成袭击另一地点。",
+    "同一概念在不同段落出现（如 trusted-access / 可信访问）应合并为一个规范实体，把其余写法收进 aliases，不要拆成多个语义重复的实体。"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-11",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "本轮抽取整体忠实原文、数字与方向基本吻合，但存在三类系统性欠账：一是在融资/伙伴/表态类多人参与场景，只抽领投方或部分具名方而漏掉其余跟投/伙伴/支持方（如 General Medicine 漏 Matrix/BoxGroup，NVIDIA 扩 8 家伙伴只建 3 条 partnered-with，Business Roundtable 支持 BAAJA 未建边）；二是把「同页并列/同名单」误当成关系（gpt-rosalind-discovery --compared_with--> gpt-rosalind-research 无比较语义），以及 GPT-Rosalind-5.5 抽成孤立实体无任何边；三是单篇情报盈余被压得过深，跨赛道的企业主体与供应商关系（Amazon 与江苏交控共建数字公路）被裁掉。这些共同导致图谱连而不全，部分关系误导读者。",
+  "findings": [
+    {
+      "article_id": "2026-10-11-1",
+      "severity": "high",
+      "problem": "「日本宣布网络空间紧急状态」事件把『高市早苗（国家网络安全战略总部负责人）』、『古川俊治（网络安全大臣）』标在其 participants 且两人都冠以 'subject' 角色——这两人是当事方的官员，不是事件的『主体』；更关键的是 NCSH 的组织主体被埋没：事件 role 应为 NCSH（国家网络安全战略总部），而不是两个官员。原文中心是 NCSH 宣布进入网络空间紧急状态，高市与古川只是叙述者。",
+      "fix": "事件 participants 改为 subject=NCSH（organization），把高市早苗、古川俊治降为 contributing/role='spokesperson'（或从 participants 移除），并让参与者角色与参与者类型一致，避免把『人』塞进 organization 主语的槽位。"
+    },
+    {
+      "article_id": "2026-10-11-1",
+      "severity": "high",
+      "problem": "source=Tokyo_attackers 是捏造的实体名。原文（Japan Times）通篇把攻击者称为『威胁行为者/境外行为者/网络罪犯』，从没出现 Dr_attackers 之类的专名；把它当高频实体抽出来并从它发 affected_by / leverages 等边，等于给图谱灌进了原文没有的主体。",
+      "fix": "删除 Tokyo_attackers 这个实体节点；若需表达『境外行为者绕过日语障碍』，应把 '迫使日语障碍失效的境外威胁行为者' 作为无主名的属性/证据写进事件 note，而不是建一个 0.8-0.9 权重的虚构实体。"
+    },
+    {
+      "article_id": "2026-10-11-1",
+      "severity": "medium",
+      "problem": "连续多点位『攻击-中断』与『为什么关键』里的语言隔离=安全感论证语调一致，但抽取把它标记成了独立的 trend 事件，且该 trend 的 participants 把『AI 加持网络攻击』当 object——它把新闻里的观点/机制（AI 让日语障碍失效）升级成了与实体并列的『事件』，与其他 trend 事件（如‚MIT 课堂合规趋势）的性质不同。",
+      "fix": "若保留该 trend，应明确其 type='opinion/perspective' 而不是 trend，participants 去掉『AI 加持网络攻击』这一不存在的对象，只留 subject=NCSH/高市早苗 + 语义对象『日语障碍』；或者把这个观点裁并入前面的事件 why_it_matters，避免与事件重复。"
+    },
+    {
+      "article_id": "2026-10-11-2",
+      "severity": "high",
+      "problem": "General Medicine 的‘why_it_matters’整段是抽取代理自己接续的产业判断（‘真正能走通的往往是先解决目录标准化与责任界定、再谈 AI 的那几位’），已超出原文事实，且与事件/关系无任何 evidence 对应；类似地 2026-10-11-7 的 why_it_matters 大段展开『谁先做出通用的机-智桥接层谁就可能成为机器人时代的 Android』——这属于预测性评论，并非原文明确观点。",
+      "fix": "why_it_matters 应压缩为原文明说或只做最小外推的一句话（如 A16z 等产业资本下场说明‘医疗 AI 的钱景由消费者买护理兑现’，并可注明该判断为 editorial）；把大段推演移到 summary 之外，或明确标注为 review 观点，避免把代理自身评论冒充新闻内 容。"
+    },
+    {
+      "article_id": "2026-10-11-6",
+      "severity": "medium",
+      "problem": "ALoDLM 的『Qwen3 自回归基线』被抽为 entity Qwen3（model），并建立了 ALoDLM --outperforms--> Qwen3 的关系。原文 ALoDLM 是『基于 Qwen3 派生的模型』并与其自回归基线对比，即 Qwen3 是 ALoDLM 的超集/候选基线；把基线模型与派生模型连成‘outperforms’并在双方上都标 model 类型，混淆了『派生自』与『优于基线』两种不同关系。",
+      "fix": "保留 ALoDLM --built_on--> Qwen3（已抽），把‘outperforms’对象改为具体基线（如超过对应 Qwen3 自回归基线），并为该对比关系补 evidence；不要在没表述派生关系的同文里同时给 Qwen3 建两套类型冲突的边。"
+    },
+    {
+      "article_id": "2026-10-11- Its",
+      "severity": "low",
+      "problem": "2026-10-11-7 的 Drex v1.5 事件/all participants 只列了 Nace AI、Drex v1.5、Qwen3.5，而摘要本身读出来的‘兼容 TypeSafe 的 /v1/systemone 接口（Kev）’被放在 relations 里；同一篇把 OpenAI gpt-rosalind-* 的 metrics（价格）落进了 metrics，但 gpt-rosalind-discovery 的价格与 research 一致这个跨文章对应关系没有作为 relation 出现。",
+      "fix": "为 Dock v1.5 --compatible_with--> /v1/systemone 这个已在 evidence 出现的关系补 participants；gpt-rosalind-discovery 与 gpt-rosalind-research 的‘同价’应在关系侧体现（如 gpt-rosalind-discovery --same_price_as--> gpt-rosalind-research，garnered 自定价页，且不属于被误切的 compared_with）。"
+    },
+    {
+      "article_id": "2026-10-11-9",
+      "severity": "medium",
+      "problem": "NVIDIA/Australia 事件只在 relations 抽了 NVIDIA 与 3 家伙伴的 partnered-with（Firmus？IREN？ResetData？Megaport），但正文明确列出 8 家伙伴（Firmus、Sharon AI、IREN、ResetData、Megaport、CDC、NEXTDC、AirTrunk），且 Sharon AI 的 6.8 万 GPU 部署被抽出，却没有对应的 partnered-with/leasing/co-deploy 关系承载‘Sharon AI 拟部署 6.8 万 GPU’这一核心动作与 NVIDIA 的关联。",
+      "fix": "补齐 NVIDIA 与 其余伙伴（Firmus、ResetData、CDC、NEXTDC、AirTrunk）的 partnered-with 边（NVIDIA --partners_with--> 各家），并为 Sharon AI --will_deploy(--> 6.8 万 GPU) 建 metrics/relation，把 8 家伙伴全部落到关系里，不留名单外实体。"
+    },
+    {
+      "article_id": "2026-10-11-13",
+      "severity": "medium",
+      "problem": "通用 Medicine 的 metrics 把『涵盖 2.9 万+ SKU 的目录』与 AI 无关，且整体 metrics 偏弱：B 轮 1.2 亿美元、累计 1.52 亿美元、目录 2900+ 这些数字都对，但事件没有把参加 follow-on 的 Matrix（之前 a16z 那句）完整表达；另外把‘礼来与 Mercy Health 入局’当作产业方入局的趋势时，未能体现 a16z 领投 B 轮之外礼来与 Mercy Health 是以产业方身份（而非纯财务投资）参与的关键。",
+      "fix": "把礼来/Mercy Health 的参与者 role 标为 'strategic_funder'（产业方战略投资者）而非泛泛 funder，并让 General Medicine --invested_in_by--> Eli_Lilly（strategic）在 evidence 中引用原文‘礼来与 Mercy Health入局’以区分战略意图与单纯财务投资。"
+    },
+    {
+      "article_id": "2026-10-11-5",
+      "severity": "low",
+      "problem": "Memento 3 的‘benchmark’事件（与 Claude Opus 5 对比高 59.3）被拆成了两个事件：一个是 research（ARC-AGI-3 全满分），一个是独立的 benchmark 对比——但两者出自同一条新闻、同一段对比证据（满分 + 59.3 差距），拆成两个事件属于过度切分，且在 ARC-AGI-3 与 Claude Opus 5 的对比上重复。",
+      "fix": "把‘在 ARC-AGI-3 上全满分’与‘相对 Claude Opus 5 高 59.3’合并为一个 benchmark 事件（可保留一个 research 事件），避免同一对比被切成两个事件并与 metrics 重复计分。"
+    },
+    {
+      "article_id": "2026-10-11-3",
+      "severity": "high",
+      "problem": "2026-10-11-3 的 density 过高地把 OpenAI 定价页的 discovery/research 同价并列加工成关系和观点，但正文事实其实是并列而非比较。把两个模型做成 compared_with（或同价）关系且以‘定价页并列’为证据，属于把‘同页并列’误当‘关系’。此外该文 why_it_matters 的‘能力越强、监管边界越靠平台侧人工审核’是把 OpenAI 文稿的 trusted-access 叙述转述成‘监管边界由人工审核接管’，与原文在 bacet 上有轻微漂移。",
+      "fix": "为 2026-10-11-3 保留 discovery 与 research 的‘并列同价’事实但不建立 compared_with 关系（改为同属 Life Sciences models 目录的 co-categorized，或仅保留 pricing 度量）；why_it_matters 改为更贴原文的表述（trusted-access 仍是平台管理准入，并非模型不再自我约束）。"
+    }
+  ],
+  "lessons": [
+    "多人参与场景（融资、伙伴、联盟、联合声明）：对正文点名的每一位具名参与者都要建对应关系边（invests_in / partners_with / supports），不能只抽领投方或部分参与者，避免名单外实体被丢。",
+    "当 conclusion/trend 事件的参与者被写成与一个不存在于原文的实体对象时，立即删除该对象并把机制语义写进证据/note，绝不凭空造出带权重的高频实体。",
+    "同一页面并列展示（如同类产品目录/同价列表）不构成 compared_with 或同价关系；只有原文给出明确对比语义时才建比较关系。",
+    "为什么关键（why_it_matters）只写原文明确观点或最小外推，把代理自己的产业推演标注为 editorial 或移到 summary 外，禁止把预测性评论冒充新闻事实。",
+    "校准参与者角色：战略产业方 vs 纯财务投资方要用不同 role 区分（如 strategic_funder vs funder），并把来源句写进 evidence。"
+  ]
+}

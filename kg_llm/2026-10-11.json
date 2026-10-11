@@ -1,0 +1,486 @@
+{
+  "date": "2026-10-11",
+  "articles": [
+    {
+      "article_id": "2026-10-11-0",
+      "entities": [
+        {"name": "Yandex", "type": "company", "aliases": ["Яндекс"], "confidence": 0.97, "evidence": ["Yandex 确认该中心运营彻底暂停"]},
+        {"name": "Yandex Cloud", "type": "product", "aliases": ["Yandex 云"], "confidence": 0.9, "evidence": ["关联可用区数量 80+ 的 Yandex Cloud 服务"]},
+        {"name": "YandexGPT", "type": "product", "aliases": ["YandexGPT API"], "confidence": 0.9, "evidence": ["含 YandexGPT API、Alisa 语音助手、Yandex Music、Telemist 视频会议"]},
+        {"name": "Alisa", "type": "product", "aliases": ["Alisa 语音助手"], "confidence": 0.85, "evidence": ["含 YandexGPT API、Alisa 语音助手、Yandex Music、Telemist 视频会议"]},
+        {"name": "Telemist", "type": "product", "aliases": ["Telemist 视频会议"], "confidence": 0.85, "evidence": ["含 YandexGPT API、Alisa 语音助手、Yandex Music、Telemist 视频会议"]},
+        {"name": "弗拉基米尔数据中心", "type": "hardware", "aliases": ["Energetik 区数据中心", "Vladimir 数据中心"], "confidence": 0.85, "evidence": ["Yandex 位于弗拉基米尔市郊的数据中心，位于 Energetik 区"]},
+        {"name": "Firepoint", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["乌克兰 Firepoint 公司的 FP-1 单向攻击无人机"]},
+        {"name": "FP-1", "type": "hardware", "aliases": ["FP-1 单向攻击无人机"], "confidence": 0.8, "evidence": ["乌克兰 Firepoint 公司的 FP-1 单向攻击无人机"]},
+        {"name": "卡卢加数据中心", "type": "hardware", "aliases": ["Kaluga 数据中心"], "confidence": 0.8, "evidence": ["参与了 9 日的卡卢加袭击"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "乌克兰无人机四天三袭 Yandex 数据中心，弗拉基米尔站遭击、80+ 云服务中断",
+          "summary": "10 月 11 日凌晨乌克兰无人机击中 Yandex 弗拉基米尔市郊 Energetik 区数据中心，该中心运营彻底暂停，关联 80+ 可用区的 Yandex Cloud 服务（YandexGPT API、Alisa、Yandex Music、Telemist 等）大面积中断。",
+          "participants": [
+            {"name": "Yandex", "type": "company", "role": "subject"},
+            {"name": "弗拉基米尔数据中心", "type": "hardware", "role": "object"},
+            {"name": "Yandex Cloud", "type": "product", "role": "object"}
+          ],
+          "evidence": ["无人机击中 Yandex 位于弗拉基米尔市郊的数据中心，位于 Energetik 区、容量 50MW、可容纳 2880 个机柜"]
+        },
+        {
+          "type": "trend",
+          "label": "连续多点位失效暴露单一大本营式计算的脆弱性",
+          "summary": "自 10 月 8 日以来 Yandex 三座主要数据中心接连遭无人机打击（梁赞 Sasovo、卡卢加、弗拉基米尔），对把搜索、出行、支付与生成式 AI 全绑在自有云上的公司来说，单一大本营式计算的物理脆弱性被暴露。",
+          "participants": [
+            {"name": "Yandex", "type": "company", "role": "subject"},
+            {"name": "弗拉基米尔数据中心", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["连续多点位失效正在暴露单一大本营式计算的脆弱性"]
+        }
+      ],
+      "relations": [
+        {"source": "弗拉基米尔数据中心", "target": "Yandex", "type": "operated_by", "weight": 0.9, "evidence": ["Yandex 确认该中心运营彻底暂停"]},
+        {"source": "Yandex Cloud", "target": "Yandex", "type": "developed_by", "weight": 0.85, "evidence": ["关联可用区数量 80+ 的 Yandex Cloud 服务"]},
+        {"source": "YandexGPT", "target": "Yandex Cloud", "type": "hosted_on", "weight": 0.85, "evidence": ["含 YandexGPT API、Alisa 语音助手、Yandex Music、Telemist 视频会议"]},
+        {"source": "FP-1", "target": "卡卢加数据中心", "type": "targets", "weight": 0.8, "evidence": ["乌克兰 Firepoint 公司的 FP-1 单向攻击无人机被指参与了 9 日的卡卢加袭击"]}
+      ],
+      "metrics": [
+        {"name": "弗拉基米尔数据中心容量", "value": "50MW"},
+        {"name": "弗拉基米尔数据中心可容纳机柜", "value": "2880 个"},
+        {"name": "受影响的 Yandex Cloud 服务/组件数", "value": "80+"},
+        {"name": "接连遭袭的主要数据中心数", "value": "三座"}
+      ],
+      "why_it_matters": "地缘冲突把「AI 基础设施」从资本开支叙事拉回物理现实——训练与推理集群不再只是账面上的 GPU 数量，而是可以被远程打击、需要冗余与备份的实体资产，单一大本营式计算被多点位失效暴露。"
+    },
+    {
+      "article_id": "2026-10-11-1",
+      "entities": [
+        {"name": "日本国家网络安全战略总部", "type": "organization", "aliases": ["NCSH", "日本国家网络安全战略本部"], "confidence": 0.9, "evidence": ["超过 20 家知名企业遭网络攻击"]},
+        {"name": "高市早苗", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["网络空间安全战略负责人高市早苗称之为「网络空间的紧急状态」"]},
+        {"name": "古川俊治", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["网络安全大臣古川俊治称形势「极其严峻」"]},
+        {"name": "Lawson", "type": "company", "aliases": ["罗森"], "confidence": 0.85, "evidence": ["Lawson、Times Car、JR East（暴露 167 万邮箱地址）等客户记录泄露"]},
+        {"name": "Times Car", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Lawson、Times Car、JR East（暴露 167 万邮箱地址）等客户记录泄露"]},
+        {"name": "JR East", "type": "company", "aliases": ["JR 东日本"], "confidence": 0.85, "evidence": ["JR East（暴露 167 万邮箱地址）"]},
+        {"name": "AI 加持网络攻击", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["因超过 20 家英美日企业连日遭网络攻击"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "日本宣布「网络空间紧急状态」，20+ 家企业遭 AI 加持黑客攻击",
+          "summary": "日本国家网络安全战略总部（NCSH）召集紧急会议，20 多家知名企业遭网络攻击，Lawson、Times Car、JR East 等客户记录泄露达数千万条；高市早苗称之为「网络空间的紧急状态」。",
+          "participants": [
+            {"name": "日本国家网络安全战略总部", "type": "organization", "role": "subject"},
+            {"name": "高市早苗", "type": "person", "role": "subject"},
+            {"name": "古川俊治", "type": "person", "role": "subject"},
+            {"name": "Lawson", "type": "company", "role": "object"},
+            {"name": "Times Car", "type": "company", "role": "object"},
+            {"name": "JR East", "type": "company", "role": "object"}
+          ],
+          "evidence": ["高市早苗用「网络空间的紧急状态」、古川俊治用「极其严峻」来形容当下局面"]
+        },
+        {
+          "type": "trend",
+          "label": "AI 让「语言隔离=安全感」的旧假设失效",
+          "summary": "官员与分析人士共识是 AI 降低了攻击者门槛，并帮境外行为者绕过了此前限制攻击目标选择的「日语障碍」，使「语言隔离=安全感」的旧假设失效。",
+          "participants": [
+            {"name": "日本国家网络安全战略总部", "type": "organization", "role": "subject"},
+            {"name": "AI 加持网络攻击", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["AI 正在降低攻击者门槛"]
+        }
+      ],
+      "relations": [
+        {"source": "高市早苗", "target": "日本国家网络安全战略总部", "type": "affiliated_with", "weight": 0.85, "evidence": ["NCSH 负责人高市早苗"]},
+        {"source": "Lawson", "target": "AI 加持网络攻击", "type": "affected_by", "weight": 0.85, "evidence": ["Lawson、Times Car、JR East（暴露 167 万邮箱地址）等客户记录泄露"]},
+        {"source": "JR East", "target": "AI 加持网络攻击", "type": "affected_by", "weight": 0.85, "evidence": ["Lawson、Times Car、JR East（暴露 167 万邮箱地址）等客户记录泄露"]},
+        {"source": "Times Car", "target": "AI 加持网络攻击", "type": "affected_by", "weight": 0.85, "evidence": ["Lawson、Times Car、JR East（暴露 167 万邮箱地址）等客户记录泄露"]}
+      ],
+      "metrics": [
+        {"name": "遭攻击的企业数", "value": "20+"},
+        {"name": "JR East 暴露邮箱地址", "value": "167 万"},
+        {"name": "累计泄露客户记录", "value": "数千万条"}
+      ],
+      "why_it_matters": "当国家层面的安全官开始把 AI 单独列为态势恶化因子而非笼统的网络威胁，说明攻击成本已经进入正式防御定价与政策响应范畴，「攻击者人手一 AI」正在重排企业端补丁与口令治理的优先级。"
+    },
+    {
+      "article_id": "2026-10-11-2",
+      "entities": [
+        {"name": "General Medicine", "type": "company", "aliases": ["GeneralMedicine", "通用医疗"], "confidence": 0.9, "evidence": ["健康「便利店」General Medicine 宣布 1.2 亿美元 B 轮"]},
+        {"name": "a16z", "type": "company", "aliases": ["Andreessen Horowitz"], "confidence": 0.9, "evidence": ["B 轮由 a16z 领投"]},
+        {"name": "Eli Lilly", "type": "company", "aliases": ["礼来"], "confidence": 0.9, "evidence": ["礼来与 Mercy Health 入局"]},
+        {"name": "Mercy Health", "type": "company", "aliases": ["Mercy"], "confidence": 0.9, "evidence": ["礼来与 Mercy Health 入局"]},
+        {"name": "Matrix", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Matrix、礼来、Mercy Health、BoxGroup 跟投"]},
+        {"name": "BoxGroup", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["BoxGroup 参投"]},
+        {"name": "TJ Parker", "type": "person", "aliases": ["Parker"], "confidence": 0.85, "evidence": ["由 PillPack / Amazon Pharmacy 创始团队（TJ Parker、Elliot Cohen、Ashwin Muralidharan）创办"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "General Medicine 获 1.2 亿美元 B 轮，a16z 领投、礼来与 Mercy Health 入局",
+          "summary": "PillPack 创始团队的健康 AI 市场 General Medicine 宣布 1.2 亿美元 B 轮，a16z 领投、Matrix、礼来、Mercy Health、BoxGroup 跟投，累计融资约 1.52 亿美元。",
+          "participants": [
+            {"name": "General Medicine", "type": "company", "role": "subject"},
+            {"name": "a16z", "type": "company", "role": "funder"},
+            {"name": "Eli Lilly", "type": "company", "role": "funder"},
+            {"name": "Mercy Health", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["B 轮由 a16z 领投，Matrix、礼来、Mercy Health、BoxGroup 跟投"]
+        }
+      ],
+      "relations": [
+        {"source": "a16z", "target": "General Medicine", "type": "invests_in", "weight": 0.9, "evidence": ["B 轮由 a16z 领投"]},
+        {"source": "Eli Lilly", "target": "General Medicine", "type": "invests_in", "weight": 0.85, "evidence": ["礼来与 Mercy Health 入局"]},
+        {"source": "Mercy Health", "target": "General Medicine", "type": "invests_in", "weight": 0.85, "evidence": ["礼来与 Mercy Health 入局"]},
+        {"source": "TJ Parker", "target": "General Medicine", "type": "affiliated_with", "weight": 0.85, "evidence": ["由 PillPack / Amazon Pharmacy 创始团队（TJ Parker、Elliot Cohen、Ashwin Muralidharan）创办"]}
+      ],
+      "metrics": [
+        {"name": "General Medicine B 轮金额", "value": "1.2 亿美元"},
+        {"name": "累计融资额", "value": "约 1.52 亿美元"},
+        {"name": "商品目录覆盖药品/实验室数", "value": "2900+"}
+      ],
+      "why_it_matters": "传统药企与医院系统（礼来、Mercy Health）作为产业方而非财务投资者直接下场，说明「医疗 AI 的钱景由让消费者像逛淘宝一样买护理来兑现」的叙事已能吸引产业资本——但能走通的往往是先解决了目录标准化与责任界定、再谈 AI 的那几位。"
+    },
+    {
+      "article_id": "2026-10-11-3",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI 的 API 定价页在「Life sciences models」下新增了 gpt-rosalind-discovery"]},
+        {"name": "gpt-rosalind-discovery", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["新增了 gpt-rosalind-discovery，与已发布的 gpt-rosalind-research 并排"]},
+        {"name": "gpt-rosalind-research", "type": "model", "aliases": ["research 版"], "confidence": 0.85, "evidence": ["与已发布的 gpt-rosalind-research 并排"]},
+        {"name": "GPT-Rosalind-5.5", "type": "model", "aliases": ["GPT-Rosalind"], "confidence": 0.85, "evidence": ["当前版本 GPT-Rosalind-5.5 基于 GPT-5.5 训练"]},
+        {"name": "可信访问程序", "type": "policy", "aliases": ["trusted-access 程序", "trusted access", "信任访问"], "confidence": 0.8, "evidence": ["依旧只对经「trusted-access 程序」批准的机构开放"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "OpenAI 定价页悄然列出未官宣的生命科学模型 gpt-rosalind-discovery",
+          "summary": "OpenAI API 定价页在「Life sciences models」下新增未官宣的 gpt-rosalind-discovery，与 gpt-rosalind-research 并排、完全同价（输入 $5/百万、缓存 $0.50、输出 $25/百万 token）。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "gpt-rosalind-discovery", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI 的 API 定价页在「Life sciences models」下新增了 gpt-rosalind-discovery"]
+        },
+        {
+          "type": "trend",
+          "label": "把「专业领域最强能力」与「严格准入」打包出售",
+          "summary": "前沿实验室正把能力最强的垂直模型与严格准入绑定——门禁式访问审核取代模型内部拒绝成为主要安全护栏，监管边界靠平台侧人工审核而非模型自律。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "可信访问程序", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["门禁式的访问审核取代模型内部拒绝作为主要安全护栏"]
+        }
+      ],
+      "relations": [
+        {"source": "gpt-rosalind-discovery", "target": "gpt-rosalind-research", "type": "compared_with", "weight": 0.85, "evidence": ["与已发布的 gpt-rosalind-research 并排，输入 $5/百万 token"]},
+        {"source": "OpenAI", "target": "gpt-rosalind-discovery", "type": "restricts", "weight": 0.8, "evidence": ["依旧只对经「trusted-access 程序」批准的机构开放"]}
+      ],
+      "metrics": [
+        {"name": "gpt-rosalind-discovery 输入价", "value": "$5/百万 token"},
+        {"name": "gpt-rosalind-discovery 缓存输入价", "value": "$0.50/百万 token"},
+        {"name": "gpt-rosalind-discovery 输出价", "value": "$25/百万 token"}
+      ],
+      "why_it_matters": "能力越强、越垂直，监管边界就越靠平台侧人工审核（trusted-access 门禁）而非模型自律——前沿实验室开始把「最强的专业领域能力」与「严格准入」打包定价出售。"
+    },
+    {
+      "article_id": "2026-10-11-4",
+      "entities": [
+        {"name": "TypeSafe", "type": "company", "aliases": ["TypeSafe AI", "TypeSafe AI（Jev 开发商）"], "confidence": 0.95, "evidence": ["TypeSafe AI（Jev 开发商）以 75 亿美元估值融资 8.7 亿美元"]},
+        {"name": "Jev", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Jev 于 9 月 15 日发布后几乎立刻病毒式传播"]},
+        {"name": "a16z", "type": "company", "aliases": ["Andreessen Horowitz"], "confidence": 0.9, "evidence": ["a16z 领投、Sequoia 与 DCVC 参与"]},
+        {"name": "Sequoia", "type": "company", "aliases": ["红杉"], "confidence": 0.85, "evidence": ["a16z 领投、Sequoia 与 DCVC 参与"]},
+        {"name": "DCVC", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["a16z 领投、Sequoia 与 DCVC 参与"]},
+        {"name": "Diogo Almeida", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["联合创始人和 CEO Diogo Almeida"]},
+        {"name": "Martin Casado", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Martin Casado 将加入董事会"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "TypeSafe 以 75 亿美元估值融资 8.7 亿美元，a16z 领投",
+          "summary": "Jev 开发商 TypeSafe AI 以 75 亿美元估值融资 8.7 亿美元，a16z 领投、Sequoia 与 DCVC 参与；约三分之一财富 500 强采用。",
+          "participants": [
+            {"name": "TypeSafe", "type": "company", "role": "subject"},
+            {"name": "a16z", "type": "company", "role": "funder"},
+            {"name": "Sequoia", "type": "company", "role": "funder"},
+            {"name": "DCVC", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["以 75 亿美元估值融资 8.7 亿美元，a16z 领投、Sequoia 与 DCVC 参与"]
+        },
+        {
+          "type": "trend",
+          "label": "「非自回归决策模型」从论文概念变成有真实融资的模型品类",
+          "summary": "Jev 基于 transformer 但非 LLM，不输出文本、只输出概率或「校准的决策」，约一个多月迅速被三分之一财富 500 强采用，与微软、LiquidAI 等同类决策模型同台。",
+          "participants": [
+            {"name": "TypeSafe", "type": "company", "role": "subject"},
+            {"name": "Jev", "type": "model", "role": "object"}
+          ],
+          "evidence": ["基于 transformer 但不是一个 LLM：不生成文本与代码，而是输出概率"]
+        }
+      ],
+      "relations": [
+        {"source": "a16z", "target": "TypeSafe", "type": "invests_in", "weight": 0.9, "evidence": ["a16z 领投、Sequoia 与 DCVC 参与"]},
+        {"source": "Sequoia", "target": "TypeSafe", "type": "invests_in", "weight": 0.85, "evidence": ["a16z 领投、Sequoia 与 DCVC 参与"]},
+        {"source": "DCVC", "target": "TypeSafe", "type": "invests_in", "weight": 0.85, "evidence": ["a16z 领投、Sequoia 与 DCVC 参与"]},
+        {"source": "Jev", "target": "TypeSafe", "type": "developed_by", "weight": 0.9, "evidence": ["TypeSafe AI（Jev 开发商）"]},
+        {"source": "Diogo Almeida", "target": "TypeSafe", "type": "affiliated_with", "weight": 0.85, "evidence": ["联合创始人和 CEO Diogo Almeida"]},
+        {"source": "Martin Casado", "target": "TypeSafe", "type": "affiliated_with", "weight": 0.85, "evidence": ["Martin Casado 将加入董事会"]}
+      ],
+      "metrics": [
+        {"name": "TypeSafe 融资额", "value": "8.7 亿美元"},
+        {"name": "TypeSafe 估值", "value": "75 亿美元"},
+        {"name": "Jev 相对前沿模型速度提升", "value": "约百倍"},
+        {"name": "Jev 成本约为前沿模型比例", "value": "1/100–1/500"}
+      ],
+      "why_it_matters": "Jev 证明「非自回归、只输出概率」的决策模型已从论文概念变成有真实融资与部署的品类，战场从「谁更火」转向「谁能用可验证、可复现的方式证明比分类 pipeline 更可靠且更便宜」。"
+    },
+    {
+      "article_id": "2026-10-11-5",
+      "entities": [
+        {"name": "Memento 3", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["UCL、华为诺亚方舟实验室与利物浦大学发布 Memento 3"]},
+        {"name": "UCL", "type": "organization", "aliases": ["伦敦大学学院"], "confidence": 0.9, "evidence": ["UCL、华为诺亚方舟实验室与利物浦大学发布 Memento 3"]},
+        {"name": "华为诺亚方舟实验室", "type": "organization", "aliases": ["诺亚方舟"], "confidence": 0.85, "evidence": ["UCL、华为诺亚方舟实验室与利物浦大学发布 Memento 3"]},
+        {"name": "利物浦大学", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["UCL、华为诺亚方舟实验室与利物浦大学发布 Memento 3"]},
+        {"name": "ARC-AGI-3", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在 ARC-AGI-3 全部 25 个公开游戏的每一关都通过"]},
+        {"name": "Claude Opus 5", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["ARC Prize 官方用标准 harness 跑的 Claude Opus 5 为 40.7 RHAE"]},
+        {"name": "规则书", "type": "topic", "aliases": ["自然语言规则书"], "confidence": 0.8, "evidence": ["通过外部记忆维护一份自然语言「规则书」"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Memento 3 靠「反思规则书」递归自我改进，ARC-AGI-3 全满分",
+          "summary": "冻结的 LLM 与一份可修订的自然语言「规则书」配合，编译成可执行代码，以预测误差持续修订，在 ARC-AGI-3 全部 25 个公开游戏每关都通过、平均 RHAE 100.0 封顶。",
+          "participants": [
+            {"name": "Memento 3", "type": "model", "role": "subject"},
+            {"name": "UCL", "type": "organization", "role": "object"},
+            {"name": "华为诺亚方舟实验室", "type": "organization", "role": "object"},
+            {"name": "利物浦大学", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["在 ARC-AGI-3 全部 25 个公开游戏的每一关都通过，平均 RHAE 100.0"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Memento 3 相比 Claude Opus 5 高 59.3 分",
+          "summary": "在 ARC-AGI-3 全 25 个公开游戏上 Memento 3 平均 RHAE 100.0，而对照的 Claude Opus 5 为 40.7 RHAE，高出 59.3 分。",
+          "participants": [
+            {"name": "Memento 3", "type": "model", "role": "subject"},
+            {"name": "Claude Opus 5", "type": "model", "role": "competitor"},
+            {"name": "ARC-AGI-3", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["作为对照，ARC Prize 官方用标准 harness 跑的 Claude Opus 5 为 40.7 RHAE——Memento 3 高出 59.3 分"]
+        }
+      ],
+      "relations": [
+        {"source": "Memento 3", "target": "UCL", "type": "authored_by", "weight": 0.85, "evidence": ["UCL、华为诺亚方舟实验室与利物浦大学发布 Memento 3"]},
+        {"source": "Memento 3", "target": "华为诺亚方舟实验室", "type": "authored_by", "weight": 0.85, "evidence": ["UCL、华为诺亚方舟实验室与利物浦大学发布 Memento 3"]},
+        {"source": "Memento 3", "target": "利物浦大学", "type": "authored_by", "weight": 0.85, "evidence": ["UCL、华为诺亚方舟实验室与利物浦大学发布 Memento 3"]},
+        {"source": "Memento 3", "target": "ARC-AGI-3", "type": "evaluated_on", "weight": 0.9, "evidence": ["在 ARC-AGI-3 全部 25 个公开游戏的每一关都通过"]},
+        {"source": "Memento 3", "target": "Claude Opus 5", "type": "outperforms", "weight": 0.85, "evidence": ["Memento 3 高出 59.3 分"]},
+        {"source": "Memento 3", "target": "规则书", "type": "uses", "weight": 0.8, "evidence": ["通过外部记忆维护一份自然语言「规则书」"]}
+      ],
+      "metrics": [
+        {"name": "Memento 3 平均 RHAE", "value": "100.0"},
+        {"name": "Memento 3 用人类动作数比例", "value": "44%"},
+        {"name": "对照 Claude Opus 5 RHAE", "value": "40.7"},
+        {"name": "Atari Pong 反馈控制器战绩", "value": "21:0"}
+      ],
+      "why_it_matters": "「compile-and-verify」环路让冻结 LLM 靠规则书+代码的递归修订而非更新权重来自我改进，把 LLM 的隐性推断沉淀成可验证的外部世界模型——这比具体 benchmark 分数更值得跟进。"
+    },
+    {
+      "article_id": "2026-10-11-6",
+      "entities": [
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.95, "evidence": ["亚马逊发布 ALoDLM 系列"]},
+        {"name": "ALoDLM", "type": "model", "aliases": ["ALoDLM 系列"], "confidence": 0.9, "evidence": ["亚马逊发布 ALoDLM 系列"]},
+        {"name": "Qwen3", "type": "model", "aliases": ["Qwen3 自回归基线"], "confidence": 0.85, "evidence": ["两个 Qwen3 派生模型"]},
+        {"name": "GSM8K", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["GSM8K 达 93.25%"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["在单张 NVIDIA B200 上"]},
+        {"name": "NVIDIA B200", "type": "hardware", "aliases": ["B200"], "confidence": 0.85, "evidence": ["在单张 NVIDIA B200 上"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Amazon 发布并行扩散语言模型 ALoDLM，8B 超 Qwen3 自回归基线",
+          "summary": "ALoDLM 把并行扩散-语言生成与 token 级自适应循环精化结合，难 token 拿更多算力、易 token 提前退出；8B 在 11 个基准平均 80.3、GSM8K 达 93.25%。",
+          "participants": [
+            {"name": "Amazon", "type": "company", "role": "subject"},
+            {"name": "ALoDLM", "type": "model", "role": "object"}
+          ],
+          "evidence": ["把并行扩散生成与「token-adaptive 循环精化」结合"]
+        },
+        {
+          "type": "benchmark",
+          "label": "ALoDLM 8B 在 11 个基准平均 80.3，超过 Qwen3 自回归基线",
+          "summary": "8B 模型在 11 个基准上的平均分 80.3，超过对应的 Qwen3 自回归基线；GSM8K 达 93.25%，吞吐约 2.7 倍于 vLLM 服务的 Qwen3-8B。",
+          "participants": [
+            {"name": "ALoDLM", "type": "model", "role": "subject"},
+            {"name": "Qwen3", "type": "model", "role": "competitor"},
+            {"name": "GSM8K", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["8B 在 11 个基准平均 80.3，超过对应的 Qwen3 自回归基线"]
+        }
+      ],
+      "relations": [
+        {"source": "ALoDLM", "target": "Amazon", "type": "developed_by", "weight": 0.9, "evidence": ["亚马逊发布 ALoDLM 系列"]},
+        {"source": "ALoDLM", "target": "Qwen3", "type": "built_on", "weight": 0.85, "evidence": ["两个 Qwen3 派生模型"]},
+        {"source": "ALoDLM", "target": "Qwen3", "type": "outperforms", "weight": 0.85, "evidence": ["8B 在 11 个基准平均 80.3，超过对应的 Qwen3 自回归基线"]},
+        {"source": "ALoDLM", "target": "GSM8K", "type": "evaluated_on", "weight": 0.85, "evidence": ["GSM8K 达 93.25%"]},
+        {"source": "ALoDLM", "target": "NVIDIA B200", "type": "runs_on", "weight": 0.8, "evidence": ["在单张 NVIDIA B200 上"]},
+        {"source": "NVIDIA B200", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["在单张 NVIDIA B200 上"]}
+      ],
+      "metrics": [
+        {"name": "ALoDLM 8B 平均分", "value": "80.3"},
+        {"name": "ALoDLM GSM8K", "value": "93.25%"},
+        {"name": "ALoDLM 吞吐", "value": "612.4 token/秒"},
+        {"name": "相对 vLLM 服务 Qwen3-8B 吞吐倍数", "value": "约 2.7 倍"}
+      ],
+      "why_it_matters": "token 级自适应循环精化给出「困难 token 才需要串行深思」的答案，若该路线泛化则让扩散模型在延迟敏感负载上可用，撬动推理性价比格局。"
+    },
+    {
+      "article_id": "2026-10-11-7",
+      "entities": [
+        {"name": "Nace AI", "type": "company", "aliases": ["NACE AI"], "confidence": 0.9, "evidence": ["开源 8.95B 决策模型 Drex v1.5"]},
+        {"name": "Drex v1.5", "type": "model", "aliases": ["Drex", "Drex v1.5 决策模型"], "confidence": 0.9, "evidence": ["开源 8.95B 决策模型 Drex v1.5"]},
+        {"name": "Qwen3.5", "type": "model", "aliases": ["Qwen3_5ForCausalLM"], "confidence": 0.85, "evidence": ["基于 Qwen3_5ForCausalLM"]},
+        {"name": "TypeSafe", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["兼容 TypeSafe 的 /v1/systemone API"]},
+        {"name": "Decision Index", "type": "benchmark", "aliases": ["Decision Index 0.3.1"], "confidence": 0.8, "evidence": ["公众 Decision Index 0.3.1 榜单 10B 以下模型里位列第一"]},
+        {"name": "Kev", "type": "tool", "aliases": ["Kev 代码"], "confidence": 0.8, "evidence": ["配套的 Kev 代码提供与托管 Drex API 格式一致的 TypeSafe 兼容 /v1/systemone 接口"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Nace AI 开源 8.95B 决策模型 Drex v1.5，登顶 10B 以下 Decision Index 榜首",
+          "summary": "Nace AI 开源 Drex v1.5（8.95B 参数、基于 Qwen3_5ForCausalLM、混合注意力），单次前向为每个选项打分，稳居 Decision Index 0.3.1 榜单 10B 以下首位。",
+          "participants": [
+            {"name": "Nace AI", "type": "company", "role": "subject"},
+            {"name": "Drex v1.5", "type": "model", "role": "object"},
+            {"name": "Qwen3.5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["开源 Drex v1.5：一个 8.95B 参数、基于 Qwen3_5ForCausalLM"]
+        }
+      ],
+      "relations": [
+        {"source": "Drex v1.5", "target": "Nace AI", "type": "released_by", "weight": 0.9, "evidence": ["开源 8.95B 决策模型 Drex v1.5"]},
+        {"source": "Drex v1.5", "target": "Qwen3.5", "type": "built_on", "weight": 0.85, "evidence": ["基于 Qwen3_5ForCausalLM"]},
+        {"source": "Drex v1.5", "target": "Decision Index", "type": "evaluated_on", "weight": 0.85, "evidence": ["公众 Decision Index 0.3.1 榜单 10B 以下模型里位列第一"]},
+        {"source": "Drex v1.5", "target": "TypeSafe", "type": "integrates", "weight": 0.8, "evidence": ["兼容 TypeSafe 的 /v1/systemone API"]},
+        {"source": "Kev", "target": "Drex v1.5", "type": "supports", "weight": 0.8, "evidence": ["配套的 Kev 代码提供与托管 Drex API 格式一致的 TypeSafe 兼容 /v1/systemone 接口"]}
+      ],
+      "metrics": [
+        {"name": "Drex v1.5 参数量", "value": "8.95B"},
+        {"name": "Drex v1.5 公开上下文长度", "value": "16,384 token（可扩到 131,072）"},
+        {"name": "Drex v1.5 Decision Index 排名", "value": "10B 以下第一"}
+      ],
+      "why_it_matters": "开源权重把「决策模型」从闭源商业产品扩散到社区，为开源社区提供与商业决策模型同接口（/v1/systemone）的替代品，真正的战场变成「谁能可验证、可复现地证明比传统 pipeline 更可靠且更便宜」。"
+    },
+    {
+      "article_id": "2026-10-11-8",
+      "entities": [
+        {"name": "美国参议院", "type": "organization", "aliases": ["参议院"], "confidence": 0.9, "evidence": ["参议院引入的《两党美国可负担与就业法案》(BAAJA)"]},
+        {"name": "BAAJA", "type": "policy", "aliases": ["《两党美国可负担与就业法案》", "《两党美国可负担与就业法案》BAAJA"], "confidence": 0.9, "evidence": ["参议院引入的《两党美国可负担与就业法案》(BAAJA)"]},
+        {"name": "Business Roundtable", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["Business Roundtable 声明"]},
+        {"name": "Earthjustice", "type": "organization", "aliases": ["环评组织"], "confidence": 0.8, "evidence": ["Earthjustice 等环保组织则指责这「掏空」了"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "参议院引入 BAAJA，加速能源项目审批以满足 AI 数据中心用电需求",
+          "summary": "《两党美国可负担与就业法案》收窄环评、把挑战诉讼限制在联邦法院、抬高撤销许可门槛，为 AI 数据中心用电加速新能源、输电网与油气项目审批；化石燃料与可再生能源行业罕见联手支持。",
+          "participants": [
+            {"name": "美国参议院", "type": "organization", "role": "subject"},
+            {"name": "BAAJA", "type": "policy", "role": "object"},
+            {"name": "Business Roundtable", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["核心是加速太阳农场、输电线、油气管道等能源项目审批"]
+        },
+        {
+          "type": "trend",
+          "label": "电力（而非 GPU）成为 AI 的下一个瓶颈，AI 功耗重塑美国能源政策",
+          "summary": "AI 数据中心的用电需求已强大到让传统对立的能源阵营在放松管制的立法里并肩，摩根士丹利重列英伟达为半导体首选说明瓶颈正从芯片转向电力、建设与融资。",
+          "participants": [
+            {"name": "BAAJA", "type": "policy", "role": "subject"},
+            {"name": "美国参议院", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["瓶颈正在从芯片转向电力、建设与融资"]
+        }
+      ],
+      "relations": [
+        {"source": "BAAJA", "target": "美国参议院", "type": "released_by", "weight": 0.9, "evidence": ["参议院引入的《两党美国可负担与就业法案》(BAAJA)"]},
+        {"source": "Earthjustice", "target": "BAAJA", "type": "opposes", "weight": 0.8, "evidence": ["Earthjustice 等环保组织则指责这「掏空」了"]}
+      ],
+      "metrics": [
+        {"name": "BAAJA 加速的项目类型", "value": "太阳农场、输电线、油气管道等"}
+      ],
+      "why_it_matters": "AI 功耗已经大到足以把传统上对立的化石燃料与可再生能源阵营撮合进同一部放松管制的立法，电力而非 GPU 被制度化确认为 AI 的下一个瓶颈，数据中心即电力需求从口号变成国会山每天都在讨价还价的议题。"
+    },
+    {
+      "article_id": "2026-10-11-9",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.97, "evidence": ["英伟达宣布与澳大利亚 NVIDIA 云伙伴"]},
+        {"name": "Sharon AI", "type": "company", "aliases": ["Sharon"], "confidence": 0.85, "evidence": ["Sharon AI 拟部署至多 6.8 万颗 GPU"]},
+        {"name": "IREN", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["伙伴包括 Firmus、Sharon AI、IREN、ResetData、Megaport、CDC、NEXTDC 与 AirTrunk"]},
+        {"name": "Megaport", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Megaport 则输出跨国互联"]},
+        {"name": "AirTrunk", "type": "company", "aliases": ["Airtrunk"], "confidence": 0.8, "evidence": ["AirTrunk 则扩充带直连芯片液冷的高性能 AI 机房壳层"]},
+        {"name": "NVIDIA DSX", "type": "product", "aliases": ["DSX AI 工厂", "DSX"], "confidence": 0.8, "evidence": ["容纳多代 NVIDIA DSX AI 工厂"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "英伟达与澳大利亚云伙伴扩张 AI 工厂版图，Sharon AI 拟部署至多 6.8 万颗 GPU",
+          "summary": "英伟达与 Firmus、Sharon AI、IREN、ResetData、Megaport、CDC、NEXTDC、AirTrunk 合作扩充土地、电力与机房壳层，Sharon AI 拟部署至多 6.8 万颗 GPU。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Sharon AI", "type": "company", "role": "partner"},
+            {"name": "IREN", "type": "company", "role": "partner"},
+            {"name": "NVIDIA DSX", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Sharon AI 拟部署至多 6.8 万颗 GPU"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "Sharon AI", "type": "partners_with", "weight": 0.85, "evidence": ["英伟达宣布与澳大利亚 NVIDIA 云伙伴"]},
+        {"source": "NVIDIA", "target": "IREN", "type": "partners_with", "weight": 0.8, "evidence": ["伙伴包括 Firmus、Sharon AI、IREN"]},
+        {"source": "NVIDIA", "target": "Megaport", "type": "partners_with", "weight": 0.8, "evidence": ["Megaport 则输出跨国互联"]},
+        {"source": "Sharon AI", "target": "NVIDIA", "type": "uses", "weight": 0.8, "evidence": ["Sharon AI 拟部署至多 6.8 万颗 GPU"]},
+        {"source": "NVIDIA DSX", "target": "NVIDIA", "type": "developed_by", "weight": 0.85, "evidence": ["容纳多代 NVIDIA DSX AI 工厂"]}
+      ],
+      "metrics": [
+        {"name": "Sharon AI 拟部署 GPU 数", "value": "至多 6.8 万颗"},
+        {"name": "参与扩张的云伙伴数", "value": "8 家"}
+      ],
+      "why_it_matters": "英伟达正把自己重写成「AI 工厂的钢板+电力+网络交钥匙方案」提供商，能源禀赋与本地化液冷基础设施成为「主权+附近算力」市场的新卡位，显卡销售之外的版图竞争由此展开。"
+    },
+    {
+      "article_id": "2026-10-11-10",
+      "entities": [
+        {"name": "LivSyn Robotics", "type": "company", "aliases": ["LivSyn", "LivSyn Robotics（北京）"], "confidence": 0.9, "evidence": ["北京 LivSyn Robotics 完成不低于 1 亿元人民币 A 轮"]},
+        {"name": "RUDA", "type": "tool", "aliases": ["Robotics Unified Device Architecture", "机器人统一设备架构"], "confidence": 0.85, "evidence": ["核心资产是名为 RUDA（Robotics Unified Device Architecture）平台的软件栈"]},
+        {"name": "浙江华方资管", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["新进入者为浙江华方资管、上海道禾长期投资与苏文电能科技"]},
+        {"name": "上海道禾长期投资", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["新进入者为浙江华方资管、上海道禾长期投资与苏文电能科技"]},
+        {"name": "苏文电能", "type": "company", "aliases": ["苏文电能科技"], "confidence": 0.85, "evidence": ["新进入者为浙江华方资管、上海道禾长期投资与苏文电能科技"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "LivSyn Robotics 完成亿元级 A 轮：RUDA 平台打通异构机器人到 AI 模型",
+          "summary": "北京 LivSyn Robotics 完成至少 1 亿元人民币 A 轮，浙江华方资管、上海道禾长期投资与苏文电能以可转换优先股入局；核心是 RUDA 平台把不同机器人设计桥接到 AI 模型。",
+          "participants": [
+            {"name": "LivSyn Robotics", "type": "company", "role": "subject"},
+            {"name": "浙江华方资管", "type": "company", "role": "funder"},
+            {"name": "上海道禾长期投资", "type": "company", "role": "funder"},
+            {"name": "苏文电能", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["北京 LivSyn Robotics 完成不低于 1 亿元人民币 A 轮"]
+        }
+      ],
+      "relations": [
+        {"source": "RUDA", "target": "LivSyn Robotics", "type": "developed_by", "weight": 0.9, "evidence": ["核心资产是名为 RUDA（Robotics Unified Device Architecture）平台的软件栈"]},
+        {"source": "浙江华方资管", "target": "LivSyn Robotics", "type": "invests_in", "weight": 0.85, "evidence": ["新进入者为浙江华方资管、上海道禾长期投资与苏文电能科技"]},
+        {"source": "上海道禾长期投资", "target": "LivSyn Robotics", "type": "invests_in", "weight": 0.85, "evidence": ["新进入者为浙江华方资管、上海道禾长期投资与苏文电能科技"]},
+        {"source": "苏文电能", "target": "LivSyn Robotics", "type": "invests_in", "weight": 0.85, "evidence": ["新进入者为浙江华方资管、上海道禾长期投资与苏文电能科技"]}
+      ],
+      "metrics": [
+        {"name": "LivSyn Robotics A 轮金额", "value": "不低于 1 亿元人民币"},
+        {"name": "RUDA 落地产线场景数", "value": "光模块插拔、电池组装、电子检测等"}
+      ],
+      "why_it_matters": "RUDA 走「设备层抽象层」路线，在上层 AI 与异构机器人硬件之间做统一适配层，谁先做出通用的「机-智桥接层」谁就可能成为机器人时代的 Android——不造机器人却定义模型如何进入物理世界。"
+    }
+  ]
+}

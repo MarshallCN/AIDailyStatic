@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-11",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "第 1 轮的硬伤（雅虎别名、FP-1 目标、trusted-access 拆分、runs_on 指向公司、compares_with/targets 误用）已全部修正，覆盖与证据质量良好。剩余问题集中在事件参与者 role 与关系类型的过度断言：3 号文把未官宣模型标成 launch/released_by，6、8 号文把被引用的硬件供应商/券商误标为 partner，1 号文用抽象话题实体作 targets 主体。",
+  "findings": [
+    {
+      "article_id": "2026-10-11-3",
+      "severity": "medium",
+      "problem": "事件 1 类型标为 launch、关系 gpt-rosalind-discovery --released_by--> OpenAI 断言了正式发布，但原文核心恰恰是「未官宣」——模型只是悄然出现在 OpenAI API 定价页，尚无博客文章、帮助文档或系统卡。launch/released_by 把「未官宣上线」误写成正式发布，与新闻主旨相反。",
+      "fix": "把该事件类型改为不表示正式发布的类型（如 research），或在 label/evidence 中明确「仅出现在定价页、未官宣」；删除 released_by 关系，或改为 listed_by 并注明「未官宣」。"
+    },
+    {
+      "article_id": "2026-10-11-6",
+      "severity": "medium",
+      "problem": "事件 1 participants 把 NVIDIA 标为 role \"partner\"——原文中 NVIDIA 只是模型运行其 B200 硬件的供应商，不存在 Amazon 与 NVIDIA 的合作关系，这与已抽取的 ALoDLM --runs_on--> NVIDIA B200 关系矛盾。",
+      "fix": "从事件 participants 移除 NVIDIA 的 partner 角色（保留 runs_on NVIDIA B200 关系即可），不要给纯硬件供应商添加 partner 角色。"
+    },
+    {
+      "article_id": "2026-10-11-8",
+      "severity": "medium",
+      "problem": "事件 2（trend）participants 把 Morgan Stanley 标为 role \"partner\"、NVIDIA 标为 role \"object\"——原文里 Morgan Stanley 只是被引用的券商（重列英伟达为半导体首选），不是 BAAJA 事件的参与方；NVIDIA 也不是 BAAJA 的 object。把被引用的分析方当作事件参与者会歪曲关系。",
+      "fix": "从该事件 participants 移除 Morgan Stanley 与 NVIDIA，或把 Morgan Stanley 改为 cites/references 类角色；不要把被引用的分析方当作事件的 partner/object。"
+    },
+    {
+      "article_id": "2026-10-11-1",
+      "severity": "medium",
+      "problem": "用话题实体「AI 加持网络攻击」作为三条 targets 关系（→Lawson / JR East / Times Car）的 source，把抽象话题拟物化为攻击主体；原文是这些公司遭网络攻击、客户记录泄露，话题实体不应作为 targets 关系的发起者。",
+      "fix": "删除这些以话题实体为 source 的 targets 边，或改用具体攻击事件/攻击者作主体；若保留，应改为「受影响」类关系而非 targets。"
+    },
+    {
+      "article_id": "2026-10-11-4",
+      "severity": "low",
+      "problem": "实体 Martin Casado 被抽取但没有任何关系——原文明确说他「将加入董事会」，缺失一条指向 TypeSafe 的边。",
+      "fix": "补一条 Martin Casado --affiliated_with--> TypeSafe 的关系（evidence 用「Martin Casado 将加入董事会」）。"
+    },
+    {
+      "article_id": "2026-10-11-1",
+      "severity": "low",
+      "problem": "关系 古川俊治 --affiliated_with--> 日本国家网络安全战略总部 依据不足：原文只说他以「网络安全大臣」身份称形势严峻，未表明他与 NCSH 有隶属关系。",
+      "fix": "删除该关系，或改为 evidence 能支撑的表述；原文未明确隶属关系时不要臆造 affiliation。"
+    }
+  ],
+  "lessons": [
+    "未官宣/悄然上线的模型不要用 launch 事件类型或 released_by 关系断言正式发布，应据原文「仅出现在定价页/文档、无官宣」的表述选择事件与关系。",
+    "事件 participants 里的 role 只能是该事件真正的参与者；被引用作分析佐证的第三方（券商、分析师、硬件供应商）不要标成 partner/object。",
+    "不要把抽象话题实体（如「AI 加持网络攻击」）当作 targets 关系的发起主体；targets 的 source 应是具体攻击者/事件，否则删除该边。"
+  ]
+}
