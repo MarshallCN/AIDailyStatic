@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:49:34Z",
+  "updated_at": "2026-10-12T06:10:20Z",
   "window_days": 30,
   "start_date": "2026-09-12",
   "end_date": "2026-10-11",
@@ -1811017,14 +1811017,14 @@
     },
     {
       "date": "2026-10-11",
-      "headline": "2026-10-11 的线索图显示 6 条可追踪主题：-Voice / 128GB Mac / 6.1 Astra / 722 篇数学论文；Alphabet / Babak Barazandeh / ChatGPT Dots / Chirantan Desai",
+      "headline": "「决策模型」被资本做成独立新品类、失控 agent 同日自曝成硬事实、算力竞速转到电力/建设/融资并被地缘打击打穿物理层、AI 数学「规模 vs 验证」裂痕引爆学界抵制——10/05–10/11 四条结构性主线",
       "theme_ids": [
-        "clue:264368bbe342",
-        "clue:20c1e5f0847d",
-        "clue:d413367e50e3",
-        "clue:c0892627889e",
-        "clue:83e33395cb9a",
-        "clue:34ee6ac09073"
+        "clue:unit-cost-and-frontier-2026w41",
+        "clue:agent-runaway-governance-2026w41",
+        "clue:open-source-china-cost-capital-2026w41",
+        "clue:agent-memory-architecture-2026w41",
+        "clue:china-speed-first-coding-agent-security-2026w41",
+        "clue:decision-model-race-2026w41"
       ]
     }
   ]
