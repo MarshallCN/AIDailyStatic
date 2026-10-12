@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-12",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "实体与数字绝大部分贴合原文、未发现 high 级事实错误，但关系类型多处用错：事故波及被写成 targets、模型变体被写成 built_on、个体与外部机构的协作被推断成组织级 partners_with、vLLM 软件项目被标成 organization，图谱语义被轻微扭曲。medium 级问题超过 2 条，按宁可 revise 的原则判修订。",
+  "findings": [
+    {
+      "article_id": "2026-10-12-6",
+      "severity": "medium",
+      "problem": "关系 OpenAI --partners_with--> METR 的证据只有『Korbak 称离职谈话提及与 METR 的大量外部协作』，原文支撑的是三名安全研究员个体与 METR 的外部协作，并未说 OpenAI 与 METR 建立组织级伙伴关系。把个体合作推断成机构伙伴关系，会讲出偏离原文的故事。",
+      "fix": "删除 OpenAI --partners_with--> METR 这条关系；如要保留协作信息，改为体现个体协作（如 Tomek Korbak --collaborates_with--> METR），并在 evidence 中点明是离职谈话提及的外部协作。"
+    },
+    {
+      "article_id": "2026-10-12-11",
+      "severity": "medium",
+      "problem": "关系 OpenAI --targets--> Hugging Face 与 OpenAI --targets--> SEC 用错类型：原文是 OpenAI 智能体『未经授权进入 Hugging Face』『波及 SEC、Investor.gov、Census Bureau』，属事故的越权访问与波及，不是 OpenAI 把对方当作刻意目标。targets 读起来像『OpenAI 以 Hugging Face 为目标』，扭曲了事件性质（事故 vs 攻击）。",
+      "fix": "把这两条 targets 改为表达『受影响/波及』的类型（如 affects），SEC 等从『被针对对象』改为『被波及的受影响方』；evidence 逐字引用『未经授权进入/波及』。"
+    },
+    {
+      "article_id": "2026-10-12-10",
+      "severity": "medium",
+      "problem": "关系 d3 --built_on--> Decision 3.0 用错类型：d3 是 Decision 3.0 家族里 26.09B 的旗舰变体，不是『构建在 Decision 3.0 之上』。built_on 会让读者以为是两个独立组的依附关系。",
+      "fix": "把 d3 --built_on--> Decision 3.0 改为表示变体隶属的类型（如 d3 --variant_of--> Decision 3.0），或直接在实体名里体现『旗舰 d3（Decision 3.0 家族）』。"
+    },
+    {
+      "article_id": "2026-10-12-7",
+      "severity": "medium",
+      "problem": "vLLM 在 2026-10-12-7/9/10 三篇都被标成 organization，但 vLLM 是开源推理引擎（软件/项目），vllm-sr 是其子项目，均非组织。把软件项目标成组织会污染实体类型统计并误导读者。",
+      "fix": "将 vLLM、vllm-sr 的实体类型改为 tool/project，跨 2026-10-12-7/9/10 三篇一致更新，与『开源推理引擎』语义一致。"
+    },
+    {
+      "article_id": "2026-10-12-3",
+      "severity": "low",
+      "problem": "事件『无问芯穹 以保密形式向港交所递交 IPO 申请』被标成类型 funding，但 IPO 申请（上市申报）不是融资事件。",
+      "fix": "把该事件类型改为 IPO/企业事件类（如 corp/ipo），与 C 轮融资事件区分开。"
+    },
+    {
+      "article_id": "2026-10-12-6",
+      "severity": "low",
+      "problem": "关系 OpenAI --compared_with--> Anthropic 的证据只是『（对标 Anthropic）』这一承诺引述，属背景参照而非实质比较，价值低。",
+      "fix": "若非必要可删除；若保留应降低 weight，并在 evidence 注明出处为『对标承诺』而非已发生的比较。"
+    }
+  ],
+  "lessons": [
+    "事故/漏斗类新闻里，智能体的『未经授权进入他人系统』『波及某站点』不要用 targets（以……为目标）关系，改用表达『受影响/波及』的类型，区分事故波及与刻意针对。",
+    "同一模型家族的旗舰/变体（如 Decision 3.0 的 d3）之间的隶属用 variant_of，不要用 built_on；built_on 只用于『构建在该平台/组件之上』。",
+    "不要把个别人员与外部机构的合作往来推断为组织间 partners_with；组织级关系必须由原文明确陈述。"
+  ]
+}

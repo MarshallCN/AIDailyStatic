@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-12",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "抽取整体结构完整、实体与数字基本对得上原文，无系统性幻觉；但存在多处过度推断：Alexandr Wang 与 Meta 的隶属关系无源文支撑、Red Hat/IBM/UC Berkeley 被仅凭「贡献者」三个字标成 partners_with、多个 trend/launch 事件把非当事人（被提到的同类、受访者）硬塞进 participants。",
+  "findings": [
+    {
+      "article_id": "2026-10-12-0",
+      "severity": "medium",
+      "problem": "关系 \"Alexandr Wang --affiliated_with--> Meta\"（weight 0.7）的 evidence 是 \"Scale AI 创始人 Alexandr Wang 重组 AI 业务后\"，但原文只在时间状语里指代\"自去年 8 月 Scale AI 创始人 Alexandr Wang 重组 AI 业务后\"，并未断言 Alexandr Wang 与 Meta 之间存在任何隶属/从属关系——这是把定语从句断章拼成事实，会让图谱额外读出「Alexandr Wang 与 Meta 有关」的错误故事。同源的实体 Alexandr Wang 本身也仅凭这一处笼统提及建立。",
+      "fix": "删除关系 \"Alexandr Wang --affiliated_with--> Meta\"。若保留 Alexandr Wang 实体，需源文明确表述其归属（本段没有），否则将该实体及其 affiliated_with 关系一并删除，别为了链接 Scale AI 而引入无源文支撑的 Meta 关联。"
+    },
+    {
+      "article_id": "2026-10-12-10",
+      "severity": "medium",
+      "problem": "三条关系 \"Red Hat --partners_with--> vllm-sr\"、\"IBM --partners_with--> vllm-sr\"、\"UC Berkeley --partners_with--> vllm-sr\" 的 evidence 都是 \"贡献者含 Red Hat、IBM、UC Berkeley\"。源文只把这三者列为项目贡献者/署名人，共同署名并不等于与 vllm-sr 建立正式合作关系，犯了「共同出现/共同署名 = 合作」的关系类型误用。",
+      "fix": "把这三条 partners_with 改为语义准确的 contributes_to（若类型表无此型则删除），不要用 partners_with 兜底。源文未给出三者与 vllm-sr 有合作关系的任何动作断言。"
+    },
+    {
+      "article_id": "2026-10-12-9",
+      "severity": "medium",
+      "problem": "事件 2（trend）\"决策模型成最热新品类\" 的 participants 把 Jev、Laya、vLLM、Decision 3.0 全部标成 role \"object\"，但它们只是被文中提到的同类/参照实体，并非该事件的参与者——事件参与者被语义无关的背景实体塞满。第 12 篇事件 2（trend）把 a16z 当 subject、Loops 当 object 同样是把一个「行业观察」伪装成有当事双方的动作；第 11 篇事件 1（launch）还把受访者 Clem Delangue、Ryan Greenblatt、Kevin Roose、Daniel Kokotajlo 当作纪录片 roll-out 的 object。",
+      "fix": "trend 事件的 participants 只保留真正执行的主体（第 9 篇即 Cloudflare），被提及的同类/参照主体（Jev、Laya、Decision 3.0 等）从 participants 移除，可降为 why_it_matters 的上下文；第 11 篇纪录片事件的受访者不要作为 participants 出现，只保留 Netflix 与《AI Gone Wild》。"
+    },
+    {
+      "article_id": "2026-10-12-9",
+      "severity": "low",
+      "problem": "对 Clef 同时抽了 \"Clef --developed_by--> Cloudflare\" 和 \"Clef --released_by--> Cloudflare\" 两条，evidence 同为 \"Cloudflare 开源其首个决策模型 Clef\"，属于同一事实的重复关系，稀释边质量。",
+      "fix": "仅保留 released_by（对应「开源发布」这一动作），developed_by 可并入 released_by 或删除其一，避免同一证据支撑两条同向关系。"
+    }
+  ],
+  "lessons": [
+    "trend/launch 等事件的 participants 只放真实执行主体和直接动作对象，被提到的同类、竞争者与受访者一律不要塞进 participants。",
+    "源文仅在定语从句或时间状语里提及某人（如「X 创始人 Y 重组业务后」）时，不要据此抽取 affiliated_with 等归属关系，需源文明确的归属断言。",
+    "源文只把机构列为项目贡献者/署名人时，用 contributes_to 而非 partners_with，共同署名不等于合作。"
+  ]
+}

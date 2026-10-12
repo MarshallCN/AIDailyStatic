@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T06:10:20Z",
+  "updated_at": "2026-10-12T22:51:44Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -788,13 +788,13 @@
       "period_id": "2026-W37",
       "period_type": "week",
       "start_date": "2026-09-07",
-      "end_date": "2026-09-11",
-      "summary": "2026-09-07 至 2026-09-11 期间，OpenAI、Anthropic、产业 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-09-12",
+      "summary": "2026-09-07 至 2026-09-12 期间，OpenAI、Anthropic、亿美元 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "Anthropic",
-        "产业",
-        "亿美元"
+        "亿美元",
+        "产业"
       ],
       "event_types": [
         "infra",
@@ -802,7 +802,7 @@
         "security"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、Anthropic、产业",
+        "核心实体：OpenAI、Anthropic、亿美元",
         "主事件类型：infra、launch"
       ],
       "representative_article_ids": [
