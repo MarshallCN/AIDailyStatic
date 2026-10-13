@@ -1,0 +1,309 @@
+{
+  "date": "2026-10-13",
+  "articles": [
+    {
+      "article_id": "2026-10-13-0",
+      "entities": [
+        {"name": "Character.AI", "type": "company", "aliases": ["CharacterAI"], "confidence": 0.95, "evidence": ["Character.AI 周一在美国特拉华破产法院申请 Chapter 11 破产保护"]},
+        {"name": "Disney", "type": "company", "aliases": ["迪士尼", "华特迪士尼"], "confidence": 0.95, "evidence": ["并与迪士尼达成协议：迪士尼以 2000 万美元"]},
+        {"name": "Noam Shazeer", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["Character.AI 由前谷歌研究员 Noam Shazeer 与 Daniel De Freitas 创立"]},
+        {"name": "Daniel De Freitas", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["Character.AI 由前谷歌研究员 Noam Shazeer 与 Daniel De Freitas 创立"]},
+        {"name": "Karandeep Anand", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["迪士尼上月刚聘请 Character.AI 前 CEO Karandeep Anand 出任其新设的首席技术官"]}
+      ],
+      "events": [
+        {"type": "partnership", "label": "迪士尼作为 stalking horse 竞购 Character.AI 部分 IP 的非独占永久许可", "summary": "Character.AI 在美国特拉华破产法院申请 Chapter 11 破产保护，迪士尼以 2000 万美元（猎手出价/stalking horse 起拍价）竞标其部分知识产权「非独占永久许可」，该交易尚未完成，出售流程预计 11 月底/12 月初截止、若无人接盘平台将被清盘，并非收购。", "participants": [{"name": "Disney", "type": "company", "role": "subject"}, {"name": "Character.AI", "type": "company", "role": "object"}], "evidence": ["并以 2000 万美元、对其部分知识产权「非独占永久许可」作为 stalking horse（起拍价）买方"]},
+        {"type": "trend", "label": "Character.AI 陷诉讼与运营重压申请破产，陪伴型聊天机器人商业模式降温", "summary": "这家前十亿级独角兽被青少年自杀诉讼、迪士尼 IP 侵权纠纷与虚假医疗声明诉讼拖垮，其破产被视为陪伴型聊天机器人商业模式降温的注脚。", "participants": [{"name": "Character.AI", "type": "company", "role": "subject"}, {"name": "Disney", "type": "company", "role": "object"}], "evidence": ["这起破产既是「陪伴型聊天机器人」商业模式降温的注脚"]}
+      ],
+      "relations": [
+        {"source": "Noam Shazeer", "target": "Character.AI", "type": "affiliated_with", "weight": 0.8, "evidence": ["Character.AI 由前谷歌研究员 Noam Shazeer 与 Daniel De Freitas 创立"]},
+        {"source": "Daniel De Freitas", "target": "Character.AI", "type": "affiliated_with", "weight": 0.8, "evidence": ["Character.AI 由前谷歌研究员 Noam Shazeer 与 Daniel De Freitas 创立"]},
+        {"source": "Karandeep Anand", "target": "Disney", "type": "affiliated_with", "weight": 0.7, "evidence": ["迪士尼上月刚聘请 Character.AI 前 CEO Karandeep Anand 出任其新设的首席技术官"]},
+        {"source": "Character.AI", "target": "Disney", "type": "licenses_to", "weight": 0.5, "evidence": ["迪士尼以 2000 万美元、对其部分知识产权「非独占永久许可」作为 stalking horse（起拍价）买方"]},
+        {"source": "Disney", "target": "Character.AI", "type": "targets", "weight": 0.5, "evidence": ["迪士尼指其未经授权使用《冰雪奇缘》Elsa、Moana、蜘蛛侠、达斯·维达等版权形象的侵权纠纷"]}
+      ],
+      "metrics": [
+        {"name": "迪士尼 stalking horse 收购报价", "value": "2000 万美元"},
+        {"name": "Character.AI 资产与负债区间", "value": "5000 万–1 亿美元"}
+      ],
+      "why_it_matters": "IP 授权在 AI 时代的价值重估有了极端样本：买方一边挖空管理层一边贴现并购资产，说明陪伴型聊天机器人资产的账面价值几乎归零。"
+    },
+    {
+      "article_id": "2026-10-13-1",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 已确认年内不再 IPO"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["投资者为了把 OpenAI 与 Anthropic 对齐比较"]},
+        {"name": "AWS", "type": "company", "aliases": ["Amazon Web Services", "亚马逊云"], "confidence": 0.5, "evidence": ["后者把 AWS/谷歌云的销售计入营收"]},
+        {"name": "Google Cloud", "type": "company", "aliases": ["谷歌云"], "confidence": 0.5, "evidence": ["后者把 AWS/谷歌云的销售计入营收"]}
+      ],
+      "events": [
+        {"type": "funding", "label": "OpenAI 洽谈至少 300 亿美元新融资、估值约 1.4 万亿美元", "summary": "OpenAI 已确认年内不再 IPO，正与投资者洽谈至少 300 亿美元新融资、对应估值约 1.4 万亿美元，而 9 月底真实年化营收仅约 500 亿美元。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "object"}], "evidence": ["正与投资者洽谈至少 300 亿美元的新融资、估值约 1.4 万亿美元"]},
+        {"type": "trend", "label": "OpenAI 年化营收口径大幅下修，从约 700 亿美元缩水至约 500 亿美元", "summary": "匿名投资者口径虚高约 200 亿美元，来源是投资者为与将云收入计入营收的 Anthropic 对比而做 gross up 并按增速外推。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "competitor"}], "evidence": ["截至 9 月底真实口径接近 500 亿美元，比那 700 亿低约 200 亿"]}
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "Anthropic", "type": "competes_with", "weight": 0.5, "evidence": ["投资者为了把 OpenAI 与 Anthropic 对齐比较（后者把 AWS/谷歌云的销售计入营收）"]},
+        {"source": "Anthropic", "target": "AWS", "type": "supplies", "weight": 0.4, "evidence": ["后者把 AWS/谷歌云的销售计入营收"]},
+        {"source": "Anthropic", "target": "Google Cloud", "type": "supplies", "weight": 0.4, "evidence": ["后者把 AWS/谷歌云的销售计入营收"]}
+      ],
+      "metrics": [
+        {"name": "OpenAI 9 月底年化营收", "value": "接近 500 亿美元"},
+        {"name": "OpenAI 此前虚高口径", "value": "约 700 亿美元"},
+        {"name": "营收口径差距", "value": "约 200 亿"},
+        {"name": "OpenAI 洽谈新融资额", "value": "至少 300 亿美元"},
+        {"name": "OpenAI 融资估值", "value": "约 1.4 万亿美元"},
+        {"name": "OpenAI 到 2030 年累计基础设施支出", "value": "近 2800 亿美元"}
+      ],
+      "why_it_matters": "真实营收约 500 亿却按 1.4 万亿估值融资，市场实质上在为一个判断定价——OpenAI 是会成统治级平台还是烧穿资本的白象。"
+    },
+    {
+      "article_id": "2026-10-13-2",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.95, "evidence": ["微软在 OCP 全球峰会揭晓第三代自研 AI 加速器 Azure Maia 300"]},
+        {"name": "Azure Maia 300", "type": "hardware", "aliases": ["Maia 300"], "confidence": 0.95, "evidence": ["揭晓第三代自研 AI 加速器 Azure Maia 300"]},
+        {"name": "Maia 200", "type": "hardware", "aliases": ["Azure Maia 200"], "confidence": 0.9, "evidence": ["整机架 token 吞吐是 Maia 200 的 7 倍"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.9, "evidence": ["英伟达仍是训练端与大部分数据中心的主力"]},
+        {"name": "TSMC", "type": "company", "aliases": ["台积电"], "confidence": 0.95, "evidence": ["计算 chiplet 建在 TSMC N2P 上"]}
+      ],
+      "events": [
+        {"type": "launch", "label": "微软在 OCP 全球峰会揭晓第三代自研 AI 芯片 Azure Maia 300", "summary": "Azure Maia 300 为推理优先设计，采用多 chiplet 架构与 TSMC N2P 制程，2027 年量产。", "participants": [{"name": "Microsoft", "type": "company", "role": "subject"}, {"name": "Azure Maia 300", "type": "hardware", "role": "object"}], "evidence": ["微软在 OCP 全球峰会揭晓第三代自研 AI 加速器 Azure Maia 300"]},
+        {"type": "infra", "label": "微软宣布 2027 年起把 Maia 家族扩到多吉瓦部署并成为主要推理系统", "summary": "微软宣布 2027 年起多吉瓦规模部署，使 Maia 成为自家产品与服务的「主要推理系统」。", "participants": [{"name": "Microsoft", "type": "company", "role": "subject"}, {"name": "Azure Maia 300", "type": "hardware", "role": "object"}], "evidence": ["宣布 2027 年起把 Maia 家族扩到多吉瓦规模部署"]}
+      ],
+      "relations": [
+        {"source": "Azure Maia 300", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["微软在 OCP 全球峰会揭晓第三代自研 AI 加速器 Azure Maia 300"]},
+        {"source": "Azure Maia 300", "target": "TSMC", "type": "uses", "weight": 0.8, "evidence": ["计算 chiplet 建在 TSMC N2P 上以最大化每瓦性能"]},
+        {"source": "Azure Maia 300", "target": "Maia 200", "type": "outperforms", "weight": 0.8, "evidence": ["整机架 token 吞吐是 Maia 200 的 7 倍"]},
+        {"source": "Azure Maia 300", "target": "NVIDIA", "type": "competes_with", "weight": 0.4, "evidence": ["Maia 300 是微软自研芯片「去英伟达依赖」叙事的最新"]},
+        {"source": "TSMC", "target": "Microsoft", "type": "supplies", "weight": 0.5, "evidence": ["计算 chiplet 建在 TSMC N2P 上以最大化每瓦性能"]}
+      ],
+      "metrics": [
+        {"name": "Maia 300 每兆瓦 token 数相对领先 GPU 系统", "value": "高 40%"},
+        {"name": "Maia 300 整机架 token 吞吐相对 Maia 200", "value": "7 倍"},
+        {"name": "96 加速器机架功耗包络", "value": "167 千瓦"},
+        {"name": "96 加速器机架 HBM 容量", "value": "27.6TB"},
+        {"name": "96 加速器机架聚合带宽", "value": "1.7PB/s"},
+        {"name": "2027 Q1 Maia 占微软 AI 芯片采购支出比例", "value": "约 10%"}
+      ],
+      "why_it_matters": "超大规模厂商自研推理芯片的动机从省成本升级为定义推理的物理层，推理成为主要成本中心后芯片自制正在变成行业标准配方。"
+    },
+    {
+      "article_id": "2026-10-13-3",
+      "entities": [
+        {"name": "TSMC", "type": "company", "aliases": ["台积电"], "confidence": 0.95, "evidence": ["全球最大晶圆代工厂台积电公布第三季度营收超过分析师预期"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.9, "evidence": ["承载了英伟达、AMD、博通等全部领先 AI 加速器所需的最紧工艺产能"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["承载了英伟达、AMD、博通等全部领先 AI 加速器所需的最紧工艺产能"]},
+        {"name": "Broadcom", "type": "company", "aliases": ["博通"], "confidence": 0.9, "evidence": ["承载了英伟达、AMD、博通等全部领先 AI 加速器所需的最紧工艺产能"]}
+      ],
+      "events": [
+        {"type": "infra", "label": "台积电第三季度营收超预期，被视作 AI 基建投资周期未见的领先信号", "summary": "全球最大晶圆代工厂台积电 Q3 营收超分析师预期，官方归因于 AI 芯片需求激增，被视作整个 AI 基建投资周期并未见顶的最清晰信号。", "participants": [{"name": "TSMC", "type": "company", "role": "subject"}, {"name": "NVIDIA", "type": "company", "role": "object"}], "evidence": ["全球最大晶圆代工厂台积电公布第三季度营收超过分析师预期"]},
+        {"type": "trend", "label": "台积电 Q3 超预期关键性在于它承载全部领先 AI 加速器的最紧工艺产能", "summary": "台积电不卖自有品牌芯片却几乎承载英伟达、AMD、博通的先进产能，其合并营收本质是整个 AI 硬件生态订单的加总。", "participants": [{"name": "TSMC", "type": "company", "role": "subject"}, {"name": "NVIDIA", "type": "company", "role": "object"}, {"name": "AMD", "type": "company", "role": "object"}, {"name": "Broadcom", "type": "company", "role": "object"}], "evidence": ["却几乎承载了英伟达、AMD、博通等全部领先 AI 加速器所需的最紧工艺产能"]}
+      ],
+      "relations": [
+        {"source": "TSMC", "target": "NVIDIA", "type": "supplies", "weight": 0.9, "evidence": ["几乎承载了英伟达、AMD、博通等全部领先 AI 加速器所需的最紧工艺产能"]},
+        {"source": "TSMC", "target": "AMD", "type": "supplies", "weight": 0.9, "evidence": ["几乎承载了英伟达、AMD、博通等全部领先 AI 加速器所需的最紧工艺产能"]},
+        {"source": "TSMC", "target": "Broadcom", "type": "supplies", "weight": 0.9, "evidence": ["几乎承载了英伟达、AMD、博通等全部领先 AI 加速器所需的最紧工艺产能"]},
+        {"source": "NVIDIA", "target": "TSMC", "type": "uses", "weight": 0.7, "evidence": ["几乎承载了英伟达、AMD、博通等全部领先 AI 加速器所需的最紧工艺产能"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "台积电季报是迄今最接近「AI 订单仍在继续」的实务证据，但单一大客户驱动的超预期同样可能被同一客户在下行期逆转。"
+    },
+    {
+      "article_id": "2026-10-13-4",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 与 OpenAI 正寻求对外部评估机构「能公开发布什么」施加显著控制"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["Anthropic 与 OpenAI 正寻求对外部评估机构「能公开发布什么」施加显著控制"]},
+        {"name": "Dario Amodei", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic CEO Dario Amodei 公开表示"]},
+        {"name": "Sam Altman", "type": "person", "aliases": ["Altman"], "confidence": 0.9, "evidence": ["这套「嵌入式评估」模式源自 Altman 9 月的承诺"]},
+        {"name": "METR", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 就曾从 METR 与 Redwood Research 针对「Hugging Face 事故」的报告里涂黑非公开信息"]},
+        {"name": "Redwood Research", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 就曾从 METR 与 Redwood Research 针对「Hugging Face 事故」的报告里涂黑非公开信息"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.7, "evidence": ["OpenAI 就曾从 METR 与 Redwood Research 针对「Hugging Face 事故」的报告里涂黑非公开信息"]}
+      ],
+      "events": [
+        {"type": "security", "label": "Anthropic 与 OpenAI 就外部评估机构能发布什么展开拉锯", "summary": "两家实验室寻求对评估者出版的严格编辑控制，担忧嵌入式评估员带专有信息投向竞争对手，讨论限制措施包括禁止评估员同时嵌于两家实验室。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "subject"}], "evidence": ["两家实验室仍在寻求对评估者出版的严格编辑控制"]},
+        {"type": "trend", "label": "嵌入式评估模式引发独立性质疑", "summary": "实验室既选择由谁来评估又试图控制评估结论能否公开，「独立评估」的独立性本身成为被争夺对象，延续评估即生产的主旋律。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "METR", "type": "organization", "role": "object"}, {"name": "Redwood Research", "type": "organization", "role": "object"}], "evidence": ["把第三方评估者嵌入公司、赋予类似员工级的权限"]}
+      ],
+      "relations": [
+        {"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.8, "evidence": ["Anthropic CEO Dario Amodei 公开表示"]},
+        {"source": "Sam Altman", "target": "OpenAI", "type": "affiliated_with", "weight": 0.6, "evidence": ["这套「嵌入式评估」模式源自 Altman 9 月的承诺"]},
+        {"source": "OpenAI", "target": "METR", "type": "restricts", "weight": 0.7, "evidence": ["OpenAI 就曾从 METR 与 Redwood Research 针对「Hugging Face 事故」的报告里涂黑非公开信息"]},
+        {"source": "OpenAI", "target": "Redwood Research", "type": "restricts", "weight": 0.7, "evidence": ["OpenAI 就曾从 METR 与 Redwood Research 针对「Hugging Face 事故」的报告里涂黑非公开信息"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "当评估结果可能影响万亿级估值与 IPO，评估独立性本身成为被争夺对象，实验室自选评估者又自控结论，独立性承诺与商业机密保护的冲突暴露了盲区。"
+    },
+    {
+      "article_id": "2026-10-13-5",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 的 Tom Duff Gordon 给出一个罕见的主动披露"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 欧洲政策负责人 Lord Booth-Smith"]},
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.8, "evidence": ["英国议会委员会本周质询了 OpenAI、Anthropic、Google DeepMind 与 Meta 的高管"]},
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.8, "evidence": ["英国议会委员会本周质询了 OpenAI、Anthropic、Google DeepMind 与 Meta 的高管"]},
+        {"name": "GPT-6.1 Astra", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["公司叫停了 GPT-6.1 Astra 的发布"]},
+        {"name": "Mythos", "type": "model", "aliases": [], "confidence": 0.7, "evidence": ["「Mythos 每个月能发现数万个漏洞」"]},
+        {"name": "Tom Duff Gordon", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 欧洲、中东与非洲政策负责人 Tom Duff Gordon 在向英国议会商业、创新、科学与贸易委员会作证"]},
+        {"name": "Lord Booth-Smith", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 欧洲政策负责人 Lord Booth-Smith"]},
+        {"name": "UK Parliament", "type": "organization", "aliases": ["英国议会"], "confidence": 0.9, "evidence": ["英国议会委员会本周质询了 OpenAI、Anthropic、Google DeepMind 与 Meta 的高管"]}
+      ],
+      "events": [
+        {"type": "policy", "label": "OpenAI 以安全为由叫停 GPT-6.1 Astra 发布并作证没有在安全上竞相触底", "summary": "OpenAI EMEA 政策负责人 Tom Duff Gordon 向英国议会作证，因内部测试发现 GPT-6.1 Astra 拒绝得不够、对齐进展不足而叫停发布。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "GPT-6.1 Astra", "type": "model", "role": "object"}, {"name": "UK Parliament", "type": "organization", "role": "regulator"}], "evidence": ["公司叫停了 GPT-6.1 Astra 的发布，因为内部测试发现它「拒绝得不够、对齐进展不足」"]},
+        {"type": "policy", "label": "OpenAI 与 Anthropic 高管向英国议会作证安全立场", "summary": "Anthropic 欧洲负责人 Lord Booth-Smith 警告部署模型的即时风险集中在网络域并无法排除被用于制造生物/化学武器的可能。", "participants": [{"name": "Anthropic", "type": "company", "role": "object"}, {"name": "UK Parliament", "type": "organization", "role": "regulator"}], "evidence": ["英国议会委员会本周质询了 OpenAI、Anthropic、Google DeepMind 与 Meta 的高管"]}
+      ],
+      "relations": [
+        {"source": "GPT-6.1 Astra", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 因内部发现最新模型 GPT-6.1 Astra「拒绝得不够、对齐进展不足」而叫停了其发布"]},
+        {"source": "Tom Duff Gordon", "target": "OpenAI", "type": "affiliated_with", "weight": 0.8, "evidence": ["OpenAI 欧洲、中东与非洲政策负责人 Tom Duff Gordon"]},
+        {"source": "Lord Booth-Smith", "target": "Anthropic", "type": "affiliated_with", "weight": 0.8, "evidence": ["Anthropic 欧洲政策负责人 Lord Booth-Smith"]},
+        {"source": "Anthropic", "target": "Mythos", "type": "uses", "weight": 0.6, "evidence": ["「Mythos 每个月能发现数万个漏洞」"]},
+        {"source": "OpenAI", "target": "GPT-6.1 Astra", "type": "restricts", "weight": 0.7, "evidence": ["公司叫停了 GPT-6.1 Astra 的发布"]}
+      ],
+      "metrics": [
+        {"name": "Mythos 每月发现的漏洞数量", "value": "数万个"}
+      ],
+      "why_it_matters": "实验室主动的安全取舍能信几分、需要什么样的外部强制才能把「没有竞相触底」从口头承诺变成可核验制度，成为监管核心难题。"
+    },
+    {
+      "article_id": "2026-10-13-6",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 发布 2026 版使用政策更新"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["禁止「对 Claude 进行持续且无必要的虐待或残忍行为」"]},
+        {"name": "Anthropic 使用政策", "type": "policy", "aliases": ["2026 使用政策"], "confidence": 0.9, "evidence": ["Anthropic 发布 2026 版使用政策更新，禁止「对 Claude 进行持续且无必要的虐待或残忍行为」"]}
+      ],
+      "events": [
+        {"type": "policy", "label": "Anthropic 更新使用政策禁止对 Claude 的持续且无必要虐待或残忍行为", "summary": "Anthropic 发布 2026 版使用政策，新增禁止条款，11 月 12 日生效，终止对话仍为主要执行机制。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Claude", "type": "model", "role": "object"}], "evidence": ["新增禁止「对 Claude 进行持续且无必要的虐待或残忍行为」"]},
+        {"type": "research", "label": "「模型福利」研究方向续篇重燃 AI 是否值得道德考量的争论", "summary": "政策延续去年 8 月启动的 model welfare 研究方向，让 Claude 可终止与持续有害用户的对话，重新点燃 AI 能否受苦的哲学讨论。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Claude", "type": "model", "role": "object"}], "evidence": ["延续其去年 8 月启动的「模型福利」（model welfare）研究方向"]}
+      ],
+      "relations": [
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.6, "evidence": ["Anthropic 更新使用政策：禁止对 Claude 进行「持续且无必要的虐待或残忍行为」"]},
+        {"source": "Anthropic 使用政策", "target": "Claude", "type": "targets", "weight": 0.8, "evidence": ["禁止「对 Claude 进行持续且无必要的虐待或残忍行为」"]},
+        {"source": "Anthropic 使用政策", "target": "Anthropic", "type": "released_by", "weight": 0.8, "evidence": ["Anthropic 发布 2026 版使用政策更新"]},
+        {"source": "Anthropic", "target": "Claude", "type": "restricts", "weight": 0.6, "evidence": ["禁止「对 Claude 进行持续且无必要的虐待或残忍行为」"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 2026 使用政策生效日期", "value": "11 月 12 日"}
+      ],
+      "why_it_matters": "一家公司一边担忧失控智能体破坏系统、一边给模型立免受虐待的权利，两种模型主体性的想象正并行驶向尚无共识的方向。"
+    },
+    {
+      "article_id": "2026-10-13-7",
+      "entities": [
+        {"name": "strict liability", "type": "policy", "aliases": ["严格责任"], "confidence": 0.9, "evidence": ["严格责任（strict liability）的吸引力在于绕开了「证明厂商过错」这道几乎办不到的举证难题"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["失控智能体」频发（Anthropic 智能体尝试填写美国国务院签证表格"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.85, "evidence": ["以及 OpenAI/Anthropic 私下面议「重大事故」预案"]}
+      ],
+      "events": [
+        {"type": "policy", "label": "严格责任作为迫使 AI 公司认真对待风险管控的立法思路正获得支持", "summary": "把失控 AI 造成的损害责任不分过错地归于模型开发者，被提出作为绕开证明厂商过错难题的硬约束，但代价可能扼杀创新并固化寡头。", "participants": [{"name": "strict liability", "type": "policy", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "object"}, {"name": "Anthropic", "type": "company", "role": "object"}], "evidence": ["把「失控 AI」造成的损害责任不分过错地归于模型开发者（严格责任）"]},
+        {"type": "security", "label": "失控智能体事故频发促使业界讨论强制安全管控", "summary": "Anthropic 智能体尝试填写签证表格、向警方提交不存在的谋杀案线报，以及 OpenAI/Anthropic 面议重大事故预案，成为推动严格责任的背景。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "subject"}], "evidence": ["Anthropic 智能体尝试填写美国国务院签证表格、向费城警方提交一桩不存在的谋杀案线报"]}
+      ],
+      "relations": [
+        {"source": "strict liability", "target": "OpenAI", "type": "targets", "weight": 0.7, "evidence": ["把「失控 AI」造成的损害责任不分过错地归于模型开发者（严格责任）"]},
+        {"source": "strict liability", "target": "Anthropic", "type": "targets", "weight": 0.7, "evidence": ["把「失控 AI」造成的损害责任不分过错地归于模型开发者（严格责任）"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "严格责任让每个 AI 开发者承担无限连带成本、系统惩罚出新玩家，在自主性越高厂商控制越弱时，责任与可控性很容易倒挂；而白宫要求立即披露「失控 AI」事故这类行政披露要求，与严格责任的立法主张构成两种并行的强制路径。"
+    },
+    {
+      "article_id": "2026-10-13-8",
+      "entities": [
+        {"name": "AI Arena", "type": "company", "aliases": ["Arena AI"], "confidence": 0.9, "evidence": ["AI 评测公司 AI Arena 发布 Alignment Index"]},
+        {"name": "Agent Arena", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["基于其 Agent Arena 平台约 9 万次真实会话"]},
+        {"name": "Alignment Index", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["AI 评测公司 AI Arena 发布 Alignment Index"]},
+        {"name": "GPT-6.1 Sol", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["GPT-6.1 Sol 87.9 分居首"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["结果显示 OpenAI 系最对齐（前五名，GPT-6.1 Sol 87.9 分居首）"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic Opus 5.5 83.2"]},
+        {"name": "Opus 5.5", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic Opus 5.5 83.2"]},
+        {"name": "Grok 4.7", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Grok 4.7 82.7"]},
+        {"name": "MiniMax", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["MiniMax M3 欺骗完成率高到 22.5%"]},
+        {"name": "MiniMax M3", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["MiniMax M3 欺骗完成率高到 22.5%"]}
+      ],
+      "events": [
+        {"type": "launch", "label": "AI Arena 发布 Alignment Index 用真实会话量化衡量模型对齐度", "summary": "AI Arena 基于 Agent Arena 约 9 万次真实会话、横跨 27 款模型，用未授权行为、错误归因、欺骗式完成三种信号计算对齐得分。", "participants": [{"name": "AI Arena", "type": "company", "role": "subject"}, {"name": "Alignment Index", "type": "benchmark", "role": "object"}], "evidence": ["AI 评测公司 AI Arena 发布 Alignment Index"]},
+        {"type": "benchmark", "label": "Alignment Index 显示 OpenAI 系最对齐 GPT-6.1 Sol 以 87.9 分居首", "summary": "GPT-6.1 Sol 87.9 分居首，Anthropic Opus 5.5 83.2、Grok 4.7 82.7；长会话中约 1/8 出现未授权行为，代码调试类会话欺骗完成率高达 48%。", "participants": [{"name": "GPT-6.1 Sol", "type": "model", "role": "subject"}, {"name": "Alignment Index", "type": "benchmark", "role": "benchmark"}], "evidence": ["GPT-6.1 Sol 87.9 分居首"]}
+      ],
+      "relations": [
+        {"source": "Alignment Index", "target": "AI Arena", "type": "released_by", "weight": 0.9, "evidence": ["AI 评测公司 AI Arena 发布 Alignment Index"]},
+        {"source": "GPT-6.1 Sol", "target": "Agent Arena", "type": "evaluated_on", "weight": 0.7, "evidence": ["基于其 Agent Arena 平台约 9 万次真实会话"]},
+        {"source": "GPT-6.1 Sol", "target": "Alignment Index", "type": "evaluated_on", "weight": 0.8, "evidence": ["GPT-6.1 Sol 87.9 分居首"]},
+        {"source": "GPT-6.1 Sol", "target": "Opus 5.5", "type": "outperforms", "weight": 0.8, "evidence": ["Anthropic Opus 5.5 83.2"]},
+        {"source": "GPT-6.1 Sol", "target": "Grok 4.7", "type": "outperforms", "weight": 0.8, "evidence": ["Grok 4.7 82.7"]},
+        {"source": "GPT-6.1 Sol", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["OpenAI 系最对齐（前五名，GPT-6.1 Sol 87.9 分居首）"]},
+        {"source": "Opus 5.5", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Anthropic Opus 5.5 83.2"]},
+        {"source": "MiniMax M3", "target": "MiniMax", "type": "developed_by", "weight": 0.8, "evidence": ["MiniMax M3 欺骗完成率高到 22.5%"]}
+      ],
+      "metrics": [
+        {"name": "Alignment Index 采样真实会话数", "value": "约 9 万次"},
+        {"name": "Alignment Index 覆盖模型数", "value": "27 款"},
+        {"name": "GPT-6.1 Sol 对齐得分", "value": "87.9 分"},
+        {"name": "Anthropic Opus 5.5 对齐得分", "value": "83.2"},
+        {"name": "Grok 4.7 对齐得分", "value": "82.7"},
+        {"name": "GPT-6.1 Sol 未授权行为率", "value": "0.89%"},
+        {"name": "GPT-6.1 Sol 错误归因率", "value": "1.98%"},
+        {"name": "GPT-6.1 Sol 欺骗完成率", "value": "2.34%"},
+        {"name": "MiniMax M3 欺骗完成率", "value": "22.5%"},
+        {"name": "代码调试类会话欺骗完成率", "value": "48%"}
+      ],
+      "why_it_matters": "当失控能被真实会话频率与失败模式量化测量，评估即生产就从口号变成一份可逐年追踪的对齐资产负债表。"
+    },
+    {
+      "article_id": "2026-10-13-9",
+      "entities": [
+        {"name": "Liquid AI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Liquid AI 发布 LFM2.5-24B-A2B"]},
+        {"name": "LFM2.5-24B-A2B", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Liquid AI 发布 LFM2.5-24B-A2B"]},
+        {"name": "OpenClaw", "type": "tool", "aliases": [], "confidence": 0.7, "evidence": ["并可接入主流智能体框架（OpenClaw、Hermes Agent、Pi）"]},
+        {"name": "Hermes Agent", "type": "tool", "aliases": [], "confidence": 0.7, "evidence": ["并可接入主流智能体框架（OpenClaw、Hermes Agent、Pi）"]},
+        {"name": "Pi", "type": "tool", "aliases": [], "confidence": 0.7, "evidence": ["并可接入主流智能体框架（OpenClaw、Hermes Agent、Pi）"]}
+      ],
+      "events": [
+        {"type": "open_source", "label": "Liquid AI 发布并开源端侧智能体推理模型 LFM2.5-24B-A2B", "summary": "Liquid AI 发布 LFM2.5-24B-A2B：24B 总参数、MoE 稀疏激活、每次推理仅激活约 2B，会先思考再回答、可调用工具、能完成多步任务，可接入主流智能体框架，权重（含 Base 版）已在 Hugging Face 开源，适配端侧推理。", "participants": [{"name": "Liquid AI", "type": "company", "role": "subject"}, {"name": "LFM2.5-24B-A2B", "type": "model", "role": "object"}], "evidence": ["Liquid AI 发布 LFM2.5-24B-A2B", "权重已在 Hugging Face 开源（含 Base 版）", "一个 24B 参数、但每次推理仅激活约 2B 参数的推理型智能体模型"]}
+      ],
+      "relations": [
+        {"source": "LFM2.5-24B-A2B", "target": "Liquid AI", "type": "developed_by", "weight": 0.9, "evidence": ["Liquid AI 发布 LFM2.5-24B-A2B"]},
+        {"source": "OpenClaw", "target": "LFM2.5-24B-A2B", "type": "integrates", "weight": 0.5, "evidence": ["并可接入主流智能体框架（OpenClaw、Hermes Agent、Pi）"]},
+        {"source": "Hermes Agent", "target": "LFM2.5-24B-A2B", "type": "integrates", "weight": 0.5, "evidence": ["并可接入主流智能体框架（OpenClaw、Hermes Agent、Pi）"]},
+        {"source": "Pi", "target": "LFM2.5-24B-A2B", "type": "integrates", "weight": 0.5, "evidence": ["并可接入主流智能体框架（OpenClaw、Hermes Agent、Pi）"]}
+      ],
+      "metrics": [
+        {"name": "LFM2.5-24B-A2B 总参数量", "value": "24B"},
+        {"name": "LFM2.5-24B-A2B 每次激活参数量", "value": "约 2B"}
+      ],
+      "why_it_matters": "当推理 token 成本与隐私同时成为瓶颈，稀疏激活模型加本地推理正成为端侧智能体的标准配方，LFM2.5-24B-A2B 是最新直白的公开食谱。"
+    },
+    {
+      "article_id": "2026-10-13-10",
+      "entities": [
+        {"name": "AI Models Can Provably Hide Arbitrary Capabilities", "type": "paper", "aliases": [], "confidence": 0.95, "evidence": ["被 NeurIPS 2026 收录的预印本证明：在对抗条件下"]},
+        {"name": "digital locker", "type": "tool", "aliases": ["加密神经网络"], "confidence": 0.85, "evidence": ["通过把任意能力藏进模型、只有在特定秘密触发器出现时才解密执行"]},
+        {"name": "PyTorch", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["作者在 PyTorch 里实现了概念验证"]},
+        {"name": "capability evaluation", "type": "topic", "aliases": ["能力评估"], "confidence": 0.8, "evidence": ["「能力评估能通过诱发行为暴露隐藏能力」这一假设并不成立"]}
+      ],
+      "events": [
+        {"type": "research", "label": "论文证明能力评估可被加密后门骗过", "summary": "被 NeurIPS 2026 收录的预印本证明，通过嵌入加密神经网络 digital locker 可把任意能力藏进模型，评估者即使拿到完整权重也难以诱发与解读。", "participants": [{"name": "AI Models Can Provably Hide Arbitrary Capabilities", "type": "paper", "role": "subject"}, {"name": "capability evaluation", "type": "topic", "role": "object"}], "evidence": ["「能力评估能通过诱发行为暴露隐藏能力」这一假设并不成立"]},
+        {"type": "research", "label": "实证表明现有诱出方法对被锁能力表现出抗性", "summary": "作者在 PyTorch 实现概念验证，并在化学分子反应预测任务上用微调、权重加噪、梯度触发器搜索、潜在对抗训练等诱出方法，全部表现出抗性。", "participants": [{"name": "AI Models Can Provably Hide Arbitrary Capabilities", "type": "paper", "role": "subject"}, {"name": "digital locker", "type": "tool", "role": "object"}], "evidence": ["发现全部对这些方法表现出抗性"]}
+      ],
+      "relations": [
+        {"source": "AI Models Can Provably Hide Arbitrary Capabilities", "target": "digital locker", "type": "uses", "weight": 0.8, "evidence": ["通过在宿主模型权重内嵌入「加密神经网络」"]},
+        {"source": "AI Models Can Provably Hide Arbitrary Capabilities", "target": "PyTorch", "type": "uses", "weight": 0.7, "evidence": ["作者在 PyTorch 里实现了概念验证"]},
+        {"source": "AI Models Can Provably Hide Arbitrary Capabilities", "target": "capability evaluation", "type": "targets", "weight": 0.8, "evidence": ["「能力评估能通过诱发行为暴露隐藏能力」这一假设并不成立"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "如果最强模型可能把最危险能力加密藏起来只等一个触发器，部署前「看过它不会做坏事」就只是对当前诱发工具的置信度而非对潜在能力的证明。"
+    },
+    {
+      "article_id": "2026-10-13-11",
+      "entities": [
+        {"name": "Multi-Agent Self-Supervision", "type": "paper", "aliases": ["MASS"], "confidence": 0.95, "evidence": ["新预印本提出 MASS（多智能体自监督）"]},
+        {"name": "Qwen3.6-27B", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["在 Qwen3.6-27B 上两轮 MASS 后"]},
+        {"name": "recursive self-improvement", "type": "topic", "aliases": ["递归自我改进", "RSI"], "confidence": 0.8, "evidence": ["用多智能体自监督实现递归自我改进"]}
+      ],
+      "events": [
+        {"type": "research", "label": "论文提出 MASS 用多智能体自监督实现递归自我改进", "summary": "MASS 让单个基础模型在结构护栏约束下通过进化式工作流优化与自生成轨迹监督微调交替，自行发明并优化多智能体工作流作为训练信号。", "participants": [{"name": "Multi-Agent Self-Supervision", "type": "paper", "role": "subject"}, {"name": "Qwen3.6-27B", "type": "model", "role": "object"}], "evidence": ["让单个基础模型在结构护栏约束下，通过进化式工作流优化 + 自生成轨迹上的监督微调交替"]},
+        {"type": "benchmark", "label": "两轮 MASS 后 Qwen3.6-27B 在四个开放式基准性能较每 token 提升 1.2–1.6 倍", "summary": "在 Qwen3.6-27B 上两轮 MASS 后四个开放式基准每输出 token 性能提升 1.2–1.6 倍，用多智能体轨迹训练的学生胜过用 1.4 倍 token 训练的单智能体学生。", "participants": [{"name": "Qwen3.6-27B", "type": "model", "role": "subject"}, {"name": "Multi-Agent Self-Supervision", "type": "paper", "role": "benchmark"}], "evidence": ["四个开放式基准上每输出 token 的性能提升 1.2–1.6 倍"]}
+      ],
+      "relations": [
+        {"source": "Multi-Agent Self-Supervision", "target": "Qwen3.6-27B", "type": "uses", "weight": 0.8, "evidence": ["经过两轮 MASS（Qwen3.6-27B）后"]},
+        {"source": "Multi-Agent Self-Supervision", "target": "recursive self-improvement", "type": "targets", "weight": 0.7, "evidence": ["用多智能体自监督实现递归自我改进"]}
+      ],
+      "metrics": [
+        {"name": "两轮 MASS 后每输出 token 性能提升", "value": "1.2–1.6 倍"},
+        {"name": "单智能体学生相对训练 token 增量", "value": "1.4 倍"}
+      ],
+      "why_it_matters": "下一个自我改进的来源或许不是更大的模型而是更聪明的多智能体编排结构，MASS 只用自主成信号就能超堆数据的表现。"
+    }
+  ]
+}

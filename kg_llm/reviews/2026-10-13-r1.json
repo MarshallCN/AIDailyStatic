@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-13",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "实体与事件抽取总体扎实、证据链完整，但存在若干关系指派错误与事件重复切分：把托管平台 Hugging Face 误当作发布主体（released_by）、把「协同一致」写成 competes_with、把议会质询写成 regulates、把叙事预期写成 replaces，均属证据不支撑关系类型的语义错。",
+  "findings": [
+    {
+      "article_id": "2026-10-13-9",
+      "severity": "high",
+      "problem": "关系 \"LFM2.5-24B-A2B --released_by--> Hugging Face\" 把发布主体指派错了。原文「权重已在 Hugging Face 开源」，发布者/开源者是 Liquid AI，Hugging Face 只是托管平台，并非发布方。这条关系读出来是「Hugging Face 发布了 LFM2.5」，与事实相反。",
+      "fix": "删除 \"LFM2.5-24B-A2B --released_by--> Hugging Face\"。若需保留平台信息，改用指向明确的类型（如 hosted_on），且 evidence 要写明「权重已在 Hugging Face 开源」；模型本身的发布主体已由 \"LFM2.5-24B-A2B --developed_by--> Liquid AI\" 表达，无需再指向 HF。"
+    },
+    {
+      "article_id": "2026-10-13-9",
+      "severity": "medium",
+      "problem": "三个关系 \"LFM2.5-24B-A2B --uses--> OpenClaw / Hermes Agent / Pi\" 方向与类型不准确。原文是模型「可接入主流智能体框架」，逻辑上是这些框架可加载/调用 LFM2.5，而非模型『使用』框架；按当前方向读出来是模型在用框架，语义倒置。",
+      "fix": "改成框架集成/兼容关系而非 uses：例如 \"LFM2.5-24B-A2B --integrates_with--> OpenClaw\"（以及 Hermes Agent、Pi），evidence 保留「可接入主流智能体框架（OpenClaw、Hermes Agent、Pi）」。若类型表无 integrates_with，可删除这三条低质关系而非强用 uses。"
+    },
+    {
+      "article_id": "2026-10-13-9",
+      "severity": "medium",
+      "problem": "事件切分重复：`open_source`（在 Hugging Face 开源）与 `launch`（发布 24B/2B 端侧推理模型）两个事件描述的是同一次发布动作的两个侧面，被拆成两个互相重复的事件，违背「一个动作不拆成多个」原则。",
+      "fix": "合并为单一事件，主标签以「发布/开源 LFM2.5-24B-A2B」为准，把参数（24B 总、约 2B 激活、MoE、端侧、可接入框架、HF 开源含 Base 版）全部并入该事件的 summary 与 metrics，去掉重复的事件对象。"
+    },
+    {
+      "article_id": "2026-10-13-4",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --competes_with--> OpenAI\"（weight 0.4）的 evidence 是「两家实验室仍在寻求对评估者出版的严格编辑控制」——这句描述的是两方立场一致、协同施压，不是竞争。共同参与同一议题不等于竞争关系，属「提到了」当「竞争」。",
+      "fix": "删除该关系或改写为能由证据支撑的类型（如 Anthropic --cooperates_with--> OpenAI，若有该类型）；不要用「同为 AI 实验室所以必然竞争」的常识代替证据。"
+    },
+    {
+      "article_id": "2026-10-13-5",
+      "severity": "medium",
+      "problem": "四条关系 \"UK Parliament --regulates--> OpenAI / Anthropic / Google DeepMind / Meta\" 把议会委员会的『质询/作证』直接当成监管关系。被委员会质询并作证不等于被监管，这里没有发布任何监管决定，regulates 类型用得过强。",
+      "fix": "将 regulates 降级为能表达调查/质询的类型（如 investigates、scrutinizes，或 UK Parliament --questions--> 各公司）；若无合适类型，删除这些关系，把「委员会质询四家高管」放回事件 summary 即可，不必强行造边。"
+    },
+    {
+      "article_id": "2026-10-13-2",
+      "severity": "medium",
+      "problem": "关系 \"Azure Maia 300 --replaces--> NVIDIA\"（weight 0.5）的证据是「去英伟达依赖的叙事」，且同一篇原文明确说「英伟达仍是训练端与大部分数据中心的主力」「2027 Q1 Maia 至多占微软 AI 芯片采购支出约 10%」。replaces 被原文直接否认，属把叙事/预期当既定事实。",
+      "fix": "删除 replaces 关系；如需保留竞争或消歧信息，改为更弱的表述（如 Azure Maia 300 --competes_with--> NVIDIA，evidence 引用「去英伟达依赖叙事」），并明确这是叙事而非已经发生的替代。"
+    }
+  ],
+  "lessons": [
+    "区分发布主体与托管平台：模型/权重由研发公司发布（released_by 研发方），平台只负责托管，不要把 Hugging Face、HuggingFace Hub 之类的托管平台写成发布主体。",
+    "关系类型必须由所引证据内容决定：证据若描述两方协同一致，就不写 competes_with；议会质询/作证、白宫要求披露这类行为不构成 regulates，应改用 investigates/scrutinizes 或干脆不建边。",
+    "不要把叙事、预期或假设当成已发生事实建立关系（如命名为 replaces、outperforms 时，要确认原文确实断言了该结果，而不仅是某方声称的愿景）。"
+  ]
+}

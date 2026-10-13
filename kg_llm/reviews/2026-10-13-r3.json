@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-13",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "抽取整体扎实、证据充分，但存在一处 high 级关系方向/类型错误：2026-10-13-1 把 Anthropic 写成 AWS 与谷歌云的供应方，与被供应的事实完全相反；另有几处事件/关系类型误用。",
+  "findings": [
+    {
+      "article_id": "2026-10-13-1",
+      "severity": "high",
+      "problem": "关系 \"Anthropic --supplies--> AWS\" 与 \"Anthropic --supplies--> Google Cloud\" 方向与类型都错了。原文说 Anthropic「把 AWS/谷歌云的销售计入营收」（即 Anthropic 运行在 AWS/谷歌云上，因 gross-up 对比而把云营收计入自家营收）——是云方为 Anthropic 提供算力，而非 Anthropic 供应云方。现写法读成「Anthropic 供应 AWS」，是把被供应当成供应方，图会讲出相反的事实。",
+      "fix": "反转并改类型：改为 \"AWS --supplies--> Anthropic\" 与 \"Google Cloud --supplies--> Anthropic\"（云方提供算力），或保留方向改 \"Anthropic --uses--> AWS\" / \"Anthropic --uses--> Google Cloud\"（Anthropic 使用云）。不要把「把云收入计入营收」这一会计口径当作供应关系。"
+    },
+    {
+      "article_id": "2026-10-13-0",
+      "severity": "medium",
+      "problem": "第一个事件 type=\"partnership\"，但内容是 Chapter 11 破产下迪士尼作为 stalking horse（起拍方）对 Character.AI 部分 IP 非独占永久许可的竞购，这是破产资产出售/许可交易，不是合作关系。事件类型会把该报道带进「合作」语义网络。",
+      "fix": "该事件类型改为 sale/restructuring/licensing 一类交易或重组类型（如 \"restructuring\" 或 \"licensing\"），删除 partnership；label 与 summary 中「竞购」「并非收购」的表意保留即可。"
+    },
+    {
+      "article_id": "2026-10-13-6",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --restricts--> Claude\" 语义错位：该项政策禁止的是「用户对 Claude 持续且无必要的虐待或残忍行为」，约束的是用户行为，不是限制 Claude 模型本身。现写法读成 Anthropic 限制 Claude，与原文相反。",
+      "fix": "删除 \"Anthropic --restricts--> Claude\"（已有 \"Anthropic 使用政策 --targets--> Claude\" 表达正确语义）；如保留需明确对象为用户行为，例如改为 \"Anthropic 使用政策 --restricts--> 用户对 Claude 的虐待行为\"（需新建恰当实体），否则直接删除。"
+    },
+    {
+      "article_id": "2026-10-13-9",
+      "severity": "medium",
+      "problem": "三条关系 \"OpenClaw/Hermes Agent/Pi --integrates--> LFM2.5-24B-A2B\" 方向与原文相反：原文是「模型可接入主流智能体框架（OpenClaw、Hermes Agent、Pi）」，即模型接入框架；现写法读成框架去集成模型，虽语义可通但方向倒置。",
+      "fix": "统一反转方向为 \"LFM2.5-24B-A2B --integrates--> OpenClaw\"（Hermes Agent、Pi 同），并改证据措辞以体现「模型接入框架」；或改用中性 relation（如 compatible_with）以避免方向歧义。"
+    }
+  ],
+  "lessons": [
+    "云厂商与 AI 实验室之间的 supplies 方向以真实依赖为准：模型运行在云上时写「云厂商--supplies-->实验室」或「实验室--uses-->云」，不要把被供应当成供应方，「把云收入计入营收」是会计口径而非供应关系。",
+    "破产、资产出售、竞拍（Chapter 11、stalking horse、IP 许可出售）类交易不要用 partnership 事件类型，改用 sale/restructuring/licensing 等交易或重组类型。",
+    "用 restricts 时先分清被限制的对象：政策禁止「用户虐待模型」约束的是用户行为而非限制模型本身，限制模型发布与限制模型运行是不同的语义，不要混用同一关系类型。",
+    "「模型可接入某框架」时 integrates 方向应为「模型--integrates-->框架」，不要写成框架集成模型；存在方向歧义时改用 compatible_with 等中性关系。"
+  ]
+}

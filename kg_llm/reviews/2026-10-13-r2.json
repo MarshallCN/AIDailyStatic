@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-13",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "整体结构完整、证据大多可追踪，但存在一处会把图谱讲歪故事的事实性错误：把迪士尼仅以 2000 万美元竞购 Character.AI 部分 IP 的「非独占永久许可」（stalking horse 出价）直接标成了 acquires/收购。另有三处中等级问题：文章1 的 AWS/谷歌云 supplies 关系方向与收入归因不符、文章6 的 developed_by 用不相关证据支撑、文章7 的 White House regulates 基于转引来源且类型过强。",
+  "findings": [
+    {
+      "article_id": "2026-10-13-0",
+      "severity": "high",
+      "problem": "关系 \"Disney --acquires--> Character.AI\"（weight 0.9）且事件类型标为 acquisition，但原文事实并非收购：迪士尼是以 2000 万美元作为 stalking horse（起拍底价）买方，竞购的是 Character.AI「部分知识产权的非独占永久许可」，出售流程尚未完成（11 月底/12 月初才结束，无人接盘将清盘）。acquires 会让图谱讲出一个不存在的「迪士尼收购了 Character.AI」故事。",
+      "fix": "把该关系改为反映许可交易而非公司并购的类型与方向，例如 \"Disney --bids_for--> Character.AI\" 或 \"Disney --licenses_from--> Character.AI\"，weight 调低并注明 stalking horse/未完成；事件类型从 acquisition 改为如 \"deal\" 或明确写为「stalking horse 竞购 IP 许可」，不要在标签或承接中暗示已完成的收购。"
+    },
+    {
+      "article_id": "2026-10-13-1",
+      "severity": "medium",
+      "problem": "关系 \"AWS --supplies--> Anthropic\" 与 \"Google Cloud --supplies--> Anthropic\" 的类型/方向与原文收入归因不符。证据是「(Anthropic) 把 AWS/谷歌云的销售计入营收」——即 Anthropic 的模型经由 AWS/谷歌云渠道销售的营收被计入 Anthropic 名下，属销售渠道关系，不是 AWS/谷歌云向 Anthropic 供货（supplies）。supplies 方向会把图意读反。",
+      "fix": "改用反映销售渠道的关系，比如 \"Anthropic --sells_through--> AWS\"、\"Anthropic --sells_through--> Google Cloud\"（或 \"AWS --resells--> Anthropic\"），并让 evidence 明确指出这是营收归因（模型经云平台销售），而不是云厂商供应算力。"
+    },
+    {
+      "article_id": "2026-10-13-6",
+      "severity": "medium",
+      "problem": "关系 \"Claude --developed_by--> Anthropic\" 的 evidence 写的是「Anthropic 每年更新一次使用政策，今年的版本大多数变更旨在澄清既有规则」，这句话并不能支撑 developed_by（Claude 由 Anthropic 开发）这个断言——证据存在但支撑的是另一回事。",
+      "fix": "换用真正支撑该断言的证据（如原文指 Anthropic 发布关于其模型 Claude 的政策、Claude 为 Anthropic 的模型），或直接删掉这条关系，避免用无关句子当 developed_by 的佐证。"
+    },
+    {
+      "article_id": "2026-10-13-7",
+      "severity": "medium",
+      "problem": "关系 \"White House --regulates--> Anthropic\" / \"--regulates--> OpenAI\"（weight 0.5）依据的是文末「参考来源」里转引的第二手报道（Reuters/BBC 关于白宫要求披露失控 AI 事故），并非本文论述主体；且把「要求披露事故」的行政要求标成 regulates 类型过强。",
+      "fix": "把关系类型从 regulates 弱化为反映披露要求的具体类型（如 \"mandates_disclosure_from\"），或删除并把白宫披露要求仅保留在 why_it_matters/摘要层面，避免把转引背景当成本文直接确认的监管关系。"
+    }
+  ],
+  "lessons": [
+    "破产/底价交易中，仅以 stalking horse 出价竞购某项 IP 的非独占永久许可并非收购，不要用 acquires/acquisition，改用 bids_for 或 licenses_from 并标注交易未完成。",
+    "模型营收计入通过云厂商渠道的销售额时，关系是模型厂商 sells_through 云厂商（或云厂商 resells），不要反向写成云厂商 supplies 模型厂商。",
+    "关系的 evidence 必须直接支撑该关系声明的事实本身，不能用文中陈述另一件事的句子（如年度政策更新）来佐证 developed_by 这类关系。"
+  ]
+}
