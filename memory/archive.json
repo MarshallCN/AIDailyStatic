@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T00:56:43Z",
+  "updated_at": "2026-10-15T22:36:43Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -817,22 +817,22 @@
       "period_id": "2026-W38",
       "period_type": "week",
       "start_date": "2026-09-14",
-      "end_date": "2026-09-14",
-      "summary": "2026-09-14 至 2026-09-14 期间，产业、NVIDIA、发布 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-09-15",
+      "summary": "2026-09-14 至 2026-09-15 期间，产业、NVIDIA、Dario Amodei 主要围绕 launch、infra 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "产业",
         "NVIDIA",
-        "发布",
-        "NVIDIA RTX GPU"
+        "Dario Amodei",
+        "Salesforce"
       ],
       "event_types": [
-        "infra",
         "launch",
-        "research"
+        "infra",
+        "trend"
       ],
       "trend_signals": [
-        "核心实体：产业、NVIDIA、发布",
-        "主事件类型：infra、launch"
+        "核心实体：产业、NVIDIA、Dario Amodei",
+        "主事件类型：launch、infra"
       ],
       "representative_article_ids": [
         "2026-09-14-0",

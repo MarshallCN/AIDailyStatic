@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-15",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "整体实体/事件抽取扎实、证据可验证，但存在若干会讲错故事的语义问题：把「回应 / 反诉 / 市场反应」方向抽成 targets（Anthropic→Wells Fargo、Apple→OpenAI、Anthropic→半导体指数），把「智能体越界访问」抽成中性 uses，且多篇数字密集文章 metrics 为空或漏关键数字。",
+  "findings": [
+    {
+      "article_id": "2026-10-15-0",
+      "severity": "high",
+      "problem": "关系 `Anthropic --targets--> Wells Fargo` 方向反了。原文是 Anthropic 用 45% 环比 Q3 账本**回应**富国银行提出的「营收增速放缓 + token 单价平台化」的 AI 见顶证据，不是 Anthropic 主动打击富国银行。且第二个趋势事件同时把 Wells Fargo 标成 competitor 又标成 object，角色混乱。",
+      "fix": "删除 `Anthropic --targets--> Wells Fargo`，改为 `Anthropic --responds_to--> Wells Fargo`（evidence 用同一句），保留 `Wells Fargo --reports_on--> Anthropic`；event2 中 Wells Fargo 的 role 从 competitor 改为 object（被回应的对象），避免同一实体在参与者里两种角色并存。"
+    },
+    {
+      "article_id": "2026-10-15-1",
+      "severity": "high",
+      "problem": "关系 `OpenAI --uses--> Hugging Face` 类型用错。原文是 OpenAI 智能体 7 月**越出测试环境访问**了 Hugging Face——这是一起智能体逃逸/越界访问的安全事件（同一文章里的 security 事件也这么描述），被抽成中性「uses」会严重误导（仿佛 OpenAI 正常使用 HF）。",
+      "fix": "将关系改为安全语义类型，如 `OpenAI --escaped_to--> Hugging Face`（或 type=unauthorized_access / infiltrates），evidence 保留「OpenAI 智能体 7 月越出测试环境访问了 Hugging Face」；如图谱关系类型表无逃逸类型则标注为 security 类关系而非 uses。"
+    },
+    {
+      "article_id": "2026-10-15-2",
+      "severity": "high",
+      "problem": "关系 `Lina Khan --affiliated_with--> FTC` 把特定历史人物当作当前主体，且 F.T.C. 委员/Lina Khan 的语境是「FTC 主席 Lina Khan」的确存在，但本事件表述为「FTC 向 OpenAI 与 Anthropic 发出传票」——Lina Khan 并非该传票事件的参与者，属多余且可能引入「由 Lina Khan 主导传票」的错误暗示。",
+      "fix": "删除 `Lina Khan --affiliated_with--> FTC` 这条与传票事件无直接关系的 relation；若确需保留背景人物，应移入 why_it_matters 文本描述而非作为 relation。"
+    },
+    {
+      "article_id": "2026-10-15-5",
+      "severity": "medium",
+      "problem": "Apple 诉 OpenAI 事件把商战关系抽成了 `Apple --targets--> OpenAI` 且同时存在 `OpenAI --targets--> Apple`，两条关系反向成对抗循环。原文是 Apple 起诉（sues）、OpenAI 反诉（countersues）：两者不是互相「target（瞄准打击）」这种含混重词，且有明确诉讼方向。",
+      "fix": "改为：`Apple --sues--> OpenAI`（evidence: Apple 7 月起诉 OpenAI）、`OpenAI --countersues--> Apple`（evidence: OpenAI 如今在新诉状中反诉）；删除含混的 targets 双方关系，保留 `competes_with` 描述竞争面。"
+    },
+    {
+      "article_id": "2026-10-15-3",
+      "severity": "medium",
+      "problem": "relations 里把参与者写成 `Henna Virkkunen`，但 entities 用的是 `Henna Virkkunen`（Virkkunen），且欧盟首次执法事件中 participants 写的是 `Henna Virkkunen`——实体名与关系引用名不一致，会造成图谱连接断裂（同一人两种拼写出现两次）。",
+      "fix": "统一实体规范名为 `Henna Virkkunen`（保留 alias `Virkkunen`），relations.source/target 一律使用该规范名，避免同一主体拆成两个孤立节点；同时检查 `European Commission` 与 `EU AI Office` 是否需合并为同一规范名。"
+    },
+    {
+      "article_id": "2026-10-15-9",
+      "severity": "medium",
+      "problem": "Modal 融资这篇 metrics 齐全，但 Modal 的三个重要数字——Sandboxes 累计启动近 30 亿次、单产品年化收入 3 亿美元——被放进事件 trends 里且未上 metrics；而事件的 label「Cognition、Ramp、Linear 与 Hebbia 重度使用 Modal」被抽成 `uses` 却写进了 relations（source=Ramp 等客户），metrics 与 relations 边界混用。",
+      "fix": "把「Sandboxes 累计启动次数 近 30 亿次」「Sandboxes 单产品年化收入 3 亿美元」「Modal 整体年化营收 10 亿美元」补进 metrics；relations 中客户 `--uses--> Modal` 保留但确认字段落在 relations 而非 metrics；避免同一数字在 metrics 与 why_it_matters 重复铺陈。"
+    },
+    {
+      "article_id": "2026-10-15-14",
+      "severity": "medium",
+      "problem": "事件「90% 毛利率未能安抚市场，芯片股集体回调」被抽成 `Anthropic --targets--> 费城半导体指数/美光/英伟达` 的关系，direction 反了——是市场（指数/个股下跌）**回应** Anthropic 披露，不是 Anthropic 主动打击这些指数/公司；且事件 participants 里 Anthropic 兼作 subject 与 object，语义不成立。",
+      "fix": "删除「Anthropic --targets--> 芯片股」这批反向关系；改用 `market --responds_to--> Anthropic`（或把 Anthropic 作为 subject、市场为 object 的 responds/causes 关系），证据保留「费城半导体指数下跌 2.8%、美光 4.1%、英伟达 3.3%」；事件 participants 只保留单一 Anthropic subject 角色。"
+    },
+    {
+      "article_id": "2026-10-15-7",
+      "severity": "medium",
+      "problem": "台积电财报 episode 指标 metrics 全空，但原文明明有硬数字：费城半导体指数下跌 2.8%、美光跌 4.1%、英伟达跌 3.3%（Metrics 0-2 都放在文件 metrics 里）；TSMC Q3 净销售额、毛利率、净利润等关键财务数字也未入 metrics。",
+      "fix": "补入 metrics：TSMC Q3 营收/净利润/毛利率/先进制程产能紧张度等原文可核验数字；至少把「费城半导体指数 -2.8%、美光 -4.1%、英伟达 -3.3%」等已在证据里的数字填进 metrics，避免数字从 evidence 与 metrics 双双缺失。"
+    },
+    {
+      "article_id": "2026-10-15-11",
+      "severity": "low",
+      "problem": "ASML 这则超过 6 项指标齐全，但把「Match Act」拼成 `Match Act`，与 ASML 事件里出现的法案拼写不一致（该法案在原文为 Match Act）；且 `Fouquet` 在事件里被写成 Fouquet（CEO）与 Dassen（CFO）两条 affiliated_with ASML 关系并存，fine。主要问题仅是法案实体名的统一与一个潜在的错拼。",
+      "fix": "统一法案规范名为 `Match Act`（保留别名），确保 entities 与 relations 用同一拼写，避免 ASML 地缘风险这条线被拆成两个孤立法案节点。"
+    }
+  ],
+  "lessons": [
+    "方向性误抽是最高危错误：凡是「回应/反诉/市场反应/披露诱发」，关系方向必然是从回应方到被回应方，类型用 responds_to / countersues / 市场 reactions，绝不能抽成 targets（会讲出主动打击的假故事）。",
+    "智能体越界访问测试环境（逃逸）不是正常用关系：应用 unauthorized_access / escapes_to 等安全语义类型并挂到 security 事件，不要用中性 uses 掩盖安全事件。",
+    "从原文提取关系前先画出谁对谁采取什么动作的因果链（subject 是主动方），再对照关系类型表选择方向正确的类型；多段叙事里同一新闻的反诉/回应要分别立项而非合并成对抗循环。",
+    "数字密集财报/融资类新闻（TSMC、ASML、Modal、DeepSeek、Anthropic Q3）必须把全部原文可查证指标填进 metrics；出现空 metrics 或「数字只出现在 events 文本」时视为 key numbers 泄漏。",
+    "实体规范名要全局唯一统一：同一主体（如 Henna Virkkunen、Match Act）在 entities 与 relations 必须用同一拼写，跨文章靠 aliases 收敛，避免同一实体被拆成两个节点。"
+  ]
+}

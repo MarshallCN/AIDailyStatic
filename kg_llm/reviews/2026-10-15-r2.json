@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-15",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "上一轮的方向性错误（targets→responds_to、uses→escaped_to、sues/countersues）均已修正，无事实性或方向性 high 级问题。剩余问题集中在事件参与者与关系语义：把只是背景语境的 Wells Fargo 塞进 Anthropic 披露事件并生成一句语义站不住脚的 reports_on 关系，事件 participants 引用了未纳入实体清单的跨文章主体，以及多篇文章把同一则新闻拆成两条重复的「趋势/解读」事件虚增事件数。",
+  "findings": [
+    {
+      "article_id": "2026-10-15-0",
+      "severity": "high",
+      "problem": "事件 0（funding 披露事件）的 participants 把 `Wells Fargo` 标为 object，但富国银行根本不是这场投资人日披露的参与者——它只是上一周发布市场顶部观点的背景机构。把 Wells Fargo 放进披露事件参与者会错误暗示「富国银行出现在这场 IPO 披露中」。",
+      "fix": "从 funding 披露事件的 participants 中删除 Wells Fargo，该事件只保留 Anthropic 一个 subject；Wells Fargo 与 Anthropic 的关系只放在 responds_to 那条 relation（聚焦回应视角），不再作为披露事件的参与者。"
+    },
+    {
+      "article_id": "2026-10-15-0",
+      "severity": "high",
+      "problem": "关系 `Wells Fargo --reports_on--> Anthropic`（weight 0.7）语义站不住脚。原文是富国银行发布「营收增速放缓 + token 单价平台化」的 AI 热潮见顶量化证据，reports_on 是「报道/覆盖某主体」，但 Wells Fargo 并没有报道 Anthropic——它只是对整体 AI 市场做出了看空判断。证据「富国银行上周刚以…提出 AI 热潮见顶的量化证据」支撑的是「Wells Fargo 看空 AI 市场顶部」，不是「Wells Fargo 报道 Anthropic」。",
+      "fix": "删除或改写作弊的 reports_on 关系：若关系表有 reports_on/评估类，确保语义是「Wells Fargo 对 AI 市场见顶出具观点」，而不是指向 Anthropic 本体的报道关系。更稳妥的做法是删掉这条边，只保留 `Anthropic --responds_to--> Wells Fargo`（该方向与 evidence 完全吻合），避免凭空生成一条会误导图谱理解成「富国银行在报道 Anthropic」的边。"
+    },
+    {
+      "article_id": "2026-10-15-13",
+      "severity": "medium",
+      "problem": "事件 1（trend 事件）的 participants 出现 `Anthropic` 作为 object，但本文章的 entities 列表里根本没有 Anthropic 这个实体（它只在 detail 里被捎带提及「Anthropic 的 METR 授权」）。跨文章凭证式的合成事件引用了未经验证的实体，会造成图谱里一个「游离」的 Anthropic 参与关系节点，破坏该文章自身图的一致性。",
+      "fix": "将该 trend 事件的 participants 收敛到本文章已抽取的实体（NVIDIA、BOLD、SOFAIR、Imperial College London 等）；对 Anthropic 与欧盟执法的类比只放在 summary/why_it_matters 文本里，不要写成没有实体的 participants。"
+    },
+    {
+      "article_id": "2026-10-15-3",
+      "severity": "medium",
+      "problem": "多篇文章（0、3、6、12、14）普遍存在「主事件 + 一条重复的趋势/解读事件」的切分：如 2026-10-15-3 事件 1「FTC 传票使本周监管压力形成三线闭环」把 EU 质询、八州诉讼、FTC 传票揉成一条综合解读事件，与主事件（FTC 发出传票）功能重叠、且引用了本文章之外的主体。同类模式下文章 0 两条事件其实都在讲同一场披露。这类冗余事件虚增事件数，且不承载新边。",
+      "fix": "同一则新闻的主事件与其「趋势解读」若未引入新的参与者或新关系，不应拆成独立事件——把解读内容并入主事件的 summary 与 why_it_matters；跨文章的监管闭环类比（2026-10-15-3 事件 1）建议只保留文本分析，不生成独立事件。"
+    }
+  ],
+  "lessons": [
+    "事件 participants 只能包含该文章实体清单里实际参与该事件动作的主体；仅为讨论背景被点名的机构（投行、分析师、监管者、市场指数）若未直接参与该事件，应移入 why_it_matters，不能塞进事件参与者。",
+    "reports_on 只用于「对目标主体本身的报道/覆盖关系」：『某机构对整体市场（如 AI 顶部）出具观点』不等于『该机构报道某家公司』，前者不应生成指向具体公司的 reports_on 边，应删掉或改用不含该公司的描述。",
+    "同一则新闻的「趋势/解读」若不引入新参与者或新关系，不要拆成独立事件，并入主事件 summary 与 why_it_matters，避免多篇文章出现虚增重复事件。"
+  ]
+}
