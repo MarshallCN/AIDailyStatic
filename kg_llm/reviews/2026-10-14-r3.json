@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-14",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "实体、指标与 evidence 多数准确，整体质量较好；主要问题是主体类型不一致（同批智能体产品/工具混标；把系统标成 paper）、2026-10-14-5 关系贫乏（核心的定价三角没有成边）、2026-10-14-2 的 uses 关系类型不贴切。",
+  "findings": [
+    {
+      "article_id": "2026-10-14-10",
+      "severity": "medium",
+      "problem": "实体 \"Sequent-Prover\" 的 type 被标成 \"paper\"。Sequent-Prover 在原文是\"一类使用验证器的 LLM 智能体\"（一个系统/智能体，不是论文），type=paper 与该实体的主体性质错配，并会被解读成出版物。",
+      "fix": "把 \"Sequent-Prover\" 的 type 改为 \"tool\" 或 \"model\"（推荐 tool，因它是运行智能体的技术系统），与其他论文类实体（如 AUBench 的 paper 区分开）。"
+    },
+    {
+      "article_id": "2026-10-14-8",
+      "severity": "medium",
+      "problem": "同一批同性质的智能体应用被标成不一致的实体类型：GitHub Copilot、Hermes、OpenClaw 是 \"product\"，而 Perplexity、Pi、WorkBuddy 是 \"tool\"。它们在原文同为\"完成 RTX Spark 本地化适配的主流智能体应用\"，类型分裂会破坏图谱内同类主体的连通与聚合。",
+      "fix": "把这一批智能体应用统一为同一种类型（推荐 \"tool\"），GitHub Copilot、Hermes、OpenClaw 从 \"product\" 改为 \"tool\"，与 Perplexity/Pi/WorkBuddy 保持一致。"
+    },
+    {
+      "article_id": "2026-10-14-5",
+      "severity": "medium",
+      "problem": "全文只有 1 条关系（Ohsung Kwon--affiliated_with-->Wells Fargo），而文章的核心论点——Gemini 4 Argon、Claude Opus 5.5、GPT-6 Astra 彼此把价格锁到 $2/$10—$4/$20 的\"定价三角\"——没有任何边来表达（该三角还在与资本开支放缓互证）。整篇文章实质是关系贫乏，除实体外缺少有价值边。",
+      "fix": "为三个模型补上横向价格关系：如 Gemini 4 Argon--priced_comparable_to-->Claude Opus 5.5、Gemini 4 Argon--priced_comparable_to-->GPT-6 Astra（evidence 用\"彼此把价格锁到 $2/$10—$4/$20 的定价三角\"）；也可为 Wells Fargo--reports_on-->OpenAI/Anthropic 加一条，避免文章仅靠 1 条 affiliation 支撑。"
+    },
+    {
+      "article_id": "2026-10-14-2",
+      "severity": "medium",
+      "problem": "关系 \"Qwen3.5-9B --uses--> Llama3.1-8B\"、\"GLM-5.2 --uses--> Llama3.1-8B\" 用的关系类型不准确：原文 Qwen/GLM 是\"搭建并传播 Llama3.1-8B 的推理服务\"，是部署/传播/管理而非\"使用\"，\"uses\" 弱化了这条边的真实语义。",
+      "fix": "改用更贴切的类型，如 \"deploys\"、\"manages\" 或 \"propagates\"（Qwen3.5-9B--deploys-->Llama3.1-8B），若图谱类型词汇表中无此类型则把证据改写为\"搭建并传播推理服务\"并保留现状，但不要在证据里写成\"使用\"。"
+    }
+  ],
+  "lessons": [
+    "论文提出的新技术系统或智能体（非文献本身）实体类型应标为 tool/model，不要标 paper。",
+    "同一篇文章里同性质、同角色的多个主体（如一批智能体应用、一批被投公司）必须统一实体类型，不要把一部分标 product、另一部分标 tool。",
+    "多个模型横向互锁定价/同价这类核心论点应抽成实体间的 comparable_price（或 comparable）关系，不要只写进事件 summary 而让文章缺边。"
+  ]
+}

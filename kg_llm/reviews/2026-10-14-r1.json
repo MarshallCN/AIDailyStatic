@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-14",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "实体覆盖与 metrics 数字基本准确、证据链总体完整，但存在一条编造关系（摩根士丹利被写成 OpenAI 供应商）及多处证据与断言脱节：evaluated_on 目标指向公司、监管关系证据未点名对象、GTC Berlin 类型错标、FBI targets OpenAI 无证据支撑，另有一处事件标签乱码，需修订后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-14-5",
+      "severity": "high",
+      "problem": "关系 \"Morgan Stanley --supplies--> OpenAI\"（weight 0.4）是编造关系。原文只说摩根士丹利的 Lisa Shalett 预计资本开支增速 2027 年显著放缓（与德意志银行 Adrian Cox 并列），摩根士丹利与 OpenAI 之间不存在任何供应商关系；该关系读出来是「摩根士丹利向 OpenAI 供货」，事实错误，且所附 evidence「摩根士丹利与德意志银行则预计资本开支增速将显著放缓」支撑的是预测观点而非 supply 关系。",
+      "fix": "删除 \"Morgan Stanley --supplies--> OpenAI\"。若要保留投行观点，改用能表达分析/预测的类型（如 Morgan Stanley --analyzes--> OpenAI 或 --reports_on-->，若类型表存在）；若无合适类型则直接删除，把「摩根士丹利预计资本开支增速放缓」放回事件 summary 即可。"
+    },
+    {
+      "article_id": "2026-10-14-1",
+      "severity": "medium",
+      "problem": "关系 \"FBI --targets--> OpenAI\" 的 evidence 是 why_it_matters 里的论述（「前沿实验室里最有价值的资产不是算力而是尚未公开的技术与商业机密」），不构成对「FBI 以 OpenAI 为目标」的任何事实支撑。原文事实是 FBI 逮捕针对 OpenAI 机密从事间谍活动的个人 Alfozan，targets 的对象应是 Alfozan 而非 OpenAI；当前读法变成「FBI 在针对 OpenAI」，扭曲事实。",
+      "fix": "删除 \"FBI --targets--> OpenAI\" 这条关系；保留 \"FBI --targets--> Abdulrahman Alfozan\"。若想表达间谍案涉及 OpenAI 机密，在事件 summary 中说明即可，不要用 targets 把 FBI 指向 OpenAI 这个组织。"
+    },
+    {
+      "article_id": "2026-10-14-2",
+      "severity": "medium",
+      "problem": "关系 \"Qwen3.5-9B --evaluated_on--> Anthropic\" 关系类型用错：evaluated_on 的目标必须是基准/评测基准，这里目标却是公司 Anthropic，读出来是「Qwen3.5-9B 在 Anthropic 这个基准上被评测」，无意义；且所附 evidence「Qwen3.5-9B 在 8/9 类硬件上成功完成部署配置」讲的是硬件部署，与 Anthropic 无关。",
+      "fix": "删除该关系。若需表达实验关系，应让 Anthropic 作为实验方、Qwen3.5-9B 作为被测对象（如 Anthropic --conducts--> 实验），或把 8/9 类硬件部署成功率留在 metrics 里即可。"
+    },
+    {
+      "article_id": "2026-10-14-3",
+      "severity": "medium",
+      "problem": "四条监管关系 \"EU AI Office --regulates--> OpenAI / Anthropic / Google DeepMind\" 与 \"EU AI Act --targets--> OpenAI\" 的证据与断言脱节：原文只说「已向最先进通用模型的开发者发送信息请求」，并未点名具体是哪几家收到请求；Meta 的 \"EU AI Office --regulates--> Meta\" 用的证据甚至是「2026 年记录到超过 20 起失控事件」这条事件统计，同样不支撑监管关系。给未点名对象逐一挂 regulates/targets 属于推断超出证据。",
+      "fix": "要么把 regulates/targets 改为不针对具体公司的表述或删除逐条边，要么为每条补上能点名对应公司的原文证据；Meta 那条不能用「失控事件数」当 regulates 证据。监管动作本身保留在事件 summary（「已向最先进通用模型开发者发送信息请求」）即可。"
+    },
+    {
+      "article_id": "2026-10-14-0",
+      "severity": "medium",
+      "problem": "事件 2 的 label 文本乱码：「Gemini 4 Argon 在 Vals Index 与 DeepSWE v1.1 上自报领先 ClAArgon」中的「ClAArgon」无法阅读，疑似 Claude（Opus 5.5）与 Argon 的粘连，该标签不可发布。",
+      "fix": "把 label 改为可读的正确表述，如「Gemini 4 Argon 在 Vals Index 与 DeepSWE v1.1 上自报领先 Claude Opus 5.5 / GPT-6 Astra」，与 summary（「优于 Opus 5.5 与 GPT-6 Astra」）保持一致。"
+    },
+    {
+      "article_id": "2026-10-14-4",
+      "severity": "medium",
+      "problem": "实体 \"GTC Berlin\" 类型错标为 tool：它是 10 月 20–22 日的会议/事件，不是工具；且关系 \"NVIDIA --targets--> GTC Berlin\" 语义错误——原文「巡演将抵达 GTC Berlin」描述的是行程到达某会议，不是 target 关系，读出来是「英伟达以 GTC Berlin 为目标」不成立。",
+      "fix": "把 GTC Berlin 的类型改为会议/事件类（event），删除 \"NVIDIA --targets--> GTC Berlin\" 这条低质关系；如需保留，在事件 summary 里写「巡演将于 10 月 20–22 日抵达 GTC Berlin」即可。"
+    },
+    {
+      "article_id": "2026-10-14-6",
+      "severity": "medium",
+      "problem": "关系 \"IDC --targets--> NVIDIA\" 关系类型用错：IDC 是发布市场报告的调研机构，原文是「IDC 报告显示英伟达在华出货量下滑」，IDC 并不是在 targeting 英伟达；targets 读出来是「IDC 以英伟达为目标」，语义错误。",
+      "fix": "改为 \"IDC --reports_on--> NVIDIA\"（或调研/发布类类型，若类型表存在），evidence 保留「IDC 报告显示 2026 年上半年英伟达在华 AI 芯片出货量下滑 44%」；若无合适类型则删除该边。"
+    }
+  ],
+  "lessons": [
+    "supplies/供应商关系只能用于确实存在的供货采购双方；分析师、投行、调研机构对公司的预测、评级或报告一律不得用 supplies。",
+    "evaluated_on 的目标只能是基准/评测基准，绝不能是公司或组织；实验方与模型的关系应表达为 conducts/被测对象，不要用 evaluated_on 指向组织。",
+    "证据必须点名关系两端：原文只写「向最先进通用模型开发者发送信息请求」这类未点名主体的表述时，不得给各家实验室逐一挂 regulates/targets 边。"
+  ]
+}

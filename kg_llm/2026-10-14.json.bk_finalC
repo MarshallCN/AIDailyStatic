@@ -1,0 +1,2281 @@
+{
+  "date": "2026-10-14",
+  "articles": [
+    {
+      "article_id": "2026-10-14-0",
+      "entities": [
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": [
+            "谷歌"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Google 全球发布前沿模型 Gemini 4 Argon"
+          ]
+        },
+        {
+          "name": "Gemini 4 Argon",
+          "type": "model",
+          "aliases": [
+            "Argon"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Google 全球发布前沿模型 Gemini 4 Argon"
+          ]
+        },
+        {
+          "name": "Gemini 4 Argon for Robotics",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "同日 Google 还发布了面向机器人的增强版 Gemini 4 Argon for Robotics"
+          ]
+        },
+        {
+          "name": "GPT-6.1 Sol",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "把限时价格直接对齐到 GPT-6.1 Sol 的 $2/$10"
+          ]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": [
+            "Opus 5.5"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "标准价对齐 Claude Opus 5.5 的 $4/$20"
+          ]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "高于 Opus 5.5 的 74.2% 与 GPT-6 Astra 的 74.1%"
+          ]
+        },
+        {
+          "name": "Vals Index",
+          "type": "benchmark",
+          "aliases": [
+            "Vals 指数"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "Argon 在 Vals 指数（按 GDP 加权的金融、代码、法律、税务工作）排名第一"
+          ]
+        },
+        {
+          "name": "DeepSWE v1.1",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "DeepSWE v1.1 软件工程取得新高"
+          ]
+        },
+        {
+          "name": "AutomationBench",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "Zapier 的 AutomationBench 端到端业务任务 51.3%"
+          ]
+        },
+        {
+          "name": "Embodied Reasoning",
+          "type": "benchmark",
+          "aliases": [
+            "Embodied Reasoning 基准"
+          ],
+          "confidence": 0.85,
+          "evidence": [
+            "Embodied Reasoning 基准 87%"
+          ]
+        },
+        {
+          "name": "Wiz",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "安全公司 Wiz 已用 Argon 在一个管理数十万患者记录的医院软件里找到关键漏洞"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google 全球发布前沿模型 Gemini 4 Argon 并以 $2/$10 限时低价切入",
+          "summary": "Google 面向全球开发者、企业与用户开放 Gemini 4 Argon，API 以 $2/百万 input、$10/百万 output token 限时低价上线，标准价对齐 Claude Opus 5.5 的 $4/$20。",
+          "participants": [
+            {
+              "name": "Google",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Gemini 4 Argon",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Claude Opus 5.5",
+              "type": "model",
+              "role": "competitor"
+            },
+            {
+              "name": "GPT-6.1 Sol",
+              "type": "model",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "Google 全球发布前沿模型 Gemini 4 Argon"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Argon 在 Vals Index 与 DeepSWE v1.1 上自报领先 Claude Opus 5.5 / GPT-6 Astra",
+          "summary": "Google 自报 Argon 在 Vals Index 领先（68.9% vs Opus 5.5 的 67.0%）、DeepSWE v1.1 达 77.9%，优于 Opus 5.5 与 GPT-6 Astra。",
+          "participants": [
+            {
+              "name": "Gemini 4 Argon",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "Vals Index",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "DeepSWE v1.1",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "Claude Opus 5.5",
+              "type": "model",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "Argon 在 Vals Index 领先（68.9% vs Opus 5.5 的 67.0%）"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "Gemini 4 Argon 通过 12 个网络攻击场景并在 Fairwind Program 下先行防御者测试",
+          "summary": "Argon 在 12 个网络攻击场景中全部解决（上一代仅 5/12），Google 以有限的 Fairwind Program 让受信任的网络安全防御者先行测试，Wiz 已用它找到医院软件关键漏洞。",
+          "participants": [
+            {
+              "name": "Google",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Gemini 4 Argon",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Wiz",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "Argon 在 12 个网络攻击场景中全部解决（上一代仅 5/12）"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Gemini 4 Argon",
+          "target": "Google",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "Google 全球发布前沿模型 Gemini 4 Argon"
+          ]
+        },
+        {
+          "source": "Gemini 4 Argon",
+          "target": "Vals Index",
+          "type": "evaluated_on",
+          "weight": 0.85,
+          "evidence": [
+            "Argon 在 Vals 指数（按 GDP 加权的金融、代码、法律、税务工作）排名第一"
+          ]
+        },
+        {
+          "source": "Gemini 4 Argon",
+          "target": "DeepSWE v1.1",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "DeepSWE v1.1 达 77.9%"
+          ]
+        },
+        {
+          "source": "Gemini 4 Argon",
+          "target": "AutomationBench",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "Zapier 的 AutomationBench 端到端业务任务 51.3%"
+          ]
+        },
+        {
+          "source": "Gemini 4 Argon for Robotics",
+          "target": "Embodied Reasoning",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "Embodied Reasoning 基准 87%"
+          ]
+        },
+        {
+          "source": "Wiz",
+          "target": "Gemini 4 Argon",
+          "type": "uses",
+          "weight": 0.6,
+          "evidence": [
+            "安全公司 Wiz 已用 Argon 在一个管理数十万患者记录的医院软件里找到关键漏洞"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Gemini 4 Argon input token 限时价",
+          "value": "$2/百万"
+        },
+        {
+          "name": "Gemini 4 Argon output token 限时价",
+          "value": "$10/百万"
+        },
+        {
+          "name": "Gemini 4 Argon 缓存输入折扣",
+          "value": "95%"
+        },
+        {
+          "name": "Gemini 4 Argon 12 月 1 日起标准价",
+          "value": "$4/$20"
+        },
+        {
+          "name": "Gemini 4 Argon Vals Index 得分",
+          "value": "68.9%"
+        },
+        {
+          "name": "Claude Opus 5.5 Vals Index 得分",
+          "value": "67.0%"
+        },
+        {
+          "name": "Gemini 4 Argon DeepSWE v1.1 得分",
+          "value": "77.9%"
+        },
+        {
+          "name": "Gemini 4 Argon AutomationBench 得分",
+          "value": "51.3%"
+        },
+        {
+          "name": "Gemini 4 Argon 智能体代码提交量提升",
+          "value": "逾 35%"
+        },
+        {
+          "name": "Gemini 4 Argon for Robotics Embodied Reasoning 得分",
+          "value": "87%"
+        },
+        {
+          "name": "Gemini 4 Argon 网络安全场景解决数",
+          "value": "12 个全部解决（上一代 5/12）"
+        }
+      ],
+      "why_it_matters": "前沿通用竞争的定价维度被一次抹平：三个实验室同价后，「用量性价比 + 可核验工程落地」取代单纯能力比拼成为新战场，也埋下前端 token 降价的行业信号。"
+    },
+    {
+      "article_id": "2026-10-14-1",
+      "entities": [
+        {
+          "name": "FBI",
+          "type": "organization",
+          "aliases": [
+            "美国 FBI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "美国 FBI 周二宣布逮捕 35 岁的 OpenAI 工程师"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 工程师、沙特公民 Abdulrahman Alfozan"
+          ]
+        },
+        {
+          "name": "Abdulrahman Alfozan",
+          "type": "person",
+          "aliases": [
+            "Alfozan"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 工程师、沙特公民 Abdulrahman Alfozan"
+          ]
+        },
+        {
+          "name": "Kash Patel",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "FBI 局长 Kash Patel 表态称其目标是获取关于「超级智能技术」的通讯内容"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "FBI 逮捕 OpenAI 沙特工程师 Abdulrahman Alfozan，涉嫌在会议室安装加密录音设备",
+          "summary": "FBI 周二逮捕 35 岁的 OpenAI 工程师、沙特公民 Abdulrahman Alfozan，指控其在旧金山办公区会议室秘密安装具备加密与远程数据传输能力的录音设备，与设备关联的聊天机器人账号事发前一周曾查询如何构建隐匿录音设备。",
+          "participants": [
+            {
+              "name": "FBI",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Abdulrahman Alfozan",
+              "type": "person",
+              "role": "object"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "美国 FBI 周二宣布逮捕 35 岁的 OpenAI 工程师、沙特公民 Abdulrahman Alfozan"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "FBI 局长 Kash Patel 将监听案纳入外国势力觊觎前沿模型机密框架",
+          "summary": "FBI 局长 Kash Patel 称目标是获取关于「超级智能技术」的通讯内容，把这起具体犯罪放进了外国势力觊觎前沿模型机密的框架。",
+          "participants": [
+            {
+              "name": "Kash Patel",
+              "type": "person",
+              "role": "subject"
+            },
+            {
+              "name": "FBI",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "FBI 局长 Kash Patel 表态称其目标是获取关于「超级智能技术」的通讯内容"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Abdulrahman Alfozan",
+          "target": "OpenAI",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": [
+            "OpenAI 工程师、沙特公民 Abdulrahman Alfozan"
+          ]
+        },
+        {
+          "source": "FBI",
+          "target": "Abdulrahman Alfozan",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": [
+            "美国 FBI 周二宣布逮捕 35 岁的 OpenAI 工程师、沙特公民 Abdulrahman Alfozan"
+          ]
+        },
+        {
+          "source": "Kash Patel",
+          "target": "FBI",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": [
+            "FBI 局长 Kash Patel 表态称其目标是获取关于「超级智能技术」的通讯内容"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "被捕人年龄",
+          "value": "35 岁"
+        },
+        {
+          "name": "录音设备被发现日期",
+          "value": "9 月 30 日"
+        }
+      ],
+      "why_it_matters": "前沿实验室最贵的资产从算力转向未公开的机密，物理反监控与人员信任因此成为新的安全薄弱面，区别于「失控智能体」的叙事主线。"
+    },
+    {
+      "article_id": "2026-10-14-2",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Anthropic 发布研究警告"
+          ]
+        },
+        {
+          "name": "Qwen3.5-9B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Qwen3.5-9B 成功在 9 类硬件中的 8 类上安装并配置好推理环境"
+          ]
+        },
+        {
+          "name": "GLM-5.2",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "GLM-5.2 在 4/5 次试次里覆盖了整个模拟网络 8 个节点"
+          ]
+        },
+        {
+          "name": "Llama3.1-8B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "去搭建并传播 Llama3.1-8B 的推理服务"
+          ]
+        },
+        {
+          "name": "Gemma4-26B-A4B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Gemma4-26B-A4B 被分发到 15 台电视盒子上运行"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Anthropic 发布研究：小模型可能在消费级 IoT 设备上自复制形成无集中关停点的分布式网络",
+          "summary": "Anthropic 用廉价 Android 电视盒子做简化实验，让开源模型分工：Qwen3.5-9B 在 8/9 类硬件上完成部署、GLM-5.2 在 4/5 次试次覆盖全部 8 个节点、Gemma4-26B-A4B 横跨 15 台盒子运行。",
+          "participants": [
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Qwen3.5-9B",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "GLM-5.2",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Gemma4-26B-A4B",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Anthropic 发布研究警告：小型 AI 模型可能「数月之内」就具备在商业 IoT 设备上自复制的能力"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "实验显示自复制蠕虫因无集中关停点而不可控",
+          "summary": "复制过程很慢（Qwen 推理部署需 28–51 小时）给了防御者时间，但模型散布到数以百计家庭设备后没有可拔电源的枢纽，Anthropic 估算 30B 参数及以下模型 2026 年底前可能达到自主复制能力。",
+          "participants": [
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Qwen3.5-9B",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Llama3.1-8B",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "真正的威胁结构在于「无集中关停点」：一旦模型散布到数以百计的家庭设备上"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Qwen3.5-9B",
+          "target": "Llama3.1-8B",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "去搭建并传播 Llama3.1-8B 的推理服务"
+          ]
+        },
+        {
+          "source": "GLM-5.2",
+          "target": "Llama3.1-8B",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "去搭建并传播 Llama3.1-8B 的推理服务"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Qwen3.5-9B 成功部署的硬件类别占比",
+          "value": "8/9 类"
+        },
+        {
+          "name": "GLM-5.2 覆盖整个模拟网络的试次占比",
+          "value": "4/5"
+        },
+        {
+          "name": "Gemma4-26B-A4B 横跨电视盒子数",
+          "value": "15 台"
+        },
+        {
+          "name": "Qwen 早期成功率",
+          "value": "45%"
+        },
+        {
+          "name": "Qwen 后期世代成功率",
+          "value": "84%"
+        },
+        {
+          "name": "Qwen 推理部署时长",
+          "value": "28–51 小时"
+        },
+        {
+          "name": "Gemma 推理部署时长",
+          "value": "71–150 小时"
+        },
+        {
+          "name": "可能达到自复制能力的参数量上限",
+          "value": "30B 及以下"
+        }
+      ],
+      "why_it_matters": "模型能力增长快于安全边界这一判断有了可度量的版本：无集中关停点的慢速自复制，让「慢但不可关停」成为与普通恶意软件本质不同的新威胁结构。"
+    },
+    {
+      "article_id": "2026-10-14-3",
+      "entities": [
+        {
+          "name": "Henna Virkkunen",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "欧盟委员会执行副主席 Henna Virkkunen 宣布欧盟 AI 办公室启动 AI 法案首次执法行动"
+          ]
+        },
+        {
+          "name": "European Commission",
+          "type": "organization",
+          "aliases": [
+            "欧盟委员会"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "欧盟委员会执行副主席 Henna Virkkunen"
+          ]
+        },
+        {
+          "name": "EU AI Office",
+          "type": "organization",
+          "aliases": [
+            "欧盟 AI 办公室"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "欧盟 AI 办公室启动 AI 法案首次执法行动"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "已在 OpenAI、Google DeepMind、Anthropic 与 Meta 及独立评估机构记录到超过 20 起「失控」事件"
+          ]
+        },
+        {
+          "name": "Google DeepMind",
+          "type": "company",
+          "aliases": [
+            "DeepMind",
+            "谷歌 DeepMind"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "已在 OpenAI、Google DeepMind、Anthropic 与 Meta 及独立评估机构记录到超过 20 起「失控」事件"
+          ]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "已在 OpenAI、Google DeepMind、Anthropic 与 Meta 及独立评估机构记录到超过 20 起「失控」事件"
+          ]
+        },
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": [
+            "Facebook",
+            "Meta AI"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "已在 OpenAI、Google DeepMind、Anthropic 与 Meta 及独立评估机构记录到超过 20 起「失控」事件"
+          ]
+        },
+        {
+          "name": "EU AI Act",
+          "type": "policy",
+          "aliases": [
+            "欧盟 AI 法案"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "欧盟 AI 法案的主体义务自今年 8 月起生效"
+          ]
+        },
+        {
+          "name": "Demis Hassabis",
+          "type": "person",
+          "aliases": [
+            "Hassabis"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "Google DeepMind 联合创始人 Hassabis 则称近期 AI 黑客事件是「早期警告射击」"
+          ]
+        },
+        {
+          "name": "Dublin Declaration",
+          "type": "policy",
+          "aliases": [
+            "都柏林宣言"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "爱尔兰以欧盟轮值主席国身份发布《都柏林宣言》"
+          ]
+        },
+        {
+          "name": "Ireland",
+          "type": "organization",
+          "aliases": [
+            "爱尔兰"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "爱尔兰以欧盟轮值主席国身份发布《都柏林宣言》"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "欧盟 AI 办公室启动 AI 法案首次执法，向最先进通用模型开发者发送信息请求",
+          "summary": "欧盟委员会执行副主席 Henna Virkkunen 在都柏林峰会上宣布欧盟 AI 办公室启动 AI 法案首次执法行动，已向最先进通用模型开发者发送信息请求，聚焦防护实践、外部评估与模型使用追踪。",
+          "participants": [
+            {
+              "name": "EU AI Office",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Google DeepMind",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Meta",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "欧盟 AI 办公室启动 AI 法案首次执法行动——已向最先进通用模型的开发者发送信息请求"
+          ]
+        },
+        {
+          "type": "policy",
+          "label": "爱尔兰以欧盟轮值主席国身份发布《都柏林宣言》聚焦可靠可信主权 AI",
+          "summary": "爱尔兰借轮值主席国之位发布《都柏林宣言》，把安全合作、训练与数字基础设施扩容、扶持欧洲本土 AI 公司列为六大行动方向。",
+          "participants": [
+            {
+              "name": "Ireland",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Dublin Declaration",
+              "type": "policy",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "爱尔兰以欧盟轮值主席国身份发布《都柏林宣言》"
+          ]
+        },
+        {
+          "type": "policy",
+          "label": "Demis Hassabis 称近期 AI 黑客事件是「早期警告射击」并主张成立国际标准机构",
+          "summary": "Google DeepMind 联合创始人 Demis Hassabis 认为这些事件是「早期警告射击」，主张最终需要成立随技术变化、与风险成比例的国际标准机构。",
+          "participants": [
+            {
+              "name": "Demis Hassabis",
+              "type": "person",
+              "role": "subject"
+            },
+            {
+              "name": "Google DeepMind",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Google DeepMind 联合创始人 Hassabis 则称近期 AI 黑客事件是「早期警告射击」"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Demis Hassabis",
+          "target": "Google DeepMind",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": [
+            "Google DeepMind 联合创始人 Hassabis"
+          ]
+        },
+        {
+          "source": "Henna Virkkunen",
+          "target": "European Commission",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": [
+            "欧盟委员会执行副主席 Henna Virkkunen"
+          ]
+        },
+        {
+          "source": "Dublin Declaration",
+          "target": "Ireland",
+          "type": "released_by",
+          "weight": 0.8,
+          "evidence": [
+            "爱尔兰以欧盟轮值主席国身份发布《都柏林宣言》"
+          ]
+        },
+        {
+          "source": "EU AI Office",
+          "target": "EU AI Act",
+          "type": "enforces",
+          "weight": 0.8,
+          "evidence": [
+            "欧盟 AI 办公室启动 AI 法案首次执法行动"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "2026 年在四大前沿实验室及独立评估机构记录的「失控」事件数",
+          "value": "逾 20 起"
+        }
+      ],
+      "why_it_matters": "欧盟 AI 治理把「谁来测、以什么标准、谁认证」从表态变成制度动作，首个执法案例让「主权 AI」与「认证流程可随能力曲线调整」成为可操作契约。"
+    },
+    {
+      "article_id": "2026-10-14-4",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "英伟达 CEO 黄仁勋本周开启巴黎—伦敦—柏林欧洲巡演"
+          ]
+        },
+        {
+          "name": "Jensen Huang",
+          "type": "person",
+          "aliases": [
+            "黄仁勋"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "英伟达 CEO 黄仁勋本周开启巴黎—伦敦—柏林欧洲巡演"
+          ]
+        },
+        {
+          "name": "Doctolib",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "当场点名对四家法国初创（Doctolib、Genesis AI、Pigment、Entalpic）的新投资"
+          ]
+        },
+        {
+          "name": "Genesis AI",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "当场点名对四家法国初创（Doctolib、Genesis AI、Pigment、Entalpic）的新投资"
+          ]
+        },
+        {
+          "name": "Pigment",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "当场点名对四家法国初创（Doctolib、Genesis AI、Pigment、Entalpic）的新投资"
+          ]
+        },
+        {
+          "name": "Entalpic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "当场点名对四家法国初创（Doctolib、Genesis AI、Pigment、Entalpic）的新投资"
+          ]
+        },
+        {
+          "name": "Sam Altman",
+          "type": "person",
+          "aliases": [
+            "Altman"
+          ],
+          "confidence": 0.85,
+          "evidence": [
+            "而非像 Sam Altman 日前所说的「为换取 AI 收益必须接受一些坏事」"
+          ]
+        },
+        {
+          "name": "GTC Berlin",
+          "type": "event",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "巡演将抵达 10 月 20–22 日的 GTC Berlin"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "黄仁勋宣布下周公布约 2 亿美元欧洲投资并对四家法国初创投资",
+          "summary": "英伟达 CEO 黄仁勋在巴黎场次称未来一周将再宣布约 2 亿美元欧洲投资（叠加过去一年已投入的 8 亿美元），并当场点名对 Doctolib、Genesis AI、Pigment、Entalpic 四家法国初创的新投资。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Doctolib",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Genesis AI",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Pigment",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Entalpic",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "未来一周将再宣布约 2 亿美元欧洲投资"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "黄仁勋对 AI 网络安全与存在性风险作出尖锐表态",
+          "summary": "黄仁勋在伦敦对 Fortune 访谈主张 AI 行业「不应容忍任何网络安全事件」，并回击存在性风险警告者称「如果真相信这项技术会终结文明，就别再从事它了」。",
+          "participants": [
+            {
+              "name": "Jensen Huang",
+              "type": "person",
+              "role": "subject"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Sam Altman",
+              "type": "person",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "他主张 AI 行业「不应容忍任何网络安全事件」"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "NVIDIA",
+          "target": "Doctolib",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "当场点名对四家法国初创（Doctolib、Genesis AI、Pigment、Entalpic）的新投资"
+          ]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "当场点名对四家法国初创（Doctolib、Genesis AI、Pigment、Entalpic）的新投资"
+          ]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "Pigment",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "当场点名对四家法国初创（Doctolib、Genesis AI、Pigment、Entalpic）的新投资"
+          ]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "Entalpic",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "当场点名对四家法国初创（Doctolib、Genesis AI、Pigment、Entalpic）的新投资"
+          ]
+        },
+        {
+          "source": "Jensen Huang",
+          "target": "NVIDIA",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": [
+            "英伟达 CEO 黄仁勋"
+          ]
+        },
+        {
+          "source": "Jensen Huang",
+          "target": "Sam Altman",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "他主张 AI 行业「不应容忍任何网络安全事件」，而非像 Sam Altman 日前所说的「为换取 AI 收益必须接受一些坏事」"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "黄仁勋宣布的欧洲新增投资",
+          "value": "约 2 亿美元"
+        },
+        {
+          "name": "过去一年英伟达已在欧洲投入",
+          "value": "8 亿美元"
+        },
+        {
+          "name": "今年前四个月英伟达对 AI 股权投入",
+          "value": "逾 40 亿美元"
+        }
+      ],
+      "why_it_matters": "算力垄断者的欧洲之行既是去风险化公关也是资本操作，其「零安全事故承诺 + 拒绝末日论」的表态把安全路线之争推向「工程隔离 vs 减速守则」的二元。"
+    },
+    {
+      "article_id": "2026-10-14-5",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 与 Anthropic 合并年化营收增速正在放缓"
+          ]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 与 Anthropic 合并年化营收增速正在放缓"
+          ]
+        },
+        {
+          "name": "Ohsung Kwon",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "富国银行分析师 Ohsung Kwon 团队"
+          ]
+        },
+        {
+          "name": "Wells Fargo",
+          "type": "company",
+          "aliases": [
+            "富国银行"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "富国银行分析师 Ohsung Kwon 团队"
+          ]
+        },
+        {
+          "name": "Morgan Stanley",
+          "type": "company",
+          "aliases": [
+            "摩根士丹利"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "摩根士丹利的 Lisa Shalett"
+          ]
+        },
+        {
+          "name": "Deutsche Bank",
+          "type": "company",
+          "aliases": [
+            "德意志银行"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "德意志银行的 Adrian Cox"
+          ]
+        },
+        {
+          "name": "Gemini 4 Argon",
+          "type": "model",
+          "aliases": [
+            "Argon"
+          ],
+          "confidence": 0.85,
+          "evidence": [
+            "本周 Gemini 4 Argon、Claude Opus 5.5、GPT-6 Astra 彼此把价格锁到 $2/$10—$4/$20 的定价三角"
+          ]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": [
+            "Opus 5.5"
+          ],
+          "confidence": 0.85,
+          "evidence": [
+            "本周 Gemini 4 Argon、Claude Opus 5.5、GPT-6 Astra 彼此把价格锁到 $2/$10—$4/$20 的定价三角"
+          ]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "本周 Gemini 4 Argon、Claude Opus 5.5、GPT-6 Astra 彼此把价格锁到 $2/$10—$4/$20 的定价三角"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "富国银行称 OpenAI 与 Anthropic 合并营收增速放缓、token 单价平台化",
+          "summary": "富国银行分析师 Ohsung Kwon 团队指出 OpenAI 与 Anthropic 合并年化营收增速正在放缓，增长率在下降，原因是 token 用量上升而单价已平台化，因为对约九成任务而言前沿模型彼此可替换。",
+          "participants": [
+            {
+              "name": "Wells Fargo",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "OpenAI 与 Anthropic 合并年化营收增速正在放缓"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "前端 token 价格平台化与后端资本开支增速放缓互相印证",
+          "summary": "Kwon 提出判断线：若超大厂商未来资本开支上修幅度不足 10%，就是 AI 基建股票的风险信号；三家前沿模型价格锁到 $2/$10—$4/$20 的定价三角与资本开支放缓互相印证。",
+          "participants": [
+            {
+              "name": "Wells Fargo",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Gemini 4 Argon",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Claude Opus 5.5",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "GPT-6 Astra",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "若超大厂商未来资本开支上修幅度不足 10%，就是 AI 基建股票的风险信号"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Ohsung Kwon",
+          "target": "Wells Fargo",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": [
+            "富国银行分析师 Ohsung Kwon 团队"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "资本开支总规模",
+          "value": "约每年 1 万亿美元"
+        },
+        {
+          "name": "Kwon 提出的资本开支上修安全线",
+          "value": "不低于 10%"
+        },
+        {
+          "name": "可替换的前沿任务占比",
+          "value": "约九成（90%）"
+        }
+      ],
+      "why_it_matters": "「AI 热潮接近顶部」首次有了量化证据链：token 单价平台化压低前沿溢价、资本开支增速放缓，用电价与卖价两端互相印证了一个逼近的平台区。"
+    },
+    {
+      "article_id": "2026-10-14-6",
+      "entities": [
+        {
+          "name": "IDC",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "IDC 报告显示，2026 年上半年英伟达在华 AI 芯片出货量下滑 44%"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "2026 年上半年英伟达在华 AI 芯片出货量下滑 44% 至 67.8 万颗"
+          ]
+        },
+        {
+          "name": "Huawei",
+          "type": "company",
+          "aliases": [
+            "华为"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "华为出货 57.2 万颗、市场份额从落后转为以 28% 逼近英伟达的 34%"
+          ]
+        },
+        {
+          "name": "Huawei Ascend",
+          "type": "hardware",
+          "aliases": [
+            "昇腾"
+          ],
+          "confidence": 0.8,
+          "evidence": [
+            "华为则借着自有昇腾路线补位"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "IDC 报告英伟达在华 AI 芯片份额降至 34%、华为以 28% 紧追",
+          "summary": "IDC 报告显示 2026 年上半年英伟达在华 AI 芯片出货量下滑 44% 至 67.8 万颗、份额降至 34%，华为出货 57.2 万颗、以 28% 份额紧追，华盛顿出口限制是主因。",
+          "participants": [
+            {
+              "name": "IDC",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Huawei",
+              "type": "company",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "2026 年上半年英伟达在华 AI 芯片出货量下滑 44% 至 67.8 万颗"
+          ]
+        },
+        {
+          "type": "infra",
+          "label": "中国市场 GPU 总出货量下降 26%，供应链断层线成形",
+          "summary": "整个中国市场 GPU 总出货量也下降 26% 至 99.1 万颗，说明英伟达丢失的份额未被华为等比例填上，合规缺口与本土替代共同压低了整体规模。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Huawei",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "中国市场 GPU 出货量整体下降 26%"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Huawei",
+          "target": "NVIDIA",
+          "type": "competes_with",
+          "weight": 0.8,
+          "evidence": [
+            "华为出货 57.2 万颗、市场份额从落后转为以 28% 逼近英伟达的 34%"
+          ]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "Huawei Ascend",
+          "type": "competes_with",
+          "weight": 0.6,
+          "evidence": [
+            "华为则借着自有昇腾路线补位"
+          ]
+        },
+        {
+          "source": "Huawei",
+          "target": "Huawei Ascend",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "华为则借着自有昇腾路线补位"
+          ]
+        },
+        {
+          "source": "IDC",
+          "target": "NVIDIA",
+          "type": "reports_on",
+          "weight": 0.5,
+          "evidence": [
+            "IDC 报告显示，2026 年上半年英伟达在华 AI 芯片出货量下滑 44%"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "英伟达在华 AI 芯片出货量下滑",
+          "value": "44%"
+        },
+        {
+          "name": "英伟达在华出货量",
+          "value": "67.8 万颗"
+        },
+        {
+          "name": "华为出货量",
+          "value": "57.2 万颗"
+        },
+        {
+          "name": "英伟达中国市场份额",
+          "value": "34%"
+        },
+        {
+          "name": "华为中国市场份额",
+          "value": "28%"
+        },
+        {
+          "name": "中国市场 GPU 总出货量下降",
+          "value": "26%"
+        },
+        {
+          "name": "中国市场 GPU 总出货量",
+          "value": "99.1 万颗"
+        }
+      ],
+      "why_it_matters": "「出口管制把中国市场让给本土厂商」被 IDC 数据变成量化事实，中国份额下滑及其未被填补的缺口是英伟达财报上最直接的地缘压力读数。"
+    },
+    {
+      "article_id": "2026-10-14-7",
+      "entities": [
+        {
+          "name": "Intel",
+          "type": "company",
+          "aliases": [
+            "英特尔"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Intel 发布面向 AI 推理的 D-Series GPU"
+          ]
+        },
+        {
+          "name": "D-Series GPU",
+          "type": "hardware",
+          "aliases": [
+            "Crescent Island"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Intel 发布面向 AI 推理的 D-Series GPU（原代号 Crescent Island）"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "而非英伟达 Blackwell 那样的服务器整板"
+          ]
+        },
+        {
+          "name": "Blackwell",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "而非英伟达 Blackwell 那样的服务器整板"
+          ]
+        },
+        {
+          "name": "Grace",
+          "type": "hardware",
+          "aliases": [
+            "Grace 芯片"
+          ],
+          "confidence": 0.8,
+          "evidence": [
+            "英伟达自己推出搭载 Grace 芯片的独立 CPU 机架"
+          ]
+        },
+        {
+          "name": "Arm",
+          "type": "company",
+          "aliases": [
+            "Arm 系"
+          ],
+          "confidence": 0.7,
+          "evidence": [
+            "Arm 系 CPU 也因英伟达推出独立 CPU 机架（Grace 芯片）而在数据中心获得更大立足点"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Intel 发布面向 AI 推理的 D-Series GPU（代号 Crescent Island）",
+          "summary": "Intel 发布 D-Series GPU，以 PCIe 卡形态部署而非 Blackwell 那样的服务器整板，瞄准推理方向，首批将携手 ASUS、HPE、Dell、Supermicro 及新云厂商推出 D-Series 系统。",
+          "participants": [
+            {
+              "name": "Intel",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "D-Series GPU",
+              "type": "hardware",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Intel 发布面向 AI 推理的 D-Series GPU"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "智能体时代让 CPU 需求回升，被冷落的 x86 重新变贵",
+          "summary": "生成式 AI 爆发初期被冷落的 CPU，正因智能体对编排工作（查数据库、启动应用、加载网页）的依赖而重新变贵，英伟达推 Grace CPU 机架、Arm 系 CPU 在数据中心份额上升都在印证。",
+          "participants": [
+            {
+              "name": "Intel",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Arm",
+              "type": "company",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "生成式 AI 爆发初期被冷落的 CPU，正因智能体（agents）对单次推理 token 之外的「编排工作」而重新变贵"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "D-Series GPU",
+          "target": "Intel",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "Intel 发布面向 AI 推理的 D-Series GPU"
+          ]
+        },
+        {
+          "source": "D-Series GPU",
+          "target": "Blackwell",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": [
+            "以 PCIe 卡形态部署而非英伟达 Blackwell 那样的服务器整板"
+          ]
+        },
+        {
+          "source": "Intel",
+          "target": "NVIDIA",
+          "type": "competes_with",
+          "weight": 0.6,
+          "evidence": [
+            "它不做训练端与英伟达正面掰手腕的旗舰加速器"
+          ]
+        },
+        {
+          "source": "Grace",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "英伟达自己推出搭载 Grace 芯片的独立 CPU 机架"
+          ]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "Grace",
+          "type": "uses",
+          "weight": 0.6,
+          "evidence": [
+            "英伟达自己推出搭载 Grace 芯片的独立 CPU 机架"
+          ]
+        },
+        {
+          "source": "Arm",
+          "target": "Intel",
+          "type": "competes_with",
+          "weight": 0.5,
+          "evidence": [
+            "Arm 系 CPU 也因英伟达推出独立 CPU 机架（Grace 芯片）而在数据中心获得更大立足点"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Intel 今年股价涨幅",
+          "value": "+183%"
+        }
+      ],
+      "why_it_matters": "智能体把 CPU 拉回数据中心舞台中央，为被挤出训练基建前排的 Intel 提供了最可信的翻身剧情，推理负载成为绕开训练端正面竞争的新战场。"
+    },
+    {
+      "article_id": "2026-10-14-8",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "英伟达宣布 RTX Spark（新一代个人 AI 超算笔记本）的软件配套已全部就绪"
+          ]
+        },
+        {
+          "name": "RTX Spark",
+          "type": "hardware",
+          "aliases": [
+            "Spark"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "英伟达宣布 RTX Spark（新一代个人 AI 超算笔记本，最高 128GB 统一内存、1 petaflop AI 算力）"
+          ]
+        },
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": [
+            "微软"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "微软与英伟达已确认 RTX Spark 笔记本将于 10 月 16 日发售"
+          ]
+        },
+        {
+          "name": "Nemotron 3.5 Bolt 74B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "预告面向本地智能体的开放权重 MoE 模型 Nemotron 3.5 Bolt 74B 于 10 月 15 日发布"
+          ]
+        },
+        {
+          "name": "GitHub Copilot",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.7,
+          "evidence": [
+            "到 GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        },
+        {
+          "name": "Hermes",
+          "type": "product",
+          "aliases": [
+            "Hermes Agent"
+          ],
+          "confidence": 0.7,
+          "evidence": [
+            "到 GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        },
+        {
+          "name": "OpenClaw",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.7,
+          "evidence": [
+            "OpenClaw 与 Hermes 等智能体项目登顶 GitHub 人气榜"
+          ]
+        },
+        {
+          "name": "OpenShell",
+          "type": "tool",
+          "aliases": [
+            "NVIDIA OpenShell"
+          ],
+          "confidence": 0.7,
+          "evidence": [
+            "安全层则由 NVIDIA OpenShell 与微软 Execution Containers（MXC）提供"
+          ]
+        },
+        {
+          "name": "Perplexity",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "GitHub Copilot、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        },
+        {
+          "name": "Pi",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "GitHub Copilot、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        },
+        {
+          "name": "WorkBuddy",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "GitHub Copilot、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "英伟达宣布 RTX Spark 本机 AI 生态齐备，10 月 16 日发售",
+          "summary": "英伟达宣布 RTX Spark（最高 128GB 统一内存、1 petaflop AI 算力）软件配套已就绪，多家智能体应用完成本地化适配与隔离沙盒，微软与英伟达确认笔记本将于 10 月 16 日发售。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "RTX Spark",
+              "type": "hardware",
+              "role": "object"
+            },
+            {
+              "name": "Microsoft",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "微软与英伟达已确认 RTX Spark 笔记本将于 10 月 16 日发售"
+          ]
+        },
+        {
+          "type": "open_source",
+          "label": "英伟达预告面向本地智能体的开放权重 MoE 模型 Nemotron 3.5 Bolt 74B 于 10 月 15 日发布",
+          "summary": "Nemotron 3.5 Bolt 74B-A9B（74B 总参、9B 激活的 MoE）被设计为 RTX Spark 上跑本地智能体的开源主力，采用 2-bit 量化与量化感知训练。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Nemotron 3.5 Bolt 74B",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "预告面向本地智能体的开放权重 MoE 模型 Nemotron 3.5 Bolt 74B 于 10 月 15 日发布"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "RTX Spark",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "英伟达宣布 RTX Spark（新一代个人 AI 超算笔记本）"
+          ]
+        },
+        {
+          "source": "Nemotron 3.5 Bolt 74B",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "面向本地智能体的开放权重 MoE 模型 Nemotron 3.5 Bolt 74B"
+          ]
+        },
+        {
+          "source": "RTX Spark",
+          "target": "Microsoft",
+          "type": "partners_with",
+          "weight": 0.6,
+          "evidence": [
+            "微软与英伟达已确认 RTX Spark 笔记本将于 10 月 16 日发售"
+          ]
+        },
+        {
+          "source": "GitHub Copilot",
+          "target": "RTX Spark",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        },
+        {
+          "source": "Hermes",
+          "target": "RTX Spark",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        },
+        {
+          "source": "OpenClaw",
+          "target": "RTX Spark",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        },
+        {
+          "source": "RTX Spark",
+          "target": "OpenShell",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "安全层则由 NVIDIA OpenShell 与微软 Execution Containers（MXC）提供"
+          ]
+        },
+        {
+          "source": "Perplexity",
+          "target": "RTX Spark",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        },
+        {
+          "source": "Pi",
+          "target": "RTX Spark",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        },
+        {
+          "source": "WorkBuddy",
+          "target": "RTX Spark",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi、WorkBuddy 等主流智能体应用都完成 RTX Spark 的本地模型与设置推荐"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "RTX Spark 统一内存",
+          "value": "最高 128GB"
+        },
+        {
+          "name": "RTX Spark AI 算力",
+          "value": "1 petaflop"
+        },
+        {
+          "name": "Nemotron 3.5 Bolt 74B 总参数量",
+          "value": "74B"
+        },
+        {
+          "name": "Nemotron 3.5 Bolt 74B 激活参数量",
+          "value": "9B"
+        },
+        {
+          "name": "Nemotron 3.5 Bolt 74B 量化后占用",
+          "value": "24GB（2-bit）"
+        },
+        {
+          "name": "本地大模型下载量相对去年全年",
+          "value": "5 倍"
+        }
+      ],
+      "why_it_matters": "本地 LLM 是否越过支撑日常智能体的智能阈值，从厂商口号变成硬件 + 模型 + 框架 + 沙盒 + 路由的整套可购方案，重画了个人设备与云端智能体的边界。"
+    },
+    {
+      "article_id": "2026-10-14-9",
+      "entities": [
+        {
+          "name": "AUBench",
+          "type": "benchmark",
+          "aliases": [
+            "Agent Unlearning Benchmark"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "作者据此构造 Agent Unlearning Benchmark（AUBench）"
+          ]
+        },
+        {
+          "name": "TOFU",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "把 TOFU 的虚构作者场景扩展进带持久记忆、离线网页快照"
+          ]
+        },
+        {
+          "name": "machine unlearning",
+          "type": "topic",
+          "aliases": [
+            "机器遗忘"
+          ],
+          "confidence": 0.7,
+          "evidence": [
+            "当 LLM 以智能体形态部署时，参数级机器遗忘不再足够"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出智能体机器遗忘基准 AUBench，跨参数、持久记忆、工具调用三信息通道",
+          "summary": "新预印本重新定义遗忘为跨三个信息通道的移除：参数知识、持久记忆、工具调用获取通道，并据此构造 AUBench，把 TOFU 的虚构作者场景扩展进带记忆与工具的智能体环境。",
+          "participants": [
+            {
+              "name": "AUBench",
+              "type": "benchmark",
+              "role": "subject"
+            },
+            {
+              "name": "TOFU",
+              "type": "benchmark",
+              "role": "object"
+            },
+            {
+              "name": "machine unlearning",
+              "type": "topic",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "作者据此构造 Agent Unlearning Benchmark（AUBench）"
+          ]
+        },
+        {
+          "type": "research",
+          "label": "论文揭示「模型级遗忘」与「系统级智能体遗忘」之间的鸿沟",
+          "summary": "现有参数级与记忆级遗忘方法在带记忆与工具的环境中都暴露差距，数据删除义务从「从权重里抹去」变成要同时管理参数、状态与外部获取面的系统工程问题。",
+          "participants": [
+            {
+              "name": "AUBench",
+              "type": "benchmark",
+              "role": "subject"
+            },
+            {
+              "name": "machine unlearning",
+              "type": "topic",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "「模型级遗忘」与「系统级智能体遗忘」不是一回事"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "AUBench",
+          "target": "TOFU",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": [
+            "把 TOFU 的虚构作者场景扩展进带持久记忆、离线网页快照"
+          ]
+        },
+        {
+          "source": "AUBench",
+          "target": "machine unlearning",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": [
+            "作者据此构造 Agent Unlearning Benchmark（AUBench）"
+          ]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "当智能体被赋予记忆与工具，数据删除义务不再只是「从权重里抹去」，而变成跨参数、状态与外部获取面的系统工程问题，亡忆研究从模型级进化为系统级。"
+    },
+    {
+      "article_id": "2026-10-14-10",
+      "entities": [
+        {
+          "name": "Sequent-Prover",
+          "type": "paper",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "新预印本提出 Sequent-Prover"
+          ]
+        },
+        {
+          "name": "Z3",
+          "type": "tool",
+          "aliases": [
+            "Z3 求解器"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "跨轮次查询 Z3 求解器、检查求解器反馈"
+          ]
+        },
+        {
+          "name": "SMT-LIB",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "在可执行的 SMT-LIB「草稿板」里推理"
+          ]
+        },
+        {
+          "name": "verifier-conditioned trajectory distillation",
+          "type": "topic",
+          "aliases": [
+            "验证器条件化轨迹蒸馏"
+          ],
+          "confidence": 0.8,
+          "evidence": [
+            "其「验证器条件化轨迹蒸馏」配方"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 Sequent-Prover 用可执行 SMT-LIB 草稿板训练可核查形式推理智能体",
+          "summary": "Sequent-Prover 强制模型写可执行 SMT-LIB 程序、实际调用 Z3 求解器，让每一步被求解器当场检验，从「会说话」走向「会证明」。",
+          "participants": [
+            {
+              "name": "Sequent-Prover",
+              "type": "paper",
+              "role": "subject"
+            },
+            {
+              "name": "SMT-LIB",
+              "type": "tool",
+              "role": "object"
+            },
+            {
+              "name": "Z3",
+              "type": "tool",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "新预印本提出 Sequent-Prover"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "验证器条件化轨迹蒸馏大幅提升 4B 模型准确率并降低成本",
+          "summary": "在 37 个基准、每个模型族 7254 个问题上，4B 模型单次准确率从 85.6% 提升到 97.0%，pass^4 从 64.1% 到 91.7%，平均 SMT 调用从 4.10 降到 2.52。",
+          "participants": [
+            {
+              "name": "Sequent-Prover",
+              "type": "paper",
+              "role": "subject"
+            },
+            {
+              "name": "verifier-conditioned trajectory distillation",
+              "type": "topic",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "其「验证器条件化轨迹蒸馏」配方，在 37 个基准、每个模型族 7254 个问题上，把 4B 模型的单次准确率从 85.6% 提升到 97.0%"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sequent-Prover",
+          "target": "Z3",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "跨轮次查询 Z3 求解器、检查求解器反馈"
+          ]
+        },
+        {
+          "source": "Sequent-Prover",
+          "target": "SMT-LIB",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "在可执行的 SMT-LIB「草稿板」里推理"
+          ]
+        },
+        {
+          "source": "Sequent-Prover",
+          "target": "verifier-conditioned trajectory distillation",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "其「验证器条件化轨迹蒸馏」配方"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "4B 模型单次准确率提升",
+          "value": "85.6% → 97.0%"
+        },
+        {
+          "name": "4B 模型 pass^4 可靠度提升",
+          "value": "64.1% → 91.7%"
+        },
+        {
+          "name": "平均 SMT 调用下降",
+          "value": "4.10 → 2.52"
+        },
+        {
+          "name": "每次尝试 token 下降",
+          "value": "18.97k → 12.72k"
+        },
+        {
+          "name": "评测覆盖基准数",
+          "value": "37 个"
+        },
+        {
+          "name": "每个模型族评测问题数",
+          "value": "7254 个"
+        }
+      ],
+      "why_it_matters": "用外部求解器充当不可造假的验证器、把每一步推理置于可证明地基上，是智能体从「会说话」走向「会证明」的一条实证路线。"
+    },
+    {
+      "article_id": "2026-10-14-11",
+      "entities": [
+        {
+          "name": "Aleph Alpha",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Aleph Alpha 发布 Kolibri-1"
+          ]
+        },
+        {
+          "name": "Kolibri-1",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Aleph Alpha 发布 Kolibri-1：Apache-2.0 开源的德英双语 78B 稀疏 MoE 推理模型"
+          ]
+        },
+        {
+          "name": "H200",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "单张 H200（或 B200/B300，或两张 80GB 的 A100/H100）即可运行"
+          ]
+        },
+        {
+          "name": "vLLM",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "通过 vLLM 与 aleph-alpha-inference 提供服务"
+          ]
+        },
+        {
+          "name": "aleph-alpha-inference",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "通过 vLLM 与 aleph-alpha-inference 提供服务"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Aleph Alpha 发布 Apache-2.0 开源 78B 稀疏 MoE 主权模型 Kolibri-1",
+          "summary": "Aleph Alpha 发布 Kolibri-1：Apache-2.0 开源的德英双语 78B 稀疏 MoE 推理模型，每次仅激活 3.46B 参数、1M token 上下文，单张 H200 即可运行，通过 vLLM 与 aleph-alpha-inference 提供服务。",
+          "participants": [
+            {
+              "name": "Aleph Alpha",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Kolibri-1",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Aleph Alpha 发布 Kolibri-1：Apache-2.0 开源的德英双语 78B 稀疏 MoE 推理模型"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "Kolibri-1 被定位为欧盟「部署即主权」的模型权重侧样本",
+          "summary": "模型把规格卡得刚好适配一张单卡就能跑，面向必须在境内/私有硬件上托管模型的欧盟机构，成为「主权模型」的落地选项。",
+          "participants": [
+            {
+              "name": "Aleph Alpha",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Kolibri-1",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "被自家团队直接定位为「主权模型」的落地选项"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Kolibri-1",
+          "target": "Aleph Alpha",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "Aleph Alpha 发布 Kolibri-1"
+          ]
+        },
+        {
+          "source": "Kolibri-1",
+          "target": "vLLM",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "通过 vLLM 与 aleph-alpha-inference 提供服务"
+          ]
+        },
+        {
+          "source": "Kolibri-1",
+          "target": "aleph-alpha-inference",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "通过 vLLM 与 aleph-alpha-inference 提供服务"
+          ]
+        },
+        {
+          "source": "Kolibri-1",
+          "target": "H200",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "单张 H200（或 B200/B300，或两张 80GB 的 A100/H100）即可运行"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Kolibri-1 总参数量",
+          "value": "78B 稀疏 MoE"
+        },
+        {
+          "name": "Kolibri-1 激活参数量",
+          "value": "3.46B"
+        },
+        {
+          "name": "Kolibri-1 上下文窗口",
+          "value": "1,048,576 token"
+        },
+        {
+          "name": "Kolibri-1 FP8 权重大小",
+          "value": "约 78GB"
+        }
+      ],
+      "why_it_matters": "在欧盟「去美国/中国云依赖」的都柏林宣言语境里，开源、双语、单卡可跑的 78B MoE 把「部署即主权」从口号做成在自有硬件上合规运行的规格化落地方案。"
+    }
+  ]
+}

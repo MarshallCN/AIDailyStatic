@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-14",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "r1 指出的七处问题已全部修复，事实与数字总体准确。但剩余问题集中在比较类关系与证据脱节：Article 0 用单项自报基准撑起全局 outperforms、Article 5 的 competes_with 与三条基于定价三角的 compared_with 均缺少比原文更强的支撑、Article 10 的 SMT-LIB--uses-->Z3 主语错配、Article 8 的整合名单只抽了 3/6 且 evidence 张冠李戴，另有 EU AI Act 孤悬无边，需再修订。",
+  "findings": [
+    {
+      "article_id": "2026-10-14-0",
+      "severity": "medium",
+      "problem": "关系 \"Gemini 4 Argon --outperforms--> Claude Opus 5.5\"（weight 0.8）被抽成全局能力领先，但支撑它的只有 Google 自报的 Vals Index 单项（68.9% vs 67.0%）。原文明确说「独立指标没有一边倒」：Artificial Analysis 的 Intelligence Index 上 Argon 与 GPT-6 Astra 并列 53，仍落后 Claude Opus 5.5(58)；且在 Terminal-Bench 4.0、FrontierSWE v2 等编码与科学测试上落后 Opus 5.5。用自报单基准抽全局 outperforms 会让图谱讲出超过证据的故事，也违背已积累的「证据必须能直接推出该关系」规则。",
+      "fix": "把全局的 \"Gemini 4 Argon --outperforms--> Claude Opus 5.5\" 删除，或收窄为带基准限定的表述（如 Gemini 4 Argon --evaluated_on--> Vals Index 已存在，可补一条限定于 Vals Index/DeepSWE v1.1 的 compared_with），并在事件 summary 保留「自报领先」与「独立指标并不一边倒」的限定。"
+    },
+    {
+      "article_id": "2026-10-14-5",
+      "severity": "medium",
+      "problem": "关系 \"OpenAI --competes_with--> Anthropic\" 的 evidence 是「OpenAI 与 Anthropic 合并年化营收增速正在放缓」，这讲的是两家合并口径的收入增速，并不构成一对一的直接竞争陈述（事实上正文是把二者合并计算）。依据已积累规则「competes_with 必须有直接竞争关系的陈述支撑，不应仅靠同段并列」，该边缺少支撑。",
+      "fix": "删除 \"OpenAI --competes_with--> Anthropic\" 这条关系。若确实认为两家存在竞争，需补一条能直接点名二者互为对手的原文证据，否则不放；把两家合并营收增速放缓的语义留在事件 summary 即可。"
+    },
+    {
+      "article_id": "2026-10-14-5",
+      "severity": "medium",
+      "problem": "三条基于定价三角的 compared_with 关系（\"Gemini 4 Argon --compared_with--> Claude Opus 5.5\"、\"Claude Opus 5.5 --compared_with--> GPT-6 Astra\"，以及 Article 0 中同源的定价对比）evidence 都是「彼此把价格锁到 $2/$10—$4/$20」，即证据是价格带而非能力对比。依据已积累规则「价格对比不要用 compared_with，证据若是价格带而非能力应改用价格语义或明确限定为定价对比」，这里用 compared_with 会被误读成模型能力比较。",
+      "fix": "将这三条 compared_with 改为带「定价」限定的表述（如 --priced_like-->、--price_matches--> 若类型表存在），或在 evidence 中明确「仅指 token 定价相同，非能力比较」；若类型表无合适类型则删除这些边，把定价三角写进事件 summary 与 metrics。"
+    },
+    {
+      "article_id": "2026-10-14-10",
+      "severity": "medium",
+      "problem": "关系 \"SMT-LIB --uses--> Z3\"（weight 0.5）主语错配：原文的动作主语是 Sequent-Prover——「写出完整 SMT-LIB 程序、跨轮次查询 Z3 求解器」。SMT-LIB 是被写出的语言/格式，不是使用 Z3 的主体；格式与被调用的求解器之间不应构成 uses 边，读出来是「SMT-LIB 语言使用 Z3」在语义上不成立。",
+      "fix": "删除 \"SMT-LIB --uses--> Z3\"。一律改用 \"Sequent-Prover --uses--> Z3\" 与 \"Sequent-Prover --uses--> SMT-LIB\"（二者已存在）来表达，工具/格式之间不要再互相连 uses 边。"
+    },
+    {
+      "article_id": "2026-10-14-8",
+      "severity": "medium",
+      "problem": "整合名单抽取不完整且一条 evidence 张冠李戴：原文并列列出 GitHub Copilot、Hermes、OpenClaw、Perplexity、Pi、WorkBuddy 六个「都完成 RTX Spark 本地模型与设置推荐」的智能体应用，但只抽了前三个，漏了 Perplexity、Pi、WorkBuddy；且 \"OpenClaw --integrates--> RTX Spark\" 的 evidence 引的是「OpenClaw 与 Hermes 等智能体项目登顶 GitHub 人气榜」，这句话讲的是人气排名，并不能支撑它与 RTX Spark 的集成关系。依据已积累规则「对正文点名的每一位具名参与者都要建对应关系边」，名单成员不应被丢。",
+      "fix": "补齐 Perplexity、Pi、WorkBuddy 三条与 GitHub Copilot 同类型的 \"X --integrates--> RTX Spark\" 边；把 OpenClaw 那条的 evidence 从「人气榜」改为指向原文名单的句子（「OpenClaw、Perplexity、Pi、WorkBuddy 都完成 RTX Spark 的本地模型与设置推荐」）。"
+    },
+    {
+      "article_id": "2026-10-14-3",
+      "severity": "low",
+      "problem": "实体 \"EU AI Act\" 存在却没有任何关系边（孤悬）：它是这次执法的对象——「欧盟 AI 办公室启动 AI 法案首次执法行动」，但图谱里只有事件把 EU AI Office 与几家实验室相连，EU AI Act 本身未接进任何事件或关系，跨文章连通上少了一条法规实体边。",
+      "fix": "新增一条 \"EU AI Office --enforces--> EU AI Act\"（若类型表存在），或让执法事件把 EU AI Act 作为对象参与者；这样法规实体不至于成为独立的孤立点。"
+    }
+  ],
+  "lessons": [
+    "厂商自报的单项基准领先（且原文同时给出独立指标并不一边倒的说明）不足以支撑全局 outperforms 关系，应改用限定到具体基准的 evaluated_on/compared_with 并保留「自报」限定。",
+    "一个动作的统一主语是某系统/智能体时（如『写 SMT-LIB 程序并查询 Z3』），只在该主语与其各宾语之间建 uses 边，不要把宾语之间（语言格式与被调用的求解器）再互相连接 uses 关系。"
+  ]
+}

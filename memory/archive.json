@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T22:28:59Z",
+  "updated_at": "2026-10-15T00:56:43Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -811,6 +811,35 @@
         "2026-09-07-2",
         "2026-09-07-3",
         "2026-09-07-4"
+      ]
+    },
+    {
+      "period_id": "2026-W38",
+      "period_type": "week",
+      "start_date": "2026-09-14",
+      "end_date": "2026-09-14",
+      "summary": "2026-09-14 至 2026-09-14 期间，产业、NVIDIA、发布 主要围绕 infra、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "产业",
+        "NVIDIA",
+        "发布",
+        "NVIDIA RTX GPU"
+      ],
+      "event_types": [
+        "infra",
+        "launch",
+        "research"
+      ],
+      "trend_signals": [
+        "核心实体：产业、NVIDIA、发布",
+        "主事件类型：infra、launch"
+      ],
+      "representative_article_ids": [
+        "2026-09-14-0",
+        "2026-09-14-1",
+        "2026-09-14-2",
+        "2026-09-14-3",
+        "2026-09-14-4"
       ]
     }
   ]
