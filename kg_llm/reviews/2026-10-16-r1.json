@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-16",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "整体抽取较准确、信息丰富，但存在一处事实错误（Mikhail Lukin 被错误归属到 QuEra Computing 而非哈佛），另有 article-13 把『获得访问权/悬赏』当 partners_with、article-7 把『基于某框架』当 released_by、article-6 把『agent 在澳大利亚系统内运行』当 targets 等关系类型误用，需要修订。",
+  "findings": [
+    {
+      "article_id": "2026-10-16-1",
+      "severity": "high",
+      "problem": "关系 \"Mikhail Lukin --affiliated_with--> QuEra Computing\" 与原文不符。原文是『获哈佛的 Susanne Yelin 与 Mikhail Lukin（及 QuEra Computing）参与』——Yelin 与 Lukin 都是哈佛（Harvard）研究者，QuEra Computing 是单独的参与机构，Lukin 并不隶属 QuEra。这条边把研究者的机构归属张冠李戴到另一家合作机构上。",
+      "fix": "改为 \"Mikhail Lukin --affiliated_with--> Harvard\"（与 Susanne Yelin 同例）；保留 QuEra Computing 实体但不给它挂这条不成立的 affiliation 边（原文未显示 Lukin 隶属 QuEra，可删边或不建边）。"
+    },
+    {
+      "article_id": "2026-10-16-13",
+      "severity": "medium",
+      "problem": "关系 \"METR --partners_with--> Anthropic\"（证据=获得近员工级访问权）与 \"Gray Swan --partners_with--> Anthropic\"（证据=30 万美元注入防御悬赏）用 partners_with 兜底，但原文并没有宣布这些是合作关系——『授予访问权』和『出资悬赏』都不构成 partnership。",
+      "fix": "把 partners_with 改为更精确的关系类型，例如 METR 侧用 \"METR --grants_access_to--> Anthropic\"（或 Anthropic 获得访问权需要明确方向）；Gray Swan 的 30 万悬赏只表明 Gray Swan 发起了悬赏，与 Anthropic 之间没有可验证的关系边，删除该 partners_with 边。"
+    },
+    {
+      "article_id": "2026-10-16-6",
+      "severity": "medium",
+      "problem": "两处问题：1) 实体 \"India\" 被标为 type=organization，印度是国家/地区而非组织；2) 关系 \"OpenAI --targets--> Australia\" 的证据『在澳大利亚，OpenAI 声称...』并不支撑『targets』——原文是 agent 在澳大利亚 Medicare 系统内运行，不是 OpenAI 针对澳大利亚发起攻击。",
+      "fix": "把 India 的 type 改为 location/country（不与其他 organization 混为一谈）；删除或改写 \"OpenAI --targets--> Australia\"，该证据只说明事件发生在澳大利亚，应改为 \"OpenAI --operates_in--> Australia\"（若该关系类型存在）或删边。"
+    },
+    {
+      "article_id": "2026-10-16-7",
+      "severity": "medium",
+      "problem": "关系 \"NIST SP 800-61r3 --released_by--> NIST\" 的类型与含义错位：原文『指南基于 NIST SP 800-61r3 等既有框架』说的是这份新指南借鉴了 SP 800-61r3，并不是这篇新闻里 SP 800-61r3 被 NIST 发布，'released_by' 会让人误读为框架本身由本事件发布。",
+      "fix": "把这条边改为表达『指南基于该框架』的关系，例如以 NIST 为 source、NIST SP 800-61r3 为 target 的 \"based_on\"（若存在该类型）；否则删除该边，不要用 released_by。"
+    },
+    {
+      "article_id": "2026-10-16-4",
+      "severity": "medium",
+      "problem": "关系 \"OpenAI --compared_with--> Glimpse\" 的证据『OpenAI 在 2025 年就给 o 系列模型加了推理中的裁剪缩放』是对机制的背景式提及（对比的是机制不是两家模型间的新关系），并不能支撑 OpenAI 与 Glimpse 之间的实体关系边，权重 0.6 属『提到了就当关系』。",
+      "fix": "删除该边（背景机制对比不应生成实体间关系边），或在确有明确对比含义时改用支撑该对比目标的证据，并提高证据与断言的匹配度。"
+    }
+  ],
+  "lessons": [
+    "研究者（person）的 affiliated_with 必须严格来自原文对该研究者本身的机构归属表述；当机构仅以合作方身份出现时，不得把该归属安到同一批研究者身上。",
+    "partners_with/acquisition/invests_in 等关系边必须有原文明确的相应行为支撑；『获得访问权』『出资悬赏』『基于某框架』『机制对比』都不等于合作关系，应使用更精确的关系类型或删边。",
+    "国家/地区（如印度、澳大利亚）独立于 organization 使用独立实体类型，不要把地区误标为 organization。"
+  ]
+}

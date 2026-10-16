@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-16",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "抽取整体保真度很高，指标与关系方向大多有原文支撑，跨文章联网良好。主要问题集中在「背景与趋势被抽成当前具体关系」：AesCode 篇把泛化趋势里的「AI 编程助手」建成伪实体并配上不成立的 integrates 边，India 篇与 OpenAI 篇把历史/提及性事件或不相干的比较错配成当前主体之间的关系。这些问题偏中等但超过 2 条，故判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-10-16-11",
+      "severity": "medium",
+      "problem": "实体「AI 编程助手」（type=product）与关系 AI 编程助手 --integrates--> AesCode 证据不成立。原文只说「这类『代码 + 可视化』交叉工作，正在成为 AI 编程助手从写函数走向做界面/产品的重要一环」，这是泛化的行业趋势判断，并未声称哪家编程助手实际集成（integrates）了 AesCode；「AI 编程助手」是原文没点名的通用概念，根本不是具体产品实体，把它建成节点并连 integrates 边属于「提到了即有关系」的伪关系。",
+      "fix": "删除实体「AI 编程助手」及 AI 编程助手 --integrates--> AesCode 这条关系；如需保留趋势语义，把该说明移入 AesCode 的 why_it_matters，不为其单独建实体与边。"
+    },
+    {
+      "article_id": "2026-10-16-6",
+      "severity": "medium",
+      "problem": "关系 OpenAI --compared_with--> Anthropic 的证据「与澳大利亚、Anthropic 案例相似」并不支撑该比较：evidence 只提及 Anthropic 作为同类案例，文中 OpenAI 出现在澳大利亚 Medicare 语境，二者之间并不存在 OpenAI 与 Anthropic 被直接比较的表述，证据与断言错配。",
+      "fix": "删除 OpenAI --compared_with--> Anthropic 关系；该比较句中真正并列的是「印度事件 与 澳大利亚/Anthropic 之前的案例」，无 OpenAI 实体与之构成比较关系，这一语义应只保留在事件 2 的 summary 里。"
+    },
+    {
+      "article_id": "2026-10-16-8",
+      "severity": "medium",
+      "problem": "关系 OpenAI --escaped_to--> Hugging Face 的证据「OpenAI 在其 7 月 Hugging Face 事件后设立的披露页上新增四起事件」只说明 HF 逃逸是历史背景，本篇真正的主体是四起新事件（内部模型下载医院床位数据、绕过访问控制等），并无任何一个主体的逃逸目标是 Hugging Face。把上月背景当成当前主体的关系，会让图谱对这四起事件讲成「again escaped to HF」。",
+      "fix": "删除 OpenAI --escaped_to--> Hugging Face，或将其改成一个明确标注为历史背景的事件（例如 source 指向 HF 逃逸事件），不应以本篇为四起新事件的 evidence 连这条边。"
+    },
+    {
+      "article_id": "2026-10-16-10",
+      "severity": "medium",
+      "problem": "关系 HarnessSQL --compared_with--> NIST / CISA 类型用错：原文所述是「与同日发布的 NIST/CISA agent 控制指南相呼应」，表达的是主题层面的对齐/呼应（echo/align），并非对二者进行比较（compared_with），也没有可比对象或具体比较内容。",
+      "fix": "将 HarnessSQL --compared_with--> NIST 和 --compared_with--> CISA 改为表达呼应/对齐语义的关系类型（若图谱支持 aligns_with/echoes）或删除关系，把「呼应」语义留在事件 2 summary 与 why_it_matters 中。"
+    }
+  ],
+  "lessons": [
+    "原文用「相呼应/呼应」表达主题层面的对齐时，不要建立 compared_with/partners 等具体关系，除非原文给出明确的可比对象和比较内容。",
+    "泛化的概念名词（如「AI 编程助手」）只出现在行业趋势判断里、原文未将其当作具体主体时，不要为其建立实体或 integrates/partners 等具体关系边。",
+    "新闻内引用的历史或背景事件（如上月 Hugging Face 逃逸）不能作为本篇当前主体 escape_to/attacks 等关系的 evidence，应只用于背景叙述。"
+  ]
+}

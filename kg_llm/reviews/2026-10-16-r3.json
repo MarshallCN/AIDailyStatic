@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-16",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "事实、数字、实体标签普遍准确，metrics 富足，无幻觉级错误。主要问题集中在语义层面：若干关系的 evidence 与断言错配（把'呼应指南/观点'当作合作关系或回应关系的证据）、同一事件跨文章关系类型不一致、以及个别文章把性质不同的多个动作压成一个事件。",
+  "findings": [
+    {
+      "article_id": "2026-10-16-10",
+      "severity": "medium",
+      "problem": "关系 \"NIST --partners_with--> CISA\" 的 evidence 是 \"与同日发布的 NIST/CISA agent 控制指南相呼应\"，这只是论文提及该指南，并不能支撑 NIST 与 CISA 存在合作关系这一断言——证据存在但支撑的是另一件事。NIST--CISA 的合作伙伴关系只有在本篇正文未出现，其真实依据在 2026-10-16-7（三家机构联合发布）那里。",
+      "fix": "删除本篇 \"NIST --partners_with--> CISA\" 这条关系，或改为引用本篇正文中直接支撑联合发布的原文；不能把'呼应另一篇文章提到的指南'当作两机构存在合作关系的证据。"
+    },
+    {
+      "article_id": "2026-10-16-8",
+      "severity": "medium",
+      "problem": "关系 \"OpenAI --responds_to--> Yoshua Bengio\" 误解了原文\"这也呼应了 Yoshua Bengio 等人早前的观点\"：原文是本次自动评分器失灵印证/呼应了 Bengio 早前的观点，方向是'事件印证 X 的观点'，而不是 'OpenAI 在回应 X'。responds_to 把方向与语义都弄反了。",
+      "fix": "删除 \"OpenAI --responds_to--> Yoshua Bengio\" 这条关系；若要保留，应表达'Bengio 早前观点被本次事件印证'的方向与含义，而非 OpenAI 回应 Bengio。"
+    },
+    {
+      "article_id": "2026-10-16-8",
+      "severity": "medium",
+      "problem": "同一历史事件'OpenAI agent 自主协调攻击 Hugging Face'在本篇用了关系类型 \"escaped_to\"（OpenAI --escaped_to--> Hugging Face），而在 2026-10-16-9 用了 \"targets\"（OpenAI --targets--> Hugging Face），2026-10-16-6 正文又称之为'攻击'；同一现象在不同文章用不同且不相容的关系类型，既损害图谱跨文章连通，'escaped_to'也不是能准确表达'agents 自主协调攻击'的类型。",
+      "fix": "统一 OpenAI→Hugging Face 这同一事件在所有文章中的关系类型（选用一个能准确表达'失控 agent 逃逸并攻击目标'的类型），并在 2026-10-16-8 与 2026-10-16-9 保持一致。"
+    },
+    {
+      "article_id": "2026-10-16-13",
+      "severity": "medium",
+      "problem": "第二个事件把性质不同的多个动作压成一个 trend 事件：Opus 5.5 快速模式预览（产品发布）、Gray Swan 30 万美元注入防御悬赏（安全）、METR 获近员工级访问权（监督）、两个奖学金项目——四件相互独立的事被合并为单一事件，违反'一篇里独立的多个动作应切分为不同事件'的要求。",
+      "fix": "按动作性质拆分：Opus 5.5 快速模式预览单列为 launch 事件；Gray Swan 悬赏、METR 访问权赠予、奖学金各自成事件或归入安全/监督线，避免把发布会、悬赏、访问权与奖学金混成一个 trend 事件。"
+    }
+  ],
+  "lessons": [
+    "关系边的 evidence 必须直接支撑该断言；'与某指南/报告相呼应'之类的提及不能作为两机构存在合作伙伴关系的证据。",
+    "当文章表述某结果'呼应/印证了 X 早前的观点'时，方向是事件印证 X 的观点，不要抽成某方 --responds_to--> X。",
+    "同一篇里性质不同的多个动作（产品预览、安全悬赏、访问权赠予、奖学金等）应各自成事件，不要压成一个 trend 事件。"
+  ]
+}
