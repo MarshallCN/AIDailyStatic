@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-17",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "抽取整体覆盖好、事件与关系方向基本正确，但存在多处中等级语义问题：实体类型错配（语料标成 product）、关系类型滥用（K-1 对尚未部署的 Vera Rubin 用 built_on、Apple Intelligence 凭注册号硬推断 integrates 通义万相）、证据与断言不匹配（Gemini 4 Argon 的 developed_by 证据指向 WANDR）、以及并购范围夸大（Disney acquires Character.ai 实为购买部分 IP）。这些都需要本轮修订。",
+  "findings": [
+    {
+      "article_id": "2026-10-17-2",
+      "severity": "medium",
+      "problem": "实体 Nemotron-pretraining-Indic-v1 的 type 被标为 \"product\"，但它是一个预训练语料库/数据集（2.8 万亿 token 的多语言数据），不是产品。把数据集标成 product 属于实体类型错配，会让图谱混淆硬件/产品与数据资产。",
+      "fix": "把 Nemotron-pretraining-Indic-v1 的 type 改为 \"dataset\"（或 \"corpus\"），并相应确认相关关系方向不受影响。"
+    },
+    {
+      "article_id": "2026-10-17-5",
+      "severity": "medium",
+      "problem": "关系 \"K-1 --built_on--> Vera Rubin\" 走样：原文是 K-1 AI 工厂平台围绕 800V 直流架构设计，\"为未来的 NVIDIA Vera Rubin 部署准备\"，Vera Rubin 尚未部署、K-1 并非构建在其硬件之上。built_on 会让人误读成 K-1 基于 Vera Rubin 芯片构建。",
+      "fix": "改用描述意图的关系类型（如 \"prepared_for\" 或 \"designed_for\"），例如改为 \"K-1 --designed_for--> Vera Rubin\"，并保留现有 \"Vera Rubin --developed_by--> NVIDIA\" 边。"
+    },
+    {
+      "article_id": "2026-10-17-10",
+      "severity": "medium",
+      "problem": "关系 \"Gemini 4 Argon --developed_by--> Google\" 所附 evidence 是 \"WANDR 基准上取得新的 SoTA\"，该证据只支撑 benchmark 断言，没有支撑\"Gemini 4 Argon 由 Google 开发\"这一事实——证据存在但支撑的是另一回事。",
+      "fix": "为 developed_by 关系替换证据，引用能够支撑 Gemini 为 Google 模型的表述（或标注为常识推断并降低权重/confidence）；不要用 SoTA 那句话支撑开发关系。"
+    },
+    {
+      "article_id": "2026-10-17-12",
+      "severity": "medium",
+      "problem": "关系 \"Disney --acquires--> Character.ai\" 夸大了并购范围：原文是迪士尼作为 stalking horse 竞标方\"以 2000 万美元购买部分知识产权及索赔的非排他永久许可\"，并非收购 Character.ai 公司本身（公司走法院监督出售流程）。acquires 会让读者误以为迪士尼收购了该平台。",
+      "fix": "把该关系收窄为对 IP 资产的获取，如 \"Disney --acquires--> 部分IP/stalking horse 资产\"，或改用它已表达的 \"Character.ai --licenses_to--> Disney\"（非排他永久许可）并删除/弱化公司级 acquires 边。"
+    },
+    {
+      "article_id": "2026-10-17-3",
+      "severity": "medium",
+      "problem": "关系 \"Apple Intelligence --integrates--> 通义万相\" 依据的证据是\"纳入 Apple Intelligence、通义万相与 Qwen 模型注册号\"。原文只说明工信部网络接入许可的注册号里包含通义万相，并未明确 Apple Intelligence 集成了通义万相（可能是备案文件的一部分），把\"登记出现\"硬推断为\"明确集成\"属于把共同出现当成合作。",
+      "fix": "改为更保守的表述：要么删除该边，要么改用不声称集成程度的类型（如 \"mentions\" 或 \"registers\"），并把通义万相的 evidence 限定为注册号出现，不做 integrates 推断。"
+    }
+  ],
+  "lessons": [
+    "语料/数据集类的发布物（预训练语料、benchmark 数据集、参考库）type 应标为 dataset 或 corpus，不要标成 product。",
+    "只有实际构建在某个硬件/平台之上才用 built_on；为未来硬件'准备/设计'（designed_for、prepared_for、planned for）不得用 built_on。",
+    "并购/破产新闻中区分 'acquires 公司' 与 '购买部分 IP/资产'：stalking horse 买的部分知识产权不应概括为公司级 acquires，只写原文明确说的交易范围。"
+  ]
+}

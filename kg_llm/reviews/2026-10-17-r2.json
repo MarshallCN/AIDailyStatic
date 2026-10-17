@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-17",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "抽取整体忠于原文、证据链清晰、无事实性错误；主要问题集中在关系类型的语义夸大（outperforms、partners_with 由硬件使用推得）、把泛指投资人群体抽成具名 organization 假实体，以及 Character.ai 收购篇边过稀、核心交易关系缺失。四篇各自有一处中等问题，相加超过 2 条，判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-10-17-1",
+      "severity": "medium",
+      "problem": "关系 \"Beam --outperforms--> GLM-5.2\" 被夸大。原文是两者在 Terminal-Bench 2.1 上都约 80 分、分数相近，Beam 只是单任务 token 消耗更低（25000 vs 80000）。证据只支撑\"成本更省\"，不支撑\"质量上胜过\"，outperforms 会被读成 Beam 分数更高。",
+      "fix": "把该关系类型改为 compared_with（或 cost-efficient 一类成本对比关系），或在证据中明确是\"同分更省 token\"，不要用 implies 质量超越的 outperforms。"
+    },
+    {
+      "article_id": "2026-10-17-13",
+      "severity": "medium",
+      "problem": "把 \"A 轮投资者\" 抽成实体并标为 organization（aliases 含\"潜在 IPO 投资者\"），它不是原文具名的主体，只是泛指的一类人，却被作为 invests_in 关系的主语，污染实体层且无法跨文章合并。",
+      "fix": "删除 \"A 轮投资者\" 这个伪实体，invests_in 关系应指向真实具名主体（可去掉或以报道方 Reuters reports_on Anthropic 保留核心），估值数字放入 metrics 即可。"
+    },
+    {
+      "article_id": "2026-10-17-7",
+      "severity": "medium",
+      "problem": "关系 \"SoftBank --partners_with--> NVIDIA\" 的证据只是\"底层硬件为 NVIDIA GB200 NVL72 系统\"，是部署关系/依赖 NVIDIA 硬件，共同出现≠双方结成伙伴关系，原文未明确软银与英伟达有正式合作声明。",
+      "fix": "把该关系改为 SoftBank（或 AI Data Center GPU Cloud）--uses--> NVIDIA GB200 NVL72，删除 partners_with；除非有原文明确合作表述再补回。"
+    },
+    {
+      "article_id": "2026-10-17-12",
+      "severity": "medium",
+      "problem": "信息偏贫乏：整篇只有 Character.ai、Disney、stalking horse 三个实体、两条关系，公司出售/被收购这一核心动作用 licenses_to 与 acts_as 间接表达，缺少\"Character.ai 进入破产出售流程/迪士尼购 IP\"的直接交易边，公司层面 buyer/deal 关系缺失。",
+      "fix": "补充一条公司出售/收购类关系（如 Disney --acquires_or_bids_on--> Character.ai 的 IP，或 Character.ai 进入 Chapter 11 出售流程的事件边），并考虑补 Chapter 11 破产程序这一实体，避免只用间接关系绕开交易核心。"
+    }
+  ],
+  "lessons": [
+    "两个模型在同一基准上分数相近、仅 token 成本/效率不同时，用 compared_with 或成本对比关系，不要用暗示质量更高的 outperforms。",
+    "不要把泛指的主体群体（如\"部分投资者\"\"一些厂商\"）抽成具名 organization 实体，只抽取原文明确命名并可跨文章合并的真实主体。",
+    "仅凭\"使用了某厂商的硬件/服务\"推不出 partners_with，需要原文有明确的合作或联合声明再建伙伴关系。"
+  ]
+}

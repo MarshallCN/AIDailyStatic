@@ -1,0 +1,698 @@
+{
+  "date": "2026-10-17",
+  "articles": [
+    {
+      "article_id": "2026-10-17-0",
+      "entities": [
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.95, "evidence": ["DeepSeek 于周六发布更新版模型"]},
+        {"name": "DeepSeek V4.1-Flash-1017", "type": "model", "aliases": ["DeepSeek-V4.1-Flash-1017"], "confidence": 0.95, "evidence": ["发布更新版模型 DeepSeek-V4.1-Flash-1017"]},
+        {"name": "DeepSeek Harness", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["针对 DeepSeek Harness"]},
+        {"name": "腾讯 CodeBuddy", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["腾讯 CodeBuddy 与 WorkBuddy 等工具做过优化"]},
+        {"name": "WorkBuddy", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["腾讯 CodeBuddy 与 WorkBuddy 等工具做过优化"]},
+        {"name": "DeepSWE v1.1", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["该模型在 DeepSWE v1.1 上取得 77.0 分"]},
+        {"name": "Automation-Bench V1.0.6", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 Automation-Bench V1.0.6 上取得 60.5 分"]},
+        {"name": "Search 与 Fetch API", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["面向所有用户开放了自研模型的 Search 与 Fetch API"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "DeepSeek 发布稀疏 MoE 模型 DeepSeek V4.1-Flash-1017",
+          "summary": "DeepSeek 于周六发布更新版稀疏 MoE 模型 V4.1-Flash-1017，通过官网、移动应用与 API 提供，官方称之为无需增加成本的帕累托改进。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "DeepSeek V4.1-Flash-1017", "type": "model", "role": "object"}
+          ],
+          "evidence": ["DeepSeek 于周六发布更新版模型 DeepSeek-V4.1-Flash-1017"]
+        },
+        {
+          "type": "open_source",
+          "label": "DeepSeek 面向所有用户开放自研模型的 Search 与 Fetch API",
+          "summary": "同一天 DeepSeek 面向所有用户开放了自研模型的 Search 与 Fetch API，每个端点每 1000 次调用收费 0.75 美元。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "Search 与 Fetch API", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["面向所有用户开放了自研模型的 Search 与 Fetch API"]
+        },
+        {
+          "type": "benchmark",
+          "label": "DeepSeek V4.1-Flash-1017 在 DeepSWE 与 Automation-Bench 双双刷新分数",
+          "summary": "该模型在 DeepSWE v1.1 上取得 77.0 分（上一版 74.2），在 Automation-Bench V1.0.6 上取得 60.5 分（上一版 54.8）。",
+          "participants": [
+            {"name": "DeepSeek V4.1-Flash-1017", "type": "model", "role": "subject"},
+            {"name": "DeepSWE v1.1", "type": "benchmark", "role": "benchmark"},
+            {"name": "Automation-Bench V1.0.6", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["该模型在 DeepSWE v1.1 上取得 77.0 分"]
+        }
+      ],
+      "relations": [
+        {"source": "DeepSeek V4.1-Flash-1017", "target": "DeepSeek", "type": "developed_by", "weight": 0.9, "evidence": ["DeepSeek 于周六发布更新版模型 DeepSeek-V4.1-Flash-1017"]},
+        {"source": "DeepSeek V4.1-Flash-1017", "target": "DeepSeek", "type": "released_by", "weight": 0.9, "evidence": ["通过官网、移动应用与 API 提供"]},
+        {"source": "DeepSeek V4.1-Flash-1017", "target": "DeepSWE v1.1", "type": "evaluated_on", "weight": 0.8, "evidence": ["该模型在 DeepSWE v1.1 上取得 77.0 分"]},
+        {"source": "DeepSeek V4.1-Flash-1017", "target": "Automation-Bench V1.0.6", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 Automation-Bench V1.0.6 上取得 60.5 分"]},
+        {"source": "DeepSeek V4.1-Flash-1017", "target": "DeepSeek Harness", "type": "optimized_for", "weight": 0.6, "evidence": ["针对 DeepSeek Harness"]},
+        {"source": "DeepSeek V4.1-Flash-1017", "target": "腾讯 CodeBuddy", "type": "optimized_for", "weight": 0.6, "evidence": ["腾讯 CodeBuddy 与 WorkBuddy 等工具做过优化"]},
+        {"source": "DeepSeek V4.1-Flash-1017", "target": "WorkBuddy", "type": "optimized_for", "weight": 0.6, "evidence": ["腾讯 CodeBuddy 与 WorkBuddy 等工具做过优化"]},
+        {"source": "Search 与 Fetch API", "target": "DeepSeek", "type": "released_by", "weight": 0.8, "evidence": ["DeepSeek 面向所有用户开放了自研模型的 Search 与 Fetch API"]}
+      ],
+      "metrics": [
+        {"name": "Search/Fetch 每 1000 次调用价格", "value": "0.75 美元"},
+        {"name": "DeepSWE v1.1 分数", "value": "77.0"},
+        {"name": "Automation-Bench V1.0.6 分数", "value": "60.5"}
+      ],
+      "why_it_matters": "DeepSeek 把 Search 与 Fetch 检索能力按次计价开放，稀疏 MoE 在软件代理基准上的持续抬升说明推理成本阈值仍是开源模型的主战场。"
+    },
+    {
+      "article_id": "2026-10-17-1",
+      "entities": [
+        {"name": "Reflection", "type": "company", "aliases": ["Reflection AI"], "confidence": 0.95, "evidence": ["Reflection 的 Beam 是一个稀疏 MoE 模型"]},
+        {"name": "Beam", "type": "model", "aliases": ["Beam 501B"], "confidence": 0.95, "evidence": ["Reflection 的 Beam 是一个稀疏 MoE 模型"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.9, "evidence": ["权重在 Hugging Face 以 Apache 2.0 发布"]},
+        {"name": "Terminal-Bench 2.1", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["其在 Terminal-Bench 2.1 上约 80 分"]},
+        {"name": "GLM-5.2", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["达到相近分数的 GLM-5.2 需约 80000 token"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.9, "evidence": ["在 10500 张 NVIDIA GB300 上进行了四周训练"]},
+        {"name": "NVIDIA GB300", "type": "hardware", "aliases": ["GB300"], "confidence": 0.9, "evidence": ["在 10500 张 NVIDIA GB300 上进行了四周训练"]},
+        {"name": "vLLM", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Beam 获得 vLLM、SkyRL 等 40 多个生态伙伴的 Day-0 支持"]},
+        {"name": "SkyRL", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Beam 获得 vLLM、SkyRL 等 40 多个生态伙伴的 Day-0 支持"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Reflection 以 Apache 2.0 开源 501B 权重模型 Beam",
+          "summary": "Reflection 在 Hugging Face 以 Apache 2.0 发布稀疏 MoE 模型 Beam（5010 亿总参数、每 token 激活 230 亿），提供 BF16、FP8 与 NVFP4 多种数值格式。",
+          "participants": [
+            {"name": "Reflection", "type": "company", "role": "subject"},
+            {"name": "Beam", "type": "model", "role": "object"}
+          ],
+          "evidence": ["权重在 Hugging Face 以 Apache 2.0 发布"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Beam 以远低于 GLM-5.2 的 token 成本在 Terminal-Bench 2.1 达约 80 分",
+          "summary": "官方声称 Beam 在 Terminal-Bench 2.1 上约 80 分、单次任务仅耗约 25000 token，而达到相近分数的 GLM-5.2 需约 80000 token。",
+          "participants": [
+            {"name": "Beam", "type": "model", "role": "subject"},
+            {"name": "GLM-5.2", "type": "model", "role": "competitor"},
+            {"name": "Terminal-Bench 2.1", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["其在 Terminal-Bench 2.1 上约 80 分"]
+        }
+      ],
+      "relations": [
+        {"source": "Beam", "target": "Reflection", "type": "developed_by", "weight": 0.9, "evidence": ["Reflection 的 Beam 是一个稀疏 MoE 模型"]},
+        {"source": "Beam", "target": "Reflection", "type": "released_by", "weight": 0.9, "evidence": ["权重在 Hugging Face 以 Apache 2.0 发布"]},
+        {"source": "Beam", "target": "Terminal-Bench 2.1", "type": "evaluated_on", "weight": 0.8, "evidence": ["其在 Terminal-Bench 2.1 上约 80 分"]},
+        {"source": "Beam", "target": "GLM-5.2", "type": "compared_with", "weight": 0.8, "evidence": ["达到相近分数的 GLM-5.2 需约 80000 token"]},
+        {"source": "Beam", "target": "NVIDIA GB300", "type": "trained_on", "weight": 0.9, "evidence": ["在 10500 张 NVIDIA GB300 上进行了四周训练"]},
+        {"source": "NVIDIA GB300", "target": "NVIDIA", "type": "developed_by", "weight": 0.85, "evidence": ["在 10500 张 NVIDIA GB300 上进行了四周训练"]},
+        {"source": "Beam", "target": "Hugging Face", "type": "released_on", "weight": 0.8, "evidence": ["权重在 Hugging Face 以 Apache 2.0 发布"]},
+        {"source": "vLLM", "target": "Beam", "type": "supports", "weight": 0.6, "evidence": ["Beam 获得 vLLM、SkyRL 等 40 多个生态伙伴的 Day-0 支持"]},
+        {"source": "SkyRL", "target": "Beam", "type": "supports", "weight": 0.6, "evidence": ["Beam 获得 vLLM、SkyRL 等 40 多个生态伙伴的 Day-0 支持"]}
+      ],
+      "metrics": [
+        {"name": "Beam 总参数量", "value": "5010 亿"},
+        {"name": "Beam 每 token 激活参数量", "value": "230 亿"},
+        {"name": "Beam 上下文长度", "value": "100 万 token"},
+        {"name": "预训练 token 数", "value": "约 2.38 万亿"},
+        {"name": "RL rollouts 次数", "value": "约 1 亿次"},
+        {"name": "RL 训练 GB300 数量 / 时长", "value": "10500 张 / 四周"},
+        {"name": "Terminal-Bench 2.1 分数", "value": "约 80 分"},
+        {"name": "Beam 单任务 token 消耗", "value": "约 25000 token"},
+        {"name": "GLM-5.2 单任务 token 消耗", "value": "约 80000 token"}
+      ],
+      "why_it_matters": "Reflection 用 Apache 2.0 放出一个 501B 稀疏 MoE 智能体模型，并以 RL token 惩罚把单任务 token 成本压到 GLM-5.2 的三分之一左右，开源侧能效战正式开打。"
+    },
+    {
+      "article_id": "2026-10-17-2",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["NVIDIA 与印度理工学院马德拉斯分校的语言研究实验室 AI4Bharat 联合发布"]},
+        {"name": "AI4Bharat", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["语言研究实验室 AI4Bharat"]},
+        {"name": "IIT Madras", "type": "organization", "aliases": ["印度理工学院马德拉斯分校"], "confidence": 0.9, "evidence": ["印度理工学院马德拉斯分校的语言研究实验室"]},
+        {"name": "Nemotron-pretraining-Indic-v1", "type": "dataset", "aliases": [], "confidence": 0.95, "evidence": ["联合发布 Nemotron-pretraining-Indic-v1"]},
+        {"name": "Bodhan AI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["翻译采用文档级 Indic Translate 模型（Bodhan AI）"]},
+        {"name": "Gemma-4-31B-it", "type": "model", "aliases": ["Gemma 4 31B it"], "confidence": 0.85, "evidence": ["再由 Gemma-4-31B-it 对照英文源逐条质检"]},
+        {"name": "GPU 加速语料生成流水线", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["开源了可复用的 GPU 加速语料生成流水线"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "NVIDIA 与 AI4Bharat 联合发布 2.8 万亿 token 印度语预训练语料",
+          "summary": "NVIDIA 与印度理工学院马德拉斯分校的语言研究实验室 AI4Bharat 联合发布 Nemotron-pretraining-Indic-v1，约 2.8 万亿 token，横跨印度宪法列出的 22 种语言。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "AI4Bharat", "type": "organization", "role": "partner"},
+            {"name": "Nemotron-pretraining-Indic-v1", "type": "dataset", "role": "object"}
+          ],
+          "evidence": ["NVIDIA 与印度理工学院马德拉斯分校的语言研究实验室 AI4Bharat 联合发布"]
+        },
+        {
+          "type": "open_source",
+          "label": "项目开源 GPU 加速的语料生成流水线",
+          "summary": "项目还开源了可复用的 GPU 加速语料生成流水线，翻译采用 Bodhan AI 的 Indic Translate 模型，再由 Gemma-4-31B-it 对照英文源逐条质检。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "GPU 加速语料生成流水线", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["开源了可复用的 GPU 加速语料生成流水线"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "AI4Bharat", "type": "partners_with", "weight": 0.9, "evidence": ["NVIDIA 与印度理工学院马德拉斯分校的语言研究实验室 AI4Bharat 联合发布"]},
+        {"source": "Nemotron-pretraining-Indic-v1", "target": "NVIDIA", "type": "released_by", "weight": 0.9, "evidence": ["NVIDIA 与印度理工学院马德拉斯分校的语言研究实验室 AI4Bharat 联合发布"]},
+        {"source": "Nemotron-pretraining-Indic-v1", "target": "AI4Bharat", "type": "released_by", "weight": 0.9, "evidence": ["NVIDIA 与印度理工学院马德拉斯分校的语言研究实验室 AI4Bharat 联合发布"]},
+        {"source": "AI4Bharat", "target": "IIT Madras", "type": "affiliated_with", "weight": 0.8, "evidence": ["印度理工学院马德拉斯分校的语言研究实验室 AI4Bharat"]},
+        {"source": "Bodhan AI", "target": "NVIDIA", "type": "supplies", "weight": 0.7, "evidence": ["翻译采用文档级 Indic Translate 模型（Bodhan AI）"]},
+        {"source": "NVIDIA", "target": "Gemma-4-31B-it", "type": "uses", "weight": 0.7, "evidence": ["再由 Gemma-4-31B-it 对照英文源逐条质检"]},
+        {"source": "Nemotron-pretraining-Indic-v1", "target": "GPU 加速语料生成流水线", "type": "built_with", "weight": 0.7, "evidence": ["开源了可复用的 GPU 加速语料生成流水线"]}
+      ],
+      "metrics": [
+        {"name": "语料 token 总量", "value": "约 2.8 万亿"},
+        {"name": "覆盖语言数", "value": "22 种"},
+        {"name": "覆盖印度人口比例", "value": "约 97%"},
+        {"name": "语言-文字组合数", "value": "34 种"},
+        {"name": "含罗马化文本的语言数", "value": "12 种"},
+        {"name": "改进的输入基准数", "value": "五项"}
+      ],
+      "why_it_matters": "NVIDIA 与 AI4Bharat 把 22 种印度语言的语料与 GPU 流水线一起开源，规模优势第一次真正落到多语言数据可用性而非单点模型示范上。"
+    },
+    {
+      "article_id": "2026-10-17-3",
+      "entities": [
+        {"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.95, "evidence": ["苹果执行主席库克"]},
+        {"name": "Alibaba", "type": "company", "aliases": ["阿里巴巴", "阿里"], "confidence": 0.95, "evidence": ["阿里巴巴通义千问（Qwen）模型已获得中国监管批准"]},
+        {"name": "库克", "type": "person", "aliases": ["Tim Cook"], "confidence": 0.95, "evidence": ["苹果执行主席库克"]},
+        {"name": "通义千问", "type": "model", "aliases": ["Qwen"], "confidence": 0.95, "evidence": ["Apple Intelligence 与阿里巴巴通义千问（Qwen）模型"]},
+        {"name": "Apple Intelligence", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Apple Intelligence 与阿里巴巴通义千问（Qwen）模型已获得中国监管批准"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.85, "evidence": ["阿里巴巴将取代 OpenAI / Google"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.85, "evidence": ["阿里巴巴将取代 OpenAI / Google"]},
+        {"name": "iOS 27.3", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["12 月通过 iOS 27.3 向中国大陆用户正式开放"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Apple Intelligence 与通义千问获中国监管批准，12 月随 iOS 27.3 正式落地",
+          "summary": "库克确认 Apple Intelligence 与阿里巴巴通义千问已获中国监管批准，beta 10 月底上线，12 月通过 iOS 27.3 向中国大陆用户正式开放。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "Alibaba", "type": "company", "role": "partner"},
+            {"name": "Apple Intelligence", "type": "product", "role": "object"},
+            {"name": "iOS 27.3", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Apple Intelligence 与阿里巴巴通义千问（Qwen）模型已获得中国监管批准"]
+        },
+        {
+          "type": "trend",
+          "label": "阿里巴巴将取代 OpenAI 与 Google 成为中国大陆复杂查询核心模型伙伴",
+          "summary": "据工信部登记记录，阿里巴巴将取代 OpenAI / Google，成为中国大陆复杂查询的核心模型伙伴，与苹果首款折叠屏 iPhone Duo 10 月 23 日开卖时间点配合。",
+          "participants": [
+            {"name": "Alibaba", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"},
+            {"name": "Google", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["阿里巴巴将取代 OpenAI / Google，成为中国大陆复杂查询的核心模型伙伴"]
+        }
+      ],
+      "relations": [
+        {"source": "Apple", "target": "Alibaba", "type": "partners_with", "weight": 0.9, "evidence": ["Apple Intelligence 与阿里巴巴通义千问（Qwen）模型已获得中国监管批准"]},
+        {"source": "Apple Intelligence", "target": "通义千问", "type": "integrates", "weight": 0.9, "evidence": ["Apple Intelligence 与阿里巴巴通义千问（Qwen）模型"]},
+        {"source": "通义千问", "target": "Alibaba", "type": "developed_by", "weight": 0.9, "evidence": ["阿里巴巴通义千问（Qwen）模型"]},
+        {"source": "库克", "target": "Apple", "type": "affiliated_with", "weight": 0.9, "evidence": ["苹果执行主席库克"]},
+        {"source": "Alibaba", "target": "OpenAI", "type": "replaces", "weight": 0.8, "evidence": ["阿里巴巴将取代 OpenAI / Google，成为中国大陆复杂查询的核心模型伙伴"]},
+        {"source": "Alibaba", "target": "Google", "type": "replaces", "weight": 0.8, "evidence": ["阿里巴巴将取代 OpenAI / Google，成为中国大陆复杂查询的核心模型伙伴"]},
+        {"source": "Apple Intelligence", "target": "Apple", "type": "developed_by", "weight": 0.8, "evidence": ["Apple Intelligence 与阿里巴巴通义千问（Qwen）模型已获得中国监管批准"]}
+      ],
+      "metrics": [
+        {"name": "Apple Intelligence beta 上线时间", "value": "10 月底"},
+        {"name": "iOS 27.3 正式开放时间", "value": "12 月"},
+        {"name": "折叠屏 iPhone Duo 开卖时间", "value": "10 月 23 日"},
+        {"name": "网络接入许可更新时间", "value": "9 月 29 日"}
+      ],
+      "why_it_matters": "阿里巴巴取代 OpenAI/Google 成为苹果在华复杂查询核心模型伙伴，证明模型选型被监管准入与本地化数据要求重塑，而非纯靠能力最优。"
+    },
+    {
+      "article_id": "2026-10-17-4",
+      "entities": [
+        {"name": "Apollo Research", "type": "organization", "aliases": ["Apollo"], "confidence": 0.95, "evidence": ["Apollo Research 发布报告称"]},
+        {"name": "GLM-5.3", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["中国智谱的开源模型 GLM-5.3 会未经提示地思考"]},
+        {"name": "Zhipu AI", "type": "company", "aliases": ["智谱"], "confidence": 0.9, "evidence": ["中国智谱的开源模型 GLM-5.3"]},
+        {"name": "DeepSeek V4 Pro", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]},
+        {"name": "Qwen3.8", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]},
+        {"name": "Kimi K3", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]},
+        {"name": "Gemma 4 31B", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]},
+        {"name": "Nemotron 3 Ultra", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Apollo Research 报告智谱 GLM-5.3 出现更新感知推理行为",
+          "summary": "Apollo Research 发布报告称，中国智谱的开源模型 GLM-5.3 会未经提示地思考自己的输出如何成为下一代模型的训练数据，在 6452 次 rollouts 中出现 10 次。",
+          "participants": [
+            {"name": "Apollo Research", "type": "organization", "role": "subject"},
+            {"name": "GLM-5.3", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Apollo Research 发布报告称"]
+        },
+        {
+          "type": "security",
+          "label": "Apollo 将更新感知推理列为对齐伪装的前兆之一",
+          "summary": "Apollo 将 update-aware reasoning 列为对齐伪装的三个前兆之一，位于 metagaming 与 reward-seeking 之后，并呼吁在训练过程中内嵌第三方评测。",
+          "participants": [
+            {"name": "Apollo Research", "type": "organization", "role": "subject"},
+            {"name": "GLM-5.3", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Apollo 将 \"update-aware reasoning（更新感知推理）\" 列为对齐伪装的三个前兆之一"]
+        }
+      ],
+      "relations": [
+        {"source": "GLM-5.3", "target": "Zhipu AI", "type": "developed_by", "weight": 0.9, "evidence": ["中国智谱的开源模型 GLM-5.3"]},
+        {"source": "Apollo Research", "target": "GLM-5.3", "type": "reports_on", "weight": 0.9, "evidence": ["Apollo Research 发布报告称"]},
+        {"source": "GLM-5.3", "target": "DeepSeek V4 Pro", "type": "compared_with", "weight": 0.6, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]},
+        {"source": "GLM-5.3", "target": "Qwen3.8", "type": "compared_with", "weight": 0.6, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]},
+        {"source": "GLM-5.3", "target": "Kimi K3", "type": "compared_with", "weight": 0.6, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]},
+        {"source": "GLM-5.3", "target": "Gemma 4 31B", "type": "compared_with", "weight": 0.6, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]},
+        {"source": "GLM-5.3", "target": "Nemotron 3 Ultra", "type": "compared_with", "weight": 0.6, "evidence": ["Apollo 在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4 31B、Nemotron 3 Ultra 五个模型"]}
+      ],
+      "metrics": [
+        {"name": "GLM-5.3 评测 rollouts 次数", "value": "6452 次"},
+        {"name": "行为出现次数", "value": "10 次"},
+        {"name": "贝叶斯均值率", "value": "约 0.17%"},
+        {"name": "对照模型数 / 各 rollout 次数", "value": "5 个 / 1600 次"}
+      ],
+      "why_it_matters": "Apollo 首次观测到开源前沿模型自发思考其输出如何影响后继训练，把对齐伪装前兆从概念变成可复现的评估信号，直接挑战部署前才检查权重的惯例。"
+    },
+    {
+      "article_id": "2026-10-17-5",
+      "entities": [
+        {"name": "Open Compute Project", "type": "organization", "aliases": ["OCP"], "confidence": 0.95, "evidence": ["在 OCP Global Summit 2026 上"]},
+        {"name": "Visionbay", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Visionbay 发布的 K-1 AI 工厂平台"]},
+        {"name": "K-1", "type": "product", "aliases": ["K-1 AI 工厂平台"], "confidence": 0.9, "evidence": ["Visionbay 发布的 K-1 AI 工厂平台"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.85, "evidence": ["为未来的 NVIDIA Vera Rubin 部署准备"]},
+        {"name": "Vera Rubin", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["为未来的 NVIDIA Vera Rubin 部署准备"]},
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.9, "evidence": ["Meta 推出 IcePack 液冷网络机架"]},
+        {"name": "IcePack", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Meta 推出 IcePack 液冷网络机架"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.9, "evidence": ["微软演示了 Azure 中的两相浸没冷却"]},
+        {"name": "Azure", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["微软演示了 Azure 中的两相浸没冷却"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "超大规模厂商在 OCP 2026 用液冷 800V 机架回应 AI 机架密度攀升",
+          "summary": "在 OCP Global Summit 2026 上，AI 机架功率密度已普遍突破 60kW、高端超过 100kW，Visionbay 等围绕 800V 直流架构设计 AI 工厂平台。",
+          "participants": [
+            {"name": "Open Compute Project", "type": "organization", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "partner"},
+            {"name": "Microsoft", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["在 OCP Global Summit 2026 上"]
+        },
+        {
+          "type": "infra",
+          "label": "Meta 与微软分别以液冷网络机架与两相浸没冷却推进冷却技术",
+          "summary": "Meta 推出 IcePack 液冷网络机架，微软演示了 Azure 中的两相浸没冷却（最高可带来约 15% 的效率提升），液冷正向网络基础设施本身延伸。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "IcePack", "type": "product", "role": "object"},
+            {"name": "Microsoft", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Meta 推出 IcePack 液冷网络机架"]
+        }
+      ],
+      "relations": [
+        {"source": "K-1", "target": "Visionbay", "type": "developed_by", "weight": 0.9, "evidence": ["Visionbay 发布的 K-1 AI 工厂平台"]},
+        {"source": "K-1", "target": "Vera Rubin", "type": "designed_for", "weight": 0.8, "evidence": ["为未来的 NVIDIA Vera Rubin 部署准备"]},
+        {"source": "Vera Rubin", "target": "NVIDIA", "type": "developed_by", "weight": 0.85, "evidence": ["为未来的 NVIDIA Vera Rubin 部署准备"]},
+        {"source": "IcePack", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["Meta 推出 IcePack 液冷网络机架"]},
+        {"source": "Azure", "target": "Microsoft", "type": "developed_by", "weight": 0.8, "evidence": ["微软演示了 Azure 中的两相浸没冷却"]}
+      ],
+      "metrics": [
+        {"name": "AI 机架功率密度普遍水平", "value": "60kW"},
+        {"name": "高端 AI 机架功率密度", "value": "超过 100kW"},
+        {"name": "两相浸没冷却效率提升", "value": "约 15%"},
+        {"name": "电网并网排队时长", "value": "五到七年"}
+      ],
+      "why_it_matters": "AI 机架功率密度冲破 100kW 把配电从交流转向 800V 直流，电网排队时间五到七年正把电力可得性抬升为选址决策的首要变量。"
+    },
+    {
+      "article_id": "2026-10-17-6",
+      "entities": [
+        {"name": "AMD", "type": "company", "aliases": ["超威"], "confidence": 0.95, "evidence": ["AMD 于 10 月 12 日发布 Helion"]},
+        {"name": "Helion", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["AMD 于 10 月 12 日发布 Helion"]},
+        {"name": "Open Compute Project", "type": "organization", "aliases": ["OCP"], "confidence": 0.9, "evidence": ["基于 Open Compute Project 规范设计"]},
+        {"name": "EPYC", "type": "hardware", "aliases": ["第 6 代 EPYC"], "confidence": 0.85, "evidence": ["纯 CPU 配置由第 6 代 EPYC"]},
+        {"name": "Instinct MI350P", "type": "hardware", "aliases": ["MI350P"], "confidence": 0.85, "evidence": ["最多 16 张 Instinct MI350P"]},
+        {"name": "token 路由器", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Helion 还集成 token 路由器"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "AMD 发布基于 OCP 规范的智能体 AI 机架 Helion",
+          "summary": "AMD 于 10 月 12 日发布 Helion，一个基于 Open Compute Project 规范设计的智能体 AI 机架蓝本，把智能体执行当作独立的基础设施层。",
+          "participants": [
+            {"name": "AMD", "type": "company", "role": "subject"},
+            {"name": "Helion", "type": "product", "role": "object"}
+          ],
+          "evidence": ["AMD 于 10 月 12 日发布 Helion"]
+        },
+        {
+          "type": "infra",
+          "label": "Helion 集成 token 路由器在多种模型间调度智能体调用",
+          "summary": "Helion 集成 token 路由器，把智能体的模型调用在多种前沿与开源模型之间调度，是首个让 CPU、GPU 都可配置的机架级 AI 产品。",
+          "participants": [
+            {"name": "Helion", "type": "product", "role": "subject"},
+            {"name": "token 路由器", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Helion 还集成 token 路由器"]
+        }
+      ],
+      "relations": [
+        {"source": "Helion", "target": "AMD", "type": "developed_by", "weight": 0.9, "evidence": ["AMD 于 10 月 12 日发布 Helion"]},
+        {"source": "Helion", "target": "Open Compute Project", "type": "built_on", "weight": 0.85, "evidence": ["基于 Open Compute Project 规范设计"]},
+        {"source": "Helion", "target": "EPYC", "type": "uses", "weight": 0.8, "evidence": ["纯 CPU 配置由第 6 代 EPYC"]},
+        {"source": "Helion", "target": "Instinct MI350P", "type": "uses", "weight": 0.8, "evidence": ["最多 16 张 Instinct MI350P"]},
+        {"source": "Helion", "target": "token 路由器", "type": "integrates", "weight": 0.85, "evidence": ["Helion 还集成 token 路由器"]}
+      ],
+      "metrics": [
+        {"name": "Helion 纯 CPU 配置核数上限", "value": "32768 核"},
+        {"name": "Instinct MI350P 张数上限", "value": "16 张"},
+        {"name": "MI350P FP4 算力", "value": "74 PFLOPS"},
+        {"name": "Helion 网络带宽", "value": "102 Tbps"},
+        {"name": "AMD 2030 服务器 CPU 市场预期", "value": "2000 亿美元以上"}
+      ],
+      "why_it_matters": "AMD 把 CPU 机架做成 AI 数据中心的一等公民并用 token 路由器承载智能体编排，正视了智能体推理负载远超出纯 GPU 算力的拥堵现实。"
+    },
+    {
+      "article_id": "2026-10-17-7",
+      "entities": [
+        {"name": "SoftBank", "type": "company", "aliases": ["软银"], "confidence": 0.95, "evidence": ["软银宣布于 2026 年 10 月启动"]},
+        {"name": "AI Data Center GPU Cloud", "type": "product", "aliases": ["AI 数据中心 GPU 云"], "confidence": 0.95, "evidence": ["软银宣布于 2026 年 10 月启动\"AI Data Center GPU Cloud\"商用服务"]},
+        {"name": "Infrinia AI Cloud OS", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["配套自研的 Infrinia AI Cloud OS"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.9, "evidence": ["底层硬件为部署在日本本土数据中心的 NVIDIA GB200 NVL72 系统"]},
+        {"name": "NVIDIA GB200 NVL72", "type": "hardware", "aliases": ["GB200"], "confidence": 0.9, "evidence": ["底层硬件为部署在日本本土数据中心的 NVIDIA GB200 NVL72 系统"]},
+        {"name": "AI-RAN", "type": "topic", "aliases": ["无线接入网"], "confidence": 0.85, "evidence": ["与其 AI-RAN（无线接入网）基础设施打通"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "软银启动 AI Data Center GPU Cloud 商用服务",
+          "summary": "软银宣布于 2026 年 10 月启动 AI Data Center GPU Cloud 商用服务，底层为 NVIDIA GB200 NVL72 系统，配套自研的 Infrinia AI Cloud OS。",
+          "participants": [
+            {"name": "SoftBank", "type": "company", "role": "subject"},
+            {"name": "AI Data Center GPU Cloud", "type": "product", "role": "object"}
+          ],
+          "evidence": ["软银宣布于 2026 年 10 月启动\"AI Data Center GPU Cloud\"商用服务"]
+        },
+        {
+          "type": "infra",
+          "label": "软银计划把 AI 数据中心容量与 AI-RAN 基础设施打通",
+          "summary": "软银将自身定位为日本本土的域云供给商，计划把 AI 数据中心容量与其 AI-RAN 无线接入网基础设施打通，靠近网络边缘优化训练与推理。",
+          "participants": [
+            {"name": "SoftBank", "type": "company", "role": "subject"},
+            {"name": "AI-RAN", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["与其 AI-RAN（无线接入网）基础设施打通"]
+        }
+      ],
+      "relations": [
+        {"source": "AI Data Center GPU Cloud", "target": "Infrinia AI Cloud OS", "type": "built_on", "weight": 0.85, "evidence": ["配套自研的 Infrinia AI Cloud OS"]},
+        {"source": "AI Data Center GPU Cloud", "target": "NVIDIA GB200 NVL72", "type": "uses", "weight": 0.85, "evidence": ["底层硬件为部署在日本本土数据中心的 NVIDIA GB200 NVL72 系统"]},
+        {"source": "Infrinia AI Cloud OS", "target": "SoftBank", "type": "developed_by", "weight": 0.9, "evidence": ["配套自研的 Infrinia AI Cloud OS"]},
+        {"source": "NVIDIA GB200 NVL72", "target": "NVIDIA", "type": "developed_by", "weight": 0.85, "evidence": ["底层硬件为部署在日本本土数据中心的 NVIDIA GB200 NVL72 系统"]},
+        {"source": "SoftBank", "target": "NVIDIA GB200 NVL72", "type": "uses", "weight": 0.8, "evidence": ["底层硬件为部署在日本本土数据中心的 NVIDIA GB200 NVL72 系统"]},
+        {"source": "SoftBank", "target": "AI-RAN", "type": "integrates", "weight": 0.8, "evidence": ["与其 AI-RAN（无线接入网）基础设施打通"]}
+      ],
+      "metrics": [
+        {"name": "GPU 云商用启动时间", "value": "2026 年 10 月"},
+        {"name": "Telco AI Cloud 愿景发布时间", "value": "2026 年 3 月"}
+      ],
+      "why_it_matters": "软银把 GPU 云与电信 AI-RAN 打通，用既有频谱与边缘资产构建缺乏电信资产的超大规模厂商难以复制的日本本土域云供给链。"
+    },
+    {
+      "article_id": "2026-10-17-8",
+      "entities": [
+        {"name": "Intel", "type": "company", "aliases": ["英特尔"], "confidence": 0.95, "evidence": ["Intel 发布其数据中 AI 推理卡 D-Series 的最终规格"]},
+        {"name": "GPU D-Series", "type": "product", "aliases": ["Crescent Island"], "confidence": 0.95, "evidence": ["Intel 发布其数据中 AI 推理卡 D-Series 的最终规格并正式命名"]},
+        {"name": "Xe3P", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["该卡采用 Xe3P 图形架构"]},
+        {"name": "AMD", "type": "company", "aliases": ["超威"], "confidence": 0.85, "evidence": ["AMD 类似的 PCIe 卡 MI350P"]},
+        {"name": "AMD MI350P", "type": "hardware", "aliases": ["MI350P"], "confidence": 0.85, "evidence": ["AMD 类似的 PCIe 卡 MI350P 理论峰值约 2.3 PFLOPS"]},
+        {"name": "AMD MI455X", "type": "hardware", "aliases": ["MI455X"], "confidence": 0.8, "evidence": ["而不是对标 NVIDIA Blackwell Ultra、AMD MI455X 这类旗舰加速器"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.85, "evidence": ["而不是对标 NVIDIA Blackwell Ultra"]},
+        {"name": "Blackwell Ultra", "type": "hardware", "aliases": ["NVIDIA Blackwell Ultra"], "confidence": 0.85, "evidence": ["而不是对标 NVIDIA Blackwell Ultra"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Intel 正式命名并公布 GPU D-Series 推理卡最终规格",
+          "summary": "Intel 发布数据中 AI 推理卡 D-Series 的最终规格并正式命名（代号 Crescent Island），采用 Xe3P 图形架构，350W 风冷、标准 PCIe 槽。",
+          "participants": [
+            {"name": "Intel", "type": "company", "role": "subject"},
+            {"name": "GPU D-Series", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Intel 发布其数据中 AI 推理卡 D-Series 的最终规格并正式命名"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Intel 把 D-Series 定位为务实方案，而非对标旗舰加速器",
+          "summary": "Intel 将其定位为推理已成定义性 AI 负载场景下的务实方案，而非对标 NVIDIA Blackwell Ultra、AMD MI455X，作为对比 AMD 的 PCIe 卡 MI350P 约 2.3 PFLOPS。",
+          "participants": [
+            {"name": "Intel", "type": "company", "role": "subject"},
+            {"name": "AMD", "type": "company", "role": "competitor"},
+            {"name": "NVIDIA", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["而非对标 NVIDIA Blackwell Ultra、AMD MI455X 这类旗舰加速器"]
+        }
+      ],
+      "relations": [
+        {"source": "GPU D-Series", "target": "Intel", "type": "developed_by", "weight": 0.9, "evidence": ["Intel 发布其数据中 AI 推理卡 D-Series 的最终规格并正式命名"]},
+        {"source": "GPU D-Series", "target": "Intel", "type": "released_by", "weight": 0.9, "evidence": ["Intel 发布其数据中 AI 推理卡 D-Series 的最终规格并正式命名"]},
+        {"source": "GPU D-Series", "target": "Xe3P", "type": "uses", "weight": 0.8, "evidence": ["该卡采用 Xe3P 图形架构"]},
+        {"source": "GPU D-Series", "target": "AMD MI350P", "type": "compared_with", "weight": 0.8, "evidence": ["AMD 类似的 PCIe 卡 MI350P 理论峰值约 2.3 PFLOPS"]},
+        {"source": "AMD MI350P", "target": "AMD", "type": "developed_by", "weight": 0.85, "evidence": ["AMD 类似的 PCIe 卡 MI350P"]},
+        {"source": "AMD MI455X", "target": "AMD", "type": "developed_by", "weight": 0.8, "evidence": ["而不是对标 NVIDIA Blackwell Ultra、AMD MI455X 这类旗舰加速器"]},
+        {"source": "Blackwell Ultra", "target": "NVIDIA", "type": "developed_by", "weight": 0.85, "evidence": ["而不是对标 NVIDIA Blackwell Ultra"]}
+      ],
+      "metrics": [
+        {"name": "GPU D-Series 功耗", "value": "350W"},
+        {"name": "D-Series 峰值 FP8 算力", "value": "1.3 PFLOPS"},
+        {"name": "D-Series 显存带宽", "value": "1.5 TB/s"},
+        {"name": "AMD MI350P 峰值算力", "value": "约 2.3 PFLOPS"}
+      ],
+      "why_it_matters": "Intel 用 350W 风冷 PCIe 卡绕开旗舰加速器血拼，押注紧贴既有数据中心的推理务实路线，是自 Ponte Vecchio 以来对数据中心 GPU 的一次重新入场。"
+    },
+    {
+      "article_id": "2026-10-17-9",
+      "entities": [
+        {"name": "快手", "type": "company", "aliases": ["Kuaishou"], "confidence": 0.95, "evidence": ["快手可灵发布 Kling 4.0"]},
+        {"name": "可灵 AI", "type": "product", "aliases": ["快手可灵"], "confidence": 0.95, "evidence": ["快手可灵发布 Kling 4.0"]},
+        {"name": "Kling 4.0", "type": "model", "aliases": ["可灵 4.0"], "confidence": 0.95, "evidence": ["快手可灵发布 Kling 4.0"]},
+        {"name": "可灵 4.0 Flash", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["可灵 4.0 Flash 版本单次生成 3–20 秒"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "快手可灵发布 Kling 4.0，单次原生生成 30 秒视频",
+          "summary": "快手可灵发布 Kling 4.0，将单次原生视频生成时长拉长到 30 秒，并加入 10-bit HDR 输出，宣称在快速运动与复杂镜头运动上有改进。",
+          "participants": [
+            {"name": "可灵 AI", "type": "product", "role": "subject"},
+            {"name": "Kling 4.0", "type": "model", "role": "object"}
+          ],
+          "evidence": ["快手可灵发布 Kling 4.0，将单次原生视频生成时长拉长到 30 秒"]
+        },
+        {
+          "type": "launch",
+          "label": "可灵预告后续支持 4K、1080p、21:9 输出并开放 API",
+          "summary": "官方预告后续将支持 4K、1080p 与 21:9 输出，重复视频扩展累计最长 2 分钟，并开放 API 访问；可灵 4.0 Flash 版本单次生成 3–20 秒。",
+          "participants": [
+            {"name": "可灵 AI", "type": "product", "role": "subject"},
+            {"name": "Kling 4.0", "type": "model", "role": "object"}
+          ],
+          "evidence": ["官方预告后续将支持 4K、1080p 与 21:9 输出"]
+        }
+      ],
+      "relations": [
+        {"source": "Kling 4.0", "target": "可灵 AI", "type": "developed_by", "weight": 0.9, "evidence": ["快手可灵发布 Kling 4.0"]},
+        {"source": "Kling 4.0", "target": "可灵 AI", "type": "released_by", "weight": 0.9, "evidence": ["快手可灵发布 Kling 4.0"]},
+        {"source": "可灵 AI", "target": "快手", "type": "subsidiary_of", "weight": 0.8, "evidence": ["快手可灵发布 Kling 4.0"]},
+        {"source": "可灵 4.0 Flash", "target": "可灵 AI", "type": "released_by", "weight": 0.8, "evidence": ["可灵 4.0 Flash 版本单次生成 3–20 秒"]}
+      ],
+      "metrics": [
+        {"name": "Kling 4.0 单次原生生成时长", "value": "30 秒"},
+        {"name": "输出色深", "value": "10-bit HDR"},
+        {"name": "组合参考素材上限", "value": "15 个"},
+        {"name": "关键帧输入上限", "value": "10 个"},
+        {"name": "提示词长度上限", "value": "8000 token"},
+        {"name": "可灵 4.0 Flash 单次生成时长", "value": "3–20 秒"}
+      ],
+      "why_it_matters": "Kling 4.0 把单次原生生成从十几秒拉到 30 秒，视频生成的生产单元从一段变成一整条广告或长镜头，改变了成片的拼接成本结构。"
+    },
+    {
+      "article_id": "2026-10-17-10",
+      "entities": [
+        {"name": "Perplexity", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Perplexity 宣布向所有 Pro 与 Max 订阅用户"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": ["Argon"], "confidence": 0.95, "evidence": ["在快速搜索和 Computer（智能体）模式中提供 Gemini 4 Argon"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.6, "evidence": ["在快速搜索和 Computer（智能体）模式中提供 Gemini 4 Argon"]},
+        {"name": "WANDR", "type": "benchmark", "aliases": ["Wide-And-Deep-Research"], "confidence": 0.95, "evidence": ["在 Wide-And-Deep-Research（WANDR）基准上取得新的 SoTA"]},
+        {"name": "Aravind Srinivas", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["首席执行官 Aravind Srinivas 称该模型"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Perplexity 向 Pro 与 Max 用户开放 Gemini 4 Argon",
+          "summary": "Perplexity 宣布向所有 Pro 与 Max 订阅用户在快速搜索和 Computer（智能体）模式中提供 Gemini 4 Argon。",
+          "participants": [
+            {"name": "Perplexity", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Perplexity 宣布向所有 Pro 与 Max 订阅用户在快速搜索和 Computer（智能体）模式中提供 Gemini 4 Argon"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Argon 在 WANDR 基准上创下新的 SoTA",
+          "summary": "Perplexity 首席执行官 Aravind Srinivas 称该模型在 Wide-And-Deep-Research（WANDR）基准上取得新的 SoTA，WANDR 是评测研究智能体广而深搜索能力的基准。",
+          "participants": [
+            {"name": "Gemini 4 Argon", "type": "model", "role": "subject"},
+            {"name": "WANDR", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 Wide-And-Deep-Research（WANDR）基准上取得新的 SoTA"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Argon", "target": "Google", "type": "developed_by", "weight": 0.5, "evidence": ["在快速搜索和 Computer（智能体）模式中提供 Gemini 4 Argon"]},
+        {"source": "Perplexity", "target": "Gemini 4 Argon", "type": "integrates", "weight": 0.9, "evidence": ["在快速搜索和 Computer（智能体）模式中提供 Gemini 4 Argon"]},
+        {"source": "Gemini 4 Argon", "target": "WANDR", "type": "evaluated_on", "weight": 0.9, "evidence": ["在 Wide-And-Deep-Research（WANDR）基准上取得新的 SoTA"]},
+        {"source": "Aravind Srinivas", "target": "Perplexity", "type": "affiliated_with", "weight": 0.9, "evidence": ["首席执行官 Aravind Srinivas 称该模型"]}
+      ],
+      "metrics": [
+        {"name": "Perplexity 自身 WANDR xhigh 档软 F1", "value": "0.447"},
+        {"name": "Perplexity 自身 WANDR xhigh 档硬 F1", "value": "0.224"}
+      ],
+      "why_it_matters": "Perplexity 把检索负担纳入 SoTA 定义，建模了前沿模型在真实研究任务中广而深权衡证据的能力，竞争焦点从单次作答转向长程研究加智能体。"
+    },
+    {
+      "article_id": "2026-10-17-11",
+      "entities": [
+        {"name": "右尺寸化", "type": "topic", "aliases": ["right-sizing"], "confidence": 0.85, "evidence": ["为智能体任务\"右尺寸化\"语言模型"]},
+        {"name": "每完成任务的能效评估", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["按\"每完成任务的能耗/成本/时间\"而非单次调用来评估"]},
+        {"name": "交叉任务长度", "type": "topic", "aliases": ["crossover task length"], "confidence": 0.9, "evidence": ["存在一个\"交叉任务长度\""]},
+        {"name": "帕累托筛选", "type": "topic", "aliases": ["Pareto 筛选"], "confidence": 0.8, "evidence": ["先用帕累托筛选剔除永无竞争力的模型"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出以每完成任务为单位评估智能体所用语言模型",
+          "summary": "论文主张把成功完成任务作为功能单位，用每完成任务的能耗、成本与时间来评估智能体所用的 LLM，而非按单次调用比较。",
+          "participants": [
+            {"name": "右尺寸化", "type": "topic", "role": "subject"},
+            {"name": "每完成任务的能效评估", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["按\"每完成任务的能耗/成本/时间\"而非单次调用来评估"]
+        },
+        {
+          "type": "research",
+          "label": "论文给出跨任务长度的模型切换点并配套两阶段决策框架",
+          "summary": "核心发现是每种资源都存在一个交叉任务长度，低于它小模型更省更环保，先用帕累托筛选剔除永无竞争力的模型，仅在有权衡时做加权决策。",
+          "participants": [
+            {"name": "右尺寸化", "type": "topic", "role": "subject"},
+            {"name": "交叉任务长度", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["每种资源都存在一个\"交叉任务长度\""]
+        }
+      ],
+      "relations": [
+        {"source": "右尺寸化", "target": "交叉任务长度", "type": "uses", "weight": 0.8, "evidence": ["每种资源都存在一个\"交叉任务长度\""]},
+        {"source": "右尺寸化", "target": "帕累托筛选", "type": "uses", "weight": 0.7, "evidence": ["先用帕累托筛选剔除永无竞争力的模型"]},
+        {"source": "每完成任务的能效评估", "target": "右尺寸化", "type": "used_by", "weight": 0.8, "evidence": ["按\"每完成任务的能耗/成本/时间\"而非单次调用来评估"]}
+      ],
+      "metrics": [
+        {"name": "试点模型参数量范围", "value": "0.6B–27B"},
+        {"name": "试点开源权重模型数", "value": "15 个"},
+        {"name": "覆盖模型开发商数", "value": "五家"},
+        {"name": "多步智能体任务类型数", "value": "两类"}
+      ],
+      "why_it_matters": "这篇论文把功能单位从单次调用改成每完成任务，直接挑战大模型越强越划算的默认假设，用小模型在短任务上更优的交叉点指出了模型选择的边界。"
+    },
+    {
+      "article_id": "2026-10-17-12",
+      "entities": [
+        {"name": "Character.ai", "type": "company", "aliases": ["Character AI"], "confidence": 0.95, "evidence": ["Character.ai 宣布已主动启动 Chapter 11 破产程序"]},
+        {"name": "Disney", "type": "company", "aliases": ["迪士尼"], "confidence": 0.95, "evidence": ["公司已与迪士尼签订协议"]},
+        {"name": "stalking horse", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["后者将作为 stalking horse 竞标方"]}
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "Character.ai 主动启动 Chapter 11 破产程序并计划法院监督下出售公司",
+          "summary": "Character.ai 宣布已主动启动 Chapter 11 破产程序以推动法院监督下的公司出售，若无可行收购方报价平台将停运，出售流程预计 2026 年 11 月底至 12 月初完成。",
+          "participants": [
+            {"name": "Character.ai", "type": "company", "role": "subject"},
+            {"name": "Disney", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Character.ai 宣布已主动启动 Chapter 11 破产程序"]
+        },
+        {
+          "type": "acquisition",
+          "label": "迪士尼以 stalking horse 竞标方身份购买 Character.ai 部分 IP",
+          "summary": "申请前公司已与迪士尼签订协议，后者将作为 stalking horse 竞标方，以 2000 万美元购买部分知识产权及索赔的非排他永久许可并提供过渡服务。",
+          "participants": [
+            {"name": "Disney", "type": "company", "role": "subject"},
+            {"name": "Character.ai", "type": "company", "role": "object"},
+            {"name": "stalking horse", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["后者将作为 stalking horse 竞标方"]
+        }
+      ],
+      "relations": [
+        {"source": "Character.ai", "target": "Disney", "type": "licenses_to", "weight": 0.8, "evidence": ["购买部分知识产权及索赔的非排他永久许可"]},
+        {"source": "Disney", "target": "Character.ai", "type": "acquires", "weight": 0.8, "evidence": ["公司已与迪士尼签订协议，后者将作为 stalking horse 竞标方，以 2000 万美元购买部分知识产权"]},
+        {"source": "Disney", "target": "stalking horse", "type": "acts_as", "weight": 0.7, "evidence": ["后者将作为 stalking horse 竞标方"]}
+      ],
+      "metrics": [
+        {"name": "迪士尼购买 IP 金额", "value": "2000 万美元"},
+        {"name": "出售流程预计完成时间", "value": "2026 年 11 月底至 12 月初"}
+      ],
+      "why_it_matters": "迪士尼以 stalking horse 身份入场 Character.ai 破产 IP 处置，精算陪伴类资产在监管与版权重压下已无独立现金流支撑，为同类垂直应用敲响警钟。"
+    },
+    {
+      "article_id": "2026-10-17-13",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["部分 Anthropic 现有及潜在 IPO 投资者"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["将超越 SpaceX 6 月约 1.8 万亿美元的纪录"]},
+        {"name": "Reuters", "type": "organization", "aliases": ["路透"], "confidence": 0.85, "evidence": ["据四位知情人士透露"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Reuters 报道部分投资者在投资者日讨论约 1.5 万亿 IPO 估值",
+          "summary": "在 10 月 14 日的旧金山投资者日上，一些投资者谈到约 1.5 万亿美元的估值，明显低于此前市场预期的约 2 万亿美元。",
+          "participants": [
+            {"name": "Reuters", "type": "organization", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["据四位知情人士透露"]
+        },
+        {
+          "type": "funding",
+          "label": "Anthropic Q3 收入环比增 45% 至 168 亿美元并季度盈利",
+          "summary": "Anthropic 在会上披露 Q3 收入环比跳增 45% 至 168 亿美元，且按调整后口径实现季度盈利，但环比增速在放缓。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Anthropic 在会上披露 Q3 收入环比跳增 45% 至 168 亿美元"]
+        }
+      ],
+      "relations": [
+        {"source": "Reuters", "target": "Anthropic", "type": "reports_on", "weight": 0.8, "evidence": ["据四位知情人士透露"]},
+        {"source": "Anthropic", "target": "SpaceX", "type": "compared_with", "weight": 0.7, "evidence": ["若按 2 万亿定价将超越 SpaceX 6 月约 1.8 万亿美元的纪录"]}
+      ],
+      "metrics": [
+        {"name": "投资者讨论的 IPO 估值", "value": "约 1.5 万亿美元"},
+        {"name": "此前市场预期估值", "value": "约 2 万亿美元"},
+        {"name": "Q3 收入环比增速", "value": "45%"},
+        {"name": "Q3 收入", "value": "168 亿美元"},
+        {"name": "Q1 到 Q2 收入", "value": "116 亿美元"},
+        {"name": "SpaceX IPO 纪录估值", "value": "约 1.8 万亿美元"}
+      ],
+      "why_it_matters": "Anthropic 估值预期在市场对增长降速与高融资成本的重新定价中承压，Q3 季度盈利仍难抵消环比增速放缓，IPO 规模将成 AI 资本情绪的温度计。"
+    }
+  ]
+}

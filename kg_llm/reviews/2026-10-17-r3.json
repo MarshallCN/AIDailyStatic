@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-17",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "抽取整体忠实于原文，事实、数字与关系方向大体正确，无高严重度问题；主要失分点是跨文章规范名不一致（MI350P、Gemma 4 31B 在不同文章拼写不同导致无法连通），以及个别关系/事件类型失准（Disney 对 Character.ai 的比例被夸大成整体收购、开放商业 API 被标为 open_source）。",
+  "findings": [
+    {
+      "article_id": "2026-10-17-12",
+      "severity": "medium",
+      "problem": "关系 \"Disney --acquires--> Character.ai\"（weight 0.8）夸大了交易范围。原文明确 Disney 只是作为 stalking horse 竞标方以 2000 万美元购买(部分知识产权及索赔的非排他永久许可并提供过渡服务)，并不是整体收购 Character.ai 这家公司；公司的整体出售走的是法院监督的 Chapter 11 流程，买家并非 Disney。事件类型 acquisition 用于 Chapter 11 破产出售也欠准。",
+      "fix": "删除 \"Disney --acquires--> Character.ai\" 或改为更准确的表述（例如 Disney --buys_ip_from--> Character.ai），并在关系/事件描述里写明是「购买部分 IP + 非排他许可」，不是公司整体收购；破产出售主体事件建议用 funding/restructuring 或明确标注为法院监督出售，而不是笼统 acquisition。"
+    },
+    {
+      "article_id": "2026-10-17-6",
+      "severity": "medium",
+      "problem": "跨文章规范名不一致：第 6 篇使用实体名 \"Instinct MI350P\"，而第 8 篇使用 \"AMD MI350P\"（aliases 也只有 MI350P），两者指向同一款 AMD MI350P 硬件却因规范名不同无法在跨文章图谱里合并连通。",
+      "fix": "统一 MI350P 的规范名，例如统一为 \"AMD MI350P\" 并把 \"Instinct MI350P\" 加入 aliases，使第 6、8 篇（以及任何之后提到该硬件的文章）指向同一实体。"
+    },
+    {
+      "article_id": "2026-10-17-2",
+      "severity": "medium",
+      "problem": "跨文章规范名不一致：第 2 篇实体名写作 \"Gemma-4-31B-it\"，第 4 篇对照模型写作 \"Gemma 4 31B\"，二者同属 Gemma 4 31B 系列却命名不一致且无 alias 关联，跨文章无法连通。",
+      "fix": "把该模型统一到一个规范名（如 \"Gemma 4 31B\"），并将 \"Gemma-4-31B-it\" 作为别名并入，保证第 2、4 篇引用同一实体。"
+    },
+    {
+      "article_id": "2026-10-17-0",
+      "severity": "low",
+      "problem": "事件 \"DeepSeek 面向所有用户开放自研模型的 Search 与 Fetch API\" 的事件类型标为 open_source，但原文是面向所有用户开放按次计费的商业 API（每 1000 次调用 0.75 美元），并非开源权重或代码。",
+      "fix": "把该事件类型从 open_source 改为 launch（或 service/launch），只在真正释出开源权重/代码时才使用 open_source 类型。"
+    },
+    {
+      "article_id": "2026-10-17-10",
+      "severity": "low",
+      "problem": "关系 \"Gemini 4 Argon --developed_by--> Google\" 的 evidence（\"在快速搜索和 Computer（智能体）模式中提供 Gemini 4 Argon\"）并不支撑 Google 是开发者这一断言，这是从 Gemini 品牌名做的推断，原文未直接说明。",
+      "fix": "要么补充能支撑出自 Google 的证据，要么降低权重并注明为推断；不要用与断言无关的 evidence 支撑 developed_by 关系。"
+    }
+  ],
+  "lessons": [
+    "跨文章引用同一硬件/模型时必须统一规范名并在 aliases 里并入其他写法（如 MI350P、Gemma 4 31B 的 it 变体），否则图谱无法跨文章连通。",
+    "破产/IP 处置新闻中，竞标方仅以 stalking horse 身份购买部分知识产权时不要用整体 acquires 关系，应按实际买入内容（如 buys_ip_from / licenses_to）并写明范围。",
+    "事件类型 open_source 仅用于真正开源权重或代码；面向所有用户开放按次计费的商业 API 属于 launch，不要误标。"
+  ]
+}
