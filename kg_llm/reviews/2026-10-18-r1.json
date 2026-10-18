@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-18",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "整体关系方向正确、无高置信幻觉，但存在多处关系类型用错、实体误合并与共同出现噪音关系等语义问题，medium 级问题超过 2 条，未达可直接发布标准。最主要的是别名把多个独立平台/产品线误并为一个实体（Antigravity、RTX Spark/DGX Spark），以及若干关系类型（supplies、targets）与动作本质不符。",
+  "findings": [
+    {
+      "article_id": "2026-10-18-1",
+      "severity": "medium",
+      "problem": "实体 Antigravity 的 aliases 误写成 [\"Google AI Studio\", \"Gemini API\"]。原文是\"模型经 gemini-4-argon API 在 Google AI Studio、Gemini API、Antigravity 提供\"，这三者是并列的三个独立提供渠道，不是同一主体的不同写法，把它们设为别称构成错误合并。",
+      "fix": "将 Google AI Studio、Gemini API、Antigravity 拆成三个独立实体，Antigravity 的 aliases 只保留自身；若三者都是分发面可各建实体，或至少删除另两个别名。" 
+    },
+    {
+      "article_id": "2026-10-18-2",
+      "severity": "medium",
+      "problem": "关系 \"公告 No.48 --targets--> 印度\" 类型用错。原文只说\"对印度等试图降低对华依赖的国家，这轮光伏制造技术管制可能冲击其本土化产能\"——印度是被波及/受影响的国家，不是该政策直接针对的对象（被管制对象是技术/出口商）。",
+      "fix": "把该关系改为 affects/impacts 类（影响溢出），或将 target 限定为受管制技术本身；不要用 targets 描述对第三国的间接冲击，存疑可删除。" 
+    },
+    {
+      "article_id": "2026-10-18-2",
+      "severity": "medium",
+      "problem": "实体印度 type 标成 organization。印度是国家/地区，不是组织。",
+      "fix": "将印度类型改为 country/region（或国家类），不要归入 organization。" 
+    },
+    {
+      "article_id": "2026-10-18-4",
+      "severity": "medium",
+      "problem": "关系 \"摩根大通 --supplies--> Oracle\" 类型不当。原文是摩根大通牵头财团花六个多月推销（转售）与 Oracle 租约绑定的约 380 亿美元建设贷款，实质是融资安排/贷款转售，不是\"supplies\"（供货）。",
+      "fix": "改用能表达融资关系的类型（如 finances / 提供融资 / arranges_financing，视图谱可用类型取其一），或明确为\"贷款绑定/转售\"关系；不要用 supplies 兜底。" 
+    },
+    {
+      "article_id": "2026-10-18-4",
+      "severity": "medium",
+      "problem": "关系 \"Oracle --compared_with--> CoreWeave\" 与 \"软银 --compared_with--> CoreWeave\" 只是同一句\"CoreWeave、Oracle、软银债券遭抛售\"里的并列列举，属于共同出现噪音关系，不构成有信息量的边，且证据无法支撑\"比较\"语义。",
+      "fix": "删除这两条 compared_with 噪音关系，或用能承载\"同批次遭抛售\"语义的明确事件/关系表达，否则不要为并列列举建关系。" 
+    },
+    {
+      "article_id": "2026-10-18-10",
+      "severity": "medium",
+      "problem": "实体 RTX Spark 的 aliases 误写成 [\"DGX Spark\"]。原文 2026-10-18-10 明确是\"RTX Spark、DGX Spark 的软件更新\"，RTX Spark（笔记本）与 DGX Spark（桌面级）是两条不同的 NVIDIA 产品线，把它们设成别称构成错误合并，会污染跨文章连通。",
+      "fix": "删除 DGX Spark 别名，将 DGX Spark 单独立为独立实体（或至少不并入 RTX Spark）。" 
+    },
+    {
+      "article_id": "2026-10-18-10",
+      "severity": "medium",
+      "problem": "关系 \"RTX Spark --integrates--> Nemotron 3.5 Super VL\" 证据是\"RTX Spark、DGX Spark 的软件更新\"，这只是说软件栈同步更新、软件层面适配，不足以支撑\"RTX Spark 整合 Nemotron 3.5 Super VL\"这一关系。",
+      "fix": "删除该关系，或把语义降级为明确的软件栈适配/本地加速支持关系并给出更贴合的证据，否则不要建关系。" 
+    }
+  ],
+  "lessons": [
+    "同一句话里并列出现的多个独立平台或产品（如 Google AI Studio、Gemini API、Antigravity）不得互设为 alias，应各自建立实体，alias 只用于同一主体的不同写法。",
+    "同一主体的不同型号或产品线（如 NVIDIA RTX Spark 笔记本与 DGX Spark 工作站）不得合并为一个实体或用 alias 关联，每个型号单独成实体。",
+    "关系类型要贴合动作本质：对第三国的间接冲击/溢出用 affects 而非 targets，融资/贷款安排用 finances 类而非 supplies，并列列举的共现不要建 compared_with 关系。"
+  ]
+}

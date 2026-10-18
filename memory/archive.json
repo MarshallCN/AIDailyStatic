@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T22:24:21Z",
+  "updated_at": "2026-10-18T23:09:33Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -817,22 +817,22 @@
       "period_id": "2026-W38",
       "period_type": "week",
       "start_date": "2026-09-14",
-      "end_date": "2026-09-17",
-      "summary": "2026-09-14 至 2026-09-17 期间，NVIDIA、OpenAI、AWS 主要围绕 launch、research 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-09-18",
+      "summary": "2026-09-14 至 2026-09-18 期间，NVIDIA、OpenAI、Anthropic 主要围绕 research、launch 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "NVIDIA",
         "OpenAI",
-        "AWS",
-        "Hugging Face"
+        "Anthropic",
+        "ChatGPT"
       ],
       "event_types": [
-        "launch",
         "research",
+        "launch",
         "trend"
       ],
       "trend_signals": [
-        "核心实体：NVIDIA、OpenAI、AWS",
-        "主事件类型：launch、research"
+        "核心实体：NVIDIA、OpenAI、Anthropic",
+        "主事件类型：research、launch"
       ],
       "representative_article_ids": [
         "2026-09-14-0",

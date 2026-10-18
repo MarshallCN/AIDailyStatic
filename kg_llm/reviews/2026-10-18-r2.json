@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-18",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "无高置信幻觉、无关系方向反转，r1 指出的别名误合并（Antigravity、RTX Spark/DGX Spark）、噪音 compared_with、supplies 误用均已修复。但仍有 7 处 medium 语义问题：同一次发布被拆成互相重复的事件（文章 0、6）、把「洽谈/提及」升级为合作关系（文章 9、10）、越词表且无证据支撑的 impacts 边（文章 4）、以及实体表与事件参与者类型不一致（文章 2）。medium 数量超过 2 条，未达直接发布标准。",
+  "findings": [
+    {
+      "article_id": "2026-10-18-4",
+      "severity": "medium",
+      "problem": "关系 \"CoreWeave --impacts--> NVIDIA\"（weight 0.55）类型不在关系词表内（词表无 impacts），且证据 \"对 AI 数据中心大规模举债的担忧本周集中爆发\" 无法推出 CoreWeave 单向影响 NVIDIA。原文里 CoreWeave 与 NVIDIA 是同一轮债务担忧的并列受影响方（CoreWeave 债券破 15%、NVIDIA 市值蒸发），不存在 CoreWeave→NVIDIA 的因果边。",
+      "fix": "删除该关系；债务担忧的传导机制写进 trend 事件的 summary 即可，不要为并列受影响的实体建一对一影响边。"
+    },
+    {
+      "article_id": "2026-10-18-4",
+      "severity": "low",
+      "problem": "关系 \"摩根大通 --finances--> Oracle\" 的类型 finances 不在关系词表内（词表仅有 invests_in、licenses_to、supplies 等），该边可能被管线按未知类型丢弃。此改动是 r1 明确建议的（r1 曾建议用 finances），故不作追责，但需补词表或换用已存在的类型。",
+      "fix": "在词表中补充 finances/arranges_financing，或改用 licenses_to（贷款转售语义）；同时确认关系边的 source/target 与实体表 name 逐字一致。"
+    },
+    {
+      "article_id": "2026-10-18-0",
+      "severity": "medium",
+      "problem": "事件 1（type=launch，\"Meta 发布开源权重模型 Muse Spark Open\"）与事件 2（type=open_source，\"Meta 以 Muse Model License 开放 Muse Spark Open 权重\"）是同一发布行为的两个切面：参与者同为 Meta + Muse Spark Open，事件 2 的许可证、推理引擎、M5 Ultra 部署细节本就属于这次发布，被拆成两个互相重复的事件。",
+      "fix": "合并为一个 open_source 事件：把参数量/上下文、Muse Model License、SGLang/vLLM/MLX 等引擎、两台 M5 Ultra 部署都写进该事件的 summary，删除重复的 launch 事件。"
+    },
+    {
+      "article_id": "2026-10-18-6",
+      "severity": "medium",
+      "problem": "事件 3（\"ChatGPT Slides 支持在 ChatGPT Work 的 Space 团队协作\"）与事件 1（\"OpenAI 上线 ChatGPT Slides 协作做幻灯片\"）重复：事件 1 的 summary 已包含\"在 ChatGPT Work 的 Space 里团队实时协作编辑\"，同一动作被拆成两个重叠事件。",
+      "fix": "合并为一个 launch 事件，把 Space 灰度范围、导出 PowerPoint/PDF/Google Slides 等细节并入该事件 summary，删除事件 3。"
+    },
+    {
+      "article_id": "2026-10-18-9",
+      "severity": "medium",
+      "problem": "关系 \"DeepX --partners_with--> AMD\"（weight 0.8）与事件 2（type=partnership）把\"尚处早期洽谈\"升级为合作。原文是\"DeepX 同时与 AMD 尚处早期洽谈\"，洽谈未成事实，partners_with 与 partnership 事件都过度声明。",
+      "fix": "删除 partners_with 关系；事件 2 的 type 改为 research/trend 或降为 why_it_matters 里的提及，不要把未确立的合作建边或用 partnership 事件类型。"
+    },
+    {
+      "article_id": "2026-10-18-10",
+      "severity": "medium",
+      "problem": "关系 \"Nemotron 3.5 Super VL --compared_with--> Muse\" 与 \"…--> GLM\" 类型用错。原文\"与 Muse/GLM 等对话模型形成互补\"是互补（complementary）语义，不是比较；现有 lesson 已明确只有原文给出明确对比语义时才建 compared_with。",
+      "fix": "删除两条 compared_with 关系，或用互补语义（如 complements）表达；不要用 compared_with 承载\"互补\"，避免图谱读成\"被拿来与 Muse 比较\"。"
+    },
+    {
+      "article_id": "2026-10-18-10",
+      "severity": "medium",
+      "problem": "事件 2 把 Meta 列为 participant（role=partner）。但 Meta 在本篇只是被提及为方向一致的参考方（\"这与 Meta、Meta 等实验室把前沿能力下沉到本地设备的方向一致\"），并未参与 NVIDIA 的任何动作，属于把\"提到了\"当成\"合作\"，会给图谱制造 Meta 与 NVIDIA 联合行动的假象。",
+      "fix": "从事件 2 的 participants 中移除 Meta（及该观察），把\"方向一致\"的对比写进 why_it_matters，不要在事件里给 Meta 挂 partner 角色。"
+    },
+    {
+      "article_id": "2026-10-18-2",
+      "severity": "medium",
+      "problem": "事件 2 participants 中\"印度\"的 type 仍为 organization，而实体表里\"印度\"已是 country，两者不一致。r1 已指出实体表问题并被修复，但事件参与者里的类型未同步，同一主体出现两种类型。",
+      "fix": "将事件 2 participants 中\"印度\"的 type 改为 country，与实体表统一；检查全部事件参与者与实体表的类型一致性。"
+    },
+    {
+      "article_id": "2026-10-18-0",
+      "severity": "low",
+      "problem": "实体 \"Muse Code\" 的 type 标为 tool，但它是 Meta 的编码模型（原文\"官方演示了本地跑 Muse Code 完成真实 iOS 改动\"），与 Muse 系列模型同级，标为 tool 造成类型错配。",
+      "fix": "将 Muse Code 的 type 改为 model；其 evidence 仍是\"官方演示了本地跑 Muse Code\"。"
+    },
+    {
+      "article_id": "2026-10-18-0",
+      "severity": "low",
+      "problem": "关系 \"Muse Spark Open --complies_with--> Muse Model License\" 语义不当：模型是\"以 Muse Model License（有限商用条款）发布\"，即处于该许可之下，不是模型\"遵守\"许可条款；complies_with 属治理类关系（被监管方→监管），用在这里造成误读。",
+      "fix": "删除该关系（许可信息已由 open_source 事件 summary 承载），或若需保留改用明确的发布许可语义（如 released_under 类）；不要用 complies_with 表达\"以某许可证发布\"。"
+    }
+  ],
+  "lessons": [
+    "同一次发布行为（发布模型 + 开放权重/许可证）不要拆成多个互相重复的事件；合并为一个事件，把许可证、推理引擎、部署细节都写进 summary。",
+    "原文只表述\"早期洽谈/接触\"时不要用 partners_with 关系或 partnership 事件类型，只有已确立的合作才如此标注。",
+    "同一主体在实体表与事件 participants 中的 type 必须完全一致（如印度始终为 country），不要一处 country 一处 organization。"
+  ]
+}

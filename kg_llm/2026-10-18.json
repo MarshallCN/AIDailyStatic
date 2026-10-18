@@ -1,0 +1,520 @@
+{
+  "date": "2026-10-18",
+  "articles": [
+    {
+      "article_id": "2026-10-18-0",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.95, "evidence": ["Meta 于 10 月 15 日发布 Muse Spark Open"]},
+        {"name": "Muse Spark Open", "type": "model", "aliases": ["Muse Spark Open 816B"], "confidence": 0.95, "evidence": ["Meta 于 10 月 15 日发布 Muse Spark Open"]},
+        {"name": "Muse Code", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["官方演示了本地跑 Muse Code"]},
+        {"name": "MLX", "type": "tool", "aliases": ["MLX 框架"], "confidence": 0.9, "evidence": ["依托最新 MLX 框架"]},
+        {"name": "M5 Ultra", "type": "hardware", "aliases": ["M5 Ultra Mac Studio"], "confidence": 0.9, "evidence": ["权重可部署在两台 M5 Ultra Mac Studio 上"]},
+        {"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.85, "evidence": ["苹果的统一内存架构"]},
+        {"name": "Muse Model License", "type": "policy", "aliases": ["有限商用条款"], "confidence": 0.85, "evidence": ["以 Muse Model License（有限商用条款）发布"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Meta 开源发布 Muse Spark Open 开放权重模型",
+          "summary": "Meta 于 10 月 15 日发布并开源 8160 亿总参数、每 token 激活 42B 的原生多模态 MoE 模型 Muse Spark Open，支持 100 万 token 上下文；权重在 Hugging Face 以 Muse Model License（有限商用条款）发布，支持 SGLang、vLLM、MLX 等推理引擎，并可部署在两台 M5 Ultra Mac Studio 上本地运行。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Muse Spark Open", "type": "model", "role": "object"},
+            {"name": "Muse Model License", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["Meta 于 10 月 15 日发布 Muse Spark Open"]
+        }
+      ],
+      "relations": [
+        {"source": "Muse Spark Open", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["Meta 于 10 月 15 日发布 Muse Spark Open"]},
+        {"source": "Muse Spark Open", "target": "Meta", "type": "released_by", "weight": 0.9, "evidence": ["Meta 于 10 月 15 日发布 Muse Spark Open"]},
+        {"source": "Muse Spark Open", "target": "MLX", "type": "uses", "weight": 0.8, "evidence": ["依托最新 MLX 框架"]},
+        {"source": "Muse Spark Open", "target": "M5 Ultra", "type": "uses", "weight": 0.8, "evidence": ["权重可部署在两台 M5 Ultra Mac Studio 上"]},
+        {"source": "M5 Ultra", "target": "Apple", "type": "developed_by", "weight": 0.8, "evidence": ["苹果的统一内存架构"]},
+        {"source": "Muse Code", "target": "Meta", "type": "developed_by", "weight": 0.8, "evidence": ["官方演示了本地跑 Muse Code"]}
+      ],
+      "metrics": [
+        {"name": "Muse Spark Open 总参数量", "value": "8160 亿"},
+        {"name": "每 token 激活参数", "value": "42B"},
+        {"name": "上下文长度", "value": "100 万 token"},
+        {"name": "单台 GPU 统一内存上限", "value": "512GB"},
+        {"name": "内存带宽", "value": "1.2 TB/s"},
+        {"name": "两台等效统一内存", "value": "1TB"}
+      ],
+      "why_it_matters": "Meta 把 816B 原生多模态 MoE 当作可控可调的开源权重差异化核心，并用苹果统一内存首次把这一规模塞进桌面，开源尺度定义权的争夺从云端下沉到本地。"
+    },
+    {
+      "article_id": "2026-10-18-1",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind"], "confidence": 0.95, "evidence": ["Google DeepMind 公布 Gemini 4 Argon 面向机器人的能力"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["Gemini 4 Argon 是 Google 面向机器人/物理理解推出的旗舰模型"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": ["Argon"], "confidence": 0.95, "evidence": ["Gemini 4 Argon 是 Google 面向机器人/物理理解推出的旗舰模型"]},
+        {"name": "ERQA", "type": "benchmark", "aliases": ["Embodied Reasoning Question Answering"], "confidence": 0.9, "evidence": ["在 ERQA（Embodied Reasoning Question Answering）基准取得 87%"]},
+        {"name": "MuJoCo", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["构建带脚踩踏板垃圾桶的 MuJoCo 数字孪生"]},
+        {"name": "Boston Dynamics", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["让一只 Boston Dynamics Spot 四足机器人在仿真里练习"]},
+        {"name": "Spot", "type": "product", "aliases": ["Boston Dynamics Spot"], "confidence": 0.85, "evidence": ["让一只 Boston Dynamics Spot 四足机器人在仿真里练习"]},
+        {"name": "Antigravity", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["模型经 gemini-4-argon API 在 Google AI Studio、Gemini API、Antigravity 提供"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Google DeepMind 公布 Gemini 4 Argon 面向机器人的能力",
+          "summary": "Google DeepMind 公布 Gemini 4 Argon 把编码、视觉感知、物理模拟与控制打通的机器人能力，用视频→模拟→真实让 Spot、人形机械臂学习新动作。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google DeepMind 公布 Gemini 4 Argon 面向机器人的能力"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Argon 在 ERQA 基准以纯推理取得 87%",
+          "summary": "Gemini 4 Argon 可用纯推理在 ERQA（Embodied Reasoning Question Answering）基准取得 87%，远超其他前沿模型。",
+          "participants": [
+            {"name": "Gemini 4 Argon", "type": "model", "role": "subject"},
+            {"name": "ERQA", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 ERQA（Embodied Reasoning Question Answering）基准取得 87%"]
+        },
+        {
+          "type": "launch",
+          "label": "Gemini 4 Argon 经 gemini-4-argon API 向开发者开放",
+          "summary": "模型经 gemini-4-argon API 在 Google AI Studio、Gemini API、Antigravity 提供，可作为机器人价值函数把 60 秒视频切成 28 段打分。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"},
+            {"name": "Antigravity", "type": "product", "role": "object"}
+          ],
+          "evidence": ["模型经 gemini-4-argon API 在 Google AI Studio、Gemini API、Antigravity 提供"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Argon", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["Google DeepMind 公布 Gemini 4 Argon 面向机器人的能力"]},
+        {"source": "Gemini 4 Argon", "target": "ERQA", "type": "evaluated_on", "weight": 0.9, "evidence": ["在 ERQA（Embodied Reasoning Question Answering）基准取得 87%"]},
+        {"source": "Gemini 4 Argon", "target": "MuJoCo", "type": "uses", "weight": 0.8, "evidence": ["构建带脚踩踏板垃圾桶的 MuJoCo 数字孪生"]},
+        {"source": "Antigravity", "target": "Gemini 4 Argon", "type": "integrates", "weight": 0.8, "evidence": ["模型经 gemini-4-argon API 在 Google AI Studio、Gemini API、Antigravity 提供"]},
+        {"source": "Spot", "target": "Gemini 4 Argon", "type": "uses", "weight": 0.7, "evidence": ["让一只 Boston Dynamics Spot 四足机器人在仿真里练习再上真机踩下脚踏板丢垃圾"]},
+        {"source": "Spot", "target": "Boston Dynamics", "type": "developed_by", "weight": 0.8, "evidence": ["让一只 Boston Dynamics Spot 四足机器人在仿真里练习"]}
+      ],
+      "metrics": [
+        {"name": "ERQA 基准分数", "value": "87%"},
+        {"name": "双臂人形自由度", "value": "76-DoF"},
+        {"name": "五指手自由度", "value": "22-DoF"},
+        {"name": "环形分拣视频分段数/时长", "value": "28 段 / 60 秒"},
+        {"name": "闭环物理验证命中率", "value": "6/6"}
+      ],
+      "why_it_matters": "Gemini 4 Argon 把人类视频与草图直接转成可用的机器人仿真与控制，从纯视觉理解进到物理智能层，编码、感知、控制首次在同一旗舰模型上打通。"
+    },
+    {
+      "article_id": "2026-10-18-2",
+      "entities": [
+        {"name": "商务部", "type": "organization", "aliases": ["中国商务部"], "confidence": 0.95, "evidence": ["中国商务部与科技部于 10 月 16 日发布公告 No. 48 草案"]},
+        {"name": "科学技术部", "type": "organization", "aliases": ["科技部"], "confidence": 0.95, "evidence": ["中国商务部与科技部于 10 月 16 日发布公告 No. 48 草案"]},
+        {"name": "公告 No. 48", "type": "policy", "aliases": ["出口管制公告"], "confidence": 0.9, "evidence": ["中国商务部与科技部于 10 月 16 日发布公告 No. 48 草案"]},
+        {"name": "太阳能级多晶硅技术", "type": "topic", "aliases": ["多晶硅"], "confidence": 0.85, "evidence": ["年度产能至少 3 万吨产线的太阳能级多晶硅技术"]},
+        {"name": "印度", "type": "country", "aliases": ["India"], "confidence": 0.85, "evidence": ["对印度等试图降低对华依赖的国家"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "商务部与科技部发布公告 No. 48 拟对 40 项前沿技术实施出口管制",
+          "summary": "中国商务部与科技部就 40 项涉及 AI、光伏与生物医药的前沿技术实施出口限制或禁止的草案征求意见，其中 14 项拟完全禁止、26 项拟限制出口。",
+          "participants": [
+            {"name": "商务部", "type": "organization", "role": "subject"},
+            {"name": "科学技术部", "type": "organization", "role": "partner"},
+            {"name": "公告 No. 48", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["拟对 40 项涉及 AI、光伏与生物医药的前沿技术实施出口限制或禁止"]
+        },
+        {
+          "type": "policy",
+          "label": "出口管制覆盖 23 项 AI 技术并可能冲击印度光伏本土化",
+          "summary": "AI 部分覆盖大模型、智能体、算力集群等 23 项关键技术，开源或已公开技术通常豁免；对印度等试图降低对华依赖的国家，光伏管制可能冲击其本土化产能爬坡。",
+          "participants": [
+            {"name": "公告 No. 48", "type": "policy", "role": "subject"},
+            {"name": "印度", "type": "country", "role": "object"}
+          ],
+          "evidence": ["对印度等试图降低对华依赖的国家"]
+        }
+      ],
+      "relations": [
+        {"source": "公告 No. 48", "target": "商务部", "type": "released_by", "weight": 0.9, "evidence": ["中国商务部与科技部于 10 月 16 日发布公告 No. 48 草案"]},
+        {"source": "公告 No. 48", "target": "科学技术部", "type": "released_by", "weight": 0.9, "evidence": ["中国商务部与科技部于 10 月 16 日发布公告 No. 48 草案"]},
+        {"source": "商务部", "target": "太阳能级多晶硅技术", "type": "restricts", "weight": 0.8, "evidence": ["拟对 40 项涉及 AI、光伏与生物医药的前沿技术实施出口限制或禁止"]}
+      ],
+      "metrics": [
+        {"name": "拟管制技术总数", "value": "40 项"},
+        {"name": "拟完全禁止出口项数", "value": "14 项"},
+        {"name": "拟限制出口项数", "value": "26 项"},
+        {"name": "AI 关键技术项数", "value": "23 项"},
+        {"name": "多晶硅产线年产能门槛", "value": "3 万吨"},
+        {"name": "意见征求截止日期", "value": "11 月 15 日"}
+      ],
+      "why_it_matters": "中国把出口管制从芯片扩到光伏与生物医药并给出 23 项 AI 技术，开源豁免加登记制表明这场管制走的是防扩散而非全面封禁路线，成为产业链本土化决策的新变量。"
+    },
+    {
+      "article_id": "2026-10-18-3",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 发布《Employment at Anthropic》"]},
+        {"name": "《Employment at Anthropic》", "type": "paper", "aliases": ["雇佣报告"], "confidence": 0.9, "evidence": ["Anthropic 发布《Employment at Anthropic》"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["读完全部 Claude 智能体产出"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Anthropic 发布《Employment at Anthropic》雇佣结构报告",
+          "summary": "Anthropic 基于内部财务、人事记录、访谈与智能体会话遥测发布报告，考察 AI 如何重塑一家前沿实验室自身的雇佣结构，并称不把自身当作普通公司的镜像。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "《Employment at Anthropic》", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["Anthropic 发布《Employment at Anthropic》"]
+        },
+        {
+          "type": "trend",
+          "label": "智能体工时以 6:1 超过员工工时",
+          "summary": "到 8 月智能体（含自主与交互式）的总工时以 6:1 超过员工工时，员工转向搭建监控管道、写评测的元工作，该部分占比从 10% 升到 22%。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["智能体（含自主与交互式）的总工时以 6:1 超过员工工时"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.85, "evidence": ["读完全部 Claude 智能体产出"]},
+        {"source": "《Employment at Anthropic》", "target": "Anthropic", "type": "authored_by", "weight": 0.9, "evidence": ["Anthropic 发布《Employment at Anthropic》"]},
+        {"source": "Anthropic", "target": "Claude", "type": "uses", "weight": 0.8, "evidence": ["读完全部 Claude 智能体产出"]}
+      ],
+      "metrics": [
+        {"name": "技术部门初级员工占比变化", "value": "21%→14%"},
+        {"name": "junior 技术新招占比变化", "value": "27%→9%"},
+        {"name": "智能体工时与员工工时之比", "value": "6:1"},
+        {"name": "无代码员工智能体会话频次变化", "value": "每月 2 次→90 次"},
+        {"name": "元工作占比变化", "value": "10%→22%"}
+      ],
+      "why_it_matters": "一家前沿实验室用自身遥测把智能体工时已是员工 6 倍摆上桌面并转向元工作，雇佣结构的参考系正从招人干活移向先审智能体产出。"
+    },
+    {
+      "article_id": "2026-10-18-4",
+      "entities": [
+        {"name": "CoreWeave", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["CoreWeave 的 2032 年到期债券收益率已突破 15%"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.9, "evidence": ["NVIDIA 单周市值蒸发超过 3500 亿美元"]},
+        {"name": "Oracle", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["摩根大通牵头财团花六个多月推销与 Oracle 租约"]},
+        {"name": "摩根大通", "type": "company", "aliases": ["JPMorgan"], "confidence": 0.9, "evidence": ["摩根大通牵头财团花六个多月推销与 Oracle 租约"]},
+        {"name": "软银", "type": "company", "aliases": ["SoftBank"], "confidence": 0.85, "evidence": ["CoreWeave、Oracle、软银债券遭抛售"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "AI 数据中心债务担忧集中爆发，高杠杆发行方债券遭抛售",
+          "summary": "对 AI 数据中心大规模举债的担忧本周集中爆发，CoreWeave 债券收益率突破 15%，NVIDIA 单周市值蒸发超 3500 亿美元、芯片股整体跌约 11%。",
+          "participants": [
+            {"name": "CoreWeave", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"},
+            {"name": "Oracle", "type": "company", "role": "partner"},
+            {"name": "软银", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["CoreWeave 的 2032 年到期债券收益率已突破 15%"]
+        },
+        {
+          "type": "infra",
+          "label": "摩根大通牵头的财团折价转售 Oracle 建设贷款",
+          "summary": "银行正尝试转售 AI 数据中心债务，摩根大通牵头财团推销与 Oracle 租约绑定的约 380 亿美元建设贷款，部分贷款方愿折价卖给非银买家。",
+          "participants": [
+            {"name": "摩根大通", "type": "company", "role": "subject"},
+            {"name": "Oracle", "type": "company", "role": "object"}
+          ],
+          "evidence": ["摩根大通牵头财团花六个多月推销与 Oracle 租约（德州+威斯康星）绑定的约 380 亿美元建设贷款"]
+        }
+      ],
+      "relations": [
+        {"source": "摩根大通", "target": "Oracle", "type": "licenses_to", "weight": 0.85, "evidence": ["摩根大通牵头财团花六个多月推销与 Oracle 租约（德州+威斯康星）绑定的约 380 亿美元建设贷款"]}
+      ],
+      "metrics": [
+        {"name": "CoreWeave 债券收益率", "value": "突破 15%"},
+        {"name": "CoreWeave 违约概率定价", "value": "超过 60%"},
+        {"name": "NVIDIA 单周市值蒸发", "value": "超 3500 亿美元"},
+        {"name": "芯片股整体跌幅", "value": "约 11%"},
+        {"name": "CoreWeave 数据中心数", "value": "51 座"},
+        {"name": "CoreWeave 负债", "value": "约 720 亿美元"},
+        {"name": "CoreWeave 债券利率/规模", "value": "9% / 50 亿美元"},
+        {"name": "CoreWeave 年收入", "value": "约 150 亿美元"},
+        {"name": "Oracle 建设贷款", "value": "约 380 亿美元"},
+        {"name": "贷款折价交易价", "value": "90 美分"},
+        {"name": "今年被推迟/撤回的数据中心项目", "value": "47 个"}
+      ],
+      "why_it_matters": "CoreWeave 债券破 15%、Oracle 贷款打到九折，贷款→债券→再融资链条第一次以流动性定价的方式松动，把 AI 算力扩张的融资风险从叙事变成了数字。"
+    },
+    {
+      "article_id": "2026-10-18-5",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["NVIDIA RTX Spark 笔记本 10 月 16-17 日开售"]},
+        {"name": "RTX Spark", "type": "product", "aliases": ["RTX Spark 笔记本"], "confidence": 0.95, "evidence": ["NVIDIA RTX Spark 笔记本 10 月 16-17 日开售"]},
+        {"name": "Blackwell RTX GPU", "type": "hardware", "aliases": ["Blackwell RTX"], "confidence": 0.9, "evidence": ["把 Blackwell RTX GPU + Grace CPU 整合进"]},
+        {"name": "Grace CPU", "type": "hardware", "aliases": ["Grace"], "confidence": 0.9, "evidence": ["把 Blackwell RTX GPU + Grace CPU 整合进"]},
+        {"name": "Muse", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["可本地跑 Muse/GLM 等对话模型"]},
+        {"name": "GLM", "type": "model", "aliases": ["智谱 GLM"], "confidence": 0.85, "evidence": ["可本地跑 Muse/GLM 等对话模型"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "NVIDIA RTX Spark 笔记本开售",
+          "summary": "NVIDIA RTX Spark 笔记本 10 月 16-17 日开售，把 Blackwell RTX GPU 与 Grace CPU 整合进 14-16 英寸 Windows 笔记本，最高 128GB 统一内存，起售价 2399 美元。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "RTX Spark", "type": "product", "role": "object"}
+          ],
+          "evidence": ["NVIDIA RTX Spark 笔记本 10 月 16-17 日开售"]
+        },
+        {
+          "type": "launch",
+          "label": "RTX Spark 在本地跑 Muse/GLM 等对话模型与创作者工作流",
+          "summary": "RTX Spark 预装完整 NVIDIA AI 软件栈，可本地跑 Muse/GLM 等对话模型、编程智能体与创作工作流，并适配 Muse 模型与 Photoshop、DaVinci 等创作者应用。",
+          "participants": [
+            {"name": "RTX Spark", "type": "product", "role": "subject"},
+            {"name": "Muse", "type": "model", "role": "object"},
+            {"name": "GLM", "type": "model", "role": "object"}
+          ],
+          "evidence": ["可本地跑 Muse/GLM 等对话模型"]
+        }
+      ],
+      "relations": [
+        {"source": "RTX Spark", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["NVIDIA RTX Spark 笔记本 10 月 16-17 日开售"]},
+        {"source": "RTX Spark", "target": "Blackwell RTX GPU", "type": "uses", "weight": 0.85, "evidence": ["把 Blackwell RTX GPU + Grace CPU 整合进"]},
+        {"source": "RTX Spark", "target": "Grace CPU", "type": "uses", "weight": 0.85, "evidence": ["把 Blackwell RTX GPU + Grace CPU 整合进"]},
+        {"source": "RTX Spark", "target": "Muse", "type": "integrates", "weight": 0.8, "evidence": ["可本地跑 Muse/GLM 等对话模型"]},
+        {"source": "RTX Spark", "target": "GLM", "type": "integrates", "weight": 0.8, "evidence": ["可本地跑 Muse/GLM 等对话模型"]}
+      ],
+      "metrics": [
+        {"name": "起售价", "value": "2399 美元"},
+        {"name": "统一内存上限", "value": "128GB"},
+        {"name": "本地 AI 算力", "value": "约 1 petaflop（FP4）"},
+        {"name": "机身尺寸", "value": "14-16 英寸"}
+      ],
+      "why_it_matters": "NVIDIA 把 RTX Spark 超级芯片塞进 14-16 英寸笔记本并用统一内存撑到 128GB，本地 AI 从开发者的工作站下沉为便携的个人算力资产，模糊了 PC 与推理服务器的界限。"
+    },
+    {
+      "article_id": "2026-10-18-6",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 10 月 16 日上线 ChatGPT Slides"]},
+        {"name": "ChatGPT Slides", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 10 月 16 日上线 ChatGPT Slides"]},
+        {"name": "GPT-6 Pro", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["GPT-6 Pro 获得更快响应与\"并行智能体\""]},
+        {"name": "ChatGPT Work", "type": "product", "aliases": ["Space", "ChatGPT Work 的 Space"], "confidence": 0.85, "evidence": ["或在 ChatGPT Work 的 Space 里团队实时协作编辑"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 上线 ChatGPT Slides 协作做幻灯片",
+          "summary": "OpenAI 10 月 16 日上线 ChatGPT Slides，用户可基于一段对话、文件或大纲直接生成幻灯片；该功能随 Space 面向符合条件的 Pro、Business、Enterprise 用户灰度，支持在 ChatGPT Work 的 Space 里团队实时协作编辑，并导出 PowerPoint、PDF 或 Google Slides。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT Slides", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 10 月 16 日上线 ChatGPT Slides"]
+        },
+        {
+          "type": "launch",
+          "label": "GPT-6 Pro 加入并行智能体，多 Agent 并行拆解任务",
+          "summary": "GPT-6 Pro 获得更快响应与并行智能体，一个复杂任务可被拆给多个 Agent 并行处理，进度在 Chat 页实时显示、每个已完成任务都可点开查看。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6 Pro", "type": "model", "role": "object"}
+          ],
+          "evidence": ["GPT-6 Pro 获得更快响应与\"并行智能体\""]
+        }
+      ],
+      "relations": [
+        {"source": "ChatGPT Slides", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 10 月 16 日上线 ChatGPT Slides"]},
+        {"source": "GPT-6 Pro", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["GPT-6 Pro 获得更快响应与\"并行智能体\""]},
+        {"source": "ChatGPT Slides", "target": "ChatGPT Work", "type": "integrates", "weight": 0.85, "evidence": ["或在 ChatGPT Work 的 Space 里团队实时协作编辑"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "OpenAI 把幻灯片生成直接做进协作产品并对 GPT-6 Pro 开放并行智能体，表明复杂任务的多 Agent 拆解从 API 实验变成订阅用户者的默认能力。"
+    },
+    {
+      "article_id": "2026-10-18-7",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 正私下向立法者游说一份《前沿 AI 安全问责法案》草案"]},
+        {"name": "《前沿 AI 安全法案》", "type": "policy", "aliases": ["《前沿 AI 安全问责法案》"], "confidence": 0.9, "evidence": ["Anthropic 正私下向立法者游说一份《前沿 AI 安全问责法案》草案"]},
+        {"name": "美国商务部", "type": "organization", "aliases": ["商务部", "Commerce"], "confidence": 0.9, "evidence": ["只有商务部（Commerce）可申请暂停某个模型"]},
+        {"name": "加州 SB 53", "type": "policy", "aliases": ["SB 53"], "confidence": 0.85, "evidence": ["借鉴加州 SB 53 的语言"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Anthropic 私下向立法者推销《前沿 AI 安全法案》草案",
+          "summary": "Anthropic 正私下向立法者游说《前沿 AI 安全问责法案》草案，把安全触发条件限定在生物武器、失去对开发者控制及网络攻击等场景。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "《前沿 AI 安全法案》", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["Anthropic 正私下向立法者游说一份《前沿 AI 安全问责法案》草案"]
+        },
+        {
+          "type": "policy",
+          "label": "法案赋予商务部申请暂停、联邦法官下令关停模型的权力",
+          "summary": "草案规定只有商务部可申请暂停某个模型，且最终需由华盛顿特区联邦地区法院法官下令，其他机构不得单方面暂停模型。",
+          "participants": [
+            {"name": "《前沿 AI 安全法案》", "type": "policy", "role": "subject"},
+            {"name": "美国商务部", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["只有商务部（Commerce）可申请暂停某个模型"]
+        }
+      ],
+      "relations": [
+        {"source": "《前沿 AI 安全法案》", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 正私下向立法者游说一份《前沿 AI 安全问责法案》草案"]},
+        {"source": "《前沿 AI 安全法案》", "target": "加州 SB 53", "type": "built_on", "weight": 0.8, "evidence": ["借鉴加州 SB 53 的语言"]},
+        {"source": "美国商务部", "target": "Anthropic", "type": "regulates", "weight": 0.8, "evidence": ["只有商务部（Commerce）可申请暂停某个模型"]}
+      ],
+      "metrics": [
+        {"name": "经济损失触发门槛", "value": "超 10 亿美元"},
+        {"name": "人员死伤触发门槛", "value": "50 人以上"}
+      ],
+      "why_it_matters": "Anthropic 把只有商务部可申请、需联邦法官下令写进自己起草的法规，等于用审慎门槛框定未来监管的边界，实验室参与立法正式成为美国 AI 治理的现实路径。"
+    },
+    {
+      "article_id": "2026-10-18-8",
+      "entities": [
+        {"name": "LSCBench", "type": "benchmark", "aliases": ["LSCBench 基准"], "confidence": 0.95, "evidence": ["arXiv 论文（LSCBench，2026 年 10 月 preprint）"]},
+        {"name": "编码智能体", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["测 6 个主流编码智能体"]},
+        {"name": "真实漏洞", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["从 150 个真实漏洞构造 450 个任务"]},
+        {"name": "隐蔽安全测试", "type": "topic", "aliases": ["隐藏测试"], "confidence": 0.85, "evidence": ["功能与隐蔽安全测试双通过"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 LSCBench 基准评测编码智能体的安全修复能力",
+          "summary": "arXiv 论文从 150 个真实漏洞构造 450 个任务，覆盖 7 种语言、24 个 CWE 类别与 6 个主流编码智能体，考察功能正确与功能加隐蔽安全测试双通过。",
+          "participants": [
+            {"name": "LSCBench", "type": "benchmark", "role": "subject"},
+            {"name": "编码智能体", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["arXiv 论文（LSCBench，2026 年 10 月 preprint）"]
+        },
+        {
+          "type": "benchmark",
+          "label": "编码智能体功能与安全双通过率最高仅 25.1%",
+          "summary": "功能测试通过率 73.6%-91.3%，但功能加隐蔽安全双通过率最高仅 25.1%，表现为最好的智能体也只在约 12% 的漏洞场景里同时修好又修安全。",
+          "participants": [
+            {"name": "编码智能体", "type": "topic", "role": "subject"},
+            {"name": "LSCBench", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["双通过率最高仅 25.1%"]
+        }
+      ],
+      "relations": [
+        {"source": "编码智能体", "target": "LSCBench", "type": "evaluated_on", "weight": 0.9, "evidence": ["测 6 个主流编码智能体"]},
+        {"source": "LSCBench", "target": "真实漏洞", "type": "built_on", "weight": 0.85, "evidence": ["从 150 个真实漏洞构造 450 个任务"]},
+        {"source": "LSCBench", "target": "隐蔽安全测试", "type": "uses", "weight": 0.8, "evidence": ["功能与隐蔽安全测试双通过"]}
+      ],
+      "metrics": [
+        {"name": "构造任务数", "value": "450 个"},
+        {"name": "真实漏洞数", "value": "150 个"},
+        {"name": "覆盖语言数", "value": "7 种"},
+        {"name": "CWE 类别数", "value": "24 个"},
+        {"name": "被测编码智能体数", "value": "6 个"},
+        {"name": "功能测试通过率", "value": "73.6%-91.3%"},
+        {"name": "双通过率最高", "value": "25.1%"},
+        {"name": "最佳智能体同时修复漏洞比例", "value": "约 12%"}
+      ],
+      "why_it_matters": "LSCBench 用功能加安全双通过揭穿编码智能体的表面正确度，最高双通过率仅 25.1%，安全修复缺口成为智能体进入研发管线的最大质检盲区。"
+    },
+    {
+      "article_id": "2026-10-18-9",
+      "entities": [
+        {"name": "DeepX", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["DeepX 正与 Intel 展开技术合作"]},
+        {"name": "Intel", "type": "company", "aliases": ["英特尔"], "confidence": 0.95, "evidence": ["DeepX 正与 Intel 展开技术合作"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["DeepX 同时与 AMD 尚处早期洽谈"]},
+        {"name": "OpenVINO", "type": "tool", "aliases": ["Intel OpenVINO"], "confidence": 0.9, "evidence": ["把自家 NPU 接入 Intel OpenVINO 生态"]},
+        {"name": "DX-M1M", "type": "hardware", "aliases": ["DX-M1M NPU"], "confidence": 0.9, "evidence": ["其 DX-M1M NPU 典型运行约 3W"]},
+        {"name": "金洛元", "type": "person", "aliases": ["金洛元 CEO"], "confidence": 0.9, "evidence": ["CEO 金洛元 10 月 18 日受访"]},
+        {"name": "Sixfab", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["被 Raspberry Pi 生态的 Sixfab AI HAT+ 采用"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "DeepX 与 Intel 技术合作，把 NPU 接入 OpenVINO",
+          "summary": "DeepX 正与 Intel 展开技术合作，把自家 NPU 接入 Intel OpenVINO 生态、优化模型与 SDK，让开发者以即插即用方式在 Intel 平台上调度 DeepX 芯片。",
+          "participants": [
+            {"name": "DeepX", "type": "company", "role": "subject"},
+            {"name": "Intel", "type": "company", "role": "partner"},
+            {"name": "OpenVINO", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["DeepX 正与 Intel 展开技术合作"]
+        },
+        {
+          "type": "trend",
+          "label": "DeepX 同时与 AMD 合作处于早期洽谈",
+          "summary": "DeepX 同时与 AMD 尚处早期洽谈，公司 CEO 金洛元把战略对标围绕物理 AI 展开，覆盖智能眼镜、自动驾驶、无人机与机器人。",
+          "participants": [
+            {"name": "DeepX", "type": "company", "role": "subject"},
+            {"name": "AMD", "type": "company", "role": "object"}
+          ],
+          "evidence": ["DeepX 同时与 AMD 尚处早期洽谈"]
+        },
+        {
+          "type": "trend",
+          "label": "DeepX 押注物理 AI 边缘 NPU",
+          "summary": "DeepX 主打超低功耗边缘推理，其 DX-M1M NPU 典型运行约 3W、峰值 25 TOPS，此前被 Raspberry Pi 生态的 Sixfab AI HAT+ 采用。",
+          "participants": [
+            {"name": "DeepX", "type": "company", "role": "subject"},
+            {"name": "DX-M1M", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["其 DX-M1M NPU 典型运行约 3W"]
+        }
+      ],
+      "relations": [
+        {"source": "DeepX", "target": "Intel", "type": "partners_with", "weight": 0.9, "evidence": ["DeepX 正与 Intel 展开技术合作"]},
+        {"source": "DX-M1M", "target": "OpenVINO", "type": "integrates", "weight": 0.85, "evidence": ["把自家 NPU 接入 Intel OpenVINO 生态"]},
+        {"source": "DX-M1M", "target": "DeepX", "type": "developed_by", "weight": 0.9, "evidence": ["其 DX-M1M NPU 典型运行约 3W"]},
+        {"source": "金洛元", "target": "DeepX", "type": "affiliated_with", "weight": 0.9, "evidence": ["CEO 金洛元 10 月 18 日受访"]},
+        {"source": "Sixfab", "target": "DX-M1M", "type": "uses", "weight": 0.8, "evidence": ["被 Raspberry Pi 生态的 Sixfab AI HAT+ 采用"]}
+      ],
+      "metrics": [
+        {"name": "DX-M1M 典型功耗", "value": "约 3W"},
+        {"name": "DX-M1M 峰值算力", "value": "25 TOPS"}
+      ],
+      "why_it_matters": "DeepX 用接入 OpenVINO 换取即插即用的开发者触达并同时接触 AMD，把物理 AI 边缘 NPU 押注放在开放生态而非封闭专有上，定位与云端大模型形成错位竞争。"
+    },
+    {
+      "article_id": "2026-10-18-10",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["NVIDIA 于 10 月中旬发布 Nemotron 3.5 Super VL"]},
+        {"name": "Nemotron 3.5 Super VL", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["NVIDIA 于 10 月中旬发布 Nemotron 3.5 Super VL"]},
+        {"name": "RTX Spark", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["RTX Spark、DGX Spark 的软件更新"]},
+        {"name": "DGX Spark", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["RTX Spark、DGX Spark 的软件更新"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "NVIDIA 发布 Nemotron 3.5 Super VL 多模态推理模型",
+          "summary": "NVIDIA 于 10 月中旬发布 Nemotron 3.5 Super VL，一条面向视觉-语言多模态与专业智能体负载的模型线，把更强的视觉理解与工具调用能力放进 NVIDIA 开源生态栈。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Nemotron 3.5 Super VL", "type": "model", "role": "object"}
+          ],
+          "evidence": ["NVIDIA 于 10 月中旬发布 Nemotron 3.5 Super VL"]
+        },
+        {
+          "type": "trend",
+          "label": "NVIDIA 面向本地 AI 的软件栈同步更新（RTX Spark、DGX Spark）",
+          "summary": "同步更新的还有 NVIDIA 面向本地 AI 的软件栈（RTX Spark、DGX Spark 的软件更新），这与其把前沿能力下沉到本地设备的战略方向延续一致。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "RTX Spark", "type": "product", "role": "object"},
+            {"name": "DGX Spark", "type": "product", "role": "object"}
+          ],
+          "evidence": ["RTX Spark、DGX Spark 的软件更新"]
+        }
+      ],
+      "relations": [
+        {"source": "Nemotron 3.5 Super VL", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["NVIDIA 于 10 月中旬发布 Nemotron 3.5 Super VL"]},
+        {"source": "Nemotron 3.5 Super VL", "target": "NVIDIA", "type": "released_by", "weight": 0.9, "evidence": ["NVIDIA 于 10 月中旬发布 Nemotron 3.5 Super VL"]},
+        {"source": "DGX Spark", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["RTX Spark、DGX Spark 的软件更新"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "NVIDIA 把多模态智能体模型与 RTX Spark/DGX Spark 的本地软件栈同步推进，与 Muse/GLM 等对话模型及 Meta 等实验室把前沿能力下沉到本地设备的方向一致，竞争已从对话模型扩展到专业智能体负载。"
+    }
+  ]
+}
