@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T23:09:33Z",
+  "updated_at": "2026-10-19T06:07:34Z",
   "window_days": 30,
   "start_date": "2026-09-19",
   "end_date": "2026-10-18",
@@ -2172539,14 +2172539,14 @@
     },
     {
       "date": "2026-10-18",
-      "headline": "2026-10-18 的线索图显示 6 条可追踪主题：128GB Mac / 6.1 Astra / 722 篇数学论文 / AI Arena；Babak Barazandeh / ChatGPT Dots / Delta / Fo",
+      "headline": "AI 热潮的账与债撕扯同周同台、失控智能体从自曝进入法律程序、决策模型用真实采用数据做实独立品类、个人算力与记忆架构成为新前线、中国算力主权与开源地缘同框——10/12–10/18 五条结构性主线",
       "theme_ids": [
-        "clue:833ff8f27997",
-        "clue:364f3ab215f7",
-        "clue:89fa1734ecb2",
-        "clue:479b334de82a",
-        "clue:31d5825c37dd",
-        "clue:2fb2b7ccdd78"
+        "clue:ai-boom-ledger-vs-debt-2026w42",
+        "clue:rogue-agent-governance-2026w42",
+        "clue:decision-model-adoption-2026w42",
+        "clue:personal-compute-memory-architecture-2026w42",
+        "clue:china-compute-sovereignty-open-source-geopolitics-2026w42",
+        "clue:agent-verifiability-frontier-2026w42"
       ]
     }
   ]
