@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-19",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "第 1 轮的问题基本已修复（arXiv 不再被当作论文作者、GPT-5.6 Sol 移出关停事件、Etched 不再被标 partner、Nscale 对微软的活跃供应边改为 partners_with）。数字级事实无幻觉，跨文章规范名一致。剩余问题集中在语义与类型层：一处关系类型把后训练完成速度夸大成 outperforms、Stargate UK 实体被错标为 product、论文抽成了自我指涉的空洞占位，另有若干关系方向/粒度偏松（Vera 对 Intel/AMD 公司、AWS 与 Amazon 分叉）。",
+  "findings": [
+    {
+      "article_id": "2026-10-19-4",
+      "severity": "medium",
+      "problem": "关系 \"Nemotron 3.5 Super VL --outperforms--> Opus 5\" 与 \"--outperforms--> GPT-6.1 Sol\" 把原文的\"在做特定 agent 任务后训练时完成速度快于 Opus 5、GPT-6.1 Sol 等竞品\"改写成了对竞品的整体性能优势。原文只声称微调/后训练进程完成得更快，是过程速度声明，不是模型评测性能对比；用 outperforms 会夸大并读成\"NVIDIA 模型跑分胜过 Opus 5\"的错误故事。",
+      "fix": "不要用 outperforms。若保留语义，应限定为\"后训练完成速度更快\"并用更精确的关系类型或放进事件里表达，同步修正事件参与方里 Opus 5、GPT-6.1 Sol 的 role 表述，避免暗示整体性能胜出。"
+    },
+    {
+      "article_id": "2026-10-19-2",
+      "severity": "medium",
+      "problem": "实体 \"Stargate UK\" 被标为 type=product。Stargate UK 是 OpenAI 与 Nscale、Nvidia 合作的巨型 AI 数据中心项目/合资计划，不是可售卖的产品，产品类型与其实体语义不符（Monarch 园区被标为 product 也是同样问题，它同样是基础设施项目而非产品）。",
+      "fix": "把 Stargate UK（以及 Monarch 园区）的类型改为 organization 或项目类类型而非 product；若实体类型表中无\"项目\"类型，用 organization 并保持全图一致。"
+    },
+    {
+      "article_id": "2026-10-19-11",
+      "severity": "medium",
+      "problem": "关系 \"KiranaBench --developed_by--> KiranaBench 论文\" 是一条自我指涉的空洞边：实体 \"KiranaBench 论文\" 是抽取代理自造的占位名（原文没有给出论文标题），\"该基准由它自己的论文实体开发\"不携带任何可核实的图信息。r1 已把 arXiv 的 authored_by 修成 published_on（正确），但新增的这份占位 paper 实体及其 self-developed 边仍未提供实质信息，且 arXiv 在事件 1 参与方里仍被列为 partner 角色（arXiv 是收录平台不是合作方）。",
+      "fix": "删除 \"KiranaBench --developed_by--> KiranaBench 论文\" 这条无信息量边；原文未给论文标题时宁可不抽占位 paper 实体，保留 \"KiranaBench 论文 --published_on--> arXiv\" 的发布语义即可。同时把事件 1 参与方中的 arXiv role 从 partner 改为非参与方或直接移除。"
+    },
+    {
+      "article_id": "2026-10-19-1",
+      "severity": "low",
+      "problem": "关系 \"Vera --outperforms--> Intel\" 与 \"--outperforms--> AMD\" 把硬件产品指向两家公司整体；原文对比的是\"同档 x86 机器\"（即 Intel、AMD 的处理器与机器），并非与 Intel、AMD 两家公司直接竞比。逐条读成\"Vera 胜过 Intel 公司\"在语义上过强。",
+      "fix": "把目标收窄为对应处理器/机器（如同档 x86 CPU），或将关系改写为 \"Vera --outperforms--> 同档 x86\"，避免把两家公司整体当作被超越的对象。"
+    },
+    {
+      "article_id": "2026-10-19-9",
+      "severity": "low",
+      "problem": "同一篇内 AWS 与 Amazon 被拆成两个实体并以 \"AWS --subsidiary_of--> Amazon\" 相连，而全文事实主体是 AWS（TorchNeuron 由 AWS 发布、Annapurna Labs 属于 AWS），Amazon 仅在标题出现一次。这种拆法在本图其它文章都不出现，造成规范名分叉、跨文章连通性变差。",
+      "fix": "统一以 AWS 为规范实体承载该文全部事实，删除独立的 Amazon 节点及其 subsidiary_of 边；若确需保留 Amazon，放回 AWS 的 aliases 而非另立实体。"
+    }
+  ],
+  "lessons": [
+    "后训练/微调完成速度声明是过程速度，不是模型整体性能，不要用 outperforms 关系表达；outperforms 只保留给模型/基准的整体或评测性能对比。",
+    "项目/合资计划类主体（如某国巨型数据中心项目）不要标成 product，应使用 organization 或项目类类型；同名园区/厂房等基础设施同理。",
+    "当原文未给出对象实体的真名时（如没报论文标题），不要自造\"XX论文\"占位实体并连出自指边；占位实体图价值极低，宁可只保留可核实的主机/发布语义。"
+  ]
+}

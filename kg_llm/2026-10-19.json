@@ -1,0 +1,2276 @@
+{
+  "date": "2026-10-19",
+  "articles": [
+    {
+      "article_id": "2026-10-19-0",
+      "entities": [
+        {
+          "name": "SemiAnalysis",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "SemiAnalysis 用专有领先指标反驳数据中心“产能过剩”叙事"
+          ]
+        },
+        {
+          "name": "Brad Gerstner",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Brad Gerstner 基于“直觉”预测 2027 年只有约 25GW"
+          ]
+        },
+        {
+          "name": "Altimeter",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "Altimeter 的 Brad Gerstner"
+          ]
+        },
+        {
+          "name": "Oracle",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Oracle 以三地约 4.5GW 开启超大租约时代"
+          ]
+        },
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Meta、AWS、Microsoft、Google、Nvidia、AMD、Anthropic 与 OpenAI 全部下场签 GW 级租约"
+          ]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": [
+            "谷歌"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "Meta、AWS、Microsoft、Google、Nvidia、AMD、Anthropic 与 OpenAI 全部下场签 GW 级租约"
+          ]
+        },
+        {
+          "name": "AWS",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Meta、AWS、Microsoft、Google、Nvidia、AMD、Anthropic 与 OpenAI 全部下场签 GW 级租约"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Meta、AWS、Microsoft、Google、Nvidia、AMD、Anthropic 与 OpenAI 全部下场签 GW 级租约"
+          ]
+        },
+        {
+          "name": "AMD",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "Meta、AWS、Microsoft、Google、Nvidia、AMD、Anthropic 与 OpenAI 全部下场签 GW 级租约"
+          ]
+        },
+        {
+          "name": "Meta",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "Meta、AWS、Microsoft、Google、Nvidia、AMD、Anthropic 与 OpenAI 全部下场签 GW 级租约"
+          ]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Meta、AWS、Microsoft、Google、Nvidia、AMD、Anthropic 与 OpenAI 全部下场签 GW 级租约"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "Meta、AWS、Microsoft、Google、Nvidia、AMD、Anthropic 与 OpenAI 全部下场签 GW 级租约"
+          ]
+        },
+        {
+          "name": "DayOne",
+          "type": "company",
+          "aliases": [
+            "DayOne（新加坡）"
+          ],
+          "confidence": 0.85,
+          "evidence": [
+            "DayOne（新加坡，2023 年初以来累计出货约 3GW）"
+          ]
+        },
+        {
+          "name": "Firmus",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "从而拿到 Firmus、OpenAI、Nvidia 的大单"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "2026 年至今已签逾 1 万亿美元不可撤销的数据中心租约",
+          "summary": "自 2025 年下半年 Oracle 以约 4.5GW 开启超大租约后，Meta、AWS、Microsoft、Google、NVIDIA、AMD、Anthropic 与 OpenAI 全部下场签 GW 级租约，2026 年至今已签逾 1 万亿美元、具约束力且不可撤销的数据中心租约。",
+          "participants": [
+            {
+              "name": "Microsoft",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Meta",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "AWS",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Google",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Oracle",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "AMD",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "2026 年至今已有逾 1 万亿美元、具有约束力且不可撤销的数据中心租约签署"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "SemiAnalysis 预测 2027 年美国数据中心新增或达 +50GW，反驳 Brad Gerstner 的约 25GW 直觉预测",
+          "summary": "SemiAnalysis 用逐栋施工追踪与租约领先指标论证 2027 年全美将交付逾 24GW 已处于高级施工阶段的机房、全年新增或达 +50GW，反驳 Brad Gerstner 基于直觉的约 25GW 预测。",
+          "participants": [
+            {
+              "name": "SemiAnalysis",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Brad Gerstner",
+              "type": "person",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "2027 年全美将交付逾 24GW"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "SemiAnalysis 预警 2028 年底数据中心或现约 10GW 过剩的空壳风险",
+          "summary": "SemiAnalysis 用 Accelerator Model 对照潜在芯片供给与实际数据中心数量，预警 2028 年底存在约 10GW 数据中心过剩风险。",
+          "participants": [
+            {
+              "name": "SemiAnalysis",
+              "type": "company",
+              "role": "subject"
+            }
+          ],
+          "evidence": [
+            "年底存在约 10GW 数据中心过剩的风险"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "DayOne",
+          "target": "Firmus",
+          "type": "supplies",
+          "weight": 0.8,
+          "evidence": [
+            "拿到 Firmus、OpenAI、Nvidia 的大单"
+          ]
+        },
+        {
+          "source": "DayOne",
+          "target": "OpenAI",
+          "type": "supplies",
+          "weight": 0.8,
+          "evidence": [
+            "拿到 Firmus、OpenAI、Nvidia 的大单"
+          ]
+        },
+        {
+          "source": "DayOne",
+          "target": "NVIDIA",
+          "type": "supplies",
+          "weight": 0.8,
+          "evidence": [
+            "拿到 Firmus、OpenAI、Nvidia 的大单"
+          ]
+        },
+        {
+          "source": "Brad Gerstner",
+          "target": "Altimeter",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": [
+            "Altimeter 的 Brad Gerstner"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "2027 年美国数据中心预计新增容量",
+          "value": "+50GW"
+        },
+        {
+          "name": "高级施工阶段交付容量",
+          "value": "逾 24GW"
+        },
+        {
+          "name": "SemiAnalysis 追踪的高阶施工项目数",
+          "value": "40 个"
+        },
+        {
+          "name": "单 GW 租约总合约价值",
+          "value": "300-500 亿美元"
+        },
+        {
+          "name": "已签不可撤销租约总额",
+          "value": "逾 1 万亿美元"
+        },
+        {
+          "name": "Oracle 首笔超大租约规模",
+          "value": "约 4.5GW"
+        },
+        {
+          "name": "2028 数据中心过剩风险",
+          "value": "约 10GW"
+        },
+        {
+          "name": "DayOne 累计出货量",
+          "value": "约 3GW"
+        }
+      ],
+      "why_it_matters": "SemiAnalysis 用逐栋施工追踪加租约先行指标把 2027 需求论证成可核查的数字，问题焦点从建不建得出转向租约背后那个买家能不能持续租，2028 的 10GW 空壳预警把供给过剩叙事反转成对买家集中度的担忧。"
+    },
+    {
+      "article_id": "2026-10-19-1",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "NVIDIA 的 Vera 中央处理器"
+          ]
+        },
+        {
+          "name": "Modal",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "于是把 Vera 加进 Modal 的混合舰队"
+          ]
+        },
+        {
+          "name": "Vera",
+          "type": "hardware",
+          "aliases": [
+            "NVIDIA Vera CPU"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "把 NVIDIA 的 Vera 中央处理器加入"
+          ]
+        },
+        {
+          "name": "Intel",
+          "type": "company",
+          "aliases": [
+            "英特尔"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "与既有 Intel、AMD 的 x86 机器并肩运行"
+          ]
+        },
+        {
+          "name": "AMD",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "与既有 Intel、AMD 的 x86 机器并肩运行"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Modal 把 NVIDIA Vera CPU 加入托管 AI agent 集群",
+          "summary": "AI 云初创 Modal 确认把 NVIDIA 的 Vera 中央处理器加入其托管 AI agent 的集群，与既有 Intel、AMD 的 x86 机器并肩运行。",
+          "participants": [
+            {
+              "name": "Modal",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Vera",
+              "type": "hardware",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "把 NVIDIA 的 Vera 中央处理器加入其托管 AI agent 的集群"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Vera 在真实 agent 负载下吞吐约为同档 x86 的 2 倍",
+          "summary": "Modal 用真实世界 agent 工作负载做基准测试，结果显示 Vera 在数百个并发任务争抢资源时仍保持低延迟、吞吐约为同档 x86 的 2 倍。",
+          "participants": [
+            {
+              "name": "Vera",
+              "type": "hardware",
+              "role": "subject"
+            },
+            {
+              "name": "Intel",
+              "type": "company",
+              "role": "competitor"
+            },
+            {
+              "name": "AMD",
+              "type": "company",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "吞吐约为同档 x86 的 2 倍"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Vera",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "NVIDIA 的 Vera 中央处理器"
+          ]
+        },
+        {
+          "source": "Modal",
+          "target": "Vera",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "把 NVIDIA 的 Vera 中央处理器加入其托管 AI agent 的集群"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Vera 相对同档 x86 吞吐倍数",
+          "value": "约 2 倍"
+        },
+        {
+          "name": "并发任务数",
+          "value": "数百个"
+        }
+      ],
+      "why_it_matters": "NVIDIA 首次以 Arm 兼容 CPU 打进 agent 编排这类连年倍速增长的工作负载，竞争点不在服务器省电而在于专为 agent 编排移除 CPU 端瓶颈，x86 阵营在 agent 编排的竞争从此多了一维。"
+    },
+    {
+      "article_id": "2026-10-19-2",
+      "entities": [
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "微软周一确认退出与英国 AI 基建商 Nscale 的一项数据中心租约"
+          ]
+        },
+        {
+          "name": "Nscale",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "微软周一确认退出与英国 AI 基建商 Nscale 的一项数据中心租约"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "拟装 23,040 颗 NVIDIA GB300"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "OpenAI 已因能源成本与监管不确定性退出与 Nscale、Nvidia 合作的 Stargate UK 项目"
+          ]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "两者占其合约积压约 85%"
+          ]
+        },
+        {
+          "name": "Stargate UK",
+          "type": "organization",
+          "aliases": [
+            "Stargate UK 项目"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "OpenAI 已因能源成本与监管不确定性退出与 Nscale、Nvidia 合作的 Stargate UK 项目"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "微软确认退出与 Nscale 的英国 Loughton 数据中心租约",
+          "summary": "微软周一确认退出与英国 AI 基建商 Nscale 的一项数据中心租约，主因是英国电力网络公司无法在 2030 年代中期前保证 90MW 并网。",
+          "participants": [
+            {
+              "name": "Microsoft",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Nscale",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "微软周一确认退出与英国 AI 基建商 Nscale 的一项数据中心租约"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI 已退出与 Nscale、Nvidia 合作的 Stargate UK 项目",
+          "summary": "早前 OpenAI 已因能源成本与监管不确定性退出与 Nscale、Nvidia 合作的 Stargate UK 项目，英国两大旗舰 AI 数据中心项目先后因物理基础设施失去美国锚定客户。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Stargate UK",
+              "type": "organization",
+              "role": "object"
+            },
+            {
+              "name": "Nscale",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "OpenAI 已因能源成本与监管不确定性退出与 Nscale、Nvidia 合作的 Stargate UK 项目"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "NVIDIA",
+          "target": "Nscale",
+          "type": "supplies",
+          "weight": 0.7,
+          "evidence": [
+            "拟装 23,040 颗 NVIDIA GB300"
+          ]
+        },
+        {
+          "source": "Nscale",
+          "target": "Microsoft",
+          "type": "partners_with",
+          "weight": 0.6,
+          "evidence": [
+            "与 Nscale 的合作关系不变"
+          ]
+        },
+        {
+          "source": "Nscale",
+          "target": "Anthropic",
+          "type": "supplies",
+          "weight": 0.7,
+          "evidence": [
+            "两者占其合约积压约 85%"
+          ]
+        },
+        {
+          "source": "Nscale",
+          "target": "NVIDIA",
+          "type": "partners_with",
+          "weight": 0.6,
+          "evidence": [
+            "退出与 Nscale、Nvidia 合作的 Stargate UK 项目"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "拟装 NVIDIA GB300 颗数",
+          "value": "23,040 颗"
+        },
+        {
+          "name": "站点容量",
+          "value": "50MW 可扩至 90MW"
+        },
+        {
+          "name": "英国投资计划规模",
+          "value": "300 亿美元"
+        },
+        {
+          "name": "并网保证时间",
+          "value": "2030 至 2035 年"
+        },
+        {
+          "name": "Nscale IPO 目标估值",
+          "value": "约 350 亿美元"
+        },
+        {
+          "name": "微软与 Anthropic 合约积压占比",
+          "value": "约 85%"
+        },
+        {
+          "name": "单一客户占 2026 上半年收入",
+          "value": "52%"
+        }
+      ],
+      "why_it_matters": "微软因并网排队退出英国大单，叠加 OpenAI 已弃 Stargate UK，AI 超级大国的两大旗舰项目都倒在物理电网而非政治，暴露出 AI 数据中心需求对单一美国锚定客户的脆弱与并网时长的硬约束。"
+    },
+    {
+      "article_id": "2026-10-19-3",
+      "entities": [
+        {
+          "name": "Nscale",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Nscale 正与 Claude 制造商 Anthropic 洽谈一笔约 450 亿美元"
+          ]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "今年 8 月 Anthropic 已签下 450 亿美元租用 Nscale 西弗吉尼亚园区算力的大单"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "以 NVIDIA 前沿 Vera Rubin 芯片交付 460MW"
+          ]
+        },
+        {
+          "name": "Vera Rubin",
+          "type": "hardware",
+          "aliases": [
+            "NVIDIA Vera Rubin"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "以 NVIDIA 前沿 Vera Rubin 芯片交付"
+          ]
+        },
+        {
+          "name": "Monarch",
+          "type": "organization",
+          "aliases": [
+            "Monarch 园区"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "其西弗吉尼亚 Monarch 园区的第二栋楼"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "Anthropic 拟再斥 450 亿美元租用 Nscale 的 Vera Rubin 算力",
+          "summary": "据彭博社引述知情人士，Nscale 正与 Claude 制造商 Anthropic 洽谈一笔约 450 亿美元的新算力供应协议，目标是用 NVIDIA Vera Rubin 芯片为其西弗吉尼亚 Monarch 园区的第二栋楼交付 460MW 算力。",
+          "participants": [
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Nscale",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Vera Rubin",
+              "type": "hardware",
+              "role": "object"
+            },
+            {
+              "name": "Monarch",
+              "type": "organization",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Nscale 正与 Claude 制造商 Anthropic 洽谈一笔约 450 亿美元的新算力供应协议"
+          ]
+        },
+        {
+          "type": "infra",
+          "label": "Anthropic 8 月已签下 450 亿美元租用 Nscale 园区算力首单",
+          "summary": "今年 8 月 Anthropic 已签下 450 亿美元租用 Nscale 西弗吉尼亚园区算力的大单，新谈判是在同一 Monarch 校区再建第二栋楼。",
+          "participants": [
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Nscale",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "今年 8 月 Anthropic 已签下 450 亿美元租用 Nscale 西弗吉尼亚园区算力的大单"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Anthropic",
+          "target": "Nscale",
+          "type": "partners_with",
+          "weight": 0.9,
+          "evidence": [
+            "Nscale 正与 Claude 制造商 Anthropic 洽谈一笔约 450 亿美元的新算力供应协议"
+          ]
+        },
+        {
+          "source": "Vera Rubin",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "以 NVIDIA 前沿 Vera Rubin 芯片"
+          ]
+        },
+        {
+          "source": "Nscale",
+          "target": "Vera Rubin",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "以 NVIDIA 前沿 Vera Rubin 芯片交付 460MW"
+          ]
+        },
+        {
+          "source": "Nscale",
+          "target": "Anthropic",
+          "type": "supplies",
+          "weight": 0.8,
+          "evidence": [
+            "今年 8 月 Anthropic 已签下 450 亿美元租用 Nscale 西弗吉尼亚园区算力的大单"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "新算力协议金额",
+          "value": "约 450 亿美元"
+        },
+        {
+          "name": "第二栋楼交付算力容量",
+          "value": "460MW"
+        },
+        {
+          "name": "8 月首单金额",
+          "value": "450 亿美元"
+        }
+      ],
+      "why_it_matters": "Anthropic 在自建之外用第二笔 450 亿美元级租约锁死 GW 级第三方算力并选定 Vera Rubin，与同日微软退出 Nscale 形成一进一出，验证头部实验室对不可撤销长租约的资金依赖才是 2027 数据中心加速的核心。"
+    },
+    {
+      "article_id": "2026-10-19-4",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "NVIDIA 发布开源权重模型 Nemotron 3.5 Super VL"
+          ]
+        },
+        {
+          "name": "Nemotron 3.5 Super VL",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "NVIDIA 发布开源权重模型 Nemotron 3.5 Super VL"
+          ]
+        },
+        {
+          "name": "Bolt",
+          "type": "model",
+          "aliases": [
+            "Bolt 模型"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "两款轻量 Bolt 模型"
+          ]
+        },
+        {
+          "name": "Nemotron 3 Ultra",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "Super VL 参数比 Nemotron 3 Ultra 更少"
+          ]
+        },
+        {
+          "name": "Opus 5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "完成速度快于 Opus 5、GPT-6.1 Sol 等竞品"
+          ]
+        },
+        {
+          "name": "GPT-6.1 Sol",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "完成速度快于 Opus 5、GPT-6.1 Sol 等竞品"
+          ]
+        },
+        {
+          "name": "RTX Spark",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "面向 RTX Spark/DGX Spark AI PC 本地运行"
+          ]
+        },
+        {
+          "name": "DGX Spark",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "面向 RTX Spark/DGX Spark AI PC 本地运行"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "NVIDIA 开源发布 Nemotron 3.5 Super VL 与 Bolt 模型",
+          "summary": "NVIDIA 发布开源权重模型 Nemotron 3.5 Super VL（约 120B 参数，面向企业常驻 agent）与两款轻量 Bolt 模型，面向 RTX Spark/DGX Spark AI PC 本地运行。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Nemotron 3.5 Super VL",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Bolt",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "NVIDIA 发布开源权重模型 Nemotron 3.5 Super VL"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Nemotron 3.5 Super VL 后训练完成速度快于 Opus 5、GPT-6.1 Sol 等竞品",
+          "summary": "NVIDIA 称在做特定 agent 任务后训练时，Nemotron 3.5 Super VL 完成速度快于 Opus 5、GPT-6.1 Sol 等竞品。",
+          "participants": [
+            {
+              "name": "Nemotron 3.5 Super VL",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "Opus 5",
+              "type": "model",
+              "role": "competitor"
+            },
+            {
+              "name": "GPT-6.1 Sol",
+              "type": "model",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "完成速度快于 Opus 5、GPT-6.1 Sol 等竞品"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Nemotron 3.5 Super VL",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "NVIDIA 发布开源权重模型 Nemotron 3.5 Super VL"
+          ]
+        },
+        {
+          "source": "Bolt",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "两款轻量 Bolt 模型"
+          ]
+        },
+        {
+          "source": "Nemotron 3.5 Super VL",
+          "target": "Nemotron 3 Ultra",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "Super VL 参数比 Nemotron 3 Ultra 更少"
+          ]
+        },
+        {
+          "source": "Bolt",
+          "target": "RTX Spark",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "面向 RTX Spark/DGX Spark AI PC 本地运行"
+          ]
+        },
+        {
+          "source": "Bolt",
+          "target": "DGX Spark",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "面向 RTX Spark/DGX Spark AI PC 本地运行"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Nemotron 3.5 Super VL 参数规模",
+          "value": "约 120B"
+        }
+      ],
+      "why_it_matters": "NVIDIA 用参数量更少的后训练模型宣称在 agent 任务上快过 Opus 5、GPT-6.1 Sol，把开放与按规模可部署直接打进企业常驻 agent 和 AI PC 本地两个档位，agent 性能竞争从通用跑分转向定向后训练速度。"
+    },
+    {
+      "article_id": "2026-10-19-5",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "被控在 OpenAI 高管会议室安装录音设备"
+          ]
+        },
+        {
+          "name": "Abdulrahman Alfozan",
+          "type": "person",
+          "aliases": [
+            "Alfozan"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "被控在 OpenAI 高管会议室安装录音设备的沙特籍前工程师 Abdulrahman Alfozan"
+          ]
+        },
+        {
+          "name": "美国检方",
+          "type": "organization",
+          "aliases": [
+            "旧金山联检方"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "美国检方在法庭文件中称"
+          ]
+        },
+        {
+          "name": "沙特王室",
+          "type": "organization",
+          "aliases": [
+            "沙特王室成员"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "这名王室成员 10 月 5 日（被捕前 4 天）仍在与其联络"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "沙特籍前工程师 Alfozan 被控在 OpenAI 高管会议室安装录音设备",
+          "summary": "Alfozan 在 9 月 28 日被控把定制加密录音设备藏进会议室电视背后，当时 OpenAI 高管正与政府官员在该室会面。",
+          "participants": [
+            {
+              "name": "Abdulrahman Alfozan",
+              "type": "person",
+              "role": "subject"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "被控在 OpenAI 高管会议室安装录音设备的沙特籍前工程师 Abdulrahman Alfozan"
+          ]
+        },
+        {
+          "type": "policy",
+          "label": "检方以构成美国国家安全威胁为由申请对 Alfozan 不予保释",
+          "summary": "旧金山联检方以构成美国国家安全威胁为由申请不予保释，指其 2025-26 年间与一名沙特王室成员频繁联络并获得沙特政府大力支持。",
+          "participants": [
+            {
+              "name": "美国检方",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Abdulrahman Alfozan",
+              "type": "person",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "检方以构成美国国家安全威胁为由申请不予保释"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "沙特王室成员反复招揽 Alfozan 加入沙特 AI 倡议",
+          "summary": "这名沙特王室成员多次以太举沙特 AI 倡议招揽 Alfozan，5 月甚至写道 Saudi needs you more than the US。",
+          "participants": [
+            {
+              "name": "沙特王室",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Abdulrahman Alfozan",
+              "type": "person",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "并多次以太举“沙特 AI 倡议”招揽他"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Abdulrahman Alfozan",
+          "target": "OpenAI",
+          "type": "affiliated_with",
+          "weight": 0.7,
+          "evidence": [
+            "被控在 OpenAI 高管会议室安装录音设备的沙特籍前工程师 Abdulrahman Alfozan"
+          ]
+        },
+        {
+          "source": "Abdulrahman Alfozan",
+          "target": "OpenAI",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": [
+            "被控把定制加密录音设备藏进会议室电视背后"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Alfozan 被控/被捕日期",
+          "value": "9 月 28 日"
+        }
+      ],
+      "why_it_matters": "前沿实验室的会议室成为国家行为体渗透现场，案子从普通间谍纠纷上升到美国国家安全风险并牵出沙特王室，跨国 AI 人才与地缘依赖的张力第一次以刑事羁押形式摆在台面。"
+    },
+    {
+      "article_id": "2026-10-19-6",
+      "entities": [
+        {
+          "name": "OpenCode",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenCode 的中控平台 OpenCode Console"
+          ]
+        },
+        {
+          "name": "OpenCode Console",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenCode 的中控平台 OpenCode Console"
+          ]
+        },
+        {
+          "name": "Dax Raad",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "创始人 Dax Raad"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "OpenCode Console 遭大规模蒸馏攻击并滥用用户 API Key 扣费",
+          "summary": "OpenCode Console 隔夜遭大规模蒸馏攻击，影响约 1.4% 在线用户，攻击者借此访问部分用户存放在工作区的第三方 AI 服务 API Key 并产生扣费。",
+          "participants": [
+            {
+              "name": "OpenCode",
+              "type": "tool",
+              "role": "subject"
+            },
+            {
+              "name": "OpenCode Console",
+              "type": "tool",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "OpenCode 的中控平台 OpenCode Console 隔夜遭大规模蒸馏（distillation）攻击"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "OpenCode 重置受影响的票据与凭据并逐一通知用户",
+          "summary": "OpenCode 周六发文称已在早上逐一邮件通知受影响用户，并已重置全部受影响票据与凭据。",
+          "participants": [
+            {
+              "name": "OpenCode",
+              "type": "tool",
+              "role": "subject"
+            },
+            {
+              "name": "OpenCode Console",
+              "type": "tool",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "该公司已重置全部受影响票据与凭据"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "OpenCode Console",
+          "target": "OpenCode",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "OpenCode 的中控平台 OpenCode Console"
+          ]
+        },
+        {
+          "source": "Dax Raad",
+          "target": "OpenCode",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": [
+            "创始人 Dax Raad"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "受影响在线用户比例",
+          "value": "约 1.4%"
+        }
+      ],
+      "why_it_matters": "连 CLI 与主体验都未被攻破的中控平台仍让 1.4% 用户的 API Key 落到攻击者手里，蒸馏攻击暴露的是缺乏低风险审核模型接入渠道的共性漏洞，AI 驱动攻击正在把算力成本转嫁给受害者。"
+    },
+    {
+      "article_id": "2026-10-19-7",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "10 月 23 日 OpenAI 关停 gpt-4、o1、o3-mini、o4-mini、gpt-image-1 等 API"
+          ]
+        },
+        {
+          "name": "GitHub",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "GitHub 在 10 月 19 日从 Copilot 全部界面"
+          ]
+        },
+        {
+          "name": "Copilot",
+          "type": "product",
+          "aliases": [
+            "GitHub Copilot"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "10 月 19 日 GitHub Copilot 全端移除 GPT-5.5"
+          ]
+        },
+        {
+          "name": "GPT-5.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "移除 GPT-5.5、GPT-5.4、GPT-5.4 mini、GPT-5 mini"
+          ]
+        },
+        {
+          "name": "GPT-5.6 Sol",
+          "type": "model",
+          "aliases": [
+            "Sol"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "官方建议分别迁移到 GPT-5.6 Sol、GPT-5.6 Luna"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "GitHub Copilot 移除 GPT-5.5、GPT-5.4 等旧模型",
+          "summary": "GitHub 在 10 月 19 日从 Copilot 全部界面移除 GPT-5.5、GPT-5.4、GPT-5.4 mini、GPT-5 mini、Gemini 3.7 Flash、Grok 4.5，并建议迁移到 GPT-5.6 Sol/Luna 等新旗舰。",
+          "participants": [
+            {
+              "name": "GitHub",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Copilot",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "GPT-5.5",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "GitHub 在 10 月 19 日从 Copilot 全部界面（Chat、内联编辑、agent 与补全）移除 GPT-5.5"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI 关停 gpt-4、o1、o3-mini 等 API 模型",
+          "summary": "OpenAI 的 10 月 23 日大清洗关停 gpt-3.5-turbo、gpt-4、gpt-4-turbo、o1、o3-mini、o4-mini、gpt-image-1 及其微调版。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            }
+          ],
+          "evidence": [
+            "关停 gpt-3.5-turbo、gpt-4、gpt-4-turbo、o1、o3-mini、o4-mini、gpt-image-1"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Copilot",
+          "target": "GitHub",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "从 Copilot 全部界面（Chat、内联编辑、agent 与补全）移除"
+          ]
+        },
+        {
+          "source": "Copilot",
+          "target": "GPT-5.5",
+          "type": "deprecates",
+          "weight": 0.8,
+          "evidence": [
+            "移除 GPT-5.5、GPT-5.4、GPT-5.4 mini、GPT-5 mini"
+          ]
+        },
+        {
+          "source": "GPT-5.6 Sol",
+          "target": "GPT-5.5",
+          "type": "replaces",
+          "weight": 0.7,
+          "evidence": [
+            "官方建议分别迁移到 GPT-5.6 Sol、GPT-5.6 Luna"
+          ]
+        },
+        {
+          "source": "GPT-5.6 Sol",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": [
+            "GPT-5.6 Sol、GPT-5.6 Luna"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Copilot 移除旧模型日期",
+          "value": "10 月 19 日"
+        },
+        {
+          "name": "OpenAI 关停模型日期",
+          "value": "10 月 23 日"
+        },
+        {
+          "name": "OpenAI 预告的下一批关停时间",
+          "value": "2027 年 4 月"
+        }
+      ],
+      "why_it_matters": "OpenAI 与 Copilot 在两周内集中退役从 GPT-4 到 GPT-5.5 一代旧模型并强推迁到 Sol/Luna 新旗舰，开发者第一次面临 5.1 到 6 级的二次迁移窗口，模型即弃型消费成为生态常态。"
+    },
+    {
+      "article_id": "2026-10-19-8",
+      "entities": [
+        {
+          "name": "Tenstorrent",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Tenstorrent 完成 15 亿美元融资，轮后估值 62 亿美元"
+          ]
+        },
+        {
+          "name": "Trace Capital",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "由 Trace Capital 与 Innovation X 领投"
+          ]
+        },
+        {
+          "name": "Innovation X",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "由 Trace Capital 与 Innovation X 领投"
+          ]
+        },
+        {
+          "name": "Jim Keller",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "CEO Jim Keller"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "构成试图啃食 NVIDIA 推理主导地位的芯片创业潮"
+          ]
+        },
+        {
+          "name": "Galaxy",
+          "type": "product",
+          "aliases": [
+            "Galaxy 服务器"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "其 Galaxy 服务器能运行 DeepSeek 模型"
+          ]
+        },
+        {
+          "name": "DeepSeek",
+          "type": "company",
+          "aliases": [
+            "深度求索"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "其 Galaxy 服务器能运行 DeepSeek 模型"
+          ]
+        },
+        {
+          "name": "Etched",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "Etched（本月早些时候传以 400 亿美元+估值接洽融资）"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Tenstorrent 完成 15 亿美元融资，轮后估值 62 亿美元",
+          "summary": "Tenstorrent 完成 15 亿美元融资，轮后估值 62 亿美元（较 2024 年底的 26 亿翻倍以上），由 Trace Capital 与 Innovation X 领投。",
+          "participants": [
+            {
+              "name": "Tenstorrent",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Trace Capital",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "Innovation X",
+              "type": "company",
+              "role": "funder"
+            }
+          ],
+          "evidence": [
+            "Tenstorrent 完成 15 亿美元融资，轮后估值 62 亿美元"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "Tenstorrent 拒绝收购保持独立并转向开放权重推理芯片",
+          "summary": "与 5 月传闻 Intel、Qualcomm 曾以最高 50 亿美元估值提出收购不同，Keller 表示在证明其 Galaxy 服务器能运行 DeepSeek 模型后，公司决定保持独立并继续融资。",
+          "participants": [
+            {
+              "name": "Tenstorrent",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Jim Keller",
+              "type": "person",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "公司决定保持独立并继续融资"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Jim Keller",
+          "target": "Tenstorrent",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": [
+            "CEO Jim Keller"
+          ]
+        },
+        {
+          "source": "Tenstorrent",
+          "target": "NVIDIA",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": [
+            "英伟达挑战者"
+          ]
+        },
+        {
+          "source": "Trace Capital",
+          "target": "Tenstorrent",
+          "type": "invests_in",
+          "weight": 0.7,
+          "evidence": [
+            "由 Trace Capital 与 Innovation X 领投"
+          ]
+        },
+        {
+          "source": "Innovation X",
+          "target": "Tenstorrent",
+          "type": "invests_in",
+          "weight": 0.7,
+          "evidence": [
+            "由 Trace Capital 与 Innovation X 领投"
+          ]
+        },
+        {
+          "source": "Galaxy",
+          "target": "Tenstorrent",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": [
+            "其 Galaxy 服务器能运行 DeepSeek 模型"
+          ]
+        },
+        {
+          "source": "Galaxy",
+          "target": "DeepSeek",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "其 Galaxy 服务器能运行 DeepSeek 模型"
+          ]
+        },
+        {
+          "source": "Etched",
+          "target": "NVIDIA",
+          "type": "competes_with",
+          "weight": 0.6,
+          "evidence": [
+            "构成试图啃食 NVIDIA 推理主导地位的芯片创业潮"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Tenstorrent 融资额",
+          "value": "15 亿美元"
+        },
+        {
+          "name": "Tenstorrent 轮后估值",
+          "value": "62 亿美元"
+        },
+        {
+          "name": "2024 年底估值",
+          "value": "26 亿"
+        },
+        {
+          "name": "传闻中 Intel/Qualcomm 收购估值",
+          "value": "最高 50 亿美元"
+        },
+        {
+          "name": "Etched 传闻融资估值",
+          "value": "400 亿美元+"
+        }
+      ],
+      "why_it_matters": "Tenstorrent 在 62 亿美元估值下拒绝 Intel/Qualcomm 收购而保持独立，与 Etched 一起押注开放权重推理芯片，GPU 创业潮从卖 GPU 转向吃 NVIDIA 推理细分，开放权重模型正在养出一整条非 NVIDIA 的推理芯片垂直。"
+    },
+    {
+      "article_id": "2026-10-19-9",
+      "entities": [
+        {
+          "name": "AWS",
+          "type": "company",
+          "aliases": [
+            "Amazon",
+            "亚马逊"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "AWS 周一发布 TorchNeuron"
+          ]
+        },
+        {
+          "name": "TorchNeuron",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "AWS 周一发布 TorchNeuron"
+          ]
+        },
+        {
+          "name": "PyTorch",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "让 PyTorch 写的 AI 应用改一行配置即可在自研芯片 Trainium 上运行"
+          ]
+        },
+        {
+          "name": "Trainium",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "在自研芯片 Trainium 上运行"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "直击 NVIDIA 的软件护城河"
+          ]
+        },
+        {
+          "name": "CUDA",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "NVIDIA 多年构建的 CUDA"
+          ]
+        },
+        {
+          "name": "Annapurna Labs",
+          "type": "company",
+          "aliases": [
+            "AWS Annapurna Labs"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "AWS Annapurna Labs 强调"
+          ]
+        },
+        {
+          "name": "Deepgram",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "以 Deepgram 迁移后每美元处理音频量+70% 为例"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "AWS 发布 TorchNeuron，让 PyTorch 应用一键上 Trainium",
+          "summary": "AWS 周一发布 TorchNeuron，让 PyTorch 写的 AI 应用改一行配置即可在自研芯片 Trainium 上运行，开发者无需重写代码即可把应用迁到 Trainium。",
+          "participants": [
+            {
+              "name": "AWS",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "TorchNeuron",
+              "type": "tool",
+              "role": "object"
+            },
+            {
+              "name": "PyTorch",
+              "type": "tool",
+              "role": "object"
+            },
+            {
+              "name": "Trainium",
+              "type": "hardware",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "AWS 周一发布 TorchNeuron，让 PyTorch 写的 AI 应用改一行配置即可在自研芯片 Trainium 上运行"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "AWS 把去 NVIDIA 锁死的代码回馈给 PyTorch 上游",
+          "summary": "AWS 把移除把框架绑死在特定芯片的代码贡献给 PyTorch 上游，目标是让整个社区受益而非只服务 Trainium。",
+          "participants": [
+            {
+              "name": "AWS",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "PyTorch",
+              "type": "tool",
+              "role": "object"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "AWS 还把“去 NVIDIA 锁死”的代码回馈给 PyTorch 上游"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Deepgram 迁移 Trainium 后每美元处理音频量提升 70%",
+          "summary": "AWS Annapurna Labs 以 Deepgram 迁移后每美元处理音频量+70% 为例，主张 Trainium 对整个工作负载的经济性更好。",
+          "participants": [
+            {
+              "name": "Deepgram",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Trainium",
+              "type": "hardware",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "以 Deepgram 迁移后每美元处理音频量+70% 为例"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "TorchNeuron",
+          "target": "AWS",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "AWS 周一发布 TorchNeuron"
+          ]
+        },
+        {
+          "source": "TorchNeuron",
+          "target": "PyTorch",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": [
+            "TorchNeuron 即从 PyTorch 派生"
+          ]
+        },
+        {
+          "source": "Trainium",
+          "target": "Annapurna Labs",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "AWS Annapurna Labs 强调"
+          ]
+        },
+        {
+          "source": "CUDA",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": [
+            "NVIDIA 多年构建的 CUDA"
+          ]
+        },
+        {
+          "source": "PyTorch",
+          "target": "CUDA",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "让自家 GPU 深度嵌入这一框架、几乎是默认选项"
+          ]
+        },
+        {
+          "source": "Deepgram",
+          "target": "Trainium",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "Deepgram 迁移后每美元处理音频量+70%"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "用 PyTorch 编写的 AI 应用占比",
+          "value": "约 85%"
+        },
+        {
+          "name": "Deepgram 每美元处理音频量提升",
+          "value": "+70%"
+        }
+      ],
+      "why_it_matters": "AWS 不只要多一个芯片对手，而是把去 CUDA 锁死的代码回喂 PyTorch 上游让框架整体硬件中立，动摇的是 NVIDIA 靠默认依赖建立的软件生态，Trainium 从又一个加速器升级为瓦解 CUDA 默认地位的支点。"
+    },
+    {
+      "article_id": "2026-10-19-10",
+      "entities": [
+        {
+          "name": "CMU",
+          "type": "organization",
+          "aliases": [
+            "卡内基梅隆大学"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "CMU 与复旦在《Towards Looped Models Done Right》Part I 引入"
+          ]
+        },
+        {
+          "name": "复旦大学",
+          "type": "organization",
+          "aliases": [
+            "复旦"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "CMU 与复旦在《Towards Looped Models Done Right》Part I 引入"
+          ]
+        },
+        {
+          "name": "Huginn MoE",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "一个 8.0B 常驻/794M 激活的 Huginn MoE"
+          ]
+        },
+        {
+          "name": "《Towards Looped Models Done Right》",
+          "type": "paper",
+          "aliases": [
+            "Towards Looped Models Done Right"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "在《Towards Looped Models Done Right》Part I 引入"
+          ]
+        },
+        {
+          "name": "MMLU",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "MMLU、GSM8K、MATH500 对齐 32.0B"
+          ]
+        },
+        {
+          "name": "GSM8K",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "MMLU、GSM8K、MATH500 对齐 32.0B"
+          ]
+        },
+        {
+          "name": "MATH500",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "MMLU、GSM8K、MATH500 对齐 32.0B"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "CMU 与复旦在论文中引入 Prelude-Recurrent-Coda 循环拓扑",
+          "summary": "CMU 与复旦在《Towards Looped Models Done Right》Part I 引入 Prelude-Recurrent-Coda 三明治拓扑，系统解耦循环位置、输入注入与循环状态拓扑对参数利用效率的影响。",
+          "participants": [
+            {
+              "name": "CMU",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "复旦大学",
+              "type": "organization",
+              "role": "partner"
+            },
+            {
+              "name": "《Towards Looped Models Done Right》",
+              "type": "paper",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "CMU 与复旦在《Towards Looped Models Done Right》Part I 引入"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Huginn MoE 在 MMLU、GSM8K、MATH500 上对齐 32.0B 前馈基线",
+          "summary": "一个 8.0B 常驻/794M 激活的 Huginn MoE，在 500B token 训练后，MMLU、GSM8K、MATH500 对齐 32.0B 常驻/3.2B 激活的前馈参考模型。",
+          "participants": [
+            {
+              "name": "Huginn MoE",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "MMLU",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "GSM8K",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "MATH500",
+              "type": "benchmark",
+              "role": "benchmark"
+            }
+          ],
+          "evidence": [
+            "MMLU、GSM8K、MATH500 对齐 32.0B"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Huginn MoE",
+          "target": "CMU",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "CMU 与复旦"
+          ]
+        },
+        {
+          "source": "Huginn MoE",
+          "target": "复旦大学",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "CMU 与复旦"
+          ]
+        },
+        {
+          "source": "Huginn MoE",
+          "target": "MMLU",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "MMLU、GSM8K、MATH500 对齐"
+          ]
+        },
+        {
+          "source": "Huginn MoE",
+          "target": "GSM8K",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "MMLU、GSM8K、MATH500 对齐"
+          ]
+        },
+        {
+          "source": "Huginn MoE",
+          "target": "MATH500",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "MMLU、GSM8K、MATH500 对齐"
+          ]
+        },
+        {
+          "source": "《Towards Looped Models Done Right》",
+          "target": "CMU",
+          "type": "authored_by",
+          "weight": 0.8,
+          "evidence": [
+            "CMU 与复旦在《Towards Looped Models Done Right》"
+          ]
+        },
+        {
+          "source": "《Towards Looped Models Done Right》",
+          "target": "复旦大学",
+          "type": "authored_by",
+          "weight": 0.8,
+          "evidence": [
+            "CMU 与复旦在《Towards Looped Models Done Right》"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Huginn MoE 常驻权重",
+          "value": "8.0B"
+        },
+        {
+          "name": "Huginn MoE 激活参数",
+          "value": "794M"
+        },
+        {
+          "name": "训练 token 数",
+          "value": "500B"
+        },
+        {
+          "name": "对齐的前馈参考模型常驻权重",
+          "value": "32.0B"
+        },
+        {
+          "name": "前馈参考模型激活参数",
+          "value": "3.2B"
+        }
+      ],
+      "why_it_matters": "循环模型第一次用 8B 常驻权重对齐 32B 前馈基线的能力，论文系统解耦循环位置、输入注入与状态拓扑后，参数/激活量与能力的解耦给端侧与私有化的少参量大能力路线提供了可复现的基准。"
+    },
+    {
+      "article_id": "2026-10-19-11",
+      "entities": [
+        {
+          "name": "KiranaBench",
+          "type": "benchmark",
+          "aliases": [
+            "KiranaBench 基准"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "本周 cs.CL 新提交推出 KiranaBench"
+          ]
+        },
+        {
+          "name": "arXiv",
+          "type": "organization",
+          "aliases": [
+            "Arxiv"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "论文经由 arXiv 10 月 19 日列表"
+          ]
+        },
+        {
+          "name": "KiranaBench 论文",
+          "type": "paper",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "论文经由 arXiv 10 月 19 日列表"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "新论文提出 KiranaBench 基准考察 LLM 面向小微经营的长程决策能力",
+          "summary": "本周 cs.CL 新提交推出 KiranaBench，一个考察 LLM 面向真实世界小微经营长程自主决策能力的基准，检验模型能否自主完成进货、记账、服务多角色顾客等经营任务；论文经由 arXiv 10 月 19 日列表呈现。",
+          "participants": [
+            {
+              "name": "KiranaBench 论文",
+              "type": "paper",
+              "role": "subject"
+            },
+            {
+              "name": "KiranaBench",
+              "type": "benchmark",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "本周 cs.CL 新提交推出 KiranaBench"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "KiranaBench 论文",
+          "target": "arXiv",
+          "type": "published_on",
+          "weight": 0.7,
+          "evidence": [
+            "论文经由 arXiv 10 月 19 日列表"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cs.CL 当天新提交论文总数",
+          "value": "146 篇"
+        }
+      ],
+      "why_it_matters": "当基础设施层开始以 agent 编排能力为卖点时，研究界补上评估 agent 在乱序多角色长周期经营场景真实可靠性的最后一环，正面回应小生意能否被 AI agent 接管的产业叙事。"
+    },
+    {
+      "article_id": "2026-10-19-12",
+      "entities": [
+        {
+          "name": "SemiAnalysis",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "SemiAnalysis 用逐栋施工追踪+租约领先指标论证 2027 年 +50GW 并非幻想"
+          ]
+        },
+        {
+          "name": "Nscale",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Nscale 一边因微软退出英国大单动摇 IPO"
+          ]
+        },
+        {
+          "name": "Microsoft",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Nscale 的积压约 85% 押在微软与 Anthropic 两个名字上"
+          ]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Nscale 的积压约 85% 押在微软与 Anthropic 两个名字上"
+          ]
+        },
+        {
+          "name": "CoreWeave",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "CoreWeave 因融资担忧股价跌逾 25%"
+          ]
+        },
+        {
+          "name": "Firmus",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "澳洲新云 Firmus 放弃 IPO"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Nscale 的合约积压约 85% 押在微软与 Anthropic 两个名字上",
+          "summary": "Nscale 一边因微软退出英国大单动摇 IPO，一边靠 Anthropic 第二笔 450 亿美元谈判续命，其积压约 85% 押在微软与 Anthropic 两个名字上。",
+          "participants": [
+            {
+              "name": "Nscale",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Microsoft",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "Nscale 的积压约 85% 押在微软与 Anthropic 两个名字上"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "CoreWeave 股价跌逾 25%、澳洲新云 Firmus 放弃 IPO",
+          "summary": "同一周 CoreWeave 因融资担忧股价跌逾 25%、澳洲新云 Firmus 放弃 IPO，头部厂商扩张与融资端情绪明显分化。",
+          "participants": [
+            {
+              "name": "CoreWeave",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Firmus",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "CoreWeave 因融资担忧股价跌逾 25%、澳洲新云 Firmus 放弃 IPO"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "SemiAnalysis 预警 2028 年可能出现约 10GW 数据中心空壳风险",
+          "summary": "SemiAnalysis 自己都预警 2028 年可能出现约 10GW 空壳，瓶颈正转向芯片产能，真正该盯的是每一 GW 租约背后那个客户的名字与资产负债表的稳健度。",
+          "participants": [
+            {
+              "name": "SemiAnalysis",
+              "type": "company",
+              "role": "subject"
+            }
+          ],
+          "evidence": [
+            "预警 2028 年可能出现约 10GW“空壳”"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Nscale",
+          "target": "Microsoft",
+          "type": "partners_with",
+          "weight": 0.6,
+          "evidence": [
+            "Nscale 的积压约 85% 押在微软与 Anthropic 两个名字上"
+          ]
+        },
+        {
+          "source": "Nscale",
+          "target": "Anthropic",
+          "type": "supplies",
+          "weight": 0.7,
+          "evidence": [
+            "Nscale 的积压约 85% 押在微软与 Anthropic 两个名字上"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Nscale 合约积压客户占比",
+          "value": "约 85%"
+        },
+        {
+          "name": "CoreWeave 股价跌幅",
+          "value": "逾 25%"
+        },
+        {
+          "name": "2028 数据中心空壳规模",
+          "value": "约 10GW"
+        }
+      ],
+      "why_it_matters": "把同日新闻拼起来，2027 的算力景气真正脆弱的是租约买家集中度而非机房供给——微软一纸退约就能动摇 Nscale 的百亿美元 IPO、Anthropic 的加码立刻撑回预期，谁在租取代谁在建成为数据中心融资与股价的主导变量。"
+    }
+  ]
+}

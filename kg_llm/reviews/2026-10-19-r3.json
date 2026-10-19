@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-19",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 88,
+  "summary": "经 r1/r2 两轮修订后本图已非常干净：逐条核对 50 条关系的方向均与原文一致，无数字幻觉、无反向关系，跨文章规范名（NVIDIA/Microsoft/Nscale/Anthropic/SemiAnalysis/AWS）连通良好，r1/r2 指出的 arXiv 作者边、outperforms 夸大、AWS/Amazon 分叉等均已修复。剩余问题集中在主体完整性与角色语义：OpenAI 关停事件的核心模型 gpt-4/o1/o3-mini/o4-mini 全部漏抽成实体（文章标题点名的旗舰模型在图谱中零承载），并列盘点中 Firmus 再次被误标为 partner（r1 已就此沉淀过 lesson，属同类复发），另有 developed_by/affiliated_with 两处类型偏松。补一轮即可发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-19-7",
+      "severity": "medium",
+      "problem": "事件 2 \"OpenAI 关停 gpt-4、o1、o3-mini 等 API 模型\" 的核心对象 gpt-4、o1、o3-mini、o4-mini、gpt-image-1 完全没有被抽成实体：全文只有 OpenAI 一个 entity，这些被关停的旗舰模型只出现在事件 summary/evidence 的文本里。文章标题就点名 \"OpenAI 关停 GPT-4、o1、o4-mini\"，与 Copilot 半篇有 GPT-5.5 实体 + deprecates 关系形成鲜明对比——OpenAI 半篇对模型退役这一核心事实的实体承载为零，违反\"新闻核心角色必须抽出来\"的要求。",
+      "fix": "为 gpt-4、o1（至少这两个标题点名的旗舰）补 type=model 实体，作为事件 2 的 object 参与方，并补 \"OpenAI --deprecates--> gpt-4\"、\"OpenAI --deprecates--> o1\" 等关系（与 Copilot --deprecates--> GPT-5.5 对称）；o3-mini、o4-mini、gpt-image-1 可并入 aliases 或至少写入事件参与方。"
+    },
+    {
+      "article_id": "2026-10-19-12",
+      "severity": "medium",
+      "problem": "事件 2 \"CoreWeave 股价跌逾 25%、澳洲新云 Firmus 放弃 IPO\" 把 Firmus 标为 role=partner。CoreWeave 与 Firmus 是同一融资端情绪趋势下各自独立的两个主体，不是合作伙伴关系（原文只是把两者并列举为同一现象的例证）。这与 r1 已针对 Etched 指正并沉淀成 lesson（\"在同一趋势盘点中并列出现的多个独立主体相互之间不是合作伙伴\"）的同类错误再次复发，说明该 lesson 未被应用到事件参与方。",
+      "fix": "将 Firmus 的 role 从 partner 改为并列主体/中性角色（如 subject 之外用并列语义），或直接移出该事件的参与方；不要给并列出现的独立公司标 partner。"
+    },
+    {
+      "article_id": "2026-10-19-6",
+      "severity": "low",
+      "problem": "关系 \"OpenCode Console --developed_by--> OpenCode\" 类型不当：原文的 \"OpenCode 的中控平台 OpenCode Console\" 说明 Console 是 OpenCode 产品的一部分/组件（中控台），不是独立产品被 OpenCode 公司开发，developed_by 会读成\"Console 是 OpenCode 另造的一个产品\"。",
+      "fix": "改用 component_of / part_of 语义表达\"Console 是 OpenCode 的中控平台\"，developed_by 保留给独立产品与其出品方。"
+    },
+    {
+      "article_id": "2026-10-19-5",
+      "severity": "low",
+      "problem": "关系 \"Abdulrahman Alfozan --affiliated_with--> OpenAI\" 的 evidence 明确写他是\"前工程师\"（former），affiliated_with 表达的是当前隶属关系，用当前隶属表达历史雇佣会让图谱误读为 Alfozan 仍是 OpenAI 员工。",
+      "fix": "若关系类型表有 former_affiliated_with / worked_at 等历史隶属类型则改用之；否则在 evidence 或别名中显式标注\"前员工\"，避免当前隶属的语义。"
+    },
+    {
+      "article_id": "2026-10-19-1",
+      "severity": "low",
+      "problem": "事件 2 \"Vera 在真实 agent 负载下吞吐约为同档 x86 的 2 倍\" 把 Intel、AMD 列为 role=competitor 参与方，但原文对比对象是\"同档 x86 机器/处理器\"而非两家公司整体（r2 已把对应的 outperforms 关系收窄，事件参与方却残留了同样的过强表述）。",
+      "fix": "将事件 2 参与方中的 Intel、AMD 改为\"同档 x86\"或移出，保持与已修复关系的语义一致：对比对象是 x86 机器/CPU 而非 Intel、AMD 公司。"
+    }
+  ],
+  "lessons": [
+    "模型退役/关停类新闻中，每个被关停的具名模型（尤其标题点名的旗舰如 gpt-4、o1）都要抽成 type=model 实体并作为关停事件的 object 参与方、补 deprecates 关系，不能只让公司主体出现在事件里。",
+    "affiliated_with 表示当前隶属关系；原文明确写\"前员工/前工程师\"（former）时不要用 affiliated_with 表达历史雇佣，应改用历史隶属类型或在证据中标注 former。",
+    "子组件/平台是父产品的一部分时（如\"XX 的中控平台\"），用 component_of/part_of 而非 developed_by；developed_by 只用于独立产品与其开发者/出品方。"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-19",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "事实与数字整体准确、metrics 富足、跨文章连通良好（NVIDIA/Microsoft/Anthropic/OpenAI/Nscale/SemiAnalysis 等规范名一致），无数字级幻觉。主要问题集中在语义层：一处虚构的作者关系（arXiv 被当作论文作者）、把编辑性观察和泛称抽成事件与实体（Etched 被标为 partner、'SMB 自动化 agent 平台'伪实体）、事件参与方张冠李戴（GPT-5.6 Sol 被列为关停对象）、以及一条以'退出'新闻为证据的活跃供应关系。",
+  "findings": [
+    {
+      "article_id": "2026-10-19-11",
+      "severity": "medium",
+      "problem": "关系 \"KiranaBench --authored_by--> arXiv\" 是原文不存在的虚构关系：原文只说\"论文经由 arXiv 10 月 19 日列表\"呈现，arXiv 是预印本收录/列表平台而非论文作者；事件 1 中 arXiv 也被列为 role=partner 参与方，同样不成立。原文并未点名论文作者，把 arXiv 抽成作者属于编造关系。",
+      "fix": "删除 \"KiranaBench --authored_by--> arXiv\" 这条关系，并从事件 1 参与方中移除 arXiv；原文未点名作者时不要抽 authored_by 边，若需保留只可表示\"发表于 arXiv\"的 hosting 语义。"
+    },
+    {
+      "article_id": "2026-10-19-11",
+      "severity": "medium",
+      "problem": "\"SMB 自动化 agent 平台\" 是编辑性泛称而非可核实实体；关系 \"SMB 自动化 agent 平台 --evaluated_on--> KiranaBench\" 与事件 2 \"KiranaBench 与各类 SMB 自动化 agent 平台互为印证\" 都把原文的分析性表述（\"互为印证\"\"贴近产业叙事\"）抽成了带参与方的实体关系与事件，原文没有给出任何具体平台名，也没有任何评估关系。",
+      "fix": "删除该伪实体及其 evaluated_on 关系，删除事件 2；把\"贴近 SMB agent 接管小微生意的产业叙事\"这类分析性判断放回 why_it_matters，不要为泛称造实体和事件。"
+    },
+    {
+      "article_id": "2026-10-19-8",
+      "severity": "medium",
+      "problem": "事件 3 \"Tenstorrent 与 Etched 构成啃食 NVIDIA 推理主导地位的芯片创业潮\" 把编辑性观察包装成事件（原文只是把两家公司并列为同一趋势的一环，没有共同动作），且 Etched 被标为 role=partner——Etched 是与 Tenstorrent 各自独立的、同为 NVIDIA 推理市场挑战者的公司，不是 Tenstorrent 的合作伙伴。",
+      "fix": "删除该事件，把\"芯片创业潮\"的分析移入 why_it_matters；若保留参与方，Etched 的 role 应为 competitor 而非 partner，并避免给并列出现的同场挑战者造出合作关系。"
+    },
+    {
+      "article_id": "2026-10-19-7",
+      "severity": "medium",
+      "problem": "事件 2 \"OpenAI 关停 gpt-4、o1、o3-mini 等 API 模型\" 把 GPT-5.6 Sol 列为 role=object 参与方；原文中 GPT-5.6 Sol 是被建议迁移的目标新模型（\"提示迁移到 GPT-5.6 Sol/Luna 等新旗舰\"），不是被关停的对象，把它放进\"被关停\"事件的参与方属于张冠李戴。",
+      "fix": "从事件 2 参与方中删除 GPT-5.6 Sol；迁移目标语义已由现有关系 \"GPT-5.6 Sol --replaces--> GPT-5.5\" 表达，无需再让它出现在关停事件的参与方里。"
+    },
+    {
+      "article_id": "2026-10-19-2",
+      "severity": "medium",
+      "problem": "关系 \"Nscale --supplies--> Microsoft\" 的 evidence 是\"微软周一确认退出与英国 AI 基建商 Nscale 的一项数据中心租约\"——证据本身描述的是微软退出该租约，与被断言的活跃供应关系相矛盾；这笔租约已被退出，图谱不应以活跃 supplies 边呈现已终止的交易（2026-10-19-12 重复了同一条关系）。",
+      "fix": "删除 \"Nscale --supplies--> Microsoft\" 或改写为不暗示活跃供应的语义（如指出该租约已退出、仅剩\"与 Nscale 的合作关系不变\"的表述），并同步修改 2026-10-19-12 中的同一条关系。"
+    }
+  ],
+  "lessons": [
+    "预印本平台（arXiv 等）只是收录/列表服务而非论文作者；'论文经 arXiv 发布/列表'不要抽成 authored_by arXiv，原文未点名作者时不要编造作者边。",
+    "事件参与方只能是被该动作直接影响的主体；被建议迁移的替代模型/替代品（如迁移目标）不能作为被关停、被移除动作的 object 参与方。",
+    "在同一趋势盘点中并列出现的多个独立主体（如同为某巨头挑战者的多家公司）相互之间不是合作伙伴，事件 role 应标 competitor 而非 partner，不要把'并列提及'当成合作关系。"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T06:07:34Z",
+  "updated_at": "2026-10-19T22:43:00Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -817,22 +817,22 @@
       "period_id": "2026-W38",
       "period_type": "week",
       "start_date": "2026-09-14",
-      "end_date": "2026-09-18",
-      "summary": "2026-09-14 至 2026-09-18 期间，NVIDIA、OpenAI、Anthropic 主要围绕 research、launch 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-09-19",
+      "summary": "2026-09-14 至 2026-09-19 期间，OpenAI、NVIDIA、Anthropic 主要围绕 trend、research 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
-        "NVIDIA",
         "OpenAI",
+        "NVIDIA",
         "Anthropic",
         "ChatGPT"
       ],
       "event_types": [
+        "trend",
         "research",
-        "launch",
-        "trend"
+        "launch"
       ],
       "trend_signals": [
-        "核心实体：NVIDIA、OpenAI、Anthropic",
-        "主事件类型：research、launch"
+        "核心实体：OpenAI、NVIDIA、Anthropic",
+        "主事件类型：trend、research"
       ],
       "representative_article_ids": [
         "2026-09-14-0",
