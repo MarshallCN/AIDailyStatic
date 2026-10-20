@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-20",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 75,
+  "summary": "整体结构完整、证据可核，但存在 1 处 high 级关系失真（把草稿提案里的监管机制抽成了现存 regulates 关系）和至少 3 处 medium 级关系类型/证据不匹配（supplies、targets、competes_with 用错），另有 1 处伪 metric 与 1 处事件角色误标。",
+  "findings": [
+    {
+      "article_id": "2026-10-20-5",
+      "severity": "high",
+      "problem": "关系 \"美国商务部 --regulates--> Anthropic\" 把草稿里的拟议机制抽成了现存监管关系：原文只是说 Anthropic 自拟的法案中\"要封禁模型，商务部须向联邦法院申诉\"，这是一条尚未生效的提案条款，不是商务部对 Anthropic 的现行监管。证据存在但支撑的是另一回事（提案授权机制），图谱据此会误导读者以为商务部现在就在监管 Anthropic。",
+      "fix": "删除该 regulates 关系；改为把监管机制挂到法案本体上，例如在 \"美国商务部\" 与 \"AI 安全法案草稿\" 之间建立\"授予封禁申诉权\"之类的关系，或用 proposal/compared_with 类关系表达，绝不能用现存 regulates 关系陈述不存在的现状。"
+    },
+    {
+      "article_id": "2026-10-20-6",
+      "severity": "medium",
+      "problem": "关系 \"Accenture --supplies--> Anthropic\" 关系类型用错：原文说\"Anthropic 选择 Accenture 为首个评估者\"，这是评估/合作性质的服务委托，不是货物供应关系，supplies 无法表达\"被选为评估者\"的含义。",
+      "fix": "改用能体现评估合作性质的关系，如 \"Accenture --evaluates--> Anthropic\"（Accenture 评估 Anthropic 的模型）或 partners_with，不要用 supplies 兜底。"
+    },
+    {
+      "article_id": "2026-10-20-7",
+      "severity": "medium",
+      "problem": "关系 \"Microsoft --targets--> AI 智能体\" 关系类型用错：原文只是 Microsoft 在报告中把 AI 智能体\"比作内部威胁\"并称\"前沿模型不能被信任\"，这是分析性/警示性表述，Microsoft 并未对 agent 采取 targets 式的行动。targets 会让人误读成 Microsoft 正在针对/打击智能体。",
+      "fix": "改用描述类关系（如 describes/warns_about，或直接删除该关系），不要用动作型 targets 去表示\"某公司把某对象定性为威胁\"的分析性表述。"
+    },
+    {
+      "article_id": "2026-10-20-11",
+      "severity": "medium",
+      "problem": "关系 \"OpenAI --competes_with--> Anthropic\" 的 evidence（\"分析师担心在 LLM 定价压力下 Anthropic 能否维持市场预期的增速\"）并不支撑竞争关系：这句话谈的是分析师对 Anthropic 增速的担忧，没有直接证据表明 OpenAI 与 Anthropic 构成正面竞争。证据与断言错位。",
+      "fix": "删除该 competes_with 关系，或找到原文中能直接支撑两方竞争的直接证据再保留；不要用增速担忧这类旁证去推断竞争关系。"
+    },
+    {
+      "article_id": "2026-10-20-8",
+      "severity": "low",
+      "problem": "metric \"Bolt 74B-A9B 参数规模 = 74B-A9B\" 不是真实指标，只是重复了模型名，未提供任何量化信息；原文也未给出 Bolt 的参数数量。",
+      "fix": "删除这条伪 metric；若原文无 Bolt 具体参数量，就不要在 metrics 里虚构。"
+    },
+    {
+      "article_id": "2026-10-20-2",
+      "severity": "low",
+      "problem": "事件 3（韩国股市成为全球 AI 情绪晴雨表）把 Samsung Electronics 和 SK Hynix 标为 role=\"competitor\"：原文中它们是\"此前涨幅的主要驱动者\"（HBM 内存芯片供应商），是市场参与者，不是互相竞争的关系，该角色标法不准确。",
+      "fix": "将三星与 SK 海力士的角色改为反映其真实身份（如 market participant / supplier 角色），或从该事件的 participants 中移出，不要标成 competitor。"
+    }
+  ],
+  "lessons": [
+    "法案/提案尚未生效时，其中的监管机制不得抽成现存 regulates 关系，应把机制挂到草稿本体或用 proposal 类关系表达，否则图谱会陈述不存在的现状。",
+    "动作型关系类型（targets、regulates、supplies）只能用于真实发生的行动；\"某公司把某对象定性/警示为威胁\"这类分析性表述应改用描述类关系，不要照搬动词。",
+    "competes_with 需要直接竞争依据（如市场份额、正面竞标/对标）；单纯的业绩担忧、增速对比或估值下修不构成竞争关系，不要用旁证推断。"
+  ]
+}

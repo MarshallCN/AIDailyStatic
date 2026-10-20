@@ -1,0 +1,641 @@
+{
+  "date": "2026-10-20",
+  "articles": [
+    {
+      "article_id": "2026-10-20-0",
+      "entities": [
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["SpaceX 在周二的监管文件中披露，第三季度营收达 146 亿美元"]},
+        {"name": "Super Intelligence", "type": "product", "aliases": ["Super Intelligence业务线"], "confidence": 0.9, "evidence": ["更名后的“Super Intelligence”业务线"]},
+        {"name": "Cursor", "type": "tool", "aliases": ["Cursor 编码工具"], "confidence": 0.9, "evidence": ["刚收购的 Cursor 编码工具"]},
+        {"name": "Grok Robot", "type": "product", "aliases": ["Grok 机器人"], "confidence": 0.85, "evidence": ["刚收购的 Cursor 编码工具、Grok 机器人"]},
+        {"name": "Colossus II", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["SpaceX 正继续建设第二个数据中心项目 Colossus II"]},
+        {"name": "Starship", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["并加大对重型火箭 Starship 的投资"]},
+        {"name": "Starlink", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["部署新一代 Starlink 卫星"]},
+        {"name": "Elon Musk", "type": "person", "aliases": ["Musk"], "confidence": 0.9, "evidence": ["Musk 称他每周四天待在田纳西州孟菲斯"]},
+        {"name": "Bret Johnsen", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["CFO Bret Johnsen 表示公司将在 Q4 投入 350 至 400 亿美元"]}
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "SpaceX 收购 Cursor 编码工具",
+          "summary": "SpaceX 更名后的“Super Intelligence”业务线包含刚收购的 Cursor 编码工具，并为此扣除 12 亿美元一次性股权补偿费用。",
+          "participants": [
+            {"name": "SpaceX", "type": "company", "role": "subject"},
+            {"name": "Cursor", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["刚收购的 Cursor 编码工具"]
+        },
+        {
+          "type": "infra",
+          "label": "SpaceX 建设第二个数据中心项目 Colossus II",
+          "summary": "SpaceX 继续建设 Colossus II 数据中心并加大 Starship 投资，总资本支出达 196 亿美元，Q4 计划再投入 350 至 400 亿美元。",
+          "participants": [
+            {"name": "SpaceX", "type": "company", "role": "subject"},
+            {"name": "Colossus II", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["SpaceX 正继续建设第二个数据中心项目 Colossus II"]
+        },
+        {
+          "type": "trend",
+          "label": "AI 收入已占 SpaceX 公司总额的 52%",
+          "summary": "SpaceX Q3 营收 146 亿美元，Super Intelligence 业务线贡献 75 亿美元，AI 收入占公司总额 52%，并产生 4.31 亿美元利润。",
+          "participants": [
+            {"name": "SpaceX", "type": "company", "role": "subject"},
+            {"name": "Super Intelligence", "type": "product", "role": "object"}
+          ],
+          "evidence": ["AI 收入已占公司总额的 52%"]
+        }
+      ],
+      "relations": [
+        {"source": "SpaceX", "target": "Cursor", "type": "acquires", "weight": 0.9, "evidence": ["刚收购的 Cursor 编码工具"]},
+        {"source": "Super Intelligence", "target": "SpaceX", "type": "part_of", "weight": 0.8, "evidence": ["更名后的“Super Intelligence”业务线"]},
+        {"source": "Grok Robot", "target": "Super Intelligence", "type": "part_of", "weight": 0.6, "evidence": ["刚收购的 Cursor 编码工具、Grok 机器人"]},
+        {"source": "Elon Musk", "target": "SpaceX", "type": "affiliated_with", "weight": 0.7, "evidence": ["Musk 称他每周四天待在田纳西州孟菲斯"]},
+        {"source": "Bret Johnsen", "target": "SpaceX", "type": "affiliated_with", "weight": 0.6, "evidence": ["CFO Bret Johnsen 表示公司将在 Q4 投入 350 至 400 亿美元"]},
+        {"source": "Starship", "target": "SpaceX", "type": "part_of", "weight": 0.6, "evidence": ["并加大对重型火箭 Starship 的投资"]},
+        {"source": "Starlink", "target": "SpaceX", "type": "part_of", "weight": 0.5, "evidence": ["部署新一代 Starlink 卫星"]}
+      ],
+      "metrics": [
+        {"name": "SpaceX Q3 总营收", "value": "146 亿美元"},
+        {"name": "Super Intelligence 业务线收入", "value": "75 亿美元"},
+        {"name": "AI 收入占公司总额比例", "value": "52%"},
+        {"name": "neocloud 云算力", "value": "1.7 GW"},
+        {"name": "AI 业务利润", "value": "4.31 亿美元"},
+        {"name": "收购 Cursor 一次性股权补偿费用", "value": "12 亿美元"},
+        {"name": "比特币价格回升相关收入", "value": "约 10 亿美元"},
+        {"name": "总资本支出", "value": "196 亿美元"},
+        {"name": "Q4 计划资本投资", "value": "350 至 400 亿美元"}
+      ],
+      "why_it_matters": "AI 收入占 SpaceX 总额 52% 意味着这家公司已从火箭公司彻底转向算力基建公司，Musk 关于“超级智能部署瓶颈在电力与冷却而非芯片”的判断正被其自建数据中心与金属铸造产能所验证。"
+    },
+    {
+      "article_id": "2026-10-20-1",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 披露 Q3 营收达 168 亿美元"]},
+        {"name": "Kalshi", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["在 Kalshi 预测市场上"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["OpenAI 首席执行官 Altman 上月表示"]},
+        {"name": "Sam Altman", "type": "person", "aliases": ["Altman"], "confidence": 0.9, "evidence": ["OpenAI 首席执行官 Altman 上月表示"]},
+        {"name": "SEC", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["向 SEC 秘密递交了 S-1 招股书"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["IPO 募集额因 SpaceX 在六月的巨型上市"]},
+        {"name": "Databricks", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Databricks、Plaid、Deel 的年内 IPO 概率分别跌至"]},
+        {"name": "Plaid", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Databricks、Plaid、Deel 的年内 IPO 概率"]},
+        {"name": "Deel", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Databricks、Plaid、Deel 的年内 IPO 概率"]},
+        {"name": "美国 IPO 市场", "type": "topic", "aliases": [], "confidence": 0.7, "evidence": ["IPO 募集额因 SpaceX 在六月的巨型上市而大幅上升"]},
+        {"name": "22V Research", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["22V Research 分析师 Dauvin Peterson 指出"]},
+        {"name": "Dauvin Peterson", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["22V Research 分析师 Dauvin Peterson 指出"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 六月初向 SEC 秘密递交 S-1 招股书",
+          "summary": "Anthropic 早在六月初就向 SEC 秘密递交了 S-1 招股书，预测市场给其年内官宣 IPO 的概率为 75%。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "SEC", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["Anthropic 早在六月初就向 SEC 秘密递交了 S-1 招股书"]
+        },
+        {
+          "type": "trend",
+          "label": "预测市场押注 Anthropic 为年内唯一官宣 IPO 的大型公司",
+          "summary": "Kalshi 交易者认为今年唯一可能正式官宣 IPO 的大型公司只剩 Anthropic，OpenAI、Databricks、Plaid、Deel 的年内 IPO 概率均已暴跌。",
+          "participants": [
+            {"name": "Kalshi", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Databricks", "type": "company", "role": "object"},
+            {"name": "Plaid", "type": "company", "role": "object"},
+            {"name": "Deel", "type": "company", "role": "object"}
+          ],
+          "evidence": ["交易者认为今年唯一可能正式官宣 IPO 的大型公司只剩 Anthropic"]
+        },
+        {
+          "type": "funding",
+          "label": "SpaceX 六月巨型上市推高 IPO 募集额",
+          "summary": "今年 IPO 募集额因 SpaceX 在六月的巨型上市而大幅上升，但美国定价的 IPO 数量反而比 2025 年下降 33%。",
+          "participants": [
+            {"name": "SpaceX", "type": "company", "role": "subject"},
+            {"name": "美国 IPO 市场", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["IPO 募集额因 SpaceX 在六月的巨型上市而大幅上升"]
+        }
+      ],
+      "relations": [
+        {"source": "SEC", "target": "Anthropic", "type": "regulates", "weight": 0.7, "evidence": ["向 SEC 秘密递交了 S-1 招股书"]},
+        {"source": "Dauvin Peterson", "target": "22V Research", "type": "affiliated_with", "weight": 0.8, "evidence": ["22V Research 分析师 Dauvin Peterson 指出"]},
+        {"source": "Sam Altman", "target": "OpenAI", "type": "affiliated_with", "weight": 0.8, "evidence": ["OpenAI 首席执行官 Altman 上月表示"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 年内官宣 IPO 概率", "value": "75%"},
+        {"name": "OpenAI 2026 年 IPO 概率", "value": "3%"},
+        {"name": "Databricks 年内 IPO 概率", "value": "1%"},
+        {"name": "Plaid 年内 IPO 概率", "value": "10%"},
+        {"name": "Deel 年内 IPO 概率", "value": "3%"},
+        {"name": "美国定价 IPO 数量同比降幅", "value": "33%"},
+        {"name": "Anthropic Q3 营收", "value": "168 亿美元"},
+        {"name": "Anthropic 修订后 IPO 估值区间起点", "value": "1.5 万亿美元起跳"}
+      ],
+      "why_it_matters": "Anthropic 成为年内 IPO 的唯一试金石，其首秀成败直接决定 OpenAI 与整个 AI 板块的融资窗口是否开启，估值从至少 2 万亿下修到 1.5 万亿起跳已率先给 AI 相关股票降温。"
+    },
+    {
+      "article_id": "2026-10-20-2",
+      "entities": [
+        {"name": "Elice Group", "type": "company", "aliases": ["Elice"], "confidence": 0.9, "evidence": ["Elice Group 提供 AI 云服务以及 AI 教育、商业软件"]},
+        {"name": "KOSPI", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["基准指数 KOSPI 下跌 3.73%"]},
+        {"name": "Samsung Electronics", "type": "company", "aliases": ["三星电子"], "confidence": 0.85, "evidence": ["三星电子和 SK 海力士等 HBM 内存芯片供应商"]},
+        {"name": "SK Hynix", "type": "company", "aliases": ["SK 海力士"], "confidence": 0.85, "evidence": ["三星电子和 SK 海力士等 HBM 内存芯片供应商"]},
+        {"name": "Swissquote", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Swissquote 分析师 Ipek Ozkardeskaya 认为"]},
+        {"name": "Ipek Ozkardeskaya", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Swissquote 分析师 Ipek Ozkardeskaya 认为"]},
+        {"name": "韩国 IPO 市场", "type": "topic", "aliases": [], "confidence": 0.7, "evidence": ["据 Dealogic 数据成为韩国历史上募资超 1 亿美元 IPO 的最差首秀"]},
+        {"name": "便携式模块化数据中心", "type": "hardware", "aliases": ["便携式模块化数据中心及相关基础设施"], "confidence": 0.85, "evidence": ["计划将大部分资金投入便携式模块化数据中心"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Elice Group 上市首日暴跌 32%，创韩国 IPO 最差首秀",
+          "summary": "Elice Group IPO 募得 2011 亿韩元后首日暴跌 32%，据 Dealogic 数据成为韩国历史上募资超 1 亿美元 IPO 的最差首秀。",
+          "participants": [
+            {"name": "Elice Group", "type": "company", "role": "subject"},
+            {"name": "韩国 IPO 市场", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["股价即暴跌 32%，据 Dealogic 数据成为韩国历史上募资超 1 亿美元 IPO 的最差首秀"]
+        },
+        {
+          "type": "trend",
+          "label": "Elice 首秀拖累 KOSPI 下跌 3.73%",
+          "summary": "Elice Group 上市首秀引发芯片抛售与避险情绪，基准指数 KOSPI 当天下跌 3.73%（215.27 点）。",
+          "participants": [
+            {"name": "Elice Group", "type": "company", "role": "subject"},
+            {"name": "KOSPI", "type": "benchmark", "role": "object"}
+          ],
+          "evidence": ["基准指数 KOSPI 下跌 3.73%"]
+        },
+        {
+          "type": "trend",
+          "label": "韩国股市成为全球 AI 情绪的晴雨表",
+          "summary": "此前涨幅主要由三星电子和 SK 海力士等 HBM 内存芯片供应商驱动，如今投资者对支出、竞争与盈利能力愈发怀疑，Elice 首秀被卷入 AI 风暴。",
+          "participants": [
+            {"name": "Samsung Electronics", "type": "company", "role": "competitor"},
+            {"name": "SK Hynix", "type": "company", "role": "competitor"},
+            {"name": "Elice Group", "type": "company", "role": "object"}
+          ],
+          "evidence": ["韩国股市已成为全球 AI 情绪的晴雨表"]
+        }
+      ],
+      "relations": [
+        {"source": "Ipek Ozkardeskaya", "target": "Swissquote", "type": "affiliated_with", "weight": 0.8, "evidence": ["Swissquote 分析师 Ipek Ozkardeskaya 认为"]},
+        {"source": "Elice Group", "target": "便携式模块化数据中心", "type": "invests_in", "weight": 0.7, "evidence": ["计划将大部分资金投入便携式模块化数据中心"]}
+      ],
+      "metrics": [
+        {"name": "Elice 上市首日跌幅", "value": "32%"},
+        {"name": "Elice IPO 募资额", "value": "2011 亿韩元（约 1.5 亿美元）"},
+        {"name": "Elice 收盘股价", "value": "60,500 韩元"},
+        {"name": "Elice IPO 定价", "value": "90,500 韩元"},
+        {"name": "Elice 市值", "value": "6740 亿韩元（5.08 亿美元）"},
+        {"name": "KOSPI 跌幅", "value": "3.73%（降 215.27 点）"}
+      ],
+      "why_it_matters": "Elice 创纪录的首日暴跌把“AI 资本支出是否可持续”的怀疑情绪推到了韩国这一全球 AI 晴雨表上，芯片抛售叠加伊朗战争推高的借贷成本，正系统性抬高 AI 公司进入公开市场的门槛。"
+    },
+    {
+      "article_id": "2026-10-20-3",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.95, "evidence": ["Nvidia 于 10 月 20 日至 22 日在柏林举办 GTC AI 大会"]},
+        {"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.9, "evidence": ["CEO 黄仁勋将于周三（10/21）上午 11:00 发表主旨演讲"]},
+        {"name": "Vera Rubin", "type": "hardware", "aliases": ["Rubin"], "confidence": 0.85, "evidence": ["而 Vera Rubin 承担下一次平台升级使命"]},
+        {"name": "Blackwell", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["Blackwell 处于大规模营收兑现期"]},
+        {"name": "Doctolib", "type": "company", "aliases": ["Doctolib（法国健康科技公司）"], "confidence": 0.85, "evidence": ["此前 Nvidia 已投资法国健康科技公司 Doctolib"]},
+        {"name": "Genesis AI", "type": "company", "aliases": ["Genesis AI（机器人公司）"], "confidence": 0.85, "evidence": ["机器人公司 Genesis AI"]},
+        {"name": "Pigment", "type": "company", "aliases": ["Pigment（企业软件公司）"], "confidence": 0.85, "evidence": ["企业软件公司 Pigment"]},
+        {"name": "Entalpic", "type": "company", "aliases": ["Entalpic（材料研发平台）"], "confidence": 0.85, "evidence": ["材料研发平台 Entalpic"]},
+        {"name": "德国政府", "type": "organization", "aliases": ["德国"], "confidence": 0.85, "evidence": ["德国政府正与 Nvidia 就工业 AI 合作谈判"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Nvidia GTC Berlin 2026 开幕，聚焦 AI 工厂与欧洲主权算力",
+          "summary": "Nvidia 于 10 月 20 日至 22 日在柏林举办 GTC AI 大会，CEO 黄仁勋周三发表主旨演讲，共 100 多场分会。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Jensen Huang", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["Nvidia 于 10 月 20 日至 22 日在柏林举办 GTC AI 大会"]
+        },
+        {
+          "type": "partnership",
+          "label": "德国政府与 Nvidia 就工业 AI 合作谈判",
+          "summary": "德国政府正与 Nvidia 就工业 AI 合作谈判，涉及机器人、自动驾驶训练所需的物理 AI 工具以及制造业大模型。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "德国政府", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["德国政府正与 Nvidia 就工业 AI 合作谈判"]
+        },
+        {
+          "type": "funding",
+          "label": "Nvidia 宣布在欧洲约 20 亿美元的新投资或合作项目",
+          "summary": "黄仁勋此前透露将宣布在欧洲约 20 亿美元的新投资或合作项目，叠加过去一年约 80 亿美元，Nvidia 在欧洲总投资与承诺或接近 100 亿美元。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "德国政府", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["将宣布在欧洲约 20 亿美元的新投资或合作项目"]
+        }
+      ],
+      "relations": [
+        {"source": "Jensen Huang", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.8, "evidence": ["CEO 黄仁勋将于周三（10/21）上午 11:00 发表主旨演讲"]},
+        {"source": "Blackwell", "target": "NVIDIA", "type": "developed_by", "weight": 0.7, "evidence": ["Blackwell 处于大规模营收兑现期"]},
+        {"source": "Vera Rubin", "target": "NVIDIA", "type": "developed_by", "weight": 0.7, "evidence": ["而 Vera Rubin 承担下一次平台升级使命"]},
+        {"source": "Vera Rubin", "target": "Blackwell", "type": "replaces", "weight": 0.6, "evidence": ["Blackwell 处于大规模营收兑现期，而 Vera Rubin 承担下一次平台升级使命"]},
+        {"source": "NVIDIA", "target": "德国政府", "type": "partners_with", "weight": 0.7, "evidence": ["德国政府正与 Nvidia 就工业 AI 合作谈判"]},
+        {"source": "NVIDIA", "target": "Doctolib", "type": "invests_in", "weight": 0.6, "evidence": ["此前 Nvidia 已投资法国健康科技公司 Doctolib"]},
+        {"source": "NVIDIA", "target": "Genesis AI", "type": "invests_in", "weight": 0.5, "evidence": ["机器人公司 Genesis AI"]},
+        {"source": "NVIDIA", "target": "Pigment", "type": "invests_in", "weight": 0.5, "evidence": ["企业软件公司 Pigment"]},
+        {"source": "NVIDIA", "target": "Entalpic", "type": "invests_in", "weight": 0.5, "evidence": ["材料研发平台 Entalpic"]}
+      ],
+      "metrics": [
+        {"name": "Nvidia 欧洲新投资或合作规模", "value": "约 20 亿美元"},
+        {"name": "Nvidia 欧洲累计投资与承诺", "value": "接近 100 亿美元"},
+        {"name": "Nvidia 2027 财年 Q2 营收", "value": "962 亿美元（同比 +106%）"},
+        {"name": "数据中心营收", "value": "890 亿美元（同比 +117%）"},
+        {"name": "数据中心营收占比", "value": "超 92%"},
+        {"name": "GTC 分会场数量", "value": "100 多场"}
+      ],
+      "why_it_matters": "Nvidia 把重心从单 GPU 性能转向“AI 工厂”整体设计、并以接近 100 亿美元欧洲投资承诺对冲主权算力，反映推理工作负载崛起正迫使它从卖芯片转向卖整个数据中心栈。"
+    },
+    {
+      "article_id": "2026-10-20-4",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.95, "evidence": ["中国科技巨头订购了约 350 亿美元的合规版 Nvidia 芯片"]},
+        {"name": "Huawei", "type": "company", "aliases": ["华为"], "confidence": 0.9, "evidence": ["也继续扩大对华为、Cambricon 等本土方案的依赖"]},
+        {"name": "Cambricon", "type": "company", "aliases": ["寒武纪"], "confidence": 0.9, "evidence": ["也继续扩大对华为、Cambricon 等本土方案的依赖"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["Nvidia 仍以 63% 居首，Google 25%"]},
+        {"name": "Amazon", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Amazon 5%"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["AMD 4%"]},
+        {"name": "Epoch AI", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["该消息与 Epoch AI 最新（10 月 20 日更新）的芯片市场份额数据相呼应"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "中国科技巨头订购约 350 亿美元合规版 Nvidia 芯片",
+          "summary": "中国科技巨头订购了约 350 亿美元的合规版 Nvidia 芯片，背景是出口管制已将 Nvidia 在中国 AI 数据中心芯片市场的份额从近乎垄断压至几乎为零。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "object"},
+            {"name": "Huawei", "type": "company", "role": "competitor"},
+            {"name": "Cambricon", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["中国科技巨头订购了约 350 亿美元的合规版 Nvidia 芯片"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Epoch AI 发布 Q2 2026 芯片市场份额数据",
+          "summary": "Epoch AI 最新数据按 H100 等价算力计，Nvidia 仍以 63% 居首，Google 25%、Amazon 5%、AMD 4%、Huawei 3%、Cambricon 不足 1%。",
+          "participants": [
+            {"name": "Epoch AI", "type": "organization", "role": "benchmark"},
+            {"name": "NVIDIA", "type": "company", "role": "object"},
+            {"name": "Google", "type": "company", "role": "object"},
+            {"name": "Amazon", "type": "company", "role": "object"},
+            {"name": "AMD", "type": "company", "role": "object"},
+            {"name": "Huawei", "type": "company", "role": "object"},
+            {"name": "Cambricon", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Nvidia 仍以 63% 居首，Google 25%，Amazon 5%，AMD 4%，Huawei 3%"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "Huawei", "type": "competes_with", "weight": 0.8, "evidence": ["中国客户既在寻求合规 Nvidia 芯片以满足峰值性能需求，也继续扩大对华为、Cambricon 等本土方案的依赖"]},
+        {"source": "NVIDIA", "target": "Cambricon", "type": "competes_with", "weight": 0.7, "evidence": ["也继续扩大对华为、Cambricon 等本土方案的依赖"]},
+        {"source": "NVIDIA", "target": "Google", "type": "competes_with", "weight": 0.7, "evidence": ["Nvidia 仍以 63% 居首，Google 25%"]},
+        {"source": "NVIDIA", "target": "AMD", "type": "competes_with", "weight": 0.6, "evidence": ["AMD 4%"]},
+        {"source": "NVIDIA", "target": "Amazon", "type": "competes_with", "weight": 0.6, "evidence": ["Amazon 5%"]}
+      ],
+      "metrics": [
+        {"name": "中国科技巨头订购合规芯片金额", "value": "约 350 亿美元"},
+        {"name": "Nvidia Q2 2026 芯片市场份额", "value": "63%"},
+        {"name": "Google 芯片市场份额", "value": "25%"},
+        {"name": "Amazon 芯片市场份额", "value": "5%"},
+        {"name": "AMD 芯片市场份额", "value": "4%"},
+        {"name": "Huawei 芯片市场份额", "value": "3%"},
+        {"name": "Cambricon 芯片市场份额", "value": "不足 1%"}
+      ],
+      "why_it_matters": "出口管制把 Nvidia 在华份额从近乎垄断压到几乎为零后，350 亿美元合规订单反而说明“管制压制”与“旺盛需求”在合规化供给下共存，主权算力与合规芯片的拉锯将持续成为管控效果博弈的焦点。"
+    },
+    {
+      "article_id": "2026-10-20-5",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 已告知美国议员将重写其自拟 AI 安全法案的部分内容"]},
+        {"name": "Politico", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["这份保密草稿上周五被 Politico 曝光"]},
+        {"name": "FRONTIER Act", "type": "policy", "aliases": ["FRONTIER 法案"], "confidence": 0.85, "evidence": ["弱于两党 FRONTIER 法案"]},
+        {"name": "AI 安全法案草稿", "type": "policy", "aliases": ["Anthropic 自拟 AI 安全法案"], "confidence": 0.9, "evidence": ["Anthropic 已告知美国议员将重写其自拟 AI 安全法案的部分内容"]},
+        {"name": "加州 AI 法律", "type": "policy", "aliases": ["加州 AI 法律（门槛）"], "confidence": 0.85, "evidence": ["门槛与加州 AI 法律呼应"]},
+        {"name": "SB 53", "type": "policy", "aliases": ["透明度法 SB 53"], "confidence": 0.85, "evidence": ["指控其滥用其透明度法 SB 53 的定义"]},
+        {"name": "LawAI", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["LawAI 的 Charlie Bullock 指出"]},
+        {"name": "Charlie Bullock", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["LawAI 的 Charlie Bullock 指出"]},
+        {"name": "Scott Wiener", "type": "person", "aliases": ["加州参议员"], "confidence": 0.9, "evidence": ["加州参议员 Scott Wiener 称该提案"]},
+        {"name": "美国商务部", "type": "organization", "aliases": ["商务部"], "confidence": 0.85, "evidence": ["要封禁模型，商务部须向联邦法院申诉"]},
+        {"name": "Anthony Cimino", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Anthropic 联邦事务主管 Anthony Cimino 回应"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Anthropic 将重写泄露的联邦 AI 安全法案草稿",
+          "summary": "Anthropic 已告知美国议员将重写其自拟 AI 安全法案的部分内容，保密草稿上周五被 Politico 曝光，被批评弱于两党 FRONTIER 法案。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "AI 安全法案草稿", "type": "policy", "role": "object"},
+            {"name": "Politico", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["Anthropic 已告知美国议员将重写其自拟 AI 安全法案的部分内容"]
+        },
+        {
+          "type": "policy",
+          "label": "草稿先占部分州 AI 法律引发安全界批评",
+          "summary": "草稿允许政府仅在狭窄情形下阻止模型发布或使用，并先占部分州 AI 法律，却遭加州参议员 Scott Wiener 与 LawAI 批评使封禁模型难度大增。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "加州 AI 法律", "type": "policy", "role": "object"},
+            {"name": "SB 53", "type": "policy", "role": "object"},
+            {"name": "Scott Wiener", "type": "person", "role": "subject"},
+            {"name": "美国商务部", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["草稿禁止任何其他机构或个人暂停模型，并先占部分州 AI 法律"]
+        }
+      ],
+      "relations": [
+        {"source": "Anthony Cimino", "target": "Anthropic", "type": "affiliated_with", "weight": 0.8, "evidence": ["Anthropic 联邦事务主管 Anthony Cimino 回应"]},
+        {"source": "Charlie Bullock", "target": "LawAI", "type": "affiliated_with", "weight": 0.8, "evidence": ["LawAI 的 Charlie Bullock 指出"]},
+        {"source": "美国商务部", "target": "Anthropic", "type": "regulates", "weight": 0.7, "evidence": ["要封禁模型，商务部须向联邦法院申诉"]},
+        {"source": "AI 安全法案草稿", "target": "加州 AI 法律", "type": "compared_with", "weight": 0.5, "evidence": ["门槛与加州 AI 法律呼应"]},
+        {"source": "AI 安全法案草稿", "target": "FRONTIER Act", "type": "compared_with", "weight": 0.7, "evidence": ["弱于两党 FRONTIER 法案"]}
+      ],
+      "metrics": [
+        {"name": "法案封禁模型的最低损失门槛", "value": "超 10 亿美元损失"},
+        {"name": "法案封禁模型的最低伤亡门槛", "value": "50 人以上死亡或重伤"}
+      ],
+      "why_it_matters": "Anthropic 一边高调推动严格 AI 监管、一边自拟的草稿却比国会 FRONTIER 法案更弱、还抬高封禁门槛，暴露出“监管设计者与被监管者身份合一”的结构性矛盾，先占条款之争将决定州与联邦谁掌握模型关闭权。"
+    },
+    {
+      "article_id": "2026-10-20-6",
+      "entities": [
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.9, "evidence": ["Hugging Face 政策主管 Irene Solaiman 上周在 TechCrunch Disrupt 的讨论中表示"]},
+        {"name": "Irene Solaiman", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Hugging Face 政策主管 Irene Solaiman 上周在 TechCrunch Disrupt 的讨论中表示"]},
+        {"name": "Accenture", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 选择 Accenture 为首个评估者便招致批评乃至嘲讽"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 选择 Accenture 为首个评估者"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Hugging Face 政策主管称嵌入式 AI 评估者不会轻松解决监管难题",
+          "summary": "Irene Solaiman 在 TechCrunch Disrupt 表示模型评估复杂且不断发展，结果能否被信任取决于他人能否复现以及是否有足够的模型访问权。",
+          "participants": [
+            {"name": "Irene Solaiman", "type": "person", "role": "subject"},
+            {"name": "Hugging Face", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Hugging Face 政策主管 Irene Solaiman 上周在 TechCrunch Disrupt 的讨论中表示"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 选择 Accenture 为首个第三方评估者",
+          "summary": "AI 实验室高调推动第三方评估者替代政府监管，Anthropic 选择 Accenture 为首个评估者便招致批评乃至嘲讽，评估者独立性与资质仍存疑。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Accenture", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Anthropic 选择 Accenture 为首个评估者便招致批评乃至嘲讽"]
+        }
+      ],
+      "relations": [
+        {"source": "Irene Solaiman", "target": "Hugging Face", "type": "affiliated_with", "weight": 0.8, "evidence": ["Hugging Face 政策主管 Irene Solaiman 上周在 TechCrunch Disrupt 的讨论中表示"]},
+        {"source": "Accenture", "target": "Anthropic", "type": "supplies", "weight": 0.5, "evidence": ["Anthropic 选择 Accenture 为首个评估者便招致批评乃至嘲讽"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "当 Anthropic 自拟的法案抬高封禁门槛、又选择 Accenture 当首个评估者时，“谁来考评、按什么标准”成了监管链条最脆弱的一环；Hugging Face 指出开放权重允许外部复现，正是对抗评估者自证合格的解药。"
+    },
+    {
+      "article_id": "2026-10-20-7",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.95, "evidence": ["Microsoft 在最新报告中把 AI 智能体比作“内部威胁”"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.95, "evidence": ["Nvidia 也在九月末推出 Open Agent Safety Platform"]},
+        {"name": "Open Agent Safety Platform", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Nvidia 也在九月末推出 Open Agent Safety Platform 以遏制失控的自主 agent"]},
+        {"name": "AI 智能体", "type": "topic", "aliases": [], "confidence": 0.7, "evidence": ["Microsoft 在最新报告中把 AI 智能体比作“内部威胁”"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Microsoft 将 AI 智能体类比为内部威胁",
+          "summary": "Microsoft 在最新报告中把 AI 智能体比作“内部威胁”，直言前沿模型不能被信任，企业安全架构、权限模型与监控策略都要被重新设计。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "AI 智能体", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Microsoft 在最新报告中把 AI 智能体比作“内部威胁”"]
+        },
+        {
+          "type": "launch",
+          "label": "Nvidia 推出 Open Agent Safety Platform",
+          "summary": "Nvidia 在九月末推出 Open Agent Safety Platform 以遏制失控的自主 agent，回应行业对不受控 agent 日益增长的担忧。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Open Agent Safety Platform", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Nvidia 也在九月末推出 Open Agent Safety Platform"]
+        }
+      ],
+      "relations": [
+        {"source": "Open Agent Safety Platform", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["Nvidia 也在九月末推出 Open Agent Safety Platform"]},
+        {"source": "Microsoft", "target": "AI 智能体", "type": "targets", "weight": 0.5, "evidence": ["Microsoft 在最新报告中把 AI 智能体比作“内部威胁”"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "Microsoft 公开把 agent 定性为“内部威胁”意味着企业安全范式要从“可信设备+边界防护”转向对自主 agent 权限的全程约束，这是最大云厂商对“agent 经济学”暗面的正式承认。"
+    },
+    {
+      "article_id": "2026-10-20-8",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.95, "evidence": ["Nvidia 本周发布专门面向企业常驻 agent 与边缘计算的新开放权重模型"]},
+        {"name": "Nemotron 3.5 Super VL", "type": "model", "aliases": ["Super VL"], "confidence": 0.95, "evidence": ["Nemotron 3.5 Super VL 是一个 1200 亿参数的模型"]},
+        {"name": "Bolt 74B-A9B", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Bolt 74B-A9B（支持多步推理、工具调用、网页浏览）与 Super VL 现已可用"]},
+        {"name": "Bolt E4B", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["最小号 Bolt E4B 计划本月稍后推出"]},
+        {"name": "Nemotron 3 Ultra", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["尽管参数量少于 Nemotron 3 Ultra"]},
+        {"name": "Kari Briski", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Nvidia 开放模型与软件副总裁 Kari Briski 表示"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["完成任务快于 Anthropic 与 OpenAI 的对手模型"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["完成任务快于 Anthropic 与 OpenAI 的对手模型"]},
+        {"name": "Opus 5", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["对手模型（Opus 5、GPT 6.1 Sol、Luna、Astra）"]},
+        {"name": "GPT 6.1 Sol", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["对手模型（Opus 5、GPT 6.1 Sol、Luna、Astra）"]},
+        {"name": "Luna", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["对手模型（Opus 5、GPT 6.1 Sol、Luna、Astra）"]},
+        {"name": "Astra", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["对手模型（Opus 5、GPT 6.1 Sol、Luna、Astra）"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Nvidia 发布 Nemotron 3.5 Super VL 与 Bolt 系列开放权重模型",
+          "summary": "Nvidia 发布面向企业常驻 agent 与边缘计算的开放权重模型：企业级 Nemotron 3.5 Super VL（120B）、面向 AI PC 的 Bolt 系列，开放权重允许组织用自己的数据后训练并在自有基础设施部署，Bolt 74B-A9B 与 Super VL 现已可用。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Nemotron 3.5 Super VL", "type": "model", "role": "object"},
+            {"name": "Bolt 74B-A9B", "type": "model", "role": "object"},
+            {"name": "Bolt E4B", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Nvidia 本周发布专门面向企业常驻 agent 与边缘计算的新开放权重模型"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Super VL 在 agentic 任务上快于 Anthropic 与 OpenAI 的对手模型",
+          "summary": "Nvidia 称 Super VL 在针对特定 agentic 任务后训练时，完成任务快于 Anthropic 与 OpenAI 的对手模型（Opus 5、GPT 6.1 Sol、Luna、Astra）。",
+          "participants": [
+            {"name": "Nemotron 3.5 Super VL", "type": "model", "role": "subject"},
+            {"name": "Opus 5", "type": "model", "role": "competitor"},
+            {"name": "GPT 6.1 Sol", "type": "model", "role": "competitor"},
+            {"name": "Luna", "type": "model", "role": "competitor"},
+            {"name": "Astra", "type": "model", "role": "competitor"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["完成任务快于 Anthropic 与 OpenAI 的对手模型（Opus 5、GPT 6.1 Sol、Luna、Astra）"]
+        }
+      ],
+      "relations": [
+        {"source": "Nemotron 3.5 Super VL", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["Nvidia 本周发布专门面向企业常驻 agent 与边缘计算的新开放权重模型"]},
+        {"source": "Bolt 74B-A9B", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["Bolt 74B-A9B（支持多步推理、工具调用、网页浏览）与 Super VL 现已可用"]},
+        {"source": "Nemotron 3.5 Super VL", "target": "Nemotron 3 Ultra", "type": "compared_with", "weight": 0.7, "evidence": ["尽管参数量少于 Nemotron 3 Ultra，Nvidia 称其指令遵循与工具使用能力相近"]},
+        {"source": "Kari Briski", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.8, "evidence": ["Nvidia 开放模型与软件副总裁 Kari Briski 表示"]},
+        {"source": "NVIDIA", "target": "Anthropic", "type": "competes_with", "weight": 0.6, "evidence": ["完成任务快于 Anthropic 与 OpenAI 的对手模型"]},
+        {"source": "NVIDIA", "target": "OpenAI", "type": "competes_with", "weight": 0.6, "evidence": ["完成任务快于 Anthropic 与 OpenAI 的对手模型"]}
+      ],
+      "metrics": [
+        {"name": "Nemotron 3.5 Super VL 参数量", "value": "1200 亿"},
+        {"name": "Bolt 74B-A9B 参数规模", "value": "74B-A9B"}
+      ],
+      "why_it_matters": "当前沿实验室转向自研芯片（AWS Trainium、Cerebras）时，Nvidia 押注“企业用自己数据后训练开源模型”这条路线，Nemotron 3.5 与 Bolt 用参数量分层把 open-weight 从能力妥协变成企业可控的私有 agent 底座，护城河正从芯片延伸到模型。"
+    },
+    {
+      "article_id": "2026-10-20-9",
+      "entities": [
+        {"name": "Agima", "type": "tool", "aliases": ["Agentic Imagination"], "confidence": 0.95, "evidence": ["这篇论文提出 Agentic Imagination（Agima）"]},
+        {"name": "Sokoban", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 Maze2D、Sokoban、Pacman、PushT 四个环境上"]},
+        {"name": "Maze2D", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 Maze2D、Sokoban、Pacman、PushT 四个环境上"]},
+        {"name": "Pacman", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 Maze2D、Sokoban、Pacman、PushT 四个环境上"]},
+        {"name": "PushT", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 Maze2D、Sokoban、Pacman、PushT 四个环境上"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "提出 Agentic Imagination（Agima）训练框架",
+          "summary": "Agima 训练智能体在执行前“想象”行动后果、在想象出的未来上推理后再行动，先用 SFT 统一策略与世界建模，再用 agentic RL 学会用想象出的未来规划。",
+          "participants": [
+            {"name": "Agima", "type": "tool", "role": "subject"},
+            {"name": "Sokoban", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["这篇论文提出 Agentic Imagination（Agima），一个训练框架让智能体在行动前“想象”"]
+        }
+      ],
+      "relations": [
+        {"source": "Agima", "target": "Sokoban", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 Maze2D、Sokoban、Pacman、PushT 四个环境上"]},
+        {"source": "Agima", "target": "Maze2D", "type": "evaluated_on", "weight": 0.7, "evidence": ["在 Maze2D、Sokoban、Pacman、PushT 四个环境上"]},
+        {"source": "Agima", "target": "Pacman", "type": "evaluated_on", "weight": 0.7, "evidence": ["在 Maze2D、Sokoban、Pacman、PushT 四个环境上"]},
+        {"source": "Agima", "target": "PushT", "type": "evaluated_on", "weight": 0.7, "evidence": ["在 Maze2D、Sokoban、Pacman、PushT 四个环境上"]}
+      ],
+      "metrics": [
+        {"name": "Agima 在四 box Sokoban 解决率", "value": "40%"},
+        {"name": "纯动作规划器四 box Sokoban 解决率", "value": "2%"}
+      ],
+      "why_it_matters": "Agima 用“想象后果再执行”的方式在少反馈、不可逆环境中显著提升成功率（四 box Sokoban 40% 对 2%），说明智能体规划的下一个瓶颈不在动作生成而在“预判未来”，前向思维成为可控 RL 的新方向。"
+    },
+    {
+      "article_id": "2026-10-20-10",
+      "entities": [
+        {"name": "Dynalize", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["论文提出 Dynalize，在策略训练期间在线缓解奖励黑客"]},
+        {"name": "偏好奖励模型", "type": "topic", "aliases": ["偏好模型"], "confidence": 0.9, "evidence": ["在策略训练期间在线缓解偏好奖励模型中的奖励黑客"]},
+        {"name": "可验证奖励", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["语言模型的强化学习正从偏好奖励模型转向可验证奖励"]},
+        {"name": "奖励黑客", "type": "topic", "aliases": ["reward hacking"], "confidence": 0.85, "evidence": ["偏好模型易受奖励黑客影响"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "提出 Dynalize 在线缓解偏好奖励模型中的奖励黑客",
+          "summary": "Dynalize 在策略训练期间在线缓解奖励黑客，让惩罚随策略的对齐尝试动态演化，而非依赖预先固定的静态惩罚。",
+          "participants": [
+            {"name": "Dynalize", "type": "tool", "role": "subject"},
+            {"name": "偏好奖励模型", "type": "topic", "role": "object"},
+            {"name": "可验证奖励", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["论文提出 Dynalize，在策略训练期间在线缓解奖励黑客"]
+        }
+      ],
+      "relations": [
+        {"source": "Dynalize", "target": "偏好奖励模型", "type": "targets", "weight": 0.8, "evidence": ["在策略训练期间在线缓解偏好奖励模型中的奖励黑客"]},
+        {"source": "Dynalize", "target": "奖励黑客", "type": "targets", "weight": 0.8, "evidence": ["在策略训练期间在线缓解奖励黑客"]},
+        {"source": "可验证奖励", "target": "偏好奖励模型", "type": "replaces", "weight": 0.7, "evidence": ["语言模型的强化学习正从偏好奖励模型转向可验证奖励"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "随着可验证奖励越来越普及，开放领域偏好模型的稳定性成了 RL 质量的最后短板；Dynalize 让惩罚“随策略演化”而非静态预设，直指奖励黑客无法靠一次性规则根治的结构性难题。"
+    },
+    {
+      "article_id": "2026-10-20-11",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 修订后的 IPO 估值从“至少 2 万亿美元”下修到 1.5 万亿美元起跳"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 同样下调了预期"]},
+        {"name": "CoreWeave", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["CoreWeave 500 亿美元债务引发的信任危机"]},
+        {"name": "Goldman Sachs", "type": "company", "aliases": ["Goldman"], "confidence": 0.9, "evidence": ["CoreWeave 获 Goldman Sachs 上调至“买入”"]},
+        {"name": "Morgan Stanley", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Morgan Stanley 预期 AI 总投资 2027 年达 1.6 万亿美元"]},
+        {"name": "S&P Global", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["S&P Global 估计全球最大科技公司可能拥有比已知更多的 AI 相关负债"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.9, "evidence": ["Nvidia 股价下滑"]},
+        {"name": "Elice Group", "type": "company", "aliases": ["Elice"], "confidence": 0.85, "evidence": ["Elice 上市暴跌 32%"]},
+        {"name": "AI 总投资", "type": "topic", "aliases": [], "confidence": 0.7, "evidence": ["Morgan Stanley 预期 AI 总投资 2027 年达 1.6 万亿美元、2028 年达 1.8 万亿美元"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "AI 融资叙事的分水岭：IPO 估值下修与数据中心债务焦虑",
+          "summary": "Anthropic 修订后 IPO 估值下修到 1.5 万亿起跳、OpenAI 下调 2026 营收预期至 500 亿，CoreWeave 500 亿债务信任危机与 Elice 上市暴跌共同标志 AI 融资叙事转折。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "CoreWeave", "type": "company", "role": "object"},
+            {"name": "Elice Group", "type": "company", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "object"},
+            {"name": "S&P Global", "type": "organization", "role": "subject"}
+          ],
+          "evidence": ["过去数日的一系列事件共同指向 AI 融资叙事的转折点"]
+        },
+        {
+          "type": "trend",
+          "label": "Goldman Sachs 分析师上调 CoreWeave 至买入评级",
+          "summary": "CoreWeave 获 Goldman Sachs 上调至“买入”，Goldman 认为紧俏算力与性能优势将推高未来两年单位兆瓦的 ARR。",
+          "participants": [
+            {"name": "Goldman Sachs", "type": "company", "role": "subject"},
+            {"name": "CoreWeave", "type": "company", "role": "object"}
+          ],
+          "evidence": ["CoreWeave 获 Goldman Sachs 上调至“买入”"]
+        },
+        {
+          "type": "trend",
+          "label": "Morgan Stanley 上调 AI 总投资预期",
+          "summary": "Morgan Stanley 预期 AI 总投资 2027 年达 1.6 万亿美元、2028 年达 1.8 万亿美元，与 Anthropic 估值下修形成对照。",
+          "participants": [
+            {"name": "Morgan Stanley", "type": "company", "role": "subject"},
+            {"name": "AI 总投资", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Morgan Stanley 预期 AI 总投资 2027 年达 1.6 万亿美元、2028 年达 1.8 万亿美元"]
+        }
+      ],
+      "relations": [
+        {"source": "Anthropic", "target": "OpenAI", "type": "compared_with", "weight": 0.7, "evidence": ["OpenAI 同样下调了预期——预计今年营收 500 亿美元，低于此前基于与 Anthropic 对比的 700 亿美元预测"]},
+        {"source": "OpenAI", "target": "Anthropic", "type": "competes_with", "weight": 0.6, "evidence": ["分析师担心在 LLM 定价压力下 Anthropic 能否维持市场预期的增速"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 修订前 IPO 估值", "value": "至少 2 万亿美元"},
+        {"name": "Anthropic 修订后 IPO 估值起点", "value": "1.5 万亿美元起跳"},
+        {"name": "OpenAI 2026 营收预期", "value": "500 亿美元"},
+        {"name": "OpenAI 此前营收预期", "value": "700 亿美元"},
+        {"name": "OpenAI 2025 营收", "value": "131 亿美元"},
+        {"name": "OpenAI 2025 亏损", "value": "209 亿美元"},
+        {"name": "OpenAI Q2 亏损", "value": "123 亿美元"},
+        {"name": "CoreWeave 债务规模", "value": "500 亿美元"},
+        {"name": "Elice 上市首日跌幅", "value": "32%"},
+        {"name": "Morgan Stanley 2027 AI 总投资预期", "value": "1.6 万亿美元"},
+        {"name": "Morgan Stanley 2028 AI 总投资预期", "value": "1.8 万亿美元"},
+        {"name": "Philadelphia 半导体指数上周跌幅", "value": "超 11%"}
+      ],
+      "why_it_matters": "当 Anthropic 估值下修、OpenAI 砍掉 200 亿营收预期、CoreWeave 500 亿债务引发信任危机同时发生，AI 板块的定价锚正从“算力即财富”转向单位产出与偿付能力，GTC 上 Nvidia 强调的每兆瓦 token 成本正是对这种焦虑的直接回应。"
+    }
+  ]
+}

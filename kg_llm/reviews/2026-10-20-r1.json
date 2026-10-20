@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-20",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 70,
+  "summary": "核心事实与关系方向大体正确，但存在多处关系/事件类型误用：把分析师评级动作当成 funding（11），把评估关系当成 supplies（6），凭共同出现断言竞争（2），以及把发布动作拆成重叠的两个事件（8）。另有 5 篇的草稿对加州法的 'replaces' 断言与原文'呼应'框架相悖。",
+  "findings": [
+    {
+      "article_id": "2026-10-20-5",
+      "severity": "medium",
+      "problem": "关系 \"AI 安全法案草稿 --replaces--> 加州 AI 法律\" 与原文相悖且未被证据支撑。原文明确说草稿的门槛'与加州 AI 法律呼应'（echo，不是取代），且被先占的是'部分州 AI 法律（公开披露、第三方评估、事件报告）'并留下儿童安全与民权法律，并未整体取代加州 AI 法律。",
+      "fix": "改为 \"AI 安全法案草稿 --similar_to--> 加州 AI 法律\"（呼应/对齐），并把先占类内容重新表述为草稿先占'部分州 AI 法律的公开披露、第三方评估、事件报告条款'，不要声称其取代加州 AI 法律。"
+    },
+    {
+      "article_id": "2026-10-20-6",
+      "severity": "medium",
+      "problem": "同一对实体出现两条重复且类型错的对象：关系 \"Accenture --supplies--> Anthropic\" 和 \"Anthropic --partners_with--> Accenture\" 都只用同一条证据'Anthropic 选择 Accenture 为首个评估者'。Accenture 是受聘评估 Anthropic，不是向 Anthropic'供货'，supplies 类型明显用错。",
+      "fix": "删除 \"Accenture --supplies--> Anthropic\" 这条错误关系，只保留 \"Anthropic --partners_with--> Accenture\"（或改用一条 '评估者' 边，如 Anthropic 委托 Accenture 评估）。"
+    },
+    {
+      "article_id": "2026-10-20-11",
+      "severity": "medium",
+      "problem": "事件 'Goldman Sachs 上调 CoreWeave 至买入' 类型被标成 funding、Goldman 角色记为 funder，关系也用 \"Goldman Sachs --targets--> CoreWeave\"。但原文只是 Goldman Sachs 分析师把 CoreWeave 评级上调至'买入'，Goldman 并未融资或投资 CoreWeave，targets/funding 都是错误类型。",
+      "fix": "把事件类型改为市场评级类（如 rate/评级），Goldman 角色改为'analyst/评估方'；关系改用评级边（如 Goldman Sachs --rates--> CoreWeave 上调至买入），删除 funding 与 targets 的误用。"
+    },
+    {
+      "article_id": "2026-10-20-2",
+      "severity": "medium",
+      "problem": "关系 \"Samsung Electronics --competes_with--> SK Hynix\" 的证据只有'三星电子和 SK 海力士等 HBM 内存芯片供应商'——只是二者在同一句中被并列列举为供应商，原文并未断言二者竞争。共同出现被当成了竞争关系。",
+      "fix": "删除该关系，或补一条真正包含竞争性表述的 evidence（原文没有时可删）。同时注意不要把'同为 HBM 供应商/同为概率下跌对象'误升格为 competes_with。"
+    },
+    {
+      "article_id": "2026-10-20-8",
+      "severity": "medium",
+      "problem": "同一发布会动作被拆成两个重叠事件：'Nvidia 发布 Nemotron 3.5 Super VL 与 Bolt 系列开放权重模型'（launch）和'Nvidia 开放 Nemotron 3.5 Super VL 与 Bolt 系列权重'（open_source），两者都是同一模型发布，只是叙述角度一为发布一为开放权重，信息重复。",
+      "fix": "合并为单个 launch 事件（开放权重作为其属性/细节保留），与独立的 benchmark 事件区分开；不要把一个发布动作拆成两个互相重复的事件。"
+    }
+  ],
+  "lessons": [
+    "分析师/评级机构对某公司给出评级或打分（如上调至买入、降级）时，事件类型用评级类而不用 funding，关系不用 invests_in/targets，按发起动作（rates）选择类型。",
+    "来源仅把多个主体并列列举（同为供应商、同为概率下跌、同为XX列表）时，不要仅凭共同出现就断言 competes_with 等关系；竞争关系必须有竞争性表述作证据。",
+    "同一发布会动作（发布产品与开放权重是同一件事）应合并为一个事件，不要把同一 launch 拆成多个互相重复的事件。"
+  ]
+}

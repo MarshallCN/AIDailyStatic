@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-20",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "这份抽取在数字与证据层面很扎实：12 篇逐条核对无数字幻觉、无反向关系、跨文章规范名（NVIDIA/Anthropic/OpenAI/SpaceX/Elice Group）连通良好。主要问题集中在语义关系与事件组装：2026-10-20-7 有一条纯共现臆造的 Microsoft --compared_with--> NVIDIA 边；多篇事件参与者角色错配（KOSPI、Dealogic、LawAI、S&P Global、并列 IPO 候选公司被塞进 object/benchmark/regulator/competitor 角色）且有 3 个事件 participants 不足 2 个；Super VL 对竞品的 outperforms 复发 10-19 的速度声明教训并漏掉 Luna/Astra；另有评估者委任误标 partnership、分析师评级误标 research 两类类型错误。建议 revise 后补一轮修订。",
+  "findings": [
+    {
+      "article_id": "2026-10-20-7",
+      "severity": "high",
+      "problem": "关系 \"Microsoft --compared_with--> NVIDIA\" 是共现臆造：其 evidence（\"Microsoft 的表述标志着一家最大的云与企业软件提供商正式承认：将 agent 视为\"内部威胁\"而非\"新工具\"\"）只陈述 Microsoft 自身的定性，通篇原文没有任何 Microsoft 与 Nvidia 相互比较的表述，证据推不出这条边，违反已沉淀的\"关系边证据必须能直接推出该关系\"规则。同一根因也污染了事件 1 \"Microsoft 将 AI 智能体类比为内部威胁\"的 participants：NVIDIA（role=competitor）与 Open Agent Safety Platform（role=object）被塞进 Microsoft 声明事件，它们属于事件 2（Nvidia 推出 OASP），Microsoft 与 Nvidia 只是同篇对同一行业担忧的并列回应者。",
+      "fix": "删除 \"Microsoft --compared_with--> NVIDIA\" 这条无证据支撑的边；把 NVIDIA 与 Open Agent Safety Platform 从事件 1 participants 中移出（仅保留在事件 2）。若确实要表达两家同处 agent 安全趋势，应通过趋势语义承载并配能直接支撑的原文证据，不要用比较关系连边。"
+    },
+    {
+      "article_id": "2026-10-20-8",
+      "severity": "medium",
+      "problem": "关系 \"Nemotron 3.5 Super VL --outperforms--> Opus 5\" 与 \"--outperforms--> GPT 6.1 Sol\" 把原文的条件性速度声明夸大成整体性能优势：原文只说\"在针对特定 agentic 任务（文档智能、财务会计等）后训练时，完成任务快于 Anthropic 与 OpenAI 的对手模型\"，是限定场景下的任务完成速度，不是评测性能对比，outperforms 会读成\"Super VL 整体胜过 Opus 5\"的错误故事——与 10-19 已沉淀的\"速度声明不要用 outperforms\"教训同类复发；且同一条证据列出的 Luna、Astra 两家完全没有对应边，四家处理不一致。",
+      "fix": "按 10-19 lesson 处理：把\"完成任务快于\"限定为速度语义（留在事件 summary 或改用不暗示整体胜出的表述），不要用 outperforms 关系；若确要保留模型间比较边，必须对 Opus 5、GPT 6.1 Sol、Luna、Astra 四家统一一致处理并补全 Luna、Astra 的缺边。"
+    },
+    {
+      "article_id": "2026-10-20-6",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --partners_with--> Accenture\" 与事件 2 的 type=partnership 都把委任误读成合作：原文事实只有\"Anthropic 选择 Accenture 为首个评估者\"（委任/聘请评估方），没有任何双方合作协议的陈述，partners_with/partnership 会被读成对等的商业合作关系，夸大事实。",
+      "fix": "删除 \"Anthropic --partners_with--> Accenture\" 关系（或改用能表达\"被委任为评估者\"的语义类型）；事件 2 类型从 partnership 改为 trend 等其他类型，label \"Anthropic 选择 Accenture 为首个第三方评估者\"本身准确，类型应与之一致。"
+    },
+    {
+      "article_id": "2026-10-20-5",
+      "severity": "medium",
+      "problem": "本篇文章的核心论点\"草稿弱于两党 FRONTIER 法案\"没有实体边：FRONTIER Act 只出现在事件 1 participants 里且 role=competitor（一部法案被标成 competitor，语义错误），图谱缺 \"AI 安全法案草稿 --compared_with--> FRONTIER Act\" 这条能承载\"弱于\"关系的关键边（事件 1 的 summary 已写出该比较，却没转换成实体关系）。",
+      "fix": "补关系 \"AI 安全法案草稿 --compared_with--> FRONTIER Act\"，evidence 用\"批评者认为该法案弱于国会已有的主要 AI 安全法案\"或\"弱于两党 FRONTIER 法案\"；同时把 FRONTIER Act 移出事件 1 参与方或改为比较对象语义，不要标 competitor。"
+    },
+    {
+      "article_id": "2026-10-20-2",
+      "severity": "medium",
+      "problem": "事件 1 \"Elice Group 上市首日暴跌 32%，创韩国 IPO 最差首秀\" 的 participants 角色错配：KOSPI 被标为 role=object（KOSPI 下跌是被拖累的后果，不是 Elice 首秀动作的对象），Dealogic 被标为 role=benchmark（Dealogic 是提供排行数据的外部数据机构，不是评测基准）。",
+      "fix": "把 KOSPI、Dealogic 从该事件参与方移除（Dealogic 保留在 evidence 引用即可）；如需表达市场联动，另建 trend 事件\"Elice 首秀拖累 KOSPI 下跌 3.73%\"承载，不要在 IPO 首秀事件里占 object/benchmark 角色。"
+    },
+    {
+      "article_id": "2026-10-20-11",
+      "severity": "medium",
+      "problem": "事件 2 \"Goldman Sachs 上调 CoreWeave 至买入评级\" 的 type=research 用错：分析师评级调整是资本市场动作，不是学术研究，与论文类事件共用 research 类型会污染语义（同一张图里 A9/A10 的论文事件也是 research）。",
+      "fix": "事件类型改为 trend（或 funding）等资本市场语义，不要用 research；research 只保留给论文/实验性工作。"
+    },
+    {
+      "article_id": "2026-10-20-1",
+      "severity": "medium",
+      "problem": "事件 2 \"预测市场押注 Anthropic 为年内唯一官宣 IPO 的大型公司\" 的 participants 中 OpenAI、Databricks、Plaid、Deel 被标为 role=competitor：原文只是把四家与 Anthropic 并列盘点为\"已推迟 IPO\"的候选公司，没有任何四家与 Anthropic 直接竞争的陈述，标 competitor 违反\"并列盘点主体不是竞争对手\"规则（10-19 已就 Firmus 沉淀过同类教训，此处复发到角色分配）。",
+      "fix": "把 OpenAI、Databricks、Plaid、Deel 移出该事件参与方，或改用并列受影响方/候选主体的中性语义，不要标 competitor；competitor 只留给原文有直接竞争陈述的主体。"
+    },
+    {
+      "article_id": "2026-10-20-1（同问题见 2026-10-20-3-事件3、2026-10-20-11-事件3）",
+      "severity": "medium",
+      "problem": "三个事件 participants 各只有 1 个主体，违反模板\"participants 至少 2 个\"的硬性要求，确定性审计未覆盖该规则：A1 事件 3 \"SpaceX 六月巨型上市推高 IPO 募集额\"只有 SpaceX；A3 事件 3 \"Nvidia 宣布在欧洲约 20 亿美元的新投资或合作项目\"只有 NVIDIA；A11 事件 3 \"Morgan Stanley 上调 AI 总投资预期\"只有 Morgan Stanley。",
+      "fix": "每个事件至少补足 2 个参与方：如 A1-3 补 IPO 市场/美国 IPO 相关主体作 object，A3-3 补欧洲投资对象（德国政府或欧洲公司），A11-3 补 \"AI 总投资\"（topic 实体）作 object；或把这些单主体事件并入相邻事件。"
+    },
+    {
+      "article_id": "2026-10-20-11",
+      "severity": "low",
+      "problem": "事件 1 participants 的角色语义错配：NVIDIA 被标为 role=competitor（本事件中它是被抛售情绪影响的股价主体，不是任何主体的竞争对手，应是被影响对象或移出）；S&P Global 被标为 role=benchmark（它是估计 AI 相关负债的机构，不是评测基准）。",
+      "fix": "把 NVIDIA 的角色改为 object/受影响方或移出；S&P Global 移出或改为数据提供者语义（subject 类角色），不要标 benchmark。"
+    },
+    {
+      "article_id": "2026-10-20-5",
+      "severity": "low",
+      "problem": "事件 2 participants 中 LawAI 被标为 role=regulator：LawAI 是发表批评的研究组织（Charlie Bullock 是批评者），不是监管方；本事件里监管角色只属于美国商务部（\"要封禁模型，商务部须向联邦法院申诉\"）。",
+      "fix": "将 LawAI 移出参与方或改为批评方/非监管语义；Scott Wiener 的 regulator 角色也请核对（加州州参议员更接近立法者而非监管机构）。"
+    },
+    {
+      "article_id": "2026-10-20-4",
+      "severity": "low",
+      "problem": "缺失关系 \"NVIDIA --competes_with--> Amazon\"：市场份额盘点中已为 Google（25%）、AMD（4%）建 competes_with 边，Amazon（5%）与它们同处一张 Epoch AI 表、同一段证据，处理不一致。",
+      "fix": "补 \"NVIDIA --competes_with--> Amazon\"（evidence \"Amazon 5%\"），与 Google/AMD 的边保持一致；或明确说明为何独缺 Amazon。"
+    },
+    {
+      "article_id": "2026-10-20-0",
+      "severity": "low",
+      "problem": "metrics 漏掉原文明确给出的关键财务数字：\"Top line 还额外获得约 10 亿美元与比特币价格回升相关的收入\"，该数字未进 metrics，属于原文明确的关键营收构成。",
+      "fix": "补 metric {\"name\": \"比特币价格回升相关收入\", \"value\": \"约 10 亿美元\"}。"
+    },
+    {
+      "article_id": "2026-10-20-0",
+      "severity": "low",
+      "problem": "实体 \"Colossus II\" 被标为 type=hardware：Colossus II 是 SpaceX 正在建设的第二个数据中心项目（设施/项目），不是硬件设备本身，hardware 会读成\"SpaceX 建设一件硬件\"，与 10-19 已沉淀的\"数据中心/园区项目不要标产品/设备类类型\"教训同源。",
+      "fix": "若实体类型表无\"项目\"类，将 Colossus II 改用 organization 或与建设项目语义相符的类型，不要标 hardware。"
+    },
+    {
+      "article_id": "2026-10-20-10",
+      "severity": "low",
+      "problem": "实体 \"偏好奖励模型\" 被标为 type=tool：它是 RL 训练方法/概念，不是工具；同篇的 可验证奖励、奖励黑客 都标了 topic，同一类概念实体类型不一致，违反\"同篇文章同性质主体必须统一实体类型\"规则。",
+      "fix": "将 \"偏好奖励模型\" 的类型改为 topic（与 可验证奖励、奖励黑客 一致），或说明其作为工具的依据。"
+    }
+  ],
+  "lessons": [
+    "事件 participants 必须至少 2 个，且 role 只能是该主体在该事件中的真实语义角色：被拖累的市场指数、提供数据的外部机构、趋势盘点中并列出现的公司，不得占用 object/benchmark/competitor/partner 角色，无法分配真实角色的主体一律移出参与方。",
+    "research 事件类型只用于学术论文与实验性工作；分析师评级调整、投行展望等资本市场动作应归入 trend/funding 等类型，不要用 research 兜底。",
+    "原文只有\"选择/委任 X 为首个评估者、审计方\"这类委任表述、没有双方合作协定时，不要抽 partners_with 关系或 partnership 事件；委任语义应单独表达或留在事件 label 里。"
+  ]
+}
