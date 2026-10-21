@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-21",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "抽取整体事实准确、证据能支撑断言，跨文章连通也做得不错（Anthropic/OpenAI/NVIDIA/OpenShell 等共享节点正常）。主要问题：同一 NVIDIA 硬件在两篇里的规范名不一致（BlueField DPU vs BlueField-4 DPU）导致图无法连通；一篇关系方向颠倒（台湾国安局 targets 中国，与实际信息操弄方向相反）；Medusa 类型错配；另有少数关系过度推断（卖方 agent uses Amazon/Instagram、National Grid partners_with NVIDIA）。",
+  "findings": [
+    {
+      "article_id": "2026-10-21-3",
+      "severity": "medium",
+      "problem": "实体规范名跨文章不一致：文章 0 用 'BlueField-4 DPU'，文章 3 用 'BlueField DPU'，二者实为同一 NVIDIA 安全执行层硬件（文章 0 的 OpenShell 架构里 Sentry 运行于 BlueField-4 DPU；文章 3 说 AI Passport 与 NVIDIA OpenShell 及 NVIDIA BlueField DPU 执行层集成）。不同规范名让两篇文章无法共享这个节点，ServiceNow 的硬件级治理集成与 OpenShell 篇的 DPU 部署在图上是两个孤立点。",
+      "fix": "把两篇并成同一个规范实体，例如规范名定 'BlueField DPU'、别名含 'BlueField-4 DPU'（反之亦可），并让文章 3 与文章 0 的 uses/integrates 关系都挂在同一实体上。"
+    },
+    {
+      "article_id": "2026-10-21-8",
+      "severity": "medium",
+      "problem": "关系 '台湾国安局 --targets--> 中国' 颠倒了行动方向。原文里台湾国安局是发现/向议员报告的一方，实施信息操弄的是中国大陆（经国家媒体、内容农场、AI 视频、网络水军针对台湾选民）。图读出来会变成'台湾国安局瞄准中国大陆'，与新闻相反。",
+      "fix": "删除该关系。若要表达关系，应建模为实施方中国大陆发起的信息操弄，并补 '台湾' 作为受影响实体（如 中国 --conducts--> 信息操弄 --targets--> 台湾），不要让作为监测/报告方的台湾国安局成为 targets 的发起者。"
+    },
+    {
+      "article_id": "2026-10-21-12",
+      "severity": "medium",
+      "problem": "实体 'Medusa' 被标成 type=model，但原文只说'配置 Medusa 头'——Medusa 是投机解码头/方法，不是独立语言模型。",
+      "fix": "将 Medusa 的 type 改为 tool 或 method（与新头/框架类一致），不要以 model 类型进入图谱。"
+    },
+    {
+      "article_id": "2026-10-21-13",
+      "severity": "medium",
+      "problem": "关系 '卖方 agent --uses--> Amazon' 与 '卖方 agent --uses--> Instagram' 与原文不符。原文是'这项研究用亚马逊与 Instagram 的真实工具数据构造市场'——买卖 agent 是模型扮演的，并不'使用'这两个平台；数据来源被错误地挂到了卖方 agent 的动作上。",
+      "fix": "删除这两条 uses 关系，或把 Amazon/Instagram 作为市场构造的数据基底（若体系支持，挂在研究/方法实体上），不要让图读成卖方 agent 在使用亚马逊与 Instagram。"
+    },
+    {
+      "article_id": "2026-10-21-1",
+      "severity": "low",
+      "problem": "关系 'National Grid --partners_with--> NVIDIA' 过度推断。原文只有'National Grid 与 Nvidia 的示范中'（模拟电网事件），示范共同点不足以支撑 partners_with 这般强的合作断言。",
+      "fix": "降级为体现实际事实的关系（如 demo / evaluated 类），或删除；不要仅凭一次示范就断言正式合作关系。"
+    },
+    {
+      "article_id": "2026-10-21-11",
+      "severity": "low",
+      "problem": "事件切分重叠：事件 1 '论文提出 Agent S4' 与事件 2 'Agent S4 在 OSWorld V2 上超越 GPT-5.5 与 Claude Opus 4.8' 高度重复，后者（benchmark 细节）已由 evaluated_on / outperforms 关系与 metrics 完整表达，再立一个独立事件是冗余拆分。",
+      "fix": "合并为一个研究事件即可，把 OSWorld/ScienceBoard 成绩留作关系和 metrics，不另行单列为第二个 launch/research 事件。"
+    }
+  ],
+  "lessons": [
+    "同一硬件或产品在同一天的多篇文章中都出现时，保留一个规范名并把其他拼写加入别名（如 'BlueField DPU' 与 'BlueField-4 DPU' 应为同一实体），保证跨文章可连通。",
+    "安全/地缘新闻里报告方是披露者而非对岸行动的发起者：'X 报告 Y 的操弄/攻击' 不要把方向写成 X 瞄准 Y，应让实际实施方作为 action 的发起主体。",
+    "投机解码头（如 Medusa）与各类框架是方法/工具（tool/method），不是独立语言模型，非模型实体的 type 不要标成 model。"
+  ]
+}

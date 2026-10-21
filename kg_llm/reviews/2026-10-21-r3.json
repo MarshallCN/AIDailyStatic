@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-21",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 81,
+  "summary": "前两轮指出的问题（BlueField 规范名不一致、台湾国安局关系方向颠倒、Medusa 类型错配、arXiv 证据错配、事件重复、漏指标等）均已修复，跨文章打通与关系方向整体扎实。本轮新发现问题集中在正文细节：文章 5 事件摘要把原文的「三大云提供商」写成「四大」，是与原文直接冲突的事实错误；文章 1 的复合 benchmark 事件证据不覆盖自身断言；文章 11 漏抽成本占比数字；另有四处低危精度问题。",
+  "findings": [
+    {
+      "article_id": "2026-10-21-5",
+      "severity": "high",
+      "problem": "事件 1（「Anthropic 因云算力不足转向租赁自有数据中心」）的 summary 写「四大云提供商难以为 Anthropic 提供足够云容量」，但原文（TechCrunch/S-1 泄露）只提 AWS、Google、Microsoft 三家——「Anthropic 正难以从 AWS、Google 和 Microsoft 获得足够云容量，三大云提供商日益把 Claude 制造商视为竞争者而非客户」。「四」这个基数在原文中不存在，且与图中自己的三条 supplies 关系（只有三家）自相矛盾。",
+      "fix": "把 summary 中的「四大云提供商」改为「三大云提供商（AWS、Google、Microsoft）」，与原文及本图关系数一致。"
+    },
+    {
+      "article_id": "2026-10-21-1",
+      "severity": "medium",
+      "problem": "事件 2（benchmark）把三组互相独立的实测压成一个事件：2GW 规模节水 5400 万升、National Grid 电网事件中 Blackwell Ultra 实现最高 40% 功率下调、Lambda 与 Nscale 的性能基准。该事件 evidence 只引用了 Lambda 的 24%/19% 一句，summary 里的 5400 万升、Nscale 49%/37%、40% 功率下调均无对应证据；Blackwell Ultra 以 object 角色挂在性能基准事件里，但它的 40% 是电网调峰演示，与 Lambda/Nscale 吞吐基准无关。",
+      "fix": "按独立断言拆分：节水 5400 万升与 Vera Rubin 100% 液冷归入事件 1（infra，补上「每天可比传统冷却塔系统节省 5400 万升水」作证据）；Blackwell Ultra 40% 功率下调单列为电网互动演示事件（证据引「模拟电网事件时实现了最高 40% 的功率下调」）；benchmark 事件只保留 Lambda 与 Nscale，并分别补各自证据句。"
+    },
+    {
+      "article_id": "2026-10-21-11",
+      "severity": "medium",
+      "problem": "metrics 漏了原文中的成本占比数字：「成本仅分别约为二者的 4.3% 与 1.5%」（相对 GPT-5.5 与 Claude Opus 4.8）。这组数字与成功率同等关键——它是「进化接口更省」论点的证据锚点，只抽成功率会让图读不出成本优势。",
+      "fix": "补两条 metrics：「Agent S4 相对 GPT-5.5 成本占比 约 4.3%」、「Agent S4 相对 Claude Opus 4.8 成本占比 约 1.5%」。"
+    },
+    {
+      "article_id": "2026-10-21-7",
+      "severity": "low",
+      "problem": "事件 summary 写「进攻性 agent 框架遭外泄」，原文是「他们各自把进攻性 agent 框架暴露在开放目录中」——框架是威胁行为者自身（出于疏漏）暴露在开放目录里的，「遭外泄」的被动泄露含义与原文的行动主体和语义不符。",
+      "fix": "改为「进攻性 agent 框架被这些行为者留在开放目录中暴露」一类表述，保留原文「自身暴露/疏漏」的语义，不要用「外泄」。"
+    },
+    {
+      "article_id": "2026-10-21-4",
+      "severity": "low",
+      "problem": "事件 summary 写「软银、MGX 等现有投资人参投」，原文只说「正在洽谈加入」（进行中、未敲定），把洽谈升级成了已参投；两条 invests_in 关系附带的也是「正在洽谈加入」证据。",
+      "fix": "summary 改为「软银、MGX 等现有投资人正在洽谈加入」，保留未定语气；invests_in 关系可保留但 weight 下调并在证据中保留「洽谈中」措辞，不要写成已完成投资。"
+    },
+    {
+      "article_id": "2026-10-21-0",
+      "severity": "low",
+      "problem": "事件 2 summary 明确点名「Anthropic、AWS、Cisco、Meta、Microsoft、OpenAI、ServiceNow 等厂商参与合作」，但实体只抽了 Anthropic、OpenAI、ServiceNow 三个，AWS、Microsoft、Meta 都是同日图中已有的规范实体（文章 5、6），却未在此篇连上参与边，图读不出「十余家厂商」的合作规模。",
+      "fix": "把 AWS、Microsoft、Meta 补为实体并各连一条 NVIDIA --partners_with--> 该厂商边（证据引参与合作名单句）；其余厂商保留在事件 summary 名单即可。"
+    },
+    {
+      "article_id": "2026-10-21-4",
+      "severity": "low",
+      "problem": "metrics 漏了原文中两个关键锚点数字：Anthropic 上市估值之争（「部分投资者主张其上市估值应接近 1.5 万亿美元，而非此前预期的 2 万亿美元」）与 Anthropic 上季度营收 116 亿美元（168 亿的环比基数，用于说明增速放缓）。",
+      "fix": "补两条 metrics：「Anthropic 上市估值主张 约 1.5 万亿美元（原预期 2 万亿）」、「Anthropic 第二季度营收 116 亿美元」。"
+    }
+  ],
+  "lessons": [
+    "事件 summary 里的数量与基数（厂商数、金额、百分比）必须逐字对回原文（如三/四大云提供商、十/二十余家），凭印象近似或照抄记忆都会造成与原文直接冲突的事实错误。",
+    "一篇含多组独立实测/演示的新闻（节水、电网调峰、各厂商吞吐基准）按每次测量拆成独立事件，每个事件的 evidence 只放支撑自身断言的句子，不要把甲演示的数字挂到乙事件的摘要里。",
+    "事件 summary 与关系不得把「正在洽谈/计划/拟」升级为已发生动作（参投、发布、达成），原文未敲定的动作保持未定语气并如实写进证据。"
+  ]
+}

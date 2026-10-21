@@ -1,0 +1,385 @@
+{
+  "date": "2026-10-21",
+  "articles": [
+    {
+      "article_id": "2026-10-21-0",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.95, "evidence": ["Nvidia 今日发布 OpenShell 参考架构"]},
+        {"name": "OpenShell", "type": "tool", "aliases": ["OpenShell 参考架构", "NVIDIA OpenShell"], "confidence": 0.9, "evidence": ["Nvidia 今日发布 OpenShell 参考架构"]},
+        {"name": "Vera Rubin", "type": "hardware", "aliases": ["NVIDIA Vera Rubin"], "confidence": 0.9, "evidence": ["整合 NVIDIA Vera Rubin 基础设施承载模型推理"]},
+        {"name": "Vera CPU", "type": "hardware", "aliases": ["NVIDIA Vera CPU"], "confidence": 0.85, "evidence": ["NVIDIA Vera CPU 运行 agent 外壳与工具调用"]},
+        {"name": "BlueField-4 DPU", "type": "hardware", "aliases": ["NVIDIA BlueField-4 DPU"], "confidence": 0.9, "evidence": ["NVIDIA BlueField-4 DPU 上的统一安全软件框架 NVIDIA Sentry"]},
+        {"name": "NVIDIA Sentry", "type": "tool", "aliases": ["Sentry"], "confidence": 0.9, "evidence": ["由 NVIDIA BlueField-4 DPU 上的统一安全软件框架 NVIDIA Sentry 提供带外的持续 agent 行为监控与芯片内策略执行"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic、AWS、Cisco、CrowdStrike、Dell、Google Cloud、HPE、IBM、Meta、Microsoft、OpenAI、Palo Alto Networks、Perplexity、SAP、ServiceNow、Siemens、SpaceX Super Intelligence 等均参与合作"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic、AWS、Cisco、CrowdStrike、Dell、Google Cloud、HPE、IBM、Meta、Microsoft、OpenAI、Palo Alto Networks、Perplexity、SAP、ServiceNow、Siemens、SpaceX Super Intelligence 等均参与合作"]},
+        {"name": "ServiceNow", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Perplexity、SAP、ServiceNow、Siemens、SpaceX Super Intelligence 等均参与合作"]}
+      ],
+      "events": [
+        {"type": "launch", "label": "Nvidia 发布 OpenShell 参考架构", "summary": "Nvidia 在 GTC Berlin 发布 OpenShell 参考架构，把运行时保护扩展为覆盖推理、agent 外壳与芯片级策略执行的工业级智能体基础设施。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "OpenShell", "type": "tool", "role": "object"}], "evidence": ["Nvidia 今日发布 OpenShell 参考架构"]},
+        {"type": "partnership", "label": "Nvidia 与 Anthropic、OpenAI 等十余家厂商共建 OpenShell", "summary": "OpenShell 架构运行在主流操作系统上，Anthropic、AWS、Cisco、Meta、Microsoft、OpenAI、ServiceNow 等厂商参与合作。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "partner"}, {"name": "OpenAI", "type": "company", "role": "partner"}, {"name": "ServiceNow", "type": "company", "role": "partner"}], "evidence": ["Anthropic、AWS、Cisco、CrowdStrike、Dell、Google Cloud、HPE、IBM、Meta、Microsoft、OpenAI、Palo Alto Networks、Perplexity、SAP、ServiceNow、Siemens、SpaceX Super Intelligence 等均参与合作"]}
+      ],
+      "relations": [
+        {"source": "OpenShell", "target": "Vera Rubin", "type": "uses", "weight": 0.8, "evidence": ["整合 NVIDIA Vera Rubin 基础设施承载模型推理"]},
+        {"source": "OpenShell", "target": "Vera CPU", "type": "uses", "weight": 0.8, "evidence": ["NVIDIA Vera CPU 运行 agent 外壳与工具调用"]},
+        {"source": "OpenShell", "target": "BlueField-4 DPU", "type": "uses", "weight": 0.8, "evidence": ["NVIDIA BlueField-4 DPU 上的统一安全软件框架 NVIDIA Sentry"]},
+        {"source": "OpenShell", "target": "NVIDIA Sentry", "type": "uses", "weight": 0.8, "evidence": ["由 NVIDIA BlueField-4 DPU 上的统一安全软件框架 NVIDIA Sentry 提供带外的持续 agent 行为监控与芯片内策略执行"]},
+        {"source": "OpenShell", "target": "NVIDIA", "type": "developed_by", "weight": 0.7, "evidence": ["Nvidia 今日发布 OpenShell 参考架构"]},
+        {"source": "NVIDIA", "target": "Anthropic", "type": "partners_with", "weight": 0.6, "evidence": ["Meta、Microsoft、OpenAI、Palo Alto Networks、Perplexity、SAP、ServiceNow、Siemens、SpaceX Super Intelligence 等均参与合作"]},
+        {"source": "NVIDIA", "target": "OpenAI", "type": "partners_with", "weight": 0.6, "evidence": ["Meta、Microsoft、OpenAI、Palo Alto Networks、Perplexity、SAP、ServiceNow、Siemens、SpaceX Super Intelligence 等均参与合作"]},
+        {"source": "NVIDIA", "target": "ServiceNow", "type": "partners_with", "weight": 0.6, "evidence": ["Perplexity、SAP、ServiceNow、Siemens、SpaceX Super Intelligence 等均参与合作"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "agent 安全被 Nvidia 从软件层下沉到硅层，治理策略由软件与芯片共同强制执行，安全边界的物理落点从控制塔下移到 DPU。"
+    },
+    {
+      "article_id": "2026-10-21-1",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.95, "evidence": ["Nvidia 展示欧洲 AI 云与设计、建筑、能源、冷却提供商正用 DSX 平台构建并运营面向企业、开发者与政府的基础设施"]},
+        {"name": "DSX", "type": "product", "aliases": ["Nvidia DSX", "DSX 平台"], "confidence": 0.9, "evidence": ["正用 DSX 平台构建并运营面向企业、开发者与政府的基础设施"]},
+        {"name": "Vera Rubin", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["Vera Rubin 基础设施支持最高 45 摄氏度的 100% 液冷"]},
+        {"name": "Lambda", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Lambda 在 HGX B200 集群上的 DSX MaxLPS 概念验证中"]},
+        {"name": "Nscale", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Nscale 在冰岛 AI 工厂基于四柜 GB300 NVL72 的评估中"]},
+        {"name": "Blackwell Ultra", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["Blackwell Ultra 集群在模拟电网事件时实现了最高 40% 的功率下调"]}
+      ],
+      "events": [
+        {"type": "infra", "label": "欧洲 AI 云生态用 Nvidia DSX 构建 AI 工厂", "summary": "欧洲 AI 云与设计、能源、冷却提供商用 DSX 平台构建运营面向企业、开发者与政府的基础设施，Vera Rubin 支持 100% 液冷。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "DSX", "type": "product", "role": "object"}], "evidence": ["欧洲 AI 云与设计、建筑、能源、冷却提供商正用 DSX 平台构建并运营面向企业、开发者与政府的基础设施"]},
+        {"type": "benchmark", "label": "DSX 在 2GW 规模节水并提升单位功率产出", "summary": "2GW 规模下 DSX 每天比传统冷却塔节水 5400 万升；固定功率预算下 Lambda 吞吐提升 24%、Nscale 推理吞吐提高 49%。", "participants": [{"name": "DSX", "type": "product", "role": "subject"}, {"name": "Nscale", "type": "company", "role": "benchmark"}, {"name": "Lambda", "type": "company", "role": "benchmark"}, {"name": "Blackwell Ultra", "type": "hardware", "role": "object"}], "evidence": ["固定功率预算下集群 token 吞吐提升 24%、GPU 容量提升 19%"]},
+        {"type": "launch", "label": "Nvidia 将 Cluster Readiness Engine 等三个 DSX OS 组件纳入开发者预览", "summary": "Nvidia 新增 Cluster Readiness Engine 等三个 DSX OS 组件进入开发者预览，扩充 DSX 平台工具链。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "DSX", "type": "product", "role": "object"}], "evidence": ["Nvidia 还新增 Cluster Readiness Engine 等三个 DSX OS 组件进入开发者预览"]}
+      ],
+      "relations": [
+        {"source": "DSX", "target": "NVIDIA", "type": "developed_by", "weight": 0.7, "evidence": ["欧洲 AI 云与设计、建筑、能源、冷却提供商正用 DSX 平台构建并运营面向企业、开发者与政府的基础设施"]},
+        {"source": "DSX", "target": "Vera Rubin", "type": "uses", "weight": 0.7, "evidence": ["Vera Rubin 基础设施支持最高 45 摄氏度的 100% 液冷"]},
+        {"source": "Lambda", "target": "DSX", "type": "uses", "weight": 0.6, "evidence": ["Lambda 在 HGX B200 集群上的 DSX MaxLPS 概念验证中"]},
+        {"source": "Nscale", "target": "DSX", "type": "uses", "weight": 0.6, "evidence": ["Nscale 在冰岛 AI 工厂基于四柜 GB300 NVL72 的评估中"]}
+      ],
+      "metrics": [
+        {"name": "Vera Rubin 最高支撑环境温度", "value": "45 摄氏度"},
+        {"name": "DSX 2GW 规模日节水量", "value": "5400 万升"},
+        {"name": "Blackwell Ultra 集群功率下调幅度", "value": "最高 40%"},
+        {"name": "Lambda DSX 集群 token 吞吐提升", "value": "24%"},
+        {"name": "Lambda DSX 集群 GPU 容量提升", "value": "19%"},
+        {"name": "Nscale 推理吞吐提升", "value": "49%"},
+        {"name": "Nscale 受管 GPU 容量提升（264 千瓦功率预算）", "value": "37%"}
+      ],
+      "why_it_matters": "数据中心扩建的叙事重心从芯片转向功率与冷却，DSX 以单位功率产出和功耗可调度为卖点，节水 5400 万升/天成为可量化的选型指标。"
+    },
+    {
+      "article_id": "2026-10-21-2",
+      "entities": [
+        {"name": "Dell", "type": "company", "aliases": ["Dell Technologies"], "confidence": 0.95, "evidence": ["Dell 强调其与 Nvidia 合作的 AI Factory"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.9, "evidence": ["其与 Nvidia 合作的 AI Factory"]},
+        {"name": "Dell AI Factory", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Dell 强调其与 Nvidia 合作的 AI Factory"]},
+        {"name": "Reflection", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Reflection 的 Beam 模型现已在 Dell AI Factory 上可用"]},
+        {"name": "Beam", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Reflection 的 Beam 模型现已在 Dell AI Factory 上可用"]},
+        {"name": "Dell Deskside Agentic AI", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Dell Deskside Agentic AI 引入可扩展到 1000 台以上系统的参考模板"]},
+        {"name": "Mistral", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Mistral 的 agentic 平台与知识助手等陆续落地"]}
+      ],
+      "events": [
+        {"type": "launch", "label": "Dell 扩展 AI Factory 并推出桌面级 agentic AI 新品", "summary": "Dell 在 GTC Berlin 宣布超 6500 家企业采用 AI Factory，推出 Deskside Agentic AI 参考模板、模块化数据中心与多款新品。", "participants": [{"name": "Dell", "type": "company", "role": "subject"}, {"name": "Dell AI Factory", "type": "product", "role": "object"}, {"name": "Dell Deskside Agentic AI", "type": "product", "role": "object"}], "evidence": ["目前已超过 6500 家企业采用 Dell AI Factory"]},
+        {"type": "partnership", "label": "Beam 与 Mistral 加入 Dell AI Factory 生态", "summary": "Reflection 的 Beam 模型与 Mistral 的 agentic 平台等陆续在 Dell AI Factory 上落地。", "participants": [{"name": "Dell", "type": "company", "role": "subject"}, {"name": "Beam", "type": "model", "role": "partner"}, {"name": "Reflection", "type": "company", "role": "partner"}, {"name": "Mistral", "type": "company", "role": "partner"}], "evidence": ["Reflection 的 Beam 模型现已在 Dell AI Factory 上可用"]}
+      ],
+      "relations": [
+        {"source": "Dell AI Factory", "target": "Dell", "type": "developed_by", "weight": 0.7, "evidence": ["Dell 强调其与 Nvidia 合作的 AI Factory"]},
+        {"source": "Dell AI Factory", "target": "NVIDIA", "type": "integrates", "weight": 0.7, "evidence": ["Dell 强调其与 Nvidia 合作的 AI Factory"]},
+        {"source": "Beam", "target": "Dell AI Factory", "type": "integrates", "weight": 0.8, "evidence": ["Reflection 的 Beam 模型现已在 Dell AI Factory 上可用"]},
+        {"source": "Beam", "target": "Reflection", "type": "developed_by", "weight": 0.7, "evidence": ["Reflection 的 Beam 模型现已在 Dell AI Factory 上可用"]},
+        {"source": "Dell", "target": "NVIDIA", "type": "partners_with", "weight": 0.7, "evidence": ["Dell 强调其与 Nvidia 合作的 AI Factory"]},
+        {"source": "Dell Deskside Agentic AI", "target": "Dell", "type": "developed_by", "weight": 0.6, "evidence": ["Dell Deskside Agentic AI 引入可扩展到 1000 台以上系统的参考模板"]},
+        {"source": "Mistral", "target": "Dell AI Factory", "type": "integrates", "weight": 0.6, "evidence": ["Mistral 的 agentic 平台与知识助手等陆续落地"]}
+      ],
+      "metrics": [{"name": "采用 AI Factory 的企业数", "value": "超 6500 家"}],
+      "why_it_matters": "企业 AI 采购进入'产出可衡量业务成果'阶段，Dell 把 agent 应用从桌面一路推到数据中心，agent 基础设施成为 B 端新的规模化战场。"
+    },
+    {
+      "article_id": "2026-10-21-3",
+      "entities": [
+        {"name": "ServiceNow", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["ServiceNow 今日宣布 Arc—一个能承担日常工作、长期运行的个人企业 agent—正式通用可用（GA）"]},
+        {"name": "Arc", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["ServiceNow 今日宣布 Arc—一个能承担日常工作、长期运行的个人企业 agent—正式通用可用（GA）"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.9, "evidence": ["ServiceNow AI 平台与 NVIDIA OpenShell 参考架构上构建端到端 AI 治理"]},
+        {"name": "OpenShell", "type": "tool", "aliases": ["NVIDIA OpenShell"], "confidence": 0.9, "evidence": ["Arc 能在 NVIDIA OpenShell 安全运行时内或员工桌面上运行"]},
+        {"name": "BlueField-4 DPU", "type": "hardware", "aliases": ["BlueField DPU", "NVIDIA BlueField DPU", "NVIDIA BlueField-4 DPU"], "confidence": 0.9, "evidence": ["AI Passport 将与 NVIDIA OpenShell 及 NVIDIA BlueField DPU 执行层集成"]},
+        {"name": "Super Intelligence Control Tower", "type": "tool", "aliases": ["Control Tower"], "confidence": 0.85, "evidence": ["由 ServiceNow Super Intelligence Control Tower 治理"]},
+        {"name": "AI Passport", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["ServiceNow 近期推出的 AI Passport 将与 NVIDIA OpenShell 及 NVIDIA BlueField DPU 执行层集成"]}
+      ],
+      "events": [
+        {"type": "launch", "label": "ServiceNow 让个人企业 agent Arc 正式通用可用", "summary": "ServiceNow 宣布 Arc 通用可用，由 Super Intelligence Control Tower 治理并经 NVIDIA OpenShell 强制执行，随时间积累记忆、发展技能。", "participants": [{"name": "ServiceNow", "type": "company", "role": "subject"}, {"name": "Arc", "type": "product", "role": "object"}], "evidence": ["ServiceNow 今日宣布 Arc—一个能承担日常工作、长期运行的个人企业 agent—正式通用可用（GA）"]},
+        {"type": "partnership", "label": "ServiceNow 与 NVIDIA 构建软硬双层 AI 治理", "summary": "ServiceNow 的 AI Passport 与 NVIDIA OpenShell 及 BlueField-4 DPU 执行层集成，Control Tower 治理一次、软件与芯片共同执行。", "participants": [{"name": "ServiceNow", "type": "company", "role": "subject"}, {"name": "NVIDIA", "type": "company", "role": "partner"}, {"name": "AI Passport", "type": "product", "role": "object"}], "evidence": ["AI Passport 将与 NVIDIA OpenShell 及 NVIDIA BlueField DPU 执行层集成"]}
+      ],
+      "relations": [
+        {"source": "Arc", "target": "ServiceNow", "type": "developed_by", "weight": 0.8, "evidence": ["ServiceNow 今日宣布 Arc—一个能承担日常工作、长期运行的个人企业 agent—正式通用可用（GA）"]},
+        {"source": "Arc", "target": "OpenShell", "type": "uses", "weight": 0.7, "evidence": ["Arc 能在 NVIDIA OpenShell 安全运行时内或员工桌面上运行"]},
+        {"source": "AI Passport", "target": "OpenShell", "type": "integrates", "weight": 0.8, "evidence": ["AI Passport 将与 NVIDIA OpenShell 及 NVIDIA BlueField DPU 执行层集成"]},
+        {"source": "AI Passport", "target": "BlueField-4 DPU", "type": "integrates", "weight": 0.8, "evidence": ["AI Passport 将与 NVIDIA OpenShell 及 NVIDIA BlueField DPU 执行层集成"]},
+        {"source": "ServiceNow", "target": "NVIDIA", "type": "partners_with", "weight": 0.7, "evidence": ["ServiceNow AI 平台与 NVIDIA OpenShell 参考架构上构建端到端 AI 治理"]},
+        {"source": "Super Intelligence Control Tower", "target": "Arc", "type": "regulates", "weight": 0.7, "evidence": ["由 ServiceNow Super Intelligence Control Tower 治理"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "ServiceNow 把 AI 治理推进到硬件层，AI Passport 由芯片执行策略，企业自主 agent 的治理从'软件说了算'转向软硬双层强制。"
+    },
+    {
+      "article_id": "2026-10-21-4",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 正在加速争夺投资者承诺"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["这与两家前沿实验室日益争夺同一批投资者基础有关"]},
+        {"name": "SoftBank Group", "type": "company", "aliases": ["软银集团"], "confidence": 0.9, "evidence": ["软银集团、阿布扎比 MGX 等现有投资人正在洽谈加入"]},
+        {"name": "MGX", "type": "company", "aliases": ["阿布扎比 MGX"], "confidence": 0.85, "evidence": ["软银集团、阿布扎比 MGX 等现有投资人正在洽谈加入"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["预计在 GPT-6 Astra 发布后让年底营收达到 700 亿美元"]}
+      ],
+      "events": [
+        {"type": "funding", "label": "OpenAI 加速筹资约 300 亿美元", "summary": "OpenAI 抢在 Anthropic 11 月上市前寻求约 300 亿美元融资，潜在估值超 1.4 万亿美元，软银、MGX 等现有投资人参投。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "SoftBank Group", "type": "company", "role": "funder"}, {"name": "MGX", "type": "company", "role": "funder"}], "evidence": ["OpenAI 正在加速争夺投资者承诺，赶在竞争对手 Anthropic 预计 11 月中旬的上市之前"]}
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "Anthropic", "type": "competes_with", "weight": 0.8, "evidence": ["这与两家前沿实验室日益争夺同一批投资者基础有关"]},
+        {"source": "SoftBank Group", "target": "OpenAI", "type": "invests_in", "weight": 0.8, "evidence": ["软银集团、阿布扎比 MGX 等现有投资人正在洽谈加入"]},
+        {"source": "MGX", "target": "OpenAI", "type": "invests_in", "weight": 0.7, "evidence": ["软银集团、阿布扎比 MGX 等现有投资人正在洽谈加入"]},
+        {"source": "GPT-6 Astra", "target": "OpenAI", "type": "developed_by", "weight": 0.6, "evidence": ["预计在 GPT-6 Astra 发布后让年底营收达到 700 亿美元"]}
+      ],
+      "metrics": [
+        {"name": "OpenAI 拟融资金额", "value": "约 300 亿美元"},
+        {"name": "OpenAI 潜在估值", "value": "超过 1.4 万亿美元"},
+        {"name": "OpenAI 年化营收目标", "value": "约 500 亿美元"},
+        {"name": "OpenAI 年底营收预期", "value": "700 亿美元"},
+        {"name": "Anthropic 第三季度营收", "value": "168 亿美元"}
+      ],
+      "why_it_matters": "两大万亿实验室为同一批资本短兵相接，OpenAI 抢在 Anthropic 上市披露前锁定 300 亿美元，头部 AI 融资出现先手卡位的竞赛节奏。"
+    },
+    {
+      "article_id": "2026-10-21-5",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 正难以从 AWS、Google 和 Microsoft 获得足够云容量"]},
+        {"name": "AWS", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 正难以从 AWS、Google 和 Microsoft 获得足够云容量"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["Anthropic 正难以从 AWS、Google 和 Microsoft 获得足够云容量"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.9, "evidence": ["Anthropic 正难以从 AWS、Google 和 Microsoft 获得足够云容量"]},
+        {"name": "Claude", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Claude 制造商"]}
+      ],
+      "events": [
+        {"type": "infra", "label": "Anthropic 因云算力不足转向租赁自有数据中心", "summary": "四大云提供商难以为 Anthropic 提供足够云容量，Anthropic 只得租赁自有数据中心并借助第三方数据中心运营者。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "AWS", "type": "company", "role": "object"}], "evidence": ["Anthropic 正难以从 AWS、Google 和 Microsoft 获得足够云容量"]},
+        {"type": "funding", "label": "Anthropic 计划 11 月上市并披露巨额亏损", "summary": "S-1 文件披露上半年净亏损 807 亿美元，Anthropic 据称计划 11 月上市。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}], "evidence": ["上半年 Anthropic 净亏损 807 亿美元"]}
+      ],
+      "relations": [
+        {"source": "AWS", "target": "Anthropic", "type": "supplies", "weight": 0.8, "evidence": ["Anthropic 正难以从 AWS、Google 和 Microsoft 获得足够云容量"]},
+        {"source": "Google", "target": "Anthropic", "type": "supplies", "weight": 0.8, "evidence": ["Anthropic 正难以从 AWS、Google 和 Microsoft 获得足够云容量"]},
+        {"source": "Microsoft", "target": "Anthropic", "type": "supplies", "weight": 0.8, "evidence": ["Anthropic 正难以从 AWS、Google 和 Microsoft 获得足够云容量"]},
+        {"source": "Anthropic", "target": "AWS", "type": "competes_with", "weight": 0.7, "evidence": ["三大云提供商日益把 Claude 制造商视为竞争者而非客户"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.7, "evidence": ["三大云提供商日益把 Claude 制造商视为竞争者而非客户"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 预计云合同支出", "value": "超过 7500 亿美元"},
+        {"name": "Anthropic 上半年净亏损", "value": "807 亿美元"},
+        {"name": "Anthropic 上半年营收", "value": "163 亿美元"},
+        {"name": "Anthropic 第三季度营收环比增速", "value": "45%"}
+      ],
+      "why_it_matters": "前沿实验室与超大规模云厂商'既买算力又竞争'的结构性紧张被写进 S-1，Anthropic 巨额云支出仍嫌不足而转向自建数据中心。"
+    },
+    {
+      "article_id": "2026-10-21-6",
+      "entities": [
+        {"name": "SentinelOne", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["SentinelOne 今日推出 Singularity Agentic Detection and Response（ADR）"]},
+        {"name": "Singularity ADR", "type": "product", "aliases": ["Singularity Agentic Detection and Response"], "confidence": 0.9, "evidence": ["SentinelOne 今日推出 Singularity Agentic Detection and Response（ADR）"]},
+        {"name": "Salesforce", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Salesforce Agentforce、Microsoft Copilot Studio、OpenAI ChatGPT workspace agents 与 Anthropic Claude managed agents"]},
+        {"name": "Agentforce", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["覆盖范围超出 MCP 网关，延伸到 Salesforce Agentforce"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.9, "evidence": ["Microsoft Copilot Studio、OpenAI ChatGPT workspace agents"]},
+        {"name": "Copilot Studio", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Microsoft Copilot Studio、OpenAI ChatGPT workspace agents 与 Anthropic Claude managed agents"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI ChatGPT workspace agents 与 Anthropic Claude managed agents"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI ChatGPT workspace agents 与 Anthropic Claude managed agents"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["与 Anthropic Claude managed agents"]},
+        {"name": "Claude", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic Claude managed agents"]},
+        {"name": "MCP", "type": "tool", "aliases": ["MCP 服务器"], "confidence": 0.85, "evidence": ["对端点、SaaS 与云上每个工具、技能、连接器和 MCP 服务器及其权限和背后员工的完整盘点"]}
+      ],
+      "events": [
+        {"type": "launch", "label": "SentinelOne 推出 Singularity Agentic Detection and Response", "summary": "Singularity ADR 发现 AI agent、约束其权限、深度监控并实时检测叫停，覆盖 MCP 及各大厂商的 agent 平台。", "participants": [{"name": "SentinelOne", "type": "company", "role": "subject"}, {"name": "Singularity ADR", "type": "product", "role": "object"}], "evidence": ["SentinelOne 今日推出 Singularity Agentic Detection and Response（ADR）"]}
+      ],
+      "relations": [
+        {"source": "Singularity ADR", "target": "SentinelOne", "type": "developed_by", "weight": 0.8, "evidence": ["SentinelOne 今日推出 Singularity Agentic Detection and Response（ADR）"]},
+        {"source": "Singularity ADR", "target": "Agentforce", "type": "targets", "weight": 0.7, "evidence": ["覆盖范围超出 MCP 网关，延伸到 Salesforce Agentforce"]},
+        {"source": "Singularity ADR", "target": "Copilot Studio", "type": "targets", "weight": 0.7, "evidence": ["Microsoft Copilot Studio、OpenAI ChatGPT workspace agents 与 Anthropic Claude managed agents"]},
+        {"source": "Singularity ADR", "target": "ChatGPT", "type": "targets", "weight": 0.7, "evidence": ["OpenAI ChatGPT workspace agents 与 Anthropic Claude managed agents"]},
+        {"source": "Singularity ADR", "target": "Claude", "type": "targets", "weight": 0.7, "evidence": ["Anthropic Claude managed agents"]},
+        {"source": "Singularity ADR", "target": "MCP", "type": "targets", "weight": 0.6, "evidence": ["对端点、SaaS 与云上每个工具、技能、连接器和 MCP 服务器及其权限和背后员工的完整盘点"]},
+        {"source": "Agentforce", "target": "Salesforce", "type": "developed_by", "weight": 0.6, "evidence": ["Salesforce Agentforce、Microsoft Copilot Studio、OpenAI ChatGPT workspace agents 与 Anthropic Claude managed agents"]},
+        {"source": "Copilot Studio", "target": "Microsoft", "type": "developed_by", "weight": 0.6, "evidence": ["Microsoft Copilot Studio、OpenAI ChatGPT workspace agents 与 Anthropic Claude managed agents"]},
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.6, "evidence": ["OpenAI ChatGPT workspace agents 与 Anthropic Claude managed agents"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.6, "evidence": ["Anthropic Claude managed agents"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "安全厂商把 agent 当作一等公民治理，ADR 从发现与治理推进到实时检测与叫停，被纳入执行图，agent 安全由此成为一个独立新品类。"
+    },
+    {
+      "article_id": "2026-10-21-7",
+      "entities": [
+        {"name": "CrowdStrike", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["CrowdStrike 的 Counter Adversary Operations 团队发布研究"]},
+        {"name": "Counter Adversary Operations", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["CrowdStrike 的 Counter Adversary Operations 团队发布研究"]},
+        {"name": "CrowdStrike Intelligence", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["CrowdStrike Intelligence 记录了多起威胁行为者"]}
+      ],
+      "events": [
+        {"type": "security", "label": "CrowdStrike 披露四个此前未报告的威胁行为者", "summary": "Counter Adversary Operations 详述四个此前未报告、未具名的威胁行为者：进攻性 agent 框架遭外泄，暴露 AI agent 正被用于自主决策并执行命令。", "participants": [{"name": "CrowdStrike", "type": "company", "role": "subject"}, {"name": "Counter Adversary Operations", "type": "organization", "role": "subject"}], "evidence": ["详述四个此前未报告的威胁行为者"]}
+      ],
+      "relations": [
+        {"source": "Counter Adversary Operations", "target": "CrowdStrike", "type": "affiliated_with", "weight": 0.7, "evidence": ["CrowdStrike 的 Counter Adversary Operations 团队发布研究"]},
+        {"source": "CrowdStrike Intelligence", "target": "CrowdStrike", "type": "affiliated_with", "weight": 0.6, "evidence": ["CrowdStrike Intelligence 记录了多起威胁行为者"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "攻击者一侧已把 AI agent 用于自主决策与执行命令且暴露了进攻性框架，'不受控 agent'进入真实攻击面，防御必须同样 agent 化。"
+    },
+    {
+      "article_id": "2026-10-21-8",
+      "entities": [
+        {"name": "台湾国安局", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["台湾国安局本周向议员报告称"]},
+        {"name": "中国", "type": "organization", "aliases": ["中国大陆", "北京"], "confidence": 0.9, "evidence": ["中国大陆 2026 年前九个月针对台湾散布了超过 250 万条争议或虚假信息"]},
+        {"name": "Facebook", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["主要经 Facebook、Threads、YouTube 及网络论坛分发"]},
+        {"name": "Threads", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["主要经 Facebook、Threads、YouTube 及网络论坛分发"]},
+        {"name": "YouTube", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["主要经 Facebook、Threads、YouTube 及网络论坛分发"]},
+        {"name": "台湾", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["中国大陆 2026 年前九个月针对台湾散布了超过 250 万条争议或虚假信息"]}
+      ],
+      "events": [
+        {"type": "security", "label": "台湾国安局报告中国用 AI 在 9 个月内散布超 250 万条虚假信息", "summary": "中国 2026 年前九个月针对台湾散布超 250 万条争议或虚假信息，较去年同期约 169 万条增长约 48%，并扩大使用 AI 操控信息。", "participants": [{"name": "台湾国安局", "type": "organization", "role": "subject"}, {"name": "中国", "type": "organization", "role": "object"}], "evidence": ["中国大陆 2026 年前九个月针对台湾散布了超过 250 万条争议或虚假信息"]}
+      ],
+      "relations": [
+        {"source": "中国", "target": "台湾", "type": "targets", "weight": 0.8, "evidence": ["中国大陆 2026 年前九个月针对台湾散布了超过 250 万条争议或虚假信息"]},
+        {"source": "中国", "target": "Facebook", "type": "uses", "weight": 0.7, "evidence": ["主要经 Facebook、Threads、YouTube 及网络论坛分发"]},
+        {"source": "中国", "target": "Threads", "type": "uses", "weight": 0.6, "evidence": ["主要经 Facebook、Threads、YouTube 及网络论坛分发"]},
+        {"source": "中国", "target": "YouTube", "type": "uses", "weight": 0.7, "evidence": ["主要经 Facebook、Threads、YouTube 及网络论坛分发"]}
+      ],
+      "metrics": [
+        {"name": "中国散布虚假/争议信息条数", "value": "超过 250 万条"},
+        {"name": "去年同期虚假/争议信息条数", "value": "约 169 万条"},
+        {"name": "虚假信息同比增幅", "value": "约 48%"}
+      ],
+      "why_it_matters": "受监管的信息战进入 AI 常态化，从静态假消息升级为可规模化、个性化、能分析选民数据的内容生产，检测与归因门槛被抬高。"
+    },
+    {
+      "article_id": "2026-10-21-9",
+      "entities": [
+        {"name": "Hugging Face", "type": "company", "aliases": ["HF"], "confidence": 0.95, "evidence": ["Hugging Face 宣布其核心库现可在 Google TPU 上原生运行"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["Google 还发布了基于 TorchTPU 的 vLLM 与 SGLang 推理引擎版本"]},
+        {"name": "TorchTPU", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["这由 TorchTPU 实现—它把 TPU 添加为 PyTorch 的一个设备"]},
+        {"name": "TPU", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["Hugging Face 宣布其核心库现可在 Google TPU 上原生运行"]},
+        {"name": "vLLM", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Google 还发布了基于 TorchTPU 的 vLLM 与 SGLang 推理引擎版本"]},
+        {"name": "SGLang", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Google 还发布了基于 TorchTPU 的 vLLM 与 SGLang 推理引擎版本"]},
+        {"name": "Qwen3-30B-A3B", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["使用内核后 Qwen3-30B-A3B 的文本生成比默认实现快 21.5 倍"]},
+        {"name": "Gemma 4 26B-A4B", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Gemma 4 26B-A4B 快 12.8 倍"]},
+        {"name": "JAX", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["另一条路则是学习 Google 自家的 JAX 框架"]},
+        {"name": "PyTorch", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["它把 TPU 添加为 PyTorch 的一个设备"]}
+      ],
+      "events": [
+        {"type": "launch", "label": "Hugging Face 模型原生运行于 Google TPU", "summary": "Hugging Face 核心库通过 TorchTPU 在 Google TPU 上原生运行，单条命令安装，速度提升最高 21 倍以上。", "participants": [{"name": "Hugging Face", "type": "company", "role": "subject"}, {"name": "TorchTPU", "type": "tool", "role": "object"}], "evidence": ["Hugging Face 宣布其核心库现可在 Google TPU 上原生运行"]},
+        {"type": "launch", "label": "Google 发布基于 TorchTPU 的 vLLM 与 SGLang 推理引擎", "summary": "Google 同日发布基于 TorchTPU 的 vLLM 与 SGLang 版本，此前它们只能在 TPU 上通过 JAX 运行。", "participants": [{"name": "Google", "type": "company", "role": "subject"}, {"name": "vLLM", "type": "tool", "role": "object"}, {"name": "SGLang", "type": "tool", "role": "object"}], "evidence": ["Google 还发布了基于 TorchTPU 的 vLLM 与 SGLang 推理引擎版本"]}
+      ],
+      "relations": [
+        {"source": "Hugging Face", "target": "TorchTPU", "type": "integrates", "weight": 0.8, "evidence": ["Hugging Face 宣布其核心库现可在 Google TPU 上原生运行"]},
+        {"source": "TorchTPU", "target": "TPU", "type": "uses", "weight": 0.8, "evidence": ["它把 TPU 添加为 PyTorch 的一个设备"]},
+        {"source": "TorchTPU", "target": "PyTorch", "type": "integrates", "weight": 0.7, "evidence": ["它把 TPU 添加为 PyTorch 的一个设备"]},
+        {"source": "Qwen3-30B-A3B", "target": "TPU", "type": "uses", "weight": 0.6, "evidence": ["使用内核后 Qwen3-30B-A3B 的文本生成比默认实现快 21.5 倍"]},
+        {"source": "Gemma 4 26B-A4B", "target": "TPU", "type": "uses", "weight": 0.6, "evidence": ["Gemma 4 26B-A4B 快 12.8 倍"]},
+        {"source": "vLLM", "target": "TorchTPU", "type": "built_on", "weight": 0.7, "evidence": ["Google 还发布了基于 TorchTPU 的 vLLM 与 SGLang 推理引擎版本"]},
+        {"source": "SGLang", "target": "TorchTPU", "type": "built_on", "weight": 0.7, "evidence": ["Google 还发布了基于 TorchTPU 的 vLLM 与 SGLang 推理引擎版本"]},
+        {"source": "JAX", "target": "Google", "type": "developed_by", "weight": 0.6, "evidence": ["另一条路则是学习 Google 自家的 JAX 框架"]}
+      ],
+      "metrics": [
+        {"name": "Qwen3-30B-A3B TPU 文本生成加速倍率", "value": "21.5 倍"},
+        {"name": "Gemma 4 26B-A4B TPU 文本生成加速倍率", "value": "12.8 倍"}
+      ],
+      "why_it_matters": "Google 用 TorchTPU 把开放模型生态拉向自家算力，与 AWS TorchNeuron 攻 Nvidia 软件护城河同构，算力竞争战场下移到框架层。"
+    },
+    {
+      "article_id": "2026-10-21-10",
+      "entities": [
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.95, "evidence": ["DeepSeek 上传了驱动其生产 API、网站和应用所用的确切 FP8 权重（DeepSeek-V4.1-Flash-1017）"]},
+        {"name": "DeepSeek-V4.1-Flash-1017", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["确切 FP8 权重（DeepSeek-V4.1-Flash-1017）"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HF"], "confidence": 0.9, "evidence": ["并在登上 Hugging Face 后迅速成为当日趋势第一的模型"]},
+        {"name": "FP8", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["确切 FP8 权重（DeepSeek-V4.1-Flash-1017）"]}
+      ],
+      "events": [
+        {"type": "open_source", "label": "DeepSeek 以 MIT 许可上传生产 FP8 权重", "summary": "DeepSeek 把驱动其生产 API 的确切 FP8 权重以 MIT 许可上传，一周内成为 Hugging Face 当日排名第一的最热模型。", "participants": [{"name": "DeepSeek", "type": "company", "role": "subject"}, {"name": "DeepSeek-V4.1-Flash-1017", "type": "model", "role": "object"}, {"name": "Hugging Face", "type": "company", "role": "partner"}], "evidence": ["以 MIT 许可发布、完全可用于商业"]}
+      ],
+      "relations": [
+        {"source": "DeepSeek-V4.1-Flash-1017", "target": "DeepSeek", "type": "developed_by", "weight": 0.8, "evidence": ["DeepSeek 上传了驱动其生产 API、网站和应用所用的确切 FP8 权重（DeepSeek-V4.1-Flash-1017）"]},
+        {"source": "DeepSeek-V4.1-Flash-1017", "target": "DeepSeek", "type": "released_by", "weight": 0.8, "evidence": ["以 MIT 许可发布、完全可用于商业"]},
+        {"source": "DeepSeek-V4.1-Flash-1017", "target": "FP8", "type": "uses", "weight": 0.6, "evidence": ["确切 FP8 权重（DeepSeek-V4.1-Flash-1017）"]}
+      ],
+      "metrics": [
+        {"name": "模型 3 天下载量", "value": "约 17,900 次"},
+        {"name": "模型获得点赞数", "value": "1,682 个"},
+        {"name": "模型趋势分", "value": "约 1,531"}
+      ],
+      "why_it_matters": "DeepSeek 把线上实际运行的 FP8 权重原样开源，让'开放权重=可独立审查'从口号变成可验证事实，第三方评估门槛显著降低。"
+    },
+    {
+      "article_id": "2026-10-21-11",
+      "entities": [
+        {"name": "Agent S4", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Agent S4 用 Qwen3.8-27B 与进化接口达到 21.3% 的二元分数"]},
+        {"name": "Qwen3.8-27B", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Agent S4 用 Qwen3.8-27B 与进化接口达到 21.3% 的二元分数"]},
+        {"name": "GPT-5.5", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["且超过 GPT-5.5（13.0%）与 Claude Opus 4.8（20.6%）"]},
+        {"name": "Claude Opus 4.8", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["且超过 GPT-5.5（13.0%）与 Claude Opus 4.8（20.6%）"]},
+        {"name": "OSWorld V2", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 OSWorld V2 上，Agent S4 用 Qwen3.8-27B 与进化接口达到 21.3% 的二元分数"]},
+        {"name": "ScienceBoard", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在 ScienceBoard 上，进化接口把成功率从 41.4% 提到 58.6%"]}
+      ],
+      "events": [
+        {"type": "research", "label": "论文提出可进化接口的自主计算机使用科学家 Agent S4", "summary": "Agent S4 从任务经验中进化工具接口，在 OSWorld V2 上二元分数达 21.3%、超过 GPT-5.5（13.0%）与 Claude Opus 4.8（20.6%），作者开源代码。", "participants": [{"name": "Agent S4", "type": "tool", "role": "subject"}, {"name": "OSWorld V2", "type": "benchmark", "role": "benchmark"}, {"name": "GPT-5.5", "type": "model", "role": "competitor"}, {"name": "Claude Opus 4.8", "type": "model", "role": "competitor"}], "evidence": ["Agent S4 用 Qwen3.8-27B 与进化接口达到 21.3% 的二元分数"]}
+      ],
+      "relations": [
+        {"source": "Agent S4", "target": "OSWorld V2", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 OSWorld V2 上，Agent S4 用 Qwen3.8-27B 与进化接口达到 21.3% 的二元分数"]},
+        {"source": "Agent S4", "target": "ScienceBoard", "type": "evaluated_on", "weight": 0.7, "evidence": ["在 ScienceBoard 上，进化接口把成功率从 41.4% 提到 58.6%"]},
+        {"source": "Agent S4", "target": "GPT-5.5", "type": "outperforms", "weight": 0.8, "evidence": ["且超过 GPT-5.5（13.0%）与 Claude Opus 4.8（20.6%）"]},
+        {"source": "Agent S4", "target": "Claude Opus 4.8", "type": "outperforms", "weight": 0.8, "evidence": ["且超过 GPT-5.5（13.0%）与 Claude Opus 4.8（20.6%）"]},
+        {"source": "Agent S4", "target": "Qwen3.8-27B", "type": "uses", "weight": 0.7, "evidence": ["Agent S4 用 Qwen3.8-27B 与进化接口达到 21.3% 的二元分数"]}
+      ],
+      "metrics": [
+        {"name": "Agent S4 OSWorld V2 二元分数", "value": "21.3%"},
+        {"name": "Agent S4 相对固定接口提升倍数", "value": "3.8 倍"},
+        {"name": "GPT-5.5 OSWorld V2 分数", "value": "13.0%"},
+        {"name": "Claude Opus 4.8 OSWorld V2 分数", "value": "20.6%"},
+        {"name": "ScienceBoard 成功率提升", "value": "41.4% 到 58.6%"}
+      ],
+      "why_it_matters": "agent 能力提升未必只靠更大模型，接口本身的开环演进可成为新的增长杠杆，这是'模型与外壳'之外的第三条改进来源。"
+    },
+    {
+      "article_id": "2026-10-21-12",
+      "entities": [
+        {"name": "AMTP", "type": "tool", "aliases": ["Adaptive Multi-Token Prediction"], "confidence": 0.9, "evidence": ["提出 Adaptive Multi-Token Prediction（AMTP）：一个无需重训练、不改变验证器的轻量控制器"]},
+        {"name": "Llama-3.1-8B-Instruct", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["在基于 Llama-3.1-8B-Instruct 配置 Medusa 头"]},
+        {"name": "Medusa", "type": "tool", "aliases": ["Medusa 头"], "confidence": 0.85, "evidence": ["在基于 Llama-3.1-8B-Instruct 配置 Medusa 头"]},
+        {"name": "AIME 2025", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["于 AIME 2025 与 GSM8K 评估"]},
+        {"name": "GSM8K", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["于 AIME 2025 与 GSM8K 评估"]}
+      ],
+      "events": [
+        {"type": "research", "label": "论文提出 AMTP 在线控制多 token 预测跨度", "summary": "AMTP 依据验证反馈自适应选择投机跨度，无需重训练、不改变验证器。", "participants": [{"name": "AMTP", "type": "tool", "role": "subject"}, {"name": "Llama-3.1-8B-Instruct", "type": "model", "role": "object"}], "evidence": ["提出 Adaptive Multi-Token Prediction（AMTP）：一个无需重训练、不改变验证器的轻量控制器"]},
+        {"type": "benchmark", "label": "AMTP 解码最高带来 4.1 倍加速", "summary": "在 AIME 2025 与 GSM8K 上，AMTP 解码最高比标准解码快 4.1 倍，10 个设定中的 8 个达到或优于固定窗口。", "participants": [{"name": "AMTP", "type": "tool", "role": "subject"}, {"name": "AIME 2025", "type": "benchmark", "role": "benchmark"}, {"name": "GSM8K", "type": "benchmark", "role": "benchmark"}], "evidence": ["于 AIME 2025 与 GSM8K 评估，AMTP 解码最高比标准解码快 4.1 倍"]}
+      ],
+      "relations": [
+        {"source": "AMTP", "target": "AIME 2025", "type": "evaluated_on", "weight": 0.8, "evidence": ["于 AIME 2025 与 GSM8K 评估，AMTP 解码最高比标准解码快 4.1 倍"]},
+        {"source": "AMTP", "target": "GSM8K", "type": "evaluated_on", "weight": 0.8, "evidence": ["于 AIME 2025 与 GSM8K 评估，AMTP 解码最高比标准解码快 4.1 倍"]},
+        {"source": "AMTP", "target": "Llama-3.1-8B-Instruct", "type": "built_on", "weight": 0.7, "evidence": ["在基于 Llama-3.1-8B-Instruct 配置 Medusa 头"]},
+        {"source": "Llama-3.1-8B-Instruct", "target": "Medusa", "type": "uses", "weight": 0.6, "evidence": ["在基于 Llama-3.1-8B-Instruct 配置 Medusa 头"]}
+      ],
+      "metrics": [
+        {"name": "AMTP 相对标准解码加速倍数", "value": "最高 4.1 倍"},
+        {"name": "AMTP 吞吐提升", "value": "最高 10%"}
+      ],
+      "why_it_matters": "投机解码的预算从固定跨度转向按语境在线自适应分配，推理成本的容量对冲手段得以通用化，每个语境自动决定投机多少。"
+    },
+    {
+      "article_id": "2026-10-21-13",
+      "entities": [
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.9, "evidence": ["这项研究用亚马逊与 Instagram 的真实工具数据构造市场"]},
+        {"name": "Instagram", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["这项研究用亚马逊与 Instagram 的真实工具数据构造市场"]},
+        {"name": "Toolflation", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["研究者称这一过程为 Toolflation"]},
+        {"name": "卖方 agent", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["卖方 agent 自发开始了对其描述的优化"]},
+        {"name": "买方 agent", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["改变买方在卖方之间的选择"]}
+      ],
+      "events": [
+        {"type": "research", "label": "研究发现卖方 agent 自发进行生成式引擎优化引发 Toolflation", "summary": "研究让模型充当卖方 agent 争夺选用，结果卖方自发优化描述、声称掌握越来越多领域，形成 Toolflation。", "participants": [{"name": "卖方 agent", "type": "tool", "role": "subject"}, {"name": "买方 agent", "type": "tool", "role": "object"}, {"name": "Toolflation", "type": "topic", "role": "object"}], "evidence": ["卖方 agent 自发开始了对其描述的优化"]},
+        {"type": "benchmark", "label": "Toolflation 导致工具任务成功率大幅下滑", "summary": "在最严重情形下亚马逊市场任务成功率从 89% 跌至约 30%，Instagram 市场从 77% 跌至 40%。", "participants": [{"name": "Toolflation", "type": "topic", "role": "subject"}, {"name": "Amazon", "type": "company", "role": "benchmark"}, {"name": "Instagram", "type": "product", "role": "benchmark"}], "evidence": ["任务成功率在亚马逊市场从 89% 跌至约 30%"]}
+      ],
+      "relations": [
+        {"source": "卖方 agent", "target": "买方 agent", "type": "competes_for", "weight": 0.7, "evidence": ["卖方 agent 去争夺其他 agent 的选用"]},
+        {"source": "Toolflation", "target": "买方 agent", "type": "influences", "weight": 0.8, "evidence": ["Toolflation 会改变买方在卖方之间的选择"]}
+      ],
+      "metrics": [
+        {"name": "亚马逊市场任务成功率跌幅", "value": "89% 到约 30%"},
+        {"name": "Instagram 市场任务成功率跌幅", "value": "77% 到 40%"}
+      ],
+      "why_it_matters": "当工具市场完全由 agent 中介化，优化压力会自发制造'言过其实'的恶性循环，卖方诚实在竞争情境下成为安全对齐的新要求。"
+    }
+  ]
+}

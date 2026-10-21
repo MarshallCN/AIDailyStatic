@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-21",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "抽取整体忠实度高：核心数字、事件切分与跨文章实体命名均无明显硬伤，未发现方向完全反掉的关系。问题集中在语义精度：arXiv 实体证据错配且以错误角色混入事件、泛化概念被建成 organization/tool 实体节点、National Grid--DSX 关系证据缺口、两处关系类型误用，另有 NVIDIA Sentry 实体与成对指标、小发布事件的遗漏。",
+  "findings": [
+    {
+      "article_id": "2026-10-21-11",
+      "severity": "medium",
+      "problem": "arXiv 实体的 evidence 为'并开源了代码'——该句行为主体是论文作者，与 arXiv 无关，属证据错配；且事件 participants 中 arXiv 以 object 角色出现，'论文提出 Agent S4'的产出主体不是 arXiv。该实体目前无任何关系边。",
+      "fix": "按既有经验库规则处理：若保留 arXiv 实体，证据改为'论文发表于 arXiv（arxiv.org/abs/2610.28601）'并补一条 Agent S4 --published_on--> arXiv 关系；否则删除该实体。两种方案都要把 arXiv 从事件 participants 的 object 角色中移除。"
+    },
+    {
+      "article_id": "2026-10-21-7",
+      "severity": "medium",
+      "problem": "泛化概念被建成具体实体节点：'威胁行为者'（type=organization）与'进攻性 agent 框架'（type=tool）在原文中没有具体名称和指称，只是类别词，按 organization/tool 建实体并连边会制造无指称的假主体，污染图谱。",
+      "fix": "删除'威胁行为者'与'进攻性 agent 框架'两个实体及两条关联边（CrowdStrike Intelligence --targets--> 威胁行为者、威胁行为者 --uses--> 进攻性 agent 框架）；四个行为者未具名，信息保留在事件 summary（框架外泄、ai agent 自主决策）即可。"
+    },
+    {
+      "article_id": "2026-10-21-1",
+      "severity": "medium",
+      "problem": "关系 'National Grid --uses--> DSX' 证据不支撑：证据句'National Grid 与 Nvidia 的示范中'只说明双方做了电网事件示范，未指明示范基于 DSX，且示范不等于生产性'使用'。",
+      "fix": "删除该关系；40% 功率下调已在 metrics 中，不影响信息量。若确认该示范属于 DSX 演示，则改为 National Grid --evaluates--> DSX（或 --uses-->）并注明评估语境、降低权重。"
+    },
+    {
+      "article_id": "2026-10-21-13",
+      "severity": "medium",
+      "problem": "关系类型用错：'Toolflation --restricts--> 买方 agent'——原文是 Toolflation 改变/扭曲买方在卖方之间的选择，'restricts'暗示限制买方本身，语义偏离；'卖方 agent --targets--> 买方 agent'中 targets 带攻击语义，而原文是卖方 agent 争夺买方选用。",
+      "fix": "改用能表达'扭曲/劣化买方选择结果'与'争夺选用'的关系类型（如 influences/affects、competes_for/markets_to）；若 schema 无合适类型，删除这两条边，把'卖方优化描述争夺选用→描述趋同→买方按位置选工具'的机理写进事件 summary。"
+    },
+    {
+      "article_id": "2026-10-21-0",
+      "severity": "low",
+      "problem": "遗漏核心组件实体 NVIDIA Sentry：原文明确'由 NVIDIA BlueField-4 DPU 上的统一安全软件框架 NVIDIA Sentry 提供带外的持续 agent 行为监控与芯片内策略执行'，Sentry 是本架构的关键安全组件，未抽为实体。",
+      "fix": "新增实体 NVIDIA Sentry（type=tool），补关系 OpenShell --uses--> NVIDIA Sentry 或 NVIDIA --developed_by--> NVIDIA Sentry，证据引用原文该句。"
+    },
+    {
+      "article_id": "2026-10-21-1",
+      "severity": "low",
+      "problem": "metrics 漏了同段的成对数字：Lambda 固定功率预算下 GPU 容量提升 19%、Nscale 同一 264 千瓦预算下受管 GPU 容量提高 37%（只抽了吞吐侧 24% 与 49%）。",
+      "fix": "补充两条 metrics：'Lambda DSX 集群 GPU 容量提升 19%'、'Nscale 受管 GPU 容量提升 37%（264 千瓦功率预算）'。"
+    },
+    {
+      "article_id": "2026-10-21-1",
+      "severity": "low",
+      "problem": "事件切分遗漏：原文还有一条发布动作'Nvidia 还新增 Cluster Readiness Engine 等三个 DSX OS 组件进入开发者预览'，未建成事件。",
+      "fix": "补一个 launch 事件：'Nvidia 将 Cluster Readiness Engine 等三个 DSX OS 组件纳入开发者预览'，参与者 NVIDIA（subject）、DSX（object）。"
+    }
+  ],
+  "lessons": [
+    "论文/研究类事件中 participants 只能放实际承担动作的主体：发表平台（如 arXiv）不是事件参与方，不要以 object 或 partner 角色入列；如需表达'发表于某平台'另用 published_on 等关系。",
+    "原文只给类别、未给具体名称的主体（如'威胁行为者''进攻性框架'）不要抽成 organization/tool 实体节点，类别信息保留在事件 summary，避免制造无指称的假实体。",
+    "成组出现的量化结果（同一实验的吞吐与容量提升、成功率与成本占比）应成对抽入 metrics，不要只取醒目数字漏掉另一半。"
+  ]
+}
