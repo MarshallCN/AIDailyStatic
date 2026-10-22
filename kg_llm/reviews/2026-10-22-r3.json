@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-22",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "抽取整体语义准确、证据几乎全部可核验，未发现事实错误或关系方向反了的高危问题；但有 4 条中等质量问题：Super Intelligence 实体类型错配为 company、Braze 整合事件误用 partnership 类型、华为--NVIDIA 与 OpenRouter--DeepSeek 两条关系的证据不支撑其类型。",
+  "findings": [
+    {
+      "article_id": "2026-10-22-2",
+      "severity": "medium",
+      "problem": "实体 \"Super Intelligence\" 被标注为 type=company，但原文明确它是 SpaceX 的 AI 部门/分部（\"AI 部门 Super Intelligence 贡献 76 亿美元\"），并非独立法人公司。将其标成 company 是实体类型错配，会误导图谱把部门当成独立公司主体，也影响跨文章归并。",
+      "fix": "把 \"Super Intelligence\" 的 type 改为分部/子组织类（如 org_subdivision 或 org_part），事件 participants 与关系（subsidiary_of SpaceX）中的同名角色同步改；\"Cursor\" 是被收购的独立主体，可保留 company/product 类型不变。"
+    },
+    {
+      "article_id": "2026-10-22-3",
+      "severity": "medium",
+      "problem": "事件 2 的 type=\"partnership\" 用错：该事件描述的是收购完成后 Braze 的实时互动能力被并入 Agentforce/Marketing Cloud 等四层架构，这是收购的后续整合动作，Salesforce 与 Braze 是收购双方而非合作方，不存在 partnership 关系。",
+      "fix": "把该事件 type 改为 acquisition（整合属收购的结果）或 integration；若用 integration 则参与者 role 相应设为 capability/object，不要用 partnership。"
+    },
+    {
+      "article_id": "2026-10-22-0",
+      "severity": "medium",
+      "problem": "关系 \"华为 --compared_with--> NVIDIA\" 的证据是\"华为与英伟达只对计算单元分档的做法不同\"——这是两家 GPU SKU 分档策略（计算+内存捆绑 vs 仅计算单元）的差异对比，不是性能/指标的基准比较，compared_with 的类型语义走样。",
+      "fix": "删除该 compared_with 关系；若图谱需要保留\"做法不同\"的对比，改用表达策略/做法差异的类型并提供相应证据，否则直接删除以免误导。"
+    },
+    {
+      "article_id": "2026-10-22-5",
+      "severity": "medium",
+      "problem": "关系 \"OpenRouter --uses--> DeepSeek\" 方向/类型可疑：原文说的是机构\"通过 OpenRouter、Vercel AI Gateway 等网关调用模型而可能'无意中'继续使用 DeepSeek 模型\"——是第三方经网关调 DeepSeek，不是 OpenRouter 作为主体去使用 DeepSeek，\"uses\"把网关当成了消费方。",
+      "fix": "删除该边，或改为能表达\"DeepSeek 模型经 OpenRouter 可分发给第三方调用\"的语义（若 schema 无此类关系则删除）；Vercel AI Gateway 现状同样不支撑抽取为单独实体关系。"
+    }
+  ],
+  "lessons": [
+    "公司内部的 AI 分部（如\"某公司的 AI 部门\"）应标注为分部/子组织类型，不要一律标成 company。",
+    "收购完成后的\"能力并入某产品\"事件不要用 partnership 类型，应归为 acquisition 或 integration。",
+    "compared_with 只用于有性能/指标对比的证据；\"两家做法或策略不同\"不是性能比较，不应建 compared_with 边。"
+  ]
+}

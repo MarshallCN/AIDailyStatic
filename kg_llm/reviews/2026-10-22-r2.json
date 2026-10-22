@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-22",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 72,
+  "summary": "总体语义质量高、证据扎实，但 2026-10-22-0 有一条 '昇腾 950PR  outperforms H100' 关系把 HBM 带宽这一子项指标夸大成整芯片层面的超越，与原文'绝对性能介于 A100 与 MI300X 之间'的定位相悖；另有若干事件类型误标（合并探讨标成 acquisition、产品集成标成 trend）。",
+  "findings": [
+    {
+      "article_id": "2026-10-22-0",
+      "severity": "high",
+      "problem": "关系 \"昇腾 950PR --outperforms--> H100\"（weight 0.6）的断言超出证据。evidence 仅支持 'HBM 有效带宽在小消息尺寸下超过 H100' 这一个子项指标，而原文同期明确给出 '绝对性能介于 A100 与 MI300X 之间' 的整体定位——用带宽单一指标推出整芯片 'outperforms H100' 是过度断言，图的叙事变成昇腾芯片强于 H100，与原文相反。",
+      "fix": "删除或改写该关系：若保留，把断言限定为带宽指标（如 \"昇腾 950PR --outperforms_in_hbm_bandwidth--> H100\" 或改用 compared_with），或在无法给出整芯片级支持时直接删去这条件，避免与 '介于 A100 与 MI300X 之间' 的定位冲突。"
+    },
+    {
+      "article_id": "2026-10-22-2",
+      "severity": "medium",
+      "problem": "事件 \"SpaceX 与特斯拉董事会各成立特别委员会研究合并\" 的 type 被标为 acquisition。原文只是两家董事会'成立特别委员会研究合并'的探讨阶段，马斯克还称假设交易必然发生是'过度陈述'，并未宣布或完成收购/合并。",
+      "fix": "把该事件 type 改为 trend 或 partnership（合并仍处于探讨阶段），不要用 acquisition；若关系层需要，可补一条 SpaceX --merges_proposal--> Tesla 之类的边而非 acquisition 语义。"
+    },
+    {
+      "article_id": "2026-10-22-3",
+      "severity": "medium",
+      "problem": "事件 'Braze 实时互动能力预计并入 Agentforce 与 Marketing Cloud' 的 type 被标为 trend。原文描述的是已定案的收购后产品能力整合计划（'预计补充...四层架构'），是产品集成动作，不是可观察的市场趋势。",
+      "fix": "把该事件 type 改为 integration 类（或 partnership），明确主语是被收购方能力并入收购方产品；trend 保留给真正可观察的市场/产业趋势。"
+    },
+    {
+      "article_id": "2026-10-22-0",
+      "severity": "medium",
+      "problem": "实体 '昇腾 950PR' 的 aliases 里包含 '950PR_9579'。950PR_9579（28 个 Cube 核、128 GiB HBM）是原文点名的一个具体 SKU 变体（原文称'昇腾 950PR 存在大量变体'），把它作为家族实体 950PR 的别名会把变体与家族混淆，导致后续引用时无法区分。",
+      "fix": "把 '950PR_9579' 从 昇腾 950PR 的 aliases 中移除；若要保留，应单列为独立实体或仅作该变体的 evidence 引用，而非家族实体的别名。"
+    }
+  ],
+  "lessons": [
+    "当证据只支持某个子项指标（如 HBM 带宽、单算子执行时间）时，不要推出实体整层级的 'outperforms' 关系；要么把断言限定到该指标，要么改用 compared_with，要么删去。",
+    "董事会'成立特别委员会研究合并'只是合并的探讨阶段，不能标成 acquisition 事件；只有已宣布或已完成的收购/合并才用 acquisition。",
+    "事件类型要反映动作的真实性质：把收购对象的能力并入产品（integration）不要标成 trend；trend 只用于可观察的市场或产业趋势。"
+  ]
+}

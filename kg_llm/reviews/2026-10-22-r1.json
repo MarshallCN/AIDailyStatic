@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-22",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "抽取整体扎实：112 实体、89 关系全部可溯源，逐条核对收益率、定价、门槛等数字均与原文一致，跨文章共享实体（DeepSeek/华为/NVIDIA/昇腾 950/谷歌/Anthropic/OpenAI 及六个内核库）连通良好。主要问题集中在关系方向与类型语义：2026-10-22-8 把「ZenDNN/ACE 并入 oneDNN」写成反向 integrates（核心新闻讲反）；2026-10-22-4 事件 summary 把叫停门槛语义写反、且「法案 --targets--> 商务部」类型不当；2026-10-22-0 一条关系证据错配；2026-10-22-7 生态厂商名单抽取不完整。",
+  "findings": [
+    {
+      "article_id": "2026-10-22-8",
+      "severity": "high",
+      "problem": "两条「并入」类关系方向反了，把这篇的核心故事讲反：原文「AMD 把其 ZenDNN 优化并入 oneDNN」和「ACE 未来会通过 oneDNN 更新进入 PyTorch」都是 oneDNN 作为接收方吸收 ZenDNN 与 ACE，但抽取写成 \"ZenDNN --integrates--> oneDNN\" 和 \"AI Compute Extensions --integrates--> oneDNN\"——被并入方成了 source，读出来变成 ZenDNN/ACE 把 oneDNN 吸收掉，与同一张图里 \"PyTorch --integrates--> oneDNN\"（PyTorch 把 oneDNN 定为默认库）采用的「接收方为 source」约定也自相矛盾。",
+      "fix": "改为 \"oneDNN --integrates--> ZenDNN\" 和 \"oneDNN --integrates--> AI Compute Extensions\"（接收方 oneDNN 为 source），其余字段不变，证据可保留原句。"
+    },
+    {
+      "article_id": "2026-10-22-4",
+      "severity": "medium",
+      "problem": "事件「草案限定叫停条件」的 summary 把门槛语义写反了：「门槛是不构成超 50 人死亡或超 10 亿美元损失」——按此读法，不构成重大损失反而才会触发叫停，与原文完全相反。原文（及本篇 metrics 和标题）是：须构成「可预见、迫近的」风险、可能造成超 50 人死亡或超 10 亿美元损失，政府才可叫停发布。",
+      "fix": "summary 改为：评估方发现迫近风险须在 72 小时内上报商务部，再由商务部请求哥伦比亚特区联邦法院法官裁定是否暂停发布；叫停门槛是构成超 50 人死亡或超 10 亿美元损失的可预见迫近风险。"
+    },
+    {
+      "article_id": "2026-10-22-4",
+      "severity": "medium",
+      "problem": "关系 \"AI 安全法案草案 --targets--> 美国商务部\" 类型不当：`targets` 是瞄准/对抗语义（上一篇审查中该类型被用于描述攻击方向），而原文中草案是「指定」商务部承担流程职能——评估方上报商务部、再由商务部请求法院裁定，商务部是被纳入监管流程的环节而非被针对的对象。",
+      "fix": "删除该关系，或改用设计/指定类语义（如 assigns_role / designates，体系不支持则删边）；不要把监管流程中的职能机构挂成 targets 目标。"
+    },
+    {
+      "article_id": "2026-10-22-0",
+      "severity": "medium",
+      "problem": "关系 \"FlashMLA --integrates--> 昇腾 950\" 的证据错配：所引证据「昇腾架构也反向塑造了 DeepSeek 的数据布局：FlashMLA 把 KV 缓存的量化值与缩放因子合并到相邻区域」支撑的是「昇腾架构影响了 FlashMLA 的数据布局」（硬件→软件的影响方向），不是 FlashMLA 集成进昇腾后端。证据存在但支撑的是另一回事，而且这条低权重关系与其他五个仓库的 integrates 关系口径也不一致。",
+      "fix": "要么把证据换成「DeepSeek 于 9 月 30 日为 TileLang、DeepGEMM、DeepEP、TileKernels、FlashMLA、DeepSelect 六个仓库一并加入昇腾（Ascend）支持」以支撑集成断言，要么删除该关系；若保留数据布局信息，应建模为昇腾架构对 FlashMLA 的影响而非 integrates。"
+    },
+    {
+      "article_id": "2026-10-22-8",
+      "severity": "medium",
+      "problem": "关系 \"oneDNN --developed_by--> UXL 基金会\" 类型不当：原文只说 oneDNN 是「由 UXL 基金会治理的深度学习库」，治理（governed by）不等于开发（developed by）——oneDNN 源自 Intel 项目、由基金会治理托管。developed_by 会让图误读为 UXL 基金会写了 oneDNN。",
+      "fix": "改为治理/托管类关系（governed_by / hosted_by，体系不支持则删除该边），不要用 developed_by。"
+    },
+    {
+      "article_id": "2026-10-22-7",
+      "severity": "medium",
+      "problem": "「DSX POD 生态」事件与 partners_with 关系只抽取了 17 家点名厂商中的 6 家（Dell、HPE、Lenovo、Foxconn、Crusoe、Schneider Electric），遗漏 Anduril、Armada、Bull、DayOne、Delta、Eaton、GIGABYTE、Pegatron、QCT、Vertiv、Wistron。该名单是这一 partnership 事件的主体内容，过半点名厂商缺失使生态规模在图上被明显缩小。",
+      "fix": "补齐其余厂商的 entities 与 NVIDIA --partners_with--> 边（可给一致的较低权重）；若刻意子集化，需在事件 summary/evidence 中写明选取标准（如只保留顶级 ODM/电力厂商），不能默认读者知道这是节选。"
+    }
+  ],
+  "lessons": [
+    "描写「并入/合并进」的句子（X 并入 Y），关系方向一律以接收方为 source、被并入方为 target（如 \"oneDNN --integrates--> ZenDNN\"）；evidence 里出现「并入/合并进/吸收」时先判定接收方再写方向，并保持同一篇内 integrates 方向约定一致。",
+    "政策/监管新闻中，法案「指定某机构承担流程职能」不要写成 targets（瞄准/对抗）类关系；用设计/指定类语义或删边，监管流程中的职能机构不是被针对的对象。",
+    "复述阈值、门槛、触发条件类数字时先核对触发方向（构成某损失才叫停 vs 不构成某损失才叫停），summary 中「不构成」这类否定表述极易把语义翻转为相反事实，必要时直接引用原文句式。"
+  ]
+}

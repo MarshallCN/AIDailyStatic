@@ -1,0 +1,765 @@
+{
+  "date": "2026-10-22",
+  "articles": [
+    {
+      "article_id": "2026-10-22-0",
+      "entities": [
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.95, "evidence": ["DeepSeek 有模型，却买不到它需要的算力"]},
+        {"name": "华为", "type": "company", "aliases": ["Huawei"], "confidence": 0.95, "evidence": ["华为拿出硬件与原生软件栈"]},
+        {"name": "昇腾 950PR", "type": "hardware", "aliases": ["Ascend 950PR"], "confidence": 0.9, "evidence": ["芯片侧，昇腾 950PR 存在大量变体"]},
+        {"name": "昇腾 950", "type": "hardware", "aliases": ["Ascend 950", "昇腾 950 后端"], "confidence": 0.9, "evidence": ["关键在于昇腾 950 后端被并入 TileLang 主干"]},
+        {"name": "TileLang", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["DeepSeek 于 9 月 30 日为 TileLang、DeepGEMM、DeepEP、TileKernels、FlashMLA、DeepSelect 六个仓库一并加入昇腾（Ascend）支持"]},
+        {"name": "FlashMLA", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["FlashMLA 为减少内存传输引擎的请求次数，把 KV 缓存的量化值与缩放因子合并到相邻区域"]},
+        {"name": "DeepGEMM", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["DeepSeek 于 9 月 30 日为 TileLang、DeepGEMM、DeepEP、TileKernels、FlashMLA、DeepSelect 六个仓库一并加入昇腾（Ascend）支持"]},
+        {"name": "DeepEP", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["DeepSeek 于 9 月 30 日为 TileLang、DeepGEMM、DeepEP、TileKernels、FlashMLA、DeepSelect 六个仓库一并加入昇腾（Ascend）支持"]},
+        {"name": "TileKernels", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["DeepSeek 于 9 月 30 日为 TileLang、DeepGEMM、DeepEP、TileKernels、FlashMLA、DeepSelect 六个仓库一并加入昇腾（Ascend）支持"]},
+        {"name": "DeepSelect", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["DeepSeek 于 9 月 30 日为 TileLang、DeepGEMM、DeepEP、TileKernels、FlashMLA、DeepSelect 六个仓库一并加入昇腾（Ascend）支持"]},
+        {"name": "AutoSchedule", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["AutoSchedule 在 950PR 上对单算子最多可减少 40% 执行时间"]},
+        {"name": "950 SuperPod", "type": "hardware", "aliases": ["昇腾 950 SuperPod"], "confidence": 0.9, "evidence": ["从 910 CloudMatrix384 到 950 SuperPod"]},
+        {"name": "URMA", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["EP16 dispatch/combine 基准跑在 URMA 之上"]},
+        {"name": "GB300", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["与 GB300 的单次融合调用不同"]},
+        {"name": "A100", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["绝对性能介于 A100 与 MI300X 之间"]},
+        {"name": "MI300X", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["绝对性能介于 A100 与 MI300X 之间"]},
+        {"name": "H100", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["HBM 有效带宽在小消息尺寸下超过 H100"]},
+        {"name": "Pangu", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["华为虽有 Pangu 等自有模型"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["华为与英伟达只对计算单元分档的做法不同"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "DeepSeek 为六个开源仓库一并加入昇腾支持",
+          "summary": "DeepSeek 于 9 月 30 日为 TileLang、DeepGEMM、DeepEP、TileKernels、FlashMLA、DeepSelect 六个仓库一并加入昇腾（Ascend）支持，截至写作时只有 TileLang 真正可用。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "TileLang", "type": "tool", "role": "object"},
+            {"name": "FlashMLA", "type": "tool", "role": "object"},
+            {"name": "DeepGEMM", "type": "tool", "role": "object"},
+            {"name": "DeepEP", "type": "tool", "role": "object"},
+            {"name": "TileKernels", "type": "tool", "role": "object"},
+            {"name": "DeepSelect", "type": "tool", "role": "object"},
+            {"name": "昇腾 950", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["DeepSeek 于 9 月 30 日为 TileLang、DeepGEMM、DeepEP、TileKernels、FlashMLA、DeepSelect 六个仓库一并加入昇腾（Ascend）支持"]
+        },
+        {
+          "type": "benchmark",
+          "label": "昇腾 950PR 微基准揭示 GEMM 峰值 99.7%、性能介于 A100 与 MI300X 之间",
+          "summary": "对 950PR_9579 的微基准显示，华为最优 GEMM 内核可达理论峰值的 99.7%，绝对性能介于 A100 与 MI300X 之间，HBM 有效带宽在小消息尺寸下超过 H100。",
+          "participants": [
+            {"name": "昇腾 950PR", "type": "hardware", "role": "subject"},
+            {"name": "A100", "type": "hardware", "role": "benchmark"},
+            {"name": "MI300X", "type": "hardware", "role": "benchmark"},
+            {"name": "H100", "type": "hardware", "role": "benchmark"}
+          ],
+          "evidence": ["对 950PR_9579（28 个 Cube 核、128 GiB HBM）的微基准显示，华为最优 GEMM 内核可达理论峰值的 99.7%，但绝对性能介于 A100 与 MI300X 之间"]
+        },
+        {
+          "type": "infra",
+          "label": "华为加入英伟达引领的大规模 scale-up 商业化",
+          "summary": "华为从 910 CloudMatrix384 到 950 SuperPod 构建跨机架紧密耦合加速器互连，EP16 dispatch/combine 基准跑在 URMA 之上，与 GB300 的单次融合调用不同。",
+          "participants": [
+            {"name": "华为", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"},
+            {"name": "950 SuperPod", "type": "hardware", "role": "object"},
+            {"name": "URMA", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["华为还正式加入了英伟达引领的大规模 scale-up 商业化：从 910 CloudMatrix384 到 950 SuperPod"]
+        }
+      ],
+      "relations": [
+        {"source": "DeepSeek", "target": "华为", "type": "partners_with", "weight": 0.9, "evidence": ["SemiAnalysis 指出这桩\"交换\"靠任何一方都无法单独完成"]},
+        {"source": "华为", "target": "DeepSeek", "type": "supplies", "weight": 0.9, "evidence": ["华为拿出硬件与原生软件栈，DeepSeek 带来工作负载与让硬件对其模型有用的工程能力"]},
+        {"source": "昇腾 950PR", "target": "华为", "type": "developed_by", "weight": 0.85, "evidence": ["华为拿出硬件与原生软件栈"]},
+        {"source": "TileLang", "target": "昇腾 950", "type": "integrates", "weight": 0.9, "evidence": ["昇腾 950 后端被并入 TileLang 主干"]},
+        {"source": "FlashMLA", "target": "昇腾 950", "type": "integrates", "weight": 0.6, "evidence": ["DeepSeek 于 9 月 30 日为 TileLang、DeepGEMM、DeepEP、TileKernels、FlashMLA、DeepSelect 六个仓库一并加入昇腾（Ascend）支持"]},
+        {"source": "昇腾 950PR", "target": "A100", "type": "compared_with", "weight": 0.7, "evidence": ["绝对性能介于 A100 与 MI300X 之间"]},
+        {"source": "昇腾 950PR", "target": "MI300X", "type": "compared_with", "weight": 0.7, "evidence": ["绝对性能介于 A100 与 MI300X 之间"]},
+        {"source": "昇腾 950PR", "target": "H100", "type": "compared_with", "weight": 0.6, "evidence": ["HBM 有效带宽在小消息尺寸下超过 H100"]},
+        {"source": "950 SuperPod", "target": "URMA", "type": "uses", "weight": 0.7, "evidence": ["EP16 dispatch/combine 基准跑在 URMA 之上"]},
+        {"source": "950 SuperPod", "target": "GB300", "type": "compared_with", "weight": 0.6, "evidence": ["与 GB300 的单次融合调用不同"]},
+        {"source": "Pangu", "target": "华为", "type": "developed_by", "weight": 0.6, "evidence": ["华为虽有 Pangu 等自有模型"]},
+        {"source": "华为", "target": "NVIDIA", "type": "compared_with", "weight": 0.5, "evidence": ["华为与英伟达只对计算单元分档的做法不同"]},
+        {"source": "AutoSchedule", "target": "昇腾 950PR", "type": "uses", "weight": 0.6, "evidence": ["AutoSchedule 在 950PR 上对单算子最多可减少 40% 执行时间"]}
+      ],
+      "metrics": [
+        {"name": "昇腾 950PR 最优 GEMM 内核理论峰值达成率", "value": "99.7%"},
+        {"name": "950PR_9579 Cube 核数", "value": "28 个"},
+        {"name": "950PR_9579 HBM 容量", "value": "128 GiB"},
+        {"name": "AutoSchedule 单算子执行时间缩减", "value": "最多 40%"},
+        {"name": "昇腾硬件相对 A100 的落后幅度", "value": "约五年"}
+      ],
+      "why_it_matters": "华为以'计算+内存捆绑分档'绕开先进制程差异，DeepSeek 的工程能力反向塑造昇腾软件栈——AI 硬件出现英伟达之外的第二个事实中心，若 2027-2028 年的判读成真，算力生态将从单极转向双栈主导。"
+    },
+    {
+      "article_id": "2026-10-22-1",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 将其前沿模型与 Codex 工作流带到 Google Cloud 的 Model Garden"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["OpenAI 模型还会进入 Google 的 Antigravity 编程工具与 Gemini Agent"]},
+        {"name": "Google Cloud", "type": "company", "aliases": ["GCP"], "confidence": 0.9, "evidence": ["OpenAI 宣布其前沿模型与 Codex 工作流即将入驻 Google Cloud 的 Model Garden"]},
+        {"name": "Model Garden", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 将其前沿模型与 Codex 工作流带到 Google Cloud 的 Model Garden"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["让 Codex 在 Antigravity 内部与 Gemini、Claude Code 正面竞争"]},
+        {"name": "Antigravity", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 模型还会进入 Google 的 Antigravity 编程工具与 Gemini Agent"]},
+        {"name": "Gemini", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["让 Codex 在 Antigravity 内部与 Gemini、Claude Code 正面竞争"]},
+        {"name": "Claude Code", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["让 Codex 在 Antigravity 内部与 Gemini、Claude Code 正面竞争"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.95, "evidence": ["OpenAI 同时强调 Microsoft 仍是其主要云合作伙伴"]},
+        {"name": "AWS", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["AWS 次日即开始托管 OpenAI 模型"]},
+        {"name": "ChatGPT 广告", "type": "product", "aliases": ["ChatGPT 广告平台"], "confidence": 0.85, "evidence": ["同日 OpenAI 还把 ChatGPT 广告扩展到 26 个新国家"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 宣布前沿模型与 Codex 即将入驻 Google Cloud Model Garden",
+          "summary": "OpenAI 宣布其前沿模型与 Codex 工作流即将入驻 Google Cloud 的 Model Garden，全面可用时间在'未来数周'，企业经 Marketplace 购买并把支出计入既有承诺额度。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Google Cloud", "type": "company", "role": "object"},
+            {"name": "Codex", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 宣布其前沿模型与 Codex 工作流即将入驻 Google Cloud 的 Model Garden"]
+        },
+        {
+          "type": "launch",
+          "label": "OpenAI 把 ChatGPT 广告扩展到 26 个新国家、共 89 国",
+          "summary": "OpenAI 把 ChatGPT 广告扩展到 26 个新国家、累计共 89 国，并称已有超过 10 万广告主使用该平台。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT 广告", "type": "product", "role": "object"}
+          ],
+          "evidence": ["同日 OpenAI 还把 ChatGPT 广告扩展到 26 个新国家、共 89 国"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "Google", "type": "partners_with", "weight": 0.8, "evidence": ["OpenAI 将其前沿模型与 Codex 工作流带到 Google Cloud 的 Model Garden"]},
+        {"source": "Google Cloud", "target": "Google", "type": "subsidiary_of", "weight": 0.6, "evidence": ["OpenAI 宣布其前沿模型与 Codex 工作流即将入驻 Google Cloud 的 Model Garden"]},
+        {"source": "Model Garden", "target": "OpenAI", "type": "integrates", "weight": 0.6, "evidence": ["OpenAI 将其前沿模型与 Codex 工作流带到 Google Cloud 的 Model Garden"]},
+        {"source": "Codex", "target": "Antigravity", "type": "integrates", "weight": 0.7, "evidence": ["让 Codex 在 Antigravity 内部与 Gemini、Claude Code 正面竞争"]},
+        {"source": "Gemini", "target": "Codex", "type": "competes_with", "weight": 0.6, "evidence": ["让 Codex 在 Antigravity 内部与 Gemini、Claude Code 正面竞争"]},
+        {"source": "Claude Code", "target": "Codex", "type": "competes_with", "weight": 0.6, "evidence": ["让 Codex 在 Antigravity 内部与 Gemini、Claude Code 正面竞争"]},
+        {"source": "Google", "target": "OpenAI", "type": "competes_with", "weight": 0.7, "evidence": ["哪怕是直接竞争对手的平台"]},
+        {"source": "Microsoft", "target": "OpenAI", "type": "partners_with", "weight": 0.6, "evidence": ["OpenAI 同时强调 Microsoft 仍是其主要云合作伙伴"]},
+        {"source": "AWS", "target": "OpenAI", "type": "integrates", "weight": 0.6, "evidence": ["AWS 次日即开始托管 OpenAI 模型"]},
+        {"source": "ChatGPT 广告", "target": "OpenAI", "type": "developed_by", "weight": 0.5, "evidence": ["同日 OpenAI 还把 ChatGPT 广告扩展到 26 个新国家"]}
+      ],
+      "metrics": [
+        {"name": "ChatGPT 广告新增覆盖国家数", "value": "26 个"},
+        {"name": "ChatGPT 广告累计覆盖国家数", "value": "89 国"},
+        {"name": "ChatGPT 广告平台广告主数", "value": "超过 10 万"}
+      ],
+      "why_it_matters": "OpenAI 同时出现在三大美国云上，模型分发从'云合作伙伴独家'变成'按位置购买'，Codex 在 Antigravity 内与 Gemini、Claude Code 正面竞争——云厂商的模型供应垄断叙事进一步瓦解。"
+    },
+    {
+      "article_id": "2026-10-22-2",
+      "entities": [
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["SpaceX 营收 146 亿美元"]},
+        {"name": "Super Intelligence", "type": "company", "aliases": ["SpaceX Super Intelligence"], "confidence": 0.9, "evidence": ["AI 部门 Super Intelligence 贡献 76 亿美元"]},
+        {"name": "Starlink", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["AI 部门 Super Intelligence 贡献 76 亿美元，多于 Starlink 的 52 亿"]},
+        {"name": "Cursor", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["被收购的 Cursor 在合并日至 9 月 30 日间贡献 6.08 亿美元收入"]},
+        {"name": "Tesla", "type": "company", "aliases": ["特斯拉"], "confidence": 0.95, "evidence": ["SpaceX 与特斯拉董事会各成立了由独立董事组成的特别委员会研究合并"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["向 Anthropic、Google 与 Reflection AI 出租算力"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["大部分来自向 Anthropic、Google 与 Reflection AI 出租算力"]},
+        {"name": "Reflection AI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["向 Anthropic、Google 与 Reflection AI 出租算力"]},
+        {"name": "马斯克", "type": "person", "aliases": ["Elon Musk", "埃隆·马斯克"], "confidence": 0.9, "evidence": ["电话会上马斯克证实 SpaceX 与特斯拉董事会各成立了由独立董事组成的特别委员会研究合并"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "SpaceX 三季度营收 146 亿美元、AI 收入 76 亿首超总营收一半",
+          "summary": "SpaceX 上市后首个完整季度营收 146 亿美元、同比增 161%，净利润 44 亿美元；AI 部门 Super Intelligence 进账 76 亿美元，多于 Starlink 的 52 亿。",
+          "participants": [
+            {"name": "SpaceX", "type": "company", "role": "subject"},
+            {"name": "Super Intelligence", "type": "company", "role": "object"},
+            {"name": "Starlink", "type": "product", "role": "benchmark"}
+          ],
+          "evidence": ["AI 部门 Super Intelligence 贡献 76 亿美元，多于 Starlink 的 52 亿"]
+        },
+        {
+          "type": "partnership",
+          "label": "Super Intelligence 向 Anthropic、Google 与 Reflection AI 出租算力",
+          "summary": "路透指出 Super Intelligence 的大部分收入来自向 Anthropic、Google 与 Reflection AI 出租算力，而非 SpaceX 自有模型。",
+          "participants": [
+            {"name": "Super Intelligence", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "partner"},
+            {"name": "Google", "type": "company", "role": "partner"},
+            {"name": "Reflection AI", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["大部分来自向 Anthropic、Google 与 Reflection AI 出租算力，而非 SpaceX 自有模型"]
+        },
+        {
+          "type": "trend",
+          "label": "SpaceX 与特斯拉董事会各成立特别委员会研究合并",
+          "summary": "马斯克证实 SpaceX 与特斯拉董事会各成立了由独立董事组成的特别委员会研究合并，但他称假设交易必然发生'是过度陈述'。",
+          "participants": [
+            {"name": "SpaceX", "type": "company", "role": "subject"},
+            {"name": "Tesla", "type": "company", "role": "object"},
+            {"name": "马斯克", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["马斯克证实 SpaceX 与特斯拉董事会各成立了由独立董事组成的特别委员会研究合并"]
+        }
+      ],
+      "relations": [
+        {"source": "Super Intelligence", "target": "SpaceX", "type": "subsidiary_of", "weight": 0.8, "evidence": ["AI 部门 Super Intelligence 贡献 76 亿美元"]},
+        {"source": "Super Intelligence", "target": "Anthropic", "type": "supplies", "weight": 0.8, "evidence": ["大部分来自向 Anthropic、Google 与 Reflection AI 出租算力"]},
+        {"source": "Super Intelligence", "target": "Google", "type": "supplies", "weight": 0.8, "evidence": ["大部分来自向 Anthropic、Google 与 Reflection AI 出租算力"]},
+        {"source": "Super Intelligence", "target": "Reflection AI", "type": "supplies", "weight": 0.8, "evidence": ["大部分来自向 Anthropic、Google 与 Reflection AI 出租算力"]},
+        {"source": "Cursor", "target": "SpaceX", "type": "subsidiary_of", "weight": 0.7, "evidence": ["被收购的 Cursor 在合并日至 9 月 30 日间贡献 6.08 亿美元收入"]},
+        {"source": "Super Intelligence", "target": "Starlink", "type": "outperforms", "weight": 0.7, "evidence": ["AI 部门 Super Intelligence 贡献 76 亿美元，多于 Starlink 的 52 亿"]},
+        {"source": "马斯克", "target": "SpaceX", "type": "affiliated_with", "weight": 0.8, "evidence": ["电话会上马斯克证实 SpaceX 与特斯拉董事会各成立了由独立董事组成的特别委员会研究合并"]}
+      ],
+      "metrics": [
+        {"name": "SpaceX 三季度营收", "value": "146 亿美元"},
+        {"name": "SpaceX 三季度营收同比增速", "value": "161%"},
+        {"name": "SpaceX 三季度净利润", "value": "44 亿美元"},
+        {"name": "Super Intelligence 季度收入", "value": "76 亿美元"},
+        {"name": "Starlink 季度收入", "value": "52 亿"},
+        {"name": "Cursor 合并日至 9 月 30 日收入", "value": "6.08 亿美元"},
+        {"name": "SpaceX 季度资本开支", "value": "196 亿美元"},
+        {"name": "资本开支中投向 AI 金额", "value": "164 亿美元"},
+        {"name": "SpaceX 年底算力规模", "value": "2.5-3GW"},
+        {"name": "SpaceX Q4 资本开支指引", "value": "350-400 亿美元"},
+        {"name": "SpaceX 股价盘后涨幅", "value": "约 9%"}
+      ],
+      "why_it_matters": "上市巨头最大的单一生意变成'给前沿实验室供货算力'——Anthropic 一边与超大规模云周旋、一边向 SpaceX 租电，算力买卖从云厂商独家扩散到独立新贵，前沿实验室的议价结构被改写。"
+    },
+    {
+      "article_id": "2026-10-22-3",
+      "entities": [
+        {"name": "Salesforce", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Salesforce 宣布与 Braze 达成最终协议"]},
+        {"name": "Braze", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["以约 56.6 亿美元企业价值全现金收购这家客户互动平台"]},
+        {"name": "Agentforce", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["把实时行为数据与 AI 决策能力并入 Marketing Cloud 与 Agentforce"]},
+        {"name": "Marketing Cloud", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["把实时行为数据与 AI 决策能力并入 Marketing Cloud 与 Agentforce"]},
+        {"name": "BrazeAI", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["BrazeAI 负责内容、渠道与时机的 AI 优化"]},
+        {"name": "Informatica", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["从约 80 亿美元收购 Informatica"]}
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "Salesforce 以约 56.6 亿美元全现金收购 Braze",
+          "summary": "Salesforce 与 Braze 达成最终协议，以约 56.6 亿美元企业价值全现金收购，每股作价 47.50 美元、溢价约 58%，预计 2028 财年完成。",
+          "participants": [
+            {"name": "Salesforce", "type": "company", "role": "subject"},
+            {"name": "Braze", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Salesforce 宣布与 Braze 达成最终协议，以约 56.6 亿美元企业价值全现金收购这家客户互动平台"]
+        },
+        {
+          "type": "partnership",
+          "label": "Braze 实时互动能力预计并入 Agentforce 与 Marketing Cloud",
+          "summary": "Braze 的实时互动能力预计补充 Data 360、Customer 360、Agentforce 与 SIForce 四层架构，让 agent 依据实时行为即时行动。",
+          "participants": [
+            {"name": "Salesforce", "type": "company", "role": "subject"},
+            {"name": "Braze", "type": "company", "role": "object"},
+            {"name": "Agentforce", "type": "product", "role": "object"},
+            {"name": "Marketing Cloud", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Braze 的实时互动能力预计补充 Data 360、Customer 360、Agentforce 与 SIForce 四层架构"]
+        }
+      ],
+      "relations": [
+        {"source": "Salesforce", "target": "Braze", "type": "acquires", "weight": 0.9, "evidence": ["Salesforce 宣布与 Braze 达成最终协议，以约 56.6 亿美元企业价值全现金收购"]},
+        {"source": "Agentforce", "target": "Braze", "type": "integrates", "weight": 0.7, "evidence": ["把实时行为数据与 AI 决策能力并入 Marketing Cloud 与 Agentforce"]},
+        {"source": "Marketing Cloud", "target": "Braze", "type": "integrates", "weight": 0.7, "evidence": ["把实时行为数据与 AI 决策能力并入 Marketing Cloud 与 Agentforce"]},
+        {"source": "BrazeAI", "target": "Braze", "type": "developed_by", "weight": 0.6, "evidence": ["BrazeAI 负责内容、渠道与时机的 AI 优化"]},
+        {"source": "Salesforce", "target": "Informatica", "type": "acquires", "weight": 0.6, "evidence": ["从约 80 亿美元收购 Informatica"]}
+      ],
+      "metrics": [
+        {"name": "收购 Braze 企业价值", "value": "约 56.6 亿美元"},
+        {"name": "Braze 每股作价", "value": "47.50 美元"},
+        {"name": "收购溢价幅度", "value": "约 58%"},
+        {"name": "Braze 服务客户数", "value": "约 2770 家"},
+        {"name": "收购 Informatica 金额", "value": "约 80 亿美元"},
+        {"name": "6 月收购 AI agent 平台金额", "value": "约 36 亿美元"}
+      ],
+      "why_it_matters": "Salesforce 用第三笔大收购给 Agentforce 补齐实时行为数据，agent 的决策依据从 CRM 静态记录升级为事件流——营销云的竞争从功能清单转向'agent 能否依据实时行为即时行动'的数据厚度。"
+    },
+    {
+      "article_id": "2026-10-22-4",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 一直向国会议员递送一份保密的法律草案"]},
+        {"name": "美国国会", "type": "organization", "aliases": ["国会"], "confidence": 0.9, "evidence": ["Anthropic 向国会递 AI 安全法案草案"]},
+        {"name": "AI 安全法案草案", "type": "policy", "aliases": ["法律草案", "高级 AI 框架"], "confidence": 0.85, "evidence": ["公司发言人确认其代表 Anthropic 自 6 月起向联邦与州议员推广的\"高级 AI 框架\""]},
+        {"name": "FRONTIER Act", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["但仍弱于两党议员提出的 FRONTIER Act"]},
+        {"name": "美国商务部", "type": "organization", "aliases": ["商务部"], "confidence": 0.9, "evidence": ["再由商务部请求哥伦比亚特区联邦法院法官裁定是否暂停发布"]},
+        {"name": "Institute for Law & AI", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Institute for Law & AI 的 Charlie Bullock"]},
+        {"name": "Charlie Bullock", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Institute for Law & AI 的 Charlie Bullock"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Anthropic 向国会议员递送 AI 安全法案草案",
+          "summary": "Anthropic 自 6 月起向联邦与州议员推广'高级 AI 框架'保密法律草案，公司发言人确认其正在游说国会。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "美国国会", "type": "organization", "role": "object"},
+            {"name": "AI 安全法案草案", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["Anthropic 一直向国会议员递送一份保密的法律草案"]
+        },
+        {
+          "type": "policy",
+          "label": "草案限定叫停条件：50 死或 10 亿美元损失、商务部和法院方可裁定",
+          "summary": "草案要求评估方发现迫近风险须在 72 小时内上报商务部，再由商务部请求哥伦比亚特区联邦法院法官裁定是否暂停发布；叫停门槛是构成超 50 人死亡或超 10 亿美元损失的可预见迫近风险。",
+          "participants": [
+            {"name": "AI 安全法案草案", "type": "policy", "role": "subject"},
+            {"name": "美国商务部", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["评估方发现迫近风险须在 72 小时内上报商务部，再由商务部请求哥伦比亚特区联邦法院法官裁定是否暂停发布"]
+        }
+      ],
+      "relations": [
+        {"source": "AI 安全法案草案", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Anthropic 一直向国会议员递送一份保密的法律草案"]},
+        {"source": "FRONTIER Act", "target": "AI 安全法案草案", "type": "compared_with", "weight": 0.7, "evidence": ["认为草案比同行公开的立场更克制但仍弱于两党议员提出的 FRONTIER Act"]},
+        {"source": "Charlie Bullock", "target": "Institute for Law & AI", "type": "affiliated_with", "weight": 0.7, "evidence": ["Institute for Law & AI 的 Charlie Bullock"]}
+      ],
+      "metrics": [
+        {"name": "触发叫停的死亡人数门槛", "value": "超过 50 人"},
+        {"name": "触发叫停的损失门槛", "value": "超过 10 亿美元"},
+        {"name": "评估方上报商务部时限", "value": "72 小时"}
+      ],
+      "why_it_matters": "实验室自提监管把叫停门槛设在'50 死或 10 亿美元'这种几乎不可及的高度，等于用技术细节架空干预——AI 安全治理的规则主导权正被模型厂商自己抢写，批评者只能拿 FRONTIER Act 当对照系。"
+    },
+    {
+      "article_id": "2026-10-22-5",
+      "entities": [
+        {"name": "美国国土安全部", "type": "organization", "aliases": ["国土安全部", "DHS"], "confidence": 0.95, "evidence": ["美国国土安全部在《联邦公报》发布命令"]},
+        {"name": "DeepSeek", "type": "company", "aliases": ["杭州深度求索人工智能基础技术研究有限公司"], "confidence": 0.95, "evidence": ["将杭州深度求索人工智能基础技术研究有限公司及其关联实体的信息技术产品与服务排除出联邦文职机构采购"]},
+        {"name": "联邦采购供应链安全法", "type": "policy", "aliases": ["FASCSA"], "confidence": 0.9, "evidence": ["依据 2018 年《联邦采购供应链安全法》及其实施细则"]},
+        {"name": "联邦采购安全委员会", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["命令经联邦采购安全委员会审查"]},
+        {"name": "Luta Security", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["The Register 援引 Luta Security 创始人 Katie Moussouris 的观点"]},
+        {"name": "Katie Moussouris", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Luta Security 创始人 Katie Moussouris"]},
+        {"name": "OpenRouter", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["通过 OpenRouter、Vercel AI Gateway 等网关调用模型的机构还可能\"无意中\"继续使用 DeepSeek 模型"]},
+        {"name": "DeepInfer", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["与 DeepSeek 同日开源 DeepInfer 形成耐人寻味的对照"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "美国国土安全部禁止联邦文职机构采购并移除 DeepSeek 产品",
+          "summary": "美国国土安全部依据《联邦采购供应链安全法》发布命令，将杭州深度求索及其关联实体的产品排除出联邦文职机构采购，并要求移除所有 DeepSeek 及'使用 DeepSeek 实现开发'的第三方产品与服务。",
+          "participants": [
+            {"name": "美国国土安全部", "type": "organization", "role": "subject"},
+            {"name": "DeepSeek", "type": "company", "role": "object"},
+            {"name": "联邦采购安全委员会", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["将杭州深度求索人工智能基础技术研究有限公司及其关联实体的信息技术产品与服务排除出联邦文职机构采购"]
+        }
+      ],
+      "relations": [
+        {"source": "美国国土安全部", "target": "DeepSeek", "type": "restricts", "weight": 0.9, "evidence": ["要求移除文职机构 IT 系统中所有 DeepSeek 及关联方产品"]},
+        {"source": "美国国土安全部", "target": "联邦采购供应链安全法", "type": "complies_with", "weight": 0.7, "evidence": ["依据 2018 年《联邦采购供应链安全法》及其实施细则"]},
+        {"source": "Katie Moussouris", "target": "Luta Security", "type": "affiliated_with", "weight": 0.7, "evidence": ["Luta Security 创始人 Katie Moussouris"]},
+        {"source": "DeepInfer", "target": "DeepSeek", "type": "released_by", "weight": 0.6, "evidence": ["与 DeepSeek 同日开源 DeepInfer 形成耐人寻味的对照"]},
+        {"source": "OpenRouter", "target": "DeepSeek", "type": "uses", "weight": 0.5, "evidence": ["通过 OpenRouter、Vercel AI Gateway 等网关调用模型的机构还可能\"无意中\"继续使用 DeepSeek 模型"]}
+      ],
+      "metrics": [
+        {"name": "命令签署日期", "value": "7 月 24 日"},
+        {"name": "命令公布日期", "value": "10 月 20 日"}
+      ],
+      "why_it_matters": "禁令覆盖'使用 DeepSeek 实现开发'的第三方产品，但软件物料清单根本不记录开发者用了什么工具，监管边界模糊到供应商只能自证清白——模型溯源正在变成供应链安全的新战场。"
+    },
+    {
+      "article_id": "2026-10-22-6",
+      "entities": [
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.95, "evidence": ["DeepSeek 开源了驱动其 DeepSeek-V4.1-Flash 生产服务的推理框架 DeepInfer"]},
+        {"name": "DeepInfer", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["DeepSeek 开源了驱动其 DeepSeek-V4.1-Flash 生产服务的推理框架 DeepInfer（Apache 2.0）"]},
+        {"name": "DeepSeek-V4.1-Flash", "type": "model", "aliases": ["V4.1-Flash"], "confidence": 0.9, "evidence": ["驱动其 DeepSeek-V4.1-Flash 生产服务的推理框架 DeepInfer"]},
+        {"name": "deepseek-recipe", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["并配合发布 MIT 许可的 deepseek-recipe（请求到 token 的转换层，与官方 API 行为对齐）"]},
+        {"name": "vLLM", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["框架基于 vLLM 的深度改造 fork"]},
+        {"name": "FlashMLA", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["整合 FlashMLA、DeepGEMM、DeepEP、TileKernels 等内核库"]},
+        {"name": "DeepGEMM", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["整合 FlashMLA、DeepGEMM、DeepEP、TileKernels 等内核库"]},
+        {"name": "DeepEP", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["整合 FlashMLA、DeepGEMM、DeepEP、TileKernels 等内核库"]},
+        {"name": "TileKernels", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["整合 FlashMLA、DeepGEMM、DeepEP、TileKernels 等内核库"]},
+        {"name": "DSpark", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["DSpark 让小型草稿模型一次提出 5 个 token"]},
+        {"name": "SWA Bounded Replay", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["SWA Bounded Replay 只重算提示最后 128 个 token"]},
+        {"name": "SM100", "type": "hardware", "aliases": ["Blackwell SM100", "NVIDIA SM100"], "confidence": 0.9, "evidence": ["DeepInfer 同时支持 NVIDIA SM100 与昇腾 950 NPU"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["DeepInfer 同时支持 NVIDIA SM100 与昇腾 950 NPU"]},
+        {"name": "昇腾 950", "type": "hardware", "aliases": ["Ascend 950", "昇腾 950 NPU"], "confidence": 0.9, "evidence": ["DeepInfer 同时支持 NVIDIA SM100 与昇腾 950 NPU"]},
+        {"name": "华为", "type": "company", "aliases": ["Huawei"], "confidence": 0.95, "evidence": ["同时支持 NVIDIA Blackwell SM100 与华为昇腾 950"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "DeepSeek 以 Apache 2.0 开源推理框架 DeepInfer",
+          "summary": "DeepSeek 开源驱动 DeepSeek-V4.1-Flash 生产服务的推理框架 DeepInfer（Apache 2.0），框架基于 vLLM 深度改造 fork 并整合 FlashMLA、DeepGEMM、DeepEP、TileKernels 等内核库。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "DeepInfer", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["DeepSeek 开源了驱动其 DeepSeek-V4.1-Flash 生产服务的推理框架 DeepInfer（Apache 2.0）"]
+        },
+        {
+          "type": "launch",
+          "label": "DeepSeek 发布 MIT 许可的 deepseek-recipe",
+          "summary": "DeepSeek 配合发布 MIT 许可的 deepseek-recipe，作为请求到 token 的转换层，与官方 API 行为对齐。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "deepseek-recipe", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["并配合发布 MIT 许可的 deepseek-recipe（请求到 token 的转换层，与官方 API 行为对齐）"]
+        },
+        {
+          "type": "benchmark",
+          "label": "DeepInfer 披露单集群日服务 155 万亿 token 的部署指标",
+          "summary": "官方披露单集群日服务 155 万亿 token、闲时每 GPU 每小时收入约 38 美元，96% 的输入命中前缀缓存，DSpark 让生产负载吞吐提升 4-7%。",
+          "participants": [
+            {"name": "DeepInfer", "type": "tool", "role": "subject"},
+            {"name": "DeepSeek-V4.1-Flash", "type": "model", "role": "object"}
+          ],
+          "evidence": ["单集群日服务 155 万亿 token，闲时定价下每 GPU 每小时收入约 38 美元"]
+        }
+      ],
+      "relations": [
+        {"source": "DeepInfer", "target": "DeepSeek", "type": "released_by", "weight": 0.9, "evidence": ["DeepSeek 开源了驱动其 DeepSeek-V4.1-Flash 生产服务的推理框架 DeepInfer（Apache 2.0）"]},
+        {"source": "DeepSeek-V4.1-Flash", "target": "DeepInfer", "type": "uses", "weight": 0.8, "evidence": ["驱动其 DeepSeek-V4.1-Flash 生产服务的推理框架 DeepInfer"]},
+        {"source": "DeepInfer", "target": "vLLM", "type": "built_on", "weight": 0.9, "evidence": ["框架基于 vLLM 的深度改造 fork"]},
+        {"source": "DeepInfer", "target": "FlashMLA", "type": "integrates", "weight": 0.7, "evidence": ["整合 FlashMLA、DeepGEMM、DeepEP、TileKernels 等内核库"]},
+        {"source": "DeepInfer", "target": "DeepGEMM", "type": "integrates", "weight": 0.7, "evidence": ["整合 FlashMLA、DeepGEMM、DeepEP、TileKernels 等内核库"]},
+        {"source": "DeepInfer", "target": "DeepEP", "type": "integrates", "weight": 0.7, "evidence": ["整合 FlashMLA、DeepGEMM、DeepEP、TileKernels 等内核库"]},
+        {"source": "DeepInfer", "target": "TileKernels", "type": "integrates", "weight": 0.7, "evidence": ["整合 FlashMLA、DeepGEMM、DeepEP、TileKernels 等内核库"]},
+        {"source": "DeepInfer", "target": "DSpark", "type": "uses", "weight": 0.8, "evidence": ["DSpark 投机解码"]},
+        {"source": "DeepInfer", "target": "SWA Bounded Replay", "type": "uses", "weight": 0.7, "evidence": ["SWA Bounded Replay 只重算提示最后 128 个 token"]},
+        {"source": "DeepInfer", "target": "SM100", "type": "uses", "weight": 0.8, "evidence": ["DeepInfer 同时支持 NVIDIA SM100 与昇腾 950 NPU"]},
+        {"source": "DeepInfer", "target": "昇腾 950", "type": "uses", "weight": 0.8, "evidence": ["DeepInfer 同时支持 NVIDIA SM100 与昇腾 950 NPU"]},
+        {"source": "SM100", "target": "NVIDIA", "type": "developed_by", "weight": 0.5, "evidence": ["DeepInfer 同时支持 NVIDIA SM100 与昇腾 950 NPU"]},
+        {"source": "昇腾 950", "target": "华为", "type": "developed_by", "weight": 0.7, "evidence": ["同时支持 NVIDIA Blackwell SM100 与华为昇腾 950"]},
+        {"source": "deepseek-recipe", "target": "DeepSeek", "type": "developed_by", "weight": 0.7, "evidence": ["并配合发布 MIT 许可的 deepseek-recipe（请求到 token 的转换层，与官方 API 行为对齐）"]}
+      ],
+      "metrics": [
+        {"name": "DeepInfer 单集群日服务 token 数", "value": "155 万亿"},
+        {"name": "闲时每 GPU 每小时收入", "value": "约 38 美元"},
+        {"name": "输入前缀缓存命中率", "value": "96%"},
+        {"name": "单 GPU 预填充吞吐提升", "value": "6 万到 150 万 token/秒"},
+        {"name": "DSpark 验证量减少", "value": "约 30%"},
+        {"name": "DSpark 生产负载吞吐提升", "value": "4-7%"},
+        {"name": "SWA Bounded Replay 重算 token 数", "value": "128 个"}
+      ],
+      "why_it_matters": "推理框架第一次横跨 NVIDIA 与昇腾两大计算生态，DeepSeek 把 DSpark、SWA Bounded Replay 等内核优化开源成公共品，同时印证了华为栈的可用性——推理软件护城河从闭源转向速度与规模本身。"
+    },
+    {
+      "article_id": "2026-10-22-7",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["NVIDIA 发布 DSX POD"]},
+        {"name": "DSX POD", "type": "product", "aliases": ["DSX POD 容器"], "confidence": 0.9, "evidence": ["NVIDIA 发布 DSX POD——一座完整 Vera Rubin AI 工厂的参考设计"]},
+        {"name": "Vera Rubin", "type": "hardware", "aliases": ["NVIDIA Vera Rubin"], "confidence": 0.9, "evidence": ["一座完整 Vera Rubin AI 工厂的参考设计"]},
+        {"name": "NVLink 72", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["DSX POD 把此前 NVLink 72 机架级组装进供应链的做法扩展到整厂级别"]},
+        {"name": "黄仁勋", "type": "person", "aliases": ["Jensen Huang"], "confidence": 0.9, "evidence": ["黄仁勋在 GTC Berlin 主题演讲中称"]},
+        {"name": "Dell", "type": "company", "aliases": ["Dell Technologies"], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "HPE", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Lenovo", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Foxconn", "type": "company", "aliases": ["Ingrasys"], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Crusoe", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Schneider Electric", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Anduril", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Armada", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Bull", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "DayOne", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Delta", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Eaton", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "GIGABYTE", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Pegatron", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "QCT", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Vertiv", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"name": "Wistron", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "NVIDIA 在 GTC Berlin 发布 DSX POD 模块化 AI 工厂",
+          "summary": "NVIDIA 发布 DSX POD——完整 Vera Rubin AI 工厂的参考设计，在模块化容器内完成集成与验证，现场部署时间从六个月压缩到最短 14 天。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "DSX POD", "type": "product", "role": "object"},
+            {"name": "Vera Rubin", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["NVIDIA 发布 DSX POD——一座完整 Vera Rubin AI 工厂的参考设计"]
+        },
+        {
+          "type": "partnership",
+          "label": "DSX POD 生态覆盖 Dell、HPE、Foxconn 等厂商",
+          "summary": "DSX POD 合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等 17 家厂商，2027 年初开始全球交付。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Anduril", "type": "company", "role": "partner"},
+            {"name": "Armada", "type": "company", "role": "partner"},
+            {"name": "Bull", "type": "company", "role": "partner"},
+            {"name": "Crusoe", "type": "company", "role": "partner"},
+            {"name": "DayOne", "type": "company", "role": "partner"},
+            {"name": "Dell", "type": "company", "role": "partner"},
+            {"name": "Delta", "type": "company", "role": "partner"},
+            {"name": "Eaton", "type": "company", "role": "partner"},
+            {"name": "Foxconn", "type": "company", "role": "partner"},
+            {"name": "GIGABYTE", "type": "company", "role": "partner"},
+            {"name": "HPE", "type": "company", "role": "partner"},
+            {"name": "Lenovo", "type": "company", "role": "partner"},
+            {"name": "Pegatron", "type": "company", "role": "partner"},
+            {"name": "QCT", "type": "company", "role": "partner"},
+            {"name": "Schneider Electric", "type": "company", "role": "partner"},
+            {"name": "Vertiv", "type": "company", "role": "partner"},
+            {"name": "Wistron", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]
+        }
+      ],
+      "relations": [
+        {"source": "DSX POD", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["NVIDIA 发布 DSX POD"]},
+        {"source": "DSX POD", "target": "Vera Rubin", "type": "uses", "weight": 0.8, "evidence": ["一座完整 Vera Rubin AI 工厂的参考设计"]},
+        {"source": "DSX POD", "target": "NVLink 72", "type": "built_on", "weight": 0.6, "evidence": ["DSX POD 把此前 NVLink 72 机架级组装进供应链的做法扩展到整厂级别"]},
+        {"source": "NVIDIA", "target": "Dell", "type": "partners_with", "weight": 0.5, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "HPE", "type": "partners_with", "weight": 0.5, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Lenovo", "type": "partners_with", "weight": 0.5, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Foxconn", "type": "partners_with", "weight": 0.5, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Crusoe", "type": "partners_with", "weight": 0.5, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Schneider Electric", "type": "partners_with", "weight": 0.5, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Anduril", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Armada", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Bull", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "DayOne", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Delta", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Eaton", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "GIGABYTE", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Pegatron", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "QCT", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Vertiv", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "NVIDIA", "target": "Wistron", "type": "partners_with", "weight": 0.4, "evidence": ["合作生态覆盖 Anduril、Armada、Bull、Crusoe、DayOne、Dell、Delta、Eaton、Foxconn（Ingrasys）、GIGABYTE、HPE、Lenovo、Pegatron、QCT、Schneider Electric、Vertiv、Wistron 等"]},
+        {"source": "黄仁勋", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.8, "evidence": ["黄仁勋在 GTC Berlin 主题演讲中称"]}
+      ],
+      "metrics": [
+        {"name": "DSX POD 部署时间压缩", "value": "六个月到最短 14 天"},
+        {"name": "1 吉瓦 AI 数据中心造价", "value": "约 500 亿美元"},
+        {"name": "1 吉瓦 AI 数据中心年收入", "value": "约 400 亿美元"},
+        {"name": "延误三个月后移收入", "value": "约 100 亿美元"}
+      ],
+      "why_it_matters": "NVIDIA 把'好芯片不等于好 AI 工厂'变成生意：集成与验证从工地前移到制造环节，交付从六个月压到 14 天——AI 基建瓶颈从芯片转向工期与功率，卖算力的方式从设备转向可用产能。"
+    },
+    {
+      "article_id": "2026-10-22-8",
+      "entities": [
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["AMD 与 Intel 宣布合作"]},
+        {"name": "Intel", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["AMD 与 Intel 宣布合作"]},
+        {"name": "oneDNN", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["把双方 x86 CPU 上各自的 PyTorch 优化工作统一进 oneDNN 库"]},
+        {"name": "UXL 基金会", "type": "organization", "aliases": ["UXL Foundation"], "confidence": 0.9, "evidence": ["统一进 oneDNN 库（由 UXL 基金会治理的深度学习库）"]},
+        {"name": "ZenDNN", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["AMD 把其 ZenDNN 优化并入 oneDNN"]},
+        {"name": "PyTorch", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["把 oneDNN 定为 PyTorch 内 x86 加速的默认库"]},
+        {"name": "x86 生态系统咨询小组", "type": "organization", "aliases": ["x86 Ecosystem Advisory Group"], "confidence": 0.85, "evidence": ["遵循 x86 生态系统咨询小组的建议"]},
+        {"name": "AI Compute Extensions", "type": "tool", "aliases": ["ACE"], "confidence": 0.85, "evidence": ["两家还延续了在 AI Compute Extensions（ACE）上的合作"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "AMD 与 Intel 把 x86 CPU 推理软件统一进 oneDNN",
+          "summary": "AMD 与 Intel 宣布合作，把各自 x86 CPU 上的 PyTorch 优化统一进由 UXL 基金会治理的 oneDNN 库，并定为 PyTorch 内 x86 加速的默认库。",
+          "participants": [
+            {"name": "AMD", "type": "company", "role": "subject"},
+            {"name": "Intel", "type": "company", "role": "partner"},
+            {"name": "oneDNN", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["AMD 与 Intel 宣布合作：把双方 x86 CPU 上各自的 PyTorch 优化工作统一进 oneDNN 库"]
+        },
+        {
+          "type": "infra",
+          "label": "AMD 将 ZenDNN 并入 oneDNN 并成为 UXL 基金会指导成员",
+          "summary": "AMD 把其 ZenDNN 优化并入 oneDNN 并成为 UXL 基金会指导成员（每年捐助 2 万美元），开发者不再需要区分 Intel 与 AMD 的软件路径。",
+          "participants": [
+            {"name": "AMD", "type": "company", "role": "subject"},
+            {"name": "ZenDNN", "type": "tool", "role": "object"},
+            {"name": "oneDNN", "type": "tool", "role": "object"},
+            {"name": "UXL 基金会", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["AMD 把其 ZenDNN 优化并入 oneDNN 并成为 UXL 基金会指导成员"]
+        }
+      ],
+      "relations": [
+        {"source": "AMD", "target": "Intel", "type": "partners_with", "weight": 0.9, "evidence": ["AMD 与 Intel 宣布合作"]},
+        {"source": "oneDNN", "target": "ZenDNN", "type": "integrates", "weight": 0.8, "evidence": ["AMD 把其 ZenDNN 优化并入 oneDNN"]},
+        {"source": "PyTorch", "target": "oneDNN", "type": "integrates", "weight": 0.7, "evidence": ["把 oneDNN 定为 PyTorch 内 x86 加速的默认库"]},
+        {"source": "AMD", "target": "x86 生态系统咨询小组", "type": "complies_with", "weight": 0.5, "evidence": ["遵循 x86 生态系统咨询小组的建议"]},
+        {"source": "oneDNN", "target": "AI Compute Extensions", "type": "integrates", "weight": 0.6, "evidence": ["未来会通过 oneDNN 更新进入 PyTorch"]},
+        {"source": "AMD", "target": "UXL 基金会", "type": "partners_with", "weight": 0.6, "evidence": ["并成为 UXL 基金会指导成员（每年捐助 2 万美元）"]}
+      ],
+      "metrics": [
+        {"name": "oneDNN FP32 推理提速", "value": "约 1.24 倍"},
+        {"name": "oneDNN BF16 推理提速", "value": "约 2.21 倍"},
+        {"name": "AMD 对 UXL 基金会年捐助", "value": "2 万美元"}
+      ],
+      "why_it_matters": "x86 两家在 AI 加速时代第一次用一个声音定义软件栈，ZenDNN 并入 oneDNN 终结 CPU 推理的双轨路径——对'单 GPU 厂商掌控 AI 软件栈'是又一次去中心化，边缘推理的软件成本向统一标准收敛。"
+    },
+    {
+      "article_id": "2026-10-22-9",
+      "entities": [
+        {"name": "LongZero", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["论文提出 LongZero，让模型从\"自己提出的任务\"中学习"]},
+        {"name": "GRPO", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["用 GRPO 训练，全程不需要任何外部数据"]},
+        {"name": "长上下文推理基准", "type": "benchmark", "aliases": ["五个长上下文推理基准"], "confidence": 0.8, "evidence": ["在两个 LLM、五个长上下文推理基准上与\"用外部语料合成数据做 RL\"的基线相比"]},
+        {"name": "外部语料合成数据 RL 基线", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["与\"用外部语料合成数据做 RL\"的基线相比，LongZero 均取得更优表现"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 LongZero 让模型自我强化长上下文推理",
+          "summary": "LongZero 让模型先自写问题、答案与支撑证据，再扩写为长多文档上下文并组合成自写多跳推理与多轮检索任务，用 GRPO 训练，全程不需要任何外部数据。",
+          "participants": [
+            {"name": "LongZero", "type": "tool", "role": "subject"},
+            {"name": "GRPO", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["论文提出 LongZero，让模型从\"自己提出的任务\"中学习"]
+        },
+        {
+          "type": "benchmark",
+          "label": "LongZero 在五个长上下文推理基准上超越合成数据 RL 基线",
+          "summary": "在两个 LLM、五个长上下文推理基准上与'用外部语料合成数据做 RL'的基线相比，LongZero 均取得更优表现并能泛化到真实任务。",
+          "participants": [
+            {"name": "LongZero", "type": "tool", "role": "subject"},
+            {"name": "长上下文推理基准", "type": "benchmark", "role": "benchmark"},
+            {"name": "外部语料合成数据 RL 基线", "type": "topic", "role": "benchmark"}
+          ],
+          "evidence": ["在两个 LLM、五个长上下文推理基准上与\"用外部语料合成数据做 RL\"的基线相比，LongZero 均取得更优表现并能泛化到真实任务"]
+        }
+      ],
+      "relations": [
+        {"source": "LongZero", "target": "GRPO", "type": "uses", "weight": 0.8, "evidence": ["用 GRPO 训练，全程不需要任何外部数据"]},
+        {"source": "LongZero", "target": "长上下文推理基准", "type": "evaluated_on", "weight": 0.7, "evidence": ["在两个 LLM、五个长上下文推理基准上与\"用外部语料合成数据做 RL\"的基线相比"]},
+        {"source": "LongZero", "target": "外部语料合成数据 RL 基线", "type": "outperforms", "weight": 0.8, "evidence": ["LongZero 均取得更优表现并能泛化到真实任务"]}
+      ],
+      "metrics": [
+        {"name": "评测 LLM 数", "value": "两个"},
+        {"name": "评测长上下文推理基准数", "value": "五个"}
+      ],
+      "why_it_matters": "当最强模型已无更强的外部教师可用，LongZero 证明自提问题到自证的自循环能替代外部语料驱动 RL——长上下文强化从数据依赖转向自我生成，头部模型的扩展竞争多了一条闭门可复用的路径。"
+    },
+    {
+      "article_id": "2026-10-22-10",
+      "entities": [
+        {"name": "Quant-Arena", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["Quant-Arena 用真实 A 股市场数据构建端到端评测与公开排行榜"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["九个前沿模型参与评测，GPT-6 Astra 得分第一"]},
+        {"name": "等权市场基准", "type": "benchmark", "aliases": ["等权市场"], "confidence": 0.85, "evidence": ["但没有任何模型在 2024 年击败等权市场"]},
+        {"name": "A 股市场数据", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["Quant-Arena 用真实 A 股市场数据构建端到端评测"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 Quant-Arena 端到端量化研究评测",
+          "summary": "Quant-Arena 用真实 A 股市场数据构建端到端评测与公开排行榜，模型只获得 2022-2023 年反馈，策略冻结后在封存的 2024 年评估，估值器施加交易约束与市场冲击成本。",
+          "participants": [
+            {"name": "Quant-Arena", "type": "benchmark", "role": "subject"},
+            {"name": "A 股市场数据", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Quant-Arena 用真实 A 股市场数据构建端到端评测与公开排行榜"]
+        },
+        {
+          "type": "benchmark",
+          "label": "九个前沿模型在 Quant-Arena 评测，GPT-6 Astra 得分第一但未跑赢等权市场",
+          "summary": "九个前沿模型参与评测，GPT-6 Astra 得分第一，但没有任何模型在 2024 年击败等权市场——模型研究的 alpha 在扣成本后整体为负。",
+          "participants": [
+            {"name": "GPT-6 Astra", "type": "model", "role": "subject"},
+            {"name": "Quant-Arena", "type": "benchmark", "role": "benchmark"},
+            {"name": "等权市场基准", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["九个前沿模型参与评测，GPT-6 Astra 得分第一，但没有任何模型在 2024 年击败等权市场"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-6 Astra", "target": "Quant-Arena", "type": "evaluated_on", "weight": 0.9, "evidence": ["九个前沿模型参与评测，GPT-6 Astra 得分第一"]},
+        {"source": "等权市场基准", "target": "GPT-6 Astra", "type": "outperforms", "weight": 0.8, "evidence": ["但没有任何模型在 2024 年击败等权市场"]},
+        {"source": "Quant-Arena", "target": "A 股市场数据", "type": "uses", "weight": 0.7, "evidence": ["Quant-Arena 用真实 A 股市场数据构建端到端评测与公开排行榜"]}
+      ],
+      "metrics": [
+        {"name": "参与评测的前沿模型数", "value": "九个"},
+        {"name": "模型训练反馈数据年份", "value": "2022-2023 年"},
+        {"name": "评测年份", "value": "2024 年"}
+      ],
+      "why_it_matters": "量化 LLM 评测从单环节能力转向端到端研究闭环，而最强模型扣完真实交易成本跑不赢等权市场——agent 炒股的实验室优势在摩擦面前尚未兑现，给'AI 超额收益'叙事泼了一盆可复现的冷水。"
+    },
+    {
+      "article_id": "2026-10-22-11",
+      "entities": [
+        {"name": "P2NPCBench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["论文用对抗式多智能体框架 AgentGAN 构造 P2NPCBench"]},
+        {"name": "AgentGAN", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["论文用对抗式多智能体框架 AgentGAN 构造 P2NPCBench"]},
+        {"name": "NP 完全问题", "type": "topic", "aliases": ["NPC 问题", "NPC"], "confidence": 0.9, "evidence": ["论文提出 P2NPCBench：给每个 NP 完全问题配上只差一个结构细节的 P 类孪生题"]},
+        {"name": "P 类孪生题", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["给每个 NP 完全问题配上只差一个结构细节的 P 类孪生题"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 P2NPCBench 配对 P 与 NP 完全问题",
+          "summary": "P2NPCBench 给每个 NP 完全问题配上只差一个结构细节的 P 类孪生题，用对抗式多智能体框架 AgentGAN 生成 2114 道硬化题与人工核验的参考解答。",
+          "participants": [
+            {"name": "P2NPCBench", "type": "benchmark", "role": "subject"},
+            {"name": "AgentGAN", "type": "tool", "role": "object"},
+            {"name": "NP 完全问题", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["论文用对抗式多智能体框架 AgentGAN 构造 P2NPCBench"]
+        },
+        {
+          "type": "benchmark",
+          "label": "12 个模型在 P2NPCBench 的 NPC 侧得分显著更低",
+          "summary": "评测 12 个专有与开源模型，所有模型在 NPC 题上的得分都低于 P 孪生题（35.4% 对 63.8%），硬化把类别差距从 24.8 分收窄到 14.6 分。",
+          "participants": [
+            {"name": "P2NPCBench", "type": "benchmark", "role": "benchmark"},
+            {"name": "NP 完全问题", "type": "topic", "role": "object"},
+            {"name": "P 类孪生题", "type": "topic", "role": "benchmark"}
+          ],
+          "evidence": ["所有模型在 NPC 题上的得分都低于 P 孪生题（35.4% 对 63.8%）"]
+        }
+      ],
+      "relations": [
+        {"source": "P2NPCBench", "target": "AgentGAN", "type": "uses", "weight": 0.8, "evidence": ["论文用对抗式多智能体框架 AgentGAN 构造 P2NPCBench"]},
+        {"source": "P2NPCBench", "target": "NP 完全问题", "type": "targets", "weight": 0.7, "evidence": ["论文提出 P2NPCBench：给每个 NP 完全问题配上只差一个结构细节的 P 类孪生题"]},
+        {"source": "NP 完全问题", "target": "P 类孪生题", "type": "compared_with", "weight": 0.7, "evidence": ["所有模型在 NPC 题上的得分都低于 P 孪生题"]}
+      ],
+      "metrics": [
+        {"name": "NPC 题平均准确率", "value": "35.4%"},
+        {"name": "P 孪生题平均准确率", "value": "63.8%"},
+        {"name": "时限放宽十倍后 NPC 准确率", "value": "28.5% 到 31.9%"},
+        {"name": "硬化后类别差距收窄幅度", "value": "24.8 分到 14.6 分"},
+        {"name": "硬化题数量", "value": "2114 道"},
+        {"name": "NPC 侧失败更多的模型-家族配对占比", "value": "95.1%"}
+      ],
+      "why_it_matters": "把 P/NPC 差距拆成熟悉度与复杂度两笔账后，约四成的类别差距在硬化后消失——模型在 NPC 上的落后有相当部分只是见过教科书题面，基准硬化正在把记忆与推理从分数里分离开来。"
+    },
+    {
+      "article_id": "2026-10-22-12",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 宣布 Decisions API 全面可用"]},
+        {"name": "Decisions API", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 宣布 Decisions API 全面可用"]},
+        {"name": "GPT-6 Luna", "type": "model", "aliases": ["Luna"], "confidence": 0.9, "evidence": ["Decisions API 内置 GPT-6 Luna"]},
+        {"name": "Responses API", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["相比 Responses API 上调用 Luna，速度提升最多 10 倍"]},
+        {"name": "GPT-Live", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["GA 版还加入原生 GPT-Live 集成"]},
+        {"name": "Dots", "type": "organization", "aliases": ["Dots 团队"], "confidence": 0.85, "evidence": ["OpenAI 内部 Dots 团队用它降低响应时间"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 将基于 GPT-6 Luna 的 Decisions API 全面可用",
+          "summary": "OpenAI 宣布 Decisions API 全面可用，内置 GPT-6 Luna 专为'有界答案'设计，开发者定义问题与允许的答案，返回概率、选项或评分三类答案。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Decisions API", "type": "product", "role": "object"},
+            {"name": "GPT-6 Luna", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI 宣布 Decisions API 全面可用"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Decisions API 比 Responses API 快最多 10 倍",
+          "summary": "相比 Responses API 上调用 Luna，Decisions API 速度提升最多 10 倍，且只按输入 token 计费：每百万输入 token 0.1 美元、缓存输入 0.01 美元。",
+          "participants": [
+            {"name": "Decisions API", "type": "product", "role": "subject"},
+            {"name": "Responses API", "type": "product", "role": "benchmark"}
+          ],
+          "evidence": ["相比 Responses API 上调用 Luna，速度提升最多 10 倍"]
+        }
+      ],
+      "relations": [
+        {"source": "Decisions API", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 宣布 Decisions API 全面可用"]},
+        {"source": "Decisions API", "target": "GPT-6 Luna", "type": "built_on", "weight": 0.9, "evidence": ["Decisions API 内置 GPT-6 Luna"]},
+        {"source": "Decisions API", "target": "Responses API", "type": "outperforms", "weight": 0.7, "evidence": ["相比 Responses API 上调用 Luna，速度提升最多 10 倍"]},
+        {"source": "Decisions API", "target": "GPT-Live", "type": "integrates", "weight": 0.7, "evidence": ["GA 版还加入原生 GPT-Live 集成"]},
+        {"source": "Dots", "target": "Decisions API", "type": "uses", "weight": 0.5, "evidence": ["OpenAI 内部 Dots 团队用它降低响应时间"]}
+      ],
+      "metrics": [
+        {"name": "Decisions API 相对 Responses API 提速", "value": "最多 10 倍"},
+        {"name": "Decisions API 每百万输入 token 价格", "value": "0.1 美元"},
+        {"name": "Decisions API 缓存输入价格", "value": "0.01 美元"},
+        {"name": "单请求最多问题数", "value": "400 个"}
+      ],
+      "why_it_matters": "模型层把'概率式生成'与'确定性裁决'拆成两种 API 形态，决策负载只按输入计费——小决策的延迟与成本被单独定价，推理商业化从卖 token 转向卖动作，agent 规模化的经济账因此重写。"
+    }
+  ]
+}
