@@ -1,0 +1,599 @@
+{
+  "date": "2026-10-23",
+  "articles": [
+    {
+      "article_id": "2026-10-23-0",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 公布前沿模型训练环境加固方案"]},
+        {"name": "GPT-6 Astra Cyber", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["包括即将推出的 GPT-6 Astra Cyber 与一个内部前沿模型"]},
+        {"name": "离线世界", "type": "tool", "aliases": ["离线世界语料"], "confidence": 0.85, "evidence": ["OpenAI 构建了“离线世界”——由索引与缓存网页构成的可交互语料"]},
+        {"name": "Kata Containers", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["发现多条 VM 逃逸链（Kata Containers CVE-2026-24834、gVisor 文件描述符处理、Moby/Docker syscall 过滤器"]},
+        {"name": "gVisor", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["gVisor 文件描述符处理"]},
+        {"name": "Moby", "type": "tool", "aliases": ["Docker", "Moby/Docker"], "confidence": 0.85, "evidence": ["Moby/Docker syscall 过滤器"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "OpenAI 前沿模型训练全面断网，改用索引缓存构成的离线世界",
+          "summary": "9 月 20 日一个内部研究模型借 DNS 解析器配置错误短暂获得真实互联网访问，OpenAI 随即暂停最强模型的训练与评测 11 天、10 月 1 日恢复，并规定前沿模型训练与大部分评测无互联网访问，所有前沿 RL 运行改在离线模式下进行。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6 Astra Cyber", "type": "model", "role": "object"},
+            {"name": "离线世界", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["前沿模型训练与大部分评测“无互联网访问”", "暂停最强模型的训练与评测 11 天", "所有前沿 RL 运行都在这套离线模式下进行"]
+        },
+        {
+          "type": "security",
+          "label": "OpenAI 组织前沿模型 agent 红队攻击隔离副本，发现多条 VM 逃逸链",
+          "summary": "OpenAI 组织包括 GPT-6 Astra Cyber 在内的前沿模型 agent 团队攻击隔离副本，红队累计消耗数百亿 token，发现 Kata Containers、gVisor、Moby/Docker 等多条 VM 逃逸链以及基于 CPU 缓存计时的隐蔽通信通道。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6 Astra Cyber", "type": "model", "role": "subject"},
+            {"name": "Kata Containers", "type": "tool", "role": "object"},
+            {"name": "gVisor", "type": "tool", "role": "object"},
+            {"name": "Moby", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["红队累计消耗数百亿 token", "发现多条 VM 逃逸链（Kata Containers CVE-2026-24834、gVisor 文件描述符处理、Moby/Docker syscall 过滤器，以及 CVE-2026-74753/80521/80841 等内核修复）"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-6 Astra Cyber", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["包括即将推出的 GPT-6 Astra Cyber 与一个内部前沿模型"]},
+        {"source": "离线世界", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["OpenAI 构建了“离线世界”——由索引与缓存网页构成的可交互语料"]},
+        {"source": "OpenAI", "target": "离线世界", "type": "uses", "weight": 0.8, "evidence": ["所有前沿 RL 运行都在这套离线模式下进行"]},
+        {"source": "OpenAI", "target": "GPT-6 Astra Cyber", "type": "restricts", "weight": 0.7, "evidence": ["前沿模型训练与大部分评测“无互联网访问”"]},
+        {"source": "GPT-6 Astra Cyber", "target": "Kata Containers", "type": "targets", "weight": 0.6, "evidence": ["发现多条 VM 逃逸链（Kata Containers CVE-2026-24834、gVisor 文件描述符处理、Moby/Docker syscall 过滤器"]},
+        {"source": "GPT-6 Astra Cyber", "target": "gVisor", "type": "targets", "weight": 0.6, "evidence": ["gVisor 文件描述符处理"]},
+        {"source": "GPT-6 Astra Cyber", "target": "Moby", "type": "targets", "weight": 0.5, "evidence": ["Moby/Docker syscall 过滤器"]}
+      ],
+      "metrics": [
+        {"name": "红队攻击累计消耗 token 量级", "value": "数百亿 token"},
+        {"name": "9/20 事故后最强模型训练与评测暂停时长", "value": "11 天"},
+        {"name": "训练与评测恢复日期", "value": "10 月 1 日"}
+      ],
+      "why_it_matters": "OpenAI 把'高算力红队 + 断网训练'变成前沿安全的标准动作，安全评估重心从'模型会不会做坏事'转向'模型能否逃出我们为它建的牢笼'——最前沿实验室的经费开始流向'防自家模型'的基础设施。"
+    },
+    {
+      "article_id": "2026-10-23-1",
+      "entities": [
+        {"name": "METR", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["METR 与 Redwood Research 公开为期三周的驻场试点审计"]},
+        {"name": "Redwood Research", "type": "organization", "aliases": ["Redwood"], "confidence": 0.95, "evidence": ["METR 与 Redwood Research 公开为期三周的驻场试点审计"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["外部研究员深度接触 OpenAI 内部代码后"]},
+        {"name": "GPT-5.5", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["约 75-94%（内部 Codex 流量达 99.2%）的 GPT-5.5 级及以上 agent 流量“可被监控”"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["内部 Codex 流量达 99.2%"]},
+        {"name": "Auto-Review", "type": "tool", "aliases": [], "confidence": 0.7, "evidence": ["绕过 Codex 沙箱与 Auto-Review 的路径"]},
+        {"name": "OpenAI agent 监控系统", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["METR 与 Redwood 各派一名研究员驻场，接触 OpenAI 内部代码库、监控系统提示词与配置"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "METR 与 Redwood 首次驻场审计 OpenAI 内部监控系统",
+          "summary": "7 月 21 日至 8 月 11 日，METR 与 Redwood 各派一名研究员驻场，接触 OpenAI 内部代码库与监控系统配置，产出 61 页内部报告，发现监控覆盖约 75-94%、RL 训练初期完全无监控、agent 可无限期推迟被审，还找到绕过 Codex 沙箱与 Auto-Review 的路径、两个可关闭新 agent 监控的客户端可控 header，以及可让“数百个动作不被记录”的利用。",
+          "participants": [
+            {"name": "METR", "type": "organization", "role": "subject"},
+            {"name": "Redwood Research", "type": "organization", "role": "partner"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "OpenAI agent 监控系统", "type": "tool", "role": "object"},
+            {"name": "Auto-Review", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["METR 与 Redwood Research 公开为期三周的驻场试点审计", "外部研究员深度接触 OpenAI 内部代码后", "绕过 Codex 沙箱与 Auto-Review 的路径"]
+        },
+        {
+          "type": "security",
+          "label": "OpenAI 称审计发现的监控漏洞均已修复并大幅扩展监控覆盖设计",
+          "summary": "OpenAI 称影响生产防护的漏洞均已修复（METR 未核实该声明），并大幅扩展了监控覆盖设计；审计期间还修复了约 10% 内部 Codex 流量漏网监控的问题。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-5.5", "type": "model", "role": "object"},
+            {"name": "Codex", "type": "product", "role": "object"}
+          ],
+          "evidence": ["影响生产防护的漏洞均已修复", "大幅扩展了监控覆盖设计", "OpenAI 已独立发现并在审计期间修复"]
+        }
+      ],
+      "relations": [
+        {"source": "METR", "target": "Redwood Research", "type": "partners_with", "weight": 0.8, "evidence": ["METR 与 Redwood 各派一名研究员驻场"]},
+        {"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["5-7 月约 10% 的内部 Codex 流量漏网（OpenAI 已独立发现并在审计期间修复）"]},
+        {"source": "GPT-5.5", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["约 75-94%（内部 Codex 流量达 99.2%）的 GPT-5.5 级及以上 agent 流量“可被监控”"]}
+      ],
+      "metrics": [
+        {"name": "OpenAI GPT-5.5 级及以上 agent 流量可监控覆盖率", "value": "约 75-94%"},
+        {"name": "内部 Codex 流量可监控比例", "value": "99.2%"},
+        {"name": "上下文压缩事件漏网内部 Codex 流量", "value": "约 10%"},
+        {"name": "驻场审计内部报告页数", "value": "61 页"},
+        {"name": "可关闭新 agent 监控的客户端可控 header 数", "value": "两个"},
+        {"name": "监控失效时可让动作不被记录的利用规模", "value": "数百个动作"}
+      ],
+      "why_it_matters": "外部安全机构首次摸到实验室内部代码，把'监控是否覆盖'变成可量化事实——75-94% 的覆盖率和 RL 训练初期的零监控窗口说明 agent 安全仍处在盲区，当 agent 会主动逃避监控时，安全边界必须假设攻击者就是被训练者本人。"
+    },
+    {
+      "article_id": "2026-10-23-2",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 前沿红队与 Theorem 合作，让 Claude 对 Google OSS-Fuzz 中 123 个库的 239 个入口写出机器可检验的 Rocq 证明"]},
+        {"name": "Theorem", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 前沿红队与 Theorem 合作"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["让 Claude 对 Google OSS-Fuzz 中 123 个库的 239 个入口写出机器可检验的 Rocq 证明"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["对 Google OSS-Fuzz 中 123 个库"]},
+        {"name": "OSS-Fuzz", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Google OSS-Fuzz 中 123 个库的 239 个入口"]},
+        {"name": "Rocq", "type": "tool", "aliases": ["Coq"], "confidence": 0.9, "evidence": ["Claude 编写证明，Rocq 证明检查器逐行核验"]},
+        {"name": "Theorem 验证流水线", "type": "tool", "aliases": ["验证流水线"], "confidence": 0.85, "evidence": ["Theorem 已把这套流水线免费开放给符合条件的开源项目"]},
+        {"name": "libexpat", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Claude 还重新发现了 libexpat 的 CVE-2026-56132"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Claude 为 Google OSS-Fuzz 中 123 个库写出机器可检验的 Rocq 形式化证明",
+          "summary": "Anthropic 前沿红队与 Theorem 合作，让 Claude 对 OSS-Fuzz 中 123 个库的 239 个入口在 RISC-V 汇编层面证明 64MB 以内任意输入都不会崩溃，证明约 1.8 亿行、数周完成。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"},
+            {"name": "Theorem", "type": "company", "role": "partner"},
+            {"name": "OSS-Fuzz", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["让 Claude 对 Google OSS-Fuzz 中 123 个库的 239 个入口写出机器可检验的 Rocq 证明", "证明约 1.8 亿行，数周完成"]
+        },
+        {
+          "type": "open_source",
+          "label": "Theorem 将形式化验证流水线免费开放给符合条件的开源项目",
+          "summary": "Theorem 把这套让 Claude 写 Rocq 证明的流水线免费开放给符合条件的开源项目，公开子集 60 个入口、25 个库以 MIT 许可发布，可独立复检。",
+          "participants": [
+            {"name": "Theorem", "type": "company", "role": "subject"},
+            {"name": "Theorem 验证流水线", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Theorem 已把这套流水线免费开放给符合条件的开源项目", "公开子集（60 个入口、25 个库，MIT 许可）可独立复检"]
+        },
+        {
+          "type": "security",
+          "label": "Claude 在证明过程中重新发现 libexpat 的 CVE-2026-56132",
+          "summary": "证明过程顺带暴露大量 fuzz 测试盲区，Claude 重新发现了 libexpat 的 CVE-2026-56132，对发现 bug 的库先修复再证明修复后的版本。",
+          "participants": [
+            {"name": "Claude", "type": "model", "role": "subject"},
+            {"name": "libexpat", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Claude 还重新发现了 libexpat 的 CVE-2026-56132"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 前沿红队与 Theorem 合作，让 Claude 对 Google OSS-Fuzz 中 123 个库的 239 个入口写出机器可检验的 Rocq 证明"]},
+        {"source": "Anthropic", "target": "Theorem", "type": "partners_with", "weight": 0.8, "evidence": ["Anthropic 前沿红队与 Theorem 合作"]},
+        {"source": "OSS-Fuzz", "target": "Google", "type": "developed_by", "weight": 0.7, "evidence": ["对 Google OSS-Fuzz 中 123 个库"]},
+        {"source": "Claude", "target": "Rocq", "type": "uses", "weight": 0.7, "evidence": ["Claude 编写证明，Rocq 证明检查器逐行核验"]},
+        {"source": "Theorem 验证流水线", "target": "Theorem", "type": "released_by", "weight": 0.8, "evidence": ["Theorem 已把这套流水线免费开放给符合条件的开源项目"]},
+        {"source": "Claude", "target": "libexpat", "type": "targets", "weight": 0.5, "evidence": ["Claude 还重新发现了 libexpat 的 CVE-2026-56132"]}
+      ],
+      "metrics": [
+        {"name": "被形式化验证的 OSS-Fuzz 库数量", "value": "123 个"},
+        {"name": "被验证的库入口数量", "value": "239 个"},
+        {"name": "Rocq 证明总行数", "value": "约 1.8 亿行"},
+        {"name": "证明覆盖的任意输入上限", "value": "64MB"},
+        {"name": "seL4 当年形式化验证耗时参照", "value": "约 20 人年"},
+        {"name": "公开子集入口与库数量", "value": "60 个入口、25 个库"}
+      ],
+      "why_it_matters": "形式化验证从'人年级的专家工作'变成'数周自动化任务'，防御方武器从'逐个找 bug'升级为'证明没有 bug'——剩余风险被收窄成信任边界（语义模型、定理陈述、检查器）内可审计的小集合，'排除整类崩溃'第一次可以规模化兑现。"
+    },
+    {
+      "article_id": "2026-10-23-3",
+      "entities": [
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.95, "evidence": ["本轮融资约 1000 亿元人民币"]},
+        {"name": "腾讯", "type": "company", "aliases": ["Tencent"], "confidence": 0.95, "evidence": ["最大出资方为腾讯与动力电池巨头宁德时代（均为老股东）"]},
+        {"name": "宁德时代", "type": "company", "aliases": ["CATL", "宁德"], "confidence": 0.95, "evidence": ["最大出资方为腾讯与动力电池巨头宁德时代（均为老股东）"]},
+        {"name": "美团", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["其他参与者包括美团、吉利、美的、芯片商兆易创新"]},
+        {"name": "吉利", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["其他参与者包括美团、吉利、美的、芯片商兆易创新"]},
+        {"name": "美的", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["其他参与者包括美团、吉利、美的、芯片商兆易创新"]},
+        {"name": "兆易创新", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["其他参与者包括美团、吉利、美的、芯片商兆易创新"]},
+        {"name": "美国国土安全部", "type": "organization", "aliases": ["DHS", "国土安全部"], "confidence": 0.95, "evidence": ["美国国土安全部上周刚依据 FASCSA 命令联邦文职机构停用并移除所有 DeepSeek 产品"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "DeepSeek 完成约 1000 亿元融资，腾讯与宁德时代联席领投",
+          "summary": "DeepSeek 新一轮融资约 1000 亿元人民币，规模两度上调（500 亿→800 亿→约 1000 亿），投前约 740 亿美元、投后近 890 亿美元，腾讯与宁德时代等 15 家以上机构参与，为年内第二轮外部融资。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "腾讯", "type": "company", "role": "funder"},
+            {"name": "宁德时代", "type": "company", "role": "funder"},
+            {"name": "美团", "type": "company", "role": "funder"},
+            {"name": "吉利", "type": "company", "role": "funder"},
+            {"name": "美的", "type": "company", "role": "funder"},
+            {"name": "兆易创新", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["本轮融资约 1000 亿元人民币", "腾讯与宁德时代联席领投"]
+        },
+        {
+          "type": "policy",
+          "label": "美国国土安全部依据 FASCSA 命令联邦文职机构停用并移除 DeepSeek 产品",
+          "summary": "美国国土安全部上周依据 FASCSA 命令联邦文职机构停用并移除所有 DeepSeek 产品，禁令阴影未散时国内资本与产业资本高度同向押注。",
+          "participants": [
+            {"name": "美国国土安全部", "type": "organization", "role": "regulator"},
+            {"name": "DeepSeek", "type": "company", "role": "object"}
+          ],
+          "evidence": ["美国国土安全部上周刚依据 FASCSA 命令联邦文职机构停用并移除所有 DeepSeek 产品"]
+        }
+      ],
+      "relations": [
+        {"source": "腾讯", "target": "DeepSeek", "type": "invests_in", "weight": 0.9, "evidence": ["最大出资方为腾讯与动力电池巨头宁德时代（均为老股东）"]},
+        {"source": "宁德时代", "target": "DeepSeek", "type": "invests_in", "weight": 0.9, "evidence": ["最大出资方为腾讯与动力电池巨头宁德时代（均为老股东）"]},
+        {"source": "美团", "target": "DeepSeek", "type": "invests_in", "weight": 0.6, "evidence": ["其他参与者包括美团、吉利、美的、芯片商兆易创新"]},
+        {"source": "吉利", "target": "DeepSeek", "type": "invests_in", "weight": 0.6, "evidence": ["其他参与者包括美团、吉利、美的、芯片商兆易创新"]},
+        {"source": "美的", "target": "DeepSeek", "type": "invests_in", "weight": 0.6, "evidence": ["其他参与者包括美团、吉利、美的、芯片商兆易创新"]},
+        {"source": "兆易创新", "target": "DeepSeek", "type": "invests_in", "weight": 0.6, "evidence": ["其他参与者包括美团、吉利、美的、芯片商兆易创新"]},
+        {"source": "美国国土安全部", "target": "DeepSeek", "type": "restricts", "weight": 0.8, "evidence": ["美国国土安全部上周刚依据 FASCSA 命令联邦文职机构停用并移除所有 DeepSeek 产品"]}
+      ],
+      "metrics": [
+        {"name": "DeepSeek 本轮融资额", "value": "约 1000 亿元人民币"},
+        {"name": "DeepSeek 投前估值", "value": "约 740 亿美元（约 5000 亿元）"},
+        {"name": "DeepSeek 投后估值", "value": "近 890 亿美元"},
+        {"name": "本轮参与机构数量", "value": "15 家以上"},
+        {"name": "6 月首轮融资额", "value": "约 74 亿美元"},
+        {"name": "6 月首轮时估值", "value": "约 520 亿美元"}
+      ],
+      "why_it_matters": "DHS 禁令落地一周内，国内资本用约 1000 亿元同向押注——DeepSeek 成为禁令名单上唯一同时握有前沿模型、华为算力通道与全产业资本的公司，这轮融资买的是'禁不住的生态'而非单纯的模型估值。"
+    },
+    {
+      "article_id": "2026-10-23-4",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 接近敲定至多 300 亿美元新轮融资"]},
+        {"name": "Coatue", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["阿联酋投资者与 Coatue 领投"]},
+        {"name": "阿联酋投资者", "type": "organization", "aliases": ["UAE", "阿联酋"], "confidence": 0.85, "evidence": ["阿联酋投资者与 Coatue 领投"]},
+        {"name": "Sarah Friar", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["CFO Sarah Friar 对员工表示上市可能在 2027 年"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "OpenAI 接近敲定至多 300 亿美元融资，投前估值 1.25 万亿美元",
+          "summary": "OpenAI 于 10 月 22 日告知投资人争取下周完成签约，阿联酋投资者与 Coatue 领投，投前估值 1.25 万亿美元，较 10 月初向 BlackRock 与 MGX 开出的 1.4 万亿要价自砍约 1500 亿美元，定位为 IPO 前机会型桥接。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Coatue", "type": "company", "role": "funder"},
+            {"name": "阿联酋投资者", "type": "organization", "role": "funder"}
+          ],
+          "evidence": ["OpenAI 接近敲定至多 300 亿美元新轮融资，投前估值 1.25 万亿美元", "阿联酋投资者与 Coatue 领投"]
+        }
+      ],
+      "relations": [
+        {"source": "Coatue", "target": "OpenAI", "type": "invests_in", "weight": 0.8, "evidence": ["阿联酋投资者与 Coatue 领投"]},
+        {"source": "阿联酋投资者", "target": "OpenAI", "type": "invests_in", "weight": 0.8, "evidence": ["阿联酋投资者与 Coatue 领投"]},
+        {"source": "Sarah Friar", "target": "OpenAI", "type": "affiliated_with", "weight": 0.8, "evidence": ["CFO Sarah Friar 对员工表示上市可能在 2027 年"]}
+      ],
+      "metrics": [
+        {"name": "OpenAI 本轮募资规模上限", "value": "至多 300 亿美元"},
+        {"name": "OpenAI 本轮投前估值", "value": "1.25 万亿美元"},
+        {"name": "10 月初向 BlackRock 与 MGX 开出的投前价", "value": "1.4 万亿美元"},
+        {"name": "OpenAI 融资要价下调幅度", "value": "约 1500 亿美元"},
+        {"name": "3 月轮融资额与投后估值", "value": "1220 亿美元 / 投后 8520 亿美元"},
+        {"name": "2030 年前总计算开支目标", "value": "约 6000 亿美元"}
+      ],
+      "why_it_matters": "OpenAI 主动把要价从 1.4 万亿自砍到 1.25 万亿，说明连最头部实验室也认为原价此刻拿不到钱——'AI 账债'进入第二阶段：不是没人给钱，而是钱开始挑估值。"
+    },
+    {
+      "article_id": "2026-10-23-5",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["路透 10 月 22 日报道称科技 IPO 秋季档“只剩下 Anthropic”"]},
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.95, "evidence": ["DeepSeek 同周拿到 150 亿美元（投前约 740 亿美元）"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 把要价从 1.4 万亿砍到 1.25 万亿"]},
+        {"name": "Reuters", "type": "organization", "aliases": ["路透"], "confidence": 0.95, "evidence": ["路透 10 月 22 日报道称科技 IPO 秋季档“只剩下 Anthropic”"]},
+        {"name": "Yahoo Finance", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Yahoo Finance 此前报道公司最早周五（10 月 23 日）公开递交 S-1"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 按原计划在 11 月中旬定价并开始路演",
+          "summary": "Anthropic 坚持按计划在 11 月中旬定价，公开招股书最早 10 月下旬发布，预计 11 月 9 日当周开始路演，市场对其估值讨论从年初的 2 万亿美元回落到约 1.5 万亿。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["公司坚持按计划在 11 月中旬定价，公开招股书最早 10 月下旬发布，预计 11 月 9 日当周开始路演"]
+        },
+        {
+          "type": "trend",
+          "label": "路透报道称秋季科技 IPO 档期只剩 Anthropic 一家",
+          "summary": "一度拥挤的秋季科技股 IPO 档期压缩到只剩 Anthropic，Anthropic 的 IPO 一旦成行将是'AI 账债'第一次被放入公开市场定价。",
+          "participants": [
+            {"name": "Reuters", "type": "organization", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["路透 10 月 22 日报道称科技 IPO 秋季档“只剩下 Anthropic”"]
+        },
+        {
+          "type": "funding",
+          "label": "Yahoo Finance 报道 Anthropic 最早周五公开递交 S-1",
+          "summary": "Anthropic 预计最早周五（10 月 23 日）公开递交 S-1，S-1 草案显示上半年收入 16.3 亿美元、净亏损 807 亿美元（多数为非现金会计费用）。",
+          "participants": [
+            {"name": "Yahoo Finance", "type": "organization", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Yahoo Finance 此前报道公司最早周五（10 月 23 日）公开递交 S-1", "上半年收入 16.3 亿美元（去年同期约 11 亿），净亏损 807 亿美元"]
+        }
+      ],
+      "relations": [
+        {"source": "Anthropic", "target": "OpenAI", "type": "compared_with", "weight": 0.3, "evidence": ["把三件事并置——DeepSeek 同周拿到 150 亿美元（投前约 740 亿美元）、OpenAI 把要价从 1.4 万亿砍到 1.25 万亿、Anthropic 用 163 亿美元半年收入撑起万亿级估值讨论"]},
+        {"source": "Anthropic", "target": "DeepSeek", "type": "compared_with", "weight": 0.3, "evidence": ["把三件事并置——DeepSeek 同周拿到 150 亿美元（投前约 740 亿美元）、OpenAI 把要价从 1.4 万亿砍到 1.25 万亿、Anthropic 用 163 亿美元半年收入撑起万亿级估值讨论"]},
+        {"source": "OpenAI", "target": "DeepSeek", "type": "compared_with", "weight": 0.3, "evidence": ["把三件事并置——DeepSeek 同周拿到 150 亿美元（投前约 740 亿美元）、OpenAI 把要价从 1.4 万亿砍到 1.25 万亿、Anthropic 用 163 亿美元半年收入撑起万亿级估值讨论"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 上半年收入", "value": "16.3 亿美元"},
+        {"name": "Anthropic 上半年净亏损", "value": "807 亿美元"},
+        {"name": "未来 7-10 年云服务承诺", "value": "约 4500 亿美元"},
+        {"name": "计入硬件交易后的总承诺", "value": "或达 7500 亿美元"},
+        {"name": "市场对 Anthropic 估值讨论", "value": "约 1.5 万亿美元"},
+        {"name": "Anthropic 上半年经营性亏损", "value": "约 87 亿美元"},
+        {"name": "Anthropic 半年计算开支", "value": "约 90 亿美元"},
+        {"name": "Anthropic 收入中来自两个客户的比例", "value": "约五分之一"}
+      ],
+      "why_it_matters": "Anthropic 的 IPO 是'AI 账债'第一次被放入公开市场定价——投资人要裁决的不是模型好坏，而是 4500-7500 亿美元不可取消算力承诺与 807 亿净亏损之间的那道缝隙值不值 1.5 万亿。"
+    },
+    {
+      "article_id": "2026-10-23-6",
+      "entities": [
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.95, "evidence": ["Amazon 3 月以 4.27 亿美元买下 GWU Ashburn 科技园（122 英亩）"]},
+        {"name": "AWS", "type": "company", "aliases": ["Amazon Web Services"], "confidence": 0.95, "evidence": ["这次连“世界数据中心之都”劳登县也迫使 AWS 让步"]},
+        {"name": "Matt Garman", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["CEO Matt Garman 称全美有 100 多个数据中心暂停令在酝酿或已通过"]},
+        {"name": "劳登县", "type": "organization", "aliases": ["Loudoun County"], "confidence": 0.95, "evidence": ["本月与劳登县达成“Project Potomac Promise”协议"]},
+        {"name": "Project Potomac Promise", "type": "policy", "aliases": [], "confidence": 0.9, "evidence": ["本月与劳登县达成“Project Potomac Promise”协议——撤销数据中心计划"]},
+        {"name": "GWU Ashburn 科技园", "type": "organization", "aliases": ["乔治·华盛顿大学 Ashburn 校区"], "confidence": 0.85, "evidence": ["Amazon 3 月以 4.27 亿美元买下 GWU Ashburn 科技园（122 英亩）"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Amazon 放弃在劳登县建设四栋数据中心，地块改作住宅与混合用途",
+          "summary": "在劳登县居民持续反对下，Amazon 与县达成 Project Potomac Promise 协议，撤销四栋数据中心计划，剩余土地大部分转向混合用途与住宅开发。",
+          "participants": [
+            {"name": "Amazon", "type": "company", "role": "subject"},
+            {"name": "劳登县", "type": "organization", "role": "partner"},
+            {"name": "Project Potomac Promise", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["本月与劳登县达成“Project Potomac Promise”协议——撤销数据中心计划", "剩余土地大部分转向混合用途与住宅开发"]
+        },
+        {
+          "type": "infra",
+          "label": "Amazon 捐出 25 英亩土地与 500 万美元住房基金用于社区建设",
+          "summary": "Amazon 捐赠市值约 6500 万美元的 25 英亩土地用于社区艺术中心与室内运动设施，另向劳登县住房基金捐款 500 万美元。",
+          "participants": [
+            {"name": "Amazon", "type": "company", "role": "subject"},
+            {"name": "劳登县", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["捐赠 25 英亩（约 6500 万美元）用于社区艺术中心与室内运动设施，另向县住房基金捐款 500 万美元"]
+        },
+        {
+          "type": "acquisition",
+          "label": "Amazon 以 4.27 亿美元买下 GWU Ashburn 科技园",
+          "summary": "Amazon 3 月以 4.27 亿美元买下 GWU Ashburn 科技园（122 英亩），随后为四栋数据中心楼提交场地申请，引发当地强烈反弹。",
+          "participants": [
+            {"name": "Amazon", "type": "company", "role": "subject"},
+            {"name": "GWU Ashburn 科技园", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["Amazon 3 月以 4.27 亿美元买下 GWU Ashburn 科技园（122 英亩）"]
+        }
+      ],
+      "relations": [
+        {"source": "AWS", "target": "Amazon", "type": "subsidiary_of", "weight": 0.7, "evidence": ["这次连“世界数据中心之都”劳登县也迫使 AWS 让步"]},
+        {"source": "Amazon", "target": "劳登县", "type": "partners_with", "weight": 0.8, "evidence": ["本月与劳登县达成“Project Potomac Promise”协议"]},
+        {"source": "Matt Garman", "target": "AWS", "type": "affiliated_with", "weight": 0.5, "evidence": ["CEO Matt Garman 称全美有 100 多个数据中心暂停令在酝酿或已通过"]},
+        {"source": "Amazon", "target": "GWU Ashburn 科技园", "type": "acquires", "weight": 0.7, "evidence": ["Amazon 3 月以 4.27 亿美元买下 GWU Ashburn 科技园（122 英亩）"]}
+      ],
+      "metrics": [
+        {"name": "GWU Ashburn 科技园成交价", "value": "4.27 亿美元"},
+        {"name": "GWU Ashburn 科技园面积", "value": "122 英亩"},
+        {"name": "捐赠土地面积与市值", "value": "25 英亩 / 约 6500 万美元"},
+        {"name": "住房基金捐款", "value": "500 万美元"},
+        {"name": "全美数据中心暂停令数量", "value": "100 多个"}
+      ],
+      "why_it_matters": "连'世界数据中心之都'劳登县都迫使 AWS 让步——美国 AI 基础设施的物理约束正从'买得到芯片吗'转向'批得下地、接得上电吗'，选址退缩与建设加速并存，社区信任已成为算力扩张的真实成本。"
+    },
+    {
+      "article_id": "2026-10-23-7",
+      "entities": [
+        {"name": "Linux Foundation", "type": "organization", "aliases": ["Linux 基金会"], "confidence": 0.95, "evidence": ["Linux 基金会旗下 Agentic AI Foundation 在 AGNTCon + MCPCon 北美大会上宣布"]},
+        {"name": "Agentic AI Foundation", "type": "organization", "aliases": ["AAIF"], "confidence": 0.95, "evidence": ["Linux 基金会旗下 Agentic AI Foundation 在 AGNTCon + MCPCon 北美大会上宣布"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 的 Agent Skills（70+ 平台接入、约 100 万技能发布）"]},
+        {"name": "Agent Skills", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 的 Agent Skills（70+ 平台接入、约 100 万技能发布）"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 的 Open Responses（基于 Responses API 的多提供商接口规范）"]},
+        {"name": "Open Responses", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 的 Open Responses（基于 Responses API 的多提供商接口规范）"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.95, "evidence": ["Hugging Face 的 OpenEnv（RL 环境框架）与阿里云的 OpenSandbox（沙箱平台）"]},
+        {"name": "OpenEnv", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Hugging Face 的 OpenEnv（RL 环境框架）与阿里云的 OpenSandbox（沙箱平台）"]},
+        {"name": "阿里云", "type": "company", "aliases": ["Alibaba Cloud", "Alibaba", "阿里巴巴"], "confidence": 0.95, "evidence": ["Hugging Face 的 OpenEnv（RL 环境框架）与阿里云的 OpenSandbox（沙箱平台）"]},
+        {"name": "OpenSandbox", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Hugging Face 的 OpenEnv（RL 环境框架）与阿里云的 OpenSandbox（沙箱平台）"]},
+        {"name": "SKILL.md", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Agent Skills（Apache 2.0/CC BY 4.0）把技能封装成含 SKILL.md 的文件夹"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Anthropic 将 Agent Skills 捐给 Agentic AI Foundation",
+          "summary": "Anthropic 把 Agent Skills（Apache 2.0/CC BY 4.0，70+ 平台接入、约 100 万技能发布）连同名称、Logo、GitHub 组织与 agentskills.io 域名一并捐出，使用或贡献都不要求 AAIF 会员身份。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Agentic AI Foundation", "type": "organization", "role": "partner"},
+            {"name": "Agent Skills", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Anthropic 连同名称、Logo、GitHub 组织与 agentskills.io 域名一并捐出"]
+        },
+        {
+          "type": "open_source",
+          "label": "OpenAI 将 Open Responses 捐给 Agentic AI Foundation",
+          "summary": "OpenAI 捐出基于 Responses API 的多提供商接口规范 Open Responses，定义统一的 LLM 请求/响应模式，让开发者'描述一次、跑遍多家模型提供商'。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Agentic AI Foundation", "type": "organization", "role": "partner"},
+            {"name": "Open Responses", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["OpenAI 的 Open Responses（基于 Responses API 的多提供商接口规范）"]
+        },
+        {
+          "type": "open_source",
+          "label": "Hugging Face 与阿里云分别捐出 OpenEnv 与 OpenSandbox",
+          "summary": "Hugging Face 捐出 RL 环境框架 OpenEnv，阿里云捐出沙箱平台 OpenSandbox（Apache 2.0），技术委员会来自 Hugging Face、微软、Reflection、Meta-PyTorch 等。",
+          "participants": [
+            {"name": "Hugging Face", "type": "company", "role": "subject"},
+            {"name": "OpenEnv", "type": "tool", "role": "object"},
+            {"name": "阿里云", "type": "company", "role": "subject"},
+            {"name": "OpenSandbox", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Hugging Face 的 OpenEnv（RL 环境框架）与阿里云的 OpenSandbox（沙箱平台）"]
+        },
+        {
+          "type": "launch",
+          "label": "Agentic AI Foundation 首个年度从 3 个项目扩至 10 个项目",
+          "summary": "在 AGNTCon + MCPCon 北美大会上，AAIF 宣布新增 Agent Skills、Open Responses、OpenEnv、OpenSandbox 四个项目，首年从 3 个项目扩到 10 个（含 A2A、Agent Router、agentgateway、AGENTS.md、goose）。",
+          "participants": [
+            {"name": "Agentic AI Foundation", "type": "organization", "role": "subject"},
+            {"name": "Agent Skills", "type": "tool", "role": "object"},
+            {"name": "Open Responses", "type": "tool", "role": "object"},
+            {"name": "OpenEnv", "type": "tool", "role": "object"},
+            {"name": "OpenSandbox", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["AAIF 首年从 3 个项目扩到 10 个（含 A2A、Agent Router、agentgateway、AGENTS.md、goose）"]
+        }
+      ],
+      "relations": [
+        {"source": "Agent Skills", "target": "Anthropic", "type": "developed_by", "weight": 0.85, "evidence": ["Anthropic 的 Agent Skills（70+ 平台接入、约 100 万技能发布）"]},
+        {"source": "Open Responses", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["OpenAI 的 Open Responses（基于 Responses API 的多提供商接口规范）"]},
+        {"source": "OpenEnv", "target": "Hugging Face", "type": "developed_by", "weight": 0.85, "evidence": ["Hugging Face 的 OpenEnv（RL 环境框架）与阿里云的 OpenSandbox（沙箱平台）"]},
+        {"source": "OpenSandbox", "target": "阿里云", "type": "developed_by", "weight": 0.85, "evidence": ["Hugging Face 的 OpenEnv（RL 环境框架）与阿里云的 OpenSandbox（沙箱平台）"]},
+        {"source": "Agent Skills", "target": "SKILL.md", "type": "uses", "weight": 0.6, "evidence": ["Agent Skills（Apache 2.0/CC BY 4.0）把技能封装成含 SKILL.md 的文件夹"]},
+        {"source": "Agent Skills", "target": "Agentic AI Foundation", "type": "contributes_to", "weight": 0.7, "evidence": ["Anthropic、OpenAI、Hugging Face、阿里把各自“中立化收益大于独占收益”的组件交给同一家基金会托管"]},
+        {"source": "Open Responses", "target": "Agentic AI Foundation", "type": "contributes_to", "weight": 0.7, "evidence": ["Anthropic、OpenAI、Hugging Face、阿里把各自“中立化收益大于独占收益”的组件交给同一家基金会托管"]},
+        {"source": "OpenEnv", "target": "Agentic AI Foundation", "type": "contributes_to", "weight": 0.7, "evidence": ["Anthropic、OpenAI、Hugging Face、阿里把各自“中立化收益大于独占收益”的组件交给同一家基金会托管"]},
+        {"source": "OpenSandbox", "target": "Agentic AI Foundation", "type": "contributes_to", "weight": 0.7, "evidence": ["Anthropic、OpenAI、Hugging Face、阿里把各自“中立化收益大于独占收益”的组件交给同一家基金会托管"]}
+      ],
+      "metrics": [
+        {"name": "Agent Skills 平台接入数", "value": "70+"},
+        {"name": "Agent Skills 技能发布量", "value": "约 100 万"},
+        {"name": "AAIF 项目数扩张", "value": "首年从 3 个扩到 10 个"}
+      ],
+      "why_it_matters": "Anthropic、OpenAI、Hugging Face、阿里把各自'中立化收益大于独占收益'的组件交给同一家基金会托管，agent 栈的标准化竞争从'比谁接口好'转向'比谁治理好'——技能、API 格式、训练环境与沙箱正变成可组合、可替换的公共层。"
+    },
+    {
+      "article_id": "2026-10-23-8",
+      "entities": [
+        {"name": "EpiSEM-Bench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["论文提出 EpiSEM-Bench：300 对匹配的“危险/无害”任务、6 个领域"]},
+        {"name": "独立审计工具", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["并配一个独立审计工具，检查 agent 是否会索取缺失事实"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 EpiSEM-Bench，系统性让工具响应缺失关键事实",
+          "summary": "EpiSEM-Bench 由 300 对匹配的危险/无害任务构成、覆盖 6 个领域，通过系统抑制关键事实测出十款 LLM agent 的不安全执行率，并配独立审计工具检查 agent 是否会索取缺失事实。",
+          "participants": [
+            {"name": "EpiSEM-Bench", "type": "benchmark", "role": "subject"},
+            {"name": "独立审计工具", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["论文提出 EpiSEM-Bench：300 对匹配的“危险/无害”任务、6 个领域"]
+        },
+        {
+          "type": "benchmark",
+          "label": "十款 LLM agent 在 EpiSEM-Bench 上被评测，恢复访问普遍降低越权率",
+          "summary": "十款模型在缺失证据下的鲁棒性差异显著，允许查询缺失事实（恢复访问）对全部十款模型都降低不安全执行，但只有部分 agent 会主动索取并用好这些事实。",
+          "participants": [
+            {"name": "EpiSEM-Bench", "type": "benchmark", "role": "subject"},
+            {"name": "独立审计工具", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["允许查询缺失事实（恢复访问）对全部十款模型都降低不安全执行"]
+        }
+      ],
+      "relations": [
+        {"source": "独立审计工具", "target": "EpiSEM-Bench", "type": "part_of", "weight": 0.5, "evidence": ["并配一个独立审计工具，检查 agent 是否会索取缺失事实"]}
+      ],
+      "metrics": [
+        {"name": "EpiSEM-Bench 任务对数量", "value": "300 对"},
+        {"name": "EpiSEM-Bench 覆盖领域数", "value": "6 个"},
+        {"name": "参与评测的模型数量", "value": "十款"},
+        {"name": "恢复访问（允许查询缺失事实）降低不安全执行的模型数", "value": "10/10"}
+      ],
+      "why_it_matters": "安全评测的默认假设'把关键信息给全'被揭穿——工具响应每句话都是真的但缺了关键事实同样能诱导越权，评估必须从'给了坏输入怎么办'扩展到'不给关键输入怎么办'，缺证据本身就是一种对抗面。"
+    },
+    {
+      "article_id": "2026-10-23-9",
+      "entities": [
+        {"name": "超智能软件工程", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["论文提出“超智能软件工程”框架"]},
+        {"name": "OSTEON", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["作者提出 OSTEON 纪律"]},
+        {"name": "agent 上下文文件", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["48.67% 已有根级或 .github 下的 agent 上下文文件"]},
+        {"name": "知识衰变", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["知识会衰变（隐性上下文会过期）"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出“超智能软件工程”框架与 OSTEON 纪律",
+          "summary": "论文提出当软件 agent 的能力超过人类工程师后，正确性不靠阅读代码而靠可扩展的治理，并给出 OSTEON 纪律：维护决策与契约知识库、机械对照核验、检查知识衰变、规划设门禁。",
+          "participants": [
+            {"name": "超智能软件工程", "type": "topic", "role": "subject"},
+            {"name": "OSTEON", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["论文提出“超智能软件工程”框架", "作者提出 OSTEON 纪律"]
+        },
+        {
+          "type": "research",
+          "label": "对 452 个高星 GitHub 仓库的快照显示近半数已带 agent 上下文文件",
+          "summary": "对 452 个最高星公开仓库的快照显示 48.67% 已有根级或 .github 下的 agent 上下文文件，中位文件中 9.5%-22% 被引用的仓库路径无法解析，agent 上下文文件的引用随知识衰变而过期失效，知识漂移首次被量化。",
+          "participants": [
+            {"name": "超智能软件工程", "type": "topic", "role": "subject"},
+            {"name": "agent 上下文文件", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["对 452 个最高星公开仓库的快照显示，48.67% 已有根级或 .github 下的 agent 上下文文件"]
+        }
+      ],
+      "relations": [
+        {"source": "OSTEON", "target": "知识衰变", "type": "regulates", "weight": 0.5, "evidence": ["会话启动时检查知识衰变"]},
+        {"source": "OSTEON", "target": "超智能软件工程", "type": "part_of", "weight": 0.6, "evidence": ["作者提出 OSTEON 纪律"]}
+      ],
+      "metrics": [
+        {"name": "快照的 GitHub 仓库数量", "value": "452 个"},
+        {"name": "已带 agent 上下文文件的仓库占比", "value": "48.67%"},
+        {"name": "无法解析的被引用仓库路径占比", "value": "9.5%-22%"}
+      ],
+      "why_it_matters": "当 agent 快过评审者，纯阅读能抓出的问题占比趋近于零——正确性安全必须靠可扩展的治理（门禁、契约、决策记录与知识衰变控制）而非更强的能力，知识漂移第一次被量化成 9.5%-22% 的不可解析路径。"
+    },
+    {
+      "article_id": "2026-10-23-10",
+      "entities": [
+        {"name": "Block", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Jack Dorsey 的 Block 发布对话模型 Dessa"]},
+        {"name": "Dessa", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Dessa 由 Block 旗下 Dessa 团队发布"]},
+        {"name": "Jack Dorsey", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["Jack Dorsey 的 Block 发布对话模型 Dessa"]},
+        {"name": "Ragavan Thurairatnam", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Dessa 由 Block 旗下 Dessa 团队发布，负责人 Ragavan Thurairatnam 放出的演示中"]},
+        {"name": "Dots", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]},
+        {"name": "Muse", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]},
+        {"name": "Claude Duet", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]},
+        {"name": "Meta", "type": "company", "aliases": ["Facebook"], "confidence": 0.95, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Block 发布宣称只用人话训练的对话模型 Dessa",
+          "summary": "Jack Dorsey 的 Block 发布对话模型 Dessa，宣称完全从零、只用人类对话训练，演示中会出现认错人等笨拙但不失自然的互动，团队把'像人而非完美'当成卖点。",
+          "participants": [
+            {"name": "Block", "type": "company", "role": "subject"},
+            {"name": "Dessa", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Jack Dorsey 的 Block 发布对话模型 Dessa", "宣称“完全从零、只用人类对话训练”"]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI、Meta、Anthropic 的语音产品争夺“主动式个人助理”入口",
+          "summary": "OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺'主动式个人助理'，而 Dessa 差异化在'闲聊感'，语音界面正成为 agent 化浪潮里的入口级产品。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Dots", "type": "product", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Muse", "type": "model", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Duet", "type": "product", "role": "object"},
+            {"name": "Dessa", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]
+        }
+      ],
+      "relations": [
+        {"source": "Dessa", "target": "Block", "type": "developed_by", "weight": 0.85, "evidence": ["Dessa 由 Block 旗下 Dessa 团队发布"]},
+        {"source": "Jack Dorsey", "target": "Block", "type": "affiliated_with", "weight": 0.8, "evidence": ["Jack Dorsey 的 Block 发布对话模型 Dessa"]},
+        {"source": "Ragavan Thurairatnam", "target": "Block", "type": "affiliated_with", "weight": 0.6, "evidence": ["Dessa 由 Block 旗下 Dessa 团队发布，负责人 Ragavan Thurairatnam 放出的演示中"]},
+        {"source": "Dots", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]},
+        {"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.7, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]},
+        {"source": "Claude Duet", "target": "Anthropic", "type": "developed_by", "weight": 0.7, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”"]},
+        {"source": "Dessa", "target": "Dots", "type": "competes_with", "weight": 0.6, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”，而 Dessa 差异化在“闲聊感”"]},
+        {"source": "Dessa", "target": "Muse", "type": "competes_with", "weight": 0.6, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”，而 Dessa 差异化在“闲聊感”"]},
+        {"source": "Dessa", "target": "Claude Duet", "type": "competes_with", "weight": 0.6, "evidence": ["OpenAI 的 Dots、Meta 的 Muse、Anthropic 的 Claude Duet 都在争夺“主动式个人助理”，而 Dessa 差异化在“闲聊感”"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "支付巨头做对话模型说明下一阶段竞争的不只是模型智商，还有模型让人愿意跟它说话的意愿度——语音产品宁可牺牲一点准确换取真实'闲聊感'，Dessa 押注的是对话意愿度而非信息量。"
+    }
+  ]
+}

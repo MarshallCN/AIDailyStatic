@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-23",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "r1/r2 报出的问题本轮已基本修复（吉利/美的补边、捐赠事件改 infra、恢复访问实体移除、targets 滥用清理、contributes_to 补边、各实体类型校正），事实与数字逐条核对无误，无幻觉、无方向反转。剩余问题集中在：DeepSeek 融资参与方抽取不全（漏掉四家具名财务机构）、阿里云实体把母公司全名并入 aliases 与全局规范名注册表冲突、a5 的 compared_with 证据仍不满足既有硬规则、Yahoo Finance 事件摘要混入 WSJ 来源的 S-1 数字。",
+  "findings": [
+    {
+      "article_id": "2026-10-23-3",
+      "severity": "medium",
+      "problem": "融资参与方抽取不全：原文明确列出'其他参与者包括美团、吉利、美的、芯片商兆易创新，以及博裕资本、CPE 源峰、君联资本、IDG 资本等财务机构'，抽取只对美团/吉利/美的/兆易创新四家产业方建立了 invests_in 边，博裕资本、CPE 源峰、君联资本、IDG 资本四家具名财务机构既无实体也无关系，事件 1 participants 同样只有七家。r1 只补了吉利/美的的边，本轮仍漏这四家。",
+      "fix": "补充博裕资本、CPE 源峰、君联资本、IDG 资本四个 company 实体，并为每家建立 invests_in -> DeepSeek 关系（evidence 沿用原文'其他参与者包括……博裕资本、CPE 源峰、君联资本、IDG 资本等财务机构'一句，weight 0.4-0.6），同时加进事件 1 participants 的 funder 角色。"
+    },
+    {
+      "article_id": "2026-10-23-7",
+      "severity": "medium",
+      "problem": "实体 阿里云 的 aliases 含 'Alibaba' 与 '阿里巴巴'，把母公司全名并进子公司实体：全局规范名注册表已把 Alibaba（company，变体 阿里巴巴、阿里）单列为父公司规范名，子实体吸收父名后，未来涉及阿里巴巴集团的新闻会被错误合并进 阿里云，且与注册表规范名直接冲突，破坏跨文章连通。",
+      "fix": "从 阿里云 的 aliases 中移除 'Alibaba'、'阿里巴巴'，只保留 'Alibaba Cloud'；父公司阿里巴巴/ Alibaba 单独作为 company 实体存在（按注册表规范名 Alibaba），母子公司分离。"
+    },
+    {
+      "article_id": "2026-10-23-5",
+      "severity": "low",
+      "problem": "三条 compared_with 边（Anthropic--OpenAI、Anthropic--DeepSeek、OpenAI--DeepSeek）的 evidence 仍是'把三件事并置'这一叙述句，不符合既有硬规则'compared_with 只用于有性能/指标对比的证据'：并置的三件融资事件（150 亿美元/740 亿投前、1.25 万亿估值、16.3 亿收入）虽然确实蕴含可对比的指标，但证据没有引用这些指标，r1 允许的'降权并注明并置'没有兑现到证据层。",
+      "fix": "把三条边的 evidence 改为实际可比的指标（如 DeepSeek 本轮 150 亿美元投前约 740 亿、OpenAI 要价 1.25 万亿、Anthropic 半年收入 16.3 亿），或直接删除三条边、让并置分析只留在事件 summary 与 why_it_matters。"
+    },
+    {
+      "article_id": "2026-10-23-5",
+      "severity": "low",
+      "problem": "事件 3（'Yahoo Finance 报道 Anthropic 最早周五公开递交 S-1'）的 summary 与 evidence 混入了 WSJ 来源的 S-1 草案数字（上半年收入 16.3 亿美元、净亏损 807 亿美元）：原文明确'S-1 草案（WSJ 审阅）的核心数字'，Yahoo Finance 只报道递交时点；把 WSJ 的数字挂到以 Yahoo Finance 为主体的摘要下，违反'不要把甲的数字挂到乙事件的摘要里'。",
+      "fix": "事件 3 只保留 Yahoo Finance 的递交时点报道（'最早周五（10 月 23 日）公开递交 S-1'），S-1 草案数字移出该事件，或单独拆成以 WSJ 为来源的事件并注明数字出自 WSJ 审阅。"
+    }
+  ],
+  "lessons": [
+    "融资新闻要把原文具名的所有参与方（含博裕资本、IDG 资本等财务机构）都抽成实体并建立 invests_in 关系，不能只抽产业方或明星方；具名即主体。",
+    "子公司/分部实体不要用母公司全名做别名（如阿里云不要写 Alibaba/阿里巴巴），并与全局规范名注册表保持区分，避免母子公司被错误合并。"
+  ]
+}

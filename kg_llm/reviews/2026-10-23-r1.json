@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-23",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "事实与数字层面可靠：逐条核对 11 篇的金额、估值、token 量级、覆盖率、行数等指标均与原文一致，无幻觉数字，事件切分基本合理。主要问题在语义层：明确报道的出资方缺边（吉利、美的未进 invests_in）、捐赠事件误标 funding、\"知识衰变 --targets--> agent 上下文文件\" 方向语义错误、实验条件\"恢复访问\"被抽成 tool 实体、METR 审计最严重的 header 漏洞发现未入图、AAIF 误用 subsidiary_of，另有若干实体类型不一致与 metrics 缺口。",
+  "findings": [
+    {
+      "article_id": "2026-10-23-3",
+      "severity": "medium",
+      "problem": "事件 participants 列出美团、吉利、美的、兆易创新四家出资方，但 relations 只有美团 --invests_in--> DeepSeek 和兆易创新 --invests_in--> DeepSeek 两条边；原文明确\"其他参与者包括美团、吉利、美的、芯片商兆易创新\"，吉利与美的作为已确认出资方缺边，事件与关系表不一致。",
+      "fix": "补两条边：吉利 --invests_in--> DeepSeek、美的 --invests_in--> DeepSeek（与美团同权重 0.6，evidence 用同一句原文）；同时把事件 participants 中四家的 role 从 partner 统一改为 funder，与腾讯/宁德时代保持一致。"
+    },
+    {
+      "article_id": "2026-10-23-6",
+      "severity": "medium",
+      "problem": "事件\"Amazon 捐出 25 英亩土地与 500 万美元住房基金用于社区建设\"的 type 标为 funding；这是捐赠让与而非融资，与同篇 acquisition/infra 事件体系和 2026-10-23-3/4 的募资类 funding 事件语义冲突，读者会把捐地捐款误读成投资。",
+      "fix": "改标 infra 或新增 donation/community 事件类型；类型体系不允许时至少改用 policy，不要用 funding。"
+    },
+    {
+      "article_id": "2026-10-23-8",
+      "severity": "medium",
+      "problem": "\"恢复访问\"（论文中允许 agent 查询缺失事实的实验干预条件）被抽成 type=\"tool\" 的实体并作为事件 2 的 subject，还挂了一条 EpiSEM-Bench --uses--> 恢复访问 的边；它不是工具而是对比实验变量，实体化后图语义失真。另外事件 2 中 EpiSEM-Bench 的 role 用了 \"benchmark\"——角色取值体系里不存在该值（应为 subject/object/partner/funder 等）。",
+      "fix": "删除\"恢复访问\"实体及其 uses 边，把\"允许查询缺失事实对全部十款模型都降低不安全执行\"写进事件 2 的 summary 与 metrics（如\"恢复访问降低不安全执行的模型数：10/10\"）；role 改为体系内取值。"
+    },
+    {
+      "article_id": "2026-10-23-9",
+      "severity": "medium",
+      "problem": "关系 \"知识衰变 --targets--> agent 上下文文件\" 类型与方向都不成立：原文是 agent 上下文文件会随知识衰变而过期失效（9.5%-22% 被引用路径无法解析是衰变的结果），不是抽象概念\"知识衰变\"主动\"瞄准\"文件。",
+      "fix": "改为 agent 上下文文件 --subject_to--> 知识衰变（或体系内等价\"经历/受…影响\"语义）；若无可接受类型则删除该边，只在事件 summary 中表达因果。"
+    },
+    {
+      "article_id": "2026-10-23-1",
+      "severity": "medium",
+      "problem": "审计报告最严重的两条发现没有进入任何事件 summary、实体或 metrics：两个客户端可控、可关闭新 agent 监控的 header，以及可让\"数百个动作不被记录\"的利用。事件 1 summary 只覆盖了覆盖率、RL 训练窗口与无限期推迟被审，而这些发现正是\"监控可被攻击者主动关闭\"这一结论的直接证据。",
+      "fix": "在事件 1 的 summary 末尾补上这两条（header 漏洞 + 数百个动作不被记录的利用），或拆成事件；并为\"客户端可控 header\"加一条 metric，确保读者能直接从摘要看到最严重的发现。"
+    },
+    {
+      "article_id": "2026-10-23-7",
+      "severity": "medium",
+      "problem": "关系 \"Agentic AI Foundation --subsidiary_of--> Linux Foundation\" 类型不当：AAIF 是 Linux 基金会旗下托管管理的基金会/项目群，不是公司意义上的子公司；subsidiary_of 会让图误读成公司股权层级。",
+      "fix": "改用 part_of/member_of/hosted_by（体系不支持则删边）；对比之下 2026-10-23-6 的 AWS --subsidiary_of--> Amazon 是正确的，可保留。"
+    },
+    {
+      "article_id": "2026-10-23-5",
+      "severity": "low",
+      "problem": "三条 compared_with 边（Anthropic--OpenAI、Anthropic--DeepSeek、OpenAI--DeepSeek）把路透观察文章中评论性\"并置\"的三件事固化为两两实体关系，属\"共现/并置不等于关系\"的边界情形，且会虚增跨文章连通指标；evidence 本身也写的是\"把三件事并置\"而非真实比较。",
+      "fix": "若 compared_with 在体系内属弱关系可保留，但 weight 应降到 0.3-0.4 并注明\"并置\"；否则删除三条边，把并置分析留在事件 summary 与 why_it_matters 中。"
+    },
+    {
+      "article_id": "2026-10-23-5",
+      "severity": "low",
+      "problem": "metrics 未收录\"经营性亏损约 87 亿美元\"与\"半年计算开支约 90 亿美元\"——807 亿净亏损中约 720 亿是可转债非现金会计费用，经营性亏损 87 亿才是\"AI 账债\"叙事的核心口径，缺这两个数字会误导读者以为亏损主体是经营。",
+      "fix": "补两条 metric：Anthropic 上半年经营性亏损约 87 亿美元、半年计算开支约 90 亿美元；可顺带补\"约五分之一收入来自两个客户\"。"
+    },
+    {
+      "article_id": "2026-10-23-9",
+      "severity": "low",
+      "problem": "\"OSTEON\" 类型标为 tool，但它是论文提出的治理纪律/方法论（维护知识库、机械对照核验等一整套做法），不是软件工具。",
+      "fix": "类型体系无 discipline 时改标 topic（与\"超智能软件工程\"一致），不要用 tool。"
+    },
+    {
+      "article_id": "2026-10-23-10",
+      "severity": "low",
+      "problem": "同一句并列的三个语音产品类型不一致：Dots 与 Claude Duet 标 product，Muse 标 model；原文统称\"争夺主动式个人助理\"的语音产品，没有把 Muse 单独定义为模型的依据（若全局实体表此前已把 Muse 定型为 model 则例外）。",
+      "fix": "按全局实体注册表为准；若 Muse 在注册表中是 model 可保留并在 evidence 注明，否则统一为 product，保持同一比较语境下类型一致。"
+    },
+    {
+      "article_id": "2026-10-23-6",
+      "severity": "low",
+      "problem": "\"GWU Ashburn 科技园\" 类型标为 product，但它是 122 英亩的大学校区/地产资产，不是产品。",
+      "fix": "改标 organization（园区/校区实体）或从实体表移除、只在事件 summary 与 metrics 中保留成交价与面积；不要用 product。"
+    }
+  ],
+  "lessons": [
+    "捐赠、捐地、资产让与事件不要标成 funding 事件类型；funding 只用于股权/债权融资，让与类（捐钱、捐地、捐域名）与融资要区分事件类型。",
+    "论文中的实验干预条件（如\"恢复访问\"）与抽象概念（如\"知识衰变\"）不要抽成 tool 实体或作为 targets 等动作关系的发起者；现象发生在载体上时方向写为\"载体 --subject_to--> 现象\"，或只在事件 summary/metrics 中描述。",
+    "事件 participants 中凡原文确认身份的参与方（出资方、领投方）必须在 relations 中有对应边，且 role 取值用体系内既有值；events 与 relations 出现不一致视为遗漏。"
+  ]
+}
