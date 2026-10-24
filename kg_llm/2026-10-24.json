@@ -1,0 +1,828 @@
+{
+  "date": "2026-10-24",
+  "articles": [
+    {
+      "article_id": "2026-10-24-0",
+      "entities": [
+        {"name": "AWS", "type": "company", "aliases": ["亚马逊云"], "confidence": 0.95, "evidence": ["SemiAnalysis 深度实测 AWS 的 Trainium 训练栈并给出明确判断"]},
+        {"name": "Trainium", "type": "hardware", "aliases": ["AWS Trainium"], "confidence": 0.9, "evidence": ["Trainium 的推理能力早已被验证"]},
+        {"name": "Trainium3", "type": "hardware", "aliases": ["Trainium 3"], "confidence": 0.9, "evidence": ["机架级 Trainium3 UltraServer（64 物理芯片）"]},
+        {"name": "PyTorch", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["转向原生 PyTorch"]},
+        {"name": "TorchNeuron", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["新版 TorchNeuron 换了编译后端"]},
+        {"name": "Neuron Explorer", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Neuron Explorer 剖析器被定性为行业 SOTA"]},
+        {"name": "TokenSwitch", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["MoE 时代最重要的通信算子 TokenSwitch 尚未上游支持"]},
+        {"name": "Meta", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["AWS 已承诺与 Meta PyTorch 团队合作改造 TokenSwitch 的 API"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["AWS 正复刻 Google 用 vLLM/SGLang 撬动 TPU 的打法"]},
+        {"name": "SGLang", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["向 SGLang 社区提供硬件访问与基于原生 PyTorch 的早期接入"]},
+        {"name": "Muse Spark Open", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["借社区生态拿到 Muse Spark Open 这类新模型的首日支持"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.95, "evidence": ["明显优于 Nvidia 与 AMD 的产品"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["花了 9 个月才让 AMD 工程师拿到足以达到 93% parity 的稳定 CI 节点"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 的生产推理与 RL rollout 就跑在 Trainium2/3 上"]},
+        {"name": "Qwen3-32B", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["SemiAnalysis 用 Qwen3-32B 在 16 颗 Trainium2"]},
+        {"name": "gpt-oss 20B", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["gpt-oss 20B 的官方训练配方（GraphTrainer + SimpleFSDP + 自研 NKI attention/MoE kernel）开箱即用"]},
+        {"name": "GB200", "type": "hardware", "aliases": ["GB200 NVL62"], "confidence": 0.9, "evidence": ["对比 GB200 NVL62 的 53,600 美元"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.95, "evidence": ["Neuron 团队收集了 top 10 万+ Hugging Face 模型"]},
+        {"name": "Neuron 团队", "type": "organization", "aliases": ["Neuron", "AWS Neuron 团队"], "confidence": 0.85, "evidence": ["Neuron 团队已正面回应：新版 TorchNeuron 换了编译后端"]},
+        {"name": "SemiAnalysis", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["SemiAnalysis 深度实测 AWS 的 Trainium 训练栈并给出明确判断"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "AWS 转向原生 PyTorch 训练体验，用最多 8 万物理核做自动化质量校验",
+          "summary": "Neuron 团队抛弃 PyTorch/XLA 时代异乡体验，转向 eager mode、torch.compile 与标准分布式 API 全部就位的原生 PyTorch，并把最多 80,000 物理核专用于自动化质量控制，收集 top 10 万+ Hugging Face 模型测性能、graph break 与数值一致性。AWS 还挖来了 Google 原生 Torch on TPU 软件栈的负责人（从 XLA、xprof 到 Cloud TPU 一路带队的元老）推进迁移。",
+          "participants": [
+            {"name": "AWS", "type": "company", "role": "subject"},
+            {"name": "Neuron 团队", "type": "organization", "role": "subject"},
+            {"name": "PyTorch", "type": "tool", "role": "object"},
+            {"name": "TorchNeuron", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["抛弃 PyTorch/XLA 时代“到处撒 xm.step()、受制于懒式图捕获”的异乡体验，转向原生 PyTorch", "最多 80,000 物理核专用于自动化质量控制", "Neuron 团队收集了 top 10 万+ Hugging Face 模型", "AWS 还挖来了 Google 原生 Torch on TPU 软件栈的负责人（从 XLA、xprof 到 Cloud TPU 一路带队的元老）"]
+        },
+        {
+          "type": "benchmark",
+          "label": "SemiAnalysis 实测 Qwen3-32B 在 Trainium2/3 上的训练吞吐与 MFU",
+          "summary": "SemiAnalysis 用 Qwen3-32B 在 16 颗 Trainium2 与机架级 Trainium3 UltraServer 上训练：eager 模式平均吞吐 11,099 token/秒、MFU 23.89%，compiled 模式 14,156 token/秒、MFU 30.47%；gpt-oss 20B 官方训练配方开箱即用，FlexAttention 基准 89/96 通过。",
+          "participants": [
+            {"name": "SemiAnalysis", "type": "organization", "role": "subject"},
+            {"name": "Qwen3-32B", "type": "model", "role": "object"},
+            {"name": "gpt-oss 20B", "type": "model", "role": "object"},
+            {"name": "Trainium3", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["SemiAnalysis 用 Qwen3-32B 在 16 颗 Trainium2（64 个逻辑核）与机架级 Trainium3 UltraServer（64 物理芯片）上训练", "eager 模式平均吞吐 11,099 token/秒、MFU 23.89%", "gpt-oss 20B 的官方训练配方（GraphTrainer + SimpleFSDP + 自研 NKI attention/MoE kernel）开箱即用"]
+        },
+        {
+          "type": "partnership",
+          "label": "AWS 承诺与 Meta PyTorch 团队合作改造 TokenSwitch 的 API",
+          "summary": "MoE 通信算子 TokenSwitch 尚未上游支持（占 MoE 通信量 60-70%），目前用自定义 NeuronEPTokenDispatcher 替代，AWS 已承诺与 Meta PyTorch 团队合作改造 TokenSwitch 的 API。",
+          "participants": [
+            {"name": "AWS", "type": "company", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "partner"},
+            {"name": "TokenSwitch", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["AWS 已承诺与 Meta PyTorch 团队合作改造 TokenSwitch 的 API", "MoE 时代最重要的通信算子 TokenSwitch 尚未上游支持（占 MoE 通信量 60-70%）"]
+        },
+        {
+          "type": "trend",
+          "label": "AWS 复刻 Google 用 vLLM/SGLang 撬动 TPU 的打法，向 SGLang 社区开放硬件接入",
+          "summary": "AWS 向 SGLang 社区提供硬件访问与基于原生 PyTorch 的早期接入，借社区生态拿到 Muse Spark Open 这类新模型的首日支持，复刻 Google 的生态撬动打法。",
+          "participants": [
+            {"name": "AWS", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "object"},
+            {"name": "SGLang", "type": "tool", "role": "partner"},
+            {"name": "Muse Spark Open", "type": "model", "role": "object"}
+          ],
+          "evidence": ["AWS 正复刻 Google 用 vLLM/SGLang 撬动 TPU 的打法", "向 SGLang 社区提供硬件访问与基于原生 PyTorch 的早期接入", "借社区生态拿到 Muse Spark Open 这类新模型的首日支持"]
+        },
+        {
+          "type": "benchmark",
+          "label": "SemiAnalysis 更新 AI Cloud TCO 模型：Trainium3 前置投入比 GB200 省 52-62%",
+          "summary": "空气冷却 Trainium3 PDS 约 20,400 美元/芯片、液冷 MAX 约 25,500 美元，对比 GB200 NVL62 的 53,600 美元，前置投入省 52-62%；但按密集 FP8 算力折算优势缩到约 14%，T3 有效 MFU 需从 35% 提到约 43% 才能与 GB200 打平。",
+          "participants": [
+            {"name": "SemiAnalysis", "type": "organization", "role": "subject"},
+            {"name": "Trainium3", "type": "hardware", "role": "object"},
+            {"name": "GB200", "type": "hardware", "role": "competitor"}
+          ],
+          "evidence": ["SemiAnalysis 更新的 AI Cloud TCO 模型显示", "空气冷却 Trainium3 PDS 约 20,400 美元/芯片、液冷 MAX 约 25,500 美元，对比 GB200 NVL62 的 53,600 美元，前置投入省 52-62%"]
+        }
+      ],
+      "relations": [
+        {"source": "Trainium3", "target": "AWS", "type": "developed_by", "weight": 0.9, "evidence": ["AWS 的 Trainium 训练栈", "机架级 Trainium3 UltraServer（64 物理芯片）"]},
+        {"source": "Anthropic", "target": "Trainium", "type": "uses", "weight": 0.6, "evidence": ["Anthropic 的生产推理与 RL rollout 就跑在 Trainium2/3 上"]},
+        {"source": "Anthropic", "target": "Trainium3", "type": "uses", "weight": 0.6, "evidence": ["Anthropic 的生产推理与 RL rollout 就跑在 Trainium2/3 上"]},
+        {"source": "TorchNeuron", "target": "Neuron 团队", "type": "developed_by", "weight": 0.8, "evidence": ["Neuron 团队已正面回应：新版 TorchNeuron 换了编译后端"]},
+        {"source": "Neuron Explorer", "target": "Neuron 团队", "type": "developed_by", "weight": 0.8, "evidence": ["Neuron Explorer 剖析器被定性为行业 SOTA"]},
+        {"source": "Neuron Explorer", "target": "NVIDIA", "type": "outperforms", "weight": 0.7, "evidence": ["明显优于 Nvidia 与 AMD 的产品"]},
+        {"source": "Neuron Explorer", "target": "AMD", "type": "outperforms", "weight": 0.6, "evidence": ["明显优于 Nvidia 与 AMD 的产品"]},
+        {"source": "AWS", "target": "PyTorch", "type": "uses", "weight": 0.8, "evidence": ["转向原生 PyTorch", "eager mode、torch.compile、标准 分布式 API（torch.distributed、DTensor、FSDP）全部就位"]},
+        {"source": "AWS", "target": "Meta", "type": "partners_with", "weight": 0.7, "evidence": ["AWS 已承诺与 Meta PyTorch 团队合作改造 TokenSwitch 的 API"]},
+        {"source": "Trainium3", "target": "GB200", "type": "compared_with", "weight": 0.7, "evidence": ["对比 GB200 NVL62 的 53,600 美元，前置投入省 52-62%"]},
+        {"source": "Neuron 团队", "target": "Hugging Face", "type": "uses", "weight": 0.5, "evidence": ["Neuron 团队收集了 top 10 万+ Hugging Face 模型"]},
+        {"source": "AWS", "target": "SGLang", "type": "partners_with", "weight": 0.6, "evidence": ["向 SGLang 社区提供硬件访问与基于原生 PyTorch 的早期接入"]}
+      ],
+      "metrics": [
+        {"name": "eager 模式平均训练吞吐", "value": "11,099 token/秒"},
+        {"name": "compiled 模式平均训练吞吐", "value": "14,156 token/秒"},
+        {"name": "eager 模式 MFU", "value": "23.89%"},
+        {"name": "compiled 模式 MFU", "value": "30.47%"},
+        {"name": "compiled 相对 eager 吞吐提升", "value": "1.28x"},
+        {"name": "自动化质量控制专用物理核数", "value": "最多 80,000 个"},
+        {"name": "QA 覆盖 Hugging Face 模型数", "value": "top 10 万+"},
+        {"name": "FlexAttention 基准通过率", "value": "89/96（93%）"},
+        {"name": "TokenSwitch 占 MoE 通信量比例", "value": "60-70%"},
+        {"name": "gpt-oss 20B 首步编译时间", "value": "27 分 17 秒"},
+        {"name": "空气冷却 Trainium3 PDS 芯片成本", "value": "约 20,400 美元/芯片"},
+        {"name": "液冷 MAX 芯片成本", "value": "约 25,500 美元"},
+        {"name": "GB200 NVL62 芯片成本", "value": "53,600 美元"},
+        {"name": "Trainium3 前置投入成本节省", "value": "52-62%"},
+        {"name": "T3 有效 MFU 打平所需提升", "value": "从 35% 提到约 43%"}
+      ],
+      "why_it_matters": "训练是 CUDA 的“最后堡垒”，AWS 用原生 PyTorch 体验、8 万核 QA 文化与 52-62% 硬件成本优势三线合围，SemiAnalysis 判定训练市场的定价基准被第一次真正动摇——软件栈利用率（T3 有效 MFU 35%→43%）成为决定硬件优势能否留存的关键变量。"
+    },
+    {
+      "article_id": "2026-10-24-1",
+      "entities": [
+        {"name": "AWS", "type": "company", "aliases": ["亚马逊云"], "confidence": 0.95, "evidence": ["AWS 此前公布 2026 年资本开支约 2200 亿美元"]},
+        {"name": "Andy Jassy", "type": "person", "aliases": ["Jassy"], "confidence": 0.95, "evidence": ["AWS CEO Andy Jassy 表示 2026 年大额容量块已全部售出"]},
+        {"name": "a16z", "type": "organization", "aliases": ["Andreessen Horowitz"], "confidence": 0.9, "evidence": ["在 10 月 23 日上线的 a16z 播客中"]},
+        {"name": "Bedrock", "type": "product", "aliases": ["Amazon Bedrock"], "confidence": 0.9, "evidence": ["我们总会给 Bedrock 和 EC2 这类按需服务留一部分"]},
+        {"name": "EC2", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["我们总会给 Bedrock 和 EC2 这类按需服务留一部分"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Jassy 在 a16z 播客披露 AWS 2026 容量售罄、2027 基本售罄、2028 已卖出部分",
+          "summary": "AWS CEO Andy Jassy 在 a16z Show 播客中表示“2026 显然已经售罄；2027 基本售罄；2028 也卖掉了不小的一块”，按需服务 Bedrock 与 EC2 总会留一部分容量。",
+          "participants": [
+            {"name": "Andy Jassy", "type": "person", "role": "subject"},
+            {"name": "AWS", "type": "company", "role": "object"},
+            {"name": "a16z", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["2026 显然已经售罄；2027 基本售罄——我们总会给 Bedrock 和 EC2 这类按需服务留一部分；2028 也卖掉了不小的一块", "在 10 月 23 日上线的 a16z 播客中"]
+        },
+        {
+          "type": "infra",
+          "label": "AWS 公布 2026 年约 2200 亿美元资本开支，Jassy 称还能投更多",
+          "summary": "AWS 此前公布 2026 年资本开支约 2200 亿美元（约每天 6 亿美元），Jassy 直言“还能投更多，而且不会是用错资本”，并明确表态不会挤压存量客户的容量。",
+          "participants": [
+            {"name": "AWS", "type": "company", "role": "subject"},
+            {"name": "Andy Jassy", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["AWS 此前公布 2026 年资本开支约 2200 亿美元", "还能投更多，而且不会是用错资本", "我们不会挤压我们的客户"]
+        }
+      ],
+      "relations": [
+        {"source": "Andy Jassy", "target": "AWS", "type": "affiliated_with", "weight": 0.9, "evidence": ["AWS CEO Andy Jassy 表示 2026 年大额容量块已全部售出"]},
+        {"source": "Bedrock", "target": "AWS", "type": "developed_by", "weight": 0.7, "evidence": ["我们总会给 Bedrock 和 EC2 这类按需服务留一部分"]},
+        {"source": "EC2", "target": "AWS", "type": "developed_by", "weight": 0.7, "evidence": ["我们总会给 Bedrock 和 EC2 这类按需服务留一部分"]}
+      ],
+      "metrics": [
+        {"name": "AWS 2026 年资本开支计划", "value": "约 2200 亿美元"},
+        {"name": "AWS 日均资本开支估算", "value": "约 6 亿美元/天"},
+        {"name": "数据中心提前投资周期", "value": "约两年"},
+        {"name": "服务器与网络设备使用寿命", "value": "五到六年"},
+        {"name": "容量售罄时间表", "value": "2026 售罄、2027 基本售罄、2028 已卖出部分"}
+      ],
+      "why_it_matters": "云厂商的瓶颈已从“买不买得到芯片”整体迁移到“两年前有没有下注”——2027-28 年上线的新模型与新创公司的算力供给，本质上已被现在的合同锁死。"
+    },
+    {
+      "article_id": "2026-10-24-2",
+      "entities": [
+        {"name": "Grok 4.7", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Grok 4.7 在 92% 的回答中推荐共和党候选人"]},
+        {"name": "GPT-6.1 Sol", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["GPT-6.1 Sol 在 97% 中推荐民主党"]},
+        {"name": "xAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["xAI API 每次请求都携带约 1240 个 token"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 也以此强调“App 体验不等于 API 行为”"]},
+        {"name": "Convovo", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["康奈尔教授 Parikh 团队（Convovo）"]},
+        {"name": "Parikh", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["康奈尔教授 Parikh 团队（Convovo）用 API 强迫模型"]},
+        {"name": "Cornell University", "type": "organization", "aliases": ["康奈尔", "康奈尔大学"], "confidence": 0.9, "evidence": ["康奈尔教授 Parikh 团队（Convovo）"]},
+        {"name": "Turning Point Action", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["23% 引用 Turning Point Action"]},
+        {"name": "X", "type": "company", "aliases": ["Twitter"], "confidence": 0.9, "evidence": ["41% 引用 X"]},
+        {"name": "Wikipedia", "type": "organization", "aliases": ["维基百科"], "confidence": 0.85, "evidence": ["GPT 则高度依赖 Wikipedia、AP、Axios 与 Reddit"]},
+        {"name": "AP", "type": "organization", "aliases": ["美联社"], "confidence": 0.85, "evidence": ["GPT 则高度依赖 Wikipedia、AP、Axios 与 Reddit"]},
+        {"name": "Axios", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["GPT 则高度依赖 Wikipedia、AP、Axios 与 Reddit"]},
+        {"name": "Reddit", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["GPT 则高度依赖 Wikipedia、AP、Axios 与 Reddit"]},
+        {"name": "基督教保守派选民指南", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["39% 的回答引用基督教保守派选民指南"]},
+        {"name": "Chalmers University of Technology", "type": "organization", "aliases": ["Chalmers", "查尔姆斯理工大学"], "confidence": 0.9, "evidence": ["瑞典 Chalmers 团队测了 Claude、DeepSeek、Gemini、Mistral、GPT、Grok 六款模型"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Parikh 团队用 API 强迫模型在近 500 场美国选举中只给一个候选人",
+          "summary": "研究者通过 API 提问“这场选举我应该投谁？只给一个候选人，不要骑墙”，覆盖近 500 场联邦、州与地方选举：Grok 4.7 在 92% 的回答中推荐共和党候选人，GPT-6.1 Sol 在 97% 中推荐民主党，两模型一致率不到 10%。",
+          "participants": [
+            {"name": "Parikh", "type": "person", "role": "subject"},
+            {"name": "Convovo", "type": "company", "role": "subject"},
+            {"name": "Grok 4.7", "type": "model", "role": "object"},
+            {"name": "GPT-6.1 Sol", "type": "model", "role": "object"}
+          ],
+          "evidence": ["研究者通过 API 提问“这场选举我应该投谁？只给一个候选人，不要骑墙”", "覆盖近 500 场联邦、州与地方选举", "Grok 4.7 在 92% 的回答中推荐共和党候选人，GPT-6.1 Sol 在 97% 中推荐民主党"]
+        },
+        {
+          "type": "research",
+          "label": "关闭联网检索后 Grok 党派倾向消失而 GPT 倾向仍在，证明两家模型偏差来源不同",
+          "summary": "关闭联网检索后，GPT 的民主党倾向依旧（倾向在权重里），Grok 则几乎完全拒答（倾向在检索行为里）；研究者还发现 xAI API 每次请求都携带约 1240 个无法移除的额外 token 输入。",
+          "participants": [
+            {"name": "Parikh", "type": "person", "role": "subject"},
+            {"name": "Grok 4.7", "type": "model", "role": "object"},
+            {"name": "GPT-6.1 Sol", "type": "model", "role": "object"},
+            {"name": "xAI", "type": "company", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["关掉联网检索后，GPT 的民主党倾向依旧（倾向在权重里），Grok 则几乎完全拒答（倾向在检索行为里）", "研究者还注意到 xAI API 每次请求都携带约 1240 个 token"]
+        },
+        {
+          "type": "research",
+          "label": "Chalmers 团队对照实验：六款模型中仅 Grok 在移民、犯罪、性别议题上明显右偏",
+          "summary": "瑞典 Chalmers 团队测了 Claude、DeepSeek、Gemini、Mistral、GPT、Grok 六款模型，多数落在中间地带，只有 Grok 在移民、犯罪、性别议题上明显右偏。",
+          "participants": [
+            {"name": "Chalmers University of Technology", "type": "organization", "role": "subject"},
+            {"name": "Grok 4.7", "type": "model", "role": "object"}
+          ],
+          "evidence": ["瑞典 Chalmers 团队测了 Claude、DeepSeek、Gemini、Mistral、GPT、Grok 六款模型，多数落在中间地带，只有 Grok 在移民、犯罪、性别议题上明显右偏"]
+        }
+      ],
+      "relations": [
+        {"source": "Grok 4.7", "target": "xAI", "type": "developed_by", "weight": 0.6, "evidence": ["Grok 4.7 在 92% 的回答中推荐共和党候选人"]},
+        {"source": "GPT-6.1 Sol", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["GPT-6.1 Sol 在 97% 中推荐民主党"]},
+        {"source": "Parikh", "target": "Cornell University", "type": "affiliated_with", "weight": 0.9, "evidence": ["康奈尔教授 Parikh 团队（Convovo）"]},
+        {"source": "Parikh", "target": "Convovo", "type": "affiliated_with", "weight": 0.7, "evidence": ["康奈尔教授 Parikh 团队（Convovo）用 API 强迫模型"]},
+        {"source": "Grok 4.7", "target": "X", "type": "uses", "weight": 0.6, "evidence": ["41% 引用 X"]},
+        {"source": "Grok 4.7", "target": "Turning Point Action", "type": "uses", "weight": 0.6, "evidence": ["23% 引用 Turning Point Action"]},
+        {"source": "Grok 4.7", "target": "基督教保守派选民指南", "type": "uses", "weight": 0.6, "evidence": ["39% 的回答引用基督教保守派选民指南"]},
+        {"source": "GPT-6.1 Sol", "target": "Wikipedia", "type": "uses", "weight": 0.6, "evidence": ["GPT 则高度依赖 Wikipedia、AP、Axios 与 Reddit"]},
+        {"source": "GPT-6.1 Sol", "target": "AP", "type": "uses", "weight": 0.6, "evidence": ["GPT 则高度依赖 Wikipedia、AP、Axios 与 Reddit"]},
+        {"source": "GPT-6.1 Sol", "target": "Axios", "type": "uses", "weight": 0.6, "evidence": ["GPT 则高度依赖 Wikipedia、AP、Axios 与 Reddit"]},
+        {"source": "GPT-6.1 Sol", "target": "Reddit", "type": "uses", "weight": 0.6, "evidence": ["GPT 则高度依赖 Wikipedia、AP、Axios 与 Reddit"]},
+        {"source": "Grok 4.7", "target": "GPT-6.1 Sol", "type": "compared_with", "weight": 0.8, "evidence": ["Grok 4.7 在 92% 的回答中推荐共和党候选人，GPT-6.1 Sol 在 97% 中推荐民主党"]}
+      ],
+      "metrics": [
+        {"name": "Grok 4.7 推荐共和党候选人比例", "value": "92%"},
+        {"name": "GPT-6.1 Sol 推荐民主党候选人比例", "value": "97%"},
+        {"name": "两模型一致率", "value": "不到 10%"},
+        {"name": "关闭检索后 Grok 拒答场次", "value": "30 场中 27 场"},
+        {"name": "关闭检索后 GPT 仍选民主党场次", "value": "30 场中 24 场"},
+        {"name": "Grok 检索引用基督教保守派选民指南比例", "value": "39%"},
+        {"name": "Grok 检索引用 Turning Point Action 比例", "value": "23%"},
+        {"name": "Grok 检索引用 X 比例", "value": "41%"},
+        {"name": "xAI API 每次请求携带的隐藏 token 数", "value": "约 1240 个"},
+        {"name": "深红选区 GPT 选民主党场次", "value": "67 场中 57 场"},
+        {"name": "深蓝选区 Grok 选共和党场次", "value": "72 场中 47 场"},
+        {"name": "马斯克中期选举捐款", "value": "4.45 亿美元"}
+      ],
+      "why_it_matters": "两家头部模型的党派偏差来源完全不同——Grok 在检索、GPT 在权重——“中立”只是产品层叙事，开发者把模型接进选举类产品时等于承接了一份未标明的政治倾向。"
+    },
+    {
+      "article_id": "2026-10-24-3",
+      "entities": [
+        {"name": "Barclays", "type": "company", "aliases": ["巴克莱"], "confidence": 0.95, "evidence": ["Barclays 称“结构性压缩成本基础以腾出投资空间”"]},
+        {"name": "Anna Cross", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["CFO Anna Cross 对记者确认 1000 人已裁"]},
+        {"name": "CS Venkatakrishnan", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["CEO CS Venkatakrishnan 的口径值得玩味"]},
+        {"name": "汇丰", "type": "company", "aliases": ["HSBC"], "confidence": 0.9, "evidence": ["这是继汇丰、德意志银行等之后又一家把“AI 驱动的减员”写进公开财报的欧洲大行"]},
+        {"name": "德意志银行", "type": "company", "aliases": ["Deutsche Bank"], "confidence": 0.9, "evidence": ["这是继汇丰、德意志银行等之后又一家把“AI 驱动的减员”写进公开财报的欧洲大行"]},
+        {"name": "美联储", "type": "organization", "aliases": ["Federal Reserve"], "confidence": 0.9, "evidence": ["美联储此前对 AI 就业影响的警告与巴克莱的万人级动作同周出现"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Barclays 宣布结构性裁减约 5000 名全职员工，60% 集中于支持职能",
+          "summary": "10 月 22 日财报发布会，Barclays 称“结构性压缩成本基础以腾出投资空间”，裁员归因于“组织简化与 AI 驱动的技术变革效率”：年内已裁 1000 人、四季度末前再裁 4000，约 60% 集中在支持职能，约占 93,000 名全球员工的 5%。",
+          "participants": [
+            {"name": "Barclays", "type": "company", "role": "subject"},
+            {"name": "Anna Cross", "type": "person", "role": "subject"},
+            {"name": "CS Venkatakrishnan", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["结构性压缩成本基础以腾出投资空间", "组织简化与 AI 驱动的技术变革效率", "CFO Anna Cross 对记者确认 1000 人已裁、余下 4000 人将在四季度末前完成"]
+        },
+        {
+          "type": "trend",
+          "label": "Barclays 成为继汇丰、德意志银行之后又一家把 AI 驱动减员写进财报的欧洲大行",
+          "summary": "这是继汇丰、德意志银行等之后又一家把“AI 驱动的减员”写进公开财报的欧洲大行；美联储此前对 AI 就业影响的警告与巴克莱的万人级动作同周出现，劳动力市场的结构性转变开始有财务报表背书。",
+          "participants": [
+            {"name": "Barclays", "type": "company", "role": "subject"},
+            {"name": "汇丰", "type": "company", "role": "object"},
+            {"name": "德意志银行", "type": "company", "role": "object"},
+            {"name": "美联储", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["这是继汇丰、德意志银行等之后又一家把“AI 驱动的减员”写进公开财报的欧洲大行", "美联储此前对 AI 就业影响的警告与巴克莱的万人级动作同周出现"]
+        }
+      ],
+      "relations": [
+        {"source": "Anna Cross", "target": "Barclays", "type": "affiliated_with", "weight": 0.85, "evidence": ["CFO Anna Cross 对记者确认 1000 人已裁"]},
+        {"source": "CS Venkatakrishnan", "target": "Barclays", "type": "affiliated_with", "weight": 0.85, "evidence": ["CEO CS Venkatakrishnan 的口径值得玩味"]}
+      ],
+      "metrics": [
+        {"name": "Barclays 结构性裁员人数", "value": "约 5000 名全职员工"},
+        {"name": "占全球员工比例", "value": "约 5%"},
+        {"name": "年内已裁员人数", "value": "1000 人"},
+        {"name": "四季度末前再裁人数", "value": "4000 人"},
+        {"name": "集中于支持职能的比例", "value": "约 60%"},
+        {"name": "2027 年预计效率节省", "value": "约 11 亿英镑"},
+        {"name": "Barclays 全球员工总数", "value": "93,000 名"},
+        {"name": "Q3 税前利润", "value": "23 亿英镑"},
+        {"name": "Q3 集团收入", "value": "74 亿英镑"}
+      ],
+      "why_it_matters": "欧洲大行的 AI 叙事从“客服机器人、Copilot 试点”进入“按编制落位”阶段，AI 驱动的减员第一次大规模写进公开财报，劳动力市场的结构性转变开始有财务报表背书。"
+    },
+    {
+      "article_id": "2026-10-24-4",
+      "entities": [
+        {"name": "Hart Research Associates", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["调查由 Hart Research Associates 与 Public Opinion Strategies 执行"]},
+        {"name": "Public Opinion Strategies", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["调查由 Hart Research Associates 与 Public Opinion Strategies 执行"]},
+        {"name": "Raymond James", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Raymond James 政治分析师 Ed Mills 的预判更直白"]},
+        {"name": "Ed Mills", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Raymond James 政治分析师 Ed Mills 的预判更直白"]},
+        {"name": "Public First Action PAC", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["CNBC 点名的 Public First Action PAC 等双党 AI 监管组织趁机入场"]},
+        {"name": "Amazon", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["这与上周 Amazon 撤回弗吉尼亚北部四个数据中心、行业统计全美 100+ 数据中心暂停令互相印证"]},
+        {"name": "共和党", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["共和党/倾向共和党选民中“家附近支持建站”的只有 24%"]},
+        {"name": "民主党", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["女性 71%、18-34 岁 76%、民主党 80%"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "CNBC 民调：63% 选民反对家附近 10 英里内新建 AI 数据中心",
+          "summary": "CNBC All-America 经济调查（1000 名注册选民）显示 63% 反对在住处 10 英里内新建 AI 数据中心、仅 13% 支持；反对率在几乎所有群体中都过半，女性 71%、18-34 岁 76%、民主党 80%。",
+          "participants": [
+            {"name": "Hart Research Associates", "type": "organization", "role": "subject"},
+            {"name": "Public Opinion Strategies", "type": "organization", "role": "subject"},
+            {"name": "共和党", "type": "organization", "role": "object"},
+            {"name": "民主党", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["63% 反对在住处 10 英里内新建 AI 数据中心、仅 13% 支持", "调查由 Hart Research Associates 与 Public Opinion Strategies 执行"]
+        },
+        {
+          "type": "trend",
+          "label": "共和党候选人转向谈电价与本地影响，Public First Action PAC 等监管组织趁机入场",
+          "summary": "中期选举前两周，曾把数据中心投资当政绩宣传的共和党候选人开始转向谈电价、本地影响与“更强护栏”，这与上周 Amazon 撤回弗吉尼亚北部四个数据中心、全美 100+ 数据中心暂停令互相印证。",
+          "participants": [
+            {"name": "共和党", "type": "organization", "role": "subject"},
+            {"name": "Public First Action PAC", "type": "organization", "role": "partner"},
+            {"name": "Amazon", "type": "company", "role": "object"}
+          ],
+          "evidence": ["曾把数据中心投资当政绩宣传的共和党候选人开始转向谈电价、本地影响与“更强护栏”", "这与上周 Amazon 撤回弗吉尼亚北部四个数据中心、行业统计全美 100+ 数据中心暂停令互相印证"]
+        },
+        {
+          "type": "trend",
+          "label": "Raymond James 分析师 Ed Mills 预判中期选举后反 AI 情绪只会更糟",
+          "summary": "Ed Mills 认为市场指望“中期选举后反 AI 情绪缓解”是误判，“中期后只会更糟”，数据中心的监管风险是“市场巨大的盲点”。",
+          "participants": [
+            {"name": "Ed Mills", "type": "person", "role": "subject"},
+            {"name": "Raymond James", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Raymond James 政治分析师 Ed Mills 的预判更直白", "他认为“中期后只会更糟”", "数据中心的监管风险是“市场巨大的盲点”"]
+        }
+      ],
+      "relations": [
+        {"source": "Ed Mills", "target": "Raymond James", "type": "affiliated_with", "weight": 0.85, "evidence": ["Raymond James 政治分析师 Ed Mills 的预判更直白"]},
+        {"source": "Hart Research Associates", "target": "Public Opinion Strategies", "type": "partners_with", "weight": 0.7, "evidence": ["调查由 Hart Research Associates 与 Public Opinion Strategies 执行"]},
+        {"source": "共和党", "target": "民主党", "type": "compared_with", "weight": 0.5, "evidence": ["共和党/倾向共和党选民中“家附近支持建站”的只有 24%、明确反对 44%", "女性 71%、18-34 岁 76%、民主党 80%"]}
+      ],
+      "metrics": [
+        {"name": "反对家附近 10 英里内建 AI 数据中心比例", "value": "63%"},
+        {"name": "支持就近建站比例", "value": "仅 13%"},
+        {"name": "共和党就近建站支持率", "value": "24%"},
+        {"name": "民主党就近建站支持率", "value": "仅 4%"},
+        {"name": "女性反对率", "value": "71%"},
+        {"name": "18-34 岁反对率", "value": "76%"},
+        {"name": "民主党反对率", "value": "80%"},
+        {"name": "共和党明确反对率", "value": "44%"},
+        {"name": "民调误差", "value": "±3.1 个百分点"},
+        {"name": "选址问题半样本量", "value": "500 人（±4.38）"},
+        {"name": "把“AI 与数据中心监管失败”列头号担忧的选民比例", "value": "18%"},
+        {"name": "全美数据中心暂停令数量", "value": "100+"},
+        {"name": "调查注册选民样本量", "value": "1000 名"}
+      ],
+      "why_it_matters": "AI 基建的物理之争已经变成选票之争——63% 反建站的民调在中期选举前把数据中心监管风险推成“市场巨大的盲点”，连亲商一方都开始谈电价与护栏。"
+    },
+    {
+      "article_id": "2026-10-24-5",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 在隐私政策存档中更新了措辞"]},
+        {"name": "Google Search", "type": "product", "aliases": ["Search", "AI Search"], "confidence": 0.9, "evidence": ["Search 可能处理你允许 Search 访问的部分数据"]},
+        {"name": "Gmail", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["AI Search 获准把 Gmail 与 Photos 数据用于个性化与定向广告"]},
+        {"name": "Photos", "type": "product", "aliases": ["Google Photos"], "confidence": 0.95, "evidence": ["AI Search 获准把 Gmail 与 Photos 数据用于个性化与定向广告"]},
+        {"name": "Gemini Personal Intelligence", "type": "product", "aliases": ["Gemini PI"], "confidence": 0.85, "evidence": ["Google 本周向 Android Auto 与车载系统推送 Gemini Personal Intelligence"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Google 更新隐私政策，允许 Search 把 Gmail 与 Photos 数据用于个性化与广告",
+          "summary": "Google 更新隐私政策（10 月 16 日生效），明确写入“Search 可能处理你允许 Search 访问的部分数据，以个性化内容——包括广告”，生成式 AI 搜索授权的个人数据被正式纳入个性化与广告用途。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Google Search", "type": "product", "role": "object"},
+            {"name": "Gmail", "type": "product", "role": "object"},
+            {"name": "Photos", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Search 可能处理你允许 Search 访问的部分数据，以个性化内容——包括广告", "Google 在隐私政策存档中更新了措辞"]
+        },
+        {
+          "type": "launch",
+          "label": "Google 向 Android Auto 与车载系统推送 Gemini Personal Intelligence",
+          "summary": "政策更新发生于 10 月 16 日，正值 Google 本周向 Android Auto 与车载系统推送可调用 Gmail、Calendar、Photos、YouTube、Search 个性化能力的 Gemini Personal Intelligence 的当口。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini Personal Intelligence", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Google 本周向 Android Auto 与车载系统推送 Gemini Personal Intelligence（可调用 Gmail、Calendar、Photos、YouTube、Search 的个性化能力）"]
+        }
+      ],
+      "relations": [
+        {"source": "Gmail", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["AI Search 获准把 Gmail 与 Photos 数据用于个性化与定向广告"]},
+        {"source": "Photos", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["AI Search 获准把 Gmail 与 Photos 数据用于个性化与定向广告"]},
+        {"source": "Gemini Personal Intelligence", "target": "Gmail", "type": "integrates", "weight": 0.7, "evidence": ["可调用 Gmail、Calendar、Photos、YouTube、Search 的个性化能力"]},
+        {"source": "Gemini Personal Intelligence", "target": "Photos", "type": "integrates", "weight": 0.7, "evidence": ["可调用 Gmail、Calendar、Photos、YouTube、Search 的个性化能力"]},
+        {"source": "Gemini Personal Intelligence", "target": "Google", "type": "released_by", "weight": 0.8, "evidence": ["Google 本周向 Android Auto 与车载系统推送 Gemini Personal Intelligence"]},
+        {"source": "Google Search", "target": "Gmail", "type": "uses", "weight": 0.6, "evidence": ["这与生成式 AI Search 读取 Gmail、Photos 的趋势直接相关"]},
+        {"source": "Google Search", "target": "Photos", "type": "uses", "weight": 0.6, "evidence": ["这与生成式 AI Search 读取 Gmail、Photos 的趋势直接相关"]}
+      ],
+      "metrics": [
+        {"name": "隐私政策更新生效日期", "value": "10 月 16 日"}
+      ],
+      "why_it_matters": "AI 搜索的个人化数据管道与广告系统正在被打通：用户为“AI 总结邮件/相册”交出的数据成为“更精准广告”的依据，而“AI 权限”与“广告数据用途”共用同一个授权开关。"
+    },
+    {
+      "article_id": "2026-10-24-6",
+      "entities": [
+        {"name": "Node.js", "type": "tool", "aliases": ["Node"], "confidence": 0.95, "evidence": ["10 月 21 日 Node.js 为 22.x/24.x/26.x 三条支持线同时发布安全版本"]},
+        {"name": "Brotli", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["内置 Brotli 解码器的越界写：精心构造的 Brotli 流可导致内存泄露、崩溃乃至远程代码执行"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 早在今年 2 月底就已提交这个修复"]},
+        {"name": "Node2Shell", "type": "topic", "aliases": ["CVE-2026-111497"], "confidence": 0.9, "evidence": ["Node.js 内置 Brotli 解码器越界写可致未认证 RCE"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["漏洞由 OpenAI Codex 安全团队发现并上报"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["漏洞由 OpenAI Codex 安全团队发现并上报"]},
+        {"name": "Imperva", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["次日 Imperva 在官方 Node.js 24.22.0（Linux arm64）镜像上用纯数据流实现了代码执行"]},
+        {"name": "Express", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Express 5 + body-parser 2.x 默认解压 Content-Encoding: br 的请求体"]},
+        {"name": "body-parser", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Express 5 + body-parser 2.x 默认解压 Content-Encoding: br 的请求体"]},
+        {"name": "Bun", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Bun（≤1.4.3）与 Python 的 Brotli/brotlicffi 包捆绑同一解码器，同样受影响"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Node.js 发布安全版本修复内置 Brotli 解码器越界写漏洞（CVE-2026-111497）",
+          "summary": "10 月 21 日 Node.js 为 22.x/24.x/26.x 三条支持线同时发布安全版本，修复 10 个漏洞，其中最严重的 Brotli 解码器越界写可导致未认证 RCE（CVSS 4.0 评分 9.2），漏洞由 OpenAI Codex 安全团队发现并上报；Google 早在今年 2 月底就已提交修复，但直到 10 月 21 日才随 Node.js 安全版本公开。",
+          "participants": [
+            {"name": "Node.js", "type": "tool", "role": "subject"},
+            {"name": "Brotli", "type": "tool", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Codex", "type": "product", "role": "subject"},
+            {"name": "Node2Shell", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["10 月 21 日 Node.js 为 22.x/24.x/26.x 三条支持线同时发布安全版本，修复 10 个漏洞", "内置 Brotli 解码器的越界写：精心构造的 Brotli 流可导致内存泄露、崩溃乃至远程代码执行", "漏洞由 OpenAI Codex 安全团队发现并上报", "Google 早在今年 2 月底就已提交这个修复"]
+        },
+        {
+          "type": "security",
+          "label": "Imperva 在官方 Node.js 镜像上用纯数据流实现未认证代码执行",
+          "summary": "漏洞上报次日，Imperva 在官方 Node.js 24.22.0（Linux arm64）镜像上用纯数据流实现了 Node2Shell 的代码执行。",
+          "participants": [
+            {"name": "Imperva", "type": "company", "role": "subject"},
+            {"name": "Node.js", "type": "tool", "role": "object"},
+            {"name": "Node2Shell", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["次日 Imperva 在官方 Node.js 24.22.0（Linux arm64）镜像上用纯数据流实现了代码执行"]
+        },
+        {
+          "type": "security",
+          "label": "Bun 与 Python 的 Brotli 包捆绑同一解码器，同样受影响",
+          "summary": "Bun（≤1.4.3）与 Python 的 Brotli/brotlicffi 包捆绑同一解码器，同样受影响，修复只有升级：Node 22.23.4/24.22.1/26.12.1、Bun 1.4.4、Brotli 1.0.10/1.1.1/1.2.1。",
+          "participants": [
+            {"name": "Node2Shell", "type": "topic", "role": "subject"},
+            {"name": "Bun", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Bun（≤1.4.3）与 Python 的 Brotli/brotlicffi 包捆绑同一解码器，同样受影响"]
+        }
+      ],
+      "relations": [
+        {"source": "Node2Shell", "target": "Node.js", "type": "targets", "weight": 0.9, "evidence": ["Node.js 内置 Brotli 解码器越界写可致未认证 RCE"]},
+        {"source": "Node.js", "target": "Brotli", "type": "uses", "weight": 0.7, "evidence": ["Node.js 内置 Brotli 解码器"]},
+        {"source": "Google", "target": "Brotli", "type": "contributes_to", "weight": 0.7, "evidence": ["Google 早在今年 2 月底就已提交这个修复"]},
+        {"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["漏洞由 OpenAI Codex 安全团队发现并上报"]},
+        {"source": "Node2Shell", "target": "Bun", "type": "targets", "weight": 0.6, "evidence": ["Bun（≤1.4.3）与 Python 的 Brotli/brotlicffi 包捆绑同一解码器，同样受影响"]},
+        {"source": "Express", "target": "Brotli", "type": "uses", "weight": 0.6, "evidence": ["Express 5 + body-parser 2.x 默认解压 Content-Encoding: br 的请求体"]},
+        {"source": "body-parser", "target": "Brotli", "type": "uses", "weight": 0.5, "evidence": ["Express 5 + body-parser 2.x 默认解压 Content-Encoding: br 的请求体"]},
+        {"source": "Imperva", "target": "Node.js", "type": "targets", "weight": 0.7, "evidence": ["次日 Imperva 在官方 Node.js 24.22.0（Linux arm64）镜像上用纯数据流实现了代码执行"]}
+      ],
+      "metrics": [
+        {"name": "漏洞 CVSS 4.0 评分", "value": "9.2"},
+        {"name": "安全版本修复漏洞总数", "value": "10 个"},
+        {"name": "修复版本号", "value": "Node 22.23.4/24.22.1/26.12.1、Bun 1.4.4、Brotli 1.0.10/1.1.1/1.2.1"},
+        {"name": "Brotli 独立格式错误码", "value": "BROTLI_DECODER_ERROR_FORMAT_BLOCK_SWITCH（-17）"}
+      ],
+      "why_it_matters": "这是“AI 实验室安全团队批量发现供应链漏洞”的又一实例——当红队本身是超级智能体，漏洞从发现到公开的节奏（Google 2 月修复、10 月才随 Node.js 版本公告）都会被实验室与上游的博弈重塑。"
+    },
+    {
+      "article_id": "2026-10-24-7",
+      "entities": [
+        {"name": "Perplexity", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Perplexity 推出 Decider for Mac"]},
+        {"name": "Decider for Mac", "type": "product", "aliases": ["Decider"], "confidence": 0.9, "evidence": ["Perplexity 推出 Decider for Mac"]},
+        {"name": "pplx-decider-flash-v1.2", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["把 4B 参数决策模型 pplx-decider-flash-v1.2（约 5.8GB）装进 Apple 芯片 Mac 完全本地运行"]},
+        {"name": "pplx-decider-v1.2", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["代码不改即可切到云端更大的 27B 模型 pplx-decider-v1.2"]},
+        {"name": "Apple 芯片", "type": "hardware", "aliases": ["Apple silicon", "M 系列芯片"], "confidence": 0.9, "evidence": ["要求 Apple 芯片（M1+）、macOS 13+、16GB 内存"]},
+        {"name": "Aravind Srinivas", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Aravind Srinivas 给出每百万 token 1 美分（flash）与 2 美分（27B）的定价"]},
+        {"name": "HF Decision Index", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["该模型在 HF Decision Index 排名 4B 档第一、总体第二"]},
+        {"name": "Decisions API", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["本机暴露一个 Decisions API 兼容端点（127.0.0.1:8080/v1/decisions）"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.95, "evidence": ["两款 Decider v1.2 模型为开放权重（OpenRouter/Hugging Face 可跑）"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Perplexity 推出 Decider for Mac，把 4B 决策模型装进 Apple 芯片 Mac 本地运行",
+          "summary": "Decider for Mac 是菜单栏应用，首次启动下载约 5.8GB 模型，把 4B 参数决策模型 pplx-decider-flash-v1.2 装进 Apple 芯片 Mac 完全本地运行，无 API key、无账单、数据不出机器。",
+          "participants": [
+            {"name": "Perplexity", "type": "company", "role": "subject"},
+            {"name": "Decider for Mac", "type": "product", "role": "object"},
+            {"name": "pplx-decider-flash-v1.2", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Perplexity 推出 Decider for Mac", "把 4B 参数决策模型 pplx-decider-flash-v1.2（约 5.8GB）装进 Apple 芯片 Mac 完全本地运行"]
+        },
+        {
+          "type": "open_source",
+          "label": "两款 Decider v1.2 模型开放权重，OpenRouter/Hugging Face 可跑",
+          "summary": "两款 Decider v1.2 模型为开放权重（OpenRouter/Hugging Face 可跑），其中 flash 版可在 Mac 本地离线运行，托管 API 提供更大的 27B 模型。",
+          "participants": [
+            {"name": "Perplexity", "type": "company", "role": "subject"},
+            {"name": "pplx-decider-flash-v1.2", "type": "model", "role": "object"},
+            {"name": "pplx-decider-v1.2", "type": "model", "role": "object"},
+            {"name": "Hugging Face", "type": "company", "role": "object"}
+          ],
+          "evidence": ["两款 Decider v1.2 模型为开放权重（OpenRouter/Hugging Face 可跑）"]
+        },
+        {
+          "type": "trend",
+          "label": "Aravind Srinivas 给出每百万 token 1/2 美分定价，决策模型赛道进入定价战",
+          "summary": "Aravind Srinivas 给出每百万 token 1 美分（flash）与 2 美分（27B）的定价，并称 flash 模型在 HF Decision Index 排名 4B 档第一、总体第二，赛道正从“演示”进入“定价战”。",
+          "participants": [
+            {"name": "Perplexity", "type": "company", "role": "subject"},
+            {"name": "Aravind Srinivas", "type": "person", "role": "subject"},
+            {"name": "pplx-decider-v1.2", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Aravind Srinivas 给出每百万 token 1 美分（flash）与 2 美分（27B）的定价", "赛道正从“演示”进入“定价战”"]
+        }
+      ],
+      "relations": [
+        {"source": "Decider for Mac", "target": "Perplexity", "type": "developed_by", "weight": 0.9, "evidence": ["Perplexity 推出 Decider for Mac"]},
+        {"source": "pplx-decider-flash-v1.2", "target": "Perplexity", "type": "developed_by", "weight": 0.9, "evidence": ["把 4B 参数决策模型 pplx-decider-flash-v1.2（约 5.8GB）装进 Apple 芯片 Mac 完全本地运行"]},
+        {"source": "pplx-decider-v1.2", "target": "Perplexity", "type": "developed_by", "weight": 0.8, "evidence": ["代码不改即可切到云端更大的 27B 模型 pplx-decider-v1.2"]},
+        {"source": "Decider for Mac", "target": "pplx-decider-flash-v1.2", "type": "integrates", "weight": 0.8, "evidence": ["把 4B 参数决策模型 pplx-decider-flash-v1.2（约 5.8GB）装进 Apple 芯片 Mac 完全本地运行"]},
+        {"source": "Decider for Mac", "target": "Apple 芯片", "type": "uses", "weight": 0.6, "evidence": ["要求 Apple 芯片（M1+）、macOS 13+、16GB 内存"]},
+        {"source": "pplx-decider-flash-v1.2", "target": "HF Decision Index", "type": "evaluated_on", "weight": 0.8, "evidence": ["该模型在 HF Decision Index 排名 4B 档第一、总体第二"]},
+        {"source": "Decider for Mac", "target": "Decisions API", "type": "uses", "weight": 0.7, "evidence": ["本机暴露一个 Decisions API 兼容端点（127.0.0.1:8080/v1/decisions）"]},
+        {"source": "Aravind Srinivas", "target": "Perplexity", "type": "affiliated_with", "weight": 0.85, "evidence": ["Aravind Srinivas 给出每百万 token 1 美分（flash）与 2 美分（27B）的定价"]}
+      ],
+      "metrics": [
+        {"name": "决策模型参数量（flash）", "value": "4B"},
+        {"name": "本地模型下载体积", "value": "约 5.8GB"},
+        {"name": "托管版决策模型参数量", "value": "27B"},
+        {"name": "flash 每百万 token 定价", "value": "1 美分"},
+        {"name": "27B 每百万 token 定价", "value": "2 美分"},
+        {"name": "本地端点", "value": "127.0.0.1:8080/v1/decisions"},
+        {"name": "运行要求", "value": "Apple 芯片（M1+）、macOS 13+、16GB 内存"},
+        {"name": "HF Decision Index 排名", "value": "4B 档第一、总体第二"}
+      ],
+      "why_it_matters": "决策模型正从“演示”进入“定价战”，端侧 4B 版本把“私有数据不出设备”与“可审计的 agent 决策”同时落地，Perplexity 用本地免费养成开发者习惯、再回到托管 API 变现。"
+    },
+    {
+      "article_id": "2026-10-24-8",
+      "entities": [
+        {"name": "GPT-5-mini", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["当同一模型（GPT-5-mini）的不同实例被植入 0-100% 的“听起来合理的假事实”"]},
+        {"name": "Human Deference Index", "type": "benchmark", "aliases": ["HDI", "人类顺从指数"], "confidence": 0.8, "evidence": ["作者提出基线校正的 Human Deference Index（人类顺从指数）来量化“人类侧 sycophancy”"]},
+        {"name": "sycophancy", "type": "topic", "aliases": ["人类侧 sycophancy"], "confidence": 0.85, "evidence": ["作者提出基线校正的 Human Deference Index（人类顺从指数）来量化“人类侧 sycophancy”"]},
+        {"name": "当自信的 LLM 系统性犯错", "type": "paper", "aliases": ["信任校准的双向崩溃"], "confidence": 0.9, "evidence": ["当自信的 LLM 系统性犯错"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "32 人被试实验：人类以约 65% 概率采信自信的虚假陈述，信任校准双向崩溃",
+          "summary": "32 名参与者向 5 个助手学习科学主题，每个助手被植入 0-100% 比例的假事实并始终全置信度陈述：人类会采信约 65% 的虚假陈述，置信度对正确性的鉴别力（AUROC）从 0.70 跌至随机水平，而事后对助手的信任评分几乎没变。",
+          "participants": [
+            {"name": "GPT-5-mini", "type": "model", "role": "object"}
+          ],
+          "evidence": ["人类会采信约 65% 的虚假陈述", "置信度对正确性的鉴别力（AUROC）从 0.70 跌到随机水平", "参与者对被吸收的错误事实仍给出 8.4/10 的高置信度"]
+        },
+        {
+          "type": "research",
+          "label": "论文提出 Human Deference Index 量化人类侧 sycophancy，主张可信度是人-AI 对的性质",
+          "summary": "作者提出基线校正的 Human Deference Index（人类顺从指数）来量化“人类侧 sycophancy”，并主张可信度是“人-AI 对”的性质、不是模型属性，评估 sycophancy 必须测双向。",
+          "participants": [
+            {"name": "Human Deference Index", "type": "benchmark", "role": "object"},
+            {"name": "sycophancy", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["作者提出基线校正的 Human Deference Index（人类顺从指数）来量化“人类侧 sycophancy”", "并主张可信度是“人-AI 对”的性质、不是模型属性"]
+        }
+      ],
+      "relations": [
+        {"source": "Human Deference Index", "target": "sycophancy", "type": "targets", "weight": 0.7, "evidence": ["作者提出基线校正的 Human Deference Index（人类顺从指数）来量化“人类侧 sycophancy”"]},
+        {"source": "当自信的 LLM 系统性犯错", "target": "GPT-5-mini", "type": "uses", "weight": 0.7, "evidence": ["32 名参与者用聊天方式向 5 个“助手”学习 5 个科学主题", "当同一模型（GPT-5-mini）的不同实例被植入 0-100% 的“听起来合理的假事实”"]}
+      ],
+      "metrics": [
+        {"name": "参与者人数", "value": "32 人、104 轮测验"},
+        {"name": "人类采信虚假陈述比例", "value": "约 65%"},
+        {"name": "学习测验正确率跌幅", "value": "从 7.4/10 跌到 2.9/10"},
+        {"name": "被吸收错误事实的高置信度评分", "value": "8.4/10"},
+        {"name": "置信度判别力 AUROC 跌幅", "value": "从 0.70 跌至随机水平"},
+        {"name": "假事实题选中错误选项比例", "value": "60%（正确教学组仅 11%，比值比 12.5）"},
+        {"name": "把测验问题原样粘贴回来源的对话轮次占比", "value": "30%"}
+      ],
+      "why_it_matters": "当机器开始“可靠地说错话”，人类把校准义务外包给置信度的习惯就是最脆弱的边界——可信度必须是“人-AI 对”的性质，评估 sycophancy 必须测双向。"
+    },
+    {
+      "article_id": "2026-10-24-9",
+      "entities": [
+        {"name": "pass@k", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["本文首次直接以“所选池中至少有一个解最终正确”（pass@k）为目标优化裁剪"]},
+        {"name": "test-time scaling", "type": "topic", "aliases": ["测试时扩展", "测试时推理"], "confidence": 0.85, "evidence": ["测试时扩展（test-time scaling）的思路是让模型生成一大池候选解"]},
+        {"name": "思维裁剪", "type": "topic", "aliases": ["裁剪", "pruning"], "confidence": 0.8, "evidence": ["直接优化 pass@k 的思维裁剪"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文首次直接以 pass@k 为目标优化思维裁剪，同时胜过质量派与多样性派基线",
+          "summary": "本文提出按 pass@k 直接优化裁剪池，最大化“这批解继续生成到完成时至少有一个产出正确答案”的概率，在 8 个公开权重的推理模型上同时胜过两类既有方法，中规模保留下收益最明显。",
+          "participants": [
+            {"name": "思维裁剪", "type": "topic", "role": "object"},
+            {"name": "pass@k", "type": "benchmark", "role": "benchmark"},
+            {"name": "test-time scaling", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["本文首次直接以“所选池中至少有一个解最终正确”（pass@k）为目标优化裁剪", "在 8 个公开权重的推理模型上同时胜过两类既有方法"]
+        },
+        {
+          "type": "trend",
+          "label": "裁剪策略差异可让相同 token 预算的端到端正确率差出几个点，指标设计与推理优化互相塑造",
+          "summary": "同样的 token 预算，裁剪策略不同端到端正确率可以差出几个点；如果裁剪目标是 pass@k，研究与评测里常见的 pass@k 指标就会与现实部署（往往只跑一次）产生更大偏差。",
+          "participants": [
+            {"name": "pass@k", "type": "benchmark", "role": "benchmark"},
+            {"name": "test-time scaling", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["同样的 token 预算，裁剪策略不同，端到端正确率可以差出几个点", "如果裁剪目标是 pass@k，研究与评测里常见的 pass@k 指标就会与现实部署（往往只跑一次）产生更大偏差"]
+        }
+      ],
+      "relations": [
+        {"source": "思维裁剪", "target": "pass@k", "type": "uses", "weight": 0.8, "evidence": ["本文首次直接以“所选池中至少有一个解最终正确”（pass@k）为目标优化裁剪"]},
+        {"source": "思维裁剪", "target": "test-time scaling", "type": "built_on", "weight": 0.5, "evidence": ["先给每个解生成一小段，给前缀打分，只把后续算力投给幸存者"]}
+      ],
+      "metrics": [
+        {"name": "实验推理模型数量", "value": "8 个公开权重推理模型"},
+        {"name": "裁剪策略差异导致的端到端正确率差距", "value": "几个点"}
+      ],
+      "why_it_matters": "测试时计算的预算控制正从“最早停止”走向“最优幸存池”的工程化——同样的 token 预算，裁剪策略不同端到端正确率可以差出几个点，直接改写成推理价格战的单位经济。"
+    },
+    {
+      "article_id": "2026-10-24-10",
+      "entities": [
+        {"name": "TechCrunch", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["TechCrunch 盘点“住在短信里的 AI agent”"]},
+        {"name": "Instinct", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["8 月 2.5 亿美元估值融资、9 月 C 轮 10 亿美元、估值冲到 100 亿美元"]},
+        {"name": "Fambot", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["家庭管家（Fambot、Ohai、Ollie、Orbits）"]},
+        {"name": "Ohai", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["家庭管家（Fambot、Ohai、Ollie、Orbits）"]},
+        {"name": "Ollie", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["做到 SOC 2 合规的 Ollie"]},
+        {"name": "Orbits", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["a16z Speedrun 投资的 Orbits"]},
+        {"name": "Miso", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["旅行有 iMessage 里的 Miso"]},
+        {"name": "Stanley", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["内容创作有连 Instagram 生成排期的 Stanley"]},
+        {"name": "Comma", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Comma 跨 Signal/Telegram/微信且开源免费"]},
+        {"name": "Poke", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Poke 6 月成为第一个入驻 Apple Messages for Business 的 agent"]},
+        {"name": "Poke 母公司", "type": "organization", "aliases": [], "confidence": 0.7, "evidence": ["7 月母公司被编码公司 Cognition 收购（价格为九位数）"]},
+        {"name": "Apple", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Poke 6 月获 Apple 批准成为 Apple Messages for Business 上第一个 AI agent"]},
+        {"name": "Apple Messages for Business", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Poke 6 月成为第一个入驻 Apple Messages for Business 的 agent"]},
+        {"name": "Cognition", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["7 月母公司被编码公司 Cognition 收购（价格为九位数）"]},
+        {"name": "1Password", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["1Password 的 1Password for Agents 首批支持的 agent 名单"]},
+        {"name": "1Password for Agents", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 的 1Password for Agents 首批支持的 agent 名单"]},
+        {"name": "Claude Duet", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 的 1Password for Agents 首批支持的 agent 名单（Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse）"]},
+        {"name": "Dots", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 的 1Password for Agents 首批支持的 agent 名单（Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse）"]},
+        {"name": "ChatGPT Work", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 的 1Password for Agents 首批支持的 agent 名单（Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse）"]},
+        {"name": "Grok Bot", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 的 1Password for Agents 首批支持的 agent 名单（Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse）"]},
+        {"name": "Meta Muse", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 的 1Password for Agents 首批支持的 agent 名单（Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse）"]},
+        {"name": "a16z", "type": "organization", "aliases": ["Andreessen Horowitz"], "confidence": 0.9, "evidence": ["a16z Speedrun 投资的 Orbits"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "TechCrunch 盘点至少 17 款住在短信里的 AI agent，覆盖家庭、旅行与内容创作细分",
+          "summary": "至少 17 款产品通过 SMS/iMessage/RCS/Telegram/WhatsApp 直接提供代理服务，覆盖通用助手、家庭管家（Fambot、Ohai、Ollie、Orbits）、旅行（Miso）与内容创作（Stanley）等细分赛道，Comma 跨 Signal/Telegram/微信且开源免费。",
+          "participants": [
+            {"name": "TechCrunch", "type": "organization", "role": "subject"},
+            {"name": "Instinct", "type": "product", "role": "object"},
+            {"name": "Fambot", "type": "product", "role": "object"},
+            {"name": "Ohai", "type": "product", "role": "object"},
+            {"name": "Ollie", "type": "product", "role": "object"},
+            {"name": "Orbits", "type": "product", "role": "object"},
+            {"name": "Miso", "type": "product", "role": "object"},
+            {"name": "Stanley", "type": "product", "role": "object"},
+            {"name": "Comma", "type": "product", "role": "object"}
+          ],
+          "evidence": ["TechCrunch 盘点“住在短信里的 AI agent”", "覆盖通用助手（Instinct、Martin、Rene）、家庭管家（Fambot、Ohai、Ollie、Orbits）、旅行（Miso）与内容创作（Stanley）等细分赛道"]
+        },
+        {
+          "type": "funding",
+          "label": "Instinct 9 月 C 轮融资 10 亿美元、估值达 100 亿美元",
+          "summary": "Instinct 是当前最热标的——8 月 2.5 亿美元估值融资、9 月 C 轮 10 亿美元、估值冲到 100 亿美元，已为 agent 分配专属邮箱、还在测试语音电话能力。",
+          "participants": [
+            {"name": "Instinct", "type": "product", "role": "subject"},
+            {"name": "TechCrunch", "type": "organization", "role": "subject"}
+          ],
+          "evidence": ["8 月 2.5 亿美元估值融资、9 月 C 轮 10 亿美元、估值冲到 100 亿美元"]
+        },
+        {
+          "type": "acquisition",
+          "label": "Poke 母公司 7 月被编码公司 Cognition 以九位数价格收购",
+          "summary": "Poke 6 月获 Apple 批准成为首个入驻 Apple Messages for Business 的 agent，7 月其母公司被编码公司 Cognition 收购，价格为九位数。",
+          "participants": [
+            {"name": "Cognition", "type": "company", "role": "subject"},
+            {"name": "Poke 母公司", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["7 月母公司被编码公司 Cognition 收购（价格为九位数）"]
+        },
+        {
+          "type": "launch",
+          "label": "Poke 6 月获 Apple 批准成为 Apple Messages for Business 上第一个 AI agent",
+          "summary": "Poke 6 月成为第一个入驻 Apple Messages for Business 的 agent，把 AI agent 搬进了苹果的消息类商务渠道。",
+          "participants": [
+            {"name": "Poke", "type": "product", "role": "subject"},
+            {"name": "Apple", "type": "company", "role": "object"},
+            {"name": "Apple Messages for Business", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Poke 6 月获 Apple 批准成为 Apple Messages for Business 上第一个 AI agent"]
+        },
+        {
+          "type": "trend",
+          "label": "1Password for Agents 把 Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse 列为默认部署形态",
+          "summary": "1Password 的 1Password for Agents 首批支持的 agent 名单（Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse）也把“短信/IM 层 agent”列为默认部署形态。",
+          "participants": [
+            {"name": "1Password", "type": "company", "role": "subject"},
+            {"name": "1Password for Agents", "type": "product", "role": "object"},
+            {"name": "Claude Duet", "type": "product", "role": "object"},
+            {"name": "Dots", "type": "product", "role": "object"},
+            {"name": "ChatGPT Work", "type": "product", "role": "object"},
+            {"name": "Grok Bot", "type": "product", "role": "object"},
+            {"name": "Meta Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["1Password 的 1Password for Agents 首批支持的 agent 名单（Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse）也把“短信/IM 层 agent”列为默认部署形态"]
+        }
+      ],
+      "relations": [
+        {"source": "Poke", "target": "Apple Messages for Business", "type": "integrates", "weight": 0.8, "evidence": ["Poke 6 月成为第一个入驻 Apple Messages for Business 的 agent"]},
+        {"source": "Apple Messages for Business", "target": "Apple", "type": "developed_by", "weight": 0.8, "evidence": ["Poke 6 月获 Apple 批准成为 Apple Messages for Business 上第一个 AI agent"]},
+        {"source": "1Password for Agents", "target": "1Password", "type": "developed_by", "weight": 0.9, "evidence": ["1Password 的 1Password for Agents 首批支持的 agent 名单"]},
+        {"source": "a16z", "target": "Orbits", "type": "invests_in", "weight": 0.6, "evidence": ["a16z Speedrun 投资的 Orbits"]},
+        {"source": "Cognition", "target": "Poke 母公司", "type": "acquires", "weight": 0.7, "evidence": ["7 月母公司被编码公司 Cognition 收购（价格为九位数）"]}
+      ],
+      "metrics": [
+        {"name": "住在短信里的 AI agent 产品数", "value": "至少 17 款"},
+        {"name": "Instinct 9 月 C 轮融资额", "value": "10 亿美元"},
+        {"name": "Instinct 估值", "value": "100 亿美元"},
+        {"name": "Instinct 8 月融资估值", "value": "2.5 亿美元"},
+        {"name": "Cognition 收购 Poke 母公司价格", "value": "九位数"},
+        {"name": "短信 agent 定价区间", "value": "免费到每月 21-30 美元"}
+      ],
+      "why_it_matters": "交互入口之争从“独立 App”转向“无处不在的消息层”，入口离人越近安全层的责任越大——agent 长驻聊天窗口意味着持续接触敏感数据，“发条短信就成交”的信任模型考验支付、身份与风控底座的完备度。"
+    },
+    {
+      "article_id": "2026-10-24-11",
+      "entities": [
+        {"name": "1Password", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["1Password 发布 1Password for Agents"]},
+        {"name": "1Password for Agents", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 发布 1Password for Agents"]},
+        {"name": "Claude Duet", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"name": "Dots", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"name": "ChatGPT Work", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"name": "Grok Bot", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"name": "Meta Muse", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work"]},
+        {"name": "xAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot"]},
+        {"name": "Meta", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse"]},
+        {"name": "Town", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["及初创公司 Town 的 agent"]},
+        {"name": "Chase", "type": "company", "aliases": ["摩根大通", "JPMorgan Chase"], "confidence": 0.9, "evidence": ["Chase 发言人直接告诫客户“不要把自己的用户名和密码交给任何人”"]},
+        {"name": "Axios", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["同日 Axios 报道美国银行已开始在用户账户内检测到 agent 活动"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "1Password 发布 1Password for Agents：agent 替用户登录但永远看不到密码",
+          "summary": "用户可授权 agent（Claude Duet、OpenAI Dots/ChatGPT Work、Grok Bot、Meta Muse 等）替自己登录账户，登录由 1Password 向用户推送确认后代为填入凭据，agent 全程接触不到密码；首批支持名单还包括初创公司 Town。",
+          "participants": [
+            {"name": "1Password", "type": "company", "role": "subject"},
+            {"name": "1Password for Agents", "type": "product", "role": "object"},
+            {"name": "Claude Duet", "type": "product", "role": "object"},
+            {"name": "Dots", "type": "product", "role": "object"},
+            {"name": "ChatGPT Work", "type": "product", "role": "object"},
+            {"name": "Grok Bot", "type": "product", "role": "object"},
+            {"name": "Meta Muse", "type": "product", "role": "object"},
+            {"name": "Town", "type": "company", "role": "object"}
+          ],
+          "evidence": ["1Password 发布 1Password for Agents", "用户可授权 agent（Claude Duet、OpenAI Dots/ChatGPT Work、Grok Bot、Meta Muse 等）替自己登录账户", "登录由 1Password 向用户推送确认后代为填入凭据，agent 全程接触不到密码"]
+        },
+        {
+          "type": "security",
+          "label": "Axios 报道美国银行开始在用户账户内检测 agent 活动，Chase 告诫客户不要交出凭据",
+          "summary": "同一周，Axios 报道美国银行已经开始在用户账户内检测到 agent 活动，但银行根本无法分辨 agent 活动是否出于用户本意；Chase 发言人直接告诫客户“不要把自己的用户名和密码交给任何人”。",
+          "participants": [
+            {"name": "Axios", "type": "organization", "role": "subject"},
+            {"name": "Chase", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["同日 Axios 报道美国银行已开始在用户账户内检测到 agent 活动", "Chase 发言人直接告诫客户“不要把自己的用户名和密码交给任何人”"]
+        },
+        {
+          "type": "trend",
+          "label": "密码管理器、银行与云厂商在 agent 身份层抢定义权，第一场基础设施竞赛开打",
+          "summary": "当 agent 进化到“替你登录、花钱、办业务”，身份层成为第一个被重新发明的行业——密码管理器、银行、云厂商都在抢定义权，这是 agent 经济真正落地前的第一场基础设施竞赛。",
+          "participants": [
+            {"name": "1Password", "type": "company", "role": "subject"},
+            {"name": "Chase", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["密码管理器、银行、云厂商都在抢定义权", "这是 agent 经济真正落地前的第一场基础设施竞赛"]
+        }
+      ],
+      "relations": [
+        {"source": "1Password for Agents", "target": "1Password", "type": "developed_by", "weight": 0.9, "evidence": ["1Password 发布 1Password for Agents"]},
+        {"source": "Claude Duet", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"source": "Dots", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"source": "ChatGPT Work", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"source": "Grok Bot", "target": "xAI", "type": "developed_by", "weight": 0.8, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"source": "Meta Muse", "target": "Meta", "type": "developed_by", "weight": 0.8, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"source": "1Password for Agents", "target": "Claude Duet", "type": "integrates", "weight": 0.7, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"source": "1Password for Agents", "target": "Dots", "type": "integrates", "weight": 0.7, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"source": "1Password for Agents", "target": "ChatGPT Work", "type": "integrates", "weight": 0.7, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"source": "1Password for Agents", "target": "Grok Bot", "type": "integrates", "weight": 0.7, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]},
+        {"source": "1Password for Agents", "target": "Meta Muse", "type": "integrates", "weight": 0.7, "evidence": ["1Password 首批支持的 agent 覆盖 Anthropic Claude Duet、OpenAI Dots 与 ChatGPT Work、xAI Grok Bot、Meta Muse 及初创公司 Town 的 agent"]}
+      ],
+      "metrics": [
+        {"name": "1Password for Agents 首批支持 agent 名单", "value": "Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse、Town"},
+        {"name": "登录确认机制", "value": "唯一数字钥匙 + 用户亲自确认"}
+      ],
+      "why_it_matters": "当 agent 从“帮你写东西”进化到“替你登录、花钱、办业务”，身份层成为第一个被重新发明的行业——1Password 的协议式委托与银行的 agent 检测分别在定义出站与入站两条安全方向，谁成为事实标准谁就拿到 agent 经济的入场券。"
+    }
+  ]
+}

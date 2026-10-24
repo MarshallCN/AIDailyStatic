@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-24",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "第 1 轮 7 条 findings 已修复 6 条（Trainium 别名自冲突、Poke 收购粒度、1Password 名单覆盖、competes_with、Convovo 关系、Ohai 实体），无 high 级问题、无方向反转；但仍有 5 处 medium：article 2 把原文错字\"中国地带\"照抄进图谱（应\"中间地带\"）、article 6 删除旧关系时把 Google 实体一并删掉导致 2 月修复时间线在图中消失、article 0 遗漏\"挖来 Google Torch on TPU 负责人\"关键事实、article 2 引用源实体抽取不对称、article 8 的 used_in 关系语义仍错配。",
+  "findings": [
+    {
+      "article_id": "2026-10-24-2",
+      "severity": "medium",
+      "problem": "事件 3 summary 中\"多数落在中国地带\"是原文错字被照抄进图谱：语境（Chalmers 六模型对照、只有 Grok 明显右偏）与原文自带参考来源《Five out of six AI chatbots stay in the political middle ground》都证明应为\"中间地带\"（政治光谱中部）。图谱发布后将宣称多数模型\"落入中国立场地带\"，是事实性错误，且与\"仅 Grok 右偏\"的结论自相矛盾。",
+      "fix": "将\"多数落在中国地带\"改为\"多数落在中间地带\"；抽取时遇到原文明显错字且与文中引用的英文标题冲突时，以英文权威表述校正后再入图。"
+    },
+    {
+      "article_id": "2026-10-24-6",
+      "severity": "medium",
+      "problem": "第 1 轮要求删除\"Brotli --developed_by--> Google\"（证据不支撑）后，抽取代理把整个 Google 实体连同修复时间线一起删掉了：原文明确\"Google 早在今年 2 月底就已提交这个修复，但当时没有发布任何版本或通告，直到 10 月 21 日才随 Node.js 安全版本公开\"，这是本文发现-修复-披露时间线的核心一环，且 why_it_matters 里还引用了\"Google 2 月修复\"——图谱现状是文字提到了 Google 但实体表、事件、关系里都没有它，过度矫正。",
+      "fix": "恢复 Google 实体（company），并按第 1 轮给出的替代方案补一条 \"Google --fixes/contributes_to--> Brotli 越界写漏洞\"（证据\"Google 早在今年 2 月底就已提交这个修复\"原句可直接支撑），让 why_it_matters 的表述在图中有着落。"
+    },
+    {
+      "article_id": "2026-10-24-0",
+      "severity": "medium",
+      "problem": "遗漏关键战略事实：原文细节明确\"AWS 还挖来了 Google 原生 Torch on TPU 软件栈的负责人（从 XLA、xprof 到 Cloud TPU 一路带队的元老）\"，这是事件 1\"转向原生 PyTorch\"的核心动因（技术路线转向的人力基础），但图中 Google 只以\"被复刻打法的对象\"（事件 4）出现，挖角事实完全缺失。",
+      "fix": "在事件 1（转向原生 PyTorch）的 summary 中补入\"AWS 挖来 Google 原生 Torch on TPU 软件栈负责人（XLA/xprof/Cloud TPU 元老）推进迁移\"，或新增一条 hires_from/swayed 类表述挂到 Google 实体；当事人未具名，可只写进事件描述，不必建 person 实体。"
+    },
+    {
+      "article_id": "2026-10-24-2",
+      "severity": "medium",
+      "problem": "引用源实体抽取不对称：Grok 侧把 X、Turning Point Action 抽成实体并各建 uses 边，而\"39% 的回答引用基督教保守派选民指南\"只有 metric 没有实体；GPT 侧\"高度依赖 Wikipedia、AP、Axios 与 Reddit\"只抽了 Wikipedia 一个。同一研究发现的两组引用来源一边抽全一边抽一，图谱无法完整呈现\"Grok 右倾检索来源 vs GPT 中立检索来源\"的对比故事。",
+      "fix": "补齐\"基督教保守派选民指南\"（organization）与 AP、Axios、Reddit（organization）实体，并为 GPT-6.1 Sol 按同名证据补 uses 关系（Grok 侧已用 uses，保持同类型对称），使 metric 里的引用来源都有实体对应。"
+    },
+    {
+      "article_id": "2026-10-24-8",
+      "severity": "medium",
+      "problem": "关系 \"GPT-5-mini --used_in--> Human Deference Index\" 语义仍错配：第 1 轮把 evaluated_on 改成 used_in 并不可行——HDI 是论文新提出的量化\"人类侧 sycophancy\"的指标，文中并未用 HDI 评测 GPT-5-mini，证据（32 名参与者向 GPT-5-mini 实例学习）只支撑\"GPT-5-mini 用于该实验\"，不支撑\"用于指数\"。",
+      "fix": "删除这条关系本身；GPT-5-mini 以 participant/object 身份留在事件 1（实验）即可，HDI 只保留与 sycophancy 的 targets 关系。如果确需表达模型与研究的关联，改到研究事件层面（事件参与者），不建实体间 used_in/evaluated_on 边。"
+    },
+    {
+      "article_id": "2026-10-24-2",
+      "severity": "low",
+      "problem": "两条归属关系的 evidence 与断言不匹配：\"Grok 4.7 --developed_by--> xAI\" 的 evidence 是\"xAI API 每次请求都携带约 1240 个 token\"，\"GPT-6.1 Sol --developed_by--> OpenAI\" 的 evidence 是\"OpenAI 也以此强调'App 体验不等于 API 行为'\"——都只证明同主体的其他事实，不直接支撑开发归属。",
+      "fix": "换成能直接支撑归属的证据（如研究上下文\"Grok 4.7\"与\"GPT-6.1 Sol\"作为 xAI/OpenAI 模型的命名归属），证据-断言要一一对应，不要拿同主体的无关事实凑数。"
+    },
+    {
+      "article_id": "2026-10-24-6",
+      "severity": "low",
+      "problem": "\"Node2Shell\" 实体类型标为 tool 不准确：它是基于 CVE-2026-111497 的漏洞利用演示名（aliases 已含 CVE 编号），不是 Express/body-parser 那样的工具，类型会让图谱读者误读。",
+      "fix": "如类型表无漏洞/利用类，改为并入 Node.js 安全漏洞相关表述（或将该名称移入事件描述），不要与 tool 类实体并列。"
+    }
+  ],
+  "lessons": [
+    "原文出现明显错别字且与文中引用的英文标题或术语矛盾时（如\"中国地带\" vs \"political middle ground\"），以权威表述（英文原题）校正语义后再写入图谱，不要照抄错字。",
+    "删除证据不支撑的关系（如某产品 --developed_by--> 厂商）时，不要连实体一起删——保留实体，改用原文原句能直接支撑的更精确关系（如 fixes/contributes_to），否则图谱会丢失原文事实。",
+    "同一研究发现中被并列列出的一组引用源/名单（如检索引用来源、首批支持名单），两侧要成组对称抽取并建同类型关系，metric 中出现的具名来源也必须有其实体对应。"
+  ]
+}

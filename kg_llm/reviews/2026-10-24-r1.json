@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-24",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "12 篇的事实与数字全部对回原文（吞吐、MFU、成本、民调、事件粒度均准确，无幻觉数字），关系方向无反转；主要问题集中在实体建模与关系精确度：Trainium/Trainium3 别名自冲突、Cognition 收购对象粒度错误（母公司 vs 产品）、Brotli 的 developed_by 证据不支撑断言、Convovo--Parikh 关系方向不当、1Password for Agents 名单覆盖不一致，另有两处关系类型存疑。",
+  "findings": [
+    {
+      "article_id": "2026-10-24-0",
+      "severity": "medium",
+      "problem": "实体 \"Trainium\" 的 aliases 包含 \"Trainium2\"/\"Trainium 2\"/\"Trainium3\"，而同图已把 \"Trainium3\" 抽成独立实体：别名会把 Trainium3（及 Trainium2）并入 Trainium 家族实体，造成实体自合并与关系重复——\"Anthropic --uses--> Trainium\" 与 \"Anthropic --uses--> Trainium3\" 两条关系源自同一句证据（\"Anthropic 的生产推理与 RL rollout 就跑在 Trainium2/3 上\"）。",
+      "fix": "从 Trainium 的 aliases 中删除 \"Trainium2\"/\"Trainium 2\"/\"Trainium3\"/\"Trainium 3\"；如需保留家族实体，aliases 只写与 Trainium 等价的历史写法（如 \"AWS Trainium\"），并保留 Trainium3 独立实体及其独立关系。"
+    },
+    {
+      "article_id": "2026-10-24-10",
+      "severity": "medium",
+      "problem": "关系 \"Cognition --acquires--> Poke\" 的粒度错误：原文只写了 \"7 月母公司被编码公司 Cognition 收购（价格为九位数）\"，被收购的是 Poke 的母公司（未具名），不是 Poke 产品本身。",
+      "fix": "新建占位实体 \"Poke 母公司\"（organization）作为 acquires 的 target，或删除该关系只保留事件；事件 summary 已正确写为\"母公司被收购\"，保留不动。"
+    },
+    {
+      "article_id": "2026-10-24-6",
+      "severity": "medium",
+      "problem": "关系 \"Brotli --developed_by--> Google\" 的证据只写了 \"Google 早在今年 2 月底就已提交这个修复\"——该证据支撑的是\"Google 提交了 Brotli 漏洞修复\"（fixes/contributes_to），不支撑 Brotli 的开发归属关系；原文并未出现\"Brotli 由 Google 开发\"的表述。",
+      "fix": "删除该 developed_by 关系，或改为 \"Google --fixes--> Brotli\"（证据不变）；若坚持保留开发关系，必须另找原文明确表述作为证据，否则按证据-断言等价原则删除。"
+    },
+    {
+      "article_id": "2026-10-24-2",
+      "severity": "medium",
+      "problem": "关系 \"Convovo --developed_by--> Parikh\" 方向/类型不当：原文 \"康奈尔教授 Parikh 团队（Convovo）\" 表明 Convovo 是 Parikh 的团队/公司，读作\"Convovo 开发了 Parikh\"不成立。",
+      "fix": "删除该关系，改用 \"Parikh --affiliated_with--> Convovo\"（或 founded_by，人→组织方向），保留 Parikh --affiliated_with--> Cornell University。"
+    },
+    {
+      "article_id": "2026-10-24-11",
+      "severity": "medium",
+      "problem": "首批支持名单共 5 款 agent（Claude Duet、Dots、ChatGPT Work、Grok Bot、Meta Muse），但 \"1Password for Agents --integrates-->\" 只建了 Claude Duet、Grok Bot、Meta Muse 三条，Dots 与 ChatGPT Work 缺失，名单覆盖不一致。",
+      "fix": "为 Dots 与 ChatGPT Work 补上 \"1Password for Agents --integrates--> Dots/ChatGPT Work\" 关系（证据沿用同一名单句），保持与事件 participants 一一对应。"
+    },
+    {
+      "article_id": "2026-10-24-0",
+      "severity": "medium",
+      "problem": "关系 \"AWS --competes_with--> Google\" 的证据是 \"AWS 正复刻 Google 用 vLLM/SGLang 撬动 TPU 的打法\"——这是模仿/借鉴打法，不是竞争行为的直接证据（经验库规则：competes_with 需要直接竞争依据，如市场份额、正面竞标）。",
+      "fix": "删除该关系，或改为 \"AWS --learns_from--> Google\"（若关系类型表支持）并把证据改为对应的借鉴表述；不要用复刻打法推断竞争关系。"
+    },
+    {
+      "article_id": "2026-10-24-8",
+      "severity": "medium",
+      "problem": "关系 \"GPT-5-mini --evaluated_on--> Human Deference Index\" 类型不当：HDI 是论文提出的量化\"人类侧 sycophancy\"的新指标准则，不是对 GPT-5-mini 的评测基准；实验是 32 名被试向 GPT-5-mini 实例学习，模型并非在 HDI 基准上被评测。",
+      "fix": "删除该关系；HDI 只保留与 sycophancy 的 targets 关系，GPT-5-mini 作为参与人物体存在于事件 1（或补一条 used_in 类表达）。"
+    },
+    {
+      "article_id": "2026-10-24-10",
+      "severity": "low",
+      "problem": "事件 1 的 summary 列出家庭管家名单\"（Fambot、Ohai、Ollie、Orbits）\"，但 Ohai 未抽成实体，而同名单的 Fambot/Ollie/Orbits 均已抽取，名单覆盖不一致。",
+      "fix": "补抽 \"Ohai\"（product）实体，或从 summary 中移除 Ohai 名称，保持 summary 提及对象与实体表一致。"
+    }
+  ],
+  "lessons": [
+    "同一张图里已作为独立实体抽取的具体型号/版本名（如 Trainium3）不得再写进其上级家族实体（Trainium）的 aliases——别名自冲突会让两个实体被合并并复制关系；家族实体 aliases 只收与家族本身等价的写法。",
+    "收购/并购新闻的 acquires 必须与原文标的一致：原文写\"某产品的母公司被收购\"而母公司未具名时，target 应为该母公司（可建\"<产品>母公司\"占位实体），不能直接写成产品本身被收购。",
+    "名单类事实（如\"首批支持/集成以下 N 款产品\"）的 relations 必须逐一覆盖名单中每个具名成员，不能只挑部分建边，保持与事件 participants 的一致性。"
+  ]
+}

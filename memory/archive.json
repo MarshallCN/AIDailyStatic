@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T22:30:14Z",
+  "updated_at": "2026-10-24T22:25:16Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -846,22 +846,22 @@
       "period_id": "2026-W39",
       "period_type": "week",
       "start_date": "2026-09-21",
-      "end_date": "2026-09-23",
-      "summary": "2026-09-21 至 2026-09-23 期间，OpenAI、Anthropic、Dario Amodei 主要围绕 trend、benchmark 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-09-24",
+      "summary": "2026-09-21 至 2026-09-24 期间，OpenAI、Anthropic、Hugging Face 主要围绕 trend、research 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "Anthropic",
-        "Dario Amodei",
-        "GPT-6"
+        "Hugging Face",
+        "Dario Amodei"
       ],
       "event_types": [
         "trend",
-        "benchmark",
+        "research",
         "policy"
       ],
       "trend_signals": [
-        "核心实体：OpenAI、Anthropic、Dario Amodei",
-        "主事件类型：trend、benchmark"
+        "核心实体：OpenAI、Anthropic、Hugging Face",
+        "主事件类型：trend、research"
       ],
       "representative_article_ids": [
         "2026-09-21-0",

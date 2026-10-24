@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-24",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "第 1、2 轮的 findings 基本修复到位（Trainium 别名自冲突、Poke 收购粒度、1Password 名单覆盖、引用源对称抽取、中国地带错字、Google 实体恢复、挖角事实入图均已落实），全部数字与事实逐条对回原文无幻觉、无方向反转，事件切分合理。剩余主要问题为两处 medium：article 2 的 Grok/GPT 归属关系 evidence 换汤不换药，仍不支撑 developed_by 断言（r2 已指出但未真正修复）；article 0 把 AWS 单方向 SGLang 社区提供资源接入抽成对等 partners_with 关系。另有 4 处 low 级参与方角色错标与盘点类具名产品抽取不完整。",
+  "findings": [
+    {
+      "article_id": "2026-10-24-2",
+      "severity": "medium",
+      "problem": "关系 \"Grok 4.7 --developed_by--> xAI\" 与 \"GPT-6.1 Sol --developed_by--> OpenAI\" 的 evidence 分别是 \"Grok 4.7 在 92% 的回答中推荐共和党候选人\" 与 \"GPT-6.1 Sol 在 97% 中推荐民主党\"——这两句是研究结果统计，只证明模型在实验中的表现，不支撑\"由某机构开发\"的归属断言。r2 已指出 evidence 不支撑归属并要求更换，本次提取只是把同样不支撑的 xAI-API/OpenAI-App 引文换成了统计数字，问题未解决，属于同一错误复发。",
+      "fix": "取原文中能把模型与货主绑定的句子作证据：GPT-6.1 Sol 用 \"OpenAI 也以此强调'App 体验不等于 API 行为'\"（被测 GPT API 归属 OpenAI），Grok 4.7 用 \"研究者还注意到 xAI API 每次请求都携带约 1240 个 token\"（被测 Grok API 归属 xAI）或标题 \"Forced to pick, Grok's AI model chooses Republicans. OpenAI's picks Democrats.\"；若坚持用实验统计作证据，则删除这两条 developed_by 边，让归属由跨文章连通提供。"
+    },
+    {
+      "article_id": "2026-10-24-0",
+      "severity": "medium",
+      "problem": "关系 \"AWS --partners_with--> SGLang\" 的证据是 \"向 SGLang 社区提供硬件访问与基于原生 PyTorch 的早期接入\"——这是 AWS 复刻 Google 生态打法时向社区单方提供资源的举措，原文没有任何双方对等合作或共同承诺的表述，partners_with（对等合作）读成\"AWS 与 SGLang 建立合作关系\"扭曲了事件语义。对照：同篇 \"AWS --partners_with--> Meta\" 有原文\"AWS 已承诺与 Meta PyTorch 团队合作改造 TokenSwitch 的 API\"支撑，保留正确，不要连带删。",
+      "fix": "删除该边（事件 4 已完整承载此事实），或按词表改用 supplies（供应商→客户，evidence 句不变）并把 target 改为\"SGLang 社区\"、明确单方供给语义并降权；单方资源接入不要 partners_with。"
+    },
+    {
+      "article_id": "2026-10-24-10",
+      "severity": "low",
+      "problem": "事件 2 \"Instinct 9 月 C 轮融资 10 亿美元、估值达 100 亿美元\" 的 participants 把 TechCrunch 列为 role=subject——TechCrunch 只是报道媒体，不是融资参与方，把报道方写进融资事件的主体位会让图读成\"TechCrunch 参与了融资\"。",
+      "fix": "从事件 2（Instinct 融资）的 participants 中删除 TechCrunch；事件 1（TechCrunch 盘点）中 TechCrunch 作为执行盘点的主体可以保留。"
+    },
+    {
+      "article_id": "2026-10-24-11",
+      "severity": "low",
+      "problem": "事件 3（agent 身份层竞争 trend）把 Chase 标为 role=partner——原文中 Chase 是告诫客户\"不要把自己的用户名和密码交给任何人\"的防守/劝诫方，与 1Password 的协议式委托方向相反，不是合作者；同类错误还有 2026-10-24-4 事件 2 把 Public First Action PAC 标为 partner（PAC 是趁势入场的主体，与共和党候选人是平行关系而非合作）。",
+      "fix": "将 Chase 从该事件 participants 中移除或改为反映其真实立场的角色（如 object/劝诫方），Public First Action PAC 同理；participants 的 role 只能反映事件内真实角色，不得把并列、对立或外围主体标成 partner。"
+    },
+    {
+      "article_id": "2026-10-24-10",
+      "severity": "low",
+      "problem": "盘点类具名产品抽取不对称：事件 1 summary 出现 Martin、Rene（通用助手）但无实体；正文明确介绍的 Folk（跑在自己的私有云电脑上）与 Ask Proxy（主打\"像女性朋友那样提前预判需求\"）完全未抽——同段盘点中 Fambot/Ohai/Ollie/Orbits/Miso/Stanley/Comma 均已抽实体，两侧不匹配且遗漏具名主体。",
+      "fix": "补抽 Martin、Rene、Folk、Ask Proxy（product），证据取对应介绍句；若认为这四个价值低，则同步从事件 1 summary 中删去 Martin、Rene 的人名，保证 summary 与实体表一致。"
+    }
+  ],
+  "lessons": [
+    "单方向开源社区/第三方提供资源接入（硬件访问、早期 API、数据或算力赠予）是单方生态扶持，不要用 partners_with；对等合作才用 partners_with，单方供给可用 supplies（供应商→客户）或仅以事件表达，避免把\"提供了接入\"读成\"建立了合作\"。",
+    "事件 participants 只能收事件内真实执行或被动执行/被作用的具名主体；报道媒体、旁观点评方、告诫劝勉方（如银行提醒客户勿交凭据）不得入列，role 取值（subject/object/partner）必须与原文立场一致。",
+    "盘点/列表类新闻中，正文逐一具名介绍的产品（包括列举句里出现的每一个名字）都应成组抽成实体，与已抽的同类产品保持对称；只抽有关系的明星项会在图谱里漏掉同样具名的次要主体。"
+  ]
+}
