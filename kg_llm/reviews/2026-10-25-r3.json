@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-25",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "r2 的两类问题（托管平台 released_by、S&P 493 类型）已修复，数字与断言普遍能对上原文。剩余问题集中在关系的支撑性：多处把\"共同出现/战略措辞\"当成竞争或归属关系（Character.ai 与 OpenAI 的 competes_with、马斯克与 Nolan 的 competes_with、DSX OS/SimReady Central 的 developed_by 证据不足），以及一篇内两个独立安全披露被压成一个事件。",
+  "findings": [
+    {
+      "article_id": "2026-10-25-11",
+      "severity": "medium",
+      "problem": "关系 \"Character.ai --competes_with--> OpenAI\" 没有原文支撑：源文章是\"AI 墓园\"清单，逐条列举失败项目及其各自原因（资金不足、技术困境、竞争、规模化、弱需求），并未说明 Character.ai 与 OpenAI 存在竞争关系。引用的证据只提到 Character.ai 破产这一事实，属于清单并列共同出现被误当成竞争关系。",
+      "fix": "删除\"Character.ai --competes_with--> OpenAI\"这条关系；competes_with 只在原文明确描述某两部分彼此竞争时使用，墓园清单里的并列出现不构成竞争。"
+    },
+    {
+      "article_id": "2026-10-25-8",
+      "severity": "medium",
+      "problem": "关系 \"马斯克 --competes_with--> Christopher Nolan\" 归属错位：源文章的竞争发生在\"Grok 版 AI 电影\"与\"Nolan 真人版\"两部《奥德赛》产物之间（正文明确写\"与 Nolan 真人版的票房与话语权对峙进入可见阶段\"），并提及马斯克此前攻击 Nolan 的选角——这是对另一部的评价，不是马斯克本人与 Nolan 的竞争。",
+      "fix": "把竞争关系放到产物之间，改为\"奥德赛（Grok 版）--competes_with--> 奥德赛（Nolan 版）\"或删除马斯克对 Nolan 的 competes_with；马斯克攻击选角只保留为他对影片的态度，不建立为两人竞争。"
+    },
+    {
+      "article_id": "2026-10-25-5",
+      "severity": "medium",
+      "problem": "关系 \"DSX OS --developed_by--> NVIDIA\" 与 \"SimReady Central --developed_by--> NVIDIA\" 证据不足：引用的证据是\"与 DSX OS、SimReady Central 数字孪生一脉相承\"，这只是说明 Minerva 落在 NVIDIA 同一产品战略主线上，并未表明这两个产品由 NVIDIA 开发/发布。把战略延续关系当成归属关系会连出错误的边。",
+      "fix": "如证据无法直接支撑，删除这两条 developed_by 改为更弱的关系（如 related_to/part_of 战略线），或补上原文明示这两个产品为 NVIDIA 产出的证据；仅凭\"一脉相承\"不足以断言 developed_by。"
+    },
+    {
+      "article_id": "2026-10-25-1",
+      "severity": "medium",
+      "problem": "事件切分不当：把同一个安全披露链条里两件互相独立的披露压成了一个 security 事件\"OpenAI 披露 Node.js Brotli 越界写漏洞并通知 100 多个组织其 agent 异常活动\"。原文的\"披露链条\"块里，Brotli CVE 的公开披露（Codex 团队 2 月发现、本周随大规模披露公开）与\"自 7 月起审查模型活动、已通知 100+ 组织其 agent 未授权活动\"是两件不同主体、不同内容的事实，合并会让图谱讲成一件事。",
+      "fix": "拆成两个独立 security 事件：一为\"公开披露 Node.js/Brotli 越界写 CVE（CVSS 4.0 9.2）\"，participants 为 OpenAI 与 Node.js/Brotli；另一为\"通知 100+ 组织其 AI agent 存在未授权活动\"，participants 为 OpenAI。"
+    },
+    {
+      "article_id": "2026-10-25-3",
+      "severity": "low",
+      "problem": "遗漏主体：源文首句即点明该模型由\"中国招聘平台 BOSS 直聘背书的 Nanbeige 团队\"发布，BOSS 直聘（Boss.cn 母公司）是本次发布在商业背书层面的核心角色，未被抽为实体，only Nanbeige 公司本身被抽取。",
+      "fix": "补充实体 BOSS 直聘（type company，aliases 含 Boss.cn/Zhipin），并与 Nanbeige 或 Nanbeige 团队建立如 backs/endorses 或 affiliated_with 的关系。"
+    },
+    {
+      "article_id": "2026-10-25-6",
+      "severity": "low",
+      "problem": "确定性审计建议把\"GPT-6.1 Sol 与 GPT-5.6-sol\"合并为同一实体——这是误报：两者是不同版本号的不同模型（6.1 vs 5.6），在同一篇文章里分别作为独立数据点出现（论文用 GPT-5.6-sol，仓库补充 GPT-6.1-sol），合并会丢失事实。",
+      "fix": "不要合并 GPT-6.1 Sol 与 GPT-5.6-sol；它们应作为两个独立 model 实体保留。若审计器再触发此建议，按版本号不合并处理。"
+    }
+  ],
+  "lessons": [
+    "墓园/失败清单类新闻里，多个主体被并列罗列不构成它们彼此竞争的证据，competes_with 只在原文明确描述竞争关系时使用。",
+    "\"与某产品一脉相承/同一战略主线\"等描述产品延续性的措辞不等于归属关系（developed_by），归属必须由原文直接点明开发者。",
+    "同一家公司在同一天披露的两个独立动作（公开漏洞、通知受影响方）应拆成独立事件，不要压成一个。"
+  ]
+}

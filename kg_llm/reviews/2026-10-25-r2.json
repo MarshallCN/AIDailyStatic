@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-25",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "抽取整体准确、信息丰富：数字与断言基本对得上原文，跨文章命名（GPT-6.1 Sol、Super Intelligence、Hugging Face、SpaceX、马斯克）归一化一致。主要问题是几处关系类型/实体类型错用：把持有/发布产物与托管平台（arXiv、GitHub）或合作方混成 released_by 关系，以及把金融指数 S&P 493 标成 benchmark、遗漏论文主结果所用的关键模型实体。",
+  "findings": [
+    {
+      "article_id": "2026-10-25-4",
+      "severity": "medium",
+      "problem": "关系 \"LIFT-Bench --released_by--> arXiv\" 类型与事实都错：arXiv 是预印本仓库，不\"发布\"基准。引用的证据 \"AI21 Labs 发布 LIFT-Bench（arXiv 2610.28819）\" 只说明论文挂在 arXiv 上，支撑不了 arXiv 发布了 LIFT-Bench 这一断言，属于检索编号共同出现被误当成发布关系。LIFT-Bench 的发布方是 AI21 Labs（已有 developed_by 覆盖）。另外实体 arXiv 也把\"预印本仓库\"当成了 organization。",
+      "fix": "删除 \"LIFT-Bench --released_by--> arXiv\" 这条关系；如需保留 arXiv 实体，把类型改为非 organization 的宿主/平台类并对 arXiv 实体不建立任何发布关系。"
+    },
+    {
+      "article_id": "2026-10-25-6",
+      "severity": "medium",
+      "problem": "关系 \"Agensh --released_by--> GitHub\" 与上一类同病：GitHub 是开源托管平台，不\"发布\"系统。证据 \"Microsoft Research 周六在 GitHub 以 MIT 许可开源 Agensh v1.0\" 只能支撑 Agensh 在 GitHub 上托管，发布方是 Microsoft Research（已有 developed_by）。",
+      "fix": "删除 \"Agensh --released_by--> GitHub\"；不要为托管平台建立 released_by 关系，发布关系只指向实际发布方。"
+    },
+    {
+      "article_id": "2026-10-25-6",
+      "severity": "medium",
+      "problem": "论文主结果（ProgramBench 1→128 agent 通过率 19.31%→28.78%）所用的模型 GPT-5.6-sol 完全没有抽成实体，事件 3 的 participants 也只列了 Agensh 与 ProgramBench，把\"哪个模型跑了主结果\"这个关键信息丢掉了；实体列表只有 GPT-6.1 Sol（那是仓库补充数据用的另一个模型，与主结果无关）。",
+      "fix": "补充实体 \"GPT-5.6-sol\"（类型 model，基准 ProgramBench 事件 3 中的 role 标注为 subject/object），并保持与 GPT-6.1 Sol 两个独立实体不作合并。"
+    },
+    {
+      "article_id": "2026-10-25-8",
+      "severity": "medium",
+      "problem": "关系 \"奥德赛 --released_by--> Wonder Studios\" 归属错误：Grok 版《奥德赛》的发布方是 xAI，Wonder Studios 只是合作制片方。证据 \"Grok 与 Wonder Studios、导演 Dev Walker 的合作片\" 支撑的是 xAI 与 Wonder Studios 的合作（已有 partners_with），支撑不了 Wonder Studios 发布了《奥德赛》。",
+      "fix": "删除 \"奥德赛 --released_by--> Wonder Studios\"；如需表达发布关系应指向 xAI（如 \"奥德赛 --released_by--> xAI\"），保留已有的 xAI --partners_with--> Wonder Studios。"
+    },
+    {
+      "article_id": "2026-10-25-10",
+      "severity": "medium",
+      "problem": "实体 \"S&P 493\" 类型误标为 benchmark：S&P 493 是剔除 Alphabet、Amazon、Apple、Meta、Microsoft、Nvidia、Tesla 的 S&P 500 子集，是一个金融市场指数，不是 AI 评测基准。benchmark 类型会与本文档里真正的 AI 基准（Terminal-Bench、LIFT-Bench 等）混为一谈，破坏图谱的类型语义。",
+      "fix": "把实体 \"S&P 493\" 的类型改为 finance_index / market index 之类，不要用 benchmark；同类金融/市场指标一律不得标成 benchmark。"
+    }
+  ],
+  "lessons": [
+    "开源/发布类新闻中，released_by 只用于实际发布方（公司或课题组）；GitHub、arXiv、Hugging Face Hub 等是托管/宿主平台或预印本仓库，不是发布方，不要建立 released_by 关系。",
+    "benchmark 类型仅用于 AI 评测基准（Terminal-Bench、LIFT-Bench 等）；金融市场指数（如 S&P 493）、财务指标等非 AI 评测量度不得标成 benchmark。",
+    "论文类新闻把主结果所用的具体模型（如跑主力评测的那个版本）单独抽成实体并标注为参与者，即使它是另一篇次要数据里的不同型号；不要把次要补充数据用的模型当作主结果模型。"
+  ]
+}

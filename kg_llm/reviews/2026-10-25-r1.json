@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-25",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "12 篇的事实与数字全部对回原文（融资额、CAPEX、基准分数、CVSS、通过率等逐条核对无幻觉），关系方向与实体类型基本正确、跨文章命名一致性好；主要问题集中在\"把未经确认或弱证据写成强断言\"（SpaceX 融资包结构传闻当事实、BOSS 直聘背书当投资、LIFT 缓解设计当 replaces）与\"核心主体零关系边\"（Character.ai、Sora 只挂事件不连边），另有 2 处指标/关系归属错位，共 5 个 medium。",
+  "findings": [
+    {
+      "article_id": "2026-10-25-0",
+      "severity": "medium",
+      "problem": "资金事件与关系把传闻结构写成已确认事实：原文明确\"此前传闻的包结构是约 100 亿美元银行贷款 + 约 300 亿美元投资级债务，由 Goldman Sachs 牵头融资、Apollo Global Management 作为主要投资者……马斯克未确认最终是否沿用此结构\"——Goldman 牵头、Apollo 主投以及\"传闻债务包结构\"指标对应的是同一句传闻，但事件 1 标签直接写\"Goldman Sachs 牵头、Apollo 为主要投资者\"、证据\"由 Goldman Sachs 牵头融资\"未标注传闻属性，关系 \"Apollo Global Management --invests_in--> SpaceX\" 也因此读作已成事实；按图讲故事会得出\"Apollo 已投 SpaceX 400 亿\"的错误结论。",
+      "fix": "在事件 1 标签/摘要和 Goldman、Apollo 两条实体证据中标明\"传闻/马斯克未确认\"（如\"Goldman Sachs 牵头（传闻结构，未获确认）\"）；关系 \"Apollo --invests_in--> SpaceX\" 删除或降权并注明传闻；结构与指标已单列为\"传闻债务包结构\"指标的可保留，但不得再以已确认事实形式出现于事件标签与关系边。"
+    },
+    {
+      "article_id": "2026-10-25-3",
+      "severity": "medium",
+      "problem": "关系 \"BOSS 直聘 --invests_in--> Nanbeige\" 证据不支撑：原文只有\"中国招聘平台 BOSS 直聘背书的 Nanbeige 团队\"一句，\"背书\"是资质/声誉背书，不构成投资关系；事件 1 中 BOSS 直聘的 role 也标了 \"funder\"，同样超出证据。",
+      "fix": "删除 invests_in 关系与事件 1 中的 funder 角色；如要保留联系，改用弱关系（如 BOSS 直聘 --sponsors_with--> Nanbeige 或 affiliated_with，具体以关系类型表为准）并附\"背书\"原文证据，否则删边。"
+    },
+    {
+      "article_id": "2026-10-25-4",
+      "severity": "medium",
+      "problem": "关系 \"LIFT-Bench --replaces--> IFEval\" 类型过强：原文说 IFEval 这类基准的可程序化约束被反向当作 RL 奖励信号、LIFT 用\"兼有主线任务与约束\"的设计缓解浅层 reward hacking——LIFT-Bench 是同一问题域的新设计，并没有替代 IFEval，证据句也没有替换语义，\"replaces\"会让图讲出\"LIFT 取代 IFEval 基准\"的错误故事。",
+      "fix": "改为 \"LIFT-Bench --compared_with--> IFEval\"（同为指令遵循基准的对照设计），或删除该关系；IFEval 与 LIFT-Bench 的关联保留在事件 2/3 中即可。"
+    },
+    {
+      "article_id": "2026-10-25-8",
+      "severity": "medium",
+      "problem": "指标 \"Grok 版《奥德赛》系列发布方式：7 月 23 日于 X 发布\" 归属错位：原文的 7 月 23 日发布指的是\"Grok 与 Wonder Studios、导演 Dev Walker 的合作片\"（对照段的历史合作片），而本次新闻是 10 月 25 日发布的《奥德赛》第一集头 7 分钟；把 7 月 23 日写成\"Grok 版《奥德赛》系列\"的发布方式属于时间线张冠李戴，且该指标名是发布方式而非度量值，本身也不合格。",
+      "fix": "删除该指标；如需保留上下文，改写为\"此前的 Wonder Studios 合作片：7 月 23 日于 X 发布\"并明确与《奥德赛》第一集片段（本周发布）区分，不要把两者日期混用。"
+    },
+    {
+      "article_id": "2026-10-25-11",
+      "severity": "medium",
+      "problem": "核心主体零关系边：文章标题主角 Character.ai（五年后申请破产）与 Sora（因成本与留存关闭）只有事件参与者身份，relations 中没有任何一条涉及它们——图谱读不出\"谁破产了、Sora 是谁的产品\"；同一篇文章里 Relay、DALL-E、Atlas、Operator 都有边，唯独这两条缺失，连通性靠审计器的孤立实体检查捕捉不到（事件参与者不计入关系）。",
+      "fix": "为 Character.ai 补一条与同类主体的关系边（如 Character.ai --competes_with--> ChatGPT/OpenAI 或与 Google 等平台竞争，需原文支撑），为 Sora 补 \"Sora --developed_by--> OpenAI\"（原文\"视频平台 Sora\"位于 OpenAI 产品清单上下文）；确保文章每个具名核心主体至少一条边。"
+    },
+    {
+      "article_id": "2026-10-25-4",
+      "severity": "low",
+      "problem": "关系 \"LIFT-Train --uses--> PrimeIntellect\" 类型不当：原文说\"任务格式原生兼容 PrimeIntellect 的 verifiers 库\"，\"兼容\"是设计/格式层面兼容，不是使用关系。",
+      "fix": "改为 \"LIFT-Train --compatible_with--> PrimeIntellect\"（若关系类型表支持），或把 evidence 保留为兼容表述并降权，避免读作\"LIFT-Train 使用 PrimeIntellect\"。"
+    },
+    {
+      "article_id": "2026-10-25-10",
+      "severity": "low",
+      "problem": "关系 \"S&P 493 --authored_by--> Torsten Slok\" 不成立：原文只说他\"聚焦于所谓'S&P 493'\"，概念（S&P 500 剔除七大巨头）是市场通行说法，Slok 是使用者而非作者，evidence 也没有\"Slok 创造该指数\"的表述。",
+      "fix": "删除该关系；如保留可改为 \"Torsten Slok --analyzes_on--> S&P 493\"（人--分析-->对象方向）或只保留事件 2 的参与者关系。"
+    }
+  ],
+  "lessons": [
+    "融资/交易类新闻中，原文标注\"传闻/此前传闻/未获确认\"的结构（牵头方、主要投资者、包结构）必须显式保留限定：事件标签、证据与关系边要么写明\"传闻、未获确认\"，要么只放进写明传闻的 metrics，绝不允许写成已确认事实。",
+    "关系类型必须被证据字面直接支撑：\"背书\"不等于 invests_in、\"兼容\"不等于 uses、\"针对同类基准问题的新设计\"不等于 replaces——证据只支持弱语义时降级为弱关系（compared_with、compatible_with 等）或删边，不要脑补强关系。",
+    "文章标题或导语的核心主体（破产、关停、被收编的主角）必须至少拥有一条关系边连接到其它实体，不能只以事件参与者身份存在于图里——事件 participant 不构成关系，图谱要能单靠边读出任一主体的结局。"
+  ]
+}
