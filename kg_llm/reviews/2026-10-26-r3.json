@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-26",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "r2 的意见大部分已落实（论文实体与 authored_by 边、ARC Prize 参与方类型、evaluated_on 与 compared_with 误边均已修正，GPT-6.1/5.6 Terra 保持独立未合并），全部数字逐字核对无误、无方向反转、无幻觉。本轮剩余 3 个中等级问题全在关系类型与证据匹配：7 号把 r2 要求删除的评测机构误边换成 supplies 又挂回，2 号两条归属边的证据实际只支撑产品集成关系，10 号把非约束性的认购表态写成了既成 invests_in。",
+  "findings": [
+    {
+      "article_id": "2026-10-26-7",
+      "severity": "medium",
+      "problem": "关系 AISI --supplies--> Anthropic（weight 0.6）类型用错：evidence「Anthropic 曾在 7 月 AISI 网络安全评估中观察到模型“未授权行为”」描述的是 AISI 对 Anthropic 模型执行安全评估，不是供应关系；词表中 supplies 限定为供应商→客户，这条边读作「AISI 向 Anthropic 供货」不成立。r2 轮已删除同类的 evaluated_on 误边并明确「执行评估的机构不挂边」，本轮却退而求其次换成了同样错误的 supplies 兜底，属于同类错误复发。",
+      "fix": "删除 AISI --supplies--> Anthropic 这条边；AISI 对 Claude Mythos 5 的评估事实已由事件 2（security 类型）与 evidence、metrics 完整承载，机构与被评对象之间不需要任何边。"
+    },
+    {
+      "article_id": "2026-10-26-2",
+      "severity": "medium",
+      "problem": "两条归属边证据不支撑：Codex --developed_by--> OpenAI 与 ChatGPT Work --developed_by--> OpenAI（均 weight 0.6）共用 evidence「在 ChatGPT Work 与 Codex 里」，原文完整句是「在 ChatGPT Work 与 Codex 里，同样的用量额度比 GPT-5.6 Terra 干更多活」——这讲的是 GPT-6.1 Terra 在这些产品中可用/用量更划算，既没有点明产品归属（违反 10-25 教训：归属必须由原文直接点明开发者），又把本篇真正有价值的关系（新模型上架自家产品）丢掉了。",
+      "fix": "删除这两条 developed_by 边；改为产品集成模型的正确方向：「ChatGPT Work --integrates--> GPT-6.1 Terra」与「Codex --integrates--> GPT-6.1 Terra」（evidence 用原文「在 ChatGPT Work 与 Codex 里，同样的用量额度比 GPT-5.6 Terra 干更多活」）。"
+    },
+    {
+      "article_id": "2026-10-26-10",
+      "severity": "medium",
+      "problem": "关系 NVIDIA --invests_in--> Meta（weight 0.7）把非约束性认购表态写成既成投资：本篇 evidence「供应商真金白银入股客户（英伟达系买 Meta」对应的事实是同日 2026-10-26-1 明确的「Nvidia、AMD、Broadcom 表示有兴趣认购最多合计 50 亿美元」且「并非约束性承诺」，属于将「拟/有意向」升级为已发生动作，违反 10-21 教训（参投不得升级为已发生）。",
+      "fix": "删除该 invests_in 边，认购意向由事件 3 与 2026-10-26-1 的 NVIDIA --supplies--> Meta 边承载；若坚持保留，必须把 evidence 改为含「表态认购/有意向」语气的原文并把 weight 降到 0.4 以下，不得让图读作 NVIDIA 已完成对 Meta 的投资。"
+    }
+  ],
+  "lessons": [
+    "由机构（AISI、ARC Prize 等）执行评测/审计的事实，机构与被评对象之间不要建任何动作型边——evaluated_on、supplies、targets 都不行；评测事实只放进 security/benchmark 事件、evidence 与 metrics。",
+    "模型发布新闻中「在某产品/工具里可用」的部署句（如「在 ChatGPT Work 与 Codex 里，同样的用量额度……干更多活」）只支撑产品集成关系（integrates：产品→模型），不能支撑「产品 --developed_by--> 公司」归属边；归属必须由原文直接点明开发者。"
+  ]
+}

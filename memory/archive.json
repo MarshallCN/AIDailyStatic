@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T07:06:59Z",
+  "updated_at": "2026-10-26T23:23:45Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -846,18 +846,18 @@
       "period_id": "2026-W39",
       "period_type": "week",
       "start_date": "2026-09-21",
-      "end_date": "2026-09-25",
-      "summary": "2026-09-21 至 2026-09-25 期间，OpenAI、Anthropic、Hugging Face 主要围绕 trend、research 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-09-26",
+      "summary": "2026-09-21 至 2026-09-26 期间，OpenAI、Anthropic、Hugging Face 主要围绕 trend、research 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "OpenAI",
         "Anthropic",
         "Hugging Face",
-        "Dario Amodei"
+        "NVIDIA"
       ],
       "event_types": [
         "trend",
         "research",
-        "benchmark"
+        "policy"
       ],
       "trend_signals": [
         "核心实体：OpenAI、Anthropic、Hugging Face",

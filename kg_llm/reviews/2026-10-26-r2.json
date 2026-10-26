@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-26",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 87,
+  "summary": "r1 的 13 条意见已全部落实（S-1 改用 funding、删除承销 partners_with 边、补 GPT-5.6 Terra 及 replaces、AISI 金额归属拆分、CVE 实体删除、OpenAI role 改 competitor 等），全部数字与原文一致、无方向反转、无幻觉。但仍有中等级问题：Claude Mythos 5 --evaluated_on--> AISI 把评测挂在机构上（2 处）、2026-10-26-9 漏抽论文主角实体致 10 个实体仅 3 条同质边、其事件参与方 ARC Prize 类型与实体表不一致、Anthropic --compared_with--> OpenAI 违反既有教训；另需顶住审计对 GPT-6.1/5.6 Terra 的\"疑似重复\"误报、不可合并。",
+  "findings": [
+    {
+      "article_id": "2026-10-26-9",
+      "severity": "medium",
+      "problem": "主角实体缺失导致整篇图贫乏：论文本身（题目标题即是论文、《arXiv 2610.31778》）没有抽成 paper 实体——对比同日 2026-10-26-8 把 Phronix 抽成 type=paper 实体。结果是 10 个实体只有 3 条彼此同质的 Salle/Bhatnagar/Bethge --affiliated_with--> 图宾根大学 边，三个基准（PaperBench/ProgramBench/PostTrainBench）、OpenCode 脚手架、GPT-6 Astra harness 62.7% vs 99.9% 的核心内容在图上一律没有边（违反 10-18 教训\"高信息量文章逐个体检查可验证边\"）。",
+      "fix": "补实体 {\"name\": \"arXiv 2610.31778\", \"type\": \"paper\", \"aliases\": [\"基准其实很吃压缩\"]}（或用标题做 name、编号进 aliases），并加 3 条关系：arXiv 2610.31778 --authored_by--> Salle / Bhatnagar / Bethge（证据\"图宾根团队（Salle、Bhatnagar、Bethge）的新论文\"）。其余实体逐个体检查：如仍无合法边，按 10-18 教训删除或并入事件承载。"
+    },
+    {
+      "article_id": "2026-10-26-9",
+      "severity": "medium",
+      "problem": "事件 2 的参与方 {\"name\": \"ARC Prize\", \"type\": \"benchmark\", \"role\": \"subject\"} 与实体表里 ARC Prize 的 type=organization 不一致；ARC Prize 是披露评测分数的组织，不是基准（r1 已要求它改 organization，实体表改了但事件参与方漏改）。",
+      "fix": "把事件 2 参与方 ARC Prize 的 type 改为 organization。"
+    },
+    {
+      "article_id": "2026-10-26-4",
+      "severity": "medium",
+      "problem": "关系 Claude Mythos 5 --evaluated_on--> AISI 类型用错：词表中 evaluated_on 限定\"模型→benchmark\"，AISI 是执行评估的机构、不是基准，这条边会把机构读成评测对象（图里 AISI 还是 organization 实体，语义冲突）。",
+      "fix": "删除该关系；AISI 对 Claude Mythos 5 的评估事实已由事件与 evidence（\"AISI 上月刚披露 7 月对 Claude Mythos 5 的网络安全评估\"）完整承载，无需边。"
+    },
+    {
+      "article_id": "2026-10-26-7",
+      "severity": "medium",
+      "problem": "同 2026-10-26-4：Claude Mythos 5 --evaluated_on--> AISI 把评估机构当 benchmark 挂边（evaluated_on 词表限定 模型→benchmark），同类错误第二处。",
+      "fix": "删除该关系；评估事实保留在事件 2 与 evidence 中。"
+    },
+    {
+      "article_id": "2026-10-26-7",
+      "severity": "medium",
+      "problem": "关系 Anthropic --compared_with--> OpenAI（weight 0.5）违反 10-22 教训：compared_with 只用于有性能/指标对比的证据；\"两周内 OpenAI 宣布断网训练、Anthropic 把停训写进风险因素\"是两家做法的平行对照，不是性能对比（10-22 明确\"两家做法或策略不同\"不是比较、不应建 compared_with 边）。",
+      "fix": "删除该关系，两家的对照已由事件 3（\"断网训练与停训披露成为前沿实验室制度化选择\"）完整表达。"
+    },
+    {
+      "article_id": "2026-10-26-2",
+      "severity": "medium",
+      "problem": "审计输出的\"疑似重复实体：GPT-6.1 Terra / GPT-5.6 Terra → 合并为一个规范名\"是名称相似启发式的误报：GPT-6.1 Terra 是本次新发布、GPT-5.6 Terra 是它所替代的上一代模型（原文\"比所替代的 GPT-5.6 Terra 便宜 50%\"），是两个不同版本实体，抽取的 GPT-6.1 Terra --replaces--> GPT-5.6 Terra 关系正确。若照审计提示合并，替换链与\"降价 50%\"语义都会丢失。",
+      "fix": "不要合并这两个实体、不要删 replaces 关系、不要把 GPT-5.6 Terra 写进 GPT-6.1 Terra 的 aliases；当前处理保持不动。"
+    },
+    {
+      "article_id": "2026-10-26-0",
+      "severity": "low",
+      "problem": "关系 Claude --developed_by--> Anthropic 的 evidence（\"9 月代码库 90% 以上的贡献由 Claude 写出\"）只证明 Claude 在写 Anthropic 的代码库，未直接点明 Anthropic 是开发者（违反 10-25 教训\"归属必须由原文直接点明开发者\"）。",
+      "fix": "换用本篇能直接点明 Anthropic 开发 Claude 的原文片段；本篇无直接归属句则删除该边（该事实已由事件与全文语境承载，且 2026-10-26-5 从版权诉讼方向间接印证）。"
+    },
+    {
+      "article_id": "2026-10-26-10",
+      "severity": "low",
+      "problem": "关系 Starlink --developed_by--> SpaceX 的 evidence（\"债务市场只对'有独立现金流（Starlink/火箭）'的公司开门\"）只说明 Starlink 是 SpaceX 的现金流来源，原文未点明 SpaceX 开发了 Starlink（同 10-25 教训：归属必须原文直接点明，不能靠常识推断）。",
+      "fix": "删除该关系或将证据换成能点明归属的原文片段；本篇无直接归属句，建议删除。"
+    }
+  ],
+  "lessons": [
+    "同一产品线的不同版本模型（如 GPT-6.1 Terra 与 GPT-5.6 Terra）是两个独立实体，用 replaces 关系表达替代；名称相似不等于重复实体，不要因审计的\"疑似重复\"提示合并不同版本。",
+    "evaluated_on 只用于模型→benchmark；由机构（AISI、ARC Prize 等）执行的评测不要把机构当基准挂 evaluated_on 边，评测事实放进 security/benchmark 事件、evidence 与 metrics。",
+    "论文类新闻要把论文本身抽成 type=paper 实体（用标题或 arXiv 编号），否则论文无法挂 authored_by / evaluated_on 边、图谱缺主角节点；同日多篇论文条目的实体处理要保持一致。"
+  ]
+}

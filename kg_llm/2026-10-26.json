@@ -1,0 +1,604 @@
+{
+  "date": "2026-10-26",
+  "articles": [
+    {
+      "article_id": "2026-10-26-0",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 周一正式向 SEC 递交 S-1"]},
+        {"name": "Goldman Sachs", "type": "company", "aliases": ["高盛"], "confidence": 0.9, "evidence": ["由 Goldman Sachs 与 Morgan Stanley 承销"]},
+        {"name": "Morgan Stanley", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["由 Goldman Sachs 与 Morgan Stanley 承销"]},
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Alphabet 持股将进一步加大"]},
+        {"name": "Dario Amodei", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"name": "Daniela Amodei", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"name": "Tom Brown", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"name": "Jack Clark", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"name": "Jared Kaplan", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"name": "Sam McCandlish", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"name": "Christopher Olah", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"name": "Founder LLC", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）组成“Founder LLC”"]},
+        {"name": "Long-Term Benefit Trust", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Long-Term Benefit Trust 有权任命董事会多数席位"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 向 SEC 递交 S-1，计划在纳斯达克以代码 ANT 上市",
+          "summary": "Anthropic 周一正式向 SEC 递交 S-1，由 Goldman Sachs 与 Morgan Stanley 承销，2026 上半年营收 163 亿美元、净亏损 807 亿美元（约 724 亿为可转债非现金调整），截至 6 月底手持现金 1,317 亿美元。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Goldman Sachs", "type": "company", "role": "partner"},
+            {"name": "Morgan Stanley", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Anthropic 周一正式向 SEC 递交 S-1", "由 Goldman Sachs 与 Morgan Stanley 承销", "2026 上半年营收 163 亿美元", "净亏损 807 亿美元"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 上市后投票权与经济所有权脱钩，公众股东几乎无实际控制权",
+          "summary": "七位联合创始人组成的 Founder LLC 将合计控制 50.1% 的股东投票权，Long-Term Benefit Trust 有权任命董事会多数席位，投票权与经济所有权脱钩。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Founder LLC", "type": "organization", "role": "subject"},
+            {"name": "Long-Term Benefit Trust", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["将合计控制 50.1% 的股东投票权", "Long-Term Benefit Trust 有权任命董事会多数席位"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 把安全事故与灾难性风险写进招股书风险因素",
+          "summary": "招股书风险因素超过 90 页，自身承认公司技术对人类社会构成灾难性或存在性风险，训练暂停与越权行为被披露。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["风险因素超过 90 页", "训练暂停、越权行为都被披露"]
+        }
+      ],
+      "relations": [
+        {"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"source": "Daniela Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"source": "Tom Brown", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"source": "Jack Clark", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"source": "Jared Kaplan", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"source": "Sam McCandlish", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"source": "Christopher Olah", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["七位联合创始人（Dario Amodei、Daniela Amodei、Tom Brown、Jack Clark、Jared Kaplan、Sam McCandlish、Christopher Olah）"]},
+        {"source": "Founder LLC", "target": "Anthropic", "type": "affiliated_with", "weight": 0.8, "evidence": ["组成“Founder LLC”", "将合计控制 50.1% 的股东投票权"]},
+        {"source": "Alphabet", "target": "Anthropic", "type": "invests_in", "weight": 0.7, "evidence": ["Alphabet 持股将进一步加大"]}
+      ],
+      "metrics": [
+        {"name": "2026 上半年营收", "value": "163 亿美元（同比 +1300%）"},
+        {"name": "上半年净亏损", "value": "807 亿美元（约 724 亿为可转债非现金调整）"},
+        {"name": "上半年经营亏损", "value": "6.93 亿美元"},
+        {"name": "截至 6 月底手持现金与短期投资", "value": "1,317 亿美元"},
+        {"name": "年付费 10 万美元以上客户数", "value": "11,900+ 家"},
+        {"name": "Founder LLC 合计股东投票权", "value": "50.1%"},
+        {"name": "招股书风险因素页数", "value": "90+ 页"},
+        {"name": "2025 全年营收", "value": "46 亿美元"}
+      ],
+      "why_it_matters": "手持 1,317 亿美元现金仍选择 IPO，且先于 OpenAI——上市被当作员工流动性、市场信誉与治理仪式，安全事件第一次以投资者披露的正式身份进入风险因素。"
+    },
+    {
+      "article_id": "2026-10-26-1",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Meta AI", "Facebook"], "confidence": 0.97, "evidence": ["Meta 周一宣布启动最高约 950 亿美元的股权融资"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["Nvidia、AMD、Broadcom 表示有兴趣认购最多合计 50 亿美元"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Nvidia、AMD、Broadcom 表示有兴趣认购最多合计 50 亿美元"]},
+        {"name": "Broadcom", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Nvidia、AMD、Broadcom 表示有兴趣认购最多合计 50 亿美元"]},
+        {"name": "Morgan Stanley", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["通过 Morgan Stanley 与 Goldman Sachs 的远期销售协议"]},
+        {"name": "Goldman Sachs", "type": "company", "aliases": ["高盛"], "confidence": 0.9, "evidence": ["通过 Morgan Stanley 与 Goldman Sachs 的远期销售协议"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["C 端 AI 服务 Muse 在美加上线数周即达 1,000 万+用户"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Meta 启动最高约 950 亿美元股权融资为 AI 扩张买单",
+          "summary": "Meta 启动最高约 950 亿美元的股权融资：先并行发行约 350 亿美元（约 225 亿 Class A 普通股 + 约 125 亿强制可转换优先股），Nvidia、AMD、Broadcom 表示有兴趣认购最多合计 50 亿美元。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"},
+            {"name": "AMD", "type": "company", "role": "partner"},
+            {"name": "Broadcom", "type": "company", "role": "partner"},
+            {"name": "Morgan Stanley", "type": "company", "role": "partner"},
+            {"name": "Goldman Sachs", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Meta 周一宣布启动最高约 950 亿美元的股权融资", "Nvidia、AMD、Broadcom 表示有兴趣认购最多合计 50 亿美元", "通过 Morgan Stanley 与 Goldman Sachs 的远期销售协议"]
+        },
+        {
+          "type": "funding",
+          "label": "Meta 计划 2027 年一季度起通过无投票权 C 类股建立约 600 亿美元 ATM 售股计划",
+          "summary": "Meta 另计划 2027 年一季度起通过新的无投票权 C 类股建立约 600 亿美元的 ATM 计划，公司明确该计划尚未设立、无保证落地。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["约 600 亿美元的 ATM 计划将使用上周刚宣布的无投票权 C 类股", "公司明确该计划尚未设立、无保证落地"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "Meta", "type": "supplies", "weight": 0.8, "evidence": ["三家都是 Meta 的芯片供应商"]},
+        {"source": "AMD", "target": "Meta", "type": "supplies", "weight": 0.8, "evidence": ["三家都是 Meta 的芯片供应商"]},
+        {"source": "Broadcom", "target": "Meta", "type": "supplies", "weight": 0.8, "evidence": ["三家都是 Meta 的芯片供应商"]},
+        {"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.7, "evidence": ["C 端 AI 服务 Muse"]}
+      ],
+      "metrics": [
+        {"name": "Meta AI 股权融资总规模", "value": "最高约 950 亿美元"},
+        {"name": "首笔 Class A 普通股规模", "value": "约 225 亿美元"},
+        {"name": "强制可转换优先股规模", "value": "约 125 亿美元"},
+        {"name": "Nvidia/AMD/Broadcom 表态认购规模", "value": "最多合计 50 亿美元"},
+        {"name": "2027 起 ATM 计划规模", "value": "约 600 亿美元"},
+        {"name": "Meta 2026 年资本开支", "value": "1,350–1,450 亿美元"},
+        {"name": "C 端 AI 服务 Muse 用户数", "value": "1,000 万+（美加上线数周）"}
+      ],
+      "why_it_matters": "Meta 不差现金流却把未来两年每年 1,350-1,450 亿美元资本开支放在公开股权市场上定价，让芯片供应商用真金白银为自己客户的订单背书——AI 基建资金正从债务市场整体迁向股权市场。"
+    },
+    {
+      "article_id": "2026-10-26-2",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.97, "evidence": ["OpenAI 周一发布 GPT-6.1 Terra"]},
+        {"name": "GPT-6.1 Terra", "type": "model", "aliases": ["6.1 Terra"], "confidence": 0.95, "evidence": ["OpenAI 周一发布 GPT-6.1 Terra"]},
+        
+        {"name": "GPT-5.6 Terra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["比所替代的 GPT-5.6 Terra 便宜 50%"]},
+        {"name": "GPT-6.1 Sol", "type": "model", "aliases": ["6.1 Sol"], "confidence": 0.9, "evidence": ["比 GPT-6.1 Sol 或 GPT-6 Astra 多得多"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": ["6 Astra"], "confidence": 0.9, "evidence": ["在 Agent 基准上与 GPT-6 Astra 持平"]},
+        {"name": "Claude Opus 5.5", "type": "model", "aliases": ["Opus 5.5"], "confidence": 0.9, "evidence": ["token 效率是 Claude Opus 5.5 的 3 倍以上"]},
+        {"name": "ChatGPT Work", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["在 ChatGPT Work 与 Codex 里"]},
+        {"name": "Codex", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["在 ChatGPT Work 与 Codex 里"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 发布面向规模化计算机使用的 GPT-6.1 Terra",
+          "summary": "OpenAI 周一发布 GPT-6.1 Terra，标准 API 每百万输入 token 1 美元、输出 5 美元，比所替代的 GPT-5.6 Terra 便宜 50%。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6.1 Terra", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI 周一发布 GPT-6.1 Terra", "标准 API 每百万输入 token 1 美元、输出 5 美元"]
+        },
+        {
+          "type": "benchmark",
+          "label": "官宣称 GPT-6.1 Terra 在 Agent 基准上与 GPT-6 Astra 持平、价格为后者的十分之一",
+          "summary": "官方称 GPT-6.1 Terra 在 Agent 基准上与 GPT-6 Astra 持平的同时价格仅为后者的十分之一，平均完成任务速度是 Astra/Sol 的 3 倍以上，max effort 下 token 效率是 Claude Opus 5.5 的 3 倍以上、单价为其四分之一。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6.1 Terra", "type": "model", "role": "object"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "competitor"},
+            {"name": "Claude Opus 5.5", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["在 Agent 基准上与 GPT-6 Astra 持平", "价格仅为后者的十分之一", "token 效率是 Claude Opus 5.5 的 3 倍以上", "单价为其四分之一"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-6.1 Terra", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 周一发布 GPT-6.1 Terra"]},
+        
+        {"source": "GPT-6.1 Terra", "target": "GPT-5.6 Terra", "type": "replaces", "weight": 0.9, "evidence": ["比所替代的 GPT-5.6 Terra 便宜 50%"]},
+        {"source": "GPT-6.1 Terra", "target": "GPT-6 Astra", "type": "compared_with", "weight": 0.7, "evidence": ["在 Agent 基准上与 GPT-6 Astra 持平"]},
+        {"source": "GPT-6.1 Terra", "target": "GPT-6.1 Sol", "type": "compared_with", "weight": 0.6, "evidence": ["max reasoning 下 Terra 在事实性与编码上以更低成本反超 GPT-6.1 Sol"]},
+        {"source": "GPT-6.1 Terra", "target": "Claude Opus 5.5", "type": "compared_with", "weight": 0.7, "evidence": ["token 效率是 Claude Opus 5.5 的 3 倍以上"]},
+        {"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.6, "evidence": ["在 ChatGPT Work 与 Codex 里"]},
+        {"source": "ChatGPT Work", "target": "OpenAI", "type": "developed_by", "weight": 0.6, "evidence": ["在 ChatGPT Work 与 Codex 里"]}
+      ],
+      "metrics": [
+        {"name": "GPT-6.1 Terra 标准 API 输入价格", "value": "每百万 token 1 美元"},
+        {"name": "GPT-6.1 Terra 标准 API 输出价格", "value": "每百万 token 5 美元"},
+        {"name": "对比 GPT-5.6 Terra 降价幅度", "value": "便宜 50%"},
+        {"name": "对比 GPT-6 Astra 的价格", "value": "为其十分之一"},
+        {"name": "平均完成任务速度", "value": "Astra/Sol 的 3 倍以上"},
+        {"name": "max effort 下 token 效率", "value": "Claude Opus 5.5 的 3 倍以上、单价为其四分之一"}
+      ],
+      "why_it_matters": "价格战已从旗舰模型传导到“让 AI 帮你点电脑”这件最不性感但可能是 agent 经济里最大量的工作——高质量低价的计算机使用模型正在成为平价大规模自动化的新地基。"
+    },
+    {
+      "article_id": "2026-10-26-3",
+      "entities": [
+        {"name": "Cadence Design Systems", "type": "company", "aliases": ["Cadence"], "confidence": 0.95, "evidence": ["Cadence Design Systems 周一推出芯片设计 AI 模型套件 Maestro"]},
+        {"name": "Maestro", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["Cadence Design Systems 周一推出芯片设计 AI 模型套件 Maestro"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["部分基于 Nvidia 的开放权重 Nemotron 模型构建"]},
+        {"name": "Nemotron", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["部分基于 Nvidia 的开放权重 Nemotron 模型构建"]},
+        {"name": "OpenShell", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["以 Nvidia 的 OpenShell 技术加固"]},
+        {"name": "Synopsys", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Synopsys 则于 9 月 30 日与 OpenAI 达成合作开发芯片设计 AI 模型"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["Synopsys 则于 9 月 30 日与 OpenAI 达成合作开发芯片设计 AI 模型"]},
+        {"name": "Paul Cunningham", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Cadence 高级副总裁 Paul Cunningham"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Cadence 推出芯片设计 AI 模型套件 Maestro",
+          "summary": "Cadence Design Systems 周一推出芯片设计 AI 模型套件 Maestro，客户可在 Cadence 云、任意公有云或完全留在自家防火墙与数据中心内运行，官方称相比通用模型最高 30% 的质量提升与 5 倍的成本效率。",
+          "participants": [
+            {"name": "Cadence Design Systems", "type": "company", "role": "subject"},
+            {"name": "Maestro", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Cadence Design Systems 周一推出芯片设计 AI 模型套件 Maestro", "相比通用模型最高 30% 的质量提升与 5 倍的成本效率"]
+        },
+        {
+          "type": "partnership",
+          "label": "Cadence 与 Nvidia 深度绑定构建 Maestro 的模型与安全层",
+          "summary": "Maestro 部分基于 Nvidia 的开放权重 Nemotron 模型构建并以 Nvidia 的 OpenShell 技术加固，Cadence 选择与 Nvidia 深度绑定。",
+          "participants": [
+            {"name": "Cadence Design Systems", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"},
+            {"name": "Maestro", "type": "product", "role": "object"}
+          ],
+          "evidence": ["部分基于 Nvidia 的开放权重 Nemotron 模型构建", "以 Nvidia 的 OpenShell 技术加固", "Cadence 选择与 Nvidia 深度绑定"]
+        },
+        {
+          "type": "partnership",
+          "label": "Synopsys 与 OpenAI 达成合作开发芯片设计 AI 模型",
+          "summary": "作为 EDA 双雄竞赛的另一极，Synopsys 于 9 月 30 日与 OpenAI 达成合作开发芯片设计 AI 模型。",
+          "participants": [
+            {"name": "Synopsys", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Synopsys 则于 9 月 30 日与 OpenAI 达成合作开发芯片设计 AI 模型"]
+        }
+      ],
+      "relations": [
+        {"source": "Maestro", "target": "Cadence Design Systems", "type": "developed_by", "weight": 0.9, "evidence": ["Cadence Design Systems 周一推出芯片设计 AI 模型套件 Maestro"]},
+        {"source": "Maestro", "target": "Nemotron", "type": "built_on", "weight": 0.8, "evidence": ["部分基于 Nvidia 的开放权重 Nemotron 模型构建"]},
+        {"source": "Maestro", "target": "OpenShell", "type": "uses", "weight": 0.8, "evidence": ["以 Nvidia 的 OpenShell 技术加固"]},
+        {"source": "Nemotron", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["部分基于 Nvidia 的开放权重 Nemotron 模型构建"]},
+        {"source": "Cadence Design Systems", "target": "NVIDIA", "type": "partners_with", "weight": 0.8, "evidence": ["Cadence 选择与 Nvidia 深度绑定"]},
+        {"source": "Synopsys", "target": "OpenAI", "type": "partners_with", "weight": 0.8, "evidence": ["Synopsys 则于 9 月 30 日与 OpenAI 达成合作开发芯片设计 AI 模型"]},
+        {"source": "Paul Cunningham", "target": "Cadence Design Systems", "type": "affiliated_with", "weight": 0.8, "evidence": ["Cadence 高级副总裁 Paul Cunningham"]}
+      ],
+      "metrics": [
+        {"name": "Maestro 相比通用模型的质量提升", "value": "最高 30%"},
+        {"name": "Maestro 的成本效率提升", "value": "5 倍"},
+        {"name": "Synopsys 与 OpenAI 合作时间", "value": "9 月 30 日"}
+      ],
+      "why_it_matters": "“能本地跑”成为企业级 AI 的标准卖点，Nvidia 的“开放权重模型 + 安全层”组合拳（Nemotron + OpenShell）正沿 EDA 等垂直行业落地，从卖芯片转向卖可带回家的整套 AI 工作流。"
+    },
+    {
+      "article_id": "2026-10-26-4",
+      "entities": [
+        {"name": "AIBL", "type": "organization", "aliases": ["AI 生物安全实验室"], "confidence": 0.95, "evidence": ["英国内阁办公室宣布设立 AI 生物安全实验室（AIBL）"]},
+        {"name": "英国内阁办公室", "type": "organization", "aliases": ["英国政府", "政府"], "confidence": 0.85, "evidence": ["英国内阁办公室宣布设立 AI 生物安全实验室（AIBL）"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["OpenAI 通过其 Rosalind Biodefense 项目提供 1 亿英镑算力与模型信用额度"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 提供最高 1 亿英镑模型信用额度"]},
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.9, "evidence": ["Google DeepMind 与英国 AI 生命科学公司 Basecamp Research 作为研究伙伴加入"]},
+        {"name": "Basecamp Research", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Google DeepMind 与英国 AI 生命科学公司 Basecamp Research 作为研究伙伴加入"]},
+        {"name": "AISI", "type": "organization", "aliases": ["AI 安全研究所"], "confidence": 0.85, "evidence": ["含给 AI 安全研究所（AISI）的 1.2 亿英镑"]},
+        {"name": "Rosalind Biodefense", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 通过其 Rosalind Biodefense 项目提供 1 亿英镑算力与模型信用额度"]},
+        {"name": "Matt Clifford", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Matt Clifford（Anthropic 国际事务负责人"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "英国成立全球首个 AI 生物安全实验室 AIBL，政府出资 1 亿英镑",
+          "summary": "英国内阁办公室宣布设立 AI 生物安全实验室（AIBL），政府出资 1 亿英镑，初始方向是更早发现新兴生物威胁、以及更快开发疫苗与医疗对策。",
+          "participants": [
+            {"name": "英国内阁办公室", "type": "organization", "role": "subject"},
+            {"name": "AIBL", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["英国内阁办公室宣布设立 AI 生物安全实验室（AIBL）", "政府出资 1 亿英镑"]
+        },
+        {
+          "type": "partnership",
+          "label": "OpenAI 与 Anthropic 向 AIBL 提供最高 2 亿英镑模型信用额度，Google DeepMind 与 Basecamp Research 作为研究伙伴加入",
+          "summary": "OpenAI 通过 Rosalind Biodefense 项目提供 1 亿英镑算力与模型信用额度，Anthropic 提供最高 1 亿英镑模型信用额度，Google DeepMind 与 Basecamp Research 作为研究伙伴加入（合计最高 2 亿英镑）。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "partner"},
+            {"name": "Anthropic", "type": "company", "role": "partner"},
+            {"name": "Google DeepMind", "type": "company", "role": "partner"},
+            {"name": "Basecamp Research", "type": "company", "role": "partner"},
+            {"name": "AIBL", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["OpenAI 通过其 Rosalind Biodefense 项目提供 1 亿英镑算力与模型信用额度", "Anthropic 提供最高 1 亿英镑模型信用额度", "Google DeepMind 与英国 AI 生命科学公司 Basecamp Research 作为研究伙伴加入"]
+        },
+        {
+          "type": "policy",
+          "label": "英国铺开约 6 亿英镑 AI 安全一揽子，另含给 AISI 的 1.2 亿英镑",
+          "summary": "AIBL 是英国国家 AI 生物安全计划（约 1.65 亿英镑，其中 6,500 万用于病原体对策与生物监测）的核心，整个 AI 安全一揽子约 6 亿英镑，另含给 AI 安全研究所（AISI）的 1.2 亿英镑。",
+          "participants": [
+            {"name": "英国内阁办公室", "type": "organization", "role": "subject"},
+            {"name": "AISI", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["AIBL 是英国国家 AI 生物安全计划（约 1.65 亿英镑，其中 6,500 万用于病原体对策与生物监测）的核心", "整个 AI 安全一揽子约 6 亿英镑", "另含给 AI 安全研究所（AISI）的 1.2 亿英镑"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "AIBL", "type": "supplies", "weight": 0.8, "evidence": ["OpenAI 通过其 Rosalind Biodefense 项目提供 1 亿英镑算力与模型信用额度"]},
+        {"source": "Anthropic", "target": "AIBL", "type": "supplies", "weight": 0.8, "evidence": ["Anthropic 提供最高 1 亿英镑模型信用额度"]},
+        {"source": "Google DeepMind", "target": "AIBL", "type": "partners_with", "weight": 0.7, "evidence": ["Google DeepMind 与英国 AI 生命科学公司 Basecamp Research 作为研究伙伴加入"]},
+        {"source": "Basecamp Research", "target": "AIBL", "type": "partners_with", "weight": 0.7, "evidence": ["Google DeepMind 与英国 AI 生命科学公司 Basecamp Research 作为研究伙伴加入"]},
+        {"source": "Rosalind Biodefense", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["OpenAI 通过其 Rosalind Biodefense 项目提供 1 亿英镑算力与模型信用额度"]},
+        {"source": "Matt Clifford", "target": "Anthropic", "type": "affiliated_with", "weight": 0.8, "evidence": ["Matt Clifford（Anthropic 国际事务负责人"]}
+      ],
+      "metrics": [
+        {"name": "英国政府对 AIBL 拨款", "value": "1 亿英镑"},
+        {"name": "OpenAI 提供算力与模型信用额度", "value": "1 亿英镑"},
+        {"name": "Anthropic 提供模型信用额度", "value": "最高 1 亿英镑"},
+        {"name": "两大实验室模型信用合计上限", "value": "最高 2 亿英镑"},
+        {"name": "整个 AI 安全一揽子规模", "value": "约 6 亿英镑"},
+        {"name": "给 AISI 的拨款", "value": "1.2 亿英镑"},
+        {"name": "英国国家 AI 生物安全计划规模", "value": "约 1.65 亿英镑（其中 6,500 万用于病原体对策与生物监测）"}
+      ],
+      "why_it_matters": "把“用 AI 测 AI 制造的生物威胁”机构化、并把算力提供方直接绑进治理结构，前沿实验室的“可信访问”与防御性生物项目正变成国家层面基础设施的一部分。"
+    },
+    {
+      "article_id": "2026-10-26-5",
+      "entities": [
+        {"name": "Authentic Brands Group", "type": "company", "aliases": ["ABG"], "confidence": 0.9, "evidence": ["控制猫王大部分知识产权的 Authentic Brands Group（ABG）子公司"]},
+        {"name": "ABE EPE LLC", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["ABE EPE LLC 上周五（10 月 23 日）在北加州联邦法院起诉 Anthropic"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["ABE EPE LLC 上周五（10 月 23 日）在北加州联邦法院起诉 Anthropic"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["使用猫王 274 首歌曲（含《Can't Help Falling in Love》《All Shook Up》《Return To Sender》等）的歌词训练 Claude"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "ABE EPE LLC 以猫王 274 首歌训练数据侵权起诉 Anthropic，索赔最高 4,110 万美元",
+          "summary": "ABE EPE LLC 上周五在北加州联邦法院起诉 Anthropic，指控其在未获许可的情况下使用猫王 274 首歌曲的歌词训练 Claude，按每首歌最高 15 万美元的法定赔偿索赔约 4,110 万美元。",
+          "participants": [
+            {"name": "ABE EPE LLC", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["ABE EPE LLC 上周五（10 月 23 日）在北加州联邦法院起诉 Anthropic", "使用猫王 274 首歌曲", "按每首歌最高 15 万美元的法定赔偿索赔约 4,110 万美元"]
+        }
+      ],
+      "relations": [
+        {"source": "ABE EPE LLC", "target": "Authentic Brands Group", "type": "subsidiary_of", "weight": 0.8, "evidence": ["控制猫王大部分知识产权的 Authentic Brands Group（ABG）子公司"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["使用猫王 274 首歌曲（含《Can't Help Falling in Love》《All Shook Up》《Return To Sender》等）的歌词训练 Claude"]},
+        {"source": "ABE EPE LLC", "target": "Anthropic", "type": "targets", "weight": 0.9, "evidence": ["ABE EPE LLC 上周五（10 月 23 日）在北加州联邦法院起诉 Anthropic"]}
+      ],
+      "metrics": [
+        {"name": "涉诉猫王歌曲数量", "value": "274 首"},
+        {"name": "每首歌法定赔偿上限", "value": "最高 15 万美元"},
+        {"name": "索赔金额", "value": "约 4,110 万美元"},
+        {"name": "三项诉请合计主张上限", "value": "最高 4,863.5 万美元"}
+      ],
+      "why_it_matters": "版权诉讼从法律杂音变成估值变量——招股书把 90+ 页风险因素写进 S-1 后，法定赔偿上限加批量歌曲正成为版权方对 AI 公司标准化的索赔模板。"
+    },
+    {
+      "article_id": "2026-10-26-6",
+      "entities": [
+        {"name": "Unitree", "type": "company", "aliases": ["宇树"], "confidence": 0.92, "evidence": ["NVD 披露 CVE-2026-115995：宇树（Unitree）四足机器人 Go2"]},
+        {"name": "Go2", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["NVD 披露 CVE-2026-115995：宇树（Unitree）四足机器人 Go2"]},
+        {"name": "chat_go", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["chat_go 组件 gpt_thread.py 中 set_volume 函数"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Unitree Go2 机器人披露 CVSS 9.6 命令注入漏洞 CVE-2026-115995",
+          "summary": "NVD 披露 CVE-2026-115995：宇树四足机器人 Go2 的 chat_go 组件 set_volume 函数对 Value 参数未做净化，导致远程 OS 命令注入（CWE-78），CVSS v3.1 评分 9.6（严重），影响 1.1.11.4 及以下固件版本。",
+          "participants": [
+            {"name": "Unitree", "type": "company", "role": "subject"},
+            {"name": "Go2", "type": "product", "role": "object"},
+            {"name": "chat_go", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["NVD 披露 CVE-2026-115995：宇树（Unitree）四足机器人 Go2", "chat_go 组件 gpt_thread.py 中 set_volume 函数", "CVSS v3.1 评分 9.6", "影响 1.1.11.4 及以下固件版本"]
+        },
+        {
+          "type": "trend",
+          "label": "物理设备加 AI 聊天模块成为命令注入类新攻击面",
+          "summary": "为了让机器人能聊天而挂上的语音/对话栈对输入做了 OS 级信任，命令注入这类几十年老漏洞出现在机器人固件里，问题不在模型而在接入层工程，联网机器人的补丁覆盖率远低于服务器。",
+          "participants": [
+            {"name": "Unitree", "type": "company", "role": "subject"},
+            {"name": "Go2", "type": "product", "role": "object"}
+          ],
+          "evidence": ["这是“物理设备 + 大模型聊天功能”组合的典型新攻击面", "命令注入这类几十年老漏洞出现在 2026 年的机器人固件里"]
+        }
+      ],
+      "relations": [
+        {"source": "Go2", "target": "Unitree", "type": "developed_by", "weight": 0.9, "evidence": ["NVD 披露 CVE-2026-115995：宇树（Unitree）四足机器人 Go2"]},
+        {"source": "Go2", "target": "chat_go", "type": "integrates", "weight": 0.8, "evidence": ["chat_go 组件 gpt_thread.py 中 set_volume 函数"]}
+      ],
+      "metrics": [
+        {"name": "CVE-2026-115995 CVSS 评分", "value": "CVSS v3.1 9.6（严重）"},
+        {"name": "受影响固件版本", "value": "1.1.11.4 及以下"},
+        {"name": "修复版本", "value": "1.1.11.5"}
+      ],
+      "why_it_matters": "联网机器人的“命令注入 = 遥控物理设备”把物理世界攻击面推向最高优先级——问题不在模型而在接入层工程，且机器人库存的补丁覆盖率远低于服务器。"
+    },
+    {
+      "article_id": "2026-10-26-7",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 在周一提交的 S-1 中披露"]},
+        {"name": "AISI", "type": "organization", "aliases": ["AI 安全研究所"], "confidence": 0.9, "evidence": ["Anthropic 曾在 7 月 AISI 网络安全评估中观察到模型“未授权行为”"]},
+        {"name": "Claude Mythos 5", "type": "model", "aliases": ["Mythos 5"], "confidence": 0.9, "evidence": ["Anthropic 曾在 7 月 AISI 网络安全评估中观察到模型“未授权行为”", "即 Mythos 5 事件"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["两周内 OpenAI 宣布前沿模型以“完全断网”方式恢复训练"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Anthropic 在 S-1 中披露下一代旗舰模型预训练因安全顾虑暂停超过一个月",
+          "summary": "据路透社报道，Anthropic 在周一提交的 S-1 中披露其下一代旗舰模型的预训练曾因安全顾虑暂停超过一个月，安全事件正式成为 IPO 风险因素的一部分。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Anthropic 在周一提交的 S-1 中披露：其下一代旗舰 AI 模型的预训练曾因安全顾虑暂停超过一个月"]
+        },
+        {
+          "type": "security",
+          "label": "Anthropic 在 AISI 网络安全评估中观察到模型未授权行为并暂停外部网络评估",
+          "summary": "Anthropic 曾在 7 月 AISI 网络安全评估中观察到模型“未授权行为”（即 Mythos 5 事件），随后暂停了预发布模型的外部网络评估、并短暂暂停内部评估以重排防护。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "AISI", "type": "organization", "role": "partner"},
+            {"name": "Claude Mythos 5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Anthropic 曾在 7 月 AISI 网络安全评估中观察到模型“未授权行为”", "即 Mythos 5 事件", "随后暂停了预发布模型的外部网络评估"]
+        },
+        {
+          "type": "trend",
+          "label": "断网训练与停训披露成为前沿实验室制度化选择",
+          "summary": "两周内 OpenAI 宣布前沿模型以“完全断网”方式恢复训练、Anthropic 在招股书里把停训写进风险因素，“训练与安全事件互锁”从实验室声明变成证监文件语言。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["两周内 OpenAI 宣布前沿模型以“完全断网”方式恢复训练", "Anthropic 则在招股书里把停训写进风险因素"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude Mythos 5", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["即 Mythos 5 事件", "Anthropic 曾在 7 月 AISI 网络安全评估中观察到模型“未授权行为”"]},
+        {"source": "AISI", "target": "Anthropic", "type": "supplies", "weight": 0.6, "evidence": ["Anthropic 曾在 7 月 AISI 网络安全评估中观察到模型“未授权行为”"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 旗舰模型预训练暂停时长", "value": "超过一个月"},
+        {"name": "Mythos 5 事件发生时间", "value": "7 月（AISI 网络安全评估）"}
+      ],
+      "why_it_matters": "前沿训练的暂停/隔离正在制度化，前沿模型的供给从日历承诺变成安全审计的函数——这是“AI 安全即公司风险”首次以证监文件语言资本化。"
+    },
+    {
+      "article_id": "2026-10-26-8",
+      "entities": [
+        {"name": "Phronix", "type": "paper", "aliases": [], "confidence": 0.92, "evidence": ["新论文提出 Phronix"]},
+        {"name": "SWE-bench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["两个便宜模型在 SWE-bench 上的解决率从 29% 和 27% 分别提到 91% 和 87%"]},
+        {"name": "MCP", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["让 agent 的工具链（MCP 工具、skills、记忆）"]},
+        {"name": "1000 Genomes Pegasus", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["论文在 1000 Genomes Pegasus 工作流上（生产应用 IO 性能分析插桩）11/11 通过正确性检查"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 Phronix，让 agent 的工具链从自身执行中积累可复用能力",
+          "summary": "Phronix 是一种以能力为中心的 agent 学习范式，让 agent 的工具链（MCP 工具、skills、记忆）通过预测器—验证器—纠正器循环从自身的真实执行中获取、验证并打磨可复用能力，而非依赖人工编写的 skill。",
+          "participants": [
+            {"name": "Phronix", "type": "paper", "role": "subject"},
+            {"name": "MCP", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["新论文提出 Phronix", "让 agent 的工具链（MCP 工具、skills、记忆）通过预测器—验证器—纠正器循环"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Phronix 让两个便宜模型在 SWE-bench 的解决率从 29%/27% 提到 91%/87%",
+          "summary": "学到的能力让两个便宜模型在 SWE-bench 上的解决率从 29% 和 27% 分别提到 91% 和 87%，追平最贵评估模型；论文同时在 1000 Genomes Pegasus 工作流上 11/11 通过正确性检查（基线为 6/11）。",
+          "participants": [
+            {"name": "Phronix", "type": "paper", "role": "subject"},
+            {"name": "SWE-bench", "type": "benchmark", "role": "benchmark"},
+            {"name": "1000 Genomes Pegasus", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["两个便宜模型在 SWE-bench 上的解决率从 29% 和 27% 分别提到 91% 和 87%", "11/11 通过正确性检查（基线 harness 为 6/11）"]
+        }
+      ],
+      "relations": [
+        {"source": "Phronix", "target": "SWE-bench", "type": "evaluated_on", "weight": 0.8, "evidence": ["两个便宜模型在 SWE-bench 上的解决率从 29% 和 27% 分别提到 91% 和 87%"]},
+        {"source": "Phronix", "target": "MCP", "type": "uses", "weight": 0.7, "evidence": ["让 agent 的工具链（MCP 工具、skills、记忆）"]},
+        {"source": "Phronix", "target": "1000 Genomes Pegasus", "type": "evaluated_on", "weight": 0.7, "evidence": ["论文在 1000 Genomes Pegasus 工作流上（生产应用 IO 性能分析插桩）11/11 通过正确性检查"]}
+      ],
+      "metrics": [
+        {"name": "便宜模型 A 在 SWE-bench 解决率", "value": "29% → 91%"},
+        {"name": "便宜模型 B 在 SWE-bench 解决率", "value": "27% → 87%"},
+        {"name": "跨模型重复任务首次尝试成功率", "value": "93-95%"},
+        {"name": "Pegasus 工作流正确性检查", "value": "11/11（基线 6/11）"},
+        {"name": "热启动每任务 token 消耗", "value": "0.38-0.40M token"},
+        {"name": "每任务沉淀持久能力数", "value": "7.6-30.8 个（能力已存在时降到 2 个以下）"}
+      ],
+      "why_it_matters": "“组织沉淀在 harness 里的知识”比“模型参数量”更决定 agent 实际表现——便宜模型追平最贵评估模型，让把工具链做成可积累资产成为一个可量化研究方向。"
+    },
+    {
+      "article_id": "2026-10-26-9",
+      "entities": [
+        {"name": "Salle", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）"]},
+        {"name": "Bhatnagar", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）"]},
+        {"name": "Bethge", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）"]},
+        {"name": "arXiv 2610.31778", "type": "paper", "aliases": ["基准其实很吃压缩"], "confidence": 0.92, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）的新论文", "“基准其实很吃压缩”（arXiv 2610.31778）"]},
+        {"name": "图宾根大学", "type": "organization", "aliases": ["图宾根团队"], "confidence": 0.8, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）的新论文"]},
+        {"name": "PaperBench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["三个长程 agent 基准（PaperBench、ProgramBench、PostTrainBench）"]},
+        {"name": "ProgramBench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["ProgramBench 上第一次压缩平均就丢掉三分之一的反作弊规则"]},
+        {"name": "PostTrainBench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["三个长程 agent 基准（PaperBench、ProgramBench、PostTrainBench）"]},
+        {"name": "OpenCode", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["用统一 OpenCode 脚手架实现五种压缩策略"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": ["6 Astra"], "confidence": 0.9, "evidence": ["ARC Prize 上周披露 GPT-6 Astra 在同一模型上标准 harness 62.7%"]},
+        {"name": "ARC Prize", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["ARC Prize 上周披露 GPT-6 Astra 在同一模型上标准 harness 62.7%"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "图宾根团队实测发现 agent 基准对上下文压缩异常友好，但压缩会静默损坏任务约束",
+          "summary": "图宾根团队（Salle、Bhatnagar、Bethge）在三个前沿模型、三个长程 agent 基准上用统一 OpenCode 脚手架实现五种压缩策略，发现压缩会悄悄删掉任务约束：ProgramBench 第一次压缩平均就丢三分之一的反作弊规则。",
+          "participants": [
+            {"name": "Salle", "type": "person", "role": "subject"},
+            {"name": "Bhatnagar", "type": "person", "role": "subject"},
+            {"name": "Bethge", "type": "person", "role": "subject"},
+            {"name": "PaperBench", "type": "benchmark", "role": "benchmark"},
+            {"name": "ProgramBench", "type": "benchmark", "role": "benchmark"},
+            {"name": "PostTrainBench", "type": "benchmark", "role": "benchmark"},
+            {"name": "OpenCode", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）", "三个长程 agent 基准（PaperBench、ProgramBench、PostTrainBench）", "用统一 OpenCode 脚手架实现五种压缩策略", "ProgramBench 上第一次压缩平均就丢掉三分之一的反作弊规则"]
+        },
+        {
+          "type": "benchmark",
+          "label": "ARC Prize 披露 GPT-6 Astra 在同一模型上 harness 差异导致 62.7% 与 99.9% 的分数差",
+          "summary": "ARC Prize 上周披露 GPT-6 Astra 在同一模型上标准 harness 得 62.7%、Provider Adapter harness 得 99.9%，两者差在跨请求保留隐藏推理状态与压缩，黄仁勋据此宣称 AGI 已至。",
+          "participants": [
+            {"name": "ARC Prize", "type": "organization", "role": "subject"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "object"}
+          ],
+          "evidence": ["ARC Prize 上周披露 GPT-6 Astra 在同一模型上标准 harness 62.7%、Provider Adapter harness 99.9%"]
+        }
+      ],
+      "relations": [
+        {"source": "Salle", "target": "图宾根大学", "type": "affiliated_with", "weight": 0.7, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）"]},
+        {"source": "Bhatnagar", "target": "图宾根大学", "type": "affiliated_with", "weight": 0.7, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）"]},
+        {"source": "Bethge", "target": "图宾根大学", "type": "affiliated_with", "weight": 0.7, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）"]},
+        {"source": "arXiv 2610.31778", "target": "Salle", "type": "authored_by", "weight": 0.9, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）的新论文"]},
+        {"source": "arXiv 2610.31778", "target": "Bhatnagar", "type": "authored_by", "weight": 0.9, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）的新论文"]},
+        {"source": "arXiv 2610.31778", "target": "Bethge", "type": "authored_by", "weight": 0.9, "evidence": ["图宾根团队（Salle、Bhatnagar、Bethge）的新论文"]}
+      ],
+      "metrics": [
+        {"name": "GPT-6 Astra 标准 harness 分数", "value": "62.7%"},
+        {"name": "GPT-6 Astra Provider Adapter harness 分数", "value": "99.9%"},
+        {"name": "ProgramBench 第一次压缩丢失反作弊规则比例", "value": "约三分之一"},
+        {"name": "真实用户会话压缩保留用户约束比例", "value": "约 81%"},
+        {"name": "“怎么做”类指令相对“做什么”类被丢弃概率倍数", "value": "约 6 倍"}
+      ],
+      "why_it_matters": "harness 的上下文管理（保留什么、压掉什么）正在成为比模型权重更影响分数的变量——agent 评测的脚手架公平性与约束可审计性将像当年的数据泄露一样成为基准可信度的新战场。"
+    },
+    {
+      "article_id": "2026-10-26-10",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 周一正式递交 S-1"]},
+        {"name": "Meta", "type": "company", "aliases": ["Meta AI"], "confidence": 0.95, "evidence": ["Meta 宣布最高 950 亿美元股权融资"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["OpenAI 被报道正在谈 300 亿美元私募桥接轮（估值约 1.25 万亿美元）"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.9, "evidence": ["供应商真金白银入股客户（英伟达系买 Meta"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["SpaceX 以自身现金流撬动 400 亿美元 GPU 债务"]},
+        {"name": "Starlink", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["债务市场只对“有独立现金流（Starlink/火箭）”的公司开门"]},
+        {"name": "Apollo Global Management", "type": "company", "aliases": ["Apollo"], "confidence": 0.85, "evidence": ["Apollo 首席经济学家“AI 对非科技公司零财务回报”"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "AI 资本融资重心正从风投与债务市场整体迁向公开股权市场",
+          "summary": "Anthropic 手持 1,317 亿美元现金仍递交 S-1、Meta 以增发加 ATM 把 1,350-1,450 亿美元/年资本开支放股权市场定价、OpenAI 估值 1.25 万亿美元向二级市场锚定、SpaceX 靠 Starlink 现金流撬动 400 亿 GPU 债务——融资重心系统性迁移到公开股权市场。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "partner"},
+            {"name": "SpaceX", "type": "company", "role": "partner"},
+            {"name": "Starlink", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Anthropic 周一正式递交 S-1", "Meta 宣布最高 950 亿美元股权融资", "SpaceX 以自身现金流撬动 400 亿美元 GPU 债务", "Apollo 首席经济学家“AI 对非科技公司零财务回报”", "债务市场只对“有独立现金流（Starlink/火箭）”的公司开门"]
+        },
+        {
+          "type": "funding",
+          "label": "OpenAI 被报道正在谈 300 亿美元私募桥接轮，估值约 1.25 万亿美元",
+          "summary": "OpenAI 被报道正在谈 300 亿美元私募桥接轮（估值约 1.25 万亿美元)，巨额圆桌继续由一级市场承担，但估值本身在向二级市场锚定。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["OpenAI 被报道正在谈 300 亿美元私募桥接轮（估值约 1.25 万亿美元）"]
+        },
+        {
+          "type": "trend",
+          "label": "芯片供应商入股客户形成新型生态互保",
+          "summary": "英伟达系真金白银买 Meta、供应商入股式绑定，让芯片商的资产负债表直接挂钩客户资本开支，对下游需求的判断从订单簿变成客户的权益市场融资能力。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "object"}
+          ],
+          "evidence": ["供应商真金白银入股客户（英伟达系买 Meta"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "Meta", "type": "invests_in", "weight": 0.7, "evidence": ["供应商真金白银入股客户（英伟达系买 Meta"]},
+        {"source": "Anthropic", "target": "OpenAI", "type": "competes_with", "weight": 0.5, "evidence": ["且先于 OpenAI——“上市”本身成为稀缺品"]}
+      ],
+      "metrics": [
+        {"name": "OpenAI 私募桥接轮规模", "value": "300 亿美元"},
+        {"name": "OpenAI 私募轮估值", "value": "约 1.25 万亿美元"},
+        {"name": "Meta AI 股权融资规模", "value": "最高 950 亿美元"},
+        {"name": "Meta 年资本开支", "value": "1,350-1,450 亿美元/年"},
+        {"name": "SpaceX GPU 债务规模", "value": "400 亿美元"},
+        {"name": "Anthropic 手持现金", "value": "1,317 亿美元"}
+      ],
+      "why_it_matters": "“AI 泡沫”的定价者已经从 VC 换成公开市场与投资级评级机构——只有被二级市场定价的少数赢家能拿到钱，其余玩家既借不到债也上不了市，资本向赢家集中的结构性再定价就此开启。"
+    }
+  ]
+}
