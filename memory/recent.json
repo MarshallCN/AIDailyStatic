@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T23:23:06Z",
+  "updated_at": "2026-10-26T07:06:59Z",
   "window_days": 30,
   "start_date": "2026-09-26",
   "end_date": "2026-10-25",
@@ -2443655,14 +2443655,14 @@
     },
     {
       "date": "2026-10-25",
-      "headline": "2026-10-25 的线索图显示 6 条可追踪主题：128GB Mac / 1Password / 1Password for Agents / 6.1 Astra；Automation-Bench V1.0.6 / CATL / CodeARC / DSec",
+      "headline": "AI 基建资金进入「谁借得到钱」的定价阶段、前沿模型安全防线完成从「防作恶」到「防越狱」的重构、agent 身份与治理成为基础设施竞赛主场、CUDA 软件护城河遭多面同时攻击、算力瓶颈彻底从芯片转向功率/冷却/选址、RL 奖励信号污染被公开数据集级点名——10/19–10/25 六条结构性主线",
       "theme_ids": [
-        "clue:c6aa37ffd3dc",
-        "clue:f3fcdf246cc7",
-        "clue:423b30494f9c",
-        "clue:211e1c33f222",
-        "clue:7d9782d9b3d1",
-        "clue:1fea19e86687"
+        "clue:ai-capex-debt-freeze-vs-sold-out-2026w43",
+        "clue:frontier-model-jailbreak-safety-redefinition-2026w43",
+        "clue:agent-identity-governance-infra-race-2026w43",
+        "clue:cuda-moat-assault-open-weights-china-sovereignty-2026w43",
+        "clue:physical-constraint-era-datacenter-backlash-2026w43",
+        "clue:rl-stability-reward-hacking-eval-reliability-2026w43"
       ]
     }
   ]
