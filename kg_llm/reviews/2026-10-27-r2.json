@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-27",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 86,
+  "summary": "r1 的 7 条意见已全部落实（删 HF uses 边、SABRE 双关系去重、删 d3-ultra 无证据比较边、事件2 改为同台演讲、Cerebras 公司/硬件拆分、补 Oracle Marketplace、删 Muse developed_by 边），13 篇数字与原文逐字一致、无幻觉、无方向反转。剩余问题集中在关系层完整性：2026-10-27-8 信息贫乏未根治（Hugging Face 实体零边、\"LLM agent\" 泛称 topic 兜底、全文仅 1 条边），2026-10-27-0 的 AMD 与 Muse 事件参与方在关系图中零边，developed_by 归属证据在 3/4/5 三篇连续不达标，另有 AI Security Mesh 零边与 Spectrum-X 类型不一致两处小问题。",
+  "findings": [
+    {
+      "article_id": "2026-10-27-8",
+      "severity": "medium",
+      "problem": "r1 删除 \"PatentAgentBench --uses--> Hugging Face\" 后全篇关系表只剩 1 条（\"LLM agent --evaluated_on--> PatentAgentBench\"），信息贫乏问题只是换了形态、未根治：实体 Hugging Face 仍零边残留在实体表中，且事件 1 给它 role=partner——Hugging Face 只是数据集托管平台，不是发布合作方（违反 10-24 「参与者只能收事件内真实执行/被动作用的具名主体」）；\"LLM agent\" 用 topic 类型兜底，而类型表规定 topic 只用于具名技术方向（如 speculative decoding），\"LLM agent\" 是类别泛称，属于被禁止的低信息量实体。",
+      "fix": "删除实体 Hugging Face（词表无 hosted_on/published_on 类托管关系，事实由事件 1 evidence \"已在Hugging Face上以数据集集合形式开源\" 承载），并将其从事件 1 participants 中移除；删除实体 \"LLM agent\" 及其 evaluated_on 边，评测事实保留在事件 2 summary 与 metrics（\"7个LLM×4种agent框架\"）中。若不想让 PatentAgentBench 成为唯一实体，按 10-18 纪律为它补一条可验证关系或明确接受事件承载，二选一。"
+    },
+    {
+      "article_id": "2026-10-27-0",
+      "severity": "medium",
+      "problem": "事件 2（Muse 合作）与事件 3（AMD 授予股票购买权）的参与方 Muse、AMD 在关系表中都没有任何一条边——同篇 NVIDIA 投资既有 funding 事件又有 NVIDIA --invests_in--> Meta 边，2026-10-27-4 的六家合作机构也各有 partners_with 边，AMD 与 Muse 成为图断点（违反 10-18 「为孤立实体补一条有证据支撑的关系，或明确删除」）；此外事件 3 类型标 funding 不准确，原文是 AMD 向 Meta 授予按每股 1 美分购买 AMD 股票的权利（股权授予安排，不是 AMD 对 Meta 的融资）。",
+      "fix": "补关系 AMD --supplies--> Meta，证据用原文句 \"此前AMD也已向Meta授予按每股1美分购买至多1.6亿股AMD股票的权利, 前提是满足芯片采购等里程碑\"（supplies 限定供应商→客户，与同篇 NVIDIA --supplies--> Meta 对称）；事件 3 类型改为 partnership 或在 label 中点明是\"授予股权购买权\"而非融资；Muse 无合法可挂边（原文未点明归属），按 10-18 纪律从实体表删除或仅保留作事件参与方、在图谱层明确接受事件承载，不要无声悬挂。"
+    },
+    {
+      "article_id": "2026-10-27-3",
+      "severity": "medium",
+      "problem": "developed_by 归属证据连续三篇不达标，违反已沉淀的 10-25/10-26 教训（归属必须由原文直接点明开发者）：本篇 \"Claude --developed_by--> Anthropic\" 的证据 \"Anthropic前沿红队使用一个未发布的内部研究模型\" 未点名 Claude，该内部模型与 Claude 是否同一物只在新闻标题层面暗示，正文用\"未发布的内部研究模型\"与\"Claude\"两套称呼并存；2026-10-27-4 的证据 \"并已根据所学优先改进了模型能力\" 支撑的是「Anthropic 改进了模型」而非「Anthropic 开发了 Claude」；2026-10-27-5 的证据 \"试验让61名受过因果推断训练的统计分析师用Claude Code完成真实的农场合作社评估任务\" 完全未提 Claude Code 的开发者。",
+      "fix": "三处统一处理：删除 Claude/Claude Code --developed_by--> Anthropic 边（本篇与 2026-10-27-4、2026-10-27-5 的原文都没有直接点明 Anthropic 开发的句子），归属事实由事件与全文语境承载；不要用\"改进模型能力\"\"用某工具完成任务\"等旁证句支撑归属边。"
+    },
+    {
+      "article_id": "2026-10-27-1",
+      "severity": "low",
+      "problem": "实体 AI Security Mesh 在 launch 事件中作 object，但关系表零边——同事件的另两个产品（App Composer --uses--> Codex、AI SMB Bundle --integrates--> ChatGPT Business/Codex/OCI）都有边，形成同类产品的不对称（违反 10-18 纪律）。",
+      "fix": "补 AI Security Mesh --developed_by--> Oracle（及/或 OpenAI），证据用 \"同时推出AI Security Mesh、App Composer与AI SMB Bundle三款新产品\" 的联合推出语境；或删除该实体，事实留给事件 evidence 承载，二选一。"
+    },
+    {
+      "article_id": "2026-10-27-0",
+      "severity": "low",
+      "problem": "同一证据句 \"Meta扩大采用NVIDIA基础设施(含Vera Rubin、Vera CPU、Spectrum-X与BlueField-4)\" 中四个并列的 NVIDIA 基础设施组件，Spectrum-X 标 type=product，其余三项标 type=hardware——同层级并列项类型不一致，图中同族组件被分拆成两类。",
+      "fix": "将 Spectrum-X 的类型统一为 hardware（与 Vera Rubin、Vera CPU、BlueField-4 一致），保持同一证据句内并列对象类型一致。"
+    }
+  ],
+  "lessons": [
+    "高管同台演讲、共同出席发布会是亮相行为不是合作——不要据此建 partnership 事件或 partners_with 关系；合作事件必须对应原文宣布的具体内容（产品、算力、投资、协议），人物出场只作关系 evidence。",
+    "出现在事件 participants 中的具名主体也必须在关系表中至少有一条可验证边或明确从实体表删除，仅出现在事件里不算连通；芯片供应/股权绑定类安排用词表内的 supplies（供应商→客户）表达。",
+    "同一句中被并列列举的同类对象（如同一厂商的基础设施组件、同一批硬件）必须使用一致的实体类型，不要在同一证据句里混用 product 与 hardware。"
+  ]
+}

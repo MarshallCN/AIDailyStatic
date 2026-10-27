@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-27",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "抽取整体扎实：13 篇全覆盖、无幻觉数字、无关系方向反转、metrics 完整、跨文章连通性好（OpenAI/Oracle/ChatGPT/Codex/OCI/Google/NVIDIA/Anthropic/Claude 跨篇一致）。主要问题集中在关系语义层：uses 被误用于托管/发布平台、outperforms 从榜单并列无证据派生、同一证据支撑两条矛盾关系、2026-10-27-2 事件 2 与前文重复、2026-10-27-1 遗漏 Oracle Marketplace 采购渠道这一核心主体。",
+  "findings": [
+    {
+      "article_id": "2026-10-27-8",
+      "severity": "medium",
+      "problem": "关系 \"PatentAgentBench --uses--> Hugging Face\"(weight 0.5, 证据\"已在Hugging Face上以数据集集合形式开源\")类型用错：词表中 uses 限定\"用到某工具/硬件\"（组件级调用），而\"开源在 Hugging Face 上\"是托管/发布平台关系，图中会读成\"PatentAgentBench 使用 Hugging Face\"，语义错误。",
+      "fix": "删除该关系；\"已在Hugging Face上开源\"这一事实已由事件 1 的 evidence 与 participants(Hugging Face, partner) 完整承载，无需边。词表中没有 hosted_on/published_on，不要用 uses 或 integrates 硬凑。"
+    },
+    {
+      "article_id": "2026-10-27-12",
+      "severity": "medium",
+      "problem": "对同一对象 SABRE 同时建了 \"Infinity Machine --outperforms--> SABRE\"(weight 0.7) 和 \"Infinity Machine --uses--> SABRE\"(weight 0.4) 两条关系，且共用同一证据\"将SABRE量子布线开销从68,559降到12,087门\"。原文说的是 Infinity Machine 在 SABRE 工具产出的基线上做出改进（超过 SABRE 现有结果），不是把 SABRE 当组件调用——两关系语义矛盾且互相重复。",
+      "fix": "保留 outperforms（对应\"多项任务上超过当前SOTA\"的断言），删除 uses 关系；若认为 agent 确实调用了 SABRE 工具，则删除 outperforms 并把\"超过SABRE基线\"改为证据中的改进描述，任选其一，不得两条并存。"
+    },
+    {
+      "article_id": "2026-10-27-10",
+      "severity": "medium",
+      "problem": "关系 \"d3-ultra --outperforms--> Jeffan\"(weight 0.5) 证据不足：证据\"榜单头部被Fastino GLiDE、d3-ultra、Jeffan等决策模型占据\"+ \"在Decision Index 0.4.1以70.18分升至第二\"只说明三者都在榜单头部、d3-ultra 排第二，完全没有 Jeffan 的分数或排名信息，无法证明 d3-ultra 高于 Jeffan（第二名输给谁、Jeffan 排第几均未知）。这是把\"并列提及\"当成了\"对比\"。",
+      "fix": "删除该关系；若保留，必须换用能直接给出 d3-ultra 与 Jeffan 双方分数或相对排名的原文证据，否则按\"无证据不建比较边\"处理。"
+    },
+    {
+      "article_id": "2026-10-27-2",
+      "severity": "medium",
+      "problem": "事件 2 \"Oracle AI World完成Oracle与OpenAI产品层与算力层双线合作升级\"是文章总结性评论而非独立事件：其内容与事件 1（OCI 芯片多元化）完全重复，产品层又已由 2026-10-27-1 的两个事件建模，属事件切分不当（把同一动作的总结性描述拆成新事件）。",
+      "fix": "删除该事件（保底每篇事件数仍达标）；若想保留 \"Sam Altman 与 Clay Magouyrk 同台发表主题演讲\"这一可独立验证的事实，把事件 2 改写为仅含该事实的 partnership/trend 事件，去掉\"双线合作升级\"的总结性表述。"
+    },
+    {
+      "article_id": "2026-10-27-2",
+      "severity": "medium",
+      "problem": "关系 \"OCI --uses--> Cerebras\" 的 target 是 type=company 实体 Cerebras（aliases 含\"Cerebras系统\"），图中读成\"OCI 使用 Cerebras 公司\"；原文是\"OCI新增...Cerebras系统\"——被采用的是硬件/系统不是公司。公司实体与硬件引用被混进同一节点，同时也使事件 1 里的 Cerebras(company, partner) 角色混乱。",
+      "fix": "新建 type=hardware 的\"Cerebras 系统\"实体作为该边 target，或直接删除该边（Cerebras 作为算力供应商已由事件 1 的 partner 参与方与 partners_with 语义承载）；不要把硬件别名词塞进公司实体。同类检查 TPU/Jalapeño 边（type=hardware，符合 uses 语义，无需改）。"
+    },
+    {
+      "article_id": "2026-10-27-1",
+      "severity": "medium",
+      "problem": "遗漏重要主体：原文 summary 明确\"OpenAI API、Codex与ChatGPT Work也可经Oracle Marketplace采购\"，why_it_matters 的论据正是\"既有采购渠道成为 OpenAI 分销网络\"，但图谱没有 Oracle Marketplace（及 Universal Credits）实体、无相关边、metrics 也未收录——支撑核心洞察的买卖渠道在图上完全缺失。",
+      "fix": "补实体 {\"name\": \"Oracle Marketplace\", \"type\": \"product\"}，在 launch 事件的 evidence 中补上\"OpenAI API、Codex与ChatGPT Work也可经Oracle Marketplace采购\"原文句，并在 metrics 中加一条（如\"经Oracle Marketplace采购的OpenAI产品\": \"OpenAI API/Codex/ChatGPT Work\"）；词表无 available_via，不要强造关系边，用事件+metrics 承载。"
+    },
+    {
+      "article_id": "2026-10-27-0",
+      "severity": "low",
+      "problem": "关系 \"Muse --developed_by--> Meta\"(weight 0.6) 的证据\"扩大在Muse及Muse模型家族上的合作以提升训练与推理性能\"只说明双方在 Muse 上合作，未点明 Meta 是 Muse 的开发者（违反 2026-10-25 教训：归属必须由原文直接点明开发者），本篇原文没有任何直接点明 Meta 开发 Muse 的句子。",
+      "fix": "删除该边；Muse 的归属不明确时不得用常识推断，合作事实已由合作伙伴关系与事件 2 完整承载。"
+    }
+  ],
+  "lessons": [
+    "数据集/模型\"开源托管在 Hugging Face 等平台\"是发布载体关系，不是组件调用，不得抽成 uses 边；词表无托管类关系时删边、让事件 evidence 承载该事实。",
+    "同一证据不得同时支撑两条语义矛盾或重复的关系（如对同一对象既建 uses 又建 outperforms）；先判断该对象是被改进的基线还是被调用的组件，只保留一条。",
+    "排行榜/榜单类新闻中，\"X、Y、Z 占据榜单头部\"的并列提及不构成 X outperforms Y 的证据；outperforms 必须来自双方直接对比的分数或明确相对排名的原文。"
+  ]
+}

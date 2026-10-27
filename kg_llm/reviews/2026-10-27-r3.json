@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-27",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "13篇实体、数字与关系方向均与原文一致, 无幻觉无反转, r2大部分意见已落实(AMD supplies边、事件3改partnership、AI Security Mesh补边、Spectrum-X改hardware、Cerebras拆分成型); 但r2的两条明确修正未执行到底: 2026-10-27-2同台演讲事件type仍为partnership(只改了label), 2026-10-27-3的Claude Code及三个模型developed_by归属边在r2明确要求删除后仍保留; 另新增2026-10-27-7/9评测机构零关系边、2026-10-27-5把原文矛盾的50/61两个口径人数合并成子集断言等关系层问题。",
+  "findings": [
+    {
+      "article_id": "2026-10-27-2",
+      "severity": "medium",
+      "problem": "事件2 label已按r2改为\"同台发表主题演讲\", 但type仍为partnership——r2及已沉淀教训明确规定\"高管同台演讲是亮相行为不是合作, 不要据此建partnership事件\", 此处只改了label没改type, 等于没改。",
+      "fix": "把该事件type从partnership改为公开活动/亮相类事件类型(按r2口径, 若词表有event/announcement类则用之), label与type必须同步; 同台演讲的事实保留在事件summary与evidence中, 不作合作证据。"
+    },
+    {
+      "article_id": "2026-10-27-3",
+      "severity": "medium",
+      "problem": "r2明确要求删除Claude/Claude Code --developed_by--> Anthropic的归属边(原文无直接点明Anthropic开发的句子), 但本篇仍保留4条同类边: Claude Code --developed_by--> Anthropic(证据\"Anthropic已开源其Claude Code安全指引插件\"只支撑\"拥有/开源\"不支撑\"开发\")和Opus 5.5/Sonnet 5.5/Mythos 5.1 --developed_by--> Anthropic(证据\"含Opus 5.5、Sonnet 5.5与Mythos 5.1的放宽拒绝分类器\"完全未提开发者), 违反\"归属必须由原文直接点明开发者\"的纪律。",
+      "fix": "删除这4条developed_by边, 模型归属事实由正文语境与事件evidence承载; 保留Claude --targets--> 五平台的攻击链边(该篇关系数仍≥2.5达标)。"
+    },
+    {
+      "article_id": "2026-10-27-7",
+      "severity": "medium",
+      "problem": "全文核心事实是\"方寸AI(Fangcun)独立测评DeepSeek V4.1 Flash-1017\", 但关系表只有V4.1 Flash-1017 --developed_by--> DeepSeek和--compared_with--> V4两条边, Fangcun AI作为最重要的评测主体在关系图中零边(违反\"出现在事件participants的具名主体必须至少有一条可验证边\"的纪律)。",
+      "fix": "补关系 Fangcun AI --evaluates--> V4.1 Flash-1017 (或 V4.1 Flash-1017 --evaluated_by--> Fangcun AI), 证据用\"方寸AI通过DeepSeek公开API在10月4日至25日间对V4.1 Flash-1017执行了34项评估\"。"
+    },
+    {
+      "article_id": "2026-10-27-9",
+      "severity": "medium",
+      "problem": "上海AI实验室、上海交大两个评测机构作为实体和事件participants存在, 但关系表零边——与2026-10-27-7的Fangcun同类问题(评测主体不进关系图), 两个组织无法与其他节点连通。",
+      "fix": "补边 GPT-6-Astra --evaluated_by--> 上海AI实验室 与 GPT-6-Astra --evaluated_by--> 上海交大, 证据用\"上海AI实验室、上海交大等机构用EBench剖析GPT-6-Astra作为机器人agent核心的能力边界\"; 或补 EBench --used_by--> 上海AI实验室 等有原文支撑的边, 二选一。"
+    },
+    {
+      "article_id": "2026-10-27-5",
+      "severity": "medium",
+      "problem": "metric\"试验统计分析师人数 61名(50名专业分析师)\"把原文summary口径(50名专业分析师)与detail口径(61名统计分析师)两个矛盾的数合并成一个\"61名中含50名专业分析师\"的子集断言, 原文从未给出这个子集关系——这是无证据的数值加工。",
+      "fix": "拆成两条metric分别标注口径(\"summary口径: 50名(专业分析师)\"与\"detail口径: 61名(受过因果推断训练的统计分析师)\"), 或在value中直接注明\"来源两处口径不一致: 50/61\", 禁止自行合并或臆造子集关系。"
+    },
+    {
+      "article_id": "2026-10-27-11",
+      "severity": "low",
+      "problem": "同类GPU产品在同一个证据语境里被拆成两种实体类型: RTX 5090标hardware、RTX Pro标product——违反同层并列同类对象类型必须一致的纪律(与r2已修的Spectrum-X问题同型)。",
+      "fix": "将RTX 5090与RTX Pro统一为同一实体类型(若词表以硬件类收消费级GPU则都标hardware, 若按产品线收则都标product), 全库保持一致。"
+    },
+    {
+      "article_id": "2026-10-27-12",
+      "severity": "low",
+      "problem": "关系类型语义错配: \"Infinity Machine --outperforms--> SABRE\"中SABRE是被改进的量子布线工具而非被比较的竞争对手(原文是\"将SABRE量子布线开销从68,559降到12,087门\"); \"--targets--> INT8脉动阵列\"中阵列是优化对象而非攻击目标, targets暗示对抗语义会误读图意。",
+      "fix": "若词表有improves/optimizes类关系则替换这两条边; 否则删除,结果保留在metrics(原始/改进后门数、能耗降幅77.7%已在metrics中), 避免用outperforms/targets讲\"改进\"。"
+    },
+    {
+      "article_id": "2026-10-27-11",
+      "severity": "low",
+      "problem": "遗漏具名核心角色: der8auer(供应冻结说法的调查者和一手来源, 新闻主体事实的提出者)与HKEPC(改装潮照片的拍摄/发布媒体)均未抽为实体, 整篇观点的来源链在图中缺位。",
+      "fix": "补person实体der8auer并承载其与事件的关系(如事件1证据中明确\"der8auer调查\"、关系 der8auer --reports_on--> RTX 5090或affiliated_with NVIDIA等有证据支撑的边); HKEPC可作organization实体或保留在evidence中, 二选一。"
+    },
+    {
+      "article_id": "2026-10-27-6",
+      "severity": "low",
+      "problem": "关系\"Claude Opus 4.6 --outperforms--> GPT-5.6 Sol\"把\"简单Claude Opus 4.6提示(0.89)胜于GPT-5.6 Sol带高推理预算的agentic评审者(0.78)\"这一设置级比较压成模型级胜负, 图中会被读成\"Claude Opus 4.6模型强于GPT-5.6 Sol\", 与文章\"成本更高不更可靠、设置决定结果\"的主旨相反。",
+      "fix": "删除该边或把evidence改写为\"简单Claude Opus 4.6提示(0.89) 胜于 GPT-5.6 Sol agentic评审者(0.78)\"并标注是比较两种评审设置而非模型本体; 数字已进metrics, 不丢信息。"
+    }
+  ],
+  "lessons": [
+    "修正事件语义时label与type必须同步修改——事件名改成\"同台演讲\"而type仍留partnership等于没改; 合作类事件类型只能用于原文宣布的具体合作内容(产品、算力、投资、协议), 亮相类事实只进summary/evidence。",
+    "评测/测评类新闻必须为评测机构与被评对象连一条评测关系边(evaluates/evaluated_by), 评测机构不能只出现在实体表和事件participants里却零关系。",
+    "同一指标在原文不同位置数字矛盾(如summary与detail人数不同)时, 按各自口径分条记录并在value中注明来源不一致, 禁止合并成一个数或臆造\"N中有M个\"的子集关系。"
+  ]
+}
