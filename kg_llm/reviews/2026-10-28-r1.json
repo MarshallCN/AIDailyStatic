@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-28",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "事实、数字与证据总体准确且可回溯，未发现幻觉级错误，指标覆盖完整、跨文章实体复用良好；主要问题集中在关系与事件类型的语义错用：targets 被用于监管/倡导动作（CISA、ICO、Open Rights Group 三处）、NVIDIA—licenses_to—Groq 方向无证据、Azure 业绩事件被误标为 benchmark，且 Wiz 发现 PHP2Shell 这一核心宾语在图中缺失。修订后可发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-28-5",
+      "severity": "medium",
+      "problem": "关系 \"CISA --targets--> PHP2Shell\" 关系类型错用：CISA 将漏洞加入\"已知被利用漏洞\"目录是监管/收录动作，不是攻击行为；targets 只应用于攻击者→受害对象或漏洞→受影响软件的攻击语义，该关系会让图读成\"CISA 攻击 PHP2Shell\"。所引证据\"CISA把PHP两个CVSS 9.2的漏洞...加入目录\"支撑的是追踪/收录，不是攻击。",
+      "fix": "将 \"CISA --targets--> PHP2Shell\" 改为 \"CISA --tracks--> PHP2Shell\"（或关系表中表示收录/监管的类型）；\"PHP2Shell --targets--> PHP\" 因表示漏洞指向受影响软件可保留。"
+    },
+    {
+      "article_id": "2026-10-28-13",
+      "severity": "medium",
+      "problem": "关系 \"ICO --targets--> ACS\" 与 \"Open Rights Group --targets--> ACS\" 关系类型错用：ICO 是在调查透明度问题（监管/调查动作），Open Rights Group 是在敦促停用（批评/倡导表态），两者都不是攻击关系；targets 的语义会把图歪曲成\"这两家机构攻击该工具\"。",
+      "fix": "分别改为 \"ICO --regulates--> ACS\"（或新增调查类关系 \"ICO --investigates--> ACS\"）与 \"Open Rights Group --criticizes--> ACS\"（或倡导类关系），不要用 targets。"
+    },
+    {
+      "article_id": "2026-10-28-5",
+      "severity": "medium",
+      "problem": "事件6\"Wiz Research用Wiz Atlas与前沿模型发现并组合出PHP2Shell两个漏洞\"的 participants 中没有 PHP2Shell，全图也没有任何指向 PHP2Shell 的发现边——发现关系是该事件的核心宾语，目前只有 Wiz --uses--> {Wiz Atlas, Gemini 4 Argon, GPT-5.6 Sol}，\"发现了什么\"在图中丢失。",
+      "fix": "在事件6 participants 中补入 {\"name\": \"PHP2Shell\", \"type\": \"topic\", \"role\": \"object\"}，并新增关系 \"Wiz --discovers--> PHP2Shell\"（或关系表中的发现/报告类型），证据用\"Wiz Research在8月19日用...发现并组合出两个漏洞\"。"
+    },
+    {
+      "article_id": "2026-10-28-14",
+      "severity": "medium",
+      "problem": "关系 \"NVIDIA --licenses_to--> Groq\" 的方向没有任何证据：原文只说\"审查还覆盖其SchedMD收购与$200亿Groq授权协议\"、\"DOJ同时在看Groq的$200亿授权协议\"，从未说明授权方是谁；当前方向\"NVIDIA 授权给 Groq\"是猜测，可能把图读成未经证实的错误事实。",
+      "fix": "在原文未指明授权方向的前提下删除该方向性关系；如必须表达，把\"NVIDIA 与 Groq 之间存在 $200 亿授权协议\"的事实写进事件2的 summary/metrics，不构建有方向的 licenses_to 关系。"
+    },
+    {
+      "article_id": "2026-10-28-2",
+      "severity": "medium",
+      "problem": "事件2类型 \"benchmark\" 错用：\"Azure以48%增速连续第五季超出自身指引，首次以美元披露收入\"是财报增长/业绩指引事件，不是模型或系统在评测基准上的得分事件；benchmark 事件类型会误导下游消费者把该事件当作跑分结果。",
+      "fix": "将事件2类型改为 \"trend\"（与同篇其他财报事件一致）；benchmark 类型仅保留给模型/系统在评测基准上的结果事件。"
+    },
+    {
+      "article_id": "2026-10-28-7",
+      "severity": "medium",
+      "problem": "关系 \"Counting the Bandages --evaluated_on--> GDPval\" 类型错用：论文是用 GDPval 逐条评审工作流的数据做举例分析（原文\"并用GDPval逐条评审工作流的数据说明\"），论文本身没有被 GDPval 评测；evaluated_on 表示\"作为被测对象在基准上评测\"，方向与语义都不符。",
+      "fix": "改为 \"Counting the Bandages --uses--> GDPval\"（或 --analyzes-->）；\"GPT-5 --evaluated_on--> GDPval\" 对应\"工作流经GDPval逐条评审\"，可保留。"
+    },
+    {
+      "article_id": "2026-10-28-6",
+      "severity": "medium",
+      "problem": "关系 \"Gemini API --integrates--> Genie 4\" 与证据不符：原文是 Genie 4 预览\"扩展到Project Genie的Google AI Ultra订阅者...与Gemini API/AI Studio的早期伙伴\"——这是 Genie 4 向 API 早期伙伴开放访问，不是 Gemini API 集成了 Genie 4，integrates 的方向与语义都站不住。",
+      "fix": "删除该关系；如需表达，改为 \"Genie 4 --available_via--> Gemini API\"（或把访问范围扩展事实写进发布事件，不构建有向关系）。"
+    },
+    {
+      "article_id": "2026-10-28-0",
+      "severity": "low",
+      "problem": "事件4的 summary 提到\"Wiz也观察到Carbon在网络渗透测试基准上领先\"，但 Wiz 既未被抽为实体也没有对应关系（该实体在 2026-10-28-5 中已存在，跨文章连通性受损）；另外原文\"高严重度misalignment告警近乎减半\"与缓存输入95折定价未进 metrics。",
+      "fix": "补 Wiz 实体（company）并加 \"Wiz --observes--> Gemini 4 Carbon\" 类关系（或从事件 summary 中删去未抽取实体的表述）；将 misalignment 告警降幅与缓存输入95折补入 metrics。"
+    },
+    {
+      "article_id": "2026-10-28-4",
+      "severity": "low",
+      "problem": "事件4\"阿里、腾讯、字节跳动与三星、SK海力士商谈服务器内存长协\"参与者齐全（5家主体），但 relations 里没有任何一条连接这些主体的边——该事件在图谱中无对应关系，信息贫乏，且\"部分希望签到2035年\"未进 metrics。",
+      "fix": "为该事件补充关系（如 Alibaba/Tencent/ByteDance --negotiates_with--> Samsung/SK hynix，若关系表无商谈类型则新增该类型）；把\"商谈锁定期至2035年\"补入 metrics。"
+    }
+  ],
+  "lessons": [
+    "关系类型 targets 只用于攻击性语义（攻击者→受害者、漏洞→受影响软件）；监管收录类动作（CISA 列入 KEV 目录、ICO 调查）用 tracks/regulates/investigates，倡导表态（敦促停用、批评）用 criticizes，不要用 targets 兜底。",
+    "事件与关系类型 benchmark/evaluated_on 只用于模型或系统在评测基准上的得分结果；财报业绩、指引上修、增速超出指引等资本类事件一律用 trend，不要把业绩数字当跑分结果。",
+    "原文只提到存在协议而未指明授权/买卖方向时，不要猜测方向构建 licenses_to 类有向关系：证据没给出方向就把事实保留在事件与 metrics 里，而不是造一条边。"
+  ]
+}

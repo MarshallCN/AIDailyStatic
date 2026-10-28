@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-28",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "逐条核对16篇文章，实体、数字、事件与关系方向全部与原文一致，无幻觉、无方向倒置；问题集中在关系/实体类型层面：Chrome 实体类型错配且同一事实在事件与关系中的主体不一致（事件是 Chrome、关系换成 Google），Alphabet/Microsoft 对自家云部门的资本开支被标成 invests_in（词表既有用法是外部投资方→被投方），另有跨文章 subsidiary_of 父级不一致等低级问题。",
+  "findings": [
+    {
+      "article_id": "2026-10-28-0",
+      "severity": "medium",
+      "problem": "实体\"Chrome\"被标为 product（浏览器），但别名\"Chrome团队\"和用法表明它实际是发言主体；且同一事实在事件4中主体是 Chrome，关系里却换成 Google（Google --observes--> Gemini 4 Carbon，evidence 仅\"Chrome团队称补丁质量好10倍\"）——产品型实体不能作为观察/断言主体，事件与关系主体自相矛盾，跨文章看图会以为谷歌官方做出该评测结论。",
+      "fix": "把发言主体统一为组织语义：将实体改名为\"Chrome团队\"（type organization）或直接删除该实体改用 Google，并保证事件4与关系的 source 是同一个主体；若保留 Chrome 实体，则它只能是被提到的产品，关系 Google --observes--> Gemini 4 Carbon 需改用组织型主体并修正 evidence 归属。"
+    },
+    {
+      "article_id": "2026-10-28-1",
+      "severity": "medium",
+      "problem": "关系 Alphabet --invests_in--> Google Cloud 原文不支撑且类型不当：evidence 只是全公司口径的\"当季capex达$51.4B\"，原文从未说 Alphabet 投资了 Google Cloud；invests_in 在本项目词表中的既有用法是外部投资人→被投方（如 Boyu Capital --invests_in--> Manus），集团对自家云部门的资本开支不属于 invest 关系。",
+      "fix": "删除该关系（capex 数字已在 metrics 中完整保留），或换用内部资本投入语义并在 evidence 中引用明确指向云业务的原文；不要用全公司 capex 充当 invest 关系的证据。"
+    },
+    {
+      "article_id": "2026-10-28-2",
+      "severity": "medium",
+      "problem": "关系 Microsoft --invests_in--> Azure 与 2026-10-28-1 同类：evidence 为全公司 capex（$45.2B 含融资租赁），原文说的是一般性资本开支而非\"微软投资 Azure\"，invests_in 的外部投资语义在此不成立，微软对自家云业务线的投入不是 invest 关系。",
+      "fix": "删除该关系，保留 Azure --developed_by--> Microsoft 作为主体关系，capex 数字留在 metrics 中；不要在母公司与其产品线之间使用 invests_in。"
+    },
+    {
+      "article_id": "2026-10-28-15",
+      "severity": "low",
+      "problem": "跨文章主体不一致：本篇关系 Google Cloud --subsidiary_of--> Alphabet，而 2026-10-28-3 的同一对实体关系是 Google Cloud --subsidiary_of--> Google，同一关系在两篇文章里 target 不同，跨文章连通时实体归属混乱。",
+      "fix": "统一为 Google Cloud --subsidiary_of--> Alphabet（Google 本身是 Alphabet 的子公司，Google Cloud 隶属 Alphabet），并把 2026-10-28-3 中的同一关系同步改为 Alphabet 或删除。"
+    },
+    {
+      "article_id": "2026-10-28-4",
+      "severity": "low",
+      "problem": "关系 HBM4 --outperforms--> HBM3E 类型不当：evidence 是\"预计Q4在出货量与收入上双双超过HBM3E\"，这是商业量能对比；outperforms 在本项目词表中用于跑分/能力领先（如 RouterLM、Kimi K3.1 Pro 对竞品模型的对比），此处会让图谱读出\"HBM4 性能比 HBM3E 强\"的错误含义。",
+      "fix": "删除该关系，把\"Q4出货量与收入超过HBM3E\"保留在事件摘要和 metrics 中；若需连线，改用替代/量能语义的关系类型而非 outperforms。"
+    },
+    {
+      "article_id": "2026-10-28-5",
+      "severity": "low",
+      "problem": "遗漏关键限定：原文明确 Wiz 10月27日跟进称\"自家遥测中尚未观察到完整成功的端到端利用，攻击工具化仍在演进\"，这对\"在野利用\"的解读至关重要（72,644次蜜罐请求 ≠ 端到端攻击成功），未进任何事件或 why_it_matters。",
+      "fix": "在蜜罐或 Wiz 相关事件的摘要中补一句\"Wiz 自家遥测尚未观察到完整端到端利用，攻击工具化仍在演进\"，避免读者把利用请求数读成攻击成功数。"
+    }
+  ],
+  "lessons": [
+    "资本开支/基建投入不要用 invests_in：invests_in 只用于外部投资方→被投方，集团对自家部门或产品线的资金投入应删除或用内部投入语义，且 evidence 必须明确指向被投对象而非全公司数字。",
+    "产品型实体（浏览器、硬件、框架等）不能作为观察、断言、表态的主体：发言主体必须是组织/团队/个人实体，且同一事实在事件和关系中的 source 必须一致，不能一个用产品一个用公司。",
+    "跨文章复用同一实体时，其属性关系（如 subsidiary_of 的父级）必须全局一致：成稿前检查同一对实体在不同文章里的关系 target 是否相同，公司层级关系统一指向最上层母公司。"
+  ]
+}

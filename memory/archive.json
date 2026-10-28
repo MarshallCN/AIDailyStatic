@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T23:35:05Z",
+  "updated_at": "2026-10-28T23:25:56Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -869,6 +869,35 @@
         "2026-09-21-2",
         "2026-09-21-3",
         "2026-09-21-4"
+      ]
+    },
+    {
+      "period_id": "2026-W40",
+      "period_type": "week",
+      "start_date": "2026-09-28",
+      "end_date": "2026-09-28",
+      "summary": "2026-09-28 至 2026-09-28 期间，Anthropic、Nvidia、OpenShell 主要围绕 launch、benchmark 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "Anthropic",
+        "Nvidia",
+        "OpenShell",
+        "Sentry"
+      ],
+      "event_types": [
+        "launch",
+        "benchmark",
+        "trend"
+      ],
+      "trend_signals": [
+        "核心实体：Anthropic、Nvidia、OpenShell",
+        "主事件类型：launch、benchmark"
+      ],
+      "representative_article_ids": [
+        "2026-09-28-0",
+        "2026-09-28-1",
+        "2026-09-28-2",
+        "2026-09-28-3",
+        "2026-09-28-4"
       ]
     }
   ]

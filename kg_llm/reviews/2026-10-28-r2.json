@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-28",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 83,
+  "summary": "第1轮问题已全部修复（CISA/ICO/Open Rights Group的关系类型、Wiz发现边、Groq授权方向、benchmark事件类型误用、Gemini API集成方向等），事实与数字再次逐条核对均能回溯原文，无幻觉级错误；本轮问题集中在：2026-10-28-15把未点名的推断主体写进participants且事件切分互相重叠，2026-10-28-0存在实体类型错配（Chrome/Fairwind），2026-10-28-13遗漏了最具损害性的问责证据（审裁法官标记AI虚构内容）。",
+  "findings": [
+    {
+      "article_id": "2026-10-28-15",
+      "severity": "medium",
+      "problem": "事件3\"SK hynix以超大规模云厂商的云收入财报为需求真实背书\"把Azure与Google Cloud列为participants，但该事件的证据原文只称\"超大规模云收入同比增30-80%、云积压订单扩大2-5倍\"，从未点名Azure或Google Cloud；这是把推断主体写进participants，会让图谱读成\"SK hynix引用Azure/Google Cloud财报\"这一原文并不存在的事实。",
+      "fix": "从该事件participants中移除Azure与Google Cloud，只保留SK hynix；若想表达与本周财报的关联，改用观察文章正文点名了的Alphabet/Microsoft，或在evidence中明确标注这是推断，不要作为事实端点入图。"
+    },
+    {
+      "article_id": "2026-10-28-15",
+      "severity": "medium",
+      "problem": "事件切分互相重叠：事件1\"财报周首次在单周内给无上限AI投入打出两个相反的价格\"、事件2\"微软Azure连续第五季beat自身指引且capex低于共识，盘后涨4%\"、事件5\"估值锚从讲故事切换到现收现付的现金流证明\"描述的是同一市场反应——事件5的summary（\"同样是在砸钱，miss利润的挨打，花钱低于担心的反而被奖励\"）与事件1内容重合，事件2则是把2026-10-28-2的财报细节在综述文中再复述一遍；同一动作被拆成多个互相重复的事件。",
+      "fix": "合并事件1与事件5为一个事件（现象与解读同列，label如\"财报周市场给AI资本开支打出方向相反的两个价格，估值锚切换至现金流兑现\"）；事件2只保留综述新增的对比视角（承接Alphabet反差的表述），删去与2026-10-28-2重复的细节，或用跨文章连接代替重抽。"
+    },
+    {
+      "article_id": "2026-10-28-0",
+      "severity": "medium",
+      "problem": "实体类型错配：\"Chrome\"被标为organization，但它是浏览器产品名，原文主体是\"Chrome团队\"（Google内部的测试团队），标成与Google并列的独立机构会让图谱出现原文不存在的组织节点；\"Fairwind\"被标为organization，原文是\"Fairwind项目\"，是Google的一个项目而非机构。另外事件4（Chrome团队/Wiz观察Carbon）没有任何对应关系边，该事件在图谱中无连接。",
+      "fix": "Chrome改标为product或直接并入Google（别名保留\"Chrome团队\"），Fairwind改标为topic/project类（或并入Google）；并为事件4补一条关系边，如Google --observes--> Gemini 4 Carbon，evidence用\"Chrome团队称Carbon生成的补丁质量比另一家大模型的模型好10倍以上\"。"
+    },
+    {
+      "article_id": "2026-10-28-13",
+      "severity": "medium",
+      "problem": "遗漏最具损害性的问责证据：原文\"一名审裁法官已在至少一封拒信中标记出可能由AI虚构的内容\"与\"边境与移民独立首席监察员正考虑把该工具纳入2027年检查计划\"均未进入entities/events/metrics；当前抽取只覆盖失败率数字与ICO/Open Rights Group的表态，而\"AI虚构内容进入司法文书\"才是该新闻最强的损害证据，缺失后why_it_matters中\"错误发生时受影响的个体没有救济渠道\"的论断在图谱内没有证据支撑。",
+      "fix": "新增一条policy或security事件，如\"审裁法官在至少一封拒信中标记出可能由AI虚构的内容，独立首席监察员考虑2027年把ACS纳入检查计划\"，participants含英国内政部与ACS，evidence引原文该句；或在metrics中补充该事实。"
+    },
+    {
+      "article_id": "2026-10-28-1",
+      "severity": "medium",
+      "problem": "关系\"Google --subsidiary_of--> Alphabet\"的evidence\"这家公司把'AI周期'押在了云与模型业务能更快接过搜索的接力棒上\"讲的是Alphabet的战略押注，并不支撑Google是Alphabet子公司的股权隶属关系——证据存在但支撑的是另一回事；同篇\"Google Cloud --subsidiary_of--> Alphabet\"的evidence\"Google Cloud收入+103%至$30.7B\"同样只支撑营收事实，不支撑隶属关系。",
+      "fix": "换成能直接支撑隶属关系的原文表述（如Alphabet Q3财报把搜索广告与Google Cloud归入Google业务的叙述），若无此类原文证据则删除该关系或改用较低权重并标注为常识性推断；不要把战略押注/营收数字当作隶属关系的evidence。"
+    }
+  ],
+  "lessons": [
+    "事件participants与关系端点只收录原文点名的实体：\"超大规模云厂商\"、\"某家巨头\"这类未点名的主体不得写入participants，需要连接时改用已具名实体，并确保evidence原文直接出现两端。",
+    "同一新闻里描述同一现象的多个事件（现象叙述、细节复述、结论解读）必须合并为一个事件或在label中显式区分事实与解读两层，不要拆成互相重叠的事件；综述文与单篇新闻的重复内容用跨文章连接代替重抽。",
+    "政府/监管系统部署AI类新闻除效果数字指标外，必须把独立问责证据（司法或专家质疑、监察机构检查计划、受影响个体的救济渠道缺失）抽成单独事件或实体，数字指标与损害事实不能只保留其一。"
+  ]
+}

@@ -1,0 +1,1184 @@
+{
+  "date": "2026-10-28",
+  "articles": [
+    {
+      "article_id": "2026-10-28-0",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.97, "evidence": ["谷歌发布Gemini 4 Carbon"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": ["Gemini Carbon"], "confidence": 0.97, "evidence": ["谷歌发布Gemini 4 Carbon"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": [], "confidence": 0.93, "evidence": ["距Gemini 4 Argon发布仅两周"]},
+        {"name": "Artificial Analysis Intelligence Index v5.0", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["Artificial Analysis Intelligence Index v5.0得分59登顶"]},
+        {"name": "SEC-bench Pro", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["SEC-bench Pro漏洞发现88.2%"]},
+        {"name": "ExploitGym", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["ExploitGym可利用性验证54.8%"]},
+        {"name": "CWE-bench", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["CWE-bench漏洞修复71.0%"]},
+        {"name": "WebDev Arena", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["WebDev Arena以1768分(-89 ELO)升至第4"]},
+        {"name": "Terminal-Bench 4.0", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["Terminal-Bench 4.0上作弊率降到0.0%"]},
+        {"name": "Gray Swan", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["Gray Swan间接提示注入攻击成功率0.0%"]},
+        {"name": "Chrome", "type": "product", "aliases": ["Chrome团队"], "confidence": 0.75, "evidence": ["Chrome团队称Carbon生成的补丁质量比另一家大模型的模型好10倍以上"]},
+        {"name": "Fairwind", "type": "topic", "aliases": ["Fairwind项目"], "confidence": 0.8, "evidence": ["首批仅向Fairwind项目中的网络防御者开放"]},
+        {"name": "Wiz", "type": "company", "aliases": ["Wiz Research"], "confidence": 0.9, "evidence": ["Wiz也观察到Carbon在网络渗透测试基准上领先"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "谷歌发布主攻网络攻防与长时程任务的旗舰模型Gemini 4 Carbon",
+          "summary": "谷歌发布Gemini 4 Carbon, 称其为最强模型, 在Artificial Analysis Intelligence Index v5.0上得分59登顶, 主打网络攻防与长时程agentic任务。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["谷歌发布Gemini 4 Carbon, 称其为\"最强模型\"", "Artificial Analysis Intelligence Index v5.0得分59登顶"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Carbon在SEC-bench Pro、ExploitGym、CWE-bench与WebDev Arena等安全与编码基准上全面领先",
+          "summary": "距Gemini 4 Argon发布仅两周, Carbon在安全基准上全面领先: SEC-bench Pro漏洞发现88.2%、ExploitGym可利用性验证54.8%、CWE-bench漏洞修复71.0%, WebDev Arena以1768分升至第4。",
+          "participants": [
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"},
+            {"name": "SEC-bench Pro", "type": "benchmark", "role": "benchmark"},
+            {"name": "ExploitGym", "type": "benchmark", "role": "benchmark"},
+            {"name": "CWE-bench", "type": "benchmark", "role": "benchmark"},
+            {"name": "WebDev Arena", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["距Gemini 4 Argon发布仅两周, Carbon在安全基准上全面领先", "SEC-bench Pro漏洞发现88.2%、ExploitGym可利用性验证54.8%、CWE-bench漏洞修复71.0%", "WebDev Arena以1768分(-89 ELO)升至第4"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Carbon对齐指标大幅改善: Terminal-Bench 4.0作弊率降至0.0%, Gray Swan间接提示注入攻击成功率0.0%",
+          "summary": "模型对齐指标也大幅改善: Terminal-Bench 4.0上作弊率降到0.0%(尝试作弊0.4%), Gray Swan间接提示注入攻击成功率0.0%, overreach降26%、under-service降29%。",
+          "participants": [
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"},
+            {"name": "Terminal-Bench 4.0", "type": "benchmark", "role": "benchmark"},
+            {"name": "Gray Swan", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Terminal-Bench 4.0上作弊率降到0.0%(尝试作弊0.4%)", "Gray Swan间接提示注入攻击成功率0.0%"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Chrome团队内部测试称Carbon生成的补丁质量比另一家大模型好10倍以上",
+          "summary": "内部测试中Chrome团队称Carbon生成的补丁质量比另一家大模型的模型好10倍以上, Wiz也观察到Carbon在网络渗透测试基准上领先。",
+          "participants": [
+            {"name": "Chrome", "type": "product", "role": "subject"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Chrome团队称Carbon生成的补丁质量比另一家大模型的模型好10倍以上"]
+        },
+        {
+          "type": "policy",
+          "label": "谷歌采取阶段式发布, 首批仅向Fairwind项目中的网络防御者开放Gemini 4 Carbon",
+          "summary": "谷歌已参与美国政府pre-release模型测试的自愿流程, 先小范围开放给防御者、再逐步扩展到开发者、企业与消费者。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"},
+            {"name": "Fairwind", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["首批仅向Fairwind项目中的网络防御者开放", "先小范围开放给防御者、再逐步扩展到开发者、企业与消费者"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Carbon", "target": "Google", "type": "developed_by", "weight": 0.9, "evidence": ["谷歌发布Gemini 4 Carbon"]},
+        {"source": "Gemini 4 Carbon", "target": "Google", "type": "released_by", "weight": 0.8, "evidence": ["谷歌发布Gemini 4 Carbon, 称其为\"最强模型\""]},
+        {"source": "Gemini 4 Carbon", "target": "Gemini 4 Argon", "type": "outperforms", "weight": 0.7, "evidence": ["距Gemini 4 Argon发布仅两周, Carbon在安全基准上全面领先"]},
+        {"source": "Gemini 4 Carbon", "target": "SEC-bench Pro", "type": "evaluated_on", "weight": 0.7, "evidence": ["SEC-bench Pro漏洞发现88.2%"]},
+        {"source": "Gemini 4 Carbon", "target": "ExploitGym", "type": "evaluated_on", "weight": 0.7, "evidence": ["ExploitGym可利用性验证54.8%"]},
+        {"source": "Gemini 4 Carbon", "target": "CWE-bench", "type": "evaluated_on", "weight": 0.7, "evidence": ["CWE-bench漏洞修复71.0%"]},
+        {"source": "Gemini 4 Carbon", "target": "WebDev Arena", "type": "evaluated_on", "weight": 0.7, "evidence": ["WebDev Arena以1768分(-89 ELO)升至第4"]},
+        {"source": "Gemini 4 Carbon", "target": "Terminal-Bench 4.0", "type": "evaluated_on", "weight": 0.7, "evidence": ["Terminal-Bench 4.0上作弊率降到0.0%"]},
+        {"source": "Gemini 4 Carbon", "target": "Artificial Analysis Intelligence Index v5.0", "type": "evaluated_on", "weight": 0.7, "evidence": ["Artificial Analysis Intelligence Index v5.0得分59登顶"]},
+        {"source": "Gray Swan", "target": "Gemini 4 Carbon", "type": "targets", "weight": 0.5, "evidence": ["Gray Swan间接提示注入攻击成功率0.0%"]},
+        {"source": "Google", "target": "Gemini 4 Carbon", "type": "restricts", "weight": 0.6, "evidence": ["先小范围开放给防御者、再逐步扩展到开发者、企业与消费者"]},
+        {"source": "Wiz", "target": "Gemini 4 Carbon", "type": "observes", "weight": 0.5, "evidence": ["Wiz也观察到Carbon在网络渗透测试基准上领先"]},
+        {"source": "Google", "target": "Gemini 4 Carbon", "type": "observes", "weight": 0.5, "evidence": ["Chrome团队称Carbon生成的补丁质量比另一家大模型的模型好10倍以上"]}
+      ],
+      "metrics": [
+        {"name": "SEC-bench Pro漏洞发现", "value": "88.2%"},
+        {"name": "ExploitGym可利用性验证", "value": "54.8%"},
+        {"name": "CWE-bench漏洞修复", "value": "71.0%"},
+        {"name": "WebDev Arena ELO", "value": "1768分(-89 ELO), 第4名"},
+        {"name": "Artificial Analysis Intelligence Index v5.0得分", "value": "59, 登顶"},
+        {"name": "Carbon API定价", "value": "$2/百万输入token、$10/百万输出, 优惠期结束后$4/$20"},
+        {"name": "Terminal-Bench 4.0作弊率", "value": "0.0%(尝试作弊0.4%)"},
+        {"name": "Gray Swan间接提示注入攻击成功率", "value": "0.0%"},
+        {"name": "overreach降幅", "value": "26%"},
+        {"name": "under-service降幅", "value": "29%"},
+        {"name": "Carbon补丁质量对比", "value": "比另一家大模型的模型好10倍以上"},
+        {"name": "高严重度misalignment告警降幅", "value": "近乎减半"},
+        {"name": "缓存输入定价折扣", "value": "打95折"}
+      ],
+      "why_it_matters": "前沿模型发布节奏第一次以'攻防两侧优先、普通用户后置'的形态展开——安全能力成为旗舰模型的发布门槛, 能力越强的模型越晚到达公众, 发布策略本身成为与跑分并列的核心议题。"
+    },
+    {
+      "article_id": "2026-10-28-1",
+      "entities": [
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Alphabet Q3营收$127.58B(+25%)与调整后EPS $2.67均不及预期"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.97, "evidence": ["Google Cloud收入+103%至$30.7B"]},
+        {"name": "Google Cloud", "type": "product", "aliases": [], "confidence": 0.93, "evidence": ["Google Cloud收入+103%至$30.7B"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.97, "evidence": ["与微软因capex低于预期反而上涨形成鲜明对比"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Alphabet发布Q3财报, 营收与每股收益双双不及预期",
+          "summary": "Alphabet Q3营收$127.58B(+25%)与调整后EPS $2.67均不及预期, 自由现金流为-$9.07B。",
+          "participants": [
+            {"name": "Alphabet", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "object"},
+            {"name": "Google Cloud", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Alphabet Q3营收$127.58B(+25%)与调整后EPS $2.67均不及预期, 自由现金流为-$9.07B"]
+        },
+        {
+          "type": "trend",
+          "label": "搜索广告收入增速从17%放缓至12%, 拖累Alphabet基本盘",
+          "summary": "搜索广告收入$63.4B仅增12%, 较上季的17%明显放缓, 是收入与利润双重miss的来源。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Alphabet", "type": "company", "role": "object"}
+          ],
+          "evidence": ["搜索广告收入$63.4B仅增12%, 较上季的17%明显放缓"]
+        },
+        {
+          "type": "trend",
+          "label": "Google Cloud收入同比翻倍至$30.7B, 已有18条产品线年收入超10亿美元",
+          "summary": "Google Cloud收入+103%至$30.7B, 第一方模型API每分钟处理近320亿token(同比4倍), Gemini应用月活达10亿。",
+          "participants": [
+            {"name": "Alphabet", "type": "company", "role": "subject"},
+            {"name": "Google Cloud", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Google Cloud收入+103%至$30.7B, 已有18条产品线年收入超10亿美元"]
+        },
+        {
+          "type": "infra",
+          "label": "Alphabet资本开支加速至当季capex $51.4B, 自由现金流转负至-$9.07B",
+          "summary": "AI资本开支继续加速, 当季capex达$51.4B, 2027年capex预计超$300B, 自由现金流压力短期不会缓解。",
+          "participants": [
+            {"name": "Alphabet", "type": "company", "role": "subject"},
+            {"name": "Google Cloud", "type": "product", "role": "object"}
+          ],
+          "evidence": ["当季capex达$51.4B, 自由现金流转负至-$9.07B", "2027年capex超$300B的表态意味着自由现金流压力短期不会缓解"]
+        },
+        {
+          "type": "trend",
+          "label": "Alphabet盘后跌逾10%, 与微软因capex低于预期上涨形成对比",
+          "summary": "云翻倍也挡不住市场对搜索放缓与AI投入回报的质疑, Alphabet盘后跌逾10%。",
+          "participants": [
+            {"name": "Alphabet", "type": "company", "role": "object"},
+            {"name": "Microsoft", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Alphabet盘后跌逾10%, 与微软因capex低于预期反而上涨形成鲜明对比"]
+        }
+      ],
+      "relations": [
+        {"source": "Alphabet", "target": "Google Cloud", "type": "invests_in", "weight": 0.6, "evidence": ["AI资本开支继续加速——当季capex达$51.4B"]},
+        {"source": "Alphabet", "target": "Microsoft", "type": "compared_with", "weight": 0.6, "evidence": ["与微软因capex低于预期反而上涨形成鲜明对比"]}
+      ],
+      "metrics": [
+        {"name": "Alphabet Q3营收", "value": "$127.58B(+25%)"},
+        {"name": "Alphabet调整后EPS", "value": "$2.67"},
+        {"name": "Alphabet自由现金流", "value": "-$9.07B"},
+        {"name": "搜索广告收入", "value": "$63.4B, 同比+12%(上季17%)"},
+        {"name": "Alphabet当季capex", "value": "$51.4B"},
+        {"name": "Google Cloud收入", "value": "$30.7B, 同比+103%"},
+        {"name": "年收入超10亿美元的产品线", "value": "18条"},
+        {"name": "第一方模型API吞吐", "value": "每分钟近320亿token(同比4倍)"},
+        {"name": "Gemini应用月活", "value": "10亿"},
+        {"name": "2027年capex展望", "value": "超$300B"}
+      ],
+      "why_it_matters": "二级市场开始把AI资本开支从利好词拆成现金流与增长兑现的组合账: 云收入翻倍也未能止住10%的盘后下跌, 搜索基本盘的放缓让市场拒绝为无上限capex买单, 估值的锚从增长故事切向利润兑现。"
+    },
+    {
+      "article_id": "2026-10-28-2",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.97, "evidence": ["微软FY27 Q1营收$92.3B(+19%)"]},
+        {"name": "Azure", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Azure以48%的constant currency增速连续第五季超出自身指引(44-45%)"]},
+        {"name": "Microsoft Cloud", "type": "product", "aliases": ["微软云"], "confidence": 0.9, "evidence": ["微软云整体收入$63.9B(+30%)"]},
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["继Alphabet因花钱太多被砸10%之后"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "微软发布FY27 Q1财报: 营收$92.3B与Azure收入$33.2B均超预期",
+          "summary": "微软FY27 Q1营收$92.3B(+19%), Azure收入$33.2B(+48%), 均超预期, 商业剩余履约义务RPO达$677B(+73%)。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Azure", "type": "product", "role": "object"}
+          ],
+          "evidence": ["微软FY27 Q1营收$92.3B(+19%)、Azure收入$33.2B(+48%, 首次以美元披露)均超预期"]
+        },
+        {
+          "type": "trend",
+          "label": "Azure以48%增速连续第五季超出自身指引, 首次以美元披露收入",
+          "summary": "Azure以48%的constant currency增速连续第五季超出自身指引(44-45%), CFO称需求仍超过供给, 下季指引49-50%。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Azure", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Azure以48%的constant currency增速连续第五季超出自身指引(44-45%)", "这是微软首次在财报中以美元披露Azure收入($33.2B, 去年同期$22.4B)"]
+        },
+        {
+          "type": "trend",
+          "label": "微软含融资租赁的capex $45.2B低于共识与自身指引, 盘后上涨约4%",
+          "summary": "含融资租赁的capex为$45.2B, 低于StreetAccount共识$50.67B也低于公司自身的7月展望, 投资者因花钱比担心的少而推高股价。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Azure", "type": "product", "role": "object"}
+          ],
+          "evidence": ["含融资租赁的capex为$45.2B(纯资本支出现金口径$39.4B, 同比翻倍), 低于StreetAccount共识$50.67B", "盘后上涨约4%"]
+        },
+        {
+          "type": "trend",
+          "label": "市场对微软与Alphabet的AI资本开支给出方向相反的价格",
+          "summary": "继Alphabet因花钱太多被砸10%之后, 微软因花钱比担心的少而上涨约4%, 这是同一周里市场给AI资本开支的第二个方向相反的价格。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "object"},
+            {"name": "Alphabet", "type": "company", "role": "object"}
+          ],
+          "evidence": ["继Alphabet因花钱太多被砸10%之后, 这是同一周里市场给AI资本开支的第二个、方向相反的价格"]
+        }
+      ],
+      "relations": [
+        {"source": "Azure", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["Azure以48%的constant currency增速连续第五季超出自身指引(44-45%)"]},
+        {"source": "Microsoft Cloud", "target": "Microsoft", "type": "developed_by", "weight": 0.7, "evidence": ["微软云整体收入$63.9B(+30%)"]},
+        {"source": "Microsoft", "target": "Azure", "type": "invests_in", "weight": 0.5, "evidence": ["含融资租赁的capex为$45.2B(纯资本支出现金口径$39.4B, 同比翻倍)"]},
+        {"source": "Microsoft", "target": "Alphabet", "type": "compared_with", "weight": 0.6, "evidence": ["继Alphabet因花钱太多被砸10%之后, 这是同一周里市场给AI资本开支的第二个、方向相反的价格"]}
+      ],
+      "metrics": [
+        {"name": "微软FY27 Q1营收", "value": "$92.3B(+19%)"},
+        {"name": "Azure收入(首次以美元披露)", "value": "$33.2B, 同比+48%(去年同期$22.4B)"},
+        {"name": "微软含融资租赁capex", "value": "$45.2B(现金口径$39.4B, 同比翻倍)"},
+        {"name": "StreetAccount capex共识", "value": "$50.67B"},
+        {"name": "Azure下季增速指引", "value": "49-50%(本季指引44-45%)"},
+        {"name": "商业剩余履约义务RPO", "value": "$677B(+73%)"},
+        {"name": "微软云整体收入", "value": "$63.9B(+30%)"},
+        {"name": "日历2026年capex指引", "value": "约$175B"},
+        {"name": "微软自由现金流", "value": "$18.6B, 同比降27%"},
+        {"name": "微软盘后涨幅", "value": "约4%"}
+      ],
+      "why_it_matters": "与Alphabet同周相反的股价走势证明市场惩罚的不是花钱本身而是花钱看不到回报——Azure连续第五季超出自身指引让微软的capex获得需求兑现背书, AI资本开支开始按ROI分别定价。"
+    },
+    {
+      "article_id": "2026-10-28-3",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI计划购买Google的AI芯片(TPU)"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.97, "evidence": ["OpenAI计划购买Google的AI芯片(TPU)"]},
+        {"name": "Google Cloud", "type": "product", "aliases": ["GCP"], "confidence": 0.93, "evidence": ["2026年6月起也开始在Google Cloud租用TPU作为补充算力"]},
+        {"name": "TPU", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI计划购买Google的AI芯片(TPU)"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.97, "evidence": ["OpenAI近年已从NVIDIA采购大量GPU, 是其最大客户之一"]},
+        {"name": "Broadcom", "type": "company", "aliases": ["博通"], "confidence": 0.9, "evidence": ["OpenAI仍在与Broadcom推进自研芯片的量产部署"]},
+        {"name": "Oracle", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Oracle AI World宣布OCI将在2027年引入Google TPU"]},
+        {"name": "OCI", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Oracle AI World宣布OCI将在2027年引入Google TPU"]},
+        {"name": "Trainium", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["此前Trainium、Cerebras等替代加速器的持续扩张"]},
+        {"name": "Cerebras", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["此前Trainium、Cerebras等替代加速器的持续扩张"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "OpenAI据报计划从租用转向直接采购Google TPU, 首次采购竞争对手加速器",
+          "summary": "据知情人士报道, OpenAI计划购买Google的AI芯片(TPU), 具体金额与条款未披露, 这是其在GCP租用TPU之后首次直接采购竞争对手的加速器。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "partner"},
+            {"name": "TPU", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["OpenAI计划购买Google的AI芯片(TPU), 具体金额与条款未披露", "从\"租\"到\"买\", 直接采购Google从今年起对外销售的TPU"]
+        },
+        {
+          "type": "infra",
+          "label": "OpenAI与Broadcom推进自研芯片量产部署, 目标今年底落地",
+          "summary": "OpenAI仍在与Broadcom推进自研芯片的量产部署, 目标今年底落地, 自研+多供应商的算力组合拳已经成型。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Broadcom", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["OpenAI仍在与Broadcom推进自研芯片的量产部署, 目标今年底落地"]
+        },
+        {
+          "type": "trend",
+          "label": "Oracle AI World宣布OCI将在2027年引入Google TPU",
+          "summary": "同周, Oracle AI World宣布OCI将在2027年引入Google TPU, 云厂商与大型AI公司几乎都在把TPU-class芯片加入采购清单。",
+          "participants": [
+            {"name": "Oracle", "type": "company", "role": "subject"},
+            {"name": "OCI", "type": "product", "role": "object"},
+            {"name": "Google", "type": "company", "role": "partner"},
+            {"name": "TPU", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["Oracle AI World宣布OCI将在2027年引入Google TPU"]
+        },
+        {
+          "type": "trend",
+          "label": "NVIDIA最深的客户关系不再排他, 替代加速器持续扩张",
+          "summary": "OpenAI转向Google TPU加上Trainium、Cerebras等替代加速器的持续扩张, NVIDIA主导地位在超大规模客户侧被松动。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "object"}
+          ],
+          "evidence": ["连NVIDIA最深的客户关系也不再是排他性的了"]
+        }
+      ],
+      "relations": [
+        {"source": "TPU", "target": "Google", "type": "developed_by", "weight": 0.9, "evidence": ["直接采购Google从今年起对外销售的TPU"]},
+        {"source": "Google Cloud", "target": "Google", "type": "subsidiary_of", "weight": 0.8, "evidence": ["2026年6月起也开始在Google Cloud租用TPU作为补充算力"]},
+        {"source": "OpenAI", "target": "Broadcom", "type": "partners_with", "weight": 0.7, "evidence": ["OpenAI仍在与Broadcom推进自研芯片的量产部署"]},
+        {"source": "OpenAI", "target": "TPU", "type": "uses", "weight": 0.6, "evidence": ["2026年6月起也开始在Google Cloud租用TPU作为补充算力"]},
+        {"source": "NVIDIA", "target": "OpenAI", "type": "supplies", "weight": 0.8, "evidence": ["OpenAI近年已从NVIDIA采购大量GPU, 是其最大客户之一"]},
+        {"source": "OpenAI", "target": "Google", "type": "competes_with", "weight": 0.5, "evidence": ["首次直接采购竞争对手的加速器"]},
+        {"source": "OCI", "target": "TPU", "type": "uses", "weight": 0.6, "evidence": ["Oracle AI World宣布OCI将在2027年引入Google TPU"]},
+        {"source": "OCI", "target": "Oracle", "type": "developed_by", "weight": 0.7, "evidence": ["Oracle AI World宣布OCI将在2027年引入Google TPU"]},
+        {"source": "Trainium", "target": "NVIDIA", "type": "competes_with", "weight": 0.5, "evidence": ["此前Trainium、Cerebras等替代加速器的持续扩张"]},
+        {"source": "Cerebras", "target": "NVIDIA", "type": "competes_with", "weight": 0.5, "evidence": ["此前Trainium、Cerebras等替代加速器的持续扩张"]}
+      ],
+      "metrics": [
+        {"name": "OCI引入Google TPU时间", "value": "2027年"},
+        {"name": "OpenAI自研芯片目标落地时间", "value": "今年底"},
+        {"name": "OpenAI开始租用Google Cloud TPU时间", "value": "2026年6月起"}
+      ],
+      "why_it_matters": "NVIDIA最深的客户关系开始松动: OpenAI从租用转向直接采购Google TPU, 叠加OCI 2027年引入TPU与Trainium、Cerebras扩张, 超大规模客户侧的算力多元化从边缘动向升级为头部共识, 单芯片供货商地位不再是排他性的。"
+    },
+    {
+      "article_id": "2026-10-28-4",
+      "entities": [
+        {"name": "SK hynix", "type": "company", "aliases": ["SK海力士"], "confidence": 0.97, "evidence": ["SK海力士发布Q3业绩: 收入104.6万亿韩元(约$78.6B, 同比+328%)首次单季破100万亿"]},
+        {"name": "DRAM", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["DRAM均价环比上涨约27%"]},
+        {"name": "HBM4", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["HBM4本季度开始规模出货"]},
+        {"name": "HBM3E", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["预计Q4在出货量与收入上双双超过HBM3E"]},
+        {"name": "M15X", "type": "hardware", "aliases": ["M15X工厂"], "confidence": 0.8, "evidence": ["M15X工厂年底满产"]},
+        {"name": "Alibaba", "type": "company", "aliases": ["阿里巴巴", "阿里"], "confidence": 0.9, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协"]},
+        {"name": "Tencent", "type": "company", "aliases": ["腾讯"], "confidence": 0.9, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协"]},
+        {"name": "ByteDance", "type": "company", "aliases": ["字节跳动"], "confidence": 0.9, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协"]},
+        {"name": "Samsung", "type": "company", "aliases": ["三星"], "confidence": 0.9, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "SK hynix发布Q3业绩, 单季收入首破100万亿韩元",
+          "summary": "SK海力士收入104.6万亿韩元(约$78.6B, 同比+328%)首次单季破100万亿, 营业利润83.3万亿韩元(同比+632%, 利润率80%)。",
+          "participants": [
+            {"name": "SK hynix", "type": "company", "role": "subject"},
+            {"name": "DRAM", "type": "hardware", "role": "object"},
+            {"name": "HBM4", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["SK海力士发布Q3业绩: 收入104.6万亿韩元(约$78.6B, 同比+328%)首次单季破100万亿", "营业利润83.3万亿韩元(同比+632%, 利润率80%)"]
+        },
+        {
+          "type": "infra",
+          "label": "HBM4开始规模出货, 预计Q4在出货量与收入上双双超过HBM3E",
+          "summary": "HBM4本季度开始规模出货, 预计Q4在出货量与收入上双双超过HBM3E, M15X工厂年底满产。",
+          "participants": [
+            {"name": "SK hynix", "type": "company", "role": "subject"},
+            {"name": "HBM4", "type": "hardware", "role": "object"},
+            {"name": "HBM3E", "type": "hardware", "role": "object"},
+            {"name": "M15X", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["HBM4本季度开始规模出货, 预计Q4在出货量与收入上双双超过HBM3E", "M15X工厂年底满产"]
+        },
+        {
+          "type": "trend",
+          "label": "SK hynix与14家客户签订长期协议, 预计存储供需失衡持续到2030年",
+          "summary": "公司与14家客户签订长期协议, 覆盖2027-28年产能的50%以上, 管理层称到2029年的DRAM与HBM基本售罄, 短缺将持续到2030年左右。",
+          "participants": [
+            {"name": "SK hynix", "type": "company", "role": "subject"},
+            {"name": "DRAM", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["公司与14家客户(上季为10家)签订长期协议, 覆盖2027-28年产能的50%以上", "短缺将持续到2030年左右"]
+        },
+        {
+          "type": "trend",
+          "label": "阿里、腾讯、字节跳动据悉正与三星、SK hynix商谈服务器内存长协",
+          "summary": "韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协, 部分希望签到2035年。",
+          "participants": [
+            {"name": "Alibaba", "type": "company", "role": "subject"},
+            {"name": "Tencent", "type": "company", "role": "subject"},
+            {"name": "ByteDance", "type": "company", "role": "subject"},
+            {"name": "Samsung", "type": "company", "role": "partner"},
+            {"name": "SK hynix", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协, 部分希望签到2035年"]
+        }
+      ],
+      "relations": [
+        {"source": "HBM4", "target": "SK hynix", "type": "developed_by", "weight": 0.8, "evidence": ["HBM4本季度开始规模出货"]},
+        {"source": "DRAM", "target": "SK hynix", "type": "developed_by", "weight": 0.7, "evidence": ["DRAM均价环比上涨约27%"]},
+        {"source": "HBM3E", "target": "SK hynix", "type": "developed_by", "weight": 0.6, "evidence": ["预计Q4在出货量与收入上双双超过HBM3E"]},
+        {"source": "HBM4", "target": "HBM3E", "type": "outperforms", "weight": 0.7, "evidence": ["预计Q4在出货量与收入上双双超过HBM3E"]},
+        {"source": "Alibaba", "target": "Samsung", "type": "negotiates_with", "weight": 0.6, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协, 部分希望签到2035年"]},
+        {"source": "Alibaba", "target": "SK hynix", "type": "negotiates_with", "weight": 0.6, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协, 部分希望签到2035年"]},
+        {"source": "Tencent", "target": "Samsung", "type": "negotiates_with", "weight": 0.6, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协, 部分希望签到2035年"]},
+        {"source": "Tencent", "target": "SK hynix", "type": "negotiates_with", "weight": 0.6, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协, 部分希望签到2035年"]},
+        {"source": "ByteDance", "target": "Samsung", "type": "negotiates_with", "weight": 0.6, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协, 部分希望签到2035年"]},
+        {"source": "ByteDance", "target": "SK hynix", "type": "negotiates_with", "weight": 0.6, "evidence": ["韩媒报道阿里、腾讯、字节跳动正与三星、SK海力士商谈服务器内存长协, 部分希望签到2035年"]}
+      ],
+      "metrics": [
+        {"name": "SK hynix Q3收入", "value": "104.6万亿韩元(约$78.6B, 同比+328%)"},
+        {"name": "SK hynix Q3营业利润", "value": "83.3万亿韩元(同比+632%, 利润率80%)"},
+        {"name": "DRAM均价环比涨幅", "value": "约27%"},
+        {"name": "服务器DDR5出货环比涨幅", "value": "40%以上"},
+        {"name": "长协客户数", "value": "14家(上季为10家)"},
+        {"name": "长协覆盖产能", "value": "2027-28年产能的50%以上"},
+        {"name": "净现金", "value": "98.7万亿韩元"},
+        {"name": "超大规模云厂商云收入同比涨幅", "value": "30-80%"},
+        {"name": "云订单积压扩大倍数", "value": "2-5倍"},
+        {"name": "存储短缺展望", "value": "持续到2030年左右"},
+        {"name": "长协商谈期限", "value": "部分希望签到2035年"}
+      ],
+      "why_it_matters": "存储短缺被SK hynix量化为2029年前DRAM与HBM基本售罄——供给约束成为AI硬件牛市持续性的核心变量, 而阿里、腾讯、字节跳动签长协至2035年的动向说明内存厂商正在从周期股转向'算力税'角色。"
+    },
+    {
+      "article_id": "2026-10-28-5",
+      "entities": [
+        {"name": "CISA", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["CISA把PHP两个CVSS 9.2的漏洞(CVE-2026-109618/109619, 合称PHP2Shell)加入\"已知被利用漏洞\"目录"]},
+        {"name": "PHP", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["影响近十年几乎所有PHP版本(可回溯至5.4)"]},
+        {"name": "PHP2Shell", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["CISA把PHP两个CVSS 9.2的漏洞(CVE-2026-109618/109619, 合称PHP2Shell)加入\"已知被利用漏洞\"目录"]},
+        {"name": "Wiz", "type": "company", "aliases": ["Wiz Research"], "confidence": 0.9, "evidence": ["Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞"]},
+        {"name": "Wiz Atlas", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": [], "confidence": 0.93, "evidence": ["Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞"]},
+        {"name": "GPT-5.6 Sol", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞"]},
+        {"name": "Delft", "type": "organization", "aliases": ["Delft威胁情报实验室"], "confidence": 0.85, "evidence": ["Delft威胁情报实验室的蜜罐数据显示10月21-28日累计72,644次利用请求"]},
+        {"name": "Perplexity", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Perplexity的Adel Karimi于10月24日在蜜罐上确认了完整RCE链"]},
+        {"name": "Adel Karimi", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Perplexity的Adel Karimi于10月24日在蜜罐上确认了完整RCE链"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "CISA把PHP2Shell列入已知被利用漏洞目录并确认在野攻击",
+          "summary": "CISA把PHP两个CVSS 9.2的漏洞(CVE-2026-109618/109619, 合称PHP2Shell)加入已知被利用漏洞目录, 确认在野攻击。",
+          "participants": [
+            {"name": "CISA", "type": "organization", "role": "subject"},
+            {"name": "PHP2Shell", "type": "topic", "role": "object"},
+            {"name": "PHP", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["CISA把PHP两个CVSS 9.2的漏洞(CVE-2026-109618/109619, 合称PHP2Shell)加入\"已知被利用漏洞\"目录, 确认在野攻击"]
+        },
+        {
+          "type": "policy",
+          "label": "CISA要求联邦机构10月29日前完成PHP2Shell修补",
+          "summary": "CISA要求联邦机构10月29日前完成修补, 而10月21日PHP已发布8.5.12/8.4.27/8.3.36/8.2.35修复版本。",
+          "participants": [
+            {"name": "CISA", "type": "organization", "role": "subject"},
+            {"name": "PHP", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["CISA要求联邦机构10月29日前完成修补"]
+        },
+        {
+          "type": "security",
+          "label": "PHP发布8.5.12/8.4.27/8.3.36/8.2.35四个版本修复PHP2Shell",
+          "summary": "10月21日PHP发布8.5.12/8.4.27/8.3.36/8.2.35修复, 漏洞影响近十年几乎所有PHP版本(可回溯至5.4)。",
+          "participants": [
+            {"name": "PHP", "type": "tool", "role": "subject"},
+            {"name": "PHP2Shell", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["10月21日PHP发布8.5.12/8.4.27/8.3.36/8.2.35修复", "影响近十年几乎所有PHP版本(可回溯至5.4)"]
+        },
+        {
+          "type": "security",
+          "label": "Delft威胁情报实验室蜜罐观测到72,644次PHP2Shell利用请求",
+          "summary": "蜜罐数据显示10月21-28日累计72,644次利用请求、664个源IP、73个国家, 上周六单小时峰值8,179次。",
+          "participants": [
+            {"name": "Delft", "type": "organization", "role": "subject"},
+            {"name": "PHP", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Delft威胁情报实验室的蜜罐数据显示10月21-28日累计72,644次利用请求、664个源IP、73个国家"]
+        },
+        {
+          "type": "research",
+          "label": "Perplexity的Adel Karimi在蜜罐上确认了完整RCE链",
+          "summary": "Adel Karimi于10月24日在蜜罐上确认了完整RCE链(含可用的内存泄露), 但他强调该链依赖单worker mod_php的有利配置。",
+          "participants": [
+            {"name": "Adel Karimi", "type": "person", "role": "subject"},
+            {"name": "PHP", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Perplexity的Adel Karimi于10月24日在蜜罐上确认了完整RCE链(含可用的内存泄露)"]
+        },
+        {
+          "type": "research",
+          "label": "Wiz Research用Wiz Atlas与前沿模型发现并组合出PHP2Shell两个漏洞",
+          "summary": "Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞, 前沿模型把埋藏十余年的内存安全缺陷变成了可用exploit。",
+          "participants": [
+            {"name": "Wiz", "type": "company", "role": "subject"},
+            {"name": "Wiz Atlas", "type": "tool", "role": "object"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"},
+            {"name": "GPT-5.6 Sol", "type": "model", "role": "object"},
+            {"name": "PHP", "type": "tool", "role": "object"},
+            {"name": "PHP2Shell", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞"]
+        }
+      ],
+      "relations": [
+        {"source": "CISA", "target": "PHP2Shell", "type": "tracks", "weight": 0.7, "evidence": ["CISA把PHP两个CVSS 9.2的漏洞(CVE-2026-109618/109619, 合称PHP2Shell)加入\"已知被利用漏洞\"目录"]},
+        {"source": "PHP2Shell", "target": "PHP", "type": "targets", "weight": 0.7, "evidence": ["影响近十年几乎所有PHP版本(可回溯至5.4)"]},
+        {"source": "Wiz", "target": "Gemini 4 Argon", "type": "uses", "weight": 0.6, "evidence": ["Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞"]},
+        {"source": "Wiz", "target": "Wiz Atlas", "type": "uses", "weight": 0.6, "evidence": ["Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞"]},
+        {"source": "Wiz", "target": "GPT-5.6 Sol", "type": "uses", "weight": 0.6, "evidence": ["Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞"]},
+        {"source": "Adel Karimi", "target": "Perplexity", "type": "affiliated_with", "weight": 0.8, "evidence": ["Perplexity的Adel Karimi于10月24日在蜜罐上确认了完整RCE链"]},
+        {"source": "Wiz", "target": "PHP2Shell", "type": "discovers", "weight": 0.8, "evidence": ["Wiz Research在8月19日用Wiz Atlas、Gemini 4 Argon与GPT-5.6 Sol发现并组合出两个漏洞"]}
+      ],
+      "metrics": [
+        {"name": "PHP2Shell漏洞CVSS评分", "value": "9.2"},
+        {"name": "一周累计利用请求", "value": "72,644次(10月21-28日)"},
+        {"name": "攻击源IP数", "value": "664个"},
+        {"name": "攻击来源国家数", "value": "73个"},
+        {"name": "上周六单小时利用峰值", "value": "8,179次"},
+        {"name": "修复版本", "value": "8.5.12/8.4.27/8.3.36/8.2.35(10月21日)"},
+        {"name": "联邦机构修补截止", "value": "10月29日"},
+        {"name": "漏洞发现时间", "value": "8月19日(Wiz Research)"}
+      ],
+      "why_it_matters": "Wiz用前沿模型组合出埋藏十余年的PHP内存漏洞并在披露一周内被大范围利用, 证明'AI挖洞-修复-验证'闭环已把漏洞披露的攻防节奏整体加速——修补窗口从月级被压缩到周级, 在野利用的观测密度成为新的决策变量。"
+    },
+    {
+      "article_id": "2026-10-28-6",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind"], "confidence": 0.97, "evidence": ["Google DeepMind发布Genie 4世界模型研究预览"]},
+        {"name": "Genie 4", "type": "model", "aliases": ["Genie 3后继"], "confidence": 0.95, "evidence": ["Google DeepMind发布Genie 4世界模型研究预览"]},
+        {"name": "Gemini Omni", "type": "model", "aliases": [], "confidence": 0.93, "evidence": ["由Gemini Omni锚定真实感"]},
+        {"name": "Gemini 3.8 Flash", "type": "model", "aliases": [], "confidence": 0.93, "evidence": ["Gemini 3.8 Flash担任\"导演\""]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": [], "confidence": 0.93, "evidence": ["Gemini 4 Argon还负责把Apptronik的Apollo人形机器人下棋任务拆解给Genie 4渲染"]},
+        {"name": "Apptronik", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Apptronik的Apollo人形机器人"]},
+        {"name": "Apollo", "type": "hardware", "aliases": ["Apollo人形机器人"], "confidence": 0.85, "evidence": ["Apptronik的Apollo人形机器人"]},
+        {"name": "SAP", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["两天前SAP发布Physical AI平台"]},
+        {"name": "SAP Physical AI", "type": "product", "aliases": ["Physical AI平台"], "confidence": 0.85, "evidence": ["两天前SAP发布Physical AI平台"]},
+        {"name": "Gemini API", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["与Gemini API/AI Studio的早期伙伴"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google DeepMind发布首个原生音频的实时交互式模拟器Genie 4",
+          "summary": "Google DeepMind发布Genie 4世界模型研究预览: 首个原生音频的实时交互式模拟器, 可用自然语言实时改天气、移镜头、加角色。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Genie 4", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google DeepMind发布Genie 4世界模型研究预览: 首个原生音频的实时交互式模拟器"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Genie 4的实时交互场景一致性约两分钟, 为Genie 3的两倍",
+          "summary": "场景一致性约两分钟(Genie 3的两倍), 物理模拟与人物动作真实感提升, 但细节会随时间退化。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Genie 4", "type": "model", "role": "object"}
+          ],
+          "evidence": ["场景一致性约两分钟(Genie 3的两倍)"]
+        },
+        {
+          "type": "research",
+          "label": "Gemini家族承担Genie 4的认知与控制: Omni锚定真实感, 3.8 Flash担任导演",
+          "summary": "架构上是混合世界模型: Gemini Omni把世界锚定在真实外观与行为上, Gemini 3.8 Flash把目标拆成步骤并逐帧检查。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Genie 4", "type": "model", "role": "object"},
+            {"name": "Gemini Omni", "type": "model", "role": "object"},
+            {"name": "Gemini 3.8 Flash", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Omni把世界锚定在真实外观与行为上, 3.8 Flash把目标拆成步骤并逐帧检查"]
+        },
+        {
+          "type": "research",
+          "label": "演示中Gemini 4 Argon把Apptronik的Apollo人形机器人下棋任务拆解给Genie 4渲染",
+          "summary": "在一项演示中, Gemini 4 Argon把Apptronik的Apollo人形机器人下棋任务拆解给Genie 4渲染。",
+          "participants": [
+            {"name": "Gemini 4 Argon", "type": "model", "role": "subject"},
+            {"name": "Apptronik", "type": "company", "role": "partner"},
+            {"name": "Apollo", "type": "hardware", "role": "object"},
+            {"name": "Genie 4", "type": "model", "role": "object"}
+          ],
+          "evidence": ["在一项演示中, Gemini 4 Argon还负责把Apptronik的Apollo人形机器人下棋任务拆解给Genie 4渲染"]
+        },
+        {
+          "type": "launch",
+          "label": "SAP两天前发布Physical AI平台, 与Genie 4同向押注世界模拟路线",
+          "summary": "两天前SAP发布Physical AI平台, 世界模拟+实体agent正在成为各大厂跑通物理AI验证闭环的共同路线。",
+          "participants": [
+            {"name": "SAP", "type": "company", "role": "subject"},
+            {"name": "SAP Physical AI", "type": "product", "role": "object"}
+          ],
+          "evidence": ["两天前SAP发布Physical AI平台"]
+        }
+      ],
+      "relations": [
+        {"source": "Genie 4", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["Google DeepMind发布Genie 4世界模型研究预览"]},
+        {"source": "Genie 4", "target": "Gemini Omni", "type": "built_on", "weight": 0.8, "evidence": ["Omni把世界锚定在真实外观与行为上"]},
+        {"source": "Genie 4", "target": "Gemini 3.8 Flash", "type": "built_on", "weight": 0.8, "evidence": ["3.8 Flash把目标拆成步骤并逐帧检查"]},
+        {"source": "Gemini 4 Argon", "target": "Genie 4", "type": "uses", "weight": 0.6, "evidence": ["Gemini 4 Argon还负责把Apptronik的Apollo人形机器人下棋任务拆解给Genie 4渲染"]},
+        {"source": "Apollo", "target": "Apptronik", "type": "developed_by", "weight": 0.8, "evidence": ["Apptronik的Apollo人形机器人"]},
+        {"source": "SAP Physical AI", "target": "SAP", "type": "developed_by", "weight": 0.8, "evidence": ["两天前SAP发布Physical AI平台"]},
+        {"source": "Genie 4", "target": "Gemini API", "type": "available_via", "weight": 0.5, "evidence": ["之后扩展到Project Genie的Google AI Ultra订阅者(订阅从$100/月起)与Gemini API/AI Studio的早期伙伴"]}
+      ],
+      "metrics": [
+        {"name": "Genie 4场景一致性时长", "value": "约两分钟"},
+        {"name": "相对Genie 3的一致性提升", "value": "两倍"},
+        {"name": "Google AI Ultra订阅价", "value": "从$100/月起"}
+      ],
+      "why_it_matters": "世界模型从生成一段视频走向逐帧实时可交互模拟, DeepMind把Gemini家族作为认知与控制层嵌入Genie 4——与SAP Physical AI同周出现说明'世界模拟+实体agent'正在成为各厂跑通物理AI验证闭环的共同路线, 模拟器成为机器人训练的前置环节。"
+    },
+    {
+      "article_id": "2026-10-28-7",
+      "entities": [
+        {"name": "Counting the Bandages", "type": "paper", "aliases": [], "confidence": 0.93, "evidence": ["论文《Counting the Bandages》质疑\"AI节省时间\"的测量方式"]},
+        {"name": "METR", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["用METR公开数据复现其开发者研究"]},
+        {"name": "GDPval", "type": "benchmark", "aliases": [], "confidence": 0.8, "evidence": ["并用GDPval逐条评审工作流的数据说明"]},
+        {"name": "GPT-5", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["仅评审时间一项就把GPT-5的提速封顶在3.6倍"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文《Counting the Bandages》用METR公开数据复现其开发者研究, 质疑AI节省时间的测量方式",
+          "summary": "论文用METR公开数据复现其开发者研究, 主张把时间账与放行的缺陷一起计, 而不是只数秒表上省下的时间。",
+          "participants": [
+            {"name": "Counting the Bandages", "type": "paper", "role": "subject"},
+            {"name": "METR", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["用METR公开数据复现其开发者研究"]
+        },
+        {
+          "type": "benchmark",
+          "label": "复现显示同一批246个issue因估计量不同呈现慢19%或慢24%",
+          "summary": "同一批246个issue因估计量不同呈现慢19%或慢24%(未校正34%), AI实际有助的问题占比在3%-82%之间无法确定。",
+          "participants": [
+            {"name": "Counting the Bandages", "type": "paper", "role": "subject"},
+            {"name": "METR", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["同一批246个issue因估计量不同呈现慢19%或慢24%(未校正34%)"]
+        },
+        {
+          "type": "benchmark",
+          "label": "GDPval数据与自设实验证明AI提速被系统性高估",
+          "summary": "仅评审时间一项就把GPT-5的提速封顶在3.6倍; 实验中轻信错误率陈述使评审员放行错误数字的比例从0%升到22.5%。",
+          "participants": [
+            {"name": "Counting the Bandages", "type": "paper", "role": "subject"},
+            {"name": "GDPval", "type": "benchmark", "role": "benchmark"},
+            {"name": "GPT-5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["仅评审时间一项就把GPT-5的提速封顶在3.6倍", "放行错误数字的比例从0%升到22.5%"]
+        }
+      ],
+      "relations": [
+        {"source": "Counting the Bandages", "target": "GDPval", "type": "uses", "weight": 0.6, "evidence": ["并用GDPval逐条评审工作流的数据说明"]},
+        {"source": "GPT-5", "target": "GDPval", "type": "evaluated_on", "weight": 0.7, "evidence": ["仅评审时间一项就把GPT-5的提速封顶在3.6倍"]}
+      ],
+      "metrics": [
+        {"name": "复现所用issue数", "value": "246个"},
+        {"name": "复现估计结果", "value": "慢19%或慢24%(未校正34%)"},
+        {"name": "AI实际有助的问题占比区间", "value": "3%-82%, 无法确定"},
+        {"name": "GPT-5提速封顶", "value": "3.6倍(仅评审时间一项)"},
+        {"name": "错误率陈述低估倍数", "value": "10倍"},
+        {"name": "评审员漏查图表数", "value": "9个图表少查了7个"},
+        {"name": "放行错误数字比例", "value": "从0%升到22.5%"},
+        {"name": "被质疑的单点报数", "value": "提速55%"}
+      ],
+      "why_it_matters": "对'AI提速55%'这类单点报数的归因拆解显示, 时间节省的测量依赖大量选择性假设——同一数据在不同估计量下可以得出相反结论, AI生产力叙事必须把质量账与不确定区间同表呈现, 否则'更快但更糟'会被系统性隐藏。"
+    },
+    {
+      "article_id": "2026-10-28-8",
+      "entities": [
+        {"name": "The Trinity", "type": "paper", "aliases": ["arXiv:2610.36077"], "confidence": 0.93, "evidence": ["论文提出The Trinity递归自改进框架(arXiv:2610.36077)"]},
+        {"name": "Creator", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["Creator/Explorer/Evolver三角色把多模态任务按底层能力需求组织成能力树"]},
+        {"name": "Explorer", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["Creator/Explorer/Evolver三角色把多模态任务按底层能力需求组织成能力树"]},
+        {"name": "Evolver", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["Creator/Explorer/Evolver三角色把多模态任务按底层能力需求组织成能力树"]},
+        {"name": "Real2Sim2Real", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["用capability-driven Real2Sim2Real在可验证模拟世界中习得能力"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["这与本周Gemini Carbon强调长时程agentic工作"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出The Trinity递归自改进框架, 由Creator/Explorer/Evolver三角色驱动",
+          "summary": "The Trinity用Creator/Explorer/Evolver三角色把多模态任务按底层能力需求组织成能力树, 实现递归自改进。",
+          "participants": [
+            {"name": "The Trinity", "type": "paper", "role": "subject"},
+            {"name": "Creator", "type": "tool", "role": "object"},
+            {"name": "Explorer", "type": "tool", "role": "object"},
+            {"name": "Evolver", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["论文提出The Trinity递归自改进框架(arXiv:2610.36077)", "Creator/Explorer/Evolver三角色把多模态任务按底层能力需求组织成能力树"]
+        },
+        {
+          "type": "research",
+          "label": "The Trinity用capability-driven Real2Sim2Real在模拟世界中习得能力并验证迁移",
+          "summary": "框架用capability-driven Real2Sim2Real在可验证模拟世界中习得能力、在真实任务上验证迁移, 评估仍在原任务上进行。",
+          "participants": [
+            {"name": "The Trinity", "type": "paper", "role": "subject"},
+            {"name": "Real2Sim2Real", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["用capability-driven Real2Sim2Real在可验证模拟世界中习得能力、在真实任务上验证迁移"]
+        },
+        {
+          "type": "benchmark",
+          "label": "The Trinity演化出的harness在28个训练基准平均+34分、18个未见基准+26分",
+          "summary": "结果包含两个真实世界具身任务, 平均在28个训练基准上提升34分、18个未见基准提升26分, 不靠扩大模型参数。",
+          "participants": [
+            {"name": "The Trinity", "type": "paper", "role": "subject"},
+            {"name": "Evolver", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["平均在28个训练基准上提升34分、18个未见基准提升26分"]
+        },
+        {
+          "type": "trend",
+          "label": "The Trinity的能力组织路线与Gemini Carbon强调长时程agentic工作互相印证",
+          "summary": "模型外层的调度与工具系统成为新的竞赛场, harness即上限的设计观与Gemini Carbon的长时程agentic路线一致。",
+          "participants": [
+            {"name": "The Trinity", "type": "paper", "role": "object"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["这与本周Gemini Carbon强调长时程agentic工作、以及各大厂转向\"harness即上限\"的设计观互相印证"]
+        }
+      ],
+      "relations": [
+        {"source": "Creator", "target": "The Trinity", "type": "component_of", "weight": 0.6, "evidence": ["Creator/Explorer/Evolver三角色把多模态任务按底层能力需求组织成能力树"]},
+        {"source": "Explorer", "target": "The Trinity", "type": "component_of", "weight": 0.6, "evidence": ["Creator/Explorer/Evolver三角色把多模态任务按底层能力需求组织成能力树"]},
+        {"source": "Evolver", "target": "The Trinity", "type": "component_of", "weight": 0.6, "evidence": ["Creator/Explorer/Evolver三角色把多模态任务按底层能力需求组织成能力树"]},
+        {"source": "The Trinity", "target": "Real2Sim2Real", "type": "uses", "weight": 0.7, "evidence": ["用capability-driven Real2Sim2Real在可验证模拟世界中习得能力、在真实任务上验证迁移"]}
+      ],
+      "metrics": [
+        {"name": "训练基准平均提升", "value": "+34分(28个训练基准)"},
+        {"name": "未见基准平均提升", "value": "+26分(18个未见基准)"}
+      ],
+      "why_it_matters": "不靠扩大模型参数、靠能力树组织与继承复用提升多模态agent能力, 说明模型外层的调度与harness系统正在成为新的竞赛场——'harness即上限'的设计观与Gemini Carbon的长时程agentic方向互相印证, 训练与推理的竞赛焦点正在外移。"
+    },
+    {
+      "article_id": "2026-10-28-9",
+      "entities": [
+        {"name": "Don't Pick a Winner", "type": "paper", "aliases": ["arXiv:2610.36169"], "confidence": 0.93, "evidence": ["论文《Don't Pick a Winner》(arXiv:2610.36169)证明"]},
+        {"name": "GRACE", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在GRACE基准上以45.3分领先最佳baseline最多26分"]},
+        {"name": "ClashEval", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在预注册的ClashEval上领先同骨干的CK-PLUG与TCR约12-26分"]},
+        {"name": "CK-PLUG", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["在预注册的ClashEval上领先同骨干的CK-PLUG与TCR约12-26分"]},
+        {"name": "TCR", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["在预注册的ClashEval上领先同骨干的CK-PLUG与TCR约12-26分"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文《Don't Pick a Winner》证明知识冲突下任何固定规则在某种部署下都必输",
+          "summary": "论文证明检索上下文与模型记忆冲突时, 任何固定规则(信上下文、信记忆、按散度放大)在某种部署下都必输, 正确解法是估计两个来源各自的证据与上下文正确率先验。",
+          "participants": [
+            {"name": "Don't Pick a Winner", "type": "paper", "role": "subject"},
+            {"name": "GRACE", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["任何固定规则(信上下文、信记忆、按散度放大)在某种部署下都必输"]
+        },
+        {
+          "type": "benchmark",
+          "label": "先验驱动的解法在GRACE每档混合比例上都高于最佳baseline, 最多+26分",
+          "summary": "π设为真实值时系统在GRACE的每个混合比例上都高于最佳baseline, 最高+26分; 在预注册的ClashEval上领先CK-PLUG与TCR约12-26分。",
+          "participants": [
+            {"name": "Don't Pick a Winner", "type": "paper", "role": "subject"},
+            {"name": "GRACE", "type": "benchmark", "role": "benchmark"},
+            {"name": "ClashEval", "type": "benchmark", "role": "benchmark"},
+            {"name": "CK-PLUG", "type": "tool", "role": "competitor"},
+            {"name": "TCR", "type": "tool", "role": "competitor"}
+          ],
+          "evidence": ["系统在GRACE的每个混合比例上都高于最佳baseline, 最高+26分", "在预注册的ClashEval上领先同骨干的CK-PLUG与TCR约12-26分"]
+        }
+      ],
+      "relations": [
+        {"source": "Don't Pick a Winner", "target": "GRACE", "type": "evaluated_on", "weight": 0.7, "evidence": ["在GRACE基准上以45.3分领先最佳baseline最多26分"]},
+        {"source": "Don't Pick a Winner", "target": "ClashEval", "type": "evaluated_on", "weight": 0.7, "evidence": ["在预注册的ClashEval上领先同骨干的CK-PLUG与TCR约12-26分"]},
+        {"source": "Don't Pick a Winner", "target": "CK-PLUG", "type": "outperforms", "weight": 0.7, "evidence": ["在预注册的ClashEval上领先同骨干的CK-PLUG与TCR约12-26分"]},
+        {"source": "Don't Pick a Winner", "target": "TCR", "type": "outperforms", "weight": 0.7, "evidence": ["在预注册的ClashEval上领先同骨干的CK-PLUG与TCR约12-26分"]}
+      ],
+      "metrics": [
+        {"name": "GRACE得分", "value": "45.3分"},
+        {"name": "GRACE上领先最佳baseline", "value": "最多26分(每个混合比例)"},
+        {"name": "ClashEval上领先CK-PLUG与TCR", "value": "约12-26分"}
+      ],
+      "why_it_matters": "RAG冲突处理从'该信谁'的规则之争转向贝叶斯先验建模——固定规则在理论层面被证明必有输家, '上下文可信度'成为可配置的工程参数, 这直接推翻检索增强最常用的对称散度直觉, 给RAG可靠性提供了新的设计依据。"
+    },
+    {
+      "article_id": "2026-10-28-10",
+      "entities": [
+        {"name": "CCORE", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["CCORE发布Qwen3.5-4B-3D-Coder"]},
+        {"name": "Qwen3.5-4B-3D-Coder", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["CCORE发布Qwen3.5-4B-3D-Coder"]},
+        {"name": "Qwen3.5-4B", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["基于Qwen3.5-4B的独立微调"]},
+        {"name": "Three.js", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["面向通用代码与高质量Three.js交互3D场景生成"]},
+        {"name": "d3-ultra", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["决策式、专用型小模型(如d3-ultra)"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "CCORE开源Qwen3.5-4B-3D-Coder及MIT许可的训练集",
+          "summary": "CCORE发布Qwen3.5-4B-3D-Coder, 10月28日放出完整FP16权重、GGUF量化版与MIT许可的训练集(4,146个场景)。",
+          "participants": [
+            {"name": "CCORE", "type": "organization", "role": "subject"},
+            {"name": "Qwen3.5-4B-3D-Coder", "type": "model", "role": "object"}
+          ],
+          "evidence": ["CCORE发布Qwen3.5-4B-3D-Coder", "以MIT许可发布"]
+        },
+        {
+          "type": "research",
+          "label": "模型基于Qwen3.5-4B独立微调, 专注Three.js交互3D场景生成",
+          "summary": "模型是小型语言模型做通用编程+3D场景生成的可行性实验, 从提示词直接生成可交互的HTML/JavaScript Three.js场景。",
+          "participants": [
+            {"name": "CCORE", "type": "organization", "role": "subject"},
+            {"name": "Qwen3.5-4B-3D-Coder", "type": "model", "role": "object"},
+            {"name": "Qwen3.5-4B", "type": "model", "role": "object"}
+          ],
+          "evidence": ["基于Qwen3.5-4B的独立微调", "面向通用代码与高质量Three.js交互3D场景生成"]
+        },
+        {
+          "type": "trend",
+          "label": "小模型垂直化成为开源社区对抗闭环生态的主要打法",
+          "summary": "4B规模、开放权重加开放数据集的组合让通用能力被蒸馏进垂直任务, 与决策式小模型(如d3-ultra)方向一致。",
+          "participants": [
+            {"name": "Qwen3.5-4B-3D-Coder", "type": "model", "role": "subject"},
+            {"name": "d3-ultra", "type": "model", "role": "subject"}
+          ],
+          "evidence": ["这与本周开源生态的另一个趋势——决策式、专用型小模型(如d3-ultra)——方向一致", "通用能力被蒸馏进垂直任务, 是开源社区对抗闭环模型生态的主要打法"]
+        }
+      ],
+      "relations": [
+        {"source": "Qwen3.5-4B-3D-Coder", "target": "CCORE", "type": "developed_by", "weight": 0.9, "evidence": ["CCORE发布Qwen3.5-4B-3D-Coder"]},
+        {"source": "Qwen3.5-4B-3D-Coder", "target": "Qwen3.5-4B", "type": "fine_tuned_from", "weight": 0.9, "evidence": ["基于Qwen3.5-4B的独立微调"]},
+        {"source": "Qwen3.5-4B-3D-Coder", "target": "Three.js", "type": "uses", "weight": 0.7, "evidence": ["面向通用代码与高质量Three.js交互3D场景生成"]},
+        {"source": "Qwen3.5-4B-3D-Coder", "target": "CCORE", "type": "released_by", "weight": 0.8, "evidence": ["10月28日放出完整FP16权重"]}
+      ],
+      "metrics": [
+        {"name": "模型参数量", "value": "4B"},
+        {"name": "公开训练集场景数", "value": "4,146个(3,933训练/213验证)"},
+        {"name": "许可证", "value": "MIT"}
+      ],
+      "why_it_matters": "4B参数+MIT训练集的开源组合再次证明垂直小模型路线可行——通用能力被蒸馏进具体场景后, 无需前沿大模型也能产出可用的3D生成结果, 开源社区正靠'蒸馏进垂直任务'这条可复制的打法对抗闭环模型生态。"
+    },
+    {
+      "article_id": "2026-10-28-11",
+      "entities": [
+        {"name": "Cognition", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["AI编程公司Cognition已收到$70B-80B估值的新投资要约"]},
+        {"name": "Devin", "type": "product", "aliases": ["编程agent Devin"], "confidence": 0.9, "evidence": ["以编程agent Devin闻名"]},
+        {"name": "Scott Wu", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["创始人Scott Wu、Steven Hao与Walden Yan"]},
+        {"name": "Steven Hao", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["创始人Scott Wu、Steven Hao与Walden Yan"]},
+        {"name": "Walden Yan", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["创始人Scott Wu、Steven Hao与Walden Yan"]},
+        {"name": "a16z", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"name": "Accel", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"name": "Founders Fund", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"name": "Khosla Ventures", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"name": "Elad Gil", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"name": "Pear VC", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"name": "Citi", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Citi已是其最大企业客户之一——4万名开发者、每周超过10万个agentic编码小时"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["恰逢Anthropic递交S-1"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Cognition已收到$70B-80B估值的新投资要约, 正考虑年底前完成新一轮",
+          "summary": "Business Insider援引知情人士称, Cognition已收到$70B-80B估值的新投资要约, 距其9月以$48B估值完成超$2B的E轮融资仅数周。",
+          "participants": [
+            {"name": "Cognition", "type": "company", "role": "object"},
+            {"name": "Devin", "type": "product", "role": "object"}
+          ],
+          "evidence": ["AI编程公司Cognition已收到$70B-80B估值的新投资要约, 正认真考虑年底前完成新一轮"]
+        },
+        {
+          "type": "funding",
+          "label": "Cognition现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC",
+          "summary": "估值曲线陡峭: 5月D轮$26B, 9月E轮$48B, 如今传出的报价区间已达$70-80B, 四个月内近一倍半的抬升。",
+          "participants": [
+            {"name": "Cognition", "type": "company", "role": "subject"},
+            {"name": "a16z", "type": "company", "role": "funder"},
+            {"name": "Accel", "type": "company", "role": "funder"},
+            {"name": "Founders Fund", "type": "company", "role": "funder"},
+            {"name": "Khosla Ventures", "type": "company", "role": "funder"},
+            {"name": "Elad Gil", "type": "person", "role": "funder"},
+            {"name": "Pear VC", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]
+        },
+        {
+          "type": "trend",
+          "label": "一级市场把编程agent当作新一代基础设施估值, 与Anthropic递交S-1的IPO窗口重叠",
+          "summary": "一级市场越来越像把Devin这类产品当作新一代基础设施而非工具来估值, 恰逢Anthropic递交S-1、AI投资进入IPO窗口。",
+          "participants": [
+            {"name": "Cognition", "type": "company", "role": "object"},
+            {"name": "Devin", "type": "product", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["一级市场越来越像把Devin这类产品当作\"新一代基础设施\"(如云、数据库)而非\"工具\"来估值", "恰逢Anthropic递交S-1、AI投资进入IPO窗口"]
+        }
+      ],
+      "relations": [
+        {"source": "Devin", "target": "Cognition", "type": "developed_by", "weight": 0.85, "evidence": ["以编程agent Devin闻名"]},
+        {"source": "a16z", "target": "Cognition", "type": "invests_in", "weight": 0.6, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"source": "Accel", "target": "Cognition", "type": "invests_in", "weight": 0.6, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"source": "Founders Fund", "target": "Cognition", "type": "invests_in", "weight": 0.6, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"source": "Khosla Ventures", "target": "Cognition", "type": "invests_in", "weight": 0.6, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"source": "Elad Gil", "target": "Cognition", "type": "invests_in", "weight": 0.6, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"source": "Pear VC", "target": "Cognition", "type": "invests_in", "weight": 0.6, "evidence": ["现有投资人包括a16z、Accel、Founders Fund、Khosla Ventures、Elad Gil与Pear VC"]},
+        {"source": "Scott Wu", "target": "Cognition", "type": "affiliated_with", "weight": 0.6, "evidence": ["创始人Scott Wu、Steven Hao与Walden Yan"]},
+        {"source": "Steven Hao", "target": "Cognition", "type": "affiliated_with", "weight": 0.6, "evidence": ["创始人Scott Wu、Steven Hao与Walden Yan"]},
+        {"source": "Walden Yan", "target": "Cognition", "type": "affiliated_with", "weight": 0.6, "evidence": ["创始人Scott Wu、Steven Hao与Walden Yan"]},
+        {"source": "Citi", "target": "Devin", "type": "uses", "weight": 0.5, "evidence": ["Citi已是其最大企业客户之一——4万名开发者、每周超过10万个agentic编码小时"]}
+      ],
+      "metrics": [
+        {"name": "新要约估值区间", "value": "$70B-80B"},
+        {"name": "E轮估值与规模", "value": "$48B、超$2B(9月)"},
+        {"name": "D轮估值", "value": "$26B(5月)"},
+        {"name": "四个月内估值抬升", "value": "近一倍半"},
+        {"name": "年化run-rate收入", "value": "约$9亿(较5月$4.92亿增长83%)"},
+        {"name": "Citi使用Devin的开发者数", "value": "4万名"},
+        {"name": "Citi每周agentic编码小时", "value": "超过10万个"}
+      ],
+      "why_it_matters": "编程agent在四个月内从$48B涨到$70-80B估值, 一级市场把Devin当'新一代基础设施'定价, 恰逢Anthropic递交S-1——私有市场估值仍在快速抬价, 与二级市场对AI资本开支的纪律化正在脱钩, IPO窗口决定这条估值链能否找到新的兑价场所。"
+    },
+    {
+      "article_id": "2026-10-28-12",
+      "entities": [
+        {"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.97, "evidence": ["Apple于10月28日开放Mac Studio顶配预售"]},
+        {"name": "Mac Studio", "type": "product", "aliases": [], "confidence": 0.93, "evidence": ["Apple于10月28日开放Mac Studio顶配预售: M5 Ultra最高可选512GB统一内存"]},
+        {"name": "M5 Ultra", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["M5 Ultra最高可选512GB统一内存"]},
+        {"name": "MLX", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["直接面向本地大模型与MLX推理负载"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Apple开放512GB内存Mac Studio顶配预售, M5 Ultra最高可选512GB统一内存",
+          "summary": "Apple于10月28日开放Mac Studio顶配预售: M5 Ultra最高可选512GB统一内存, 起步价$22,299, 顶配约$29,799, 11月6日发货。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "Mac Studio", "type": "product", "role": "object"},
+            {"name": "M5 Ultra", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["Apple于10月28日开放Mac Studio顶配预售: M5 Ultra最高可选512GB统一内存"]
+        },
+        {
+          "type": "launch",
+          "label": "Mac平台首次支持512GB统一内存, 直接面向本地大模型与MLX推理负载",
+          "summary": "512GB统一内存的上限在Mac平台此前从未出现, 让单机运行此前只能上服务器的模型规模成为可能。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "Mac Studio", "type": "product", "role": "object"},
+            {"name": "MLX", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["这是Mac平台首次支持512GB内存, 直接面向本地大模型与MLX推理负载"]
+        },
+        {
+          "type": "trend",
+          "label": "小模型+大内存本地的组合把部分AI工作负载从数据中心拉回开发者桌面",
+          "summary": "当云推理价格与数据主权问题并存, 本地大内存工作站正成为模型开发、微调与私有推理的现实选项之一。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "Mac Studio", "type": "product", "role": "object"},
+            {"name": "MLX", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["小模型+大内存本地的组合, 正在把部分AI工作负载从数据中心拉回到开发者桌面"]
+        }
+      ],
+      "relations": [
+        {"source": "Mac Studio", "target": "M5 Ultra", "type": "uses", "weight": 0.8, "evidence": ["M5 Ultra最高可选512GB统一内存"]},
+        {"source": "M5 Ultra", "target": "Apple", "type": "developed_by", "weight": 0.8, "evidence": ["Apple于10月28日开放Mac Studio顶配预售: M5 Ultra最高可选512GB统一内存"]},
+        {"source": "Mac Studio", "target": "MLX", "type": "uses", "weight": 0.5, "evidence": ["直接面向本地大模型与MLX推理负载"]},
+        {"source": "Mac Studio", "target": "Apple", "type": "released_by", "weight": 0.7, "evidence": ["Apple于10月28日开放Mac Studio顶配预售"]}
+      ],
+      "metrics": [
+        {"name": "Mac Studio最大统一内存", "value": "512GB"},
+        {"name": "Mac Studio起步价", "value": "$22,299"},
+        {"name": "Mac Studio顶配价格", "value": "约$29,799"},
+        {"name": "发货日期", "value": "11月6日"}
+      ],
+      "why_it_matters": "512GB统一内存把本地推理的上限推到单机运行服务器级模型, '小模型+大内存本地'的组合正在把部分AI工作负载从数据中心拉回开发者桌面——当云推理价格与数据主权问题并存, 端侧工作站成为模型开发、微调与私有推理的现实选项。"
+    },
+    {
+      "article_id": "2026-10-28-13",
+      "entities": [
+        {"name": "审裁法官", "type": "person", "aliases": [], "confidence": 0.8, "evidence": ["一名审裁法官已在至少一封拒信中标记出可能由AI虚构的内容"]},
+        {"name": "英国内政部", "type": "organization", "aliases": ["Home Office"], "confidence": 0.95, "evidence": ["英国内政部的庇护申请面谈AI摘要工具(ACS)上线后"]},
+        {"name": "ACS", "type": "tool", "aliases": ["AI摘要工具"], "confidence": 0.9, "evidence": ["英国内政部的庇护申请面谈AI摘要工具(ACS)上线后"]},
+        {"name": "ICO", "type": "organization", "aliases": ["英国信息专员办公室"], "confidence": 0.9, "evidence": ["英国信息专员办公室(ICO)正调查其透明度问题"]},
+        {"name": "Open Rights Group", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Open Rights Group引述数据敦促停用该工具"]},
+        {"name": "Gartner", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["本周Gartner的供应链裁员调查"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "英国内政部ACS工具正式运行失败率22%, 是试点期失败率的两倍多",
+          "summary": "专家复核203份摘要中45份未通过(22%), 是试点期9%失败率的两倍多; 第一阶段203份中45份未通过, 第二阶段复核的56份中又有30份失败。",
+          "participants": [
+            {"name": "英国内政部", "type": "organization", "role": "subject"},
+            {"name": "ACS", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["专家复核203份摘要中45份未通过(22%), 是试点期9%失败率的两倍多"]
+        },
+        {
+          "type": "policy",
+          "label": "ICO正调查ACS的透明度问题, 申请者不知道AI摘要了自己的面谈",
+          "summary": "英国信息专员办公室正调查其透明度问题——申请者不知道AI摘要了自己的面谈, 也无法对错误内容提出异议。",
+          "participants": [
+            {"name": "ICO", "type": "organization", "role": "regulator"},
+            {"name": "英国内政部", "type": "organization", "role": "object"},
+            {"name": "ACS", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["英国信息专员办公室(ICO)正调查其透明度问题——申请者不知道AI摘要了自己的面谈"]
+        },
+        {
+          "type": "policy",
+          "label": "Open Rights Group引述数据敦促停用ACS工具",
+          "summary": "Open Rights Group指出申请者既未被告知AI参与摘要, 也没有渠道质疑或更正, 其法律意见认为这种做法很可能违法。",
+          "participants": [
+            {"name": "Open Rights Group", "type": "organization", "role": "subject"},
+            {"name": "英国内政部", "type": "organization", "role": "object"},
+            {"name": "ACS", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Open Rights Group引述数据敦促停用该工具"]
+        },
+        {
+          "type": "policy",
+          "label": "审裁法官标记出可能由AI虚构的庇护申请内容, 独立首席监察员考虑把ACS纳入2027年检查计划",
+          "summary": "一名审裁法官已在至少一封拒信中标记出可能由AI虚构的内容; 边境与移民独立首席监察员正考虑把该工具纳入2027年检查计划。",
+          "participants": [
+            {"name": "英国内政部", "type": "organization", "role": "subject"},
+            {"name": "审裁法官", "type": "person", "role": "subject"},
+            {"name": "ACS", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["一名审裁法官已在至少一封拒信中标记出可能由AI虚构的内容", "边境与移民独立首席监察员正考虑把该工具纳入2027年检查计划"]
+        },
+        {
+          "type": "trend",
+          "label": "AI部署速度快于责任、透明与纠错机制的建设速度",
+          "summary": "试点准确不等于规模准确(9%→22%), 与Gartner的供应链裁员调查同属一面: AI收益真实存在, 但责任与纠错机制没跟上部署速度。",
+          "participants": [
+            {"name": "英国内政部", "type": "organization", "role": "subject"},
+            {"name": "Gartner", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["AI在生产效率与行政效率上的收益真实存在, 但责任、透明与纠错机制的建设速度还没有跟上部署速度"]
+        }
+      ],
+      "relations": [
+        {"source": "ACS", "target": "英国内政部", "type": "developed_by", "weight": 0.8, "evidence": ["英国内政部的庇护申请面谈AI摘要工具(ACS)上线后"]},
+        {"source": "英国内政部", "target": "ACS", "type": "uses", "weight": 0.7, "evidence": ["英国内政部的庇护申请面谈AI摘要工具(ACS)上线后"]},
+        {"source": "ICO", "target": "英国内政部", "type": "regulates", "weight": 0.7, "evidence": ["英国信息专员办公室(ICO)正调查其透明度问题"]},
+        {"source": "ICO", "target": "ACS", "type": "investigates", "weight": 0.6, "evidence": ["正调查其透明度问题——申请者不知道AI摘要了自己的面谈"]},
+        {"source": "Open Rights Group", "target": "ACS", "type": "criticizes", "weight": 0.5, "evidence": ["Open Rights Group引述数据敦促停用该工具"]}
+      ],
+      "metrics": [
+        {"name": "第一阶段复核失败率", "value": "203份中45份未通过(22%)"},
+        {"name": "第二阶段复核失败数", "value": "56份中30份失败"},
+        {"name": "试点评估失败率", "value": "9%"},
+        {"name": "Gartner供应链裁员调查", "value": "47%的供应链组织两年内平均裁员10.5%, 主因是AI"}
+      ],
+      "why_it_matters": "政府关键决策中的AI失败率从试点9%升至正式运行22%, 而受影响个体既不知情也无法申诉——透明与纠错机制的建设速度没有跟上部署速度, AI的行政效率收益面临信任兑付风险, 审计与问责仍依赖事后曝光。"
+    },
+    {
+      "article_id": "2026-10-28-14",
+      "entities": [
+        {"name": "美国司法部", "type": "organization", "aliases": ["DOJ"], "confidence": 0.93, "evidence": ["美国司法部对NVIDIA以$129.3亿收购Hugging Face展开反垄断审查"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.97, "evidence": ["美国司法部对NVIDIA以$129.3亿收购Hugging Face展开反垄断审查"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.97, "evidence": ["美国司法部对NVIDIA以$129.3亿收购Hugging Face展开反垄断审查"]},
+        {"name": "SchedMD", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["审查还覆盖其SchedMD收购与$200亿Groq授权协议"]},
+        {"name": "Groq", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["DOJ同时在看Groq的$200亿授权协议"]},
+        {"name": "CUDA", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["一家同时出售芯片、CUDA软件栈、网络系统与自有模型的厂商"]}
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "NVIDIA以$129.3亿收购Hugging Face, 美国司法部展开反垄断审查",
+          "summary": "美国司法部对NVIDIA以$129.3亿收购Hugging Face展开反垄断审查, 该交易是NVIDIA史上最大常规收购, 预计2027上半年完成。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Hugging Face", "type": "company", "role": "object"},
+            {"name": "美国司法部", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["美国司法部对NVIDIA以$129.3亿收购Hugging Face展开反垄断审查", "预计2027上半年完成"]
+        },
+        {
+          "type": "policy",
+          "label": "美国司法部审查还覆盖NVIDIA的SchedMD收购与$200亿Groq授权协议",
+          "summary": "DOJ对AI价值链的审查正在逐环展开, 除Hugging Face交易外还覆盖SchedMD收购与Groq的$200亿授权协议。",
+          "participants": [
+            {"name": "美国司法部", "type": "organization", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "object"},
+            {"name": "SchedMD", "type": "company", "role": "object"},
+            {"name": "Groq", "type": "company", "role": "object"}
+          ],
+          "evidence": ["审查还覆盖其SchedMD收购与$200亿Groq授权协议", "DOJ同时在看Groq的$200亿授权协议"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "Hugging Face", "type": "acquires", "weight": 0.95, "evidence": ["美国司法部对NVIDIA以$129.3亿收购Hugging Face展开反垄断审查"]},
+        {"source": "NVIDIA", "target": "SchedMD", "type": "acquires", "weight": 0.7, "evidence": ["审查还覆盖其SchedMD收购与$200亿Groq授权协议"]},
+        {"source": "CUDA", "target": "NVIDIA", "type": "developed_by", "weight": 0.7, "evidence": ["一家同时出售芯片、CUDA软件栈、网络系统与自有模型的厂商"]},
+        {"source": "美国司法部", "target": "NVIDIA", "type": "regulates", "weight": 0.7, "evidence": ["美国司法部对NVIDIA以$129.3亿收购Hugging Face展开反垄断审查"]}
+      ],
+      "metrics": [
+        {"name": "NVIDIA收购Hugging Face金额", "value": "$129.3亿"},
+        {"name": "交易完成时间", "value": "预计2027上半年"},
+        {"name": "Groq授权协议金额", "value": "$200亿"},
+        {"name": "Malaysia机场截获疑似走私AI芯片案值", "value": "$1,210万"}
+      ],
+      "why_it_matters": "DOJ对'AI分发环节'启动反垄断审查, 与芯片出口管制收紧同步——硬件厂商的纵向整合(HF收购、SchedMD、Groq授权)遇上监管的横向扫描, 开发者从下载模型到购买算力的路径能否保持中立, 将由监管而非市场单独决定。"
+    },
+    {
+      "article_id": "2026-10-28-15",
+      "entities": [
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Alphabet云收入翻倍但自由现金流为负、盘后跌超10%"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.97, "evidence": ["微软Azure增48%且capex低于指引、盘后涨4%"]},
+        {"name": "Azure", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Azure连续第五季beat自身指引(+48%, 下季指引49-50%)"]},
+        {"name": "SK hynix", "type": "company", "aliases": ["SK海力士"], "confidence": 0.95, "evidence": ["SK海力士则以\"需求真实\"的数据为整个周期背书"]},
+        {"name": "Google Cloud", "type": "product", "aliases": [], "confidence": 0.93, "evidence": ["Google Cloud的103%增长能否在2027年capex超$300B的背景下"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI拟采购Google TPU"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["OpenAI拟采购Google TPU"]},
+        {"name": "TPU", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI拟采购Google TPU"]},
+        {"name": "Cognition", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Cognition传出$70-80B估值"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic递交S-1"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "财报周市场给无上限AI投入打出方向相反的两个价格, 估值锚从讲故事切换至现金流兑现",
+          "summary": "Alphabet云收入翻倍但自由现金流为负、盘后跌超10%; 微软Azure增48%且capex低于指引、盘后涨4%。同样是在砸钱, miss利润的挨打, 花钱低于担心的反而被奖励——资本开支不再自动利好, 估值锚切向现收现付的现金流证明。",
+          "participants": [
+            {"name": "Alphabet", "type": "company", "role": "object"},
+            {"name": "Microsoft", "type": "company", "role": "object"}
+          ],
+          "evidence": ["市场第一次在单周内给\"无上限AI投入\"打出两个相反的价格", "估值的锚从\"讲故事\"切到\"现收现付的现金流证明\""]
+        },
+        {
+          "type": "trend",
+          "label": "微软因Azure连超指引且capex低于共识而获奖励, 构成对Alphabet的镜像",
+          "summary": "Azure连续第五季beat自身指引(+48%, 下季指引49-50%), 含融资租赁的capex $45.2B低于$50.7B共识——需求超供给且花钱比担心的少, 盘后涨4%, 与Alphabet因花钱多被砸超10%构成同周镜像。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Azure", "type": "product", "role": "object"},
+            {"name": "Alphabet", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Azure连续第五季beat自身指引(+48%, 下季指引49-50%)", "含融资租赁的capex $45.2B低于$50.7B的共识"]
+        },
+        {
+          "type": "trend",
+          "label": "SK hynix以超大规模云厂商的云收入财报为需求真实背书, 把短缺看至2030年",
+          "summary": "超大规模云收入同比增30-80%、云积压订单扩大2-5倍, 企业AI合同持续增长, SK海力士以\"需求真实\"的数据为周期背书, 把存储短缺看至2030年。",
+          "participants": [
+            {"name": "SK hynix", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["超大规模云收入同比增30-80%、云积压订单扩大2-5倍", "把短缺看至2030年"]
+        },
+        {
+          "type": "trend",
+          "label": "一级市场估值抬价与二级市场的纪律化脱钩",
+          "summary": "OpenAI拟采购Google TPU、Cognition传出$70-80B估值、Anthropic递交S-1, 一级市场仍在快速抬价, 若Alphabet式miss延续, 私有市场天量估值将失去新锚点。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Cognition", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["OpenAI拟采购Google TPU、Cognition传出$70-80B估值、Anthropic递交S-1, 一级市场仍在快速抬价"]
+        }
+      ],
+      "relations": [
+        {"source": "Azure", "target": "Microsoft", "type": "developed_by", "weight": 0.8, "evidence": ["Azure连续第五季beat自身指引(+48%, 下季指引49-50%)"]},
+        {"source": "Google Cloud", "target": "Alphabet", "type": "subsidiary_of", "weight": 0.8, "evidence": ["Google Cloud的103%增长能否在2027年capex超$300B的背景下, 把Alphabet的自由现金流拉回正数"]},
+        {"source": "Microsoft", "target": "Alphabet", "type": "compared_with", "weight": 0.7, "evidence": ["市场第一次在单周内给\"无上限AI投入\"打出两个相反的价格"]},
+        {"source": "TPU", "target": "Google", "type": "developed_by", "weight": 0.6, "evidence": ["OpenAI拟采购Google TPU"]}
+      ],
+      "metrics": [
+        {"name": "Alphabet当季capex", "value": "$51.4B"},
+        {"name": "Alphabet FY26 capex指引", "value": "$195-205B"},
+        {"name": "Alphabet 2027年capex预告", "value": "超$300B"},
+        {"name": "Alphabet调整后EPS", "value": "$2.67, miss $3.02"},
+        {"name": "搜索广告增速", "value": "从17%滑到12%"},
+        {"name": "Alphabet自由现金流", "value": "-$9.07B"},
+        {"name": "Alphabet盘后跌幅", "value": "超10%"},
+        {"name": "Azure增速与下季指引", "value": "+48%, 下季49-50%"},
+        {"name": "微软RPO", "value": "$677B(+73%)"},
+        {"name": "微软含融资租赁capex vs 共识", "value": "$45.2B vs $50.7B"},
+        {"name": "微软盘后涨幅", "value": "4%"},
+        {"name": "超大规模云收入同比涨幅", "value": "30-80%"},
+        {"name": "云积压订单扩大倍数", "value": "2-5倍"}
+      ],
+      "why_it_matters": "财报周首次给无上限AI投入打出方向相反的两个价格: 估值的锚从讲故事切向现金流的现收现付证明, miss利润的Alphabet挨打、花钱更省的微软被奖励——资本开支不再自动利好, 决定AI基建牛市能否进入第三阶段的关键是Google Cloud的103%增长能否把Alphabet自由现金流拉回正数。"
+    }
+  ]
+}
