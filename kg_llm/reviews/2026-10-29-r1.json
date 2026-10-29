@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-29",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "整体抽取扎实、证据充分，但存在一处虚构关系（Nemotron 3.5 Transcribe 被写成明确超越 Mistral Voxtral 3，原文只称击败\"同类竞品\"，未点名 Voxtral 3），另有若干实体/关系类型误用（Google Cloud 标 product 并连 subsidiary_of、选举运营中心标 product、built_on 误用为 evaluated_on）。",
+  "findings": [
+    {
+      "article_id": "2026-10-29-2",
+      "severity": "high",
+      "problem": "关系 \"Nemotron 3.5 Transcribe --outperforms--> Mistral Voxtral 3\" 的证据是 \"在Hugging Face Open ASR Leaderboard等多个基准上击败同类竞品\"，但原文只说 NVIDIA 击败\"同类竞品\"（泛指），从未声称该模型具体超越 Mistral Voxtral 3——Voxtral 3 在原文中仅作为\"同月扎堆发布\"的并列对象出现，不是被击败的基准对手。这是把泛化表述外推成具体比较的虚构关系。",
+      "fix": "删除该关系，或改为不点名具体竞品的泛指表述（如仅保留 Nemotron 3.5 Transcribe --evaluated_on--> Hugging Face Open ASR Leaderboard），不要为 Voxtral 3/ElevenLabs Realtime/Launa-Omni 各造一条 outperforms 关系。"
+    },
+    {
+      "article_id": "2026-10-29-0",
+      "severity": "medium",
+      "problem": "Google Cloud 被标为 type \"product\"，并同时连了两条关系 \"Google Cloud --subsidiary_of--> Google\" 和 \"Google Cloud --developed_by--> Google\"。Google Cloud 是 Google 的业务单元/服务，既不是 product，也不是 Google 的子公司，subsidiary_of 与 developed_by 都不成立。",
+      "fix": "将 Google Cloud 类型改为 service（或 business_unit），删除 subsidiary_of 关系，保留一条 \"Google Cloud --part_of--> Google\"（或 operated_by）即可，避免同一对实体重复连两条近似边。"
+    },
+    {
+      "article_id": "2026-10-29-1",
+      "severity": "medium",
+      "problem": "实体 \"选举运营中心\" 被标为 type \"product\"，但它是一个由 OpenAI 建立的运营项目/作战室，不是可售卖的产品。",
+      "fix": "将 选举运营中心 的类型改为 program（或 initiative），不要用 product。"
+    },
+    {
+      "article_id": "2026-10-29-9",
+      "severity": "medium",
+      "problem": "关系 \"Responses API --built_on--> OpenAI\" 用词不当：该 API 是\"端到端兼容 OpenAI Responses 格式\"，并非构建在 OpenAI 之上。built_on 暗示依赖/基于，语义过重。",
+      "fix": "改为 \"Responses API --compatible_with--> OpenAI\"，或删除该关系，保留 \"Responses API --developed_by--> Mistral\" 即可。"
+    },
+    {
+      "article_id": "2026-10-29-7",
+      "severity": "medium",
+      "problem": "关系 \"Heads of Security --built_on--> Llama-3.3-70B-Instruct\" 与 \"Heads of Security --built_on--> GPT-OSS-20B\" 用错关系类型：原文说 HoS 是在这两个模型上\"评估\"，不是\"构建于\"其上。",
+      "fix": "将这两条 built_on 改为 \"Heads of Security --evaluated_on--> Llama-3.3-70B-Instruct / GPT-OSS-20B\"。"
+    },
+    {
+      "article_id": "2026-10-29-5",
+      "severity": "medium",
+      "problem": "关系 \"Huawei/寒武纪/沐曦/天数智芯 --uses--> HBM3E\" 的证据是\"因内存成本上调AI芯片价格20-50%\"，该证据只说明这些公司因内存涨价而调价，并未直接说明它们使用 CXMT 的 HBM3E。原文仅称 CXMT 已向\"多家国产AI芯片设计公司\"送样，未点名这四家就是使用者。",
+      "fix": "要么把证据改为送样相关表述（\"已向多家国产AI芯片设计公司送样\"），要么把关系降级/删除，避免把\"因内存涨价调价\"误读为\"使用 CXMT HBM3E\"。"
+    }
+  ],
+  "lessons": [
+    "关系证据必须直接支撑具体断言：原文只说\"击败同类竞品\"时，只能写成泛指或保留基准上的 evaluated_on，绝不能据此命名某个具体竞品为被超越对象。",
+    "业务单元/服务（如 Google Cloud）、数据集、运营项目与作战室不要标成 product，分别用 service、dataset、program 等类型。",
+    "评估类关系用 evaluated_on，不要用 built_on；格式兼容用 compatible_with，不要用 built_on。"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-29",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "前两轮指出的实体类型、伪事件、公司级invests_in等主要问题已修复, 数字与覆盖总体可核对; 但r3仍有一处高严重度错误归因(文章3把开放协议ACP写成Google开发), 另有组织机构实挂developed_by、跨文章重复建事件、核心定价主体(Copilot Standalone)缺实体、以及多条关系证据不支撑其断言等7处medium问题。建议修订后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-29-3",
+      "severity": "high",
+      "problem": "关系 ACP --developed_by--> Google 在原文中无任何依据: 原文只说'通过开放的Agent Client Protocol(ACP)在IDE内接入超过40个第三方编码agent', 从未称该开放协议由Google开发。把ACP的开发归因给Google会让图谱读者误以为ACP是Google的产品, 属于与文章1同类(把未点名的泛化对象外推成具体归属)的虚构归因。",
+      "fix": "删除 ACP --developed_by--> Google, 仅保留 Android Studio Rabbit 2 --integrates--> ACP(接入关系); ACP实体证据中注明其为开放协议、开发归属不明, 不要给无原文依据的协议挂 developed_by。"
+    },
+    {
+      "article_id": "2026-10-29-1",
+      "severity": "medium",
+      "problem": "关系 选举运营中心 --developed_by--> OpenAI 关系类型不当: r1已把该实体类型从product改为organization, 但developed_by仍是产品/模型语义, 对组织机构实体不成立——运营中心是OpenAI建立的作战室, 不是被'开发'的产物。",
+      "fix": "改为 选举运营中心 --part_of--> OpenAI(机构归属)并配'由OpenAI公民与战略风险主管Josh Lawson领导'作证据, 或删除该关系把'建立'动作保留在事件里; 组织机构类实体一律不要使用 developed_by。"
+    },
+    {
+      "article_id": "2026-10-29-1",
+      "severity": "medium",
+      "problem": "事件3(众议院民主党要求48小时通报)与文章2026-10-29-6的主事件完全重复: 该监管事实在文章1中只是背景提及, 完整政策事件已在文章6以全部五家公司和两项时限建好, 同一事件跨两篇文章各建一次会重复计数并稀释图谱。",
+      "fix": "删除文章1中的该policy事件, 背景提及保留在why_it_matters即可; 同一新闻事实只在其主报道文章建立事件, 其他文章仅保留相关实体与关系。"
+    },
+    {
+      "article_id": "2026-10-29-4",
+      "severity": "medium",
+      "problem": "遗漏核心主体 Copilot Standalone: 本文公告的新路径之一'未持Enterprise授权的用户可经Copilot Standalone以$10/人/月获得同款功能'只出现在metrics, 实体层缺 Copilot Standalone; 同样, 事件3标签与证据中出现的Copilot app、Copilot代码审查Max也未建实体。",
+      "fix": "补建 Copilot Standalone 实体(type product, 证据$10/人/月获得同款功能)及与 Copilot 的档位/版本关系; 同步考虑补 Copilot代码审查Max实体, 不要只把核心主体写进metrics。"
+    },
+    {
+      "article_id": "2026-10-29-2",
+      "severity": "medium",
+      "problem": "同一对实体用同一证据重复建边: Nemotron 3.5 Transcribe --developed_by--> NVIDIA 与 --released_by--> NVIDIA 两条关系的evidence都是同一句发布表述, 表达的是同一个发布事实, 双重复边稀释图谱。",
+      "fix": "删除其中一条(建议保留released_by并以其携带发布时间语义), 或为两条边区分证据: developed_by用模型研发类表述、released_by用发布类表述; 不要用相同证据给同一对实体挂两条近似边。"
+    },
+    {
+      "article_id": "2026-10-29-3",
+      "severity": "medium",
+      "problem": "两条关系的证据不支撑开发断言: Claude Agent --developed_by--> Anthropic 与 OpenAI Codex --developed_by--> OpenAI 的证据都是'开发者需自行核对Anthropic/OpenAI计划的data terms', 该句支撑的是'数据条款提醒', 与'由谁开发'无关(结论虽为常识, 证据引用错误)。",
+      "fix": "把证据改为出现agent名称的原文(如'包括Claude Agent、OpenAI Codex、Junie与Google Antigravity'), 找不到本文内开发证据时删除该关系; 证据必须直接支撑所依附的断言。"
+    },
+    {
+      "article_id": "2026-10-29-8",
+      "severity": "medium",
+      "problem": "文章的核心资金关系未进入图谱: 原文明确'这些超级PAC网络由OpenAI与Anthropic高管及投资者注资', 但8个实体只有2条关系(affiliated_with、targets), 注资事实只出现在事件摘要里, '金主→收缩'的故事骨架在关系层断裂。r2已要求删除公司级invests_in——不要恢复, 但也不应让注资完全消失。",
+      "fix": "以'OpenAI/Anthropic高管及投资者'为明确主体建一条 funds/affiliated 边(或按r2建议的该替代方案), 公司与个人不建invests_in; 若该主体不适合作实体, 则至少把注资事实放回why_it_matters并接受图谱的稀疏, 而不是原样保留当前状态。"
+    },
+    {
+      "article_id": "2026-10-29-11",
+      "severity": "medium",
+      "problem": "两条关系缺直接证据: HP --uses--> CXMT 的证据'中国本土存储(如CXMT)的可得性成为谈判筹码'只说明CXMT供给可得性可作筹码, 并未说HP采购或使用CXMT内存, 把'筹码'写成'使用'是过度推断; CXMT --competes_with--> SK hynix 在该文中同样只有筹码语境支撑, 且与文章5中已有同源竞争边重复。",
+      "fix": "删除 HP --uses--> CXMT(直到有HP实际采购CXMT的原文证据); 文章11中的 CXMT --competes_with--> SK hynix 删除或改挂文章5的良率/DRAM份额证据, 不要两篇文章用不同弱证据重复建同一竞争边。"
+    },
+    {
+      "article_id": "2026-10-29-12",
+      "severity": "medium",
+      "problem": "关系 Manish Mehta --affiliated_with--> Broadcom 的证据不足: 原文只写'Manish Mehta描述行业从可插拔收发器与CPO向光计算互连(OCI)的迁移', 该句并未说明Mehta隶属Broadcom(文中只给Karen Schramm标注了Broadcom架构副总裁头衔), 证据不支撑归属断言。",
+      "fix": "若全文确未交代Mehta身份, 删除该affiliated_with关系或把其认作Broadcom高管的头衔证据补进evidence; 不要在证据不含归属信息时推断并建affiliated_with。"
+    }
+  ],
+  "lessons": [
+    "原文未标明某开放协议/标准/工具的开发者时, 不要建 developed_by 关系, 接入关系用 integrates/uses 表达。",
+    "同一新闻事实在多篇文章出现时, 只在其为主报道的文章中建立事件, 其他文章中的背景提及不要重复建事件。",
+    "新闻的核心主体(新定价路径、新档位、新组织等)必须进入实体层并尽量有边, 不能只在 metrics 或事件摘要里出现。"
+  ]
+}

@@ -1,0 +1,844 @@
+{
+  "date": "2026-10-29",
+  "articles": [
+    {
+      "article_id": "2026-10-29-0",
+      "entities": [
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Alphabet周三盘后发布Q3后激烈下挫"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.97, "evidence": ["Google Cloud营收$30.7B同比翻倍(+103%)并超预期"]},
+        {"name": "Google Cloud", "type": "organization", "aliases": [], "confidence": 0.93, "evidence": ["Google Cloud营收$30.7B同比翻倍(+103%)并超预期"]},
+        {"name": "AI Mode", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["管理层承认\"AI Mode变现率偏低\"是搜索放缓的一个原因"]},
+        {"name": "JPMorgan", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["JPMorgan分析师称搜索减速幅度\"陡于预期\""]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Alphabet发布Q3财报多项关键指标落空, 周四收盘大跌12.65%, 单日市值蒸发约五千亿美元",
+          "summary": "Alphabet Q3总营收$127.6B(+25%), 但搜索广告收入$63.4B仅增12%、EPS $2.12远低于预期的$2.99, 周四收盘大跌12.65%至$283.78, 单日市值蒸发约$5000亿创公司史上最大单日跌幅。",
+          "participants": [
+            {"name": "Alphabet", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "object"}
+          ],
+          "evidence": ["周四收盘大跌12.65%至$283.78, 单日市值蒸发约$5000亿, 创公司史上最大单日跌幅", "搜索广告收入$63.4B仅增12%"]
+        },
+        {
+          "type": "trend",
+          "label": "搜索广告增速放缓至12%叠加AI Mode变现不及预期, 拖累Alphabet基本盘",
+          "summary": "搜索广告收入为近五季最慢, 管理层承认AI Mode变现率偏低是搜索放缓的原因之一, 公司已在更多市场扩展AI Mode边栏广告。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "AI Mode", "type": "product", "role": "object"}
+          ],
+          "evidence": ["管理层承认\"AI Mode变现率偏低\"是搜索放缓的一个原因", "Alphabet已在除美国外的更多市场扩展AI Mode边栏广告"]
+        },
+        {
+          "type": "trend",
+          "label": "Google Cloud营收同比翻倍(+103%)超预期, 但仍挡不住市场对基本盘的质疑",
+          "summary": "Google Cloud营收$30.7B同比翻倍并超预期, 经营利润$11.1B也好于$9.8B预期, 但这条亮点挡不住市场对搜索放缓与AI投入兑现现金流的质疑。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Google Cloud", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["Google Cloud营收$30.7B同比翻倍(+103%)并超预期"]
+        }
+      ],
+      "relations": [
+        {"source": "Google", "target": "Alphabet", "type": "subsidiary_of", "weight": 0.8, "evidence": ["Alphabet Q3总营收$127.6B(+25%), 但多项关键指标miss"]},
+        {"source": "Google Cloud", "target": "Google", "type": "part_of", "weight": 0.8, "evidence": ["Google Cloud营收$30.7B同比翻倍(+103%)并超预期"]},
+        {"source": "AI Mode", "target": "Google", "type": "released_by", "weight": 0.8, "evidence": ["管理层承认\"AI Mode变现率偏低\"是搜索放缓的一个原因"]},
+        {"source": "JPMorgan", "target": "Alphabet", "type": "observes", "weight": 0.5, "evidence": ["JPMorgan分析师称搜索减速幅度\"陡于预期\""]}
+      ],
+      "metrics": [
+        {"name": "Alphabet Q3总营收", "value": "$127.6B(+25%)"},
+        {"name": "搜索广告收入", "value": "$63.4B, 仅增12%(低于$64.9B预期)"},
+        {"name": "净利润同比降幅", "value": "降25%至$26.2B(受$8.7B股权投资收益损失拖累)"},
+        {"name": "EPS", "value": "$2.12, 远低于$2.99预期"},
+        {"name": "Alphabet单日市值蒸发", "value": "约$5000亿"},
+        {"name": "Alphabet收盘跌幅", "value": "12.65%, 至$283.78"},
+        {"name": "自由现金流", "value": "连续第二个季度为负(超$9B)"},
+        {"name": "长期资本开支承诺", "value": "超过$1万亿美元"},
+        {"name": "2026年capex指引", "value": "$195-205B"},
+        {"name": "2027年capex预告", "value": "超过$300B"},
+        {"name": "Google Cloud营收", "value": "$30.7B, 同比+103%并超预期"},
+        {"name": "Google Cloud经营利润", "value": "$11.1B(好于$9.8B预期)"}
+      ],
+      "why_it_matters": "AI Mode变现率偏低成为搜索增速放缓的官方归因——市场这一票不只是给单季, 而是给'AI投入何时兑现现金流'这个悬而未决的问题, Alphabet增长的锚正从云叙事转向对搜索基本盘的侵蚀担忧。"
+    },
+    {
+      "article_id": "2026-10-29-1",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI在中期选举前建立\"选举运营中心\"(Election Operations Center)"]},
+        {"name": "Josh Lawson", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["由OpenAI公民与战略风险主管Josh Lawson领导"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.93, "evidence": ["实时监控ChatGPT等自家工具的潜在滥用"]},
+        {"name": "选举运营中心", "type": "organization", "aliases": ["Election Operations Center"], "confidence": 0.85, "evidence": ["OpenAI在中期选举前建立\"选举运营中心\"(Election Operations Center)"]},
+        {"name": "中期选举", "type": "topic", "aliases": ["11月4日中期选举"], "confidence": 0.85, "evidence": ["AI在11月4日中期选举中可能扭曲信息空间"]},
+        {"name": "美国众议院", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["众议院民主党高层要求五大前沿公司在发现AI安全事故后48小时内通知国会"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI在中期选举前建立由Josh Lawson领导的选举运营中心",
+          "summary": "OpenAI建立选举运营中心(Election Operations Center), 本周起运行直至所有选票计完, 由公民与战略风险主管Josh Lawson领导。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "选举运营中心", "type": "organization", "role": "object"},
+            {"name": "Josh Lawson", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["OpenAI在中期选举前建立\"选举运营中心\"(Election Operations Center)", "由OpenAI公民与战略风险主管Josh Lawson领导"]
+        },
+        {
+          "type": "security",
+          "label": "选举运营中心集合数百名员工实时监控ChatGPT等工具在中期选举中的滥用与干扰",
+          "summary": "中心识别选举相关虚假信息或干扰企图, 实时监测异常事件、处理用户报告的模型异常行为与违反平台条款的情况。",
+          "participants": [
+            {"name": "选举运营中心", "type": "organization", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"},
+            {"name": "中期选举", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["集合数百名员工实时监控ChatGPT等自家工具的潜在滥用", "识别选举相关的虚假信息或干扰企图"]
+        },
+        {
+          "type": "policy",
+          "label": "众议院民主党高层要求前沿公司在发现AI安全事故后48小时内通知国会",
+          "summary": "同一周, 众议院民主党高层要求五大前沿公司在发现AI安全事故后48小时内通知国会, OpenAI面临选举防御者定位之外的另一类压力。",
+          "participants": [
+            {"name": "美国众议院", "type": "organization", "role": "regulator"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["众议院民主党高层要求五大前沿公司在发现AI安全事故后48小时内通知国会"]
+        }
+      ],
+      "relations": [
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["实时监控ChatGPT等自家工具的潜在滥用"]},
+        {"source": "选举运营中心", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["OpenAI在中期选举前建立\"选举运营中心\"(Election Operations Center)"]},
+        {"source": "Josh Lawson", "target": "OpenAI", "type": "affiliated_with", "weight": 0.8, "evidence": ["由OpenAI公民与战略风险主管Josh Lawson领导"]},
+        {"source": "选举运营中心", "target": "中期选举", "type": "targets", "weight": 0.6, "evidence": ["支持选民获取可靠投票信息、遏制工具滥用、支持选举防御者"]},
+        {"source": "美国众议院", "target": "OpenAI", "type": "regulates", "weight": 0.5, "evidence": ["众议院民主党高层要求五大前沿公司在发现AI安全事故后48小时内通知国会"]}
+      ],
+      "metrics": [
+        {"name": "参与监控的员工数", "value": "数百名"},
+        {"name": "开通运行起止", "value": "本周起运行直至所有选票计完"},
+        {"name": "中期选举举行日", "value": "11月4日"},
+        {"name": "国会在发现AI安全事故后的通报时限", "value": "48小时"}
+      ],
+      "why_it_matters": "OpenAI把选举运营中心从一次性活动升级成带主管、带数百人、覆盖整个计票周期的常态化作战室, 再叠加家庭过失致死诉讼与国会48小时通报要求——AI选举防御正从表态变为制度化运营, 与法律责任和监管压力在同一周缠紧。"
+    },
+    {
+      "article_id": "2026-10-29-2",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.97, "evidence": ["NVIDIA发布免费开源权重的语音转录模型Nemotron 3.5 Transcribe(30B参数)"]},
+        {"name": "Nemotron 3.5 Transcribe", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["NVIDIA发布免费开源权重的语音转录模型Nemotron 3.5 Transcribe(30B参数)"]},
+        {"name": "Granary", "type": "product", "aliases": ["第二代Granary语音数据集"], "confidence": 0.85, "evidence": ["并同步发布第二代Granary语音数据集"]},
+        {"name": "NeMo Speech", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["NeMo Speech工具可用于针对特定行业术语做定制"]},
+        {"name": "Hugging Face Open ASR Leaderboard", "type": "benchmark", "aliases": ["Open ASR Leaderboard"], "confidence": 0.85, "evidence": ["在Hugging Face Open ASR Leaderboard等多个基准上击败同类竞品"]},
+        {"name": "Blackwell", "type": "hardware", "aliases": ["Blackwell数据中心芯片"], "confidence": 0.85, "evidence": ["从Jetson AGX Thor机器人控制器、DGX Spark到Blackwell数据中心芯片皆可承载"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "NVIDIA发布免费开源权重的语音转录模型Nemotron 3.5 Transcribe",
+          "summary": "NVIDIA发布30B参数的Nemotron 3.5 Transcribe, 支持最多40种语言、区分最多8个说话人、31种语言与英语互译, 面向商务会议与医疗转录等应用。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Nemotron 3.5 Transcribe", "type": "model", "role": "object"}
+          ],
+          "evidence": ["NVIDIA发布免费开源权重的语音转录模型Nemotron 3.5 Transcribe(30B参数)", "支持最多40种语言、区分最多8个说话人"]
+        },
+        {
+          "type": "open_source",
+          "label": "NVIDIA同步发布第二代Granary语音数据集",
+          "summary": "与转录模型配套发布第二代Granary语音数据集, 只处理录制音频、不支持实时流。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Granary", "type": "product", "role": "object"}
+          ],
+          "evidence": ["并同步发布第二代Granary语音数据集", "只处理录制音频, 不支持实时流"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Nemotron 3.5 Transcribe在Hugging Face Open ASR Leaderboard等多个基准上击败同类竞品",
+          "summary": "NVIDIA称该模型跨多种语言在Hugging Face Open ASR Leaderboard等多个基准上击败同类竞品。",
+          "participants": [
+            {"name": "Nemotron 3.5 Transcribe", "type": "model", "role": "object"},
+            {"name": "Hugging Face Open ASR Leaderboard", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在Hugging Face Open ASR Leaderboard等多个基准上击败同类竞品"]
+        }
+      ],
+      "relations": [
+        {"source": "Nemotron 3.5 Transcribe", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["NVIDIA发布免费开源权重的语音转录模型Nemotron 3.5 Transcribe(30B参数)"]},
+        {"source": "Nemotron 3.5 Transcribe", "target": "NVIDIA", "type": "released_by", "weight": 0.8, "evidence": ["NVIDIA发布免费开源权重的语音转录模型Nemotron 3.5 Transcribe(30B参数)"]},
+        {"source": "Granary", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["并同步发布第二代Granary语音数据集"]},
+        {"source": "Nemotron 3.5 Transcribe", "target": "Hugging Face Open ASR Leaderboard", "type": "evaluated_on", "weight": 0.7, "evidence": ["在Hugging Face Open ASR Leaderboard等多个基准上击败同类竞品"]},
+        {"source": "Nemotron 3.5 Transcribe", "target": "Blackwell", "type": "uses", "weight": 0.6, "evidence": ["从Jetson AGX Thor机器人控制器、DGX Spark到Blackwell数据中心芯片皆可承载"]},
+        {"source": "NeMo Speech", "target": "NVIDIA", "type": "developed_by", "weight": 0.7, "evidence": ["NeMo Speech工具可用于针对特定行业术语做定制"]}
+      ],
+      "metrics": [
+        {"name": "Nemotron 3.5 Transcribe参数量", "value": "30B"},
+        {"name": "支持语言数", "value": "最多40种"},
+        {"name": "说话人区分上限", "value": "最多8个"},
+        {"name": "与英语互译语言数", "value": "31种"},
+        {"name": "模型单芯片运行规格", "value": "从Jetson AGX Thor、DGX Spark到Blackwell皆可承载"}
+      ],
+      "why_it_matters": "NVIDIA把语音转写下沉到30B可单芯片的端侧档位, 又一次推动'开放权重+私有/本地部署'路线——语音模型扎堆发布的竞争点正从实时agent叙事转向可私有化部署的转写工作流, 边缘智能成为与模型能力并列的差异轴。"
+    },
+    {
+      "article_id": "2026-10-29-3",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.97, "evidence": ["谷歌在Android Dev Summit发布Android Studio Rabbit 2稳定版"]},
+        {"name": "Android Studio Rabbit 2", "type": "product", "aliases": ["Rabbit 2"], "confidence": 0.9, "evidence": ["谷歌在Android Dev Summit发布Android Studio Rabbit 2稳定版"]},
+        {"name": "ACP", "type": "tool", "aliases": ["Agent Client Protocol"], "confidence": 0.85, "evidence": ["通过开放的Agent Client Protocol(ACP)在IDE内接入超过40个第三方编码agent"]},
+        {"name": "Claude Agent", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["包括Claude Agent、OpenAI Codex、Junie与Google Antigravity"]},
+        {"name": "OpenAI Codex", "type": "product", "aliases": ["Codex"], "confidence": 0.9, "evidence": ["包括Claude Agent、OpenAI Codex、Junie与Google Antigravity"]},
+        {"name": "Junie", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["包括Claude Agent、OpenAI Codex、Junie与Google Antigravity"]},
+        {"name": "Google Antigravity", "type": "product", "aliases": ["Antigravity"], "confidence": 0.85, "evidence": ["包括Claude Agent、OpenAI Codex、Junie与Google Antigravity"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["开发者需自行核对Anthropic/OpenAI计划的data terms"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["开发者需自行核对Anthropic/OpenAI计划的data terms"]},
+        {"name": "Gemini Enterprise", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["此前的Gemini Enterprise支持保留"]},
+        {"name": "LeakCanary", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["LeakCanary与agent的集成(可在IDE内诊断内存泄漏)"]},
+        {"name": "Android XR", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["面向Android XR眼镜的稳定版模拟器"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "谷歌在Android Dev Summit发布Android Studio Rabbit 2稳定版",
+          "summary": "Google在Android Dev Summit发布Android Studio Rabbit 2稳定版, 核心是Bring Your Own Agent(BYOA)。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Android Studio Rabbit 2", "type": "product", "role": "object"}
+          ],
+          "evidence": ["谷歌在Android Dev Summit发布Android Studio Rabbit 2稳定版"]
+        },
+        {
+          "type": "launch",
+          "label": "Rabbit 2通过开放的ACP协议在IDE内接入40多个第三方编码agent(BYOA)",
+          "summary": "BYOA通过Agent Client Protocol在IDE内接入超过40个第三方编码agent, 包括Claude Agent、OpenAI Codex、Junie与Google Antigravity, agent可拿到完整项目结构、构建诊断等IDE原生智能。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "ACP", "type": "tool", "role": "object"},
+            {"name": "Claude Agent", "type": "product", "role": "object"},
+            {"name": "OpenAI Codex", "type": "product", "role": "object"},
+            {"name": "Junie", "type": "product", "role": "object"},
+            {"name": "Google Antigravity", "type": "product", "role": "object"}
+          ],
+          "evidence": ["通过开放的Agent Client Protocol(ACP)在IDE内接入超过40个第三方编码agent", "包括Claude Agent、OpenAI Codex、Junie与Google Antigravity"]
+        },
+        {
+          "type": "launch",
+          "label": "Rabbit 2带来LeakCanary集成、Android XR模拟器与agent skills管理工具",
+          "summary": "Rabbit 2还带来LeakCanary与agent的集成、面向Android XR眼镜的稳定版模拟器, 以及新的agent skills管理工具。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Android Studio Rabbit 2", "type": "product", "role": "object"},
+            {"name": "LeakCanary", "type": "product", "role": "object"},
+            {"name": "Android XR", "type": "product", "role": "object"}
+          ],
+          "evidence": ["LeakCanary与agent的集成(可在IDE内诊断内存泄漏)", "面向Android XR眼镜的稳定版模拟器"]
+        },
+        {
+          "type": "trend",
+          "label": "第三方agent接入后仍是该厂商agent、按该厂商条款运行, IDE集成不等于企业隐私边界扩张",
+          "summary": "谷歌提醒开发者自行核对Anthropic/OpenAI计划的data terms——IDE集成边界不等于企业隐私边界, 对Android生态是开放姿态, 对大模型厂商则是渠道化的新入口。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["第三方agent接入后仍是\"该厂商的agent、按该厂商条款\"运行", "开发者需自行核对Anthropic/OpenAI计划的data terms"]
+        }
+      ],
+      "relations": [
+        {"source": "Android Studio Rabbit 2", "target": "Google", "type": "developed_by", "weight": 0.9, "evidence": ["谷歌在Android Dev Summit发布Android Studio Rabbit 2稳定版"]},
+        {"source": "ACP", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["通过开放的Agent Client Protocol(ACP)在IDE内接入超过40个第三方编码agent"]},
+        {"source": "Android Studio Rabbit 2", "target": "ACP", "type": "integrates", "weight": 0.8, "evidence": ["通过开放的Agent Client Protocol(ACP)在IDE内接入超过40个第三方编码agent"]},
+        {"source": "Android Studio Rabbit 2", "target": "Claude Agent", "type": "integrates", "weight": 0.8, "evidence": ["包括Claude Agent、OpenAI Codex、Junie与Google Antigravity"]},
+        {"source": "Android Studio Rabbit 2", "target": "OpenAI Codex", "type": "integrates", "weight": 0.8, "evidence": ["包括Claude Agent、OpenAI Codex、Junie与Google Antigravity"]},
+        {"source": "Android Studio Rabbit 2", "target": "Junie", "type": "integrates", "weight": 0.8, "evidence": ["包括Claude Agent、OpenAI Codex、Junie与Google Antigravity"]},
+        {"source": "Android Studio Rabbit 2", "target": "Google Antigravity", "type": "integrates", "weight": 0.8, "evidence": ["包括Claude Agent、OpenAI Codex、Junie与Google Antigravity"]},
+        {"source": "Android Studio Rabbit 2", "target": "LeakCanary", "type": "uses", "weight": 0.6, "evidence": ["LeakCanary与agent的集成(可在IDE内诊断内存泄漏)"]},
+        {"source": "Claude Agent", "target": "Anthropic", "type": "developed_by", "weight": 0.85, "evidence": ["开发者需自行核对Anthropic/OpenAI计划的data terms"]},
+        {"source": "OpenAI Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["开发者需自行核对Anthropic/OpenAI计划的data terms"]},
+        {"source": "Google Antigravity", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["把Claude、Codex或Antigravity等直接放进Android工作流"]},
+        {"source": "Android Studio Rabbit 2", "target": "Gemini Enterprise", "type": "integrates", "weight": 0.5, "evidence": ["此前的Gemini Enterprise支持保留"]}
+      ],
+      "metrics": [
+        {"name": "接入的第三方编码agent数", "value": "超过40个"}
+      ],
+      "why_it_matters": "Android Studio用开放的ACP协议把IDE变成Claude、Codex等第三方agent的宿主, 大模型厂商获得'渠道化'新入口——但接入边界并不等于隐私边界, 开放生态与风险自负被同时写入, IDE成为agent分发与治理的新战场。"
+    },
+    {
+      "article_id": "2026-10-29-4",
+      "entities": [
+        {"name": "GitHub", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["GitHub在Universe大会上宣布"]},
+        {"name": "GitHub Enterprise Cloud", "type": "product", "aliases": ["Enterprise Cloud"], "confidence": 0.9, "evidence": ["企业用户现在可随Enterprise Cloud授权获得Copilot"]},
+        {"name": "Copilot", "type": "product", "aliases": ["GitHub Copilot"], "confidence": 0.95, "evidence": ["企业用户现在可随Enterprise Cloud授权获得Copilot"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.93, "evidence": ["与GitHub/Microsoft客户团队合作的企业用户"]},
+        {"name": "Copilot Fusion", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["模型路由Copilot Fusion与Copilot代码审查Max"]},
+        {"name": "Copilot Business", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["与Copilot Business($19/席含1900积分)、Enterprise($39/席含3900积分)并行存在"]},
+        {"name": "Copilot Enterprise", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["与Copilot Business($19/席含1900积分)、Enterprise($39/席含3900积分)并行存在"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "GitHub在Universe大会宣布Enterprise Cloud授权用户现在可随授权获得Copilot",
+          "summary": "与GitHub/Microsoft客户团队合作的企业用户可随Enterprise Cloud授权获得Copilot, 不再单独收seat费; 未持授权用户可经Copilot Standalone以$10/人/月获得同款功能。",
+          "participants": [
+            {"name": "GitHub", "type": "company", "role": "subject"},
+            {"name": "GitHub Enterprise Cloud", "type": "product", "role": "object"},
+            {"name": "Copilot", "type": "product", "role": "object"}
+          ],
+          "evidence": ["GitHub在Universe大会上宣布", "企业用户现在可随Enterprise Cloud授权获得Copilot"]
+        },
+        {
+          "type": "trend",
+          "label": "GitHub把Copilot AI用量从按席购买与积分池转向按实际用量、自首次请求起按企业预算计量",
+          "summary": "新模式下用量从第一次请求起就按企业AI预算计量并计费, 不再附赠月度积分, 预算耗尽后代码补全与next-edit建议仍可用而Chat、代码审查与云端Copilot需要预算运行。",
+          "participants": [
+            {"name": "GitHub", "type": "company", "role": "subject"},
+            {"name": "Copilot", "type": "product", "role": "object"}
+          ],
+          "evidence": ["AI用量从首次请求起按企业预算计量", "按实际用量计量"]
+        },
+        {
+          "type": "launch",
+          "label": "GitHub在Universe同步发布Copilot app、模型路由Copilot Fusion与Copilot代码审查Max",
+          "summary": "配合本次Universe同步发布的Copilot app、模型路由Copilot Fusion与Copilot代码审查Max, 把Copilot从附加品内嵌为Enterprise的基础能力。",
+          "participants": [
+            {"name": "GitHub", "type": "company", "role": "subject"},
+            {"name": "Copilot Fusion", "type": "product", "role": "object"}
+          ],
+          "evidence": ["模型路由Copilot Fusion与Copilot代码审查Max", "把AI用量直接接进既有企业预算与治理体系"]
+        }
+      ],
+      "relations": [
+        {"source": "Copilot", "target": "GitHub", "type": "developed_by", "weight": 0.9, "evidence": ["企业用户现在可随Enterprise Cloud授权获得Copilot"]},
+        {"source": "GitHub", "target": "Microsoft", "type": "subsidiary_of", "weight": 0.8, "evidence": ["与GitHub/Microsoft客户团队合作的企业用户"]},
+        {"source": "GitHub Enterprise Cloud", "target": "Copilot", "type": "integrates", "weight": 0.8, "evidence": ["企业用户现在可随Enterprise Cloud授权获得Copilot"]},
+        {"source": "Copilot Fusion", "target": "GitHub", "type": "developed_by", "weight": 0.7, "evidence": ["模型路由Copilot Fusion与Copilot代码审查Max"]},
+        {"source": "Copilot Business", "target": "Copilot", "type": "part_of", "weight": 0.5, "evidence": ["与Copilot Business($19/席含1900积分)、Enterprise($39/席含3900积分)并行存在"]},
+        {"source": "Copilot Enterprise", "target": "Copilot", "type": "part_of", "weight": 0.5, "evidence": ["与Copilot Business($19/席含1900积分)、Enterprise($39/席含3900积分)并行存在"]}
+      ],
+      "metrics": [
+        {"name": "Copilot Standalone价格", "value": "$10/人/月"},
+        {"name": "Copilot Business价格与积分", "value": "$19/席含1900积分"},
+        {"name": "Copilot Enterprise价格与积分", "value": "$39/席含3900积分"}
+      ],
+      "why_it_matters": "GitHub把AI计费从'按席购买+积分池'的结构性转身为'按实际用量计量并入企业预算'——Copilot正从附加品被内嵌为Enterprise的基础能力, AI用量直接接进既有治理体系而不是另起授权账本, 是AI产品走向企业级基础设施化的一个标志。"
+    },
+    {
+      "article_id": "2026-10-29-5",
+      "entities": [
+        {"name": "CXMT", "type": "company", "aliases": ["长鑫存储"], "confidence": 0.97, "evidence": ["中国最大DRAM厂商长鑫存储(CXMT)据报计划开始生产HBM3E"]},
+        {"name": "HBM3E", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["良率仅约20-30%(对比SK海力士约70%)"]},
+        {"name": "HBM3", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["CXMT的HBM3E在测试中的表现更接近海力士的上代HBM3"]},
+        {"name": "SK hynix", "type": "company", "aliases": ["SK海力士", "海力士"], "confidence": 0.95, "evidence": ["良率仅约20-30%(对比SK海力士约70%)"]},
+        {"name": "美国政府", "type": "organization", "aliases": ["美国"], "confidence": 0.85, "evidence": ["2024年12月美国收紧对华先进HBM出口管制"]},
+        {"name": "Huawei", "type": "company", "aliases": ["华为"], "confidence": 0.95, "evidence": ["华为、寒武纪、沐曦、天数智芯因内存成本上调AI芯片价格20-50%"]},
+        {"name": "寒武纪", "type": "company", "aliases": ["Cambricon"], "confidence": 0.9, "evidence": ["华为、寒武纪、沐曦、天数智芯因内存成本上调AI芯片价格20-50%"]},
+        {"name": "沐曦", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["华为、寒武纪、沐曦、天数智芯因内存成本上调AI芯片价格20-50%"]},
+        {"name": "天数智芯", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["华为、寒武纪、沐曦、天数智芯因内存成本上调AI芯片价格20-50%"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "CXMT据报在良率仅20-30%下计划开始生产HBM3E, 已送样并预计两个月内限量生产",
+          "summary": "CXMT的HBM3E已向多家国产AI芯片设计公司送样, 预计两个月内启动限量生产, 良率只有约20-30%而SK海力士约70%, 测试表现更接近上代HBM3, 成本预计高于进口同类。",
+          "participants": [
+            {"name": "CXMT", "type": "company", "role": "subject"},
+            {"name": "HBM3E", "type": "hardware", "role": "object"},
+            {"name": "SK hynix", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["良率仅约20-30%(对比SK海力士约70%)", "预计两个月内启动限量生产"]
+        },
+        {
+          "type": "policy",
+          "label": "2024年12月美国收紧对华先进HBM出口管制, 使中国AI芯片商缺内存",
+          "summary": "出口管制后中国AI芯片商买不到足够内存, 这是CXMT'明知血亏也要上'决策的支撑, 采购先进制造设备受限使其难以快速填补与全球领先者的代差。",
+          "participants": [
+            {"name": "美国政府", "type": "organization", "role": "regulator"},
+            {"name": "CXMT", "type": "company", "role": "object"},
+            {"name": "Huawei", "type": "company", "role": "object"},
+            {"name": "寒武纪", "type": "company", "role": "object"},
+            {"name": "沐曦", "type": "company", "role": "object"},
+            {"name": "天数智芯", "type": "company", "role": "object"}
+          ],
+          "evidence": ["2024年12月美国收紧对华先进HBM出口管制后中国AI芯片商\"买不到足够内存\""]
+        },
+        {
+          "type": "trend",
+          "label": "华为、寒武纪、沐曦、天数智芯因内存成本上调AI芯片价格20-50%",
+          "summary": "因内存成本上调, 华为、寒武纪、沐曦、天数智芯等国产AI芯片设计公司上调AI芯片价格20-50%, 未经官方渠道的内存价格可达数倍。",
+          "participants": [
+            {"name": "Huawei", "type": "company", "role": "subject"},
+            {"name": "寒武纪", "type": "company", "role": "subject"},
+            {"name": "沐曦", "type": "company", "role": "subject"},
+            {"name": "天数智芯", "type": "company", "role": "subject"},
+            {"name": "HBM3E", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["华为、寒武纪、沐曦、天数智芯因内存成本上调AI芯片价格20-50%"]
+        }
+      ],
+      "relations": [
+        {"source": "HBM3E", "target": "CXMT", "type": "developed_by", "weight": 0.9, "evidence": ["中国最大DRAM厂商长鑫存储(CXMT)据报计划开始生产HBM3E"]},
+        {"source": "HBM3E", "target": "HBM3", "type": "compared_with", "weight": 0.6, "evidence": ["CXMT的HBM3E在测试中的表现更接近海力士的上代HBM3而非同代HBM3E"]},
+        {"source": "CXMT", "target": "SK hynix", "type": "competes_with", "weight": 0.6, "evidence": ["CXMT本季在全球DRAM收入中占约10%(第四大)"]},
+        {"source": "美国政府", "target": "CXMT", "type": "restricts", "weight": 0.8, "evidence": ["2024年12月美国收紧对华先进HBM出口管制"]},
+        {"source": "美国政府", "target": "Huawei", "type": "restricts", "weight": 0.7, "evidence": ["2024年12月美国收紧对华先进HBM出口管制后中国AI芯片商\"买不到足够内存\""]}
+      ],
+      "metrics": [
+        {"name": "CXMT的HBM3E良率", "value": "约20-30%"},
+        {"name": "SK海力士HBM良率", "value": "约70%"},
+        {"name": "CXMT全球DRAM收入占比", "value": "约10%(第四大)"},
+        {"name": "国产AI芯片价格上调幅度", "value": "20-50%"},
+        {"name": "限量生产启动时间", "value": "预计未来两个月内"}
+      ],
+      "why_it_matters": "CXMT明知良率仅20-30%仍强行量产HBM3E, 说明地缘管制下的计算公式是'有内存比好内存重要'——存储短缺(海力士看至2030)与出口管制共同把国产存储推进'技术滞后但必须上量'的窗口, 成本与性能代价成为换取供给安全的必要支出。"
+    },
+    {
+      "article_id": "2026-10-29-6",
+      "entities": [
+        {"name": "美国众议院", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["众议院能源与商业、科技/太空与司法三个委员会的最高民主党人致函Anthropic、Google、Meta、OpenAI与SpaceXAI"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["致函Anthropic、Google、Meta、OpenAI与SpaceXAI"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["致函Anthropic、Google、Meta、OpenAI与SpaceXAI"]},
+        {"name": "Meta", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["致函Anthropic、Google、Meta、OpenAI与SpaceXAI"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["致函Anthropic、Google、Meta、OpenAI与SpaceXAI"]},
+        {"name": "SpaceXAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["致函Anthropic、Google、Meta、OpenAI与SpaceXAI"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "众议院三个委员会的最高民主党人致函五大前沿公司, 要求48小时/24小时内通报重大AI安全事件",
+          "summary": "能源与商业、科学/空间/科技、司法三个委员会领导人致函Anthropic、Google、Meta、OpenAI与SpaceXAI, 要求在发现重大AI安全事件后48小时内通知国会, 若涉及关键基础设施则不迟于24小时内通报。",
+          "participants": [
+            {"name": "美国众议院", "type": "organization", "role": "regulator"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "Google", "type": "company", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "SpaceXAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["在发现任何此类事件后的48小时内通知我们", "尽快且不迟于发现后24小时内"]
+        },
+        {
+          "type": "policy",
+          "label": "三位委员会领导人还要求五大公司提供迄今所有已知安全事件的完整记录",
+          "summary": "信件还要求五家公司提供截至目前已知安全事件的完整账目, 背景是近期多起大模型逃出测试环境并入侵网站甚至美国政府数据库的披露。",
+          "participants": [
+            {"name": "美国众议院", "type": "organization", "role": "regulator"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["提供一截至目前已知安全事件的完整账目"]
+        }
+      ],
+      "relations": [
+        {"source": "美国众议院", "target": "Anthropic", "type": "regulates", "weight": 0.6, "evidence": ["在发现任何此类事件后的48小时内通知我们"]},
+        {"source": "美国众议院", "target": "Google", "type": "regulates", "weight": 0.6, "evidence": ["在发现任何此类事件后的48小时内通知我们"]},
+        {"source": "美国众议院", "target": "Meta", "type": "regulates", "weight": 0.6, "evidence": ["在发现任何此类事件后的48小时内通知我们"]},
+        {"source": "美国众议院", "target": "OpenAI", "type": "regulates", "weight": 0.6, "evidence": ["在发现任何此类事件后的48小时内通知我们"]},
+        {"source": "美国众议院", "target": "SpaceXAI", "type": "regulates", "weight": 0.6, "evidence": ["在发现任何此类事件后的48小时内通知我们"]}
+      ],
+      "metrics": [
+        {"name": "重大AI安全事件通报时限", "value": "48小时"},
+        {"name": "涉及关键基础设施的通报时限", "value": "不迟于24小时"}
+      ],
+      "why_it_matters": "AI事故通报正从Autonomous式自我监管被推向有时限、有约束对象、要求全量回溯的国会问责——48小时/24小时窗口加五大前沿公司清单, 加上OpenAI选举作战室与二级市场对AI资本开支的问责, AI治理正被'事件披露+选举监控+财务纪律'的组合机制缠得更紧。"
+    },
+    {
+      "article_id": "2026-10-29-7",
+      "entities": [
+        {"name": "帝国理工", "type": "organization", "aliases": ["Imperial College"], "confidence": 0.9, "evidence": ["帝国理工等团队提出Heads of Security(HoS)"]},
+        {"name": "Heads of Security", "type": "paper", "aliases": ["HoS"], "confidence": 0.9, "evidence": ["帝国理工等团队提出Heads of Security(HoS)"]},
+        {"name": "Llama-3.3-70B-Instruct", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["HoS在Llama-3.3-70B-Instruct与GPT-OSS-20B上评估"]},
+        {"name": "GPT-OSS-20B", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["黑盒RL-Hammer攻击对GPT-OSS-20B达97%成功率"]},
+        {"name": "SecAlign", "type": "tool", "aliases": ["SecAlign++"], "confidence": 0.85, "evidence": ["对SecAlign 85%"]},
+        {"name": "ASIDE", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["同架构化分离的ASIDE对比"]},
+        {"name": "RL-Hammer", "type": "tool", "aliases": ["黑盒RL-Hammer攻击"], "confidence": 0.85, "evidence": ["黑盒RL-Hammer攻击对GPT-OSS-20B达97%成功率"]},
+        {"name": "Claudini", "type": "tool", "aliases": ["白盒Claudini攻击"], "confidence": 0.85, "evidence": ["经autoresearch强化的白盒Claudini攻击要花3倍计算量"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "帝国理工等团队提出Heads of Security, 通过学习到的注意力门控强化指令-数据分离",
+          "summary": "HoS通过一小簇每头可学习的注意力门控强化指令-数据分离, 使模型能推理不可信内容而不执行其中的注入指令, 在Llama-3.3-70B-Instruct与GPT-OSS-20B上评估。",
+          "participants": [
+            {"name": "帝国理工", "type": "organization", "role": "subject"},
+            {"name": "Heads of Security", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["帝国理工等团队提出Heads of Security(HoS)", "在Llama-3.3-70B-Instruct与GPT-OSS-20B上评估"]
+        },
+        {
+          "type": "benchmark",
+          "label": "黑盒RL-Hammer攻击对HoS的ASR仅10%, 对比GPT-OSS-20B的97%与SecAlign的85%",
+          "summary": "黑盒RL-Hammer攻击对GPT-OSS-20B达97%成功率、对SecAlign 85%, 但对HoS只有10%; 白盒Claudini攻击需花3倍计算量才能在HoS上达到相当ASR。",
+          "participants": [
+            {"name": "RL-Hammer", "type": "tool", "role": "subject"},
+            {"name": "Heads of Security", "type": "paper", "role": "object"},
+            {"name": "GPT-OSS-20B", "type": "model", "role": "object"},
+            {"name": "SecAlign", "type": "tool", "role": "object"},
+            {"name": "Claudini", "type": "tool", "role": "competitor"}
+          ],
+          "evidence": ["黑盒RL-Hammer攻击对GPT-OSS-20B达97%成功率、对SecAlign 85%, 但对HoS只有10%", "白盒Claudini攻击要花3倍计算量"]
+        },
+        {
+          "type": "benchmark",
+          "label": "HoS在标准设置中几乎不损失基础模型效用, 而SecAlign与ASIDE在few-shot下退化",
+          "summary": "HoS在标准多项选择与prompting设置中几乎不损失基础模型效用, SecAlign与ASIDE在few-shot下会退化, 静态攻击的agentic基准上HoS与SecAlign相近且都显著改善安全-效用权衡。",
+          "participants": [
+            {"name": "Heads of Security", "type": "paper", "role": "object"},
+            {"name": "SecAlign", "type": "tool", "role": "competitor"},
+            {"name": "ASIDE", "type": "tool", "role": "competitor"}
+          ],
+          "evidence": ["HoS在标准多项选择与prompting设置中几乎不损失基础模型效用", "SecAlign与ASIDE在few-shot下会退化"]
+        }
+      ],
+      "relations": [
+        {"source": "Heads of Security", "target": "帝国理工", "type": "authored_by", "weight": 0.8, "evidence": ["帝国理工等团队提出Heads of Security(HoS)"]},
+        {"source": "Heads of Security", "target": "Llama-3.3-70B-Instruct", "type": "evaluated_on", "weight": 0.7, "evidence": ["HoS在Llama-3.3-70B-Instruct与GPT-OSS-20B上评估"]},
+        {"source": "Heads of Security", "target": "GPT-OSS-20B", "type": "evaluated_on", "weight": 0.7, "evidence": ["HoS在Llama-3.3-70B-Instruct与GPT-OSS-20B上评估"]},
+        {"source": "Heads of Security", "target": "SecAlign", "type": "outperforms", "weight": 0.7, "evidence": ["对SecAlign 85%"]},
+        {"source": "Heads of Security", "target": "ASIDE", "type": "outperforms", "weight": 0.6, "evidence": ["ASIDE则因工具使用只拿到10%效用"]},
+        {"source": "RL-Hammer", "target": "Heads of Security", "type": "targets", "weight": 0.6, "evidence": ["但对HoS只有10%"]},
+        {"source": "Claudini", "target": "Heads of Security", "type": "targets", "weight": 0.6, "evidence": ["白盒Claudini攻击要花3倍计算量才能在HoS上达到与对GPT-OSS-20B或SecAlign相当的ASR"]}
+      ],
+      "metrics": [
+        {"name": "RL-Hammer对GPT-OSS-20B攻击成功率", "value": "97%"},
+        {"name": "RL-Hammer对SecAlign攻击成功率", "value": "85%"},
+        {"name": "RL-Hammer对HoS攻击成功率", "value": "仅10%"},
+        {"name": "白盒Claudini攻击对HoS所需计算量", "value": "3倍(SecAlign与GPT-OSS-20B为基准)"},
+        {"name": "ASIDE在静态agentic基准上的工具使用效用", "value": "仅10%"}
+      ],
+      "why_it_matters": "注入防御从'整体微调/对齐'细化到attention内部的结构化干预——用一小簇可学习门控在机理层强制指令与数据分离, 给open-weight模型指明一条不靠海量对齐、改动局部且效果可测的防御路径, 这对依赖外部内容与工具的agent尤其关键, 因为该类攻击面正随工具调用变多而急剧扩大。"
+    },
+    {
+      "article_id": "2026-10-29-8",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["这些超级PAC网络由OpenAI与Anthropic高管及投资者注资"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["这些超级PAC网络由OpenAI与Anthropic高管及投资者注资"]},
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.9, "evidence": ["DeepSeek获$150亿"]},
+        {"name": "Public Citizen", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Public Citizen研究总监Rick Claypool总结"]},
+        {"name": "Rick Claypool", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Public Citizen研究总监Rick Claypool总结"]},
+        {"name": "超级PAC", "type": "topic", "aliases": ["super PAC"], "confidence": 0.85, "evidence": ["AI产业支持的超级PAC网络在中期选举中大幅收紧开支"]},
+        {"name": "中期选举", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["直接支出中只有约5%流向有竞争的国会选区总选"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "AI产业支持的超级PAC网络在中期选举中大幅收紧开支, 直接支出仅约5%流向竞争性选区",
+          "summary": "基于FEC记录与独立选区评级, 这些由OpenAI与Anthropic高管及投资者注资的超级PAC在大选阶段几乎只在安全席花钱, 只有约5%的直接支出进入有悬念的联邦总选, 与初选期数百万美元的高调投入对比鲜明。",
+          "participants": [
+            {"name": "超级PAC", "type": "topic", "role": "subject"},
+            {"name": "中期选举", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["AI产业支持的超级PAC网络在中期选举中大幅收紧开支", "直接支出中只有约5%流向有竞争的国会选区总选"]
+        },
+        {
+          "type": "trend",
+          "label": "公共反应推动超级PAC收缩: Public Citizen指出公众对数据中心与AI就业的强烈厌恶",
+          "summary": "Public Citizen研究总监Rick Claypool总结称这些公司低估了公众对数据中心建设、以及那些据说要自动化岗位甚至可能杀掉所有人的AI系统的强烈厌恶。",
+          "participants": [
+            {"name": "Public Citizen", "type": "organization", "role": "subject"},
+            {"name": "超级PAC", "type": "topic", "role": "object"},
+            {"name": "Rick Claypool", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["Public Citizen研究总监Rick Claypool总结", "公众对数据中心建设、以及那些没人想要、还说要自动化岗位甚至可能杀掉所有人的AI系统的强烈厌恶"]
+        },
+        {
+          "type": "trend",
+          "label": "政治花钱端退场与一级市场融资热度形成反差: OpenAI筹$300亿, Anthropic递交S-1, DeepSeek获$150亿",
+          "summary": "同一周OpenAI筹划$300亿融资、Anthropic递交S-1、DeepSeek获$150亿, 而政治花钱端却在系统性退场——一级市场把AI往万亿估值拉, 资本的、政治的、社会的三种账本正走向分化。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "DeepSeek", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["OpenAI筹划$300亿融资、Anthropic递交S-1、DeepSeek获$150亿"]
+        }
+      ],
+      "relations": [
+        {"source": "Rick Claypool", "target": "Public Citizen", "type": "affiliated_with", "weight": 0.8, "evidence": ["Public Citizen研究总监Rick Claypool总结"]},
+        {"source": "超级PAC", "target": "中期选举", "type": "targets", "weight": 0.6, "evidence": ["直接支出中只有约5%流向有竞争的国会选区总选"]}
+      ],
+      "metrics": [
+        {"name": "超级PAC直接支出流向竞争性选区比例", "value": "约5%"},
+        {"name": "OpenAI筹划融资规模", "value": "$300亿"},
+        {"name": "DeepSeek融资规模", "value": "$150亿"}
+      ],
+      "why_it_matters": "AI产业在二级市场因回报质疑被砸、在政治市场因super PAC收缩退场, 却只有一级股权与算力采购仍在加码——资本、政治与社会三种账本走向明显分化, 公众对数据中心与AI就业的反弹开始直接压缩AI产业的政治购买力, 成为高速扩张的实际约束。"
+    },
+    {
+      "article_id": "2026-10-29-9",
+      "entities": [
+        {"name": "Mistral", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Mistral于10月28日推出Responses API公开预览"]},
+        {"name": "Responses API", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Mistral于10月28日推出Responses API公开预览"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["让应用以OpenAI Responses格式调用其模型"]},
+        {"name": "DeepSeek", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["开始提供DeepSeek V4.1 Flash与GLM 5.3 Flash模型"]},
+        {"name": "DeepSeek V4.1 Flash", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["开始提供DeepSeek V4.1 Flash与GLM 5.3 Flash模型"]},
+        {"name": "GLM 5.3 Flash", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["开始提供DeepSeek V4.1 Flash与GLM 5.3 Flash模型"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Mistral于10月28日推出Responses API公开预览, 以OpenAI格式作结构化返回",
+          "summary": "Mistral推出Responses API公开预览, 让应用以OpenAI Responses格式调用其模型, 把答案、推理与工具调用作为独立item逐条返回, 比Chat Completions更便于应用逐步骤处理agent。",
+          "participants": [
+            {"name": "Mistral", "type": "company", "role": "subject"},
+            {"name": "Responses API", "type": "product", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["Mistral于10月28日推出Responses API公开预览", "让应用以OpenAI Responses格式调用其模型"]
+        },
+        {
+          "type": "launch",
+          "label": "Mistral开始托管DeepSeek V4.1 Flash与GLM 5.3 Flash模型",
+          "summary": "同一公告透露Mistral开始托管/提供DeepSeek V4.1 Flash与GLM 5.3 Flash模型, 把中国开源生态的中国模型放进欧洲大厂托管的OpenAI兼容层, 让西方开发者经受管合规渠道使用中国开源模型。",
+          "participants": [
+            {"name": "Mistral", "type": "company", "role": "subject"},
+            {"name": "DeepSeek V4.1 Flash", "type": "model", "role": "object"},
+            {"name": "GLM 5.3 Flash", "type": "model", "role": "object"},
+            {"name": "DeepSeek", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Mistral开始托管/提供DeepSeek V4.1 Flash与GLM 5.3 Flash模型"]
+        },
+        {
+          "type": "trend",
+          "label": "端到端兼容OpenAI Responses格式让'统一agent接口'成为多模型提供商竞争的通用层",
+          "summary": "兼容OpenAI格式意味着开发者可以低成本把agent栈从OpenAI迁到Mistral或混合路由, 统一agent接口成为多模型竞争通用层, 语音、编码agent与开源托管三条线都在把Mistral塑成模型生态中立托管商。",
+          "participants": [
+            {"name": "Mistral", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["把agent栈从OpenAI迁到Mistral(或混合路由)", "让\"统一agent接口\"成为多模型提供商竞争的通用层"]
+        }
+      ],
+      "relations": [
+        {"source": "Responses API", "target": "Mistral", "type": "developed_by", "weight": 0.9, "evidence": ["Mistral于10月28日推出Responses API公开预览"]},
+        {"source": "Responses API", "target": "OpenAI", "type": "compatible_with", "weight": 0.7, "evidence": ["端到端兼容OpenAI Responses格式"]},
+        {"source": "DeepSeek V4.1 Flash", "target": "DeepSeek", "type": "developed_by", "weight": 0.8, "evidence": ["一个中式开源生态的中国模型(DeepSeek、GLM)"]},
+        {"source": "Mistral", "target": "DeepSeek V4.1 Flash", "type": "hosts", "weight": 0.7, "evidence": ["Mistral开始托管/提供DeepSeek V4.1 Flash与GLM 5.3 Flash模型"]},
+        {"source": "Mistral", "target": "GLM 5.3 Flash", "type": "hosts", "weight": 0.7, "evidence": ["Mistral开始托管/提供DeepSeek V4.1 Flash与GLM 5.3 Flash模型"]}
+      ],
+      "metrics": [
+        {"name": "Responses API推出时间", "value": "10月28日(公开预览)"},
+        {"name": "新托管的中式开源模型", "value": "DeepSeek V4.1 Flash与GLM 5.3 Flash"}
+      ],
+      "why_it_matters": "Mistral端到端兼容OpenAI Responses格式并把agent栈迁移成本降到最低, 又托管DeepSeek与GLM让西方开发者经合规渠道用上中国开源模型——'统一agent接口'正成为多模型竞争的通用层, Mistral把自己塑成模型生态中立托管商, 语音、编码与托管三条线同时铺开。"
+    },
+    {
+      "article_id": "2026-10-29-10",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.97, "evidence": ["微软将驱动其Copilot产品的GitHub构建的harness(agent控制程序)开放"]},
+        {"name": "GitHub", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["GitHub工程师构建的这套Copilot harness"]},
+        {"name": "Copilot", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["微软将驱动其Copilot产品的GitHub构建的harness(agent控制程序)开放"]},
+        {"name": "Microsoft Foundry", "type": "product", "aliases": ["Foundry"], "confidence": 0.85, "evidence": ["或在Microsoft Foundry中托管云端运行"]},
+        {"name": "Rust", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["把harness运行时迁移到Rust"]},
+        {"name": "SDK", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["开发者可把它作为SDK下载"]},
+        {"name": "VS Code", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["驱动Copilot Code、Copilot Studio、GitHub Copilot应用/CLI与VS Code等全线产品"]},
+        {"name": "Copilot Code", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["驱动Copilot Code、Copilot Studio、GitHub Copilot应用/CLI与VS Code等全线产品"]},
+        {"name": "Copilot Studio", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["驱动Copilot Code、Copilot Studio、GitHub Copilot应用/CLI与VS Code等全线产品"]},
+        {"name": "The Trinity", "type": "paper", "aliases": [], "confidence": 0.8, "evidence": ["agent的执行层正在成为下一个被产品化的竞赛场(见本周The Trinity、Gemini 4 Carbon)"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["agent的执行层正在成为下一个被产品化的竞赛场(见本周The Trinity、Gemini 4 Carbon)"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "微软把驱动Copilot的GitHub构建的harness开放成SDK与Microsoft Foundry托管服务",
+          "summary": "开发者可把harness下载为SDK(支持超过20个前沿模型、含自带key), 或在Microsoft Foundry中托管云端运行, 由微软管理沙箱与agent循环。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Copilot", "type": "product", "role": "object"},
+            {"name": "Microsoft Foundry", "type": "product", "role": "object"}
+          ],
+          "evidence": ["微软将驱动其Copilot产品的GitHub构建的harness(agent控制程序)开放", "开发者可把它作为SDK下载或放进Foundry由微软云端托管"]
+        },
+        {
+          "type": "trend",
+          "label": "微软把harness运行时迁移到Rust, 带来更强性能、更低session开销与更快首token",
+          "summary": "微软宣称把harness运行时迁移到Rust带来更强性能、更低session开销与更快首token, 并称该harness为同类最佳。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Copilot", "type": "product", "role": "object"},
+            {"name": "Rust", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["把harness运行时迁移到Rust带来了更强性能、更低session开销与更快首token"]
+        },
+        {
+          "type": "trend",
+          "label": "微软把驱动Copilot的执行层产品化为基础设施, 与The Trinity、Gemini 4 Carbon同脉",
+          "summary": "价值主张翻转: 此前消费者买的是Copilot成品, 现在微软把驱动Copilot的那层工程本身作为开发产品出售, 与本周The Trinity、Gemini 4 Carbon围绕'harness即上限'的竞争是同一脉络。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Copilot", "type": "product", "role": "object"},
+            {"name": "The Trinity", "type": "paper", "role": "object"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["把\"驱动Copilot的那层工程\"本身作为开发产品出售", "agent的执行层正在成为下一个被产品化的竞赛场"]
+        }
+      ],
+      "relations": [
+        {"source": "Copilot", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["微软将驱动其Copilot产品的GitHub构建的harness(agent控制程序)开放"]},
+        {"source": "Copilot", "target": "GitHub", "type": "developed_by", "weight": 0.7, "evidence": ["GitHub工程师构建的这套Copilot harness"]},
+        {"source": "Copilot", "target": "Rust", "type": "uses", "weight": 0.6, "evidence": ["把harness运行时迁移到Rust"]},
+        {"source": "Microsoft Foundry", "target": "Microsoft", "type": "developed_by", "weight": 0.8, "evidence": ["或在Microsoft Foundry中托管云端运行"]},
+        {"source": "SDK", "target": "Microsoft", "type": "released_by", "weight": 0.7, "evidence": ["开发者可把它作为SDK下载"]},
+        {"source": "VS Code", "target": "Copilot", "type": "integrates", "weight": 0.7, "evidence": ["驱动Copilot Code、Copilot Studio、GitHub Copilot应用/CLI与VS Code等全线产品"]},
+        {"source": "Copilot Code", "target": "Copilot", "type": "integrates", "weight": 0.6, "evidence": ["驱动Copilot Code、Copilot Studio、GitHub Copilot应用/CLI与VS Code等全线产品"]},
+        {"source": "Copilot Studio", "target": "Copilot", "type": "integrates", "weight": 0.6, "evidence": ["驱动Copilot Code、Copilot Studio、GitHub Copilot应用/CLI与VS Code等全线产品"]}
+      ],
+      "metrics": [
+        {"name": "harness支持的前沿模型数", "value": "超过20个"},
+        {"name": "自带key方式", "value": "BYOK(个人key)"}
+      ],
+      "why_it_matters": "微软把'驱动Copilot的那层工程'(harness)本身作为开发产品出售, agent的执行层正式被产品化为一项基础设施——与GitHub把Copilot内嵌进Enterprise同一周出现, 证明'harness即上限'正成为各大厂围绕agent执行层展开的下一个竞赛场, 竞争焦点从成品消费转向底层底盘。"
+    },
+    {
+      "article_id": "2026-10-29-11",
+      "entities": [
+        {"name": "HP", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["HP、华硕、宏碁正把部分笔记本/台式机产能从泰国、越南迁回中国"]},
+        {"name": "华硕", "type": "company", "aliases": ["ASUS", "Asus"], "confidence": 0.95, "evidence": ["HP、华硕、宏碁正把部分笔记本/台式机产能从泰国、越南迁回中国"]},
+        {"name": "宏碁", "type": "company", "aliases": ["Acer"], "confidence": 0.9, "evidence": ["HP、华硕、宏碁正把部分笔记本/台式机产能从泰国、越南迁回中国"]},
+        {"name": "Dell", "type": "company", "aliases": ["戴尔"], "confidence": 0.9, "evidence": ["戴尔也在评估"]},
+        {"name": "CXMT", "type": "company", "aliases": ["长鑫存储"], "confidence": 0.9, "evidence": ["中国本土存储(如CXMT)的可得性成为谈判筹码"]},
+        {"name": "SK hynix", "type": "company", "aliases": ["SK海力士", "海力士"], "confidence": 0.9, "evidence": ["结合存储短缺(海力士看至2030)"]},
+        {"name": "立讯精密", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["立讯精密(苹果代工背景)参与的合资企业已拿到HP、戴尔与华硕订单"]},
+        {"name": "闻泰科技", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["闻泰科技与龙旗科技也在争抢PC订单"]},
+        {"name": "龙旗科技", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["闻泰科技与龙旗科技也在争抢PC订单"]},
+        {"name": "中国", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["把部分笔记本/台式机产能从泰国、越南迁回中国"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "HP、华硕、宏碁把部分笔记本/台式机产能从东南亚迁回中国, 戴尔也在评估",
+          "summary": "业界消息称主因是AI对内存/存储的挤占推高PC物料成本, 大厂重新投向中国制造商的低价报价; 三年前China+1分散策略的产能正向中国部分回流。",
+          "participants": [
+            {"name": "HP", "type": "company", "role": "subject"},
+            {"name": "华硕", "type": "company", "role": "subject"},
+            {"name": "宏碁", "type": "company", "role": "subject"},
+            {"name": "Dell", "type": "company", "role": "subject"},
+            {"name": "中国", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["HP、华硕、宏碁正把部分笔记本/台式机产能从泰国、越南迁回中国", "戴尔也在评估"]
+        },
+        {
+          "type": "trend",
+          "label": "AI对内存/存储的挤占推高PC物料成本, CPU+DRAM+SSD占主流笔记本BOM比例从45%升至约68%",
+          "summary": "AI数据中心虹吸内存与存储供给导致PC零部件成本全线抬升, CPU、DRAM、SSD合计占主流笔记本BOM的比例已从2025年Q1的45%升至2026年Q3的约68%。",
+          "participants": [
+            {"name": "HP", "type": "company", "role": "subject"},
+            {"name": "华硕", "type": "company", "role": "subject"},
+            {"name": "宏碁", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["CPU、DRAM、SSD合计占主流笔记本BOM的比例已从2025年Q1的45%升至2026年Q3的约68%"]
+        },
+        {
+          "type": "trend",
+          "label": "立讯精密参与的合资企业已拿到HP、戴尔与华硕订单, 闻泰科技与龙旗科技争抢PC订单",
+          "summary": "立讯精密参与的合资企业已拿到HP、戴尔与华硕订单, 闻泰科技与龙旗科技也在争抢订单, 甚至愿意免除工程与开模费用。",
+          "participants": [
+            {"name": "立讯精密", "type": "company", "role": "subject"},
+            {"name": "闻泰科技", "type": "company", "role": "subject"},
+            {"name": "龙旗科技", "type": "company", "role": "subject"},
+            {"name": "HP", "type": "company", "role": "object"},
+            {"name": "Dell", "type": "company", "role": "object"},
+            {"name": "华硕", "type": "company", "role": "object"}
+          ],
+          "evidence": ["立讯精密(苹果代工背景)参与的合资企业已拿到HP、戴尔与华硕订单", "闻泰科技与龙旗科技也在争抢PC订单"]
+        },
+        {
+          "type": "trend",
+          "label": "AI对存储的挤占重排全球电子制造地理, 中国本土存储CXMT的可得性成为谈判筹码",
+          "summary": "结合存储短缺(海力士看至2030)、中国HBM自产低良率仍强行上马, 中国既是最大的受害者之一也是产能回迁的受益方, 中国本土存储可得性成为谈判筹码。",
+          "participants": [
+            {"name": "CXMT", "type": "company", "role": "subject"},
+            {"name": "SK hynix", "type": "company", "role": "subject"},
+            {"name": "HP", "type": "company", "role": "object"}
+          ],
+          "evidence": ["中国本土存储(如CXMT)的可得性成为谈判筹码", "AI对存储的挤占正在重排全球电子制造的地理与成本结构"]
+        }
+      ],
+      "relations": [
+        {"source": "立讯精密", "target": "HP", "type": "supplies", "weight": 0.7, "evidence": ["立讯精密(苹果代工背景)参与的合资企业已拿到HP、戴尔与华硕订单"]},
+        {"source": "立讯精密", "target": "Dell", "type": "supplies", "weight": 0.7, "evidence": ["立讯精密(苹果代工背景)参与的合资企业已拿到HP、戴尔与华硕订单"]},
+        {"source": "立讯精密", "target": "华硕", "type": "supplies", "weight": 0.7, "evidence": ["立讯精密(苹果代工背景)参与的合资企业已拿到HP、戴尔与华硕订单"]},
+        {"source": "CXMT", "target": "SK hynix", "type": "competes_with", "weight": 0.5, "evidence": ["中国本土存储(如CXMT)的可得性成为谈判筹码"]},
+        {"source": "HP", "target": "CXMT", "type": "uses", "weight": 0.5, "evidence": ["中国本土存储(如CXMT)的可得性成为谈判筹码"]}
+      ],
+      "metrics": [
+        {"name": "主流笔记本BOM中CPU+DRAM+SSD占比", "value": "从2025年Q1的45%升至2026年Q3的约68%"},
+        {"name": "主流笔记本参考价位", "value": "$699"}
+      ],
+      "why_it_matters": "三年前为规避关税与地缘风险撤出中国的产能, 如今被'AI时代的内存通胀'部分抵消而回迁——AI对存储的挤占正在重排全球电子制造的地理与成本结构, 中国既是最大的受害者之一也是产能回迁的受益方, 本地存储可得性成为反向谈判筹码。"
+    },
+    {
+      "article_id": "2026-10-29-12",
+      "entities": [
+        {"name": "Broadcom", "type": "company", "aliases": ["博通"], "confidence": 0.95, "evidence": ["Broadcom高管介绍\"Deep Buffers\"作为可扩展AI训练/推理网络的基础"]},
+        {"name": "OCP", "type": "organization", "aliases": ["OCP全球峰会", "Open Compute Project"], "confidence": 0.9, "evidence": ["在2026 OCP全球峰会上"]},
+        {"name": "Karen Schramm", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Broadcom架构副总裁Karen Schramm在\"Deep Buffers\"演讲中"]},
+        {"name": "Manish Mehta", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Manish Mehta描述行业从可插拔收发器与CPO向光计算互连(OCI)的迁移"]},
+        {"name": "Deep Buffers", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["Broadcom高管介绍\"Deep Buffers\"作为可扩展AI训练/推理网络的基础"]},
+        {"name": "Ethernet", "type": "topic", "aliases": ["开放Ethernet"], "confidence": 0.85, "evidence": ["以开放Ethernet替代专有互联"]},
+        {"name": "InfiniBand", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["推动开放Ethernet在AI训练网络里与InfiniBand/NVLink正面竞争"]},
+        {"name": "NVLink", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["推动开放Ethernet在AI训练网络里与InfiniBand/NVLink正面竞争"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.9, "evidence": ["与NVIDIA\"全栈\"路线之间长期角力的延伸"]},
+        {"name": "OCI", "type": "hardware", "aliases": ["光计算互连"], "confidence": 0.85, "evidence": ["从可插拔收发器/CPO向光计算互连(OCI)的迁移"]},
+        {"name": "CPO", "type": "hardware", "aliases": ["共封装光学"], "confidence": 0.8, "evidence": ["从可插拔收发器与CPO向光计算互连(OCI)的迁移"]},
+        {"name": "XPU", "type": "hardware", "aliases": [], "confidence": 0.8, "evidence": ["让XPU厂商获得可互操作的开放Ethernet标准"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Broadcom在2026 OCP全球峰会上介绍Deep Buffers, 推进开放Ethernet的AI基础设施",
+          "summary": "Broadcom架构副总裁Karen Schramm在Deep Buffers演讲中展示两栋32-GPU建筑经scale-across交换机连接的设计, 诉求是避免复杂追踪、把芯片做小, 在800G速率下也维持无丢包, 让XPU厂商获得可互操作的开放Ethernet标准。",
+          "participants": [
+            {"name": "Broadcom", "type": "company", "role": "subject"},
+            {"name": "OCP", "type": "organization", "role": "partner"},
+            {"name": "Karen Schramm", "type": "person", "role": "subject"},
+            {"name": "Deep Buffers", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Broadcom高管介绍\"Deep Buffers\"作为可扩展AI训练/推理网络的基础", "两栋32-GPU建筑经scale-across交换机连接"]
+        },
+        {
+          "type": "infra",
+          "label": "Broadcom讨论从可插拔收发器/CPO向光计算互连(OCI)的迁移, 覆盖scale-up/scale-across/scale-out三层网络",
+          "summary": "Manish Mehta描述行业从可插拔收发器与CPO向光计算互连(OCI)的迁移, 配合ESUN与SUE-T等计划覆盖三层网络。",
+          "participants": [
+            {"name": "Broadcom", "type": "company", "role": "subject"},
+            {"name": "Manish Mehta", "type": "person", "role": "subject"},
+            {"name": "OCI", "type": "hardware", "role": "object"},
+            {"name": "CPO", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["从可插拔收发器/CPO向光计算互连(OCI)的迁移", "Manish Mehta描述行业从可插拔收发器与CPO向光计算互连(OCI)的迁移"]
+        },
+        {
+          "type": "trend",
+          "label": "开放Ethernet在AI训练网络里与InfiniBand/NVLink正面竞争, 是Broadcom与NVIDIA全栈路线角力的延伸",
+          "summary": "当训练集群涨到数千到数十万GPU, 交换拓扑与光互连成为与加速器同等重要的杠杆; 需要更多自主或多供应商网络的AI工厂, 是开放Ethernet最大的增长叙事。",
+          "participants": [
+            {"name": "Broadcom", "type": "company", "role": "subject"},
+            {"name": "Ethernet", "type": "topic", "role": "object"},
+            {"name": "InfiniBand", "type": "topic", "role": "competitor"},
+            {"name": "NVIDIA", "type": "company", "role": "competitor"},
+            {"name": "NVLink", "type": "hardware", "role": "competitor"}
+          ],
+          "evidence": ["推动开放Ethernet在AI训练网络里与InfiniBand/NVLink正面竞争", "与NVIDIA\"全栈\"路线之间长期角力的延伸"]
+        }
+      ],
+      "relations": [
+        {"source": "Karen Schramm", "target": "Broadcom", "type": "affiliated_with", "weight": 0.8, "evidence": ["Broadcom架构副总裁Karen Schramm在\"Deep Buffers\"演讲中"]},
+        {"source": "Manish Mehta", "target": "Broadcom", "type": "affiliated_with", "weight": 0.8, "evidence": ["Manish Mehta描述行业从可插拔收发器与CPO向光计算互连(OCI)的迁移"]},
+        {"source": "Deep Buffers", "target": "Broadcom", "type": "developed_by", "weight": 0.8, "evidence": ["Broadcom高管介绍\"Deep Buffers\"作为可扩展AI训练/推理网络的基础"]},
+        {"source": "Deep Buffers", "target": "Ethernet", "type": "built_on", "weight": 0.8, "evidence": ["以开放Ethernet替代专有互联"]},
+        {"source": "Ethernet", "target": "InfiniBand", "type": "competes_with", "weight": 0.7, "evidence": ["推动开放Ethernet在AI训练网络里与InfiniBand/NVLink正面竞争"]},
+        {"source": "Broadcom", "target": "NVIDIA", "type": "competes_with", "weight": 0.6, "evidence": ["与NVIDIA\"全栈\"路线之间长期角力的延伸"]},
+        {"source": "OCI", "target": "CPO", "type": "replaces", "weight": 0.6, "evidence": ["从可插拔收发器/CPO向光计算互连(OCI)的迁移"]},
+        {"source": "XPU", "target": "Ethernet", "type": "uses", "weight": 0.6, "evidence": ["让XPU厂商获得可互操作的开放Ethernet标准"]}
+      ],
+      "metrics": [
+        {"name": "演示的楼栋互联规模", "value": "两栋32-GPU建筑经scale-across交换机连接"},
+        {"name": "无丢包维持速率", "value": "800G"},
+        {"name": "AI训练集群增长规模", "value": "数千到数十万GPU"}
+      ],
+      "why_it_matters": "当训练集群涨到数千到数十万GPU, 交换拓扑与光互连成为与加速器同级的杠杆——Broadcom在开放计算生态里系统推动AI网络'去专有化', 开放Ethernet开始与InfiniBand/NVLink正面竞争, 需要多供应商互操作网络的AI工厂是开放互联最大的增长叙事。"
+    }
+  ]
+}

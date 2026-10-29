@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-29",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "抽取整体扎实、事实与数字多可核对, 但有一处高严重度事实走样(article 8 把PAC注资错归给OpenAI/Anthropic公司实体), 另有多处用编辑对比语造伪事件/伪关系、以及实体与关系类型错配(article 2/4/7)。建议修订后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-29-8",
+      "severity": "high",
+      "problem": "两条关系 \"OpenAI --invests_in--> 超级PAC\" 和 \"Anthropic --invests_in--> 超级PAC\" 把注资主体错写成公司法人。原文说 \"这些超级PAC网络由OpenAI与Anthropic高管及投资者注资\"——注资的是这两家公司的高管与投资个人, 并非 OpenAI/Anthropic 公司本身。图谱读起来会讲成\"OpenAI公司花钱买中期选举\"的错误事实。",
+      "fix": "删除这两条 invests_in 关系(或把 source 改成证据明确的主体, 如\"OpenAI/Anthropic高管及投资者\"), 公司实体仅保留为这些个人所属的组织 affiliation; 不要在没有公司本身出资证据时建公司级的 invests_in。"
+    },
+    {
+      "article_id": "2026-10-29-5",
+      "severity": "medium",
+      "problem": "四条 \"Huawei --uses--> HBM3E\"、\"寒武纪 --uses--> HBM3E\"、\"沐曦 --uses--> HBM3E\"、\"天数智芯 --uses--> HBM3E\" 的共用 evidence 都是 \"CXMT的HBM3E已向多家国产AI芯片设计公司送样\"。原文只说\"送样给多家国产AI芯片设计公司\"并另起一句把华W/寒武纪/沐曦/天数智芯列为\"因内存成本上调AI芯片价格20-50%\"的公司——抽样收件人清单与涨价清单并未被原文等同, 这四条 uses 关系缺直接证据支撑。",
+      "fix": "要么删掉这四条未经证据确认的 uses 关系, 要么把related主体的证据改为支持\"它们的AI芯片也受内存短缺影响\"的原文(价格上调), 不要用\"送样\"证据硬套这四家。"
+    },
+    {
+      "article_id": "2026-10-29-2",
+      "severity": "medium",
+      "problem": "事件4 \"与Mistral Voxtral 3等语音模型扎堆发布相比, NVIDIA的核心差异在开放权重加端侧可跑\" 被标为 trend 事件, 并把 NVIDIA/Mistral Voxtral 3/ElevenLabs Realtime/Salesforce Launa-Omni 一起列为 participants。原文里这批竞品只是\"相比之下\"的编辑对比上下文, 它们与 NVIDIA 之间没有发生任何真实交互或事件, 这制造了一个伪事件并隐含竞品间关系。",
+      "fix": "删除这个伪事件及其 participants 列表; 三个竞品模型仅作实体保留(用于图谱连通), 不为其建关系和事件。"
+    },
+    {
+      "article_id": "2026-10-29-4",
+      "severity": "medium",
+      "problem": "关系 \"Copilot Business --released_by--> GitHub\" 与 \"Copilot Enterprise --released_by--> GitHub\" 用错类型。Copilot Business/Enterprise 是早已存在的定价层级, 本篇新闻只是把它们作为背景参照(\"与...并行存在\")重提, 并非本日发布; released_by 会给人\"当天新发布\"的误导。",
+      "fix": "删除这两条 released_by 关系, 或改为表达\"随Enterprise Cloud授权包含/并行存在\"的包含类关系; 本篇真正的新事件是 Copilot 随 Enterprise Cloud 授权捆绑 + 按量计费, 已用事件0/1表达, 不要重复给它安 released_by。"
+    },
+    {
+      "article_id": "2026-10-29-7",
+      "severity": "medium",
+      "problem": "实体类型错配: SecAlign(SecAlign++)、ASIDE 被标成 type \"model\"。它们是面向提示注入的防御/对齐方法(technique/approach), 不是可独立发布的模型; 把它们与 GPT-OSS-20B、Llama-3.3-70B-Instruct 这些基准模型混同为 model 类型, 会让图谱把方法与模型当成同一类对象。",
+      "fix": "把 SecAlign、ASIDE 的 type 改为 technique/approach(method)这类防御方法类型; 若类型枚举无该值, 至少不要标 model, 并确保它们不与基准模型共用同一实体类型语义。"
+    },
+    {
+      "article_id": "2026-10-29-1",
+      "severity": "medium",
+      "problem": "关系 \"美国众议院 --targets--> OpenAI\" 用 targets 表达监管/追责诉求, 关系类型不准确。原文是众议院民主党高层\"要求...在48小时内通知国会\", 这是对受约束对象的强制性监管要求, 不是单纯瞄准(targets); 同一类型在 article 6 被套用在五家公司上, 语义含糊且鼓励了\"提到即关系\"。",
+      "fix": "改用表达监管/要求的类型(如 regulates / demands_notification), 或至少把 evidence 与 type 对齐为\"要求48小时通报\"的监管关系; 不要用泛化的 targets 兜底。"
+    }
+  ],
+  "lessons": [
+    "资金/献金类新闻要区分公司法人与其高管投资者个体: 只有原文明确是公司本身出资时才建公司级 invests_in 关系, 若是\"高管及投资者\"则应归为个人 affiliation。",
+    "\"与竞品对比/扎堆发布\"的并列提及只是编辑上下文, 不是事件也不是关系, 竞品仅保留为实体, 不要为没有真实互动的对象建伪事件或关系。",
+    "已存在多年的产品或定价层级在条款调整中被重提时不要标 released_by(暗示当日新发布), 用包含/变更类关系表达。"
+  ]
+}
