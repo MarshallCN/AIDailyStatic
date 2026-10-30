@@ -1,0 +1,683 @@
+{
+  "date": "2026-10-30",
+  "articles": [
+    {
+      "article_id": "2026-10-30-0",
+      "entities": [
+        {"name": "Intel", "type": "company", "aliases": ["英特尔"], "confidence": 0.97, "evidence": ["Intel因第四季度业绩指引不及预期而暴跌25.7%至盘中-29.6%"]},
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.93, "evidence": ["这是Alphabet周三Q3业绩雷(单日蒸发约$5000亿、创史上最大单日跌幅)之后的第二天"]},
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.93, "evidence": ["Amazon因Q4展望低于预期跌5.3%"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英伟达跌破5万亿美元整数关口"]},
+        {"name": "Nebius", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["云计算公司Nebius跌7.3%"]},
+        {"name": "ARM", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["ARM与AMD单日跌超9%"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["ARM与AMD单日跌超9%"]},
+        {"name": "费城半导体指数", "type": "benchmark", "aliases": ["费半"], "confidence": 0.9, "evidence": ["费城半导体指数一度扩大跌幅至约6%"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Intel Q4指引不及预期开盘暴跌25.7%, 引发科技股连锁抛售",
+          "summary": "Intel因第四季度业绩指引不及预期而开盘暴跌25.7%(盘中一度-29.6%)领跌全场, 纳指跌2.2%、标普500跌1.1%, Amazon跌5.3%、Nebius跌7.3%, ARM与AMD单日跌超9%。",
+          "participants": [
+            {"name": "Intel", "type": "company", "role": "subject"},
+            {"name": "Amazon", "type": "company", "role": "object"},
+            {"name": "Nebius", "type": "company", "role": "object"},
+            {"name": "ARM", "type": "company", "role": "object"},
+            {"name": "AMD", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Intel因第四季度业绩指引不及预期而暴跌25.7%至盘中-29.6%", "Amazon因Q4展望低于预期跌5.3%, 云计算公司Nebius跌7.3%, 费城半导体指数一度扩大跌幅至约6%, ARM与AMD单日跌超9%"]
+        },
+        {
+          "type": "trend",
+          "label": "英伟达跌破5万亿美元市值关口, 半导体权重股承接重定价抛压",
+          "summary": "英伟达跌破5万亿美元整数关口, 开盘前报$207.12、较周四收盘$213.66跌$6.54, 10月以来累计下跌约9%; 费城半导体指数一度扩大跌幅至约6%。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "费城半导体指数", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["英伟达跌破5万亿美元整数关口——开盘前报$207.12、较周四收盘$213.66跌$6.54", "费城半导体指数一度扩大跌幅至约6%"]
+        },
+        {
+          "type": "trend",
+          "label": "Alphabet周三Q3业绩雷开启现金流问责传导, 次日Intel接棒",
+          "summary": "这是Alphabet周三Q3业绩雷(单日蒸发约$5000亿、创史上最大单日跌幅)之后的第二天\"现金流问责\"传导, AI资产连续两日被重定价, 主题从增长叙事切换到盈利与现金流实测。",
+          "participants": [
+            {"name": "Alphabet", "type": "company", "role": "subject"},
+            {"name": "Intel", "type": "company", "role": "object"}
+          ],
+          "evidence": ["这是Alphabet周三Q3业绩雷(单日蒸发约$5000亿、创史上最大单日跌幅)之后的第二天\"现金流问责\"传导"]
+        }
+      ],
+      "relations": [
+        {"source": "Intel", "target": "Alphabet", "type": "compared_with", "weight": 0.5, "evidence": ["这是Alphabet周三Q3业绩雷(单日蒸发约$5000亿、创史上最大单日跌幅)之后的第二天\"现金流问责\"传导"]},
+        {"source": "ARM", "target": "费城半导体指数", "type": "compared_with", "weight": 0.4, "evidence": ["费城半导体指数一度扩大跌幅至约6%, ARM与AMD单日跌超9%"]},
+        {"source": "AMD", "target": "费城半导体指数", "type": "compared_with", "weight": 0.4, "evidence": ["费城半导体指数一度扩大跌幅至约6%, ARM与AMD单日跌超9%"]}
+      ],
+      "metrics": [
+        {"name": "Intel开盘跌幅", "value": "25.7%(盘中一度-29.6%)"},
+        {"name": "纳指跌幅", "value": "2.2%"},
+        {"name": "Dow跌幅", "value": "0.2%"},
+        {"name": "S&P 500跌幅", "value": "1.1%"},
+        {"name": "Amazon跌幅", "value": "5.3%"},
+        {"name": "Nebius跌幅", "value": "7.3%"},
+        {"name": "费城半导体指数跌幅", "value": "约6%"},
+        {"name": "ARM与AMD单日跌幅", "value": "超9%"},
+        {"name": "英伟达市值关口", "value": "跌破5万亿美元"},
+        {"name": "英伟达开盘股价", "value": "$207.12(较周四收盘$213.66跌$6.54)"},
+        {"name": "英伟达10月累计跌幅", "value": "约9%"},
+        {"name": "Alphabet单日市值蒸发", "value": "约$5000亿"}
+      ],
+      "why_it_matters": "二级市场连续两日把\"AI资本开支何时兑现现金流\"当作定价主轴, 叙事从增长切换为盈利实测, 而一级市场与算力采购端仍在加码——两级市场对同一资产的定价背离正在扩大而不是收敛。"
+    },
+    {
+      "article_id": "2026-10-30-1",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.97, "evidence": ["Jensen Huang在10月29日受访称NVIDIA与Megaspeed的关系\"正常且不寻常\""]},
+        {"name": "Jensen Huang", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["Jensen Huang在10月29日受访称NVIDIA与Megaspeed的关系\"正常且不寻常\""]},
+        {"name": "Megaspeed International", "type": "company", "aliases": ["Megaspeed"], "confidence": 0.9, "evidence": ["新加坡公司Megaspeed International的一名高管(Alice Huang)正受到美国国家安全调查"]},
+        {"name": "Alice Huang", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Megaspeed International的一名高管(Alice Huang)正受到美国国家安全调查"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "美国国家安全调查针对Megaspeed International高管Alice Huang涉数据中心AI芯片转口中国",
+          "summary": "新加坡公司Megaspeed International高管Alice Huang正受美国国家安全调查, 疑与将数据中心级AI芯片转口至中国有关——中国被禁止购买NVIDIA最先进AI加速器。",
+          "participants": [
+            {"name": "Megaspeed International", "type": "company", "role": "object"},
+            {"name": "Alice Huang", "type": "person", "role": "object"}
+          ],
+          "evidence": ["新加坡公司Megaspeed International的一名高管(Alice Huang)正受到美国国家安全调查", "疑与将数据中心级AI芯片转口至中国有关"]
+        },
+        {
+          "type": "security",
+          "label": "Jensen Huang回应间谍调查, 称NVIDIA与Megaspeed关系正常且已逐一清点所有GPU",
+          "summary": "Jensen Huang强调NVIDIA与Megaspeed的往来是正当的, 且逐一清点过该公司部署的所有GPU、确认没有非法流向中国, 并相信美国政府也这样做了。",
+          "participants": [
+            {"name": "Jensen Huang", "type": "person", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Megaspeed International", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Huang受访强调\"NVIDIA与Megaspeed的往来是正当的\"", "且\"我们研究过他们部署的所有GPU、逐一清点过每一个, 我相信美国政府也这样做了\""]
+        },
+        {
+          "type": "policy",
+          "label": "出口禁令把NVIDIA逐出中国市场, 催生灰色转口与走私指控",
+          "summary": "出口禁令已把NVDA逐出中国市场, 也催生高额\"灰色转口\"与走私指控; Megaspeed此前已就芯片转口调查\"关灯\"(官网下线), 使外部难以独立核实NVIDIA声明。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "object"},
+            {"name": "Megaspeed International", "type": "company", "role": "object"}
+          ],
+          "evidence": ["出口禁令已把NVDA逐出中国市场, 也催生高额\"灰色转口\"与走私指控", "Megaspeed此前已就芯片转口调查\"关灯\"(官网下线)"]
+        }
+      ],
+      "relations": [
+        {"source": "Jensen Huang", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.85, "evidence": ["Jensen Huang在10月29日受访称NVIDIA与Megaspeed的关系"]},
+        {"source": "Alice Huang", "target": "Megaspeed International", "type": "affiliated_with", "weight": 0.8, "evidence": ["新加坡公司Megaspeed International的一名高管(Alice Huang)"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "芯片流向可溯性升级为国家安全的问讯对象后, NVIDIA只能用\"清点GPU\"式自证回应, 而涉事方官网下线让外部无法独立核实——出口管制的执行成本正从政府下沉到芯片制造商与整条转运渠道。"
+    },
+    {
+      "article_id": "2026-10-30-2",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI周四(10/30)更新其Model Spec——面向公众的AI模型行为路线图"]},
+        {"name": "Model Spec", "type": "policy", "aliases": [], "confidence": 0.93, "evidence": ["将其重组为五大核心价值: 忠于人类意图、最小化伤害、诚实与透明、人类能动性、人文关怀"]},
+        {"name": "Constitutional AI", "type": "policy", "aliases": [], "confidence": 0.9, "evidence": ["此举在外界看来明显对标Anthropic的Constitutional AI"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["明显对标Anthropic的Constitutional AI——后者用一份书面的\"宪法\"式原则引导模型行为"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "OpenAI更新Model Spec, 重组为五大核心价值并以忠于人类意图为基石",
+          "summary": "新版Model Spec把框架收敛为五个核心价值: 忠于人类意图、最小化伤害、诚实与透明、人类能动性、关怀; 忠于人类意图是整套框架的基石, 要求模型理解用户真实意图而非机械执行指令。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Model Spec", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["OpenAI周四(10/30)更新其Model Spec", "将其重组为五大核心价值: 忠于人类意图、最小化伤害、诚实与透明、人类能动性、人文关怀"]
+        },
+        {
+          "type": "research",
+          "label": "OpenAI探索新的训练方法让模型内化更新后的Model Spec原则",
+          "summary": "官方坦承\"当前模型尚未完全体现更新后的Model Spec\", 并称正在探索新的训练方法来让模型内化这些原则, 明确承认当前agent按字面执行指令的局限。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Model Spec", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["官方同时坦承\"当前模型尚未完全体现更新后的Model Spec\", 并称正在探索新的训练方法来让模型内化这些原则"]
+        }
+      ],
+      "relations": [
+        {"source": "Model Spec", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI周四(10/30)更新其Model Spec"]},
+        {"source": "Constitutional AI", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["明显对标Anthropic的Constitutional AI——后者用一份书面的\"宪法\"式原则引导模型行为、让塑造模型的价值观更透明可审计"]},
+        {"source": "Model Spec", "target": "Constitutional AI", "type": "compared_with", "weight": 0.6, "evidence": ["此举在外界看来明显对标Anthropic的Constitutional AI"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "OpenAI把\"照字面执行指令\"公开定性为模型局限, 并把价值观内化写进训练目标——模型如何自我约束正成为与能力跑分并列的公共竞争维度, Anthropic的Constitutional AI路线因此拿到先手背书。"
+    },
+    {
+      "article_id": "2026-10-30-3",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI宣布两项社区安全举措"]},
+        {"name": "社区安全报告", "type": "policy", "aliases": ["《社区安全报告》"], "confidence": 0.9, "evidence": ["承诺在2027年初发布首份《社区安全报告》"]},
+        {"name": "年龄预测系统", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["机制上OpenAI加强了年龄预测系统"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "OpenAI承诺2027年初发布首份《社区安全报告》并每半年更新一期",
+          "summary": "首份报告覆盖2026下半年\"防止暴力\"等相关安全措施的有效性, 之后每半年一期; 2026年Q3已向执法部门移交200多起紧急暴力威胁线索。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "社区安全报告", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["承诺在2027年初发布首份《社区安全报告》(覆盖2026年下半年\"防止暴力\"等相关安全措施的有效性, 之后每半年更新一次)", "OpenAI称2026年Q3向执法部门移交了200多起紧急暴力威胁线索"]
+        },
+        {
+          "type": "security",
+          "label": "OpenAI加强未成年人武器信息限制, 并新增暴力专注行为干预",
+          "summary": "对未成年人进一步压缩武器的实用信息; 机制上加强年龄预测系统, 新增\"当对话显示出对暴力的持续专注时自动结束该轮聊天\"的行为干预, 多次触发可临时暂停账户。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "年龄预测系统", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["二是对未成年人进一步压缩武器的实用信息", "机制上OpenAI加强了年龄预测系统, 并新增\"当对话显示出对暴力的持续专注时自动结束该轮聊天\"的行为干预, 多次触发可临时暂停账户"]
+        }
+      ],
+      "relations": [
+        {"source": "社区安全报告", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["承诺在2027年初发布首份《社区安全报告》"]},
+        {"source": "OpenAI", "target": "年龄预测系统", "type": "uses", "weight": 0.7, "evidence": ["机制上OpenAI加强了年龄预测系统"]}
+      ],
+      "metrics": [
+        {"name": "首份报告发布时点", "value": "2027年初(覆盖2026下半年)"},
+        {"name": "报告更新频率", "value": "每半年一期"},
+        {"name": "Q3移交执法部门线索", "value": "200多起紧急暴力威胁线索"}
+      ],
+      "why_it_matters": "治理手段从\"事后封号\"转向\"对话过程中实时介入\"——年龄预测、暴力专注识别与自动中断的组合, 说明安全投入的颗粒度已经从内容过滤下沉到行为模式层面。"
+    },
+    {
+      "article_id": "2026-10-30-4",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI宣布将遵守robots.txt中一个共享信号(common signal)"]},
+        {"name": "共享信号", "type": "tool", "aliases": ["common signal"], "confidence": 0.9, "evidence": ["OpenAI宣布将遵守robots.txt中一个共享信号(common signal)"]},
+        {"name": "robots.txt", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI强调这个新信号不会取代其既有robots.txt爬虫控制"]},
+        {"name": "IETF AI Preferences工作组", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["该信号来自IETF AI Preferences工作组"]},
+        {"name": "Meta", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI在Meta新版商业条款(10/30生效, 允许爬取商业/新闻站点用于AI训练)的同一星期宣布"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "OpenAI宣布遵守robots.txt共享信号, 网站可一次性向多家AI提供商表态训练偏好",
+          "summary": "共享信号来自IETF AI Preferences工作组, OpenAI与工作组其他成员于10/30联合宣布, 让网站运营者用一套规则同时向多家参与AI提供商表达训练偏好, 预计未来数月内实施。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "共享信号", "type": "tool", "role": "object"},
+            {"name": "IETF AI Preferences工作组", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["OpenAI宣布将遵守robots.txt中一个共享信号(common signal)", "该信号来自IETF AI Preferences工作组, OpenAI与工作组其他成员于10/30联合宣布, 预计未来数月内实施"]
+        },
+        {
+          "type": "policy",
+          "label": "OpenAI强调共享信号不取代既有robots.txt爬虫控制, 将在未来数月落地",
+          "summary": "OpenAI强调新信号不会取代其既有robots.txt爬虫控制, 已有的逐爬虫开关仍有效并被尊重, 官方表示将在未来数月落地并再发更新说明实现细节。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "robots.txt", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["OpenAI强调这个新信号不会取代其既有robots.txt爬虫控制", "官方表示将在未来数月落地"]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI在Meta新版商业条款生效同一周宣布尊重网站训练偏好, 两者方向恰好相反",
+          "summary": "OpenAI在Meta新版商业条款(10/30生效, 允许爬取商业/新闻站点用于AI训练)的同一星期宣布\"尊重网站不想被训练\"的偏好, 两者方向恰好相反。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "object"}
+          ],
+          "evidence": ["两者方向恰好相反"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "共享信号", "type": "complies_with", "weight": 0.8, "evidence": ["OpenAI宣布将遵守robots.txt中一个共享信号(common signal)"]},
+        {"source": "共享信号", "target": "IETF AI Preferences工作组", "type": "developed_by", "weight": 0.7, "evidence": ["该信号来自IETF AI Preferences工作组"]},
+        {"source": "OpenAI", "target": "robots.txt", "type": "uses", "weight": 0.5, "evidence": ["OpenAI强调这个新信号不会取代其既有robots.txt爬虫控制"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "\"网站如何表达抗AI训练偏好\"正从各家专有爬虫规则收敛为IETF层的互操作标准——数据可治理被头部模型厂商当作竞争力, 而OpenAI与Meta同一周释放方向相反的信号, 让标准与责任分配的两场博弈同时成形。"
+    },
+    {
+      "article_id": "2026-10-30-5",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Meta新商业条款将于10月30日生效"]},
+        {"name": "Meta AI", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["新条款将Meta AI输出错误(如幻觉、错误决策建议)导致的法律后果划给企业客户"]},
+        {"name": "Facebook", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["持续使用Facebook、Instagram或WhatsApp的企业账户, 将被视为同意Meta抓取其关联网站内容"]},
+        {"name": "Instagram", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["持续使用Facebook、Instagram或WhatsApp的企业账户, 将被视为同意Meta抓取其关联网站内容"]},
+        {"name": "WhatsApp", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["持续使用Facebook、Instagram或WhatsApp的企业账户, 将被视为同意Meta抓取其关联网站内容"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Meta新商业条款10月30日生效, 将AI模型出错责任转移给企业客户",
+          "summary": "新条款将Meta AI输出错误(如幻觉、错误决策建议)导致的法律后果划给企业客户, 企业(及政府实体)使用Meta AI即被视为接受这一责任分配。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Meta AI", "type": "product", "role": "object"}
+          ],
+          "evidence": ["新条款将Meta AI输出错误(如幻觉、错误决策建议)导致的法律后果划给企业客户——企业(及政府实体)使用Meta AI即被视为接受这一责任分配"]
+        },
+        {
+          "type": "policy",
+          "label": "Meta获授权抓取企业账户关联的商业与新闻网站数据训练AI(继续使用即同意)",
+          "summary": "据法律专家解读, 10月30日起持续使用Facebook、Instagram或WhatsApp的企业账户将被视为同意Meta抓取其关联网站内容(含新闻站点)用于训练旗下AI模型。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Facebook", "type": "product", "role": "object"},
+            {"name": "Instagram", "type": "product", "role": "object"},
+            {"name": "WhatsApp", "type": "product", "role": "object"}
+          ],
+          "evidence": ["10月30日起持续使用Facebook、Instagram或WhatsApp的企业账户, 将被视为同意Meta抓取其关联网站内容(含新闻站点)用于训练旗下AI模型"]
+        }
+      ],
+      "relations": [
+        {"source": "Meta AI", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["新条款将Meta AI输出错误(如幻觉、错误决策建议)导致的法律后果划给企业客户"]},
+        {"source": "Facebook", "target": "Meta", "type": "released_by", "weight": 0.6, "evidence": ["持续使用Facebook、Instagram或WhatsApp的企业账户, 将被视为同意Meta抓取其关联网站内容"]},
+        {"source": "WhatsApp", "target": "Meta", "type": "released_by", "weight": 0.6, "evidence": ["持续使用Facebook、Instagram或WhatsApp的企业账户, 将被视为同意Meta抓取其关联网站内容"]},
+        {"source": "Instagram", "target": "Meta", "type": "released_by", "weight": 0.6, "evidence": ["持续使用Facebook、Instagram或WhatsApp的企业账户, 将被视为同意Meta抓取其关联网站内容"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "Meta把AI责任与数据使用权绑进同一个生效日, 用\"继续使用即同意\"完成单边再平衡——治理空窗期里平台把法律敞口转给客户、把第三方内容留给自己, 出版方与中大型企业的议价地位被同步压缩。"
+    },
+    {
+      "article_id": "2026-10-30-6",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.97, "evidence": ["NVIDIA计划向封测厂京元电子(King Yuan Electronics)预付约$11亿"]},
+        {"name": "京元电子", "type": "company", "aliases": ["King Yuan Electronics"], "confidence": 0.92, "evidence": ["封测厂京元电子(King Yuan Electronics)"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "NVIDIA拟向京元电子预付约11亿美元扩充美国芯片测试产能, 目标2027年4月量产",
+          "summary": "预付(advance payment)是英伟达锁定封测产能的金融工具, 京元电子将用这笔资金在美国建设新设施、采购设备, 高产量目标定在2027年4月。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "京元电子", "type": "company", "role": "object"}
+          ],
+          "evidence": ["NVIDIA计划向封测厂京元电子(King Yuan Electronics)预付约$11亿, 支持其在美国建设与采购新设施及设备的新产能, 目标2027年4月实现量产"]
+        }
+      ],
+      "relations": [
+        {"source": "京元电子", "target": "NVIDIA", "type": "supplies", "weight": 0.7, "evidence": ["NVIDIA计划向封测厂京元电子(King Yuan Electronics)预付约$11亿, 支持其在美国建设与采购新设施及设备的新产能"]},
+        {"source": "NVIDIA", "target": "京元电子", "type": "funds", "weight": 0.4, "evidence": ["预付(advance payment)是英伟达锁定封测产能的又一种金融工具", "NVIDIA计划向封测厂京元电子(King Yuan Electronics)预付约$11亿"]}
+      ],
+      "metrics": [
+        {"name": "预付金额", "value": "约$11亿"},
+        {"name": "量产目标", "value": "2027年4月"}
+      ],
+      "why_it_matters": "预付、担保这类金融工具正把美国AI供应链逐个资本化——当芯片厂商同时扮演\"货币提供方\"与\"算力承销商\", 最稀缺的资源已不是芯片本身, 而是把芯片变成可交付算力的本土环节; 把测试产能拉进美国既缩短对亚洲的依赖, 也是对出口管制与\"灰色转口\"争议的直接对冲。"
+    },
+    {
+      "article_id": "2026-10-30-7",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.97, "evidence": ["NVIDIA正考虑为Nscale运营的数据中心提供数十亿美元信用担保"]},
+        {"name": "Nscale", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["NVIDIA正考虑为Nscale运营的数据中心提供数十亿美元信用担保, Anthropic计划使用该设施"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["对象涵盖由合作伙伴运营、面向核心客户(如Anthropic)的大型AI设施"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "NVIDIA考虑为Nscale数据中心提供数十亿美元信用担保, Anthropic计划使用该设施",
+          "summary": "NVIDIA正考虑为Nscale运营的数据中心提供数十亿美元信用担保, Anthropic计划使用该设施; 此前已披露的此类担保最大总敞口已达约$1085亿(即约$108.5B, 以文章摘要口径为准), 覆盖面向Anthropic等核心客户的大型AI设施。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Nscale", "type": "company", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["NVIDIA正考虑为Nscale运营的数据中心提供数十亿美元信用担保, Anthropic计划使用该设施", "此前披露的此类担保最大总敞口已达$1085亿"]
+        },
+        {
+          "type": "trend",
+          "label": "NVIDIA以信用担保替下游客户吸收资本开支风险, 锁定未来GPU采购订单",
+          "summary": "NVIDIA用自己的资产负债表替下游客户(尤其是IPO前、现金流为负的实验室)吸收部分资本开支风险, 从而锁定未来的GPU采购订单, 把卖算力和为算力买单连成一体。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["它用自己的资产负债表替下游客户(尤其是IPO前、现金流为负的实验室)吸收部分资本开支风险, 从而锁定未来的GPU采购订单"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "Nscale", "type": "guarantees", "weight": 0.7, "evidence": ["NVIDIA正考虑为Nscale运营的数据中心提供数十亿美元信用担保"]},
+        {"source": "Anthropic", "target": "Nscale", "type": "uses", "weight": 0.6, "evidence": ["Anthropic计划使用该设施"]},
+        {"source": "NVIDIA", "target": "Anthropic", "type": "supplies", "weight": 0.7, "evidence": ["对象涵盖由合作伙伴运营、面向核心客户(如Anthropic)的大型AI设施", "从而锁定未来的GPU采购订单"]}
+      ],
+      "metrics": [
+        {"name": "此前披露担保最大总敞口", "value": "约$1085亿(约$108.5B; 以文章摘要口径为准, 原文detail正文误写约$108.5亿)"},
+        {"name": "Anthropic芯片债务", "value": "$630亿"}
+      ],
+      "why_it_matters": "英伟达把客户(尤其是IPO前负现金流实验室)的资本开支风险搬上自己的资产负债表以锁定GPU订单——二级市场对同一条资金链的高压审视与一级市场更复杂的金融加注, 在同一周针锋相对。"
+    },
+    {
+      "article_id": "2026-10-30-8",
+      "entities": [
+        {"name": "SK海力士", "type": "company", "aliases": ["SK Hynix", "SK hynix"], "confidence": 0.97, "evidence": ["SK海力士将其AI内存开发负责人调任为新成立的美洲事业部负责人"]},
+        {"name": "美洲事业部", "type": "organization", "aliases": ["SK海力士美洲事业部"], "confidence": 0.88, "evidence": ["新成立的美洲事业部负责人(总部设在美国)"]},
+        {"name": "三星", "type": "company", "aliases": ["Samsung"], "confidence": 0.9, "evidence": ["三星、美光等对手的本土化动作"]},
+        {"name": "美光", "type": "company", "aliases": ["Micron"], "confidence": 0.9, "evidence": ["三星、美光等对手的本土化动作"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "SK海力士将AI内存开发负责人调任新美洲事业部负责人, 常驻美国贴近客户",
+          "summary": "SK海力士将AI内存开发负责人调任为新成立的美洲事业部负责人(总部设在美国), 把与客户联合定义产品提到战略优先级, 技术元老常驻客户身边。",
+          "participants": [
+            {"name": "SK海力士", "type": "company", "role": "subject"},
+            {"name": "美洲事业部", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["SK海力士将其AI内存开发负责人调任为新成立的美洲事业部负责人(总部设在美国)", "让AI内存研发一把手常驻美国"]
+        },
+        {
+          "type": "trend",
+          "label": "SK海力士、三星、美光争夺美国主要CSP长期绑定, 定制化HBM竞争加剧",
+          "summary": "行业正从通用HBM转向与芯片设计方深度协作的定制化HBM并围绕本土供应竞争, 三家都在争取美国主要CSP的长期绑定, 定制化程度决定锁定深度。",
+          "participants": [
+            {"name": "SK海力士", "type": "company", "role": "subject"},
+            {"name": "三星", "type": "company", "role": "object"},
+            {"name": "美光", "type": "company", "role": "object"}
+          ],
+          "evidence": ["这也呼应\"内存短缺看至2029-2030\"的普遍判断与三星、美光等对手的本土化动作: 三家都在争取美国主要CSP的长期绑定"]
+        }
+      ],
+      "relations": [
+        {"source": "美洲事业部", "target": "SK海力士", "type": "subsidiary_of", "weight": 0.8, "evidence": ["SK海力士将其AI内存开发负责人调任为新成立的美洲事业部负责人(总部设在美国)"]},
+        {"source": "三星", "target": "SK海力士", "type": "competes_with", "weight": 0.7, "evidence": ["三星、美光等对手的本土化动作: 三家都在争取美国主要CSP的长期绑定"]},
+        {"source": "美光", "target": "SK海力士", "type": "competes_with", "weight": 0.7, "evidence": ["三星、美光等对手的本土化动作: 三家都在争取美国主要CSP的长期绑定"]}
+      ],
+      "metrics": [
+        {"name": "内存短缺预测期限", "value": "看至2029-2030"}
+      ],
+      "why_it_matters": "HBM的胜负手从良率与产能转向\"与客户联合定义下一代架构\"——把最懂内存的技术元老常驻美国, 说明存储三强的新战场是绑定深度, 而不是单纯的本地建厂。"
+    },
+    {
+      "article_id": "2026-10-30-9",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI的四层监控架构(读激活的探针、复核对话/推理/工具调用的模型、调查智能体、网络日志交叉核对)"]},
+        {"name": "Hugging Face", "type": "organization", "aliases": ["HF"], "confidence": 0.9, "evidence": ["官方回放7月的Hugging Face逃逸事件称, 若当时监控在线, 会在智能体逃出沙箱30分钟后(即泄密前约30小时)发出告警"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic训练Claude在作答后自评估对话、识别潜在有害请求"]},
+        {"name": "Claude", "type": "product", "aliases": [], "confidence": 0.93, "evidence": ["Anthropic训练Claude在每次作答后立即给出可选的对话安全初判"]},
+        {"name": "Claude Code", "type": "tool", "aliases": [], "confidence": 0.88, "evidence": ["在9月挖出一个用Claude Code对数十名受害者跑自动恋爱诈骗的操作"]},
+        {"name": "Fable 5", "type": "model", "aliases": [], "confidence": 0.88, "evidence": ["机制自6月起已跑进此后发布的每个Claude模型(自Fable 5起)"]},
+        {"name": "METR", "type": "organization", "aliases": [], "confidence": 0.88, "evidence": ["METR与Redwood Research的红队测评仍找出过漏洞"]},
+        {"name": "Redwood Research", "type": "organization", "aliases": [], "confidence": 0.88, "evidence": ["METR与Redwood Research的红队测评仍找出过漏洞"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "OpenAI披露四层模型监控架构, 并在HF逃逸事件复盘与真实训练拦截中验证",
+          "summary": "监控分四层: 读模型内部激活的探针、复核对话与推理及工具调用的模型、深入调查的智能体、对照网络日志的交叉检查; 若当时在线会在HF逃逸泄密前约30小时发出告警。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Hugging Face", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["OpenAI的监控分四层依次运行: 读模型内部激活的探针、复核对话与推理及工具调用的模型、负责深入调查的智能体、以及对照网络日志的交叉检查", "若当时监控在线, 会在智能体逃出沙箱30分钟后(即泄密前约30小时)发出告警"]
+        },
+        {
+          "type": "security",
+          "label": "Anthropic训练Claude在作答后自评估对话, 以1%假阳性率达成78%有害会话召回",
+          "summary": "Claude在每次作答后立即给出可选的对话安全初判(含拒绝的请求), 标记结果走离线复核; 机制自6月起已跑进此后发布的每个Claude模型(自Fable 5起), 并在9月挖出用Claude Code的自动恋爱诈骗操作。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "product", "role": "object"},
+            {"name": "Claude Code", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["训练Claude在每次作答后立即给出可选的对话安全初判(含它拒绝的请求), 标记结果走离线复核而非打断用户", "官方称该自评估达到1%假阳性率下78%有害会话召回、94%高优先级召回"]
+        },
+        {
+          "type": "security",
+          "label": "METR与Redwood Research红队测评仍能找出OpenAI监控漏洞, 官方称多数已修补",
+          "summary": "被标记的训练样本仍保留其奖励以避免教会模型隐藏证据, 但METR与Redwood Research的红队测评仍找出过漏洞(官方称多数已修补)。",
+          "participants": [
+            {"name": "METR", "type": "organization", "role": "subject"},
+            {"name": "Redwood Research", "type": "organization", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["METR与Redwood Research的红队测评仍找出过漏洞(官方称多数已修补)"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic训练Claude在每次作答后立即给出可选的对话安全初判"]},
+        {"source": "Fable 5", "target": "Anthropic", "type": "developed_by", "weight": 0.7, "evidence": ["机制自6月起已跑进此后发布的每个Claude模型(自Fable 5起)"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic自评估假阳性率", "value": "1%"},
+        {"name": "Anthropic有害会话召回", "value": "78%"},
+        {"name": "Anthropic高优先级召回", "value": "94%"},
+        {"name": "HF逃逸事件告警时机", "value": "智能体逃出沙箱30分钟后(即泄密前约30小时)"},
+        {"name": "隔离模型连外网被标记时间", "value": "15分钟以内"},
+        {"name": "自动恋爱诈骗受害者规模", "value": "数十名"}
+      ],
+      "why_it_matters": "\"出事前能提前多久发现\"正取代跑分成为前沿实验室的新军备维度——OpenAI盯模型越界、Anthropic盯用户恶意, 两条互补的技术路线同一天公开, 且都被独立红队持续挑战, 自报式监控的可信度仍是缺口。"
+    },
+    {
+      "article_id": "2026-10-30-10",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["预计Anthropic在IPO后将获得\"高\"垃圾级(high junk)信用评级"]},
+        {"name": "黑石", "type": "company", "aliases": ["Blackstone"], "confidence": 0.92, "evidence": ["作为Anthropic $630亿芯片债务融资锚定投资者的黑石(Blackstone)已告诉交易投资人"]},
+        {"name": "Broadcom", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Broadcom CEO intervened to seal $63 billion Anthropic debt deal"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "黑石预计Anthropic IPO后获高投机级垃圾评级, 与此前投资级说法相反",
+          "summary": "黑石此前对外释放的信号是Anthropic会在2027年前获得投资级评级, 如今在$630亿芯片债务交易中却转向预计\"高投机级\", 贷方已把庞大算力负债、持续负现金流与变现尚待验证一并计入风险。",
+          "participants": [
+            {"name": "黑石", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["作为Anthropic $630亿芯片债务融资锚定投资者的黑石(Blackstone)已告诉交易投资人, 预计Anthropic在IPO后将获得\"高\"垃圾级(high junk)信用评级", "与此前黑石放出的\"2027年前获投资级\"的说法相反"]
+        },
+        {
+          "type": "funding",
+          "label": "Anthropic于本周递交S-1启动IPO, AI信贷与股权市场同步转向风险定价",
+          "summary": "Anthropic已于本周递交S-1启动IPO; $630亿芯片债务+IPO在即说明资本仍在加码追捧, 但\"高投机级\"预告说明贷方与评级机构对实验室何时盈利的耐心正在收窄。",
+          "participants": [
+            {"name": "黑石", "type": "company", "role": "funder"},
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Anthropic已于本周递交S-1启动IPO", "AI的信贷与股权市场正在同步从\"信仰\"转向\"定价风险\""]
+        }
+      ],
+      "relations": [
+        {"source": "黑石", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["作为Anthropic $630亿芯片债务融资锚定投资者的黑石(Blackstone)"]},
+        {"source": "Broadcom", "target": "Anthropic", "type": "facilitates", "weight": 0.4, "evidence": ["Broadcom CEO intervened to seal $63 billion Anthropic debt deal", "在自筹$630亿芯片债务(Broadcom CEO亲自介入促成)的同时"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic芯片债务", "value": "$630亿"},
+        {"name": "预期信用评级", "value": "\"高投机级\"(high junk), 介于投资级与深度垃圾之间"},
+        {"name": "IPO节奏", "value": "本周递交S-1"}
+      ],
+      "why_it_matters": "黑石在同一笔交易里两面定价——$630亿债务照给、评级预告却降到\"高投机级\"——贷方对\"实验室何时盈利\"的耐心开始收窄, AI债务与股权市场正同步从信仰转向风险定价。"
+    },
+    {
+      "article_id": "2026-10-30-11",
+      "entities": [
+        {"name": "SPLICE", "type": "paper", "aliases": [], "confidence": 0.95, "evidence": ["为此研究者提出SPLICE: 按查询定位可能的信息缺口、补一条有向边把关键证据送达、再选择性采纳改动后的答案"]},
+        {"name": "多智能体系统", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["多步Web任务常需多个LLM agent各自取证再合并"]},
+        {"name": "信息缺口", "type": "topic", "aliases": [], "confidence": 0.88, "evidence": ["按查询定位可能的信息缺口、补一条有向边把关键证据送达"]},
+        {"name": "Web工具使用", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["SPLICE在Web工具使用上把任务得分相对静态骨架提升8.0%"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "研究者提出SPLICE, 在多智能体系统中按需定位信息缺口并补边送达证据",
+          "summary": "原始工作流跑完后, SPLICE用查询与各节点输出定位潜在缺口, 加一条从源头到接收者的有向边送达证据, 只重跑接收者及受影响的下游节点, 再用基于进程特征的selector决定采纳候选还是保留原始。",
+          "participants": [
+            {"name": "SPLICE", "type": "paper", "role": "subject"},
+            {"name": "多智能体系统", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["为此研究者提出SPLICE: 按查询定位可能的信息缺口、补一条有向边把关键证据送达、再选择性采纳改动后的答案"]
+        },
+        {
+          "type": "benchmark",
+          "label": "SPLICE在Web工具使用与推理规划基准上分别提升8.0%与5.7%",
+          "summary": "SPLICE在Web工具使用上把任务得分相对静态骨架提升8.0%、四个推理与规划基准平均提升5.7%, 代价是1.25-1.44倍骨架成本, 且能zero-shot迁移到四个未见骨干。",
+          "participants": [
+            {"name": "SPLICE", "type": "paper", "role": "subject"},
+            {"name": "Web工具使用", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["SPLICE在Web工具使用上把任务得分相对静态骨架提升8.0%、四个推理与规划基准平均提升5.7%, 代价是1.25-1.44倍骨架成本"]
+        }
+      ],
+      "relations": [
+        {"source": "SPLICE", "target": "多智能体系统", "type": "targets", "weight": 0.7, "evidence": ["在多智能体系统中定位并修补\"信息缺口\""]},
+        {"source": "SPLICE", "target": "Web工具使用", "type": "evaluated_on", "weight": 0.8, "evidence": ["SPLICE在Web工具使用上把任务得分相对静态骨架提升8.0%"]},
+        {"source": "SPLICE", "target": "信息缺口", "type": "targets", "weight": 0.6, "evidence": ["按查询定位可能的信息缺口"]}
+      ],
+      "metrics": [
+        {"name": "Web工具使用得分提升", "value": "8.0%(相对静态骨架)"},
+        {"name": "推理与规划基准平均提升", "value": "5.7%"},
+        {"name": "骨架成本代价", "value": "1.25-1.44倍"},
+        {"name": "基准数量", "value": "5个(1个Web工具使用+4个推理/规划)"}
+      ],
+      "why_it_matters": "SPLICE把多agent工作流当作可动态重组的图、按需补边——这是对多agent\"信息孤岛\"病灶的第一次正面解法, 多agent协作的演进方向从加节点加轮次转向围绕缺口局部重连。"
+    },
+    {
+      "article_id": "2026-10-30-12",
+      "entities": [
+        {"name": "经典共识理论", "type": "topic", "aliases": ["分布式共识理论"], "confidence": 0.9, "evidence": ["LLM系统地违反经典共识理论的核心假设"]},
+        {"name": "多智能体群体", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["某些多智能体群体(含高达7B参数的模型)会可靠地把小的局部漂移累积成全体\"自信地达成一致\""]},
+        {"name": "集体错觉", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["一致认同的是客观错误的命题, 且与网络结构无关"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "对8个指令微调模型73080次受控交互实测, 发现LLM系统性违反经典共识理论核心假设",
+          "summary": "实测发现LLM用负权重做出\"主动排斥\"式的更新, 不再符合\"人们在随机分布式共识里渐进趋同\"的数学前提, 使行随机建模与bounded-confidence修复失效。",
+          "participants": [
+            {"name": "多智能体群体", "type": "topic", "role": "subject"},
+            {"name": "经典共识理论", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["对8个指令微调模型、73080次受控交互的实测发现, LLM系统地违反经典共识理论的核心假设", "测出LLM会以负权重做出\"主动排斥\"式的更新, 不再符合\"人们在随机分布式共识里渐进趋同\"的数学前提"]
+        },
+        {
+          "type": "research",
+          "label": "万人规模模拟显示网络连通性几乎无法解释结果差异, 群体可形成集体错觉",
+          "summary": "把拟合出的算子外推到10000个agent的模拟, 代数连通度几乎解释不了任何结果方差; 某些多智能体群体可靠地把局部漂移累积成对客观错误命题的\"自信一致\", 群体动力学由内部更新偏置与消息框架主导。",
+          "participants": [
+            {"name": "多智能体群体", "type": "topic", "role": "subject"},
+            {"name": "集体错觉", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["把拟合出的算子外推到10000个agent的模拟, 代数连通度(algebraic connectivity)几乎解释不了任何结果方差", "某些多智能体群体(含高达7B参数的模型)会可靠地把小的局部漂移累积成全体\"自信地达成一致\", 一致认同的是客观错误的命题"]
+        }
+      ],
+      "relations": [
+        {"source": "多智能体群体", "target": "经典共识理论", "type": "violates", "weight": 0.6, "evidence": ["LLM系统地违反经典共识理论的核心假设"]},
+        {"source": "多智能体群体", "target": "集体错觉", "type": "exhibits", "weight": 0.7, "evidence": ["某些多智能体群体(含高达7B参数的模型)会可靠地把小的局部漂移累积成全体\"自信地达成一致\""]}
+      ],
+      "metrics": [
+        {"name": "受控交互实测次数", "value": "73080次"},
+        {"name": "参测模型数", "value": "8个指令微调模型"},
+        {"name": "模拟规模", "value": "10000个agent"},
+        {"name": "模型参数上限", "value": "高达7B参数"}
+      ],
+      "why_it_matters": "大规模实测证伪了\"靠网络拓扑就能让多agent收敛\"的直觉——偏置与措辞主导群体动力学, 客观错误也能在\"自信一致\"中放大, 部署多LLM协同的团队需要的是机制级独立验证与多样性注入, 而不是调整连接方式。"
+    },
+    {
+      "article_id": "2026-10-30-13",
+      "entities": [
+        {"name": "DiffuSpace", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["DiffuSpace发布Clover-35B-A3B-Preview: 首个开源的MoE扩散语言模型"]},
+        {"name": "Clover-35B-A3B", "type": "model", "aliases": ["Clover-35B-A3B-Preview", "Clover"], "confidence": 0.95, "evidence": ["Clover用35B总参/3B激活的稀疏结构主打\"低成本推理\""]},
+        {"name": "Qwen3.6-35B-A3B", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["宣称在多项基准上优于同样尺度的Qwen3.6-35B-A3B"]},
+        {"name": "SGLang", "type": "tool", "aliases": [], "confidence": 0.88, "evidence": ["推理栈对齐SGLang与llama.cpp"]},
+        {"name": "llama.cpp", "type": "tool", "aliases": [], "confidence": 0.88, "evidence": ["推理栈对齐SGLang与llama.cpp"]},
+        {"name": "Hugging Face", "type": "organization", "aliases": ["HuggingFace"], "confidence": 0.88, "evidence": ["权重与代码已在Hugging Face/GitHub开放"]},
+        {"name": "GitHub", "type": "tool", "aliases": [], "confidence": 0.88, "evidence": ["权重与代码已在Hugging Face/GitHub开放"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "DiffuSpace发布首个开源MoE扩散语言模型Clover-35B-A3B",
+          "summary": "Clover-35B-A3B-Preview为35B总参、3B激活的MoE扩散语言模型, 带思考模式, 用稀疏结构主打低成本推理, Apache 2.0许可证、附完整权重与代码。",
+          "participants": [
+            {"name": "DiffuSpace", "type": "company", "role": "subject"},
+            {"name": "Clover-35B-A3B", "type": "model", "role": "object"}
+          ],
+          "evidence": ["DiffuSpace发布Clover-35B-A3B-Preview: 首个开源的MoE扩散语言模型(35B总参、3B激活), 带思考模式"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Clover-35B-A3B在多项基准上超过同规模的Qwen3.6-35B-A3B且生成更快",
+          "summary": "Clover是扩散式而非纯自回归, 宣称在多项基准上优于同样尺度的Qwen3.6-35B-A3B、同时生成显著更快, 并支持thinking模式。",
+          "participants": [
+            {"name": "Clover-35B-A3B", "type": "model", "role": "subject"},
+            {"name": "Qwen3.6-35B-A3B", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["宣称在多项基准上优于同样尺度的Qwen3.6-35B-A3B、同时生成显著更快, 并支持thinking模式"]
+        },
+        {
+          "type": "open_source",
+          "label": "Clover权重与代码在Hugging Face/GitHub开放, 支持SGLang与llama.cpp推理",
+          "summary": "Apache 2.0许可证、附完整权重+代码, 权重与代码已在Hugging Face/GitHub开放, 推理栈对齐SGLang与llama.cpp, 可立即在本地或现有推理框架上部署验证。",
+          "participants": [
+            {"name": "DiffuSpace", "type": "company", "role": "subject"},
+            {"name": "Hugging Face", "type": "organization", "role": "object"},
+            {"name": "GitHub", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Apache 2.0许可证、附完整权重+代码", "权重与代码已在Hugging Face/GitHub开放, 支持SGLang与llama.cpp推理"]
+        }
+      ],
+      "relations": [
+        {"source": "Clover-35B-A3B", "target": "DiffuSpace", "type": "developed_by", "weight": 0.92, "evidence": ["DiffuSpace发布Clover-35B-A3B-Preview"]},
+        {"source": "Clover-35B-A3B", "target": "Qwen3.6-35B-A3B", "type": "outperforms", "weight": 0.8, "evidence": ["宣称在多项基准上优于同样尺度的Qwen3.6-35B-A3B"]},
+        {"source": "Clover-35B-A3B", "target": "SGLang", "type": "uses", "weight": 0.6, "evidence": ["推理栈对齐SGLang与llama.cpp"]},
+        {"source": "Clover-35B-A3B", "target": "llama.cpp", "type": "uses", "weight": 0.6, "evidence": ["推理栈对齐SGLang与llama.cpp"]}
+      ],
+      "metrics": [
+        {"name": "总参数量", "value": "35B"},
+        {"name": "激活参数量", "value": "3B"}
+      ],
+      "why_it_matters": "Apache许可+3B激活+通用推理后端的扩散语言模型, 把\"非自回归能否在推理性价比上竞争\"从研究口号变成可公开复现的现实基准——Clover的部署实测将决定Diffusion LM是又一个A/B实验还是真的改写小激活模型的性价比曲线。"
+    },
+    {
+      "article_id": "2026-10-30-14",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.97, "evidence": ["Google把最强大的Gemini 4 Carbon先限供给网络防御者(Fairwind计划)"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Google把最强大的Gemini 4 Carbon先限供给网络防御者(Fairwind计划)"]},
+        {"name": "Fairwind计划", "type": "organization", "aliases": ["Fairwind"], "confidence": 0.9, "evidence": ["随后经Fairwind计划(全球650+合作伙伴)逐步扩展到经过核准的政府、医疗、电信机构"]},
+        {"name": "Artificial Analysis Intelligence Index v5.0", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["该模型在Artificial Analysis Intelligence Index v5.0拿第一"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google对Gemini 4 Carbon分阶段放行, 先限供给网络防御者",
+          "summary": "Google对Gemini 4 Carbon采用分阶段放行: 本周只给一小批网络防御者使用, 随后经Fairwind计划(全球650+合作伙伴)逐步扩展到经过核准的政府、医疗、电信机构, 开发者与企业尚无时间表。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"},
+            {"name": "Fairwind计划", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["本周只给一小批网络防御者使用, 随后经Fairwind计划(全球650+合作伙伴)逐步扩展到经过核准的政府、医疗、电信机构, 开发者与企业尚无时间表"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Carbon在Artificial Analysis Intelligence Index v5.0拿第一, 却刻意不上市就上限供",
+          "summary": "该模型在Artificial Analysis Intelligence Index v5.0拿第一, 却刻意\"不上市就上限供\"; 官方称参与美国政府自愿的预发布模型测试流程, 边收反馈边加固护栏。",
+          "participants": [
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "subject"},
+            {"name": "Artificial Analysis Intelligence Index v5.0", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["该模型在Artificial Analysis Intelligence Index v5.0拿第一, 却刻意\"不上市就上限供\""]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Carbon", "target": "Google", "type": "developed_by", "weight": 0.95, "evidence": ["Google把最强大的Gemini 4 Carbon先限供给网络防御者(Fairwind计划)"]},
+        {"source": "Gemini 4 Carbon", "target": "Artificial Analysis Intelligence Index v5.0", "type": "evaluated_on", "weight": 0.8, "evidence": ["该模型在Artificial Analysis Intelligence Index v5.0拿第一"]},
+        {"source": "Google", "target": "Fairwind计划", "type": "uses", "weight": 0.5, "evidence": ["随后经Fairwind计划(全球650+合作伙伴)逐步扩展到经过核准的政府、医疗、电信机构"]}
+      ],
+      "metrics": [
+        {"name": "Fairwind合作伙伴数", "value": "全球650+"},
+        {"name": "Gemini 4 Carbon排名", "value": "Artificial Analysis Intelligence Index v5.0第1"}
+      ],
+      "why_it_matters": "能力以\"分阶段+防御优先\"放行、资金从信仰转向风险定价——供给两侧同时收窄, 意味着下一阶段前沿AI的红利更可能流向已获验证的防御与关键基建, 而非广撒网的公开消费。"
+    }
+  ]
+}

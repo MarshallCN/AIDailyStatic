@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 81,
+  "summary": "第1轮指出的高严重度问题（$1085亿笔误、invests_in 金融工具误标、Broadcom partners_with、主客颠倒）在本轮已全部修正，事实与数字核对基本忠实。但仍有 1 处高严重度的关系误导（第1篇把 NVIDIA 写成主动向被调查转运公司 supplies，与同篇 Huang 自辩相冲突）以及 4 处中等问题（事件类型误用、并列实体关系不一致、evidence 支撑的是事件而非关系、解释性内容被拆成重复事件），修订后即可发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-30-1",
+      "severity": "high",
+      "problem": "关系 NVIDIA --supplies--> Megaspeed International 的 evidence 是\"Megaspeed是涉廉价灰色转运英伟达AI芯片到中国的公司群之一\"。这会读成\"NVIDIA主动向处于美国国家安全调查中的转运公司出货\"，与同篇 Jensen Huang\"关系正常且正当、已逐一清点所有GPU、确认无非法流向中国\"的自辩直接冲突——文章的本意是芯片经灰色/走私链流入 Megaspeed、NVIDIA 否认刻意为之。用 supplies 会把该文的核心定性讲反。",
+      "fix": "删除该关系，或改用表达\"涉入/流向\"的中性关系（如 involved_in、Megaspeed International <--> 灰色转运事件），证据改写为\"芯片经灰色转口链流入 Megaspeed、NVIDIA 否认刻意供应\"；切勿保留 NVIDIA --supplies--> Megaspeed International 这一主动出货表述。"
+    },
+    {
+      "article_id": "2026-10-30-1",
+      "severity": "medium",
+      "problem": "事件1 label 提到\"美国国家安全调查\"却标为 type \"policy\"，而同一篇中关于 Huang 回应的回应事件2标为 \"security\"。国家安全调查是安全事件（security），不是政策/规则类（policy）事件；同篇两个事件类型不一致。",
+      "fix": "把事件1的 type 从 policy 改为 security，与事件2保持一致；policy 仅用于政策、规则、监管类内容。"
+    },
+    {
+      "article_id": "2026-10-30-5",
+      "severity": "medium",
+      "problem": "实体清单里有 Instagram，事件2 participants 也含 Instagram，但 relations 只有 Meta AI、Facebook、WhatsApp 三条（Facebook/WhatsApp 均为 --released_by--> Meta），Instagram 没有任何关系，并列的同类产品关系不一致，图谱上形成孤立缺口。",
+      "fix": "补一条 Instagram --released_by--> Meta（evidence 用同一句\"持续使用Facebook、Instagram或WhatsApp的企业账户…\"），使三个同名产品关系保持一致；若认为 Instagram 无独立价值则一并从实体清单移除。"
+    },
+    {
+      "article_id": "2026-10-30-9",
+      "severity": "medium",
+      "problem": "关系 Claude Code --developed_by--> Anthropic 的 evidence 是\"在9月挖出一个用Claude Code对数十名受害者跑自动恋爱诈骗的操作\"——这条只支撑\"Claude Code 被用于作案\"的安全事件，不足以作为\"Claude Code 由 Anthropic 开发\"的 evidence（被用于犯罪不等于由谁开发）。同样的证据错配思路也存在于 Fable 5 --developed_by--> Anthropic（evidence 是自评估机制跑进各模型，勉强间接相关）。",
+      "fix": "为 Claude Code --developed_by--> Anthropic 更换能支撑开发归属的 evidence（若无直接表述则删除该关系，只保留它在安全事件中的参与）；relation 的 evidence 必须支撑关系本身，而不是该实体被引用的那条事件。"
+    },
+    {
+      "article_id": "2026-10-30-6",
+      "severity": "medium",
+      "problem": "事件2\"NVIDIA把测试产能拉进美国, 缩短晶圆到出货链条对亚洲的依赖\"是与事件1(预付京元)相同参与方（NVIDIA、京元电子）的解释性/为什么重要内容，本身没有新的独立事实（正文把它放在 why-it-matters 段落），被单独拆成一个事件属于事件膨胀，和图谱原则'一个动作拆成重复事件'冲突。",
+      "fix": "把事件2并入事件1或删除事件2，将其中'缩短对亚洲依赖、对冲出口管制'的解释只保留在 why_it_matters 中，避免同参与方的重复事件。"
+    }
+  ],
+  "lessons": [
+    "调查/安全审查类新闻中，\"某厂商产品经灰色/走私链流入受调查实体\"不构成\"该厂商主动向该实体供应\"：不要用 supplies 把被调查的转口链写成厂商的主动出���，evidence 无法支撑直接供应意图时改用表达涉入/流向的关系或删除，避免与厂商自辩讲出相反故事。",
+    "事件类型要按事件性质而非标签字数划分：国家安全调查/数据泄露/攻击事件标 security，不必是 policy；policy 仅用于政策、规则、监管类内容，同一篇同类事件类型要一致。",
+    "relation 的 evidence 必须支撑该关系本身，而不是该实体被引用的那条事件——例如\"某工具被用于某犯罪操作\"支撑的是事件，不能作为\"该工具由某公司开发\"的证据；并列的同类实体（同一产品家族）关系抽取要一致，避免孤立缺口。"
+  ]
+}

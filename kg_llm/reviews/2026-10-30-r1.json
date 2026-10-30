@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "覆盖完整、实体规范名跨文章一致、evidence 引文基本忠实，但存在一处 10 倍级金额错误：第7篇把担保总敞口写成原文 detail 的漏零笔误口径（$108.5亿，文章摘要为 $1085亿/约$108.5B）且与\"数十亿美元\"单笔担保自相矛盾；另有预付/信用担保被标成 invests_in、Broadcom--partners_with--Anthropic 证据不足、集体错觉--targets--多智能体群体主客颠倒等多处关系类型失准，修订后才能发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-30-7",
+      "severity": "high",
+      "problem": "事件1摘要与 metrics 均写\"此前披露担保最大总敞口约$108.5亿\"，但文章摘要明确写\"最大总敞口已达$1085亿\"（即约$108.5B），两者相差10倍；正文 detail 的\"约$108.5亿\"是漏零笔误，且正文同一处称单笔 Nscale 担保即\"数十亿美元\"，若此前总敞口仅约$10.85B 即自相矛盾。抽取没有察觉原文内部矛盾，照抄了笔误口径，会让图谱上的担保敞口低估10倍。",
+      "fix": "将事件1摘要与 metric 改为\"约$1085亿（约$108.5B）\"，以文章摘要口径为准；在 evidence 中保留\"数十亿美元\"单笔担保与总敞口的完整表述，并加注原文 detail 缺失一个数量级，供读者核对。"
+    },
+    {
+      "article_id": "2026-10-30-6",
+      "severity": "medium",
+      "problem": "关系 NVIDIA --invests_in--> 京元电子 类型失准：原文明确称\"预付(advance payment)是英伟达锁定封测产能的又一种金融工具\"，预付产能款不是股权投资，invests_in 会把资金关系误读成入股，与第7篇的信用担保同类。",
+      "fix": "改用体现\"资金支持/预付\"性质的关系类型（如 funds），或将 invests_in 删除、只保留 京元电子 --supplies--> NVIDIA（方向正确），并在 evidence 中写明是预付产能款而非股权投资。"
+    },
+    {
+      "article_id": "2026-10-30-7",
+      "severity": "medium",
+      "problem": "关系 NVIDIA --invests_in--> Nscale 类型失准：原文证据是\"NVIDIA正考虑为Nscale运营的数据中心提供数十亿美元信用担保\"，信用担保不是股权投资，与第6篇预付被标成 invests_in 是同一个系统性误标。",
+      "fix": "改用体现担保/资金支持的关系类型（如 guarantees/funds），或删除该关系，保留方向清晰且证据充分的 Anthropic --uses--> Nscale 与 NVIDIA --supplies--> Anthropic。"
+    },
+    {
+      "article_id": "2026-10-30-12",
+      "severity": "medium",
+      "problem": "两条关系词不达意且一条主客颠倒：\"集体错觉 --targets--> 多智能体群体\"读出来是\"集体错觉针对多智能体群体\"，但集体错觉是群体表现出的现象而非施动动作；\"多智能体群体 --compared_with--> 经典共识理论\"也未反映事实——原文说的是多智能体群体的行为\"违反\"经典共识理论的核心假设。",
+      "fix": "改为 多智能体群体 --exhibits--> 集体错觉（或 集体错觉 --occurs_in--> 多智能体群体）；compared_with 改为表达\"偏离/违反\"的关系类型（如 violates），保证每条关系能读成一句正确的事实句。"
+    },
+    {
+      "article_id": "2026-10-30-10",
+      "severity": "medium",
+      "problem": "关系 Broadcom --partners_with--> Anthropic 证据不足：唯一 evidence 是\"Broadcom CEO 介入促成 $630亿 芯片债务交易\"（且该条源自文章参考来源而非正文事实），只能说明促成融资的角色，不足以推断\"合作关系\"；第7篇里同名的 Broadcom --partners_with--> Anthropic（evidence 同为\"Broadcom CEO亲自介入促成\"）有同样问题。",
+      "fix": "删除该关系，或改为表达\"融资促成/债务安排\"的关系并在 evidence 中明确写出促成方角色；若保留 partners_with 需补充双边合作的直接证据。"
+    }
+  ],
+  "lessons": [
+    "同一文章内金额互相矛盾（常见为\"亿\"的位数漏零、摘要与正文差10倍）时，以标题/摘要口径为准，并用正文\"数十亿\"等量级描述交叉验证，不得照抄疑似笔误的数值。",
+    "预付(advance payment)、信用担保(guarantee)、贷款等财务锁定工具不是股权投资，不要给这类资金关系标 invests_in；应使用表达资金支持/担保性质的关系类型，或在 evidence 中写明工具性质。",
+    "partners_with 需要明确的双边合作关系证据；\"某方CEO帮助促成另一方融资/交易\"只说明促成关系，不足以下 partners_with，应改用融资/交易促成类表述。"
+  ]
+}

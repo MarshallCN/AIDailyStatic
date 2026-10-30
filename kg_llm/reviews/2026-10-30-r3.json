@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-30",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "语义质量整体很高：逐篇核对了 evidence 与原文，未发现实体/数字/关系的幻觉或方向反转，审计不出的错误很少。但存在 3 处中等质量问题：article-5 把平台与母公司的关系错用成 released_by、article-14 作为\"双重限供\"的观察文漏抽了资金侧的 Anthropic/Intel/NVIDIA 主体、article-3 对尚未发布的《社区安全报告》用了 developed_by 断言已存在的成品关系。",
+  "findings": [
+    {
+      "article_id": "2026-10-30-5",
+      "severity": "medium",
+      "problem": "关系 \"Facebook --released_by--> Meta\"、\"Instagram --released_by--> Meta\"、\"WhatsApp --released_by--> Meta\" 类型用错：released_by 表\"Meta 今日发布了该产品\"，但原文里这三个平台是早已存在的 Meta 旗下产品，新闻讲的是 Meta 借新商业条款有权抓取通过这些账户关联的网站内容，三者与发布行为无关。现有关系既失真（暗示当日产品上线）又不传递任何图谱价值。",
+      "fix": "删除这三条 released_by 关系（今日并无产品发布事件），改为 Meta 与这三个平台间用表明归属关系的类型（如 owned_by/风格一致的自定义类型），或直接省略；把\"抓取企业账户关联网站用于训练\"这一事实只保留在 Event 2 的 participants 与 summary 里即可。"
+    },
+    {
+      "article_id": "2026-10-30-14",
+      "severity": "medium",
+      "problem": "本篇标题与正文核心是\"双重限供\"对照：能力侧(Google/Gemini 4 Carbon)与资金侧(Anthropic 垃圾评级、Intel指引爆雷-25.7%、英伟达跌破5万亿)在同一周同时收窄。但抽取只抽了能力侧实体(Google、Gemini 4 Carbon、Fairwind计划、AA Index v5.0)，资金侧的 Anthropic、Intel、NVIDIA 三个本篇明确点名的核心主体一个都没进 entities/events，导致跨篇共享实体连通度下降，也压低了本篇作为综合观察的价值。",
+      "fix": "在 article-14 补充资金侧主体：Anthropic(company，证据：黑石预告IPO后获\"高投机级\"垃圾评级)、Intel/NVIDIA(company，证据：Intel指引爆雷-25.7%、英伟达跌破5万亿美元)，并至少为该事件补一条能读通全文的关系(如 NVIDIA/Anthropic 与事件 role)，使\"能力+资金双侧限供\"的对照在图上可见。"
+    },
+    {
+      "article_id": "2026-10-30-3",
+      "severity": "medium",
+      "problem": "关系 \"社区安全报告 --developed_by--> OpenAI\" 断言了\"已开发完成/已发布\"的成品关系，但原文明确说首份报告要到 2027 年初才发布，至今并不存在。developed_by 会误导读者以为报告已产出，且与同属该篇的 metric\"首份报告发布时点 2027年初(覆盖2026下半年)\"自相矛盾。",
+      "fix": "不要对\"承诺未来发布但尚未存在的产物\"使用 developed_by；改为不含完成态的关系（如 OpenAI --plans--> 社区安全报告，若词表有 plans/commits_to 类类型）或在场从 entities.participants 保留该实体但删除该 verified 关系；若词表无此类型则删除该关系，把\"承诺2027年初发布\"留在 event summary。"
+    }
+  ],
+  "lessons": [
+    "平台类产品(Facebook/Instagram/WhatsApp 等)与母公司的关系不要用 released_by，除非原文明确报道母公司当日发布了该产品；无签约式仅表达归属的新闻关系应省略或改用拥有类类型。",
+    "综合/观察类文章的核心论点若同时点名了几组主体（如能力侧与资金侧对照），每一侧明确点名的关键主体都要进 entities/events，不能只抽标题首发侧，否则丢失跨篇连通与论点完整性。",
+    "对\"承诺未来发布但尚未存在\"的产物（报告、标准、阶段性承诺）不要标成 developed_by 之类的完成态关系，改用计划/承诺类表述或直接省略。"
+  ]
+}
