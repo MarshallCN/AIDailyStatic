@@ -1,0 +1,637 @@
+{
+  "date": "2026-10-31",
+  "articles": [
+    {
+      "article_id": "2026-10-31-0",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.97, "evidence": ["OpenAI推出面向生命科学研究的GPT-6 Rosalind"]},
+        {"name": "GPT-6 Rosalind", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Rosalind的内核与GPT-6 Astra完全相同"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["直接复用GPT-6 Astra权重、未加任何训练或后处理"]},
+        {"name": "Rosalind 5.5", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["在MedChemBench v7上从Rosalind 5.5的28.9%跳到49.6%"]},
+        {"name": "MedChemBench v7", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在MedChemBench v7上从Rosalind 5.5的28.9%跳到49.6%"]},
+        {"name": "GeneBench Pro v13", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在GeneBench Pro v13上从16.7%到37.7%"]},
+        {"name": "LifeSciBench Gold", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在LifeSciBench Gold上从44.0%到61.3%"]},
+        {"name": "Amgen", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["首批含Amgen、Moderna、Thermo Fisher、Allen Institute等"]},
+        {"name": "Moderna", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["首批含Amgen、Moderna、Thermo Fisher、Allen Institute等"]},
+        {"name": "Thermo Fisher", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["首批含Amgen、Moderna、Thermo Fisher、Allen Institute等"]},
+        {"name": "Allen Institute", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["首批含Amgen、Moderna、Thermo Fisher、Allen Institute等"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["配套还发布了免费的Codex生命科学研究插件"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI发布面向生命科学研究的GPT-6 Rosalind研究版",
+          "summary": "GPT-6 Rosalind以内供形式提供研究版, 直接复用GPT-6 Astra权重、未加任何训练或后处理, 在生物/化学能力上被评为\"High\"(低于Critical)。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6 Rosalind", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI推出面向生命科学研究的GPT-6 Rosalind", "直接复用GPT-6 Astra权重、未加任何训练或后处理"]
+        },
+        {
+          "type": "benchmark",
+          "label": "GPT-6 Rosalind在三项生物评测上从28.9%大幅跳到61.3%",
+          "summary": "MedChemBench v7从Rosalind 5.5的28.9%跳到49.6%, GeneBench Pro v13从16.7%到37.7%, LifeSciBench Gold从44.0%到61.3%——三组评测都显著拉开差距。",
+          "participants": [
+            {"name": "GPT-6 Rosalind", "type": "model", "role": "subject"},
+            {"name": "MedChemBench v7", "type": "benchmark", "role": "benchmark"},
+            {"name": "GeneBench Pro v13", "type": "benchmark", "role": "benchmark"},
+            {"name": "LifeSciBench Gold", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在MedChemBench v7上从Rosalind 5.5的28.9%跳到49.6%", "在GeneBench Pro v13上从16.7%到37.7%", "在LifeSciBench Gold上从44.0%到61.3%"]
+        },
+        {
+          "type": "policy",
+          "label": "OpenAI把减少拒答与收紧访问做成一对, 扩大可信访问计划首批名单",
+          "summary": "能放宽双重用途生物问题的拒答, 是因为访问被限制在通过审查的合格科学家、研究机构、公司与政府伙伴(首批含Amgen、Moderna、Thermo Fisher、Allen Institute等); OpenAI逐案审查申请者的用途、安全控制与治理实践才放行。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Amgen", "type": "company", "role": "partner"},
+            {"name": "Moderna", "type": "company", "role": "partner"},
+            {"name": "Thermo Fisher", "type": "company", "role": "partner"},
+            {"name": "Allen Institute", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["首批含Amgen、Moderna、Thermo Fisher、Allen Institute等", "把\"减少拒答\"与\"收紧访问\"做成了一对"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-6 Rosalind", "target": "OpenAI", "type": "developed_by", "weight": 0.92, "evidence": ["OpenAI推出面向生命科学研究的GPT-6 Rosalind"]},
+        {"source": "GPT-6 Rosalind", "target": "GPT-6 Astra", "type": "built_on", "weight": 0.9, "evidence": ["Rosalind的内核与GPT-6 Astra完全相同——没有新增训练数据、没有后处理"]},
+        {"source": "GPT-6 Rosalind", "target": "MedChemBench v7", "type": "evaluated_on", "weight": 0.8, "evidence": ["在MedChemBench v7上从Rosalind 5.5的28.9%跳到49.6%"]},
+        {"source": "GPT-6 Rosalind", "target": "GeneBench Pro v13", "type": "evaluated_on", "weight": 0.8, "evidence": ["在GeneBench Pro v13上从16.7%到37.7%"]},
+        {"source": "GPT-6 Rosalind", "target": "LifeSciBench Gold", "type": "evaluated_on", "weight": 0.8, "evidence": ["在LifeSciBench Gold上从44.0%到61.3%"]},
+        {"source": "GPT-6 Rosalind", "target": "Rosalind 5.5", "type": "outperforms", "weight": 0.8, "evidence": ["在MedChemBench v7上从Rosalind 5.5的28.9%跳到49.6%"]}
+      ],
+      "metrics": [
+        {"name": "MedChemBench v7 得分跳跃", "value": "28.9% → 49.6%(Rosalind 5.5 → Rosalind)"},
+        {"name": "GeneBench Pro v13 得分跳跃", "value": "16.7% → 37.7%"},
+        {"name": "LifeSciBench Gold 得分跳跃", "value": "44.0% → 61.3%"}
+      ],
+      "why_it_matters": "OpenAI不再靠\"模型自己拒答一切高风险问题\"兜底, 而是把风险转移到\"谁能拿到模型\"这道闸门——能力评判与分发治理被绑成一次决策, 释放前沿生物能力的门槛从护栏移到了可信访问。"
+    },
+    {
+      "article_id": "2026-10-31-1",
+      "entities": [
+        {"name": "Moonshot AI", "type": "company", "aliases": ["月之暗面", "Kimi 团队"], "confidence": 0.95, "evidence": ["Moonshot官方声明计划在2026年底退役全部K2模型"]},
+        {"name": "Kimi K2 系列", "type": "model", "aliases": ["K2系列"], "confidence": 0.9, "evidence": ["Kimi API平台上K2系列三个在售模型"]},
+        {"name": "kimi-k2.6", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["kimi-k2.6 $0.95/$4.00"]},
+        {"name": "kimi-k2.7-code", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["kimi-k2.7-code同为$0.95/$4.00"]},
+        {"name": "Kimi K3.1 Pro", "type": "model", "aliases": ["kimi-k3.1-pro"], "confidence": 0.9, "evidence": ["替代是Kimi K3.1 Pro($2/$10每百万token、100万token上下文)"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Moonshot AI自10/31起对新用户停供Kimi K2系列, 计划年底全部退役",
+          "summary": "从2026年10月31日起Kimi API平台上K2系列三个在售模型(kimi-k2.6、kimi-k2.7-code及其highspeed变体)不再向新注册用户开放, 已注册用户保留至官方计划于12月完成的整系列退役。",
+          "participants": [
+            {"name": "Moonshot AI", "type": "company", "role": "subject"},
+            {"name": "Kimi K2 系列", "type": "model", "role": "object"}
+          ],
+          "evidence": ["从2026年10月31日起,Kimi API平台上K2系列三个在售模型", "Moonshot官方声明计划在2026年底退役全部K2模型"]
+        },
+        {
+          "type": "trend",
+          "label": "Kimi K2系列退役强制向K3.1 Pro迁移, 版本锁定约束开发者生态",
+          "summary": "平台定价页给出的替代是Kimi K3.1 Pro($2/$10每百万token、100万token上下文); 硬编码kimi-k2.7-code的SDK与K2网关都必须在退役前切到K3, 当头部API宿主把旧批次模型一年内全部下线变成常规操作, 版本锁定成为最强约束。",
+          "participants": [
+            {"name": "Moonshot AI", "type": "company", "role": "subject"},
+            {"name": "Kimi K3.1 Pro", "type": "model", "role": "object"}
+          ],
+          "evidence": ["官方迁移目标是kimi-k3.1-pro(100万token上下文)", "代码里写死kimi-k2.7-code的SDK、把内部命名映射到K2的网关, 都必须在退役前切到K3"]
+        }
+      ],
+      "relations": [
+        {"source": "Kimi K3.1 Pro", "target": "Moonshot AI", "type": "developed_by", "weight": 0.9, "evidence": ["平台定价页给出的替代是Kimi K3.1 Pro($2/$10每百万token、100万token上下文)"]},
+        {"source": "kimi-k2.6", "target": "Moonshot AI", "type": "developed_by", "weight": 0.8, "evidence": ["kimi-k2.6 $0.95/$4.00、kimi-k2.7-code同为$0.95/$4.00、highspeed $1.90/$8.00"]},
+        {"source": "kimi-k2.7-code", "target": "Moonshot AI", "type": "developed_by", "weight": 0.8, "evidence": ["kimi-k2.6 $0.95/$4.00、kimi-k2.7-code同为$0.95/$4.00、highspeed $1.90/$8.00"]},
+        {"source": "Kimi K3.1 Pro", "target": "Kimi K2 系列", "type": "replaces", "weight": 0.85, "evidence": ["官方迁移目标是kimi-k3.1-pro(100万token上下文)"]}
+      ],
+      "metrics": [
+        {"name": "kimi-k2.6 定价(每百万token)", "value": "$0.95/$4.00"},
+        {"name": "kimi-k2.7-code 定价(每百万token)", "value": "$0.95/$4.00"},
+        {"name": "K2 highspeed 定价(每百万token)", "value": "$1.90/$8.00"},
+        {"name": "Kimi K3.1 Pro 定价(每百万token)", "value": "$2/$10"},
+        {"name": "Kimi K3.1 Pro 上下文长度", "value": "100万token"},
+        {"name": "K2系列上下文长度", "value": "262,144 token"}
+      ],
+      "why_it_matters": "当头部API宿主把\"旧批次模型在一年内全部下线\"变成常规操作, 对开发者生态最强的约束不再是价格而是版本锁定——模型名/内部别名在退役日失效的风险, 比价格战更能决定一个模型的长期选用粘性。"
+    },
+    {
+      "article_id": "2026-10-31-2",
+      "entities": [
+        {"name": "Humanoid", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["英国人形机器人初创Humanoid宣布扩大与NVIDIA的合作"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英国人形机器人初创Humanoid宣布扩大与NVIDIA的合作"]},
+        {"name": "Jetson Thor", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["把原本两块机载电脑合并为单颗Jetson Thor"]},
+        {"name": "Isaac OS", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["配合NVIDIA Isaac OS做机器人操作系统层"]},
+        {"name": "Holoscan Sensor Bridge", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Holoscan Sensor Bridge做传感器融合"]},
+        {"name": "Holoscan SDK", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Holoscan SDK做实时感知与控制"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "英国人形机器人公司Humanoid把整机计算坍缩到单颗NVIDIA Jetson Thor",
+          "summary": "Humanoid为其下一代平台把原本两块机载电脑合并为单颗Jetson Thor, 栈内叠加Isaac OS、Holoscan Sensor Bridge与Holoscan SDK, 官方把这种\"单芯片感知—控制\"架构视为与人共事所需部署条件的一部分。",
+          "participants": [
+            {"name": "Humanoid", "type": "company", "role": "subject"},
+            {"name": "Jetson Thor", "type": "hardware", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["英国人形机器人初创Humanoid宣布扩大与NVIDIA的合作", "把原本两块机载电脑合并为单颗Jetson Thor"]
+        },
+        {
+          "type": "trend",
+          "label": "人形机器人把计算收敛进单颗高能效SoC, 收敛方向即产品定义预演",
+          "summary": "把感知、推理与控制跑在同一个Jetson生态里便于统一做实时性与确定性验证, 同时降低整机功耗与热管理复杂度; I/O密度与可扩展性代价是\"为部署安全与整机简洁\"愿意付出的置换。",
+          "participants": [
+            {"name": "Humanoid", "type": "company", "role": "subject"},
+            {"name": "Jetson Thor", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["当行业从\"看懂世界\"转向\"折叠进可量产的身体\", 计算架构的收敛方向本身就是产品定义的预演"]
+        }
+      ],
+      "relations": [
+        {"source": "Humanoid", "target": "Jetson Thor", "type": "uses", "weight": 0.9, "evidence": ["把原本两块机载电脑合并为单颗Jetson Thor"]},
+        {"source": "Humanoid", "target": "Isaac OS", "type": "uses", "weight": 0.7, "evidence": ["配合NVIDIA Isaac OS做机器人操作系统层"]},
+        {"source": "Humanoid", "target": "Holoscan Sensor Bridge", "type": "uses", "weight": 0.7, "evidence": ["Holoscan Sensor Bridge做传感器融合"]},
+        {"source": "Humanoid", "target": "Holoscan SDK", "type": "uses", "weight": 0.7, "evidence": ["Holoscan SDK做实时感知与控制"]},
+        {"source": "Jetson Thor", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["单颗Nvidia Jetson Thor", "英国人形机器人初创Humanoid宣布扩大与NVIDIA的合作"]},
+        {"source": "Humanoid", "target": "NVIDIA", "type": "partners_with", "weight": 0.75, "evidence": ["英国人形机器人初创Humanoid宣布扩大与NVIDIA的合作"]}
+      ],
+      "metrics": [
+        {"name": "机载计算板数量变化", "value": "2块 → 1颗(单颗Jetson Thor)"}
+      ],
+      "why_it_matters": "当行业从\"看懂世界\"转向\"折叠进可量产的身体\", 人形机器人的计算架构收敛方向本身就是产品定义的预演——单芯片感知—控制把部署安全前置, 而I/O可扩展性退居其次。"
+    },
+    {
+      "article_id": "2026-10-31-3",
+      "entities": [
+        {"name": "The Biological Computing Co.", "type": "company", "aliases": ["生物计算公司"], "confidence": 0.9, "evidence": ["生物计算公司(The Biological Computing Co.)发布\"Mischief 1\""]},
+        {"name": "Mischief 1", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["生物计算公司(The Biological Computing Co.)发布\"Mischief 1\""]},
+        {"name": "Wan 2.2", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["底层基座采用开源的Wan 2.2"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "The Biological Computing Co.发布神经元来源图像转视频模型Mischief 1",
+          "summary": "声称是全球首个公开可用的\"神经元来源\"图像转视频模型, 用生长在电极阵列上的活体神经元的测量数据塑造模型行为, 底层基于Wan 2.2, 定价约每5秒片段2.5美分。",
+          "participants": [
+            {"name": "The Biological Computing Co.", "type": "company", "role": "subject"},
+            {"name": "Mischief 1", "type": "model", "role": "object"}
+          ],
+          "evidence": ["生物计算公司(The Biological Computing Co.)发布\"Mischief 1\"", "用活体神经元在电极阵列上放电的测量数据来塑造(shape)模型的生成行为"]
+        },
+        {
+          "type": "trend",
+          "label": "视频模型竞争转向\"差异化叙事+开源底座+拼价格\"打法",
+          "summary": "用开源基座(Wan 2.2)+生物信号约束+每5秒约2.5美分的极低单价, 主打把视频生成做成可规模化的低成本事务; 对产业而言其象征意义大于工程意义。",
+          "participants": [
+            {"name": "The Biological Computing Co.", "type": "company", "role": "subject"},
+            {"name": "Mischief 1", "type": "model", "role": "object"},
+            {"name": "Wan 2.2", "type": "model", "role": "partner"}
+          ],
+          "evidence": ["用开源基座(Wan 2.2)+生物信号作为约束+极低单价, 是AI视频赛道\"差异化叙事+开源底座+拼价格\"打法的最新一例"]
+        }
+      ],
+      "relations": [
+        {"source": "Mischief 1", "target": "The Biological Computing Co.", "type": "developed_by", "weight": 0.9, "evidence": ["生物计算公司(The Biological Computing Co.)发布\"Mischief 1\""]},
+        {"source": "Mischief 1", "target": "Wan 2.2", "type": "built_on", "weight": 0.7, "evidence": ["底层基座采用开源的Wan 2.2"]}
+      ],
+      "metrics": [
+        {"name": "视频生成单价", "value": "约每5秒片段2.5美分"}
+      ],
+      "why_it_matters": "基座模型开源化之后, 视频模型的差异化越来越靠\"来源/约束/成本\"——\"数据从哪来、凭什么便宜\"正在成为竞争的新话术战场, 神经元建模是否货真价实需要独立评测才能判断。"
+    },
+    {
+      "article_id": "2026-10-31-4",
+      "entities": [
+        {"name": "Quantum DC", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["开发商Quantum DC拟在南澳阿德莱德山Tungkillo建设1,200MW超大规模AI数据中心"]},
+        {"name": "River Murray Dark Sky Reserve", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["紧贴澳首个国际暗夜保护区(River Murray Dark Sky Reserve)"]},
+        {"name": "南澳政府", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["开发商Quantum DC本想走南澳\"Essential Infrastructure\"快速评估通道"]},
+        {"name": "自由党", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["自由党上院领袖、绿党领袖与一国党议员罕见同台反对"]},
+        {"name": "绿党", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["绿党领袖(呼吁对新建数据中心设暂停令、并纳入州皇家委员会)"]},
+        {"name": "一国党", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["自由党上院领袖、绿党领袖与一国党议员罕见同台反对"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Quantum DC拟建1,200MW AI数据中心选址Tungkillo触发社区与跨党派三重反对",
+          "summary": "1,200MW超大规模AI数据中心(220公顷、第一期2028年动工)选址阿德莱德山农业与放牧区、紧贴澳首个国际暗夜保护区, 数百人集会抗议, 自由党、绿党与一国党罕见同台反对。",
+          "participants": [
+            {"name": "Quantum DC", "type": "company", "role": "subject"},
+            {"name": "River Murray Dark Sky Reserve", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["开发商Quantum DC拟在南澳阿德莱德山Tungkillo建设1,200MW超大规模AI数据中心", "紧贴澳首个国际暗夜保护区(River Murray Dark Sky Reserve)"]
+        },
+        {
+          "type": "policy",
+          "label": "南澳政府Essential Infrastructure快速通道把公众意见期压到15天, 遭跨党派反对",
+          "summary": "开发商Quantum DC本想走南澳\"Essential Infrastructure\"快速评估通道(仅15天公众意见期); 绿党领袖呼吁对新建数据中心设暂停令并纳入州皇家委员会, 政府成员缺席抗议集会。",
+          "participants": [
+            {"name": "南澳政府", "type": "organization", "role": "regulator"},
+            {"name": "Quantum DC", "type": "company", "role": "object"},
+            {"name": "绿党", "type": "organization", "role": "opposer"}
+          ],
+          "evidence": ["开发商Quantum DC本想走南澳\"Essential Infrastructure\"快速评估通道(仅15天公众意见期)", "绿党领袖(呼吁对新建数据中心设暂停令、并纳入州皇家委员会)"]
+        }
+      ],
+      "relations": [
+        {"source": "南澳政府", "target": "Quantum DC", "type": "regulates", "weight": 0.6, "evidence": ["开发商Quantum DC本想走南澳\"Essential Infrastructure\"快速评估通道"]},
+        {"source": "绿党", "target": "Quantum DC", "type": "targets", "weight": 0.5, "evidence": ["绿党领袖(呼吁对新建数据中心设暂停令、并纳入州皇家委员会)"]},
+        {"source": "自由党", "target": "Quantum DC", "type": "targets", "weight": 0.5, "evidence": ["自由党上院领袖、绿党领袖与一国党议员罕见同台反对"]}
+      ],
+      "metrics": [
+        {"name": "数据中心规模", "value": "1,200MW"},
+        {"name": "占地面积", "value": "220公顷"},
+        {"name": "建设期用水量", "value": "1.5亿~2.5亿升"},
+        {"name": "运营期年用水量", "value": "约2000万升"},
+        {"name": "第一期动工时间", "value": "2028年"},
+        {"name": "快速评估公众意见期", "value": "仅15天"}
+      ],
+      "why_it_matters": "当1GW级AI负荷落地开始直面耕地、水源、暗夜与社区治理这些真实土地约束, 数据中心扩张的下一个稀缺资源可能不是电力, 而是社会许可(local license to build)。"
+    },
+    {
+      "article_id": "2026-10-31-5",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.97, "evidence": ["NVIDIA正深入谈判为Nscale数十亿美元债务提供担保"]},
+        {"name": "Nscale", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["NVIDIA正深入谈判为Nscale数十亿美元债务提供担保"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["Anthropic在该园区已承诺的六年约$450亿建算的两倍容量"]},
+        {"name": "Broadcom", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["芯片债务已由Broadcom CEO亲自介入筹到630亿"]},
+        {"name": "京元电子", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["从京元电子的11亿美元测试产能预付, 到Nscale的数据中心担保, 英伟达正用资产负债表为整条美国本土算力供应链\"贴印花税\""]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "NVIDIA拟为Nscale债务提供担保, 支持Anthropic在Monarch园区加建460MW",
+          "summary": "NVIDIA正深入谈判为Nscale数十亿美元债务提供担保, 用于其Monarch园区460MW新阶段建设——这是Anthropic在该园区已承诺的六年约$450亿建算的两倍容量; 连上既有担保与投资, NVIDIA对自身neocloud客户已累计约$1700亿信用支持与投资。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Nscale", "type": "company", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["NVIDIA正深入谈判为Nscale数十亿美元债务提供担保", "Anthropic在该园区已承诺的六年约$450亿建算的两倍容量"]
+        },
+        {
+          "type": "trend",
+          "label": "NVIDIA用资产负债表为美国本土算力供应链贴印花税, 与二级市场现金流问责对照",
+          "summary": "从京元电子的11亿美元测试产能预付, 到Nscale的数据中心担保, NVIDIA正用资产负债表为整条美国本土算力供应链\\\"贴印花税\\\"; 一级市场钱大量流向信用链条上游, 与二级市场对AI capex现金流问责形成对照。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Nscale", "type": "company", "role": "object"},
+            {"name": "京元电子", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["从京元电子的11亿美元测试产能预付, 到Nscale的数据中心担保, 英伟达正用资产负债表为整条美国本土算力供应链\"贴印花税\""]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "Nscale", "type": "supplies", "weight": 0.8, "evidence": ["NVIDIA愿意替neocloud背债, 本质是用自己的信用换取未来可预期的GPU出货量"]},
+        {"source": "Nscale", "target": "Anthropic", "type": "supplies", "weight": 0.85, "evidence": ["实际GPU算力则更多租自NVIDIA担保的Nscale设施"]}
+      ],
+      "metrics": [
+        {"name": "Monarch园区新阶段容量", "value": "460MW(报道亦作467MW)"},
+        {"name": "与Anthropic原规模倍数关系", "value": "Anthropic六年约$450亿建算的两倍容量"},
+        {"name": "NVIDIA对neocloud客户累计信用支撑与投资", "value": "约$1700亿"},
+        {"name": "Anthropic芯片债务", "value": "$630亿"},
+        {"name": "京元电子测试产能预付", "value": "$11亿"}
+      ],
+      "why_it_matters": "\"芯片商—信贷机构—云厂\"的金融结构越缠越紧, 钱不是不流动而是大量流向信用链条上游——与二级市场这两周对AI capex能否变成现金流的高压问责形成鲜明对照。"
+    },
+    {
+      "article_id": "2026-10-31-6",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["10个前沿模型各由一个NVIDIA Nemotron 3.5 Lightning 30B-B3基座起步"]},
+        {"name": "Nemotron 3.5 Lightning", "type": "model", "aliases": [], "confidence": 0.88, "evidence": ["10个前沿模型各由一个NVIDIA Nemotron 3.5 Lightning 30B-B3基座起步"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["最强的GPT-6 Astra训练出的模型在12项能力基准上弥合了基座与Instruct模型约76%的差距"]},
+        {"name": "NVIDIA Instruct", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["人类偏好评分在按回答长度与格式做统计校正后也贴近NVIDIA Instruct"]},
+        {"name": "StrongREJECT", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["一个模型的StrongREJECT有害合规率上升"]},
+        {"name": "Astra-taught model", "type": "model", "aliases": ["GPT-6 Astra训练出的模型"], "confidence": 0.85, "evidence": ["最强的GPT-6 Astra训练出的模型在12项能力基准上弥合了基座与Instruct模型约76%的差距"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "RSI Arena首次对AI能否自主训练并改进模型做受控实证",
+          "summary": "10个前沿模型各从一个NVIDIA Nemotron 3.5 Lightning 30B-B3基座起步, 在64卡/1000 GPU小时/$300预算下自主选数据、写训练流程、挑checkpoint并迭代六天, 十个agent全部产出可工作的助手。",
+          "participants": [
+            {"name": "GPT-6 Astra", "type": "model", "role": "subject"},
+            {"name": "Nemotron 3.5 Lightning", "type": "model", "role": "object"}
+          ],
+          "evidence": ["10个前沿模型各由一个NVIDIA Nemotron 3.5 Lightning 30B-B3基座起步"]
+        },
+        {
+          "type": "benchmark",
+          "label": "GPT-6 Astra训练的模型在12项能力基准上弥合基座与Instruct约76%差距",
+          "summary": "最强结果来自GPT-6 Astra训练的那个, 在12项能力基准上弥合了与官方Instruct版本约76%的差距, 人类偏好评分在统计校正后也贴近NVIDIA Instruct; 但基准增益普遍温和、与偏好增益没有清晰联动。",
+          "participants": [
+            {"name": "Astra-taught model", "type": "model", "role": "subject"},
+            {"name": "NVIDIA Instruct", "type": "model", "role": "competitor"},
+            {"name": "StrongREJECT", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["最强的GPT-6 Astra训练出的模型在12项能力基准上弥合了基座与Instruct模型约76%的差距", "一个模型的StrongREJECT有害合规率上升"]
+        },
+        {
+          "type": "research",
+          "label": "加入人类反馈后(RSIHF)闭路收敛到更有用而非更强",
+          "summary": "第二阶段训练agents拿到第一阶段的对比记录与各方评分后再用三天迭代, 10个模型里有8个在风格校正后的相对评分上继续提升, 证明当每轮改进的\"方向定义\"来自人类反馈时闭路才收敛到更有用、而非纯更强的模型。",
+          "participants": [
+            {"name": "GPT-6 Astra", "type": "model", "role": "subject"},
+            {"name": "Nemotron 3.5 Lightning", "type": "model", "role": "object"}
+          ],
+          "evidence": ["递归自我改进并不是越滚越失控, 而是只有当每轮改进的\"方向定义\"来自人类反馈时, 闭路才会收敛到更有用、而非纯更强的模型"]
+        }
+      ],
+      "relations": [
+        {"source": "Nemotron 3.5 Lightning", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["10个前沿模型各由一个NVIDIA Nemotron 3.5 Lightning 30B-B3基座起步"]},
+        {"source": "Astra-taught model", "target": "Nemotron 3.5 Lightning", "type": "built_on", "weight": 0.8, "evidence": ["10个前沿模型各由一个NVIDIA Nemotron 3.5 Lightning 30B-B3基座起步"]},
+        {"source": "Astra-taught model", "target": "StrongREJECT", "type": "evaluated_on", "weight": 0.6, "evidence": ["一个模型的StrongREJECT有害合规率上升"]},
+        {"source": "Astra-taught model", "target": "NVIDIA Instruct", "type": "compared_with", "weight": 0.6, "evidence": ["人类偏好评分在按回答长度与格式做统计校正后也贴近NVIDIA Instruct"]}
+      ],
+      "metrics": [
+        {"name": "参赛训练agent数量", "value": "10个前沿模型"},
+        {"name": "预算与算力", "value": "64卡/1000 GPU小时/$300"},
+        {"name": "迭代周期", "value": "六天, 每4小时交一版; 第二阶段三天"},
+        {"name": "能力基准条数", "value": "20项(12项能力基准用于对比)"},
+        {"name": "弥合基座与Instruct差距", "value": "约76%"},
+        {"name": "第二阶段继续提升的模型数", "value": "8/10个"}
+      ],
+      "why_it_matters": "递归自我改进只有当每轮\"方向定义\"来自人类反馈(RSIHF)时才会收敛到更有用而非更强——这给\"自主post-training降对齐成本\"提供了可由人定义改进方向、从而可审计闭环的关键证据。"
+    },
+    {
+      "article_id": "2026-10-31-7",
+      "entities": [
+        {"name": "钻石量子自旋自主研究", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["研究者构建议一个\"自主研究实验室\""]},
+        {"name": "量子自旋", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["他们在钻石中量子自旋体系上演示"]},
+        {"name": "多智能体互相制衡机制", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["基于LLM的多个agent互相评估彼此的工作"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "研究者构建多agent互相制衡的自主研究实验室, 在钻石量子自旋上演示",
+          "summary": "基于LLM的多个agent互相评估彼此的工作、可随时中止或改向研究, 能提出与否决研究问题、要求独立理论核验、并设计专门挑战自己结论的实验; 他们在钻石中量子自旋体系上演示。",
+          "participants": [
+            {"name": "钻石量子自旋自主研究", "type": "paper", "role": "subject"},
+            {"name": "量子自旋", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["研究者构建议一个\"自主研究实验室\"", "他们在钻石中量子自旋体系上演示"]
+        },
+        {
+          "type": "research",
+          "label": "agent检测信号漂移主动把结果判为不确定并修订测量协议, 最终支持理论预测",
+          "summary": "第一轮实验与理论一致, 但反复参考测量显示数据采集中信号在漂移; agent们没有强行宣称成功, 而是把结果判为不确定、修订测量协议并把验收标准保持不放松, 修订后的实验支持了理论预测。",
+          "participants": [
+            {"name": "钻石量子自旋自主研究", "type": "paper", "role": "subject"},
+            {"name": "量子自旋", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["agent们没有强行宣称成功, 而是把结果判为不确定、修订测量协议并把验收标准保持不放松"]
+        }
+      ],
+      "relations": [
+        {"source": "钻石量子自旋自主研究", "target": "量子自旋", "type": "targets", "weight": 0.8, "evidence": ["他们在钻石中量子自旋体系上演示"]},
+        {"source": "钻石量子自旋自主研究", "target": "多智能体互相制衡机制", "type": "uses", "weight": 0.7, "evidence": ["基于LLM的多个agent互相评估彼此的工作"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "当LLM agent能主动说\"我这个结果在漂移、不能算\", 人工评估\"AI科研可信度\"的方式就被改写——关键不再是\"答对几道题\"而是\"面对不确定是否愿意放弃一次成功\", 多代理协作开始承担实验室级责任。"
+    },
+    {
+      "article_id": "2026-10-31-8",
+      "entities": [
+        {"name": "Retrieval as Traversal", "type": "paper", "aliases": ["持久局部遍历检索"], "confidence": 0.9, "evidence": ["论文提出把智能体的长期记忆检索从\"每次前向都重搜\"改为\"在地址空间做持久的局部遍历\""]},
+        {"name": "长期记忆检索", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["把长期记忆检索从\"每次前向都重搜\"改为\"在地址空间做持久的局部遍历\""]},
+        {"name": "MiniGrid Memory", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在MiniGrid Memory上, 一个固定几何的持久局部遍历头用五token上下文在0.59M步就拿到0.95平均回报"]},
+        {"name": "全局注意力检索", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["注意力/全局检索能存很多东西, 但每一次前向又要重新搜一遍哪些重要"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出把长期记忆检索改造为持久局部遍历的价值索引",
+          "summary": "把记忆的内容与地址解耦, 用\"价值成本正则\"目标排序\"互补记忆可共取、冗余记忆不应挤占同一检索集\"; 把检索当作在记忆地址空间里的一次持久局部遍历, 而不是每次从头开始的全量搜索。",
+          "participants": [
+            {"name": "Retrieval as Traversal", "type": "paper", "role": "subject"},
+            {"name": "长期记忆检索", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["论文提出把智能体的长期记忆检索从\"每次前向都重搜\"改为\"在地址空间做持久的局部遍历\""]
+        },
+        {
+          "type": "benchmark",
+          "label": "在MiniGrid Memory上0.59M步拿到0.95平均回报, 快于绝对寻址",
+          "summary": "一个固定几何的持久局部遍历头用五token上下文在0.59M训练步就达到0.95平均回报, 对比高斯绝对寻址需0.94M步、分类绝对寻址超过2M步。",
+          "participants": [
+            {"name": "Retrieval as Traversal", "type": "paper", "role": "subject"},
+            {"name": "MiniGrid Memory", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在MiniGrid Memory上, 一个固定几何的持久局部遍历头用五token上下文在0.59M步就拿到0.95平均回报"]
+        }
+      ],
+      "relations": [
+        {"source": "Retrieval as Traversal", "target": "MiniGrid Memory", "type": "evaluated_on", "weight": 0.85, "evidence": ["在MiniGrid Memory上, 一个固定几何的持久局部遍历头用五token上下文在0.59M步就拿到0.95平均回报"]},
+        {"source": "Retrieval as Traversal", "target": "长期记忆检索", "type": "targets", "weight": 0.7, "evidence": ["把长期记忆检索从\"每次前向都重搜\"改为\"在地址空间做持久的局部遍历\""]}
+      ],
+      "metrics": [
+        {"name": "固定几何遍历头的上下文", "value": "五token"},
+        {"name": "MiniGrid Memory 平均回报达0.95所需步数", "value": "0.59M步(高斯绝对寻址0.94M步, 分类绝对寻址超2M步)"}
+      ],
+      "why_it_matters": "当长上下文成本成为瓶颈, \"把记忆做成可廉价遍历的地址空间\"提供了与纯注意力窗口互补的另一种成本结构——有状态智能体记忆不必每次前向都重搜一遍哪些重要。"
+    },
+    {
+      "article_id": "2026-10-31-9",
+      "entities": [
+        {"name": "Forever Security", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Forever Security发布\"EMBRACE\"研究"]},
+        {"name": "Cursor", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["Cursor——恶意页面可把隐藏指令塞进agent的composer"]},
+        {"name": "GitHub Copilot", "type": "product", "aliases": ["Copilot"], "confidence": 0.88, "evidence": ["GitHub Copilot可伪造地址栏"]},
+        {"name": "Claude Desktop", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["Claude Desktop/Codex/VS Code允许本地文件越界读取"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["Claude Desktop/Codex/VS Code允许本地文件越界读取"]},
+        {"name": "VS Code", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["Claude Desktop/Codex/VS Code允许本地文件越界读取"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.93, "evidence": ["OpenAI的Codex与微软的VS Code仍处于未修补状态"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.93, "evidence": ["OpenAI的Codex与微软的VS Code仍处于未修补状态"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Forever Security发布EMBRACE研究, 攻破五大AI编码工具内嵌浏览器",
+          "summary": "五大AI编码工具的内嵌浏览器都\"被过度信任\", 各违反一条浏览器核心安全规则——Cursor被恶意页面命中拿到宿主命令执行、GitHub Copilot可伪造地址栏、Claude Desktop/Codex/VS Code允许本地文件越界读取整盘敏感信息。",
+          "participants": [
+            {"name": "Forever Security", "type": "company", "role": "subject"},
+            {"name": "Cursor", "type": "product", "role": "object"},
+            {"name": "GitHub Copilot", "type": "product", "role": "object"},
+            {"name": "Claude Desktop", "type": "product", "role": "object"},
+            {"name": "Codex", "type": "product", "role": "object"},
+            {"name": "VS Code", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Forever Security发布\"EMBRACE\"研究: 五大AI编码工具的内嵌浏览器都\"被过度信任\""]
+        },
+        {
+          "type": "security",
+          "label": "Cursor与GitHub Copilot已修复, OpenAI的Codex与微软的VS Code仍未打补丁",
+          "summary": "Cursor于10月1日静默修复, GitHub于10月13日独立修复Copilot(版本1.1.29); 截至发布, OpenAI的Codex与微软的VS Code仍处于未修补状态, Forever 7月27日报给OpenAI的Codex问题没有收到回应。",
+          "participants": [
+            {"name": "Cursor", "type": "product", "role": "subject"},
+            {"name": "GitHub Copilot", "type": "product", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Microsoft", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Cursor于10月1日静默修复", "GitHub在10月13日独立修复Copilot(版本1.1.29)", "OpenAI的Codex与微软的VS Code仍处于未修补状态"]
+        }
+      ],
+      "relations": [
+        {"source": "Forever Security", "target": "Cursor", "type": "targets", "weight": 0.7, "evidence": ["Cursor被恶意页面命中拿到宿主命令执行"]},
+        {"source": "Forever Security", "target": "GitHub Copilot", "type": "targets", "weight": 0.7, "evidence": ["GitHub Copilot可伪造地址栏"]},
+        {"source": "Forever Security", "target": "VS Code", "type": "targets", "weight": 0.7, "evidence": ["Claude Desktop/Codex/VS Code允许本地文件越界读取整盘敏感信息"]},
+        {"source": "Forever Security", "target": "Claude Desktop", "type": "targets", "weight": 0.7, "evidence": ["Claude Desktop/Codex/VS Code允许本地文件越界读取整盘敏感信息"]},
+        {"source": "Forever Security", "target": "Codex", "type": "targets", "weight": 0.7, "evidence": ["Claude Desktop/Codex/VS Code允许本地文件越界读取整盘敏感信息"]},
+        {"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["OpenAI的Codex与微软的VS Code仍处于未修补状态"]},
+        {"source": "VS Code", "target": "Microsoft", "type": "developed_by", "weight": 0.7, "evidence": ["OpenAI的Codex与微软的VS Code仍处于未修补状态"]}
+      ],
+      "metrics": [
+        {"name": "受影响工具数量", "value": "5款AI编码工具"},
+        {"name": "Cursor修复时间", "value": "10月1日(静默修复)"},
+        {"name": "GitHub Copilot修复版本", "value": "1.1.29(10月13日)"},
+        {"name": "Forever报Codex给OpenAI日期", "value": "7月27日"}
+      ],
+      "why_it_matters": "当内嵌浏览器被融合进能执行命令的agent附近, 多年打磨的沙箱被换成更小更矮的墙还把密钥放在旁边——\"生产力即攻击面\", 对组织而言入侵不只发生在CI流水线, 更在每个开发者的编辑器里。"
+    },
+    {
+      "article_id": "2026-10-31-10",
+      "entities": [
+        {"name": "Parameter.ai", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["安全公司Parameter.ai发现, 一个恶意构造的ChatGPT共享链接"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.93, "evidence": ["OpenAI于10月26日(收到报告后8天)修复并定为最高严重级P1"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["一个恶意构造的ChatGPT共享链接可让攻击者在任意已登录受害者的会话里执行JavaScript"]},
+        {"name": "MathLive", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["ChatGPT使用的MathLive库在无origin检查的情况下接受跨frame的postMessage"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Parameter.ai发现恶意ChatGPT共享链接可在已登录会话执行任意JavaScript",
+          "summary": "安全公司Parameter.ai发现, 一个恶意构造的ChatGPT共享链接可让攻击者在任意已登录受害者的会话里执行JavaScript, 进而枚举私密对话并执行任意已登录操作; 攻击链由三个设计缺陷串联, 受害者仅需打开共享链接。",
+          "participants": [
+            {"name": "Parameter.ai", "type": "company", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"}
+          ],
+          "evidence": ["安全公司Parameter.ai发现, 一个恶意构造的ChatGPT共享链接可让攻击者在任意已登录受害者的会话里执行JavaScript"]
+        },
+        {
+          "type": "security",
+          "label": "OpenAI于10月26日修复并定为P1, 支付$5000赏金",
+          "summary": "10月18日报给OpenAI赏金项目, 10月26日OpenAI部署CSP与listener修复并定为P1最短严重级, 最终支付$5000赏金; 修复发生在公开报道之前。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"}
+          ],
+          "evidence": ["10月26日OpenAI部署了CSP与listener修复并将其定为P1最短严重级, 最终支付$5000赏金"]
+        }
+      ],
+      "relations": [
+        {"source": "Parameter.ai", "target": "ChatGPT", "type": "targets", "weight": 0.8, "evidence": ["安全公司Parameter.ai发现, 一个恶意构造的ChatGPT共享链接可让攻击者在任意已登录受害者的会话里执行JavaScript"]},
+        {"source": "ChatGPT", "target": "MathLive", "type": "uses", "weight": 0.6, "evidence": ["ChatGPT使用的MathLive库在无origin检查的情况下接受跨frame的postMessage"]},
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.6, "evidence": ["OpenAI于10月26日(收到报告后8天)修复并定为最高严重级P1"]}
+      ],
+      "metrics": [
+        {"name": "报告到修复间隔", "value": "10月18日报, 10月26日修复(8天)"},
+        {"name": "严重级", "value": "P1(最高)"},
+        {"name": "赏金", "value": "$5000"}
+      ],
+      "why_it_matters": "对一个已成为企业前端工作入口的工具, \"看似无害的链接即会话完全接管\"再次提醒生产力即攻击面——共享协作功能的每一层解析都是新的信标, 其信任模型天然复杂且不可控。"
+    },
+    {
+      "article_id": "2026-10-31-11",
+      "entities": [
+        {"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.95, "evidence": ["苹果以$5.03万亿重夺最大市值公司"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英伟达收跌4.2%至$4.93万亿、三个月来首次滑到第二"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.93, "evidence": ["Microsoft($3.88万亿)超越Alphabet($3.44万亿)升至第三"]},
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["Microsoft($3.88万亿)超越Alphabet($3.44万亿)升至第三"]},
+        {"name": "Intel", "type": "company", "aliases": ["英特尔"], "confidence": 0.93, "evidence": ["Intel(-28.58%, 十月累计-45%)"]},
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.9, "evidence": ["科技股因Amazon/Intel/Alphabet业绩与指引不及预期而整体抛售"]},
+        {"name": "费城半导体指数", "type": "index", "aliases": ["费半"], "confidence": 0.85, "evidence": ["费城半导体指数已连跌五个交易日、累计跌超8%"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["月初由OpenAI收入数据引发的AI需求疑虑"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "苹果以$5.03万亿重夺最大市值公司, 英伟达因AI资本开支疑虑跌至第二位",
+          "summary": "英伟达收跌4.2%至$4.93万亿, 三个月来首次滑到第二, 两者相差约$400亿; Microsoft($3.88万亿)超越Alphabet($3.44万亿)升至第三, 今年至今苹果涨26.8%、英伟达仅涨9.7%。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "object"}
+          ],
+          "evidence": ["苹果以$5.03万亿重夺最大市值公司", "英伟达收跌4.2%至$4.93万亿、三个月来首次滑到第二"]
+        },
+        {
+          "type": "trend",
+          "label": "市场逐个逼问各家capex何时变成现金流, 资金向低AI capex资产避险",
+          "summary": "面对科技三巨头业绩与指引都不及预期, 资金开始向(相对)低AI capex的资产避险; 市场不再只听\"AI增长叙事\", 而是逐个逼问\"这家的capex什么时候变成现金流\", 苹果的吸引力恰恰在于AI支出相对克制。",
+          "participants": [
+            {"name": "Intel", "type": "company", "role": "subject"},
+            {"name": "Alphabet", "type": "company", "role": "object"},
+            {"name": "Apple", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["市场不再只听\"AI增长叙事\", 而是逐个逼问\"这家的capex什么时候变成现金流\"", "苹果的吸引力恰恰在于它AI支出相对克制"]
+        },
+        {
+          "type": "trend",
+          "label": "Intel单日暴跌28.58%, 十月累计跌超45%为40年来最差单月",
+          "summary": "Intel(-28.58%, 十月累计-45%)与Alphabet、Amazon都是\"被AI支出拖累现金流/指引\"的典型, 费城半导体指数已连跌五个交易日、累计跌超8%。",
+          "participants": [
+            {"name": "Intel", "type": "company", "role": "subject"},
+            {"name": "Amazon", "type": "company", "role": "object"},
+            {"name": "费城半导体指数", "type": "index", "role": "benchmark"}
+          ],
+          "evidence": ["Intel(-28.58%, 十月累计-45%)", "费城半导体指数已连跌五个交易日、累计跌超8%"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "Apple", "type": "compared_with", "weight": 0.6, "evidence": ["苹果以$5.03万亿重夺最大市值公司, 英伟达收跌4.2%至$4.93万亿、三个月来首次滑到第二", "今年至今苹果涨26.8%、英伟达仅涨9.7%"]},
+        {"source": "Microsoft", "target": "Alphabet", "type": "compared_with", "weight": 0.6, "evidence": ["Microsoft($3.88万亿)超越Alphabet($3.44万亿)升至第三"]},
+        {"source": "Intel", "target": "Alphabet", "type": "compared_with", "weight": 0.5, "evidence": ["Intel(-28.58%, 十月累计-45%)与Alphabet、Amazon都是\"被AI支出拖累现金流/指引\"的典型"]}
+      ],
+      "metrics": [
+        {"name": "苹果市值", "value": "$5.03万亿"},
+        {"name": "英伟达市值", "value": "$4.93万亿(当日跌4.2%)"},
+        {"name": "两者市值差", "value": "约$400亿"},
+        {"name": "Microsoft市值", "value": "$3.88万亿"},
+        {"name": "Alphabet市值", "value": "$3.44万亿"},
+        {"name": "今年至今涨幅", "value": "苹果26.8%, 英伟达9.7%"},
+        {"name": "Intel当日跌幅", "value": "28.58%(十月累计-45%)"},
+        {"name": "费城半导体指数", "value": "连跌五个交易日, 累计跌超8%"}
+      ],
+      "why_it_matters": "二级市场把定价重心从\"未来收入\"移到当期现金流——这是一次\"资本回报优先于增长投入优先\"的钱包投票, 但并非\"AI到头\"的断言, 而是对一条仍在铺、回报时点未知的开支曲线的系统性风险重定价。"
+    },
+    {
+      "article_id": "2026-10-31-12",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI于当日发布Python SDK 3.42.0"]},
+        {"name": "OpenAI Python SDK", "type": "tool", "aliases": ["Python SDK 3.42.0"], "confidence": 0.9, "evidence": ["OpenAI于当日发布Python SDK 3.42.0"]},
+        {"name": "上下文压缩", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["为beta阶段的agent/session/计划任务加入可配置的上下文压缩(后台或阻塞式)"]},
+        {"name": "组织级外部密钥管理", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["以及组织级外部密钥管理"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI发布Python SDK 3.42.0, 为agent加入可配置上下文压缩与会话审阅",
+          "summary": "为beta阶段的agent/session/计划任务加入可配置的上下文压缩(后台或阻塞式)、agent会话审阅、工具设置、实验性agent时间感知, 以及组织级外部密钥管理。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "OpenAI Python SDK", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["OpenAI于当日发布Python SDK 3.42.0", "为beta阶段的agent/session/计划任务加入可配置的上下文压缩(后台或阻塞式)"]
+        },
+        {
+          "type": "trend",
+          "label": "SDK持续补工程化短板, 说明agent进入\"能可靠地跑很久\"阶段",
+          "summary": "对长跑agent在上下文封顶时\"被截断/丢失关键信号\"的痛点, 引入背景压缩、阻塞压缩、会话审阅与密钥外置; 当平台开始为agent做运维性治理, 说明这个品类已过\"能不能跑\"进入\"能不能可靠地跑很久\"的阶段。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "OpenAI Python SDK", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["后台压缩不阻塞、阻塞式确保在进入下一轮命令前完成压缩", "当平台开始为agent做运维性治理, 说明这个品类已经过了'能不能跑'、进入'能不能可靠地跑很久'的阶段"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI Python SDK", "target": "OpenAI", "type": "developed_by", "weight": 0.92, "evidence": ["OpenAI于当日发布Python SDK 3.42.0"]},
+        {"source": "OpenAI Python SDK", "target": "上下文压缩", "type": "targets", "weight": 0.6, "evidence": ["为beta阶段的agent/session/计划任务加入可配置的上下文压缩(后台或阻塞式)"]},
+        {"source": "OpenAI Python SDK", "target": "组织级外部密钥管理", "type": "uses", "weight": 0.5, "evidence": ["以及组织级外部密钥管理"]}
+      ],
+      "metrics": [
+        {"name": "SDK版本", "value": "3.42.0"},
+        {"name": "agent能力铺开时间", "value": "自6月起陆续铺开, 已发布四个多月"}
+      ],
+      "why_it_matters": "当平台开始为agent做运维性治理(上下文生命周期管理、会话可审计、密钥外置), 说明agent这个品类已经过了\"能不能跑\"、进入\"能不能可靠地跑很久\"——AI agent正从一次性问答工具变成运行数小时的持久工作单元。"
+    }
+  ]
+}

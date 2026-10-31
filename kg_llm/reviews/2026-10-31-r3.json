@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-31",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "整体事实与关系方向基本正确，但存在两处中等语义问题：article 0 的评测事件把三个独立基准跳升压成一个误导性区间，article 6 把 RSI Arena 实验的主体错标成参赛模型之一 GPT-6 Astra。另有若干低严重度类型/角色错配（Wan 2.2 标为 partner、SDK 用 uses 描述其提供的功能、一国党漏抽）。",
+  "findings": [
+    {
+      "article_id": "2026-10-31-0",
+      "severity": "medium",
+      "problem": "benchmark 事件标签写为\"从28.9%大幅跳到61.3%\"，把三个互不相关的基准跳升压成一个笼统区间，误导读者以为存在单一 28.9%→61.3% 的跳跃。原文是 MedChemBench v7 28.9%→49.6%、GeneBench Pro v13 16.7%→37.7%、LifeSciBench Gold 44.0%→61.3%，三个起点终点各不相同。",
+      "fix": "把标签改为不暗示单一区间，例如\"GPT-6 Rosalind 在 MedChemBench v7/GeneBench Pro v13/LifeSciBench Gold 三项生物评测上均显著跳升\"，并在 summary 中分别保留各基准的起止值。"
+    },
+    {
+      "article_id": "2026-10-31-6",
+      "severity": "medium",
+      "problem": "事件1（RSI Arena 首次受控实证）与事件3（RSIHF 收敛）的 subject 都标成 GPT-6 Astra，但 GPT-6 Astra 只是 RSI Arena 中 10 个参赛前沿模型之一，不是实验的执行主体；实验主体应是 RSI Arena 本身或全体 10 个参赛模型。把单一参赛模型当作 subject 会让图谱讲出\"GPT-6 Astra 主导实验\"的错误故事。",
+      "fix": "为 RSI Arena 实验建立一个 paper/实验实体作为 subject，或把参与者列为全体 10 个前沿模型；仅当事件确实在讲 GPT-6 Astra 训练出的那个结果时（如事件2）才用 Astra-taught model 作 subject。"
+    },
+    {
+      "article_id": "2026-10-31-3",
+      "severity": "low",
+      "problem": "trend 事件中 Wan 2.2 被标为 role \"partner\"，但 Wan 2.2 是 Mischief 1 的开源基座模型，不是合作方。",
+      "fix": "把 Wan 2.2 的 role 改为 \"base\" 或 \"object\"（被引用的底层基座），不要用 \"partner\"。"
+    },
+    {
+      "article_id": "2026-10-31-4",
+      "severity": "low",
+      "problem": "一国党是原文中与自由党、绿党同台反对的核心主体之一（\"自由党上院领袖、绿党领袖与一国党议员罕见同台反对\"），但实体虽被抽取，relations 与事件 participants 中都没有一国党，导致图谱缺失一个关键反对者。",
+      "fix": "给 一国党 增加与 Quantum DC 的 opposition 关系（与自由党同型），并在 policy 事件的 participants 中加入 一国党（role opposer）。"
+    },
+    {
+      "article_id": "2026-10-31-12",
+      "severity": "low",
+      "problem": "关系 \"OpenAI Python SDK --uses--> 组织级外部密钥管理\" 语义读反：SDK 是提供/支持外部密钥管理这一能力方，用它去 uses 一个它自己实现的功能读不通。",
+      "fix": "把关系类型改为 supports/provides（SDK 提供组织级外部密钥管理能力），或删除该关系，避免 uses 造成\"SDK 依赖外部密钥管理\"的误读。"
+    }
+  ],
+  "lessons": [
+    "论文/实验类事件里，subject 必须选真正的执行主体：当实验包含多个参赛模型时，用实验或论文实体作 subject，不要把其中一个参赛模型当成主体。",
+    "发布评测类事件里，多个独立基准的跳升不要压成一个笼统区间，label 要分别注明各基准各自的起止值，避免误导性区间。",
+    "被引用的开源基座模型在事件中的 role 应为 base/object，不要标成 partner。"
+  ]
+}

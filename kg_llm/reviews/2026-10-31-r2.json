@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-31",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "r1 的全部 high/medium 问题（训练者与产物主体错位、NVIDIA--invests_in-->Anthropic、Quantum DC--targets-->暗夜保护区、费半指数类型、绿党 role）已逐一修复。本轮最大的新问题是 2026-10-31-11 事件1摘要把英伟达当日收跌4.2%至$4.93万亿的行情错写成微软——同一句里微软同时出现$4.93万亿与$3.88万亿（第三名）两个市值，与原文矛盾。另有 2026-10-31-8 的 replaces 言过其实（原文明说互补）、2026-10-31-0 的 Codex 归属关系证据错位、实体名自加「GPT-6」前缀等中等问题，建议修订后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-10-31-11",
+      "severity": "high",
+      "problem": "事件1（苹果以$5.03万亿重夺最大市值公司）的 summary 写「微软收跌4.2%至$4.93万亿, 三个月来首次滑到第二」，把英伟达的行情安到了微软头上。原文（及本事件自己的 label、relations 证据）都是「英伟达收跌4.2%至$4.93万亿、三个月来首次滑到第二」，微软当日是$3.88万亿、升至第三。同一句内微软同时被写成$4.93万亿和$3.88万亿，自相矛盾，属事实改写走样。",
+      "fix": "把该句改为「英伟达收跌4.2%至$4.93万亿, 三个月来首次滑到第二」；微软只保留「Microsoft($3.88万亿)超越Alphabet($3.44万亿)升至第三」。写摘要前逐句核对每个数字的公司归属。"
+    },
+    {
+      "article_id": "2026-10-31-8",
+      "severity": "medium",
+      "problem": "关系「Retrieval as Traversal --replaces--> 全局注意力检索」言过其实。原文把该方案定位为「第三条路」、「与纯注意力窗口互补的另一种成本结构」，并说两套既有机制都各有代价，完全没有表达「取代」注意力/全局检索；replaces 是替代语义，与原文互补定位不符。",
+      "fix": "改为互补类关系（如 complements，若关系表内有）或直接删除该边；replaces 只用于原文明确出现「替代/停用换新」的场合（本天 2026-10-31-1 的 Kimi K3.1 Pro--replaces-->K2 系列用法正确，可对照）。"
+    },
+    {
+      "article_id": "2026-10-31-0",
+      "severity": "medium",
+      "problem": "关系「Codex --developed_by--> OpenAI」的证据「配套还发布了免费的Codex生命科学研究插件」是配套插件发布句，不支撑归属关系；本篇任何位置都没有直接点明 Codex 的开发者是谁。证据存在但支撑的是另一回事。",
+      "fix": "按已有规则「原文未标明开发者时不要建 developed_by 关系」，删除该低权重（0.4）关系，或改用能直接点明归属的证据（本篇无此句，应删）。"
+    },
+    {
+      "article_id": "2026-10-31-0",
+      "severity": "medium",
+      "problem": "实体名「GPT-6 Rosalind 5.5」与原文不符。原文只写「Rosalind 5.5」（对比句：从Rosalind 5.5的28.9%跳到49.6%），没有任何位置说它是 GPT-6 代系；「GPT-6」前缀是抽取自造。原文语境里 Rosalind 5.5 是新发布 GPT-6 Rosalind 的旧版本，前缀拼接反而会误导版本谱系，且与历史抽取中若存在的「Rosalind 5.5」实体无法合并。",
+      "fix": "实体名改为原文原词「Rosalind 5.5」，aliases 留空；若历史图谱中已有该实体，保持名称一致以打通跨文章边。"
+    },
+    {
+      "article_id": "2026-10-31-9",
+      "severity": "low",
+      "problem": "Forever Security 对 Cursor、GitHub Copilot、VS Code、Claude Desktop 都建了 targets 边，但同属 EMBRACE 研究对象的 Codex 没有 targets 边——它与 Claude Desktop/VS Code 共享同一条证据「Claude Desktop/Codex/VS Code允许本地文件越界读取」，关系不对称。",
+      "fix": "补一条「Forever Security --targets--> Codex」（weight 0.7 同档，证据引该越界读取句），使五个被攻破工具都在图上对称受边。"
+    },
+    {
+      "article_id": "2026-10-31-11",
+      "severity": "low",
+      "problem": "NVIDIA --compared_with--> Apple 出现两条重复关系（weight 0.6 对应市值座次、weight 0.5 对应年内涨幅），同一对实体被两条同类型边重复相连，制造冗余。",
+      "fix": "合并为一条 compared_with，evidence 同时收录市值与涨幅两句引文；同日其它 compared_with 对（Microsoft--Alphabet、Intel--Alphabet）不受影响。"
+    },
+    {
+      "article_id": "2026-10-31-5",
+      "severity": "low",
+      "problem": "趋势事件2的 evidence 与摘要把「京元电子的11亿美元测试产能预付」作为「NVIDIA用资产负债表为本土算力供应链贴印花税」论点的前半段，但具名主体「京元电子」没有进入实体层，metrics 里也只有孤立的数字，违反「核心主体必须进实体层」规则。",
+      "fix": "补实体「京元电子」（company，证据引11亿美元测试产能预付句），并在事件2 participants 中把京元电子列为 partner/object；若无可支撑的关系类型，至少保证实体出现在事件中。"
+    },
+    {
+      "article_id": "2026-10-31-10",
+      "severity": "low",
+      "problem": "实体类型错配：Parameter.ai 与 Forever Security（2026-10-31-9）原文均以「安全公司」称谓（「安全公司Parameter.ai发现…」），是商业安全公司，却被标成 organization；organization 类型在本图语义里留给研究机构/政府/非商业组织，商业公司应标 company。",
+      "fix": "把两处的「Parameter.ai」「Forever Security」类型改为 company；同为安全厂商的后续实体按此口径处理。"
+    }
+  ],
+  "lessons": [
+    "行情/市值类新闻中，每家公司的当日涨跌幅、市值、排名必须与公司名逐对核对后再写入事件摘要，禁止把 A 公司的行情数字安到 B 公司头上；同一句内同一家公司不得出现两个市值。",
+    "论文/方法类新闻中，只有当原文明确说新方法「替代/取代」现有方案时才建 replaces 类关系；原文说「互补/并行/另一条路」时不得用 replaces。",
+    "版本/历史对照实体的命名必须忠于原文用词，不得自行拼接前缀组装的版本名（如原文只写「Rosalind 5.5」就不要命名成「GPT-6 Rosalind 5.5」），否则阻断跨文章同实体合并并误导版本谱系。"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-31",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 73,
+  "summary": "主要问题是2026-10-31-6把训练者GPT-6 Astra与它训练出的模型混为一谈：built_on/evaluated_on/compared_with三条关系的主体都错用了GPT-6 Astra，而原文评测对象是Astra训练出的那个新模型（实体未抽取）。其次是2026-10-31-5的 NVIDIA--invests_in-->Anthropic 证据不支撑直接投资、NVIDIA--supplies-->Nscale 证据说的是信用担保；另有若干关系类型误用（targets用于紧邻冲突、指数标成benchmark）。",
+  "findings": [
+    {
+      "article_id": "2026-10-31-6",
+      "severity": "high",
+      "problem": "关系主体系统性错位。原文明文\"最强的GPT-6 Astra训练出的模型在12项能力基准上弥合约76%差距、人类偏好评分贴近NVIDIA Instruct、一个模型的StrongREJECT有害合规率上升\"——被评测/比较的是\"由Astra训练出的模型\"，不是GPT-6 Astra本身。但抽取把三条关系都挂在GPT-6 Astra上：\"GPT-6 Astra --built_on--> Nemotron 3.5 Lightning\"（Astra是从Nemotron基座起步的10个训练agent之一，并非在Nemotron上建的产品）、\"GPT-6 Astra --evaluated_on--> StrongREJECT\"、\"GPT-6 Astra --compared_with--> NVIDIA Instruct\"。这会把图谱讲成\"GPT-6 Astra是在Nemotron上建成的并被评测\"的错误故事。",
+      "fix": "抽出一个\"GPT-6 Astra训练出的模型\"实体（如\n\"Astra-taught model\"，type model），把三条关系的主体改换成它：\n--built_on--> Nemotron 3.5 Lightning、--evaluated_on--> StrongREJECT、--compared_with--> NVIDIA Instruct。若抽实体困难，至少把关系主体降级为该训练产物并明确命名，不要在关系里把Astra当作被评测对象。"
+    },
+    {
+      "article_id": "2026-10-31-5",
+      "severity": "high",
+      "problem": "关系\"NVIDIA --invests_in--> Anthropic\"证据不支撑。原文说NVIDIA为Nscale债务做担保、累计对neocloud客户约$1700亿信用支持与投资、Anthropic租用NVIDIA担保的Nscale设施——没有任何一句说NVIDIA直接向Anthropic注入投资。invests_in是直接股权投资关系，证据(\"NVIDIA对自身neocloud客户已累计约$1700亿的信用支持与投资\")是把信用担保/间接支持误读成投资。",
+      "fix": "删除或改写该关系。如果要表达Nscale向Anthropic供算力，保留已有的\"Nscale --supplies--> Anthropic\"即可；NVIDIA与Anthropic之间应表示\"为Anthropic所用算力的第三方做债务担保\"，若无从对应原文件证据，直接删去这条invests_in。"
+    },
+    {
+      "article_id": "2026-10-31-5",
+      "severity": "medium",
+      "problem": "关系\"NVIDIA --supplies--> Nscale\"的evidence(\"NVIDIA对自身neocloud客户已累计约$1700亿的信用支持与投资\")支撑的是信用担保而非产品供货，supplies(供算力/GPU)与证据说的担保/信用不对应。",
+      "fix": "把该关系改为表达NVIDIA为Nscale提供债务担保（如\"NVIDIA --guarantees--> Nscale\"，若有此关系类型），或换用能对上原文\"担保换GPU订单\"的措辞；若产品供货在原文无直接支撑，删去supplies。"
+    },
+    {
+      "article_id": "2026-10-31-4",
+      "severity": "medium",
+      "problem": "关系\"Quantum DC --targets--> River Murray Dark Sky Reserve\"类型误用。原文是数据中心选址\"紧贴\"暗夜保护区、项目与之产生冲突，Quantum DC并没有\"针对/打击\"保护区；targets应表示一方明确针对另一方的对抗动作（本文后半段绿党/自由党 target Quantum DC是合理用法），用它表示空间邻接会误导。",
+      "fix": "把该关系改为表示空间/用地冲突的关系（如\"located_near\"或\"conflicts_with\"并注明\"紧贴\"），不要用targets。若图谱无空间邻接类型，删去这条。"
+    },
+    {
+      "article_id": "2026-10-31-11",
+      "severity": "medium",
+      "problem": "费城半导体指数实体类型标成 benchmark。它是股价指数（市场/指数），不是机器学习评测基准benchmark，与本图其它benchmark(MedChemBench等)语义完全不同，会污染类型一致性。",
+      "fix": "把\"费城半导体指数\"类型改为\"index\"（金融市场指数），或明确为市场/指数实体类型，不要用ML意义的benchmark。同一处理适用于未来财报/行情类新闻中的指数实体。"
+    },
+    {
+      "article_id": "2026-10-31-4",
+      "severity": "low",
+      "problem": "事件\"南澳政府Essential Infrastructure快速通道...遭跨党派反对\"中绿党的role被标为\"partner\"，但原文绿党是明确反对新建数据中心的反对者，角色语义相反。",
+      "fix": "把绿党在该事件的role改为\"opponent/opposer\"（反对者），与\"partner\"区分开。"
+    }
+  ],
+  "lessons": [
+    "评测/基准类新闻中，若模型A被用作训练者产出模型B并对B做评测，关系主体必须是产出的模型B（built_on、evaluated_on、compared_with都指向被训练出的模型），不能拿训练者A顶替；训练者与产物应抽成不同实体。",
+    "融资/信用结构类新闻中，为第三方债务提供担保或信用支持不等于invests_in（直接股权注资），也不等于supplies（产品供货）；按原文动作选用对应关系，不要把担保当投资兜底。",
+    "位置/冲突类新闻中，\"紧邻某保护区/某地块\"是空间邻接或用地冲突，不是targets；targets只用于一方明确针对另一方的对抗动作（如反对、攻击）。"
+  ]
+}
