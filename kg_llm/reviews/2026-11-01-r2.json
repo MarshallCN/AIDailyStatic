@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-01",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "r1 的问题多数已修复：ChatGPT/Codex 的 compared_with、Amazon Bedrock 的 integrates、'美国中期选举'施动者、Menomie/项目与 ASR 的类型错配均已清除。本轮剩余问题集中在关键数字的数量级错漏（OpenAI 融资 $30B→$20B 被照抄成 $30亿/$20亿，缩水 10 倍）与多处关系类型/证据不匹配（保留股份≠invests_in、授权伙伴≠licenses_to、SAST 非 uses 对象），共 1 高 3 中，建议修订后发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-01-12",
+      "severity": "high",
+      "problem": "本轮融资规模被记录为 '约$30亿/最高约$20亿'（launch 事件标签与 metrics 的 '原融资目标 约$30亿'、'融资目标(下调后) 最高约$20亿' 均如此），但实际是 $30B→$20B（削减约 $10B）。该口径与同一篇的估值数据自相矛盾：投后估值从 $1.4万亿 降到 $1.25万亿（万亿/B 级），而 '最高约$20亿' 在 $1.25万亿 估值上仅占约 0.16%，对一个融资轮明显不合量级；来源标题写的是 '$30B削到约$20B'、FT 口径也是 'cut funding target by $10 billion'。抽取沿用了 source summary 里的 '$30亿/$20亿' 笔误，导致本日最重要的一笔融资数字被缩小 10 倍。",
+      "fix": "metrics 与事件标签统一改为 '$30B→$20B'（或中文约 '约$300亿→约$200亿'）：原融资目标 $30B、下调后最高约 $20B、削减幅度约 $10B，以 source 标题的 $30B 与 '$10 billion cut' 为准，不要沿用 summary 中的 '$30亿/$20亿'。"
+    },
+    {
+      "article_id": "2026-11-01-4",
+      "severity": "medium",
+      "problem": "关系 'PIF --invests_in--> HUMAIN' 的 evidence 是 '主权基金PIF保留51%'。'保留/retain 股份' 是既有股权的留存，不是新增注资或投资行为，该证据并不支撑 invests_in 的语义——证据存在但支撑的是另一回事。",
+      "fix": "若 PIF 确有向 HUMAIN 合并资产的行为，改用原文 'PIF与Aramco把各自的AI资产、能力与人才合并进HUMAIN' 作证据并确认仍属 invests_in；否则把该关系改为表达持有多数股权的关系（如 owner_of / retains_majority_stake）或删除，不要用保留证据支撑注资关系。"
+    },
+    {
+      "article_id": "2026-11-01-3",
+      "severity": "medium",
+      "problem": "关系 'VulnSAGE --uses--> SAST'（evidence '大幅削减SAST误报'）关系类型用错：SAST 是 VulnSAGE 裁决、改善的对象，不是 VulnSAGE 调用/依赖的组件；uses 语义不成立。",
+      "fix": "改为 'VulnSAGE --targets--> SAST' 或 'improves'，或直接删除该边；uses 只保留给 Pyodide、CLAIM 这类 VulnSAGE 真实调用依赖的组件。"
+    },
+    {
+      "article_id": "2026-11-01-7",
+      "severity": "medium",
+      "problem": "关系 'Dell --licenses_to--> Total Technical Triangle'（evidence 'Dell授权伙伴Total Technical Triangle'）类型用错：'授权伙伴' 表示 3T 是 Dell 的授权合作方这一合作关系，不等于 Dell 把许可证授予 3T；licenses_to 把授权合作写成授权许可，语义错位。",
+      "fix": "改为 'Dell --partners_with--> Total Technical Triangle'（或表示授权的关系，如 authorizes），并把 evidence 锁定为 'Dell授权伙伴Total Technical Triangle'，不要使用 licenses_to。"
+    }
+  ],
+  "lessons": [
+    "关键金额要与上下文规模交叉校验：当估值已是万亿级（$1.4T/$1.25T）时，同一轮融资金额应是 $30B/$20B 而非 $30亿/$20亿；来源标题与正文单位冲突（$30B vs $30亿）时，优先采用与估值、削减幅度（$10 billion）一致的 B 级口径，避免数量级缩水 10 倍。",
+    "关系类型必须与证据的真实语义匹配：'保留/retain 股份' 是既有持股留存，不等于 invests_in 注资；'授权伙伴/authorized partner' 是合作关系而非 licenses_to；引用证据前先核对它是否真的支撑所标关系。",
+    "uses 仅用于某个组件被实际调用、依赖的情形；被分析、被裁决、被改善的对象（如 SAST 报告、被治理的主体）不是分析方 uses 的依赖，应改用 targets/improves 或删除该边。"
+  ]
+}

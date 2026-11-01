@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-01",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "r1/r2 的问题已全部修复且未复发（compared_with、Bedrock integrates、选举施动者、Menomie/ASR 类型错配已清除，Opus 4.7/4.6 保持为独立实体，OpenAI 融资 $30B→$20B 量级已校正），关键数字、关系方向与证据大多经核对无误。本轮剩余问题：文章4 把同一笔交易（收购及其对价注资）切成两个重复事件，且 Aramco→HUMAIN 出现 acquires+invests_in+partners_with 三条语义重合的边；文章0 的 \"Apple --uses--> OpenAI\" 把原文的\"绑定\"关系写成了\"使用\"。另注意确定性审计建议合并 Opus 4.7/4.6 是误报，两者是不同模型版本，不应执行。",
+  "findings": [
+    {
+      "article_id": "2026-11-01-4",
+      "severity": "medium",
+      "problem": "事件切分重复 + 同对实体边冗余：事件1（\"收购49%股权\"）与事件2（\"Aramco 一年内向 HUMAIN 注资约 SAR 94 亿($2.6B)现金加 AI/算力/数字资产\"）描述的是同一笔交易的两个侧面——原文\"完成对 49% 股权的收购, 向 HUMAIN 注资约 SAR 94 亿($2.6B)现金外加 AI、算力与数字资产\"表明注资即收购对价，被拆成两个几乎同样角度的重复事件（各自的 participants 也基本相同，只是 role 标签不同）。关系层同一对实体 Aramco→HUMAIN 同时挂了三条件同向边：acquires、invests_in、partners_with，其中 partners_with 的证据\"Aramco 既是 HUMAIN 算力的股东与战略伙伴\"只是前两条边的换说法，无独立信息量，会让图谱重复计数同一事实。",
+      "fix": "把注资细节并入收购事件（在 summary 中保留\"一年内注资约 SAR 94 亿($2.6B)+AI 资产\"），或明确区分两个不同时点的动作（\"本轮交割完成\" vs \"一年期资本与资产注入\"；但注意 $2.6B 注资就是 49% 股权的对价，不宜并存为两个互不相关的事件）；关系层删除 Aramco--partners_with-->HUMAIN 这条边，保留 acquires 与 invests_in 即可。"
+    },
+    {
+      "article_id": "2026-11-01-0",
+      "severity": "medium",
+      "problem": "关系类型用错：\"Apple --uses--> OpenAI\" 的证据是\"这与它在美国绑定OpenAI\"——原文只表达苹果在美国与 OpenAI 存在\"绑定\"（合作/结盟）关系，并没有说 Apple 调用或使用了 OpenAI 的模型/服务；uses 把\"合作绑定\"写成了\"使用\"，且与同一篇里苹果-阿里用 partners_with 的表述口径不一致，同一主体对两个合作方使用了不同强度的关系类型。",
+      "fix": "改为 \"Apple --partners_with--> OpenAI\"（与苹果-阿里巴巴的 partners_with 对齐），证据保持\"这与它在美国绑定OpenAI\"；若坚持 uses，需要原文出现 Apple 实际使用 OpenAI 模型的表述，否则删除该边。"
+    },
+    {
+      "article_id": "2026-11-01-3",
+      "severity": "low",
+      "problem": "实体类型错配：\"CLAIM\" 被标为 tool，但 CLAIM 是 VulnSAGE 系统内部的\"判决理由\"表示机制（原文\"把模型的每个解释记录成一条语义事实\"），不是独立可用的工具，标成 tool 会误导读者认为它是可单独使用的软件；其唯一关系 \"VulnSAGE --uses--> CLAIM\" 是系统指向自身内部组件的自指边，信息量低。",
+      "fix": "将 CLAIM 的类型改为 topic/concept（或并入 VulnSAGE 的事件描述、不单独立实体）；若保留实体，其边应能连接系统外的对象，仅指向所属系统自身的自指边建议删除。"
+    }
+  ],
+  "lessons": [
+    "同一笔交易（如收购与作为对价注入的资金/资产移交）不要切成两个互相重复的事件：注资是对价的一部分时只有一个事件，细节放进 summary；同一对实体不要同时挂 acquires/invests_in/partners_with 等多条语义重合的边，保留信息量最大的一条即可。",
+    "原文只表达\"绑定/合作/结盟\"关系时用 partners_with，不要升级成 uses 这类更强语义；uses 要求原文明确写出某个对象调用或使用了另一个对象。",
+    "论文/系统类新闻中，系统内部的机制与组件（如某系统的 CLAIM 判决机制）不要标为独立 tool 实体，若其边只指向所属系统自身，信息应并入事件描述而非单独立节点。"
+  ]
+}

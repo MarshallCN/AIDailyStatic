@@ -1,0 +1,583 @@
+{
+  "date": "2026-11-01",
+  "articles": [
+    {
+      "article_id": "2026-11-01-0",
+      "entities": [
+        {"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.97, "evidence": ["苹果与阿里巴巴正式宣布"]},
+        {"name": "Alibaba", "type": "company", "aliases": ["阿里巴巴", "阿里"], "confidence": 0.97, "evidence": ["阿里通义千问(Qwen)将为进入中国的Apple Intelligence提供AI能力"]},
+        {"name": "Qwen", "type": "model", "aliases": ["通义千问"], "confidence": 0.95, "evidence": ["阿里通义千问(Qwen)将为进入中国的Apple Intelligence提供AI能力"]},
+        {"name": "Apple Intelligence", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Qwen将内置于中国市场Apple Intelligence"]},
+        {"name": "Siri", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Qwen不再是App层的可选插件, 而是直接驱动Siri"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["它与美国绑定OpenAI"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "苹果与阿里巴巴达成合作, 将Qwen整合进中国市场Apple Intelligence",
+          "summary": "苹果与阿里正式宣布, 阿里通义千问(Qwen)将为中国市场的Apple Intelligence提供AI能力, 覆盖Siri、写作工具、视觉智能等系统级场景, 12月随iOS 27.3正式版向中国区iPhone开放。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "Alibaba", "type": "company", "role": "partner"},
+            {"name": "Qwen", "type": "model", "role": "object"},
+            {"name": "Apple Intelligence", "type": "product", "role": "object"}
+          ],
+          "evidence": ["苹果与阿里巴巴正式宣布", "阿里通义千问(Qwen)将为进入中国的Apple Intelligence提供AI能力"]
+        },
+        {
+          "type": "launch",
+          "label": "Qwen整合将于12月随iOS 27.3正式版向中国区iPhone开放",
+          "summary": "开发者11月4日起可在iOS开发者测试版预览Qwen整合, 12月随iOS 27.3正式版向购买中国大陆版iPhone的用户开放, 用户可自行决定是否启用及共享哪些信息。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "Qwen", "type": "model", "role": "object"},
+            {"name": "Apple Intelligence", "type": "product", "role": "object"}
+          ],
+          "evidence": ["随12月的iOS 27.3正式版向购买中国大陆版iPhone的用户开放", "用户可自行决定是否启用Qwen整合"]
+        }
+      ],
+      "relations": [
+        {"source": "Qwen", "target": "Alibaba", "type": "developed_by", "weight": 0.9, "evidence": ["阿里通义千问(Qwen)将为进入中国的Apple Intelligence提供AI能力"]},
+        {"source": "Apple Intelligence", "target": "Qwen", "type": "integrates", "weight": 0.95, "evidence": ["Qwen将内置于中国市场Apple Intelligence"]},
+        {"source": "Apple", "target": "Alibaba", "type": "partners_with", "weight": 0.85, "evidence": ["苹果与阿里巴巴正式宣布"]},
+        {"source": "Siri", "target": "Qwen", "type": "uses", "weight": 0.7, "evidence": ["Qwen不再是App层的可选插件, 而是直接驱动Siri"]},
+        {"source": "Apple", "target": "OpenAI", "type": "uses", "weight": 0.5, "evidence": ["这与它在美国绑定OpenAI"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "苹果用'一国一模型'把模型底座让位给本土厂商、自己继续掌控体验与数据边界, 系统级接入让Qwen拿到远比App分发高一档的生态卡位。"
+    },
+    {
+      "article_id": "2026-11-01-1",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI确认自12月起"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["将在ChatGPT与Codex之间共享同一套基于token的用量额度"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["将在ChatGPT与Codex之间共享同一套基于token的用量额度"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 12月起打通ChatGPT与Codex的token用量池",
+          "summary": "Plus、Pro与Business订阅用户在ChatGPT与Codex之间共享同一套基于token的用量额度, 替代两产品各自独立的额度池, 重度使用Codex将直接挤占ChatGPT的聊天额度。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"},
+            {"name": "Codex", "type": "product", "role": "object"}
+          ],
+          "evidence": ["自12月起, Plus、Pro与Business订阅用户将在ChatGPT与Codex之间共享同一套基于token的用量额度"]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI把用量池越做越统一, 计价逻辑从卖订阅转向卖算力计量",
+          "summary": "通过把ChatGPT与Codex的usage池合并、令牌化日益统一, OpenAI实质上在把自己从'卖订阅'转向'卖算力计量', 用户为同一片token预算付费。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"},
+            {"name": "Codex", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI通过把\"用量池\"做得越来越统一、越来越token化, 实际上在把自己从\"卖订阅\"转向\"卖算力计量\""]
+        }
+      ],
+      "relations": [
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["ChatGPT与Codex之间共享同一套基于token的用量额度"]},
+        {"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["ChatGPT与Codex之间共享同一套基于token的用量额度"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "OpenAI把两产品用量池合并成'预算零和'的token池, 计价逻辑从卖订阅收敛到卖算力计量, 是Agent规模化后越走越统一的定价方向。"
+    },
+    {
+      "article_id": "2026-11-01-2",
+      "entities": [
+        {"name": "Safety Mid-Training", "type": "paper", "aliases": ["safety mid-training", "安全中训练"], "confidence": 0.92, "evidence": ["论文提出\"safety mid-training\""]},
+        {"name": "Qwen3", "type": "model", "aliases": ["Qwen3-1.7B", "Qwen3-4B", "Qwen3-8B"], "confidence": 0.9, "evidence": ["在Qwen3-1.7B/4B/8B上平均ASR下降72%~81%"]},
+        {"name": "攻击成功率(ASR)", "type": "metric", "aliases": ["ASR"], "confidence": 0.85, "evidence": ["平均攻击成功率(ASR)下降72%~81%"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "研究者提出Safety Mid-Training, 在预训练与后训练之间插入对齐训练阶段",
+          "summary": "论文提出把对齐训练成基础能力的中训练(safety mid-training), 让基座通过共享推理结构同时训练对齐与通用推理, 使安全效果在后续纯通用训练后仍能保持。",
+          "participants": [
+            {"name": "Safety Mid-Training", "type": "paper", "role": "subject"},
+            {"name": "Qwen3", "type": "model", "role": "object"}
+          ],
+          "evidence": ["在预训练与后训练之间插入一个阶段"]
+        },
+        {
+          "type": "research",
+          "label": "Safety Mid-Training在Qwen3基座上实现平均ASR下降72%~81%且通用能力不降反升",
+          "summary": "在Qwen3-1.7B/4B/8B基座上, 平均攻击成功率(ASR)下降72%~81%, 通用能力提升, 且该增益在后续纯通用SFT与无安全奖励的纯通用GRPO下大体保留。",
+          "participants": [
+            {"name": "Safety Mid-Training", "type": "paper", "role": "subject"},
+            {"name": "Qwen3", "type": "model", "role": "object"},
+            {"name": "攻击成功率(ASR)", "type": "metric", "role": "object"}
+          ],
+          "evidence": ["相比Qwen3 1.7B/4B/8B基座, 平均攻击成功率(ASR)下降72%~81%"]
+        }
+      ],
+      "relations": [
+        {"source": "Safety Mid-Training", "target": "Qwen3", "type": "built_on", "weight": 0.9, "evidence": ["在Qwen3-1.7B/4B/8B上平均ASR下降72%~81%"]},
+        {"source": "Safety Mid-Training", "target": "攻击成功率(ASR)", "type": "evaluated_on", "weight": 0.75, "evidence": ["平均攻击成功率(ASR)下降72%~81%"]},
+        {"source": "Qwen3", "target": "攻击成功率(ASR)", "type": "evaluated_on", "weight": 0.6, "evidence": ["在Qwen3-1.7B/4B/8B上平均ASR下降72%~81%"]}
+      ],
+      "metrics": [
+        {"name": "平均攻击成功率(ASR)下降幅度", "value": "72%~81%"},
+        {"name": "通用能力变化", "value": "不降反升"}
+      ],
+      "why_it_matters": "把安全当作可在共享推理结构里习得的基础能力, 从预训练与后训练之间的前置阶段缓解安全—效用权衡, 让对齐对后续训练更鲁棒。"
+    },
+    {
+      "article_id": "2026-11-01-3",
+      "entities": [
+        {"name": "VulnSAGE", "type": "paper", "aliases": [], "confidence": 0.92, "evidence": ["研究者提出VulnSAGE"]},
+        {"name": "LLM4SA", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["对比纯LLM裁决器LLM4SA只有3条"]},
+        {"name": "SAST", "type": "topic", "aliases": ["静态分析"], "confidence": 0.8, "evidence": ["大幅削减SAST误报"]},
+        {"name": "CLAIM", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["CLAIM是这个系统的枢纽"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "研究者提出VulnSAGE, 用LLM裁决静态分析漏洞报告并接回程序结构",
+          "summary": "VulnSAGE先用聚焦切片器恢复被报操作与其依赖的程序结构, 再让模型生成可被程序分析核验的判决理由CLAIM, 由静态检查器逐条验证前提。",
+          "participants": [
+            {"name": "VulnSAGE", "type": "paper", "role": "subject"},
+            {"name": "SAST", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["研究者提出VulnSAGE, 一个用LLM裁决静态分析(SAST)漏洞报告的体系"]
+        },
+        {
+          "type": "benchmark",
+          "label": "VulnSAGE在标注报告上淘汰89/97误报、保留85/90真实缺陷",
+          "summary": "在187条跨五个漏洞家族的标注报告上, VulnSAGE淘汰了89/97的误报、保留了85/90的真实缺陷; 放大到45,440条真实告警复现出104个真实缺陷。",
+          "participants": [
+            {"name": "VulnSAGE", "type": "paper", "role": "subject"},
+            {"name": "LLM4SA", "type": "tool", "role": "competitor"}
+          ],
+          "evidence": ["VulnSAGE淘汰了89/97的误报、保留了85/90的真实缺陷"]
+        }
+      ],
+      "relations": [
+        {"source": "VulnSAGE", "target": "LLM4SA", "type": "outperforms", "weight": 0.8, "evidence": ["对比纯LLM裁决器LLM4SA只有3条"]},
+        {"source": "VulnSAGE", "target": "SAST", "type": "targets", "weight": 0.55, "evidence": ["大幅削减SAST误报"]},
+        {"source": "VulnSAGE", "target": "CLAIM", "type": "uses", "weight": 0.6, "evidence": ["CLAIM是这个系统的枢纽"]}
+      ],
+      "metrics": [
+        {"name": "跨五个漏洞家族标注报告上的误报淘汰", "value": "89/97"},
+        {"name": "保留的真实缺陷", "value": "85/90"},
+        {"name": "GitHub热门C/C++项目告警量", "value": "45,440条"},
+        {"name": "运行时复现的真实缺陷数", "value": "104个"}
+      ],
+      "why_it_matters": "把'模型提出判断、程序分析核验证据链条'做成闭环, 让AI安全结论走向可审计而非又一次黑箱判断。"
+    },
+    {
+      "article_id": "2026-11-01-4",
+      "entities": [
+        {"name": "Aramco", "type": "company", "aliases": ["沙特阿美", "Saudi Aramco"], "confidence": 0.95, "evidence": ["沙特阿美(Aramco)通过全资子公司完成对国有人工智能公司HUMAIN 49%股权的收购"]},
+        {"name": "HUMAIN", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["完成对国有人工智能公司HUMAIN 49%股权的收购"]},
+        {"name": "PIF", "type": "organization", "aliases": ["主权基金"], "confidence": 0.85, "evidence": ["主权基金PIF保留51%"]},
+        {"name": "ALLaM", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["先进大模型(含阿拉伯语多模态大模型ALLaM)"]}
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "Aramco通过全资子公司收购国有人工智能公司HUMAIN 49%股权",
+          "summary": "Aramco完成对HUMAIN 49%股权的收购, 向HUMAIN注资约SAR 94亿($2.6B)现金外加AI、算力与数字资产, 主权基金PIF保留51%。",
+          "participants": [
+            {"name": "Aramco", "type": "company", "role": "subject"},
+            {"name": "HUMAIN", "type": "company", "role": "object"},
+            {"name": "PIF", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["通过全资子公司完成对国有人工智能公司HUMAIN 49%股权的收购"]
+        },
+        {
+          "type": "funding",
+          "label": "Aramco一年内向HUMAIN注资约$2.6B现金加AI、算力与数字资产",
+          "summary": "按Aramco官方口径, 它一年内向HUMAIN注资约SAR 94亿($2.6B), 并移交AI、算力与数字资产。",
+          "participants": [
+            {"name": "Aramco", "type": "company", "role": "funder"},
+            {"name": "HUMAIN", "type": "company", "role": "object"}
+          ],
+          "evidence": ["一年内向HUMAIN注资约SAR 94亿($2.6B)"]
+        },
+        {
+          "type": "infra",
+          "label": "HUMAIN为2030年部署3GW AI数据中心容量、成为全球领先AI出口方铺路",
+          "summary": "协议支持HUMAIN到2030年部署3GW AI数据中心容量, 并把它推向'全球AI出口方'的定位, Aramco既是其算力股东也是战略伙伴。",
+          "participants": [
+            {"name": "HUMAIN", "type": "company", "role": "subject"},
+            {"name": "Aramco", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["HUMAIN要到2030年部署3GW AI数据中心容量", "Aramco既是HUMAIN算力的股东与战略伙伴"]
+        }
+      ],
+      "relations": [
+        {"source": "Aramco", "target": "HUMAIN", "type": "acquires", "weight": 0.95, "evidence": ["完成对国有人工智能公司HUMAIN 49%股权的收购"]},
+        {"source": "Aramco", "target": "HUMAIN", "type": "invests_in", "weight": 0.9, "evidence": ["一年内向HUMAIN注资约SAR 94亿($2.6B)"]},
+        {"source": "PIF", "target": "HUMAIN", "type": "invests_in", "weight": 0.8, "evidence": ["PIF与Aramco把各自的AI资产、能力与人才合并进HUMAIN"]},
+        {"source": "ALLaM", "target": "HUMAIN", "type": "developed_by", "weight": 0.7, "evidence": ["先进大模型(含阿拉伯语多模态大模型ALLaM)"]},
+        {"source": "Aramco", "target": "HUMAIN", "type": "partners_with", "weight": 0.7, "evidence": ["Aramco既是HUMAIN算力的股东与战略伙伴"]},
+        {"source": "Aramco", "target": "PIF", "type": "partners_with", "weight": 0.6, "evidence": ["PIF与Aramco把各自的AI资产、能力与人才合并进HUMAIN"]}
+      ],
+      "metrics": [
+        {"name": "Aramco持股比例", "value": "49%"},
+        {"name": "注资额度", "value": "SAR约94亿($2.6B)"},
+        {"name": "PIF持股份额", "value": "51%"},
+        {"name": "2030年AI数据中心目标容量", "value": "3GW"}
+      ],
+      "why_it_matters": "能源巨头用真金白银加自有算力成为主权AI基础设施的最大股东, '主权AI算力'从口号变成可量化的国家储备。"
+    },
+    {
+      "article_id": "2026-11-01-5",
+      "entities": [
+        {"name": "数据中心", "type": "topic", "aliases": [], "confidence": 0.75, "evidence": ["就数十项数据中心相关地方法案投票"]},
+        {"name": "Shapiro", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["宾州Shapiro、得州Abbott)开始转向更严格的监管"]},
+        {"name": "Abbott", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["宾州Shapiro、得州Abbott)开始转向更严格的监管"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "数据中心议题登上美国中期选举: 数十项地方公投与州长监管转向同频",
+          "summary": "从俄亥俄到伊利诺伊的多个社区将就数十项针对数据中心的地方公投投票, 反对为AI而建的巨型建筑的情绪罕见地切穿了党派线; 此前亲数据中心的宾州州长Shapiro、得州州长Abbott开始转向更严格的监管, '数据中心许可'成为能让在任者得罪选民的少数议题之一。",
+          "participants": [
+            {"name": "Shapiro", "type": "person", "role": "subject"},
+            {"name": "Abbott", "type": "person", "role": "subject"},
+            {"name": "数据中心", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["数十项针对数据中心的地方公投", "此前亲数据中心的州长(宾州Shapiro、得州Abbott)开始转向更严格的监管"]
+        }
+      ],
+      "relations": [
+        {"source": "Shapiro", "target": "数据中心", "type": "restricts", "weight": 0.6, "evidence": ["开始转向更严格的监管"]},
+        {"source": "Abbott", "target": "数据中心", "type": "restricts", "weight": 0.6, "evidence": ["开始转向更严格的监管"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "AI算力扩张的'社会许可'从产业议题升格为能左右中期选举的社区治理议题, 对在民主市场铺大站点的任何主体都是一笔必须计入的前置不确定性。"
+    },
+    {
+      "article_id": "2026-11-01-6",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Tech巨头"], "confidence": 0.9, "evidence": ["$1.6B Meta数据中心项目"]},
+        {"name": "Balloonist LLC", "type": "company", "aliases": ["Balloonist"], "confidence": 0.85, "evidence": ["其幕后东家一直藏在特拉华注册的空壳公司Balloonist LLC背后"]},
+        {"name": "Menomie", "type": "place", "aliases": ["门诺米"], "confidence": 0.85, "evidence": ["威斯康星门诺米(约17,000人)"]},
+        {"name": "Menomie数据中心项目", "type": "infrastructure", "aliases": [], "confidence": 0.8, "evidence": ["$1.6B AI超大规模数据中心园区"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Menomie社区居民抗争使$1.6B Meta数据中心项目被无限期暂停",
+          "summary": "约17,000人的威斯康星小城门诺米通过居民与几名议员持续抗争, 挫败了Tech巨头借特拉华空壳公司Balloonist LLC推进的$1.6B AI超大规模数据中心园区, 项目被无限期暂停但空壳公司仍持有土地。",
+          "participants": [
+            {"name": "Menomie", "type": "place", "role": "subject"},
+            {"name": "Menomie数据中心项目", "type": "infrastructure", "role": "object"},
+            {"name": "Balloonist LLC", "type": "company", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "object"}
+          ],
+          "evidence": ["挫败了Tech巨头通过特拉华空壳公司Balloonist LLC推进的$1.6B AI超大规模数据中心园区", "项目被\"无限期暂停\""]
+        },
+        {
+          "type": "policy",
+          "label": "Balloonist借特拉华空壳公司与NDA在一年多里隐瞒金主身份推进项目",
+          "summary": "项目的幕后东家一直藏在特拉华注册的空壳公司Balloonist LLC背后, 多数市议员在一年多里不知道真正的金主是谁, 新市长拒绝与Balloonist会面以免被不当影响。",
+          "participants": [
+            {"name": "Balloonist LLC", "type": "company", "role": "subject"},
+            {"name": "Menomie", "type": "place", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "object"}
+          ],
+          "evidence": ["其幕后东家一直藏在特拉华注册的空壳公司Balloonist LLC背后", "多数市议员在一年多里都不知道真正的金主是谁"]
+        }
+      ],
+      "relations": [
+        {"source": "Menomie数据中心项目", "target": "Meta", "type": "developed_by", "weight": 0.8, "evidence": ["$1.6B Meta数据中心项目"]},
+        {"source": "Meta", "target": "Balloonist LLC", "type": "uses", "weight": 0.8, "evidence": ["Tech巨头通过特拉华空壳公司Balloonist LLC推进"]}
+      ],
+      "metrics": [
+        {"name": "项目投资额", "value": "$1.6B"},
+        {"name": "城市人口", "value": "约17,000人"},
+        {"name": "园区面积", "value": "320英亩"},
+        {"name": "日耗水", "value": "约75,000加仑"},
+        {"name": "承诺高薪永久岗位", "value": "50~75个"}
+      ],
+      "why_it_matters": "当大厂用空壳公司与NDA绕过地方治理, 反作用力以政治抵制的形式回到谈判桌, 用地许可正成为比芯片和电力更难提前买到的东西。"
+    },
+    {
+      "article_id": "2026-11-01-7",
+      "entities": [
+        {"name": "Etihad GO Telecom", "type": "company", "aliases": ["GO", "GO Telecom"], "confidence": 0.88, "evidence": ["沙特Etihad GO Telecom(GO)将一份价值$49.6M"]},
+        {"name": "Total Technical Triangle", "type": "company", "aliases": ["3T"], "confidence": 0.8, "evidence": ["授予Dell授权伙伴Total Technical Triangle(3T)"]},
+        {"name": "Dell", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["配备NVIDIA GPU的Dell计算系统"]},
+        {"name": "NVIDIA", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["配备NVIDIA GPU的Dell计算系统"]},
+        {"name": "Etihad Etisalat", "type": "company", "aliases": ["Etihad Etisalat系"], "confidence": 0.85, "evidence": ["沙特国有电信运营商Etihad Etisalat系的一员"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Etihad GO Telecom将$49.6M云AI数据中心基础设施合同授予Dell授权伙伴3T",
+          "summary": "GO将价值$49.6M(约SAR 1.859亿, 不含税)的云AI数据中心基础设施合同授予Dell授权伙伴Total Technical Triangle(3T), 合同涵盖配备NVIDIA GPU的Dell计算系统、服务器与软件许可, 工期12个月。",
+          "participants": [
+            {"name": "Etihad GO Telecom", "type": "company", "role": "subject"},
+            {"name": "Total Technical Triangle", "type": "company", "role": "object"},
+            {"name": "Dell", "type": "company", "role": "partner"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["将一份价值$49.6M(约SAR 1.859亿, 不含税)的云AI数据中心基础设施合同授予Dell授权伙伴Total Technical Triangle(3T)"]
+        },
+        {
+          "type": "trend",
+          "label": "电信运营商层面的AI数据中心采购正在变得例行公事",
+          "summary": "AI数据中心采购正从超大规模玩家的专属叙事扩散到国家级电信主体, GPU与整机供应链在海湾市场变成稳定的需求管线。",
+          "participants": [
+            {"name": "Etihad GO Telecom", "type": "company", "role": "subject"},
+            {"name": "Dell", "type": "company", "role": "partner"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["电信运营商层面的AI数据中心采购正在变得例行公事"]
+        }
+      ],
+      "relations": [
+        {"source": "Total Technical Triangle", "target": "Etihad GO Telecom", "type": "supplies", "weight": 0.75, "evidence": ["把一座新云AI数据中心的基础设施供应与安装交给3T"]},
+        {"source": "Etihad GO Telecom", "target": "Dell", "type": "uses", "weight": 0.7, "evidence": ["设备是Dell计算系统配NVIDIA GPU"]},
+        {"source": "Etihad GO Telecom", "target": "NVIDIA", "type": "uses", "weight": 0.7, "evidence": ["配备NVIDIA GPU的Dell计算系统"]},
+        {"source": "Dell", "target": "Total Technical Triangle", "type": "partners_with", "weight": 0.65, "evidence": ["Dell授权伙伴Total Technical Triangle"]},
+        {"source": "Dell", "target": "NVIDIA", "type": "partners_with", "weight": 0.6, "evidence": ["对Dell+英伟达的组合"]},
+        {"source": "Etihad GO Telecom", "target": "Etihad Etisalat", "type": "subsidiary_of", "weight": 0.6, "evidence": ["GO作为沙特国有电信运营商Etihad Etisalat系的一员"]}
+      ],
+      "metrics": [
+        {"name": "合同金额", "value": "$49.6M(约SAR 1.859亿, 不含税)"},
+        {"name": "工期", "value": "12个月"}
+      ],
+      "why_it_matters": "AI基建采购从超大规模玩家扩散到国家级电信主体, '主权云+主权算力'在全链路铺开, 海湾GPU与整机需求变成稳定管线。"
+    },
+    {
+      "article_id": "2026-11-01-8",
+      "entities": [
+        {"name": "JFrog", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["JFrog披露CVE-2026-120338(CVSS 10.0)"]},
+        {"name": "PrefectHQ", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["PrefectHQ的Prefab UI\"生成式UI\"沙箱"]},
+        {"name": "Prefab UI", "type": "product", "aliases": ["Generative UI"], "confidence": 0.88, "evidence": ["PrefectHQ的Prefab UI\"生成式UI\"沙箱"]},
+        {"name": "Pyodide", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["把调用方提供的Python放进Pyodide"]},
+        {"name": "Deno", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["在Deno子进程里以过宽的权限运行"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "JFrog披露Prefab UI生成式UI沙箱的RCE漏洞CVE-2026-120338(CVSS 10.0)",
+          "summary": "Prefab UI的生成式UI沙箱(0.14.0~0.20.2)把Python放进Pyodide、在Deno子进程里以过宽权限运行, 攻击者可任意读写文件并持久化执行代码。",
+          "participants": [
+            {"name": "JFrog", "type": "company", "role": "subject"},
+            {"name": "Prefab UI", "type": "product", "role": "object"}
+          ],
+          "evidence": ["JFrog披露CVE-2026-120338(CVSS 10.0)"]
+        },
+        {
+          "type": "security",
+          "label": "PrefectHQ在0.21.0修复版本收回Deno读写与网络权限",
+          "summary": "修复版本0.21.0在启动后、接受代码前收回Deno的读/写/网络权限, 并用--no-prompt杜绝运行中被再次授权。",
+          "participants": [
+            {"name": "PrefectHQ", "type": "company", "role": "subject"},
+            {"name": "Prefab UI", "type": "product", "role": "object"}
+          ],
+          "evidence": ["修复版本0.21.0在启动后即收回读写与网络权限"]
+        }
+      ],
+      "relations": [
+        {"source": "Prefab UI", "target": "PrefectHQ", "type": "developed_by", "weight": 0.9, "evidence": ["PrefectHQ的Prefab UI\"生成式UI\"沙箱"]},
+        {"source": "Prefab UI", "target": "Pyodide", "type": "uses", "weight": 0.8, "evidence": ["把调用方提供的Python放进Pyodide"]},
+        {"source": "Prefab UI", "target": "Deno", "type": "uses", "weight": 0.8, "evidence": ["在Deno子进程里以过宽的权限运行"]},
+        {"source": "JFrog", "target": "Prefab UI", "type": "targets", "weight": 0.6, "evidence": ["JFrog披露CVE-2026-120338(CVSS 10.0)"]}
+      ],
+      "metrics": [
+        {"name": "CVSS评分(无认证场景)", "value": "10.0"},
+        {"name": "CVSS评分(有认证场景)", "value": "9.9"},
+        {"name": "受影响版本范围", "value": "0.14.0~0.20.2"},
+        {"name": "修复版本", "value": "0.21.0"}
+      ],
+      "why_it_matters": "当'沙箱隔离'从纵深防御变成模型生成代码的整个安全地基, 轻信'文档写着read-only'与真实授权的落差, 代价是从生成UI到拿到服务器一步之遥。"
+    },
+    {
+      "article_id": "2026-11-01-9",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic通过邮件通知API客户"]},
+        {"name": "Claude Mythos 5", "type": "model", "aliases": ["Mythos 5"], "confidence": 0.9, "evidence": ["自11月3日起将对另四款模型(Claude Mythos 5、Opus 4.7、Opus 4.6、Sonnet 4.6)的输出应用不可见的词序文本水印"]},
+        {"name": "Claude Opus 4.7", "type": "model", "aliases": ["Opus 4.7"], "confidence": 0.9, "evidence": ["Claude Mythos 5、Opus 4.7、Opus 4.6、Sonnet 4.6"]},
+        {"name": "Claude Opus 4.6", "type": "model", "aliases": ["Opus 4.6"], "confidence": 0.9, "evidence": ["Opus 4.6与Sonnet 4.6"]},
+        {"name": "Claude Sonnet 4.6", "type": "model", "aliases": ["Sonnet 4.6"], "confidence": 0.9, "evidence": ["Opus 4.6与Sonnet 4.6"]},
+        {"name": "欧盟AI法", "type": "policy", "aliases": ["欧盟《AI法》"], "confidence": 0.8, "evidence": ["与欧盟《AI法》的合规时限绑定"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Anthropic自11月3日起对四款Claude模型应用不可见文本水印",
+          "summary": "Anthropic对Claude Mythos 5、Opus 4.7、Opus 4.6与Sonnet 4.6的输出应用词序文本水印, 设计成可在事后检测某段文字是否由Claude生成, 发布时间点与欧盟《AI法》合规时限绑定; 该水印在Amazon Bedrock上的部署可能延后数天。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Mythos 5", "type": "model", "role": "object"},
+            {"name": "Claude Opus 4.7", "type": "model", "role": "object"},
+            {"name": "Claude Opus 4.6", "type": "model", "role": "object"},
+            {"name": "Claude Sonnet 4.6", "type": "model", "role": "object"}
+          ],
+          "evidence": ["自11月3日起将对另四款模型(Claude Mythos 5、Opus 4.7、Opus 4.6、Sonnet 4.6)的输出应用不可见的词序文本水印", "Amazon Bedrock可能延后数天"]
+        },
+        {
+          "type": "security",
+          "label": "Opus 4.6与Sonnet 4.6的水印在开发者改动采样设置时会被绕过",
+          "summary": "对Opus 4.6与Sonnet 4.6, 水印只在默认生成设置下生效, 开发者改动temperature、top_p或top_k即可关掉, 留下明确的可绕过后门。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Opus 4.6", "type": "model", "role": "object"},
+            {"name": "Claude Sonnet 4.6", "type": "model", "role": "object"}
+          ],
+          "evidence": ["开发者只要改动temperature/top_p/top_k即可关掉"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude Mythos 5", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Claude Mythos 5"]},
+        {"source": "Claude Opus 4.7", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Claude Mythos 5、Opus 4.7、Opus 4.6、Sonnet 4.6"]},
+        {"source": "Claude Opus 4.6", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Opus 4.6与Sonnet 4.6"]},
+        {"source": "Claude Sonnet 4.6", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Opus 4.6与Sonnet 4.6"]},
+        {"source": "Anthropic", "target": "欧盟AI法", "type": "complies_with", "weight": 0.6, "evidence": ["与欧盟《AI法》的合规时限绑定"]}
+      ],
+      "metrics": [
+        {"name": "新增应用文本水印的模型数", "value": "4款"}
+      ],
+      "why_it_matters": "有条件、可绕过、检测仅'估算'的水印提示治理缺口: 规范要求可检测的AI标识, 但技术的可检测性暂时追不上规范期望。"
+    },
+    {
+      "article_id": "2026-11-01-10",
+      "entities": [
+        {"name": "DeepSeek", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["DeepSeek Harness团队开源了代号dsh-superagent"]},
+        {"name": "Super-agent", "type": "tool", "aliases": ["dsh-superagent"], "confidence": 0.9, "evidence": ["开源了代号dsh-superagent的\"Super-agent\"研究原型(MIT许可)"]},
+        {"name": "Claude Code", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["旨在挑战Anthropic的Claude Code"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["旨在挑战Anthropic的Claude Code"]},
+        {"name": "GitHub", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["它以单一GitHub仓库为安装单元"]},
+        {"name": "Feishu", "type": "product", "aliases": ["飞书"], "confidence": 0.8, "evidence": ["把字节的飞书(Feishu)作为可选消息源"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "DeepSeek Harness团队开源Super-agent研究原型(MIT许可)",
+          "summary": "DeepSeek Harness团队于10月31日开源代号dsh-superagent的Super-agent研究原型(MIT许可), 监控单一GitHub仓库、(可选)监听飞书群聊, 在获准后自己开执行工单并回复原线程。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "Super-agent", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["开源了代号dsh-superagent的\"Super-agent\"研究原型(MIT许可)"]
+        },
+        {
+          "type": "trend",
+          "label": "中国实验室把Claude Code式产品彻底开源正在加速",
+          "summary": "DeepSeek用MIT许可把'监视群聊主动提PR'做成可自托管原型, 把Claude Code式产品的主动性直接摆进开源生态的竞争起点。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "Claude Code", "type": "product", "role": "competitor"}
+          ],
+          "evidence": ["中国实验室把Claude Code式产品彻底开源"]
+        }
+      ],
+      "relations": [
+        {"source": "Super-agent", "target": "DeepSeek", "type": "developed_by", "weight": 0.9, "evidence": ["DeepSeek Harness团队开源了代号dsh-superagent"]},
+        {"source": "Super-agent", "target": "Claude Code", "type": "competes_with", "weight": 0.8, "evidence": ["旨在挑战Anthropic的Claude Code"]},
+        {"source": "Claude Code", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["旨在挑战Anthropic的Claude Code"]},
+        {"source": "Super-agent", "target": "GitHub", "type": "uses", "weight": 0.7, "evidence": ["它以单一GitHub仓库为安装单元"]},
+        {"source": "Super-agent", "target": "Feishu", "type": "uses", "weight": 0.6, "evidence": ["把字节的飞书(Feishu)作为可选消息源"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "中国实验室把'监视群聊主动提PR'的Claude Code式产品用MIT许可开源成可自托管原型, 把编码代理的主动性与价格战直接摆进开源生态竞争起点。"
+    },
+    {
+      "article_id": "2026-11-01-11",
+      "entities": [
+        {"name": "Vercel", "type": "company", "aliases": ["Vercel Labs"], "confidence": 0.9, "evidence": ["Vercel Labs发布agent-desktop(Apache-2.0)"]},
+        {"name": "agent-desktop", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Vercel Labs发布agent-desktop(Apache-2.0)"]},
+        {"name": "agent-browser", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["把Vercel先前在agent-browser(浏览器端用无障碍快照控制网页)的思路"]},
+        {"name": "Claude Code", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["任何能跑shell的agent(Claude Code、Codex等)都能装它驱动原生应用"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["任何能跑shell的agent(Claude Code、Codex等)都能装它驱动原生应用"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Vercel Labs开源agent-desktop(Apache-2.0)",
+          "summary": "Vercel Labs发布用Rust写的CLI与C库agent-desktop, 让任意编码agent通过读取macOS/Windows/Linux操作系统无障碍树驱动桌面应用, 默认无头运行、不动用户鼠标。",
+          "participants": [
+            {"name": "Vercel", "type": "company", "role": "subject"},
+            {"name": "agent-desktop", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Vercel Labs发布agent-desktop(Apache-2.0)"]
+        },
+        {
+          "type": "trend",
+          "label": "agent-desktop把'agent会操作你的电脑'从API专属变成通用基础设施",
+          "summary": "任何能跑shell的agent(Claude Code、Codex等)都能装它驱动原生应用, 无障碍树作为agent感知层正成为桌面自动化的第一道地基。",
+          "participants": [
+            {"name": "Vercel", "type": "company", "role": "subject"},
+            {"name": "Claude Code", "type": "product", "role": "object"},
+            {"name": "Codex", "type": "product", "role": "object"}
+          ],
+          "evidence": ["任何能跑shell的agent(Claude Code、Codex等)都能装它驱动原生应用"]
+        }
+      ],
+      "relations": [
+        {"source": "agent-desktop", "target": "Vercel", "type": "developed_by", "weight": 0.9, "evidence": ["Vercel Labs发布agent-desktop"]},
+        {"source": "agent-browser", "target": "Vercel", "type": "developed_by", "weight": 0.7, "evidence": ["把Vercel先前在agent-browser(浏览器端用无障碍快照控制网页)的思路"]},
+        {"source": "agent-desktop", "target": "agent-browser", "type": "built_on", "weight": 0.8, "evidence": ["把Vercel先前在agent-browser(浏览器端用无障碍快照控制网页)的思路, 扩展到了整个桌面操作系统"]},
+        {"source": "Claude Code", "target": "agent-desktop", "type": "uses", "weight": 0.6, "evidence": ["任何能跑shell的agent(Claude Code、Codex等)都能装它驱动原生应用"]},
+        {"source": "Codex", "target": "agent-desktop", "type": "uses", "weight": 0.6, "evidence": ["任何能跑shell的agent(Claude Code、Codex等)都能装它"]}
+      ],
+      "metrics": [
+        {"name": "骨架快照相对全量树的token节省", "value": "78%~96%"},
+        {"name": "无障碍树读取延迟", "value": "约50~200ms"},
+        {"name": "截图加视觉模型猜坐标耗时", "value": "3~8秒"}
+      ],
+      "why_it_matters": "把'agent会操作你的电脑'从特定厂商的API专属推向通用的桌面控制标准, 无障碍树作为agent感知层正成为桌面自动化的第一道地基。"
+    },
+    {
+      "article_id": "2026-11-01-12",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI已把最新一轮融资目标从约$30B下调到最高约$20B"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic在11月以最高约$100亿美元募资额、$1.5万亿估值的上市计划逼近"]},
+        {"name": "MGX", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["阿联酋国资背景财团(含MGX)预计仍是最大参与者"]},
+        {"name": "Founders Fund", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Founders Fund、Coatue、Sequoia、A16Z都在列"]},
+        {"name": "Coatue", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Founders Fund、Coatue、Sequoia、A16Z都在列"]},
+        {"name": "Sequoia", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Founders Fund、Coatue、Sequoia、A16Z都在列"]},
+        {"name": "A16Z", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Founders Fund、Coatue、Sequoia、A16Z都在列"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "OpenAI将最新一轮融资目标从约$30B下调到最高约$20B、投后估值降至$1.25万亿",
+          "summary": "OpenAI把最新一轮融资目标从约$30B下调到最高约$20B, 削减约$10B, 投后估值从$1.4万亿降到$1.25万亿, 一些投资者缩减配售, 首个close预计低于$20B。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "MGX", "type": "organization", "role": "funder"}
+          ],
+          "evidence": ["已把最新一轮融资目标从约$30B下调到最高约$20B", "投后估值从$1.4万亿降到$1.25万亿"]
+        },
+        {
+          "type": "funding",
+          "label": "Anthropic 11月以最高约$100亿募资、$1.5万亿估值冲击IPO",
+          "summary": "Anthropic在11月以最高约$100亿美元募资额、$1.5万亿估值的上市计划逼近, 与OpenAI争夺同类投资者基础, 逼迫OpenAI抢先压低估值close。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["Anthropic在11月以最高约$100亿美元募资额、$1.5万亿估值的上市计划逼近"]
+        }
+      ],
+      "relations": [
+        {"source": "MGX", "target": "OpenAI", "type": "invests_in", "weight": 0.9, "evidence": ["阿联酋国资背景财团(含MGX)预计仍是最大参与者"]},
+        {"source": "Founders Fund", "target": "OpenAI", "type": "invests_in", "weight": 0.7, "evidence": ["Founders Fund、Coatue、Sequoia、A16Z都在列"]},
+        {"source": "Coatue", "target": "OpenAI", "type": "invests_in", "weight": 0.7, "evidence": ["Founders Fund、Coatue、Sequoia、A16Z都在列"]},
+        {"source": "Sequoia", "target": "OpenAI", "type": "invests_in", "weight": 0.7, "evidence": ["Founders Fund、Coatue、Sequoia、A16Z都在列"]},
+        {"source": "A16Z", "target": "OpenAI", "type": "invests_in", "weight": 0.7, "evidence": ["Founders Fund、Coatue、Sequoia、A16Z都在列"]},
+        {"source": "OpenAI", "target": "Anthropic", "type": "competes_with", "weight": 0.8, "evidence": ["Anthropic即将上市对同类投资者基础的争夺"]}
+      ],
+      "metrics": [
+        {"name": "融资目标(下调后)", "value": "最高约$20B"},
+        {"name": "原融资目标", "value": "约$30B"},
+        {"name": "融资目标削减幅度", "value": "约$10B"},
+        {"name": "投后估值(下调后)", "value": "$1.25万亿"},
+        {"name": "原投后估值", "value": "$1.4万亿"},
+        {"name": "Anthropic IPO募资额", "value": "最高约$100亿"},
+        {"name": "Anthropic IPO估值", "value": "$1.5万亿"}
+      ],
+      "why_it_matters": "AI资本在最缺变现承诺的阶段主动把'估值—确定性'天平往确定性移, '谁能更快更便宜地拿钱'正成为与大模型能力同等重要的竞争维度。"
+    }
+  ]
+}
