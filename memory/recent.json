@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T23:31:42Z",
+  "updated_at": "2026-11-02T07:07:09Z",
   "window_days": 30,
   "start_date": "2026-10-03",
   "end_date": "2026-11-01",
@@ -2675877,14 +2675877,14 @@
     },
     {
       "date": "2026-11-01",
-      "headline": "2026-11-01 的线索图显示 6 条可追踪主题：-0.5 / 128GB Mac / 1Password / 1Password for Agents；Character.AI / Disney / stalking horse / Daniel De Freitas",
+      "headline": "AI资本进入「现金流折现」阶段（Alphabet单日蒸发$5000亿、OpenAI融资自$30B削至约$20B）；芯片商变成AI基建的金融资本（NVIDIA增持Meta、为neocloud担保、预付封测）；存储短缺重排全球电子制造与地缘博弈；「license to build」政治化——数据中心上了中期选举选票，海湾主权算力反而加码；编码/桌面agent从工具变成基础设施；前沿模型的「能力-访问」被绑成一次决策，可信访问成为治理闸门",
       "theme_ids": [
-        "clue:8b99fff02be0",
-        "clue:211e1c33f222",
-        "clue:7d9782d9b3d1",
-        "clue:45962e06b916",
-        "clue:21de60ca6bfa",
-        "clue:4ccbcf5a87f1"
+        "clue:ai-capital-cashflow-repricing-2026w45",
+        "clue:chip-vendor-as-ai-financier-2026w45",
+        "clue:memory-shortage-reorders-elec-manufacturing-2026w45",
+        "clue:license-to-build-politicized-2026w45",
+        "clue:agent-as-open-infrastructure-2026w45",
+        "clue:frontier-capability-access-trusted-gate-2026w45"
       ]
     }
   ]
