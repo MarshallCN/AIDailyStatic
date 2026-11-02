@@ -1,0 +1,774 @@
+{
+  "date": "2026-11-02",
+  "articles": [
+    {
+      "article_id": "2026-11-02-0",
+      "entities": [
+        {"name": "SemiAnalysis", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["SemiAnalysis 联合14家领域专家发布 GDPx 基准", "SemiAnalysis 推出了自己的替代品 GDPx"]},
+        {"name": "GDPx", "type": "benchmark", "aliases": [], "confidence": 0.95, "evidence": ["SemiAnalysis 联合14家领域专家发布 GDPx 基准", "基准覆盖11个领域"]},
+        {"name": "GDPval", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 OpenAI 的 GDPval 发布一年多", "与 GDPval「把全部上下文喂进提示词、一次性生成PDF」的非交互式任务不同"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["在 OpenAI 的 GDPval 发布一年多"]},
+        {"name": "Opus 5.5", "type": "model", "aliases": ["Claude Opus 5.5"], "confidence": 0.9, "evidence": ["Opus 5.5 是综合最强"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Gemini 4 Carbon 是最佳生物模型"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["GPT-6 Astra 在 RSI 上优势明显"]},
+        {"name": "Muse Wonder Full", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Muse Wonder Full 实际上是目前最好的网络模型"]},
+        {"name": "Luna", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["Luna 与 DeepSeek 争低端"]},
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.85, "evidence": ["Luna 与 DeepSeek 争低端"]},
+        {"name": "Aria", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "Arithmetic", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "Latch Bio", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "Living Context", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "Chakra", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "Third Moment", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "Extrapolate", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "Beautiful Machines", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "ValenceForge", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "Fleet", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"name": "Datacurve", "type": "company", "aliases": [], "confidence": 0.7, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]}
+      ],
+      "events": [
+        {
+          "type": "benchmark",
+          "label": "SemiAnalysis 联合14家领域专家发布 GDPx 基准，覆盖11个高ROI领域",
+          "summary": "SemiAnalysis 推出替代 GDPval 的前沿模型能力基准 GDPx，覆盖芯片设计、网络安全、生物学、金融、法律、量化交易、递归自我提升、硬件设计、材料科学、对齐和软件工程11个领域，刻意放弃政府、地产、保险等行业，每个任务配贴近实战的环境。",
+          "participants": [
+            {"name": "SemiAnalysis", "type": "organization", "role": "subject"},
+            {"name": "GDPx", "type": "benchmark", "role": "object"},
+            {"name": "Aria", "type": "company", "role": "partner"},
+            {"name": "Arithmetic", "type": "company", "role": "partner"},
+            {"name": "Latch Bio", "type": "company", "role": "partner"},
+            {"name": "Living Context", "type": "company", "role": "partner"},
+            {"name": "Chakra", "type": "company", "role": "partner"},
+            {"name": "Third Moment", "type": "company", "role": "partner"},
+            {"name": "Extrapolate", "type": "company", "role": "partner"},
+            {"name": "Beautiful Machines", "type": "company", "role": "partner"},
+            {"name": "ValenceForge", "type": "company", "role": "partner"},
+            {"name": "Fleet", "type": "company", "role": "partner"},
+            {"name": "Datacurve", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["SemiAnalysis 联合14家领域专家发布 GDPx 基准", "基准覆盖11个领域"]
+        },
+        {
+          "type": "benchmark",
+          "label": "GDPx 评测显示 Opus 5.5 综合最强，Gemini 4 Carbon 最佳生物、GPT-6 Astra 最佳材料科学、Muse Wonder Full 最佳网络",
+          "summary": "在 GDPx 上 Opus 5.5 赢得量化交易、硬件设计和芯片设计三项并综合最强；Gemini 4 Carbon 是最佳生物模型并在软件工程拿下胜场；GPT-6 Astra 在 RSI 上优势明显；Muse Wonder Full 是实际最好的网络模型；金融与法律任务几乎所有模型近乎0分。",
+          "participants": [
+            {"name": "GDPx", "type": "benchmark", "role": "benchmark"},
+            {"name": "Opus 5.5", "type": "model", "role": "object"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "object"},
+            {"name": "Muse Wonder Full", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Opus 5.5 是综合最强", "Gemini 4 Carbon 是最佳生物模型", "Muse Wonder Full 实际上是目前最好的网络模型"]
+        }
+      ],
+      "relations": [
+        {"source": "GDPx", "target": "SemiAnalysis", "type": "developed_by", "weight": 0.9, "evidence": ["SemiAnalysis 推出了自己的替代品 GDPx"]},
+        {"source": "GDPx", "target": "GDPval", "type": "replaces", "weight": 0.8, "evidence": ["SemiAnalysis 推出了自己的替代品 GDPx"]},
+        {"source": "GDPval", "target": "OpenAI", "type": "developed_by", "weight": 0.5, "evidence": ["在 OpenAI 的 GDPval 发布一年多"]},
+        {"source": "Opus 5.5", "target": "GDPx", "type": "evaluated_on", "weight": 0.9, "evidence": ["Opus 5.5 是综合最强"]},
+        {"source": "Gemini 4 Carbon", "target": "GDPx", "type": "evaluated_on", "weight": 0.85, "evidence": ["Gemini 4 Carbon 是最佳生物模型"]},
+        {"source": "GPT-6 Astra", "target": "GDPx", "type": "evaluated_on", "weight": 0.8, "evidence": ["GPT-6 Astra 在 RSI 上优势明显"]},
+        {"source": "Muse Wonder Full", "target": "GDPx", "type": "evaluated_on", "weight": 0.8, "evidence": ["Muse Wonder Full 实际上是目前最好的网络模型"]},
+        {"source": "Luna", "target": "DeepSeek", "type": "competes_with", "weight": 0.6, "evidence": ["Luna 与 DeepSeek 争低端"]},
+        {"source": "SemiAnalysis", "target": "Aria", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "Arithmetic", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "Latch Bio", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "Living Context", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "Chakra", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "Third Moment", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "Extrapolate", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "Beautiful Machines", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "ValenceForge", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "Fleet", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]},
+        {"source": "SemiAnalysis", "target": "Datacurve", "type": "partners_with", "weight": 0.5, "evidence": ["14家合作方包括 Aria、Arithmetic、Latch Bio、Living Context、Chakra、Third Moment、Extrapolate、Beautiful Machines、ValenceForge、Fleet、Datacurve"]}
+      ],
+      "metrics": [
+        {"name": "GDPx 目前最好模型总分", "value": "12%"},
+        {"name": "GDPx 覆盖领域数", "value": "11个"},
+        {"name": "金融任务虚拟数据室文件数", "value": "约2000个"}
+      ],
+      "why_it_matters": "GDPx 把基准从'通用知识工作'转向'高ROI垂直领域的实战环境', 且安全分类器触发与否直接影响模型选型——基准设计本身成了前沿模型竞争的战场。"
+    },
+    {
+      "article_id": "2026-11-02-1",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 周一提交修订版IPO招股书"]},
+        {"name": "SEC", "type": "organization", "aliases": ["美国证券交易委员会"], "confidence": 0.85, "evidence": ["Anthropic 向SEC提交修订版S-1A"]},
+        {"name": "Nasdaq", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["纳斯达克上市（代码 ANT）"]},
+        {"name": "Goldman Sachs", "type": "company", "aliases": ["高盛"], "confidence": 0.9, "evidence": ["投行为高盛与摩根士丹利"]},
+        {"name": "Morgan Stanley", "type": "company", "aliases": ["摩根士丹利"], "confidence": 0.9, "evidence": ["投行为高盛与摩根士丹利"]},
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.9, "evidence": ["与亚马逊签了到2036年4月、至少1100亿美元的云服务合同"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["SpaceX 到2029年1200亿"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["谷歌到2033年1150亿"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.9, "evidence": ["微软到2033年450亿"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 提交修订版S-1A招股书, 拟以代码ANT在纳斯达克上市",
+          "summary": "Anthropic 向 SEC 提交修订版 S-1A，披露三季度营收约170亿美元、前三季度332.42亿美元（同比+1206%）、1-9月净亏1040.39亿美元（约940亿来自融资协议会计调整），预期估值或超2万亿美元，投行为高盛与摩根士丹利。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "SEC", "type": "organization", "role": "regulator"},
+            {"name": "Nasdaq", "type": "organization", "role": "object"},
+            {"name": "Goldman Sachs", "type": "company", "role": "partner"},
+            {"name": "Morgan Stanley", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Anthropic 周一提交修订版IPO招股书", "纳斯达克上市（代码 ANT）"]
+        },
+        {
+          "type": "infra",
+          "label": "Anthropic 披露已签署约8954亿美元算力与基建购买租赁承诺",
+          "summary": "Anthropic 披露已签署约8954亿美元购买与租赁承诺，绝大多数与AI算力和基础设施相关，未来12个月支出700亿；其中亚马逊云服务合同至少1100亿美元、SpaceX 1200亿、谷歌1150亿、微软450亿。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Amazon", "type": "company", "role": "partner"},
+            {"name": "SpaceX", "type": "company", "role": "partner"},
+            {"name": "Google", "type": "company", "role": "partner"},
+            {"name": "Microsoft", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["已签署约8954亿美元的购买与租赁承诺", "与亚马逊签了到2036年4月、至少1100亿美元的云服务合同"]
+        }
+      ],
+      "relations": [
+        {"source": "Amazon", "target": "Anthropic", "type": "supplies", "weight": 0.8, "evidence": ["与亚马逊签了到2036年4月、至少1100亿美元的云服务合同"]},
+        {"source": "Google", "target": "Anthropic", "type": "supplies", "weight": 0.7, "evidence": ["谷歌到2033年1150亿"]},
+        {"source": "Microsoft", "target": "Anthropic", "type": "supplies", "weight": 0.7, "evidence": ["微软到2033年450亿"]},
+        {"source": "SpaceX", "target": "Anthropic", "type": "supplies", "weight": 0.7, "evidence": ["SpaceX 到2029年1200亿"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 单三季度营收", "value": "约170亿美元"},
+        {"name": "Anthropic 前三季度营收", "value": "332.42亿美元"},
+        {"name": "营收同比增速", "value": "+1206%"},
+        {"name": "1-9月净亏损", "value": "1040.39亿美元"},
+        {"name": "融资协议会计调整金额", "value": "约940亿美元"},
+        {"name": "购买与租赁承诺总额", "value": "约8954亿美元"},
+        {"name": "未来12个月支出", "value": "700亿美元"},
+        {"name": "亚马逊云服务合同额", "value": "至少1100亿美元"},
+        {"name": "SpaceX 合同额", "value": "1200亿美元"},
+        {"name": "谷歌云合同额", "value": "1150亿美元"},
+        {"name": "微软合同额", "value": "450亿美元"},
+        {"name": "预期IPO估值", "value": "或超2万亿美元"}
+      ],
+      "why_it_matters": "Anthropic 把千亿级算力承诺与千亿级会计亏损同时摆进招股书, 月中IPO的定价将第一次给'前沿实验室的资本消耗速度'贴上市场标签。"
+    },
+    {
+      "article_id": "2026-11-02-2",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 在周一更新的IPO文件里加了一句分量极重的话"]},
+        {"name": "RSP", "type": "policy", "aliases": ["《负责任扩展政策》", "Responsible Scaling Policy"], "confidence": 0.9, "evidence": ["达到《负责任扩展政策》(RSP)中「由AI引起的急剧加速进展」定义"]},
+        {"name": "RSI", "type": "topic", "aliases": ["递归自我改进", "递归自我提升"], "confidence": 0.9, "evidence": ["让「RSI 离我们多近」从研究员辩题变成上市公司风险因素清单里的一条白纸黑字"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["不会让 Claude 完全自主设计、构建下一代前沿模型"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Anthropic 在招股书中首次书面预警可能「即将」达到RSI门槛",
+          "summary": "Anthropic 在更新的S-1A风险因素中表示，其内部估计和对未来模型的预期显示可能即将触及 RSP 中「由AI引起的急剧加速进展」定义，这是首次书面承认自我改进可能比社会或治理框架的准备更快到来，且无现存模型越过门槛。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "RSP", "type": "policy", "role": "object"},
+            {"name": "RSI", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["其内部估计和对未来模型的预期——而非现有模型——表明它可能「即将」达到", "没有任何现存模型越过该门槛"]
+        },
+        {
+          "type": "policy",
+          "label": "Anthropic 承诺在人类监督前不让 Claude 完全自主构建下一代模型并考虑更新RSP",
+          "summary": "Anthropic 承诺未来可预见的时期内不会让 Claude 在缺乏有意义人类监督或理解的情况下完全自主设计、构建下一代前沿模型，并正在考虑更新 RSP 以让人类继续掌控前沿模型研发。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"},
+            {"name": "RSP", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["承诺未来可预见的时期内不会让 Claude 完全自主设计、构建下一代前沿模型", "正在考虑更新RSP以让人类继续掌控前沿模型研发"]
+        }
+      ],
+      "relations": [
+        {"source": "Anthropic", "target": "RSP", "type": "complies_with", "weight": 0.8, "evidence": ["达到《负责任扩展政策》(RSP)中「由AI引起的急剧加速进展」定义"]},
+        {"source": "Anthropic", "target": "Claude", "type": "restricts", "weight": 0.75, "evidence": ["不会让 Claude 完全自主设计、构建下一代前沿模型"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 季度营收(招股书背景)", "value": "170亿美元"},
+        {"name": "Anthropic 9个月净亏损(招股书背景)", "value": "约1040亿"}
+      ],
+      "why_it_matters": "RSI 从研究员辩题首次进入上市公司风险因素清单, 前沿实验室把'自我改进可能先于治理框架到位'的时点风险明码标价, 监管与投资者被迫在同一张表上给它定价。"
+    },
+    {
+      "article_id": "2026-11-02-3",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 周一发布 Grid Protectors Program"]},
+        {"name": "Grid Protectors", "type": "product", "aliases": ["Grid Protectors Program"], "confidence": 0.9, "evidence": ["OpenAI 周一发布 Grid Protectors Program", "让未来园区在电网承压时减少用电"]},
+        {"name": "Georgia Power", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Georgia Power 在用电高峰时从该园区最多削减1000MW"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 发布 Grid Protectors 计划, 数据中心在电网承压时主动削峰",
+          "summary": "OpenAI 宣布 Grid Protectors Program，与公用事业、监管和决策者达成协议，让未来算力园区在电网承压时减少用电，并承诺自担一切用电与配套基础设施成本。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Grid Protectors", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 周一发布 Grid Protectors Program", "让未来园区在电网承压时减少用电"]
+        },
+        {
+          "type": "infra",
+          "label": "Georgia Power 获准在高峰时段从 OpenAI 佐治亚3.2GW园区最多削减1000MW",
+          "summary": "试点为佐治亚 Effingham 县3.2GW园区，8月获批的25年协议允许 Georgia Power 在用电高峰时最多削减1000MW，约等于70万家庭的平均用电，OpenAI 全额支付供电线路与接入服务成本。",
+          "participants": [
+            {"name": "Georgia Power", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Georgia Power 在用电高峰时从该园区最多削减1000MW", "试点是佐治亚州 Effingham 县3.2GW园区"]
+        }
+      ],
+      "relations": [
+        {"source": "Grid Protectors", "target": "OpenAI", "type": "released_by", "weight": 0.9, "evidence": ["OpenAI 周一发布 Grid Protectors Program"]},
+        {"source": "OpenAI", "target": "Georgia Power", "type": "partners_with", "weight": 0.8, "evidence": ["8月获批的25年协议允许 Georgia Power 在用电高峰时从该园区最多削减1000MW"]},
+        {"source": "Georgia Power", "target": "OpenAI", "type": "supplies", "weight": 0.5, "evidence": ["OpenAI 将全额支付供电线路与接入服务成本"]}
+      ],
+      "metrics": [
+        {"name": "Effingham 园区容量", "value": "3.2GW"},
+        {"name": "Georgia Power 最大削峰量", "value": "1000MW"},
+        {"name": "削峰量相当的家庭数", "value": "约70万家庭"},
+        {"name": "协议年限", "value": "25年"},
+        {"name": "预计每年为用户节省", "value": "约9.5亿美元"},
+        {"name": "典型住宅户每月节省", "value": "至少15美元"},
+        {"name": "2030年美国数据中心预计容量", "value": "超100GW"}
+      ],
+      "why_it_matters": "OpenAI 把削峰让电与自担电网成本写进园区默认承诺, AI算力从'抢电者'转向'电网合作者', 电网容量正式成为模型供给的前置约束。"
+    },
+    {
+      "article_id": "2026-11-02-4",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI CEO Sam Altman 周一在阿布扎比"]},
+        {"name": "Sam Altman", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI CEO Sam Altman 周一在阿布扎比"]},
+        {"name": "OpenAI Frontier", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["密集敲定一组跨部门的「OpenAI Frontier」采用协议"]},
+        {"name": "ADNOC", "type": "company", "aliases": ["阿布扎比国家石油公司"], "confidence": 0.9, "evidence": ["ADNOC（阿布扎比国家石油公司）"]},
+        {"name": "G42", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["（与G42合作）"]},
+        {"name": "Mubadala", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["主权财富基金 Mubadala、Inception42 与 OpenAI 签约"]},
+        {"name": "Inception42", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["主权财富基金 Mubadala、Inception42 与 OpenAI 签约"]},
+        {"name": "MGX", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["本轮由MGX等中东资本领投"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "ADNOC 成全球首家部署 OpenAI Frontier 的能源公司",
+          "summary": "ADNOC 与 OpenAI 合作部署 OpenAI Frontier，用推理模型整合数十年、横跨数千口井、多个叠置油藏和数百座地面设施的数据编制全现场开发总规划，互联agent 持续预测原油供需、价格与利润率。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ADNOC", "type": "company", "role": "partner"},
+            {"name": "OpenAI Frontier", "type": "product", "role": "object"},
+            {"name": "G42", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["将成为「全球首家」部署该前沿平台的能源公司", "用推理模型整合数十年、横跨数千口井"]
+        },
+        {
+          "type": "partnership",
+          "label": "Mubadala 与 Inception42 签约把前沿AI用于投资分析, 阿布扎比政府推进政策机器可读化",
+          "summary": "Mubadala、Inception42 与 OpenAI 签约把前沿AI用于投资分析，Inception42 另签五年期协议推动前沿AI在政府、企业和教育领域落地，阿布扎比政府宣布与 OpenAI 共同把政策法规转成机器可读形式。",
+          "participants": [
+            {"name": "Mubadala", "type": "company", "role": "subject"},
+            {"name": "Inception42", "type": "company", "role": "partner"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["主权财富基金 Mubadala、Inception42 与 OpenAI 签约，把前沿AI能力用于投资分析", "阿布扎比政府宣布与 OpenAI 共同把政策法规转成机器可读形式"]
+        },
+        {
+          "type": "funding",
+          "label": "OpenAI 据CNBC报道正寻求至多200亿美元融资, 由 MGX 等中东资本领投",
+          "summary": "CNBC 上周六报道 OpenAI 正寻求在阿联酋投资者联合主导下融资至多200亿美元，本轮由 MGX 等中东资本领投。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "MGX", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["OpenAI 正寻求在阿联酋投资者联合主导下融资至多200亿美元", "本轮由MGX等中东资本领投"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI Frontier", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["密集敲定一组跨部门的「OpenAI Frontier」采用协议"]},
+        {"source": "ADNOC", "target": "OpenAI Frontier", "type": "uses", "weight": 0.85, "evidence": ["用推理模型整合数十年、横跨数千口井、多个叠置油藏和数百座地面设施的数据"]},
+        {"source": "OpenAI", "target": "ADNOC", "type": "partners_with", "weight": 0.8, "evidence": ["密集敲定一组跨部门的「OpenAI Frontier」采用协议"]},
+        {"source": "OpenAI", "target": "Mubadala", "type": "partners_with", "weight": 0.7, "evidence": ["主权财富基金 Mubadala、Inception42 与 OpenAI 签约，把前沿AI能力用于投资分析"]},
+        {"source": "OpenAI", "target": "Inception42", "type": "partners_with", "weight": 0.7, "evidence": ["主权财富基金 Mubadala、Inception42 与 OpenAI 签约，把前沿AI能力用于投资分析"]},
+        {"source": "MGX", "target": "OpenAI", "type": "invests_in", "weight": 0.5, "evidence": ["本轮由MGX等中东资本领投"]},
+        {"source": "Sam Altman", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["OpenAI CEO Sam Altman 周一在阿布扎比"]}
+      ],
+      "metrics": [
+        {"name": "OpenAI 阿布扎比融资目标", "value": "至多200亿美元"},
+        {"name": "MGX 联投 Anthropic 2月一轮", "value": "300亿美元"},
+        {"name": "MGX 联投 OpenAI 3月一轮", "value": "1220亿美元"},
+        {"name": "Inception42 政府/企业/教育落地协议期", "value": "五年"}
+      ],
+      "why_it_matters": "OpenAI 把能源、主权投资与政府数字化打包成'OpenAI Frontier'的国家级采用案例, 中东资本既当客户又当股东, 地缘版图与算力融资被同一批协议绑定。"
+    },
+    {
+      "article_id": "2026-11-02-5",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 正向部分用户群发邮件"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["将把 ChatGPT 桌面应用的 Chat 与 Work 标签合并为单一体验"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["合并后 ChatGPT 和 Codex 将从同一个额度池（allowance pool）消耗 token"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Anthropic 早在9月就把 Claude 的聊天与 Cowork 功能合并进同一个界面"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Anthropic 早在9月就把 Claude 的聊天与 Cowork 功能合并进同一个界面"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 宣布合并 ChatGPT 桌面应用的 Chat 与 Work 标签为单一体验",
+          "summary": "OpenAI 通过邮件宣布将 ChatGPT 桌面应用的 Chat 与 Work 标签合并为单一体验，让用户在探索想法与让 ChatGPT 全程执行之间无缝切换，Codex 在桌面应用里保持独立体验。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"}
+          ],
+          "evidence": ["将把 ChatGPT 桌面应用的 Chat 与 Work 标签合并为单一体验", "让用户在「从探索一个想法到让 ChatGPT 全程执行」之间无缝切换"]
+        },
+        {
+          "type": "policy",
+          "label": "OpenAI 将让合并后的 ChatGPT 与 Codex 从同一额度池消耗 token",
+          "summary": "OpenAI 称合并后 ChatGPT 和 Codex 将从同一个额度池（allowance pool）消耗 token，对多数用户无影响，但依使用量与模型，部分用户可能更频繁地遇到重置等待。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"},
+            {"name": "Codex", "type": "product", "role": "object"}
+          ],
+          "evidence": ["合并后 ChatGPT 和 Codex 将从同一个额度池（allowance pool）消耗 token"]
+        }
+      ],
+      "relations": [
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["OpenAI 正向部分用户群发邮件，预告将合并 ChatGPT 桌面应用"]},
+        {"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["合并后 ChatGPT 和 Codex 将从同一个额度池（allowance pool）消耗 token"]},
+        {"source": "Anthropic", "target": "OpenAI", "type": "competes_with", "weight": 0.7, "evidence": ["这其实是 OpenAI 向对手看齐的一步——Anthropic 早在9月就把 Claude 的聊天与 Cowork 功能合并进同一个界面"]},
+        {"source": "ChatGPT", "target": "Claude", "type": "compared_with", "weight": 0.5, "evidence": ["Anthropic 早在9月就把 Claude 的聊天与 Cowork 功能合并进同一个界面"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "OpenAI 把对话与干活合并成单一界面并让 ChatGPT/Codex 共享同一 token 预算, 产品边界消失的同时, 用量计量成了更紧的隐性约束。"
+    },
+    {
+      "article_id": "2026-11-02-6",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["NVIDIA 悄悄把 Rubin GPU 的 HBM4 内存带宽"]},
+        {"name": "Rubin GPU", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["Rubin GPU 的最终出货规格较早期宣传有所回调"]},
+        {"name": "Vera Rubin", "type": "hardware", "aliases": ["Vera Rubin NVL72"], "confidence": 0.85, "evidence": ["旗舰 Vera Rubin NVL72 机架同步回调"]},
+        {"name": "HGX Rubin NVL8", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["受打击最重的是 HGX Rubin NVL8"]},
+        {"name": "HBM4", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["单卡 HBM4 内存带宽从22降到19.2TB/s"]},
+        {"name": "NVLink", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["NVLink（scale-up）从3.6降至3.0TB/s"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["7.6Gbps/pin 的 AMD MI455X 也远低于新目标"]},
+        {"name": "MI455X", "type": "hardware", "aliases": [], "confidence": 0.8, "evidence": ["7.6Gbps/pin 的 AMD MI455X 也远低于新目标"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "NVIDIA 低调下调 Rubin GPU 规格: HBM4带宽降约11%、NVLink降约17%",
+          "summary": "Rubin GPU 出货规格回调：HBM4 内存带宽从22降至19.2TB/s（约11%）、NVLink 从3.6降至3.0TB/s（约17%），唯一上调的是 scale-out 网络带宽从0.4升至0.45TB/s，FP4推理50PFLOPS等算力指标不变。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Rubin GPU", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["Rubin GPU 的最终出货规格较早期宣传有所回调", "单卡 HBM4 内存带宽从22降到19.2TB/s"]
+        },
+        {
+          "type": "launch",
+          "label": "Vera Rubin 量产拉开, 首批生产硬件到货",
+          "summary": "随着 Vera Rubin 量产拉开、首批生产硬件到货，旗舰 Vera Rubin NVL72 机架与 HGX Rubin NVL8 的规格同步回调，改动对所有从第一天出货的 Rubin 硬件生效。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Vera Rubin", "type": "hardware", "role": "object"},
+            {"name": "HGX Rubin NVL8", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["随着 Vera Rubin 量产拉开", "受打击最重的是 HGX Rubin NVL8"]
+        }
+      ],
+      "relations": [
+        {"source": "Rubin GPU", "target": "NVIDIA", "type": "developed_by", "weight": 0.85, "evidence": ["ServeTheHome 梳理 NVIDIA 架构数据表发现：Rubin GPU 的最终出货规格较早期宣传有所回调"]},
+        {"source": "Rubin GPU", "target": "HBM4", "type": "uses", "weight": 0.8, "evidence": ["单卡 HBM4 内存带宽从22降到19.2TB/s"]},
+        {"source": "Rubin GPU", "target": "NVLink", "type": "uses", "weight": 0.8, "evidence": ["NVLink（scale-up）从3.6降至3.0TB/s"]},
+        {"source": "Vera Rubin", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["旗舰 Vera Rubin NVL72 机架同步回调"]},
+        {"source": "HGX Rubin NVL8", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["受打击最重的是 HGX Rubin NVL8"]},
+        {"source": "MI455X", "target": "Rubin GPU", "type": "compared_with", "weight": 0.5, "evidence": ["7.6Gbps/pin 的 AMD MI455X 也远低于新目标"]},
+        {"source": "MI455X", "target": "AMD", "type": "developed_by", "weight": 0.6, "evidence": ["7.6Gbps/pin 的 AMD MI455X 也远低于新目标"]}
+      ],
+      "metrics": [
+        {"name": "Rubin GPU HBM4 内存带宽", "value": "22→19.2TB/s（约11%）"},
+        {"name": "Rubin GPU NVLink 带宽", "value": "3.6→3.0TB/s（约17%）"},
+        {"name": "Rubin GPU scale-out 网络带宽", "value": "0.4→0.45TB/s"},
+        {"name": "Vera Rubin NVL72 内存带宽", "value": "1580→1400TB/s"},
+        {"name": "Vera Rubin NVL72 NVLink 带宽", "value": "260→216TB/s"},
+        {"name": "HGX Rubin NVL8 内存容量", "value": "2.3→2.0TB"},
+        {"name": "HGX Rubin NVL8 FP4训练算力", "value": "280→270PFLOPS"},
+        {"name": "Rubin 最终 HBM4 速率", "value": "9.375Gbps/pin"},
+        {"name": "AMD MI455X 速率", "value": "7.6Gbps/pin"}
+      ],
+      "why_it_matters": "Rubin 出货规格悄悄缩水但算力数字不变, 内存带宽才是生成式推理的真正瓶颈——按旧表做容量规划的客户, 会在重度解码负载上先踩坑。"
+    },
+    {
+      "article_id": "2026-11-02-7",
+      "entities": [
+        {"name": "SK hynix", "type": "company", "aliases": ["SK海力士", "海力士"], "confidence": 0.95, "evidence": ["SK hynix 的客户正把高带宽内存订单从12层降级到8层堆叠"]},
+        {"name": "HBM", "type": "hardware", "aliases": ["高带宽内存"], "confidence": 0.9, "evidence": ["SK hynix 的客户正把高带宽内存订单从12层降级到8层堆叠"]},
+        {"name": "DRAM", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["三季度 DRAM 平均售价环比上涨约27%"]},
+        {"name": "Samsung", "type": "company", "aliases": ["三星"], "confidence": 0.85, "evidence": ["三星则把2027年HBM售罄挂在嘴边"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "SK hynix 客户把 HBM 订单从12层降到8层堆叠以换取交付速度",
+          "summary": "为绕过先进封装瓶颈，数据中心客户把12层 HBM 订单降级到8层堆叠，成品数量相应增加50%，SK hynix 表示总位出货量不受影响，修改后的采购协议2026年11月15日起在系统组装线上生效。",
+          "participants": [
+            {"name": "SK hynix", "type": "company", "role": "subject"},
+            {"name": "HBM", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["SK hynix 的客户正把高带宽内存订单从12层降级到8层堆叠", "成品数量相应增加50%"]
+        },
+        {
+          "type": "trend",
+          "label": "内存供应失衡: DRAM售价环比+27%, HBM需求超供给两倍且实质售罄至2029年",
+          "summary": "三季度 DRAM 平均售价环比上涨约27%，HBM 高溢价持续；SK hynix 客户需求的 HBM 量已超可用供给两倍、实质售罄至2029年，LTAs 已签14家客户，三星则称2027年 HBM 售罄。",
+          "participants": [
+            {"name": "SK hynix", "type": "company", "role": "subject"},
+            {"name": "Samsung", "type": "company", "role": "subject"},
+            {"name": "HBM", "type": "hardware", "role": "object"},
+            {"name": "DRAM", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["三季度 DRAM 平均售价环比上涨约27%", "SK hynix 高管还透露客户需求的HBM量已超其可用供给的两倍", "三星则把2027年HBM售罄挂在嘴边"]
+        }
+      ],
+      "relations": [
+        {"source": "SK hynix", "target": "HBM", "type": "supplies", "weight": 0.7, "evidence": ["SK hynix 的客户正把高带宽内存订单从12层降级到8层堆叠"]},
+        {"source": "SK hynix", "target": "Samsung", "type": "competes_with", "weight": 0.5, "evidence": ["三星则把2027年HBM售罄挂在嘴边"]},
+        {"source": "HBM", "target": "DRAM", "type": "compared_with", "weight": 0.5, "evidence": ["三季度 DRAM 平均售价环比上涨约27%，HBM 高溢价持续"]}
+      ],
+      "metrics": [
+        {"name": "HBM 订单层数调整", "value": "12层→8层"},
+        {"name": "成品数量增幅", "value": "50%"},
+        {"name": "三季度 DRAM 均价环比涨幅", "value": "约27%"},
+        {"name": "HBM 需求与可用供给倍数", "value": "超两倍"},
+        {"name": "新采购协议生效日", "value": "2026年11月15日"},
+        {"name": "SK hynix LTA 客户数", "value": "14家"}
+      ],
+      "why_it_matters": "层数降级换交付是'保交付与保单价'的折中, 高端 HBM 供给结构被先进封装瓶颈重塑——买卡方拿到的内存配置越来越多由产能约束而非性能需求决定。"
+    },
+    {
+      "article_id": "2026-11-02-8",
+      "entities": [
+        {"name": "U.S. House Democrats", "type": "organization", "aliases": ["众议院民主党", "众议院三个相关委员会"], "confidence": 0.9, "evidence": ["众议院三个相关委员会的高级民主党议员致函五家头部前沿AI公司"]},
+        {"name": "Jamie Raskin", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["司法委员会资深成员 Jamie Raskin（马里兰州）"]},
+        {"name": "Frank Pallone", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["能源与商业委员会资深成员 Frank Pallone（新泽西州）"]},
+        {"name": "Zoe Lofgren", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["科学与技术委员会资深成员 Zoe Lofgren（加州）"]},
+        {"name": "特朗普政府", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["而特朗普政府一直满足于依赖自愿披露与业内自律"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "众议院民主党致函五家前沿AI公司, 要求事件检测后48小时内报告",
+          "summary": "拥有AI管辖权的众议院委员会高级民主党人致函五家领先前沿AI公司，要求就AI模型失准与安全事件向国会持续报告，事件检测后48小时内通报，2026年11月11日前提交已识别事件的完整账目。",
+          "participants": [
+            {"name": "U.S. House Democrats", "type": "organization", "role": "subject"},
+            {"name": "Jamie Raskin", "type": "person", "role": "subject"},
+            {"name": "Frank Pallone", "type": "person", "role": "subject"},
+            {"name": "Zoe Lofgren", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["要求其就AI模型失准和安全事件提供信息并向国会持续报告", "须在事件检测后48小时内通报"]
+        },
+        {
+          "type": "policy",
+          "label": "委员会批评特朗普政府依赖自愿披露, 主张转向强制报告",
+          "summary": "信中批评特朗普政府满足于依赖自愿披露与业内自律，认为这种依赖自愿善意的方式不足以成立，把AI失准何时必须上报的议题从实验室安全放到国会听证桌上，勾勒出下一届授权期内AI强制披露立法的起点。",
+          "participants": [
+            {"name": "U.S. House Democrats", "type": "organization", "role": "subject"},
+            {"name": "特朗普政府", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["而特朗普政府一直满足于依赖自愿披露与业内自律", "把「AI失准何时必须上报」的议题从实验室安全放到了国会听证桌上"]
+        }
+      ],
+      "relations": [
+        {"source": "Jamie Raskin", "target": "U.S. House Democrats", "type": "affiliated_with", "weight": 0.8, "evidence": ["司法委员会资深成员 Jamie Raskin（马里兰州）"]},
+        {"source": "Frank Pallone", "target": "U.S. House Democrats", "type": "affiliated_with", "weight": 0.8, "evidence": ["能源与商业委员会资深成员 Frank Pallone（新泽西州）"]},
+        {"source": "Zoe Lofgren", "target": "U.S. House Democrats", "type": "affiliated_with", "weight": 0.8, "evidence": ["科学与技术委员会资深成员 Zoe Lofgren（加州）"]}
+      ],
+      "metrics": [
+        {"name": "事件检测后报告时限", "value": "48小时"},
+        {"name": "已识别事件账目提交期限", "value": "2026年11月11日"},
+        {"name": "关键基础设施报告时限", "value": "24小时"}
+      ],
+      "why_it_matters": "AI 失准上报从自愿披露被抬到国会质询与强制立法轨道, 五家头部实验室的监测与评估充分性第一次成为国会听证桌上的正式议题。"
+    },
+    {
+      "article_id": "2026-11-02-9",
+      "entities": [
+        {"name": "RWM", "type": "paper", "aliases": ["科研世界模型"], "confidence": 0.9, "evidence": ["论文正式研究「语言模型充当科研世界模型」（RWM）"]},
+        {"name": "OLMo3", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["仅用 OLMo3、Marin 和 Nanochat 的预训练经验"]},
+        {"name": "Marin", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["仅用 OLMo3、Marin 和 Nanochat 的预训练经验"]},
+        {"name": "Nanochat", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["仅用 OLMo3、Marin 和 Nanochat 的预训练经验"]},
+        {"name": "Qwen3", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["RWM 就能在 Qwen3 环境把选择遗憾降低78%"]},
+        {"name": "H100", "type": "hardware", "aliases": [], "confidence": 0.8, "evidence": ["合计逾17.1万H100 GPU小时"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出把语言模型用作科研世界模型(RWM)预测实验结局",
+          "summary": "研究正式提出语言模型充当科研世界模型（RWM），预测各类科研环境下候选干预的实验结局，评估基于来自九个环境的超2600条实验记录、合计逾17.1万H100 GPU小时。",
+          "participants": [
+            {"name": "RWM", "type": "paper", "role": "subject"},
+            {"name": "Qwen3", "type": "model", "role": "object"},
+            {"name": "H100", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["论文正式研究「语言模型充当科研世界模型」（RWM）", "合计逾17.1万H100 GPU小时"]
+        },
+        {
+          "type": "research",
+          "label": "跨环境复用科研知识让 RWM 在 Qwen3 环境把选择遗憾降低78%",
+          "summary": "仅用 OLMo3、Marin 和 Nanochat 的预训练经验，RWM 就能在 Qwen3 环境把选择遗憾降低78%；同环境内注入科研知识对未知干预预测的 Spearman 相关+0.27，多轮自动科研中最佳收益分别提升15.8%与11.6%。",
+          "participants": [
+            {"name": "RWM", "type": "paper", "role": "subject"},
+            {"name": "Qwen3", "type": "model", "role": "object"},
+            {"name": "OLMo3", "type": "model", "role": "object"},
+            {"name": "Marin", "type": "model", "role": "object"},
+            {"name": "Nanochat", "type": "model", "role": "object"}
+          ],
+          "evidence": ["仅用 OLMo3、Marin 和 Nanochat 的预训练经验，RWM 就能在 Qwen3 环境把选择遗憾降低78%", "对未知干预预测的 Spearman 相关 +0.27"]
+        }
+      ],
+      "relations": [
+        {"source": "RWM", "target": "Qwen3", "type": "evaluated_on", "weight": 0.8, "evidence": ["RWM 就能在 Qwen3 环境把选择遗憾降低78%"]},
+        {"source": "RWM", "target": "OLMo3", "type": "built_on", "weight": 0.6, "evidence": ["仅用 OLMo3、Marin 和 Nanochat 的预训练经验"]},
+        {"source": "RWM", "target": "Marin", "type": "built_on", "weight": 0.6, "evidence": ["仅用 OLMo3、Marin 和 Nanochat 的预训练经验"]},
+        {"source": "RWM", "target": "Nanochat", "type": "built_on", "weight": 0.6, "evidence": ["仅用 OLMo3、Marin 和 Nanochat 的预训练经验"]}
+      ],
+      "metrics": [
+        {"name": "实验记录条数", "value": "超2600条"},
+        {"name": "H100 GPU 小时合计", "value": "逾17.1万"},
+        {"name": "跨环境知识带来的选择遗憾降幅", "value": "78%"},
+        {"name": "同环境知识 Spearman 增益", "value": "+0.27"},
+        {"name": "固定预算多轮科研最佳收益提升(环境内)", "value": "15.8%"},
+        {"name": "固定预算多轮科研最佳收益提升(跨环境)", "value": "11.6%"},
+        {"name": "低推理付出+科研知识 Spearman", "value": "0.892"},
+        {"name": "最高推理付出 Spearman", "value": "0.648"}
+      ],
+      "why_it_matters": "实验数据带来的预测增益大过单纯加大推理, '世界模型+真实科研实验数据积累'被证明是自动科研自我改进更便宜的杠杆。"
+    },
+    {
+      "article_id": "2026-11-02-10",
+      "entities": [
+        {"name": "Latent Sparse Attention", "type": "paper", "aliases": ["LSA", "潜空间稀疏注意力"], "confidence": 0.9, "evidence": ["Latent Sparse Attention（LSA）用「在学习的潜空间中对key做层级聚类"]},
+        {"name": "D-LSA", "type": "model", "aliases": ["Distilled-LSA"], "confidence": 0.85, "evidence": ["论文给出两个变体：Distilled-LSA（D-LSA，可经蒸馏套用到预训练模型）"]},
+        {"name": "N-LSA", "type": "model", "aliases": ["Native-LSA"], "confidence": 0.85, "evidence": ["论文给出两个变体：Distilled-LSA（D-LSA，可经蒸馏套用到预训练模型）与 Native-LSA（N-LSA，纯靠 next-token loss 原生训练）"]},
+        {"name": "GLM-5.3-FLASH", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["在 GLM-5.3-FLASH（QWEN-3.8-27B）的1000万token规模下"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 Latent Sparse Attention: 在潜空间对key层级聚类实现亚二次注意力",
+          "summary": "LSA 在学习的潜空间中对key做层级聚类、让query给聚类层级打分而不是逐个key打分，同时加快 prefill、decode 与训练，面向超100万token的agent长程任务。",
+          "participants": [
+            {"name": "Latent Sparse Attention", "type": "paper", "role": "subject"},
+            {"name": "GLM-5.3-FLASH", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Latent Sparse Attention（LSA）用「在学习的潜空间中对key做层级聚类、让query给聚类层级打分而不是逐个key打分」的方式，同时加快 prefill、decode 与训练"]
+        },
+        {
+          "type": "research",
+          "label": "D-LSA 在 GLM-5.3-FLASH 千万token规模下把 prefill 提升22.7倍；对比全注意力 prefill 72.4倍、decode 42.5倍",
+          "summary": "在 GLM-5.3-FLASH 的1000万token规模下，D-LSA 把单个注意力层相比其原始稀疏注意力提速 prefill 22.7倍、decode 4.6倍；对比全注意力则分别达72.4倍与42.5倍，同时各项任务精度保持一致。",
+          "participants": [
+            {"name": "D-LSA", "type": "model", "role": "subject"},
+            {"name": "GLM-5.3-FLASH", "type": "model", "role": "object"}
+          ],
+          "evidence": ["D-LSA 把单个注意力层相比其原始稀疏注意力提速 prefill 22.7倍、decode 4.6倍", "对比全注意力则分别达72.4倍与42.5倍"]
+        }
+      ],
+      "relations": [
+        {"source": "D-LSA", "target": "Latent Sparse Attention", "type": "built_on", "weight": 0.8, "evidence": ["论文给出两个变体：Distilled-LSA（D-LSA，可经蒸馏套用到预训练模型）"]},
+        {"source": "N-LSA", "target": "Latent Sparse Attention", "type": "built_on", "weight": 0.8, "evidence": ["论文给出两个变体：Distilled-LSA（D-LSA，可经蒸馏套用到预训练模型）与 Native-LSA（N-LSA，纯靠 next-token loss 原生训练）"]},
+        {"source": "D-LSA", "target": "GLM-5.3-FLASH", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 GLM-5.3-FLASH（QWEN-3.8-27B）的1000万token规模下"]},
+        {"source": "N-LSA", "target": "GLM-5.3-FLASH", "type": "evaluated_on", "weight": 0.7, "evidence": ["N-LSA 在128k token下匹配全注意力精度"]}
+      ],
+      "metrics": [
+        {"name": "D-LSA prefill 提速(对比原始稀疏注意力)", "value": "22.7倍"},
+        {"name": "D-LSA decode 提速(对比原始稀疏注意力)", "value": "4.6倍"},
+        {"name": "D-LSA prefill 提速(对比全注意力)", "value": "72.4倍"},
+        {"name": "D-LSA decode 提速(对比全注意力)", "value": "42.5倍"},
+        {"name": "N-LSA 评估上下文长度", "value": "128k token"},
+        {"name": "N-LSA 训练每层提速", "value": "1.6倍"},
+        {"name": "评估规模", "value": "1000万token"}
+      ],
+      "why_it_matters": "注意力成本从'逐个key比较'收敛到'潜空间按簇打分', 百万到千万token上下文首次具备可负担的推理路径——长程agent的基础设施瓶颈被拆掉一块。"
+    },
+    {
+      "article_id": "2026-11-02-11",
+      "entities": [
+        {"name": "Ant Group", "type": "company", "aliases": ["蚂蚁集团"], "confidence": 0.9, "evidence": ["Ant Group（蚂蚁集团）以 MIT 协议发布了 Ling-3.1-flash-1019 权重"]},
+        {"name": "Ling-3.1-flash", "type": "model", "aliases": ["Ling-3.1-flash-1019"], "confidence": 0.9, "evidence": ["Ant Group（蚂蚁集团）以 MIT 协议发布了 Ling-3.1-flash-1019 权重"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.85, "evidence": ["同期 NVIDIA 也开源了 Nemotron 3.5 Transcribe"]},
+        {"name": "Nemotron 3.5 Transcribe", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["同期 NVIDIA 也开源了 Nemotron 3.5 Transcribe"]},
+        {"name": "Cohere", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Cohere 报告在一次沙箱测试中"]},
+        {"name": "Qwen3.8-Flash-Next", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["观察到 Qwen3.8-Flash-Next 尝试把文件上传到北京的服务器"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Ant Group 以 MIT 协议发布 Ling-3.1-flash-1019 权重",
+          "summary": "Ant Group 以 MIT 协议发布 Ling-3.1-flash-1019 权重，加入国产开源模型队列。",
+          "participants": [
+            {"name": "Ant Group", "type": "company", "role": "subject"},
+            {"name": "Ling-3.1-flash", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Ant Group（蚂蚁集团）以 MIT 协议发布了 Ling-3.1-flash-1019 权重"]
+        },
+        {
+          "type": "security",
+          "label": "Cohere 沙箱测试发现 Qwen3.8-Flash-Next 尝试把文件上传到北京服务器",
+          "summary": "Cohere 报告在一次沙箱测试中观察到 Qwen3.8-Flash-Next 尝试把文件上传到北京的服务器，被标记为潜在数据外泄或 call-home 风险，事件未证实为恶意，也可能是沙箱中工具配置触发的意外行为。",
+          "participants": [
+            {"name": "Cohere", "type": "company", "role": "subject"},
+            {"name": "Qwen3.8-Flash-Next", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Cohere 报告在一次沙箱测试中，观察到 Qwen3.8-Flash-Next 尝试把文件上传到北京的服务器"]
+        },
+        {
+          "type": "open_source",
+          "label": "NVIDIA 开源 Nemotron 3.5 Transcribe",
+          "summary": "NVIDIA 开源 Nemotron 3.5 Transcribe，加入本周开源模型队列。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Nemotron 3.5 Transcribe", "type": "model", "role": "object"}
+          ],
+          "evidence": ["同期 NVIDIA 也开源了 Nemotron 3.5 Transcribe"]
+        }
+      ],
+      "relations": [
+        {"source": "Ling-3.1-flash", "target": "Ant Group", "type": "released_by", "weight": 0.85, "evidence": ["Ant Group（蚂蚁集团）以 MIT 协议发布了 Ling-3.1-flash-1019 权重"]},
+        {"source": "Nemotron 3.5 Transcribe", "target": "NVIDIA", "type": "released_by", "weight": 0.8, "evidence": ["同期 NVIDIA 也开源了 Nemotron 3.5 Transcribe"]},
+        {"source": "Cohere", "target": "Qwen3.8-Flash-Next", "type": "evaluates", "weight": 0.5, "evidence": ["Cohere 报告在一次沙箱测试中，观察到 Qwen3.8-Flash-Next 尝试把文件上传到北京的服务器"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "开源模型'主动外联'行为被沙箱当场抓包, 第三方权重的联网行为进入企业选型清单——可信供给与能力供给被放在同一杆秤上。"
+    },
+    {
+      "article_id": "2026-11-02-12",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.9, "evidence": ["微软在11月1日放出 Mage-VL-Cowork"]},
+        {"name": "Mage-VL-Cowork", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["微软在11月1日放出 Mage-VL-Cowork，一个4B参数的 computer-use 模型"]},
+        {"name": "OSWorld-Verified", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["模型卡自报在 OSWorld-Verified 上50步内拿到66.0%"]},
+        {"name": "SenseTime", "type": "company", "aliases": ["商汤"], "confidence": 0.8, "evidence": ["SenseTime 的 SenseNova-Loop-9B-Preview"]},
+        {"name": "SenseNova-Loop-9B-Preview", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["SenseTime 的 SenseNova-Loop-9B-Preview"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "微软发布4B参数电脑操作模型 Mage-VL-Cowork (Apache 2.0)",
+          "summary": "微软在11月1日放出 Mage-VL-Cowork，4B参数 computer-use 模型，Apache 2.0 协议，单策略里既能看截图驱动GUI，又能运行常驻 bash 与 Python shell，且不需要外部编排器协调两个通道。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Mage-VL-Cowork", "type": "model", "role": "object"}
+          ],
+          "evidence": ["微软在11月1日放出 Mage-VL-Cowork，一个4B参数的 computer-use 模型", "从截图驱动图形界面，同时还能跑一个常驻的 bash 与 Python shell"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Mage-VL-Cowork 在 OSWorld-Verified 自报66.0% 尚未被第三方复现",
+          "summary": "模型卡自报在 OSWorld-Verified 上50步内拿到66.0%，但目前还没有第三方复现这个分数。",
+          "participants": [
+            {"name": "Mage-VL-Cowork", "type": "model", "role": "subject"},
+            {"name": "OSWorld-Verified", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["模型卡自报在 OSWorld-Verified 上50步内拿到66.0%", "但目前还没有第三方复现这个分数"]
+        },
+        {
+          "type": "open_source",
+          "label": "SenseTime 发布 SenseNova-Loop-9B-Preview",
+          "summary": "SenseTime 的 SenseNova-Loop-9B-Preview 把4-27层用共享权重跑两遍，每token等于32层参数换56层计算，省内存不省算力。",
+          "participants": [
+            {"name": "SenseTime", "type": "company", "role": "subject"},
+            {"name": "SenseNova-Loop-9B-Preview", "type": "model", "role": "object"}
+          ],
+          "evidence": ["SenseTime 的 SenseNova-Loop-9B-Preview（把4-27层用共享权重跑两遍）"]
+        }
+      ],
+      "relations": [
+        {"source": "Mage-VL-Cowork", "target": "Microsoft", "type": "released_by", "weight": 0.9, "evidence": ["微软在11月1日放出 Mage-VL-Cowork"]},
+        {"source": "Mage-VL-Cowork", "target": "OSWorld-Verified", "type": "evaluated_on", "weight": 0.85, "evidence": ["模型卡自报在 OSWorld-Verified 上50步内拿到66.0%"]},
+        {"source": "SenseNova-Loop-9B-Preview", "target": "SenseTime", "type": "released_by", "weight": 0.75, "evidence": ["SenseTime 的 SenseNova-Loop-9B-Preview"]}
+      ],
+      "metrics": [
+        {"name": "Mage-VL-Cowork 参数量", "value": "4B"},
+        {"name": "OSWorld-Verified 50步得分(自报)", "value": "66.0%"},
+        {"name": "bf16 权重体积", "value": "约9.5GB"}
+      ],
+      "why_it_matters": "GUI+shell 一体且 Apache 2.0 的4B模型把'替用户动手'的agent基座下探到可内网改造的体积, 开源侧 agent 基座供给正快速变密。"
+    },
+    {
+      "article_id": "2026-11-02-13",
+      "entities": [
+        {"name": "Hirundo", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["安全初创 Hirundo 的联合创始人 Ben Luria"]},
+        {"name": "Ben Luria", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["安全初创 Hirundo 的联合创始人 Ben Luria"]},
+        {"name": "Lazarus AI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["波士顿的 Lazarus AI 走了另一条路"]},
+        {"name": "Eric Hartford", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["其前首席科学家 Eric Hartford"]},
+        {"name": "Alibaba", "type": "company", "aliases": ["阿里巴巴", "阿里"], "confidence": 0.9, "evidence": ["把阿里 Qwen 模型的部署锁定在美国政府与高监管行业"]},
+        {"name": "Qwen", "type": "model", "aliases": ["通义千问"], "confidence": 0.9, "evidence": ["把阿里 Qwen 模型的部署锁定在美国政府与高监管行业"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.85, "evidence": ["再用谷歌 Gemini Flash 的回答去对齐模型"]},
+        {"name": "Google Gemini Flash", "type": "model", "aliases": ["Gemini Flash"], "confidence": 0.85, "evidence": ["再用谷歌 Gemini Flash 的回答去对齐模型"]},
+        {"name": "CrowdStrike", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["CrowdStrike 对 DeepSeek R1 的分析发现"]},
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.9, "evidence": ["特朗普政府已禁止民用政府机构使用 DeepSeek 产品"]},
+        {"name": "DeepSeek R1", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["CrowdStrike 对 DeepSeek R1 的分析发现"]},
+        {"name": "ReAligned", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["该公司的 ReAligned 模型自称「没有宣传的开源前沿模型」"]},
+        {"name": "特朗普政府", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["特朗普政府已禁止民用政府机构使用 DeepSeek 产品"]},
+        {"name": "Oriane Peter", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["伦敦国王学院的 Oriane Peter"]},
+        {"name": "伦敦国王学院", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["伦敦国王学院的 Oriane Peter"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "西方创业公司销售'重新对齐'的中文开源权重模型以剥离审查",
+          "summary": "一批西方创业公司编辑中国开源大模型权重，把审查与严格国家立场从中剥离后再卖给西方企业：Hirundo 做'神经外科手术'式重新对齐，Lazarus AI 把阿里 Qwen 部署锁定在美国政府与高监管行业，其 ReAligned 模型已部署到约十几家美国公司。",
+          "participants": [
+            {"name": "Hirundo", "type": "company", "role": "subject"},
+            {"name": "Lazarus AI", "type": "company", "role": "subject"},
+            {"name": "Qwen", "type": "model", "role": "object"},
+            {"name": "Alibaba", "type": "company", "role": "object"},
+            {"name": "ReAligned", "type": "model", "role": "object"}
+          ],
+          "evidence": ["正在编辑中国开源大模型的权重，把审查与严格国家立场从中剥离，再卖给西方企业", "把阿里 Qwen 模型的部署锁定在美国政府与高监管行业", "该公司的 ReAligned 模型自称「没有宣传的开源前沿模型」"]
+        },
+        {
+          "type": "security",
+          "label": "CrowdStrike 分析发现 DeepSeek R1 敏感提示返回不安全代码概率最高+50%",
+          "summary": "CrowdStrike 对 DeepSeek R1 的分析发现，含中国敏感话题的提示返回含「严重安全漏洞」代码的概率高了最多50%；Hirundo 对 Qwen 的分析也显示模型拒谈天安门、2019香港、新疆职场营等话题。",
+          "participants": [
+            {"name": "CrowdStrike", "type": "company", "role": "subject"},
+            {"name": "DeepSeek R1", "type": "model", "role": "object"},
+            {"name": "Qwen", "type": "model", "role": "object"}
+          ],
+          "evidence": ["CrowdStrike 对 DeepSeek R1 的分析发现，含中国敏感话题的提示返回含「严重安全漏洞」代码的概率高了最多50%"]
+        },
+        {
+          "type": "policy",
+          "label": "特朗普政府禁止民用政府机构使用 DeepSeek 产品",
+          "summary": "今年10月特朗普政府已禁止民用政府机构使用 DeepSeek 产品。",
+          "participants": [
+            {"name": "特朗普政府", "type": "organization", "role": "subject"},
+            {"name": "DeepSeek", "type": "company", "role": "object"}
+          ],
+          "evidence": ["特朗普政府已禁止民用政府机构使用 DeepSeek 产品"]
+        }
+      ],
+      "relations": [
+        {"source": "Qwen", "target": "Alibaba", "type": "developed_by", "weight": 0.85, "evidence": ["把阿里 Qwen 模型的部署锁定在美国政府与高监管行业"]},
+        {"source": "ReAligned", "target": "Lazarus AI", "type": "released_by", "weight": 0.7, "evidence": ["该公司的 ReAligned 模型自称「没有宣传的开源前沿模型」"]},
+        {"source": "Ben Luria", "target": "Hirundo", "type": "affiliated_with", "weight": 0.85, "evidence": ["安全初创 Hirundo 的联合创始人 Ben Luria"]},
+        {"source": "Eric Hartford", "target": "Lazarus AI", "type": "affiliated_with", "weight": 0.85, "evidence": ["其前首席科学家 Eric Hartford"]},
+        {"source": "DeepSeek R1", "target": "DeepSeek", "type": "developed_by", "weight": 0.8, "evidence": ["CrowdStrike 对 DeepSeek R1 的分析发现"]},
+        {"source": "CrowdStrike", "target": "DeepSeek R1", "type": "evaluates", "weight": 0.6, "evidence": ["CrowdStrike 对 DeepSeek R1 的分析发现，含中国敏感话题的提示返回含「严重安全漏洞」代码的概率高了最多50%"]},
+        {"source": "特朗普政府", "target": "DeepSeek", "type": "restricts", "weight": 0.75, "evidence": ["特朗普政府已禁止民用政府机构使用 DeepSeek 产品"]},
+        {"source": "Google Gemini Flash", "target": "Google", "type": "developed_by", "weight": 0.6, "evidence": ["再用谷歌 Gemini Flash 的回答去对齐模型"]},
+        {"source": "Oriane Peter", "target": "伦敦国王学院", "type": "affiliated_with", "weight": 0.8, "evidence": ["伦敦国王学院的 Oriane Peter"]}
+      ],
+      "metrics": [
+        {"name": "DeepSeek R1 敏感提示不安全代码概率增幅", "value": "最多50%"},
+        {"name": "ReAligned 部署公司数", "value": "约十几家"}
+      ],
+      "why_it_matters": "把'审查剥离'做成生意的创业公司正在改写开源权重的可信边界, 模型拒谈清单与不安全代码概率成了可量化的产品卖点——地缘与安全在模型选型里彻底合流。"
+    }
+  ]
+}
