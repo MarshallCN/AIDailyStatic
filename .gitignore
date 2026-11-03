@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+# Rolling build artifact, rebuilt by publish; far exceeds GitHub's 100MB file limit. Never commit.
+memory/recent.json
