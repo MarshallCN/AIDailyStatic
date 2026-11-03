@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-03",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "整体抽取扎实：数字、方向、事件切分基本都对，metrics 大量覆盖了原文关键数字。主要问题集中在几处关系类型与实体类型误用：Anthropic 与自己的 RSP 被画成 complies_with（RSP 是 Anthropic 自有的政策，方向语义反了）、标普对 Meta 的评级下调被画成 targets、MRG 被标成 product。",
+  "findings": [
+    {
+      "article_id": "2026-11-03-0",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --complies_with--> RSP\"（weight 0.7）语义反了。RSP（Responsible Scaling Policy）是 Anthropic 自有的政策，原文说 Anthropic \"正考虑收紧 RSP 政策以求保留人类参与\"——Anthropic 是 RSP 的制定者，不是被外部政策约束的合规主体。complies_with 会让图中读成「Anthropic 遵守某项外部 RSP」，方向与事实不符。",
+      "fix": "把该关系改为 Anthropic 是 RSP 的制定/执行方语义，如 Anthropic --enforces--> RSP 或 Anthropic --owns--> RSP；不要用 complies_with。"
+    },
+    {
+      "article_id": "2026-11-03-0",
+      "severity": "medium",
+      "problem": "关系 \"RSP --targets--> RSI\"（weight 0.55）证据弱且类型勉强。evidence 只引了\"「由 AI 加速 AI 研发」的「急剧加速进展」（RSI）门槛\"，它支撑的是 RSI 概念本身，并不是一个「RSP 以 RSI 为目标」的关系。targets 在此读不出明确事实，属于为凑边而造的关系。",
+      "fix": "删除 \"RSP --targets--> RSI\"。RSI 已在事件（security）与 entities 中被作为门槛概念覆盖；若要保留 RSP 与 RSI 的联系，应给出一条由原文直接支撑的连边（原文并无此类表述），否则不加。"
+    },
+    {
+      "article_id": "2026-11-03-4",
+      "severity": "medium",
+      "problem": "关系 \"S&P Global --targets--> Meta\"（weight 0.7, evidence \"S&P Global 上周把 Meta 展望由 AA- 稳定下调至 AA- 负面\"）关系类型用错。targets 不表达「评级机构对主体下调评级」这类动作，图中会读成「标普以 Meta 为目标」，语义错误。评级下调动作用于事件已完整承载。",
+      "fix": "删除 \"S&P Global --targets--> Meta\"；避免为评级动作额外建 targets 关系。若系统有 rates/downgrades 之类的专属关系类型再启用，否则以事件承载即可。"
+    },
+    {
+      "article_id": "2026-11-03-3",
+      "severity": "medium",
+      "problem": "实体 MRG 被标成 type=\"product\"。MRG（机器可读政府，Machine Readable Government）是阿布扎比政府发起的一项计划/项目（\"阿布扎比政府与 OpenAI 启动「机器可读政府」（MRG）计划\"），不是一个可售卖的产品。实体类型错配会误导图谱消费者。",
+      "fix": "将 MRG 的类型改为 organization 或 program/initiative 类（区别于 product），并在 why_it_matters/event 中保持其「政府计划」语义。"
+    }
+  ],
+  "lessons": [
+    "公司自有的安全/扩展政策（如 RSP、内部 policy）是该主体制定的治理机制，不要用 complies_with（那是针对外部监管或合规的义务关系）；该自有机制应用 enforces/owns 一类关系。",
+    "评级机构的评级/展望调整动作属于事件而非实体间 targets 关系，不要为「机构--下调-->主体」额外造 targets 边；无专属关系类型时以事件承载即可。",
+    "政府或组织发起的研究计划、倡议、项目（如 MRG、机器可读政府）不要标成 product，用 organization 或 program/initiative 类型；product 只用于可交付售卖的成果物。"
+  ]
+}

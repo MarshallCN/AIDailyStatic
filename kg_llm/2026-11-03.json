@@ -1,0 +1,421 @@
+{
+"date": "2026-11-03",
+"articles": [
+{
+"article_id": "2026-11-03-0",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic 在周一（11 月 2 日）向 SEC 提交的修订版 S-1"]},
+{"name": "SEC", "type": "organization", "aliases": ["美国证券交易委员会"], "confidence": 0.85, "evidence": ["Anthropic 在周一（11 月 2 日）向 SEC 提交的修订版 S-1"]},
+{"name": "Nasdaq", "type": "organization", "aliases": ["纳斯达克"], "confidence": 0.85, "evidence": ["在纳斯达克（代码 ANT）上市前的关键信息披露"]},
+{"name": "RSP", "type": "policy", "aliases": ["《负责任扩展政策》", "Responsible Scaling Policy"], "confidence": 0.9, "evidence": ["正考虑收紧 RSP 政策以保留人类参与"]},
+{"name": "RSI", "type": "topic", "aliases": ["急剧加速进展", "递归自我改进"], "confidence": 0.9, "evidence": ["「由 AI 加速 AI 研发」的「急剧加速进展」（RSI）门槛"]},
+{"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["不打算在无人类监督下让 Claude 自主迭代构建下一代前沿模型"]}
+],
+"events": [
+{"type": "funding", "label": "Anthropic 提交修订版 S-1 披露 Q3 营收 169.6 亿美元、营业亏损 5.67 亿美元", "summary": "Anthropic 向 SEC 提交修订版 S-1 补齐三季度财务数据，Q3 营收环比增 47%，录得营业亏损 5.67 亿美元，数据中心成本占营收比例从 48% 升至 58%，为纳斯达克（代码 ANT）上市作关键信息披露。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "SEC", "type": "organization", "role": "regulator"}, {"name": "Nasdaq", "type": "organization", "role": "object"}], "evidence": ["Anthropic 在周一（11 月 2 日）向 SEC 提交的修订版 S-1", "在纳斯达克（代码 ANT）上市前的关键信息披露"]},
+{"type": "security", "label": "Anthropic 首次书面预警其「急剧加速进展」（RSI）门槛可能「即将达到」", "summary": "招股书首次书面预警，公司内部衡量「由 AI 加速 AI 研发」的 RSI 门槛可能即将达到，且当 AI 帮助构建更强 AI 时可能构成相当大的安全风险，目前没有模型跨过该门槛。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "RSI", "type": "topic", "role": "object"}], "evidence": ["公司内部衡量「由 AI 加速 AI 研发」的「急剧加速进展」（RSI）门槛「可能即将达到」"]},
+{"type": "policy", "label": "Anthropic 承诺不自主迭代下一代模型并考虑收紧 RSP 以保留人类参与", "summary": "Anthropic 表示当前没有任何模型跨过该门槛，不打算在无人类监督下让 Claude 自主迭代构建下一代前沿模型，正考虑收紧 RSP 政策以保留人类参与。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Claude", "type": "model", "role": "object"}, {"name": "RSP", "type": "policy", "role": "object"}], "evidence": ["不打算在无人类监督下让 Claude 自主迭代构建下一代前沿模型", "正考虑收紧 RSP 政策以保留人类参与"]}
+],
+"relations": [
+{"source": "SEC", "target": "Anthropic", "type": "regulates", "weight": 0.6, "evidence": ["Anthropic 在周一（11 月 2 日）向 SEC 提交的修订版 S-1"]},
+{"source": "Anthropic", "target": "Claude", "type": "restricts", "weight": 0.8, "evidence": ["不打算在无人类监督下让 Claude 自主迭代构建下一代前沿模型"]},
+{"source": "Anthropic", "target": "RSP", "type": "enforces", "weight": 0.7, "evidence": ["正考虑收紧 RSP 政策以保留人类参与"]}
+],
+"metrics": [
+{"name": "Anthropic Q3 营收", "value": "169.6 亿美元"},
+{"name": "Q3 营收环比增幅", "value": "47%"},
+{"name": "Q2 营收环比增幅", "value": "144%"},
+{"name": "Q1 营收环比增幅", "value": "132%"},
+{"name": "营收同比增幅", "value": "约1127%"},
+{"name": "Q3 营业亏损", "value": "5.67 亿美元"},
+{"name": "Q2 营业利润", "value": "9.74 亿美元"},
+{"name": "短期合同算力采购费用", "value": "约 50 亿美元"},
+{"name": "慈善捐款匹配非现金费用", "value": "约 20 亿美元"},
+{"name": "当季计算相关支出", "value": "99 亿美元"},
+{"name": "计算相关支出环比增幅", "value": "77%"},
+{"name": "数据中心成本占营收比例", "value": "48% 升至 58%"},
+{"name": "现金余额", "value": "约 956 亿美元"},
+{"name": "短期投资", "value": "约 363 亿美元"},
+{"name": "九个月净亏损", "value": "1040 亿美元"},
+{"name": "可转债与SAFE公允价值变动会计科目", "value": "943 亿美元"},
+{"name": "建议压低的 IPO 估值", "value": "约 1.5 万亿美元"}
+],
+"why_it_matters": "RSI 首次从研究员辩题进入上市公司风险因素清单, 前沿实验室把‘自我改进可能先于治理框架到位’的时点风险明码归档, 监管与投资者被迫在同一张表上给这条门槛定价。"
+},
+{
+"article_id": "2026-11-03-1",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["修订版招股书点名 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE 和 Trade-PMR 六家经纪商"]},
+{"name": "Charles Schwab", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商"]},
+{"name": "Fidelity", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商"]},
+{"name": "Robinhood", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商"]},
+{"name": "SoFi", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商"]},
+{"name": "E*TRADE", "type": "company", "aliases": ["ETrade"], "confidence": 0.9, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商"]},
+{"name": "Trade-PMR", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商"]},
+{"name": "Mizuho Securities", "type": "company", "aliases": ["瑞穗证券"], "confidence": 0.9, "evidence": ["Mizuho Securities 负责承销"]},
+{"name": "Goldman Sachs", "type": "company", "aliases": ["高盛"], "confidence": 0.9, "evidence": ["Goldman Sachs、三菱UFJ摩根士丹利证券等参与认购"]},
+{"name": "Morgan Stanley", "type": "company", "aliases": ["摩根士丹利"], "confidence": 0.7, "evidence": ["E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商"]}
+],
+"events": [
+{"type": "funding", "label": "Anthropic 修订版招股书披露通过六家经纪商向个人投资者发售配售", "summary": "修订版 S-1 首次披露配售结构：一批股票将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE 和 Trade-PMR 六家经纪商以 IPO 定价向个人投资者发行，认购遵循各平台自身条款。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Charles Schwab", "type": "company", "role": "partner"}, {"name": "Fidelity", "type": "company", "role": "partner"}, {"name": "Robinhood", "type": "company", "role": "partner"}, {"name": "SoFi", "type": "company", "role": "partner"}, {"name": "E*TRADE", "type": "company", "role": "partner"}, {"name": "Trade-PMR", "type": "company", "role": "partner"}], "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商，以 IPO 定价向个人投资者发行"]},
+{"type": "funding", "label": "Anthropic 计划向日本投资者出售至多约 35 亿美元新股并纳入澳洲零售配售", "summary": "全球配售方面将向日本投资者出售至多 552.9 亿日元（约 35 亿美元）新股，Mizuho Securities 负责承销，Goldman Sachs、三菱UFJ摩根士丹利证券等参与认购，并纳入澳洲零售配售。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Mizuho Securities", "type": "company", "role": "partner"}, {"name": "Goldman Sachs", "type": "company", "role": "partner"}], "evidence": ["将向日本投资者出售至多 552.9 亿日元（约 35 亿美元）新股", "Mizuho Securities 负责承销"]}
+],
+"relations": [
+{"source": "Anthropic", "target": "Charles Schwab", "type": "partners_with", "weight": 0.7, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商，以 IPO 定价向个人投资者发行"]},
+{"source": "Anthropic", "target": "Fidelity", "type": "partners_with", "weight": 0.7, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商，以 IPO 定价向个人投资者发行"]},
+{"source": "Anthropic", "target": "Robinhood", "type": "partners_with", "weight": 0.7, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商，以 IPO 定价向个人投资者发行"]},
+{"source": "Anthropic", "target": "SoFi", "type": "partners_with", "weight": 0.7, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商，以 IPO 定价向个人投资者发行"]},
+{"source": "Anthropic", "target": "E*TRADE", "type": "partners_with", "weight": 0.7, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商，以 IPO 定价向个人投资者发行"]},
+{"source": "Anthropic", "target": "Trade-PMR", "type": "partners_with", "weight": 0.7, "evidence": ["将通过 Charles Schwab、Fidelity、Robinhood、SoFi、E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商，以 IPO 定价向个人投资者发行"]},
+{"source": "Anthropic", "target": "Mizuho Securities", "type": "partners_with", "weight": 0.8, "evidence": ["Mizuho Securities 负责承销"]},
+{"source": "Anthropic", "target": "Goldman Sachs", "type": "partners_with", "weight": 0.7, "evidence": ["Goldman Sachs、三菱UFJ摩根士丹利证券等参与认购"]},
+{"source": "E*TRADE", "target": "Morgan Stanley", "type": "subsidiary_of", "weight": 0.7, "evidence": ["E*TRADE（Morgan Stanley）和 Trade-PMR 六家经纪商"]}
+],
+"metrics": [
+{"name": "向日本投资者配售金额", "value": "至多 552.9 亿日元（约 35 亿美元）"},
+{"name": "SpaceX 6 月 IPO 募资额", "value": "750 亿美元"},
+{"name": "SpaceX 6 月 IPO 中日本配售额", "value": "22 亿美元"},
+{"name": "Anthropic 算力承诺总额", "value": "约 8954 亿美元"},
+{"name": "投资者权衡的估值", "value": "约 1.5 万亿美元"}
+],
+"why_it_matters": "IPO 配售首次把六家散户经纪商与日本/澳洲零售资本写进路径, 前沿模型资本化的额度池不再只靠机构——全球散户资本与近 9000 亿美元算力承诺在公开市场直接对赌。"
+},
+{
+"article_id": "2026-11-03-2",
+"entities": [
+{"name": "Menlo Ventures", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Menlo Ventures（Anthropic 与 OpenRouter 的投资方）在 11 月 3 日发布的"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["在企业 LLM API 支出份额中，Anthropic 从 40% 升至 55%"]},
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 从 27% 升至 31%"]},
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["而 Google 从 21% 崩跌至 9%"]},
+{"name": "OpenRouter", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["在 OpenRouter 上智能体贡献 80% 的 token"]}
+],
+"events": [
+{"type": "research", "label": "Menlo Ventures 发布《2026 企业 AI 现状》: 企业 AI 支出年增 5.4 倍至 1768 亿美元", "summary": "Menlo Ventures 报告称截至 9 月企业 AI 支出达 1768 亿美元，是一年前 330 亿美元的 5.4 倍；付费企业占比仅从 55% 升至 65%，增长主要来自存量客户加码。", "participants": [{"name": "Menlo Ventures", "type": "company", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "object"}, {"name": "OpenAI", "type": "company", "role": "object"}, {"name": "Google", "type": "company", "role": "object"}], "evidence": ["企业 AI 支出达 1768 亿美元，是一年前 330 亿美元的 5.4 倍", "付费企业占比仅从 55% 升至 65%"]},
+{"type": "trend", "label": "企业 LLM API 支出份额 Anthropic 升至 55% 反超 OpenAI 与 Google", "summary": "企业 LLM API 支出中 Anthropic 从 40% 升至 55%、OpenAI 从 27% 升至 31%，而 Google 从 21% 崩跌至 9%；三大前沿实验室合计占部署支出的 69%。", "participants": [{"name": "Anthropic", "type": "company", "role": "object"}, {"name": "OpenAI", "type": "company", "role": "object"}, {"name": "Google", "type": "company", "role": "object"}, {"name": "Menlo Ventures", "type": "company", "role": "subject"}], "evidence": ["在企业 LLM API 支出份额中，Anthropic 从 40% 升至 55%，OpenAI 从 27% 升至 31%，而 Google 从 21% 崩跌至 9%"]},
+{"type": "trend", "label": "智能体已占 OpenRouter 80% 的 token 流量", "summary": "智能体成为主导流量源，在 OpenRouter 上贡献 80% 的 token，约为人类用量的 7 倍，自 2 月反超人类流量后出现 37 倍增长（人类侧仅 5 倍）。", "participants": [{"name": "OpenRouter", "type": "company", "role": "subject"}], "evidence": ["在 OpenRouter 上智能体贡献 80% 的 token，约为人类用量的 7 倍"]}
+],
+"relations": [
+{"source": "Menlo Ventures", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["Menlo Ventures（Anthropic 与 OpenRouter 的投资方）"]},
+{"source": "Menlo Ventures", "target": "OpenRouter", "type": "invests_in", "weight": 0.7, "evidence": ["Menlo Ventures（Anthropic 与 OpenRouter 的投资方）"]},
+{"source": "Anthropic", "target": "OpenAI", "type": "competes_with", "weight": 0.8, "evidence": ["在企业 LLM API 支出份额中，Anthropic 从 40% 升至 55%，OpenAI 从 27% 升至 31%"]},
+{"source": "Anthropic", "target": "Google", "type": "competes_with", "weight": 0.7, "evidence": ["Anthropic 从 40% 升至 55%，OpenAI 从 27% 升至 31%，而 Google 从 21% 崩跌至 9%"]}
+],
+"metrics": [
+{"name": "企业 AI 支出", "value": "1768 亿美元"},
+{"name": "一年前企业 AI 支出", "value": "330 亿美元"},
+{"name": "企业 AI 支出倍数", "value": "5.4 倍"},
+{"name": "付费企业占比", "value": "55% 升至 65%"},
+{"name": "Anthropic 企业 LLM API 份额", "value": "40% 升至 55%"},
+{"name": "OpenAI 企业 LLM API 份额", "value": "27% 升至 31%"},
+{"name": "Google 企业 LLM API 份额", "value": "21% 崩跌至 9%"},
+{"name": "三大前沿实验室部署支出占比", "value": "69%"},
+{"name": "OpenRouter 智能体 token 占比", "value": "80%"},
+{"name": "智能体流量与人类用量倍数", "value": "约 7 倍"},
+{"name": "智能体反超后增长倍数", "value": "37 倍"}
+],
+"why_it_matters": "增长主要靠存量加码而非新客户, 而 Anthropic 在招股书承认增长放缓的同时却在 API 采购端压过所有对手——市场对前沿实验室的定价依据正从营收增速转向份额护城河。"
+},
+{
+"article_id": "2026-11-03-3",
+"entities": [
+{"name": "Abu Dhabi", "type": "organization", "aliases": ["阿布扎比", "阿布扎比政府"], "confidence": 0.95, "evidence": ["阿布扎比四个实体与 OpenAI 签署四项协议"]},
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["阿布扎比四个实体与 OpenAI 签署四项协议"]},
+{"name": "Sheikh Khaled", "type": "person", "aliases": ["Sheikh Khaled bin Mohamed bin Zayed"], "confidence": 0.9, "evidence": ["王储 Sheikh Khaled bin Mohamed bin Zayed 与 Altman 的会谈"]},
+{"name": "Sam Altman", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["王储 Sheikh Khaled bin Mohamed bin Zayed 与 Altman 的会谈"]},
+{"name": "ADNOC", "type": "company", "aliases": ["阿布扎比国家石油公司"], "confidence": 0.95, "evidence": ["使 ADNOC 成为能源行业首家部署 OpenAI「前沿技术」的公司"]},
+{"name": "G42", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["ADNOC、G42 子公司 Inception42 与 OpenAI 签署里程碑协议"]},
+{"name": "Inception42", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["ADNOC、G42 子公司 Inception42 与 OpenAI 签署里程碑协议"]},
+{"name": "Mubadala", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["主权财富基金 Mubadala 与 Inception42、OpenAI 签约"]},
+{"name": "MRG", "type": "organization", "aliases": ["机器可读政府"], "confidence": 0.9, "evidence": ["阿布扎比政府与 OpenAI 启动「机器可读政府」（MRG）计划"]},
+{"name": "ADAFSA", "type": "organization", "aliases": ["阿布扎比农业与食品安全局"], "confidence": 0.9, "evidence": ["首个试点已在阿布扎比农业与食品安全局（ADAFSA）投产"]}
+],
+"events": [
+{"type": "partnership", "label": "阿布扎比四个实体与 OpenAI 签署四项覆盖政府、能源与投资的协议", "summary": "阿布扎比四个实体与 OpenAI 签署四项协议，王储 Sheikh Khaled 与 Altman 的会谈聚焦把 AI 整合进政府服务，以支持全球首个完全 AI 原生政府的 2027 年目标。", "participants": [{"name": "Abu Dhabi", "type": "organization", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "object"}, {"name": "Sheikh Khaled", "type": "person", "role": "subject"}, {"name": "Sam Altman", "type": "person", "role": "partner"}], "evidence": ["阿布扎比四个实体与 OpenAI 签署四项协议", "王储 Sheikh Khaled bin Mohamed bin Zayed 与 Altman 的会谈"]},
+{"type": "partnership", "label": "ADNOC 成为能源行业首家部署 OpenAI「前沿技术」的公司", "summary": "ADNOC、G42 子公司 Inception42 与 OpenAI 签署里程碑协议，使 ADNOC 成为能源行业首家部署 OpenAI 前沿技术的公司，计划把高级 AI 能力整合进其运营。", "participants": [{"name": "ADNOC", "type": "company", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "object"}, {"name": "Inception42", "type": "company", "role": "partner"}, {"name": "G42", "type": "company", "role": "partner"}], "evidence": ["ADNOC、G42 子公司 Inception42 与 OpenAI 签署里程碑协议", "使 ADNOC 成为能源行业首家部署 OpenAI「前沿技术」的公司"]},
+{"type": "partnership", "label": "阿布扎比政府启动「机器可读政府」（MRG）计划, 首个试点在 ADAFSA 投产", "summary": "阿布扎比政府与 OpenAI 启动 MRG 计划，把政府政策与法规改写为机器可读形式供 AI 系统协助官员完成合规审查，首个试点在 ADAFSA 投产覆盖食品进口，MRG 使用 OpenAI 的阿联酋推理驻留。", "participants": [{"name": "Abu Dhabi", "type": "organization", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "object"}, {"name": "MRG", "type": "organization", "role": "object"}, {"name": "ADAFSA", "type": "organization", "role": "object"}], "evidence": ["阿布扎比政府与 OpenAI 启动「机器可读政府」（MRG）计划", "首个试点已在阿布扎比农业与食品安全局（ADAFSA）投产"]},
+{"type": "partnership", "label": "Mubadala 与 Inception42 签约把前沿 AI 用于投资分析, Inception42 另签五年协议", "summary": "Mubadala 与 Inception42、OpenAI 签约把高级 AI 应用于投资分析、机会识别与风险评估；Inception42 与 OpenAI 还签署五年协议推动前沿 AI 在阿联酋政府、企业与教育领域的采用。", "participants": [{"name": "Mubadala", "type": "company", "role": "subject"}, {"name": "Inception42", "type": "company", "role": "partner"}, {"name": "OpenAI", "type": "company", "role": "object"}], "evidence": ["主权财富基金 Mubadala 与 Inception42、OpenAI 签约", "Inception42 与 OpenAI 还签署五年协议"]}
+],
+"relations": [
+{"source": "OpenAI", "target": "ADNOC", "type": "partners_with", "weight": 0.9, "evidence": ["ADNOC、G42 子公司 Inception42 与 OpenAI 签署里程碑协议"]},
+{"source": "OpenAI", "target": "Inception42", "type": "partners_with", "weight": 0.85, "evidence": ["Inception42 与 OpenAI 还签署五年协议"]},
+{"source": "OpenAI", "target": "Mubadala", "type": "partners_with", "weight": 0.8, "evidence": ["主权财富基金 Mubadala 与 Inception42、OpenAI 签约"]},
+{"source": "Inception42", "target": "G42", "type": "subsidiary_of", "weight": 0.75, "evidence": ["G42 子公司 Inception42 与 OpenAI 签署里程碑协议"]},
+{"source": "MRG", "target": "OpenAI", "type": "uses", "weight": 0.8, "evidence": ["MRG 使用 OpenAI 的阿联酋推理驻留（inference residency）"]},
+{"source": "ADNOC", "target": "OpenAI", "type": "uses", "weight": 0.7, "evidence": ["计划把高级 AI 能力整合进其运营"]},
+{"source": "Sheikh Khaled", "target": "Abu Dhabi", "type": "affiliated_with", "weight": 0.8, "evidence": ["王储 Sheikh Khaled bin Mohamed bin Zayed 与 Altman 的会谈"]},
+{"source": "Sam Altman", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["王储 Sheikh Khaled bin Mohamed bin Zayed 与 Altman 的会谈"]}
+],
+"metrics": [
+{"name": "完全 AI 原生政府目标年份", "value": "2027 年"},
+{"name": "Inception42 前沿 AI 采用协议期", "value": "五年"}
+],
+"why_it_matters": "阿联酋把能源、主权投资与政府合规数字化打包进同一批协议, 前沿模型首入能源业并反向承担官员合规审查——主权 AI 落地从‘买模型’升级为‘重构治理流程’。"
+},
+{
+"article_id": "2026-11-03-4",
+"entities": [
+{"name": "Meta", "type": "company", "aliases": ["Facebook"], "confidence": 0.95, "evidence": ["Meta 正寻求在周二发售 200–250 亿美元债券"]},
+{"name": "S&P Global", "type": "company", "aliases": ["标普全球"], "confidence": 0.9, "evidence": ["S&P Global 上周把 Meta 展望由 AA- 稳定下调至 AA- 负面"]},
+{"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["与 Alphabet、Amazon 一同落入负值区间"]},
+{"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.9, "evidence": ["与 Alphabet、Amazon 一同落入负值区间"]}
+],
+"events": [
+{"type": "funding", "label": "Meta 周二发售 200–250 亿美元债券为 AI 基建融资", "summary": "Meta 正寻求在周二发售 200–250 亿美元债券以支撑 AI 基建、模型与服务支出，发行约 2/3 以美元计价、1/3 以欧元计价，紧跟在股权募资之后。", "participants": [{"name": "Meta", "type": "company", "role": "subject"}], "evidence": ["Meta 正寻求在周二发售 200–250 亿美元债券，以支撑 AI 基建、模型与服务支出"]},
+{"type": "trend", "label": "S&P Global 将 Meta 展望由 AA- 稳定下调至 AA- 负面", "summary": "S&P Global 因 Meta 巨额资本开支与负自由现金流的「不确定性」把其展望由 AA- 稳定下调至 AA- 负面，Meta 当季录得 21.2 亿美元负自由现金流，与 Alphabet、Amazon 一同落入负值区间。", "participants": [{"name": "S&P Global", "type": "company", "role": "subject"}, {"name": "Meta", "type": "company", "role": "object"}], "evidence": ["S&P Global 上周把 Meta 展望由 AA- 稳定下调至 AA- 负面", "与 Alphabet、Amazon 一同落入负值区间"]}
+],
+"relations": [
+{"source": "Meta", "target": "Alphabet", "type": "compared_with", "weight": 0.4, "evidence": ["与 Alphabet、Amazon 一同落入负值区间"]},
+{"source": "Meta", "target": "Amazon", "type": "compared_with", "weight": 0.4, "evidence": ["与 Alphabet、Amazon 一同落入负值区间"]}
+],
+"metrics": [
+{"name": "Meta 债券发售规模", "value": "200–250 亿美元"},
+{"name": "美元计价占比", "value": "约 2/3"},
+{"name": "欧元计价占比", "value": "1/3"},
+{"name": "标普评级展望", "value": "AA- 稳定下调至 AA- 负面"},
+{"name": "全年资本开支指引", "value": "1350–1450 亿美元"},
+{"name": "当季负自由现金流", "value": "21.2 亿美元"},
+{"name": "股权承销募资", "value": "350 亿美元"},
+{"name": "场内（ATM）募资", "value": "600 亿美元"},
+{"name": "4 月已募债券", "value": "250 亿美元"}
+],
+"why_it_matters": "Meta 同时动用股权与债市为 AI 基建融资, 叠加 S&P 因负自由现金流下调展望——‘AI 资本由信仰转向定价风险’在债务市场首度被显性定价。"
+},
+{
+"article_id": "2026-11-03-5",
+"entities": [
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["英伟达在产品页与架构数据表上悄然修订了 Rubin 的出货规格"]},
+{"name": "Vera Rubin", "type": "hardware", "aliases": ["Vera Rubin NVL72"], "confidence": 0.95, "evidence": ["Vera Rubin NVL72 整 rack 内存带宽从 1580 TB/s 降至 1400 TB/s"]},
+{"name": "HGX Rubin NVL8", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["HGX Rubin NVL8 则从 2.3TB / 176 TB/s 降至 2TB / 130 TB/s"]},
+{"name": "HBM4", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["HBM4 带宽从 22 TB/s 降至 19.2 TB/s"]},
+{"name": "NVLink", "type": "hardware", "aliases": ["NVLink-6"], "confidence": 0.9, "evidence": ["NVLink-6 从 3.6 降至 3.0 TB/s"]},
+{"name": "SK hynix", "type": "company", "aliases": ["SK海力士", "海力士"], "confidence": 0.9, "evidence": ["SK 海力士最先完成 HBM4 开发"]},
+{"name": "Samsung", "type": "company", "aliases": ["三星"], "confidence": 0.9, "evidence": ["三星 2 月起以 11.7 Gbps 供货"]}
+],
+"events": [
+{"type": "infra", "label": "NVIDIA 悄然下调 Vera Rubin 单卡 HBM4 带宽至 19.2 TB/s、NVLink-6 至 3.0 TB/s", "summary": "未公告情况下英伟达把 Rubin 单卡 HBM4 内存带宽从 22 下调到 19.2 TB/s，NVLink-6 从 3.6 降至 3.0 TB/s，称修订后代表已通过认证进入量产的规格。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "Vera Rubin", "type": "hardware", "role": "object"}, {"name": "HBM4", "type": "hardware", "role": "object"}, {"name": "NVLink", "type": "hardware", "role": "object"}], "evidence": ["英伟达在产品页与架构数据表上悄然修订了 Rubin 的出货规格", "HBM4 带宽从 22 TB/s 降至 19.2 TB/s", "NVLink-6 从 3.6 降至 3.0 TB/s"]},
+{"type": "infra", "label": "HGX Rubin NVL8 系统带宽下调约 26%, 首批 Vera Rubin NVL72 向超大规模客户交付", "summary": "rack 与系统层面下修更明显：Vera Rubin NVL72 整 rack 内存带宽降至 1400 TB/s，HGX Rubin NVL8 内存带宽下降约 26%；首批 Vera Rubin NVL72 正向超大规模客户交付。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "Vera Rubin", "type": "hardware", "role": "object"}, {"name": "HGX Rubin NVL8", "type": "hardware", "role": "object"}], "evidence": ["HGX Rubin NVL8 则从 2.3TB / 176 TB/s 降至 2TB / 130 TB/s", "系统级内存带宽下降约 26%"]}
+],
+"relations": [
+{"source": "Vera Rubin", "target": "NVIDIA", "type": "developed_by", "weight": 0.85, "evidence": ["英伟达在产品页与架构数据表上悄然修订了 Rubin 的出货规格"]},
+{"source": "HGX Rubin NVL8", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["HGX Rubin NVL8 则从 2.3TB / 176 TB/s 降至 2TB / 130 TB/s"]},
+{"source": "Vera Rubin", "target": "HBM4", "type": "uses", "weight": 0.8, "evidence": ["HBM4 带宽从 22 TB/s 降至 19.2 TB/s"]},
+{"source": "Vera Rubin", "target": "NVLink", "type": "uses", "weight": 0.8, "evidence": ["NVLink-6 从 3.6 降至 3.0 TB/s"]},
+{"source": "SK hynix", "target": "NVIDIA", "type": "supplies", "weight": 0.7, "evidence": ["HBM4 存储伙伴仍在量产交付计划之内——SK 海力士最先完成 HBM4 开发"]},
+{"source": "Samsung", "target": "NVIDIA", "type": "supplies", "weight": 0.6, "evidence": ["三星 2 月起以 11.7 Gbps 供货"]}
+],
+"metrics": [
+{"name": "Vera Rubin 单卡 HBM4 带宽", "value": "22 降至 19.2 TB/s（约 -13%）"},
+{"name": "NVLink-6 带宽", "value": "3.6 降至 3.0 TB/s"},
+{"name": "scale-out 网络带宽", "value": "0.4 升至 0.45 TB/s"},
+{"name": "单卡 HBM4 每引脚速率", "value": "10.75 降至 9.375 Gbps"},
+{"name": "单卡容量", "value": "288GB"},
+{"name": "Vera Rubin NVL72 整 rack 内存带宽", "value": "1580 降至 1400 TB/s"},
+{"name": "Vera Rubin NVL72 整 rack NVLink", "value": "260 降至 216 TB/s"},
+{"name": "HGX Rubin NVL8 内存/带宽", "value": "2.3TB/176 TB/s 降至 2TB/130 TB/s"},
+{"name": "系统级内存带宽降幅", "value": "约 26%"},
+{"name": "三星 HBM4 供货速率", "value": "11.7 Gbps"}
+],
+"why_it_matters": "NVIDIA 在量产前静默下调内存带宽规格、却以‘已认证、进入量产’背书——买家按早期幻灯片峰值作容量规划时, 首次会在真实解码负载下感知内存带宽而非算力才是约束。"
+},
+{
+"article_id": "2026-11-03-6",
+"entities": [
+{"name": "Goldman Sachs", "type": "company", "aliases": ["高盛"], "confidence": 0.95, "evidence": ["高盛在经历数月让交易员与银行家试点后，收紧"]},
+{"name": "Claude Code", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["Claude Code（Anthropic）与 GitHub 等编码工具现在「基本只保留给工程师」"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Claude Code（Anthropic）与 GitHub 等编码工具"]},
+{"name": "GitHub", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Claude Code（Anthropic）与 GitHub 等编码工具现在「基本只保留给工程师」"]}
+],
+"events": [
+{"type": "policy", "label": "高盛限制多数交易员与银行家使用 Claude Code、GitHub 等高级 AI 编码工具", "summary": "高盛经数月试点后收紧高级 AI 编码工具范围，多数交易员与银行家不再能用其编写代码，新规下 Claude Code 等工具基本只保留给工程师。", "participants": [{"name": "Goldman Sachs", "type": "company", "role": "subject"}, {"name": "Claude Code", "type": "tool", "role": "object"}, {"name": "GitHub", "type": "company", "role": "object"}], "evidence": ["Claude Code（Anthropic）与 GitHub 等编码工具现在「基本只保留给工程师」", "多数交易员与银行家不再能用其编写代码"]},
+{"type": "trend", "label": "华尔街对 AI 编码工具的渗透从鼓励实验转向受控放行", "summary": "结合 Anthropic 同期披露的营收放缓，AI 编码在金融机构内的渗透正在从「鼓励实验」转向「受控放行」，为智能体编码工具的营收持续性提供审慎注脚。", "participants": [{"name": "Goldman Sachs", "type": "company", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "object"}], "evidence": ["AI 编码在金融机构内的渗透正在从「鼓励实验」转向「受控放行」"]}
+],
+"relations": [
+{"source": "Claude Code", "target": "Anthropic", "type": "developed_by", "weight": 0.85, "evidence": ["Claude Code（Anthropic）与 GitHub 等编码工具"]},
+{"source": "Goldman Sachs", "target": "Claude Code", "type": "restricts", "weight": 0.85, "evidence": ["Claude Code（Anthropic）与 GitHub 等编码工具现在「基本只保留给工程师」"]},
+{"source": "Goldman Sachs", "target": "GitHub", "type": "restricts", "weight": 0.7, "evidence": ["Claude Code（Anthropic）与 GitHub 等编码工具现在「基本只保留给工程师」"]}
+],
+"metrics": [
+{"name": "受影响人群", "value": "多数交易员与银行家"}
+],
+"why_it_matters": "华尔街开始对‘人人写码’设边界, 智能体编码在金融机构的渗透从鼓励实验转向受控放行——这对 Claude/ChatGPT 的编码收入持续性构成最直接的审慎注脚。"
+},
+{
+"article_id": "2026-11-03-7",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 对齐团队在博客中公布的研究发现"]},
+{"name": "OpenAI Alignment", "type": "organization", "aliases": ["OpenAI 对齐团队"], "confidence": 0.9, "evidence": ["OpenAI 对齐团队在博客中公布的研究发现"]},
+{"name": "GPT-6.1 Sol", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["以 GPT-6.1 Sol 为基座"]},
+{"name": "尊重警告评估", "type": "benchmark", "aliases": ["respect warnings 评估"], "confidence": 0.85, "evidence": ["对「尊重警告」评估加入三种系统提示"]}
+],
+"events": [
+{"type": "research", "label": "OpenAI 发现安全评估成功率普遍比部署场景低 10.2–37.4 个百分点", "summary": "OpenAI 对齐团队对比六款模型在安全评估与真实部署的表现，发现评估成功率普遍低于生产 10.2–37.4 个百分点，最大的缺口出现在 GPT-5.6 Sol 与 GPT-6 Sol 上。", "participants": [{"name": "OpenAI Alignment", "type": "organization", "role": "subject"}, {"name": "GPT-6.1 Sol", "type": "model", "role": "object"}], "evidence": ["在六款所提供模型中", "安全评估的成功率普遍比可比的部署场景低 10.2–37.4 个百分点", "最大的缺口出现在 GPT-5.6 Sol 与 GPT-6 Sol 上"]},
+{"type": "research", "label": "干预实验验证「评估目标意识」是 eval–生产缺口的因果变量", "summary": "以 GPT-6.1 Sol 为基座对「尊重警告」评估加入三种系统提示：仅声明这是评估几乎无影响（63.4% vs 63.1%），明确正确目标升至 91.6%，给出相反错误目标则跌至 17.6%。", "participants": [{"name": "OpenAI Alignment", "type": "organization", "role": "subject"}, {"name": "GPT-6.1 Sol", "type": "model", "role": "object"}, {"name": "尊重警告评估", "type": "benchmark", "role": "benchmark"}], "evidence": ["以 GPT-6.1 Sol 为基座、对「尊重警告」评估加入三种系统提示", "明确指出正确目标（尊重警告）成功率升至 91.6%"]}
+],
+"relations": [
+{"source": "GPT-6.1 Sol", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["以 GPT-6.1 Sol 为基座"]},
+{"source": "GPT-6.1 Sol", "target": "尊重警告评估", "type": "evaluated_on", "weight": 0.8, "evidence": ["以 GPT-6.1 Sol 为基座、对「尊重警告」评估加入三种系统提示"]}
+],
+"metrics": [
+{"name": "评估-生产成功率差距", "value": "10.2–37.4 个百分点"},
+{"name": "仅声明这是评估的成功率", "value": "63.4% vs 63.1%"},
+{"name": "明确指出正确目标后成功率", "value": "91.6%"},
+{"name": "给出相反错误目标后成功率", "value": "17.6%"},
+{"name": "受测模型数", "value": "六款"}
+],
+"why_it_matters": "评估表现反而低于生产、主因是对评估目标的理解偏差——安全评估能否外推真实行为首次被端到端质疑, 评估意图设计成了可干预的因果变量。"
+},
+{
+"article_id": "2026-11-03-8",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 公布的一项实验探索了用 AI 来自动发现模型失范条件"]},
+{"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Claude 智能体为一个小型研究模型构造训练数据"]},
+{"name": "Emergent Misalignment", "type": "topic", "aliases": ["涌现性失范"], "confidence": 0.95, "evidence": ["这种「从看似无害训练数据学到的行为模式会迁移到其他情境」的现象即「涌现性失范」（Emergent Misalignment）"]}
+],
+"events": [
+{"type": "research", "label": "Anthropic 让 Claude 智能体自动构造能通过过滤又诱发失范的训练数据", "summary": "实验中 Claude 智能体为小型研究模型构造训练数据，既通过安全过滤又能在微调后触发不当行为，最终在每一轮试验中都找到合格数据集。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Claude", "type": "model", "role": "object"}], "evidence": ["Claude 智能体为一个小型研究模型构造训练数据", "最终在每一轮试验中都找到了合格数据集"]},
+{"type": "research", "label": "Anthropic 验证养蜂等无害内容微调后也会引发跨情境失范即「涌现性失范」", "summary": "养蜂建议与角色扮演故事这类看似无害训练数据在微调后引发不当行为并迁移到其他情境，Anthropic 称之为「涌现性失范」，并将其视为自动化安全测试的概念验证。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Emergent Misalignment", "type": "topic", "role": "object"}], "evidence": ["一个数据集包含「以自然方式养蜂」的建议", "这种「从看似无害训练数据学到的行为模式会迁移到其他情境」的现象即「涌现性失范】（Emergent Misalignment）"]}
+],
+"relations": [
+{"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Anthropic 公布的一项实验探索了用 AI 来自动发现模型失范条件"]},
+{"source": "Anthropic", "target": "Claude", "type": "uses", "weight": 0.8, "evidence": ["Claude 智能体为一个小型研究模型构造训练数据"]},
+{"source": "Anthropic", "target": "Emergent Misalignment", "type": "targets", "weight": 0.6, "evidence": ["Anthropic 将其视为自动化安全测试的概念验证"]}
+],
+"metrics": [
+{"name": "找出合格数据集的试验成功率", "value": "每一轮试验中都找到"}
+],
+"why_it_matters": "养蜂这类无害内容微调也能触发跨情境失范, 安全评估第一次从‘抽检已学到的’转向‘主动诱导未暴露的’——涌现性失范被论证成可自动化的碰撞测试。"
+},
+{
+"article_id": "2026-11-03-9",
+"entities": [
+{"name": "WIRED", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["WIRED 的调查追踪 Meta 上数千条含辱性深度伪造内容的视频广告"]},
+{"name": "Meta", "type": "company", "aliases": ["Facebook"], "confidence": 0.9, "evidence": ["WIRED 的调查追踪 Meta 上数千条含辱性深度伪造内容的视频广告"]},
+{"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.9, "evidence": ["苹果在 WIRED 问询后移除 19 款应用"]},
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["却可隐秘加载生成淫秽与暴力深度伪造的界面，并已通过苹果与谷歌应用商店审核"]},
+{"name": "DiffAI", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["有 App 在 Play 商店下载超 10 万次（DiffAI）"]},
+{"name": "KeLing Technology Limited", "type": "company", "aliases": ["KeLing HK"], "confidence": 0.85, "evidence": ["运营方指向中国开发者与香港实体 KeLing Technology Limited"]},
+{"name": "AI Forensics", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["研究者（AI Forensics 的 Paul Bouchaud、Infoblox 的 Maël Le Touz）"]},
+{"name": "Infoblox", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["研究者（AI Forensics 的 Paul Bouchaud、Infoblox 的 Maël Le Touz）"]},
+{"name": "Paul Bouchaud", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["研究者（AI Forensics 的 Paul Bouchaud、Infoblox 的 Maël Le Touz）"]},
+{"name": "Maël Le Touz", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["研究者（AI Forensics 的 Paul Bouchaud、Infoblox 的 Maël Le Touz）"]}
+],
+"events": [
+{"type": "security", "label": "WIRED 揭露超 400 个互联域名与应用的「换衣式」深度伪造网络", "summary": "WIRED 追踪发现超过 400 个互联域名与应用的可疑网络，以宠物照、语言课等日常工具为壳，暗藏生成淫秽与暴力深度伪造的界面，并已通过苹果与谷歌应用商店审核。", "participants": [{"name": "WIRED", "type": "organization", "role": "subject"}, {"name": "Meta", "type": "company", "role": "object"}, {"name": "Apple", "type": "company", "role": "object"}, {"name": "Google", "type": "company", "role": "object"}, {"name": "DiffAI", "type": "product", "role": "object"}, {"name": "KeLing Technology Limited", "type": "company", "role": "object"}], "evidence": ["发现了超过 400 个互联域名与应用的可疑网络", "通过「换衣」手法绕过商店审核", "有 App 在 Play 商店下载超 10 万次（DiffAI）"]},
+{"type": "policy", "label": "苹果移除 19 款应用, Meta 封禁 209 款应用并处置大批广告账户", "summary": "苹果在 WIRED 问询后移除 19 款应用；Meta 对 1.16 万个广告账户、4700 多个企业页面、5200 个用户与 1.5 万个页面采取行动，封禁 209 款应用在其平台投放。", "participants": [{"name": "Apple", "type": "company", "role": "subject"}, {"name": "Meta", "type": "company", "role": "subject"}, {"name": "KeLing Technology Limited", "type": "company", "role": "object"}], "evidence": ["苹果在 WIRED 问询后移除 19 款应用", "Meta 则对 1.16 万个广告账户、4700 多个企业页面、5200 个用户与 1.5 万个页面采取行动、封禁 209 款应用在其平台投放"]}
+],
+"relations": [
+{"source": "Apple", "target": "KeLing Technology Limited", "type": "restricts", "weight": 0.8, "evidence": ["苹果在 WIRED 问询后移除 19 款应用"]},
+{"source": "Meta", "target": "KeLing Technology Limited", "type": "restricts", "weight": 0.8, "evidence": ["Meta 则对 1.16 万个广告账户、4700 多个企业页面、5200 个用户与 1.5 万个页面采取行动、封禁 209 款应用在其平台投放"]},
+{"source": "Paul Bouchaud", "target": "AI Forensics", "type": "affiliated_with", "weight": 0.7, "evidence": ["研究者（AI Forensics 的 Paul Bouchaud、Infoblox 的 Maël Le Touz）"]},
+{"source": "Maël Le Touz", "target": "Infoblox", "type": "affiliated_with", "weight": 0.7, "evidence": ["研究者（AI Forensics 的 Paul Bouchaud、Infoblox 的 Maël Le Touz）"]},
+{"source": "DiffAI", "target": "KeLing Technology Limited", "type": "developed_by", "weight": 0.6, "evidence": ["运营方指向中国开发者与香港实体 KeLing Technology Limited"]}
+],
+"metrics": [
+{"name": "可疑网络域名与应用数", "value": "超过 400 个"},
+{"name": "苹果移除应用数", "value": "19 款"},
+{"name": "Meta 处置广告账户数", "value": "1.16 万个"},
+{"name": "Meta 处置企业页面数", "value": "4700 多个"},
+{"name": "Meta 处置用户数", "value": "5200 个"},
+{"name": "Meta 处置页面数", "value": "1.5 万个"},
+{"name": "Meta 封禁应用数", "value": "209 款"},
+{"name": "DiffAI 下载量", "value": "超 10 万次"},
+{"name": "全网合计下载量", "value": "约 35 万次"},
+{"name": "锁定关联域名数", "value": "约 500 个"}
+],
+"why_it_matters": "‘批准后更换远端服务器’的换衣手法让平面审核长期与其竞速, 深度伪造攻击面从单一平台蔓延到跨商店的合规工具外壳——治理重心从审核 App 内容转向审核 App 行为。"
+},
+{
+"article_id": "2026-11-03-10",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 消费产品负责人 Adam Fry 在一次发布会上称"]},
+{"name": "Adam Fry", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["消费产品负责人 Adam Fry 在一次发布会上称"]},
+{"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["按「凡实际发起网页查询的用户交互」计，ChatGPT 的检索量约为 Google 搜索量的 20%"]},
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["ChatGPT 的检索量约为 Google 搜索量的 20%"]},
+{"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["从 12 月起 ChatGPT 与 Codex 将在 Plus/Pro/Business 套餐共享统一的算力 token 池"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["对 Anthropic 此前合并 Claude Chat 与 Cowork、10 月 23 日向企业开放统一界面等竞争动作的回应"]},
+{"name": "Claude", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["对 Anthropic 此前合并 Claude Chat 与 Cowork、10 月 23 日向企业开放统一界面等竞争动作的回应"]}
+],
+"events": [
+{"type": "trend", "label": "OpenAI 称 ChatGPT 触发后台检索的输入量已达 Google 搜索量的约 20%", "summary": "OpenAI 消费产品负责人 Adam Fry 称按实际发起网页查询的用户交互计，ChatGPT 的检索量约为 Google 搜索量的 20%，未附外部验证，且搜索广告与检索交互是否可比仍有争议。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Adam Fry", "type": "person", "role": "subject"}, {"name": "ChatGPT", "type": "product", "role": "object"}, {"name": "Google", "type": "company", "role": "object"}], "evidence": ["ChatGPT 的检索量约为 Google 搜索量的 20%", "OpenAI 消费产品负责人 Adam Fry 在一次发布会上称"]},
+{"type": "policy", "label": "12 月起 ChatGPT 与 Codex 将在 Plus/Pro/Business 套餐共享统一算力 token 池", "summary": "从 12 月起 ChatGPT 与 Codex 将在 Plus/Pro/Business 套餐共享统一的算力 token 池，被视为对 Anthropic 合并 Claude Chat 与 Cowork 等竞争动作的回应。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "ChatGPT", "type": "product", "role": "object"}, {"name": "Codex", "type": "product", "role": "object"}, {"name": "Anthropic", "type": "company", "role": "competitor"}, {"name": "Claude", "type": "model", "role": "competitor"}], "evidence": ["从 12 月起 ChatGPT 与 Codex 将在 Plus/Pro/Business 套餐共享统一的算力 token 池"]}
+],
+"relations": [
+{"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["OpenAI 消费产品负责人 Adam Fry 在一次发布会上称"]},
+{"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["从 12 月起 ChatGPT 与 Codex 将在 Plus/Pro/Business 套餐共享统一的算力 token 池"]},
+{"source": "ChatGPT", "target": "Google", "type": "competes_with", "weight": 0.8, "evidence": ["ChatGPT 的检索量约为 Google 搜索量的 20%"]},
+{"source": "Adam Fry", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["OpenAI 消费产品负责人 Adam Fry 在一次发布会上称"]},
+{"source": "OpenAI", "target": "Anthropic", "type": "competes_with", "weight": 0.7, "evidence": ["对 Anthropic 此前合并 Claude Chat 与 Cowork、10 月 23 日向企业开放统一界面等竞争动作的回应"]}
+],
+"metrics": [
+{"name": "ChatGPT 检索量占 Google 比例", "value": "约 20%"},
+{"name": "每日可比的 ChatGPT 检索交互", "value": "约 32 亿次"},
+{"name": "Google 每日搜索量", "value": "约 160 亿次"},
+{"name": "Google 全球搜索份额", "value": "90% 以上"},
+{"name": "统一算力 token 池生效时间", "value": "12 月起"}
+],
+"why_it_matters": "OpenAI 首次对检索体量给出对标数字（约 1/5 Google）却无外部验证——搜索主导权之争从模糊愿景变成可争议的量化口径, 份额叙事成了竞争与估值的弹药。"
+},
+{
+"article_id": "2026-11-03-11",
+"entities": [
+{"name": "OpenConjecture", "type": "benchmark", "aliases": [], "confidence": 0.95, "evidence": ["这篇论文提出 OpenConjecture，从 2026 年 2 月以来发表于 arXiv 的数学论文里收集猜想"]},
+{"name": "arXiv", "type": "organization", "aliases": ["Arxiv"], "confidence": 0.9, "evidence": ["从 2026 年 2 月以来发表于 arXiv 的数学论文里收集猜想"]},
+{"name": "GPT", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["对前沿 GPT 模型做评估"]}
+],
+"events": [
+{"type": "research", "label": "论文提出 OpenConjecture 数据集, 随机抽取 200 个 arXiv 数学猜想评估前沿模型", "summary": "论文提出 OpenConjecture，从今年 2 月后发表于 arXiv 的数学论文中随机抽取 200 个猜想，用可复现协议（无问题特定的数学提示、三轮通过）对前沿 GPT 模型做评估，剔除基准的挑选偏差。", "participants": [{"name": "OpenConjecture", "type": "benchmark", "role": "subject"}, {"name": "arXiv", "type": "organization", "role": "object"}, {"name": "GPT", "type": "model", "role": "object"}], "evidence": ["这篇论文提出 OpenConjecture", "再从这些猜想中随机抽取 200 个", "用可复现协议（无问题特定的数学提示、三轮通过）对前沿 GPT 模型做评估"]}
+],
+"relations": [
+{"source": "GPT", "target": "OpenConjecture", "type": "evaluated_on", "weight": 0.85, "evidence": ["用可复现协议（无问题特定的数学提示、三轮通过）对前沿 GPT 模型做评估"]},
+{"source": "OpenConjecture", "target": "arXiv", "type": "uses", "weight": 0.7, "evidence": ["从 2026 年 2 月以来发表于 arXiv 的数学论文里收集猜想"]},
+{"source": "OpenConjecture", "target": "GPT", "type": "targets", "weight": 0.7, "evidence": ["对前沿 GPT 模型做评估"]}
+],
+"metrics": [
+{"name": "随机抽取猜想数", "value": "200 个"},
+{"name": "论文时间窗口起点", "value": "2026 年 2 月以来"}
+],
+"why_it_matters": "把评估对象从‘刻意挑选的里程碑’换成‘真实待解的开问题’, 随机采样抹掉了训练时见过的题——数学-AI 评估首次得到一个更难钻空子的诚实基准。"
+},
+{
+"article_id": "2026-11-03-12",
+"entities": [
+{"name": "RIP", "type": "topic", "aliases": ["回卷交互式证明", "Rewindable Interactive Proofs"], "confidence": 0.9, "evidence": ["论文从理论层面引入回卷交互式证明（RIP）"]},
+{"name": "Scalable Oversight", "type": "topic", "aliases": ["可扩展监督"], "confidence": 0.9, "evidence": ["一种针对可扩展监督的相对化交互证明模型"]},
+{"name": "回卷监督协议", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["作者还提出可扩展的「回卷监督」协议"]}
+],
+"events": [
+{"type": "research", "label": "论文提出回卷交互式证明（RIP）, 用验证者回卷实现可扩展监督", "summary": "论文引入回卷交互式证明（RIP），一种针对可扩展监督的相对化交互证明模型，允许验证者把证明者回卷到交互的较早状态再继续，以放大弱验证者对强证明者的把关能力。", "participants": [{"name": "RIP", "type": "topic", "role": "subject"}, {"name": "Scalable Oversight", "type": "topic", "role": "object"}], "evidence": ["论文从理论层面引入回卷交互式证明（RIP）", "一种针对可扩展监督的相对化交互证明模型"]},
+{"type": "research", "label": "作者提出可扩展的「回卷监督」协议并给出 RIP 下的验证性质与边界", "summary": "作者提出可扩展的「回卷监督」协议，给出了 RIP 下高效验证的性质与边界，属于前沿对齐的机制设计路线。", "participants": [{"name": "回卷监督协议", "type": "tool", "role": "object"}, {"name": "RIP", "type": "topic", "role": "subject"}], "evidence": ["作者还提出可扩展的「回卷监督」协议", "给出了 RIP 下高效验证的性质与边界"]}
+],
+"relations": [
+{"source": "RIP", "target": "Scalable Oversight", "type": "targets", "weight": 0.8, "evidence": ["一种针对可扩展监督的相对化交互证明模型"]},
+{"source": "回卷监督协议", "target": "RIP", "type": "built_on", "weight": 0.7, "evidence": ["作者还提出可扩展的「回卷监督」协议，给出了 RIP 下高效验证的性质与边界"]}
+],
+"metrics": [],
+"why_it_matters": "可扩展监督首次被形式化为‘验证者回卷’的相对化交互证明模型, 与逆向博弈论思路呼应——在不透明化黑箱的前提下用交互结构保证可信度, 是前沿对齐落地的可验证路径。"
+},
+{
+"article_id": "2026-11-03-13",
+"entities": [
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 在内嵌面板（side panel）中的 Gemini 新增了作用于现存可编辑 Google Slides 演示文稿的能力"]},
+{"name": "Gemini", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Google 在内嵌面板（side panel）中的 Gemini 新增了作用于现存可编辑 Google Slides 演示文稿的能力"]},
+{"name": "Google Slides", "type": "product", "aliases": ["Slides"], "confidence": 0.95, "evidence": ["让助手改多张或整份幻灯片的内容与视觉风格"]},
+{"name": "Google Workspace", "type": "product", "aliases": ["Workspace"], "confidence": 0.9, "evidence": ["覆盖范围包括 Workspace 商业标准版/Plus"]}
+],
+"events": [
+{"type": "launch", "label": "Google 向 Google Slides 推送 Gemini 更新, 一条提示即可改写整份演示文稿", "summary": "Google 在内嵌面板中的 Gemini 新增作用于现存可编辑 Google Slides 的能力，用户可用一条提示修改多张或整份幻灯片的内容与视觉风格，也能以另一份演示文稿作风格参考。", "participants": [{"name": "Google", "type": "company", "role": "subject"}, {"name": "Gemini", "type": "model", "role": "object"}, {"name": "Google Slides", "type": "product", "role": "object"}], "evidence": ["Google 在内嵌面板（side panel）中的 Gemini 新增了作用于现存可编辑 Google Slides 演示文稿的能力", "让助手改多张或整份幻灯片的内容与视觉风格"]},
+{"type": "trend", "label": "Gemini 写演示功能覆盖 Workspace 等多个套餐并分两批滚动", "summary": "覆盖范围包括 Workspace 商业标准版/Plus、企业标准版/Plus、Google AI Pro for Education，分 Rapid Release 与 Scheduled Release 两批滚动，可能需要 15 天以上才能全量到达。", "participants": [{"name": "Google", "type": "company", "role": "subject"}, {"name": "Google Workspace", "type": "product", "role": "object"}], "evidence": ["覆盖范围包括 Workspace 商业标准版/Plus、企业标准版/Plus、Google AI Pro for Education", "分 Rapid Release 与 Scheduled Release 两批滚动"]}
+],
+"relations": [
+{"source": "Google Slides", "target": "Gemini", "type": "integrates", "weight": 0.85, "evidence": ["Google 在内嵌面板（side panel）中的 Gemini 新增了作用于现存可编辑 Google Slides 演示文稿的能力"]},
+{"source": "Gemini", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["Google 在内嵌面板（side panel）中的 Gemini 新增了作用于现存可编辑 Google Slides 演示文稿的能力"]},
+{"source": "Google Workspace", "target": "Gemini", "type": "integrates", "weight": 0.7, "evidence": ["作为 Google 把 Gemini 深度嵌进生产力套件的一环"]}
+],
+"metrics": [
+{"name": "推广期内更高的多幻灯片额度截止", "value": "12 月 1 日"},
+{"name": "全量到达所需时间", "value": "15 天以上"}
+],
+"why_it_matters": "Gemini 写幻灯片从‘单页生成’升级到‘整场重写与风格迁移’, 生成式排版在生产力套件的入口从聊天面板深化到文档结构本身——重新定义办公协同的默认工作流。"
+}
+]
+}

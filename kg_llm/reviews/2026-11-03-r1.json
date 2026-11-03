@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-03",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "主体覆盖与数值抽取总体扎实，但存在两处事实性错误/无据关系（DiffAI 被标为 Google 发布、RIP replaces 回卷监督协议与原文矛盾），另有多处证据无法支撑的关系（OpenRouter uses Anthropic、Meta 凭负现金流并列剽窃 competes_with）。",
+  "findings": [
+    {
+      "article_id": "2026-11-03-9",
+      "severity": "high",
+      "problem": "关系 \"DiffAI --released_by--> Google\"（weight 0.5）是事实错误：DiffAI 是伪装深度伪造的恶意 App，仅通过 Google Play 商店分发，并非 Google 发布的产品，release_by 主语对象颠倒且归属错误。",
+      "fix": "删除 \"DiffAI --released_by--> Google\"，改为 \"DiffAI --distributed_via--> Google Play\"（若关系类型库支持）或直接删除该关系；DiffAI 的运营归属是 KeLing Technology Limited，可据此建 \"KeLing Technology Limited --develops--> DiffAI\"（原文证据：运营方指向香港实体 KeLing Technology Limited）。"
+    },
+    {
+      "article_id": "2026-11-03-12",
+      "severity": "high",
+      "problem": "关系 \"RIP --replaces--> 回卷监督协议\"（weight 0.5）在原文中完全不存在：原文说作者同时提出「回卷监督」协议、该协议是建立在 RIP 之下的验证方法，RIP 是理论模型、协议是应用，二者不是替换关系，且与同图已有关系 \"回卷监督协议 --built_on--> RIP\" 自相矛盾。",
+      "fix": "删除 \"RIP --replaces--> 回卷监督协议\" 这条无据关系；保留 \"回卷监督协议 --built_on--> RIP\" 即可，不要制造原文没有的替换语义。"
+    },
+    {
+      "article_id": "2026-11-03-12",
+      "severity": "medium",
+      "problem": "实体 RIP 的 type 标为 \"paper\"，但 RIP（Rewindable Interactive Proofs）是论文提出的方法论/证明模型，不是论文这一载体；与同文已把「尊重警告评估」等抽象物正确标注相比，类型失配。",
+      "fix": "将 RIP 的 type 从 \"paper\" 改为 \"topic\"（与 Scalable Oversight、Emergent Misalignment 等一致），或用能表达「证明模型/概念」的类型；仅当实体确指论文本身时才用 paper。"
+    },
+    {
+      "article_id": "2026-11-03-2",
+      "severity": "medium",
+      "problem": "关系 \"OpenRouter --uses--> Anthropic\"（weight 0.5）证据不足：引用的原文「在 OpenRouter 上智能体贡献 80% 的 token」只说明 token 流量构成，完全未说 OpenRouter 在使用 Anthropic 的模型；该边由图注写死无出处。",
+      "fix": "删除 \"OpenRouter --uses--> Anthropic\"；若确实需要连通 OpenRouter 与 Anthropic，需找原文中「OpenRouter 汇集中含 Anthropic 模型」的直接证据，否则留白。"
+    },
+    {
+      "article_id": "2026-11-03-4",
+      "severity": "medium",
+      "problem": "关系 \"Meta --competes_with--> Alphabet\"、\"Meta --competes_with--> Amazon\"（均 weight 0.5）的 evidence 是「三者一同落入负自由现金流区间」，这只是财务指标的并列，原文没有以竞争者关系表述三者，证据无法支撑 competes_with。",
+      "fix": "删除或降权这两条，并换用能支撑竞争语义的证据（如原文若提及 Meta 与 Alphabet/Amazon 在 AI 广告/基建上正面竞争）；仅凭负现金流并列不得建 competes_with 关系。"
+    }
+  ],
+  "lessons": [
+    "不要把分发渠道当作发布主体：恶意或第三方 App 经应用商店传播时归属到开发者，不能用 released_by 指向商店实体，商店关系应记 distributed_via / 上架于。",
+    "同一来源同时给出上下位或构建关系（A built_on B）时，不要再额外加一条 replaces 反向关系；没有原文明示的替换语义一律不写 replaces。",
+    "财务指标并列（同处负现金流、同涨同跌、相同市场份额）不构成竞争证据，competes_with 需要原文以竞争对手身份表述双方。"
+  ]
+}
