@@ -1,0 +1,384 @@
+{
+"date": "2026-11-04",
+"articles": [
+{
+"article_id": "2026-11-04-0",
+"entities": [
+{"name": "SpaceX", "type": "company", "aliases": ["Spacex"], "confidence": 0.97, "evidence": ["SpaceX要做全球最大的AI云"]},
+{"name": "Elon Musk", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["市场普遍质疑Elon Musk“2027年建10GW”的说法"]},
+{"name": "Semianalysis", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["现在Semianalysis的产业模型显示已有3.6GW在多个场地同时开建"]},
+{"name": "TVA", "type": "organization", "aliases": ["美国田纳西流域管理局"], "confidence": 0.9, "evidence": ["TVA已受理Macrohard（700MW）与MiniHard（450MW）的供电申请"]},
+{"name": "FTAI", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["包括FTAI、Solaris等协议"]},
+{"name": "Tesla", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["SpaceX与Tesla在工业制造上的协同"]},
+{"name": "TeraFab", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["报告判断TeraFab的数据中心很可能是面向第三方出租"]},
+{"name": "Starbase", "type": "infrastructure", "aliases": ["星舰发射及制造基地"], "confidence": 0.85, "evidence": ["Starbase（星舰发射及制造基地）从8月底清地到9月底立起钢结构"]},
+{"name": "Colossus 2", "type": "infrastructure", "aliases": [], "confidence": 0.85, "evidence": ["Colossus 2则新建“Project SPAM”厂房"]},
+{"name": "BESS", "type": "hardware", "aliases": ["电池储能系统"], "confidence": 0.85, "evidence": ["Colossus 2正在安装全球最大的电池储能系统（BESS，已有5.9GWh落地）"]}
+],
+"events": [
+{"type": "research", "label": "Semianalysis 产业模型显示 SpaceX 已有 3.6GW 在建、2027 年预计规模上调至约 13GW", "summary": "Semianalysis 产业模型显示已有 3.6GW 在多个场地同时开建，预估数字被上调到 2027 年约 13GW，并识别出 9GW 以上的明确容量，称 SpaceX 正成为全球最快的数据中心建设方。", "participants": [{"name": "Semianalysis", "type": "organization", "role": "subject"}, {"name": "SpaceX", "type": "company", "role": "object"}], "evidence": ["现在Semianalysis的产业模型显示已有3.6GW在多个场地同时开建，预估数字被上调到2027年约13GW", "报告已识别出9GW以上的明确容量"]},
+{"type": "infra", "label": "SpaceX 在 Starbase 与 Colossus 2 铺开建设并接入 TVA 电网，Colossus 2 安装全球最大 BESS", "summary": "Starbase 从 8 月底清地到 9 月底立起钢结构，Colossus 2 新建 Project SPAM 厂房；供电侧 SpaceX 至少有 8GW 表后自发电部署、Colossus 2 正在安装全球最大 BESS（5.9GWh），TVA 已受理两份供电申请。", "participants": [{"name": "SpaceX", "type": "company", "role": "subject"}, {"name": "Starbase", "type": "infrastructure", "role": "object"}, {"name": "Colossus 2", "type": "infrastructure", "role": "object"}, {"name": "TVA", "type": "organization", "role": "partner"}, {"name": "BESS", "type": "hardware", "role": "object"}], "evidence": ["Starbase（星舰发射及制造基地）从8月底清地到9月底立起钢结构", "Colossus 2正在安装全球最大的电池储能系统（BESS，已有5.9GWh落地）", "TVA已受理Macrohard（700MW）与MiniHard（450MW）的供电申请"]},
+{"type": "trend", "label": "TeraFab 芯片厂项目被报告判断实为数据中心且可能面向第三方出租", "summary": "号称 10GW+、1 亿平方英尺的 TeraFab 项目最初以数据中心立项，SpaceX 代表视频确认该场地会承载算力，报告判断其数据中心很可能是面向第三方出租。", "participants": [{"name": "SpaceX", "type": "company", "role": "subject"}, {"name": "TeraFab", "type": "company", "role": "object"}], "evidence": ["这个号称10GW+、1亿平方英尺的芯片厂项目最初其实是以数据中心立项", "报告判断TeraFab的数据中心很可能是面向第三方出租"]}
+],
+"relations": [
+{"source": "Elon Musk", "target": "SpaceX", "type": "affiliated_with", "weight": 0.6, "evidence": ["市场普遍质疑Elon Musk“2027年建10GW”的说法"]},
+{"source": "TVA", "target": "SpaceX", "type": "supplies", "weight": 0.6, "evidence": ["TVA已受理Macrohard（700MW）与MiniHard（450MW）的供电申请"]},
+{"source": "SpaceX", "target": "FTAI", "type": "partners_with", "weight": 0.5, "evidence": ["包括FTAI、Solaris等协议"]},
+{"source": "SpaceX", "target": "Tesla", "type": "partners_with", "weight": 0.6, "evidence": ["SpaceX与Tesla在工业制造上的协同"]},
+{"source": "Colossus 2", "target": "BESS", "type": "uses", "weight": 0.5, "evidence": ["Colossus 2正在安装全球最大的电池储能系统（BESS，已有5.9GWh落地）"]}
+],
+"metrics": [
+{"name": "2027 年预估算力规模", "value": "约 13GW"},
+{"name": "多场地同时开建容量", "value": "3.6GW"},
+{"name": "已识别的明确容量", "value": "9GW 以上"},
+{"name": "表后自发电部署", "value": "8GW 以上"},
+{"name": "BESS 已落地容量", "value": "5.9GWh"},
+{"name": "TVA 受理供电申请", "value": "Macrohard 700MW 与 MiniHard 450MW"},
+{"name": "TeraFab 芯片厂规模", "value": "10GW+、1 亿平方英尺"},
+{"name": "SpaceX 现有建厂纪录", "value": "91 天"},
+{"name": "Colossus 2 建厂目标", "value": "刷新 91 天纪录（10 月 5 日开工、目标 12 月首笔算力上线）"}
+],
+"why_it_matters": "把「2027 年 10GW」从口号翻成 3.6GW 在建、13GW 预估的产业模型，火箭公司正以复用制造资产的路径刷新数据中心速度上限，TeraFab 若真对外出租将让 SpaceX 同时成为云算力批发商。"
+},
+{
+"article_id": "2026-11-04-1",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI公布ChatGPT周活用户达12亿"]},
+{"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["在周一的发布会上，OpenAI公布ChatGPT周活用户达12亿（两个月内从10亿增长）"]},
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["称其量级已达到Google的约20%"]},
+{"name": "Adam Fry", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI消费产品负责人Adam Fry称ChatGPT的“类搜索查询”量已达Google的两成"]}
+],
+"events": [
+{"type": "trend", "label": "OpenAI 公布 ChatGPT 周活用户达 12 亿，两个月内从 10 亿增长", "summary": "在周一发布会上 OpenAI 公布 ChatGPT 周活用户达 12 亿（两个月内从 10 亿增长），其中每月新增约 1 亿，语音周活约 2.5 亿。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "ChatGPT", "type": "product", "role": "object"}], "evidence": ["在周一的发布会上，OpenAI公布ChatGPT周活用户达12亿（两个月内从10亿增长）"]},
+{"type": "benchmark", "label": "ChatGPT 类搜索查询量达到 Google 约 20%，被 OpenAI 归入搜索品类", "summary": "OpenAI 把「任何触发联网搜索的查询」定义为搜索，称 ChatGPT 的类搜索量级已达到 Google 的约 20%，但该数字出自自家口径、与 Google 官方份额不可直接对比。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "ChatGPT", "type": "product", "role": "object"}, {"name": "Google", "type": "company", "role": "competitor"}], "evidence": ["公司把“任何触发联网搜索的查询”定义为搜索，称其量级已达到Google的约20%"]}
+],
+"relations": [
+{"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["在周一的发布会上，OpenAI公布ChatGPT周活用户达12亿（两个月内从10亿增长）"]},
+{"source": "OpenAI", "target": "Google", "type": "competes_with", "weight": 0.8, "evidence": ["称其量级已达到Google的约20%"]},
+{"source": "ChatGPT", "target": "Google", "type": "compared_with", "weight": 0.6, "evidence": ["称其量级已达到Google的约20%"]},
+{"source": "Adam Fry", "target": "OpenAI", "type": "affiliated_with", "weight": 0.7, "evidence": ["OpenAI消费产品负责人Adam Fry称ChatGPT的“类搜索查询”量已达Google的两成"]}
+],
+"metrics": [
+{"name": "ChatGPT 周活用户", "value": "12 亿"},
+{"name": "周活两个月前基数", "value": "10 亿"},
+{"name": "每月新增用户", "value": "约 1 亿"},
+{"name": "语音周活", "value": "约 2.5 亿"},
+{"name": "ChatGPT 搜索量相对 Google", "value": "约 20%"}
+],
+"why_it_matters": "OpenAI 用「触发联网搜索的查询」这个自家口径把对话流量对齐到搜索引擎坐标系，IPO 前把入口迁移讲成可量化份额故事——但两边的统计口径不可比，份额之争首先成了定义之争。"
+},
+{
+"article_id": "2026-11-04-2",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI宣布收购Pierre Computer Company"]},
+{"name": "Pierre Computer Company", "type": "company", "aliases": ["Pierre"], "confidence": 0.95, "evidence": ["OpenAI宣布收购Pierre Computer Company，该公司是Codex中Trees（项目文件浏览）与Diffs（差异查看）底层库以及代码存储服务Code Storage和极速语法高亮Highlights的开发者"]},
+{"name": "Codex", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["把Git工作流通吃进Codex"]},
+{"name": "Code Storage", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["代码存储服务Code Storage和极速语法高亮Highlights的开发者"]},
+{"name": "Trees", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Codex中Trees（项目文件浏览）与Diffs（差异查看）底层库"]},
+{"name": "Diffs", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["Codex中Trees（项目文件浏览）与Diffs（差异查看）底层库"]},
+{"name": "Pando", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["自研源码控制后端Pando，用于在工程与agent并行的场景下扩展Git"]},
+{"name": "Git", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["把Git工作流通吃进Codex"]}
+],
+"events": [
+{"type": "acquisition", "label": "OpenAI 收购 Pierre Computer Company，把 Git 工作流与代码存储收编进 Codex", "summary": "OpenAI 宣布收购 Pierre Computer Company（Trees、Diffs、Code Storage 的开发者），收购后 Pierre 的开源项目继续开源，目标是让 Codex 统一从「agent 首个分支」到「代码上线」的整条链路。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Pierre Computer Company", "type": "company", "role": "object"}, {"name": "Codex", "type": "product", "role": "object"}], "evidence": ["OpenAI宣布收购Pierre Computer Company", "把Git工作流通吃进Codex"]},
+{"type": "infra", "label": "OpenAI 披露自研源码控制后端 Pando 以在 agent 并行场景扩展 Git", "summary": "收购背景是 OpenAI 本周早些时候披露的自研源码控制后端 Pando，用于在工程与 agent 并行的场景下扩展 Git，为 Codex 承载开发者与智能体的并行协作打底。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Pando", "type": "tool", "role": "object"}, {"name": "Git", "type": "tool", "role": "object"}], "evidence": ["自研源码控制后端Pando，用于在工程与agent并行的场景下扩展Git"]}
+],
+"relations": [
+{"source": "OpenAI", "target": "Pierre Computer Company", "type": "acquires", "weight": 0.95, "evidence": ["OpenAI宣布收购Pierre Computer Company"]},
+{"source": "Trees", "target": "Pierre Computer Company", "type": "developed_by", "weight": 0.8, "evidence": ["该公司是Codex中Trees（项目文件浏览）与Diffs（差异查看）底层库以及代码存储服务Code Storage和极速语法高亮Highlights的开发者"]},
+{"source": "Diffs", "target": "Pierre Computer Company", "type": "developed_by", "weight": 0.8, "evidence": ["该公司是Codex中Trees（项目文件浏览）与Diffs（差异查看）底层库以及代码存储服务Code Storage和极速语法高亮Highlights的开发者"]},
+{"source": "Code Storage", "target": "Pierre Computer Company", "type": "developed_by", "weight": 0.8, "evidence": ["代码存储服务Code Storage和极速语法高亮Highlights的开发者"]},
+{"source": "Codex", "target": "Git", "type": "integrates", "weight": 0.6, "evidence": ["把Git工作流通吃进Codex"]},
+{"source": "Codex", "target": "Code Storage", "type": "integrates", "weight": 0.6, "evidence": ["让Codex成为开发者和智能体的主协作平台，把“agent首个分支”到“代码上线”的整条链路统一起来"]},
+{"source": "Pando", "target": "Git", "type": "uses", "weight": 0.6, "evidence": ["用于在工程与agent并行的场景下扩展Git"]}
+],
+"metrics": [],
+"why_it_matters": "模型公司开始收购「版本管理」本身：Codex 要当 agent 时代的主协作平台，Git 的扩展性成了瓶颈，Pando 加 Pierre 是把「代码如何被存放与读取」收编成自家标准的第一步。"
+},
+{
+"article_id": "2026-11-04-3",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI发布了一个自主的漏洞发现、利用与打补丁流水线"]},
+{"name": "自主漏洞流水线", "type": "tool", "aliases": ["LPE 自动挖掘流水线"], "confidence": 0.85, "evidence": ["OpenAI发布了一个自主的漏洞发现、利用与打补丁流水线"]},
+{"name": "Linux", "type": "topic", "aliases": ["Linux 内核"], "confidence": 0.85, "evidence": ["该流水线识别并分析了2308个Linux内核候选发现"]},
+{"name": "Cathedral", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["配合同期与安全公司Cathedral的合作"]},
+{"name": "Pwn2Own", "type": "benchmark", "aliases": [], "confidence": 0.8, "evidence": ["威胁模型与Pwn2Own等安全竞赛一致"]}
+],
+"events": [
+{"type": "research", "label": "OpenAI 自主漏洞流水线以 121.3 万美元 API 成本产出 948 个 Linux LPE exploit", "summary": "2026 年 10 月中旬一次运行中，该流水线识别并分析了 2308 个 Linux 内核候选发现，动态复现 1724 个，产出 948 个本地提权 exploit 与 291 个信息泄露 PoC，总 API 成本 121.3 万美元，补丁最后由人类安全研究员复核上报。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "自主漏洞流水线", "type": "tool", "role": "object"}, {"name": "Linux", "type": "topic", "role": "object"}], "evidence": ["该流水线识别并分析了2308个Linux内核候选发现，动态复现了1724个漏洞，产出948个可让非特权本地用户获得root权限的本地提权（LPE）exploit，以及291个信息泄露漏洞的PoC，总API成本121.3万美元"]},
+{"type": "security", "label": "OpenAI 与安全公司 Cathedral 合作并把 bug bounty 关键漏洞奖金提升四倍", "summary": "该运行是 OpenAI 把前沿模型用于「持续防御」策略的一部分，配合同期与安全公司 Cathedral 的合作，以及把 bug bounty 关键漏洞奖金提升四倍。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Cathedral", "type": "company", "role": "partner"}], "evidence": ["配合同期与安全公司Cathedral的合作，以及把bug bounty关键漏洞奖金提升四倍"]}
+],
+"relations": [
+{"source": "自主漏洞流水线", "target": "OpenAI", "type": "released_by", "weight": 0.9, "evidence": ["OpenAI发布了一个自主的漏洞发现、利用与打补丁流水线"]},
+{"source": "自主漏洞流水线", "target": "Linux", "type": "targets", "weight": 0.9, "evidence": ["该流水线识别并分析了2308个Linux内核候选发现"]},
+{"source": "OpenAI", "target": "Cathedral", "type": "partners_with", "weight": 0.7, "evidence": ["配合同期与安全公司Cathedral的合作"]},
+{"source": "自主漏洞流水线", "target": "Pwn2Own", "type": "compared_with", "weight": 0.4, "evidence": ["威胁模型与Pwn2Own等安全竞赛一致"]}
+],
+"metrics": [
+{"name": "Linux 内核候选发现数", "value": "2308 个"},
+{"name": "动态复现漏洞数", "value": "1724 个"},
+{"name": "本地提权（LPE）exploit 数", "value": "948 个"},
+{"name": "信息泄露漏洞 PoC 数", "value": "291 个"},
+{"name": "总 API 成本", "value": "121.3 万美元"},
+{"name": "单个 exploit 平均成本", "value": "约 1279 美元"},
+{"name": "6 月 GPT-5.5 Cyber 开发的 LPE exploit 数", "value": "24 个"},
+{"name": "bug bounty 关键漏洞奖金", "value": "提升四倍"}
+],
+"why_it_matters": "「挖漏洞—复现—出 exploit—打补丁」第一次以 121 万美元总成本跑成闭环，948 个 root 漏洞一夜量产：安全研究从手艺活变成可定价的流水线，防御侧的自动补洞被迫与自动挖洞同步资本化。"
+},
+{
+"article_id": "2026-11-04-4",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["OpenAI宣布与安全公司Cathedral合作筹备下一次内部安全冲刺"]},
+{"name": "Cathedral", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI宣布与安全公司Cathedral合作筹备下一次内部安全冲刺"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["在一次bug bounty调查中曾进入Anthropic内部系统的部分区域"]},
+{"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["投入25%的产品工程师用Codex调查发现、在隔离环境复现漏洞并准备补丁"]}
+],
+"events": [
+{"type": "security", "label": "OpenAI 与曾攻入 Anthropic 内部系统的 Cathedral 合作筹备内部安全冲刺", "summary": "Cathedral 的研究员将使用 OpenAI 自家的模型配合其团队共同挑战防御体系；这家由前 DOGE 员工创立的公司此前在一次 bug bounty 调查中曾进入 Anthropic 内部系统的部分区域。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Cathedral", "type": "company", "role": "partner"}, {"name": "Anthropic", "type": "company", "role": "object"}], "evidence": ["OpenAI宣布与安全公司Cathedral合作筹备下一次内部安全冲刺：Cathedral的研究员将使用OpenAI自家的模型配合其团队，共同挑战防御体系"]},
+{"type": "security", "label": "OpenAI 把关键漏洞奖金提高四倍以上并承诺 10 亿美元补贴前线防御者", "summary": "OpenAI 升级安全 bug bounty 计划把关键发现奖金提高四倍以上；此前一次冲刺中投入 25% 的产品工程师用 Codex 调查发现、在隔离环境复现漏洞并准备补丁，并已承诺为「前线防御者」提供 6 个月共 10 亿美元的补贴访问。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Codex", "type": "product", "role": "object"}], "evidence": ["把关键发现奖金提高四倍以上", "投入25%的产品工程师用Codex调查发现、在隔离环境复现漏洞并准备补丁"]}
+],
+"relations": [
+{"source": "OpenAI", "target": "Cathedral", "type": "partners_with", "weight": 0.9, "evidence": ["OpenAI宣布与安全公司Cathedral合作筹备下一次内部安全冲刺"]},
+{"source": "OpenAI", "target": "Codex", "type": "uses", "weight": 0.6, "evidence": ["投入25%的产品工程师用Codex调查发现、在隔离环境复现漏洞并准备补丁"]}
+],
+"metrics": [
+{"name": "关键漏洞奖金提升幅度", "value": "四倍以上"},
+{"name": "冲刺激中投入的产品工程师比例", "value": "25%"},
+{"name": "前线防御者补贴", "value": "6 个月共 10 亿美元"}
+],
+"why_it_matters": "让「曾进过 Anthropic 内部系统」的外部红队用自家模型打自己，等于把防御强度交给对抗性审计定价——奖金四倍加 10 亿美元补贴说明「持续防御循环」已被当作与训练同级的资本开支。"
+},
+{
+"article_id": "2026-11-04-5",
+"entities": [
+{"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind"], "confidence": 0.97, "evidence": ["Google DeepMind发布了面向Google Antigravity的Cheminformatics Skills化学信息学技能套件"]},
+{"name": "Antigravity", "type": "product", "aliases": ["Google Antigravity"], "confidence": 0.9, "evidence": ["Google DeepMind发布了面向Google Antigravity的Cheminformatics Skills化学信息学技能套件"]},
+{"name": "Cheminformatics Skills", "type": "tool", "aliases": ["化学信息学技能套件"], "confidence": 0.9, "evidence": ["Google DeepMind发布了面向Google Antigravity的Cheminformatics Skills化学信息学技能套件"]},
+{"name": "RDKit", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["技能以开源工具RDKit为底座"]},
+{"name": "ChEMBL", "type": "database", "aliases": [], "confidence": 0.8, "evidence": ["连接ChEMBL与PubChem"]},
+{"name": "PubChem", "type": "database", "aliases": [], "confidence": 0.8, "evidence": ["连接ChEMBL与PubChem"]}
+],
+"events": [
+{"type": "launch", "label": "Google DeepMind 发布面向 Antigravity 的 Cheminformatics Skills 化学信息学技能套件", "summary": "技能套件以开源工具 RDKit 为底座、连接 ChEMBL 与 PubChem，采用 LLM 编排、确定性化学工具执行分子计算的分工，把 Antigravity 变成化学家的协作科学工作台。", "participants": [{"name": "Google DeepMind", "type": "company", "role": "subject"}, {"name": "Cheminformatics Skills", "type": "tool", "role": "object"}, {"name": "Antigravity", "type": "product", "role": "object"}], "evidence": ["Google DeepMind发布了面向Google Antigravity的Cheminformatics Skills化学信息学技能套件，把Antigravity变成面向计算化学家和实验化学家的协作科学工作台"]},
+{"type": "research", "label": "Antigravity agent 约 1 小时完成非小细胞肺癌候选分子设计闭环", "summary": "演示中 agent 从文献与专利检索数千个化合物、做 matched molecular pair 分析并训练效价预测模型，最终提出带合成路线的全新刚性大环化合物候选，整个过程约 1 小时，而人工迭代通常要数天；产出仍需湿实验验证。", "participants": [{"name": "Google DeepMind", "type": "company", "role": "subject"}, {"name": "Antigravity", "type": "product", "role": "object"}], "evidence": ["整个过程约1小时，而DeepMind称人工迭代通常要数天"]}
+],
+"relations": [
+{"source": "Cheminformatics Skills", "target": "Google DeepMind", "type": "released_by", "weight": 0.9, "evidence": ["Google DeepMind发布了面向Google Antigravity的Cheminformatics Skills化学信息学技能套件"]},
+{"source": "Cheminformatics Skills", "target": "RDKit", "type": "uses", "weight": 0.8, "evidence": ["技能以开源工具RDKit为底座"]},
+{"source": "Cheminformatics Skills", "target": "ChEMBL", "type": "uses", "weight": 0.6, "evidence": ["连接ChEMBL与PubChem"]},
+{"source": "Cheminformatics Skills", "target": "PubChem", "type": "uses", "weight": 0.6, "evidence": ["连接ChEMBL与PubChem"]},
+{"source": "Antigravity", "target": "Cheminformatics Skills", "type": "integrates", "weight": 0.7, "evidence": ["技能现已上线（安装Antigravity Science插件即可用）"]}
+],
+"metrics": [
+{"name": "分子设计循环时长", "value": "约 1 小时"},
+{"name": "人工迭代通常耗时", "value": "数天"},
+{"name": "检索化合物数量", "value": "数千个化合物"},
+{"name": "免费开放科学家数", "value": "10000 名"},
+{"name": "最高档使用权限时长", "value": "6 个月"}
+],
+"why_it_matters": "「分子设计 1 小时闭环 + 湿实验强制验证」把 agentic science 从演示变成可复用插件模式——通用 agent 平台加领域技能套件的复制成本被压到近乎为零，化学合成从此有了标准化的可交付假设流水线。"
+},
+{
+"article_id": "2026-11-04-6",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Anthropic Frontier Red Team发布的FlashProve是运行在Llama 4 Maverick（约400B参数、17B活跃/token）上的zkSNARK开源原型"]},
+{"name": "FlashProve", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["仓库以Apache 2.0发布在github.com/anthropics/FlashProve"]},
+{"name": "Llama 4 Maverick", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["运行在Llama 4 Maverick（约400B参数、17B活跃/token）上的zkSNARK开源原型"]},
+{"name": "zkSNARK", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["用zkSNARK加密证明让任何人无需看到模型权重即可验证"]},
+{"name": "H100", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["单张H100上约110 token/秒"]},
+{"name": "vLLM", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["证明过程约消耗70-90倍于vLLM的GPU时间"]},
+{"name": "Lean", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["安全属性在Lean下按random oracle模型形式化证明"]}
+],
+"events": [
+{"type": "open_source", "label": "Anthropic 红队开源 zkSNARK 推理验证原型 FlashProve", "summary": "FlashProve 让审计者、监管者或第三方客户仅凭权重承诺、prompt 与回复核验「是那个模型产的」而不暴露权重；仓库以 Apache 2.0 发布在 github.com/anthropics/FlashProve。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "FlashProve", "type": "tool", "role": "object"}], "evidence": ["Anthropic Frontier Red Team发布的FlashProve是运行在Llama 4 Maverick（约400B参数、17B活跃/token）上的zkSNARK开源原型", "仓库以Apache 2.0发布在github.com/anthropics/FlashProve"]},
+{"type": "benchmark", "label": "FlashProve 实测：单张 H100 约 110 token/秒，验证约 17 秒完成", "summary": "单张 H100 上约 110 token/秒，每条 1024 token 请求约 18.78MB 证明；验证可在 24 线程上约 17 秒完成无需 GPU，代价是证明过程约消耗 70-90 倍于 vLLM 的 GPU 时间。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "FlashProve", "type": "tool", "role": "object"}, {"name": "H100", "type": "hardware", "role": "object"}], "evidence": ["单张H100上约110 token/秒，每条1024 token请求约18.78MB证明；验证可在24线程上约17秒完成"]}
+],
+"relations": [
+{"source": "FlashProve", "target": "Anthropic", "type": "released_by", "weight": 0.9, "evidence": ["Anthropic Frontier Red Team发布的FlashProve"]},
+{"source": "FlashProve", "target": "Llama 4 Maverick", "type": "built_on", "weight": 0.9, "evidence": ["运行在Llama 4 Maverick（约400B参数、17B活跃/token）上的zkSNARK开源原型"]},
+{"source": "FlashProve", "target": "zkSNARK", "type": "uses", "weight": 0.8, "evidence": ["用zkSNARK加密证明让任何人无需看到模型权重即可验证"]},
+{"source": "FlashProve", "target": "H100", "type": "uses", "weight": 0.6, "evidence": ["单张H100上约110 token/秒"]},
+{"source": "FlashProve", "target": "vLLM", "type": "compared_with", "weight": 0.6, "evidence": ["证明过程约消耗70-90倍于vLLM的GPU时间"]},
+{"source": "FlashProve", "target": "Lean", "type": "uses", "weight": 0.4, "evidence": ["安全属性在Lean下按random oracle模型形式化证明"]}
+],
+"metrics": [
+{"name": "Llama 4 Maverick 参数量", "value": "约 400B 参数、17B 活跃/token"},
+{"name": "FlashProve 生成速度", "value": "约 110 token/秒"},
+{"name": "每条请求证明体积", "value": "约 18.78MB（1024 token）"},
+{"name": "验证耗时", "value": "约 17 秒（24 线程）"},
+{"name": "证明过程 GPU 时间开销", "value": "约 70-90 倍于 vLLM"}
+],
+"why_it_matters": "「这条回复真的是那个模型产的吗」第一次有了第三方可执行的开源验证器：审计者不再需要权重就能核验 provenance，代价是 70-90 倍推理时间——证明推理在当前成本结构下是合规工具而非消费级功能。"
+},
+{
+"article_id": "2026-11-04-7",
+"entities": [
+{"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.97, "evidence": ["苹果在年度10-K文件中新增风险因素"]},
+{"name": "Siri AI", "type": "product", "aliases": ["Siri"], "confidence": 0.95, "evidence": ["苹果在iOS/iPadOS/macOS/visionOS 27.3 beta中把Siri AI以Developer Preview开放给所有开发者"]},
+{"name": "App Intents", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["任何App都能用App Intents接入内容与操作"]},
+{"name": "John Ternus", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["CEO John Ternus重申苹果无法访问设备上的私人数据"]}
+],
+"events": [
+{"type": "security", "label": "Apple 在 10-K 年报警告 AI agent 可能未经授权自主行动并造成难以挽回的后果", "summary": "苹果在年度 10-K 文件新增风险因素，警告 AI agent 可能自主与内外系统交互、执行或修改代码、发送通信、完成交易，甚至超出权限、违抗指令、隐瞒或篡改信息。", "participants": [{"name": "Apple", "type": "company", "role": "subject"}], "evidence": ["苹果在年度10-K文件中新增风险因素，警告“AI agent及其他技术能自主行动，包括在无权访问时与内外系统交互、执行或修改代码、发送通信、完成交易”"]},
+{"type": "launch", "label": "Apple 把 Siri AI 以 Developer Preview 开放给所有开发者，任何 App 可用 App Intents 接入", "summary": "11 月 3 日苹果在 iOS/iPadOS/macOS/visionOS 27.3 beta 中把 Siri AI 以 Developer Preview 开放给所有开发者，任何 App 都能用 App Intents 接入内容与操作；Siri AI 暂不支持欧盟，服务器端功能有每日用量上限且未来将收费。", "participants": [{"name": "Apple", "type": "company", "role": "subject"}, {"name": "Siri AI", "type": "product", "role": "object"}, {"name": "App Intents", "type": "tool", "role": "object"}], "evidence": ["苹果在iOS/iPadOS/macOS/visionOS 27.3 beta中把Siri AI以Developer Preview开放给所有开发者，任何App都能用App Intents接入内容与操作"]}
+],
+"relations": [
+{"source": "Siri AI", "target": "App Intents", "type": "integrates", "weight": 0.6, "evidence": ["任何App都能用App Intents接入内容与操作"]},
+{"source": "Siri AI", "target": "Apple", "type": "developed_by", "weight": 0.9, "evidence": ["苹果在iOS/iPadOS/macOS/visionOS 27.3 beta中把Siri AI以Developer Preview开放给所有开发者"]},
+{"source": "John Ternus", "target": "Apple", "type": "affiliated_with", "weight": 0.7, "evidence": ["CEO John Ternus重申苹果无法访问设备上的私人数据"]}
+],
+"metrics": [],
+"why_it_matters": "「设备端隐私」卖点与「agent 可能失控」的免责条款在同一份文件里并置：苹果承认对外部 agent 掌控有限的同时，正把 Siri 从读日历升级成能在第三方 App 里替用户执行交易的 agent——权限边界第一次变成上市公司风险披露。"
+},
+{
+"article_id": "2026-11-04-8",
+"entities": [
+{"name": "AMD", "type": "company", "aliases": ["超威"], "confidence": 0.97, "evidence": ["AMD公布Q3财报"]},
+{"name": "Intel", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["将首次在单季营收上超过Intel"]},
+{"name": "Instinct MI455X", "type": "hardware", "aliases": ["MI455X"], "confidence": 0.9, "evidence": ["由EPYC服务器CPU与新发布的Instinct MI455X带动"]},
+{"name": "Helios", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"name": "EPYC", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["由EPYC服务器CPU与新发布的Instinct MI455X带动"]},
+{"name": "苏姿丰", "type": "person", "aliases": ["Lisa Su"], "confidence": 0.9, "evidence": ["苏姿丰在电话会上称已锁定晶圆、基板、先进封装与存储等关键环节的供应链"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"name": "Microsoft", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"name": "Oracle", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]}
+],
+"events": [
+{"type": "trend", "label": "AMD Q3 数据中心收入约 85 亿美元近乎翻倍，Q4 指引约 170 亿美元或首超 Intel", "summary": "AMD Q3 营收 133.8 亿美元（同比 +45%），数据中心业务收入约 85 亿美元、同比增长 97%、占整体 64%；Q4 指引约 170 亿美元，将首次在单季营收上超过 Intel。", "participants": [{"name": "AMD", "type": "company", "role": "subject"}, {"name": "Intel", "type": "company", "role": "competitor"}, {"name": "Instinct MI455X", "type": "hardware", "role": "object"}, {"name": "EPYC", "type": "product", "role": "object"}], "evidence": ["数据中心业务收入约85亿美元，同比增长97%、占整体64%，由EPYC服务器CPU与新发布的Instinct MI455X带动", "Q4指引约170亿美元，将首次在单季营收上超过Intel"]},
+{"type": "launch", "label": "AMD 规模出货 Instinct MI455X，首批 Helios 整机系统在五家大客户上线", "summary": "AMD 确认 MI455X 已在 Q3 规模出货，首批 Helios 整机（rack-scale）系统已由 Anthropic、Meta、Microsoft、OpenAI、Oracle 上线。", "participants": [{"name": "AMD", "type": "company", "role": "subject"}, {"name": "Instinct MI455X", "type": "hardware", "role": "object"}, {"name": "Helios", "type": "hardware", "role": "object"}, {"name": "Anthropic", "type": "company", "role": "partner"}, {"name": "Meta", "type": "company", "role": "partner"}, {"name": "Microsoft", "type": "company", "role": "partner"}, {"name": "OpenAI", "type": "company", "role": "partner"}, {"name": "Oracle", "type": "company", "role": "partner"}], "evidence": ["AMD还确认MI455X已在Q3规模出货，首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"type": "partnership", "label": "AMD 以向 OpenAI 与 Meta 授予股权激励的方式锁定大额芯片采购订单", "summary": "AMD 因给 OpenAI 与 Meta 的股权激励（warrant，换大额芯片采购，各至多 10% 股份）在 Q3 计提了 10.7 亿美元的非现金费用，用未来股权换客户订单。", "participants": [{"name": "AMD", "type": "company", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "object"}, {"name": "Meta", "type": "company", "role": "object"}], "evidence": ["AMD因给OpenAI与Meta的股权激励（warrant，换大额芯片采购，各至多10%股份）在Q3计提了10.7亿美元的非现金费用"]}
+],
+"relations": [
+{"source": "AMD", "target": "Intel", "type": "competes_with", "weight": 0.7, "evidence": ["Q4指引约170亿美元，将首次在单季营收上超过Intel"]},
+{"source": "AMD", "target": "Anthropic", "type": "supplies", "weight": 0.8, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"source": "AMD", "target": "Meta", "type": "supplies", "weight": 0.8, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"source": "AMD", "target": "Microsoft", "type": "supplies", "weight": 0.8, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"source": "AMD", "target": "OpenAI", "type": "supplies", "weight": 0.8, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"source": "AMD", "target": "Oracle", "type": "supplies", "weight": 0.8, "evidence": ["首批Helios整机（rack-scale）系统已由Anthropic、Meta、Microsoft、OpenAI、Oracle上线"]},
+{"source": "Instinct MI455X", "target": "AMD", "type": "released_by", "weight": 0.8, "evidence": ["由EPYC服务器CPU与新发布的Instinct MI455X带动"]},
+{"source": "苏姿丰", "target": "AMD", "type": "affiliated_with", "weight": 0.7, "evidence": ["苏姿丰在电话会上称已锁定晶圆、基板、先进封装与存储等关键环节的供应链"]}
+],
+"metrics": [
+{"name": "Q3 营收", "value": "133.8 亿美元（预期 130.9 亿）"},
+{"name": "营收同比增幅", "value": "+45%"},
+{"name": "调整后 EPS", "value": "2.09 美元"},
+{"name": "数据中心业务收入", "value": "约 85 亿美元、同比 +97%、占整体 64%"},
+{"name": "Q4 指引", "value": "约 170 亿美元"},
+{"name": "股权激励上限", "value": "各至多 10% 股份"},
+{"name": "Q3 计提非现金费用", "value": "10.7 亿美元"},
+{"name": "2027 年服务器 CPU 收入目标", "value": "翻倍"}
+],
+"why_it_matters": "「给客户发自家股权换芯片订单」把 AI 采购金融化到新程度，Q4 单季营收首超 Intel 又意味着 CPU 需求的重估已开始改写芯片龙头排位——AMD 用资产负债表锁来的不只是收入，还有 AI 军备竞赛的定价权。"
+},
+{
+"article_id": "2026-11-04-9",
+"entities": [
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.97, "evidence": ["NVIDIA周二涨3%至208美元，市值5.03万亿美元"]},
+{"name": "Apple", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["从Apple手中重夺“全球最有价值公司”桂冠"]},
+{"name": "Reflection AI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Reflection AI（NVIDIA投资）CEO Misha Laskin警告中国AI实验室把开源模型免费送出海"]},
+{"name": "Misha Laskin", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Reflection AI（NVIDIA投资）CEO Misha Laskin警告中国AI实验室把开源模型免费送出海"]},
+{"name": "黄仁勋", "type": "person", "aliases": ["Jensen Huang"], "confidence": 0.9, "evidence": ["黄仁勋称可保证交付70%"]}
+],
+"events": [
+{"type": "trend", "label": "NVIDIA 市值回升至 5.03 万亿美元，从 Apple 手中重夺全球第一", "summary": "NVIDIA 周二涨 3% 至 208 美元，市值 5.03 万亿美元，从 Apple 手中重夺「全球最有价值公司」桂冠，终结四连跌；但前瞻 PE 约 17 倍仍处五年低位，需求仍大于供给。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "Apple", "type": "company", "role": "object"}], "evidence": ["NVIDIA周二涨3%至208美元，市值5.03万亿美元，从Apple手中重夺“全球最有价值公司”桂冠，终结四连跌"]},
+{"type": "trend", "label": "Reflection AI CEO 警告中国开源模型可能捆绑芯片出海冲击 NVIDIA 主权 AI 市场", "summary": "Misha Laskin 警告中国 AI 实验室把开源模型免费送出海、未来顺势卖自家芯片与数据中心，开放模型是「其基础设施的特洛伊木马」，直接冲击 NVIDIA 在美国和中国以外快速增长的主权 AI 市场。", "participants": [{"name": "Reflection AI", "type": "company", "role": "subject"}, {"name": "NVIDIA", "type": "company", "role": "object"}], "evidence": ["Reflection AI（NVIDIA投资）CEO Misha Laskin警告中国AI实验室把开源模型免费送出海、未来会顺势卖自家芯片与数据中心", "称开放模型是“其基础设施的特洛伊木马”"]}
+],
+"relations": [
+{"source": "NVIDIA", "target": "Reflection AI", "type": "invests_in", "weight": 0.7, "evidence": ["Reflection AI（NVIDIA投资）"]},
+{"source": "Misha Laskin", "target": "Reflection AI", "type": "affiliated_with", "weight": 0.7, "evidence": ["Reflection AI（NVIDIA投资）CEO Misha Laskin"]},
+{"source": "黄仁勋", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.6, "evidence": ["黄仁勋称可保证交付70%"]}
+],
+"metrics": [
+{"name": "当日涨幅", "value": "+3% 至 208 美元"},
+{"name": "市值", "value": "5.03 万亿美元"},
+{"name": "主权 AI 市场环比增幅", "value": "Q2 FY27 环比 +35%"},
+{"name": "云客户非中国销售占比要求", "value": "至少 51%"},
+{"name": "前瞻 PE", "value": "约 17 倍（五年均值 36 倍）"},
+{"name": "可保证交付比例", "value": "70%"},
+{"name": "中国市场营收", "value": "2025 财年 250 亿美元降至 2026 财年 197 亿"}
+],
+"why_it_matters": "市值王座的争夺从模型性能转移到「主权 AI 订单」：一方用开放模型做钩子捆绑软硬件栈出海，一方用 51% 经销红线锁流通——中国开源模型与 NVIDIA 的云生态互为对方增长叙事的前提。"
+},
+{
+"article_id": "2026-11-04-10",
+"entities": [
+{"name": "NCSC", "type": "organization", "aliases": ["英国国家网络安全中心"], "confidence": 0.95, "evidence": ["NCSC（GCHQ下属）在年度报告《State of the Cyber Nation》中警告"]},
+{"name": "GCHQ", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["NCSC（GCHQ下属）在年度报告《State of the Cyber Nation》中警告"]},
+{"name": "Richard Horne", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["CEO Richard Horne称"]},
+{"name": "State of the Cyber Nation", "type": "paper", "aliases": ["《State of the Cyber Nation》"], "confidence": 0.9, "evidence": ["NCSC（GCHQ下属）在年度报告《State of the Cyber Nation》中警告"]},
+{"name": "国家 Cyber Shield", "type": "policy", "aliases": [], "confidence": 0.8, "evidence": ["报告配套动作包括建设国家Cyber Shield与AI网络安全卓越中心"]}
+],
+"events": [
+{"type": "policy", "label": "NCSC 年度报告警告 2028 年前 AI 勒索软件极可能袭击英国关键基础设施", "summary": "NCSC 在年度报告《State of the Cyber Nation》中警告，未来两年内敌对方采用 AI 极有可能放大勒索软件、社工与漏洞利用的规模与效率，并判断 AI 驱动的恶意软件用于针对英国 CNI 的勒索攻击在窗口内高度可能。", "participants": [{"name": "NCSC", "type": "organization", "role": "subject"}, {"name": "State of the Cyber Nation", "type": "paper", "role": "object"}], "evidence": ["NCSC（GCHQ下属）在年度报告《State of the Cyber Nation》中警告，未来两年内敌对方采用AI“极有可能”放大其勒索软件、社工与漏洞利用操作的规模与效率"]},
+{"type": "policy", "label": "NCSC 公布配套动作：建设国家 Cyber Shield 与 AI 网络安全卓越中心", "summary": "报告配套动作包括建设国家 Cyber Shield 与 AI 网络安全卓越中心；CEO Richard Horne 称 AI 不是发明新攻击，而是让被容忍已久的漏洞以难以想象的速度和规模被发现利用。", "participants": [{"name": "NCSC", "type": "organization", "role": "subject"}, {"name": "国家 Cyber Shield", "type": "policy", "role": "object"}], "evidence": ["报告配套动作包括建设国家Cyber Shield与AI网络安全卓越中心"]}
+],
+"relations": [
+{"source": "NCSC", "target": "GCHQ", "type": "subsidiary_of", "weight": 0.7, "evidence": ["NCSC（GCHQ下属）在年度报告《State of the Cyber Nation》中警告"]},
+{"source": "State of the Cyber Nation", "target": "NCSC", "type": "authored_by", "weight": 0.8, "evidence": ["NCSC（GCHQ下属）在年度报告《State of the Cyber Nation》中警告"]},
+{"source": "Richard Horne", "target": "NCSC", "type": "affiliated_with", "weight": 0.6, "evidence": ["CEO Richard Horne称"]}
+],
+"metrics": [],
+"why_it_matters": "官方机构把结论从「AI 会发明新攻击」纠正为「AI 放大既有欠账」——真正承压的不是威胁模型而是长期低成本技术投入的选择，关键基础设施的韧性首次被列为两年内的硬约束。"
+},
+{
+"article_id": "2026-11-04-11",
+"entities": [
+{"name": "GC-MoE", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["推理算子GC-MoE用CUDA Green Contexts把GPU拆成通信与计算两个分区"]},
+{"name": "CUDA Green Contexts", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["推理算子GC-MoE用CUDA Green Contexts把GPU拆成通信与计算两个分区"]},
+{"name": "DeepSeek-V4.1-Flash", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["结果是8张H20上DeepSeek-V4.1-Flash解码平均快1.188x（峰值1.296x）"]},
+{"name": "GLM-5.2", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["8张B300上GLM-5.2与DeepSeek-V4.1-Flash快1.106x"]},
+{"name": "Mega MoE", "type": "tool", "aliases": ["DeepGEMM Mega MoE"], "confidence": 0.85, "evidence": ["并在全部54个测试点击败Mega MoE"]},
+{"name": "H20", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["8张H20上DeepSeek-V4.1-Flash解码平均快1.188x"]},
+{"name": "B300", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["8张B300上GLM-5.2与DeepSeek-V4.1-Flash快1.106x"]}
+],
+"events": [
+{"type": "research", "label": "GC-MoE 用 CUDA Green Contexts 拆开 MoE 分发与计算，H20 上解码平均提速 1.188 倍", "summary": "GC-MoE 把 GPU 拆成通信与计算两个分区，各自拥有独立 kernel、资源预算与同步域；8 张 H20 上 DeepSeek-V4.1-Flash 解码平均快 1.188x（峰值 1.296x）。", "participants": [{"name": "GC-MoE", "type": "paper", "role": "subject"}, {"name": "DeepSeek-V4.1-Flash", "type": "model", "role": "object"}, {"name": "H20", "type": "hardware", "role": "object"}], "evidence": ["推理算子GC-MoE用CUDA Green Contexts把GPU拆成通信与计算两个分区", "结果是8张H20上DeepSeek-V4.1-Flash解码平均快1.188x（峰值1.296x）"]},
+{"type": "benchmark", "label": "GC-MoE 在全部 54 个测试点上击败 Mega MoE", "summary": "8 张 B300 上 GLM-5.2 与 DeepSeek-V4.1-Flash 解码快 1.106x，并在全部 54 个测试点击败融合算子 Mega MoE。", "participants": [{"name": "GC-MoE", "type": "paper", "role": "subject"}, {"name": "Mega MoE", "type": "tool", "role": "competitor"}, {"name": "GLM-5.2", "type": "model", "role": "object"}], "evidence": ["8张B300上GLM-5.2与DeepSeek-V4.1-Flash快1.106x，并在全部54个测试点击败Mega MoE"]}
+],
+"relations": [
+{"source": "GC-MoE", "target": "CUDA Green Contexts", "type": "uses", "weight": 0.7, "evidence": ["推理算子GC-MoE用CUDA Green Contexts把GPU拆成通信与计算两个分区"]},
+{"source": "GC-MoE", "target": "H20", "type": "uses", "weight": 0.6, "evidence": ["8张H20上DeepSeek-V4.1-Flash解码平均快1.188x"]},
+{"source": "GC-MoE", "target": "B300", "type": "uses", "weight": 0.6, "evidence": ["8张B300上GLM-5.2与DeepSeek-V4.1-Flash快1.106x"]},
+{"source": "GC-MoE", "target": "Mega MoE", "type": "outperforms", "weight": 0.9, "evidence": ["并在全部54个测试点击败Mega MoE"]}
+],
+"metrics": [
+{"name": "H20 上 DeepSeek-V4.1-Flash 解码提速", "value": "平均 1.188x（峰值 1.296x）"},
+{"name": "B300 上解码提速", "value": "1.106x"},
+{"name": "测试点数", "value": "54 个"},
+{"name": "decode 每 rank token 数", "value": "1-256 个"},
+{"name": "MoE 分发占用 SM 开销", "value": "20 个 SM"}
+],
+"why_it_matters": "MoE 推理优化的下一战场是「别让分发与计算抢资源」：用硬件分区把两者隔开而不是在软件层挤调度，说明架构红利见顶后，性能工程开始向运行时系统软件要每 token 成本。"
+},
+{
+"article_id": "2026-11-04-12",
+"entities": [
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.97, "evidence": ["Google发布教育相关更新"]},
+{"name": "Gemini", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["面向K-12学生账户，Gemini、Gemini Notebook、Gemini in Classroom与Google Search默认全部关闭"]},
+{"name": "Gemini Notebook", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["面向K-12学生账户，Gemini、Gemini Notebook、Gemini in Classroom与Google Search默认全部关闭"]},
+{"name": "Gemini in Classroom", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["面向K-12学生账户，Gemini、Gemini Notebook、Gemini in Classroom与Google Search默认全部关闭"]},
+{"name": "Google Search", "type": "product", "aliases": ["Search"], "confidence": 0.9, "evidence": ["面向K-12学生账户，Gemini、Gemini Notebook、Gemini in Classroom与Google Search默认全部关闭"]},
+{"name": "Guided Learning", "type": "tool", "aliases": ["导向学习"], "confidence": 0.85, "evidence": ["同时给Search与Classroom加入“Guided Learning”（导向学习）能力"]},
+{"name": "Chris Phillips", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Google教育副总裁Chris Phillips对NYT表示“Search和AI深度整合”"]},
+{"name": "Blumenthal", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["参议员Blumenthal批评Google“更关心把Gemini塞进学校，而不是让学生成功”"]},
+{"name": "Sanders", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Sanders与Lina Khan也公开批评"]},
+{"name": "Lina Khan", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Sanders与Lina Khan也公开批评"]}
+],
+"events": [
+{"type": "launch", "label": "Google 面向 K-12 默认关闭 Gemini 与 Google Search，并给 Search 加入 Guided Learning", "summary": "面向 K-12 学生账户，Gemini、Gemini Notebook、Gemini in Classroom 与 Google Search 默认全部关闭，管理员可逐个打开；同时给 Search 与 Classroom 加入 Guided Learning（导向学习）能力，Search 侧在部分美国学校试点。", "participants": [{"name": "Google", "type": "company", "role": "subject"}, {"name": "Gemini", "type": "product", "role": "object"}, {"name": "Gemini Notebook", "type": "product", "role": "object"}, {"name": "Gemini in Classroom", "type": "product", "role": "object"}, {"name": "Google Search", "type": "product", "role": "object"}, {"name": "Guided Learning", "type": "tool", "role": "object"}], "evidence": ["面向K-12学生账户，Gemini、Gemini Notebook、Gemini in Classroom与Google Search默认全部关闭，管理员可逐个打开", "同时给Search与Classroom加入“Guided Learning”（导向学习）能力"]},
+{"type": "policy", "label": "Blumenthal、Sanders 与 Lina Khan 批评 Google 在学校捆绑 AI 与 Search 的做法", "summary": "由于 Search 与 AI 深度整合，学校若不选 AI 将无法访问 Search；参议员 Blumenthal 批评 Google 更关心把 Gemini 塞进学校而不是让学生成功，Sanders 与 Lina Khan 也公开批评，Google 回应称这是给学校更多选择而非更少。", "participants": [{"name": "Blumenthal", "type": "person", "role": "subject"}, {"name": "Sanders", "type": "person", "role": "subject"}, {"name": "Lina Khan", "type": "person", "role": "subject"}, {"name": "Google", "type": "company", "role": "object"}], "evidence": ["参议员Blumenthal批评Google“更关心把Gemini塞进学校，而不是让学生成功”，Sanders与Lina Khan也公开批评"]}
+],
+"relations": [
+{"source": "Google Search", "target": "Guided Learning", "type": "integrates", "weight": 0.7, "evidence": ["同时给Search与Classroom加入“Guided Learning”（导向学习）能力"]},
+{"source": "Gemini", "target": "Google", "type": "developed_by", "weight": 0.7, "evidence": ["Google发布教育相关更新：面向K-12学生账户，Gemini、Gemini Notebook、Gemini in Classroom与Google Search默认全部关闭"]},
+{"source": "Google Search", "target": "Google", "type": "developed_by", "weight": 0.7, "evidence": ["Google发布教育相关更新：面向K-12学生账户，Gemini、Gemini Notebook、Gemini in Classroom与Google Search默认全部关闭"]},
+{"source": "Chris Phillips", "target": "Google", "type": "affiliated_with", "weight": 0.6, "evidence": ["Google教育副总裁Chris Phillips对NYT表示“Search和AI深度整合”"]}
+],
+"metrics": [],
+"why_it_matters": "把「不用 AI」与「不用 Search」绑成同一个开关，Google 正式让教育场景成为 AI 分发的强制搭售试验场——反垄断压力这次来自学校、家长与参议员，而真正的「无 AI」选项被明确推迟到 2027 年之后。"
+}
+]
+}

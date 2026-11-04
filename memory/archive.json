@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T23:41:27Z",
+  "updated_at": "2026-11-04T23:17:04Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -898,6 +898,35 @@
         "2026-09-28-2",
         "2026-09-28-3",
         "2026-09-28-4"
+      ]
+    },
+    {
+      "period_id": "2026-W41",
+      "period_type": "week",
+      "start_date": "2026-10-05",
+      "end_date": "2026-10-05",
+      "summary": "2026-10-05 至 2026-10-05 期间，NVIDIA、Vera Rubin NVL72、主权 AI 主要围绕 research、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "NVIDIA",
+        "Vera Rubin NVL72",
+        "主权 AI",
+        "Queen"
+      ],
+      "event_types": [
+        "research",
+        "infra",
+        "trend"
+      ],
+      "trend_signals": [
+        "核心实体：NVIDIA、Vera Rubin NVL72、主权 AI",
+        "主事件类型：research、infra"
+      ],
+      "representative_article_ids": [
+        "2026-10-05-0",
+        "2026-10-05-1",
+        "2026-10-05-2",
+        "2026-10-05-3",
+        "2026-10-05-4"
       ]
     }
   ]

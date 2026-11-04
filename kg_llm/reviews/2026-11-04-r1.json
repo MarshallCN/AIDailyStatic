@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-04",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "事实与数字基本准确、证据支撑到位，但实体类型错配集中（设施标成 hardware、操作系统标成 product、数据库标成 organization），另有两条关系类型用错（市值排名当成竞争、一次性安全事件固化为持续 targets）。存在超过 2 条 medium 级问题，需修订后发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-04-0",
+      "severity": "medium",
+      "problem": "实体类型错配：Colossus 2 和 Starbase 是算力站点/园区设施（数据中心扩建项目、基地），但都被标成 type=\"hardware\"；BESS 作为储能设备算 hardware 尚可，但站点不应该与 GPU 同属 hardware 类。",
+      "fix": "把 Colossus 2、Starbase 的 type 改为 \"facility\" 或 \"site\"（若 schema 无此类则用 \"infrastructure\"），不要用 hardware；BESS 保留 hardware/equipment。"
+    },
+    {
+      "article_id": "2026-11-04-3",
+      "severity": "medium",
+      "problem": "实体类型错配：Linux 内核是操作系统/软件，被标成 type=\"product\"，与 OpenAI、SpaceX 这类公司产品混为同类；\"自主漏洞流水线\"标为 tool 正确，但 Linux 不是产品。",
+      "fix": "将 Linux 的 type 改为 \"software\" 或 \"topic\"（操作系统/软件基础设施），不要用 product。"
+    },
+    {
+      "article_id": "2026-11-04-5",
+      "severity": "medium",
+      "problem": "实体类型错配：ChEMBL 和 PubChem 是化合物数据库（data source/数据库），被标成 type=\"organization\"，误当作机构主体。",
+      "fix": "将 ChEMBL、PubChem 的 type 改为 \"database\" 或 \"data\"（数据源），删除 organization 标注；对其 uses 关系保留即可。"
+    },
+    {
+      "article_id": "2026-11-04-4",
+      "severity": "medium",
+      "problem": "关系 Cathedral --targets--> Anthropic 把一次性历史事件固化为持续性关系：原文是 Cathedral \"在一次 bug bounty 调查中曾进入 Anthropic 内部系统的部分区域\"（一次性、历史、且有 Anthropic 质疑），targets 读作\"正在针对 Anthropic\"会误导整图叙事，权重 0.6 也偏低。",
+      "fix": "删除该 targets 关系，改为在安全事件中记录\"Cathedral 曾对 Anthropic 系统做过一次 bug bounty 测试\"，或用 tested_on / historically_attacked 明确是过去单次行为，不要用持续进行的 targets。"
+    },
+    {
+      "article_id": "2026-11-04-9",
+      "severity": "medium",
+      "problem": "关系 NVIDIA --competes_with--> Apple 依据仅\"从 Apple 手中重夺全球最有价值公司桂冠\"，这是市值/排名对比而非两家公司在市场上的竞争关系，competes_with 类型用错。",
+      "fix": "将 NVIDIA 与 Apple 的关系改为 compared_with（市值规模对比）或直接删除该边；competes_with 只留给真正同赛道商业竞争的主体。"
+    },
+    {
+      "article_id": "2026-11-04-0",
+      "severity": "medium",
+      "problem": "metric \"Colossus 2 建厂目标纪录 91 天\" 表述走样：原文是 SpaceX 自己保持 91 天建厂纪录，Colossus 2 目标是\"刷新（打破）\"该纪录（开工到首笔算力更快），不是以 91 天为目标。",
+      "fix": "将该 metric 改为\"Colossus 2 目标打破 SpaceX 保持的 91 天建厂纪录\"，或\"SpaceX 现有建厂纪录：91 天\"，避免读成 91 天是 Colossus 2 的目标时长。"
+    }
+  ],
+  "lessons": [
+    "市值/排名的前后对比（如 A 市值超越 B 成最有价值公司）不是商业竞争关系，不要用 competes_with，改用 compared_with 或不建关系。",
+    "实体类型要按真实属性归类：算力站点/园区/基建项目（如 Colossus 2、Starbase）用 facility/site 而非 hardware，操作系统（如 Linux）用 software/topic 而非 product，数据库（如 ChEMBL、PubChem）用 database 而非 organization。",
+    "一次性历史事件（如\"曾在 bug bounty 中进入某系统\"）不要固化为持续的 targets 类关系，用事件记录并在关系标记中明确是过去单次行为。"
+  ]
+}
