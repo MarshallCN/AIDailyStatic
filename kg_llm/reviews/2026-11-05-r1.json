@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-05",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 77,
+  "summary": "抽取密度与数字准确性整体较好（61 实体/27 事件/46 关系，metrics 大多与原文逐条吻合），但第 1 篇存在一条高严重度语义反转：把\"出口管制存在漏洞、月之暗面绕开管制\"抽成了\"出口管制 restricts 月之暗面\"，图谱会讲出与原文相反的故事；另有 neocloud/OpenParallelThinking 实体类型错配、\"中期选举 regulates neocloud\"与\"Codex uses GPT-6 Cyber\"关系不当、Firefox 误挂进 Linux 内核事件等问题，需修订后发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-05-1",
+      "severity": "high",
+      "problem": "关系 \"美国出口管制 --restricts--> Moonshot AI\"（weight 0.8）与原文立场相反。文章的核心主张是出口管制存在明显漏洞：所附证据\"现行法律没有充分授权监管机构管控美国公司通过海外云服务向中国实体提供高端算力\"恰恰说明管制未覆盖该行为，且原文明说月之暗面\"延续其绕开美国出口管制的做法\"。图上这条边读出来是\"出口管制限制月之暗面\"，与整篇报道相反。",
+      "fix": "删除该关系。如要保留语义，改为以 Moonshot AI 为主语、表达绕开/规避方向的关系（如 Moonshot AI --bypasses/evades--> 美国出口管制），evidence 换成\"延续其绕开美国出口管制的做法\"；不要用\"法律未授权管控\"的句子支撑正向 restricts。"
+    },
+    {
+      "article_id": "2026-11-05-10",
+      "severity": "medium",
+      "problem": "实体 \"neocloud\" 标成 company 类型错配。原文中的 neocloud 是与\"超大规模云厂商\"对应的商业模式/行业类别泛指（\"靠债务扩张的 neocloud 面临远高于超大规模云厂商的融资成本\"），不是具名公司；且 2026-11-05-1 同样提到 neocloud 却未抽成实体，两个文件互相矛盾，说明它是泛指而非主体。",
+      "fix": "把 neocloud 改为 topic/industry 类类型，或直接删除该实体及其挂载的关系；neocloud 不作为 company 出现在图谱中。"
+    },
+    {
+      "article_id": "2026-11-05-10",
+      "severity": "medium",
+      "problem": "关系 \"美国中期选举 --regulates--> neocloud\" 类型与端点都错。选举事件不是监管主体，原文只说\"民主党在关键州长席位的获胜提高了数据中心项目遭遇更严格许可与监管的几率\"——支撑的是\"影响/可能引发更严监管\"，不是 regulates；且 target 是类别词 neocloud，没有具体被监管对象。",
+      "fix": "删除该关系。若要保留语义，改用更弱的关系类型（如美国中期选举 --affects--> 数据中心供给/投资），evidence 用\"提高了数据中心项目遭遇更严格许可与监管的几率\"原句。"
+    },
+    {
+      "article_id": "2026-11-05-8",
+      "severity": "medium",
+      "problem": "实体 \"OpenParallelThinking\" 标成 tool 类型错配。它是语料/数据集（12810 道数学题、混入六个 LLM 的推理轨迹），不是可执行工具，tool 类型会让读者误解为可调用软件。",
+      "fix": "改为 dataset 类型（schema 无 dataset 则用最接近的数据资源类类型），并相应把 TTT-Consolidate --uses--> OpenParallelThinking 的语义写清为\"在该语料上训练/评估\"。"
+    },
+    {
+      "article_id": "2026-11-05-0",
+      "severity": "medium",
+      "problem": "关系 \"Codex --uses--> GPT-6 Cyber\"（weight 0.4）证据不支撑。原文\"目前只通过 API 和 Codex 面向获批的 Daybreak Red 客户开放\"说的是发布/分发渠道，没有任何句子说 Codex 调用了该模型，违反\"uses 要求原文明确写出调用关系\"的已有规则。",
+      "fix": "删除该关系，或改用渠道/集成语义（GPT-6 Cyber 通过 API 和 Codex 提供，可表达为 available_via/集成类关系，source 为 GPT-6 Cyber）；不要把\"开放渠道\"抽成 uses。"
+    },
+    {
+      "article_id": "2026-11-05-6",
+      "severity": "low",
+      "problem": "关系 \"GPT-Image-2.6 Flare --compared_with--> GPT-Image-2.6 Sunburst\" 类型不当。两条模型是同一发布的\"速度/画质\"两个档位，原文是并列介绍产品线，没有对二者做出对比断言，违反 compared_with 只用于明确对比的已有规则。",
+      "fix": "删除该关系；两条模型的定位差异保留在事件 summary 里即可。"
+    },
+    {
+      "article_id": "2026-11-05-0",
+      "severity": "low",
+      "problem": "事件 \"OpenAI 用 GPT-6 Cyber 自动化复现 Linux 内核漏洞并写出 948 个提权利用\" 的 participants 误挂 Firefox（role object）。Firefox 的 81 个漏洞发现属于下一个 Mozilla 修复事件，与本事件 summary（Linux 内核复现 1724 个漏洞）范围不一致，跨事件挂错主体。",
+      "fix": "从该事件移除 Firefox 及其证据，只保留在 \"Mozilla 修复 GPT-6 Cyber 识别出的 Firefox 高危漏洞\" 事件中。"
+    },
+    {
+      "article_id": "2026-11-05-11",
+      "severity": "low",
+      "problem": "事件1 label/summary 遗漏原文关键限定：\"Anthropic 声明不打算用 Claude 安全地独立设计后继的前沿模型\"。只抽了\"可能迫在眉睫触及'可归因于 AI 的剧烈加速进展'的定义\"前半句，去掉限定后图谱读起来比原文更戏剧化。",
+      "fix": "在事件1 summary 或 why_it_matters 中补上该限定句（Anthropic 不打算用 Claude 独立设计后继前沿模型），保持与原文一致的克制表述。"
+    },
+    {
+      "article_id": "2026-11-05-1",
+      "severity": "low",
+      "problem": "metrics 遗漏原文关键数字：\"英伟达对主要云客户提出'售给非中国客户占比不低于 51%'的销售条件\"。该数字是出口管制漏洞论点的旁证，属于原文明确给出的量化事实，未进 metrics。",
+      "fix": "在 metrics 中补充：{\"name\": \"英伟达对云客户的非中国销售占比条件\", \"value\": \"不低于 51%\"}。"
+    }
+  ],
+  "lessons": [
+    "政策/管制类新闻中，当原文强调管制\"存在漏洞/未覆盖\"或主体\"绕开管制\"时，禁止抽成\"管制方 --restricts--> 行为方\"的正向限制关系；应表达规避/未覆盖语义或删除，证据方向必须与关系断言一致。",
+    "行业类别泛指词（neocloud、hyperscaler、超大规模云厂商等）不是具名主体，不得标为 company 类型或作为关系端点；只有原文点名的主体才能建实体。",
+    "论文/系统类新闻中的语料与数据集（corpus、XX 语料、含 N 条样本）标 dataset 类型，不标 tool；tool 只用于可执行工具。"
+  ]
+}

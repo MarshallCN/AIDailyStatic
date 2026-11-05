@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T23:17:04Z",
+  "updated_at": "2026-11-05T23:17:30Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -904,22 +904,22 @@
       "period_id": "2026-W41",
       "period_type": "week",
       "start_date": "2026-10-05",
-      "end_date": "2026-10-05",
-      "summary": "2026-10-05 至 2026-10-05 期间，NVIDIA、Vera Rubin NVL72、主权 AI 主要围绕 research、infra 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-10-06",
+      "summary": "2026-10-05 至 2026-10-06 期间，NVIDIA、Muse、Meta 主要围绕 trend、research 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "NVIDIA",
-        "Vera Rubin NVL72",
-        "主权 AI",
-        "Queen"
+        "Muse",
+        "Meta",
+        "Instinct"
       ],
       "event_types": [
+        "trend",
         "research",
-        "infra",
-        "trend"
+        "infra"
       ],
       "trend_signals": [
-        "核心实体：NVIDIA、Vera Rubin NVL72、主权 AI",
-        "主事件类型：research、infra"
+        "核心实体：NVIDIA、Muse、Meta",
+        "主事件类型：trend、research"
       ],
       "representative_article_ids": [
         "2026-10-05-0",

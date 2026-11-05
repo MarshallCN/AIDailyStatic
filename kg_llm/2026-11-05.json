@@ -1,0 +1,310 @@
+{
+"date": "2026-11-05",
+"articles": [
+{
+"article_id": "2026-11-05-0",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["OpenAI 推出网络安全专用模型 GPT-6 Cyber"]},
+{"name": "GPT-6 Cyber", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 推出网络安全专用模型 GPT-6 Cyber"]},
+{"name": "ExploitGym", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["ExploitGym 得分 48.5%"]},
+{"name": "Codex", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["通过 API 和 Codex 面向获批的 Daybreak Red 客户开放"]},
+{"name": "Firefox", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["识别出 81 个 Firefox 此前未知的高危漏洞"]},
+{"name": "Mozilla", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Mozilla 已修复其中多款"]},
+{"name": "Dragos", "type": "company", "aliases": [], "confidence": 0.75, "evidence": ["与 Dragos 合作在模拟电厂环境做了评估"]}
+],
+"events": [
+{"type": "launch", "label": "OpenAI 发布网络安全专用模型 GPT-6 Cyber", "summary": "OpenAI 推出今年第四款网络安全向模型 GPT-6 Cyber，专为漏洞发现与利用开发训练，被归类为 Critical 且仅对获批的 Daybreak Red 客户开放。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "GPT-6 Cyber", "type": "model", "role": "object"}], "evidence": ["OpenAI 推出网络安全专用模型 GPT-6 Cyber", "目前只通过 API 和 Codex 面向获批的 Daybreak Red 客户开放"]},
+{"type": "benchmark", "label": "GPT-6 Cyber 在 ExploitGym 得分 48.5%，越界率较上一代大幅下降", "summary": "GPT-6 Cyber 在 ExploitGym 得分为 48.5%，高于 GPT-5.6 Cyber 的 32.1%；Honeypot 评估中越界率从 GPT-5.6 Cyber 的 5.51% 降到 0.07%。", "participants": [{"name": "GPT-6 Cyber", "type": "model", "role": "subject"}, {"name": "ExploitGym", "type": "benchmark", "role": "benchmark"}], "evidence": ["ExploitGym 得分 48.5%", "越界率从 GPT-5.6 Cyber 的 5.51% 降到 0.07%"]},
+{"type": "research", "label": "OpenAI 用 GPT-6 Cyber 自动化复现 Linux 内核漏洞并写出 948 个提权利用", "summary": "团队用 GPT-6 Cyber 在 Linux 内核上复现 1724 个漏洞并为其中 948 个写出可用提权利用，耗用约 121 万美元 API 额度。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "GPT-6 Cyber", "type": "model", "role": "object"}], "evidence": ["在 Linux 内核上复现了 1724 个漏洞并为其中 948 个写出了可用提权利用"]},
+{"type": "security", "label": "Mozilla 修复 GPT-6 Cyber 识别出的 Firefox 高危漏洞", "summary": "GPT-6 Cyber 识别出 81 个 Firefox 此前未知的高危漏洞，Mozilla 已修复其中多款。", "participants": [{"name": "Mozilla", "type": "organization", "role": "subject"}, {"name": "Firefox", "type": "product", "role": "object"}], "evidence": ["Mozilla 已修复其中多款"]}
+],
+"relations": [
+{"source": "GPT-6 Cyber", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 推出网络安全专用模型 GPT-6 Cyber"]},
+{"source": "GPT-6 Cyber", "target": "ExploitGym", "type": "evaluated_on", "weight": 0.7, "evidence": ["ExploitGym 得分 48.5%"]},
+{"source": "Codex", "target": "GPT-6 Cyber", "type": "integrates", "weight": 0.4, "evidence": ["目前只通过 API 和 Codex 面向获批的 Daybreak Red 客户开放"]},
+{"source": "OpenAI", "target": "Dragos", "type": "partners_with", "weight": 0.4, "evidence": ["与 Dragos 合作在模拟电厂环境做了评估"]}
+],
+"metrics": [
+{"name": "ExploitGym 得分", "value": "48.5%"},
+{"name": "GPT-5.6 Cyber ExploitGym 得分", "value": "32.1%"},
+{"name": "越界率（无部署提示词）", "value": "0.07%"},
+{"name": "GPT-5.6 Cyber 越界率", "value": "5.51%"},
+{"name": "加入部署提示后的越界率", "value": "0%"},
+{"name": "Linux 内核复现漏洞数", "value": "1724 个"},
+{"name": "写出可用提权利用数", "value": "948 个"},
+{"name": "Firefox 此前未知高危漏洞数", "value": "81 个"},
+{"name": "自动化流水线 API 额度成本", "value": "约 121 万美元"},
+{"name": "每唯一漏洞成本", "value": "约 1279 美元"}
+],
+"why_it_matters": "安全研究的单位成本正被 AI 显著压降：自动化 LPE 流水线把每个漏洞成本压到约 1279 美元，'模型即安全工具'正从研究演示转向可规模化、可审计的产品化。"
+},
+{
+"article_id": "2026-11-05-1",
+"entities": [
+{"name": "Moonshot AI", "type": "company", "aliases": ["月之暗面"], "confidence": 0.97, "evidence": ["月之暗面曾寻求从设在欧洲的数据中心租用英伟达 Blackwell GPU 集群"]},
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["租用英伟达 Blackwell GPU 集群"]},
+{"name": "Blackwell", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["租用英伟达 Blackwell GPU 集群"]},
+{"name": "美国出口管制", "type": "policy", "aliases": [], "confidence": 0.7, "evidence": ["延续其绕开美国出口管制的做法"]}
+],
+"events": [
+{"type": "infra", "label": "月之暗面寻求从欧洲 neocloud 租用英伟达 Blackwell 算力", "summary": "消息人士称月之暗面曾寻求从设在欧洲的数据中心租用英伟达 Blackwell GPU 集群，部分谈判涉及 8000 张以上 GPU，主要用于推理负载。", "participants": [{"name": "Moonshot AI", "type": "company", "role": "subject"}, {"name": "Blackwell", "type": "hardware", "role": "object"}, {"name": "NVIDIA", "type": "company", "role": "partner"}], "evidence": ["月之暗面曾寻求从设在欧洲的数据中心租用英伟达 Blackwell GPU 集群"]},
+{"type": "policy", "label": "美国出口管制未能覆盖算力即服务的海外租赁漏洞", "summary": "现行法律没有充分授权监管机构管控美国公司通过海外云服务向中国实体提供高端算力，'远程租用海外数据中心算力'成为美国出口管制的明显漏洞。", "participants": [{"name": "美国出口管制", "type": "policy", "role": "subject"}, {"name": "Moonshot AI", "type": "company", "role": "object"}], "evidence": ["现行法律没有充分授权监管机构管控美国公司通过海外云服务向中国实体提供高端算力"]}
+],
+"relations": [
+{"source": "Blackwell", "target": "NVIDIA", "type": "developed_by", "weight": 0.5, "evidence": ["租用英伟达 Blackwell GPU 集群"]},
+{"source": "Moonshot AI", "target": "Blackwell", "type": "uses", "weight": 0.9, "evidence": ["月之暗面曾寻求从设在欧洲的数据中心租用英伟达 Blackwell GPU 集群"]}
+],
+"metrics": [
+{"name": "谈判涉及的 GPU 集群规模", "value": "8000 张以上 GPU"},
+{"name": "英伟达对云客户的非中国销售占比条件", "value": "不低于 51%"}
+],
+"why_it_matters": "当算力可以隔洋租赁，芯片出口禁令的效力边界正在被重新划定——'限硬件、管不住算力即服务'成为美中科技地缘的新焦点。"
+},
+{
+"article_id": "2026-11-05-2",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic 发布开源原型 FlashProve"]},
+{"name": "FlashProve", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 发布开源原型 FlashProve"]},
+{"name": "zkSNARK", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["用 zkSNARK 让用户验证某条回复确实出自所宣称的模型"]},
+{"name": "H100", "type": "hardware", "aliases": [], "confidence": 0.8, "evidence": ["在单张 H100 上检查一个约 4000 亿参数的模型即可完成验证"]}
+],
+"events": [
+{"type": "open_source", "label": "Anthropic 开源模型身份验证工具 FlashProve", "summary": "Anthropic 发布开源原型 FlashProve，用 zkSNARK 让用户验证某条回复确实出自所宣称的模型，并公开了代码、技术报告和形式化证明。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "FlashProve", "type": "tool", "role": "object"}], "evidence": ["Anthropic 发布开源原型 FlashProve", "Anthropic 公开了代码、技术报告和形式化证明"]},
+{"type": "research", "label": "FlashProve 用 zkSNARK 为每条 AI 回复附可验证证明", "summary": "方案是服务方先发布模型权重指纹，每条回复附带密码学证明，据称在单张 H100 上即可完成约 4000 亿参数模型的验证。", "participants": [{"name": "FlashProve", "type": "tool", "role": "subject"}, {"name": "zkSNARK", "type": "topic", "role": "object"}, {"name": "H100", "type": "hardware", "role": "object"}], "evidence": ["用 zkSNARK 让用户验证某条回复确实出自所宣称的模型", "在单张 H100 上检查一个约 4000 亿参数的模型即可完成验证"]}
+],
+"relations": [
+{"source": "FlashProve", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 发布开源原型 FlashProve"]},
+{"source": "FlashProve", "target": "zkSNARK", "type": "uses", "weight": 0.9, "evidence": ["用 zkSNARK 让用户验证某条回复确实出自所宣称的模型"]},
+{"source": "FlashProve", "target": "H100", "type": "uses", "weight": 0.6, "evidence": ["在单张 H100 上检查一个约 4000 亿参数的模型即可完成验证"]}
+],
+"metrics": [
+{"name": "可校验的模型参数量", "value": "约 4000 亿参数"},
+{"name": "校验所需硬件", "value": "单张 H100"}
+],
+"why_it_matters": "推理可验证是 Agent 经济可信度的基石，zk 路径的开源让第三方能低成本验真模型身份，模型路由与 Agent 外包的诚实性门槛随之下降。"
+},
+{
+"article_id": "2026-11-05-3",
+"entities": [
+{"name": "Cat Wu", "type": "person", "aliases": ["Catherine Wu"], "confidence": 0.9, "evidence": ["Cat Wu 是 Claude Code 从内部原型成长为公司级产品的主要推手"]},
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["负责核心产品团队的产品管理"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["上周离开 Anthropic"]},
+{"name": "Claude Code", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Claude Code 从内部原型成长为公司级产品的主要推手"]},
+{"name": "Codex", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 Codex 有类似 Claude Code 的业务"]},
+{"name": "Austin Lau", "type": "person", "aliases": [], "confidence": 0.8, "evidence": ["Anthropic 增长营销经理 Austin Lau 也转投 OpenAI"]}
+],
+"events": [
+{"type": "trend", "label": "Cat Wu 从 Anthropic 转投 OpenAI 主管核心产品", "summary": "Claude Code 的产品负责人 Cat Wu 上周离开 Anthropic，本周宣布加入 OpenAI，负责核心产品团队的产品管理，被视为 OpenAI 对宿敌的重大挖角。", "participants": [{"name": "Cat Wu", "type": "person", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "object"}, {"name": "Anthropic", "type": "company", "role": "object"}], "evidence": ["上周离开 Anthropic", "本周宣布加入 OpenAI", "负责核心产品团队的产品管理"]},
+{"type": "trend", "label": "Claude Code 与 Codex 的编码 Agent 正面竞争加剧", "summary": "OpenAI 的 Codex 有类似 Claude Code 的业务，并正越来越多地瞄准非技术性工作；人才流动被媒体当作两巨头全面竞争的信号。", "participants": [{"name": "Claude Code", "type": "product", "role": "subject"}, {"name": "Codex", "type": "product", "role": "object"}], "evidence": ["OpenAI 的 Codex 有类似 Claude Code 的业务"]}
+],
+"relations": [
+{"source": "Cat Wu", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["本周宣布加入 OpenAI"]},
+{"source": "Claude Code", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Claude Code 从内部原型成长为公司级产品"]},
+{"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.6, "evidence": ["OpenAI 的 Codex 有类似 Claude Code 的业务"]},
+{"source": "Claude Code", "target": "Codex", "type": "competes_with", "weight": 0.7, "evidence": ["OpenAI 的 Codex 有类似 Claude Code 的业务"]},
+{"source": "OpenAI", "target": "Anthropic", "type": "competes_with", "weight": 0.5, "evidence": ["把这一连串当作两巨头在模型、定价、产品和人才四条线上全面竞争的信号"]},
+{"source": "Austin Lau", "target": "OpenAI", "type": "affiliated_with", "weight": 0.5, "evidence": ["Anthropic 增长营销经理 Austin Lau 也转投 OpenAI"]}
+],
+"metrics": [],
+"why_it_matters": "编码 Agent 已成为前沿实验室产品与人才的正面战场，Claude Code 与 Codex 从此将直接对标，产品负责人的流向成为竞争烈度的早期信号。"
+},
+{
+"article_id": "2026-11-05-4",
+"entities": [
+{"name": "Aina", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["硬件创业公司 Aina 发布了售价 399 美元（早鸟价，之后 499 美元）的 AI 戒指"]},
+{"name": "AI ring", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Aina 发布了售价 399 美元（早鸟价，之后 499 美元）的 AI 戒指"]},
+{"name": "Apoorv Shankar", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["创始人 Apoorv Shankar 表示"]},
+{"name": "Natura", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["同类产品还包括更便宜的 Natura $99 戒指"]},
+{"name": "Mac", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["并对 Mac 听写笔记"]}
+],
+"events": [
+{"type": "launch", "label": "Aina 发布带屏、摇杆和麦克风的 AI 戒指", "summary": "Aina 发布售价 399 美元（之后 499 美元）的 AI 戒指，集成屏幕、摇杆和麦克风，能用来接电话并对 Mac 听写笔记。", "participants": [{"name": "Aina", "type": "company", "role": "subject"}, {"name": "AI ring", "type": "product", "role": "object"}], "evidence": ["Aina 发布了售价 399 美元（早鸟价，之后 499 美元）的 AI 戒指", "能用来接电话并对 Mac 听写笔记"]},
+{"type": "trend", "label": "可穿戴硬件成为控制 AI Agent 的随身入口新品类", "summary": "随着 Agent 从手机走向无处不在，戒指、手表这类始终在线的微交互硬件正在成为新品类，同类产品还包括更便宜的 Natura 戒指。", "participants": [{"name": "Apoorv Shankar", "type": "person", "role": "subject"}, {"name": "AI ring", "type": "product", "role": "object"}, {"name": "Natura", "type": "product", "role": "object"}], "evidence": ["可穿戴硬件不再只是\"记录\"，而是成为控制 AI Agent 的随身入口", "戒指、手表这类始终在线的微交互硬件正在成为新品类"]}
+],
+"relations": [
+{"source": "AI ring", "target": "Aina", "type": "developed_by", "weight": 0.9, "evidence": ["Aina 发布了售价 399 美元（早鸟价，之后 499 美元）的 AI 戒指"]},
+{"source": "AI ring", "target": "Natura", "type": "competes_with", "weight": 0.5, "evidence": ["同类产品还包括更便宜的 Natura $99 戒指"]},
+{"source": "Apoorv Shankar", "target": "Aina", "type": "affiliated_with", "weight": 0.7, "evidence": ["创始人 Apoorv Shankar 表示"]},
+{"source": "AI ring", "target": "Mac", "type": "uses", "weight": 0.4, "evidence": ["并对 Mac 听写笔记"]}
+],
+"metrics": [
+{"name": "AI 戒指早鸟价", "value": "399 美元"},
+{"name": "AI 戒指正式价", "value": "499 美元"},
+{"name": "Natura 戒指价格", "value": "$99"}
+],
+"why_it_matters": "AI 交互正从屏幕向更贴身、更即时输入的硬件迁移，Agent 终端设备的差异化竞争开始显现，可穿戴不再只是'记录'而是控制 Agent 的入口。"
+},
+{
+"article_id": "2026-11-05-5",
+"entities": [
+{"name": "Salesforce", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Salesforce 的 Agentforce Coworker 使用量三个月增长 21 倍"]},
+{"name": "Agentforce Coworker", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Salesforce 的 Agentforce Coworker 使用量三个月增长 21 倍"]},
+{"name": "Microsoft Teams", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["包括 Microsoft Teams、移动端和桌面端"]},
+{"name": "Google Workspace", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["Google Workspace 与 Microsoft 365 连接"]},
+{"name": "Microsoft 365", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["Google Workspace 与 Microsoft 365 连接"]},
+{"name": "Adecco", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["Adecco 集团等企业正在跨业务扩展采用"]}
+],
+"events": [
+{"type": "trend", "label": "Agentforce Coworker 使用量三个月增长 21 倍", "summary": "Salesforce 宣布超过 185000 名用户正在使用 Coworker，三个月内使用量增长 21 倍，Adecco 集团等企业正在跨业务扩展采用。", "participants": [{"name": "Salesforce", "type": "company", "role": "subject"}, {"name": "Agentforce Coworker", "type": "product", "role": "object"}], "evidence": ["Salesforce 的 Agentforce Coworker 使用量三个月增长 21 倍", "超过 185000 名用户正在使用 Coworker"]},
+{"type": "launch", "label": "Agentforce Coworker 新增 Teams、移动端与桌面端协作能力", "summary": "此次更新让 Agent 延伸到员工所在的工作流，包括 Microsoft Teams、移动端和桌面端，并新增 Google Workspace 与 Microsoft 365 连接等能力。", "participants": [{"name": "Salesforce", "type": "company", "role": "subject"}, {"name": "Agentforce Coworker", "type": "product", "role": "object"}, {"name": "Microsoft Teams", "type": "product", "role": "object"}], "evidence": ["包括 Microsoft Teams、移动端和桌面端", "Google Workspace 与 Microsoft 365 连接"]}
+],
+"relations": [
+{"source": "Agentforce Coworker", "target": "Salesforce", "type": "developed_by", "weight": 0.8, "evidence": ["Salesforce 的 Agentforce Coworker 使用量三个月增长 21 倍"]},
+{"source": "Agentforce Coworker", "target": "Microsoft Teams", "type": "integrates", "weight": 0.7, "evidence": ["包括 Microsoft Teams、移动端和桌面端"]},
+{"source": "Agentforce Coworker", "target": "Google Workspace", "type": "integrates", "weight": 0.6, "evidence": ["Google Workspace 与 Microsoft 365 连接"]},
+{"source": "Agentforce Coworker", "target": "Microsoft 365", "type": "integrates", "weight": 0.6, "evidence": ["Google Workspace 与 Microsoft 365 连接"]},
+{"source": "Adecco", "target": "Agentforce Coworker", "type": "uses", "weight": 0.6, "evidence": ["Adecco 集团等企业正在跨业务扩展采用"]}
+],
+"metrics": [
+{"name": "三个月内使用量增长", "value": "21 倍"},
+{"name": "Coworker 使用用户数", "value": "超过 185000 名"}
+],
+"why_it_matters": "Agent 从'工具'走向'同事'，Salesforce 通过把 Coworker 嵌进 Teams、移动端与既有 CRM 底座，给出了企业 Agent 分发规模化的一条主流答案。"
+},
+{
+"article_id": "2026-11-05-6",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 向 Web、桌面和移动端推送 ChatGPT Images 2.6"]},
+{"name": "ChatGPT Images 2.6", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 向 Web、桌面和移动端推送 ChatGPT Images 2.6"]},
+{"name": "GPT-Image-2.6 Flare", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["GPT-Image-2.6 Flare 面向更快的生成"]},
+{"name": "GPT-Image-2.6 Sunburst", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Sunburst 面向更高画质"]}
+],
+"events": [
+{"type": "launch", "label": "OpenAI 推送支持原生动图生成的 ChatGPT Images 2.6", "summary": "OpenAI 向 Web、桌面和移动端推送 ChatGPT Images 2.6，支持由提示词或图片直接生成动图 GIF，生成速度较上一代提升约 50%。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "ChatGPT Images 2.6", "type": "product", "role": "object"}], "evidence": ["OpenAI 向 Web、桌面和移动端推送 ChatGPT Images 2.6", "生成速度较上一代提升约 50%"]},
+{"type": "launch", "label": "OpenAI 上线 Flare 与 Sunburst 两条图像 API 模型", "summary": "API 侧新增 GPT-Image-2.6 Flare 面向更快的生成，Sunburst 面向更高画质并支持 SVG 输出。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "GPT-Image-2.6 Flare", "type": "model", "role": "object"}, {"name": "GPT-Image-2.6 Sunburst", "type": "model", "role": "object"}], "evidence": ["API 侧新增两条模型：GPT-Image-2.6 Flare 面向更快的生成", "Sunburst 面向更高画质"]}
+],
+"relations": [
+{"source": "ChatGPT Images 2.6", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["OpenAI 向 Web、桌面和移动端推送 ChatGPT Images 2.6"]},
+{"source": "GPT-Image-2.6 Flare", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["GPT-Image-2.6 Flare 面向更快的生成"]},
+{"source": "GPT-Image-2.6 Sunburst", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["Sunburst 面向更高画质"]}
+],
+"metrics": [
+{"name": "每周图片生成量", "value": "超过 40 亿次"},
+{"name": "生成速度提升", "value": "约 50%"}
+],
+"why_it_matters": "当 API 同时提供'快'和'好'两个档位，图像生成的调用价格与产品用途差异会被进一步拉开，静态图像开始向 GIF、SVG 等可批量调用的物料延伸。"
+},
+{
+"article_id": "2026-11-05-7",
+"entities": [
+{"name": "Cognition", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Cognition 推出 SWE-2 的紧凑版编码模型 Flash"]},
+{"name": "SWE-2 Flash", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Cognition 推出 SWE-2 的紧凑版编码模型 Flash"]},
+{"name": "SWE-2", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["SWE-2 的紧凑版编码模型 Flash"]},
+{"name": "Inkling-Small", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["以 Thinking Machines 的开源 MoE 模型 Inkling-Small（276B/12B 激活，Apache 2.0）为基础"]},
+{"name": "Thinking Machines", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["以 Thinking Machines 的开源 MoE 模型 Inkling-Small"]},
+{"name": "Terminal-Bench 4.0", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["把 Terminal-Bench 4.0 从 0.9% 提到 20.0%"]},
+{"name": "FrontierCode 2.0", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["FrontierCode 2.0 从 3.2% 提到 24.0%"]},
+{"name": "ExploitBench", "type": "benchmark", "aliases": [], "confidence": 0.8, "evidence": ["训练把 ExploitBench 从 11.3% 提到 34.8%"]}
+],
+"events": [
+{"type": "launch", "label": "Cognition 发布低成本编码模型 SWE-2 Flash", "summary": "Cognition 推出 SWE-2 的紧凑版编码模型 Flash（276B 总参、12B 激活），跑 3 倍速、售价仅五分之一，面向自动化、代码评审等日常 Agent 工作。", "participants": [{"name": "Cognition", "type": "company", "role": "subject"}, {"name": "SWE-2 Flash", "type": "model", "role": "object"}], "evidence": ["Cognition 推出 SWE-2 的紧凑版编码模型 Flash（276B 总参、12B 激活）", "跑 3 倍速、售价仅五分之一"]},
+{"type": "research", "label": "SWE-2 Flash 基于开源 MoE 模型 Inkling-Small 训练", "summary": "SWE-2 Flash 以 Thinking Machines 的开源 MoE 模型 Inkling-Small（276B/12B 激活，Apache 2.0）为基础，首次在 RL 前加入中间训练阶段。", "participants": [{"name": "Cognition", "type": "company", "role": "subject"}, {"name": "Inkling-Small", "type": "model", "role": "object"}, {"name": "Thinking Machines", "type": "company", "role": "partner"}], "evidence": ["以 Thinking Machines 的开源 MoE 模型 Inkling-Small（276B/12B 激活，Apache 2.0）为基础"]},
+{"type": "benchmark", "label": "SWE-2 Flash 在 Terminal-Bench 4.0 与 FrontierCode 2.0 大幅提升", "summary": "把 Terminal-Bench 4.0 从 0.9% 提到 20.0%、FrontierCode 2.0 从 3.2% 提到 24.0%；但 ExploitBench 从 11.3% 提到 34.8%，出于安全暂不公开权重。", "participants": [{"name": "SWE-2 Flash", "type": "model", "role": "subject"}, {"name": "Terminal-Bench 4.0", "type": "benchmark", "role": "benchmark"}, {"name": "FrontierCode 2.0", "type": "benchmark", "role": "benchmark"}, {"name": "ExploitBench", "type": "benchmark", "role": "benchmark"}], "evidence": ["把 Terminal-Bench 4.0 从 0.9% 提到 20.0%", "FrontierCode 2.0 从 3.2% 提到 24.0%", "训练把 ExploitBench 从 11.3% 提到 34.8%"]}
+],
+"relations": [
+{"source": "SWE-2 Flash", "target": "Cognition", "type": "developed_by", "weight": 0.9, "evidence": ["Cognition 推出 SWE-2 的紧凑版编码模型 Flash"]},
+{"source": "SWE-2 Flash", "target": "Inkling-Small", "type": "built_on", "weight": 0.8, "evidence": ["以 Thinking Machines 的开源 MoE 模型 Inkling-Small（276B/12B 激活，Apache 2.0）为基础"]},
+{"source": "SWE-2 Flash", "target": "SWE-2", "type": "variant_of", "weight": 0.6, "evidence": ["SWE-2 的紧凑版编码模型 Flash"]},
+{"source": "SWE-2 Flash", "target": "Terminal-Bench 4.0", "type": "evaluated_on", "weight": 0.7, "evidence": ["把 Terminal-Bench 4.0 从 0.9% 提到 20.0%"]},
+{"source": "SWE-2 Flash", "target": "FrontierCode 2.0", "type": "evaluated_on", "weight": 0.7, "evidence": ["FrontierCode 2.0 从 3.2% 提到 24.0%"]},
+{"source": "SWE-2 Flash", "target": "ExploitBench", "type": "evaluated_on", "weight": 0.6, "evidence": ["训练把 ExploitBench 从 11.3% 提到 34.8%"]},
+{"source": "Inkling-Small", "target": "Thinking Machines", "type": "developed_by", "weight": 0.7, "evidence": ["以 Thinking Machines 的开源 MoE 模型 Inkling-Small"]}
+],
+"metrics": [
+{"name": "SWE-2 Flash 总参数量", "value": "276B"},
+{"name": "SWE-2 Flash 激活参数量", "value": "12B"},
+{"name": "推理速度", "value": "3 倍速"},
+{"name": "价格", "value": "五分之一"},
+{"name": "Terminal-Bench 4.0 得分", "value": "20.0%（从 0.9% 提升）"},
+{"name": "FrontierCode 2.0 得分", "value": "24.0%（从 3.2% 提升）"},
+{"name": "ExploitBench 得分", "value": "34.8%（从 11.3% 提升）"}
+],
+"why_it_matters": "编码 Agent 的成本竞赛从'最高分'转向'每单位活儿的价格/时延'，中小模型凭借够快够便宜在 Agent 循环里获得明确分工。"
+},
+{
+"article_id": "2026-11-05-8",
+"entities": [
+{"name": "TTT-Consolidate", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["新论文提出 TTT-Consolidate"]},
+{"name": "OpenParallelThinking", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["作者构建了 OpenParallelThinking 语料（12810 道数学题、混入六个 LLM 的推理轨迹）来训练聚合方法"]},
+{"name": "测试时训练", "type": "topic", "aliases": ["test-time training"], "confidence": 0.8, "evidence": ["把轨迹先通过测试时训练（内循环）编码进一个轻量 LoRA 适配器"]}
+],
+"events": [
+{"type": "research", "label": "新论文提出 TTT-Consolidate 聚合多 Agent 推理轨迹", "summary": "TTT-Consolidate 把多 Agent 的推理轨迹通过测试时训练压缩成参数化表示，在挑战性数学与 STEM 基准上比最优聚合基线最高领先 20 个百分点。", "participants": [{"name": "TTT-Consolidate", "type": "paper", "role": "subject"}, {"name": "OpenParallelThinking", "type": "topic", "role": "object"}], "evidence": ["新论文提出 TTT-Consolidate", "作者构建了 OpenParallelThinking 语料（12810 道数学题、混入六个 LLM 的推理轨迹）来训练聚合方法"]},
+{"type": "research", "label": "TTT-Consolidate 用测试时训练把多 Agent 轨迹压缩成参数表示", "summary": "把轨迹先通过测试时训练（内循环）编码进一个轻量 LoRA 适配器，再在压缩表示上生成最终解，训练阶段用双层优化元学习这个压缩过程。", "participants": [{"name": "TTT-Consolidate", "type": "paper", "role": "subject"}, {"name": "测试时训练", "type": "topic", "role": "object"}], "evidence": ["把轨迹先通过测试时训练（内循环）编码进一个轻量 LoRA 适配器"]}
+],
+"relations": [
+{"source": "TTT-Consolidate", "target": "测试时训练", "type": "uses", "weight": 0.8, "evidence": ["把轨迹先通过测试时训练（内循环）编码进一个轻量 LoRA 适配器"]},
+{"source": "TTT-Consolidate", "target": "OpenParallelThinking", "type": "uses", "weight": 0.7, "evidence": ["作者构建了 OpenParallelThinking 语料（12810 道数学题、混入六个 LLM 的推理轨迹）来训练聚合方法"]}
+],
+"metrics": [
+{"name": "OpenParallelThinking 语料题目数", "value": "12810 道数学题"},
+{"name": "相对最优基线的提升", "value": "最高 20 个百分点"}
+],
+"why_it_matters": "当'多个模型一起想'成为常态，把中间思考压缩成有用信号是关键科学问题之一——多 Agent 共识正从上下文拼接推进到参数层面。"
+},
+{
+"article_id": "2026-11-05-9",
+"entities": [
+{"name": "Axion 1.0", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["论文提出 Axion 1.0，一个仅用三段式（两次轻量 SFT + 一次 RL）"]},
+{"name": "监督微调（SFT）", "type": "topic", "aliases": ["SFT"], "confidence": 0.7, "evidence": ["仅用三段式（两次轻量 SFT + 一次 RL）"]},
+{"name": "强化学习（RL）", "type": "topic", "aliases": ["RL"], "confidence": 0.7, "evidence": ["第三段 RL 强化长程推理与工具交互"]}
+],
+"events": [
+{"type": "research", "label": "论文提出开放 Agent 基础模型 Axion 1.0", "summary": "Axion 1.0 用极简的三段式流程（两次轻量 SFT + 一次 RL）训练出 Agent 能力，在多个 Agentic 基准上表现可与头部商业模型竞争。", "participants": [{"name": "Axion 1.0", "type": "model", "role": "subject"}, {"name": "监督微调（SFT）", "type": "topic", "role": "object"}, {"name": "强化学习（RL）", "type": "topic", "role": "object"}], "evidence": ["Axion 1.0 用极简流程训练出 Agent 能力", "仅用三段式（两次轻量 SFT + 一次 RL）"]},
+{"type": "open_source", "label": "Axion 1.0 完全开放权重与训练配方", "summary": "Axion 1.0 不仅开放权重，还开放数据构造、生成过滤、验证提示和训练代码，让整个开发流程可复现、可扩展。", "participants": [{"name": "Axion 1.0", "type": "model", "role": "subject"}, {"name": "监督微调（SFT）", "type": "topic", "role": "object"}], "evidence": ["不仅开放权重，还开放数据构造、生成过滤、验证提示和训练代码"]}
+],
+"relations": [
+{"source": "Axion 1.0", "target": "强化学习（RL）", "type": "uses", "weight": 0.7, "evidence": ["第三段 RL 强化长程推理与工具交互"]},
+{"source": "Axion 1.0", "target": "监督微调（SFT）", "type": "uses", "weight": 0.7, "evidence": ["第一段 SFT 通过\"模型感知\"数据构造建立自包含推理"]}
+],
+"metrics": [],
+"why_it_matters": "强 Agent 模型可以既开放又简单，无需堆砌复杂训练阶段，只要把数据构造与验证做扎实——开放 Agent 智能复现与工程化的门槛正在降低。"
+},
+{
+"article_id": "2026-11-05-10",
+"entities": [
+{"name": "美国中期选举", "type": "policy", "aliases": [], "confidence": 0.7, "evidence": ["美国中期选举的结果因此被解读为 AI 投资供给侧的潜在分水岭"]},
+{"name": "Nomura", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["Nomura 指出，民主党在关键州长席位的获胜"]},
+{"name": "JPMorgan", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["JPMorgan 的 James Sullivan 判断"]},
+{"name": "James Sullivan", "type": "person", "aliases": [], "confidence": 0.8, "evidence": ["JPMorgan 的 James Sullivan 判断"]},
+{"name": "BMI", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["BMI 警告"]},
+{"name": "neocloud", "type": "topic", "aliases": [], "confidence": 0.7, "evidence": ["靠债务扩张的 neocloud 面临远高于超大规模云厂商的融资成本"]}
+],
+"events": [
+{"type": "policy", "label": "美国中期选举可能带来更严的数据中心许可与监管", "summary": "分析称民主党在关键州长选举的获胜可能提高数据中心项目遭遇更严格许可与监管的几率，2028 年起影响更大。", "participants": [{"name": "美国中期选举", "type": "policy", "role": "subject"}, {"name": "neocloud", "type": "topic", "role": "object"}], "evidence": ["民主党在关键州长席位的获胜提高了数据中心项目遭遇更严格许可与监管的几率"]},
+{"type": "trend", "label": "分析师评估选举结果对 AI 数据中心供给的影响", "summary": "Nomura 与 JPMorgan 的 James Sullivan 判断现有产能可能因此更值钱，靠债务扩张的 neocloud 面临更高融资成本；BMI 警告投资或超预期下降。", "participants": [{"name": "Nomura", "type": "organization", "role": "subject"}, {"name": "JPMorgan", "type": "company", "role": "partner"}, {"name": "BMI", "type": "organization", "role": "partner"}, {"name": "neocloud", "type": "topic", "role": "object"}, {"name": "美国中期选举", "type": "policy", "role": "partner"}], "evidence": ["Nomura 指出，民主党在关键州长席位的获胜", "JPMorgan 的 James Sullivan 判断", "BMI 警告"]}
+],
+"relations": [
+{"source": "美国中期选举", "target": "neocloud", "type": "affects", "weight": 0.5, "evidence": ["民主党在关键州长席位的获胜提高了数据中心项目遭遇更严格许可与监管的几率"]},
+{"source": "James Sullivan", "target": "JPMorgan", "type": "affiliated_with", "weight": 0.5, "evidence": ["JPMorgan 的 James Sullivan 判断"]}
+],
+"metrics": [
+{"name": "受影响最明显的时间窗口", "value": "2028 年起的项目"}
+],
+"why_it_matters": "AI 基建的瓶颈正从'有没有钱和芯片'转向'批不批得下来、借不借得到钱'，政策与融资成本成为新的供给约束变量。"
+},
+{
+"article_id": "2026-11-05-11",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic 在披露中证实"]},
+{"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Claude 撰写了公司 9 月代码贡献的 90% 以上"]},
+{"name": "METR", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["METR 在 11 月 5 日发布的研发加速评估"]}
+],
+"events": [
+{"type": "trend", "label": "Anthropic 披露 Claude 撰写了其 90% 以上代码", "summary": "Anthropic 证实 Claude 撰写了公司 9 月代码贡献的 90% 以上，表示可能迫在眉睫触及'可归因于 AI 的剧烈加速进展'的定义，但声明不打算用 Claude 安全地独立设计后继的前沿模型。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Claude", "type": "model", "role": "object"}], "evidence": ["Claude 撰写了公司 9 月代码贡献的 90% 以上", "Anthropic 在披露中证实"]},
+{"type": "research", "label": "METR 评估称前沿实验室逼近自我改进循环临界", "summary": "METR 在 11 月 5 日发布的研发加速评估与 Anthropic 的披露互相印证，称实验室正接近'自我改进回路'，并把加速变成可观测指标。", "participants": [{"name": "METR", "type": "organization", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "object"}], "evidence": ["METR 在 11 月 5 日发布的研发加速评估"]}
+],
+"relations": [
+{"source": "Anthropic", "target": "Claude", "type": "uses", "weight": 0.9, "evidence": ["Claude 撰写了公司 9 月代码贡献的 90% 以上"]},
+{"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.7, "evidence": ["Anthropic 在披露中证实"]}
+],
+"metrics": [
+{"name": "9 月代码贡献占比", "value": "90% 以上"},
+{"name": "Q3 收入", "value": "约 170 亿美元"},
+{"name": "收入同比增幅", "value": "12 倍"},
+{"name": "至 2045 年算力承诺", "value": "约 8954 亿美元"}
+],
+"why_it_matters": "当实验室一半代码与全部算力财务都由 AI 与 AI 基建驱动，'AI 写的 AI'从口号变成可量化事实，加速同时成为战略变量与治理对象。"
+}
+]
+}
