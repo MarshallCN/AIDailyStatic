@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-06",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "数字与事件大多有据可依、成本核算自洽，但存在一处关系方向反转（Meta 被写成限制数据中心，实为县政府叫停 Meta 设施）及若干关系类型与实体类型错配（Stacks Project 归单一作者、Images 2.6 标成 product、IETF 被误记为草案开发主体），另有核心评测模型 GLM-5.2/Qwen3.5 未抽为实体。",
+  "findings": [
+    {
+      "article_id": "2026-11-06-11",
+      "severity": "high",
+      "problem": "关系 \"Meta --restricts--> 数据中心\" 方向写反。原文是俄亥俄州一个县通过了对 Meta 规划的 70 万平方英尺设施的禁令，即县政府限制 Meta 的数据中心，而非 Meta 限制数据中心。当前表述让图谱讲出相反的故事（好似 Meta 在限制数据中心建设）。",
+      "fix": "删除该关系，或改为反向、主体正确的表述：建立 县/法规 --restricts--> Meta(数据中心) 的关系；若不宜新增无名字的地方政府实体，则保留 Meta 实体但去掉 'restricts 数据中心' 这条边，把禁令信息并入 metrics/事件描述即可。"
+    },
+    {
+      "article_id": "2026-11-06-8",
+      "severity": "medium",
+      "problem": "关系 \"Stacks Project --authored_by--> Johan de Jong\" 关系类型用错。原文明确说 Stacks Project 由 de Jong 于 2005 年'发起、数百位数学家贡献了二十年'，属开放协作参考书，不是他个人所著。把众包成果归为单一作者 authored_by 属事实性走样。",
+      "fix": "把该关系类型改为 initiated_by（发起人）或 founded_by，保留 de Jong 主体；同时可补充一条与'数百位数学家集体贡献'对应的表述，不要用 authored_by。"
+    },
+    {
+      "article_id": "2026-11-06-13",
+      "severity": "medium",
+      "problem": "关系 \"AI Preferences --developed_by--> IETF\" 归因错误。原文指草案由 Anthropic 工程师 Kevin Kelley 在 IETF 的 AI Preferences 工作组提交，这里 AI Preferences 是工作组名，IETF 是承办/标准化机构，不是起草方。当前关系把标准主体记到了 IETF 头上，且与同一篇文章事件 2 自己写的'Kelley 提出草案'自相矛盾。",
+      "fix": "删除 \"AI Preferences --developed_by--> IETF\"。若保留工作组成员贡献，改为 Kevin Kelley --authored_by/proposed--> __usage_ai-training 草案（或用 IETF --hosts--> AI Preferences 工作组）；不要把 IETF 写成开发主体。"
+    },
+    {
+      "article_id": "2026-11-06-5",
+      "severity": "medium",
+      "problem": "实体 'Images 2.6' 类型标为 product，但原文称其为'图像模型'，且同篇 API 侧 Flare/Sunburst 都标为 model。同一产品线的图像模型在产品与 model 两个类型间不一致，会造成跨文章实体类型错配。",
+      "fix": "把 'Images 2.6' 的 type 从 product 改为 model，与 GPT-Image-2.6 Flare/Sunburst 保持一致。"
+    },
+    {
+      "article_id": "2026-11-06-0",
+      "severity": "medium",
+      "problem": "评测的核心四款模型中，事件 0 明确列出 'Muse Spark Open、GLM-5.2、Qwen3.5、Kimi K3'，但实体表只抽取了 Muse Spark Open 和 Kimi K3，漏掉了 GLM-5.2 与 Qwen3.5 两个被重点评测的对象（且其 1.2–2.7 倍提升、胜过 GB300 等指标正是围绕它们）。",
+      "fix": "补充实体 'GLM-5.2'（model）与 'Qwen3.5'（model），并为它们各建与 TPUv7 的 uses/evaluated 边，用原文对应的数据做 evidence，使四个评测主体对齐事件描述。"
+    },
+    {
+      "article_id": "2026-11-06-0",
+      "severity": "low",
+      "problem": "关系 \"TPUv7 --outperforms--> GB300\" 表述过于绝对。原文是 TPUv7 '胜过 GB300 FP8，并在高质量/高精度档位与 GB300 FP4 拉平'，即并非在所有档位都胜出。",
+      "fix": "在 evidence 或关系描述里补上'胜过 GB300 FP8、与 FP4 拉平'的限定，避免传达全面 outperforms 的印象；或在类型上改为以 FP8 对比为主。"
+    }
+  ],
+  "lessons": [
+    "分布式/众包编纂的成果（如开放参考书）不要用 authored_by 归属单一作者；原文说'某人发起、多人贡献'时用 initiated_by 或 founded_by。",
+    "限制/禁令类关系务必区分执行主体与承受对象：是'政府/县限制某公司的设施'，不是'该公司限制数据中心'，方向不能反。",
+    "标准/草案类新闻中，把'某人在某工作组的提案'记为起草人的贡献，不要把承办/标准化机构（如 IETF）记为开发主体。"
+  ]
+}

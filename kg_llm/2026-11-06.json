@@ -1,0 +1,435 @@
+{
+"date": "2026-11-06",
+"articles": [
+{
+"article_id": "2026-11-06-0",
+"entities": [
+{"name": "SemiAnalysis", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["SemiAnalysis 首次公布了 TPUv7 在四款大模型上跑通 AgentX"]},
+{"name": "TPUv7", "type": "hardware", "aliases": ["Ironwood"], "confidence": 0.95, "evidence": ["SemiAnalysis 首次公布了 TPUv7 在四款大模型上跑通 AgentX"]},
+{"name": "AgentX", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["首次公布了 TPUv7 在四款大模型上跑通 AgentX（多轮、长上下文、贴近真实 agent 负载）"]},
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["英伟达真正的护城河是软件与庞大的开发者生态"]},
+{"name": "B200/B300", "type": "hardware", "aliases": ["B200", "B300"], "confidence": 0.9, "evidence": ["比 B200 与 B300 高出最多 50%"]},
+{"name": "GB300", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["并在高质量/高精度档位与 GB300 FP4 拉平"]},
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Meta 的 Muse Spark Open 816B 用 SGLang-TorchTPU"]},
+{"name": "Muse Spark Open", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Meta 的 Muse Spark Open 816B 用 SGLang-TorchTPU"]},
+{"name": "Kimi K3", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Kimi K3 用 vLLM（社区开发者 Inferact 提交）"]},
+{"name": "vLLM", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Kimi K3 用 vLLM（社区开发者 Inferact 提交）"]},
+{"name": "GLM-5.2", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["GLM-5.2 用 vLLM 跑 FP8"]},
+{"name": "Qwen3.5", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Qwen3.5 用 llm-d 拆分配置"]}
+],
+"events": [
+{"type": "research", "label": "SemiAnalysis 首次公布 TPUv7 在四款大模型上的 AgentX 推理成绩", "summary": "SemiAnalysis 首次公布第三方 TPUv7（Ironwood）在 Muse Spark Open、GLM-5.2、Qwen3.5、Kimi K3 四款大模型上跑通 AgentX 多轮长上下文推理的结果。", "participants": [{"name": "SemiAnalysis", "type": "organization", "role": "subject"}, {"name": "TPUv7", "type": "hardware", "role": "object"}, {"name": "AgentX", "type": "benchmark", "role": "benchmark"}], "evidence": ["SemiAnalysis 首次公布了 TPUv7 在四款大模型上跑通 AgentX"]},
+{"type": "benchmark", "label": "TPUv7 在单位美元 agentic 推理吞吐上反超 B200/GB300", "summary": "报告称 TPUv7 在单位美元 token 数上高于 B200、B300、GB300 乃至 MI355X，多轮 agentic 推理成为英伟达首次被并行生态以性价比碾压的标准化基准。", "participants": [{"name": "TPUv7", "type": "hardware", "role": "subject"}, {"name": "AgentX", "type": "benchmark", "role": "benchmark"}, {"name": "NVIDIA", "type": "company", "role": "competitor"}], "evidence": ["这是英伟达首次在标准化推理基准上被并行生态以性价比碾压"]}
+],
+"relations": [
+{"source": "TPUv7", "target": "AgentX", "type": "evaluated_on", "weight": 0.8, "evidence": ["SemiAnalysis 首次公布了 TPUv7 在四款大模型上跑通 AgentX"]},
+{"source": "TPUv7", "target": "B200/B300", "type": "outperforms", "weight": 0.7, "evidence": ["比 B200 与 B300 高出最多 50%"]},
+{"source": "TPUv7", "target": "GB300", "type": "outperforms", "weight": 0.7, "evidence": ["在各级交互性上都胜过 GB300 FP8，并在高质量/高精度档位与 GB300 FP4 拉平"]},
+{"source": "GLM-5.2", "target": "TPUv7", "type": "uses", "weight": 0.7, "evidence": ["首次公布了 TPUv7 在四款大模型上跑通 AgentX"]},
+{"source": "Qwen3.5", "target": "TPUv7", "type": "uses", "weight": 0.7, "evidence": ["首次公布了 TPUv7 在四款大模型上跑通 AgentX"]},
+{"source": "GLM-5.2", "target": "vLLM", "type": "uses", "weight": 0.6, "evidence": ["GLM-5.2 用 vLLM 跑 FP8"]},
+{"source": "Muse Spark Open", "target": "TPUv7", "type": "uses", "weight": 0.7, "evidence": ["Meta 的 Muse Spark Open 816B 用 SGLang-TorchTPU"]},
+{"source": "Kimi K3", "target": "vLLM", "type": "uses", "weight": 0.7, "evidence": ["Kimi K3 用 vLLM（社区开发者 Inferact 提交）"]},
+{"source": "B200/B300", "target": "NVIDIA", "type": "developed_by", "weight": 0.5, "evidence": ["比 B200 与 B300 高出最多 50%"]},
+{"source": "GB300", "target": "NVIDIA", "type": "developed_by", "weight": 0.5, "evidence": ["但其首个 GB300 FP4 应战提交在多数区间仍比 TPUv7 FP8 差 1.64 倍"]},
+{"source": "Muse Spark Open", "target": "Meta", "type": "developed_by", "weight": 0.5, "evidence": ["Meta 的 Muse Spark Open 816B 用 SGLang-TorchTPU"]}
+],
+"metrics": [
+{"name": "Ironwood/TPUv7 单位美元性能相对 B200 与 B300 上限提升", "value": "高出最多 50%"},
+{"name": "GLM-5.2 区间单位美元 token 数相对 B200/B300/MI355X 提升", "value": "1.2–2.7 倍"},
+{"name": "Kimi K3 单位美元 token 数相对 GB200/B200/B300/MI355X 提升", "value": "高出 1.15–2.5 倍"},
+{"name": "英伟达 GB300 FP4 应战提交相对 TPUv7 FP8 差距", "value": "差 1.64 倍"}
+],
+"why_it_matters": "算力竞争从单芯片跑分转向单位美元 agentic 吞吐，英伟达'CUDA 软件护城河'的叙事首次在公开数据上被并行生态以性价比反超。"
+},
+{
+"article_id": "2026-11-06-1",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["OpenAI 在受控研究环境中构建了一个原型"]},
+{"name": "OpenAI cyber 模型", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 一个未发布的'cyber 模型'驱动的自主漏洞管线"]},
+{"name": "Linux", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["该管线在未弱化的桌面版 Linux 上"]}
+],
+"events": [
+{"type": "research", "label": "OpenAI 自主漏洞管线在单次运行中复现 1724 个 Linux 漏洞并产出 948 个 LPE 修复", "summary": "OpenAI 的 Scout/Analyst agent 管线在未弱化的桌面版 Linux 上复现 1724 个漏洞，并产出 948 个去重、各配独立补丁的本地提权（LPE）修复，总 API 成本约 120 万美元。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "OpenAI cyber 模型", "type": "model", "role": "object"}, {"name": "Linux", "type": "product", "role": "object"}], "evidence": ["该管线在未弱化的桌面版 Linux 上", "复现了 1724 个漏洞"]},
+{"type": "security", "label": "OpenAI 将数百份漏洞报告与补丁提交给 Linux 内核社区", "summary": "OpenAI 配合 Patch the Planet 计划分批提交数百份漏洞报告与补丁，并在 10 天内观察到 100 多个 LPE 已被他人补上或贴出 staging patch。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Linux", "type": "product", "role": "object"}], "evidence": ["OpenAI 已把数百份漏洞报告与补丁分批提交给内核社区"]}
+],
+"relations": [
+{"source": "OpenAI cyber 模型", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 一个未发布的'cyber 模型'驱动的自主漏洞管线"]},
+{"source": "OpenAI cyber 模型", "target": "Linux", "type": "targets", "weight": 0.8, "evidence": ["该管线在未弱化的桌面版 Linux 上", "复现了 1724 个漏洞"]},
+{"source": "OpenAI", "target": "OpenAI cyber 模型", "type": "uses", "weight": 0.8, "evidence": ["OpenAI 在受控研究环境中构建了一个原型"]}
+],
+"metrics": [
+{"name": "候选漏洞数", "value": "2308 个"},
+{"name": "复现漏洞数", "value": "1724 个"},
+{"name": "信息泄露 PoC 数", "value": "291 个"},
+{"name": "本地提权 exploit 数", "value": "1169 个"},
+{"name": "可用 LPE 修复（去重、各配补丁）", "value": "948 个"},
+{"name": "每个漏洞平均成本", "value": "约 $1279"},
+{"name": "单次运行总 API 成本", "value": "约 120 万美元"}
+],
+"why_it_matters": "'未知漏洞是防御者可依赖的缓冲'这一假设被推翻，补丁节奏与隔离成为主要防线，漏洞发现—exploit—补丁整条链路首次实现自动化闭环。"
+},
+{
+"article_id": "2026-11-06-2",
+"entities": [
+{"name": "Baidu", "type": "company", "aliases": ["百度"], "confidence": 0.97, "evidence": ["百度低调在 Hugging Face 放出文心 ERNIE-5.5-Flash-Base 权重"]},
+{"name": "ERNIE-5.5-Flash-Base", "type": "model", "aliases": ["文心ERNIE-5.5-Flash-Base"], "confidence": 0.95, "evidence": ["百度低调在 Hugging Face 放出文心 ERNIE-5.5-Flash-Base 权重"]},
+{"name": "Hugging Face", "type": "organization", "aliases": ["HuggingFace"], "confidence": 0.85, "evidence": ["百度低调在 Hugging Face 放出文心 ERNIE-5.5-Flash-Base 权重"]},
+{"name": "ERNIE 5.5 Flash Base License v1.0", "type": "policy", "aliases": [], "confidence": 0.8, "evidence": ["而是自定义 ERNIE 5.5 Flash Base License v1.0"]}
+],
+"events": [
+{"type": "open_source", "label": "百度在 Hugging Face 发布开源 MoE 基座 ERNIE-5.5-Flash-Base", "summary": "百度低调放出 280B 总参、每 token 激活 14B 的 MoE 基座模型权重，从零预训练 33.5T token，FP8/BF16 双格式开放，无发布会与官方预告。", "participants": [{"name": "Baidu", "type": "company", "role": "subject"}, {"name": "ERNIE-5.5-Flash-Base", "type": "model", "role": "object"}, {"name": "Hugging Face", "type": "organization", "role": "partner"}], "evidence": ["百度低调在 Hugging Face 放出文心 ERNIE-5.5-Flash-Base 权重"]},
+{"type": "open_source", "label": "ERNIE-5.5-Flash-Base 以自定义许可证发布并排除欧盟英国与韩国", "summary": "权重不在 Apache 2.0 下，而是自定义 ERNIE 5.5 Flash Base License v1.0，明确排除欧盟、英国与韩国；年营收 5000 万美元以下免费商用。", "participants": [{"name": "Baidu", "type": "company", "role": "subject"}, {"name": "ERNIE-5.5-Flash-Base", "type": "model", "role": "object"}], "evidence": ["明确排除欧盟、英国与韩国", "权重不在 Apache 2.0 下"]}
+],
+"relations": [
+{"source": "ERNIE-5.5-Flash-Base", "target": "Baidu", "type": "released_by", "weight": 0.9, "evidence": ["百度低调在 Hugging Face 放出文心 ERNIE-5.5-Flash-Base 权重"]},
+{"source": "ERNIE 5.5 Flash Base License v1.0", "target": "ERNIE-5.5-Flash-Base", "type": "restricts", "weight": 0.7, "evidence": ["明确排除欧盟、英国与韩国"]}
+],
+"metrics": [
+{"name": "总参数量", "value": "280B"},
+{"name": "每 token 激活参数量", "value": "14B"},
+{"name": "预训练 token 数", "value": "33.5T"},
+{"name": "最长训练上下文", "value": "128K"},
+{"name": "推理支持上下文", "value": "1M"},
+{"name": "词表大小", "value": "201216"},
+{"name": "免费商用营收门槛", "value": "年营收 5000 万美元以下"}
+],
+"why_it_matters": "国产开源从 chat 模型向基础研究型基座扩展，且用自定义许可证切割地域与营收边界——'开源'的许可语义被大厂重新定义。"
+},
+{
+"article_id": "2026-11-06-3",
+"entities": [
+{"name": "Moonshot AI", "type": "company", "aliases": ["月之暗面"], "confidence": 0.97, "evidence": ["Moonshot AI 在 Hugging Face 放出 Kimi K3.1 Pro 权重"]},
+{"name": "Kimi K3.1 Pro", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Moonshot AI 在 Hugging Face 放出 Kimi K3.1 Pro 权重"]},
+{"name": "Hugging Face", "type": "organization", "aliases": ["HuggingFace"], "confidence": 0.85, "evidence": ["Moonshot AI 在 Hugging Face 放出 Kimi K3.1 Pro 权重"]},
+{"name": "MXFP4", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["权重以 MXFP4 量化（激活层 MXFP8）在 Hugging Face 分发"]}
+],
+"events": [
+{"type": "open_source", "label": "Moonshot AI 在 Hugging Face 开放 Kimi K3.1 Pro 权重", "summary": "月之暗面放出迄今最强的开源权重模型 Kimi K3.1 Pro：MoE 2.8T 总参、每 token 激活 104B，原生多模态，支持约 1M token 上下文，权重以 MXFP4 量化分发。", "participants": [{"name": "Moonshot AI", "type": "company", "role": "subject"}, {"name": "Kimi K3.1 Pro", "type": "model", "role": "object"}, {"name": "Hugging Face", "type": "organization", "role": "partner"}], "evidence": ["Moonshot AI 在 Hugging Face 放出 Kimi K3.1 Pro 权重"]},
+{"type": "launch", "label": "Moonshot AI 同日开放 OpenAI/Anthropic 兼容的 kimi-k3.1-pro API", "summary": "同步开放 platform.kimi.ai 的 kimi-k3.1-pro API 调用，接口兼容 OpenAI 与 Anthropic。", "participants": [{"name": "Moonshot AI", "type": "company", "role": "subject"}, {"name": "Kimi K3.1 Pro", "type": "model", "role": "object"}], "evidence": ["同步开放 kimi-k3.1-pro 的 API 调用", "接口兼容 OpenAI 与 Anthropic"]}
+],
+"relations": [
+{"source": "Kimi K3.1 Pro", "target": "Moonshot AI", "type": "developed_by", "weight": 0.9, "evidence": ["月之暗面迄今最强的开源权重模型"]},
+{"source": "Kimi K3.1 Pro", "target": "Moonshot AI", "type": "released_by", "weight": 0.8, "evidence": ["Moonshot AI 在 Hugging Face 放出 Kimi K3.1 Pro 权重"]},
+{"source": "Kimi K3.1 Pro", "target": "MXFP4", "type": "uses", "weight": 0.6, "evidence": ["权重以 MXFP4 量化（激活层 MXFP8）在 Hugging Face 分发"]}
+],
+"metrics": [
+{"name": "总参数量", "value": "2.8T"},
+{"name": "每 token 激活参数量", "value": "104B"},
+{"name": "上下文长度", "value": "约 1M token"}
+],
+"why_it_matters": "开源生态首次把'百万上下文的多模态 agent'级权重交到开发者手中，闭源旗舰与自托管的差距被一举拉平。"
+},
+{
+"article_id": "2026-11-06-4",
+"entities": [
+{"name": "Ricursive", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Ricursive 发布 65B 稠密开源模型 Ripple-65B Preview"]},
+{"name": "Ripple-65B", "type": "model", "aliases": ["Ripple-65B Preview"], "confidence": 0.95, "evidence": ["Ricursive 发布 65B 稠密开源模型 Ripple-65B Preview"]},
+{"name": "TerminalBench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["TerminalBench 2.1 上 80.52"]},
+{"name": "Reflection Beam", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["其官方对比声称超过 Reflection Beam 501B"]},
+{"name": "Muse Spark Open", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Meta Muse Spark Open 816B（76.4）"]},
+{"name": "Inkling", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Thinking Machines Inkling 975B（63.8）"]},
+{"name": "Nemotron 3 Ultra", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["NVIDIA Nemotron 3 Ultra 550B（56.4）"]},
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Meta Muse Spark Open 816B（76.4）"]},
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.9, "evidence": ["NVIDIA Nemotron 3 Ultra 550B（56.4）"]},
+{"name": "SWE-bench", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["SWE-bench Verified 76.5"]},
+{"name": "AIME 2025", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["AIME 2025 98.3"]}
+],
+"events": [
+{"type": "launch", "label": "Ricursive 发布开源 65B 稠密模型 Ripple-65B Preview", "summary": "芯片设计公司 Ricursive 发布 Apache 2.0 的稠密 Transformer 模型 Ripple-65B，从零预训练 12T token、上下文 1M，后训练仅用 1.4M 次 RL rollout、总研发成本约 3200 万美元。", "participants": [{"name": "Ricursive", "type": "company", "role": "subject"}, {"name": "Ripple-65B", "type": "model", "role": "object"}], "evidence": ["Ricursive 发布 65B 稠密开源模型 Ripple-65B Preview"]},
+{"type": "benchmark", "label": "Ripple-65B 在 TerminalBench 2.1 登顶 80.52", "summary": "Ripple-65B 在 TerminalBench 2.1 得 80.52，官方对比声称超过 Reflection Beam 501B 等更大的美国开源模型；GMI Cloud 实测 SWE-bench Verified 76.5、AIME 2025 98.3。", "participants": [{"name": "Ripple-65B", "type": "model", "role": "subject"}, {"name": "TerminalBench", "type": "benchmark", "role": "benchmark"}, {"name": "Reflection Beam", "type": "model", "role": "competitor"}, {"name": "Muse Spark Open", "type": "model", "role": "competitor"}], "evidence": ["TerminalBench 2.1 上 80.52", "其官方对比声称超过 Reflection Beam 501B"]}
+],
+"relations": [
+{"source": "Ripple-65B", "target": "Ricursive", "type": "developed_by", "weight": 0.9, "evidence": ["Ricursive 发布 65B 稠密开源模型 Ripple-65B Preview"]},
+{"source": "Ripple-65B", "target": "TerminalBench", "type": "evaluated_on", "weight": 0.8, "evidence": ["TerminalBench 2.1 上 80.52"]},
+{"source": "Ripple-65B", "target": "Reflection Beam", "type": "outperforms", "weight": 0.7, "evidence": ["其官方对比声称超过 Reflection Beam 501B"]},
+{"source": "Ripple-65B", "target": "Muse Spark Open", "type": "outperforms", "weight": 0.6, "evidence": ["Meta Muse Spark Open 816B（76.4）"]},
+{"source": "Ripple-65B", "target": "Inkling", "type": "outperforms", "weight": 0.6, "evidence": ["Thinking Machines Inkling 975B（63.8）"]},
+{"source": "Ripple-65B", "target": "Nemotron 3 Ultra", "type": "outperforms", "weight": 0.6, "evidence": ["NVIDIA Nemotron 3 Ultra 550B（56.4）"]},
+{"source": "Ripple-65B", "target": "SWE-bench", "type": "evaluated_on", "weight": 0.6, "evidence": ["SWE-bench Verified 76.5"]},
+{"source": "Ripple-65B", "target": "AIME 2025", "type": "evaluated_on", "weight": 0.6, "evidence": ["AIME 2025 98.3"]},
+{"source": "Muse Spark Open", "target": "Meta", "type": "developed_by", "weight": 0.5, "evidence": ["Meta Muse Spark Open 816B（76.4）"]},
+{"source": "Nemotron 3 Ultra", "target": "NVIDIA", "type": "developed_by", "weight": 0.5, "evidence": ["NVIDIA Nemotron 3 Ultra 550B（56.4）"]}
+],
+"metrics": [
+{"name": "TerminalBench 2.1 得分", "value": "80.52"},
+{"name": "总研发成本", "value": "约 3200 万美元"},
+{"name": "RL rollout 次数", "value": "1.4M"},
+{"name": "总参数量", "value": "65B"},
+{"name": "Reflection Beam 501B TerminalBench 得分", "value": "80.1"},
+{"name": "Muse Spark Open 816B TerminalBench 得分", "value": "76.4"},
+{"name": "Inkling 975B TerminalBench 得分", "value": "63.8"},
+{"name": "Nemotron 3 Ultra 550B TerminalBench 得分", "value": "56.4"},
+{"name": "SWE-bench Verified 得分", "value": "76.5"},
+{"name": "AIME 2025 得分", "value": "98.3"},
+{"name": "预训练 token 数", "value": "12T"}
+],
+"why_it_matters": "'3200 万美元级 AI coding 开源模型'的成本曲线让中小团队追赶闭源 coding agent 的门槛大幅下降，agentic coding 高分不再依赖堆参数量。"
+},
+{
+"article_id": "2026-11-06-5",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["OpenAI 发布图像模型 Images 2.6"]},
+{"name": "Images 2.6", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 发布图像模型 Images 2.6"]},
+{"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["在 ChatGPT 与 Codex（Web/桌面/移动）中全局推出"]},
+{"name": "Codex", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["在 ChatGPT 与 Codex（Web/桌面/移动）中全局推出"]},
+{"name": "GPT-Image-2.6 Flare", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["API 侧新增 GPT-Image-2.6 Flare 与 Sunburst 两个模型"]},
+{"name": "GPT-Image-2.6 Sunburst", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["API 侧新增 GPT-Image-2.6 Flare 与 Sunburst 两个模型"]}
+],
+"events": [
+{"type": "launch", "label": "OpenAI 在 ChatGPT 与 Codex 中推出 Images 2.6", "summary": "OpenAI 面向 ChatGPT 与 Codex 全局推出 Images 2.6，生成速度比上一代快约 50%，新增可控 GIF、参考图复用与 SVG 矢量导出。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Images 2.6", "type": "model", "role": "object"}, {"name": "ChatGPT", "type": "product", "role": "object"}, {"name": "Codex", "type": "product", "role": "object"}], "evidence": ["在 ChatGPT 与 Codex（Web/桌面/移动）中全局推出", "生成速度比上一代快约 50%"]},
+{"type": "launch", "label": "OpenAI 发布 GPT-Image-2.6 Flare 与 Sunburst 两个 API 模型", "summary": "API 侧新增 GPT-Image-2.6 Flare 与 Sunburst 两个模型，面向自动化出图场景。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "GPT-Image-2.6 Flare", "type": "model", "role": "object"}, {"name": "GPT-Image-2.6 Sunburst", "type": "model", "role": "object"}], "evidence": ["API 侧新增 GPT-Image-2.6 Flare 与 Sunburst 两个模型"]}
+],
+"relations": [
+{"source": "Images 2.6", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["OpenAI 发布图像模型 Images 2.6"]},
+{"source": "Images 2.6", "target": "ChatGPT", "type": "integrates", "weight": 0.6, "evidence": ["在 ChatGPT 与 Codex（Web/桌面/移动）中全局推出"]},
+{"source": "Images 2.6", "target": "Codex", "type": "integrates", "weight": 0.6, "evidence": ["在 ChatGPT 与 Codex（Web/桌面/移动）中全局推出"]},
+{"source": "GPT-Image-2.6 Flare", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["API 侧新增 GPT-Image-2.6 Flare 与 Sunburst 两个模型"]},
+{"source": "GPT-Image-2.6 Sunburst", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["API 侧新增 GPT-Image-2.6 Flare 与 Sunburst 两个模型"]}
+],
+"metrics": [
+{"name": "生成速度提升", "value": "比上一代快约 50%"},
+{"name": "每周图像生成量", "value": "逾 40 亿张"}
+],
+"why_it_matters": "图像生成竞争点从'比画得真'转向'比可控编辑与可集成原生能力'，生成能力被拆成动效、矢量、参考一致性等可被 API 调用的细粒度原语。"
+},
+{
+"article_id": "2026-11-06-6",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic 借 Claude 首次解出原核细胞的三维结构"]},
+{"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["用 Claude 辅助完成了序列文献搜索"]},
+{"name": "vault", "type": "topic", "aliases": ["拱顶颗粒", "拱顶"], "confidence": 0.8, "evidence": ["首次测定原核生物（噬菌体）中的 vault 三维结构"]}
+],
+"events": [
+{"type": "research", "label": "Anthropic 用 Claude 首次解出原核生物 vault 颗粒的三维结构", "summary": "Anthropic 生物学实验室用 Claude 驱动的多步流程，从约 150 亿条预测蛋白序列中筛出远亲，把纯化压缩到约 90 分钟、34 小时生成初版结构模型，首次测定噬菌体编码 vault 颗粒的三维结构。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Claude", "type": "model", "role": "object"}, {"name": "vault", "type": "topic", "role": "object"}], "evidence": ["采用 Claude 驱动的多步科研流程", "首次测定原核生物（噬菌体）中"]},
+{"type": "research", "label": "Claude 作为计算生物搭档开启 SmallLab 新科研范式", "summary": "展示 Claude 可弥补领域知识缺口，让 SmallLab 在四个月内完成常规实验室按年计的人才积累与计算。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Claude", "type": "model", "role": "object"}], "evidence": ["展示了一种'新科研范式'"]}
+],
+"relations": [
+{"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Anthropic 借 Claude 首次解出原核细胞的三维结构"]},
+{"source": "Anthropic", "target": "Claude", "type": "uses", "weight": 0.9, "evidence": ["用 Claude 辅助完成了序列文献搜索"]}
+],
+"metrics": [
+{"name": "蛋白纯化时间压缩", "value": "3 天到约 90 分钟"},
+{"name": "初版结构模型生成时长", "value": "34 小时"},
+{"name": "vault 蛋白拷贝数", "value": "96 个"},
+{"name": "vault 分子量", "value": "约 9.5 兆道尔顿"}
+],
+"why_it_matters": "SmallLab 可借 AI 弥补领域知识缺口，四个月完成按年计的人才积累与计算——Claude 作为计算生物学搭档从演示走向可复现案例。"
+},
+{
+"article_id": "2026-11-06-7",
+"entities": [
+{"name": "Ai2", "type": "organization", "aliases": ["Allen Institute"], "confidence": 0.9, "evidence": ["Ai2 把状态追踪按代数复杂度分成四档"]},
+{"name": "StateBench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["Allen Institute 发布 StateBench"]},
+{"name": "Gemini 3.8 Flash", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Gemini 3.8 Flash、Claude Opus 5.5、GPT-6 Sol/Luna"]},
+{"name": "Claude Opus 5.5", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Gemini 3.8 Flash、Claude Opus 5.5、GPT-6 Sol/Luna"]},
+{"name": "GPT-6 Sol", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Gemini 3.8 Flash、Claude Opus 5.5、GPT-6 Sol/Luna"]},
+{"name": "GPT-6 Luna", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Gemini 3.8 Flash、Claude Opus 5.5、GPT-6 Sol/Luna"]},
+{"name": "Gated DeltaNet", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["循环与混合架构（如 Gated DeltaNet）"]},
+{"name": "transformer", "type": "topic", "aliases": [], "confidence": 0.7, "evidence": ["transformer 在 harder 档随序列超出训练范围迅速退化"]}
+],
+"events": [
+{"type": "launch", "label": "Ai2 发布 StateBench 基准分四档衡量长文档状态追踪", "summary": "Ai2 把状态追踪按代数复杂度分成 r-trivial、aperiodic、soluble、general finite 四档，衡量模型在长文档中追踪'状态变化'的能力。", "participants": [{"name": "Ai2", "type": "organization", "role": "subject"}, {"name": "StateBench", "type": "benchmark", "role": "object"}], "evidence": ["Ai2 把状态追踪按代数复杂度分成四档"]},
+{"type": "benchmark", "label": "前沿模型在 StateBench general finite 档随输入变长崩到 13% 或更低", "summary": "Gemini 3.8 Flash、Claude Opus 5.5、GPT-6 Sol/Luna 在最难的 general finite 档随输入变长准确率跌至 13% 或更低。", "participants": [{"name": "Gemini 3.8 Flash", "type": "model", "role": "subject"}, {"name": "Claude Opus 5.5", "type": "model", "role": "subject"}, {"name": "GPT-6 Sol", "type": "model", "role": "subject"}, {"name": "GPT-6 Luna", "type": "model", "role": "subject"}, {"name": "StateBench", "type": "benchmark", "role": "benchmark"}], "evidence": ["在 general finite 档准确率跌至 13% 或更低"]},
+{"type": "research", "label": "循环与混合架构对状态追踪的泛化优于纯 transformer", "summary": "Ai2 训练 2.75 亿参数模型并外推到 6.4 万赋值，发现循环与混合架构几乎完美泛化，而 transformer 在 harder 档随序列超出训练范围迅速退化。", "participants": [{"name": "Ai2", "type": "organization", "role": "subject"}, {"name": "Gated DeltaNet", "type": "model", "role": "object"}, {"name": "transformer", "type": "topic", "role": "object"}], "evidence": ["循环与混合架构几乎完美泛化到几万个赋值"]}
+],
+"relations": [
+{"source": "StateBench", "target": "Ai2", "type": "developed_by", "weight": 0.8, "evidence": ["Allen Institute 发布 StateBench"]},
+{"source": "Gemini 3.8 Flash", "target": "StateBench", "type": "evaluated_on", "weight": 0.7, "evidence": ["在 general finite 档准确率跌至 13% 或更低"]},
+{"source": "Claude Opus 5.5", "target": "StateBench", "type": "evaluated_on", "weight": 0.7, "evidence": ["Gemini 3.8 Flash、Claude Opus 5.5、GPT-6 Sol/Luna"]},
+{"source": "GPT-6 Sol", "target": "StateBench", "type": "evaluated_on", "weight": 0.7, "evidence": ["Gemini 3.8 Flash、Claude Opus 5.5、GPT-6 Sol/Luna"]},
+{"source": "GPT-6 Luna", "target": "StateBench", "type": "evaluated_on", "weight": 0.7, "evidence": ["Gemini 3.8 Flash、Claude Opus 5.5、GPT-6 Sol/Luna"]},
+{"source": "Gated DeltaNet", "target": "transformer", "type": "outperforms", "weight": 0.8, "evidence": ["循环与混合架构几乎完美泛化到几万个赋值", "transformer 在 harder 档随序列超出训练范围迅速退化"]}
+],
+"metrics": [
+{"name": "general finite 档准确率", "value": "13% 或更低"},
+{"name": "从零训练参数量", "value": "2.75 亿"},
+{"name": "训练赋值序列上限", "value": "最多 256 个"},
+{"name": "外推赋值数", "value": "6.4 万"}
+],
+"why_it_matters": "'长上下文窗口大'不等于'长上下文理解好'，状态化/混合架构相比纯 attention 的归纳偏置可外推得到首个基准证据，长上下文产品的可靠性被划出边界。"
+},
+{
+"article_id": "2026-11-06-8",
+"entities": [
+{"name": "Axiom", "type": "organization", "aliases": ["Axiom Math"], "confidence": 0.9, "evidence": ["Axiom 用 AI agent 群把整个代数几何 Stacks Project 形式化为 1600 万行 Lean"]},
+{"name": "Stacks Project", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Stacks Project 是代数几何领域的基础性开放参考书"]},
+{"name": "Lean", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["被译成约 1600 万行机器校验代码"]},
+{"name": "Johan de Jong", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["由哥伦比亚大学数学家 Johan de Jong 2005 年发起"]},
+{"name": "Columbia University", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["由哥伦比亚大学数学家 Johan de Jong 2005 年发起"]}
+],
+"events": [
+{"type": "research", "label": "Axiom 用 AI agent 群把 Stacks Project 形式化为 1600 万行 Lean", "summary": "Axiom 派出一队 AI agent 把全书约 7654 页代数几何翻译成约 1600 万行 Lean 4 校验代码，使所有 tag 成为单一可机器检查的库。", "participants": [{"name": "Axiom", "type": "organization", "role": "subject"}, {"name": "Stacks Project", "type": "product", "role": "object"}, {"name": "Lean", "type": "tool", "role": "object"}], "evidence": ["把全书约 7654 页翻译成约 1600 万行 Lean 4 校验代码"]},
+{"type": "research", "label": "Stacks 形式化库分为 StacksCore 与 StacksFrontier 两层", "summary": "StacksCore 人类评审并达到 Mathlib 标准，StacksFrontier 为 AI 生成、需最多人工评审；全文仅三个公理、无 sorry。", "participants": [{"name": "Axiom", "type": "organization", "role": "subject"}, {"name": "Stacks Project", "type": "product", "role": "object"}], "evidence": ["库被分为两层：StacksCore"]}
+],
+"relations": [
+{"source": "Stacks Project", "target": "Johan de Jong", "type": "initiated_by", "weight": 0.8, "evidence": ["由哥伦比亚大学数学家 Johan de Jong 2005 年发起、数百位数学家贡献了二十年"]},
+{"source": "Stacks Project", "target": "Lean", "type": "formalized_in", "weight": 0.9, "evidence": ["被译成约 1600 万行机器校验代码"]},
+{"source": "Johan de Jong", "target": "Columbia University", "type": "affiliated_with", "weight": 0.8, "evidence": ["由哥伦比亚大学数学家 Johan de Jong 2005 年发起"]}
+],
+"metrics": [
+{"name": "形式化 Lean 校验代码行数", "value": "约 1600 万行"},
+{"name": "原书页数", "value": "约 7654 页"}
+],
+"why_it_matters": "大规模 AI agent 群也能产出高质量、可靠机器校验成果，形式化库正成为 agent 可安全重建新数学与软件的地基。"
+},
+{
+"article_id": "2026-11-06-9",
+"entities": [
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Meta 收购 Conductor"]},
+{"name": "Conductor", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Meta 收购 Conductor——一款让开发者把项目拆给多个并行 AI 编码 agent 的编排平台"]},
+{"name": "Claude Code", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["而是来自 Anthropic（Claude Code）、OpenAI（Codex）等外部实验室"]},
+{"name": "Codex", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["而是来自 Anthropic（Claude Code）、OpenAI（Codex）等外部实验室"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["而是来自 Anthropic（Claude Code）、OpenAI（Codex）等外部实验室"]},
+{"name": "Charlie Holtz", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["创始人 Charlie Holtz 将并入 Meta Superintelligence Labs"]},
+{"name": "xAI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["xAI 以 60 亿美元买下 Cursor"]},
+{"name": "Cursor", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["xAI 以 60 亿美元买下 Cursor"]},
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 也在竞购 Pierre 等开发者工具创业公司"]}
+],
+"events": [
+{"type": "acquisition", "label": "Meta 收购 AI 编程编排公司 Conductor", "summary": "Meta 收购 Conductor，创始人 Charlie Holtz 并入 Meta Superintelligence Labs，云服务 11 月 20 日停服并删除数据；金额未披露。", "participants": [{"name": "Meta", "type": "company", "role": "subject"}, {"name": "Conductor", "type": "company", "role": "object"}, {"name": "Charlie Holtz", "type": "person", "role": "partner"}], "evidence": ["Meta 收购 Conductor——一款让开发者把项目拆给多个并行 AI 编码 agent 的编排平台"]},
+{"type": "trend", "label": "Conductor 站在外部 agent 之上做编排而非自研模型", "summary": "Conductor 的 agent 来自 Anthropic Claude Code、OpenAI Codex 等外部实验室，不同于自研模型型工具，这正是它被 Meta 看重的差异化。", "participants": [{"name": "Conductor", "type": "company", "role": "subject"}, {"name": "Claude Code", "type": "product", "role": "object"}, {"name": "Codex", "type": "product", "role": "object"}], "evidence": ["它的 agent 并非自研，而是来自 Anthropic（Claude Code）、OpenAI（Codex）等外部实验室"]},
+{"type": "trend", "label": "开发者工具收购潮中 xAI 以 60 亿美元买下 Cursor", "summary": "背景是开发者工具并购潮，xAI 以 60 亿美元买下 Cursor，OpenAI 也在竞购 Pierre 等工具创业公司，Meta 意在跟上码农界面争夺。", "participants": [{"name": "xAI", "type": "company", "role": "subject"}, {"name": "Cursor", "type": "product", "role": "object"}, {"name": "Meta", "type": "company", "role": "competitor"}], "evidence": ["xAI 以 60 亿美元买下 Cursor"]}
+],
+"relations": [
+{"source": "Meta", "target": "Conductor", "type": "acquires", "weight": 0.9, "evidence": ["Meta 收购 Conductor——一款让开发者把项目拆给多个并行 AI 编码 agent 的编排平台"]},
+{"source": "Conductor", "target": "Claude Code", "type": "integrates", "weight": 0.7, "evidence": ["它的 agent 并非自研，而是来自 Anthropic（Claude Code）、OpenAI（Codex）等外部实验室"]},
+{"source": "Conductor", "target": "Codex", "type": "integrates", "weight": 0.7, "evidence": ["它的 agent 并非自研，而是来自 Anthropic（Claude Code）、OpenAI（Codex）等外部实验室"]},
+{"source": "Claude Code", "target": "Anthropic", "type": "developed_by", "weight": 0.6, "evidence": ["而是来自 Anthropic（Claude Code）、OpenAI（Codex）等外部实验室"]},
+{"source": "Charlie Holtz", "target": "Meta", "type": "affiliated_with", "weight": 0.8, "evidence": ["创始人 Charlie Holtz 将并入 Meta Superintelligence Labs"]},
+{"source": "xAI", "target": "Cursor", "type": "acquires", "weight": 0.7, "evidence": ["xAI 以 60 亿美元买下 Cursor"]},
+{"source": "Meta", "target": "OpenAI", "type": "competes_with", "weight": 0.5, "evidence": ["跟上 OpenAI、Anthropic、Microsoft（GitHub）在'码农界面'上的争夺"]}
+],
+"metrics": [
+{"name": "xAI 收购 Cursor 金额", "value": "60 亿美元"},
+{"name": "Conductor 云服务停服日期", "value": "11 月 20 日"},
+{"name": "Conductor 云服务转只读日期", "value": "11 月 13 日"}
+],
+"why_it_matters": "开发者工具之争从自研模型转向'站在 agent 之上做编排'的模型无关层，巨头以并购快速补位码农界面入口。"
+},
+{
+"article_id": "2026-11-06-10",
+"entities": [
+{"name": "Google", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["已与 Google LLC 签署 credit support agreements"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["与 Anthropic 签订的约 190 亿美元租约的债务融资提供信用背书"]},
+{"name": "TeraWulf", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["TeraWulf 11 月 4 日盘前公告"]},
+{"name": "Fluor", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["TeraWulf 与 Fluor 签署了 Jedia 三栋数据中心楼的 EPC（工程—采购—施工）总包协议"]},
+{"name": "Raylan Data", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["由 TeraWulf 子公司 Raylan Data 签下的 20 年期"]}
+],
+"events": [
+{"type": "infra", "label": "Google 为 TeraWulf 与 Anthropic 的 190 亿美元肯塔基租约提供信用背书", "summary": "Google 与 TeraWulf 签署 credit support agreements，为其与 Anthropic 在肯塔基州 Hawesville 的约 190 亿美元、401MW/20 年租约的债务融资提供 backstop。", "participants": [{"name": "TeraWulf", "type": "company", "role": "subject"}, {"name": "Google", "type": "company", "role": "partner"}, {"name": "Anthropic", "type": "company", "role": "object"}], "evidence": ["已与 Google LLC 签署 credit support agreements", "与其在肯塔基州 Hawesville 的 Justified Data Campus 上与 Anthropic 签订的约 190 亿美元租约"]},
+{"type": "infra", "label": "TeraWulf 与 Fluor 签署 Jedia 数据中心 EPC 总包协议", "summary": "TeraWulf 与 Fluor 签署三栋数据中心楼 EPC 总包协议，推进施工，并披露 Muskie 园区签约电力容量扩到 1GW。", "participants": [{"name": "TeraWulf", "type": "company", "role": "subject"}, {"name": "Fluor", "type": "company", "role": "partner"}], "evidence": ["TeraWulf 与 Fluor 签署了 Jedia 三栋数据中心楼的 EPC（工程—采购—施工）总包协议"]}
+],
+"relations": [
+{"source": "TeraWulf", "target": "Anthropic", "type": "supplies", "weight": 0.9, "evidence": ["与其在肯塔基州 Hawesville 的 Justified Data Campus 上与 Anthropic 签订的约 190 亿美元租约"]},
+{"source": "TeraWulf", "target": "Google", "type": "partners_with", "weight": 0.7, "evidence": ["已与 Google LLC 签署 credit support agreements"]},
+{"source": "Raylan Data", "target": "TeraWulf", "type": "subsidiary_of", "weight": 0.6, "evidence": ["由 TeraWulf 子公司 Raylan Data 签下的 20 年期"]}
+],
+"metrics": [
+{"name": "租约金额", "value": "约 190 亿美元"},
+{"name": "关键 IT 负载", "value": "约 401MW"},
+{"name": "租约期限", "value": "20 年"},
+{"name": "Muskie 园区签约电力容量", "value": "1GW"}
+],
+"why_it_matters": "AI 基础设施从'自建自融'转向'第三方业主+租户+背书的复杂资本结构'，巨头间形成资本互保与共享基础设施的竞合网络，项目融资门槛随之降低。"
+},
+{
+"article_id": "2026-11-06-11",
+"entities": [
+{"name": "伯尼·桑德斯", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["伯尼·桑德斯与 AOC 高调重申其 AI 数据中心暂停法案"]},
+{"name": "AOC", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["伯尼·桑德斯与 AOC 高调重申其 AI 数据中心暂停法案"]},
+{"name": "美国国会", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["直到国会就电力价格、环境、劳动力、社区同意等制定保护条款"]},
+{"name": "AI 数据中心暂停法案", "type": "policy", "aliases": [], "confidence": 0.8, "evidence": ["冻结全国新建数据中心"]},
+{"name": "数据中心", "type": "topic", "aliases": [], "confidence": 0.7, "evidence": ["冻结全国新建数据中心"]},
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["俄亥俄一个县甚至通过了对 Meta 规划中的 70 万平方英尺设施的禁令"]},
+{"name": "俄亥俄县", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["俄亥俄一个县甚至通过了对 Meta 规划中的 70 万平方英尺设施的禁令"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["一边是需求侧（Anthropic、OpenAI、AMD 的资本开支仍在上行）"]},
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["一边是需求侧（Anthropic、OpenAI、AMD 的资本开支仍在上行）"]},
+{"name": "AMD", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["一边是需求侧（Anthropic、OpenAI、AMD 的资本开支仍在上行）"]},
+{"name": "Data Center Coalition", "type": "organization", "aliases": ["数据中心行业协会"], "confidence": 0.8, "evidence": ["数据中心行业协会则强烈反弹"]}
+],
+"events": [
+{"type": "policy", "label": "桑德斯与 AOC 在中期选举后推动全国数据中心暂停令", "summary": "中期选举后桑德斯与 AOC 重申 AI 数据中心暂停法案，冻结全国新建数据中心，当地投票 43/44 个社区支持本地暂停令。", "participants": [{"name": "伯尼·桑德斯", "type": "person", "role": "subject"}, {"name": "AOC", "type": "person", "role": "partner"}, {"name": "美国国会", "type": "organization", "role": "regulator"}, {"name": "AI 数据中心暂停法案", "type": "policy", "role": "object"}, {"name": "数据中心", "type": "topic", "role": "object"}], "evidence": ["冻结全国新建数据中心", "昨晚 43 个社区中有 44 个投票支持本地暂停令"]},
+{"type": "trend", "label": "数据中心行业协会反对暂停令称地点可迁移", "summary": "Data Center Coalition 强烈反弹，认为冻结仅'暂停美国经济'、需求只会流向东盟、中东与欧洲等地。", "participants": [{"name": "Data Center Coalition", "type": "organization", "role": "subject"}, {"name": "数据中心", "type": "topic", "role": "object"}], "evidence": ["地点是可迁移的"]},
+{"type": "trend", "label": "需求侧资本开支上行与社会许可形成节奏错位", "summary": "一边是 Anthropic、OpenAI、AMD 的资本开支仍在上行，一边是选民与社区开始对数据中心行使否决权。", "participants": [{"name": "Anthropic", "type": "company", "role": "partner"}, {"name": "OpenAI", "type": "company", "role": "partner"}, {"name": "AMD", "type": "company", "role": "partner"}, {"name": "数据中心", "type": "topic", "role": "object"}], "evidence": ["一边是需求侧（Anthropic、OpenAI、AMD 的资本开支仍在上行）"]}
+],
+"relations": [
+{"source": "伯尼·桑德斯", "target": "美国国会", "type": "affiliated_with", "weight": 0.7, "evidence": ["直到国会就电力价格、环境、劳动力、社区同意等制定保护条款"]},
+{"source": "AOC", "target": "美国国会", "type": "affiliated_with", "weight": 0.7, "evidence": ["直到国会就电力价格、环境、劳动力、社区同意等制定保护条款"]},
+{"source": "AI 数据中心暂停法案", "target": "数据中心", "type": "targets", "weight": 0.8, "evidence": ["冻结全国新建数据中心"]},
+{"source": "俄亥俄县", "target": "Meta", "type": "restricts", "weight": 0.4, "evidence": ["俄亥俄一个县甚至通过了对 Meta 规划中的 70 万平方英尺设施的禁令"]}
+],
+"metrics": [
+{"name": "支持本地暂停令的社区数", "value": "43/44 个"},
+{"name": "反对自社区建数据中心的选民比例", "value": "76%"},
+{"name": "认为 AI 对社会弊大于利的选民比例", "value": "57%"},
+{"name": "认为 AI 与数据中心是投票关键因素的选民比例", "value": "56%"},
+{"name": "俄亥俄县对 Meta 叫停的设施面积", "value": "70 万平方英尺"}
+],
+"why_it_matters": "AI 供给的硬约束正从算力与资本转向'社会许可'，数据中心成为需求的第一个政治否决点，开发商被迫转向给社区分红与更严格环境披露。"
+},
+{
+"article_id": "2026-11-06-12",
+"entities": [
+{"name": "Uber", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["第三方 AI agent 下单的乘车只有 4 单"]},
+{"name": "第三方 AI agent", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["第三方 AI agent 下单的乘车只有 4 单"]},
+{"name": "Dara Khosrowshahi", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["CEO Dara Khosrowshahi 说"]},
+{"name": "Balaji Krishnamurthy", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["CFO Balaji Krishnamurthy 确认了这一数据"]},
+{"name": "DoorDash", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["DoorDash 也仅报告几百单 agent 下单"]},
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Meta 的 Muse app 已破 1000 万用户"]},
+{"name": "Muse", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["Meta 的 Muse app 已破 1000 万用户"]},
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 agent 在高风险任务（如网络安全）上表现出惊人能力"]}
+],
+"events": [
+{"type": "trend", "label": "Uber 披露第三方 AI agent 一周仅完成 4 单乘车", "summary": "Uber 十月最忙的一周里经第三方 AI agent 下单的乘车只有 4 单、Uber Eats 约 500 单，CEO 坦言 traction 极其有限。", "participants": [{"name": "Uber", "type": "company", "role": "subject"}, {"name": "Dara Khosrowshahi", "type": "person", "role": "partner"}], "evidence": ["经第三方 AI agent 下单的乘车只有 4 单、Uber Eats 约 500 单"]},
+{"type": "trend", "label": "agent 经济需按任务适配度分层", "summary": "对比 Meta 的 Muse app 破 1000 万用户与 OpenAI agent 在高风险任务上的能力，agent 在打车点餐等高频低价值场景里几乎为零。", "participants": [{"name": "Uber", "type": "company", "role": "subject"}, {"name": "Meta", "type": "company", "role": "partner"}, {"name": "OpenAI", "type": "company", "role": "partner"}, {"name": "Muse", "type": "product", "role": "object"}], "evidence": ["agent 的价值集中在多步、长流程、跨系统、信息检索密集的任务"]},
+{"type": "trend", "label": "DoorDash 同样报告 agent 下单仅几百单", "summary": "DoorDash 也仅报告几百单 agent 下单，与 Uber 数据互为印证。", "participants": [{"name": "DoorDash", "type": "company", "role": "subject"}, {"name": "Uber", "type": "company", "role": "partner"}], "evidence": ["DoorDash 也仅报告几百单 agent 下单"]}
+],
+"relations": [
+{"source": "第三方 AI agent", "target": "Uber", "type": "uses", "weight": 0.7, "evidence": ["第三方 AI agent 下单的乘车只有 4 单"]},
+{"source": "Dara Khosrowshahi", "target": "Uber", "type": "affiliated_with", "weight": 0.8, "evidence": ["CEO Dara Khosrowshahi 说"]},
+{"source": "Balaji Krishnamurthy", "target": "Uber", "type": "affiliated_with", "weight": 0.8, "evidence": ["CFO Balaji Krishnamurthy 确认了这一数据"]},
+{"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.7, "evidence": ["Meta 的 Muse app 已破 1000 万用户"]}
+],
+"metrics": [
+{"name": "最忙一周第三方 agent 乘车订单", "value": "4 单"},
+{"name": "最忙一周第三方 agent Uber Eats 订单", "value": "约 500 单"},
+{"name": "最忙一周总行程与订单", "value": "约 3.2 亿次"},
+{"name": "App 内叫车耗时", "value": "约 50 秒"},
+{"name": "Meta Muse app 用户数", "value": "破 1000 万"}
+],
+"why_it_matters": "agent 经济需按任务适配度分层：多步长流程是 agent 主场，高频低价值场景人类直达最快，真正的融合点落在 API/编排层而非终端下单。"
+},
+{
+"article_id": "2026-11-06-13",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 官方博客宣告"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["它与 Anthropic、Google、Microsoft 共同支持一个'通用信号'"]},
+{"name": "Google", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["它与 Anthropic、Google、Microsoft 共同支持一个'通用信号'"]},
+{"name": "Microsoft", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["它与 Anthropic、Google、Microsoft 共同支持一个'通用信号'"]},
+{"name": "IETF", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["在 IETF 的 AI Preferences 工作组提交的互联网草案"]},
+{"name": "Kevin Kelley", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Anthropic 工程师 Kevin Kelley 在 IETF 的 AI Preferences 工作组"]},
+{"name": "AI Preferences", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["一个名为 __usage_ai-training 的 policy-token 规则组"]}
+],
+"events": [
+{"type": "policy", "label": "四家头部 AI 公司统一支持 IETF 的 AI 训练偏好信号", "summary": "OpenAI、Anthropic、Google、Microsoft 宣布用同一份 robots.txt 声明同时向多方传达 AI 训练偏好，取代按每家爬虫单独维护规则。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "partner"}, {"name": "Google", "type": "company", "role": "partner"}, {"name": "Microsoft", "type": "company", "role": "partner"}, {"name": "IETF", "type": "organization", "role": "regulator"}, {"name": "AI Preferences", "type": "policy", "role": "object"}], "evidence": ["共同支持一个'通用信号'"]},
+{"type": "policy", "label": "Anthropic 工程师 Kevin Kelley 在 IETF 提出 __usage_ai-training 草案", "summary": "该信号源自 Kevin Kelley 在 IETF AI Preferences 工作组提交的互联网草案，是一个名为 __usage_ai-training 的 policy-token 规则组。", "participants": [{"name": "Kevin Kelley", "type": "person", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "object"}, {"name": "IETF", "type": "organization", "role": "regulator"}, {"name": "AI Preferences", "type": "policy", "role": "object"}], "evidence": ["Anthropic 工程师 Kevin Kelley 在 IETF 的 AI Preferences 工作组提交的互联网草案"]},
+{"type": "policy", "label": "各家对统一信号的落地节奏不一", "summary": "Anthropic 已从 10 月 30 日开始识别，OpenAI 未来几个月实现，Google 与 Microsoft 计划 2027 年初支持，Microsoft 2027 年 2 月 1 日起停用旧标签。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Google", "type": "company", "role": "subject"}, {"name": "Microsoft", "type": "company", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "AI Preferences", "type": "policy", "role": "object"}], "evidence": ["各家落地节奏不一"]}
+],
+"relations": [
+{"source": "Kevin Kelley", "target": "Anthropic", "type": "affiliated_with", "weight": 0.8, "evidence": ["Anthropic 工程师 Kevin Kelley 在 IETF 的 AI Preferences 工作组"]},
+{"source": "IETF", "target": "AI Preferences", "type": "hosts", "weight": 0.7, "evidence": ["在 IETF 的 AI Preferences 工作组提交的互联网草案", "共同支持一个'通用信号'"]},
+{"source": "OpenAI", "target": "AI Preferences", "type": "complies_with", "weight": 0.7, "evidence": ["共同支持一个'通用信号'"]},
+{"source": "Anthropic", "target": "AI Preferences", "type": "complies_with", "weight": 0.7, "evidence": ["已从 10 月 30 日开始识别该信号"]},
+{"source": "Google", "target": "AI Preferences", "type": "complies_with", "weight": 0.7, "evidence": ["计划 2027 年初支持"]},
+{"source": "Microsoft", "target": "AI Preferences", "type": "complies_with", "weight": 0.7, "evidence": ["计划 2027 年初支持"]}
+],
+"metrics": [
+{"name": "Anthropic 开始识别该信号的日期", "value": "10 月 30 日"},
+{"name": "Google 与 Microsoft 计划支持时间", "value": "2027 年初"},
+{"name": "Microsoft 停用旧标签日期", "value": "2027 年 2 月 1 日"}
+],
+"why_it_matters": "Web 爬虫规则从各家专有约定收敛为互联网标准，'内容是否进入训练集'第一次有了机器可读、行业级统一的开关，数据获取权被正式化。"
+}
+]
+}

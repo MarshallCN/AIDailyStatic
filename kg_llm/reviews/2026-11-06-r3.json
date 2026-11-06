@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-06",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "r1/r2 指出的问题（Meta 限制方向反转、authored_by 归因、IETF 误作开发主体、Images 2.6 类型、GLM-5.2/Qwen3.5 缺失、Uber 无边）已全部修正，全篇数字与事实逐条核对无误；剩余问题集中在图连通性与命名：Axiom 与 Google 信用背书两条核心边缺失，'AI Preferences' 工作组名被误当政策实体，共 3 条 medium。",
+  "findings": [
+    {
+      "article_id": "2026-11-06-8",
+      "severity": "medium",
+      "problem": "新闻主角 Axiom 没有任何 relations 边。全篇唯一核心事实是「Axiom 用 AI agent 群把 Stacks Project 形式化为 1600 万行 Lean」，但 relations 中 Axiom 既不是 source 也不是 target，只有 Stacks Project--initiated_by-->de Jong、Stacks Project--formalized_in-->Lean、de Jong--affiliated_with-->Columbia 三条边；实施形式化的主体与被形式化对象之间没有动作边，文章标题所示的核心关系只能靠事件承载、无法进入图谱，与 r2 已沉淀的『新闻主角至少一条边』规则相悖。",
+      "fix": "补充关系 Axiom --formalizes--> Stacks Project（evidence 用「把全书约 7654 页翻译成约 1600 万行 Lean 4 校验代码」），并可另加 Axiom --uses--> Lean 边，让 Axiom 进入 relations 并承载核心事实。"
+    },
+    {
+      "article_id": "2026-11-06-10",
+      "severity": "medium",
+      "problem": "本文标题与核心事实是「Google 为 Anthropic 190 亿美元租约提供信用担保」，但 relations 中 Google 只以一条弱类型边 TeraWulf --partners_with--> Google 入图，Google 与 Anthropic、Google 与租约之间没有任何边，'credit support 让银行愿意放贷'这一关键机制完全没进图；partners_with 也无法表达信用背书这种单方向的金融担保关系。",
+      "fix": "把 TeraWulf --partners_with--> Google 改为体现背书语义的类型（如 Google --backs--> TeraWulf 或 --credit_supports-->），并补充 Google --backs--> Anthropic 边（evidence 用「已与 Google LLC 签署 credit support agreements」+「为其与 Anthropic 的约 190 亿美元租约的债务融资提供信用背书」），让标题事实进入图谱。"
+    },
+    {
+      "article_id": "2026-11-06-13",
+      "severity": "medium",
+      "problem": "实体命名与类型错配：实体 'AI Preferences' 被标为 type=policy，但其 evidence 引用的是「一个名为 __usage_ai-training 的 policy-token 规则组」——AI Preferences 实为 IETF 工作组名，真正的信号是 __usage_ai-training。把工作组名当政策实体，导致 OpenAI/Anthropic/Google/Microsoft 四条 complies_with 边指向工作组而非信号本身，且与事件 2 自己写的『Kevin Kelley 提出 __usage_ai-training 草案』自相矛盾，未来关于 robots.txt 信号的跨文章连通会接错节点。",
+      "fix": "把政策实体改名为 __usage_ai-training（type=policy），四条 complies_with 边及 IETF --hosts--> 边全部指向它；若保留 'AI Preferences' 实体，则应标为 organization（工作组）并只承担被 IETF 承载的角色，不要用作 complies_with 的 target。"
+    }
+  ],
+  "lessons": [
+    "信用背书/担保类新闻：背书方与被担保方之间要建直接关系边（如 backs），不要把 credit support 抽成 partners_with 这类对等兜底类型。",
+    "标准/草案类新闻：实体名用标准本身的标识（如 __usage_ai-training），不要把承载它的工作组名（如 AI Preferences）当作标准实体，工作组与标准是两类不同实体。"
+  ]
+}

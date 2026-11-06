@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-06",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "整体事实与指标核对基本准确、单元美元性能等关键数字均有原文支撑，但存在一处关系语义反转（Meta 被县禁令限制被抽成 Meta 限制数据中心），且 Uber 篇的新闻主角完全没有边，构成信息贫乏。",
+  "findings": [
+    {
+      "article_id": "2026-11-06-11",
+      "severity": "high",
+      "problem": "关系 <Meta --restricts--> 数据中心>（weight 0.4）语义方向反转。原文是「俄亥俄一个县甚至通过了对 Meta 规划中的 70 万平方英尺设施的禁令」——施动者是该县（地方政府），被限制的是 Meta 的数据中心设施；抽成了 Meta 去限制数据中心，正好讲反了事实。",
+      "fix": "删除该条反向关系。若想保留，改为以县政府／社区为 source、以 Meta 的数据中心为 target 的限制关系（如 <俄亥俄某县 --restricts--> Meta 数据中心>），并让 evidence 使用禁令原文；否则直接删除，因为图谱里没有该县实体。"
+    },
+    {
+      "article_id": "2026-11-06-12",
+      "severity": "medium",
+      "problem": "新闻主角 Uber 只出现在 3 个事件的 participants 里，整篇 relations 中没有任何一条以 Uber 为 source 或 target 的边；Dara Khosrowshahi、Balaji Krishnamurthy 两人也只挂了 affiliated_with，agent 下单数据未连接到任何主体。核心叙事「第三方 AI agent 一周仅 4 单 Uber 打车」没有进图。",
+      "fix": "补充一条支撑核心事实的边，如 <第三方 AI agent --uses--> Uber>（source 可新建实体），配 evidence「经第三方 AI agent 下单的乘车只有 4 单」；并考虑把 agent 数量对比中至少一条放进 relations，让 Uber 篇能与其他篇连通。"
+    },
+    {
+      "article_id": "2026-11-06-0",
+      "severity": "low",
+      "problem": "同类硬件实体处理不一致：B200/B300 有 <B200/B300 --developed_by--> NVIDIA> 边，同属英伟达的 GB300 却没有对应的 developed_by 边，导致 GB300 孤立于厂商主体，削弱跨实体连通性。",
+      "fix": "补充 <GB300 --developed_by--> NVIDIA>（weight 约 0.5），evidence 用原文提及英伟达应战提交处，使同一厂商的 B200/B300 与 GB300 处理一致。"
+    }
+  ],
+  "lessons": [
+    "禁令/叫停/暂停/否决类新闻：施动者是被限制对象的对立面（政府、社区、监管机构），绝不要把作为被限制方的主体（如设施业主 Meta）写成 restrict/抑制类关系的施动者，方向反了会讲出相反事实。",
+    "新闻主角（标题与核心事实的主体）至少应有一条进入 relations 的边；若主体只出现在事件 participants 而完全无边，说明抽取不完整，应补上支撑核心事实的关系。"
+  ]
+}
