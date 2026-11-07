@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T23:20:44Z",
+  "updated_at": "2026-11-07T23:18:49Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -904,13 +904,13 @@
       "period_id": "2026-W41",
       "period_type": "week",
       "start_date": "2026-10-05",
-      "end_date": "2026-10-07",
-      "summary": "2026-10-05 至 2026-10-07 期间，NVIDIA、OpenAI、Meta 主要围绕 trend、research 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-10-08",
+      "summary": "2026-10-05 至 2026-10-08 期间，OpenAI、NVIDIA、Meta 主要围绕 trend、research 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
-        "NVIDIA",
         "OpenAI",
+        "NVIDIA",
         "Meta",
-        "Muse"
+        "Anthropic"
       ],
       "event_types": [
         "trend",
@@ -918,7 +918,7 @@
         "benchmark"
       ],
       "trend_signals": [
-        "核心实体：NVIDIA、OpenAI、Meta",
+        "核心实体：OpenAI、NVIDIA、Meta",
         "主事件类型：trend、research"
       ],
       "representative_article_ids": [

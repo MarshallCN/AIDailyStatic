@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-07",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "第一轮指出的 developed_by、proposes、serves 等问题均已修复，图谱整体扎实、指标与证据贴合原文。但仍在两处残留会把意思讲反的关系方向错误（article 8 的 released_by、article 11 的 authored_by），另有一处事件类型用错和一处事件过度切分，需再修订后发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-07-8",
+      "severity": "high",
+      "problem": "关系 \"xAI --released_by--> Grok API\" 方向/语义颠倒。released_by 约定是 source=被发布之物、target=发布方，现写法读成「xAI 被 Grok API 发布」，不通。实际是 xAI 发布/运营 Grok API（且本图已有一条 \"Grok 4.7 --developed_by--> xAI\" 表达公司产出关系）。",
+      "fix": "删掉这条 released_by 冗余边，或改为 \"Grok API --released_by--> xAI\"（source=Grok API、target=xAI）；不要以 xAI 作 source 配 released_by。"
+    },
+    {
+      "article_id": "2026-11-07-11",
+      "severity": "high",
+      "problem": "关系 \"微软研究院 --authored_by--> 《LLMs Corrupt Your Documents When You Delegate》\" 方向反了。authored_by 读作「微软研究院 被 那篇论文 撰写」，与原文（该研究由微软研究院撰写）相反。",
+      "fix": "改为 \"《LLMs Corrupt Your Documents When You Delegate》 --authored_by--> 微软研究院\"，即 source=论文、target=作者机构。"
+    },
+    {
+      "article_id": "2026-11-07-5",
+      "severity": "medium",
+      "problem": "事件类型用错：\"通过与 SPAC 公司 Churchill Capital Corp XI 合并完成上市\" 标的类型为 acquisition，但这是 de-SPAC 合并挂牌，不是收购——Agility 并未收购 Churchill 或其业务，双方是合并后公司整体上市。acquisition 会误导为一起并购交易。",
+      "fix": "把该事件类型改为 \"ipo\" 或 \"funding\" 类（上市/融资），label 与 summary 已描述合并挂牌事实，仅修正 type。"
+    },
+    {
+      "article_id": "2026-11-07-3",
+      "severity": "medium",
+      "problem": "同一产品发布被拆成 3 个 launch 事件（GA 可用、时长/价格更新、多轮对话编辑）。三者是同一款模型一次 GA 发布的不同侧面，缺乏可区分的独立事件意义，构成过度切分。",
+      "fix": "合并为 1 个 launch 事件，把时长/价格下调与对话式编辑功能写进该事件的 summary；或保留多个但改用不同事件类型（如 launch + benchmark）。"
+    },
+    {
+      "article_id": "2026-11-07-11",
+      "severity": "medium",
+      "problem": "关系 \"Claude --uses--> Dropbox\" 不成立。原文是讲义/教案存储在 Dropbox，Claude 删除后主动询问用户能否从 Dropbox 恢复——Claude 并未「使用」Dropbox，是用户的文件托管于 Dropbox。",
+      "fix": "删除该关系，或改为 \"William Baude --uses--> Dropbox\"（用户用 Dropbox 存文件）；不要把 Dropbox 误连到 Claude。"
+    },
+    {
+      "article_id": "2026-11-07-6",
+      "severity": "low",
+      "problem": "关系 \"Meta 新商业条款 --targets--> robots.txt\" 与 \"Meta 新商业条款 --targets--> Facebook\" 关系类型不准。条款是让 Meta 无视 robots.txt 的爬取偏好、对象是链接在 Facebook 等站点的站外内容——条款并没有「针对」robots.txt 或 Facebook 本身。",
+      "fix": "删去这两条，或改为表达冲突/影响的语义（如 \"Meta 新商业条款 --conflicts_with--> robots.txt\"）；不要用 targets 表达「条款涉及的对象」。"
+    }
+  ],
+  "lessons": [
+    "released_by、authored_by 等被动关系一律写 source=被发布/被撰写的产物（模型、论文）、target=发布方/作者机构；任何情况下不要把公司或机构放在 source 配 released_by/authored_by，否则会读成「公司被人/产品发布」。",
+    "SPAC 合并/借壳/直接挂牌是上市或融资事件，不要标成 acquisition；acquisition 只用于真正的并购动因。",
+    "同一产品同一次发布的不同侧面（可用性、价格、功能）合并为单个事件，不要按特性拆成多个同类型事件。"
+  ]
+}

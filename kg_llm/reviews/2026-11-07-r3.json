@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-07",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "抽取整体扎实、事实与关系方向基本正确，无 high 级问题。主要问题是三处 medium：Agility 与 Churchill 的核心合并关系缺失、BMI 研报警告被抽成 targets 关系、arXiv 论文事件过度切分且关系稀疏。",
+  "findings": [
+    {
+      "article_id": "2026-11-07-5",
+      "severity": "medium",
+      "problem": "缺少 Agility Robotics 与 Churchill Capital Corp XI 之间的合并关系。事件里 Churchill 只是 participant，但 relations 列表没有任何连接双方的边（仅有 Digit/Foxconn/NVIDIA/Amazon/GXO 相关）。de-SPAC 合并是全文的核心事实（'通过与 SPAC 公司 Churchill Capital Corp XI 合并完成上市'），缺这条边使整篇的上市方式无法在图中连通。",
+      "fix": "增加一条 relation：Agility Robotics --merges_with--> Churchill Capital Corp XI（如类型不存在可用 spacs_with/partners 近似），evidence 用 '通过与 SPAC 公司 Churchill Capital Corp XI 合并完成上市'。"
+    },
+    {
+      "article_id": "2026-11-07-7",
+      "severity": "medium",
+      "problem": "关系 'BMI --targets--> 数据中心' 类型误用。原文只是 BMI 在周三研报中警告'数据中心建设与 AI 投资若迅速放缓可能带来整体投资下滑'，这是研报评论/警告，不是针对数据中心的对抗性动作。'提到'被当成了'targets'。",
+      "fix": "删除该 relation，或改为基于研报警告的语义（如 warnings_about 数据中心），不能用 targets；若图谱无此类型则删边并在事件里保留论述即可。"
+    },
+    {
+      "article_id": "2026-11-07-10",
+      "severity": "medium",
+      "problem": "同一篇论文被过度切分成三个互相重叠的 research 事件（'挑战上下文越长越好假设'、'后期 token 成本高至 7 倍'、'提出 SSSMs')，三条是同一研究的多个侧面而非独立动作；且该篇仅有 2 条 relation（released_by、proposes），信息贫乏，缺论文与核心发现的其他关键边。",
+      "fix": "合并为一个 research 事件，概括论文核心主张（成本不均衡+压缩维持精度+SSSMs 概念）；保留 paper --proposes--> SSSMs，并考虑补充 paper 到'上下文压缩/长程成本'等核心指标的 relation 与 metrics。"
+    },
+    {
+      "article_id": "2026-11-07-0",
+      "severity": "low",
+      "problem": "两条 reviews 关系的对象是 Aaronson-Ambainis 猜想，但证据写的是'Jim Halverson 审计了证明'、'Phiala Shanahan 评阅了形式化'——审计/评阅的对象是证明与形式化成果，而非猜想本身，目标实体与动作对象错位。",
+      "fix": "将 reviews 的 target 改为证明/形式化成果（可让 Halverson/Shanahan 关联到研究产出实体），或在证据与 label 中注明审计对象是证明；避免读成'审阅猜想'。"
+    }
+  ],
+  "lessons": [
+    "合并/SPAC/收购类新闻，参与合并或交易的双方主体都必须建 relation（如 merges_with、acquires），不能只把其中一方放进 event participants 而漏掉连线。",
+    "把机构研报里的'警告/评论'抽象成关系时不要用 targets（针对）这类对抗性类型，仅在确有指向性对抗对象时使用；泛泛评论应删除该边或降级为事件论述。",
+    "同一篇论文/同一研究的多个发现不要各拆成一个 research 事件，应合并为一个事件概括核心主张，避免互相重复。"
+  ]
+}

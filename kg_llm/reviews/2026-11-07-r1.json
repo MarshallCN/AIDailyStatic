@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-07",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "图谱整体结构扎实、证据齐全，但存在会讲反故事的关系方向错误：article 5 把「Agility 开发 Digit」写成「Agility 被 Digit 开发」，article 10 把「论文提出 SSSMs」写成「SSSMs 开发论文」。另有若干关系用词不准与冗余，需修订后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-07-5",
+      "severity": "high",
+      "problem": "关系 \"Agility Robotics --developed_by--> Digit 5\" 和 \"Agility Robotics --developed_by--> Digit\" 方向反了。在全篇其它地方 developed_by 的约定都是 source=产品/模型、target=开发方（如 Arete-27B--developed_by-->Nous Research、Gemini Omni 1.2 Flash--developed_by-->Google），唯独这两条把公司 Agility Robotics 放到 source，读成「Agility 被 Digit 开发」，与原文（Agility Robotics 是 Digit 人形机器人的开发商）完全相反。",
+      "fix": "改为 \"Digit 5 --developed_by--> Agility Robotics\" 和 \"Digit --developed_by--> Agility Robotics\"；若保留公司为主语，应用 \"Agility Robotics --develops--> Digit\"，不要用 developed_by。"
+    },
+    {
+      "article_id": "2026-11-07-10",
+      "severity": "high",
+      "problem": "关系 \"You don't need long context --developed_by--> SSSMs\" 方向/类型错误。是这篇论文提出/命名了「语义状态空间模型（SSSMs）」这一概念，不是 SSSMs 开发了论文。现写法读成「论文由 SSSMs 开发」，语义颠倒。",
+      "fix": "改为 \"You don't need long context --proposes--> SSSMs\"（source=论文、target=概念），或 \"SSSMs --introduced_in--> You don't need long context\"。不要用 developed_by 表达「论文提出概念」。"
+    },
+    {
+      "article_id": "2026-11-07-5",
+      "severity": "medium",
+      "problem": "关系 \"Digit 5 --supplies--> GXO\" 语义不准。原文只说「GXO 扩展部署（Digit 5）」，GXO 是 Digit 的使用/部署方，不是被 Digit 供货的对象。supplies 会误导为 Digit 是供应链供货方。",
+      "fix": "改为 \"GXO --uses--> Digit 5\" 或 \"Digit 5 --supplied_to--> GXO\"，明确 GXO 是使用者、Digit 是被部署产品。"
+    },
+    {
+      "article_id": "2026-11-07-0",
+      "severity": "medium",
+      "problem": "事件 participants 中 David Turturean 的 role 标为 \"partner\"，但原文明确他是搭建 harness 的 PSI 员工、论文唯一作者并承担正确性责任，role 应为 \"author\"。另外原文明确参与审计/评阅的 PSI 顾问 Jim Halverson 与 Phiala Shanahan（前两者核对证明与形式化）以及斯坦福的 Guy Blanc 等人均未被抽取，遗漏了与「证明可信度」相关的关键主体。",
+      "fix": "将 David Turturean 的 role 改为 \"author\"；把 Jim Halverson（审计证明）、Phiala Shanahan（评阅形式化）抽取为 person 实体，并给出与证明/形式化核查相关的边。"
+    },
+    {
+      "article_id": "2026-11-07-3",
+      "severity": "low",
+      "problem": "两条关系表达同一事实：\"Gemini Omni 1.2 Flash --developed_by--> Google\" 与 \"Google --released_by--> Gemini Omni 1.2 Flash\" 冗余重复，都在说 Google 开发/发布了该模型，且一条用 developed_by、一条用 released_by 混用。",
+      "fix": "删去其一（建议保留 developed_by 那条），保持同一事实只保留一条关系。"
+    },
+    {
+      "article_id": "2026-11-07-8",
+      "severity": "low",
+      "problem": "关系 \"Grok 4.7 --integrates--> Grok API\" 类型不准：原文是 Grok 4.7 等模型经 Grok API 对外提供服务，integrates 误读为「模型集成了 API」。",
+      "fix": "改为 \"Grok API --serves--> Grok 4.7\" 或 \"Grok 4.7 --available_via--> Grok API\"，明确服务与被服务关系。"
+    }
+  ],
+  "lessons": [
+    "developed_by 关系必须写 source=被开发的产品/模型、target=开发方/公司；任何情况下都不要把公司放在 source，否则图会把「公司开发产品」讲成「产品开发公司」。",
+    "论文或研究提出一个概念时用 proposes（source=论文、target=概念）或 introduced_in，不要用 developed_by；developed_by 只适合表达产品/模型由某机构制造。",
+    "部署/使用类的语义要分清 supplies（source 供货、target 收货）与 uses（source 使用、target 被用），写错方向会把使用方和产品关系颠倒。"
+  ]
+}

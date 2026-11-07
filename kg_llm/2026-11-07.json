@@ -1,0 +1,397 @@
+{
+"date": "2026-11-07",
+"articles": [
+{
+"article_id": "2026-11-07-0",
+"entities": [
+{"name": "Physical Superintelligence", "type": "company", "aliases": ["PSI"], "confidence": 0.92, "evidence": ["物理超级智能（Physical Superintelligence, PSI）宣布"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["运行一个未公开命名的 Anthropic 模型"]},
+{"name": "Aaronson-Ambainis 猜想", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["给出了 Aaronson-Ambainis 猜想的完整证明"]},
+{"name": "Lean", "type": "tool", "aliases": [], "confidence": 0.92, "evidence": ["Lean 证明助手接受了每一步检查"]},
+{"name": "Scott Aaronson", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["该猜想由 Scott Aaronson 与 Andris Ambainis 于 2008 年提出"]},
+{"name": "Andris Ambainis", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["该猜想由 Scott Aaronson 与 Andris Ambainis 于 2008 年提出"]},
+{"name": "David Turturean", "type": "person", "aliases": [], "confidence": 0.88, "evidence": ["PSI 员工 David Turturean 搭建的 harness 中生成"]},
+{"name": "Jim Halverson", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["PSI 顾问 Jim Halverson 审计了证明"]},
+{"name": "Phiala Shanahan", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Phiala Shanahan 评阅了形式化"]}
+],
+"events": [
+{"type": "research", "label": "PSI 研究系统用 Anthropic 模型在第 3 天证明并经 Lean 形式化 Aaronson-Ambainis 猜想", "summary": "PSI 内部研究系统运行未公开命名的 Anthropic 模型，在第 3 天给出悬置 18 年的 Aaronson-Ambainis 猜想的完整证明，Lean 证明助手接受每一步，随后又两次改进上界。", "participants": [{"name": "Physical Superintelligence", "type": "company", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "object"}, {"name": "Aaronson-Ambainis 猜想", "type": "topic", "role": "object"}, {"name": "Lean", "type": "tool", "role": "object"}, {"name": "David Turturean", "type": "person", "role": "author"}, {"name": "Jim Halverson", "type": "person", "role": "reviewer"}, {"name": "Phiala Shanahan", "type": "person", "role": "reviewer"}], "evidence": ["在第 3 天给出了 Aaronson-Ambainis 猜想的完整证明", "Lean 证明助手接受了每一步检查"]},
+{"type": "research", "label": "Scott Aaronson 与 Andris Ambainis 于 2008 年提出量子加速猜想", "summary": "该猜想由 Scott Aaronson 与 Andris Ambainis 于 2008 年提出，核心问题是量子计算机能否在随机输入上相较经典计算机获得指数级加速。", "participants": [{"name": "Scott Aaronson", "type": "person", "role": "subject"}, {"name": "Andris Ambainis", "type": "person", "role": "partner"}, {"name": "Aaronson-Ambainis 猜想", "type": "topic", "role": "object"}], "evidence": ["该猜想由 Scott Aaronson 与 Andris Ambainis 于 2008 年提出"]}
+],
+"relations": [
+{"source": "Physical Superintelligence", "target": "Anthropic", "type": "uses", "weight": 0.7, "evidence": ["运行一个未公开命名的 Anthropic 模型"]},
+{"source": "Aaronson-Ambainis 猜想", "target": "Scott Aaronson", "type": "authored_by", "weight": 0.5, "evidence": ["该猜想由 Scott Aaronson 与 Andris Ambainis 于 2008 年提出"]},
+{"source": "Aaronson-Ambainis 猜想", "target": "Andris Ambainis", "type": "authored_by", "weight": 0.5, "evidence": ["该猜想由 Scott Aaronson 与 Andris Ambainis 于 2008 年提出"]},
+{"source": "Aaronson-Ambainis 猜想", "target": "Lean", "type": "formalized_in", "weight": 0.8, "evidence": ["被形式化验证器 Lean 接受", "Lean 证明助手接受了每一步检查"]},
+{"source": "David Turturean", "target": "Physical Superintelligence", "type": "affiliated_with", "weight": 0.8, "evidence": ["PSI 员工 David Turturean 搭建的 harness 中生成"]},
+{"source": "Jim Halverson", "target": "Physical Superintelligence", "type": "affiliated_with", "weight": 0.7, "evidence": ["PSI 顾问 Jim Halverson 审计了证明"]},
+{"source": "Phiala Shanahan", "target": "Physical Superintelligence", "type": "affiliated_with", "weight": 0.7, "evidence": ["Phiala Shanahan 评阅了形式化"]},
+{"source": "Jim Halverson", "target": "Aaronson-Ambainis 猜想", "type": "reviews", "weight": 0.6, "evidence": ["PSI 顾问 Jim Halverson 审计了证明"]},
+{"source": "Phiala Shanahan", "target": "Aaronson-Ambainis 猜想", "type": "reviews", "weight": 0.6, "evidence": ["Phiala Shanahan 评阅了形式化"]}
+],
+"metrics": [
+{"name": "猜想悬置年限", "value": "18 年"},
+{"name": "提出猜想的年份", "value": "2008 年"},
+{"name": "给出证明耗时", "value": "第 3 天"}
+],
+"why_it_matters": "AI 首次独立生成并经机器验证悬置 18 年的量子计算核心猜想证明，'提出—验证—审稿'的证据链被拆成可审计步骤，由模型产出数学正从个案走向常态化。"
+},
+{
+"article_id": "2026-11-07-1",
+"entities": [
+{"name": "Thinking Machines", "type": "company", "aliases": ["Thinking Machines Lab"], "confidence": 0.92, "evidence": ["Thinking Machines Lab（前 Anthropic 联合创始人等创办的实验室）发布第二代模型"]},
+{"name": "Inkling 2 Small", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["发布第二代模型 Inkling 2 Small"]},
+{"name": "Tinker", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["模型初期只在 Tinker 上以闭源权重开放 API 与微调"]},
+{"name": "Apache 2.0", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["下周以 Apache 2.0 授权发布全部权重"]},
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.9, "evidence": ["训练使用 NVIDIA GB300 NVL72 上的 NVFP4 预训练"]},
+{"name": "GB300 NVL72", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["训练使用 NVIDIA GB300 NVL72 上的 NVFP4 预训练"]},
+{"name": "SWE-Bench Pro V2", "type": "benchmark", "aliases": [], "confidence": 0.88, "evidence": ["SWE-Bench Pro v2 Hard 86.3%"]},
+{"name": "DeepSWE", "type": "benchmark", "aliases": [], "confidence": 0.88, "evidence": ["DeepSWE v1.1 72.1%"]},
+{"name": "Artificial Analysis Intelligence Index", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["Artificial Analysis Intelligence Index 31"]},
+{"name": "GLM-5.3", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["与 GLM-5.3、甚至 Claude Sonnet 5 直接竞争"]},
+{"name": "Claude Sonnet 5", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["与 GLM-5.3、甚至 Claude Sonnet 5 直接竞争"]}
+],
+"events": [
+{"type": "launch", "label": "Thinking Machines 发布第二代稀疏 MoE 模型 Inkling 2 Small", "summary": "Thinking Machines 发布 Inkling 2 Small：总参数 594B、激活 17B 的稀疏 mixture-of-experts，配 292M 视觉编码器，支持文本+图像输入与 1M token 上下文，先在 Tinker 平台开放闭源 API。", "participants": [{"name": "Thinking Machines", "type": "company", "role": "subject"}, {"name": "Inkling 2 Small", "type": "model", "role": "object"}, {"name": "Tinker", "type": "product", "role": "partner"}], "evidence": ["发布第二代模型 Inkling 2 Small", "总参数 594B、激活 17B"]},
+{"type": "benchmark", "label": "Inkling 2 Small 在 SWE-Bench Pro v2 Hard 得分 86.3%", "summary": "官方口径得分 SWE-Bench Pro v2 Hard 86.3%、DeepSWE v1.1 72.1%、Artificial Analysis Intelligence Index 31，训练使用 NVIDIA GB300 NVL72 上 NVFP4 预训练加 9 天强化学习。", "participants": [{"name": "Inkling 2 Small", "type": "model", "role": "subject"}, {"name": "SWE-Bench Pro V2", "type": "benchmark", "role": "benchmark"}, {"name": "DeepSWE", "type": "benchmark", "role": "benchmark"}, {"name": "Artificial Analysis Intelligence Index", "type": "benchmark", "role": "benchmark"}], "evidence": ["SWE-Bench Pro v2 Hard 86.3%", "DeepSWE v1.1 72.1%"]},
+{"type": "open_source", "label": "Thinking Machines 承诺一周后以 Apache 2.0 开源 Inkling 2 Small 全部权重", "summary": "模型初期仅在 Tinker 闭源提供 API，公司明确承诺外部安全测试与红队完成后，下周以 Apache 2.0 授权发布全部权重，留出可核查时间窗口。", "participants": [{"name": "Thinking Machines", "type": "company", "role": "subject"}, {"name": "Inkling 2 Small", "type": "model", "role": "object"}, {"name": "Apache 2.0", "type": "policy", "role": "object"}], "evidence": ["下周以 Apache 2.0 授权发布全部权重"]}
+],
+"relations": [
+{"source": "Inkling 2 Small", "target": "Thinking Machines", "type": "developed_by", "weight": 0.9, "evidence": ["发布第二代模型 Inkling 2 Small"]},
+{"source": "Tinker", "target": "Inkling 2 Small", "type": "integrates", "weight": 0.6, "evidence": ["模型初期只在 Tinker 上以闭源权重开放 API 与微调"]},
+{"source": "Inkling 2 Small", "target": "GB300 NVL72", "type": "uses", "weight": 0.7, "evidence": ["训练使用 NVIDIA GB300 NVL72 上的 NVFP4 预训练"]},
+{"source": "GB300 NVL72", "target": "NVIDIA", "type": "developed_by", "weight": 0.5, "evidence": ["训练使用 NVIDIA GB300 NVL72 上的 NVFP4 预训练"]},
+{"source": "Inkling 2 Small", "target": "SWE-Bench Pro V2", "type": "evaluated_on", "weight": 0.8, "evidence": ["SWE-Bench Pro v2 Hard 86.3%"]},
+{"source": "Inkling 2 Small", "target": "DeepSWE", "type": "evaluated_on", "weight": 0.7, "evidence": ["DeepSWE v1.1 72.1%"]},
+{"source": "Inkling 2 Small", "target": "Artificial Analysis Intelligence Index", "type": "evaluated_on", "weight": 0.6, "evidence": ["Artificial Analysis Intelligence Index 31"]},
+{"source": "Inkling 2 Small", "target": "GLM-5.3", "type": "competes_with", "weight": 0.6, "evidence": ["与 GLM-5.3、甚至 Claude Sonnet 5 直接竞争"]},
+{"source": "Inkling 2 Small", "target": "Claude Sonnet 5", "type": "competes_with", "weight": 0.6, "evidence": ["与 GLM-5.3、甚至 Claude Sonnet 5 直接竞争"]}
+],
+"metrics": [
+{"name": "总参数量", "value": "594B"},
+{"name": "每 token 激活参数量", "value": "17B"},
+{"name": "解码器层数", "value": "48 层"},
+{"name": "专家数与路由", "value": "384 个中路由 8 个"},
+{"name": "视觉编码器参数量", "value": "292M"},
+{"name": "上下文长度", "value": "1M token"},
+{"name": "SWE-Bench Pro v2 Hard 得分", "value": "86.3%"},
+{"name": "DeepSWE v1.1 得分", "value": "72.1%"},
+{"name": "Artificial Analysis Intelligence Index", "value": "31"},
+{"name": "强化学习 GPU 与天数", "value": "2,048 张 9 天"},
+{"name": "输入价格", "value": "每百万 token $0.30"},
+{"name": "输出价格", "value": "$1.00"}
+],
+"why_it_matters": "开源兑现从口头许诺转为'带日期+可核查窗口'，594B 级稀疏 MoE 首次以接近前沿的厂商级成绩进入自托管，头部 coding 模型竞争开始以可验证承诺论输赢。"
+},
+{
+"article_id": "2026-11-07-2",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 与金融科技平台 Plaid 合作"]},
+{"name": "Plaid", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 与金融科技平台 Plaid 合作"]},
+{"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["为 Claude 推出 Personal Finance"]},
+{"name": "Claude Personal Finance", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["为 Claude 推出 Personal Finance（个人理财）功能"]},
+{"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["直接对标 ChatGPT 已有的财务分析能力"]}
+],
+"events": [
+{"type": "launch", "label": "Anthropic 与 Plaid 合作为 Claude 推出 Personal Finance 个人理财 beta", "summary": "Anthropic 与 Plaid 合作在 Claude 推出 Personal Finance，面向美国 Pro、Max、Ultra 订阅用户开放，可只读读取最多 16 家美国银行账户与至多两年交易数据。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Plaid", "type": "company", "role": "partner"}, {"name": "Claude", "type": "model", "role": "object"}, {"name": "Claude Personal Finance", "type": "product", "role": "object"}], "evidence": ["Anthropic 与金融科技平台 Plaid 合作，为 Claude 推出 Personal Finance", "通过 Plaid 授权后，Claude 可读取最多 16 家美国银行"]},
+{"type": "security", "label": "Claude 财务账户采用只读权限设计不能移动或投资资金", "summary": "Claude 连接账户的权限只进不出，Plaid 明确账户访问是只读的、无法执行转账，也不能移动、管理或投资资金，对话不用于训练。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Claude", "type": "model", "role": "object"}, {"name": "Plaid", "type": "company", "role": "partner"}], "evidence": ["账户访问是只读的，无法执行转账"]}
+],
+"relations": [
+{"source": "Claude Personal Finance", "target": "Claude", "type": "integrates", "weight": 0.6, "evidence": ["为 Claude 推出 Personal Finance（个人理财）功能"]},
+{"source": "Anthropic", "target": "Plaid", "type": "partners_with", "weight": 0.8, "evidence": ["Anthropic 与金融科技平台 Plaid 合作"]},
+{"source": "Claude Personal Finance", "target": "Plaid", "type": "uses", "weight": 0.7, "evidence": ["通过 Plaid 授权后，Claude 可读取最多 16 家美国银行"]},
+{"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.7, "evidence": ["Anthropic 与金融科技平台 Plaid 合作，为 Claude 推出 Personal Finance"]},
+{"source": "Claude Personal Finance", "target": "ChatGPT", "type": "competes_with", "weight": 0.5, "evidence": ["直接对标 ChatGPT 已有的财务分析能力"]}
+],
+"metrics": [
+{"name": "可读取的美国银行账户数上限", "value": "16 家"},
+{"name": "可读取的交易数据时限", "value": "至多两年"}
+],
+"why_it_matters": "大模型厂商首次切入个人金融时把'只读、不进不出'设为默认安全边界，理财代理的可信度取决于能证明它碰不到钱，而非只靠营销措辞。"
+},
+{
+"article_id": "2026-11-07-3",
+"entities": [
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 宣布 Gemini Omni 1.2 Flash 全面转向一般可用"]},
+{"name": "Gemini Omni 1.2 Flash", "type": "model", "aliases": [], "confidence": 0.93, "evidence": ["宣布 Gemini Omni 1.2 Flash 全面转向一般可用（GA）"]},
+{"name": "Gemini Omni 1.1", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["视频时长从 10 秒提升到原生 15 秒"]},
+{"name": "Gemini API", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["覆盖 Gemini API 与 Gemini for business"]},
+{"name": "Gemini for business", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["覆盖 Gemini API 与 Gemini for business"]},
+{"name": "SynthID", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["输出的 SynthID 水印"]}
+],
+"events": [
+{"type": "launch", "label": "Google 将 Gemini Omni 1.2 Flash 转正式一般可用", "summary": "Google 宣布 Gemini Omni 1.2 Flash 在 Gemini API 与 Gemini for business 上全面 GA，相比 Omni 1.1 视频时长从 10 秒提到原生 15 秒、720p 每秒价格从 $0.10 降到 $0.07（降幅 30%），并新增多轮对话式编辑与更清晰的唇形同步，用户可在对话中连续多轮修改一段视频而非从头重生成。", "participants": [{"name": "Google", "type": "company", "role": "subject"}, {"name": "Gemini Omni 1.2 Flash", "type": "model", "role": "object"}, {"name": "Gemini Omni 1.1", "type": "model", "role": "object"}, {"name": "Gemini API", "type": "tool", "role": "object"}], "evidence": ["宣布 Gemini Omni 1.2 Flash 全面转向一般可用（GA）", "视频时长从 10 秒提升到原生 15 秒", "价格从每秒 $0.10 降到 720p 每秒 $0.07", "用户可以在对话中连续多轮修改一段视频"]}
+],
+"relations": [
+{"source": "Gemini Omni 1.2 Flash", "target": "Google", "type": "developed_by", "weight": 0.9, "evidence": ["Google 宣布 Gemini Omni 1.2 Flash 全面转向一般可用"]},
+{"source": "Gemini Omni 1.2 Flash", "target": "Gemini API", "type": "integrates", "weight": 0.6, "evidence": ["覆盖 Gemini API 与 Gemini for business"]},
+{"source": "Gemini Omni 1.2 Flash", "target": "Gemini for business", "type": "integrates", "weight": 0.6, "evidence": ["覆盖 Gemini API 与 Gemini for business"]},
+{"source": "Gemini Omni 1.2 Flash", "target": "Gemini Omni 1.1", "type": "replaces", "weight": 0.7, "evidence": ["视频时长从 10 秒提升到原生 15 秒"]},
+{"source": "Gemini Omni 1.2 Flash", "target": "SynthID", "type": "uses", "weight": 0.6, "evidence": ["输出的 SynthID 水印"]}
+],
+"metrics": [
+{"name": "原生视频时长", "value": "3–15 秒（步进 1 秒）"},
+{"name": "相比上一代视频时长提升", "value": "10 秒到 15 秒"},
+{"name": "720p 每秒价格", "value": "$0.07"},
+{"name": "价格降幅", "value": "30%"},
+{"name": "上采样目标分辨率", "value": "1080p/4K"}
+],
+"why_it_matters": "视频生成进入'单次生成整条广告'的量产档——15 秒与 7 美分/秒把生成成本压到可批量产出区间，起稿到 4K 的上采样工作流正成为默认管线。"
+},
+{
+"article_id": "2026-11-07-4",
+"entities": [
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["NVIDIA 悄然下调了下一代旗舰 Vera Rubin GPU 公开文档中的关键规格"]},
+{"name": "Vera Rubin", "type": "hardware", "aliases": ["Rubin"], "confidence": 0.92, "evidence": ["下调了下一代旗舰 Vera Rubin GPU 公开文档中的关键规格"]},
+{"name": "HBM4", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["HBM4 带宽从 22 TB/s 降到 19.2 TB/s"]},
+{"name": "NVLink 6", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["NVLink 6 带宽从每芯片 3.6 TB/s 降到 3.0 TB/s"]},
+{"name": "NVL72", "type": "hardware", "aliases": [], "confidence": 0.88, "evidence": ["整机 NVL72 的总内存带宽从 1,580 TB/s 落到 1,400 TB/s"]},
+{"name": "GB300 NVL72", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["可比 GB300 NVL72 在 agentic 工作负载上每兆瓦吞吐提升最高 30 倍"]},
+{"name": "AgentX", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["按 SemiAnalysis AgentX 播放真实编码 agent 会话测得"]},
+{"name": "KV Cache Runner", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["KV cache 池化（Dynamo + KV Cache Runner + Vera CPU）"]},
+{"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.88, "evidence": ["CEO 黄仁勋在 8 月电话会上给出的"]}
+],
+"events": [
+{"type": "infra", "label": "NVIDIA 下调 Vera Rubin 关键规格并开始向云厂商出货", "summary": "首批生产系统逐步进入云服务商之际，NVIDIA 下调公开文档关键规格：单颗 HBM4 带宽从 22 TB/s 降到 19.2 TB/s，NVLink 6 从 3.6 TB/s 降到 3.0 TB/s，反映量产真实硬件而非早期工程预估。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "Vera Rubin", "type": "hardware", "role": "object"}], "evidence": ["下调了下一代旗舰 Vera Rubin GPU 公开文档中的关键规格", "首批生产系统开始进入云服务商"]},
+{"type": "benchmark", "label": "Vera Rubin NVL72 在 agentic 工作负载上每兆瓦吞吐可比 GB300 高 30 倍", "summary": "官方博客称 Vera Rubin NVL72 通过 NVFP4 量化、宽 expert 并行、KV cache 池化等协同设计，可比 GB300 NVL72 在 agentic 工作负载上每兆瓦吞吐提升最高 30 倍。", "participants": [{"name": "Vera Rubin", "type": "hardware", "role": "subject"}, {"name": "NVL72", "type": "hardware", "role": "object"}, {"name": "GB300 NVL72", "type": "hardware", "role": "competitor"}, {"name": "AgentX", "type": "benchmark", "role": "benchmark"}], "evidence": ["可比 GB300 NVL72 在 agentic 工作负载上每兆瓦吞吐提升最高 30 倍"]}
+],
+"relations": [
+{"source": "Vera Rubin", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["NVIDIA 悄然下调了下一代旗舰 Vera Rubin GPU 公开文档中的关键规格"]},
+{"source": "Vera Rubin", "target": "HBM4", "type": "uses", "weight": 0.7, "evidence": ["HBM4 带宽从 22 TB/s 降到 19.2 TB/s"]},
+{"source": "Vera Rubin", "target": "NVLink 6", "type": "uses", "weight": 0.7, "evidence": ["NVLink 6 带宽从每芯片 3.6 TB/s 降到 3.0 TB/s"]},
+{"source": "Vera Rubin", "target": "GB300 NVL72", "type": "outperforms", "weight": 0.8, "evidence": ["可比 GB300 NVL72 在 agentic 工作负载上每兆瓦吞吐提升最高 30 倍"]},
+{"source": "Vera Rubin", "target": "AgentX", "type": "evaluated_on", "weight": 0.6, "evidence": ["按 SemiAnalysis AgentX 播放真实编码 agent 会话测得"]},
+{"source": "Vera Rubin", "target": "KV Cache Runner", "type": "uses", "weight": 0.6, "evidence": ["KV cache 池化（Dynamo + KV Cache Runner + Vera CPU）"]},
+{"source": "GB300 NVL72", "target": "NVIDIA", "type": "developed_by", "weight": 0.5, "evidence": ["可比 GB300 NVL72 在 agentic 工作负载上每兆瓦吞吐提升最高 30 倍"]},
+{"source": "Jensen Huang", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.8, "evidence": ["CEO 黄仁勋在 8 月电话会上给出的"]}
+],
+"metrics": [
+{"name": "单颗 HBM4 内存带宽", "value": "19.2 TB/s（原 22 TB/s，-13%）"},
+{"name": "NVLink 6 带宽", "value": "3.0 TB/s（原 3.6 TB/s）"},
+{"name": "整机 NVL72 总内存带宽", "value": "1,400 TB/s（原 1,580 TB/s）"},
+{"name": "NVL 互联带宽", "value": "216 TB/s（原 260 TB/s）"},
+{"name": "scale-out 网络带宽提升", "value": "每 GPU 450 GB/s（原 400 GB/s，+12.5%）"},
+{"name": "机架级 scale-out 带宽", "value": "32.4 TB/s（原 28.8 TB/s）"},
+{"name": "单芯片推理算力", "value": "50 PFLOPS sparse NF4"},
+{"name": "单芯片训练算力", "value": "35 PFLOPS FP4"},
+{"name": "单 GPU 内存", "value": "288 GB"},
+{"name": "Vera CPU 内存", "value": "1.5TB LPDDR5X"},
+{"name": "agentic 工作负载能效提升", "value": "最高 30 倍"},
+{"name": "每兆瓦收入节奏", "value": "Hopper $18B→Grace Blackwell $25B→Vera Rubin $40B"}
+],
+"why_it_matters": "厂商写进公开文档的规格随量产回落，说明跑分数字只是'工程预估'而非'交付承诺'；'30 倍能效'与'带宽下跳'同现于一个产品周期，取信于谁的判断正被'规格即营销'扭曲。"
+},
+{
+"article_id": "2026-11-07-5",
+"entities": [
+{"name": "Agility Robotics", "type": "company", "aliases": ["Agility"], "confidence": 0.93, "evidence": ["Agility Robotics（Digit 人形机器人的开发商）正式登陆纳斯达克"]},
+{"name": "Churchill Capital Corp XI", "type": "company", "aliases": ["Churchill XI"], "confidence": 0.85, "evidence": ["通过与 SPAC 公司 Churchill Capital Corp XI 合并完成上市"]},
+{"name": "Digit", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["Agility Robotics（Digit 人形机器人的开发商）正式登陆纳斯达克"]},
+{"name": "Digit 5", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Digit 5 于 9 月发布"]},
+{"name": "Foxconn", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["Foxconn 领投的普通股 PIPE"]},
+{"name": "GXO", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["GXO 扩展部署"]},
+{"name": "NVIDIA", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["战略与机构投资者包括 NVIDIA、Amazon"]},
+{"name": "Amazon", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["战略与机构投资者包括 NVIDIA、Amazon"]},
+{"name": "Nasdaq", "type": "organization", "aliases": ["纳斯达克"], "confidence": 0.85, "evidence": ["以 AGLT 在纳斯达克开始交易"]}
+],
+"events": [
+{"type": "ipo", "label": "Agility Robotics 通过与 Churchill Capital Corp XI 合并登陆纳斯达克", "summary": "Agility Robotics 与 SPAC 公司 Churchill Capital Corp XI 合并、以代码 AGLT 在美国纳斯达克开始交易，实现 de-SPAC 挂牌上市，成为美国首家拥有真实商业部署的纯人形机器人上市公司。", "participants": [{"name": "Agility Robotics", "type": "company", "role": "subject"}, {"name": "Churchill Capital Corp XI", "type": "company", "role": "partner"}, {"name": "Nasdaq", "type": "organization", "role": "partner"}], "evidence": ["通过与 SPAC 公司 Churchill Capital Corp XI 合并完成上市", "以 AGLT 在纳斯达克开始交易"]},
+{"type": "funding", "label": "Agility Robotics 上市募集约 4.65 亿美元含 Foxconn 领投 PIPE", "summary": "Gross 募集约 4.65 亿美元，其中约 1.64 亿来自 Churchill XI 信托、约 2.01 亿为 Foxconn 领投的每股 $10 普通股 PIPE，另有公告前已到账的 1 亿美元股权融资。", "participants": [{"name": "Agility Robotics", "type": "company", "role": "subject"}, {"name": "Foxconn", "type": "company", "role": "funder"}, {"name": "Churchill Capital Corp XI", "type": "company", "role": "funder"}], "evidence": ["募集约 4.65 亿美元", "Foxconn 领投的普通股 PIPE"]}
+],
+"relations": [
+{"source": "Digit 5", "target": "Agility Robotics", "type": "developed_by", "weight": 0.8, "evidence": ["Digit 5 于 9 月发布"]},
+{"source": "Digit", "target": "Agility Robotics", "type": "developed_by", "weight": 0.6, "evidence": ["Agility Robotics（Digit 人形机器人的开发商）正式登陆纳斯达克"]},
+{"source": "Foxconn", "target": "Agility Robotics", "type": "invests_in", "weight": 0.8, "evidence": ["Foxconn 领投的普通股 PIPE"]},
+{"source": "NVIDIA", "target": "Agility Robotics", "type": "invests_in", "weight": 0.6, "evidence": ["战略与机构投资者包括 NVIDIA、Amazon"]},
+{"source": "Amazon", "target": "Agility Robotics", "type": "invests_in", "weight": 0.6, "evidence": ["战略与机构投资者包括 NVIDIA、Amazon"]},
+{"source": "GXO", "target": "Digit 5", "type": "uses", "weight": 0.6, "evidence": ["GXO 扩展部署"]}
+],
+"metrics": [
+{"name": "Gross 募集金额", "value": "约 4.65 亿美元"},
+{"name": "Churchill XI 信托账户贡献", "value": "约 1.64 亿美元"},
+{"name": "Foxconn 领投 PIPE 规模与单价", "value": "约 2.01 亿美元（每股 $10）"},
+{"name": "公告前已到账股权融资", "value": "1 亿美元"},
+{"name": "真实部署运行时长", "value": "超过 65,000 小时"},
+{"name": "使用客户数", "value": "9 家"},
+{"name": "多年度 Digit 5 订单", "value": "超过 3 亿美元"},
+{"name": "股东股份锁定期", "value": "180 天"}
+],
+"why_it_matters": "上市把'人形机器人'变成公开可交易标的，但 Digit 5 到 2027 年底才一般可用，这意味着当前市值押的是订单履约而非当期营收，机器人商业化仍由后验证阶段定价。"
+},
+{
+"article_id": "2026-11-07-6",
+"entities": [
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Meta 无限期暂停了一项争议性商业条款更新"]},
+{"name": "Meta 新商业条款", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["无限期暂停了一项争议性商业条款更新"]},
+{"name": "Facebook", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["链接在其 Facebook 等站点的外部网站内容"]},
+{"name": "robots.txt", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["条款可能让 Meta 无视 robots.txt 的爬取偏好"]},
+{"name": "巴西法院", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["巴西与挪威法院已以初步禁令阻断相关条款"]},
+{"name": "挪威法院", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["巴西与挪威法院已以初步禁令阻断相关条款"]},
+{"name": "CMA", "type": "organization", "aliases": ["英国竞争与市场管理局"], "confidence": 0.85, "evidence": ["英国 CMA 也宣布将调查这些条款"]}
+],
+"events": [
+{"type": "policy", "label": "Meta 无限期暂停要求授权站外内容训练 AI 的新商业条款", "summary": "Meta 宣布其新商业条款不会在 11 月 20 日生效、原条款继续有效，无限期暂停并要求使用 Meta Business 账户的商家授权爬取外部网站内容来训练 AI 的更新。", "participants": [{"name": "Meta", "type": "company", "role": "subject"}, {"name": "Meta 新商业条款", "type": "policy", "role": "object"}], "evidence": ["无限期暂停了一项争议性商业条款更新"]},
+{"type": "policy", "label": "英国 CMA 宣布将调查 Meta 新商业条款", "summary": "在巴西、挪威法院以初步禁令阻断相关条款后，英国竞争与市场管理局（CMA）也宣布将调查这些条款，监管与司法多线施压。", "participants": [{"name": "CMA", "type": "organization", "role": "regulator"}, {"name": "Meta", "type": "company", "role": "object"}, {"name": "Meta 新商业条款", "type": "policy", "role": "object"}], "evidence": ["英国 CMA 也宣布将调查这些条款"]}
+],
+"relations": [
+{"source": "CMA", "target": "Meta", "type": "regulates", "weight": 0.8, "evidence": ["英国 CMA 也宣布将调查这些条款"]},
+{"source": "巴西法院", "target": "Meta", "type": "restricts", "weight": 0.7, "evidence": ["巴西与挪威法院已以初步禁令阻断相关条款"]},
+{"source": "挪威法院", "target": "Meta", "type": "restricts", "weight": 0.7, "evidence": ["巴西与挪威法院已以初步禁令阻断相关条款"]},
+{"source": "Meta 新商业条款", "target": "robots.txt", "type": "restricts", "weight": 0.5, "evidence": ["条款可能让 Meta 无视 robots.txt 的爬取偏好"]},
+{"source": "Facebook", "target": "Meta", "type": "developed_by", "weight": 0.5, "evidence": ["链接在其 Facebook 等站点的外部网站内容"]}
+],
+"metrics": [
+{"name": "条款原定生效日期", "value": "10 月 30 日"},
+{"name": "推迟后原定生效日期", "value": "11 月 20 日"}
+],
+"why_it_matters": "在法院禁令与监管调查叠加下，Meta 把'可抓取站外内容训练 AI'的条款无限期搁置，数据获取权冲突从文本协商升级为司法与行政的双重否决，robots.txt 等既有偏好协议正被条款式绕过挑战。"
+},
+{
+"article_id": "2026-11-07-7",
+"entities": [
+{"name": "Northampton 市议会", "type": "organization", "aliases": [], "confidence": 0.88, "evidence": ["Northampton 市议会一致通过为期一年的数据中心停建令"]},
+{"name": "数据中心", "type": "topic", "aliases": [], "confidence": 0.7, "evidence": ["暂停建设任何「为存放计算机服务器或其他电子数据存储管理设备而设计」的设施"]},
+{"name": "Deutsche Bank", "type": "company", "aliases": ["德意志银行"], "confidence": 0.85, "evidence": ["德意志银行证券经济学家 Brett Ryan 对推动这一波 AI 基建狂潮的投资者表示"]},
+{"name": "Brett Ryan", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["德意志银行证券经济学家 Brett Ryan 对推动这一波 AI 基建狂潮的投资者表示"]},
+{"name": "Christopher Stratton", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["市议员 Christopher Stratton 争取到豁免条款"]},
+{"name": "Gina Hinojosa", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["德州当选州长 Gina Hinojosa 提出了全州数据中心新许可停建提案"]},
+{"name": "伯尼·桑德斯", "type": "person", "aliases": [], "confidence": 0.88, "evidence": ["伯尼·桑德斯与 AOC 在中期选举后喊出「现在就全国数据中心停建令」"]},
+{"name": "AOC", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["伯尼·桑德斯与 AOC 在中期选举后喊出「现在就全国数据中心停建令」"]},
+{"name": "BMI", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["BMI 也在周三的研报中警告"]}
+],
+"events": [
+{"type": "policy", "label": "Northampton 市议会一致通过为期一年的数据中心停建令", "summary": "马萨诸塞州 Northampton 市议会一致通过为期一年的数据中心停建令、立即生效，暂停建设为存放服务器等而设计的设施，市议员 Stratton 争取到 250 千瓦以下企业的豁免。", "participants": [{"name": "Northampton 市议会", "type": "organization", "role": "regulator"}, {"name": "数据中心", "type": "topic", "role": "object"}], "evidence": ["Northampton 市议会一致通过为期一年的数据中心停建令", "暂停建设任何「为存放计算机服务器或其他电子数据存储管理设备而设计」的设施"]},
+{"type": "policy", "label": "伯尼·桑德斯与 AOC 呼吁全国数据中心停建令", "summary": "中期选举后桑德斯与 AOC 喊出'现在就全国数据中心停建令'，直指科技寡头破坏环境，与 Texas 当选州长 Gina Hinojosa 的全州新许可停建提案互相呼应。", "participants": [{"name": "伯尼·桑德斯", "type": "person", "role": "subject"}, {"name": "AOC", "type": "person", "role": "partner"}, {"name": "数据中心", "type": "topic", "role": "object"}], "evidence": ["伯尼·桑德斯与 AOC 在中期选举后喊出「现在就全国数据中心停建令」"]}
+],
+"relations": [
+{"source": "Northampton 市议会", "target": "数据中心", "type": "regulates", "weight": 0.8, "evidence": ["暂停建设任何「为存放计算机服务器或其他电子数据存储管理设备而设计」的设施"]},
+{"source": "Brett Ryan", "target": "Deutsche Bank", "type": "affiliated_with", "weight": 0.8, "evidence": ["德意志银行证券经济学家 Brett Ryan 对推动这一波 AI 基建狂潮的投资者表示"]},
+{"source": "Christopher Stratton", "target": "Northampton 市议会", "type": "affiliated_with", "weight": 0.7, "evidence": ["市议员 Christopher Stratton 争取到豁免条款"]},
+{"source": "Gina Hinojosa", "target": "数据中心", "type": "targets", "weight": 0.7, "evidence": ["德州当选州长 Gina Hinojosa 提出了全州数据中心新许可停建提案"]},
+{"source": "伯尼·桑德斯", "target": "数据中心", "type": "targets", "weight": 0.7, "evidence": ["伯尼·桑德斯与 AOC 在中期选举后喊出「现在就全国数据中心停建令」"]},
+{"source": "AOC", "target": "数据中心", "type": "targets", "weight": 0.7, "evidence": ["伯尼·桑德斯与 AOC 在中期选举后喊出「现在就全国数据中心停建令」"]},
+{"source": "伯尼·桑德斯", "target": "AOC", "type": "partners_with", "weight": 0.5, "evidence": ["伯尼·桑德斯与 AOC 在中期选举后喊出「现在就全国数据中心停建令」"]},
+{"source": "BMI", "target": "数据中心", "type": "targets", "weight": 0.4, "evidence": ["BMI 也在周三的研报中警告"]}
+],
+"metrics": [
+{"name": "停建令期限", "value": "一年"},
+{"name": "普通企业自有服务器豁免门槛", "value": "用电 250 千瓦及以下"}
+],
+"why_it_matters": "数据中心正从纯基建议题变成连接地方治理、选举政治与资本叙事的核心变量，停建令与'反泡沫'论同框出现，AI 供给的硬约束正从算力转向社会许可与政治投票。"
+},
+{
+"article_id": "2026-11-07-8",
+"entities": [
+{"name": "xAI", "type": "company", "aliases": ["SpaceXSI"], "confidence": 0.92, "evidence": ["xAI 在 Grok API 文本输出上默认启用不可见水印"]},
+{"name": "Grok API", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["xAI 在 Grok API 文本输出上默认启用不可见水印"]},
+{"name": "Grok 4.7", "type": "model", "aliases": ["grok-4.7"], "confidence": 0.88, "evidence": ["覆盖 grok-4.7"]},
+{"name": "欧盟《人工智能法案》", "type": "policy", "aliases": ["欧盟 AI 法案", "EU AI 法案"], "confidence": 0.88, "evidence": ["官方给出的理由是「遵守欧盟 AI 法案」"]}
+],
+"events": [
+{"type": "policy", "label": "xAI 在 Grok API 的 7 个模型上默认开启不可见文本水印", "summary": "自 11 月 7 日起 xAI 在 Grok API 文本输出默认启用不可见水印，覆盖 grok-4.7 等 7 个模型与所有端点，通过统计偏置而非隐藏字符实现，调用方可读响应头 x-watermark。", "participants": [{"name": "xAI", "type": "company", "role": "subject"}, {"name": "Grok API", "type": "product", "role": "object"}, {"name": "Grok 4.7", "type": "model", "role": "object"}], "evidence": ["xAI 在 Grok API 文本输出上默认启用不可见水印", "覆盖 grok-4.7"]},
+{"type": "policy", "label": "xAI 称文本水印默认开启旨在符合欧盟 AI 法案", "summary": "官方给出理由为遵守欧盟 AI 法案，这是首个主要模型厂商以默认开启方式为文本输出提供水印，此前多为可选或图表视频水印。", "participants": [{"name": "xAI", "type": "company", "role": "subject"}, {"name": "欧盟《人工智能法案》", "type": "policy", "role": "regulator"}], "evidence": ["官方给出的理由是「遵守欧盟 AI 法案」"]}
+],
+"relations": [
+{"source": "Grok 4.7", "target": "xAI", "type": "developed_by", "weight": 0.8, "evidence": ["覆盖 grok-4.7"]},
+{"source": "Grok API", "target": "Grok 4.7", "type": "serves", "weight": 0.6, "evidence": ["xAI 在 Grok API 文本输出上默认启用不可见水印"]},
+{"source": "xAI", "target": "欧盟《人工智能法案》", "type": "complies_with", "weight": 0.8, "evidence": ["官方给出的理由是「遵守欧盟 AI 法案」"]},
+{"source": "Grok API", "target": "xAI", "type": "released_by", "weight": 0.5, "evidence": ["xAI 在 Grok API 文本输出上默认启用不可见水印"]}
+],
+"metrics": [
+{"name": "水印默认开启日期", "value": "2026 年 11 月 7 日"},
+{"name": "覆盖模型数", "value": "7 个"}
+],
+"why_it_matters": "文本水印从可选/图表视频扩展到明确默认开启，Grok 成为首个以强制默认给文本加水印的厂商——AI 内容溯源正从自我约束变成由欧盟《人工智能法案》这类监管驱动的合规默认项。"
+},
+{
+"article_id": "2026-11-07-9",
+"entities": [
+{"name": "Nous Research", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Nous Research 发布 Arete-27B"]},
+{"name": "Arete-27B", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Nous Research 发布 Arete-27B"]},
+{"name": "Qwen3.8-27B", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["对阿里 Qwen3.8-27B 的后训练改造"]},
+{"name": "Alibaba", "type": "company", "aliases": ["阿里巴巴", "阿里", "Qwen 团队"], "confidence": 0.85, "evidence": ["对阿里 Qwen3.8-27B 的后训练改造"]},
+{"name": "Grok 4.7", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["用 LLM 裁判（Grok 4.7）在盲评下打分"]},
+{"name": "Mistral Large 4", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["与 Mistral Large 4 的 0.3% 同量级"]},
+{"name": "GLM-5.3", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["GLM-5.3 为 15%"]},
+{"name": "DeepSeek V4.1 Flash", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["DeepSeek V4.1 Flash 为 16%"]},
+{"name": "Hermes Bench", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["Hermes Bench 65.60%（基线 65.77%）"]},
+{"name": "Terminal-Bench-2.1", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["Terminal-Bench-2.1 70%（基线 67%）"]}
+],
+"events": [
+{"type": "open_source", "label": "Nous Research 发布基于 Qwen3.8-27B 微调的 Arete-27B", "summary": "Nous Research 用约 5,300 万 token 监督微调在阿里 Qwen3.8-27B 上训练出 Arete-27B，纯 SFT 无 RL、无偏好优化、无架构改动，目的是强化西方价值观。", "participants": [{"name": "Nous Research", "type": "company", "role": "subject"}, {"name": "Arete-27B", "type": "model", "role": "object"}, {"name": "Qwen3.8-27B", "type": "model", "role": "base"}], "evidence": ["Nous Research 发布 Arete-27B", "对阿里 Qwen3.8-27B 的后训练改造"]},
+{"type": "research", "label": "Arete-27B 将中国官方口径宣传率从 22% 降到 0.9%", "summary": "经 5,300 万 token 微调后，答案中采用中国官方口径的比例从 22% 降到 0.9%，事实分从 2.32 升到 2.98，与 Mistral Large 4 的 0.3% 同量级。", "participants": [{"name": "Arete-27B", "type": "model", "role": "subject"}, {"name": "Qwen3.8-27B", "type": "model", "role": "object"}], "evidence": ["宣传率降到 0.9%", "将答案中采用中国官方口径的比例从 22% 降到 0.9%"]},
+{"type": "benchmark", "label": "Arete-27B 一般能力几乎无回退保持 Hermes Bench 65.60%", "summary": "能力无显著回退：Hermes Bench 65.60%（基线 65.77%）、Terminal-Bench-2.1 70%（基线 67%），证明价值层很浅、可微调剥离而不扰动底层能力。", "participants": [{"name": "Arete-27B", "type": "model", "role": "subject"}, {"name": "Hermes Bench", "type": "benchmark", "role": "benchmark"}, {"name": "Terminal-Bench-2.1", "type": "benchmark", "role": "benchmark"}], "evidence": ["Hermes Bench 65.60%（基线 65.77%）", "Terminal-Bench-2.1 70%（基线 67%）"]}
+],
+"relations": [
+{"source": "Arete-27B", "target": "Nous Research", "type": "developed_by", "weight": 0.9, "evidence": ["Nous Research 发布 Arete-27B"]},
+{"source": "Arete-27B", "target": "Qwen3.8-27B", "type": "fine_tuned_from", "weight": 0.8, "evidence": ["对阿里 Qwen3.8-27B 的后训练改造"]},
+{"source": "Qwen3.8-27B", "target": "Alibaba", "type": "developed_by", "weight": 0.7, "evidence": ["对阿里 Qwen3.8-27B 的后训练改造"]},
+{"source": "Nous Research", "target": "Grok 4.7", "type": "uses", "weight": 0.6, "evidence": ["用 LLM 裁判（Grok 4.7）在盲评下打分"]},
+{"source": "Arete-27B", "target": "Hermes Bench", "type": "evaluated_on", "weight": 0.7, "evidence": ["Hermes Bench 65.60%（基线 65.77%）"]},
+{"source": "Arete-27B", "target": "Terminal-Bench-2.1", "type": "evaluated_on", "weight": 0.7, "evidence": ["Terminal-Bench-2.1 70%（基线 67%）"]},
+{"source": "Arete-27B", "target": "Mistral Large 4", "type": "compared_with", "weight": 0.6, "evidence": ["与 Mistral Large 4 的 0.3% 同量级"]},
+{"source": "Arete-27B", "target": "GLM-5.3", "type": "compared_with", "weight": 0.6, "evidence": ["GLM-5.3 为 15%"]},
+{"source": "Arete-27B", "target": "DeepSeek V4.1 Flash", "type": "compared_with", "weight": 0.6, "evidence": ["DeepSeek V4.1 Flash 为 16%"]}
+],
+"metrics": [
+{"name": "官方口径宣传率下降", "value": "22% → 0.9%"},
+{"name": "事实得分提升", "value": "2.32 → 2.98（5 分制）"},
+{"name": "微调数据量与步数", "value": "5,300 万 token / 两 epoch / 1,202 步"},
+{"name": "Mistral Large 4 宣传率", "value": "0.3%"},
+{"name": "GLM-5.3 宣传率", "value": "15%"},
+{"name": "DeepSeek V4.1 Flash 宣传率", "value": "16%"},
+{"name": "Hermes Bench 得分", "value": "65.60%（基线 65.77%）"},
+{"name": "Terminal-Bench-2.1 得分", "value": "70%（基线 67%）"},
+{"name": "言论自由宣传率变化", "value": "60% → 1%"},
+{"name": "言论自由事实分变化", "value": "0.89 → 2.44"}
+],
+"why_it_matters": "开源模型的价值维度被实证为'可剥离的一层'——只要 5 千万 token 受控微调就能移除政治宣传而几乎不动底层能力，这既证明价值观可塑，也预示政治偏见微调将越来越常见且廉价。"
+},
+{
+"article_id": "2026-11-07-10",
+"entities": [
+{"name": "You don't need long context", "type": "paper", "aliases": ["《You don't need long context》"], "confidence": 0.9, "evidence": ["一篇题为《You don't need long context》的 arXiv 论文"]},
+{"name": "arXiv", "type": "organization", "aliases": ["Arxiv"], "confidence": 0.8, "evidence": ["一篇题为《You don't need long context》的 arXiv 论文"]},
+{"name": "SSSMs", "type": "topic", "aliases": ["语义状态空间模型"], "confidence": 0.85, "evidence": ["作者据此提出「语义状态空间模型（SSSMs）」的概念"]}
+],
+"events": [
+{"type": "research", "label": "arXiv 论文《You don't need long context》挑战上下文越长越好假设", "summary": "一篇 arXiv 论文对'上下文越长越好'的行业默认提出挑战，在前沿开放权重模型上测量发现生成后期 token 的成本显著高于早期 token。", "participants": [{"name": "You don't need long context", "type": "paper", "role": "subject"}, {"name": "arXiv", "type": "organization", "role": "partner"}], "evidence": ["一篇题为《You don't need long context》的 arXiv 论文"]},
+{"type": "research", "label": "论文称后期 token 生成成本最高可为早期 token 的 7 倍", "summary": "研究发现生成后期 token 的成本高至早期 token 的 7 倍，通过频繁上下文压缩维持短上下文，模型在长程与长输入任务上几乎不损失任务精度。", "participants": [{"name": "You don't need long context", "type": "paper", "role": "subject"}], "evidence": ["后期 token 的生成成本可高至早期 token 的 7 倍"]},
+{"type": "research", "label": "论文提出语义状态空间模型（SSSMs）概念", "summary": "即便在长程软件工程任务中只允许每个上下文内采取一次动作 LLM 性能也不崩塌，作者据此提出语义状态空间模型（SSSMs），质疑依赖超长上下文窗口的假设。", "participants": [{"name": "You don't need long context", "type": "paper", "role": "subject"}, {"name": "SSSMs", "type": "topic", "role": "object"}], "evidence": ["作者据此提出「语义状态空间模型（SSSMs）」的概念"]}
+],
+"relations": [
+{"source": "You don't need long context", "target": "arXiv", "type": "released_by", "weight": 0.7, "evidence": ["一篇题为《You don't need long context》的 arXiv 论文"]},
+{"source": "You don't need long context", "target": "SSSMs", "type": "proposes", "weight": 0.7, "evidence": ["作者据此提出「语义状态空间模型（SSSMs）」的概念"]}
+],
+"metrics": [
+{"name": "后期 token 生成成本相对早期最大差距", "value": "7 倍"}
+],
+"why_it_matters": "对'上下文越长越好'的行业默认给出反例数据：长程可靠性与推理成本未必绑定窗口长度，靠压缩维持短上下文也能保住精度，长上下文模型的价值主张被重新校正到压缩与成本侧。"
+},
+{
+"article_id": "2026-11-07-11",
+"entities": [
+{"name": "Claude", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["他让 Claude 更新一批旧讲义里的页码"]},
+{"name": "William Baude", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["芝加哥大学法学教授、宪法研究所 Faculty Director William Baude 发帖称"]},
+{"name": "芝加哥大学", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["芝加哥大学法学教授、宪法研究所 Faculty Director William Baude 发帖称"]},
+{"name": "Dropbox", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["文件最终通过 Dropbox 恢复"]},
+{"name": "微软研究院", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["微软研究院一篇《LLMs Corrupt Your Documents When You Delegate》的研究相互印证"]},
+{"name": "LLMs Corrupt Your Documents When You Delegate", "type": "paper", "aliases": [], "confidence": 0.85, "evidence": ["微软研究院一篇《LLMs Corrupt Your Documents When You Delegate》的研究相互印证"]}
+],
+"events": [
+{"type": "security", "label": "Claude 误删法教授 William Baude 一年讲义与当前教案", "summary": "芝加哥大学法学教授 William Baude 让 Claude 给讲义调页码，午饭后发现 Claude 删除了他的 Fall 2026 最终教案与顶层 Class N 2023 讲义，日志坦承因疏忽删除且未还原，文件最终经 Dropbox 找回。", "participants": [{"name": "Claude", "type": "model", "role": "subject"}, {"name": "William Baude", "type": "person", "role": "object"}, {"name": "Dropbox", "type": "product", "role": "partner"}], "evidence": ["Claude 删除了他的 Fall 2026 最终教案 .doc 和所有顶层 Class N 2023 讲义", "他让 Claude 更新一批旧讲义里的页码"]},
+{"type": "research", "label": "微软研究院研究指出 LLM 委托下文档损坏是真实风险", "summary": "此事与微软研究院《LLMs Corrupt Your Documents When You Delegate》研究相互印证，指出把文档操作委托给 LLM 时文档损坏与丢失是真实而普遍的风险而非个案。", "participants": [{"name": "微软研究院", "type": "organization", "role": "subject"}, {"name": "LLMs Corrupt Your Documents When You Delegate", "type": "paper", "role": "object"}], "evidence": ["微软研究院一篇《LLMs Corrupt Your Documents When You Delegate》的研究相互印证"]}
+],
+"relations": [
+{"source": "William Baude", "target": "Claude", "type": "uses", "weight": 0.8, "evidence": ["他让 Claude 更新一批旧讲义里的页码"]},
+{"source": "William Baude", "target": "芝加哥大学", "type": "affiliated_with", "weight": 0.8, "evidence": ["芝加哥大学法学教授、宪法研究所 Faculty Director William Baude 发帖称"]},
+{"source": "William Baude", "target": "Dropbox", "type": "uses", "weight": 0.4, "evidence": ["文件最终通过 Dropbox 恢复"]},
+{"source": "LLMs Corrupt Your Documents When You Delegate", "target": "微软研究院", "type": "authored_by", "weight": 0.7, "evidence": ["微软研究院一篇《LLMs Corrupt Your Documents When You Delegate》的研究相互印证"]}
+],
+"metrics": [
+{"name": "误删范围", "value": "Fall 2026 最终教案 .doc 及顶层 Class N 2023 讲义"}
+],
+"why_it_matters": "把文件删除这类高风险写入操作委托给 LLM 时，回滚能力完全取决于外部备份而非模型自身；随着文档编辑代理接管工作流，'只完成部分指令'与'产生不可逆副作用'之间的错位成为新的安全缺口。"
+}
+]
+}
