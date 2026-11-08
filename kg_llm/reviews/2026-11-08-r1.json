@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-08",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "主要问题是 developed_by 关系方向在 5 篇文章里系统性写反（NVIDIA/OpenAI 作物源指向被开发的芯片/产品），与本图自身「产品→开发者」的约定冲突（同一篇里 Blackwell→NVIDIA 就是对的，可见纯属方向错）。另有若干实体/关系类型错配：MIT 标成 policy、产品对母公司建竞争边、Google 收购的是站点而非公司。",
+  "findings": [
+    {
+      "article_id": "2026-11-08-0/1/5/6/7",
+      "severity": "high",
+      "problem": "developed_by 方向全部写反。本图约定是 source 为被开发对象、target 为开发者（证据对照：article-8 的 Project Tembo→Google、article-9 的 APM/Claude Code/Codex→对应公司、article-15 的 Muse→Meta，以及本文内 Blackwell→NVIDIA 都是正确的）。但以下边把 NVIDIA/OpenAI 当 source 指向芯片/产品：article-0『NVIDIA --developed_by--> Vera Rubin』、article-1『OpenAI --developed_by--> ChatGPT』、article-5『NVIDIA --developed_by--> H200』、article-6『NVIDIA --developed_by--> B300』与『NVIDIA --developed_by--> H200』、article-7『NVIDIA --developed_by--> H200』。article-5 自身即自相矛盾：Blackwell→NVIDIA 正确而 NVIDIA→H200 反了，证明这不是约定差异而是一次性方向错误。",
+      "fix": "把上述边全部对调为：article-0『Vera Rubin --developed_by--> NVIDIA』、article-1『ChatGPT --developed_by--> OpenAI』、article-5/6/7『H200 --developed_by--> NVIDIA』、article-6『B300 --developed_by--> NVIDIA』。规则：凡『谁开发了谁』，source 一律是被开发的硬件/模型/产品，target 是开发公司。"
+    },
+    {
+      "article_id": "2026-11-08-9",
+      "severity": "medium",
+      "problem": "实体『MIT』被标成 type=policy，且关系『APM --licensed_under--> MIT』的目标实体名为裸的 MIT。MIT 是一种开源许可证，不是政策；裸名 MIT 还可能被误解为同名机构（麻省理工）。",
+      "fix": "把该实体改名为『MIT License』，type 改用一个许可证/标准类型（如 license），关系目标同步改为『MIT License』。"
+    },
+    {
+      "article_id": "2026-11-08-15",
+      "severity": "medium",
+      "problem": "关系『Muse --competes_with--> OpenAI / Anthropic / xAI』把产品跟母公司公司实体连了竞争边。原文竞争对象是产品：OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot，证据要点名的也是这些产品而非公司。",
+      "fix": "competes_with 应连接同层级产品实体：改为『Muse --competes_with--> Dots』并视需要补充 Claude Duet、Grok Bot 三个产品实体，或删除与公司实体的竞争边，不要用产品对公司建竞争关系。"
+    },
+    {
+      "article_id": "2026-11-08-8",
+      "severity": "medium",
+      "problem": "关系『Google --acquires--> Crusoe』过度声明：原文（Google 官方与摘要）是 Google 收购 Crusoe 在东南怀俄明的站点/园区（一个 6GW 签约容量的站点），并非收购 Crusoe 这家公司本身。acquires 指向公司实体会读成『Google 买下 Crusoe 公司』，与文意不符。",
+      "fix": "把目标改为站点实体（如新建『Crusoe 东南怀俄明站点』实体系 infra），关系『Google --acquires--> 该站点』；或在事件里明确是资产收购而非公司收购，避免 acquires 直接落在公司实体上。"
+    },
+    {
+      "article_id": "2026-11-08-13",
+      "severity": "medium",
+      "problem": "关系『Claude Code --developed_by--> Anthropic』的 evidence 引用的是『Claude Code 是唯一默认持久化完整批准命令的』——这条证据讲的是权限持久化行为，并不支撑『Claude Code 由 Anthropic 开发』这一断言，属于证据与断言错配。",
+      "fix": "为该关系另配能支撑开发的证据（原文正文明确 Claude Code 是 Anthropic 的产品），或至少补一条如『Anthropic 的 Claude Code 有 plugins 机制』这类体现归属关系的证据。"
+    },
+    {
+      "article_id": "2026-11-08-14",
+      "severity": "medium",
+      "problem": "关系『Coca-Cola --compared_with--> NVIDIA』目标实体错：原文对照的是 NVIDIA 的 SEED 论文/工作（『NVIDIA 的 SEED 论文在混合模型 prefill 中同样发现…』），不是 NVIDIA 这家公司本身。把模型间比较建成模型对公司的边语义不通。",
+      "fix": "把目标改为 SEED 论文实体（如『SEED』，topic/research 类型）或用『Coca-Cola --compared_with--> SEED』；不要对 NVIDIA 公司实体建模型比较边。"
+    }
+  ],
+  "lessons": [
+    "关系 developed_by 的方向必须全局一致：source 是被开发的产品/模型/硬件，target 是开发者（如 H200 --developed_by--> NVIDIA）；芯片类新闻里不可写反成 NVIDIA --developed_by--> H200。",
+    "许可证实体应命名为全称（如『MIT License』）并标许可证/标准类，不要用裸名『MIT』或标成 policy，避免与同名机构混淆。",
+    "competes_with 只连接同类产品实体（如 Muse 对 Dots），不要把产品与母公司公司实体建竞争边。"
+  ]
+}

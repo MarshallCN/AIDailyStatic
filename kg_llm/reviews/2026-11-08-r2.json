@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-08",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "图谱整体扎实，绝大多数实体、事件与 metrics 数值都逐条贴合原文（Anthropic 8954 亿算力承诺、H200 60 万颗、B300 黑市 4.7 倍溢价、Claude Code 1122 仓库等均准确）。但残留一处被无中生有出来的对比关系（Coca-Cola compared_with SEED）和一处关系类型用错（Liza Tobin reviews 商务部），会加载语义噪音，需修订后发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-08-14",
+      "severity": "high",
+      "problem": "关系 \"Coca-Cola --compared_with--> SEED\" 在原文中不存在。SEED 论文被引用只是作者作为「本周行业方向共振」的背景举例（讨论混合模型 prefill 中读路径比写路径浅、据此提升每 GPU 吞吐 1.2–1.4 倍），从未对 Coca-Cola 方法与 SEED 做过任何对比、基准或消融评估——把它连成 compared_with 是在原文证据之外虚构了一条对比关系，且两者优化的机制层面都不相同。",
+      "fix": "删除 \"Coca-Cola --compared_with--> SEED\" 这条关系；保留 \"SEED --authored_by--> NVIDIA\"（这条证据成立）。若确想保留关联，应改用表达了「背景相关」而非「直接对比」的弱语义，否则按原文事实删除即可。"
+    },
+    {
+      "article_id": "2026-11-08-7",
+      "severity": "medium",
+      "problem": "关系 \"Liza Tobin --reviews--> US Department of Commerce\" 类型用错。Tobin 是前白宫国安会中国事务主任，原文明明是她在采访中公开批评「商务部与英伟达都没有做确保许可条款被遵守所需的尽职调查」，这是对监管方的一次负面评论，不是 Tobin 在「审查/评测」商务部，二者之间也没有任何事实性工作交互。",
+      "fix": "删除该关系（Tobin 之言是报道引语，不足以构成本图的有价值关系边）；若确需保留主体，表达为评论/批评语义（如 criticizes），不要用 reviews，以免误读为她与商务部存在审查工作关系。"
+    },
+    {
+      "article_id": "2026-11-08-9",
+      "severity": "low",
+      "problem": "关系 \"APM --competes_with--> Claude Code\" 品类错配。APM 是 agent 依赖/包管理器，Claude Code 是编码 agent，二者分属不同产品类别；原文只是把 Claude Code 的 plugins、Codex 指令、Google ADK 作为 APM 所处生态的「同类赛道布局」上下文，并未认定 APM 与 Claude Code 直接竞争。",
+      "fix": "删除 \"APM --competes_with--> Claude Code\" 这条边；该竞争力已由 trend 事件的 participants(competitor) 表达，不需要在关系层再连一条跨品类的竞争边。"
+    }
+  ],
+  "lessons": [
+    "提到某篇相关工作作为「行业方向背景」不等于该方法与它做了对比；只有原文明确对二者进行基准、消融或评估时，才建立 compared_with 关系。",
+    "某人对监管机构或企业的批评性引语不要构造成 reviews 关系；当事人与对象之间没有实际工作交互时不要建边。",
+    "competes_with 只能在同一产品类别之间建立（agent 对 agent、包管理器对包管理器）；不同品类只有生态上下文时用事件 participants 表达竞争，不要在关系层硬连。"
+  ]
+}

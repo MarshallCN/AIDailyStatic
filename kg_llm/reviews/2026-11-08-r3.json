@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-08",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "前两轮指出的 developed_by 方向与无中生有关系均已修复，实体、事件与全部 metrics 数值逐条贴合原文，连通性好。残留几处关系类型与方向语义问题：把实地探访构造成 reviews、把订单承接方写成 supplier、把分析师推测断言为既定 association，以及挟带上周的背景事件，均会向图谱注入噪音，修订后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-08-0",
+      "severity": "medium",
+      "problem": "关系 \"SemiAnalysis --reviews--> Galaxy\" 类型用错。两条 evidence（\"SemiAnalysis 团队 9 月实地探访了乌兰察布的 Galaxy 园区\"）都只是到访/现场考察，原文没有任何对 Galaxy 的评价、评测或打分内容，构造成 reviews（审查/评测）关系会误读为 SemiAnalysis 对园区做了评估。",
+      "fix": "删除该关系，或改用表达「到访/实地考察」语义的关系类型（如 visits）；若仅作为报道主体出现，保留在事件 participants 即可，不要在本图关系层建 reviews 边。"
+    },
+    {
+      "article_id": "2026-11-08-3",
+      "severity": "medium",
+      "problem": "关系 \"OnePWR Solutions --supplies--> Anthropic\" 方向/语义错位。原文是 Anthropic 从 OnePWR 手中承接（接管）后者向卡特彼勒订购的发电机订单，OnePWR 并未向 Anthropic 供货——OnePWR 反而是因缺钱完成采购而转让订单的一方，把它写成 Anthropic 的 supplier 与实际方向相反。",
+      "fix": "删除 \"OnePWR --supplies--> Anthropic\" 这条边。实际供货方是 Caterpillar，替代为 \"Caterpillar --supplies--> Anthropic\"（Anthropic 承接后发电机由卡特彼勒交付）；若想保留 OnePWR，用承接/接管订单的语义（acquisition/takeover of order）而非 supplies。"
+    },
+    {
+      "article_id": "2026-11-08-7",
+      "severity": "medium",
+      "problem": "关系 \"Maginfra --affiliated_with--> Inspur\" 把未证实的分析师推测断言成既定事实。唯一 evidence（\"分析师认为它是已列入实体清单的浪潮（Inspur）的关联方\"）明确是「分析师认为」的指控，报道并未证实 Maginfra 与浪潮存在关联；在关系层无保留地连成 affiliated_with，会让图谱把一项仍在调查的关联当成事实，在空壳中介这种安全敏感语境下风险更高。",
+      "fix": "删除该关系，或将语义改为明确的未证实/疑似关联（suspected/alleged 前缀），保留 evidence 中的\"分析师认为\"字眼并降低 weight；不要断言为事实性 affiliated_with。"
+    },
+    {
+      "article_id": "2026-11-08-10",
+      "severity": "medium",
+      "problem": "事件 \"OpenAI 发布网络安全模型 GPT-6 Cyber，据称在 ExploitGym 达 48.5%\" 是上周（11-08 之前）的背景事件，被当作本文事件抽入。本篇 2026-11-08 的实际主题是 OpenAI 与 Hacktron 的漏洞研究合作，GPT-6 Cyber 只是该叙事的一个背景注脚（\"上周发布的 GPT-6 Cyber 同样服务于该叙事\"），且此模型作为独立发布事件应归属其各自的当日新闻，放进本文会虚增当日事件数并造成跨篇重复。",
+      "fix": "从本文删除该 research 事件（保留其关系/实体作为背景引用即可，若该模型已有独立新闻覆盖则彻底不在此建事件）；不要把上周的产品发布当作当日事件再次抽入。"
+    },
+    {
+      "article_id": "2026-11-08-8",
+      "severity": "low",
+      "problem": "实体类型错配：\"Crusoe 东南怀俄明站点\" 与 2026-11-08-0 的 \"Galaxy\" 都被标为 product（产品），但二者是数据中心园区/基础设施选址，不是可售产品；把园区标成 product 会让图谱把基础设施误读为商业产品。",
+      "fix": "将此类数据中心园区/站点实体改用设施/基础设施类类型（如 infrastructure/facility），并与项目主体（Google、Envision）一致建模，避免 product 误分类。"
+    },
+    {
+      "article_id": "2026-11-08-0",
+      "severity": "low",
+      "problem": "metric 名称 \"内蒙古数据中项目储备\" 缺字，应为 \"内蒙古数据中心项目储备\"，当前名称不通顺且会造成数据口径混淆。",
+      "fix": "修正 metric name 为 \"内蒙古数据中心项目储备\"，value 保持\"约 25GW\"。"
+    }
+  ],
+  "lessons": [
+    "实地探访/到访/现场考察类报道（如团队去园区参观）不要构造成 reviews 关系；只有原文含评价、评测或打分内容才用 reviews，否则删边或用 visits/考察类语义。",
+    "把\"分析师认为/据称/疑似是某方关联方\"的未证实指控，不要在关系层断言为既定的 affiliated_with/partner；用疑似或 alleged 语义表达并保留\"据称\"字眼、降低权重。",
+    "A 从 B 手中承接/接管 B 向 C 订购的订单时，实际供货方是 C，不要把被接管订单的 B 写成 A 的 supplier；供应链按真实交付方建模，订单转移用 acquisition/takeover 语义。"
+  ]
+}

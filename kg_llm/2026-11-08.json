@@ -1,0 +1,443 @@
+{
+"date": "2026-11-08",
+"articles": [
+{
+"article_id": "2026-11-08-0",
+"entities": [
+{"name": "Envision Group", "type": "company", "aliases": ["远景能源", "远景"], "confidence": 0.95, "evidence": ["所有者是累计装机超过 100GW 的可再生能源系统集成商远景能源（Envision Group）"]},
+{"name": "Galaxy", "type": "product", "aliases": ["Galaxy 园区"], "confidence": 0.9, "evidence": ["SemiAnalysis 团队 9 月实地探访了乌兰察布的 Galaxy 园区"]},
+{"name": "SemiAnalysis", "type": "organization", "aliases": ["SemiAnalysis 团队"], "confidence": 0.9, "evidence": ["SemiAnalysis 团队 9 月实地探访了乌兰察布的 Galaxy 园区"]},
+{"name": "AESC", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["由关联公司 AESC 制造电池储能"]},
+{"name": "SST", "type": "hardware", "aliases": ["固态变压器"], "confidence": 0.9, "evidence": ["固态变压器（SST）将 10kV 交流直接转换为 800V 直流供机架使用"]},
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.9, "evidence": ["英伟达为 600kW 级 Kyber 机架推动的下一代方案"]},
+{"name": "Vera Rubin", "type": "hardware", "aliases": [], "confidence": 0.88, "evidence": ["英伟达称 Vera Rubin 可在 45°C 供水下无需冷机运行"]}
+],
+"events": [
+{"type": "infra", "label": "远景能源在乌兰察布规划建造 800MW 的 Galaxy 数据中心园区", "summary": "远景能源规划的 Galaxy 园区 IT 容量 800MW，与 Abilene 核心园区约 820MW 相当，首期 120MW 一年内交付且成本约为美国的五分之一。", "participants": [{"name": "Envision Group", "type": "company", "role": "subject"}, {"name": "Galaxy", "type": "product", "role": "object"}], "evidence": ["园区规划 IT 容量 800MW", "首期 120MW 在一年内交付，成本约为美国的五分之一"]},
+{"type": "trend", "label": "Galaxy 采用 800V 直流与固态变压器且不设中央冷机的激进供电冷却设计", "summary": "园区内 5MW 机房已运行 800V 直流系统，固态变压器将 10kV 交流直接转换为 800V 直流，液冷风冷共享同一水回路且整个园区不设中央冷机。", "participants": [{"name": "Galaxy", "type": "product", "role": "subject"}, {"name": "SST", "type": "hardware", "role": "object"}], "evidence": ["固态变压器（SST）将 10kV 交流直接转换为 800V 直流供机架使用", "整个园区不设中央冷机"]}
+],
+"relations": [
+{"source": "Galaxy", "target": "Envision Group", "type": "developed_by", "weight": 0.9, "evidence": ["所有者是累计装机超过 100GW 的可再生能源系统集成商远景能源（Envision Group）"]},
+{"source": "Galaxy", "target": "AESC", "type": "uses", "weight": 0.5, "evidence": ["由关联公司 AESC 制造电池储能"]},
+{"source": "Galaxy", "target": "SST", "type": "uses", "weight": 0.8, "evidence": ["固态变压器（SST）将 10kV 交流直接转换为 800V 直流供机架使用"]},
+{"source": "SemiAnalysis", "target": "Galaxy", "type": "reviews", "weight": 0.6, "evidence": ["SemiAnalysis 团队 9 月实地探访了乌兰察布的 Galaxy 园区"]},
+{"source": "Vera Rubin", "target": "NVIDIA", "type": "developed_by", "weight": 0.6, "evidence": ["英伟达称 Vera Rubin 可在 45°C 供水下无需冷机运行"]}
+],
+"metrics": [
+{"name": "Galaxy 规划 IT 容量", "value": "800MW"},
+{"name": "Abilene 核心园区关键 IT 容量", "value": "约 820MW"},
+{"name": "首期交付容量与工期", "value": "120MW 一年"},
+{"name": "成本对比", "value": "约为美国的五分之一"},
+{"name": "远景在内蒙古数据中心总规划", "value": "3GW"},
+{"name": "前两期风电装机", "value": "420MW"},
+{"name": "风电覆盖负载倍数", "value": "1.75 倍"},
+{"name": "乌兰察布风资源容量因子", "value": "35–40%"},
+{"name": "内蒙古数据中项目储备", "value": "约 25GW"},
+{"name": "马来西亚数据中心可再生能源要求", "value": "至少 30%"}
+],
+"why_it_matters": "美国路线图上的 800V 直流、固态变压器与去冷机冷却在中国园区已成运行中的量产参照系，'自备绿电'被远景提前固化进交付能力，数据中心竞赛从算力转向电力同盟。"
+},
+{
+"article_id": "2026-11-08-1",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 已于 11 月 6 日（周五）完成新一轮融资的首笔约 110 亿美元交割"]},
+{"name": "SoftBank", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["SoftBank 与阿布扎比 MGX 参与"]},
+{"name": "MGX", "type": "company", "aliases": ["阿布扎比 MGX"], "confidence": 0.88, "evidence": ["SoftBank 与阿布扎比 MGX 参与"]},
+{"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["周活 ChatGPT 用户 12 亿"]},
+{"name": "Sarah Friar", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["CFO Sarah Friar 在电视采访中确认了 1.25 万亿美元的估值"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["与 Anthropic IPO 估值预期的同步回落构成同一枚硬币的两面"]}
+],
+"events": [
+{"type": "funding", "label": "OpenAI 完成首笔约 110 亿美元融资交割，投前估值 1.25 万亿美元", "summary": "OpenAI 于 11 月 6 日完成新一轮融资首笔约 110 亿美元交割，投前估值 1.25 万亿美元，SoftBank 与阿布扎比 MGX 参与，本轮总额可能增至约 200 亿美元。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "SoftBank", "type": "company", "role": "funder"}, {"name": "MGX", "type": "company", "role": "funder"}, {"name": "Anthropic", "type": "company", "role": "competitor"}], "evidence": ["完成新一轮融资的首笔约 110 亿美元交割", "估值 1.25 万亿美元（pre-money）", "SoftBank 与阿布扎比 MGX 参与"]}
+],
+"relations": [
+{"source": "SoftBank", "target": "OpenAI", "type": "invests_in", "weight": 0.7, "evidence": ["SoftBank 与阿布扎比 MGX 参与"]},
+{"source": "MGX", "target": "OpenAI", "type": "invests_in", "weight": 0.7, "evidence": ["SoftBank 与阿布扎比 MGX 参与"]},
+{"source": "Sarah Friar", "target": "OpenAI", "type": "affiliated_with", "weight": 0.6, "evidence": ["CFO Sarah Friar 在电视采访中确认了 1.25 万亿美元的估值"]},
+{"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.5, "evidence": ["周活 ChatGPT 用户 12 亿"]}
+],
+"metrics": [
+{"name": "本轮融资首笔交割额", "value": "约 110 亿美元"},
+{"name": "投前估值", "value": "1.25 万亿美元"},
+{"name": "9 月底原定募资目标", "value": "300 亿美元"},
+{"name": "本轮预计最终总额", "value": "约 200 亿美元"},
+{"name": "三季度营收环比增长", "value": "70%"},
+{"name": "周活 ChatGPT 用户", "value": "12 亿"},
+{"name": "8 月广告年化收入", "value": "10 亿美元"},
+{"name": "纳斯达克 100 指数周四单日跌幅", "value": "6.4%"}
+],
+"why_it_matters": "科技股抛售后私募阵营不再接受上月估值，OpenAI 以低于最初要价完成交割，前沿实验室'九位数支票照开但定价权松动'，与 Anthropic 估值同步回落印证资本退潮。"
+},
+{
+"article_id": "2026-11-08-2",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["潜在买家当前讨论的估值区间约为 1.1 万亿至 1.3 万亿美元"]},
+{"name": "Dario Amodei", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["CEO Dario Amodei 将此归因为「信任危机」"]},
+{"name": "Nasdaq", "type": "organization", "aliases": ["纳斯达克"], "confidence": 0.88, "evidence": ["计划以 ANT 代码登陆纳斯达克"]}
+],
+"events": [
+{"type": "trend", "label": "Anthropic IPO 估值预期从约 2 万亿美元回落至 1.1–1.3 万亿美元", "summary": "科技股抛售叠加选民对数据中心反弹，Anthropic IPO 潜在买家讨论的估值区间从一个月前的约 2 万亿美元降至 1.1–1.3 万亿美元，招股书披露约 8954 亿美元算力相关承诺。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Nasdaq", "type": "organization", "role": "object"}], "evidence": ["潜在买家当前讨论的估值区间约为 1.1 万亿至 1.3 万亿美元"]},
+{"type": "policy", "label": "Anthropic 在招股书风险因素中承认数据中心开发反对声已更有组织", "summary": "选民在 41 项数据中心相关公投中否决 40 项，公司承认其公开形象或使相关项目受到额外审查，IPO 成为公开市场对'选民反对其基础设施的公司'的第一个大考。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Dario Amodei", "type": "person", "role": "subject"}], "evidence": ["选民在 41 项数据中心相关公投中否决了 40 项", "CEO Dario Amodei 将此归因为「信任危机」"]}
+],
+"relations": [
+{"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.7, "evidence": ["CEO Dario Amodei 将此归因为「信任危机」"]},
+{"source": "Anthropic", "target": "Nasdaq", "type": "plans_to_list_on", "weight": 0.5, "evidence": ["计划以 ANT 代码登陆纳斯达克"]}
+],
+"metrics": [
+{"name": "Anthropic IPO 估值预期区间", "value": "1.1–1.3 万亿美元"},
+{"name": "一个月前估值预期", "value": "约 2 万亿美元"},
+{"name": "招股书购买承诺与租赁协议", "value": "约 8954 亿美元"},
+{"name": "上半年营收", "value": "163 亿美元"},
+{"name": "上半年净亏损", "value": "807 亿美元"},
+{"name": "承诺算力", "value": "约 4170 亿美元"},
+{"name": "Polymarket 12 月前完成 IPO 概率", "value": "跌至近 50%"},
+{"name": "数据中心相关公投被否决数", "value": "40/41 项"}
+],
+"why_it_matters": "估值四个月内从 2 万亿腰斩至 1.1–1.3 万亿区间，反映资本与选民双重反噬正侵蚀'以 AI 垄断叙事定价'的前提，Anthropic IPO 成为公开市场对数据中心社会反弹的定价试纸。"
+},
+{
+"article_id": "2026-11-08-3",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 已同意支付 34 亿美元，购买 1.7GW 的重型燃气发电机"]},
+{"name": "OnePWR Solutions", "type": "company", "aliases": ["OnePWR"], "confidence": 0.9, "evidence": ["在 9 月下旬从圣安东尼奥供应商 OnePWR Solutions 手中承接了后者的卡特彼勒发电机订单"]},
+{"name": "Caterpillar", "type": "company", "aliases": ["卡特彼勒"], "confidence": 0.9, "evidence": ["向卡特彼勒订购的发电机"]},
+{"name": "TeraWulf", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["Anthropic 此前已与 TeraWulf 等达成算力合作"]}
+],
+"events": [
+{"type": "infra", "label": "Anthropic 斥 34 亿美元承接 OnePWR 的 1.7GW 卡特彼勒燃气发电机订单", "summary": "Anthropic 支付 34 亿美元购买 1.7GW 重型燃气发电机，承接供应商 OnePWR Solutions 向卡特彼勒订购的订单，为已知 AI 实验室最大规模发电设备采购。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "OnePWR Solutions", "type": "company", "role": "partner"}, {"name": "Caterpillar", "type": "company", "role": "partner"}], "evidence": ["已同意支付 34 亿美元，购买 1.7GW 的重型燃气发电机", "承接了后者的卡特彼勒发电机订单"]},
+{"type": "infra", "label": "Anthropic 加速把电力资产内部化以绕开电网并网排队", "summary": "在并网动辄数年背景下，前沿实验室转向自建电力资产，Anthropic 此前已与 TeraWulf 等达成算力合作。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "TeraWulf", "type": "company", "role": "partner"}], "evidence": ["Anthropic 此前已与 TeraWulf 等达成算力合作"]}
+],
+"relations": [
+{"source": "OnePWR Solutions", "target": "Anthropic", "type": "supplies", "weight": 0.7, "evidence": ["从圣安东尼奥供应商 OnePWR Solutions 手中承接了后者的卡特彼勒发电机订单"]},
+{"source": "Caterpillar", "target": "OnePWR Solutions", "type": "supplies", "weight": 0.5, "evidence": ["向卡特彼勒订购了发电机"]},
+{"source": "Anthropic", "target": "Caterpillar", "type": "uses", "weight": 0.4, "evidence": ["购买 1.7GW 的重型燃气发电机"]},
+{"source": "Anthropic", "target": "TeraWulf", "type": "partners_with", "weight": 0.6, "evidence": ["Anthropic 此前已与 TeraWulf 等达成算力合作"]}
+],
+"metrics": [
+{"name": "燃气发电机采购金额", "value": "34 亿美元"},
+{"name": "燃气发电机容量", "value": "1.7GW"}
+],
+"why_it_matters": "电网并网排队比九位数支票更慢，Anthropic 直接承接发电机制造订单把电力资产内部化，前沿实验室既抢算力又抢'能开的电源'，电力主权成为新的军备门槛。"
+},
+{
+"article_id": "2026-11-08-4",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["METR 发布了对 Anthropic 研发加速的独立评估"]},
+{"name": "METR", "type": "organization", "aliases": ["独立评估机构 METR"], "confidence": 0.9, "evidence": ["独立评估机构 METR 在 11 周的内部审查后估计"]},
+{"name": "AECI 能力指数", "type": "benchmark", "aliases": [], "confidence": 0.88, "evidence": ["Anthropic 在其 AECI 能力指数上的提升速度约为 2025 年 10 月之前的 1.9 倍"]}
+],
+"events": [
+{"type": "research", "label": "METR 独立评估 Anthropic 研发加速约 1.9 倍且约八成来自 AI 辅助研发", "summary": "METR 在 11 周内部审查后估计 Anthropic 在 AECI 能力指数上的提升速度约为 2025 年 10 月前的 1.9 倍，大部分加速来自员工用 AI 做研究而非训练算力扩张。", "participants": [{"name": "METR", "type": "organization", "role": "subject"}, {"name": "Anthropic", "type": "company", "role": "object"}, {"name": "AECI 能力指数", "type": "benchmark", "role": "benchmark"}], "evidence": ["METR 发布了对 Anthropic 研发加速的独立评估", "其 AECI 能力指数上的提升速度约为 2025 年 10 月之前的 1.9 倍"]},
+{"type": "research", "label": "Anthropic 删改多数关键证据削弱 METR 外部审计严谨性", "summary": "Anthropic 以保护机密为由删改 METR 认为最有信息量的多数证据，报告承认更快的基准趋势并非'AI 已学会独立自我改进'的证明。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "METR", "type": "organization", "role": "object"}], "evidence": ["Anthropic 删改了 METR 认为最有信息量的多数证据"]}
+],
+"relations": [
+{"source": "METR", "target": "Anthropic", "type": "reviews", "weight": 0.8, "evidence": ["METR 发布了对 Anthropic 研发加速的独立评估"]},
+{"source": "Anthropic", "target": "AECI 能力指数", "type": "evaluated_on", "weight": 0.7, "evidence": ["Anthropic 在其 AECI 能力指数上的提升速度约为 2025 年 10 月之前的 1.9 倍"]}
+],
+"metrics": [
+{"name": "研发加速倍数", "value": "约 1.9 倍"},
+{"name": "加速倍数置信区间", "value": "95% 置信区间 1.5–2.8 倍"},
+{"name": "来自 AI 辅助研发占比", "value": "约 80%"}
+],
+"why_it_matters": "'AI 加速 AI'从传闻进入可核查测量的关键一步：METR 把 Anthropic 的进步归因于员工用 AI 做研究而非算力堆叠，但被删改的证据提醒这类外部审计的可信度仍有上限。"
+},
+{
+"article_id": "2026-11-08-5",
+"entities": [
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["约 60 万颗英伟达 H200 芯片正滞留在香港等待运往中国大陆"]},
+{"name": "H200", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["约 60 万颗英伟达 H200 芯片正滞留在香港等待运往中国大陆"]},
+{"name": "Blackwell", "type": "hardware", "aliases": [], "confidence": 0.88, "evidence": ["受出口管制的新款 Blackwell 服务器报价超过 2000 万元人民币一台"]}
+],
+"events": [
+{"type": "infra", "label": "约 60 万颗英伟达 H200 芯片滞留在香港等待北京放行进口", "summary": "Reuters 披露约 60 万颗英伟达 H200 芯片正滞留香港等待运往中国大陆，尽管华盛顿已批准对华销售，但北京设置第二道闸门未批准大规模进口。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "H200", "type": "hardware", "role": "object"}], "evidence": ["约 60 万颗英伟达 H200 芯片正滞留在香港等待运往中国大陆"]},
+{"type": "policy", "label": "北京从严审批对美技术依赖，头部互联网公司仅获约 1 万颗 H200 配额", "summary": "过去几个月几家中国大型互联网公司各只获得约 1 万颗 H200，稀缺已把八卡 H200 服务器黑市价推高至一年前的近三倍。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "H200", "type": "hardware", "role": "object"}], "evidence": ["北京设置了第二道闸门", "几家中国大型互联网公司各只获得约 1 万颗 H200"]}
+],
+"relations": [
+{"source": "H200", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["约 60 万颗英伟达 H200 芯片正滞留在香港等待运往中国大陆"]},
+{"source": "Blackwell", "target": "NVIDIA", "type": "developed_by", "weight": 0.6, "evidence": ["受出口管制的新款 Blackwell 服务器报价超过 2000 万元人民币一台"]}
+],
+"metrics": [
+{"name": "滞留香港的 H200 数量", "value": "约 60 万颗"},
+{"name": "头部互联网公司获配额", "value": "各约 1 万颗"},
+{"name": "八卡 H200 服务器大陆黑市价", "value": "超 600 万元人民币（约 90 万美元）"},
+{"name": "黑市价一年变化", "value": "约为一年前的三倍"},
+{"name": "Blackwell 服务器报价", "value": "超 2000 万元人民币一台"},
+{"name": "可获批的 H200 总量预期", "value": "可能不足 20 万颗"}
+],
+"why_it_matters": "'美国批、北京拦'的双向管制让中国的进口审批而非美国的出口许可成为英伟达对华供应的实际闸门，对美技术依赖的政治顾虑正把稀缺与黑市溢价变成常态。"
+},
+{
+"article_id": "2026-11-08-6",
+"entities": [
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["英伟达正要求境外云服务商减少对中国客户业务的依赖"]},
+{"name": "B300", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["B300 是英伟达最先进处理器之一"]},
+{"name": "H200", "type": "hardware", "aliases": [], "confidence": 0.88, "evidence": ["约 60 万颗 H200 滞留香港等待北京放行"]},
+{"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.88, "evidence": ["黄仁勋将出席众议院共和党人要求的闭门简报会"]}
+],
+"events": [
+{"type": "security", "label": "英伟达要求境外云厂商至少 51% 营收来自中国以外客户以封堵芯片后门", "summary": "英伟达收紧对境外云服务商的商业限制，新条件要求受影响公司至少 51% 的营收来自中国以外客户，并已把获准采购其 AI 芯片的亚洲公司数量削减过半。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "B300", "type": "hardware", "role": "object"}], "evidence": ["新条件要求受影响公司至少 51% 的营收来自中国以外客户"]},
+{"type": "infra", "label": "B300 整柜在华黑市报价约 280 万美元较国际价溢价近 4 倍", "summary": "B300 整柜国际市场约 60 万美元，但 2026 年 10 月中国黑市报价约 280 万美元，约 4.7 倍溢价让买家甘愿冒险走灰色渠道。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "B300", "type": "hardware", "role": "object"}], "evidence": ["但 2026 年 10 月中国黑市报价约 280 万美元"]}
+],
+"relations": [
+{"source": "B300", "target": "NVIDIA", "type": "developed_by", "weight": 0.6, "evidence": ["B300 是英伟达最先进处理器之一"]},
+{"source": "Jensen Huang", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.6, "evidence": ["黄仁勋将出席众议院共和党人要求的闭门简报会"]},
+{"source": "H200", "target": "NVIDIA", "type": "developed_by", "weight": 0.5, "evidence": ["约 60 万颗 H200 滞留香港等待北京放行"]}
+],
+"metrics": [
+{"name": "中国以外客户营收下限", "value": "至少 51%"},
+{"name": "B300 整柜国际价", "value": "约 60 万美元"},
+{"name": "B300 中国黑市价", "value": "约 280 万美元"},
+{"name": "黑市溢价倍数", "value": "约 4.7 倍"}
+],
+"why_it_matters": "英伟达一边被华盛顿要求管住流向、一边被中国高溢价吸引，被迫对云厂商设 51% 中国外营收门槛；灰色市场价格揭示'禁而不止'下先进 AI 芯片的稀缺溢价正在扭曲整个供应结构。"
+},
+{
+"article_id": "2026-11-08-7",
+"entities": [
+{"name": "New Matrix", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["New Matrix——一家 17 个月前成立、获美国商务部批准处理英伟达 H200 芯片的中介公司"]},
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.9, "evidence": ["英伟达称自身的尽职调查未发现非法转售"]},
+{"name": "H200", "type": "hardware", "aliases": [], "confidence": 0.88, "evidence": ["获美国商务部批准处理英伟达 H200 芯片的中介公司"]},
+{"name": "US Department of Commerce", "type": "organization", "aliases": ["美国商务部", "商务部"], "confidence": 0.9, "evidence": ["获美国商务部批准处理英伟达 H200 芯片的中介公司"]},
+{"name": "Maginfra", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["另一家获批公司 Maginfra 同样可疑"]},
+{"name": "Inspur", "type": "company", "aliases": ["浪潮"], "confidence": 0.88, "evidence": ["分析师认为它是已列入实体清单的浪潮（Inspur）的关联方"]},
+{"name": "Liza Tobin", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["前白宫国安会中国事务主任 Liza Tobin 直言"]}
+],
+"events": [
+{"type": "security", "label": "NYT 调查发现获批处理 H200 的 New Matrix 注册地址是空壳办公室", "summary": "《纽约时报》调查证实 New Matrix 注册地址是空壳灰楼，其所有人与 2024 年起被美列入实体清单的中国私募股权基金有关联，质疑商务部与英伟达的尽调。", "participants": [{"name": "New Matrix", "type": "company", "role": "subject"}, {"name": "H200", "type": "hardware", "role": "object"}, {"name": "US Department of Commerce", "type": "organization", "role": "regulator"}], "evidence": ["New Matrix——一家 17 个月前成立、获美国商务部批准处理英伟达 H200 芯片的中介公司", "其注册地址被证实是空壳"]},
+{"type": "security", "label": "Maginfra 被疑为已列实体清单的浪潮关联方，商务部与英伟达尽调遭质疑", "summary": "另一家获批公司 Maginfra 被分析师认为是已列入实体清单的浪潮（Inspur）的关联方，前白宫国安会中国事务主任 Liza Tobin 直言商务部与英伟达都没做足够尽调。", "participants": [{"name": "Maginfra", "type": "company", "role": "subject"}, {"name": "Inspur", "type": "company", "role": "partner"}, {"name": "Liza Tobin", "type": "person", "role": "subject"}], "evidence": ["分析师认为它是已列入实体清单的浪潮（Inspur）的关联方", "商务部与英伟达都没有做确保许可条款被遵守所需的尽职调查"]}
+],
+"relations": [
+{"source": "US Department of Commerce", "target": "New Matrix", "type": "regulates", "weight": 0.6, "evidence": ["获美国商务部批准处理英伟达 H200 芯片的中介公司"]},
+{"source": "New Matrix", "target": "H200", "type": "uses", "weight": 0.5, "evidence": ["获美国商务部批准处理英伟达 H200 芯片的中介公司"]},
+{"source": "H200", "target": "NVIDIA", "type": "developed_by", "weight": 0.6, "evidence": ["获批处理英伟达 H200 芯片的中介公司"]},
+{"source": "Maginfra", "target": "Inspur", "type": "affiliated_with", "weight": 0.6, "evidence": ["它是已列入实体清单的浪潮（Inspur）的关联方"]}
+],
+"metrics": [
+{"name": "New Matrix 成立时长", "value": "17 个月前"},
+{"name": "英伟达上缴政府销售额比例", "value": "15%（后提高至 25%）"}
+],
+"why_it_matters": "空壳中介获准处理受限芯片说明美国对华出口管控的尽调形同虚设，'谁在批'比'批给谁'更能决定芯片能不能流向被制裁方，执行漏洞正在成为新的政治靶点。"
+},
+{
+"article_id": "2026-11-08-8",
+"entities": [
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 宣布在怀俄明州建设其首个数据中心园区「Project Tembo」"]},
+{"name": "Project Tembo", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Google 宣布在怀俄明州建设其首个数据中心园区「Project Tembo」，长期投资 170 亿美元"]},
+{"name": "Crusoe", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["Google 同时确认收购了 Crusoe 在东南怀俄明的站点"]},
+{"name": "Crusoe 东南怀俄明站点", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Google 同时确认收购了 Crusoe 在东南怀俄明的站点"]},
+{"name": "Tallgrass Energy", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Tallgrass Energy 的混合供电合作"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Google 已为 Anthropic 的 190 亿美元肯塔基数据中心租约提供信用担保"]}
+],
+"events": [
+{"type": "infra", "label": "Google 投资 170 亿美元建设怀俄明首个数据中心园区 Project Tembo", "summary": "Google 在拉勒米县建设首个数据中心园区 Project Tembo，长期投资 170 亿美元，采用 702MW 燃料电池与燃气发电加碳捕集的混合供电方案。", "participants": [{"name": "Google", "type": "company", "role": "subject"}, {"name": "Project Tembo", "type": "product", "role": "object"}], "evidence": ["Google 宣布在怀俄明州建设其首个数据中心园区「Project Tembo」，长期投资 170 亿美元", "702MW 燃料电池与燃气发电，配套碳捕集与封存（CCS）"]},
+{"type": "acquisition", "label": "Google 收购 Crusoe 东南怀俄明含 6GW 签约容量的站点", "summary": "Google 确认收购 Crusoe 在东南怀俄明的站点，一个 6GW 签约容量的园区，含预开发审批与 Tallgrass Energy 的混合供电合作。", "participants": [{"name": "Google", "type": "company", "role": "subject"}, {"name": "Crusoe 东南怀俄明站点", "type": "product", "role": "object"}], "evidence": ["Google 同时确认收购了 Crusoe 在东南怀俄明的站点", "一个 6GW 签约容量的园区"]}
+],
+"relations": [
+{"source": "Project Tembo", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["Google 宣布在怀俄明州建设其首个数据中心园区「Project Tembo」"]},
+{"source": "Google", "target": "Crusoe 东南怀俄明站点", "type": "acquires", "weight": 0.8, "evidence": ["Google 同时确认收购了 Crusoe 在东南怀俄明的站点"]},
+{"source": "Crusoe", "target": "Tallgrass Energy", "type": "partners_with", "weight": 0.5, "evidence": ["Tallgrass Energy 的混合供电合作"]},
+{"source": "Google", "target": "Anthropic", "type": "backs", "weight": 0.6, "evidence": ["Google 已为 Anthropic 的 190 亿美元肯塔基数据中心租约提供信用担保"]}
+],
+"metrics": [
+{"name": "Project Tembo 长期投资额", "value": "170 亿美元"},
+{"name": "供电容量", "value": "702MW 燃料电池与燃气"},
+{"name": "Crusoe 站点签约容量", "value": "6GW"},
+{"name": "为 Anthropic 肯塔基租约提供的信用担保额", "value": "190 亿美元"}
+],
+"why_it_matters": "Google 在自建怀俄明园区之外仍为 Anthropic 肯塔基租约做信用担保，标志超大规模厂商在 AI 基础设施上同时充当'自建者'与'金主'的双重角色，「自备电」成为新的核心售卖能力。"
+},
+{
+"article_id": "2026-11-08-9",
+"entities": [
+{"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.95, "evidence": ["Microsoft 发布 Agent Package Manager（APM）"]},
+{"name": "APM", "type": "product", "aliases": ["Agent Package Manager"], "confidence": 0.9, "evidence": ["Microsoft 发布 Agent Package Manager（APM）"]},
+{"name": "MIT License", "type": "topic", "aliases": ["MIT 许可"], "confidence": 0.85, "evidence": ["项目以 MIT 许可开源"]},
+{"name": "Claude Code", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["Anthropic 的 Claude Code 有 plugins 机制"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 的 Claude Code 有 plugins 机制"]},
+{"name": "Codex", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 Codex 有自定义指令"]},
+{"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["OpenAI 的 Codex 有自定义指令"]},
+{"name": "Agent Development Kit", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Google 的 Agent Development Kit 本周刚发布 2.14.0"]},
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["Google 的 Agent Development Kit 本周刚发布 2.14.0"]}
+],
+"events": [
+{"type": "open_source", "label": "Microsoft 发布 MIT 许可的 agent 依赖管理器 APM", "summary": "Microsoft 发布 Agent Package Manager（APM），开发者可在单个 apm.yml 清单中声明 skills、prompts、plugins 与 MCP 服务器并统一部署，项目以 MIT 许可开源。", "participants": [{"name": "Microsoft", "type": "company", "role": "subject"}, {"name": "APM", "type": "product", "role": "object"}, {"name": "MIT License", "type": "topic", "role": "object"}], "evidence": ["Microsoft 发布 Agent Package Manager（APM）", "项目以 MIT 许可开源"]},
+{"type": "trend", "label": "多家厂商布局 agent 依赖管理赛道，APM 以中立性与 MIT 许可差异化", "summary": "Anthropic 的 Claude Code、OpenAI 的 Codex 与 Google 的 Agent Development Kit 各有插件或指令机制，APM 的差异化在于不绑定特定模型或厂商且 MIT 许可便于集成。", "participants": [{"name": "Microsoft", "type": "company", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "competitor"}, {"name": "Anthropic", "type": "company", "role": "competitor"}, {"name": "Google", "type": "company", "role": "competitor"}], "evidence": ["Anthropic 的 Claude Code 有 plugins 机制", "OpenAI 的 Codex 有自定义指令", "Google 的 Agent Development Kit 本周刚发布 2.14.0"]}
+],
+"relations": [
+{"source": "APM", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["Microsoft 发布 Agent Package Manager（APM）"]},
+{"source": "APM", "target": "MIT License", "type": "licensed_under", "weight": 0.5, "evidence": ["项目以 MIT 许可开源"]},
+{"source": "Claude Code", "target": "Anthropic", "type": "developed_by", "weight": 0.6, "evidence": ["Anthropic 的 Claude Code 有 plugins 机制"]},
+{"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.6, "evidence": ["OpenAI 的 Codex 有自定义指令"]},
+{"source": "Agent Development Kit", "target": "Google", "type": "developed_by", "weight": 0.5, "evidence": ["Google 的 Agent Development Kit 本周刚发布 2.14.0"]}
+],
+"metrics": [
+{"name": "Agent Development Kit 版本", "value": "2.14.0"}
+],
+"why_it_matters": "APM 承认 skills、plugins 与 MCP 的版本管理和可复现部署已成为真实痛点，第三方工具以中立协议切入说明 agent 依赖生态正从'各写各的脚本'走向标准化分发。"
+},
+{
+"article_id": "2026-11-08-10",
+"entities": [
+{"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 宣布与 Hacktron 合作排查自身系统漏洞"]},
+{"name": "Hacktron", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 宣布与 Hacktron 合作排查自身系统漏洞"]},
+{"name": "Daybreak Red", "type": "tool", "aliases": ["Daybreak Red 项目"], "confidence": 0.88, "evidence": ["Daybreak Red 是 OpenAI 8 月推出的授权网络安全研究层级"]},
+{"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["借此从论坛攻入 ChatGPT 与 Codex"]},
+{"name": "Codex", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["借此从论坛攻入 ChatGPT 与 Codex"]},
+{"name": "GPT-6 Cyber", "type": "model", "aliases": [], "confidence": 0.88, "evidence": ["上周发布的 GPT-6 Cyber（据称在 ExploitGym 达到 48.5%）"]},
+{"name": "ExploitGym", "type": "benchmark", "aliases": [], "confidence": 0.88, "evidence": ["上周发布的 GPT-6 Cyber（据称在 ExploitGym 达到 48.5%）"]},
+{"name": "Cathedral", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["同期 OpenAI 还宣布 Cathedral 的研究人员将参与下一轮安全冲刺"]}
+],
+"events": [
+{"type": "partnership", "label": "OpenAI 与 Hacktron 合作排查自身系统漏洞并扩大其 Daybreak Red 访问", "summary": "OpenAI 与 AI 安全公司 Hacktron 聚焦系统与第三方服务交互边界的漏洞研究，并扩大后者通过 Daybreak Red 项目对前沿模型的授权访问。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "Hacktron", "type": "company", "role": "partner"}, {"name": "Daybreak Red", "type": "tool", "role": "object"}], "evidence": ["OpenAI 宣布与 Hacktron 合作排查自身系统漏洞", "OpenAI 扩大 Hacktron 通过 Daybreak Red 项目对前沿模型的访问"]},
+{"type": "security", "label": "Hacktron 此前通过双漏洞链攻入 OpenAI 员工的 ChatGPT 与 Codex 账户", "summary": "Hacktron 研究人员串联 Discourse 图片处理路径 RCE 与 OpenAI 单点登录漏洞，从论坛攻入 ChatGPT 与 Codex 并最终在 OpenAI 内部 monorepo 创建无害 PR 以证明访问能力。", "participants": [{"name": "Hacktron", "type": "company", "role": "subject"}, {"name": "OpenAI", "type": "company", "role": "object"}, {"name": "ChatGPT", "type": "product", "role": "object"}, {"name": "Codex", "type": "product", "role": "object"}], "evidence": ["借此从论坛攻入 ChatGPT 与 Codex"]},
+{"type": "research", "label": "OpenAI 发布网络安全模型 GPT-6 Cyber，据称在 ExploitGym 达 48.5%", "summary": "上周发布 GPT-6 Cyber，据称在 ExploitGym 达到 48.5%，服务于把前沿网络模型交给授权研究者并让外部黑客测试自家系统边界的防御路线。", "participants": [{"name": "OpenAI", "type": "company", "role": "subject"}, {"name": "GPT-6 Cyber", "type": "model", "role": "object"}, {"name": "ExploitGym", "type": "benchmark", "role": "benchmark"}], "evidence": ["上周发布的 GPT-6 Cyber（据称在 ExploitGym 达到 48.5%）"]}
+],
+"relations": [
+{"source": "OpenAI", "target": "Hacktron", "type": "partners_with", "weight": 0.8, "evidence": ["OpenAI 宣布与 Hacktron 合作排查自身系统漏洞"]},
+{"source": "Hacktron", "target": "Daybreak Red", "type": "uses", "weight": 0.5, "evidence": ["OpenAI 扩大 Hacktron 通过 Daybreak Red 项目对前沿模型的访问"]},
+{"source": "OpenAI", "target": "Daybreak Red", "type": "released_by", "weight": 0.6, "evidence": ["Daybreak Red 是 OpenAI 8 月推出的授权网络安全研究层级"]},
+{"source": "GPT-6 Cyber", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["上周发布的 GPT-6 Cyber"]},
+{"source": "GPT-6 Cyber", "target": "ExploitGym", "type": "evaluated_on", "weight": 0.7, "evidence": ["在 ExploitGym 达到 48.5%"]},
+{"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.5, "evidence": ["借此从论坛攻入 ChatGPT 与 Codex"]},
+{"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.5, "evidence": ["借此从论坛攻入 ChatGPT 与 Codex"]},
+{"source": "Cathedral", "target": "OpenAI", "type": "partners_with", "weight": 0.4, "evidence": ["Cathedral 的研究人员将参与下一轮安全冲刺"]}
+],
+"metrics": [
+{"name": "Hacktron 获得的漏洞赏金", "value": "6500 美元"},
+{"name": "GPT-6 Cyber 在 ExploitGym 得分", "value": "48.5%"},
+{"name": "OpenAI 确认修复耗时", "value": "约 14 小时"}
+],
+"why_it_matters": "OpenAI 把自家系统的边界测试外包给外部黑客、把前沿网络模型交给授权研究者，'用 AI 加速自身防御'从口号落到可复用的授权研究层级，接缝类漏洞成为 AI agent 时代的新安全主战场。"
+},
+{
+"article_id": "2026-11-08-11",
+"entities": [
+{"name": "Democratic Party", "type": "organization", "aliases": ["民主党"], "confidence": 0.92, "evidence": ["民主党计划在 1 月掌控国会后推动「洪水般」的 AI 立法"]},
+{"name": "Lori Trahan", "type": "person", "aliases": [], "confidence": 0.88, "evidence": ["马萨诸塞州众议员、民主党 AI 政策主要声音 Lori Trahan"]},
+{"name": "Zoe Lofgren", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["寻求出任众议院科学委员会主席的 Zoe Lofgren"]},
+{"name": "Abdul El-Sayed", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["密歇根州新当选参议员 Abdul El-Sayed"]},
+{"name": "US AI Safety Institute", "type": "organization", "aliases": ["美国 AI 安全中心"], "confidence": 0.88, "evidence": ["美国 AI 安全中心（US AI Safety Institute）没有常任负责人"]}
+],
+"events": [
+{"type": "policy", "label": "民主党计划 1 月掌控国会后推动「洪水般」AI 立法含安全评估与责任界定", "summary": "民主党计划要求独立专家依据安全标准评估领先 AI 模型，并推动明确 AI 系统造成损害时公司可被追责的立法，还有人呼吁设立拥有执法权的独立 AI 监管机构。", "participants": [{"name": "Democratic Party", "type": "organization", "role": "subject"}, {"name": "Lori Trahan", "type": "person", "role": "subject"}, {"name": "Zoe Lofgren", "type": "person", "role": "subject"}, {"name": "Abdul El-Sayed", "type": "person", "role": "subject"}], "evidence": ["民主党计划在 1 月掌控国会后推动「洪水般」的 AI 立法", "要求独立专家依据安全标准评估领先 AI 模型"]},
+{"type": "policy", "label": "美国 AI 安全中心停摆并停止发布研究，独立性引发关注", "summary": "美联社披露 US AI Safety Institute 没有常任负责人、已停止发布研究且员工向白宫汇报，独立性问题成为民主党建章时最先需要修复的对象。", "participants": [{"name": "Democratic Party", "type": "organization", "role": "regulator"}, {"name": "US AI Safety Institute", "type": "organization", "role": "object"}], "evidence": ["美国 AI 安全中心（US AI Safety Institute）没有常任负责人、已停止发布研究且员工向白宫汇报"]}
+],
+"relations": [
+{"source": "Lori Trahan", "target": "Democratic Party", "type": "affiliated_with", "weight": 0.6, "evidence": ["马萨诸塞州众议员、民主党 AI 政策主要声音 Lori Trahan"]},
+{"source": "Zoe Lofgren", "target": "Democratic Party", "type": "affiliated_with", "weight": 0.5, "evidence": ["寻求出任众议院科学委员会主席的 Zoe Lofgren"]},
+{"source": "Abdul El-Sayed", "target": "Democratic Party", "type": "affiliated_with", "weight": 0.5, "evidence": ["密歇根州新当选参议员 Abdul El-Sayed"]}
+],
+"metrics": [
+{"name": "数据中心相关公投被否决数", "value": "40/41 项"}
+],
+"why_it_matters": "中期选举把 AI 从产业议题变成选举议题，民主党的安全评估与责任立法将首次明确'公司可为 AI 系统致害被追责'，独立监管机构的呼声意味着美国 AI 治理从行业自律转向行政强制。"
+},
+{
+"article_id": "2026-11-08-12",
+"entities": [
+{"name": "US AI Safety Institute", "type": "organization", "aliases": ["美国 AI 安全中心"], "confidence": 0.92, "evidence": ["美国 AI 安全中心（US AI Safety Institute）没有常任负责人"]},
+{"name": "White House", "type": "organization", "aliases": ["白宫"], "confidence": 0.85, "evidence": ["其员工开始向白宫汇报工作"]},
+{"name": "Toh", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["受访专家（如 Stanford 的 Toh）"]},
+{"name": "Stanford", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["受访专家（如 Stanford 的 Toh）"]},
+{"name": "Democratic Party", "type": "organization", "aliases": ["民主党"], "confidence": 0.88, "evidence": ["民主党已预告上任后推出一批 AI 立法"]}
+],
+"events": [
+{"type": "policy", "label": "美联社调查揭露美国 AI 安全中心无常任负责人、停发研究且员工向白宫汇报", "summary": "负责评估新 AI 产品风险的美国 AI 安全中心没有常任负责人，已停止发布研究成果，员工开始向白宫汇报工作，独立性受到质疑。", "participants": [{"name": "US AI Safety Institute", "type": "organization", "role": "subject"}, {"name": "White House", "type": "organization", "role": "object"}], "evidence": ["没有常任负责人，已停止发布研究成果", "其员工开始向白宫汇报工作"]},
+{"type": "policy", "label": "民主党上任后拟推出 AI 立法填补停摆的 AI 安全评估职能", "summary": "Trahan 的提案要求独立专家按安全标准评估前沿模型，投前评估的职能将由国家独立的评估机构承担，而非实验室自检。", "participants": [{"name": "Democratic Party", "type": "organization", "role": "subject"}, {"name": "US AI Safety Institute", "type": "organization", "role": "object"}], "evidence": ["民主党已预告上任后推出一批 AI 立法", "Trahan 的提案正是要求「独立专家按安全标准评估前沿模型」"]}
+],
+"relations": [
+{"source": "Toh", "target": "Stanford", "type": "affiliated_with", "weight": 0.5, "evidence": ["受访专家（如 Stanford 的 Toh）"]},
+{"source": "US AI Safety Institute", "target": "White House", "type": "reports_to", "weight": 0.5, "evidence": ["其员工开始向白宫汇报工作"]}
+],
+"metrics": [],
+"why_it_matters": "连负责评估 AI 产品风险的联邦机构自身都处于停摆与失独立状态，'让实验室给自己做安全测试'的现状使独立制衡形同虚设，评估机构可信度反而成为最先要修复的结构性缺口。"
+},
+{
+"article_id": "2026-11-08-13",
+"entities": [
+{"name": "Apiiro", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["安全公司 Apiiro 发现"]},
+{"name": "Claude Code", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["当用户对 Claude Code 的 shell 命令批准「Yes, and don't ask again」时，工具会把该命令逐字保存"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Claude Code 是唯一默认持久化完整批准命令的"]},
+{"name": "GitHub", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["GitHub 上有 1122 个公开仓库的该文件含至少一个真实密钥"]}
+],
+"events": [
+{"type": "security", "label": "Apiiro 研究揭示 Claude Code「不再询问」会把含密码的批准命令以明文写入仓库", "summary": "当用户批准「Yes, and don't ask again」时，Claude Code 会把逐字命令作为 allow 规则存入 .claude/settings.local.json，密码或 token 以明文落盘，且默认防护不会随项目走。", "participants": [{"name": "Apiiro", "type": "company", "role": "subject"}, {"name": "Claude Code", "type": "product", "role": "object"}, {"name": "Anthropic", "type": "company", "role": "object"}], "evidence": ["当用户对 Claude Code 的 shell 命令批准「Yes, and don't ask again」时，工具会把该命令逐字保存", "Claude Code 是唯一默认持久化完整批准命令的"]},
+{"type": "security", "label": "GitHub 上 1122 个公开仓库的 Claude Code 配置文件含明文密钥共 2539 个", "summary": "Apiiro 扫描 GitHub 上 1122 份含真实密钥的该文件，加上旧版本与 agent 日志总数达 2539 个密钥、1994 个仓库、63 家组织，至少一家公司确认密钥仍在生效。", "participants": [{"name": "Apiiro", "type": "company", "role": "subject"}, {"name": "GitHub", "type": "company", "role": "object"}, {"name": "Claude Code", "type": "product", "role": "object"}], "evidence": ["GitHub 上有 1122 个公开仓库的该文件含至少一个真实密钥"]}
+],
+"relations": [
+{"source": "Apiiro", "target": "Claude Code", "type": "reviews", "weight": 0.7, "evidence": ["安全公司 Apiiro 发现"]},
+{"source": "Apiiro", "target": "GitHub", "type": "scans", "weight": 0.5, "evidence": ["GitHub 上有 1122 个公开仓库的该文件含至少一个真实密钥"]}
+],
+"metrics": [
+{"name": "含真实密钥的公开仓库数", "value": "1122 个"},
+{"name": "不同密钥数", "value": "1379 个"},
+{"name": "密钥总数", "value": "2539 个"},
+{"name": "波及仓库数", "value": "1994 个"},
+{"name": "受影响组织数", "value": "63 家"},
+{"name": "GitHub 该文件公开副本数", "value": "104185 份"},
+{"name": "Gitleaks 漏报（仅标出数）", "value": "564 份"},
+{"name": "TruffleHog 仅标出数", "value": "643 份"}
+],
+"why_it_matters": "编码 agent 的默认权限设计存在'省一步询问就写入仓库'的明文泄漏链，且全局 git excludes 只守在本地、不随项目走，密钥轮换比删除文件更紧迫，agent 供应链安全出现第一起规模化事故。"
+},
+{
+"article_id": "2026-11-08-14",
+"entities": [
+{"name": "Coca-Cola", "type": "model", "aliases": ["连续潜在上下文压缩模型"], "confidence": 0.9, "evidence": ["Coca-Cola（连续潜在上下文压缩模型）将工具输出压缩为潜在 token"]},
+{"name": "Tsinghua University", "type": "organization", "aliases": ["清华"], "confidence": 0.9, "evidence": ["一篇来自清华的 arXiv 论文"]},
+{"name": "Action-Preserving Training", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["团队引入 Action-Preserving Training"]},
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.88, "evidence": ["NVIDIA 的 SEED 论文在混合模型 prefill 中同样发现"]},
+{"name": "SEED", "type": "paper", "aliases": ["SEED 论文"], "confidence": 0.85, "evidence": ["NVIDIA 的 SEED 论文在混合模型 prefill 中同样发现"]}
+],
+"events": [
+{"type": "research", "label": "清华团队提出 Coca-Cola 把工具输出压缩为潜在 token", "summary": "清华团队提出 Coca-Cola，将工具输出压缩为连续潜在 token 直接嵌入 agent 模型的输入嵌入空间，并引入 Action-Preserving Training 只保留对决策关键的信息。", "participants": [{"name": "Tsinghua University", "type": "organization", "role": "subject"}, {"name": "Coca-Cola", "type": "model", "role": "object"}], "evidence": ["一篇来自清华的 arXiv 论文", "团队引入 Action-Preserving Training"]},
+{"type": "research", "label": "Coca-Cola 在四个 QA 基准上把 token 消耗降 70%–89% 且端到端时间缩 24%–56%", "summary": "实验验证 token 消耗降低 70.01%–89.24%，端到端运行时间缩短 24.45%–55.97%，且任务表现一致提升。", "participants": [{"name": "Coca-Cola", "type": "model", "role": "subject"}, {"name": "Tsinghua University", "type": "organization", "role": "partner"}], "evidence": ["token 消耗降低 70.01%–89.24%", "端到端运行时间缩短 24.45%–55.97%"]}
+],
+"relations": [
+{"source": "Coca-Cola", "target": "Tsinghua University", "type": "authored_by", "weight": 0.8, "evidence": ["一篇来自清华的 arXiv 论文"]},
+{"source": "Coca-Cola", "target": "Action-Preserving Training", "type": "uses", "weight": 0.5, "evidence": ["团队引入 Action-Preserving Training"]},
+{"source": "SEED", "target": "NVIDIA", "type": "authored_by", "weight": 0.4, "evidence": ["NVIDIA 的 SEED 论文在混合模型 prefill 中同样发现"]}
+],
+"metrics": [
+{"name": "token 消耗降幅", "value": "70.01%–89.24%"},
+{"name": "端到端运行时间降幅", "value": "24.45%–55.97%"},
+{"name": "精度验证基准数", "value": "四个 QA 基准"}
+],
+"why_it_matters": "把冗长的工具观测压成潜在记录的『上下文压缩』路线正在从研究噱头变成 agent 推理的成本与延迟主战场，与长上下文窗口的军备竞赛并行开辟了第二条以压缩换效率的竞争维度。"
+},
+{
+"article_id": "2026-11-08-15",
+"entities": [
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Meta 11 月 6 日宣布 Muse 应用推出「spaces」"]},
+{"name": "Muse", "type": "product", "aliases": ["Muse 应用"], "confidence": 0.9, "evidence": ["Meta 11 月 6 日宣布 Muse 应用推出「spaces」"]},
+{"name": "Muse Wonder", "type": "model", "aliases": ["Muse Wonder 模型"], "confidence": 0.88, "evidence": ["这两项能力源自 Meta 10 月发布的 Muse Wonder 系列模型"]},
+{"name": "Meta AI", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["把 Muse Wonder 模型的「Active Memory」与「Active Focus」能力引入 Muse 应用与 Meta AI 聊天机器人"]},
+{"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.88, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"name": "xAI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"name": "Dots", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"name": "Claude Duet", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"name": "Grok Bot", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]}
+],
+"events": [
+{"type": "launch", "label": "Meta 在 Muse 应用推出可用自然语言生成持久化自定义界面的 spaces 功能", "summary": "用户用自然语言描述想法，Muse 生成可交互且持久化的自定义空间，用户再通过对话不断调整，相当于让用户自己设计专属的 AI 应用界面。", "participants": [{"name": "Meta", "type": "company", "role": "subject"}, {"name": "Muse", "type": "product", "role": "object"}], "evidence": ["Meta 11 月 6 日宣布 Muse 应用推出「spaces」"]},
+{"type": "launch", "label": "Meta 把 Muse Wonder 的 Active Memory 与 Active Focus 能力引入 Muse 与 Meta AI", "summary": "Meta 把 Muse Wonder 模型的主动记忆与主动聚焦能力引入 Muse 应用与 Meta AI 聊天机器人，让记忆跨会话记住偏好、聚焦在长任务中保持方向。", "participants": [{"name": "Meta", "type": "company", "role": "subject"}, {"name": "Muse Wonder", "type": "model", "role": "object"}, {"name": "Muse", "type": "product", "role": "object"}, {"name": "Meta AI", "type": "product", "role": "object"}], "evidence": ["把 Muse Wonder 模型的「Active Memory」与「Active Focus」能力引入 Muse 应用与 Meta AI 聊天机器人", "这两项能力源自 Meta 10 月发布的 Muse Wonder 系列模型"]}
+],
+"relations": [
+{"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.8, "evidence": ["Meta 11 月 6 日宣布 Muse 应用推出「spaces」"]},
+{"source": "Muse Wonder", "target": "Meta", "type": "developed_by", "weight": 0.8, "evidence": ["这两项能力源自 Meta 10 月发布的 Muse Wonder 系列模型"]},
+{"source": "Meta AI", "target": "Meta", "type": "developed_by", "weight": 0.6, "evidence": ["引入 Muse 应用与 Meta AI 聊天机器人"]},
+{"source": "Muse", "target": "Dots", "type": "competes_with", "weight": 0.5, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"source": "Muse", "target": "Claude Duet", "type": "competes_with", "weight": 0.5, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"source": "Muse", "target": "Grok Bot", "type": "competes_with", "weight": 0.5, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"source": "Dots", "target": "OpenAI", "type": "developed_by", "weight": 0.4, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"source": "Claude Duet", "target": "Anthropic", "type": "developed_by", "weight": 0.4, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]},
+{"source": "Grok Bot", "target": "xAI", "type": "developed_by", "weight": 0.4, "evidence": ["OpenAI 的 Dots、Anthropic 的 Claude Duet、xAI 的 Grok Bot 都在抢占「proactive agent」的消费市场"]}
+],
+"metrics": [
+{"name": "Muse Wonder 发布时间", "value": "10 月"}
+],
+"why_it_matters": "Meta 选择让用户用语言拼装界面而非把固定功能卖给所有人，以对话为迭代循环的『自建应用』与 OpenAI Dots、Claude Duet 的固定 proactive agent 形成差异化路径，代理体验的争夺转向'界面主权'。"
+}
+]
+}
