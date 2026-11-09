@@ -1,0 +1,330 @@
+{
+"date": "2026-11-09",
+"articles": [
+{
+"article_id": "2026-11-09-0",
+"entities": [
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 周一发布 Claude Fable 5.2 与 Mythos 5.2"]},
+{"name": "Dario Amodei", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["自 9 月 CEO Dario Amodei 公开呼吁放缓前沿 AI 开发以来"]},
+{"name": "Claude Fable 5.2", "type": "model", "aliases": ["Fable 5.2"], "confidence": 0.95, "evidence": ["Anthropic 周一发布 Claude Fable 5.2 与 Mythos 5.2"]},
+{"name": "Claude Mythos 5.2", "type": "model", "aliases": ["Mythos 5.2"], "confidence": 0.95, "evidence": ["Anthropic 周一发布 Claude Fable 5.2 与 Mythos 5.2"]},
+{"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["以 $8/百万输入、$40/百万输出 token 的价格对标 OpenAI GPT-6 Astra"]},
+{"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["价格对标 OpenAI GPT-6 Astra（$10/$50）"]},
+{"name": "FrontierCode 2.0", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 FrontierCode 2.0 编码基准上，Fable 5.2 在高强度下得分 49.1%"]}
+],
+"events": [
+{"type": "launch", "label": "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2 前沿模型并对标 GPT-6 Astra", "summary": "Anthropic 发布自呼吁放缓以来的首个前沿模型，二者本质同一底层模型、区别在安全防护，定价 $8/$40 较 GPT-6 Astra（$10/$50）便宜 20% 且输出快 30%。", "participants": [{"name": "Anthropic", "type": "company", "role": "subject"}, {"name": "Claude Fable 5.2", "type": "model", "role": "object"}, {"name": "Claude Mythos 5.2", "type": "model", "role": "object"}, {"name": "GPT-6 Astra", "type": "model", "role": "competitor"}], "evidence": ["Anthropic 周一发布 Claude Fable 5.2 与 Mythos 5.2"]},
+{"type": "benchmark", "label": "Claude Fable 5.2 在 FrontierCode 2.0 高强度下创下已发布模型最高分 49.1%", "summary": "Fable 5.2 在 FrontierCode 2.0 编码基准高强度下得分 49.1%，并帮助用 1000 个代理在 30 小时形式化验证费马大定理。", "participants": [{"name": "Claude Fable 5.2", "type": "model", "role": "subject"}, {"name": "FrontierCode 2.0", "type": "benchmark", "role": "benchmark"}], "evidence": ["在 FrontierCode 2.0 编码基准上，Fable 5.2 在高强度下得分 49.1%", "用 1000 个代理在 30 小时内形式化验证了费马大定理（此前未发布的研究版用了 11 天）"]}
+],
+"relations": [
+{"source": "Claude Fable 5.2", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 周一发布 Claude Fable 5.2 与 Mythos 5.2"]},
+{"source": "Claude Mythos 5.2", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 周一发布 Claude Fable 5.2 与 Mythos 5.2"]},
+{"source": "Claude Fable 5.2", "target": "FrontierCode 2.0", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 FrontierCode 2.0 编码基准上，Fable 5.2 在高强度下得分 49.1%"]},
+{"source": "Claude Fable 5.2", "target": "GPT-6 Astra", "type": "compared_with", "weight": 0.6, "evidence": ["以 $8/百万输入、$40/百万输出 token 的价格对标 OpenAI GPT-6 Astra"]},
+{"source": "GPT-6 Astra", "target": "OpenAI", "type": "developed_by", "weight": 0.5, "evidence": ["价格对标 OpenAI GPT-6 Astra（$10/$50）"]},
+{"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.5, "evidence": ["自 9 月 CEO Dario Amodei 公开呼吁放缓前沿 AI 开发以来"]}
+],
+"metrics": [
+{"name": "Claude 5.2 输入/输出 token 价格", "value": "$8 / $40 每百万"},
+{"name": "价格较 GPT-6 Astra 下调", "value": "20%"},
+{"name": "输出速度提升", "value": "30%"},
+{"name": "缓存 token 单价", "value": "$0.20 每百万"},
+{"name": "GPT-6 Astra 输入/输出价格", "value": "$10 / $50"},
+{"name": "快模式价格与速度", "value": "$16/$80，token 生成提升 2.5 倍"},
+{"name": "FrontierCode 2.0 高强度得分", "value": "49.1%"},
+{"name": "费马大定理形式化验证", "value": "1000 代理/30 小时（研究版 11 天）"}
+],
+"why_it_matters": "Anthropic 在呼吁放缓后选择了'降价 20%-80% 打价格战'抢占生态，且 30 小时形式化证明费马大定理说明研发加速正向 RSI 拐点逼近，安全评估却被模型自身'怀疑被评测'的反身性削弱。"
+},
+{
+"article_id": "2026-11-09-1",
+"entities": [
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Meta 超智能实验室周一发布 Muse Ember"]},
+{"name": "Muse Ember", "type": "model", "aliases": ["Ember"], "confidence": 0.9, "evidence": ["Meta 超智能实验室周一发布 Muse Ember"]},
+{"name": "Muse Wonder", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Muse Wonder 负责规划，Muse Ember 负责处理规模"]},
+{"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["在比 Anthropic Haiku、OpenAI Luna 更便宜的同时更聪明"]},
+{"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["在比 Anthropic Haiku、OpenAI Luna 更便宜的同时更聪明"]},
+{"name": "Anthropic Haiku", "type": "model", "aliases": ["Haiku"], "confidence": 0.85, "evidence": ["在比 Anthropic Haiku、OpenAI Luna 更便宜的同时更聪明"]},
+{"name": "OpenAI Luna", "type": "model", "aliases": ["Luna"], "confidence": 0.85, "evidence": ["在比 Anthropic Haiku、OpenAI Luna 更便宜的同时更聪明"]}
+],
+"events": [
+{"type": "launch", "label": "Meta 发布最轻量最经济的执行模型 Muse Ember", "summary": "Meta 超智能实验室发布 Ember，输入 token 仅 $0.10/百万，专为代理高频重复执行任务（工具调用、编码子任务、路由、抽取、长文档解析）设计，且跨文本、图像、音频多模态训练。", "participants": [{"name": "Meta", "type": "company", "role": "subject"}, {"name": "Muse Ember", "type": "model", "role": "object"}], "evidence": ["Meta 超智能实验室周一发布 Muse Ember"]},
+{"type": "trend", "label": "Meta 将 Muse Ember 定位为大型模型的执行端搭档", "summary": "Meta 把 Ember 定义为大型模型的'执行端'，Muse Wonder 负责规划、Ember 负责处理规模，典型场景是重模型定规则、轻模型在数万案例批量应用。", "participants": [{"name": "Muse Wonder", "type": "model", "role": "subject"}, {"name": "Muse Ember", "type": "model", "role": "object"}], "evidence": ["Muse Wonder 负责规划，Muse Ember 负责处理规模"]}
+],
+"relations": [
+{"source": "Muse Ember", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["Meta 超智能实验室周一发布 Muse Ember"]},
+{"source": "Muse Wonder", "target": "Meta", "type": "developed_by", "weight": 0.7, "evidence": ["Muse Wonder 负责规划，Muse Ember 负责处理规模"]},
+{"source": "Muse Ember", "target": "Anthropic Haiku", "type": "competes_with", "weight": 0.6, "evidence": ["在比 Anthropic Haiku、OpenAI Luna 更便宜的同时更聪明"]},
+{"source": "Muse Ember", "target": "OpenAI Luna", "type": "competes_with", "weight": 0.6, "evidence": ["在比 Anthropic Haiku、OpenAI Luna 更便宜的同时更聪明"]},
+{"source": "Anthropic Haiku", "target": "Anthropic", "type": "developed_by", "weight": 0.5, "evidence": ["在比 Anthropic Haiku、OpenAI Luna 更便宜的同时更聪明"]},
+{"source": "OpenAI Luna", "target": "OpenAI", "type": "developed_by", "weight": 0.5, "evidence": ["在比 Anthropic Haiku、OpenAI Luna 更便宜的同时更聪明"]}
+],
+"metrics": [
+{"name": "Muse Ember 输入 token 价格", "value": "$0.10 每百万"},
+{"name": "Muse 品牌下模型数量", "value": "第四款"}
+],
+"why_it_matters": "Meta 以 $0.10/百万的价格把'廉价批量执行'单独做成产品层级，与 Haiku/Luna/开源模型的成本竞争证明代理时代的差异化正从推理质量转向单任务边际成本。"
+},
+{
+"article_id": "2026-11-09-2",
+"entities": [
+{"name": "Video-Coder", "type": "tool", "aliases": [], "confidence": 0.92, "evidence": ["中佛罗里达大学、微软研究院、清华等团队提出 Video-Coder"]},
+{"name": "University of Central Florida", "type": "organization", "aliases": ["中佛罗里达大学"], "confidence": 0.9, "evidence": ["中佛罗里达大学、微软研究院、清华等团队提出 Video-Coder"]},
+{"name": "Microsoft Research", "type": "organization", "aliases": ["微软研究院"], "confidence": 0.9, "evidence": ["中佛罗里达大学、微软研究院、清华等团队提出 Video-Coder"]},
+{"name": "Tsinghua University", "type": "organization", "aliases": ["清华"], "confidence": 0.9, "evidence": ["中佛罗里达大学、微软研究院、清华等团队提出 Video-Coder"]},
+{"name": "Blender", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["智能体自动编写并执行 Blender Python 程序来构建动态 3D 场景"]},
+{"name": "MiniMax-H3", "type": "model", "aliases": [], "confidence": 0.88, "evidence": ["在 PhyGenBench 上使 MiniMax-H3 提升约 7 个点"]},
+{"name": "PhyGenBench", "type": "benchmark", "aliases": [], "confidence": 0.88, "evidence": ["在 PhyGenBench 上使 MiniMax-H3 提升约 7 个点"]},
+{"name": "VBench-2.0", "type": "benchmark", "aliases": [], "confidence": 0.88, "evidence": ["在 VBench-2.0 上提升 24 个点"]}
+],
+"events": [
+{"type": "research", "label": "Video-Coder 训练代码驱动视频生成智能体以 Blender 搭建动态 3D 场景", "summary": "Video-Coder 自动编写并执行 Blender Python 程序构建'起草视频'，为下游视频生成器提供显式结构与运动信号，并构建了 Video-Coder-SFT-6k 与 Video-Coder-RL-2k 数据集和统一 Harness 环境。", "participants": [{"name": "University of Central Florida", "type": "organization", "role": "subject"}, {"name": "Microsoft Research", "type": "organization", "role": "subject"}, {"name": "Tsinghua University", "type": "organization", "role": "subject"}, {"name": "Video-Coder", "type": "tool", "role": "object"}, {"name": "Blender", "type": "tool", "role": "object"}], "evidence": ["中佛罗里达大学、微软研究院、清华等团队提出 Video-Coder"]},
+{"type": "benchmark", "label": "Video-Coder 在 PhyGenBench 助 MiniMax-H3 提升约 7 点、在 VBench-2.0 提升 24 点", "summary": "实验显示显著提升：Video-Coder 经执行奖励与视频奖励双重反馈训练后，使 MiniMax-H3 在 PhyGenBench 提升约 7 点、在 VBench-2.0 提升 24 点。", "participants": [{"name": "Video-Coder", "type": "tool", "role": "subject"}, {"name": "PhyGenBench", "type": "benchmark", "role": "benchmark"}, {"name": "VBench-2.0", "type": "benchmark", "role": "benchmark"}, {"name": "MiniMax-H3", "type": "model", "role": "object"}], "evidence": ["在 PhyGenBench 上使 MiniMax-H3 提升约 7 个点"]}
+],
+"relations": [
+{"source": "Video-Coder", "target": "University of Central Florida", "type": "authored_by", "weight": 0.8, "evidence": ["中佛罗里达大学、微软研究院、清华等团队提出 Video-Coder"]},
+{"source": "Video-Coder", "target": "Microsoft Research", "type": "authored_by", "weight": 0.8, "evidence": ["中佛罗里达大学、微软研究院、清华等团队提出 Video-Coder"]},
+{"source": "Video-Coder", "target": "Tsinghua University", "type": "authored_by", "weight": 0.8, "evidence": ["中佛罗里达大学、微软研究院、清华等团队提出 Video-Coder"]},
+{"source": "Video-Coder", "target": "Blender", "type": "uses", "weight": 0.7, "evidence": ["智能体自动编写并执行 Blender Python 程序来构建动态 3D 场景"]},
+{"source": "Video-Coder", "target": "PhyGenBench", "type": "evaluated_on", "weight": 0.7, "evidence": ["在 PhyGenBench 上使 MiniMax-H3 提升约 7 个点"]},
+{"source": "Video-Coder", "target": "VBench-2.0", "type": "evaluated_on", "weight": 0.7, "evidence": ["在 VBench-2.0 上提升 24 个点"]},
+{"source": "Video-Coder", "target": "MiniMax-H3", "type": "improves", "weight": 0.7, "evidence": ["在 PhyGenBench 上使 MiniMax-H3 提升约 7 个点"]}
+],
+"metrics": [
+{"name": "PhyGenBench 提升", "value": "约 7 个点"},
+{"name": "VBench-2.0 提升", "value": "24 个点"},
+{"name": "监督微调数据集", "value": "Video-Coder-SFT-6k"},
+{"name": "强化学习数据集", "value": "Video-Coder-RL-2k"}
+],
+"why_it_matters": "把'写代码建 3D 场景'作为中间表达来替代文生视频的黑箱生成，开辟了用可执行代码显式约束空间与运动的新范式，且数据模型代码全开成为视频生成编码智能体的开放基座。"
+},
+{
+"article_id": "2026-11-09-3",
+"entities": [
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["NVIDIA、Rebellions 与 SK Telecom 周一宣布合作共建韩国主权 AI 基础设施"]},
+{"name": "Rebellions", "type": "company", "aliases": ["韩国 AI 芯片公司 Rebellions"], "confidence": 0.9, "evidence": ["NVIDIA、Rebellions 与 SK Telecom 周一宣布合作共建韩国主权 AI 基础设施"]},
+{"name": "SK Telecom", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["NVIDIA、Rebellions 与 SK Telecom 周一宣布合作共建韩国主权 AI 基础设施"]},
+{"name": "R200", "type": "hardware", "aliases": [], "confidence": 0.88, "evidence": ["Rebellions 计划用 NVLink Fusion 将下一代 R200 神经处理单元连接至 NVIDIA 的开放推理基础设施平台"]},
+{"name": "NVLink Fusion", "type": "hardware", "aliases": [], "confidence": 0.88, "evidence": ["核心技术是 NVIDIA 的 NVLink Fusion 开放机架级互联"]},
+{"name": "Korea Ministry of Science and ICT", "type": "organization", "aliases": ["韩国科学技术情报通信部"], "confidence": 0.85, "evidence": ["韩国科学技术情报通信部支持了该项目"]}
+],
+"events": [
+{"type": "partnership", "label": "NVIDIA、Rebellions 与 SK Telecom 合作共建韩国主权 AI 基础设施", "summary": "三方利用 NVIDIA 的 NVLink Fusion 开放机架级互联，将 Rebellions 的 R200 NPU 接入 NVIDIA 推理平台，推进韩国主权 AI，部署预计 2028 年，韩国科学技术情报通信部支持。", "participants": [{"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "Rebellions", "type": "company", "role": "partner"}, {"name": "SK Telecom", "type": "company", "role": "partner"}, {"name": "Korea Ministry of Science and ICT", "type": "organization", "role": "regulator"}], "evidence": ["NVIDIA、Rebellions 与 SK Telecom 周一宣布合作共建韩国主权 AI 基础设施"]},
+{"type": "infra", "label": "R200 与 NVIDIA GPU 经 NVLink Fusion 分工负责 decode 与 prefill 阶段", "summary": "在 SK Telecom 数据中心内，Rebellions 的 R200 NPU 负责 decode 阶段、NVIDIA GPU 承担 prefill 阶段，两套芯片通过 NVLink Fusion 互联，是第三方芯片直连 NVIDIA 生态的首批公开演示之一。", "participants": [{"name": "R200", "type": "hardware", "role": "object"}, {"name": "NVIDIA", "type": "company", "role": "subject"}, {"name": "NVLink Fusion", "type": "hardware", "role": "object"}], "evidence": ["Rebellions 的 R200 NPU 负责 AI 推理的 decode 阶段，而 NVIDIA GPU 承担计算更重的 prefill 阶段"]}
+],
+"relations": [
+{"source": "NVIDIA", "target": "Rebellions", "type": "partners_with", "weight": 0.9, "evidence": ["NVIDIA、Rebellions 与 SK Telecom 周一宣布合作共建韩国主权 AI 基础设施"]},
+{"source": "NVIDIA", "target": "SK Telecom", "type": "partners_with", "weight": 0.8, "evidence": ["NVIDIA、Rebellions 与 SK Telecom 周一宣布合作共建韩国主权 AI 基础设施"]},
+{"source": "SK Telecom", "target": "Rebellions", "type": "partners_with", "weight": 0.9, "evidence": ["NVIDIA、Rebellions 与 SK Telecom 周一宣布合作共建韩国主权 AI 基础设施"]},
+{"source": "NVLink Fusion", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["核心技术是 NVIDIA 的 NVLink Fusion 开放机架级互联"]},
+{"source": "R200", "target": "Rebellions", "type": "developed_by", "weight": 0.7, "evidence": ["Rebellions 计划用 NVLink Fusion 将下一代 R200 神经处理单元"]},
+{"source": "R200", "target": "NVLink Fusion", "type": "uses", "weight": 0.6, "evidence": ["Rebellions 计划用 NVLink Fusion 将下一代 R200 神经处理单元"]},
+{"source": "R200", "target": "NVIDIA", "type": "integrates", "weight": 0.6, "evidence": ["将下一代 R200 神经处理单元连接至 NVIDIA 的开放推理基础设施平台"]}
+],
+"metrics": [
+{"name": "项目部署预计时间", "value": "2028 年"}
+],
+"why_it_matters": "NVLink Fusion 首次向第三方芯片开放直连 NVIDIA 推理生态，韩国借 R200 的 decode/NVIDIA 的 prefill 分工绕开对单一 GPU 供应商依赖，互联标准的生态锁定价值开始盖过直接收入。"
+},
+{
+"article_id": "2026-11-09-4",
+"entities": [
+{"name": "Samsung Electronics", "type": "company", "aliases": ["三星电子", "三星"], "confidence": 0.95, "evidence": ["三星电子与 SK 海力士的现金储备合计达 329.3 万亿韩元"]},
+{"name": "SK Hynix", "type": "company", "aliases": ["SK 海力士"], "confidence": 0.95, "evidence": ["三星电子与 SK 海力士的现金储备合计达 329.3 万亿韩元"]},
+{"name": "HBM4", "type": "hardware", "aliases": [], "confidence": 0.88, "evidence": ["将忠清北道清州新建的 M15X DRAM 工厂产能拉满，以增加 HBM4 供应"]},
+{"name": "M15X", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["将忠清北道清州新建的 M15X DRAM 工厂产能拉满，以增加 HBM4 供应"]}
+],
+"events": [
+{"type": "trend", "label": "AI 半导体景气使三星电子与 SK 海力士现金储备合计达 329.3 万亿韩元", "summary": "在 AI 半导体热潮推动下两家公司现金储备合计 329.3 万亿韩元（约 2430 亿美元），并同步用现金扩充芯片制造产能与提升股东回报，三星现金储备首超 200 万亿韩元。", "participants": [{"name": "Samsung Electronics", "type": "company", "role": "subject"}, {"name": "SK Hynix", "type": "company", "role": "subject"}], "evidence": ["三星电子与 SK 海力士的现金储备合计达 329.3 万亿韩元"]},
+{"type": "infra", "label": "三星资本支出创新高、SK 海力士拉满 M15X 扩大 HBM4 产能", "summary": "三星计划今年资本支出 84.4 万亿韩元（约 623 亿美元）创历史新高，76.8 万亿投向半导体；SK 海力士计划将清州 M15X DRAM 工厂产能拉满以增加 HBM4 供应。", "participants": [{"name": "Samsung Electronics", "type": "company", "role": "subject"}, {"name": "SK Hynix", "type": "company", "role": "subject"}, {"name": "M15X", "type": "hardware", "role": "object"}, {"name": "HBM4", "type": "hardware", "role": "object"}], "evidence": ["公司计划今年资本支出 84.4 万亿韩元", "将忠清北道清州新建的 M15X DRAM 工厂产能拉满，以增加 HBM4 供应"]}
+],
+"relations": [
+{"source": "SK Hynix", "target": "M15X", "type": "uses", "weight": 0.6, "evidence": ["将忠清北道清州新建的 M15X DRAM 工厂产能拉满，以增加 HBM4 供应"]},
+{"source": "Samsung Electronics", "target": "SK Hynix", "type": "competes_with", "weight": 0.5, "evidence": ["两家巨头大幅扩产，反映出 AI 存储芯片需求远未见顶"]}
+],
+"metrics": [
+{"name": "两家现金储备合计", "value": "329.3 万亿韩元（约 2430 亿美元）"},
+{"name": "三星现金储备", "value": "首超 200 万亿韩元"},
+{"name": "三星今年计划资本支出", "value": "84.4 万亿韩元（约 623 亿美元）"},
+{"name": "资本支出同比增幅", "value": "约 60%（去年 52.7 万亿）"},
+{"name": "投向半导体业务", "value": "76.8 万亿韩元"},
+{"name": "潜在研发支出", "value": "超 50 万亿韩元"}
+],
+"why_it_matters": "329 万亿韩元现金与创纪录产能投资说明 AI 存储需求被两家算力巨头同时视为未到顶，但 M15X 拉满与三星扩产埋下的正是 HBM 供需再平衡的伏笔。"
+},
+{
+"article_id": "2026-11-09-5",
+"entities": [
+{"name": "Adobe", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Adobe 与华特迪士尼周一在迈阿密 Adobe MAX 上宣布多年战略联盟"]},
+{"name": "Walt Disney Company", "type": "company", "aliases": ["华特迪士尼", "迪士尼"], "confidence": 0.92, "evidence": ["Adobe 与华特迪士尼周一在迈阿密 Adobe MAX 上宣布多年战略联盟"]},
+{"name": "Firefly Foundry", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Firefly Foundry——Adobe 面向单一客户构建私有定制模型的服务"]},
+{"name": "Adobe Firefly", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["授予迪士尼 Adobe Firefly、Firefly Foundry、Premiere 与 Photoshop 的早期使用权"]},
+{"name": "Walt Disney Imagineering", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Walt Disney Imagineering 研发部门已在用 Firefly Foundry"]}
+],
+"events": [
+{"type": "partnership", "label": "Adobe 与迪士尼达成多年战略联盟并成为官方 AI 创新伙伴", "summary": "Adobe 被指定为迪士尼官方 AI 创新伙伴，合作建立在数十年合作之上，授予迪士尼 Adobe Firefly 等产品早期使用权并配备专门工程与研发资源，财务条款未披露。", "participants": [{"name": "Adobe", "type": "company", "role": "subject"}, {"name": "Walt Disney Company", "type": "company", "role": "partner"}], "evidence": ["Adobe 与华特迪士尼周一在迈阿密 Adobe MAX 上宣布多年战略联盟"]},
+{"type": "partnership", "label": "用 Firefly Foundry 为迪士尼打造基于其 IP 的私有定制 AI 模型", "summary": "核心是 Firefly Foundry，迪士尼基于其 IP 特征集训练自有模型生成'商业安全、可上生产线'的输出，Walt Disney Imagineering 已在使用草图转图像与定制图像两个模型。", "participants": [{"name": "Adobe", "type": "company", "role": "subject"}, {"name": "Firefly Foundry", "type": "product", "role": "object"}, {"name": "Adobe Firefly", "type": "product", "role": "object"}, {"name": "Walt Disney Company", "type": "company", "role": "object"}], "evidence": ["Firefly Foundry——Adobe 面向单一客户构建私有定制模型的服务"]}
+],
+"relations": [
+{"source": "Adobe", "target": "Walt Disney Company", "type": "partners_with", "weight": 0.9, "evidence": ["Adobe 与华特迪士尼周一在迈阿密 Adobe MAX 上宣布多年战略联盟"]},
+{"source": "Firefly Foundry", "target": "Adobe", "type": "developed_by", "weight": 0.8, "evidence": ["Firefly Foundry——Adobe 面向单一客户构建私有定制模型的服务"]},
+{"source": "Walt Disney Imagineering", "target": "Firefly Foundry", "type": "uses", "weight": 0.6, "evidence": ["Walt Disney Imagineering 研发部门已在用 Firefly Foundry"]},
+{"source": "Adobe Firefly", "target": "Adobe", "type": "developed_by", "weight": 0.5, "evidence": ["授予迪士尼 Adobe Firefly、Firefly Foundry、Premiere 与 Photoshop 的早期使用权"]}
+],
+"metrics": [],
+"why_it_matters": "迪士尼把'复现自家 IP 角色'从诉讼争议反转为私有模型的设计目标，Adobe 借此把 Firefly Foundry 的定制服务确立为企业客户第一落点，AI 图像生成进入'客户自训练数据'的合规化阶段。"
+},
+{
+"article_id": "2026-11-09-6",
+"entities": [
+{"name": "US Department of Commerce", "type": "organization", "aliases": ["美国商务部", "商务部"], "confidence": 0.92, "evidence": ["美国商务部终止了对新加坡数据中心运营商 Megaspeed 的芯片走私调查"]},
+{"name": "US Department of Justice", "type": "organization", "aliases": ["美国司法部", "司法部"], "confidence": 0.9, "evidence": ["并将案件移交司法部开展刑事调查"]},
+{"name": "Megaspeed", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["美商务部对新加坡芯片转售商 Megaspeed 的调查"]},
+{"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.92, "evidence": ["英伟达总法律顾问 Tim Teter 的电邮"]},
+{"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.88, "evidence": ["与英伟达 CEO 黄仁勋有恋情"]},
+{"name": "Tim Teter", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["英伟达总法律顾问 Tim Teter 的电邮"]},
+{"name": "BIS", "type": "organization", "aliases": ["商务部工业和安全局"], "confidence": 0.85, "evidence": ["商务部工业和安全局（BIS）办案人员收到英伟达总法律顾问 Tim Teter 的电邮"]}
+],
+"events": [
+{"type": "policy", "label": "美国商务部终止对 Megaspeed 芯片走私调查并移交司法部刑事调查", "summary": "《纽约时报》披露商务部终止对新加坡数据中心运营商 Megaspeed 的芯片走私调查，并将案件移交司法部开展刑事调查；涉案客户 Megaspeed 正是黄仁勋风波的中心客户。", "participants": [{"name": "US Department of Commerce", "type": "organization", "role": "regulator"}, {"name": "US Department of Justice", "type": "organization", "role": "regulator"}, {"name": "Megaspeed", "type": "company", "role": "object"}], "evidence": ["美国商务部终止了对新加坡数据中心运营商 Megaspeed 的芯片走私调查", "并将案件移交司法部开展刑事调查"]},
+{"type": "security", "label": "英伟达总法律顾问联系办案人员被部分官员视为程序违规并波及黄仁勋", "summary": "去年 8 月英伟达总法律顾问 Tim Teter 电邮办案人员，部分官员视接触为程序违规可能污染案件，司法部随后接管；英伟达董事会此前就 CEO 黄仁勋关系展开独立调查。", "participants": [{"name": "BIS", "type": "organization", "role": "subject"}, {"name": "Tim Teter", "type": "person", "role": "subject"}, {"name": "NVIDIA", "type": "company", "role": "object"}, {"name": "Jensen Huang", "type": "person", "role": "object"}], "evidence": ["英伟达总法律顾问 Tim Teter 的电邮"]}
+],
+"relations": [
+{"source": "US Department of Commerce", "target": "Megaspeed", "type": "regulates", "weight": 0.8, "evidence": ["美国商务部终止了对新加坡数据中心运营商 Megaspeed 的芯片走私调查"]},
+{"source": "US Department of Justice", "target": "Megaspeed", "type": "regulates", "weight": 0.8, "evidence": ["并将案件移交司法部开展刑事调查"]},
+{"source": "Tim Teter", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.6, "evidence": ["英伟达总法律顾问 Tim Teter"]},
+{"source": "Jensen Huang", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.6, "evidence": ["英伟达 CEO 黄仁勋"]},
+{"source": "BIS", "target": "US Department of Commerce", "type": "subsidiary_of", "weight": 0.5, "evidence": ["商务部工业和安全局（BIS）办案人员"]}
+],
+"metrics": [
+{"name": "商务部未列实体清单时长", "value": "逾一年（18 年最长）"}
+],
+"why_it_matters": "移交发生在英伟达总法律顾问接触办案人员之后，叠加商务部 18 年来最久未列实体清单，暴露对华芯片执法的独立性与力度正同时被企业与政治压力侵蚀。"
+},
+{
+"article_id": "2026-11-09-7",
+"entities": [
+{"name": "EU", "type": "organization", "aliases": ["欧盟"], "confidence": 0.92, "evidence": ["欧盟《数字公平法》（Digital Fairness Act）草案将于 11 月 11 日公布"]},
+{"name": "Digital Fairness Act", "type": "policy", "aliases": ["数字公平法"], "confidence": 0.9, "evidence": ["欧盟《数字公平法》（Digital Fairness Act）草案将于 11 月 11 日公布"]},
+{"name": "Meta", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Meta、Google、TikTok 等依赖注意力经济的巨头被视为主目标"]},
+{"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["Meta、Google、TikTok 等依赖注意力经济的巨头被视为主目标"]},
+{"name": "TikTok", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["Meta、Google、TikTok 等依赖注意力经济的巨头被视为主目标"]}
+],
+"events": [
+{"type": "policy", "label": "欧盟《数字公平法》草案拟对 AI 陪伴机器人及成瘾式设计最高罚 6%", "summary": "草案将于 11 月 11 日公布，针对 AI 关系/陪伴机器人与成瘾式界面设计设定严厉条款，违规企业面临最高全球年营业额 6% 罚款，把成瘾式设计认定为不公平商业行为。", "participants": [{"name": "EU", "type": "organization", "role": "regulator"}, {"name": "Digital Fairness Act", "type": "policy", "role": "object"}, {"name": "Meta", "type": "company", "role": "object"}, {"name": "Google", "type": "company", "role": "object"}, {"name": "TikTok", "type": "company", "role": "object"}], "evidence": ["欧盟《数字公平法》（Digital Fairness Act）草案将于 11 月 11 日公布"]}
+],
+"relations": [
+{"source": "Digital Fairness Act", "target": "EU", "type": "released_by", "weight": 0.8, "evidence": ["欧盟《数字公平法》（Digital Fairness Act）草案将于 11 月 11 日公布"]},
+{"source": "Digital Fairness Act", "target": "Meta", "type": "targets", "weight": 0.7, "evidence": ["Meta、Google、TikTok 等依赖注意力经济的巨头被视为主目标"]},
+{"source": "Digital Fairness Act", "target": "Google", "type": "targets", "weight": 0.7, "evidence": ["Meta、Google、TikTok 等依赖注意力经济的巨头被视为主目标"]},
+{"source": "Digital Fairness Act", "target": "TikTok", "type": "targets", "weight": 0.7, "evidence": ["Meta、Google、TikTok 等依赖注意力经济的巨头被视为主目标"]}
+],
+"metrics": [
+{"name": "草案公布日期", "value": "11 月 11 日"},
+{"name": "违规最高罚款", "value": "全球年营业额 6%"}
+],
+"why_it_matters": "这是 AI 监管从能力与安全首次延伸至'用户操控与心理福祉'，把成瘾式设计定为不公平商业行为并设 6% 罚则，AI 陪伴与社交平台的盈利模式第一次直接撞上消费者保护红线。"
+},
+{
+"article_id": "2026-11-09-8",
+"entities": [
+{"name": "JB Pritzker", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["伊利诺伊州长 JB Pritzker"]},
+{"name": "Illinois", "type": "organization", "aliases": ["伊利诺伊州"], "confidence": 0.88, "evidence": ["伊利诺伊州长 JB Pritzker"]},
+{"name": "Secure AI Project", "type": "organization", "aliases": [], "confidence": 0.88, "evidence": ["Secure AI Project 政策主管 Scott Wisor"]},
+{"name": "Scott Wisor", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Secure AI Project 政策主管 Scott Wisor"]},
+{"name": "AI Safety Measures Act", "type": "policy", "aliases": ["《AI 安全措施法》"], "confidence": 0.9, "evidence": ["已在其《AI 安全措施法》中首创对前沿 AI 模型进行强制年度第三方审计"]}
+],
+"events": [
+{"type": "policy", "label": "伊利诺伊州长 Pritzker 向新一届民主党国会呼吁推出联邦 AI 监管", "summary": "Pritzker 向即将上任的民主党国会提出 200 点议程，呼吁建立涵盖隐私、AI 安全与数据中心的综合性联邦数字保护框架，此时民主党刚重夺国会多数。", "participants": [{"name": "JB Pritzker", "type": "person", "role": "subject"}, {"name": "Illinois", "type": "organization", "role": "subject"}], "evidence": ["伊利诺伊州长 JB Pritzker"]},
+{"type": "policy", "label": "伊利诺伊州《AI 安全措施法》首创对前沿 AI 模型强制年度第三方审计", "summary": "伊利诺伊州立法要求对前沿 AI 模型进行强制年度第三方审计以核实企业遵守法案，支持者强调独立审查避免'企业既造模型又自评'，业界担忧审计尚无先例。", "participants": [{"name": "Illinois", "type": "organization", "role": "subject"}, {"name": "AI Safety Measures Act", "type": "policy", "role": "object"}, {"name": "Secure AI Project", "type": "organization", "role": "partner"}], "evidence": ["已在其《AI 安全措施法》中首创对前沿 AI 模型进行强制年度第三方审计"]}
+],
+"relations": [
+{"source": "JB Pritzker", "target": "Illinois", "type": "affiliated_with", "weight": 0.8, "evidence": ["伊利诺伊州长 JB Pritzker"]},
+{"source": "Scott Wisor", "target": "Secure AI Project", "type": "affiliated_with", "weight": 0.6, "evidence": ["Secure AI Project 政策主管 Scott Wisor"]},
+{"source": "AI Safety Measures Act", "target": "Illinois", "type": "developed_by", "weight": 0.8, "evidence": ["已在其《AI 安全措施法》中首创对前沿 AI 模型进行强制年度第三方审计"]}
+],
+"metrics": [
+{"name": "全国议程要点数", "value": "200 点"}
+],
+"why_it_matters": "州级'强制年度第三方审计'此前无先例，一旦被联邦立法采纳将把'实验室自评安全'变成外部可核查义务，迎来监管从自愿承诺转向法定审计的关键拐点。"
+},
+{
+"article_id": "2026-11-09-9",
+"entities": [
+{"name": "Meituan", "type": "company", "aliases": ["美团"], "confidence": 0.92, "evidence": ["美团 LongCat 团队将 1.6 万亿总参数、约 480 亿活跃参数的多模态模型 LongCat 2.5 权重以 MIT 协议放到 Hugging Face"]},
+{"name": "LongCat 2.5", "type": "model", "aliases": ["LongCat"], "confidence": 0.92, "evidence": ["美团 LongCat 团队将 1.6 万亿总参数、约 480 亿活跃参数的多模态模型 LongCat 2.5 权重以 MIT 协议放到 Hugging Face"]},
+{"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace"], "confidence": 0.9, "evidence": ["美团 LongCat 团队将 1.6 万亿总参数、约 480 亿活跃参数的多模态模型 LongCat 2.5 权重以 MIT 协议放到 Hugging Face"]},
+{"name": "MIT License", "type": "topic", "aliases": ["MIT 协议", "MIT 许可"], "confidence": 0.88, "evidence": ["将 1.6 万亿总参数、约 480 亿活跃参数的多模态模型 LongCat 2.5 权重以 MIT 协议放到 Hugging Face"]},
+{"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.88, "evidence": ["进一步推高了对 DeepSeek、月之暗面等开源阵营的竞争"]},
+{"name": "Moonshot AI", "type": "company", "aliases": ["月之暗面"], "confidence": 0.88, "evidence": ["进一步推高了对 DeepSeek、月之暗面等开源阵营的竞争"]}
+],
+"events": [
+{"type": "open_source", "label": "美团以 MIT 协议在 Hugging Face 开放 LongCat 2.5 权重", "summary": "LongCat 团队将 1.6 万亿总参数、约 480 亿活跃参数的多模态模型权重以最宽松的 MIT 协议放到 Hugging Face，允许商业使用、修改与再分发，模型卡 11 月 9 日更新为'权重可下载'。", "participants": [{"name": "Meituan", "type": "company", "role": "subject"}, {"name": "LongCat 2.5", "type": "model", "role": "object"}, {"name": "Hugging Face", "type": "organization", "role": "partner"}], "evidence": ["美团 LongCat 团队将 1.6 万亿总参数、约 480 亿活跃参数的多模态模型 LongCat 2.5 权重以 MIT 协议放到 Hugging Face"]},
+{"type": "launch", "label": "LongCat 2.5 新增原生视觉并加重智能体训练", "summary": "与 2.0 相比，2.5 新增原生视觉能力并显著加重智能体训练，模型 11 月初先经官网与 API debut，权重随后（11 月 4–5 日）上传。", "participants": [{"name": "Meituan", "type": "company", "role": "subject"}, {"name": "LongCat 2.5", "type": "model", "role": "object"}], "evidence": ["与 2.0 相比，2.5 新增原生视觉能力，并显著加重了智能体训练"]}
+],
+"relations": [
+{"source": "LongCat 2.5", "target": "Meituan", "type": "developed_by", "weight": 0.9, "evidence": ["美团 LongCat 团队将 1.6 万亿总参数、约 480 亿活跃参数的多模态模型 LongCat 2.5 权重以 MIT 协议放到 Hugging Face"]},
+{"source": "LongCat 2.5", "target": "MIT License", "type": "licensed_under", "weight": 0.6, "evidence": ["以 MIT 协议放到 Hugging Face"]},
+{"source": "LongCat 2.5", "target": "Hugging Face", "type": "released_on", "weight": 0.7, "evidence": ["将 1.6 万亿总参数、约 480 亿活跃参数的多模态模型 LongCat 2.5 权重以 MIT 协议放到 Hugging Face"]},
+{"source": "Meituan", "target": "DeepSeek", "type": "competes_with", "weight": 0.6, "evidence": ["进一步推高了对 DeepSeek、月之暗面等开源阵营的竞争"]},
+{"source": "Meituan", "target": "Moonshot AI", "type": "competes_with", "weight": 0.6, "evidence": ["进一步推高了对 DeepSeek、月之暗面等开源阵营的竞争"]}
+],
+"metrics": [
+{"name": "LongCat 2.5 总参数", "value": "1.6 万亿（索引记录 1.78 万亿）"},
+{"name": "活跃参数", "value": "约 480 亿"},
+{"name": "仓库总量", "value": "约 3.56 TB（BF16）"},
+{"name": "权重上传时间", "value": "11 月 4–5 日"},
+{"name": "模型卡标记更新", "value": "11 月 9 日"}
+],
+"why_it_matters": "MIT 开源 + 中国超大权重（1.6 万亿）组合把开源阵营竞争从'小模型免费'推向'顶级规模白嫖'，厂商自报基准与封闭数据管线让'开源'标签更多是权重开放而非代码开放。"
+},
+{
+"article_id": "2026-11-09-10",
+"entities": [
+{"name": "Nominal", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["奥斯汀公司 Nominal 周一宣布完成 2.4 亿美元 C 轮融资"]},
+{"name": "Lightspeed Venture Partners", "type": "company", "aliases": ["Lightspeed"], "confidence": 0.9, "evidence": ["由 Lightspeed Venture Partners 领投"]},
+{"name": "Insight Partners", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Insight Partners 联合领投"]},
+{"name": "Founders Fund", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["以 10 亿美元估值完成由 Founders Fund 的 Trae Stephens 领投的 1.55 亿美元 B 轮延期"]}
+],
+"events": [
+{"type": "funding", "label": "AI 硬件工程平台 Nominal 完成 2.4 亿美元 C 轮融资估值升至 30 亿美元", "summary": "奥斯汀公司 Nominal 由 Lightspeed 领投、Insight 联合领投完成 2.4 亿美元 C 轮，估值从 3 月的 10 亿美元升至 30 亿美元，8 个月翻三倍。", "participants": [{"name": "Nominal", "type": "company", "role": "subject"}, {"name": "Lightspeed Venture Partners", "type": "company", "role": "funder"}, {"name": "Insight Partners", "type": "company", "role": "funder"}, {"name": "Founders Fund", "type": "company", "role": "funder"}], "evidence": ["奥斯汀公司 Nominal 周一宣布完成 2.4 亿美元 C 轮融资"]}
+],
+"relations": [
+{"source": "Lightspeed Venture Partners", "target": "Nominal", "type": "invests_in", "weight": 0.9, "evidence": ["由 Lightspeed Venture Partners 领投"]},
+{"source": "Insight Partners", "target": "Nominal", "type": "invests_in", "weight": 0.8, "evidence": ["Insight Partners 联合领投"]},
+{"source": "Founders Fund", "target": "Nominal", "type": "invests_in", "weight": 0.7, "evidence": ["以 10 亿美元估值完成由 Founders Fund 的 Trae Stephens 领投的 1.55 亿美元 B 轮延期"]}
+],
+"metrics": [
+{"name": "C 轮融资额", "value": "2.4 亿美元"},
+{"name": "本轮估值", "value": "30 亿美元"},
+{"name": "3 月 B 轮估值", "value": "10 亿美元"},
+{"name": "估值增至 3 倍耗时", "value": "8 个月"}
+],
+"why_it_matters": "8 个月估值从 10 亿翻到 30 亿，资本正从纯模型层转向'AI+实体工程'落地赛道，用大模型加速航空航天与核反应堆设计被视作继编码后更具确定性的商业场景。"
+},
+{
+"article_id": "2026-11-09-11",
+"entities": [
+{"name": "Spines", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["AI 出版平台 Spines 周一宣布获得 6400 万美元增长资金"]},
+{"name": "Zeev Ventures", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["2900 万美元为 Zeev Ventures 领投的 A-1 轮股权融资"]},
+{"name": "Twelve", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["另有 3500 万美元来自信贷投资机构 Twelve 的非稀释型增长融资"]}
+],
+"events": [
+{"type": "funding", "label": "AI 出版平台 Spines 获 6400 万美元融资自动化图书出版", "summary": "Spines 获得 6400 万美元增长资金（2900 万股权 + 3500 万非稀释），用 AI 代理完成编辑、封面设计、翻译、营销与社交媒体管理，宣称达 5000 万美元年收入运行率、同比增 400%。", "participants": [{"name": "Spines", "type": "company", "role": "subject"}, {"name": "Zeev Ventures", "type": "company", "role": "funder"}, {"name": "Twelve", "type": "company", "role": "funder"}], "evidence": ["AI 出版平台 Spines 周一宣布获得 6400 万美元增长资金"]}
+],
+"relations": [
+{"source": "Zeev Ventures", "target": "Spines", "type": "invests_in", "weight": 0.9, "evidence": ["2900 万美元为 Zeev Ventures 领投的 A-1 轮股权融资"]},
+{"source": "Twelve", "target": "Spines", "type": "finances", "weight": 0.7, "evidence": ["另有 3500 万美元来自信贷投资机构 Twelve 的非稀释型增长融资"]}
+],
+"metrics": [
+{"name": "本轮融资总额", "value": "6400 万美元"},
+{"name": "A-1 轮股权融资", "value": "2900 万美元"},
+{"name": "非稀释型增长融资", "value": "3500 万美元"},
+{"name": "年收入运行率", "value": "5000 万美元"},
+{"name": "年收入同比增速", "value": "400%"},
+{"name": "已出版作者/图书", "value": "8000+ 作者 / 约 1.2 万种"}
+],
+"why_it_matters": "把编辑、设计、发行全交给代理把单本书成本与周期拉到新低，AI+出版因此成为'长尾内容自动化'样板，也是当天多起融资中'具体行业+AI 代理'偏好的直接注脚。"
+}
+]
+}

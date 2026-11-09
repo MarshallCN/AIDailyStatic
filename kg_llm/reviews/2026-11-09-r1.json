@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-09",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "事实与数字基本准确、覆盖完整，但实体类型与关系标签存在多处系统性错配：第三方评测机构 Artificial Analysis 被标成 benchmark 并据此建了 evaluated_on 边，HBM/HBM4 的产能语境被标成 developed_by，迪士尼定制模型的合作计划被标为 launch 事件，且 MiniMax-H3、Hugging Face 等核心结果主体（后者类型还与规范表不符）缺少关系边，建议修订后进入下一轮。",
+  "findings": [
+    {
+      "article_id": "2026-11-09-1",
+      "severity": "medium",
+      "problem": "实体 \"Artificial Analysis\" 类型标成 benchmark 错误：它是独立 AI 评测机构/平台（artificialanalysis.ai），不是基准数据集本身。关系 \"Muse Ember --evaluated_on--> Artificial Analysis\" 依据是原文 \"引用 Artificial Analysis 的综合基准……声称 Ember 更聪明\"，这是 Meta 为营销引用第三方机构的基准结论，不等于模型在该机构上被评测，evaluated_on（模型→benchmark）语义不成立。",
+      "fix": "实体类型改为 organization；删除 \"Muse Ember --evaluated_on--> Artificial Analysis\" 这条边（或若确需表达，把基准名称具体化再建 evaluated_on，但当前证据下建议直接删除），宣传性引用保留在事件 summary 即可。"
+    },
+    {
+      "article_id": "2026-11-09-4",
+      "severity": "medium",
+      "problem": "关系 \"HBM --developed_by--> SK Hynix\" 与 \"HBM4 --developed_by--> SK Hynix\" 的证据不支撑 developed_by：所引证据均为产能/供应语境（\"SK 海力士则聚焦扩大 HBM 产能\"、\"以增加 HBM4 供应\"），原文没有任何 SK 海力士开发 HBM/HBM4 的表述。developed_by 要求有开发/创造语义，这里实际是扩产与供货。",
+      "fix": "删除这两条 developed_by 关系，产能扩张与供应信息保留在事件 summary 和 metrics 中；如确需为 HBM4 连线，只能使用\"生产/供应\"语义并换用有据可依的证据句子，不能再挂 developed_by。"
+    },
+    {
+      "article_id": "2026-11-09-5",
+      "severity": "medium",
+      "problem": "事件 2 \"用 Firefly Foundry 为迪士尼打造基于其 IP 的私有定制 AI 模型\" 类型标成 launch 错误：原文没有发布任何产品，内容是合作计划（\"将会合作训练自有模型\"）与已投入使用的两个在研模型，且与事件 1（联盟宣布）是同一公告的两个侧面，拆成两个事件造成重复描述。",
+      "fix": "把事件 2 合并进 partnership 事件（summary 已覆盖 Foundry 定制模型细节），或将事件 2 类型改为 partnership 而非 launch；launch 只用于原文真正发生发布动作的产品。"
+    },
+    {
+      "article_id": "2026-11-09-4",
+      "severity": "medium",
+      "problem": "实体 \"M15X\" 类型标成 product 错误：M15X 是忠清北道清州新建的 DRAM 工厂（生产设施），不是产品；关系 \"HBM4 --built_on--> M15X\" 表达的也仅是\"在哪扩产\"的地点信息，类型表内没有 facility 类型时该实体放哪都不贴切。",
+      "fix": "把 M15X 类型改为 organization（作为设施实体），或参照\"系统内部组件不单独立节点\"的既有经验删除该实体、把\"拉满 M15X 扩产\"并入事件描述并移除 built_on 边。"
+    },
+    {
+      "article_id": "2026-11-09-2",
+      "severity": "medium",
+      "problem": "实体 MiniMax-H3 出现在 entities 与事件 participants 中，但没有任何关系边，使本文核心实验结果（Video-Coder 使 MiniMax-H3 在 PhyGenBench 提升约 7 点、VBench-2.0 提升 24 点）在网络层面断裂，结果主体无法从图谱读出。",
+      "fix": "增加关系 \"Video-Coder --improves--> MiniMax-H3\"（或等价表达 Video-Coder 使 MiniMax-H3 指标提升的语义），证据用 \"在 PhyGenBench 上使 MiniMax-H3 提升约 7 个点\"，补齐这条缺失的边。"
+    },
+    {
+      "article_id": "2026-11-09-9",
+      "severity": "medium",
+      "problem": "实体 \"Hugging Face\" 无任何关系边，头条事件\"权重放到 Hugging Face 开放\"缺发布/托管关系的图支撑；且其类型标成 organization，与实体规范名对照表（Hugging Face → company，变体 HuggingFace、HF）不符。",
+      "fix": "增加关系 \"LongCat 2.5 --released_on--> Hugging Face\"（证据：\"将 1.6 万亿总参数……权重以 MIT 协议放到 Hugging Face\"）；同时把 Hugging Face 类型改为 company，与规范表一致。"
+    },
+    {
+      "article_id": "2026-11-09-10",
+      "severity": "low",
+      "problem": "metric \"估值翻倍耗时 8 个月\" 标签与原文不符：原文（标题与正文）是 8 个月内估值从 10 亿美元翻三倍到 30 亿美元（Triples Valuation to $3B in 8 Months），不是翻倍。",
+      "fix": "metric 标签改为 \"估值增至 3 倍耗时\"，值保留 \"8 个月\"；事件 summary 中已有的 \"8 个月翻三倍\" 表述正确，无需改动。"
+    },
+    {
+      "article_id": "2026-11-09-3",
+      "severity": "low",
+      "problem": "三方合作缺 NVIDIA 与 SK Telecom 之间的直接关系边（图中只有双方各自与 Rebellions 的 partners_with），违背\"多方合作的顶层参与者之间应补直接关系边\"的既有经验，头条合作在图谱上只能经 Rebellions 间接连通。",
+      "fix": "补一条 \"NVIDIA --partners_with--> SK Telecom\" 边，证据用 \"NVIDIA、Rebellions 与 SK Telecom 周一宣布合作共建韩国主权 AI 基础设施\"。"
+    }
+  ],
+  "lessons": [
+    "第三方评测机构或平台（如 Artificial Analysis、LMArena）用 organization 类型，只有具体基准（如 PhyGenBench、VBench-2.0）才用 benchmark 类型；'引用某机构综合基准做宣传'是引用不是评测，不要据此建 evaluated_on 边。",
+    "'扩大产能/增加供应'语境只支持生产或供给语义，不支撑 developed_by；developed_by 必须原文有开发、创造动作才可用，证据与关系语义必须一致。",
+    "只有原文真实发生发布动作（产品上线、版本对外推出）才用 launch 事件；'计划中/将构建/已在研发'的协作内容并入 partnership 事件，不要为同一公告拆出第二个 launch 事件。"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-09",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "整体事实准确、结构完整，主要问题集中在 2026-11-09-6（Megaspeed 案）：核心当事人 Alice Huang 被遗漏，且 Jensen Huang 实体引用了一段实为描述 Alice Huang 与其恋情的证据；另 2026-11-09-4 将 DRAM 工厂 M15X 误标为 hardware。",
+  "findings": [
+    {
+      "article_id": "2026-11-09-6",
+      "severity": "high",
+      "problem": "Megaspeed 案的核心当事人 Alice Huang（涉案数据中心前高管、被疑为中方效力、并与英伟达 CEO 黄仁勋有恋情）完全未被抽取为实体。原文多处提及她，且整个'黄仁勋风波'的故事钩子正是这段恋情；现有图谱只有孤立的 Jensen Huang 实体，其证据却写着'与英伟达 CEO 黄仁勋有恋情'——这句是在描述 Alice Huang 与黄仁勋之间的关系，被错误安在了 Jensen Huang 实体名下。",
+      "fix": "新增实体 person 'Alice Huang'（aliases 可含'前高管 Alice Huang'），她是被遗漏的核心角色。将 Jensen Huang 实体的 evidence 改为描述其本人的句子'英伟达 CEO 黄仁勋'，删除其证据中'与……有恋情'一句；可另加关系 'Alice Huang --affiliated_with--> Megaspeed' 来承接这段恋情语境。"
+    },
+    {
+      "article_id": "2026-11-09-6",
+      "severity": "medium",
+      "problem": "Jensen Huang 实体的 evidence 引用了'与英伟达 CEO 黄仁勋有恋情'，该句子描述的主体是 Megaspeed 前高管 Alice Huang 与黄仁勋的恋情（含'可能为中方效力'的前半句语链），并非对黄仁勋本人身份或行为的描述；用他人关系句作为该人物实体证据不符合'证据须支撑其所附断言'的要求。",
+      "fix": "把 Jensen Huang 实体的 evidence 改为直接指认身份的原文'英伟达 CEO 黄仁勋'；涉及恋情的原文证据应归入 Alice Huang 实体或作为 Alice Huang↔Jensen Huang 关系（若保留）的证据，不要原样挂在 Jensen 名下。"
+    },
+    {
+      "article_id": "2026-11-09-4",
+      "severity": "medium",
+      "problem": "实体 M15X 被标为 type 'hardware'，但原文中的 M15X 是 SK 海力士在忠清北道清州新建的 DRAM 工厂（'将 M15X DRAM 工厂产能拉满'），是一个制造设施而非芯片/硬件产品；类型错配会让图谱把'工厂'误读成硬件器件。",
+      "fix": "将实体 M15X 的 type 改为 'organization'（或 'facility'），说明其是 DRAM 制造工厂；相应关系 'SK Hynix --uses--> M15X' 可保留但措辞应体现为'运营/扩建工厂'，与 HBM4（硬件产品）区分开。"
+    }
+  ],
+  "lessons": [
+    "场所/设施类主体（DRAM 工厂、数据中心、测试产线等）应标为 organization 或 facility，不要标成 hardware/product。",
+    "丑闻/调查类新闻须抽取核心当事人为实体（含仅以背景身份提及但构成故事钩子的关键人物），不能只抽到与之相关的主流通用人物。",
+    "人物实体的 evidence 必须是描述该人物自身身份或行为的句子，不得引用描述其与他人关系或他人行为的句子。"
+  ]
+}

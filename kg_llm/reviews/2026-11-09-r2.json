@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-09",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "整体抽取忠实度高：无关系方向反向、无明显幻觉、实体与证据基本吻合。但存在一处头条定价指标的参照基准错配（20% 优惠实为对标 GPT-6 Astra 而非 5.1 代）、若干关系/实体类型语义错配（非稀释信贷误标 invests_in、把竞品模型比较落到公司、M15X 标成 organization），以及部分事件摘要超出其 evidence 支撑范围。",
+  "findings": [
+    {
+      "article_id": "2026-11-09-0",
+      "severity": "high",
+      "problem": "metric \"价格较 5.1 代下调 20%\" 与 launch 事件摘要 \"定价 $8/$40 比 5.1 代便宜 20%且输出快 30%\" 的 20% 参照基准错配。原文定价是 $8/$40 对标 GPT-6 Astra（$10/$50），而 $8 相对 $10、$40 相对 $50 恰好各便宜 20%，即这 20% 明显是相对 GPT-6 Astra 的降幅；全文没有任何 5.1 代的定价数据可支撑 \"比 5.1 代便宜\" 的说法（原文 summary 的该表述与 detail 自相矛盾）。",
+      "fix": "将该 metric 与事件摘要改为 \"价格较 GPT-6 Astra 便宜 20%\"（$10/$50 → $8/$40）；在缺乏 5.1 代定价证据时删除 \"比 5.1 代便宜 20%\" 的表述。"
+    },
+    {
+      "article_id": "2026-11-09-0",
+      "severity": "medium",
+      "problem": "benchmark 事件的 summary 把费马大定理（1000 代理/30 小时、研究版 11 天）写成 Fable 5.2 的成果，但该事件的 evidence 只有 \"在 FrontierCode 2.0 编码基准上，Fable 5.2 在高强度下得分 49.1%\" 一条，并不覆盖费马断言；费马信息虽在 metrics 中，事件 evidence 与断言范围不一致。",
+      "fix": "为费马大定理断言补上原文对应 evidence（\"用 1000 个代理在 30 小时内形式化验证了费马大定理（此前未发布的研究版用了 11 天）\"），或将其从该事件摘要移除只保留在 metrics。"
+    },
+    {
+      "article_id": "2026-11-09-1",
+      "severity": "medium",
+      "problem": "两条 competes_with 关系的 target 是公司实体 Anthropic 和 OpenAI，但证据引用的是具体模型 \"Anthropic Haiku、OpenAI Luna\"。原文只声称 Muse Ember 在价格与性能上胜过 Haiku/Luna 两个模型，并未声称与整个公司竞争；把 target 落为公司读成 \"Muse Ember 与 Anthropic/OpenAI 公司竞争\"，超出证据。",
+      "fix": "建立 Muse Ember 与 Haiku、Luna 两个模型实体的 competes_with 关系（如未抽取该模型则补建），不要再以公司 Anthropic/OpenAI 作为竞争目标；或至少把 evidence 限定为具体模型而非公司。"
+    },
+    {
+      "article_id": "2026-11-09-11",
+      "severity": "medium",
+      "problem": "relation \"Twelve --invests_in--> Spines\" 用股权语义的 invests_in 来描述 3500 万美元融资，但原文明确其为 \"来自信贷投资机构 Twelve 的非稀释型增长融资\"（债务/信贷，非股权）。invests_in 代表股权注资，语义错配。",
+      "fix": "为 Twelve 改为 finances（或提供资金）类关系并在 evidence 注明 \"非稀释型增长融资\"；invests_in 仅保留给 Zeev Ventures 的 A-1 轮股权融资。"
+    },
+    {
+      "article_id": "2026-11-09-4",
+      "severity": "medium",
+      "problem": "实体 M15X 被标为 organization，但 M15X 是 SK 海力士在清州新建的 DRAM 芯片工厂（生产设施），不是组织；且关系 \"HBM4 --built_on--> M15X\" 类型语义不明（built_on 无法表达 HBM4 在 M15X 工厂生产）。",
+      "fix": "M15X 改为基础设施/facility（工厂）类型而非 organization；把 built_on 换成含义明确的关系（如 produced_in 或在 M15X 工厂生产），HBM4 是产品、M15X 是其生产设施。"
+    },
+    {
+      "article_id": "2026-11-09-6",
+      "severity": "medium",
+      "problem": "relation \"Jensen Huang --affiliated_with--> NVIDIA\" 的证据是 \"与英伟达 CEO 黄仁勋有恋情\"，该证据描述的是 Huang 与 Alice Huang 的恋情，与被认证的隶属关系无关（虽黄仁勋确为英伟达 CEO，但这条证据不支撑 affiliated_with 断言）。",
+      "fix": "将 affiliation 关系的 evidence 换成确立 CEO 身份的原文（如 \"英伟达 CEO 黄仁勋\"），避免把恋情证据误用于隶属关系；或补充一条更贴切的 evidence。"
+    },
+    {
+      "article_id": "2026-11-09-5",
+      "severity": "medium",
+      "problem": "metric \"Adobe MAX 举办地 迈阿密\" 是背景/地点信息而非可量化指标，混入 metrics 字段会稀释 metrics 作为数值型指标集的纯度（协会类同样问题：\"联盟性质\"）。",
+      "fix": "把举办地、联盟性质等非数值信息从 metrics 移除；metrics 只保留可量化的数字/金额/时间跨度。"
+    }
+  ],
+  "lessons": [
+    "融资类新闻中，非稀释型/信贷增长融资是债务而非股权，不能用 invests_in；invests_in 仅用于股权融资，信贷类用 finances/提供资金 关系并注明性质。",
+    "价格对比的数字要核对参照基准：百分比（如便宜 20%）用数学验证（$10→$8、$50→$40 恰好 20%，即对标模型而非前代），没有前代价格数据时不得写 \"比前代便宜 X%\"。",
+    "声称与某具体模型（如 Anthropic Haiku、OpenAI Luna）在价格/性能竞争时，competes_with/compared_with 的 target 是该模型实体而非其所属公司；公司层面关系另建。"
+  ]
+}
