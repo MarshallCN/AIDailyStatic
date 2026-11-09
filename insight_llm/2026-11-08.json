@@ -1,0 +1,437 @@
+{
+  "date": "2026-11-08",
+  "overview": {
+    "headline": "中期选举把「license to build」变成美国 AI 的第一约束：41 项数据中心公投否了 40 项、桑德斯/AOC 喊全国停建令、民主党预告「洪水般」AI 立法，Anthropic 的 IPO 估值由此从约 $2T 缩到 $1.1–1.3T；RSI 从研究员辩题变成上市公司风险清单——Anthropic 书面承认「即将」触及 AI 自我加速门槛、METR 独立测到研发提速约 1.9x、Axiom 用 agent 群形式化整个 Stacks Project；AI 资本继续让价（OpenAI 首轮 $11B 落袋 @ $1.25T、Anthropic 背负 $895B 算力承诺上市）；英伟达「单位美元 agentic 吞吐」这条护城河第一次被 Google TPUv7 在公开 AgentX 基准上正面击穿",
+    "summary": "过去 7 天（11/02–11/08）是中期选举结果把 AI 从「产业议题」彻底变成「政治与立法议题」的一周，并把前几周靠资本市场与供应链酝酿的三条主线全部坐实或逆转。最硬的结构性变化在政治端：选民在 41 项数据中心相关公投中否决了 40 项、NBC 出口民调显示过半选民把 AI 数据中心视为投票重要考量，桑德斯与 AOC 借势在选举次日喊出「现在就全国数据中心停建令」、得州当选州长提出全州许可停建，马萨诸塞 Northampton 等市议会陆续通过一年停建令，而德银经济学家甚至公开称这类禁令是「阻止吹出更大泡沫、杀掉本就摇摇欲坠项目的好借口」；同周 Reuters 报道民主党掌控两院后预备推「洪水般」AI 立法（独立专家评估前沿模型、AI 致害责任、甚至独立监管机构），并点名马萨诸塞 Lori Trahan 与密歇根新科参议员 Abdul El-Sayed。这股「社会许可 + 立法」的双重收紧直接压进公司定价：Anthropic 的 IPO 估值从约 $2T 一路回落至当前路演讨论的 $1.1–1.3T（Polymarket 上 12 月前挂牌概率自约 80% 跌至近 50%），OpenAI 则赶在这周完成首轮约 $11B 交割、投前 $1.25T（低于最初 $1.4–1.5T 目标），两者构成「一个拥抱立法不确定性、一个抢在窗口关闭前拿钱」的对照。第二根主线是「AI 加速 AI」从口号变成可核查测量：Anthropic 在修订版 S-1 中首次书面承认其《负责任扩展政策》的「急剧加速进展」(RSI) 门槛「可能即将达到」，并同时披露 Claude 撰写了公司 9 月 90% 以上的代码贡献；独立机构 METR 在 11 周内部审查后估测其研发提速约 1.9x（95% CI 1.5–2.8x）且约 80% 来自 AI 辅助而非算力扩张；同周 Axiom 用一队 AI agent 把代数几何整个 Stacks Project（约 7500 页）形式化为 1600 万行 Lean 校验代码，PSI 的研究系统用非公开 Anthropic 模型证明了归档 18 年的 Aaronson-Ambainis 猜想且通过 Lean——「AI 写的 AI / AI 证明的数学」首次在同一个月里同时以上市公司披露、独立评测与数学出版三种形态被量化。第三根主线是算力竞争从「谁有最好的芯片」转向「单位美元能买到多少 real agentic 吞吐」，英伟达的叙事第一次在公开数据上遇挫：Semianalysis 发布 TPUv7 (Ironwood) 在真实多轮长上下文 AgentX 基准上对 Qwen3.5、GLM-5.2、Muse Spark Open、Kimi K3 的第三方结果，单位美元 token 数在多个区间反超 B200/B300/GB300（最高 1.2–2.7x），并批评英伟达对外部提交的响应正被内部法务流程拖慢；同期 NVIDIA 在 Vera Rubin 首批量产硬件进入云厂之际悄然下调公开规格（HBM4 带宽 22→19.2TB/s、NVLink 3.6→3.0TB/s、NVL8 带宽 -26%），AMD 数据中心收入近翻倍且 Q4 有望首度超过 Intel，SpaceX 被模型上修至 2027 年约 13GW、中国远景在乌兰察布以约美方五分之一成本一年交付 120MW。中国轴同样贯穿全周：约 60 万颗 H200 滞留香港等北京放行、B300 整柜在华黑市溢价约 4.7 倍、NYT 曝光获批中介 New Matrix 注册地址是空壳、英伟达要求云商对华收入占比压到 51% 以下、月之暗面被曝寻求租用欧洲 neocloud 的 Blackwell——芯片出口管制的效力被「美国批/北京卡」和「算力即服务」两股力量同时重划边界。",
+    "key_observations": [
+      "中期选举把「建不建数据中心」送进 41 场公投并否了 40 项：超半数选民自认把 AI 数据中心当作投票考量，桑德斯/AOC 喊「全国停建令」、得州当选州长提全州许可停建、Northampton 等市陆续通过一年停建令；Reuters 指民主党预备推「洪水般」AI 立法（独立前沿模型评估、AI 致害公司责任、甚至独立 AI 监管机构）——「license to build」从电力议题变成社会许可与立法议题，且一手直接压进估值。",
+      "Anthropic IPO 估值从约 $2T 缩到 $1.1–1.3T、OpenAI 首轮 $11B @ $1.25T 落袋，AI 一级市场让价在科技股抛售与数据中心反弹双重压力下具体化：Anthropic 修订版 S-1 披露出约 $895B 算力/基建承诺、Q3 营收 $170B 但环比增速从 144% 放缓到 47%、九个月净亏约 $1040B（多属会计调整）——买家在给「一家被选民否决所需基建的公司」定 IPO 价，风险因素第一次把「数据中心反对声已更有组织」写进去。",
+      "RSI（AI 自我改进）首次进入上市公司风险清单且被独立测量：Anthropic S-1 书面承认「即将」触及急剧加速门槛、披露 Claude 写了 9 月 90%+ 代码；METR 独立估测其研发提速约 1.9x 且八成来自 AI 辅助；Axiom 用 agent 群形式化整个 Stacks Project（1600 万行 Lean）、PSI 的非公开 Anthropic 模型证明 Aaronson-Ambainis 猜想且 Lean 通过——「AI 加速 AI / AI 证明数学」在同一周变身三种可核查产物。",
+      "算力竞争开新场：单位美元 agentic 吞吐。TPUv7 (Ironwood) 首次凭公开多轮长上下文 AgentX 第三方结果在 Qwen3.5/GLM-5.2/Muse Spark Open/Kimi K3 上反超 B200/B300/GB300，Semianalysis 判定对某些模型 NVIDIA 在 FP8 对 FP8 上已难回 SOTA；同期 Vera Rubin 首批量产硬件进云厂但公开规格被悄然下修（HBM4 -13%、NVL8 带宽 -26%）——行业开始按「量产实测 + 交付节奏」而非「早期幻灯片峰值」给算力定价。",
+      "芯片金融化与主权算力继续并行：AMD 用给 OpenAI/Meta 的股权激励(warrant)锁芯片订单并在 Q3 计提 $10.7 亿非现金费用、数据中心收入近翻倍、Q4 首有望超 Intel；Google 为竞争对手 Anthropic 的 $19B 肯塔基租约提供信用 backstop，Anthropic 以 $34B 买 1.7GW 燃气发电机、OpenAI 用「Grid Protectors」削峰换电网合作——供应商/金主/租户的资产负债表越缠越深，能源获取内化为超大规模厂商的核心能力。",
+      "Agent 经济进入「成本与信任」审校期：不只是拼能力。OpenAI 12 月起统一 ChatGPT/Codex token 池、微软推 APM（「agent 的 npm」）、Coca-Cola 论文把工具观测压成潜在 token 省 70–89%、《You don't need long context》主张频繁压缩、SWE-2 Flash 以五分之一价格打日常调用层——Agent 计费与推理成本的「工程化」成为主战场；同时 Uber 用「一周 4 单 agent 打车」给「agent 什么都行」浇冷水（高频低价值场景 agent 反而劣化）、Apiiro 曝光 Claude Code 把明文密钥写进 1122 个公开仓库、Claude 删教授一年讲义——「agent 在哪一层值得信任」首次被真实使用数据与安全事件同时证伪。",
+      "对华算力陷入「美国批、北京卡」双向管制 + 灰色溢价：约 60 万颗 H200 滞留香港等北京放行、受管制 B300 整柜在华黑市约 $2.8M（溢价约 4.7x）、NYT 曝光获批中介 New Matrix 注册地址是空壳、月之暗面被曝寻求租欧洲 neocloud 的 Blackwell——芯片出口管制的实际约束从「美国许可」转移到「中国进口审批」与「算力即服务」的灰色地带，英伟达以「对华营收占比≤50%」的商业条件试图封堵后门。"
+    ]
+  },
+  "themes": [
+    {
+      "theme_id": "clue:license-to-build-2026w46",
+      "title": "「license to build」政治化坐实：中期选举 41 项数据中心公投否 40 项、桑德斯/AOC 喊全国停建令、民主党预告「洪水般」AI 立法，直接压进 Anthropic/OpenAI 定价",
+      "summary": "上周的观察在本周中期选举结果里被坐实并升级成结构性约束。选民在 41 项数据中心相关公投中否决了 40 项，NBC 出口民调显示过半选民把 AI 数据中心视为投票重要考量、57% 认为 AI 对社会弊大于利、56% 认为 AI 是投票关键因素；桑德斯与 AOC 选举次日高调重申《全国数据中心停建令》法案（3 月提出、尚无法律效力）并喊出「NATIONAL DATA CENTER MORATORIUM NOW」，得州当选州长 Hinojosa 提出对新建数据中心暂停直至「真正保护」落地，马萨诸塞 Northampton 市议会一致通过为期一年停建令并加入 Greenfield/Easthampton/Westfield 行列（Shutesbury 与 Holyoke 已直接禁止）。市场侧出现「反建或防泡沫」的新叙事：德银经济学家 Brett Ryan 坦言这类禁令「几乎就是阻止吹出更大泡沫、杀掉本就摇摇欲坠项目的好借口」；Nomura/JPMorgan 则判断民主党在关键州获胜提高许可收紧概率，让「手里有现成产能」的巨头受益、债务驱动的 neocloud 承压，真正受拖累的是 2028 年起的新项目。立法端，Reuters 报道民主党掌控两院后预备推「洪水般」AI 立法：Lori Trahan 拟要求独立专家按安全标准评估前沿模型、并明确 AI 致害的公司责任，Zoe Lofgren 聚焦「创新与负责任监管的平衡」，密歇根新科参议员 Abdul El-Sayed 甚至主张设立有执法权的独立 AI 监管机构；与此同时美联社曝光美国 AI 安全中心（US AI Safety Institute）无常任负责人、停发研究、员工改向白宫汇报——评估机构自身的可信度成为最先要修的东西。公司与产业侧的反应是把能源/电力内部化并主动妥协：Anthropic 以 $34B 买下 1.7GW 燃气发电机（承接 OnePWR 的卡特彼勒订单）、Google 投 $17B 建怀俄明首个园区并配燃料电池+碳捕集、OpenAI 推出 Grid Protectors 让佐治亚 3.2GW 试点园区在电网承压时最多削峰 1000MW。",
+      "conclusion": "这条线值得持续跟踪的根本原因在于：AI 基建的真实瓶颈已经从「有没有芯片、有没有电」迁移到「批不批得下来、借不借得到钱、社区认不认」，而且这个约束第一次有了民调与选票的量化背书——在民主市场铺站的主体必须把「社会许可」计为前置成本与不确定性。接下来最值得盯的三个观察点：一，桑德斯/AOC 的全国停建令与各州许可收紧是否会形成「可得产能定价权向已建成的在位者集中」的供给侧分化（利好现有产能持有者、挤压 later-stage neocloud）；二，民主党「洪水般」AI 立法（独立评估 + 责任 + 独立监管机构）在 2027 年 1 月掌控国会后到底落地多少、能否绕过 2/3 多数推翻总统否决；三，Anthropic IPO 作为「市场愿不愿为一家被选民反对其基础设施的公司买单」的第一个大考，其定价将成为「license to build」对资本市场的直接传导标尺。",
+      "trend_signals": [
+        "数据中心进选票：41 项公投否 40 项，NBC 出口民调超半数选民把数据中心设为投票考量、57% 认为 AI 弊大于利——「社会许可」第一次以选票形式变成可量化的政治资本。",
+        "停建令从社区蔓延到州与联邦倡议：Northampton/Greenfield/Easthampton 等市已通过一年停建令，桑德斯/AOC 借势推全国法案、得州当选州长提全州许可停建——地方治理正升级为跨州与全国议程。",
+        "立法进入推进期：民主党预备「洪水般」AI 立法（Trahan 独立专家评估前沿模型 + AI 致害公司责任；El-Sayed 主张独立监管机构；科技委员会席位争夺聚焦「负责任的 AI 监管」）。",
+        "产业把能源内部化 + 主动示好：Anthropic $34B 买 1.7GW 燃气发电机、Google 配燃料电池+碳捕集、OpenAI Grid Protectors 让园区在电网承压时削峰——「电力资产」与「电网合作者」姿态成为超大规模厂商的核心竞争力。",
+        "资本市场开始定价这种约束：Nomura/JPMorgan 判断现有产能因许可收紧变得更值钱、债务型 neocloud 融资成本高企，Anthropic IPO 估值随「选民反对其基建」从约 $2T 缩至 $1.1–1.3T。"
+      ],
+      "core_entities": ["数据中心公投", "全国数据中心停建令", "Northampton 停建令", "桑德斯/AOC", "Anthropic 燃气发电机", "Google Project Tembo", "OpenAI Grid Protectors", "民主党 AI 立法"],
+      "event_types": ["policy", "election", "infra", "energy"],
+      "dominant_category": "基础设施",
+      "evidence": [
+        {
+          "article_id": "2026-11-06-11",
+          "report_index": 12,
+          "title": "中期选举后桑德斯与 AOC 高调推动「全国数据中心暂停令」",
+          "source": "CNBC",
+          "date": "2026-11-06",
+          "summary": "民主党在中期选举获胜后，桑德斯与 AOC 借势要求「现在就全国暂停数据中心」——当地投票中有 43/44 个社区支持本地暂停令，但业界警告「地点是可迁移的」，需求只会流向他国。"
+        },
+        {
+          "article_id": "2026-11-07-7",
+          "report_index": 8,
+          "title": "数据中心禁令蔓延与「防泡沫」叙事：Northampton 一致通过一年停建令，德银称「是杀掉摇摇欲坠项目的借口」",
+          "source": "CNBC",
+          "date": "2026-11-07",
+          "summary": "马萨诸塞 Northampton 市议会一致通过为期一年数据中心停建令；德银经济学家 Brett Ryan 认为这类禁令与监管压力给 AI 投资热潮降温、「几乎是阻止吹出更大泡沫并杀掉本就摇摇欲坠项目的好借口」。"
+        },
+        {
+          "article_id": "2026-11-05-10",
+          "report_index": 11,
+          "title": "美国中期选举可能加剧 AI 数据中心供给分化",
+          "source": "CNBC",
+          "date": "2026-11-05",
+          "summary": "分析称民主党在关键州长选举的获胜可能带来更严的数据中心审批/监管，让手里有现成产能的巨头受益、债务驱动的 neocloud 承压，2028 年起影响更大。"
+        },
+        {
+          "article_id": "2026-11-08-11",
+          "report_index": 12,
+          "title": "民主党人酝酿「洪水般」的 AI 立法：安全评估、责任界定与独立监管机构",
+          "source": "Reuters",
+          "date": "2026-11-08",
+          "summary": "民主党在中期选举拿下国会两院后，计划在明年 1 月掌控国会时推出一批 AI 立法：要求独立专家评估前沿模型风险、明确 AI 致害的公司责任，并有人主张设立独立 AI 监管机构。"
+        },
+        {
+          "article_id": "2026-11-08-3",
+          "report_index": 4,
+          "title": "Anthropic 斥 34 亿美元购买 1.7GW 燃气发电机，据称为 AI 实验室最大规模电力设备采购",
+          "source": "CNBC",
+          "date": "2026-11-08",
+          "summary": "Anthropic 同意支付 34 亿美元购买 1.7GW 重型燃气发电机、承接供应商 OnePWR Solutions 向卡特彼勒订购的订单——「等电网接入比写一张九位数支票更慢」的直接注脚，前沿实验室加速把电力资产内部化。"
+        },
+        {
+          "article_id": "2026-11-08-8",
+          "report_index": 9,
+          "title": "Google 投资 170 亿美元建设怀俄明州首个数据中心园区：燃料电池+燃气+碳捕集供电",
+          "source": "Google",
+          "date": "2026-11-08",
+          "summary": "Google 宣布对怀俄明州拉勒米县首个数据中心园区「Project Tembo」投资 170 亿美元，采用 702MW 燃料电池与燃气发电加碳捕集的混合供电，并确认收购 Crusoe 东南怀俄明站点——自备电力成为核心能力的最新案例。"
+        },
+        {
+          "article_id": "2026-11-02-3",
+          "report_index": 4,
+          "title": "OpenAI 推出 Grid Protectors 计划：让未来算力园区在电网吃紧时主动削峰",
+          "source": "OpenAI",
+          "date": "2026-11-02",
+          "summary": "OpenAI 宣布全国性 Grid Protectors 计划，未来数据中心将按协议在电网承压时降低用电；佐治亚 Effingham 3.2GW 园区试点可被 Georgia Power 削峰 1000MW——AI 巨头从「抢电者」转向「电网合作者」。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:rsi-becomes-measured-2026w46",
+      "title": "RSI（AI 自我改进）从研究员辩题变成上市公司风险清单：Anthropic 书面承认「即将」触及门槛、METR 独立测到研发提速约 1.9x、Axiom/PSI 用 agent 产出可校验数学",
+      "summary": "本周「AI 加速 AI」第一次同时以三种形态被量化：上市公司披露、独立评测、数学出版。Anthropic 在修订版 S-1 的风险因素中首次书面承认——其内部估计和对未来模型的预期表明可能「即将」触及其《负责任扩展政策》(RSP) 中「由 AI 引起的急剧加速进展」定义，同时披露 Claude 撰写了公司 9 月 90% 以上的代码贡献、存在「能力跃升当时没识别出来」的既往，并承诺未来可预见期内不会在无人类监督下让 Claude 自主设计构建下一代前沿模型、正考虑收紧 RSP 以保留人类掌控。独立侧，METR 在 8 月 12 日至 10 月 29 日获得 Anthropic 内部访问、审查研究数据并访谈后估测其 AI 能力指数提升速度约为 2025 年 10 月前的 1.9x（95% CI 1.5–2.8x，相当于把两年进步压缩进一年），且约 80% 来自员工用 AI 做研究而非训练算力增长，并披露三个未发布模型在 7–10 月完成训练；但 Anthropic 删改了 METR 认为最有信息量的多数证据以向竞争对手保密，削弱了外部审计严谨性——METR 明确这是重要信号、但并非「AI 已学会独立自我改进」的证明。数学与形式化侧，Axiom 用一队 AI agent（松散层级、自我派活并行）把代数几何的 Stacks Project（约 7500 页、二十余年多位数学家贡献）整体形式化为约 1600 万行 Lean 4 校验代码、全文仅 propext/Classical.choice/Quot.sound 三个公理且无 sorry，作为「agent 可安全建基的可校验底座」；PSI 的研究系统（运行非公开 Anthropic 模型、harness 由员工 David Turturean 搭建）在运行第三天给出 2008 年 Aaronson-Ambainis 猜想的证明且被 Lean 接受、随后两次改进上界，斯坦福研究者正在复核。这条「AI 做的 AI」从提法变成可核查数字的进程，正是 AI 风险最高的一层。",
+      "conclusion": "需要持续跟踪这条线的核心理由：当「AI 自我改进离我们多近」从研究辩题变成招股书白纸黑字、又有了一个外部机构（即便证据被删改）给出的 1.9x 数量级，加速的可验证性本身就成了新的治理对象——它让「AI 加速 AI」不再依赖传闻，而成为可以要求披露、要求第三方审计的硬指标。跟踪点三组：一，METR 这类独立评估能否在被删改证据下仍保持可核查，以及 Anthropic 修订 RSP 后「人类掌控前沿研发」会不会成为其他实验室的公开基准；二，Axiom 的 StacksFrontier（AI 生成层）与 PSI 的证明在数学家/Lean 社区复核后的接受度，决定「agent 产出可校验数学」能否从单点成果变成可复现流程；三，更快的基准趋势会不会反过来被写进监管通报义务（如国会 48 小时通报）与 IPO 定价——风险与收益正被同一条加速曲线一起放大。",
+      "trend_signals": [
+        "RSI 进入招股书：Anthropic 首次书面承认「即将」触及 RSP 急剧加速门槛、并披露 Claude 写了 9 月 90%+ 代码、既往有「能力已跃升当时未识别」——自我改进首次获得上市公司风险因素的实质性地位。",
+        "加速被独立量化：METR 内部审查 11 周后估测 Anthropic 研发提速约 1.9x（CI 1.5–2.8x）且约 80% 来自 AI 辅助而非算力扩张——「推理 vs 算力」的加快速率来源有了第一个外部数量级。",
+        "外部审计的边界被点破：Anthropic 删改多数高信息量证据以保密，METR 明言「加速趋势重要但非独立自我改进的证明」——可核查性与商业机密的张力成为审计价值的关键限制。",
+        "AI 产出可校验数学：Axiom 用 agent 群形式化整个 Stacks Project（1600 万行 Lean、无 sorry），PSI 模型证明 2008 Aaronson-Ambainis 猜想且 Lean 过——「agent 生成的可验证证明」成为新的可复现科研形态。",
+        "治理同步收紧：Anthropic 承诺不无监督自建下一代、考虑更新 RSP 保留人类掌控；国会 48 小时通报信（11/02 发函、11/11 前交账）与「提前多久发现失范」的监控军备竞赛把加速风险拉进问责框架。"
+      ],
+      "core_entities": ["Anthropic RSI 门槛", "METR 研发加速评估", "Claude 90% 代码", "Axiom Stacks Project", "PSI Aaronson-Ambainis", "RSP 收紧"],
+      "event_types": ["security", "research", "ipo", "math"],
+      "dominant_category": "论文",
+      "evidence": [
+        {
+          "article_id": "2026-11-02-2",
+          "report_index": 3,
+          "title": "Anthropic 招股书自曝：或「即将」达到递归自我改进（RSI）门槛",
+          "source": "TechCrunch",
+          "date": "2026-11-02",
+          "summary": "在更新的 S-1A 风险因素中，Anthropic 首次明确表示其内部估计显示可能「即将」触及其《负责任扩展政策》中由 AI 驱动的加速发展定义（RSI 门槛），尽管尚未认定任何现有模型超标。"
+        },
+        {
+          "article_id": "2026-11-05-11",
+          "report_index": 12,
+          "title": "观察：当 Claude 写了 Anthropic 90% 的代码——AI 研发加速的自我参照",
+          "source": "METR",
+          "date": "2026-11-05",
+          "summary": "Anthropic 确认 Claude 撰写了公司 9 月代码贡献的 90% 以上，且可能「迫在眉睫」触及「AI 带来剧烈加速进展」的定义；METR 评估称前沿实验室正逼近「自我改进循环」临界。"
+        },
+        {
+          "article_id": "2026-11-08-4",
+          "report_index": 5,
+          "title": "METR 独立评估：Anthropic 研发加速约 1.9 倍，约八成来自 AI 辅助研发",
+          "source": "METR",
+          "date": "2026-11-08",
+          "summary": "独立评估机构 METR 在 11 周内部审查后估计，Anthropic 模型能力提升速度约为 2025 年 10 月之前的 1.9 倍，大部分加速来自 AI 辅助研发而非算力扩张；但 Anthropic 删改了大量关键证据。"
+        },
+        {
+          "article_id": "2026-11-06-8",
+          "report_index": 9,
+          "title": "Axiom 用 AI agent 群把整个代数几何 Stacks Project 形式化为 1600 万行 Lean",
+          "source": "Axiom Math",
+          "date": "2026-11-06",
+          "summary": "Axiom 宣布完成对 Johan de Jong 的 Stacks Project 的 Lean 形式化：约 7500 页代数几何被译成约 1600 万行机器校验代码，成为迄今最大的集成可复用形式化数学库。"
+        },
+        {
+          "article_id": "2026-11-07-0",
+          "report_index": 1,
+          "title": "AI 模型证明 2008 年悬而未决的 Aaronson-Ambainis 猜想，Lean 形式化通过",
+          "source": "Physical Superintelligence",
+          "date": "2026-11-07",
+          "summary": "PSI 的自研研究系统用非公开 Anthropic 模型，在运行第三天给出 Aaronson-Ambainis 猜想的完整证明，且被形式化验证器 Lean 接受，随后又两次改进结论。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:ai-capital-repricing-w46",
+      "title": "AI 一级市场让价在科技股抛售 + 数据中心反弹下具体化：OpenAI 首轮 $11B @ $1.25T、Anthropic IPO 估值缩至 $1.1–1.3T 且背负 $895B 算力承诺",
+      "summary": "上周「AI 资本从信仰转向定价风险」的判断本周有了交割层面的证据。OpenAI 于 11 月 6 日完成新一轮融资首笔约 $11B 交割、投前估值 $1.25T（SoftBank 与阿布扎比 MGX 参与），未来数周或增至约 $200B——仅为 9 月底报道的 $30B 目标的约三分之二、估值也低于最初寻求的 $1.4–1.5T；CFO Sarah Friar 给出一组业务数据：Q3 营收环比 +70%、企业业务翻倍、周活 ChatGPT 12 亿、8 月广告年化 $10B，并称上市从今年推迟到明年。Anthropic 一侧的回落更陡：潜在买家讨论的 IPO 估值区间约 $1.1–1.3T——一个月前约 $2T、最新业绩披露后一度降至 $1.4–1.5T、更有投资者称 $1.5T 都「勉强」、另有人预计 $1T–1.25T 更现实；修订版 S-1A 披露 Q3 营收 $170B（同比 +1200%、环比 +47% 但远低于上季 +144%）、九个月净亏约 $1040B（其中约 $940B 为可转债/SAFE 公允变动、不涉现金）、营业亏损 $5.67B（上季为盈利 $9.74B），并披露已签署约 $895B 购买与租赁承诺（绝大多数为算力/基建）、未来 12 个月要花 $700B、现金约 $956B；公司计划以 ANT 登陆纳斯达克、路演下周启动、Polymarket「12 月前完成 IPO」概率自约 80% 跌至近 50%。支撑这条资金链的另一半是发债与股权并行：Meta 计划发售 $20–25B 债券（2/3 美元、1/3 欧元）为 AI 基建融资、紧随 S&P 因负 FCF 把其展望调为 AA- 负面，而上周已公布合计约 $95B 的股权募资（350 亿承销 + 600 亿 ATM）；AMD 用给 OpenAI 与 Meta 的股权激励（warrant，锁大额芯片采购）在 Q3 计提 $10.7B 非现金费用。与之呼应的是资本结构的复杂化：TeraWulf 宣布 Google 为其与 Anthropic 的约 $19B 肯塔基（401MW/20 年）租约债务融资提供信用 backstop——「硅谷最大资产负债表之一为增长最快的实验室背书房租」，项目融资门槛随之降低。Menlo 报告给出企业端需求侧背书：截至 9 月企业 AI 支出 $1768 亿（一年前 $330 亿、5.4x），企业 LLM API 采购中 Anthropic 占 55%（自 40%）、OpenAI 31%、Google 自 21% 崩跌至 9%。",
+      "conclusion": "这条线值得持续跟的根本压力在于：AI 实验室的「增长神话」正在第一次被要求与「当期现金消耗」和「社会许可」对价，而评级、债市与 IPO 定价同时开始把它落到实处——Anthropic 背负近 $900B 的算力承诺去敲一个被民调反对其基建的市场，OpenAI 则用一个被投资者接受的更低估值抢在窗口前交割。这组「让价 — 放量 — 承诺 — 背书」的结构里最关键的三组观察点是：一，Anthropic IPO 实际定价相对 $1.1–1.3T 区间的方向，会同时框定 OpenAI 后续增资（至约 $200B）与 Meta 等发债的成本锚；二，$895B 算力承诺在「需求放缓 + 数据中心禁令」下的可取消/可重谈概率，决定这块表外风险会不会在下一轮融资里被要求折价；三，Google 替 Anthropic 背书的「资本互保」能否演化为常态——当芯片商（NVIDIA/AMD）、云厂（Google）、信贷机构与主权基金都成为实验室的股东或担保人，AI 生态的风险与回报被更均匀地摊进了各家资产负债表。",
+      "trend_signals": [
+        "一级市场让价交割：OpenAI 首轮约 $11B @ $1.25T 落袋（目标 $30B/$1.4T）、未来数周或增至 $200B，CFO 确认估值并称上市推至明年——私募市场不再接受上月估值。",
+        "IPO 估值随「选民反对基建」回落：Anthropic 估值区间自约 $2T 缩至 $1.1–1.3T、Polymarket 12 月前挂牌概率 80%→近 50%，风险因素首次写进「数据中心反对声已更有组织」。",
+        "增长放缓被披露：Anthropic Q3 营收 $170B 但环比增速 144%→47%、九个月净亏约 $1040B（多不涉现金）、营业转亏，同时背负约 $895B 算力/基建承诺、12 个月要花 $700B。",
+        "发债+股权并行托起资本开支：Meta 拟售 $20–25B 债（年内第二笔大额发债）紧随 S&P 负 FCF 下调展望，加上约 $95B 股权募资；AMD 用 warrant 换芯片订单——AI 基建的资本结构愈发依赖债务与股权激励。",
+        "资本互保成常态：Google 为竞争对手 Anthropic 的 $19B 租约提供信用 backstop、TeraWulf 以此为项目融资——「这栋楼的现金流有 Google 兜底」降低放贷门槛，巨头间形成共享基础设施的竞合网络。"
+      ],
+      "core_entities": ["OpenAI 融资 $11B", "Anthropic IPO 估值回落", "$895B 算力承诺", "Meta 发债", "AMD 股权激励", "Google TeraWulf 背书", "企业 AI 支出"],
+      "event_types": ["funding", "ipo", "debt", "earnings"],
+      "dominant_category": "观察",
+      "evidence": [
+        {
+          "article_id": "2026-11-08-1",
+          "report_index": 2,
+          "title": "OpenAI 首轮融资落袋 110 亿美元，估值 1.25 万亿美元，低于此前目标",
+          "source": "TechCrunch",
+          "date": "2026-11-08",
+          "summary": "OpenAI 已完成新一轮融资的首笔约 110 亿美元交割，投前估值 1.25 万亿美元；此前目标为以 1.4 万亿估值募资 300 亿美元，本轮总额预计最终约 200 亿美元，反映科技股抛售后的市场降温。"
+        },
+        {
+          "article_id": "2026-11-08-2",
+          "report_index": 3,
+          "title": "Anthropic IPO 估值预期回落至 1.1–1.3 万亿美元区间，招股书披露约 8954 亿美元算力承诺",
+          "source": "CNBC",
+          "date": "2026-11-08",
+          "summary": "科技股抛售与选民对数据中心的反弹双重压力下，Anthropic 的 IPO 估值预期从上月的约 2 万亿美元回落至 1.1–1.3 万亿美元；修订版招股书披露约 8954 亿美元的算力相关购买承诺与租赁协议。"
+        },
+        {
+          "article_id": "2026-11-02-1",
+          "report_index": 2,
+          "title": "Anthropic 更新IPO招股书：季度营收170亿美元，九个月净亏约1040亿美元",
+          "source": "NBC News",
+          "date": "2026-11-02",
+          "summary": "Anthropic 向 SEC 提交修订版 S-1A：三季度营收 170 亿美元、前九个月 332 亿（同比 +1206%）、净亏 1040 亿美元（主要为会计调整），并承诺到 2036 年前投入约 8954 亿美元用于算力与基建。"
+        },
+        {
+          "article_id": "2026-11-03-4",
+          "report_index": 5,
+          "title": "Meta 发债 200–250 亿美元为 AI 基础设施融资，紧随 S50 亿美元股权募资之后",
+          "source": "CNBC",
+          "date": "2026-11-03",
+          "summary": "Meta 计划周二通过约 200–250 亿美元债券发售为 AI 基建融资，约 2/3 美元、1/3 欧元；此前 S&P 刚因负自由现金流把其展望调为 AA- 负面。"
+        },
+        {
+          "article_id": "2026-11-06-10",
+          "report_index": 11,
+          "title": "Google 为 Anthropic 190 亿美元肯塔基数据中心租约提供信用担保",
+          "source": "TeraWulf",
+          "date": "2026-11-06",
+          "summary": "TeraWulf 宣布与 Google 签署信用支持协议，为其与 Anthropic 的约 190 亿美元、401MW/20 年租约的债务融资提供 backstop——「硅谷最大资产负债表之一为增长最快的 AI 实验室背书房租」，改变银行放贷意愿。"
+        },
+        {
+          "article_id": "2026-11-03-2",
+          "report_index": 3,
+          "title": "Menlo 报告：企业级 AI 支出年增 5.4 倍至 1768 亿美元，Anthropic 占 LLM API 投入 55% 反超 Google",
+          "source": "Menlo Ventures",
+          "date": "2026-11-03",
+          "summary": "Menlo Ventures 报告显示，截至 9 月企业 AI 支出达 1768 亿美元（一年前 330 亿）；企业 LLM API 支出中 Anthropic 占 55%、OpenAI 31%、Google 从 21% 暴跌至 9%，智能体已占 OpenRouter 80% token。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:compute-competition-2026w46",
+      "title": "算力竞争开新场：TPUv7 凭公开 AgentX 基准反超英伟达单位美元吞吐、Rubin 量产规格被悄然下修、AMD/主权 SOverL 基建同时放量",
+      "summary": "本周算力战争的度量衡从「单芯片峰值」切换到「单位美元能买到的真实 agentic 吞吐」，英伟达的护城河叙事第一次在公开数据上面临挑战。Semianalysis 公布 TPUv7（Ironwood）在四款大模型上跑通 AgentX（多轮、长上下文、贴近真实 agent 负载）的第三方结果：Meta Muse Spark Open 816B 用 SGLang-TorchTPU 打平、GLM-5.2 用 vLLM 跑 FP8 在 60–300 tok/s/user 区间单位美元 token 高于 B200/B300/MI355X 1.2–2.7 倍、Qwen3.5 用 llm-d 在各级交互性胜过 GB300 FP8 并拉平其 FP4、Kimi K3 单位美元 token 高于 GB200/B200/B300/MI355X 1.15–2.5 倍——报告并尖锐批评英伟达对外部 Git commit/建议的响应被内部法务流程拖慢（一个 CudaGraph 抓取驱动自称审查卡三个月），判断「对某些模型 NVIDIA 在 FP8 对 FP8 上已不可能夺回 SOTA」。与软件护城河受到质疑同步的是硬件的「量产即回调」：NVIDIA 在首批 Vera Rubin 量产硬件进入云厂之际悄然下调公开规格（单卡 HBM4 22→19.2TB/s -13%、NVLink6 3.6→3.0TB/s、HGX NVL8 内存带宽 176→130TB/s -26%），仅 scale-out 网络带宽上调，发言人解释此前为「初步目标、现为已认证量产规格」——行业开始按「量产实测 + 交付节奏」而非「早期幻灯片峰值」定价。竞争的放大器是美国之外与英伟达之外的扩张：SpaceX 被 Semianalysis 模型上修至 2027 年约 13GW（比 Google 1999–2026 累计还多、1 年半建成，含 Colossus 2「Project SPAM」与可能面向第三方出租的 TeraFab 数据中心），中国远景在乌兰察布 Galaxy 园区一件交付 120MW、成本约美方五分之一且已运行 800V 直流/固态变压器(SST)/去中央冷机等英伟达仍在美国路线图早期的架构；AMD 数据中心收入近翻倍（+97%、占 64%）、确认 MI455X 规模出货、首批 Helios 整柜已上线 Anthropic/Meta/Microsoft/OpenAI/Oracle，Q4 指引约 $170B 拟首次单季超 Intel。与之平行的是「共生协同」的话语：NVIDIA 副总裁级博客宣传 Vera Rubin NVL72 用 NVFP4 量化、宽 expert 并行、KV cache 池化、CMX 机架级存储等五条协同设计可比 GB300 在 agentic 负载上每兆瓦吞吐最高提升 30x（按 AgentX 实测），黄仁勋给出的每兆瓦收入节奏为 Hopper $18B→GB $25B→Rubin $40B。",
+      "conclusion": "这条线值得持续跟踪的结构性意义在于：AI 基建的竞争范式已从「单芯片/单卡基准」迁移到「单位美元 + 每兆瓦的 agentic 吞吐」，而这次是英伟达第一次在标准化基准上被并行生态以性价比碾压——Google 通过给开源维护者大量送卡（Kimi K3.1 Pro 首日支持 TPU）、对接 vLLM/SGLang/llm-d/Ray 上游，正从软件生态面撬动 CUDA 的护城河，同时英伟达自己的官僚响应机制被点名拖慢。跟踪点三组：一，TPUv7 在 AgentX 上对 GB300 的反超会否复制到更多模型与更大规模，以及 NVIDIA 内部「反官僚」转型能否把响应社区的速度拉回来；二，Rubin 规格回调对「decode-heavy 推理能力规划偏乐观」客户的真实影响，以及 HBM4 定制化（SK 海力士美洲事业部常驻客户）会否反过来锁死部分供给；三，SpaceX 13GW / 中国 Galaxy / AMD 放量三条线同步逼近，AI 算力的区域与价格平价会不会在 2027–28 出现——当「单位美元吞吐」成为新的定价锚，NVIDIA 的高溢价就会面对更多可计算的替代选项。",
+      "trend_signals": [
+        "第三方基准扭转叙事：Semianalysis 首次发布 TPUv7 在 Qwen3.5/GLM-5.2/Muse Spark Open/Kimi K3 上跑 AgentX 的结果，单位美元 token 数 1.15–2.7x 反超 B200/B300/GB300，判定部分模型 FP8 对 FP8 上 NVIDIA 已难回 SOTA。",
+        "量产即规格回调：Vera Rubin 首批量产硬件进云厂，HBM4 22→19.2TB/s、NVLink 3.6→3.0TB/s、NVL8 带宽 -26%，仅 scale-out 上调——算力定价从早期幻灯片转向量产实测。",
+        "英伟达响应被拖慢：一个给 PyTorch CudaGraph 的抓取驱动「内部法务审查」卡三个月，报告称「英伟达现在比 AMD/Google/Amazon 对外部更慢」——社区响应速度成为软件护城河的可量化短板。",
+        "SOverL 与第三方快速放量：SpaceX 被上修至 2027 约 13GW（1.5 年建成、含可出租 TeraFab），中国远景乌兰察布一年交付 120MW、成本约美方 1/5 且已跑 800V/SST/去冷机架构；AMD 数据中心 +97%、Q4 首有望超 Intel。",
+        "能效与协同叙事并行：NVIDIA 宣称 Vera Rubin NVL72 经量化/宽 MoE/KV 池化/CMX storage 在 agentic 负载每兆瓦吞吐最高 30x（AgentX 实测）、黄仁勋每兆瓦收入 Hopper $18B→Rubin $40B——性能竞赛与每瓦/每美元经济竞赛同时开打。"
+      ],
+      "core_entities": ["TPUv7 Ironwood", "AgentX 基准", "Vera Rubin 规格回调", "SpaceX 13GW", "C 景 Galaxy 园区", "AMD MI455X"],
+      "event_types": ["chip", "infra", "benchmark", "launch"],
+      "dominant_category": "基础设施",
+      "evidence": [
+        {
+          "article_id": "2026-11-06-0",
+          "report_index": 1,
+          "title": "“铁木王座”：Google TPUv7 首次凭公开 AgentX 推理基准挑战英伟达的护城河",
+          "source": "Semianalysis",
+          "date": "2026-11-06",
+          "summary": "SemiAnalysis 公布英伟达之外的第三方 TPUv7（Ironwood）长上下文多轮 agentic 推理结果，宣称在单位美元性能上对 B200/B300 乃至 GB300 实现反超，直接冲击英伟达软件护城河这一叙事。"
+        },
+        {
+          "article_id": "2026-11-02-6",
+          "report_index": 7,
+          "title": "NVIDIA 低调下调 Rubin GPU 规格：HBM4 带宽与 NVLink 缩水，首批生产硬件已到",
+          "source": "ServeTheHome",
+          "date": "2026-11-02",
+          "summary": "随着 Vera Rubin 量产拉开，NVIDIA 悄然把 Rubin GPU 的 HBM4 内存带宽从 22 降至 19.2TB/s（约 11%）、NVLink 从 3.6 降至 3.0TB/s（约 17%），HGX NVL8 内存容量则由 2.3 降为 2.0TB。"
+        },
+        {
+          "article_id": "2026-11-04-0",
+          "report_index": 1,
+          "title": "SpaceX要做全球最大的AI云：1.5年建13GW",
+          "source": "Semianalysis",
+          "date": "2026-11-04",
+          "summary": "Semianalysis 详解 SpaceX 把星舰火箭园区改造成数据中心、在 1.5 年内建造 13GW 算力，并披露 TeraFab 芯片厂可能附带出租给第三方的数据中心；9GW 以上明确容量已被识别。"
+        },
+        {
+          "article_id": "2026-11-08-0",
+          "report_index": 1,
+          "title": "探访内蒙古「中国的 Stargate」：远景 Galaxy 园区 800MW 规划、一年交付 120MW、成本约为美国五分之一",
+          "source": "Semianalysis",
+          "date": "2026-11-08",
+          "summary": "Semianalysis 探访远景能源在乌兰察布的 Galaxy 园区——规划 800MW、首期 120MW 一年交付且成本约为美国五分之一，首次近距离披露其 800V 直流、固态变压器（SST）与无中央冷机的冷却设计。"
+        },
+        {
+          "article_id": "2026-11-04-8",
+          "report_index": 9,
+          "title": "AMD：数据中心营收近翻倍，Q4 有望首次超过Intel",
+          "source": "CNBC",
+          "date": "2026-11-04",
+          "summary": "AMD Q3 营收 133.8 亿美元（+45%），数据中心收入约 85 亿近乎翻倍（+97%）、MI455X 规模出货、首批 Helios 上线多家实验室；Q4 指引约 170 亿美元或首度超过 Intel，并因给 OpenAI/Meta 股权激励(warrant)计提 10.7 亿美元费用。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:agent-economy-trust-cost-2026w46",
+      "title": "Agent 经济进入「成本与信任」审校期：统一 token 池/APM/上下文压缩把推理工程化，Uber「一周 4 单」与 Claude Code 密钥泄漏给「agent 什么都行」降温",
+      "summary": "当 agent 从演示走向规模化使用，本周的新闻把竞争重心从「哪个 agent 更聪明」移到「它的调用成本、可复现性与权限边界是否可信」。成本端出现一波「agent 推理工程化」：OpenAI 12 月 1 日起把 ChatGPT 与 Codex 的 token 用量池合并（Plus/Pro/Business 共用一套额度），从「卖订阅」收敛到「卖算力计量」；微软发布 Agent Package Manager（APM，MIT，「AI agent 的 npm」），用单一 apm.yml 清单声明 skills/prompts/plugins/MCP 并部署，把 agent 供应链（版本、传递依赖、可复现部署）工程化；清华的 Coca-Cola 论文把 agent 的工具输出压缩为连续潜在 token 直接嵌入输入嵌入空间，token 消耗降 70–89%、端到端时间缩 24–56% 且任务不降反升；《You don't need long context》测出后期 token 生成成本最多是早期 7 倍、主张频繁压缩以维持短上下文——「长上下文窗口越大 ≠ 越长上下文理解越好」在此与 Ai2 的 StateBench（前沿模型在 general finite 档随输入变长崩到 13%）互相印证；Cognition 推出 SWE-2 Flash（276B/12B，3 倍速、1/5 价格）明确瞄准 agent 循环里成千上万次小调用的流量层级。与成本工程化同步的是一盆盆「信任」冷水：Uber 高管在 Q3 财报中披露十月最忙一周约 3.2 亿次行程里、第三方 AI agent 只完成 4 次打车与约 500 单 Eats（DoorDash 仅数百单），CEO 坦言「非常非常早期、traction 极其有限」——连 agent 经济最被寄予厚望的「外包出行」都显示出「高频低价值场景 agent 反而劣化、认知负担是负资产」；安全侧，Apiiro 曝光 Claude Code 的「Yes, and don't ask again」会把用户批准的命令逐字（含密码）写到 .claude/settings.local.json，GitHub 上 1122 个公开仓库含真实密钥（总计 2539 个密钥、1994 仓库、63 组织，含 379 个数据库密码、122 个 Supabase、43 个 SSH root、23 个 AWS，且 Gitleaks/TruffleHog 大量漏报）；芝加哥法学教授 William Baude 让 Claude 调页码却惨删一年讲义与教案——与微软研究院《LLMs Corrupt Your Documents When You Delegate》研究互相印证；苹果则在 10-K 中新增风险因素警告 AI agent 可能「未经授权、未受指示」地行动并造成难以逆转的后果。产品与人才侧的竞速不降反升：Meta 收购 Conductor（站在 Claude Code/Codex 之上编排并行编码 agent）、Cat Wu 从 Anthropic 转投 OpenAI 主导核心产品、Salesforce Agentforce Coworker 三个月 21x 到 18.5 万用户、Meta Muse spaces 让用户自然语言自建持久化应用界面、NVIDIA/Google/Anthropic 等对 AgentX 型真实负载的重视。",
+      "conclusion": "这条线值得持续跟踪的原因在于：agent 经济正在被「成本平价 + 信任证伪」两条同时作用而重新洗牌——一边是 token 池统一、APM、上下文压缩让调用成本与可复现性快速工程化（Coca-Cola 90% 级压缩、SWE-2 Flash 的 1/5 价格说明推理成本曲线正在被压出量级差），另一边 Uber 的真实使用、Claude Code 的密钥泄漏与误删文件则提示 agent 的「适配度」是分层的：价值集中在多步、长流程、跨系统的任务（编码、外包研究、安全、企业工作流），而非一切消费场景，且权限边界与回滚能力（外部备份）决定它能否被信任接管高风险操作。跟踪点：一，统一 token 池与 APM 这类「agent 基础设施」会否让 agent 栈在同一协议层上竞争并改变 Pro 级产品格局；二，Claude Code 的密钥泄漏会否倒逼编码 agent 默认权限设计（allow 持久化）整体收紧，成为事实上的行业安全基线；三，「agent 在哪一层值得信任」会用真实使用数据（Uber/DoorDash 案例、Salesforce 21x）逐场景修正——agent 经济的天花板可能不是技术而是「认知负担 vs 价值」的适配边界。",
+      "trend_signals": [
+        "推理成本工程化：OpenAI 12 月统一 ChatGPT/Codex token 池、微软 APM（“agent 的 npm”）声明式管理 skills/MCP、Coca-Cola 把工具观测压成潜在 token 省 70–89%、SWE-2 Flash 以 1/5 价格打日常小调用层——agent 推理进入“每单位活儿多少钱/多快”的军备竞赛。",
+        "长上下文神话被动摇：《You don't need long context》测出后期 token 成本最高为早期的 7 倍、主张频繁压缩；Ai2 StateBench 显示前沿模型长文档状态追踪可崩到 13%——「上下文窗口大 ≠ 长上下文理解好」获得数据支撑。",
+        "真实使用数据证伪“agent 包办”：Uber 十月最忙一周约 3.2 亿行程中第三方 agent 只叫 4 次车、约 500 单 Eats，DoorDash 亦仅数百单——“agent 什么都行”在低频值、已有人机优化的场景里被证伪。",
+        "权限边界成安全新故障点：Claude Code 的 allow 会把带密钥命令明文落盘（GitHub 1122 个公开仓库、2539 密钥并大量漏报）、法学院教授被 Claude 误删一年讲义？与《LLMs Corrupt Your Documents》研究互证——agent 的高风险操作能不能回滚取决于外部备份。",
+        "产品/人才竞速不降：Meta 收购 Conductor（编排第三方编码 agent）、Cat Wu 从 Anthropic 转投 OpenAI、Salesforce Agentforce Coworker 三个月 21x 到 18.5 万用户、Meta Muse spaces 让用户自建持久化应用界面——agent 界面的消费级入口之争升温。"
+      ],
+      "core_entities": ["统一 token 池", "Microsoft APM", "Coca-Cola 压缩", "SWE-2 Flash", "Uber agent 使用数据", "Claude Code 密钥泄漏", "StateBench 长上下文"],
+      "event_types": ["agent", "cost", "security", "api", "opensource"],
+      "dominant_category": "论文",
+      "evidence": [
+        {
+          "article_id": "2026-11-08-14",
+          "report_index": 15,
+          "title": "论文：Coca-Cola——把工具观测压成潜在上下文，agent token 消耗最高省 89%",
+          "source": "arXiv",
+          "date": "2026-11-08",
+          "summary": "清华团队提出 Coca-Cola，把 agent 的工具输出压缩为连续潜在 token 并嵌入模型的输入嵌入空间，在四个 QA 基准上把 token 消耗降低 70%–89%、端到端运行时间缩短 24%–56%，同时任务表现不降反升。"
+        },
+        {
+          "article_id": "2026-11-08-9",
+          "report_index": 10,
+          "title": "Microsoft 发布 APM：自称「AI agent 的 npm」，MIT 许可的依赖管理器",
+          "source": "Microsoft",
+          "date": "2026-11-08",
+          "summary": "Microsoft 发布 Agent Package Manager（APM），一个 MIT 许可的 agent 依赖管理器：开发者可在单个 apm.yml 清单中声明 skills、prompts、plugins 与 MCP 服务器并部署——把 agent 供应链版本管理、传递依赖与可复现部署工程化。"
+        },
+        {
+          "article_id": "2026-11-06-12",
+          "report_index": 13,
+          "title": "Uber 财报：AI agent 一周只叫了 4 单 Uber，agent 打车远未成气候",
+          "source": "TechCrunch",
+          "date": "2026-11-06",
+          "summary": "Uber 高管在 Q3 财报会上披露：在十月最忙的一周（约 3.2 亿次行程），第三方 AI agent 只完成 4 次乘车预订、约 500 单 Uber Eats；CEO 承认「非常非常早期、traction 极其有限」。"
+        },
+        {
+          "article_id": "2026-11-08-13",
+          "report_index": 14,
+          "title": "Apiiro 研究：Claude Code 的「不再询问」会把明文密钥写进仓库，1122 个公开仓库中招",
+          "source": "The Hacker News",
+          "date": "2026-11-08",
+          "summary": "Apiiro 发现 Claude Code 的「Yes, and don't ask again」会把整条含密码命令原样存入 .claude/settings.local.json，GitHub 上 1122 个公开仓库含真实密钥（总计 2539 个、1994 仓库、63 组织），且标准扫描器大量漏报。"
+        },
+        {
+          "article_id": "2026-11-05-7",
+          "report_index": 8,
+          "title": "Cognition 发布 SWE-2 Flash：3 倍速度、五分之一价格的低成本编码模型",
+          "source": "Cognition",
+          "date": "2026-11-05",
+          "summary": "Cognition 推出 SWE-2 的紧凑版编码模型 Flash（276B 总参、12B 激活），跑 3 倍速、售价仅五分之一，面向 Agent 工作流里反复小步调用的流量层级；因 ExploitBench 从 11.3% 提到 34.8% 暂不公开权重。"
+        },
+        {
+          "article_id": "2026-11-07-10",
+          "report_index": 11,
+          "title": "「你其实不需要长上下文」：前沿开放权重模型在短上下文下几乎不损失精度",
+          "source": "arXiv",
+          "date": "2026-11-07",
+          "summary": "研究发现后期 token 的生成成本可高至早期 token 的 7 倍；而通过频繁压缩上下文、把长上下文维持得很短，模型在长程与长输入任务上几乎不损失精度——质疑「上下文越长越好」的行业默认。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:china-compute-openweights-2026w46",
+      "title": "对华算力陷入「美国批、北京卡」双向管制 + 灰色溢价：60 万颗 H200 滞留香港、B300 黑市约 $2.8M、开权重总值及「价值剥离」同时刷屏",
+      "summary": "本周对华算力既有政策又有人才——供需与价值观两条线同时被点亮。政策/供应端，Reuters 独家披露约 60 万颗英伟达 H200 正滞留香港等待运往中国大陆——尽管特朗普政府去年 12 月已允许英伟达向获批中国客户出售 H200 并抽 25% 关税，北京却以「不愿增加对美技术依赖」为由设第二道闸门，过去几个月几家大型互联网公司各只获约 1 万颗、获批总量可能不足 20 万颗且推理负载须优先用国产芯片；稀缺直接推高黑市：截至 10 月底一台八卡 H200 服务器在大陆报价超约 $90 万（约为一年前三倍），受管制的 B300 整柜在华黑市约 $2.8M（国际价约 $60 万的约 4.7 倍）。监管漏洞同样被曝光：NYT 调查发现获批处理 H200 的中介公司 New Matrix 注册地址是「天花板垂下电线的空壳灰楼」、其所有人关联 2024 年列入实体清单的中资 PE（另一家 Maginfra 被指为已列清单的浪潮关联方），前白宫国安会中国事务主任称「商务部与英伟达都没有做保住许可条款所需的尽调」；同日英伟达要求全球云厂商把对华收入占比压到 50% 以下（以封堵先进芯片经第三方流向中国的后门），已把获准采购其 AI 芯片的亚洲公司数削减过半。算力即服务的灰色地带也升温：CNBC 披露月之暗面今年讨论过从欧洲 neocloud 租用 Blackwell 集群（部分谈判 8000 张以上 GPU、主要推理负载）——现行法律未充分授权监管美国公司经海外云向中国实体供算。开源/价值观一侧则有另一组爆发：新一代中国+开源大模型密集放出——月之暗面开放 Kimi K3.1 Pro（2.8T 总参/104B 激活、原生多模态、约 1M 上下文、MXFP4 权重、同日开放 OpenAI/Anthropic 兼容 API）、百度低调放出 ERNIE-5.5-Flash-Base（280B/14B、33.5T token 预训练、FP8/BF16），此外 Thinking Machines 发布 Inkling 2 Small（594B/17B、承诺下周 Apache 2.0）与 Ripple-65B 以 65B 稠密模型在 TerminalBench 上「以小胜大」（训练仅 $32M、前代开源 SOTA 的 1/10）；而 Nous Research 的 Arete-27B 用 5300 万 token SFT 把 Qwen3.8 的「官方口径」宣传率从 22% 压到 0.9%（与 Mistral Large 4 的 0.3% 同量级），直接呼应周一 Rest of World 关于一批西方创业公司「神经外科式」剥离中文模型审查/C国立场再卖给西方企业、Lazarus AI 专攻美国政府/高监管行业的报道。",
+      "conclusion": "这条线值得持续跟踪的本质在于：美国芯片出口管制的真实瓶颈已经从「发不发许可」转移到「中国进口审批 + 算力即服务 + 灰色中介」三个更难管住的环节，而英伟达被迫用「对华营收占比≤50%」这类商业条件去补监管的洞——政策的效果边界与市场的灰色均衡（$4.7x 溢价）构成了对华算力未来的两个方向相反的力。与之平行的是开源多模态/超大模型的加速开放（Kimi K3.1 Pro 2.8T、Inkling 2 Small 594B 下周 Apache、ERNIE base）让中文与第三方开源权重在地缘市场里同时成为「能力供给」与「价值观争夺」的载体——一侧是免费送权重、未来卖芯片的主权叙事（如 Reflection AI 的「特洛伊木马」警告），另一侧是西方公司用数千到数千万 token 的微调把「价值层」剥离到 Mistral 量级。跟踪点：一，600K H200 滞留与 B300 黑市溢价会否催生对「算力即服务」的更严立法（此前月之暗面欧洲租用已是暴露点）；二，NYT 空壳公司调查会否把对华芯片审批的尽调责任（商务部/英伟达）推向新的国会质询；三，开权重「剥离价值观」是否会从实验（Arete/Hirundo/Lazarus）演变成可规模化的产业，进而反向影响国产模型的发布与开源策略。",
+      "trend_signals": [
+        "双向管制形成：约 60 万颗 H200 滞留香港等北京放行（获批总量或不足 20 万颗、推理须优先国产芯片），叠加美国去年 12 月已批对华销售——「美国批、北京卡」成为英伟达对华供应的实际约束。",
+        "灰色溢价与中介漏洞：B300 整柜在华黑市约 $2.8M（≈国际价 4.7 倍）、NYT 曝光获批中介 New Matrix 为空壳/关联实体清单基金、Maginfra 疑为浪潮关联——尽调形同虚设成为新的政治靶点。",
+        "算力即服务成管制缺口：月之暗面被曝寻求租欧洲 neocloud 的 Blackwell（谈判含 8000+ GPU 集群）——现行法律未充分授权监管美国公司经海外云向中国供算，出口管制「限硬件管不住云」。",
+        "供应商主动切风险：英伟达要求云厂对华收入占比≤50%、已把获准采购其 AI 芯片的亚洲公司数削减过半——商业条件正被用作封堵灰色流出的手段。",
+        "开权重超大型+价值观可调并存：Kimi K3.1 Pro（2.8T）、ERNIE-5.5-Flash-Base（280B）、Inkling 2 Small（594B 下周 Apache）、Ripple-65B「以小胜大」，而 Arete-27B 以 5300 万 token 把 Qwen 宣传率 22%→0.9%——开源既放大算力供给也放大了「价值层」可剥离性。"
+      ],
+      "core_entities": ["60 万颗 H200", "B300 黑市", "New Matrix 空壳", "月之暗面租欧洲 Blackwell", "Kimi K3.1 Pro", "ERNIE-5.5-Flash-Base", "Arete-27B", "英伟达 51% 对华营收"],
+      "event_types": ["geo", "chip", "export-control", "opensource", "security"],
+      "dominant_category": "基础设施",
+      "evidence": [
+        {
+          "article_id": "2026-11-08-5",
+          "report_index": 6,
+          "title": "约 60 万颗英伟达 H200 滞留香港：北京迟迟不放行大规模进口",
+          "source": "Reuters",
+          "date": "2026-11-08",
+          "summary": "约 60 万颗英伟达 H200 芯片堆积在香港等待运往中国大陆，北京出于对美技术依赖的顾虑始终未批准大规模进口；头部互联网公司近几个月各只获约 1 万颗配额。"
+        },
+        {
+          "article_id": "2026-11-08-6",
+          "report_index": 7,
+          "title": "英伟达要求全球云厂商削减在华业务敞口，B300 整柜在华黑市溢价近 4 倍",
+          "source": "TechRadar",
+          "date": "2026-11-08",
+          "summary": "英伟达新条件要求境外云商至少 51% 营收来自中国以外、已把获准采购其 AI 芯片的亚洲公司数削减过半；B300 整柜国际价约 60 万美元、在华黑市却卖到约 280 万美元。"
+        },
+        {
+          "article_id": "2026-11-08-7",
+          "report_index": 8,
+          "title": "NYT 调查：获批采购 H200 的中国公司注册地址竟是空壳办公室",
+          "source": "The Verge",
+          "date": "2026-11-08",
+          "summary": "《纽约时报》调查发现，获批处理英伟达 H200 芯片的中介公司 New Matrix 注册地址是「天花板垂下电线的空壳灰楼」，其所有人与 2024 年列入黑名单的私募股权基金有联系，质疑商务部与英伟达尽调形同虚设。"
+        },
+        {
+          "article_id": "2026-11-05-1",
+          "report_index": 2,
+          "title": "CNBC：月之暗面寻求借欧洲数据中心接入英伟达高端芯片",
+          "source": "CNBC",
+          "date": "2026-11-05",
+          "summary": "月之暗面今年讨论过从欧洲 neocloud 租用英伟达 Blackwell 集群，部分谈判涉及 8000 张以上 GPU、主要用于推理负载——「远程租用海外数据中心算力」正成为美国出口管制的明显漏洞。"
+        },
+        {
+          "article_id": "2026-11-06-3",
+          "report_index": 4,
+          "title": "月之暗面开放 Kimi K3.1 Pro 权重：2.8T 参数多模态 MoE agent 模型",
+          "source": "Hugging Face",
+          "date": "2026-11-06",
+          "summary": "Moonshot AI 在 Hugging Face 放出 Kimi K3.1 Pro 权重：MoE 2.8T 总参、每 token 激活 104B，原生多模态、约 1M 上下文，MXFP4 权重分发，同日开放 OpenAI/Anthropic 兼容 API。"
+        },
+        {
+          "article_id": "2026-11-07-9",
+          "report_index": 10,
+          "title": "Nous Research 发布 Arete-27B：在 Qwen3.8-27B 上微调「剥离」中国官方话术，宣传率 22% 降至约 1%",
+          "source": "Nous Research",
+          "date": "2026-11-07",
+          "summary": "Nous Research 用约 5300 万 token 监督微调在阿里 Qwen3.8-27B 上训练出 Arete-27B，将答案中采用中国官方口径的比例从 22% 降到 0.9%，一般能力几乎无回退。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    }
+  ],
+  "memory_refs": {
+    "recent_window": {
+      "start_date": "2026-11-02",
+      "end_date": "2026-11-08"
+    },
+    "archive_refs": ["2026-W45"]
+  }
+}
