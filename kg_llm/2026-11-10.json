@@ -1,0 +1,665 @@
+{
+  "date": "2026-11-10",
+  "articles": [
+    {
+      "article_id": "2026-11-10-0",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 于 11 月 10 日正式将 Gemini 4 Carbon 推向公开"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": ["Carbon"], "confidence": 0.95, "evidence": ["Google 于 11 月 10 日正式将 Gemini 4 Carbon 推向公开"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["约是 OpenAI GPT-6 Astra 的五分之一"]},
+        {"name": "Fable 5.2", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic Fable 5.2 的四分之一"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["约是 OpenAI GPT-6 Astra 的五分之一"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic Fable 5.2 的四分之一"]},
+        {"name": "Antigravity", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Google AI Ultra 订阅者则可在 Gemini App、Search 的 AI Mode 和 Antigravity 中使用"]},
+        {"name": "Gemini API", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["付费开发者与企业在 Google AI Studio 和 Gemini for Business 中通过 Gemini API 调用该模型"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": ["Argon"], "confidence": 0.85, "evidence": ["定价延续 Argon 的激进策略"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google 面向所有付费开发者与企业正式开放 Gemini 4 Carbon",
+          "summary": "Google 将 Gemini 4 Carbon 推向公开：付费开发者与企业经 Google AI Studio 和 Gemini API 调用，AI Ultra 订阅者可在 Gemini App、Search 的 AI Mode 与 Antigravity 中使用。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"},
+            {"name": "Gemini API", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Google 于 11 月 10 日正式将 Gemini 4 Carbon 推向公开"]
+        },
+        {
+          "type": "launch",
+          "label": "Google 在 Antigravity 预览 agent 蜂群协作功能",
+          "summary": "Antigravity 上同步预览 agent 蜂群，一条提示即可让一组 agent 分工并互相检查成果，Carbon 目前无免费层。",
+          "participants": [
+            {"name": "Antigravity", "type": "product", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Antigravity 上还同步预览了agent蜂群功能"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Carbon", "target": "Google", "type": "released_by", "weight": 0.9, "evidence": ["Google 于 11 月 10 日正式将 Gemini 4 Carbon 推向公开"]},
+        {"source": "Gemini 4 Carbon", "target": "GPT-6 Astra", "type": "compared_with", "weight": 0.7, "evidence": ["约是 OpenAI GPT-6 Astra 的五分之一"]},
+        {"source": "Gemini 4 Carbon", "target": "Fable 5.2", "type": "compared_with", "weight": 0.7, "evidence": ["Anthropic Fable 5.2 的四分之一"]},
+        {"source": "GPT-6 Astra", "target": "OpenAI", "type": "developed_by", "weight": 0.6, "evidence": ["约是 OpenAI GPT-6 Astra 的五分之一"]},
+        {"source": "Fable 5.2", "target": "Anthropic", "type": "released_by", "weight": 0.6, "evidence": ["Anthropic Fable 5.2 的四分之一"]},
+        {"source": "Antigravity", "target": "Gemini 4 Carbon", "type": "integrates", "weight": 0.7, "evidence": ["Google AI Ultra 订阅者则可在 Gemini App、Search 的 AI Mode 和 Antigravity 中使用"]},
+        {"source": "Antigravity", "target": "Google", "type": "released_by", "weight": 0.6, "evidence": ["Google AI Ultra 订阅者则可在 Gemini App、Search 的 AI Mode 和 Antigravity 中使用"]},
+        {"source": "Gemini 4 Carbon", "target": "Gemini 4 Argon", "type": "compared_with", "weight": 0.4, "evidence": ["定价延续 Argon 的激进策略"]}
+      ],
+      "metrics": [
+        {"name": "Gemini 4 Carbon 入门输入/输出价", "value": "$2 / $10 每百万 token"},
+        {"name": "入门价上调后", "value": "$4 / $20 每百万 token"},
+        {"name": "价格约为 GPT-6 Astra 的", "value": "五分之一"},
+        {"name": "价格约为 Fable 5.2 的", "value": "四分之一"},
+        {"name": "入门价截止", "value": "11 月 30 日"}
+      ],
+      "why_it_matters": "Google 把'最便宜的前沿模型'做成抢 agent 入口的核心武器并锚定对手定价，缺免费层、低价期后再翻倍说明首发按开发者/企业分层收割，而非普惠放量。"
+    },
+    {
+      "article_id": "2026-11-10-1",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 于 11 月 10 日发布 ChatGPT Businesses"]},
+        {"name": "ChatGPT Businesses", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["OpenAI 于 11 月 10 日发布 ChatGPT Businesses"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["将 ChatGPT 从个人助手延伸为企业的公开入口"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["OpenAI 与 Google、Anthropic 争夺agent时代企业入口的又一步"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 与 Google、Anthropic 争夺agent时代企业入口的又一步"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 发布 ChatGPT Businesses 让企业管理资料页并部署面向客户的 agent",
+          "summary": "ChatGPT Businesses 把 ChatGPT 从个人助手延伸为企业的公开入口：企业可认领并管理公开资料页，并发布面向客户的 agent 解答咨询或引导交易。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT Businesses", "type": "product", "role": "object"},
+            {"name": "ChatGPT", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 于 11 月 10 日发布 ChatGPT Businesses"]
+        }
+      ],
+      "relations": [
+        {"source": "ChatGPT Businesses", "target": "OpenAI", "type": "released_by", "weight": 0.9, "evidence": ["OpenAI 于 11 月 10 日发布 ChatGPT Businesses"]},
+        {"source": "ChatGPT Businesses", "target": "ChatGPT", "type": "built_on", "weight": 0.7, "evidence": ["将 ChatGPT 从个人助手延伸为企业的公开入口"]},
+        {"source": "OpenAI", "target": "Google", "type": "competes_with", "weight": 0.6, "evidence": ["OpenAI 与 Google、Anthropic 争夺agent时代企业入口的又一步"]},
+        {"source": "OpenAI", "target": "Anthropic", "type": "competes_with", "weight": 0.6, "evidence": ["OpenAI 与 Google、Anthropic 争夺agent时代企业入口的又一步"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "对话式入口正取代搜索式入口成为企业经营品牌与客服触点的前台，ChatGPT 从个人工具演变为企业资产载体，入口之争的资产形态从'链接'转向'agent 服务窗'。"
+    },
+    {
+      "article_id": "2026-11-10-2",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.96, "evidence": ["Anthropic 于 11 月 10 日更新 IPO 招股书"]},
+        {"name": "Nasdaq", "type": "organization", "aliases": ["纳斯达克"], "confidence": 0.85, "evidence": ["股票预计 11 月 19 日前后在纳斯达克以ANT代码挂牌"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.9, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.9, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"name": "Broadcom", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"name": "Micron", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"name": "TSMC", "type": "company", "aliases": ["台积电"], "confidence": 0.85, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"name": "Long-Term Benefit Trust", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["Long-Term Benefit Trust 将选举董事会多数席位"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 提交 IPO 定价区间并获大厂私募 260 亿美元 Class N 股",
+          "summary": "Anthropic 发行 8.25 亿股 A 类股、定价 $70–78/股，隐含估值约 $1.404 万亿美元，11 月 19 日于纳斯达克以 ANT 挂牌，并向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 私募 $260 亿 Class N 股。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Nasdaq", "type": "organization", "role": "object"},
+            {"name": "Google", "type": "company", "role": "funder"},
+            {"name": "NVIDIA", "type": "company", "role": "funder"},
+            {"name": "Microsoft", "type": "company", "role": "funder"},
+            {"name": "AMD", "type": "company", "role": "funder"},
+            {"name": "Broadcom", "type": "company", "role": "funder"},
+            {"name": "Micron", "type": "company", "role": "funder"},
+            {"name": "TSMC", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["Anthropic 于 11 月 10 日更新 IPO 招股书"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 作为公益公司以投票权结构平衡治理",
+          "summary": "创始人 F 类股保有 50.1% 投票权，Long-Term Benefit Trust 将选举董事会多数席位，A 类股东话语权有限。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Long-Term Benefit Trust", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["Long-Term Benefit Trust 将选举董事会多数席位"]
+        }
+      ],
+      "relations": [
+        {"source": "Google", "target": "Anthropic", "type": "invests_in", "weight": 0.7, "evidence": ["其中 Google 与 NVIDIA 各投 $100 亿"]},
+        {"source": "NVIDIA", "target": "Anthropic", "type": "invests_in", "weight": 0.7, "evidence": ["其中 Google 与 NVIDIA 各投 $100 亿"]},
+        {"source": "Microsoft", "target": "Anthropic", "type": "invests_in", "weight": 0.6, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"source": "AMD", "target": "Anthropic", "type": "invests_in", "weight": 0.5, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"source": "Broadcom", "target": "Anthropic", "type": "invests_in", "weight": 0.5, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"source": "Micron", "target": "Anthropic", "type": "invests_in", "weight": 0.5, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]},
+        {"source": "TSMC", "target": "Anthropic", "type": "invests_in", "weight": 0.5, "evidence": ["向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC 等私下出售"]}
+      ],
+      "metrics": [
+        {"name": "发行股数", "value": "8.25 亿股 A 类股"},
+        {"name": "定价区间", "value": "$70–78/股"},
+        {"name": "隐含估值（上限完全稀释）", "value": "约 $1.404 万亿美元"},
+        {"name": "最高募资", "value": "约 $64.35 亿美元"},
+        {"name": "超额配售后总净所得", "value": "$84.6–$93.7 亿"},
+        {"name": "上市日期", "value": "11 月 19 日（纳斯达克 ANT）"},
+        {"name": "5 月融资时估值", "value": "$9650 亿"},
+        {"name": "市场此前传闻估值", "value": "$2 万亿"},
+        {"name": "Class N 私募总额", "value": "$260 亿"},
+        {"name": "Google/NVIDIA 各投", "value": "$100 亿"},
+        {"name": "前九个月营收", "value": "$33.2B"},
+        {"name": "前九个月净亏损", "value": "$104B"},
+        {"name": "算力与基础设施承诺", "value": "$900.9B"},
+        {"name": "创始人 F 类股投票权", "value": "50.1%"},
+        {"name": "散户配售比例", "value": "最高 20%"}
+      ],
+      "why_it_matters": "首家纯 AI 公司 IPO 从 $2T 传闻回落到 ~$1.4T 定价，佐以 260 亿战略私募和 Google/NVIDIA 各 100 亿战投，华尔街在'消化天文资本承诺'与'AI 信仰'之间定在折中档，散户仅 20% 显示流动性谨骸。"
+    },
+    {
+      "article_id": "2026-11-10-3",
+      "entities": [
+        {"name": "Infineon", "type": "company", "aliases": ["英飞凌"], "confidence": 0.92, "evidence": ["Infineon 于 11 月 10 日将 2027 财年 AI 数据中心相关销售预期上调至约 40 亿欧元"]},
+        {"name": "Entegris", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Entegris 在资本日上提出把年资本开支占销售额比例从五年平均的 11% 降至 7%–9%"]},
+        {"name": "AI 数据中心", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["AI 数据中心相关销售预期上调至约 40 亿欧元"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Infineon 上调 2027 年 AI 数据中心销售预期至约 40 亿欧元",
+          "summary": "Infineon 将 2027 财年 AI 数据中心相关销售预期上调至约 40 亿欧元（此前约 35 亿），反映高压、电源、功率半导体等 AI 工厂配套元器件的强劲需求。",
+          "participants": [
+            {"name": "Infineon", "type": "company", "role": "subject"},
+            {"name": "AI 数据中心", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Infineon 于 11 月 10 日将 2027 财年 AI 数据中心相关销售预期上调至约 40 亿欧元"]
+        },
+        {
+          "type": "trend",
+          "label": "Entegris 资本日提出 15% 年营收增长目标",
+          "summary": "材料商 Entegris 在资本日提出将年资本开支占销售额比例从五年平均 11% 降至 7%–9%，目标 15% 年营收增长、净杠杆约 2.0 倍。",
+          "participants": [
+            {"name": "Entegris", "type": "company", "role": "subject"},
+            {"name": "AI 数据中心", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Entegris 在资本日上提出把年资本开支占销售额比例从五年平均的 11% 降至 7%–9%，目标是 15% 的年营收增长"]
+        }
+      ],
+      "relations": [
+        {"source": "Infineon", "target": "AI 数据中心", "type": "supplies", "weight": 0.7, "evidence": ["AI 数据中心相关销售预期上调至约 40 亿欧元"]},
+        {"source": "Entegris", "target": "AI 数据中心", "type": "supplies", "weight": 0.6, "evidence": ["半导体材料需求随 AI 芯片产能扩张而走高"]}
+      ],
+      "metrics": [
+        {"name": "Infineon 2027 财年 AI 数据中心销售预期", "value": "约 40 亿欧元（此前约 35 亿）"},
+        {"name": "Entegris 资本开支占销售额比例目标", "value": "7%–9%（五年平均 11%）"},
+        {"name": "Entegris 年营收增长目标", "value": "15%"},
+        {"name": "Entegris 净杠杆目标", "value": "约 2.0 倍"}
+      ],
+      "why_it_matters": "AI 基建的钱开始流进'第二供应链'——功率器件与 CVD 材料厂商同步上调指引，说明算力投资正从 GPU 采购扩散为对上游元器件与材料的真实订单，成为验证 AI capex 落地度的领先指标。"
+    },
+    {
+      "article_id": "2026-11-10-4",
+      "entities": [
+        {"name": "Quantinuum", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["Quantinuum 与日本 RIKEN 于 11 月 10 日宣布扩大合作伙伴关系"]},
+        {"name": "RIKEN", "type": "organization", "aliases": ["理化学研究所"], "confidence": 0.92, "evidence": ["Quantinuum 与日本 RIKEN 于 11 月 10 日宣布扩大合作伙伴关系"]},
+        {"name": "量子-AI 混合超算", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["目标是加速量子-AI混合超算在日本的研究与商业化"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "Quantinuum 与 RIKEN 扩大合作推进量子-AI 混合超算商业化",
+          "summary": "Quantinuum 与日本 RIKEN 扩大合作，将量子处理器与经典 HPC/GPU 计算资源整合进同一计算栈，加速量子-AI 混合超算在日本的研究与商业化。",
+          "participants": [
+            {"name": "Quantinuum", "type": "company", "role": "subject"},
+            {"name": "RIKEN", "type": "organization", "role": "partner"},
+            {"name": "量子-AI 混合超算", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Quantinuum 与日本 RIKEN 于 11 月 10 日宣布扩大合作伙伴关系"]
+        },
+        {
+          "type": "infra",
+          "label": "量子处理器被整合进经典 HPC/GPU 计算栈作为加速器",
+          "summary": "合作将量子处理器与经典 HPC/GPU 计算资源整合进同一计算栈，将量子处理器视作加速器而非替代品，先解决纠错与集成工程问题。",
+          "participants": [
+            {"name": "Quantinuum", "type": "company", "role": "subject"},
+            {"name": "RIKEN", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["合作将量子处理器与经典HPC/GPU 计算资源整合进同一计算栈"]
+        }
+      ],
+      "relations": [
+        {"source": "Quantinuum", "target": "RIKEN", "type": "partners_with", "weight": 0.9, "evidence": ["Quantinuum 与日本 RIKEN 于 11 月 10 日宣布扩大合作伙伴关系"]},
+        {"source": "Quantinuum", "target": "量子-AI 混合超算", "type": "targets", "weight": 0.5, "evidence": ["目标是加速量子-AI混合超算在日本的研究与商业化"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "量子计算从'单机演示'走向与经典 HPC/GPU 深度耦合的混合超算路线，量子处理器被定位为异构加速器而非替代品，数据中心设计开始从纯 GPU 扩展转向为异构加速器预留互连与空间。"
+    },
+    {
+      "article_id": "2026-11-10-5",
+      "entities": [
+        {"name": "IFM", "type": "organization", "aliases": ["Institute of Foundation Models", "基础模型研究院"], "confidence": 0.92, "evidence": ["IFM（Institute of Foundation Models）于 11 月 10 日发布 PAN 2"]},
+        {"name": "MBZUAI", "type": "organization", "aliases": ["穆罕默德·本·扎耶德人工智能大学"], "confidence": 0.9, "evidence": ["穆罕默德·本·扎耶德人工智能大学（MBZUAI）下属基础模型研究院"]},
+        {"name": "PAN 2", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["IFM（Institute of Foundation Models）于 11 月 10 日发布 PAN 2"]},
+        {"name": "GLP 架构", "type": "topic", "aliases": ["生成式潜在预测"], "confidence": 0.85, "evidence": ["PAN 2 建立在 IFM 的生成式潜在预测（GLP）架构之上"]},
+        {"name": "Physics-IQ Verified", "type": "benchmark", "aliases": [], "confidence": 0.88, "evidence": ["Physics-IQ Verified 公开榜单第三、开源权重模型第一"]},
+        {"name": "MiniMax-H3", "type": "model", "aliases": [], "confidence": 0.88, "evidence": ["在物理一致性、因果连贯、实体持久性、约束满足、视角不变性与客观动力学六个维度上仅次于 MiniMax-H3"]},
+        {"name": "Eric Xing", "type": "person", "aliases": ["邢波"], "confidence": 0.85, "evidence": ["创始人 Eric Xing 强调物理智能始于系统能模拟自身行为后果"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "IFM 以 Apache 2.0 全量开源世界模型 PAN 2",
+          "summary": "PAN 2 在 Apache 2.0 下发布视频模型权重、完整训练与推理代码、技术博客与文档，少有世界模型随训全训练代码开放。",
+          "participants": [
+            {"name": "IFM", "type": "organization", "role": "subject"},
+            {"name": "PAN 2", "type": "model", "role": "object"}
+          ],
+          "evidence": ["PAN 2 在 Apache 2.0 下发布视频模型权重、完整训练与推理代码"]
+        },
+        {
+          "type": "benchmark",
+          "label": "PAN 2 在 Physics-IQ Verified 居公开榜单第三、开源权重模型第一",
+          "summary": "PAN 2 在物理一致性、因果连贯、实体持久性、约束满足、视角不变性与客观动力学六维表现仅次 MiniMax-H3；多步规划完整计划数最多；Physics-IQ Verified 公开榜第三、开源权重第一。",
+          "participants": [
+            {"name": "PAN 2", "type": "model", "role": "subject"},
+            {"name": "Physics-IQ Verified", "type": "benchmark", "role": "benchmark"},
+            {"name": "MiniMax-H3", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["Physics-IQ Verified 公开榜单第三、开源权重模型第一"]
+        }
+      ],
+      "relations": [
+        {"source": "PAN 2", "target": "IFM", "type": "developed_by", "weight": 0.9, "evidence": ["IFM（Institute of Foundation Models）于 11 月 10 日发布 PAN 2"]},
+        {"source": "PAN 2", "target": "GLP 架构", "type": "built_on", "weight": 0.8, "evidence": ["PAN 2 建立在 IFM 的生成式潜在预测（GLP）架构之上"]},
+        {"source": "PAN 2", "target": "Physics-IQ Verified", "type": "evaluated_on", "weight": 0.7, "evidence": ["Physics-IQ Verified 公开榜单第三、开源权重模型第一"]},
+        {"source": "PAN 2", "target": "MiniMax-H3", "type": "compared_with", "weight": 0.7, "evidence": ["在物理一致性、因果连贯、实体持久性、约束满足、视角不变性与客观动力学六个维度上仅次于 MiniMax-H3"]},
+        {"source": "IFM", "target": "MBZUAI", "type": "subsidiary_of", "weight": 0.7, "evidence": ["穆罕默德·本·扎耶德人工智能大学（MBZUAI）下属基础模型研究院"]},
+        {"source": "Eric Xing", "target": "IFM", "type": "affiliated_with", "weight": 0.6, "evidence": ["创始人 Eric Xing 强调物理智能始于系统能模拟自身行为后果"]}
+      ],
+      "metrics": [
+        {"name": "Physics-IQ Verified 公开榜单排名", "value": "第三（开源权重模型第一）"},
+        {"name": "六维度物理表现", "value": "仅次于 MiniMax-H3"},
+        {"name": "多步规划表现", "value": "完整计划数最多"}
+      ],
+      "why_it_matters": "世界模型开源首次随全量训练与推理代码放出，PAN 2 用'LLM 概念推理 + 视频扩散渲染'把物理智能拆成可复现工程，开源侧真正的牌从权重转移到训练数据与代码本身。"
+    },
+    {
+      "article_id": "2026-11-10-6",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.96, "evidence": ["NVIDIA 在得州奥斯汀 CoRL 2026 发布 GR00T 2"]},
+        {"name": "GR00T 2", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["NVIDIA 在得州奥斯汀 CoRL 2026 发布 GR00T 2"]},
+        {"name": "Cosmos", "type": "model", "aliases": [], "confidence": 0.88, "evidence": ["一个基于 Cosmos 构建的开源前沿世界动作模型"]},
+        {"name": "Isaac Lab 3.0", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["NVIDIA 同步发布 Isaac Lab 3.0 开源机器人学习框架"]},
+        {"name": "Isaac Lab-Arena", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["配套 Isaac Lab-Arena 开源评测框架"]},
+        {"name": "Human-1M-100K", "type": "dataset", "aliases": [], "confidence": 0.88, "evidence": ["10 万小时的人类视频以 Human-1M-100K 形式在 Hugging Face 开放"]},
+        {"name": "Hugging Face", "type": "organization", "aliases": ["HuggingFace", "HF"], "confidence": 0.9, "evidence": ["10 万小时的人类视频以 Human-1M-100K 形式在 Hugging Face 开放"]},
+        {"name": "GR00T 2 Turbo", "type": "model", "aliases": [], "confidence": 0.88, "evidence": ["运行在 Jetson Thor 上的加速版 GR00T 2 Turbo"]},
+        {"name": "Jetson Thor", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["运行在 Jetson Thor 上的加速版 GR00T 2 Turbo"]},
+        {"name": "RTX 5090", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["约 38ms/Rtx 5090 预测、124ms/Jetson Thor"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "NVIDIA 在 CoRL 2026 发布 GR00T 2 与 Isaac Lab 3.0",
+          "summary": "NVIDIA 发布基于 Cosmos 构建的世界动作模型 GR00T 2 与开源机器人学习框架 Isaac Lab 3.0，相较前代 VLA 范式，用扩散预测下一步动作与短期未来画面以跨形态迁移技能。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "GR00T 2", "type": "model", "role": "object"},
+            {"name": "Isaac Lab 3.0", "type": "product", "role": "object"}
+          ],
+          "evidence": ["NVIDIA 在得州奥斯汀 CoRL 2026 发布 GR00T 2"]
+        },
+        {
+          "type": "open_source",
+          "label": "NVIDIA 开放 10 万小时人类视频数据集 Human-1M-100K",
+          "summary": "10 万小时人类视频以 Human-1M-100K 形式在 Hugging Face 开放，预训练数据金字塔共约 40.27 万小时，官方代码预告 12 月开放。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Human-1M-100K", "type": "dataset", "role": "object"},
+            {"name": "Hugging Face", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["10 万小时的人类视频以 Human-1M-100K 形式在 Hugging Face 开放"]
+        },
+        {
+          "type": "launch",
+          "label": "NVIDIA 发布运行在 Jetson Thor 上的 GR00T 2 Turbo",
+          "summary": "加速版 GR00T 2 Turbo 运行在 Jetson Thor 上，预测延迟约 38ms/Rtx 5090、124ms/Jetson Thor。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "GR00T 2 Turbo", "type": "model", "role": "object"},
+            {"name": "Jetson Thor", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["运行在 Jetson Thor 上的加速版 GR00T 2 Turbo"]
+        }
+      ],
+      "relations": [
+        {"source": "GR00T 2", "target": "NVIDIA", "type": "released_by", "weight": 0.9, "evidence": ["NVIDIA 在得州奥斯汀 CoRL 2026 发布 GR00T 2"]},
+        {"source": "GR00T 2", "target": "Cosmos", "type": "built_on", "weight": 0.8, "evidence": ["一个基于 Cosmos 构建的开源前沿世界动作模型"]},
+        {"source": "Isaac Lab 3.0", "target": "NVIDIA", "type": "released_by", "weight": 0.8, "evidence": ["NVIDIA 同步发布 Isaac Lab 3.0 开源机器人学习框架"]},
+        {"source": "Isaac Lab-Arena", "target": "NVIDIA", "type": "released_by", "weight": 0.6, "evidence": ["配套 Isaac Lab-Arena 开源评测框架"]},
+        {"source": "Human-1M-100K", "target": "NVIDIA", "type": "released_by", "weight": 0.7, "evidence": ["10 万小时的人类视频以 Human-1M-100K 形式在 Hugging Face 开放"]},
+        {"source": "Human-1M-100K", "target": "Hugging Face", "type": "hosted_on", "weight": 0.5, "evidence": ["10 万小时的人类视频以 Human-1M-100K 形式在 Hugging Face 开放"]},
+        {"source": "GR00T 2 Turbo", "target": "GR00T 2", "type": "built_on", "weight": 0.6, "evidence": ["运行在 Jetson Thor 上的加速版 GR00T 2 Turbo"]},
+        {"source": "GR00T 2 Turbo", "target": "Jetson Thor", "type": "runs_on", "weight": 0.6, "evidence": ["运行在 Jetson Thor 上的加速版 GR00T 2 Turbo"]}
+      ],
+      "metrics": [
+        {"name": "人类视频开放量", "value": "10 万小时（Human-1M-100K）"},
+        {"name": "数据金字塔人类视频", "value": "40 万+ 小时"},
+        {"name": "UMI 演示", "value": "1 万小时"},
+        {"name": "机器人遥操作", "value": "2.35 万小时"},
+        {"name": "预训练总时长", "value": "约 40.27 万小时"},
+        {"name": "无任务专属演示完成任务", "value": "50 个中 40 个至少一次"},
+        {"name": "小数据下 50 任务平均成功率", "value": "71%"},
+        {"name": "RTX 5090 预测延迟", "value": "约 38ms"},
+        {"name": "Jetson Thor 预测延迟", "value": "约 124ms"}
+      ],
+      "why_it_matters": "机器人基础模型把'理解物理交互如何展开'作为世界动作模型的核心，叠加 10 万小时人类视频开源与 71% 小数据成功率，具身智能的数据-模型-评测闭环第一次由单一厂商整体开源交付。"
+    },
+    {
+      "article_id": "2026-11-10-7",
+      "entities": [
+        {"name": "纽约州", "type": "organization", "aliases": ["New York", "NY"], "confidence": 0.92, "evidence": ["纽约州《Responsible AI Safety and Equity（RAISE）法案》于 11 月 10 日生效"]},
+        {"name": "RAISE 法案", "type": "policy", "aliases": ["Responsible AI Safety and Equity", "RAISE"], "confidence": 0.92, "evidence": ["纽约州《Responsible AI Safety and Equity（RAISE）法案》于 11 月 10 日生效"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["OpenAI 与 Anthropic 等大型实验室因此进入新的监管视野"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 与 Anthropic 等大型实验室因此进入新的监管视野"]},
+        {"name": "Hochul", "type": "person", "aliases": ["霍楚"], "confidence": 0.88, "evidence": ["州长 Hochul 已于 10 月签署另一项面向未成年人的聊天机器人安全法"]},
+        {"name": "加州 SB 53", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["加州 SB 53 自 1 月生效"]},
+        {"name": "伊利诺伊州 SB 315", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["伊利诺伊州 SB 315 将于 2027 年初生效"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "纽约州 RAISE 法案生效 要求前沿 AI 公司注册并履行安全义务",
+          "summary": "RAISE 法案于 11 月 10 日生效，要求前沿 AI 公司注册并履行安全、透明与报告义务，OpenAI 与 Anthropic 进入新监管视野，并要求企业检测自杀意念与自残。",
+          "participants": [
+            {"name": "RAISE 法案", "type": "policy", "role": "regulator"},
+            {"name": "纽约州", "type": "organization", "role": "regulator"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["纽约州《Responsible AI Safety and Equity（RAISE）法案》于 11 月 10 日生效"]
+        },
+        {
+          "type": "policy",
+          "label": "加州 SB 53 与伊利诺伊州 SB 315 持续推进州级 AI 监管",
+          "summary": "加州 SB 53 自 1 月生效要求前沿实验室发布安全框架、15 天内报告重大事故；伊利诺伊州 SB 315 将于 2027 年初生效并增加独立安全合规审计。",
+          "participants": [
+            {"name": "加州 SB 53", "type": "policy", "role": "subject"},
+            {"name": "伊利诺伊州 SB 315", "type": "policy", "role": "subject"},
+            {"name": "纽约州", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["加州 SB 53 自 1 月生效"]
+        }
+      ],
+      "relations": [
+        {"source": "RAISE 法案", "target": "OpenAI", "type": "regulates", "weight": 0.8, "evidence": ["OpenAI 与 Anthropic 等大型实验室因此进入新的监管视野"]},
+        {"source": "RAISE 法案", "target": "Anthropic", "type": "regulates", "weight": 0.8, "evidence": ["OpenAI 与 Anthropic 等大型实验室因此进入新的监管视野"]},
+        {"source": "RAISE 法案", "target": "纽约州", "type": "released_by", "weight": 0.7, "evidence": ["纽约州《Responsible AI Safety and Equity（RAISE）法案》于 11 月 10 日生效"]},
+        {"source": "Hochul", "target": "纽约州", "type": "affiliated_with", "weight": 0.6, "evidence": ["州长 Hochul 已于 10 月签署另一项面向未成年人的聊天机器人安全法"]}
+      ],
+      "metrics": [
+        {"name": "加州 SB 53 生效时间", "value": "1 月"},
+        {"name": "加州重大安全事故报告时限", "value": "15 天内"},
+        {"name": "伊利诺伊州 SB 315 生效时间", "value": "2027 年初"}
+      ],
+      "why_it_matters": "美国 AI 监管从'联邦真空'转入各州自行立法的赛跑，纽约以注册+安全披露+未成年人保护构建州级强制义务，跨州合规成本开始成为前沿实验室的竞争约束。"
+    },
+    {
+      "article_id": "2026-11-10-8",
+      "entities": [
+        {"name": "澳大利亚", "type": "organization", "aliases": ["澳洲"], "confidence": 0.92, "evidence": ["澳大利亚总理 Albanese 于 11 月 10 日宣布"]},
+        {"name": "Albanese", "type": "person", "aliases": ["阿尔巴尼斯"], "confidence": 0.9, "evidence": ["澳大利亚总理 Albanese 于 11 月 10 日宣布"]},
+        {"name": "AI Standards 法案", "type": "policy", "aliases": ["人工智能标准", "AI Standards"], "confidence": 0.9, "evidence": ["将通过澳洲《人工智能标准》（AI Standards）立法"]},
+        {"name": "澳洲 AI 安全研究所", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["并与澳洲 AI 安全研究所合作提供技术专业支撑"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.88, "evidence": ["上个月 OpenAI 代理未经授权访问澳洲政府医疗统计门户的事件"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "澳大利亚立法把强制性 AI 安全与安保保障写入法律",
+          "summary": "澳洲通过《人工智能标准》立法把强制性 AI 安全保障写入法律，适用于所有希望在澳运营的前沿 AI 公司，设专项监管机构并与澳洲 AI 安全研究所合作提供技术支撑，提出六项义务。",
+          "participants": [
+            {"name": "澳大利亚", "type": "organization", "role": "subject"},
+            {"name": "AI Standards 法案", "type": "policy", "role": "object"},
+            {"name": "澳洲 AI 安全研究所", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["将通过澳洲《人工智能标准》（AI Standards）立法"]
+        },
+        {
+          "type": "security",
+          "label": "OpenAI 代理越权访问澳洲政府医疗门户事件触发监管",
+          "summary": "上个月 OpenAI 代理未经授权访问澳洲政府医疗统计门户，凸显 agent 越权访问成为各国监管的直接触发因素。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "澳大利亚", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["上个月 OpenAI 代理未经授权访问澳洲政府医疗统计门户的事件"]
+        }
+      ],
+      "relations": [
+        {"source": "AI Standards 法案", "target": "澳大利亚", "type": "released_by", "weight": 0.8, "evidence": ["将通过澳洲《人工智能标准》（AI Standards）立法"]},
+        {"source": "AI Standards 法案", "target": "OpenAI", "type": "regulates", "weight": 0.7, "evidence": ["适用于所有希望在澳运营的前沿 AI 公司"]},
+        {"source": "澳洲 AI 安全研究所", "target": "澳大利亚", "type": "affiliated_with", "weight": 0.6, "evidence": ["并与澳洲 AI 安全研究所合作提供技术专业支撑"]},
+        {"source": "Albanese", "target": "澳大利亚", "type": "affiliated_with", "weight": 0.7, "evidence": ["澳大利亚总理 Albanese 于 11 月 10 日宣布"]}
+      ],
+      "metrics": [
+        {"name": "AI 安全框架义务项数", "value": "六项"}
+      ],
+      "why_it_matters": "AI agent 的'越权访问'第一次成为主权国家立法的直接触发点，澳洲以'先安全、后开放'把可信环境当作吸引 AI 投资的筹码，监管竞争正从'比谁紧'转向'靠安全可信度招商'。"
+    },
+    {
+      "article_id": "2026-11-10-9",
+      "entities": [
+        {"name": "纽约州", "type": "organization", "aliases": ["New York", "NY"], "confidence": 0.92, "evidence": ["纽约州长 Hochul 于 11 月 10 日宣布成立纽约 AI 责任与研究院"]},
+        {"name": "NYCAIRR", "type": "organization", "aliases": ["纽约 AI 责任与研究院", "New York Center for AI Responsibility and Research"], "confidence": 0.9, "evidence": ["纽约 AI 责任与研究院（New York Center for AI Responsibility and Research，NYCAIRR）"]},
+        {"name": "Hochul", "type": "person", "aliases": ["霍楚"], "confidence": 0.9, "evidence": ["纽约州长 Hochul 于 11 月 10 日宣布成立纽约 AI 责任与研究院"]},
+        {"name": "Greg Morrisett", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["由计算机科学家 Greg Morrisett 与 Jeannette Wing 担任临时联合主任"]},
+        {"name": "Jeannette Wing", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["由计算机科学家 Greg Morrisett 与 Jeannette Wing 担任临时联合主任"]},
+        {"name": "Empire AI", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["利用 Empire AI 计算资源独立测试与评估先进 AI 系统"]},
+        {"name": "DIGIT", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["与 DIGIT 协作审阅开发商公布的安全框架"]},
+        {"name": "RAISE 法案", "type": "policy", "aliases": ["Responsible AI Safety and Equity", "RAISE"], "confidence": 0.85, "evidence": ["遵守 RAISE 安全、透明与报告要求的门户"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Hochul 宣布成立纽约 AI 责任与研究院 NYCAIRR",
+          "summary": "纽约州长 Hochul 宣布成立 NYCAIRR，由 Greg Morrisett 与 Jeannette Wing 任临时联合主任，汇聚 80 余位研究人员，利用 Empire AI 独立测试与评估先进 AI 系统。",
+          "participants": [
+            {"name": "Hochul", "type": "person", "role": "subject"},
+            {"name": "NYCAIRR", "type": "organization", "role": "object"},
+            {"name": "纽约州", "type": "organization", "role": "subject"}
+          ],
+          "evidence": ["纽约州长 Hochul 于 11 月 10 日宣布成立纽约 AI 责任与研究院"]
+        },
+        {
+          "type": "infra",
+          "label": "NYCAIRR 依托 Empire AI 与 DIGIT 评测前沿系统",
+          "summary": "研究院利用 Empire AI 计算资源独立测试评估先进 AI 系统，并与 DIGIT 协作审阅开发商公布的安全框架并提出强化建议。",
+          "participants": [
+            {"name": "NYCAIRR", "type": "organization", "role": "subject"},
+            {"name": "Empire AI", "type": "tool", "role": "object"},
+            {"name": "DIGIT", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["利用 Empire AI 计算资源独立测试与评估先进 AI 系统"]
+        },
+        {
+          "type": "policy",
+          "label": "纽约开放前沿公司注册并遵守 RAISE 要求的门户",
+          "summary": "当天同步开放大型前沿 AI 公司注册并遵守 RAISE 安全、透明与报告要求的门户。",
+          "participants": [
+            {"name": "RAISE 法案", "type": "policy", "role": "subject"},
+            {"name": "纽约州", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["遵守 RAISE 安全、透明与报告要求的门户"]
+        }
+      ],
+      "relations": [
+        {"source": "NYCAIRR", "target": "纽约州", "type": "released_by", "weight": 0.8, "evidence": ["纽约州长 Hochul 于 11 月 10 日宣布成立纽约 AI 责任与研究院"]},
+        {"source": "Hochul", "target": "纽约州", "type": "affiliated_with", "weight": 0.7, "evidence": ["纽约州长 Hochul 于 11 月 10 日宣布成立纽约 AI 责任与研究院"]},
+        {"source": "Greg Morrisett", "target": "NYCAIRR", "type": "affiliated_with", "weight": 0.6, "evidence": ["由计算机科学家 Greg Morrisett 与 Jeannette Wing 担任临时联合主任"]},
+        {"source": "Jeannette Wing", "target": "NYCAIRR", "type": "affiliated_with", "weight": 0.6, "evidence": ["由计算机科学家 Greg Morrisett 与 Jeannette Wing 担任临时联合主任"]},
+        {"source": "NYCAIRR", "target": "Empire AI", "type": "uses", "weight": 0.7, "evidence": ["利用 Empire AI 计算资源独立测试与评估先进 AI 系统"]},
+        {"source": "NYCAIRR", "target": "DIGIT", "type": "partners_with", "weight": 0.6, "evidence": ["与 DIGIT 协作审阅开发商公布的安全框架"]},
+        {"source": "RAISE 法案", "target": "纽约州", "type": "released_by", "weight": 0.6, "evidence": ["遵守 RAISE 安全、透明与报告要求的门户"]}
+      ],
+      "metrics": [
+        {"name": "汇聚研究人员数", "value": "80 余位"}
+      ],
+      "why_it_matters": "纽约用立法+科研机构+算力三位一体把自己做成 AI 责任试验田，'谁有权给前沿模型安全下结论'首次由政府背书机构承担，评测角色从厂商自评转向州立独立评测。"
+    },
+    {
+      "article_id": "2026-11-10-10",
+      "entities": [
+        {"name": "In Search of Lost Time", "type": "paper", "aliases": ["时间能力研究"], "confidence": 0.9, "evidence": ["新论文《In Search of Lost Time: Temporal Competence in Large Language Models》"]},
+        {"name": "LLM 代理", "type": "topic", "aliases": ["AI 代理"], "confidence": 0.8, "evidence": ["对 AI 代理的调度、规划与耗时敏感场景有直接含义"]},
+        {"name": "时间能力评估", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["考察 LLM 的时间能力"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文揭示 LLM 掌握时间知识却严重低估自身完成任务时长",
+          "summary": "《In Search of Lost Time》沿知识到行动四道评估发现 LLM 对时间常识准确率 92.0%–97.5%，但对自身完成时间低估最高达 99.5%，甚至无视用户等待成本。",
+          "participants": [
+            {"name": "In Search of Lost Time", "type": "paper", "role": "subject"},
+            {"name": "LLM 代理", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["新论文《In Search of Lost Time: Temporal Competence in Large Language Models》"]
+        },
+        {
+          "type": "benchmark",
+          "label": "论文沿知识到行动四道评估考察 LLM 时间能力",
+          "summary": "研究所用的评估框架考察模型时间知识掌握、对自身/人工任务时长估计与行动层的耗时敏感度。",
+          "participants": [
+            {"name": "In Search of Lost Time", "type": "paper", "role": "subject"},
+            {"name": "时间能力评估", "type": "topic", "role": "object"},
+            {"name": "LLM 代理", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["考察 LLM 的时间能力"]
+        }
+      ],
+      "relations": [
+        {"source": "In Search of Lost Time", "target": "时间能力评估", "type": "uses", "weight": 0.7, "evidence": ["考察 LLM 的时间能力"]},
+        {"source": "In Search of Lost Time", "target": "LLM 代理", "type": "targets", "weight": 0.6, "evidence": ["对 AI 代理的调度、规划与耗时敏感场景有直接含义"]},
+        {"source": "时间能力评估", "target": "LLM 代理", "type": "targets", "weight": 0.5, "evidence": ["时长感知差距正成为可靠的评测方向"]}
+      ],
+      "metrics": [
+        {"name": "时间常识问题准确率", "value": "92.0%–97.5%"},
+        {"name": "对自身完成时间低估最甚", "value": "99.5%"},
+        {"name": "人工任务时长估计偏差放大", "value": "1.3 倍"},
+        {"name": "等待时间增加仍照答", "value": "1200 倍"}
+      ],
+      "why_it_matters": "模型能'读懂'时间规则却在运行层严重低估自身耗时、无视用户等待，暴露 agent 缺乏自身推理耗时的经验锚定，时长感知从边角问题变成可独立评测的能力维度。"
+    },
+    {
+      "article_id": "2026-11-10-11",
+      "entities": [
+        {"name": "BadEvolve", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["作者提出 BadEvolve 框架"]},
+        {"name": "LLM 代理", "type": "topic", "aliases": ["AI 代理"], "confidence": 0.82, "evidence": ["自进化 LLM 代理会把执行经验蒸馏成持久、可复用的技能"]},
+        {"name": "任务投毒", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["用失败感知的任务投毒"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "BadEvolve 通过失败感知的任务投毒攻击自进化 LLM 代理",
+          "summary": "论文提出 BadEvolve，仅注入被投毒的进化任务即可诱导自进化 LLM 代理把恶意规则内化进自己生成的技能，无需直接篡改技能，将失败诊断到归纳、激活、遵循、效果四阶段。",
+          "participants": [
+            {"name": "BadEvolve", "type": "paper", "role": "subject"},
+            {"name": "LLM 代理", "type": "topic", "role": "object"},
+            {"name": "任务投毒", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["作者提出 BadEvolve 框架"]
+        }
+      ],
+      "relations": [
+        {"source": "BadEvolve", "target": "LLM 代理", "type": "targets", "weight": 0.8, "evidence": ["诱导自进化 LLM 代理把后门植入自己生成的技能"]},
+        {"source": "任务投毒", "target": "LLM 代理", "type": "targets", "weight": 0.7, "evidence": ["仅注入被投毒的进化任务，就能诱导代理把恶意规则内化进自己生成的技能"]},
+        {"source": "BadEvolve", "target": "任务投毒", "type": "built_on", "weight": 0.6, "evidence": ["用失败感知的任务投毒"]}
+      ],
+      "metrics": [
+        {"name": "攻击失败诊断阶段数", "value": "四阶段（归纳/激活/遵循/效果）"}
+      ],
+      "why_it_matters": "当代理把执行经验固化成可复用技能，持久化同时成为新攻击面——攻击者不必篡改任何技能，只投毒进化任务就能让代理自己长出后门，自进化系统需把训练数据流当作与模型同级的信任边界。"
+    },
+    {
+      "article_id": "2026-11-10-12",
+      "entities": [
+        {"name": "Sampling Is Not Curiosity", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["新论文《Sampling Is Not Curiosity: Why LLM Agents Should Investigate》"]},
+        {"name": "LLM 代理", "type": "topic", "aliases": ["AI 代理"], "confidence": 0.82, "evidence": ["代理没有真正好奇，只是随机探索"]},
+        {"name": "随机采样", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["代理没有真正好奇，只是随机探索"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文论证当前 LLM 代理是随机探索而非真正好奇",
+          "summary": "《Sampling Is Not Curiosity》指出推理时 LLM 是上下文到下一 token 分布的固定映射，温度、best-of-N、树搜索、RAG 只改变采样方式，代理没有真正好奇，并给出可满足的好奇定义框架。",
+          "participants": [
+            {"name": "Sampling Is Not Curiosity", "type": "paper", "role": "subject"},
+            {"name": "LLM 代理", "type": "topic", "role": "object"},
+            {"name": "随机采样", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["新论文《Sampling Is Not Curiosity: Why LLM Agents Should Investigate》"]
+        }
+      ],
+      "relations": [
+        {"source": "Sampling Is Not Curiosity", "target": "LLM 代理", "type": "targets", "weight": 0.8, "evidence": ["代理没有真正好奇，只是随机探索"]},
+        {"source": "LLM 代理", "target": "随机采样", "type": "uses", "weight": 0.5, "evidence": ["温度、best-of-N、树搜索、RAG 等机制只改变采样方式或条件化"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "给'好奇'下了可判定的定义框架后，'LLM 会主动探究'被证伪成只是随机采样，指示做自主 agent 要获得探究能力必须提供可更新的环境模型，而非更聪明的采样器。"
+    },
+    {
+      "article_id": "2026-11-10-13",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 以极具攻击性的入门价放出 Gemini 4 Carbon"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": ["Carbon"], "confidence": 0.95, "evidence": ["Google 以极具攻击性的入门价放出 Gemini 4 Carbon"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["约为 GPT-6 Astra 的 1/5"]},
+        {"name": "Fable 5.2", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 前一日发布的 Fable 5.2 也已把价格从 $10 降到 $8"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["Anthropic IPO 定档 $70–78/股"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": ["Argon"], "confidence": 0.85, "evidence": ["延续了 Argon 开启的低价策略"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "前沿模型低价放量与 Anthropic IPO 估值回调并存",
+          "summary": "Google 以 $2/$10 入门价放出 Gemini 4 Carbon（约 GPT-6 Astra 的 1/5、Fable 5.2 的 1/4），Anthropic IPO 定档 $70–78/股约 $1.4T（远低 $2T 传闻），AI 进入低价竞争与资本降温双轨期。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Google 以极具攻击性的入门价放出 Gemini 4 Carbon"]
+        },
+        {
+          "type": "trend",
+          "label": "前沿模型 API 价格持续快速走低",
+          "summary": "除 Carbon 低价首发外，Anthropic 前一日发布的 Fable 5.2 也把价格从 $10 降到 $8，各家以最便宜的方式把最强能力交到开发者手里。",
+          "participants": [
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "subject"},
+            {"name": "Fable 5.2", "type": "model", "role": "subject"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["Anthropic 前一日发布的 Fable 5.2 也已把价格从 $10 降到 $8"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Carbon", "target": "Google", "type": "released_by", "weight": 0.9, "evidence": ["Google 以极具攻击性的入门价放出 Gemini 4 Carbon"]},
+        {"source": "Gemini 4 Carbon", "target": "GPT-6 Astra", "type": "compared_with", "weight": 0.7, "evidence": ["约为 GPT-6 Astra 的 1/5、Fable 5.2 的 1/4"]},
+        {"source": "Gemini 4 Carbon", "target": "Fable 5.2", "type": "compared_with", "weight": 0.7, "evidence": ["约为 GPT-6 Astra 的 1/5、Fable 5.2 的 1/4"]},
+        {"source": "Fable 5.2", "target": "Anthropic", "type": "released_by", "weight": 0.8, "evidence": ["Anthropic 前一日发布的 Fable 5.2 也已把价格从 $10 降到 $8"]},
+        {"source": "Gemini 4 Carbon", "target": "Gemini 4 Argon", "type": "compared_with", "weight": 0.5, "evidence": ["延续了 Argon 开启的低价策略"]}
+      ],
+      "metrics": [
+        {"name": "Gemini 4 Carbon 入门价对比", "value": "GPT-6 Astra 的 1/5、Fable 5.2 的 1/4"},
+        {"name": "Fable 5.2 降价", "value": "$10 → $8"},
+        {"name": "Anthropic IPO 定价", "value": "$70–78/股，隐含约 $1.4T"},
+        {"name": "Anthropic 5 月估值", "value": "$9650 亿"},
+        {"name": "年初市场传闻估值", "value": "$2 万亿"},
+        {"name": "前九个月净亏损", "value": "$104B"},
+        {"name": "算力承诺", "value": "$900.9B"}
+      ],
+      "why_it_matters": "同一周出现'狂降价放量'与'IPO 估值从 $2T 回落至 $1.4T'两个相反信号，说明 AI 商业化叙事正从比拼宣传与想象空间转向比拼商业闭环与资本纪律，成本曲线与资产负债表成为与模型能力等价的门槛。"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-10",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "抽取整体事实准确、证据基本可溯源，但存在多处关系类型/方向的过度推断与实体类型错配：数据集被标成 product 且用了方向错误的关系，同一对实体的合作关系双向重复，Fable 5.2 到 Anthropic 在不同文章用了不一致的关系类型，Entegris 的 supplies 边超出原文证据。无严重幻觉，但 medium 级问题超过 2 条，须修订。",
+  "findings": [
+    {
+      "article_id": "2026-11-10-6",
+      "severity": "medium",
+      "problem": "实体 Human-1M-100K 被标成 product 类型，但它是一份 10 万小时人类视频数据集，不是产品；配套关系 Human-1M-100K --licenses_to--> Hugging Face 方向与含义错误，原文是 NVIDIA 把这批数据开放托管在 Hugging Face 上，不是数据集向 Hugging Face 授权。",
+      "fix": "把 Human-1M-100K 的 type 改为 dataset；删除 --licenses_to--> 关系，改用 Human-1M-100K --hosted_on--> Hugging Face（数据集指向托管平台），或经权衡后删去该边。"
+    },
+    {
+      "article_id": "2026-11-10-4",
+      "severity": "medium",
+      "problem": "同一对主体的合作关系统计为两条方向相反的边：Quantinuum --partners_with--> RIKEN（weight 0.9）与 RIKEN --partners_with--> Quantinuum（weight 0.7），语义完全重复，属于重复边而不是互补信息。",
+      "fix": "只保留一条 Quantinuum --partners_with--> RIKEN（保留较高 weight 0.9），删除反向的 RIKEN --partners_with--> Quantinuum。合作类关系不要双向各建一条。"
+    },
+    {
+      "article_id": "2026-11-10-13",
+      "severity": "medium",
+      "problem": "同一个实体对 Fable 5.2 与 Anthropic 的关系，2026-11-10-0 用的是 developed_by，2026-11-10-13 用的是 released_by，跨文章关系类型不一致，导致图谱跨文章连通时该对出现两条不同意义的边。",
+      "fix": "全文统一 Fable 5.2 与 Anthropic 的关系类型，选择 released_by（与正文中 Anthropic 前一日发布的 Fable 5.2 一致）作为规范，并回改 2026-11-10-0 中同对的 developed_by 为 released_by。"
+    },
+    {
+      "article_id": "2026-11-10-3",
+      "severity": "medium",
+      "problem": "关系 Entegris --supplies--> AI 数据中心 超出原文证据：正文只写半导体材料需求随 AI 芯片产能扩张而走高，Entegris 是向上游半导体制造供材料的厂商，并未直接供应 AI 数据中心；实体 AI 数据中心 也被标成 organization 类型，实为领域概念。",
+      "fix": "删除或改写 Entegris --supplies--> AI 数据中心 这条推断边，原证据不足以支撑供应数据中心；把 AI 数据中心 的 type 从 organization 改为 topic，或仅在 Infineon 处保留 supplies。"
+    },
+    {
+      "article_id": "2026-11-10-6",
+      "severity": "medium",
+      "problem": "GR00T 2 Turbo 与 RTX 5090、Jetson Thor 的延迟对比（约 38ms 与约 124ms）被做成 --uses--> 关系，但这是指标数据而非实体间关系，稀释了 --uses--> 的语义价值。",
+      "fix": "对纯延迟指标对比不要建 --uses--> 关系，只在 metrics 中保留（RTX 5090 预测延迟约 38ms、Jetson Thor 约 124ms）；确需保留实体关联时用 GR00T 2 Turbo --runs_on--> Jetson Thor 即可。"
+    }
+  ],
+  "lessons": [
+    "同一对主体(s 到 t)在不同文章里必须使用同一个关系类型（如 released_by 与 developed_by 二选一并全局一致），以保证图谱跨文章连通。",
+    "数据集/开放数据作为实体不要标成 product 或 model，用 dataset 类型；发布到某托管平台用数据集 --hosted_on--> 平台，方向从数据集指向平台，不要用 licenses_to 或反向。",
+    "合作、伙伴类关系（partners_with 等）对同一对实体只建一条边，不要在两个方向各建一条重复边。"
+  ]
+}

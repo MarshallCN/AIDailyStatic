@@ -1,6 +1,7 @@
 window.INSIGHT_MANIFEST = {
-  version: '20261109232222',
+  version: '20261110231728',
   files: [
+    '2026-11-10.json',
     '2026-11-09.json',
     '2026-11-08.json',
     '2026-11-07.json',
@@ -245,5 +246,5 @@ window.INSIGHT_MANIFEST = {
     '2026-03-12.json',
     '2026-03-02.json',
   ],
-  latest: '2026-11-09'
+  latest: '2026-11-10'
 };

@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-10",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "实体、指标与大多数关系的证据都能对上原文，事实性硬伤少；主要问题在事件切分（把同一合作拆成重复事件）、事件参与者角色错配（把治理受托机构/对比背景误标为 regulator），以及个别关系用证据支撑了另一回事。",
+  "findings": [
+    {
+      "article_id": "2026-11-10-4",
+      "severity": "medium",
+      "problem": "事件切分不当：同一条合作被拆成两个互相重复的事件。事件 1“Quantinuum 与 RIKEN 扩大合作推进量子-AI 混合超算商业化”的 abstract 已包含“将量子处理器与经典 HPC/GPU 计算资源整合进同一计算栈”，事件 2“量子处理器被整合进经典 HPC/GPU 计算栈作为加速器”又在重复这一段技术内容，不是一个新的独立动作。",
+      "fix": "合并为一个 partnership 事件（Quantinuum 与 RIKEN 扩大合作），把“整合进同一计算栈、定位为加速器而非替代品、先解决纠错与集成工程”全部写进这一个事件的 summary，删除重复的事件 2。"
+    },
+    {
+      "article_id": "2026-11-10-7",
+      "severity": "medium",
+      "problem": "事件 2“加州 SB 53 与伊利诺伊州 SB 315 持续推进州级 AI 监管”的 participants 把纽约州列为 role=regulator，但该事件主体是加州与伊利诺伊州的立法，纽约州与这条内容无关，参与主体错配会让图谱把纽约误读为这场对比监管的监管者。",
+      "fix": "从该事件的 participants 中去掉纽约州；若想保留对比语境，可在 summary 里说明这是与纽约 RAISE 的横向参照，不要让纽约州以 regulator 身份出现在加州/伊利诺伊事件里。"
+    },
+    {
+      "article_id": "2026-11-10-2",
+      "severity": "medium",
+      "problem": "事件 2“Anthropic 作为公益公司以投票权结构平衡治理”中 Long-Term Benefit Trust 的 role 被标为 regulator。Long-Term Benefit Trust 是选举董事会多数席位的治理受托机构，不是监管者，事件类型也是 trend，角色与实体性质不符。",
+      "fix": "将 Long-Term Benefit Trust 的 role 改为 governance 或 stakeholder（或省略 role），不要使用 regulator；regulator 仅用于政府/立法机关/监管机构这类主体。"
+    },
+    {
+      "article_id": "2026-11-10-0",
+      "severity": "low",
+      "problem": "关系“Gemini 4 Carbon --compared_with--> Gemini 4 Argon”的 evidence“定价延续 Argon 的激进策略”支撑的是定价策略的延续性，不是两个模型能力的对比，compared_with 关系的证据不成立。",
+      "fix": "删除该 compared_with 关系；如需表达定价参照，应换用能支撑的语义（如定价续接/参照），或在 evidence 明确指出这是定价层面的延续而非模型对比后再建立关系。"
+    },
+    {
+      "article_id": "2026-11-10-3",
+      "severity": "low",
+      "problem": "关系“Entegris --supplies--> AI 数据中心”的 evidence“半导体材料需求随 AI 芯片产能扩张而走高”是泛泛的行业趋势描述，没有直接体现 Entegris 对 AI 数据中心的具体供货关系，证据与所附断言的关联薄弱。",
+      "fix": "补强 evidence 到 Entegris 本身（如“材料商 Entegris 为 AI 芯片产能扩张供货”），或把该关系降为低可信度的间接推断并注明证据不足。"
+    },
+    {
+      "article_id": "2026-11-10-13",
+      "severity": "low",
+      "problem": "正文明确提到“被 METR 报告警告可能逼近递归自我改进”这一命名机构，但 METR 未作为实体抽出，属次要主体遗漏，削弱该文对 Anthropic IPO 风险叙事的支撑。",
+      "fix": "补抽 METR 实体（organization），并建立 METR 与被其警告的 Anthropic 之间的关联（预警/警告），补进该文实体与关系。"
+    }
+  ],
+  "lessons": [
+    "若一篇新闻里后一个事件只是对前一个事件技术细节或内容的展开而非新的独立动作，应合并进同一事件，不要把同一动作拆成互相重复的多个事件。",
+    "事件 participants 的角色（如 regulator）必须与该事件的实际主体一致；不要因为整篇文章主题涉及某主体就把它与不相关的事件绑定。",
+    "关系类型的 evidence 必须直接支撑该关系语义；“延续某策略/定价续接”这类证据支撑定价参照而非模型能力对比，不要据此建立 compared_with 之类关系。"
+  ]
+}

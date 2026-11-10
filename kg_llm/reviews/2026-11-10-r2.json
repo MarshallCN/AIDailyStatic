@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-10",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 88,
+  "summary": "事实层面可信：全部 metrics 与原文数字逐条对得上，跨文章规范名一致（Gemini 4 Carbon、GPT-6 Astra、Anthropic），关系方向无反向错误。主要问题集中在 2026-11-10-3（Entegris 事件证据错引、全篇仅 1 条关系的贫乏）以及两处实体类型错配与自家评测框架被误标为独立 benchmark，无需推翻重构但仍达不到直接发布标准。",
+  "findings": [
+    {
+      "article_id": "2026-11-10-3",
+      "severity": "medium",
+      "problem": "事件 \"Entegris 资本日提出 15% 年营收增长目标\" 的 evidence 引用的是第三段结论句 \"半导体材料需求随 AI 芯片产能扩张而走高\"，该句不支撑资本日目标这一断言；真正支撑的原文是第二段 \"Entegris 在资本日上提出把年资本开支占销售额比例从五年平均的 11% 降至 7%–9%，目标是 15% 的年营收增长，净杠杆降到约 2.0 倍\"。证据存在但支撑的是另一回事。",
+      "fix": "将事件 2 的 evidence 改为第二段原文（\"Entegris 在资本日上提出把年资本开支占销售额比例从五年平均的 11% 降至 7%–9%，目标是 15% 的年营收增长\"），并补充 Entegris 的关系以消除贫乏——例如 Entegris 与 AI 芯片/半导体材料制造的关系（supplies 给产业链），或至少为 Entegris 增加一条能跨文章连通的边。"
+    },
+    {
+      "article_id": "2026-11-10-5",
+      "severity": "medium",
+      "problem": "实体 \"GLP 架构\" 被标为 type \"model\"。GLP（生成式潜在预测）是 PAN 2 所依的架构/框架，不是独立模型，与 PAN 2、MiniMax-H3 等 model 类型实体混在同类会误导类型统计与下游检索。",
+      "fix": "将 GLP 架构的 type 改为架构类（如 architecture 或 framework），不要用 model；保留 PAN 2 --built_on--> GLP 架构 的关系即可。"
+    },
+    {
+      "article_id": "2026-11-10-10",
+      "severity": "low",
+      "problem": "实体 \"时间能力评估\" 被标为 type \"benchmark\"，且关系 \"In Search of Lost Time --evaluated_on--> 时间能力评估\"。这是论文自建的\"知识→行动\"四道评估框架，不是独立第三方基准；把它标成独立 benchmark 并用 evaluated_on 会暗示存在一个可复用的外部评测基准，实际不存在。",
+      "fix": "将 2026-11-10-10 的 \"时间能力评估\" 归类为论文内部方法论/评测框架（不要用 benchmark 类型），并删除 directed research 关系 \"evaluated_on\" 或改为表述论文内部评估的关系；evaluated_on 应仅用于第三方独立基准（如 Physics-IQ Verified 那种）。"
+    },
+    {
+      "article_id": "2026-11-10-3",
+      "severity": "low",
+      "problem": "全篇只有 1 条关系（Infineon --supplies--> AI 数据中心），Entegris 作为本世纪的核心角色之一没有任何关系边，属于信息贫乏；确定性审计也已单独指出该文章关系不足 2 条。",
+      "fix": "为 Entegris 补充关系，例如 Entegris --supplies/相关于--> 半导体材料或 AI 芯片产能扩张主体，使该文章关系数达到 ≥2 条，并改善与其它文章（如 AI 芯片/算力 topic）的连通。"
+    }
+  ],
+  "lessons": [
+    "事件与关系的 evidence 必须引用能直接支撑该断言的具体原文片段；段落级结论句（如\"某需求走高\"、\"这是领先指标\"）不可当作业绩指引、资本日目标等具体断言的证据。",
+    "架构/框架（如 GLP、生成式潜在预测）与 model 是不同类型，不要把架构实体标成 model。",
+    "论文自己设计的评测框架不要标为独立 benchmark，也不要对内部框架用 evaluated_on 关系；evaluated_on 仅用于第三方独立基准（如 Physics-IQ Verified）。"
+  ]
+}
