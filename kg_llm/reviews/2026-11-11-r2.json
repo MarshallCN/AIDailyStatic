@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-11",
+  "round": 2,
+  "verdict": "accept",
+  "quality_score": 88,
+  "summary": "15 篇文章数字、实体、关系方向基本逐条与原文核验无误，且统一用 released_by/developed_by 方向正确，Google 与 Google DeepMind 未错误合并。仅有三处轻微问题：Art12 用一对方向相反的边重复表达同一客户-供应商事实、Art1 的 Antigravity 集成方向写反、Art10 新设 5 亿美元半导体投资公司这一独立动作只落在事件叙述文字里没有落成实体/关系。",
+  "findings": [
+    {
+      "article_id": "2026-11-11-12",
+      "severity": "low",
+      "problem": "同一事实被用两条方向相反的边重复表达：既写 CoreWeave --supplies--> Anthropic，又写 Anthropic --uses--> CoreWeave，两条 evidence 都指向同一句“随 Anthropic 等客户需求增长”。这会让图谱呈现相互矛盾的双向边。",
+      "fix": "只保留语义更具体的一条，建议删掉 Anthropic --uses--> CoreWeave（权重0.5），保留 CoreWeave --supplies--> Anthropic。"
+    },
+    {
+      "article_id": "2026-11-11-1",
+      "severity": "low",
+      "problem": "关系 Antigravity --integrates--> AlphaGenome 2 方向写反。原文是“AlphaGenome 2 将作为 Skills 出现在 Antigravity”，即模型作为技能被托管进平台，方向应为 AlphaGenome 2 集成到 Antigravity。",
+      "fix": "改为 AlphaGenome 2 --integrates--> Antigravity，evidence 保持“作为 AlphaGenome 2 Skills 出现在 Antigravity”。"
+    },
+    {
+      "article_id": "2026-11-11-10",
+      "severity": "low",
+      "problem": "台积电董事会“批准设立一家最高 5 亿美元的投资公司、专项用于半导体产业战略投资”是与投资 Anthropic/OpenAI 并列的第二个独立公司动作，但只出现在事件 summary 文字和 metric 里，没有抽成实体或关系（该投资公司无 entity、无 relation）。",
+      "fix": "新增实体“台积电半导体战略投资公司”（company/entity），并加关系 TSMC --establishes--> 该实体，或拆分出独立 funding/trend 事件。"
+    }
+  ],
+  "lessons": [
+    "同一对主体之间的同一事实不要用一对方向相反的边重复表达（如 client 关系既写 supplies 又写 uses），只保留语义最具体的一条。",
+    "当某产品/模型/技能是作为 Skills 被托管进某个平台时，方向应写 产品 --integrates--> 平台，不要把承载平台写成集成方。"
+  ]
+}

@@ -1,0 +1,675 @@
+{
+  "date": "2026-11-11",
+  "articles": [
+    {
+      "article_id": "2026-11-11-0",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.95, "evidence": ["Google DeepMind 于 11 月 10 日发布 Gemini Robotics 2.5"]},
+        {"name": "Gemini Robotics 2.5", "type": "model", "aliases": ["Robotics 2.5"], "confidence": 0.95, "evidence": ["Google DeepMind 于 11 月 10 日发布 Gemini Robotics 2.5"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": ["Argon"], "confidence": 0.9, "evidence": ["Robotics 2.5 的核心飞跃是借力 Gemini 4 Argon"]},
+        {"name": "Gemini Robotics ER 2", "type": "model", "aliases": ["Gemini Robotics ER 2"], "confidence": 0.9, "evidence": ["相比此前的 Gemini Robotics ER 2"]},
+        {"name": "ASIMOV-Jailbreak", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["同时开源 ASIMOV-Jailbreak 基准"]},
+        {"name": "Apptronik", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["与 Apptronik、Mercedes-Benz 在匈牙利 Kecskemét 与德国 Sindelfingen 的真实产线试点中"]},
+        {"name": "Mercedes-Benz", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["与 Apptronik、Mercedes-Benz 在匈牙利 Kecskemét 与德国 Sindelfingen 的真实产线试点中"]},
+        {"name": "Apollo 2", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Apollo 2 人形机器人在装配零件拣选的 proof-of-concept 达到 96% 成功率"]},
+        {"name": "Agile Robots", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["该模型通过 Agile Robots、Apptronik、Boston Dynamics 等合作伙伴开放"]},
+        {"name": "Boston Dynamics", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["该模型通过 Agile Robots、Apptronik、Boston Dynamics 等合作伙伴开放"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google DeepMind 发布机器人 VLA 模型 Gemini Robotics 2.5",
+          "summary": "Google DeepMind 于 11 月 10 日发布迄今最强大的机器人视觉-语言-动作（VLA）模型 Gemini Robotics 2.5，借力 Gemini 4 Argon 作仿真引擎，任务成功率较基线提升 30%–100%、完成速度快 20%–30%。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Gemini Robotics 2.5", "type": "model", "role": "object"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google DeepMind 于 11 月 10 日发布 Gemini Robotics 2.5"]
+        },
+        {
+          "type": "open_source",
+          "label": "Google DeepMind 开源机器人越狱评测基准 ASIMOV-Jailbreak",
+          "summary": "开源 ASIMOV-Jailbreak 基准，含数百条伪装多种场景的不安全请求，Gemini 4 Argon 达 99.5% 越狱抵抗率（此前基线仅 82%）。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "ASIMOV-Jailbreak", "type": "benchmark", "role": "object"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["同时开源 ASIMOV-Jailbreak 基准"]
+        },
+        {
+          "type": "partnership",
+          "label": "Google DeepMind 与 Apptronik、Mercedes-Benz 在真实产线试点 Gemini Robotics 2.5",
+          "summary": "与 Apptronik、Mercedes-Benz 在匈牙利与德国真实产线试点，Apollo 2 人形机器人装配零件拣选 proof-of-concept 达 96% 成功率，模型经 Agile Robots、Apptronik、Boston Dynamics 等合作伙伴开放。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Apptronik", "type": "company", "role": "partner"},
+            {"name": "Mercedes-Benz", "type": "company", "role": "partner"},
+            {"name": "Apollo 2", "type": "product", "role": "object"},
+            {"name": "Agile Robots", "type": "company", "role": "partner"},
+            {"name": "Boston Dynamics", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["与 Apptronik、Mercedes-Benz 在匈牙利 Kecskemét 与德国 Sindelfingen 的真实产线试点中"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini Robotics 2.5", "target": "Google DeepMind", "type": "released_by", "weight": 0.9, "evidence": ["Google DeepMind 于 11 月 10 日发布 Gemini Robotics 2.5"]},
+        {"source": "Gemini Robotics 2.5", "target": "Gemini 4 Argon", "type": "uses", "weight": 0.8, "evidence": ["Robotics 2.5 的核心飞跃是借力 Gemini 4 Argon"]},
+        {"source": "Gemini Robotics 2.5", "target": "Gemini Robotics ER 2", "type": "outperforms", "weight": 0.7, "evidence": ["相比此前的 Gemini Robotics ER 2"]},
+        {"source": "ASIMOV-Jailbreak", "target": "Google DeepMind", "type": "released_by", "weight": 0.8, "evidence": ["同时开源 ASIMOV-Jailbreak 基准"]},
+        {"source": "Gemini 4 Argon", "target": "ASIMOV-Jailbreak", "type": "evaluated_on", "weight": 0.7, "evidence": ["Argon 达到 99.5% 越狱抵抗率（此前基线仅 82%）"]},
+        {"source": "Apollo 2", "target": "Gemini Robotics 2.5", "type": "uses", "weight": 0.6, "evidence": ["Apollo 2 人形机器人在装配零件拣选的 proof-of-concept 达到 96% 成功率"]},
+        {"source": "Apptronik", "target": "Google DeepMind", "type": "partners_with", "weight": 0.6, "evidence": ["与 Apptronik、Mercedes-Benz 在匈牙利 Kecskemét 与德国 Sindelfingen 的真实产线试点中"]},
+        {"source": "Mercedes-Benz", "target": "Google DeepMind", "type": "partners_with", "weight": 0.6, "evidence": ["与 Apptronik、Mercedes-Benz 在匈牙利 Kecskemét 与德国 Sindelfingen 的真实产线试点中"]}
+      ],
+      "metrics": [
+        {"name": "任务成功率较基线提升", "value": "30%–100%"},
+        {"name": "完成任务速度提升", "value": "20%–30%"},
+        {"name": "绕开障碍物安全完成率提升", "value": "33%"},
+        {"name": "人群安全完成率提升", "value": "43%"},
+        {"name": "Apollo 2 装配零件拣选成功", "value": "96%"},
+        {"name": "ASIMOV-Jailbreak 越狱抵抗率（Argon）", "value": "99.5%（基线 82%）"},
+        {"name": "覆盖任务数", "value": "200 多个"}
+      ],
+      "why_it_matters": "机器人基础模型第一次把'仿真引擎（世界模型）+安全越狱评测+产线试点'打包进同一发布，物理智能的门槛从单点模型能力移到能否用合成数据低成本加速技能习得与可信安全交付。"
+    },
+    {
+      "article_id": "2026-11-11-1",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.95, "evidence": ["Google DeepMind 于 11 月 11 日发布 AlphaGenome 2"]},
+        {"name": "AlphaGenome 2", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Google DeepMind 于 11 月 11 日发布 AlphaGenome 2"]},
+        {"name": "TenK10K", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在 TenK10K 单细胞数据上"]},
+        {"name": "AlphaGenome API", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["通过 AlphaGenome API 开放"]},
+        {"name": "Antigravity", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["作为 AlphaGenome 2 Skills 出现在 Antigravity"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google DeepMind 发布条件式单细胞 DNA 序列模型 AlphaGenome 2",
+          "summary": "下一代 DNA 序列模型 AlphaGenome 2 改为条件式模型：每次只预测一个'条件'（组织、细胞类型或状态），训练数据超过 1.07 亿个单细胞谱、覆盖 68 种组织，今日起经 AlphaGenome API 面向非商用研究开放。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "AlphaGenome 2", "type": "model", "role": "object"},
+            {"name": "AlphaGenome API", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Google DeepMind 于 11 月 11 日发布 AlphaGenome 2"]
+        },
+        {
+          "type": "benchmark",
+          "label": "AlphaGenome 2 在 TenK10K 上识别因果变异较前代翻倍",
+          "summary": "在 TenK10K 单细胞数据上，AlphaGenome 2 识别的因果变异数量 30% vs 16%、定向基因效应 43% vs 23%，约较前代翻倍。",
+          "participants": [
+            {"name": "AlphaGenome 2", "type": "model", "role": "subject"},
+            {"name": "TenK10K", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 TenK10K 单细胞数据上"]
+        }
+      ],
+      "relations": [
+        {"source": "AlphaGenome 2", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["Google DeepMind 于 11 月 11 日发布 AlphaGenome 2"]},
+        {"source": "AlphaGenome 2", "target": "TenK10K", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 TenK10K 单细胞数据上"]},
+        {"source": "AlphaGenome API", "target": "Google DeepMind", "type": "released_by", "weight": 0.6, "evidence": ["通过 AlphaGenome API 开放"]},
+        {"source": "AlphaGenome 2", "target": "AlphaGenome API", "type": "uses", "weight": 0.5, "evidence": ["模型今日起面向非商用研究通过 AlphaGenome API 开放"]},
+        {"source": "Antigravity", "target": "AlphaGenome 2", "type": "integrates", "weight": 0.4, "evidence": ["作为 AlphaGenome 2 Skills 出现在 Antigravity"]}
+      ],
+      "metrics": [
+        {"name": "训练单细胞谱数量", "value": "超过 1.07 亿个"},
+        {"name": "覆盖组织数", "value": "68 种"},
+        {"name": "TenK10K 因果变异识别", "value": "30% vs 16%（前代）"},
+        {"name": "TenK10K 定向基因效应", "value": "43% vs 23%（前代）"}
+      ],
+      "why_it_matters": "DNA 建模从'组织平均'转向'细胞条件式'，同一段变异的致病效应能否被锁定，取决于是否按细胞类型分别读——这是把基因组学从关联逼近推进到机制辨识的关键一跃。"
+    },
+    {
+      "article_id": "2026-11-11-2",
+      "entities": [
+        {"name": "Databricks", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Databricks 于 11 月 11 日推出新一代 agentic AI 工具集"]},
+        {"name": "Ali Ghodsi", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["CEO Ali Ghodsi 称他全天候使用"]},
+        {"name": "Genie", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["升级后的 Genie 助手在后台陪跑办公者"]},
+        {"name": "Ontology", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["另一项 Ontology 功能则扫描组织内全部数据"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 刚发布面向企业的办公工具"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Databricks 推出永不睡觉的 agentic 工具 Genie 与 Ontology",
+          "summary": "Databricks 推出新一代 agentic AI 工具集：升级后的 Genie 助手在后台陪跑办公者、全天主动提建议，另一项 Ontology 功能扫描组织内全部数据，让个人快速取用信息或运行分析。",
+          "participants": [
+            {"name": "Databricks", "type": "company", "role": "subject"},
+            {"name": "Genie", "type": "product", "role": "object"},
+            {"name": "Ontology", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Databricks 于 11 月 11 日推出新一代 agentic AI 工具集"]
+        },
+        {
+          "type": "trend",
+          "label": "Databricks 与 Anthropic 争夺知识工人办公市场",
+          "summary": "Databricks 发布 agentic 工具恰逢 AI 行业争夺'知识工人'白热化：前一天 Anthropic 刚发布面向企业的办公工具（Claude Sheets、Whiteboards、Claude Meetings）。",
+          "participants": [
+            {"name": "Databricks", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["Anthropic 刚发布面向企业的办公工具"]
+        }
+      ],
+      "relations": [
+        {"source": "Genie", "target": "Databricks", "type": "released_by", "weight": 0.9, "evidence": ["Databricks 于 11 月 11 日推出新一代 agentic AI 工具集"]},
+        {"source": "Ontology", "target": "Databricks", "type": "released_by", "weight": 0.8, "evidence": ["另一项 Ontology 功能则扫描组织内全部数据"]},
+        {"source": "Ali Ghodsi", "target": "Databricks", "type": "affiliated_with", "weight": 0.7, "evidence": ["CEO Ali Ghodsi 称他全天候使用"]},
+        {"source": "Databricks", "target": "Anthropic", "type": "competes_with", "weight": 0.6, "evidence": ["Anthropic 刚发布面向企业的办公工具"]}
+      ],
+      "metrics": [
+        {"name": "CEO 自称效率提升", "value": "10 倍"},
+        {"name": "最新一轮融资估值", "value": "1900 亿美元"},
+        {"name": "最近融资额（8 月）", "value": "50 亿美元"},
+        {"name": "营收同比增幅", "value": "80%"},
+        {"name": "年化运转率", "value": "突破 70 亿美元"},
+        {"name": "2025 年全球知识工人工作创造价值", "value": "超过 40 万亿美元"}
+      ],
+      "why_it_matters": "让 agent'常驻后台'而非'被调用'，是把入口从对话框搬进工作流本身——Databricks 用企业数据 + 常驻 agent 证明数据方也能抢办公室入口，而不再只靠对话模型。"
+    },
+    {
+      "article_id": "2026-11-11-3",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 于 11 月 10 日宣布把 Claude 引入视频会议平台 Google Meet"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["把 Claude 引入视频会议平台 Google Meet"]},
+        {"name": "Claude Meetings", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["新的 Claude Meetings 让用户把 Claude 作为可见参与者加入会议"]},
+        {"name": "Google Meet", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["把 Claude 引入视频会议平台 Google Meet"]},
+        {"name": "Claude Sheets", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Claude Sheets（AI 表格，对标 Excel/Google Sheets）"]},
+        {"name": "Claude Whiteboards", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Claude Whiteboards（把讨论转为时间线与行动计划）"]},
+        {"name": "Claude Data", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Claude Data（共享仪表板）"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["把 Claude 引入视频会议平台 Google Meet"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 把 Claude 作为可见参与者带入 Google Meet 实时干活",
+          "summary": "新的 Claude Meetings 让用户把 Claude 作为可见参与者加入 Google Meet，把 AI 在会议中的角色从'记录或总结'升级为'在讨论进行中就完成随之而来的工作'，先以 beta 向 Team 与 Enterprise 客户开放。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Meetings", "type": "product", "role": "object"},
+            {"name": "Claude", "type": "model", "role": "object"},
+            {"name": "Google Meet", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Anthropic 于 11 月 10 日宣布把 Claude 引入视频会议平台 Google Meet"]
+        },
+        {
+          "type": "launch",
+          "label": "Anthropic 发布 Claude Sheets、Whiteboards 与 Data 办公套件",
+          "summary": "同一批发布还有 Claude Whiteboards（把讨论转为时间线与行动计划）、Claude Sheets（AI 表格，对标 Excel/Google Sheets）与 Claude Data（共享仪表板），是 Anthropic 在 IPO 前把 Claude 做成知识工人'主动参与者'的全面铺陈。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Sheets", "type": "product", "role": "object"},
+            {"name": "Claude Whiteboards", "type": "product", "role": "object"},
+            {"name": "Claude Data", "type": "product", "role": "object"}
+          ],
+          "evidence": ["同一批发布还有 Claude Whiteboards"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude Meetings", "target": "Anthropic", "type": "released_by", "weight": 0.9, "evidence": ["Anthropic 于 11 月 10 日宣布把 Claude 引入视频会议平台 Google Meet"]},
+        {"source": "Claude Meetings", "target": "Google Meet", "type": "integrates", "weight": 0.8, "evidence": ["让用户把 Claude 作为可见参与者加入会议"]},
+        {"source": "Claude Meetings", "target": "Claude", "type": "built_on", "weight": 0.7, "evidence": ["让用户把 Claude 作为可见参与者加入会议"]},
+        {"source": "Claude Sheets", "target": "Anthropic", "type": "released_by", "weight": 0.8, "evidence": ["Claude Sheets（AI 表格，对标 Excel/Google Sheets）"]},
+        {"source": "Claude Whiteboards", "target": "Anthropic", "type": "released_by", "weight": 0.8, "evidence": ["Claude Whiteboards（把讨论转为时间线与行动计划）"]},
+        {"source": "Claude Data", "target": "Anthropic", "type": "released_by", "weight": 0.8, "evidence": ["Claude Data（共享仪表板）"]},
+        {"source": "Google Meet", "target": "Google", "type": "released_by", "weight": 0.5, "evidence": ["把 Claude 引入视频会议平台 Google Meet"]}
+      ],
+      "metrics": [
+        {"name": "IPO 路演计划募资上限", "value": "最高约 644 亿美元"}
+      ],
+      "why_it_matters": "Claude 从'会后转录'上升到'会中开工'，等于把对话模型植入会议这一最高频协作动线，AI 从工具变成会议里的第一公民——办公软件竞争的战场从编辑器搬到实时协作会话本身。"
+    },
+    {
+      "article_id": "2026-11-11-4",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 于 11 月 10 日（美国时间）宣布"]},
+        {"name": "ChatGPT Voice", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["从 ChatGPT Voice 中完全移除 Advanced 与 Standard 语音选项"]},
+        {"name": "Advanced 语音", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["从 ChatGPT Voice 中完全移除 Advanced 与 Standard 语音选项"]},
+        {"name": "Standard 语音", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["从 ChatGPT Voice 中完全移除 Advanced 与 Standard 语音选项"]},
+        {"name": "GPT-Live", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["现有用户届时自动切换到 GPT-Live"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "OpenAI 从 ChatGPT Voice 移除 Advanced 与 Standard 语音并迁移到 GPT-Live",
+          "summary": "OpenAI 宣布自 12 月 11 日起从 ChatGPT Voice 完全移除 Advanced 与 Standard 语音选项，现有用户自动切换到 GPT-Live，两个旧选项不再出现在'设置 > 语音'中，语音之外仍保留视频与屏幕共享。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT Voice", "type": "product", "role": "object"},
+            {"name": "Advanced 语音", "type": "product", "role": "object"},
+            {"name": "Standard 语音", "type": "product", "role": "object"},
+            {"name": "GPT-Live", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI 于 11 月 10 日（美国时间）宣布"]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI 收拢多套语音实现、把赌注押在 GPT-Live 上",
+          "summary": "GPT-Live 采用全双工架构、能同时听与说，自上线以来整体语音使用量近乎翻倍，几乎全部聊天语音用户都已迁移，此次是'产品减负'式调整以集中资源迭代最受欢迎的实时语音模型。",
+          "participants": [
+            {"name": "GPT-Live", "type": "model", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["GPT-Live 是 OpenAI 今年 7 月发布的语音模型"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-Live", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["GPT-Live 是 OpenAI 今年 7 月发布的语音模型"]},
+        {"source": "GPT-Live", "target": "Advanced 语音", "type": "replaces", "weight": 0.8, "evidence": ["从 ChatGPT Voice 中完全移除 Advanced 与 Standard 语音选项"]},
+        {"source": "GPT-Live", "target": "Standard 语音", "type": "replaces", "weight": 0.8, "evidence": ["从 ChatGPT Voice 中完全移除 Advanced 与 Standard 语音选项"]},
+        {"source": "ChatGPT Voice", "target": "GPT-Live", "type": "integrates", "weight": 0.7, "evidence": ["现有用户届时自动切换到 GPT-Live"]}
+      ],
+      "metrics": [
+        {"name": "语音使用量变化", "value": "近乎翻倍"},
+        {"name": "停用生效日期", "value": "2026 年 12 月 11 日"},
+        {"name": "GPT-Live 上线时间", "value": "今年 7 月"}
+      ],
+      "why_it_matters": "在语音占满用户时长、竞相堆功能时，OpenAI 反向'砍产品'收拢到单一大而全的实时语音，说明多套并存带来的体验分裂与维护成本已大于差异化收益，成熟市场进入'收敛'阶段。"
+    },
+    {
+      "article_id": "2026-11-11-5",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 收购了 AI 旅行 agent Odessia"]},
+        {"name": "Odessia", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["OpenAI 收购了 AI 旅行 agent Odessia"]},
+        {"name": "Francis Davidson", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["他在宣布交易的帖子中称自己已入职 OpenAI"]},
+        {"name": "Sonder", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["曾是最早开创 Airbnb 式短租独角兽 Sonder 的创始人兼 CEO"]},
+        {"name": "Sequoia", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["由 Sequoia 领投的 600 万美元 pre-seed"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 称每周有 12 亿人使用 ChatGPT"]}
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "OpenAI 收购 AI 旅行 agent 创业公司 Odessia",
+          "summary": "OpenAI 通过人才收购（acqui-hire）招入 AI 旅行 agent Odessia 及其创始人 Francis Davidson，其已入职 OpenAI 帮助推进'旅行的未来'，交易条款未披露，该工具现已关闭。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Odessia", "type": "company", "role": "object"},
+            {"name": "Francis Davidson", "type": "person", "role": "object"}
+          ],
+          "evidence": ["OpenAI 收购了 AI 旅行 agent Odessia"]
+        },
+        {
+          "type": "funding",
+          "label": "Odessia 完成由 Sequoia 领投的 600 万美元 pre-seed",
+          "summary": "成立仅一年的 Odessia 此前完成由 Sequoia 领投的 600 万美元 pre-seed，AI 旅行 agent 上线约五个月，帮助早期用户规划了价值数百万美元的行程。",
+          "participants": [
+            {"name": "Sequoia", "type": "company", "role": "funder"},
+            {"name": "Odessia", "type": "company", "role": "object"}
+          ],
+          "evidence": ["由 Sequoia 领投的 600 万美元 pre-seed"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "Odessia", "type": "acquires", "weight": 0.9, "evidence": ["OpenAI 收购了 AI 旅行 agent Odessia"]},
+        {"source": "Francis Davidson", "target": "OpenAI", "type": "affiliated_with", "weight": 0.8, "evidence": ["他在宣布交易的帖子中称自己已入职 OpenAI"]},
+        {"source": "Francis Davidson", "target": "Sonder", "type": "affiliated_with", "weight": 0.6, "evidence": ["曾是最早开创 Airbnb 式短租独角兽 Sonder 的创始人兼 CEO"]},
+        {"source": "Sequoia", "target": "Odessia", "type": "invests_in", "weight": 0.7, "evidence": ["由 Sequoia 领投的 600 万美元 pre-seed"]},
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.6, "evidence": ["OpenAI 称每周有 12 亿人使用 ChatGPT"]}
+      ],
+      "metrics": [
+        {"name": "Odessia pre-seed 金额", "value": "600 万美元"},
+        {"name": "ChatGPT 周活用户", "value": "12 亿人"},
+        {"name": "Odessia 成立时长", "value": "一年"},
+        {"name": "AI 旅行 agent 上线时长", "value": "约五个月"}
+      ],
+      "why_it_matters": "OpenAI 用 acqui-hire 收的不是技术而是'把抽象需求翻译成可售行程'的产品直觉，把旅行列进 agent 落地优先场景，说明入口之争正按'高频真实世界交易'逐行业兑现。"
+    },
+    {
+      "article_id": "2026-11-11-6",
+      "entities": [
+        {"name": "Moonshot AI", "type": "company", "aliases": ["月之暗面", "Kimi 团队"], "confidence": 0.95, "evidence": ["月之暗面发布 Kimi K3.1 Pro"]},
+        {"name": "Kimi K3.1 Pro", "type": "model", "aliases": ["K3.1 Pro"], "confidence": 0.95, "evidence": ["月之暗面发布 Kimi K3.1 Pro"]},
+        {"name": "Kimi K3", "type": "model", "aliases": ["K3"], "confidence": 0.85, "evidence": ["较 Kimi K3 全面一致地提升"]},
+        {"name": "Kimi K3.1 Pro Highspeed", "type": "model", "aliases": ["Highspeed"], "confidence": 0.88, "evidence": ["提供 Kimi K3.1 Pro Highspeed（速度 2–3 倍）版本"]},
+        {"name": "Gated DeepSeek Sparse Attention", "type": "topic", "aliases": ["DSA", "Gated DSA"], "confidence": 0.85, "evidence": ["把原有 24 层完整注意力的 Gated MLA 层替换为 Gated DeepSeek Sparse Attention（DSA）层"]},
+        {"name": "vLLM", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["vLLM、SGLang、AMD Instinct 等在 day-0 提供支持"]},
+        {"name": "SGLang", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["vLLM、SGLang、AMD Instinct 等在 day-0 提供支持"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "月之暗面发布开源 MoE agent 模型 Kimi K3.1 Pro",
+          "summary": "Kimi K3.1 Pro 是 K3.1 系列首个模型，也是公司迄今最强的 3T 级开源权重模型：MoE 架构、总参数 2.8T、激活 104B、上下文 100 万 token，完整权重将按承诺开放。",
+          "participants": [
+            {"name": "Moonshot AI", "type": "company", "role": "subject"},
+            {"name": "Kimi K3.1 Pro", "type": "model", "role": "object"}
+          ],
+          "evidence": ["月之暗面发布 Kimi K3.1 Pro"]
+        },
+        {
+          "type": "launch",
+          "label": "Kimi K3.1 Pro Highspeed 与日模型配套版本上线",
+          "summary": "发布即接入 Kimi.ai、Kimi Work、Kimi Code 与 Kimi API，并提供 Kimi K3.1 Pro Highspeed（速度 2–3 倍）版本；vLLM、SGLang、AMD Instinct 等在 day-0 提供支持。",
+          "participants": [
+            {"name": "Kimi K3.1 Pro Highspeed", "type": "model", "role": "object"},
+            {"name": "Kimi K3.1 Pro", "type": "model", "role": "object"},
+            {"name": "vLLM", "type": "tool", "role": "partner"},
+            {"name": "SGLang", "type": "tool", "role": "partner"}
+          ],
+          "evidence": ["提供 Kimi K3.1 Pro Highspeed（速度 2–3 倍）版本"]
+        }
+      ],
+      "relations": [
+        {"source": "Kimi K3.1 Pro", "target": "Moonshot AI", "type": "released_by", "weight": 0.9, "evidence": ["月之暗面发布 Kimi K3.1 Pro"]},
+        {"source": "Kimi K3.1 Pro", "target": "Kimi K3", "type": "outperforms", "weight": 0.7, "evidence": ["较 Kimi K3 全面一致地提升"]},
+        {"source": "Kimi K3.1 Pro", "target": "Gated DeepSeek Sparse Attention", "type": "built_on", "weight": 0.7, "evidence": ["把原有 24 层完整注意力的 Gated MLA 层替换为 Gated DeepSeek Sparse Attention（DSA）层"]},
+        {"source": "Kimi K3.1 Pro Highspeed", "target": "Kimi K3.1 Pro", "type": "built_on", "weight": 0.7, "evidence": ["提供 Kimi K3.1 Pro Highspeed（速度 2–3 倍）版本"]},
+        {"source": "vLLM", "target": "Kimi K3.1 Pro", "type": "integrates", "weight": 0.6, "evidence": ["vLLM、SGLang、AMD Instinct 等在 day-0 提供支持"]},
+        {"source": "SGLang", "target": "Kimi K3.1 Pro", "type": "integrates", "weight": 0.6, "evidence": ["vLLM、SGLang、AMD Instinct 等在 day-0 提供支持"]}
+      ],
+      "metrics": [
+        {"name": "总参数", "value": "2.8T"},
+        {"name": "激活参数", "value": "104B"},
+        {"name": "上下文窗口", "value": "100 万 token"},
+        {"name": "路由专家数", "value": "896"},
+        {"name": "每 token 选专家数", "value": "16"},
+        {"name": "DSA 历史 top-K 取 token", "value": "2048"},
+        {"name": "Highspeed 提速", "value": "2–3 倍"}
+      ],
+      "why_it_matters": "MoE 三大卖点——3T 级参数、1M 上下文、完整权重开源——首次集于同一模型，叠加原生多模态 agent 定位，说明开源侧的竞争从'能用'转向'超大上下文 + agentic + 全量权重'三件套同时给齐。"
+    },
+    {
+      "article_id": "2026-11-11-7",
+      "entities": [
+        {"name": "AutoScaffold", "type": "paper", "aliases": [], "confidence": 0.92, "evidence": ["arXiv 论文《AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models》"]},
+        {"name": "arXiv", "type": "organization", "aliases": ["Arxiv"], "confidence": 0.9, "evidence": ["arXiv 论文《AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models》"]},
+        {"name": "RLHF", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["做成 RLHF 之上的一层抽象"]},
+        {"name": "强化学习", "type": "topic", "aliases": ["RL"], "confidence": 0.85, "evidence": ["把先验信息注入 RL 训练的自然方式"]},
+        {"name": "冻结教师", "type": "model", "aliases": ["冻结的教师"], "confidence": 0.85, "evidence": ["一个冻结的教师定期审查学生的训练经验，诊断瓶颈"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "AutoScaffold 提出用冻结教师自动为学生 RL 生成自适应脚手架",
+          "summary": "论文提出统一的'AI 教 AI'框架：冻结的教师定期审查学生的强化学习经验、诊断瓶颈，自动生成两种形式的训练脚手架，全程无需人工干预、几乎不需要领域特定信息。",
+          "participants": [
+            {"name": "AutoScaffold", "type": "paper", "role": "subject"},
+            {"name": "冻结教师", "type": "model", "role": "object"},
+            {"name": "强化学习", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["arXiv 论文《AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models》"]
+        }
+      ],
+      "relations": [
+        {"source": "AutoScaffold", "target": "arXiv", "type": "released_by", "weight": 0.7, "evidence": ["arXiv 论文《AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models》"]},
+        {"source": "AutoScaffold", "target": "强化学习", "type": "targets", "weight": 0.7, "evidence": ["把先验信息注入 RL 训练的自然方式"]},
+        {"source": "AutoScaffold", "target": "RLHF", "type": "built_on", "weight": 0.7, "evidence": ["做成 RLHF 之上的一层抽象"]},
+        {"source": "AutoScaffold", "target": "冻结教师", "type": "uses", "weight": 0.8, "evidence": ["一个冻结的教师定期审查学生的训练经验，诊断瓶颈"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "把'设计训练脚手架'这一最依赖专家的环节交给冻结教师自动生成，强化学习训练从一次性人工设计的奖励与提示，走向能随过程自我调优的自适应课程，直指少人工标注的对齐目标。"
+    },
+    {
+      "article_id": "2026-11-11-8",
+      "entities": [
+        {"name": "When Should Agents Remember?", "type": "paper", "aliases": ["证伪门控自进化"], "confidence": 0.9, "evidence": ["arXiv 论文《When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents》"]},
+        {"name": "arXiv", "type": "organization", "aliases": ["Arxiv"], "confidence": 0.9, "evidence": ["arXiv 论文《When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents》"]},
+        {"name": "LLM agent", "type": "topic", "aliases": ["自进化 agent"], "confidence": 0.85, "evidence": ["自进化 LLM agent 会被任务投毒植入后门"]},
+        {"name": "证伪门控", "type": "topic", "aliases": ["falsification-gated"], "confidence": 0.88, "evidence": ["作者提出证伪门控机制"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出基于证伪门控的 agent 记忆自进化机制",
+          "summary": "新论文提出'证伪门控'机制：为候选记忆设置一道以证伪为核心的检查，只有当经验经受住反例检验、对既有认知构成真正挑战时才被采纳写入记忆，让 agent 记忆保持精简可靠。",
+          "participants": [
+            {"name": "When Should Agents Remember?", "type": "paper", "role": "subject"},
+            {"name": "LLM agent", "type": "topic", "role": "object"},
+            {"name": "证伪门控", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["arXiv 论文《When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents》"]
+        }
+      ],
+      "relations": [
+        {"source": "When Should Agents Remember?", "target": "arXiv", "type": "released_by", "weight": 0.6, "evidence": ["arXiv 论文《When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents》"]},
+        {"source": "When Should Agents Remember?", "target": "LLM agent", "type": "targets", "weight": 0.7, "evidence": ["聚焦自进化 agent 的一个基础问题"]},
+        {"source": "When Should Agents Remember?", "target": "证伪门控", "type": "proposes", "weight": 0.8, "evidence": ["作者提出证伪门控机制"]},
+        {"source": "证伪门控", "target": "LLM agent", "type": "targets", "weight": 0.7, "evidence": ["对记忆管理做门控，是把防线前置到数据吸收这一层"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "记忆既是 agent 的能力来源也是攻击面，用证伪门控在'吸收前'拦截噪声与投毒，与任务投毒后门风险（2611.10542）构成同一信任边界的两端，把安全防线从固化后移到数据进入前。"
+    },
+    {
+      "article_id": "2026-11-11-9",
+      "entities": [
+        {"name": "ReTrace", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["arXiv 论文《ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows》"]},
+        {"name": "arXiv", "type": "organization", "aliases": ["Arxiv"], "confidence": 0.9, "evidence": ["arXiv 论文《ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows》"]},
+        {"name": "LLM agent", "type": "topic", "aliases": ["工具调用 agent"], "confidence": 0.85, "evidence": ["LLM agent 能按自然语言写成的 SOP 逐句执行"]},
+        {"name": "SOP", "type": "topic", "aliases": ["标准操作流程"], "confidence": 0.85, "evidence": ["ReTrace 把一份 SOP 和几条已记录的 agent 运行日志转化为可复用工作流"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "ReTrace 把会调用工具的 agent 蒸馏成无需规划器的确定性工作流",
+          "summary": "ReTrace 把一份 SOP 和几条已记录的 agent 运行日志转化为可复用工作流，由'代码而不是 LLM'来选择下一步，提取每一步背后的触发条件并生成可执行的流水线。",
+          "participants": [
+            {"name": "ReTrace", "type": "paper", "role": "subject"},
+            {"name": "LLM agent", "type": "topic", "role": "object"},
+            {"name": "SOP", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["arXiv 论文《ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows》"]
+        }
+      ],
+      "relations": [
+        {"source": "ReTrace", "target": "arXiv", "type": "released_by", "weight": 0.6, "evidence": ["arXiv 论文《ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows》"]},
+        {"source": "ReTrace", "target": "LLM agent", "type": "targets", "weight": 0.7, "evidence": ["LLM agent 能按自然语言写成的 SOP 逐句执行"]},
+        {"source": "ReTrace", "target": "SOP", "type": "uses", "weight": 0.8, "evidence": ["ReTrace 把一份 SOP 和几条已记录的 agent 运行日志转化为可复用工作流"]},
+        {"source": "ReTrace", "target": "LLM agent", "type": "replaces", "weight": 0.6, "evidence": ["在其中由代码而不是 LLM 来选择下一步"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "把'每步都用 LLM 想'的通用模式蒸馏成确定性流程，规模化执行的延迟与成本直接从线性掉到近常数，业务自动化赛道出现了'先跑遍再固化'的折中解。"
+    },
+    {
+      "article_id": "2026-11-11-10",
+      "entities": [
+        {"name": "TSMC", "type": "company", "aliases": ["台积电", "台积电"], "confidence": 0.95, "evidence": ["台积电董事会于 11 月 10 日例会通过多项决议"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["各以不高于 5 亿美元投资 Anthropic"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.92, "evidence": ["与 OpenAI（认购优先股）"]},
+        {"name": "Nasdaq", "type": "organization", "aliases": ["纳斯达克"], "confidence": 0.85, "evidence": ["Anthropic 预计 11 月 19 日前后在纳斯达克以 ANT 代码挂牌"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "TSMC 董事会批准最高 10 亿美元投资 Anthropic 与 OpenAI",
+          "summary": "台积电董事会批准各以不高于 5 亿美元投资 Anthropic（按其 IPO 发行价认购普通股）与 OpenAI（认购优先股），两项合计最高 10 亿美元，并设最高 5 亿美元投资公司布局半导体生态。",
+          "participants": [
+            {"name": "TSMC", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["台积电董事会于 11 月 10 日例会通过多项决议"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 预计 11 月 19 日在纳斯达克以 ANT 挂牌",
+          "summary": "Anthropic 预计 11 月 19 日前后在纳斯达克以 ANT 代码挂牌上市。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Nasdaq", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["Anthropic 预计 11 月 19 日前后在纳斯达克以 ANT 代码挂牌"]
+        }
+      ],
+      "relations": [
+        {"source": "TSMC", "target": "Anthropic", "type": "invests_in", "weight": 0.9, "evidence": ["各以不高于 5 亿美元投资 Anthropic"]},
+        {"source": "TSMC", "target": "OpenAI", "type": "invests_in", "weight": 0.9, "evidence": ["与 OpenAI（认购优先股）"]}
+      ],
+      "metrics": [
+        {"name": "投资 Anthropic 上限", "value": "不高于 5 亿美元"},
+        {"name": "投资 OpenAI 上限", "value": "不高于 5 亿美元"},
+        {"name": "两项合并投资上限", "value": "最高 10 亿美元"},
+        {"name": "新设战略投资公司规模上限", "value": "最高 5 亿美元"},
+        {"name": "2026 年 Q3 季度收入", "value": "NT$1,494.24B（约 $45.5B）"},
+        {"name": "2026 年 Q3 净利", "value": "NT$763.06B"},
+        {"name": "每股派现", "value": "NT$9.0"}
+      ],
+      "why_it_matters": "芯片代工龙头从'卖铲人'直接投资顶级 AI 实验室，等于把算力订单、财报与 IPO 股权三层绑定到一起，AI capex 的信用背书第一次来自硅片制造环节本身。"
+    },
+    {
+      "article_id": "2026-11-11-11",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 为 MaxText 加入长上下文训练"]},
+        {"name": "MaxText", "type": "tool", "aliases": [], "confidence": 0.92, "evidence": ["Google Cloud 宣布在 MaxText（其开源 JAX LLM 训练框架）中加入长上下文训练能力"]},
+        {"name": "Cloud TPU", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["把 Cloud TPU 上的原生序列长度扩展到最高 1400 万 token"]},
+        {"name": "Llama 3.1 8B", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Llama 3.1 8B 在 TPU v5p 上 400 万 token 内达到 70% MFU"]},
+        {"name": "TPU 7", "type": "hardware", "aliases": ["Ironwood"], "confidence": 0.85, "evidence": ["TPU 7（Ironwood）在 600 万 token 以下维持 50% MFU"]},
+        {"name": "上下文并行", "type": "topic", "aliases": ["context parallelism"], "confidence": 0.85, "evidence": ["通过四种上下文并行（context parallelism）策略"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Google 在 MaxText 中加入长上下文训练并把序列长度扩到 1400 万 token",
+          "summary": "Google Cloud 在开源 JAX 训练框架 MaxText 中通过四种上下文并行策略，把 Cloud TPU 上的原生序列长度从约 20 万扩展到最高 1400 万 token，全部运行在 Tokamax Splash Attention 内核上。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "MaxText", "type": "tool", "role": "object"},
+            {"name": "上下文并行", "type": "topic", "role": "object"},
+            {"name": "Cloud TPU", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["Google Cloud 宣布在 MaxText（其开源 JAX LLM 训练框架）中加入长上下文训练能力"]
+        },
+        {
+          "type": "benchmark",
+          "label": "MaxText 在 TPU 上跑出高模型利用率的长上下文评测",
+          "summary": "评测数据：Llama 3.1 8B 在 TPU v5p 上 400 万 token 内达到 70% MFU；TPU 7（Ironwood）在 600 万 token 以下维持 50% MFU，可持续到 1400 万 token。",
+          "participants": [
+            {"name": "Llama 3.1 8B", "type": "model", "role": "subject"},
+            {"name": "Cloud TPU", "type": "hardware", "role": "benchmark"},
+            {"name": "TPU 7", "type": "hardware", "role": "benchmark"}
+          ],
+          "evidence": ["Llama 3.1 8B 在 TPU v5p 上 400 万 token 内达到 70% MFU"]
+        }
+      ],
+      "relations": [
+        {"source": "MaxText", "target": "Google", "type": "released_by", "weight": 0.9, "evidence": ["Google Cloud 宣布在 MaxText（其开源 JAX LLM 训练框架）中加入长上下文训练能力"]},
+        {"source": "MaxText", "target": "Cloud TPU", "type": "uses", "weight": 0.8, "evidence": ["把 Cloud TPU 上的原生序列长度扩展到最高 1400 万 token"]},
+        {"source": "MaxText", "target": "上下文并行", "type": "built_on", "weight": 0.7, "evidence": ["通过四种上下文并行（context parallelism）策略"]},
+        {"source": "MaxText", "target": "TPU 7", "type": "uses", "weight": 0.6, "evidence": ["MaxText v0.2.4 已发布，支持 TPU 7 与 v5p 样例配方"]},
+        {"source": "Llama 3.1 8B", "target": "MaxText", "type": "uses", "weight": 0.6, "evidence": ["Llama 3.1 8B 在 TPU v5p 上 400 万 token 内达到 70% MFU"]}
+      ],
+      "metrics": [
+        {"name": "原生序列长度扩展", "value": "最高 1400 万 token"},
+        {"name": "Llama 3.1 8B @ TPU v5p MFU", "value": "70%（400 万 token 内）"},
+        {"name": "TPU 7 MFU", "value": "50%（600 万 token 以下，可持至 1400 万）"}
+      ],
+      "why_it_matters": "训练框架把'能原生训多长的序列'当作关键差异化卖点，说明 agentic/长视频任务对整库代码库与超长上下文的需求正把预训练/后训练的序列长度抬到百万级。"
+    },
+    {
+      "article_id": "2026-11-11-12",
+      "entities": [
+        {"name": "CoreWeave", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["GPU 云厂商 CoreWeave 的最新季度营收超出分析师预期"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["随 Anthropic 等客户需求增长"]},
+        {"name": "AI 数据中心", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["AI 数据中心仍在扩张"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "CoreWeave 季度营收超预期并定下 2028 年盈利目标",
+          "summary": "随 Anthropic 等客户需求增长，GPU 云厂商 CoreWeave 最新季度营收超出分析师预期，并把达成盈利的时间点定在 2028 年，表态称 AI 计算需求顶住了日益增长的怀疑。",
+          "participants": [
+            {"name": "CoreWeave", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "partner"},
+            {"name": "AI 数据中心", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["GPU 云厂商 CoreWeave 的最新季度营收超出分析师预期"]
+        }
+      ],
+      "relations": [
+        {"source": "CoreWeave", "target": "Anthropic", "type": "supplies", "weight": 0.7, "evidence": ["随 Anthropic 等客户需求增长"]},
+        {"source": "Anthropic", "target": "CoreWeave", "type": "uses", "weight": 0.5, "evidence": ["随 Anthropic 等客户需求增长"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "GPU 云厂的业绩与 2028 盈利指引被当作 AI 资本开支能否消化的晴雨表，需求端'顶住怀疑'与华尔街的谨慎构成拉锯，2028 目标是对'AI 基建是烧钱黑洞'的直接回应。"
+    },
+    {
+      "article_id": "2026-11-11-13",
+      "entities": [
+        {"name": "Fireworks AI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Fireworks AI 披露其 10 月安全事件调查范围再度扩大"]},
+        {"name": "Notion AI", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Notion AI 的部分聊天记录（用于 Insights 功能）被外泄"]},
+        {"name": "Palo Alto Networks", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Fireworks 已与 Palo Alto Networks 的 Unit 42 协作整改"]},
+        {"name": "Unit 42", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["Fireworks 已与 Palo Alto Networks 的 Unit 42 协作整改"]},
+        {"name": "Cursor", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Fireworks 还正与 Cursor、Harvey 等客户共同评估影响"]},
+        {"name": "Render", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["Render 等客户收到警告"]},
+        {"name": "LLMJacking", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["即所谓 LLMJacking"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Fireworks AI 披露第二起入侵、客户数据暴露面扩大",
+          "summary": "攻击者 10 月 23 日攻破一家托管 Fireworks 研发机器的第三方云厂商，次日借该访问进入开发系统运行未授权负载，波及资源元数据、账单信息以及部分客户的不完整模型权重与数据集。",
+          "participants": [
+            {"name": "Fireworks AI", "type": "company", "role": "subject"},
+            {"name": "Notion AI", "type": "product", "role": "object"},
+            {"name": "Cursor", "type": "product", "role": "object"},
+            {"name": "Render", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Fireworks AI 披露其 10 月安全事件调查范围再度扩大"]
+        },
+        {
+          "type": "security",
+          "label": "攻击涉嫌 LLMJacking 团伙，Fireworks 与 Unit 42 协作整改",
+          "summary": "调查指向以牟利为目的的网络犯罪团伙，其手法是把 LLM 的未授权访问 token 转售给非法路由网关（LLMJacking）；Fireworks 已与 Palo Alto Networks 的 Unit 42 协作整改。",
+          "participants": [
+            {"name": "Fireworks AI", "type": "company", "role": "subject"},
+            {"name": "Unit 42", "type": "organization", "role": "partner"},
+            {"name": "LLMJacking", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Fireworks 已与 Palo Alto Networks 的 Unit 42 协作整改"]
+        }
+      ],
+      "relations": [
+        {"source": "Fireworks AI", "target": "Unit 42", "type": "partners_with", "weight": 0.7, "evidence": ["Fireworks 已与 Palo Alto Networks 的 Unit 42 协作整改"]},
+        {"source": "Notion AI", "target": "Fireworks AI", "type": "uses", "weight": 0.7, "evidence": ["Notion AI 的部分聊天记录（用于 Insights 功能）被外泄"]},
+        {"source": "Cursor", "target": "Fireworks AI", "type": "uses", "weight": 0.5, "evidence": ["Fireworks 还正与 Cursor、Harvey 等客户共同评估影响"]},
+        {"source": "Render", "target": "Fireworks AI", "type": "uses", "weight": 0.4, "evidence": ["Render 等客户收到警告"]},
+        {"source": "LLMJacking", "target": "Fireworks AI", "type": "targets", "weight": 0.6, "evidence": ["其手法是把 LLM 的未授权访问 token 转售给非法路由网关，即所谓 LLMJacking"]}
+      ],
+      "metrics": [
+        {"name": "首次入侵披露日", "value": "10 月 9 日"},
+        {"name": "二次入侵云厂商被攻破日", "value": "10 月 23 日"}
+      ],
+      "why_it_matters": "第三方推理/训练基础设施被二次攻破并把污染传到 Notion AI、Cursor、Render 等多个下游产品，LLMJacking 让'托管显卡'环节成为攻击者中转站，供应链信任半径被重新丈量。"
+    },
+    {
+      "article_id": "2026-11-11-14",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 发布 Claude Meetings（实时加入 Google Meet 干活）"]},
+        {"name": "Databricks", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Databricks 推出永不睡觉、后台陪跑的 Genie agent"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 一边把语音收拢到 GPT-Live"]},
+        {"name": "Odessia", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 一边通过收购 Odessia 押注 ChatGPT 帮人规划旅行"]},
+        {"name": "知识工人", "type": "topic", "aliases": ["打工人"], "confidence": 0.85, "evidence": ["面向打工人 的 agent 功能"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Anthropic 发布 Claude Meetings"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Anthropic、Databricks、OpenAI 同周围绕知识工人发起 agent 入口之争",
+          "summary": "Anthropic 把 Claude 塞进会议与表格、Databricks 让 agent 永不掉线、OpenAI 收拢语音并收购旅行 agent，三家公司从不同入口争夺同一批每天坐在办公桌前用工具干活的人。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Databricks", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Odessia", "type": "company", "role": "object"},
+            {"name": "知识工人", "type": "topic", "role": "object"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Anthropic 发布 Claude Meetings（实时加入 Google Meet 干活）"]
+        }
+      ],
+      "relations": [
+        {"source": "Anthropic", "target": "Databricks", "type": "competes_with", "weight": 0.7, "evidence": ["三家公司从不同入口争夺同一批用户"]},
+        {"source": "Anthropic", "target": "OpenAI", "type": "competes_with", "weight": 0.7, "evidence": ["一天之内，三家公司从不同入口争夺同一批用户"]},
+        {"source": "Databricks", "target": "OpenAI", "type": "competes_with", "weight": 0.7, "evidence": ["一天之内，三家公司从不同入口争夺同一批用户"]},
+        {"source": "OpenAI", "target": "Odessia", "type": "acquires", "weight": 0.6, "evidence": ["OpenAI 一边通过收购 Odessia 押注 ChatGPT 帮人规划旅行"]},
+        {"source": "Anthropic", "target": "知识工人", "type": "targets", "weight": 0.6, "evidence": ["AI 公司正围绕知识工人发起全面进攻"]},
+        {"source": "Claude", "target": "Anthropic", "type": "released_by", "weight": 0.6, "evidence": ["Anthropic 把 Claude 塞进会议与表格"]}
+      ],
+      "metrics": [
+        {"name": "2025 年全球知识工人创造经济价值", "value": "超过 40 万亿美元"}
+      ],
+      "why_it_matters": "知识工人是比程序员大几个数量级的付费市场，本 AI 商业化主战场从'写代码'转向'做办公室工作'，而赢家拼的是能否同时拿到'数据 + 入口 + 模型'中的任两端，决定 AI 是变下一代办公操作系统还是留在插件层。"
+    }
+  ]
+}

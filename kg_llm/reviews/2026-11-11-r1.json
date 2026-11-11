@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-11",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "实体、事件、metrics 与原文高度一致，未发现事实错误或方向颠倒的核心关系；主要问题是关系类型大量误用 built_on（把输入物、被超越的前代模型、论文自身提出的机制都标成 built_on），另有两条无原文支撑或端点错误的关系（Genie–Ontology、CoreWeave–AI数据中心）需要删除。",
+  "findings": [
+    {
+      "article_id": "2026-11-11-8",
+      "severity": "medium",
+      "problem": "关系 \"When Should Agents Remember? --built_on--> 证伪门控\" 类型用错：证伪门控是这篇论文自己提出（'作者提出证伪门控机制'）的贡献，不是论文建立在其上的既有基础。built_on 表示实现基础，语义不成立。",
+      "fix": "改为 proposes（或 introduces）：字符串应读作 '论文提出证伪门控机制'，即 \"When Should Agents Remember? --proposes--> 证伪门控\"。"
+    },
+    {
+      "article_id": "2026-11-11-9",
+      "severity": "medium",
+      "problem": "关系 \"ReTrace --built_on--> SOP\" 类型用错：原文说 ReTrace '把一份 SOP 和几条已记录的 agent 运行日志转化为可复用工作流'，SOP 是 ReTrace 的输入数据，不是其实现所构建的基础。",
+      "fix": "改为 uses（或 consumes）：ReTrace 以 SOP 为输入，字符串应读作 \"ReTrace --uses--> SOP\"。"
+    },
+    {
+      "article_id": "2026-11-11-6",
+      "severity": "medium",
+      "problem": "关系 \"Kimi K3.1 Pro --built_on--> Kimi K3\" 类型用错：原文是'在大量下游领域上较 Kimi K3 全面一致地提升'，描述的是 K3.1 Pro 性能超越前代 K3，而不是建立在 K3 之上。",
+      "fix": "改为 outperforms（或 improves_upon）：字符串应读作 \"Kimi K3.1 Pro --outperforms--> Kimi K3\"。"
+    },
+    {
+      "article_id": "2026-11-11-2",
+      "severity": "medium",
+      "problem": "关系 \"Genie --uses--> Ontology\" 无原文支撑：原文把 Genie（后台陪跑助手）与 Ontology（扫描全组织数据）描述为 Databricks 工具集中两个并行的独立功能，未说明 Genie 依赖或使用 Ontology。共同出现不等于有关系。",
+      "fix": "删除该关系；如确需表达两者同属 Databricks 工具集，应改用两者各自指向 Databricks 的 released_by，而非互相之间建立 uses。"
+    },
+    {
+      "article_id": "2026-11-11-12",
+      "severity": "medium",
+      "problem": "关系 \"CoreWeave --supplies--> AI 数据中心\" 端点错误：'AI 数据中心'在本篇是行业背景实体（原文仅说'AI 数据中心仍在扩张'），CoreWeave 并未向其'供应'任何东西；CoreWeave 本身是 AI 数据中心运营方，不存在 supply 指向该主题的关系。",
+      "fix": "删除该关系。如要表达 CoreWeave 与 AI 基建扩张的关联，可保留其与 Anthropic 的 supplies 关系（晶体半导体算力客户），不要再给 'AI 数据中心' 挂 supply 边。"
+    },
+    {
+      "article_id": "2026-11-11-4",
+      "severity": "medium",
+      "problem": "第一个事件类型标为 \"launch\"，但该事件的实质是'从 ChatGPT Voice 移除 Advanced 与 Standard 语音并迁移到 GPT-Live'——是产品下线/迁移，不是发布。",
+      "fix": "改用 deprecation / migration 之类的类型来表达'停用并迁移'，不要用 launch；无此类时用 trend 亦可，但需避免把'砍产品'说成发布。"
+    },
+    {
+      "article_id": "2026-11-11-0",
+      "severity": "low",
+      "problem": "关系 \"Gemini Robotics 2.5 --built_on--> Gemini 4 Argon\" 语义偏弱：原文说 Argon '充当仿真引擎'，从真实相机画面生成模拟演练、构建数字孪生来加速技能习得，Argon 是 Robotics 2.5 借力/使用的外部世界模型，并非其底层架构。",
+      "fix": "可改为 uses / leverages（Robotics 2.5 使用 Argon 作仿真引擎），比 built_on 更准确；若保留 built_on 需确认系统支持'外部仿真引擎'这类语义。"
+    }
+  ],
+  "lessons": [
+    "built_on 仅在目标确实是实现/架构的基础（底层模型、核心架构）时使用；输入物用 uses/consumes、被超越的前代用 outperforms、论文自提机制用 proposes/introduces，不要一律套 built_on。",
+    "同文并列描述的功能/主体不等于彼此有边，只有原文明确写出依赖或使用关系时才建立它们之间的边（如 Genie 与 Ontology）。",
+    "不要把行业背景类主题实体（如 'AI 数据中心'）当作关系的端点挂 supply/partner 边；关系端点必须是有真实动作承担者的具体实体。"
+  ]
+}
