@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-12",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "确定性审计 100 分但语义审查发现约 5 条 medium 问题：多处同一对实体重复生成同方向关系（article 11 的 restricts/targets、article 4 的 developed_by/released_by）、article 8 的 NVD--targets-->GPUStack 关系类型用错、article 3 的 subsidiary_of 缺直接证据、article 5 事件引用了未抽取的实体 GPT-5.6 Cyber。无 high 级事实错误或方向反转，但因 medium 超出 2 条判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-11-12-11",
+      "severity": "medium",
+      "problem": "同一对实体 (United Airlines, AI agent) 之间生成两条同源同向的关系：\"United Airlines --restricts--> AI agent\" (w0.8) 与 \"United Airlines --targets--> AI agent\" (w0.5)，二者表述的是同一个动作（阻止 agent 订票），后一条冗余；且其证据\"绕过正常流程的自动化 agent 行为\"描述的是 agent 的行为而非 United 的主动打击，证据不支撑 targets 语义。",
+      "fix": "删除 \"United Airlines --targets--> AI agent\" 这条重复关系，仅保留 \"United Airlines --restricts--> AI agent\"。"
+    },
+    {
+      "article_id": "2026-11-12-4",
+      "severity": "medium",
+      "problem": "Beam 到 Reflection 同时生成两条同向关系：\"Beam --developed_by--> Reflection\" (w0.9) 与 \"Beam --released_by--> Reflection\" (w0.8)，二者都来源于同一事实（\"Reflection 宣布其首个开源权重模型 Beam 现已可用\"），属重复抽取，会把图里同一指向的关系稀释成两条。",
+      "fix": "每对实体每个方向只保留一条最高权重关系；此处保留 \"Beam --released_by--> Reflection\"（证据为开源发布）或 \"--developed_by-->\" 之一，删除另一条。"
+    },
+    {
+      "article_id": "2026-11-12-8",
+      "severity": "medium",
+      "problem": "关系 \"NVD --targets--> GPUStack\" (w0.6) 关系类型用错：NVD 是漏洞数据库/披露机构，只记录\"漏洞已在野外被利用\"这一事实，它并不主动攻击或追缉 GPUStack（targets 携带攻击/敌对话语语义，真正发起利用的是攻击者，不是 NVD）；证据\"NVD 记录显示已在野外被利用\"支撑的是\"记录/披露\"语义。",
+      "fix": "删除或改掉该关系：将关系类型改为记录/披露类（如 NVD --documents/catalogs--> GPUStack），或直接从图谱删除，避免让 NVD 显得是 GPUStack 的攻击方。"
+    },
+    {
+      "article_id": "2026-11-12-3",
+      "severity": "medium",
+      "problem": "关系 \"Google DeepMind --subsidiary_of--> Google\" (w0.7) 的证据是\"Consumer 端面向 Google AI Ultra 订阅者\"，这条证据只说明消费者入口挂在 Google 订阅名下，并不断言 Google 与 Google DeepMind 之间的公司控制/从属结构；证据与所标关系不匹配（断言本身或为常识成立，但原文未给出持证）。",
+      "fix": "为该关系补充能直接指向公司从属/控股关系的原文证据；若原文无明确表述，则降低该关系权重或删除，改用文章明确提述的归属证据（如模型由 Google DeepMind 发布的证据支撑 developed_by，而非 subsidiary_of）。"
+    },
+    {
+      "article_id": "2026-11-12-5",
+      "severity": "medium",
+      "problem": "benchmark 事件参与方引用了 \"GPT-5.6 Cyber\"（\"较 GPT-5.6 Cyber 的 32.1% 提升 51%\"），但该实体没有出现在本文的 entities 列表中；事件引用了未被抽取的实体，造成事件-实体不一致，且指标里也没有 GPT-5.6 的得分。",
+      "fix": "把 GPT-5.6 Cyber 作为 model 类型实体补进 2026-11-12-5 的 entities 列表（并提供对应 evidence），或在事件参与方中去掉该未抽取实体；同时考虑在 metrics 中补充 GPT-5.6 Cyber 的 ExploitGym 得分 32.1%。"
+    }
+  ],
+  "lessons": [
+    "同一对实体同一方向只生成一条关系：当 duplicate 出来的 developed_by/released_by、restricts/targets 与证据指向同一个动作时，保留证据最直接、权重最高的一条，删除其余。",
+    "机构关系类型要贴合其角色语义：数据库/目录类机构（如 NVD、KEV）只记录或披露漏洞，不要标注为 targets（敌人/攻击者语义），除非证据显示其主动发起利用。",
+    "entity 的 evidence 必须能直接支撑它所附的关系：如果一条证据只陈述了别的事实（如消费者订阅入口、某方公布的报告），就不能拿它去背 subsidiary_of 这类从属/控制关系。"
+  ]
+}

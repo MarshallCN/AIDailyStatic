@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-12",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "实体、数字与事件主体基本忠实原文，方向正确（invests_in/supplies/partners_with 均对）；主要问题在三处关系类型或证据失配：CISA--regulates-->GPUStack 用错关系、AI agent--targets-->United Airlines 不成立、Google DeepMind--subsidiary_of-->Google 的 evidence 完全不支撑隶属关系，另有一处 NVIDIA/Nvidia 跨篇规范名不一致。注意：审计器建议把 GPT-6 Cyber 与 GPT-5.6 Cyber 合并是错的——二者是不同代模型，抽取保持独立是正确的，勿照改。",
+  "findings": [
+    {
+      "article_id": "2026-11-12-8",
+      "severity": "medium",
+      "problem": "关系 \"CISA --regulates--> GPUStack\" 类型用错：CISA 把 GPUStack 的漏洞加入 KEV 目录是对该漏洞/产品的\"登记/标记\"（与 NVD --documents--> GPUStack 同类动作），并非对 GPUStack 这家公司行使正式监管权力。",
+      "fix": "把该关系改为 documents/records 类（如 \"CISA --documents--> GPUStack\"），与 NVD 那条对齐，或删去；regulates 仅保留给监管机构对主体有正式监管权力的场景。"
+    },
+    {
+      "article_id": "2026-11-12-11",
+      "severity": "medium",
+      "problem": "关系 \"AI agent --targets--> United Airlines\" 不成立：原文是说 United 因网络风险阻止 agent 预订航班，agent 的自动化订票行为并非\"攻击/瞄准\"航空公司，evidence \"绕过正常流程的自动化 agent 行为\" 支撑的是\"agent 是自动化流量\"，不是 targets。",
+      "fix": "删除该关系；只保留方向正确的 \"United Airlines --restricts--> AI agent\"。若想表达 agent 与平台交互，可用 interacts_with 之类中性关系，勿用 targets。"
+    },
+    {
+      "article_id": "2026-11-12-3",
+      "severity": "medium",
+      "problem": "关系 \"Google DeepMind --subsidiary_of--> Google\" 的 evidence \"Consumer 端面向 Google AI Ultra 订阅者\" 完全不支撑\"子公司\"关系——原文只在提及 Google AI Ultra / Gemini App 订阅时出现 Google 字样，并未表述 Google DeepMind 是 Google 的子公司；且该隶属关系本身存疑（DeepMind 隶属 Alphabet）。",
+      "fix": "删除这条关系，或换用原文能直接支撑的证据；若原文未明确表述隶属关系，则不应建立 subsidiary_of。"
+    },
+    {
+      "article_id": "2026-11-12-4",
+      "severity": "medium",
+      "problem": "规范名跨篇不一致：本篇把 Nvidia 的规范名写成 \"NVIDIA\"，而 article 0/1/13 均用 \"Nvidia\" 作为规范名（article 5 用 \"NVIDIA\" 同理），会导致同一公司跨文章难以可靠连通。",
+      "fix": "全篇统一规范名为 \"Nvidia\"，把 \"NVIDIA\"（及\"英伟达\"）放入 aliases；article 4、article 5 的 \"NVIDIA\" 实体改为规范名 \"Nvidia\"。"
+    },
+    {
+      "article_id": "2026-11-12-1",
+      "severity": "low",
+      "problem": "原文的关键叙事数字 \"2025 年全球知识工人创造的经济价值超过 40 万亿美元\"（Anthropic 招股书的定价叙事锚点，已在 why_it_matters 中被引用）没有进入 metrics。",
+      "fix": "在 metrics 中补一条：name=\"2025 年全球知识工人经济价值\"，value=\"超 40 万亿美元\"。"
+    }
+  ],
+  "lessons": [
+    "不同代号的模型（如 GPT-6 Cyber 与 GPT-5.6 Cyber）是不同的实体，即使名称相似也不合并；被对比的前代基线与被发布的当前模型必须各自独立，才能保留\"提升 51%\"这类对比关系。",
+    "监管机构把产品漏洞加入 KEV/NVD 目录用 documents/records 类关系；regulates 仅限监管机构对主体的正式监管权力，不要拿它描述漏洞登记。",
+    "隶属关系（subsidiary_of 等）必须由原文明确表述支撑；仅在叙事中泛泛出现同一品牌名（如 Google AI Ultra 订阅）不能作为 Google 与 Google DeepMind 隶属关系的证据。"
+  ]
+}

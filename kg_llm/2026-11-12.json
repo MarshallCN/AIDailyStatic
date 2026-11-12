@@ -1,0 +1,592 @@
+{
+  "date": "2026-11-12",
+  "articles": [
+    {
+      "article_id": "2026-11-12-0",
+      "entities": [
+        {"name": "Nvidia", "type": "company", "aliases": ["英伟达", "NVIDIA"], "confidence": 0.95, "evidence": ["Nvidia 董事会于周三开会"]},
+        {"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.95, "evidence": ["把联合创始人兼 CEO 黄仁勋赶下台"]},
+        {"name": "Kimberly Powell", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["第二段与 Nvidia 医疗健康业务副总裁 Kimberly Powell 的关系"]},
+        {"name": "Alice Huang", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["被美国情报部门认定为中国间谍的 Alice Huang"]},
+        {"name": "Megaspeed", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Nvidia 还是一家正接受调查的客户 Megaspeed 的供货方"]},
+        {"name": "FBI", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["FBI 参与调查"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Nvidia 董事会据报酝酿罢免掌舵约 33 年的 CEO 黄仁勋",
+          "summary": "Nvidia 董事会于周三开会，据 WSJ/NYT 报道准备把联合创始人兼 CEO 黄仁勋赶下台，起因是两段婚外情风波，盘后股价一度下跌超 9%。",
+          "participants": [
+            {"name": "Nvidia", "type": "company", "role": "subject"},
+            {"name": "Jensen Huang", "type": "person", "role": "object"}
+          ],
+          "evidence": ["把联合创始人兼 CEO 黄仁勋赶下台"]
+        },
+        {
+          "type": "security",
+          "label": "黄仁勋婚外情牵出的涉华间谍疑云触发 FBI 与监管部门介入",
+          "summary": "黄仁勋绯闻对象之一 Alice Huang 被美国情报部门认定为间谍，Nvidia 还是接受调查的客户 Megaspeed 的供货方，FBI 参与调查、行政部门与国会均已介入。",
+          "participants": [
+            {"name": "Jensen Huang", "type": "person", "role": "subject"},
+            {"name": "Alice Huang", "type": "person", "role": "object"},
+            {"name": "FBI", "type": "organization", "role": "regulator"},
+            {"name": "Megaspeed", "type": "company", "role": "object"}
+          ],
+          "evidence": ["FBI 参与调查"]
+        },
+        {
+          "type": "trend",
+          "label": "Nvidia 盘后股价一度下跌超 9%、市值蒸发约 6000 亿美元",
+          "summary": "市场对 CEO 信任危机作出剧烈反应，盘后股价一度跌超 9%，自周一宣布调查以来市值据估算蒸发约 6000 亿美元。",
+          "participants": [
+            {"name": "Nvidia", "type": "company", "role": "subject"},
+            {"name": "Jensen Huang", "type": "person", "role": "object"}
+          ],
+          "evidence": ["盘后 Nvidia 股价一度下跌超 9%"]
+        }
+      ],
+      "relations": [
+        {"source": "Jensen Huang", "target": "Nvidia", "type": "affiliated_with", "weight": 0.9, "evidence": ["把联合创始人兼 CEO 黄仁勋赶下台"]},
+        {"source": "Kimberly Powell", "target": "Nvidia", "type": "affiliated_with", "weight": 0.6, "evidence": ["第二段与 Nvidia 医疗健康业务副总裁 Kimberly Powell 的关系"]},
+        {"source": "Nvidia", "target": "Megaspeed", "type": "supplies", "weight": 0.8, "evidence": ["Nvidia 还是一家正接受调查的客户 Megaspeed 的供货方"]},
+        {"source": "FBI", "target": "Megaspeed", "type": "targets", "weight": 0.5, "evidence": ["FBI 参与调查"]}
+      ],
+      "metrics": [
+        {"name": "黄仁勋掌舵年限", "value": "约 33 年"},
+        {"name": "盘后股价跌幅", "value": "超 9%"},
+        {"name": "市值蒸发", "value": "约 6000 亿美元"}
+      ],
+      "why_it_matters": "黄仁勋私德风波让'算力叙事'的价格锚第一次押在人本身——芯片股能因 CEO 婚外情在盘后蒸发数千亿，AI 交易的定价基础已从技术财报扩展为对掌门人诚信、涉华供货与地缘合规的多重信任。"
+    },
+    {
+      "article_id": "2026-11-12-1",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 于 11 月 10 日公布其首次公开募股（IPO）路演细节"]},
+        {"name": "Nasdaq", "type": "organization", "aliases": ["纳斯达克"], "confidence": 0.9, "evidence": ["申请在纳斯达克全球精选市场以 \"ANT\" 为代码上市"]},
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头的私募配售"]},
+        {"name": "Nvidia", "type": "company", "aliases": ["英伟达"], "confidence": 0.85, "evidence": ["面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头的私募配售"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.85, "evidence": ["面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头的私募配售"]},
+        {"name": "TSMC", "type": "company", "aliases": ["台积电"], "confidence": 0.85, "evidence": ["面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头的私募配售"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["作为对比，SpaceX 6 月创纪录 IPO 募资 857 亿美元"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 启动 IPO 路演并计划在纳斯达克以 ANT 代码上市",
+          "summary": "Anthropic 拟发售 8.25 亿股 A 类普通股、每股 70–78 美元，完全稀释估值约 1.4 万亿美元，计划 11/18 定价、11/19 在纳斯达克以 ANT 代码上市。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Nasdaq", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["申请在纳斯达克全球精选市场以 \"ANT\" 为代码上市"]
+        },
+        {
+          "type": "funding",
+          "label": "Anthropic 附带约 260 亿美元面向 Alphabet、Nvidia、微软、台积电的私募配售",
+          "summary": "Anthropic 附带一笔约 260 亿美元的私募配售，面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Alphabet", "type": "company", "role": "funder"},
+            {"name": "Nvidia", "type": "company", "role": "funder"},
+            {"name": "Microsoft", "type": "company", "role": "funder"},
+            {"name": "TSMC", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头的私募配售"]
+        }
+      ],
+      "relations": [
+        {"source": "Alphabet", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头的私募配售"]},
+        {"source": "Nvidia", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头的私募配售"]},
+        {"source": "Microsoft", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头的私募配售"]},
+        {"source": "TSMC", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["面向包括 Alphabet、Nvidia、微软、台积电等芯片与科技巨头的私募配售"]},
+        {"source": "Anthropic", "target": "SpaceX", "type": "compared_with", "weight": 0.5, "evidence": ["作为对比，SpaceX 6 月创纪录 IPO 募资 857 亿美元"]}
+      ],
+      "metrics": [
+        {"name": "IPO 每股定价区间", "value": "70–78 美元"},
+        {"name": "拟发售 A 类普通股", "value": "8.25 亿股"},
+        {"name": "募资上限", "value": "约 644 亿美元"},
+        {"name": "完全稀释市值", "value": "约 1.4 万亿美元"},
+        {"name": "净资产", "value": "1.03 万亿美元"},
+        {"name": "私募配售规模", "value": "约 260 亿美元"},
+        {"name": "5 月融资估值", "value": "约 9650 亿美元"},
+        {"name": "SpaceX 6 月 IPO 募资", "value": "857 亿美元"},
+        {"name": "2025 年全球知识工人经济价值", "value": "超 40 万亿美元"}
+      ],
+      "why_it_matters": "Anthropic 把 IPO 完全稀释估值抬到约 1.4 万亿美元并锚定'全球知识工人 40 万亿美元经济价值'叙事，这一价格基准将同时重新定义 OpenAI 的上市窗口与整个 AI 应用层的市值想象。"
+    },
+    {
+      "article_id": "2026-11-12-2",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 的 2026 年更新版使用政策于 11 月 12 日正式生效"]},
+        {"name": "Claude", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["使用 Claude 服务"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 也收紧了对直接提供 GPT 访问的第三方平台的审批要求"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Anthropic 区域使用政策 11 月 12 日生效，禁止中国大陆公司及关联实体使用 Claude",
+          "summary": "Anthropic 更新版使用政策生效，区域条款禁止中国大陆、由中国大陆注册的公司或任何直接间接受其控制的实体使用 Claude 服务。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "product", "role": "object"}
+          ],
+          "evidence": ["禁止从中国大陆、由中国大陆注册的公司、或任何\"直接或间接受其控制\"的实体使用 Claude 服务"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 与 OpenAI 几乎同步收紧 AI 访问与区域管控",
+          "summary": "同一天前后 OpenAI 收紧对直接提供 GPT 访问的第三方平台的审批要求，两家头部实验室同步加强区域与访问管控，被解读为 AI 服务地理隔离加速制度化。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["两家头部实验室几乎同步加强区域与访问管控"]
+        }
+      ],
+      "relations": [
+        {"source": "Anthropic", "target": "OpenAI", "type": "compared_with", "weight": 0.7, "evidence": ["两家头部实验室几乎同步加强区域与访问管控"]},
+        {"source": "Claude", "target": "Anthropic", "type": "released_by", "weight": 0.6, "evidence": ["使用 Claude 服务"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "Anthropic 与 OpenAI 几乎同步把区域与访问管控写进可执行条款，AI 服务的地理隔离正从口头表态变成制度化切分，跨国企业必须重估其在华数据与合规路径。"
+    },
+    {
+      "article_id": "2026-11-12-3",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.95, "evidence": ["Google DeepMind 的 Gemini 4 Carbon 全面向开发者、企业、科学家与消费者开放"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": ["Carbon"], "confidence": 0.95, "evidence": ["Google DeepMind 的 Gemini 4 Carbon 全面向开发者、企业、科学家与消费者开放"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": ["Argon", "4 Argon"], "confidence": 0.9, "evidence": ["Carbon 是基于 4 Argon 的模型"]},
+        {"name": "Fairwind", "type": "organization", "aliases": ["公平风窗计划", "Fairwind Program"], "confidence": 0.85, "evidence": ["通过 Fairwind Program"]},
+        {"name": "Trajectory Labs", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["官方称外部测试（Trajectory Labs）在 132 小时、超 1.3 万次请求中未发现新的通用越狱"]},
+        {"name": "Hebbia E2E 金融 agent 评测", "type": "benchmark", "aliases": ["E2E 金融 agent 评测"], "confidence": 0.85, "evidence": ["在 Hebbia 的 E2E 金融 agent 评测等真实工作流基准上，Carbon 排名位居 23 个前沿模型之首"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google DeepMind 全面开放最强前沿模型 Gemini 4 Carbon",
+          "summary": "Google DeepMind 从 11 月 10 日起向开发者、企业与消费者开放基于 4 Argon 的最强模型 Gemini 4 Carbon，定位于长程 agent 化工作流，跨 100 万 token 上下文。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google DeepMind 的 Gemini 4 Carbon 全面向开发者、企业、科学家与消费者开放"]
+        },
+        {
+          "type": "security",
+          "label": "Gemini 4 Carbon 向 Fairwind 内防御者提供网络安全能力并通过 Trajectory Labs 外部测试",
+          "summary": "Carbon 提供面向已验证防御者的双用途网络安全能力，官方称 Trajectory Labs 在 132 小时、超 1.3 万次请求中未发现新的通用越狱。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"},
+            {"name": "Fairwind", "type": "organization", "role": "partner"},
+            {"name": "Trajectory Labs", "type": "organization", "role": "benchmark"}
+          ],
+          "evidence": ["官方称外部测试（Trajectory Labs）在 132 小时、超 1.3 万次请求中未发现新的通用越狱"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Carbon 在 Hebbia E2E 金融 agent 评测等真实工作流基准上位居 23 个前沿模型之首",
+          "summary": "在 Hebbia 的 E2E 金融 agent 评测等真实工作流基准上，Carbon 排名位居 23 个前沿模型之首。",
+          "participants": [
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "object"},
+            {"name": "Hebbia E2E 金融 agent 评测", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 Hebbia 的 E2E 金融 agent 评测等真实工作流基准上，Carbon 排名位居 23 个前沿模型之首"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Carbon", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["Google DeepMind 的 Gemini 4 Carbon 全面向开发者、企业、科学家与消费者开放"]},
+        {"source": "Gemini 4 Carbon", "target": "Gemini 4 Argon", "type": "built_on", "weight": 0.8, "evidence": ["Carbon 是基于 4 Argon 的模型"]},
+        {"source": "Gemini 4 Carbon", "target": "Hebbia E2E 金融 agent 评测", "type": "evaluated_on", "weight": 0.7, "evidence": ["Carbon 排名位居 23 个前沿模型之首"]}
+      ],
+      "metrics": [
+        {"name": "长程 agent 上下文长度", "value": "100 万 token"},
+        {"name": "外部测试时长", "value": "132 小时"},
+        {"name": "越狱测试请求数", "value": "超 1.3 万次"},
+        {"name": "agent 诚实基准项目数", "value": "375 项"},
+        {"name": "真实工作流基准覆盖前沿模型数", "value": "23 个"}
+      ],
+      "why_it_matters": "Google 首次把'最强模型'做成一个专攻长程 agent 与前沿网络安全的极限档、而非通用默认，前沿竞争从通用能力转向'极限工作流能力 + 双用途安全管控'的分层比拼。"
+    },
+    {
+      "article_id": "2026-11-12-4",
+      "entities": [
+        {"name": "Reflection", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["11 月 11 日，Reflection 宣布其首个开源权重模型 Beam 现已可用"]},
+        {"name": "Beam", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["11 月 11 日，Reflection 宣布其首个开源权重模型 Beam 现已可用"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HuggingFace", "HF"], "confidence": 0.9, "evidence": ["发布在 Hugging Face 并以 Apache 2.0 授权"]},
+        {"name": "Qwen 3.8-Max", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["逼近 Qwen 3.8-Max 等更大的开放权重前沿"]},
+        {"name": "Nvidia", "type": "company", "aliases": ["英伟达", "NVIDIA"], "confidence": 0.85, "evidence": ["于 1.05 万张 NVIDIA GB300 GPU 上生成了超 1 亿次 rollout"]},
+        {"name": "AWS", "type": "company", "aliases": ["Amazon Web Services"], "confidence": 0.85, "evidence": ["包括 AWS（JumpStart/HyperPod）、Databricks、Fireworks、CoreWeave、Google Cloud、微软 Foundry、NVIDIA NIMs、OpenRouter、Ollama 等"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.85, "evidence": ["包括 AWS（JumpStart/HyperPod）、Databricks、Fireworks、CoreWeave、Google Cloud、微软 Foundry、NVIDIA NIMs、OpenRouter、Ollama 等"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Reflection 开源首个开源权重模型 Beam，Apache 2.0 授权并发布于 Hugging Face",
+          "summary": "Reflection 发布稀疏 MoE 模型 Beam，总参数 5010 亿、每 token 激活 230 亿，1M 上下文，以 Apache 2.0 授权发布在 Hugging Face，并配置 40+ 集成伙伴。",
+          "participants": [
+            {"name": "Reflection", "type": "company", "role": "subject"},
+            {"name": "Beam", "type": "model", "role": "object"},
+            {"name": "Hugging Face", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Reflection 宣布其首个开源权重模型 Beam 现已可用"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Reflection 称 Beam 编码与 agentic 表现逼近 Qwen 3.8-Max",
+          "summary": "官方称 Beam 编码与 agentic 表现领先于同等开源模型、逼近 Qwen 3.8-Max 等更大的开放权重前沿，约以 1/3 的推理 token 达到相当解答质量。",
+          "participants": [
+            {"name": "Reflection", "type": "company", "role": "subject"},
+            {"name": "Beam", "type": "model", "role": "object"},
+            {"name": "Qwen 3.8-Max", "type": "model", "role": "object"}
+          ],
+          "evidence": ["逼近 Qwen 3.8-Max 等更大的开放权重前沿"]
+        }
+      ],
+      "relations": [
+        {"source": "Beam", "target": "Reflection", "type": "developed_by", "weight": 0.9, "evidence": ["Reflection 宣布其首个开源权重模型 Beam 现已可用"]},
+        {"source": "Beam", "target": "Qwen 3.8-Max", "type": "compared_with", "weight": 0.7, "evidence": ["逼近 Qwen 3.8-Max"]},
+        {"source": "Reflection", "target": "AWS", "type": "partners_with", "weight": 0.6, "evidence": ["包括 AWS（JumpStart/HyperPod）、Databricks、Fireworks、CoreWeave、Google Cloud、微软 Foundry、NVIDIA NIMs、OpenRouter、Ollama 等"]},
+        {"source": "Reflection", "target": "Nvidia", "type": "partners_with", "weight": 0.6, "evidence": ["包括 AWS（JumpStart/HyperPod）、Databricks、Fireworks、CoreWeave、Google Cloud、微软 Foundry、NVIDIA NIMs、OpenRouter、Ollama 等"]},
+        {"source": "Reflection", "target": "Microsoft", "type": "partners_with", "weight": 0.6, "evidence": ["包括 AWS（JumpStart/HyperPod）、Databricks、Fireworks、CoreWeave、Google Cloud、微软 Foundry、NVIDIA NIMs、OpenRouter、Ollama 等"]}
+      ],
+      "metrics": [
+        {"name": "总参数", "value": "5010 亿"},
+        {"name": "每 token 激活参数", "value": "230 亿"},
+        {"name": "有效上下文", "value": "约 100 万 token"},
+        {"name": "预训练 token 数", "value": "23.8 万亿"},
+        {"name": "强化学习 GPU 规模", "value": "1.05 万张 NVIDIA GB300 GPU"},
+        {"name": "RL rollout 次数", "value": "超 1 亿次"},
+        {"name": "达相当质量的推理 token", "value": "约 1/3"}
+      ],
+      "why_it_matters": "Reflection 用 501B 稀疏 MoE 加高强度 RL，在约 1/3 推理 token 下逼近 Qwen 3.8-Max，说明西方开源编码前沿正靠'更大的掐尖模型 + 推理效率'补齐与闭源巨头的代差，开源'开放操作系统'叙事正式成型。"
+    },
+    {
+      "article_id": "2026-11-12-5",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 于 11 月发布了 GPT-6 Cyber"]},
+        {"name": "GPT-6 Cyber", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 于 11 月发布了 GPT-6 Cyber"]},
+        {"name": "GPT-5.6 Cyber", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["较 GPT-5.6 Cyber 的 32.1% 提升 51%"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["一个为\"授权安全研究\"优化的 GPT-6 Astra 变体"]},
+        {"name": "ExploitGym", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 ExploitGym 这一\"给定漏洞能否加以利用\"的基准上，GPT-6 Cyber 得分 48.5%"]},
+        {"name": "Firefox", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["研究人员用它发现了 81 个 Firefox 高危漏洞"]},
+        {"name": "Mozilla", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["（Mozilla 已开始修复）"]},
+        {"name": "Dragos", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["与工业控制安全公司 Dragos 合作在受控实验室验证"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 发布面向授权安全研究的专业防御模型 GPT-6 Cyber",
+          "summary": "GPT-6 Cyber 是面向授权安全研究优化的 GPT-6 Astra 变体，专长漏洞发现、利用开发与 Web 渗透，网安能力在安全框架下被评为 Critical。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6 Cyber", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI 于 11 月发布了 GPT-6 Cyber"]
+        },
+        {
+          "type": "benchmark",
+          "label": "GPT-6 Cyber 在 ExploitGym 得分 48.5%，较 GPT-5.6 Cyber 提升 51%",
+          "summary": "在 ExploitGym 基准上 GPT-6 Cyber 得分 48.5%，较 GPT-5.6 Cyber 的 32.1% 大幅领先，并完成 100% 的一般安全协助与漏洞修补。",
+          "participants": [
+            {"name": "GPT-6 Cyber", "type": "model", "role": "object"},
+            {"name": "GPT-5.6 Cyber", "type": "model", "role": "object"},
+            {"name": "ExploitGym", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["GPT-6 Cyber 得分 48.5%，较 GPT-5.6 Cyber 的 32.1% 提升 51%"]
+        },
+        {
+          "type": "security",
+          "label": "GPT-6 Cyber 帮助发现 81 个 Firefox 高危漏洞并开发 Linux 内核漏洞利用",
+          "summary": "研究人员用它发现 81 个 Firefox 高危漏洞（Mozilla 已开始修复），并为 948 个 Linux 内核漏洞开发了可用利用。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Firefox", "type": "product", "role": "object"},
+            {"name": "Mozilla", "type": "company", "role": "object"}
+          ],
+          "evidence": ["研究人员用它发现了 81 个 Firefox 高危漏洞"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-6 Cyber", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 于 11 月发布了 GPT-6 Cyber"]},
+        {"source": "GPT-6 Cyber", "target": "GPT-6 Astra", "type": "built_on", "weight": 0.8, "evidence": ["一个为\"授权安全研究\"优化的 GPT-6 Astra 变体"]},
+        {"source": "GPT-6 Cyber", "target": "ExploitGym", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 ExploitGym 这一\"给定漏洞能否加以利用\"的基准上"]},
+        {"source": "OpenAI", "target": "Dragos", "type": "partners_with", "weight": 0.6, "evidence": ["与工业控制安全公司 Dragos 合作在受控实验室验证"]}
+      ],
+      "metrics": [
+        {"name": "ExploitGym 漏洞利用得分", "value": "48.5%"},
+        {"name": "GPT-5.6 Cyber 的 ExploitGym 得分", "value": "32.1%"},
+        {"name": "在 ExploitGym 上提升幅度", "value": "51%"},
+        {"name": "一般安全协助与漏洞修补完成率", "value": "100%"},
+        {"name": "漏洞利用开发完成率", "value": "96%"},
+        {"name": "红队任务完成率", "value": "97%"},
+        {"name": "发现的 Firefox 高危漏洞数", "value": "81 个"},
+        {"name": "开发了利用的 Linux 内核漏洞数", "value": "948 个"},
+        {"name": "其中此前未知的漏洞数", "value": "588 个"}
+      ],
+      "why_it_matters": "网安模型被官方划入 Critical 级并已落地发现 81 个 Firefox 高危漏洞，OpenAI 把'更强的攻防能力'与'授权范围 + 关键基础设施护栏'绑成同一产品，安全能力竞赛正式进入受控利用与放量交付阶段。"
+    },
+    {
+      "article_id": "2026-11-12-6",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.95, "evidence": ["Google DeepMind 于 11 月中旬介绍了 AlphaProof Code"]},
+        {"name": "AlphaProof Code", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["Google DeepMind 于 11 月中旬介绍了 AlphaProof Code"]},
+        {"name": "Signal", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["形式化验证了 Signal 端到端加密协议的安全性质"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Google DeepMind 推出 agent 化框架 AlphaProof Code 并形式化验证 Signal 协议安全性",
+          "summary": "AlphaProof Code 是用于深度验证复杂软件的 agent 化框架，首次用 AI 在机器码层面形式化验证被广泛部署的加密协议 Signal 的正确性，全程约四周。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "AlphaProof Code", "type": "tool", "role": "object"},
+            {"name": "Signal", "type": "product", "role": "object"}
+          ],
+          "evidence": ["形式化验证了 Signal 端到端加密协议的安全性质"]
+        }
+      ],
+      "relations": [
+        {"source": "AlphaProof Code", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["Google DeepMind 于 11 月中旬介绍了 AlphaProof Code"]},
+        {"source": "AlphaProof Code", "target": "Signal", "type": "verifies", "weight": 0.9, "evidence": ["形式化验证了 Signal 端到端加密协议的安全性质"]}
+      ],
+      "metrics": [
+        {"name": "验证 Signal 安全保证耗时", "value": "约四周"}
+      ],
+      "why_it_matters": "AI 第一次把加密协议的形式化验证推进到生产级机器码层级、并压缩到约四周，意味着密码验证正从需要专家团队数年的人工论证走向可规模化、可信任的自动化基础设施保障。"
+    },
+    {
+      "article_id": "2026-11-12-7",
+      "entities": [
+        {"name": "MIT", "type": "organization", "aliases": ["麻省理工", "麻省理工学院"], "confidence": 0.95, "evidence": ["MIT 新闻于 11 月 12 日报道"]},
+        {"name": "气候仿真器", "type": "tool", "aliases": ["AI 气候仿真器", "emulator"], "confidence": 0.9, "evidence": ["气候仿真器（emulator）是科学家在无法运行完整气候模拟时使用的替代模型"]},
+        {"name": "优化情景合成算法", "type": "tool", "aliases": ["优化的气候情景"], "confidence": 0.85, "evidence": ["MIT 团队提出一种算法，生成一组\"优化的气候情景\"合成数据"]},
+        {"name": "MITEI", "type": "organization", "aliases": ["MIT 能源研究所"], "confidence": 0.85, "evidence": ["论文在 MIT 能源研究所（MITEI）年度研究会议上发布"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "MIT 开发出生成更快更可信 AI 气候仿真器的新训练算法",
+          "summary": "MIT 团队提出一种生成优化的气候情景合成数据的算法，专门用来提升某一仿真器对分布外（新颖）情景的预测表现。",
+          "participants": [
+            {"name": "MIT", "type": "organization", "role": "subject"},
+            {"name": "气候仿真器", "type": "tool", "role": "object"},
+            {"name": "优化情景合成算法", "type": "tool", "role": "object"},
+            {"name": "MITEI", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["MIT 团队提出一种算法，生成一组\"优化的气候情景\"合成数据"]
+        }
+      ],
+      "relations": [
+        {"source": "气候仿真器", "target": "MIT", "type": "developed_by", "weight": 0.8, "evidence": ["该校研究人员开发出一种新的训练方法"]},
+        {"source": "优化情景合成算法", "target": "MIT", "type": "developed_by", "weight": 0.8, "evidence": ["MIT 团队提出一种算法，生成一组\"优化的气候情景\"合成数据"]},
+        {"source": "气候仿真器", "target": "优化情景合成算法", "type": "uses", "weight": 0.7, "evidence": ["专门用来提升某一仿真器的预测表现"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "气候 AI 仿真的核心矛盾从'跑得快'转向'对分布外情景不可信'，MIT 把训练数据从被动投喂标准情景改为主动针对模型弱点合成优化情景，仿真器正从专家调校走向可扩展的机器学习流水线。"
+    },
+    {
+      "article_id": "2026-11-12-8",
+      "entities": [
+        {"name": "CISA", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["美国 CISA 于 11 月 9 日将其加入已知被利用漏洞（KEV）目录"]},
+        {"name": "GPUStack", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["开源 AI 推理集群管理器 GPUStack 被发现存在严重认证绕过漏洞"]},
+        {"name": "NVD", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["NVD 记录显示已在野外被利用"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "CISA 将 GPUStack 认证绕过漏洞 CVE-2026-102895 列入 KEV 目录",
+          "summary": "CISA 于 11 月 9 日将 GPUStack 认证绕过漏洞（CVSS 9.8）加入已知被利用漏洞目录，11 月 12 日为联邦机构修复截止日。",
+          "participants": [
+            {"name": "CISA", "type": "organization", "role": "subject"},
+            {"name": "GPUStack", "type": "product", "role": "object"}
+          ],
+          "evidence": ["CISA 于 11 月 9 日将其加入已知被利用漏洞（KEV）目录"]
+        },
+        {
+          "type": "security",
+          "label": "GPUStack 认证绕过漏洞已在野外被利用并被 NVD 记录",
+          "summary": "NVD 记录显示漏洞已在野外被利用，攻击者注册恶意推理后端以接管 GPU worker，影响 2.2.0 之前所有版本。",
+          "participants": [
+            {"name": "GPUStack", "type": "product", "role": "subject"},
+            {"name": "NVD", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["NVD 记录显示已在野外被利用"]
+        }
+      ],
+      "relations": [
+        {"source": "CISA", "target": "GPUStack", "type": "documents", "weight": 0.7, "evidence": ["CISA 于 11 月 9 日将其加入已知被利用漏洞（KEV）目录"]},
+        {"source": "NVD", "target": "GPUStack", "type": "documents", "weight": 0.6, "evidence": ["NVD 记录显示已在野外被利用"]}
+      ],
+      "metrics": [
+        {"name": "漏洞 CVSS 评分", "value": "9.8"},
+        {"name": "受影响版本", "value": "2.2.0 之前的所有版本"},
+        {"name": "修复版本", "value": "2.2.0"}
+      ],
+      "why_it_matters": "一个开源 AI 集群管理器仅靠未认证访问就能接管整个 GPU 推理集群且已被在野利用，多租户 AI 基础设施的'默认安全'假设被 CISA/KEV 正式证伪，供应链攻击面已从芯片延伸到集群管理面。"
+    },
+    {
+      "article_id": "2026-11-12-9",
+      "entities": [
+        {"name": "Fireworks AI", "type": "company", "aliases": ["Fireworks"], "confidence": 0.95, "evidence": ["AI 推理/训练平台 Fireworks AI 遭第二次数据泄露"]},
+        {"name": "Notion", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["攻击者曾访问其客户（包括 Notion）的对话记录"]},
+        {"name": "Palo Alto Networks", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Fireworks 正与 Palo Alto Networks 的 Unit 42 合作整改"]},
+        {"name": "Unit 42", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["与 Palo Alto Networks 的 Unit 42 合作整改"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Fireworks AI 遭第二次数据泄露，攻击者访问 Notion 等客户数据与模型权重",
+          "summary": "攻击者曾访问 Fireworks AI 客户（包括 Notion）的对话记录、账单数据以及部分模型权重，入侵与 LLMJacking 网络犯罪团伙相关。",
+          "participants": [
+            {"name": "Fireworks AI", "type": "company", "role": "subject"},
+            {"name": "Notion", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Fireworks AI 遭第二次数据泄露"]
+        },
+        {
+          "type": "security",
+          "label": "Fireworks AI 与 Palo Alto Networks 的 Unit 42 合作整改",
+          "summary": "Fireworks 正与 Palo Alto Networks 的 Unit 42 合作整改，轮换凭据、隔离受影响系统并收紧存储访问。",
+          "participants": [
+            {"name": "Fireworks AI", "type": "company", "role": "subject"},
+            {"name": "Palo Alto Networks", "type": "company", "role": "partner"},
+            {"name": "Unit 42", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["Fireworks 正与 Palo Alto Networks 的 Unit 42 合作整改"]
+        }
+      ],
+      "relations": [
+        {"source": "Fireworks AI", "target": "Notion", "type": "supplies", "weight": 0.8, "evidence": ["攻击者曾访问其客户（包括 Notion）的对话记录"]},
+        {"source": "Unit 42", "target": "Palo Alto Networks", "type": "affiliated_with", "weight": 0.7, "evidence": ["Fireworks 正与 Palo Alto Networks 的 Unit 42 合作整改"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "第三方推理与训练基础设施连续两次成为攻击者集中下手的薄弱环节，'用自己的数据、别人的算力'的公司必须把对云推理提供商的默认信任换成隔离、凭据轮换与持续监控的硬前提。"
+    },
+    {
+      "article_id": "2026-11-12-10",
+      "entities": [
+        {"name": "日本政府", "type": "organization", "aliases": ["日本"], "confidence": 0.9, "evidence": ["日本政府正考虑要求 AI 相关企业采取确保安全的措施"]},
+        {"name": "《AI 法》", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["日本 2025 年 5 月生效的《AI 法》"]},
+        {"name": "EU AI Act", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["与 EU AI Act 式的\"有牙齿监管\"之间进一步转向"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "日本政府拟对不配合调查的 AI 企业发布有约束力的整改命令并处以罚款",
+          "summary": "日本政府正考虑要求 AI 相关企业确保安全并对违规行为处以罚款，对不配合调查的企业发布有法律约束力的整改命令，处罚限定在先进 AI 相关事件。",
+          "participants": [
+            {"name": "日本政府", "type": "organization", "role": "subject"},
+            {"name": "《AI 法》", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["日本政府正考虑要求 AI 相关企业采取确保安全的措施"]
+        },
+        {
+          "type": "policy",
+          "label": "日本 AI 治理从建议性转向 EU AI Act 式的有牙齿监管",
+          "summary": "比照现行无处罚、无约束力的《AI 法》，此次审议标志日本在'建议性治理'与 EU AI Act 式的'有牙齿监管'之间进一步转向。",
+          "participants": [
+            {"name": "日本政府", "type": "organization", "role": "subject"},
+            {"name": "EU AI Act", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["在\"建议性治理\"与 EU AI Act 式的\"有牙齿监管\"之间进一步转向"]
+        }
+      ],
+      "relations": [
+        {"source": "日本政府", "target": "EU AI Act", "type": "compared_with", "weight": 0.7, "evidence": ["与 EU AI Act 式的\"有牙齿监管\"之间进一步转向"]},
+        {"source": "《AI 法》", "target": "日本政府", "type": "developed_by", "weight": 0.6, "evidence": ["日本 2025 年 5 月生效的《AI 法》"]}
+      ],
+      "metrics": [
+        {"name": "《AI 法》生效时间", "value": "2025 年 5 月"}
+      ],
+      "why_it_matters": "日本正从'建议性治理'转向 EU AI Act 式有牙齿的罚则监管，给先进 AI 事件装上可执行的追责与罚款机制，亚太对大模型的治理将首次从软约束走向可起诉的硬约束。"
+    },
+    {
+      "article_id": "2026-11-12-11",
+      "entities": [
+        {"name": "United Airlines", "type": "company", "aliases": ["美联航"], "confidence": 0.95, "evidence": ["United Airlines 正阻止 AI agent 在其平台上预订航班"]},
+        {"name": "AI agent", "type": "tool", "aliases": ["AI 助手", "自主代理", "AI 代办"], "confidence": 0.85, "evidence": ["United Airlines 正阻止 AI agent 在其平台上预订航班"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "United Airlines 因网络安全风险阻止 AI agent 预订航班",
+          "summary": "United Airlines 已识别自主代理在网站上的行为模式，选择让 AI 助手只能查看、不能完成订票等交易动作，理由是网络安全风险。",
+          "participants": [
+            {"name": "United Airlines", "type": "company", "role": "subject"},
+            {"name": "AI agent", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["United Airlines 正阻止 AI agent 在其平台上预订航班"]
+        }
+      ],
+      "relations": [
+        {"source": "United Airlines", "target": "AI agent", "type": "restricts", "weight": 0.8, "evidence": ["United Airlines 正阻止 AI agent 在其平台上预订航班"]},
+        {"source": "AI agent", "target": "United Airlines", "type": "uses", "weight": 0.5, "evidence": ["United Airlines 正阻止 AI agent 在其平台上预订航班"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "企业第一次对 AI agent 类交易流量设卡，说明代理智能若无法被平台可信识别与管控，就会被金融、航空、医疗这类合规重资产行业挡在门外——agent 生态遇到的是准入信任而非技术问题。"
+    },
+    {
+      "article_id": "2026-11-12-12",
+      "entities": [
+        {"name": "Sompo 控股", "type": "company", "aliases": ["Sompo"], "confidence": 0.9, "evidence": ["Sompo 控股与 NTT 于 11 月 11 日签署合作协议"]},
+        {"name": "NTT", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Sompo 控股与 NTT 于 11 月 11 日签署合作协议"]},
+        {"name": "实体 AI", "type": "topic", "aliases": ["Physical AI"], "confidence": 0.85, "evidence": ["在养老护理行业的真正落地"]},
+        {"name": "养老护理", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["在养老护理行业的真正落地"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "Sompo 控股与 NTT 签署协议共同推进实体 AI 在养老护理行业落地",
+          "summary": "两公司签署合作协议，以'人—实体 AI 协作'为前提协商运营与服务模式，探索从研发、演示到部署运营、持续改进与商业化的完整路径。",
+          "participants": [
+            {"name": "Sompo 控股", "type": "company", "role": "subject"},
+            {"name": "NTT", "type": "company", "role": "partner"},
+            {"name": "实体 AI", "type": "topic", "role": "object"},
+            {"name": "养老护理", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Sompo 控股与 NTT 于 11 月 11 日签署合作协议"]
+        }
+      ],
+      "relations": [
+        {"source": "Sompo 控股", "target": "NTT", "type": "partners_with", "weight": 0.9, "evidence": ["Sompo 控股与 NTT 于 11 月 11 日签署合作协议"]},
+        {"source": "实体 AI", "target": "养老护理", "type": "applies_to", "weight": 0.7, "evidence": ["在养老护理行业的真正落地"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "实体 AI 正式从工业产线转向养老护理这一服务场景，'物理智能'的下一波竞争不是更强的机器人，而是能否在'人—实体 AI 协作'下跑通从部署运营到商业化收费的完整模式。"
+    },
+    {
+      "article_id": "2026-11-12-13",
+      "entities": [
+        {"name": "Nvidia", "type": "company", "aliases": ["英伟达", "NVIDIA"], "confidence": 0.95, "evidence": ["Nvidia 市值据估算蒸发约 6000 亿美元"]},
+        {"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.95, "evidence": ["黄仁勋模式的核心是\"先给钱后赚\""]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 以约 1.4 万亿美元完全稀释市值启动 IPO"]},
+        {"name": "Dario Amodei", "type": "person", "aliases": ["Amodei"], "confidence": 0.85, "evidence": ["AI 圈的市值都建立在\"某个不可替代的人（黄或 Amodei）"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "黄仁勋信任危机暴露 AI 板块对单一传奇掌门人的依赖，Nvidia 市值蒸发约 6000 亿美元",
+          "summary": "Nvidia 市值据估算蒸发约 6000 亿美元，纳斯达克 100 期货一度下挫 1%，暴露市场对 Nvidia 的定价也是对'黄仁勋这个不断给客户提供资金的生意模式'的定价。",
+          "participants": [
+            {"name": "Nvidia", "type": "company", "role": "subject"},
+            {"name": "Jensen Huang", "type": "person", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Nvidia 市值据估算蒸发约 6000 亿美元"]
+        }
+      ],
+      "relations": [
+        {"source": "Jensen Huang", "target": "Nvidia", "type": "affiliated_with", "weight": 0.8, "evidence": ["黄仁勋模式的核心是\"先给钱后赚\""]},
+        {"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.7, "evidence": ["某个不可替代的人（黄或 Amodei）"]},
+        {"source": "Nvidia", "target": "Anthropic", "type": "compared_with", "weight": 0.6, "evidence": ["无论是芯片还是大模型，AI 圈的市值都建立在"]}
+      ],
+      "metrics": [
+        {"name": "Nvidia 市值蒸发", "value": "约 6000 亿美元"},
+        {"name": "Anthropic 完全稀释市值", "value": "约 1.4 万亿美元"},
+        {"name": "纳斯达克 100 期货下挫幅度", "value": "1%"}
+      ],
+      "why_it_matters": "黄仁勋危机与 Anthropic 约 1.4 万亿美元 IPO 叠在同一条线上，证明 AI 板块的市值几乎全部建立在'不可替代的传奇领导力 + 不断扩大的未来现金流'之上，领导力一旦成为风险源，要回答的是这类商业模式信任成本本身有多高。"
+    }
+  ]
+}

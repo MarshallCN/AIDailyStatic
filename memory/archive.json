@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T23:13:49Z",
+  "updated_at": "2026-11-12T23:33:07Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -933,22 +933,22 @@
       "period_id": "2026-W42",
       "period_type": "week",
       "start_date": "2026-10-12",
-      "end_date": "2026-10-12",
-      "summary": "2026-10-12 至 2026-10-12 期间，Hugging Face、vLLM、Jev 主要围绕 benchmark、funding 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-10-13",
+      "summary": "2026-10-12 至 2026-10-13 期间，Anthropic、OpenAI、Hugging Face 主要围绕 policy、research 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
+        "Anthropic",
+        "OpenAI",
         "Hugging Face",
-        "vLLM",
-        "Jev",
-        "Muse"
+        "IPO"
       ],
       "event_types": [
-        "benchmark",
-        "funding",
-        "policy"
+        "policy",
+        "research",
+        "benchmark"
       ],
       "trend_signals": [
-        "核心实体：Hugging Face、vLLM、Jev",
-        "主事件类型：benchmark、funding"
+        "核心实体：Anthropic、OpenAI、Hugging Face",
+        "主事件类型：policy、research"
       ],
       "representative_article_ids": [
         "2026-10-12-0",
