@@ -1,0 +1,563 @@
+{
+  "date": "2026-11-13",
+  "articles": [
+    {
+      "article_id": "2026-11-13-0",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["超过 1.5GW 本应受限的英伟达芯片最终仍流入中国"]},
+        {"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.95, "evidence": ["他离开掌舵 33 年的公司"]},
+        {"name": "Colette Kress", "type": "person", "aliases": ["柯蕾丝"], "confidence": 0.9, "evidence": ["CFO Colette Kress 任临时 CEO"]},
+        {"name": "Ian Buck", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["内部被点名的 Ian Buck 与 Jonah Alben 都极出色"]},
+        {"name": "Jonah Alben", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["内部被点名的 Ian Buck 与 Jonah Alben 都极出色"]},
+        {"name": "SK hynix", "type": "company", "aliases": ["SK海力士"], "confidence": 0.9, "evidence": ["SK海力士 2027 年 HBM4 给英伟达的定价明显低于"]},
+        {"name": "RASA", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["已通过众议院的 RASA 类立法将更快推进"]},
+        {"name": "美国情报界", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["美国情报界是推动他出局的重要力量"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "黄仁勋离任使美国对华芯片与 AI 限制加码、RASA 类立法推进加快",
+          "summary": "美国情报界被视为推动黄仁勋出局的重要力量，其离场后已通过众议院的 RASA 类立法将更快推进，对华芯片与 AI 限制明显加码。",
+          "participants": [
+            {"name": "美国情报界", "type": "organization", "role": "regulator"},
+            {"name": "RASA", "type": "policy", "role": "regulator"},
+            {"name": "NVIDIA", "type": "company", "role": "object"},
+            {"name": "Jensen Huang", "type": "person", "role": "object"}
+          ],
+          "evidence": ["已通过众议院的 RASA 类立法将更快推进"]
+        },
+        {
+          "type": "security",
+          "label": "Semianalysis 测算超 1.5GW 应受限的英伟达芯片流入中国",
+          "summary": "报告用加速器模型测算，超过 1.5GW 本应受限的英伟达芯片最终仍流入中国，且不含为规避规则特制的型号。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "RASA", "type": "policy", "role": "regulator"}
+          ],
+          "evidence": ["超过 1.5GW 本应受限的英伟达芯片最终仍流入中国"]
+        },
+        {
+          "type": "infra",
+          "label": "报告判断 2028 年超 70% 总产能可能非英伟达所有",
+          "summary": "黄仁勋主导供应的锁喉是护城河，但报告判断2028年超过70%总产能可能非英伟达所有，竞争对手将更容易获得供给。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["2028 年超过 70% 的总产能可能非英伟达所有"]
+        }
+      ],
+      "relations": [
+        {"source": "Jensen Huang", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.9, "evidence": ["他离开掌舵 33 年的公司"]},
+        {"source": "Colette Kress", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.7, "evidence": ["CFO Colette Kress 任临时 CEO"]},
+        {"source": "Ian Buck", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.6, "evidence": ["内部被点名的 Ian Buck 与 Jonah Alben 都极出色"]},
+        {"source": "Jonah Alben", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.6, "evidence": ["内部被点名的 Ian Buck 与 Jonah Alben 都极出色"]},
+        {"source": "SK hynix", "target": "NVIDIA", "type": "supplies", "weight": 0.8, "evidence": ["SK海力士 2027 年 HBM4 给英伟达的定价明显低于"]},
+        {"source": "RASA", "target": "NVIDIA", "type": "restricts", "weight": 0.8, "evidence": ["对华芯片与 AI 限制会明显加码"]}
+      ],
+      "metrics": [
+        {"name": "应受限却流入中国的英伟达芯片规模", "value": "1.5GW"},
+        {"name": "供应与产能承诺单季增幅", "value": "119B → 279B 亿美元"},
+        {"name": "黄仁勋主导的表外担保规模", "value": "530B 美元"},
+        {"name": "2028 年非英伟达占比预期", "value": "70%"},
+        {"name": "黄仁勋掌舵年数", "value": "33 年"}
+      ],
+      "why_it_matters": "黄仁勋离场不是一次单纯人事更替，而是同时抽走英伟达对华供应的地缘护城河、对供应链的锁定能力与对客户的信用背书三重支柱，市场在为一个失去个人化信用的英伟达重新定价。"
+    },
+    {
+      "article_id": "2026-11-13-1",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英伟达董事会于 11 月宣布"]},
+        {"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.95, "evidence": ["黄仁勋即日辞去总裁、CEO 与董事职务"]},
+        {"name": "Colette Kress", "type": "person", "aliases": ["柯蕾丝"], "confidence": 0.9, "evidence": ["任执行副总裁兼财务长的 Colette Kress"]},
+        {"name": "Harvey C. Jones", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["任命 Harvey C. Jones 为英伟达历史上首位董事长"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "黄仁勋辞任英伟达总裁、CEO 与董事职务",
+          "summary": "英伟达董事会于11月宣布黄仁勋即日辞去总裁、CEO 与董事职务。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Jensen Huang", "type": "person", "role": "object"}
+          ],
+          "evidence": ["黄仁勋即日辞去总裁、CEO 与董事职务"]
+        },
+        {
+          "type": "trend",
+          "label": "Colette Kress 出任临时 CEO、Harvey C. Jones 任首位董事长",
+          "summary": "公司任命财务长 Colette Kress 为临时 CEO 并继续保留财务长职务，同时任命 Harvey C. Jones 为英伟达历史上首位董事长，直至确定永久继任者。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Colette Kress", "type": "person", "role": "object"},
+            {"name": "Harvey C. Jones", "type": "person", "role": "object"}
+          ],
+          "evidence": ["任命 Harvey C. Jones 为英伟达历史上首位董事长"]
+        }
+      ],
+      "relations": [
+        {"source": "Jensen Huang", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.9, "evidence": ["黄仁勋即日辞去总裁、CEO 与董事职务"]},
+        {"source": "Colette Kress", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.8, "evidence": ["任执行副总裁兼财务长的 Colette Kress"]},
+        {"source": "Harvey C. Jones", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.7, "evidence": ["任命 Harvey C. Jones 为英伟达历史上首位董事长"]}
+      ],
+      "metrics": [
+        {"name": "柯蕾丝加入英伟达年份", "value": "2013 年"},
+        {"name": "黄仁勋掌舵年数", "value": "33 年"},
+        {"name": "2027 财年第三季度财报日期", "value": "11 月 17 日"}
+      ],
+      "why_it_matters": "官方交接落定把上一天的市场揣测变成董事会已拍板的既成事实，金融背景的临时 CEO 表明公司短期以运营平稳为先，但永久掌舵人的悬空让一切的供应与信用承诺都暂时没有对等的个人背书。"
+    },
+    {
+      "article_id": "2026-11-13-2",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英伟达董事会周五声明"]},
+        {"name": "Rene Haas", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["接触 Arm CEO Rene Haas"]},
+        {"name": "Arm", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["接触 Arm CEO Rene Haas"]},
+        {"name": "Colette Kress", "type": "person", "aliases": ["柯蕾丝"], "confidence": 0.85, "evidence": ["柯蕾丝已于周四下午与英伟达总部的核心高管举行首次会议"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "英伟达正为 CEO 遴选猎头公司、尚未正式接洽候选人",
+          "summary": "英伟达董事会周五声明正在为 CEO 一职遴选猎头公司，尚未正式接洽任何潜在候选人。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Jensen Huang", "type": "person", "role": "object"}
+          ],
+          "evidence": ["正在为 CEO 一职遴选猎头公司，尚未正式接洽任何潜在候选人"]
+        },
+        {
+          "type": "trend",
+          "label": "据 FT 报道董事会接触 Arm CEO Rene Haas 作为永久继任候选人",
+          "summary": "FT 引述知情人士称董事会已在接班候选名单中接触 Arm CEO Rene Haas，他本人曾是英伟达高管，分析师普遍预期永久继任者将来自外部。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Rene Haas", "type": "person", "role": "object"},
+            {"name": "Arm", "type": "company", "role": "object"}
+          ],
+          "evidence": ["董事会已在接班候选名单中接触 Arm CEO Rene Haas"]
+        }
+      ],
+      "relations": [
+        {"source": "Rene Haas", "target": "Arm", "type": "affiliated_with", "weight": 0.8, "evidence": ["接触 Arm CEO Rene Haas"]},
+        {"source": "Rene Haas", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.7, "evidence": ["他本人曾是英伟达高管"]},
+        {"source": "Colette Kress", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.7, "evidence": ["柯蕾丝已于周四下午与英伟达总部的核心高管举行首次会议"]}
+      ],
+      "metrics": [
+        {"name": "临时 CEO 首次高管会议时间", "value": "周四下午"}
+      ],
+      "why_it_matters": "继任悬念的最大变量是候选人的外部性——分析师预期永久继任者将来自公司外部，意味着英伟达从一家创始人深度绑定、扁平化运转的公司，正在向职业经理人治理结构过渡，而 Rene Haas 的名字正是这种外部化预期的具体化身。"
+    },
+    {
+      "article_id": "2026-11-13-3",
+      "entities": [
+        {"name": "Nebius", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Nebius 计划 2027 年在数据中心建设上投入 400 亿美元"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.9, "evidence": ["与微软就新泽西州 Vineland"]},
+        {"name": "DataOne", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["由第三方 DataOne 运营"]},
+        {"name": "Vineland 数据中心", "type": "infrastructure", "aliases": [], "confidence": 0.7, "evidence": ["由第三方 DataOne 运营"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Nebius 公布 2027 年 400 亿美元数据中心建设计划",
+          "summary": "Nebius 计划2027年在数据中心建设上投入400亿美元，通过客户预付款与资产类贷款支撑扩张，预付款加资产融资预计覆盖最多85%的资本开支。",
+          "participants": [
+            {"name": "Nebius", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Nebius 计划 2027 年在数据中心建设上投入 400 亿美元"]
+        },
+        {
+          "type": "infra",
+          "label": "微软 194 亿美元 AI 算力订单延期致 Nebius 财报后股价跌 17%",
+          "summary": "与微软就新泽西州 Vineland（由第三方 DataOne 运营）最高194亿美元的AI算力合同仅约一半能在2026年底前完成，Nebius财报后股价大跌17%。",
+          "participants": [
+            {"name": "Nebius", "type": "company", "role": "subject"},
+            {"name": "Microsoft", "type": "company", "role": "object"},
+            {"name": "DataOne", "type": "organization", "role": "operator"}
+          ],
+          "evidence": ["财报后股价大跌 17%"]
+        }
+      ],
+      "relations": [
+        {"source": "Nebius", "target": "Microsoft", "type": "supplies", "weight": 0.8, "evidence": ["与微软就新泽西州 Vineland"]},
+        {"source": "DataOne", "target": "Vineland 数据中心", "type": "operates", "weight": 0.6, "evidence": ["由第三方 DataOne 运营"]}
+      ],
+      "metrics": [
+        {"name": "2027 年数据中心资本开支计划", "value": "400 亿美元"},
+        {"name": "微软新泽西 Vineland AI 算力合同最高金额", "value": "194 亿美元"},
+        {"name": "财报后股价跌幅", "value": "17%"},
+        {"name": "Q3 末持有现金", "value": "约 74 亿美元"},
+        {"name": "预付款加资产融资覆盖资本开支比例", "value": "最多 85%"},
+        {"name": "2027 年营收预期", "value": "120-130 亿美元"}
+      ],
+      "why_it_matters": "Nebius 用未来产能做抵押融资把资本竞赛推到新高度，但微软订单的延期暴露出这种前置融资模式的裂缝——当核心客户需求松动时，以预付款和资产贷款堆起来的扩张承诺会比订单本身先承压。"
+    },
+    {
+      "article_id": "2026-11-13-4",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 为 TeraWulf 在肯塔基州 Hawesville 的 Anthropic 数据中心交易提供信用兜底"]},
+        {"name": "TeraWulf", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Google 为 TeraWulf 在肯塔基州 Hawesville 的 Anthropic 数据中心交易提供信用兜底"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Google 为 TeraWulf 在肯塔基州 Hawesville 的 Anthropic 数据中心交易提供信用兜底"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Google 为 TeraWulf 的 Anthropic 数据中心交易提供信用兜底",
+          "summary": "Google 为 TeraWulf 位于肯塔基州 Hawesville 的 Anthropic 数据中心交易提供信用兜底，该园区预计带来约 190 亿美元合同收入，信用兜底正成为超大规模云与新兴数据中心运营商之间越来越常见的融资安排。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "TeraWulf", "type": "company", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Google 为 TeraWulf 在肯塔基州 Hawesville 的 Anthropic 数据中心交易提供信用兜底"]
+        }
+      ],
+      "relations": [
+        {"source": "Google", "target": "TeraWulf", "type": "backs", "weight": 0.8, "evidence": ["Google 为 TeraWulf 在肯塔基州 Hawesville 的 Anthropic 数据中心交易提供信用兜底"]},
+        {"source": "TeraWulf", "target": "Anthropic", "type": "supplies", "weight": 0.8, "evidence": ["Google 为 TeraWulf 在肯塔基州 Hawesville 的 Anthropic 数据中心交易提供信用兜底"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 数据中心园区预计合同收入", "value": "约 190 亿美元"}
+      ],
+      "why_it_matters": "信用兜底正从英伟达、微软扩散到谷歌，说明 AI 算力供给的竞争已从拼产能升级为拼资产负债表——谁愿意为第三方数据中心运营商承担财务风险，谁就能在当前资本极度密集的格局里锁住算力。"
+    },
+    {
+      "article_id": "2026-11-13-5",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 今日发布 ChatGPT Wallet"]},
+        {"name": "ChatGPT Wallet", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 今日发布 ChatGPT Wallet"]},
+        {"name": "American Express", "type": "company", "aliases": ["Amex"], "confidence": 0.9, "evidence": ["首个合作方是 American Express"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 发布智能体支付基础设施 ChatGPT Wallet",
+          "summary": "OpenAI 发布 ChatGPT Wallet，用户可设定支出额度、品类等参数，预先批准智能体在约束内购买，并叠加生物识别校验与授权记录。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT Wallet", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 今日发布 ChatGPT Wallet"]
+        },
+        {
+          "type": "partnership",
+          "label": "OpenAI 与 American Express 达成首个智能体商务集成",
+          "summary": "OpenAI 首个合作方为 American Express，符合条件的持卡人可在 Amex Agentic Commerce Experiences 集成中使用 Amex 卡逐笔查看并批准购买。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "American Express", "type": "company", "role": "partner"},
+            {"name": "ChatGPT Wallet", "type": "product", "role": "object"}
+          ],
+          "evidence": ["首个合作方是 American Express"]
+        }
+      ],
+      "relations": [
+        {"source": "ChatGPT Wallet", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 今日发布 ChatGPT Wallet"]},
+        {"source": "ChatGPT Wallet", "target": "American Express", "type": "integrates", "weight": 0.8, "evidence": ["首个合作方是 American Express"]},
+        {"source": "OpenAI", "target": "American Express", "type": "partners_with", "weight": 0.8, "evidence": ["首个合作方是 American Express"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "ChatGPT Wallet 把智能体从'能查询'推进到'能替你花钱'，而 American Express 作为首个支付伙伴意味着智能体商务的真正门槛在金融基础设施与风控，OpenAI 正试图成为这笔新交易流的入口。"
+    },
+    {
+      "article_id": "2026-11-13-6",
+      "entities": [
+        {"name": "Runway", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Runway 将世界动作模型 Praxis-1 以 Apache 2.0 协议开源"]},
+        {"name": "Praxis-1", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Runway 将世界动作模型 Praxis-1 以 Apache 2.0 协议开源"]},
+        {"name": "RoboLab-120", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 NVIDIA RoboLab-120 上以 46.2% 成功率列第一"]},
+        {"name": "FLUX 3 Action", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["FLUX 3 Action（42.9%）"]},
+        {"name": "Cosmos3 Nano", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Cosmos3 Nano（36.8%）"]},
+        {"name": "π0.5", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["π0.5（28.0%）"]},
+        {"name": "Cosmos Coalition", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["其作为 Cosmos Coalition 创始成员推动开源世界模型的路线"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.9, "evidence": ["在 NVIDIA RoboLab-120 上以 46.2% 成功率列第一"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Runway 以 Apache 2.0 协议开源世界动作模型 Praxis-1",
+          "summary": "Runway 将 27B 参数的 MoE 扩散世界动作模型 Praxis-1 以 Apache 2.0 协议开源，权重、推理与微调代码全部公开。",
+          "participants": [
+            {"name": "Runway", "type": "company", "role": "subject"},
+            {"name": "Praxis-1", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Runway 将世界动作模型 Praxis-1 以 Apache 2.0 协议开源"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Praxis-1 在 NVIDIA RoboLab-120 上以 46.2% 成功率排名第一",
+          "summary": "Praxis-1 在 RoboLab-120 榜单以46.2%成功率列第一，超过 FLUX 3 Action（42.9%）、Cosmos3 Nano（36.8%）与 π0.5（28.0%）。",
+          "participants": [
+            {"name": "Praxis-1", "type": "model", "role": "subject"},
+            {"name": "RoboLab-120", "type": "benchmark", "role": "benchmark"},
+            {"name": "FLUX 3 Action", "type": "model", "role": "competitor"},
+            {"name": "Cosmos3 Nano", "type": "model", "role": "competitor"},
+            {"name": "π0.5", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["在 NVIDIA RoboLab-120 上以 46.2% 成功率列第一"]
+        }
+      ],
+      "relations": [
+        {"source": "Praxis-1", "target": "Runway", "type": "developed_by", "weight": 0.9, "evidence": ["Runway 将世界动作模型 Praxis-1 以 Apache 2.0 协议开源"]},
+        {"source": "Praxis-1", "target": "RoboLab-120", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 NVIDIA RoboLab-120 上以 46.2% 成功率列第一"]},
+        {"source": "Praxis-1", "target": "FLUX 3 Action", "type": "outperforms", "weight": 0.7, "evidence": ["FLUX 3 Action（42.9%）"]},
+        {"source": "Praxis-1", "target": "Cosmos3 Nano", "type": "outperforms", "weight": 0.7, "evidence": ["Cosmos3 Nano（36.8%）"]},
+        {"source": "Praxis-1", "target": "π0.5", "type": "outperforms", "weight": 0.7, "evidence": ["π0.5（28.0%）"]},
+        {"source": "Runway", "target": "Cosmos Coalition", "type": "affiliated_with", "weight": 0.7, "evidence": ["其作为 Cosmos Coalition 创始成员推动开源世界模型的路线"]},
+        {"source": "RoboLab-120", "target": "NVIDIA", "type": "developed_by", "weight": 0.5, "evidence": ["在 NVIDIA RoboLab-120 上以 46.2% 成功率列第一"]}
+      ],
+      "metrics": [
+        {"name": "RoboLab-120 成功率", "value": "46.2%"},
+        {"name": "FLUX 3 Action 成功率", "value": "42.9%"},
+        {"name": "Cosmos3 Nano 成功率", "value": "36.8%"},
+        {"name": "π0.5 成功率", "value": "28.0%"},
+        {"name": "Praxis-1 参数量", "value": "27B"}
+      ],
+      "why_it_matters": "Runway 把最强的开源动作模型权重与商业推理代码一起放出，并用 RoboLab-120 一榜碾压同类，标志着物理 AI 的开源竞争从'能跑'进化到'性能对标商业闭源'，算力差异之外开源权重本身成了产品。"
+    },
+    {
+      "article_id": "2026-11-13-7",
+      "entities": [
+        {"name": "Thinking Machines Lab", "type": "company", "aliases": ["TMLab"], "confidence": 0.95, "evidence": ["Thinking Machines Lab 于 11 月 12 日将 Inkling 2 Small 的权重以 Apache 2.0 协议发布"]},
+        {"name": "Inkling 2 Small", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Thinking Machines Lab 于 11 月 12 日将 Inkling 2 Small 的权重以 Apache 2.0 协议发布"]},
+        {"name": "Hugging Face", "type": "organization", "aliases": ["HuggingFace", "HF"], "confidence": 0.9, "evidence": ["发布到 Hugging Face"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.85, "evidence": ["2 张 B300 或 4 张 H200"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Thinking Machines Lab 以 Apache 2.0 发布 594B 参数 Inkling 2 Small 权重",
+          "summary": "Thinking Machines Lab 将 Inkling 2 Small 的多模态稀疏 MoE 权重（共594B、激活约17B）以 Apache 2.0 发布到 Hugging Face，兑现了开放权重承诺。",
+          "participants": [
+            {"name": "Thinking Machines Lab", "type": "company", "role": "subject"},
+            {"name": "Inkling 2 Small", "type": "model", "role": "object"},
+            {"name": "Hugging Face", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["Thinking Machines Lab 于 11 月 12 日将 Inkling 2 Small 的权重以 Apache 2.0 协议发布"]
+        },
+        {
+          "type": "research",
+          "label": "Inkling 2 Small 是可运行于 500GB 显存的 594B 多模态稀疏 MoE",
+          "summary": "模型为48层 decoder、token 路由到384专家中的8个，共594B、激活约17B，上下文窗口最高100万token，NVFP4 下约需500GB显存。",
+          "participants": [
+            {"name": "Thinking Machines Lab", "type": "company", "role": "subject"},
+            {"name": "Inkling 2 Small", "type": "model", "role": "object"}
+          ],
+          "evidence": ["token 路由到 384 专家中的 8 个"]
+        }
+      ],
+      "relations": [
+        {"source": "Inkling 2 Small", "target": "Thinking Machines Lab", "type": "developed_by", "weight": 0.9, "evidence": ["Thinking Machines Lab 于 11 月 12 日将 Inkling 2 Small 的权重以 Apache 2.0 协议发布"]},
+        {"source": "Inkling 2 Small", "target": "Hugging Face", "type": "integrates", "weight": 0.7, "evidence": ["发布到 Hugging Face"]},
+        {"source": "Inkling 2 Small", "target": "NVIDIA", "type": "uses", "weight": 0.7, "evidence": ["2 张 B300 或 4 张 H200"]}
+      ],
+      "metrics": [
+        {"name": "总参数量", "value": "594B"},
+        {"name": "每 token 激活参数", "value": "约 17B"},
+        {"name": "decoder 层数", "value": "48 层"},
+        {"name": "专家总数/路由专家数", "value": "384 / 8"},
+        {"name": "最大上下文窗口", "value": "100 万 token"},
+        {"name": "NVFP4 建议显存", "value": "约合 500GB"},
+        {"name": "MXFP8 显存", "value": "约 800GB"},
+        {"name": "运行所需 GPU", "value": "2 张 B300 或 4 张 H200"}
+      ],
+      "why_it_matters": "一家以安全与前沿对齐为立场的实验室放出 594B 级权重并全程支持 LoRA 与主流推理框架，说明'开放权重'已从图像生成蔓延到智能体工具使用级多模态模型，运行门槛被压到约 500GB 显存，本地部署的前沿能力门槛正在下移。"
+    },
+    {
+      "article_id": "2026-11-13-8",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 上线内部自动化红队系统 Anvil"]},
+        {"name": "Anvil", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 上线内部自动化红队系统 Anvil"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["用 Claude 主动寻找自身防护机制的漏洞"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Anthropic 上线自动化红队系统 Anvil 主动寻找自身防护漏洞",
+          "summary": "Anthropic 用 Claude 驱动的自动化红队系统 Anvil 主动寻找自身防护机制的漏洞，宣称在生物、网络安全与蒸馏三方面都胜过签约的人类专家红队。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Anvil", "type": "tool", "role": "object"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Anthropic 上线内部自动化红队系统 Anvil"]
+        },
+        {
+          "type": "security",
+          "label": "Anvil 在生物、网络与蒸馏防护上超过人类专家红队",
+          "summary": "生物安全奖池任务的8个问题上 Anvil 对每个分类器都匹配或超越最佳人类越狱且只需24-48小时；对抗蒸馏约435次请求即达成首次实质推理泄露，而最佳人类专家需10.2万次请求。",
+          "participants": [
+            {"name": "Anvil", "type": "tool", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["让带防护的模型写出针对 Chrome 与 Firefox JS 引擎历史漏洞的有效利用代码"]
+        }
+      ],
+      "relations": [
+        {"source": "Anvil", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 上线内部自动化红队系统 Anvil"]},
+        {"source": "Anvil", "target": "Claude", "type": "uses", "weight": 0.8, "evidence": ["用 Claude 主动寻找自身防护机制的漏洞"]}
+      ],
+      "metrics": [
+        {"name": "生物安全奖池任务问题数", "value": "8 个问题"},
+        {"name": "Anvil 完成时间", "value": "24-48 小时"},
+        {"name": "对抗蒸馏首次实质推理泄露请求数", "value": "约 435 次请求"},
+        {"name": "Anvil 蒸馏用时", "value": "1.2 小时"},
+        {"name": "最佳人类专家蒸馏请求数", "value": "10.2 万次请求"},
+        {"name": "最佳人类专家蒸馏用时", "value": "27.9 小时"}
+      ],
+      "why_it_matters": "红队从人力密集型转向自动化，24 小时内完成人类需数周才能越狱的任务，意味着最前沿模型的漏洞暴露速度与攻击者可用工具之间的差距被拉大——模型能力越强、自动化越能抢先发现并封堵漏洞，安全竞争变成算力与自动化之争。"
+    },
+    {
+      "article_id": "2026-11-13-9",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 推出两款安全产品"]},
+        {"name": "Daybreak Red Team", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Daybreak Red Team 处于早期访问阶段"]},
+        {"name": "Daybreak Defense Factory", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["第二款 Daybreak Defense Factory 则自动化防御回路"]},
+        {"name": "GPT-6 Cyber", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["（当前为 GPT-6 Cyber）"]},
+        {"name": "Nancy Wang", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["负责人 Nancy Wang"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 推出智能体渗透测试产品 Daybreak Red Team",
+          "summary": "Daybreak Red Team 处于早期访问阶段，用 OpenAI 模型对企业 Web 应用做漏洞测试，模拟超人类渗透测试并协助验证漏洞报告、回归测试补丁。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Daybreak Red Team", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 推出两款安全产品"]
+        },
+        {
+          "type": "launch",
+          "label": "OpenAI 推出自动化修复产品 Daybreak Defense Factory",
+          "summary": "Daybreak Defense Factory 用基于 GPT-6 Cyber 的智能体扫描代码库、寻找漏洞并生成补丁，由工程师审查批准后进入生产。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Daybreak Defense Factory", "type": "product", "role": "object"},
+            {"name": "GPT-6 Cyber", "type": "model", "role": "object"}
+          ],
+          "evidence": ["第二款 Daybreak Defense Factory 则自动化防御回路"]
+        }
+      ],
+      "relations": [
+        {"source": "Daybreak Red Team", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 推出两款安全产品"]},
+        {"source": "Daybreak Defense Factory", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 推出两款安全产品"]},
+        {"source": "Daybreak Defense Factory", "target": "GPT-6 Cyber", "type": "built_on", "weight": 0.7, "evidence": ["当前为 GPT-6 Cyber"]},
+        {"source": "Nancy Wang", "target": "OpenAI", "type": "affiliated_with", "weight": 0.7, "evidence": ["负责人 Nancy Wang"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "OpenAI 把防御产品化并明言不用此工具的企业'注定不安全'，显示安全已经从安全问题变成平台方挟持客户的商业杠杆，GPT-6 Cyber 这类从对抗成长起来的模型正在成为安全市场的标准底座。"
+    },
+    {
+      "article_id": "2026-11-13-10",
+      "entities": [
+        {"name": "CRAM", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["继承 80 年代 Hopfield & Tank 能量的可学习版本 CRAM"]},
+        {"name": "Hopfield-Tank", "type": "model", "aliases": ["Hopfield & Tank"], "confidence": 0.85, "evidence": ["继承 80 年代 Hopfield & Tank 能量的可学习版本 CRAM"]},
+        {"name": "Hoover", "type": "person", "aliases": [], "confidence": 0.8, "evidence": ["作者（Hoover、Blayney、Whittington）"]},
+        {"name": "Sudoku-Extreme", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["训练 42ms（Sudoku-Extreme）"]},
+        {"name": "Maze-Unique", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["132ms（Maze-Unique）"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文用可学习 Hopfield-Tank 能量函数 CRAM 解决 Sudoku 与 Maze 推理",
+          "summary": "论文改用参数化的能量下降，继承 Hopfield & Tank 能量的可学习版本 CRAM，在单 GPU 上分别解决 Sudoku-Extreme 与 Maze-Unique 的 99.996% 与 100% 测试题。",
+          "participants": [
+            {"name": "Hoover", "type": "person", "role": "subject"},
+            {"name": "CRAM", "type": "model", "role": "object"},
+            {"name": "Hopfield-Tank", "type": "model", "role": "object"}
+          ],
+          "evidence": ["继承 80 年代 Hopfield & Tank 能量的可学习版本 CRAM"]
+        },
+        {
+          "type": "benchmark",
+          "label": "CRAM 比循环模型快至少 1000 倍、推理 FLOPs 低至少 282 倍",
+          "summary": "CRAM 训练 42ms（Sudoku-Extreme）与 132ms（Maze-Unique），分别解决 99.996% 与 100% 的测试题，比循环模型至少快 1000 倍。",
+          "participants": [
+            {"name": "CRAM", "type": "model", "role": "subject"},
+            {"name": "Sudoku-Extreme", "type": "benchmark", "role": "benchmark"},
+            {"name": "Maze-Unique", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["比循环模型至少快 1000 倍"]
+        }
+      ],
+      "relations": [
+        {"source": "CRAM", "target": "Hopfield-Tank", "type": "built_on", "weight": 0.85, "evidence": ["继承 80 年代 Hopfield & Tank 能量的可学习版本 CRAM"]},
+        {"source": "CRAM", "target": "Hoover", "type": "authored_by", "weight": 0.8, "evidence": ["作者（Hoover、Blayney、Whittington）"]},
+        {"source": "CRAM", "target": "Sudoku-Extreme", "type": "evaluated_on", "weight": 0.7, "evidence": ["训练 42ms（Sudoku-Extreme）"]},
+        {"source": "CRAM", "target": "Maze-Unique", "type": "evaluated_on", "weight": 0.7, "evidence": ["132ms（Maze-Unique）"]}
+      ],
+      "metrics": [
+        {"name": "Sudoku-Extreme 训练耗时", "value": "42ms"},
+        {"name": "Maze-Unique 训练耗时", "value": "132ms"},
+        {"name": "Sudoku-Extreme 测试解决率", "value": "99.996%"},
+        {"name": "Maze-Unique 测试解决率", "value": "100%"},
+        {"name": "相对循环模型的推理速度倍数", "value": "至少 1000 倍"},
+        {"name": "相对循环模型的推理 FLOPs 降幅", "value": "至少 282 倍"}
+      ],
+      "why_it_matters": "能量下降范式用 42ms 与低至少 282 倍的推理 FLOPs 把循环模型的一切开销优势化为乌有，说明'从数据学推理'不必走 token 自回归路线，能量函数是循环推理范式之外的强候选，同时点醒可平凡求解的基准不适合测扩展性。"
+    },
+    {
+      "article_id": "2026-11-13-11",
+      "entities": [
+        {"name": "思考的价值", "type": "paper", "aliases": ["《思考的价值》"], "confidence": 0.9, "evidence": ["《思考的价值》：让模型自主决定"]},
+        {"name": "zero-or-T", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["zero-or-T：单一模型在一次前向传播中利用隐式思考直接作答"]},
+        {"name": "混合决策模型", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["研究将该范式落到混合决策模型上"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "《思考的价值》提出 zero-or-T 自适应推理范式",
+          "summary": "论文探索单一模型在一次前向传播中利用隐式思考直接作答（生成0个显式 token），或当值得支付时才执行花费 T 个 token 的完整自回归推理。",
+          "participants": [
+            {"name": "思考的价值", "type": "paper", "role": "subject"},
+            {"name": "zero-or-T", "type": "topic", "role": "object"},
+            {"name": "混合决策模型", "type": "model", "role": "object"}
+          ],
+          "evidence": ["这篇论文探索不同范式"]
+        }
+      ],
+      "relations": [
+        {"source": "思考的价值", "target": "混合决策模型", "type": "applies_to", "weight": 0.7, "evidence": ["研究将该范式落到混合决策模型上"]},
+        {"source": "思考的价值", "target": "zero-or-T", "type": "proposes", "weight": 0.6, "evidence": ["这篇论文探索不同范式——zero-or-T"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "zero-or-T 把'该思考多深'的问题改成'要不要思考'的二值决策，让模型在单次前向与全量推理之间自选路径，把推理成本与质量的权衡直接内化进模型架构，为自适应推理提供脱离 token 预算的新坐标。"
+    },
+    {
+      "article_id": "2026-11-13-12",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 计划在 11 月 3 日美国中期选举后的国会跛脚鸭会期"]},
+        {"name": "Chris Lehane", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 首席全球事务官 Chris Lehane"]},
+        {"name": "AI 限速", "type": "policy", "aliases": ["speed limits"], "confidence": 0.85, "evidence": ["给最强大的 AI 系统设定强制性限速"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "OpenAI 计划在跛脚鸭会期推动强制性 AI 限速立法",
+          "summary": "OpenAI 计划在国会跛脚鸭会期推动给最强大 AI 系统设定强制性限速护栏，并配套数据中心选址、劳动者支持与全球 AI 标准诉求。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "AI 限速", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["OpenAI 计划在 11 月 3 日美国中期选举后的国会跛脚鸭会期"]
+        },
+        {
+          "type": "policy",
+          "label": "OpenAI 首席全球事务官 Chris Lehane 称人类应始终掌控 AI",
+          "summary": "Chris Lehane 表示我们相信人们应始终掌控这项技术，整体定向更像为 2028 年总统选战铺路的政策宣示。",
+          "participants": [
+            {"name": "Chris Lehane", "type": "person", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "AI 限速", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["我们相信人们应始终掌控这项技术"]
+        }
+      ],
+      "relations": [
+        {"source": "Chris Lehane", "target": "OpenAI", "type": "affiliated_with", "weight": 0.8, "evidence": ["OpenAI 首席全球事务官 Chris Lehane"]},
+        {"source": "OpenAI", "target": "AI 限速", "type": "advocates_for", "weight": 0.7, "evidence": ["OpenAI 计划在 11 月 3 日美国中期选举后的国会跛脚鸭会期"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "OpenAI 从被监管对象转身为限速立法的倡议者，用'人类始终掌控'的叙事把自身置于监管起草席上，说明前沿实验室已把监管看作塑造市场准入与竞争格局的政治工具，而不仅是合规负担。"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-13",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "整体抽取质量高：关键实体、数字与关系方向大多准确，NVIDIA/Jensen Huang 跨文章命名一致。主要问题是第 9 篇把仅属于 Defense Factory 的底层模型 GPT-6 Cyber 错误地 also 关联到 Daybreak Red Team（事实性过度关联），另有第 11 篇论文关系类型用错（uses 代替 proposes）及若干实体类型/低价值边问题。",
+  "findings": [
+    {
+      "article_id": "2026-11-13-9",
+      "severity": "high",
+      "problem": "关系 Daybreak Red Team --built_on--> GPT-6 Cyber 与其事件参与者把 GPT-6 Cyber 标为 Red Team 的 partner/object 均不成立。原文明确 GPT-6 Cyber 只属于 Defense Factory（\"用基于最新网络模型（当前为 GPT-6 Cyber）的智能体扫描代码库\"），而 Daybreak Red Team 的描述是笼统的\"用 OpenAI 模型对企业 Web 应用做漏洞测试\"。抽取把防御产品的专属底座推广到了渗透测试产品，图为 Red Team 编造了一个原文未声明的底层模型。",
+      "fix": "删除 Daybreak Red Team --built_on--> GPT-6 Cyber 关系，并从 Daybreak Red Team 事件的 participants 中移除 GPT-6 Cyber；GPT-6 Cyber 仅保留给 Daybreak Defense Factory 的 built_on 关系与事件。"
+    },
+    {
+      "article_id": "2026-11-13-11",
+      "severity": "medium",
+      "problem": "关系语义反向：\"思考的价值 --uses--> zero-or-T\" 用错，原文是论文提出/引入 zero-or-T 范式（\"这篇论文探索不同范式——zero-or-T\"），是被提出而非被使用；\"混合决策模型 --built_on--> zero-or-T\" 也把一个范式当成可构建的模型底座，语义牵强。",
+      "fix": "改为 \"思考的价值 --proposes--> zero-or-T\"（论文提出范式）；\"混合决策模型\" 与其关联改为 \"思考的价值 --applies_to--> 混合决策模型\"（研究将该范式落到混合决策模型），或删除 built_on 关系。"
+    },
+    {
+      "article_id": "2026-11-13-8",
+      "severity": "medium",
+      "problem": "Anvil --targets--> Chrome 与 --targets--> Firefox 高估了关系：原文中 Chrome/Firefox JS 引擎历史漏洞只是\"现实网络任务\"里让带防护模型写出可利用代码的演示目标，Anvil 并非在攻击这些浏览器；Chrome/Firefox 仅凭一条 targets 边成为图谱节点，语义价值低。",
+      "fix": "删除 Anvil 对 Chrome/Firefox 的 targets 关系及这两个实体（或改为把事件证据收进 Anvil 的网络安全表现描述即可），避免把红队演示目标当成被攻击对象。"
+    },
+    {
+      "article_id": "2026-11-13-3",
+      "severity": "medium",
+      "problem": "实体 \"Vineland 数据中心\" 类型标为 hardware 不当，数据中心/托管园区是物理设施而非硬件组件，与其他文章将基础设施类主体类型化的口径不一致。",
+      "fix": "将该实体类型改为 infrastructure（或 facility），仅 GPU/芯片等物理器件保留 hardware 类型。"
+    }
+  ],
+  "lessons": [
+    "多款产品共用同一底层模型或平台时，built_on 关系只能加给原文明确声明的那个产品，不得因同级产品共用底座就推广到全部。",
+    "论文类新闻中，论文与其提出的范式或方法用 proposes（提出），范式被落到具体实现上用 applies_to，不要用 uses 或 built_on 替代。",
+    "数据中心、园区、基础设施类主体用 infrastructure 类型，只有 GPU、芯片等物理器件才用 hardware 类型。"
+  ]
+}

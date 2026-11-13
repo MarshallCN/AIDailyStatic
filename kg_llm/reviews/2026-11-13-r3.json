@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-13",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "总体抽取质量高：13 篇文章实体与关系基本都有证据支撑，numeric 提取（Nebius 400 亿/194 亿/17%、Praxis-1 46.2%、Anvil 435 次请求等）准确。主要问题集中在事件切分与类型表征：一篇文章把并列的两件独立事实压成单个事件并断言原文未建立的因果，另一篇在前瞻性分析上用了已发生型事件类型，此外事件 participants 引用了本文 entities 里没抽出的跨文章实体。",
+  "findings": [
+    {
+      "article_id": "2026-11-13-3",
+      "severity": "medium",
+      "problem": "第二个事件把「微软 194 亿美元 AI 算力订单延期」与「财报后股价跌 17%」两件并列的独立事实压进同一个事件，label 用「致」断言了因果关系（'...订单延期致...股价跌 17%'），但原文只并列陈述了合同延误与 Q3/Q4 指引后股价大跌，并未明确建立因果链。这既是事件切分不当（deliver 延误 vs 股价下跌是两个不同事件），也是对原文未支持的因果关系的断言。",
+      "fix": "拆成两个事件：a)「微软 194 亿美元 Vineland AI 算力合同约一半推迟到 2027 年 Q2」；b)「Nebius 财报后股价大跌 17%」，后者 label 去掉『致』字因果，改为『财报后（含微软订单延期等因素）股价大跌 17%』，或干脆只用『Nebius 财报后股价跌 17%』。不要把两件命题的命运绑在一个 label 上。"
+    },
+    {
+      "article_id": "2026-11-13-2",
+      "severity": "medium",
+      "problem": "事件 1『英伟达正为 CEO 遴选猎头公司、尚未正式接洽候选人』的 participants 里引用了 Jensen Huang（role: object），但 Jensen Huang 并未出现在本文 entities 列表中，是跨文章悬空引用，破坏了「该事件必须可独立核查」的要求。",
+      "fix": "在 2026-11-13-2 的 entities 中补抽 Jensen Huang（aliases: 黄仁勋），或从该事件 participants 中移除 Jensen Huang；考虑到他是被接替的对象、是本文核心语境，建议补抽实体而非删除。"
+    },
+    {
+      "article_id": "2026-11-13-0",
+      "severity": "medium",
+      "problem": "事件 1 用了 type:'policy' 来表征『黄仁勋离任使对华限制加码、RASA 类立法推进加快』，但这是 Semianalysis 的前瞻性研判（『将更快推进』『会明显加码』），不是已经发生的政策动作。policy 类型让读者误读为已发生的立法/管制事件；同样，metrics 里『2028 年非英伟达占比预期 70%』的 value 截为『70%』丢失了原文『预计/可能』的不确定性。",
+      "fix": "将该事件 type 改为 research/analysis（报告研判类），并在 label 与 summary 中保留『预计/将』等措辞；metrics 的 value 建议写成『约 70%（报告预计）』或在 name 里带『预计』。不要把预测当既定事实的表象放进图谱。"
+    }
+  ],
+  "lessons": [
+    "把机构预测、分析师判断、项目展望这类前瞻性论断抽成事件时，type 不要用 policy/launch 等表示已发生动作的类型，用 research/analysis 并在 label 中保留『预计/可能/将』措辞，metrics 的 value 也要保留不确定性。",
+    "同一篇里并列的独立事实（如订单延期与股价下跌）要拆成不同事件，只有原文明确建立因果时才能在 label 里用『致』，否则只作并列陈述。",
+    "事件 participants 中出现的每个实体必须同时出现在该篇 entities 列表里，不得跨文章悬空引用；跨文章复用的主体要在每一篇内都单独抽出来。"
+  ]
+}
