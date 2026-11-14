@@ -1,0 +1,605 @@
+{
+  "date": "2026-11-14",
+  "articles": [
+    {
+      "article_id": "2026-11-14-0",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.95, "evidence": ["Google 在美国向全部 Gemini 用户开放连接 Google Wallet"]},
+        {"name": "Gemini", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Google 在美国向全部 Gemini 用户开放连接 Google Wallet"]},
+        {"name": "Google Wallet", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Google 宣布 Gemini 的 Connected Apps 新增 Google Wallet"]},
+        {"name": "Plaid", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["可选通过 Plaid 关联银行、信用卡、贷款与投资账户"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["与 Anthropic 本月 5 日上线、同样经 Plaid 打通只读银行访问的 Claude Personal Finance 形成对照"]},
+        {"name": "Claude Personal Finance", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["同样经 Plaid 打通只读银行访问的 Claude Personal Finance"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["如 OpenAI 前一日发布的 ChatGPT Wallet"]},
+        {"name": "ChatGPT Wallet", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["真正的智能体支付（如 OpenAI 前一日发布的 ChatGPT Wallet）仍被谨慎地与个人财务只读分析区分开"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google 向美国全部 Gemini 用户开放 Google Wallet 与银行卡连接",
+          "summary": "美国所有 Gemini 用户（Web、Android、iOS）即日起可在对话中 @Google Wallet 询问支出习惯、订阅审计或预算规划，并可经 Plaid 关联银行、信用卡、贷款与投资账户获得深度个性化洞察，连接可随时关闭。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini", "type": "product", "role": "object"},
+            {"name": "Google Wallet", "type": "product", "role": "object"},
+            {"name": "Plaid", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Google 在美国向全部 Gemini 用户开放连接 Google Wallet"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini", "target": "Google Wallet", "type": "integrates", "weight": 0.9, "evidence": ["Google 宣布 Gemini 的 Connected Apps 新增 Google Wallet"]},
+        {"source": "Gemini", "target": "Plaid", "type": "uses", "weight": 0.8, "evidence": ["可选通过 Plaid 关联银行、信用卡、贷款与投资账户"]},
+        {"source": "Claude Personal Finance", "target": "Plaid", "type": "uses", "weight": 0.7, "evidence": ["同样经 Plaid 打通只读银行访问的 Claude Personal Finance"]},
+        {"source": "ChatGPT Wallet", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["如 OpenAI 前一日发布的 ChatGPT Wallet"]},
+        {"source": "ChatGPT Wallet", "target": "Gemini", "type": "compared_with", "weight": 0.5, "evidence": ["真正的智能体支付（如 OpenAI 前一日发布的 ChatGPT Wallet）仍被谨慎地与个人财务只读分析区分开"]},
+        {"source": "Anthropic", "target": "Google", "type": "competes_with", "weight": 0.6, "evidence": ["两家巨头几乎同时把手伸向用户的个人财务数据"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic Claude Personal Finance 上线时间", "value": "本月 5 日"}
+      ],
+      "why_it_matters": "财务智能体化的第一步竞争发生在数据授权层而非支付执行层——Google 与 Anthropic 同步用只读连接圈占个人财务数据入口，把真正代付留给 OpenAI 单独试探。"
+    },
+    {
+      "article_id": "2026-11-14-1",
+      "entities": [
+        {"name": "Google Research", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["Google Research 介绍了 /teamwork 的成果"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.95, "evidence": ["Google 各团队与 CUHK、USC、CMU 等学术伙伴合作"]},
+        {"name": "Antigravity", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Google 公布 Antigravity 的 /teamwork 多智能体系统在数学、化学、系统软件与 ML 工程上求解开放问题的进展"]},
+        {"name": "Gemini 4 Argon", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["用 Gemini 4 Argon/Carbon/Hydrogen 与多智能体工作流在信息论、形式化验证、分子结构发现与内核优化等领域解决了多个悬置多年的开放问题"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["用 Gemini 4 Argon/Carbon/Hydrogen 与多智能体工作流在信息论、形式化验证、分子结构发现与内核优化等领域解决了多个悬置多年的开放问题"]},
+        {"name": "Gemini 4 Hydrogen", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["用 Gemini 4 Argon/Carbon/Hydrogen 与多智能体工作流在信息论、形式化验证、分子结构发现与内核优化等领域解决了多个悬置多年的开放问题"]},
+        {"name": "CUHK", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Google 各团队与 CUHK、USC、CMU 等学术伙伴合作"]},
+        {"name": "USC", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Google 各团队与 CUHK、USC、CMU 等学术伙伴合作"]},
+        {"name": "CMU", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Google 各团队与 CUHK、USC、CMU 等学术伙伴合作"]},
+        {"name": "Lean 4", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Lean 4 证明检查器、未修改的软件测试套件、执行模拟器、web 搜索甚至硬件计数器来自动验证哪些候选解成立"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Google 用 Antigravity /teamwork 多智能体系统解决多个开放科学工程难题",
+          "summary": "过去几周 Google 各团队与 CUHK、USC、CMU 等学术伙伴合作，用 Gemini 4 Argon/Carbon/Hydrogen 与多智能体工作流在信息论、形式化验证、分子结构发现与内核优化等领域解决了多个悬置多年的开放问题。",
+          "participants": [
+            {"name": "Google Research", "type": "organization", "role": "subject"},
+            {"name": "Antigravity", "type": "product", "role": "object"},
+            {"name": "Gemini 4 Argon", "type": "model", "role": "object"},
+            {"name": "CUHK", "type": "organization", "role": "partner"},
+            {"name": "USC", "type": "organization", "role": "partner"},
+            {"name": "CMU", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["Google 各团队与 CUHK、USC、CMU 等学术伙伴合作"]
+        },
+        {
+          "type": "launch",
+          "label": "Google 把 Antigravity /teamwork 等工具向外部研究者与开发者开放",
+          "summary": "Google 把 /teamwork（以及 /boost 等）及配套验证工具一起向外部开放，研究者与开发者可应用到自己的工作中。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Antigravity", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Google 现把这些工具随 /teamwork（以及 /boost 等）一起向外部开放"]
+        }
+      ],
+      "relations": [
+        {"source": "Antigravity", "target": "Google Research", "type": "developed_by", "weight": 0.9, "evidence": ["Google 公布 Antigravity 的 /teamwork 多智能体系统在数学、化学、系统软件与 ML 工程上求解开放问题的进展"]},
+        {"source": "Google Research", "target": "Google", "type": "part_of", "weight": 0.8, "evidence": ["Google Research 介绍了 /teamwork 的成果"]},
+        {"source": "Antigravity", "target": "Gemini 4 Argon", "type": "uses", "weight": 0.7, "evidence": ["用 Gemini 4 Argon/Carbon/Hydrogen 与多智能体工作流在信息论、形式化验证、分子结构发现与内核优化等领域解决了多个悬置多年的开放问题"]},
+        {"source": "Antigravity", "target": "Gemini 4 Carbon", "type": "uses", "weight": 0.7, "evidence": ["用 Gemini 4 Argon/Carbon/Hydrogen 与多智能体工作流在信息论、形式化验证、分子结构发现与内核优化等领域解决了多个悬置多年的开放问题"]},
+        {"source": "Antigravity", "target": "Gemini 4 Hydrogen", "type": "uses", "weight": 0.7, "evidence": ["用 Gemini 4 Argon/Carbon/Hydrogen 与多智能体工作流在信息论、形式化验证、分子结构发现与内核优化等领域解决了多个悬置多年的开放问题"]},
+        {"source": "Antigravity", "target": "Lean 4", "type": "uses", "weight": 0.6, "evidence": ["Lean 4 证明检查器、未修改的软件测试套件、执行模拟器、web 搜索甚至硬件计数器来自动验证哪些候选解成立"]},
+        {"source": "Google Research", "target": "CUHK", "type": "partners_with", "weight": 0.6, "evidence": ["Google 各团队与 CUHK、USC、CMU 等学术伙伴合作"]},
+        {"source": "Google Research", "target": "USC", "type": "partners_with", "weight": 0.6, "evidence": ["Google 各团队与 CUHK、USC、CMU 等学术伙伴合作"]},
+        {"source": "Google Research", "target": "CMU", "type": "partners_with", "weight": 0.6, "evidence": ["Google 各团队与 CUHK、USC、CMU 等学术伙伴合作"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "多智能体协作第一次以「可验证解题」而非生成演示作为价值主张——证伪器替代人工验收，并把能力作为研究基础设施向外部开放，科学发现的 agent 化开始兑现。"
+    },
+    {
+      "article_id": "2026-11-14-2",
+      "entities": [
+        {"name": "LangChain", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["LangChain 周五宣布完成 3 亿美元 C 轮融资，估值 30 亿美元"]},
+        {"name": "CapitalG", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["由 Alphabet 旗下成长基金 CapitalG 领投"]},
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["由 Alphabet 旗下成长基金 CapitalG 领投"]},
+        {"name": "GIC", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["新加坡 GIC、DFJ Growth 以及既有投资人 IVP、Sapphire Ventures 参投"]},
+        {"name": "DFJ Growth", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["新加坡 GIC、DFJ Growth 以及既有投资人 IVP、Sapphire Ventures 参投"]},
+        {"name": "IVP", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["新加坡 GIC、DFJ Growth 以及既有投资人 IVP、Sapphire Ventures 参投"]},
+        {"name": "Sapphire Ventures", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["新加坡 GIC、DFJ Growth 以及既有投资人 IVP、Sapphire Ventures 参投"]},
+        {"name": "LangSmith", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["公司声称 LangSmith 已有超 7000 家组织使用"]},
+        {"name": "Harrison Chase", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["CEO Harrison Chase 表示资金将主要用于扩张 LangSmith"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "LangChain 完成由 CapitalG 领投的 3 亿美元 C 轮融资，估值 30 亿美元",
+          "summary": "CapitalG 领投，新加坡 GIC、DFJ Growth 及既有投资人 IVP、Sapphire Ventures 参投，估值约为一年前 12.5 亿美元的两倍多。",
+          "participants": [
+            {"name": "LangChain", "type": "company", "role": "subject"},
+            {"name": "CapitalG", "type": "company", "role": "funder"},
+            {"name": "GIC", "type": "company", "role": "funder"},
+            {"name": "DFJ Growth", "type": "company", "role": "funder"},
+            {"name": "IVP", "type": "company", "role": "funder"},
+            {"name": "Sapphire Ventures", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["LangChain 周五宣布完成 3 亿美元 C 轮融资，估值 30 亿美元，由 Alphabet 旗下成长基金 CapitalG 领投"]
+        },
+        {
+          "type": "trend",
+          "label": "资本开始为 agent 上线后的追踪、评估与治理付钱",
+          "summary": "资金将主要用于扩张 LangSmith——让企业监控、评估与部署自身 agent 的企业平台，反映出企业级 agent 正从原型期走向需要运维与治理的生产阶段。",
+          "participants": [
+            {"name": "LangChain", "type": "company", "role": "subject"},
+            {"name": "LangSmith", "type": "product", "role": "object"}
+          ],
+          "evidence": ["资本开始为「agent 上线后的追踪、评估与治理」付钱，反映出企业级 agent 正从原型期走向需要运维与治理的生产阶段"]
+        }
+      ],
+      "relations": [
+        {"source": "LangSmith", "target": "LangChain", "type": "developed_by", "weight": 0.9, "evidence": ["CEO Harrison Chase 表示资金将主要用于扩张 LangSmith——让企业监控、评估与部署自身 agent 的企业平台"]},
+        {"source": "CapitalG", "target": "Alphabet", "type": "subsidiary_of", "weight": 0.8, "evidence": ["由 Alphabet 旗下成长基金 CapitalG 领投"]},
+        {"source": "CapitalG", "target": "LangChain", "type": "invests_in", "weight": 0.9, "evidence": ["由 Alphabet 旗下成长基金 CapitalG 领投"]},
+        {"source": "GIC", "target": "LangChain", "type": "invests_in", "weight": 0.8, "evidence": ["新加坡 GIC、DFJ Growth 以及既有投资人 IVP、Sapphire Ventures 参投"]},
+        {"source": "DFJ Growth", "target": "LangChain", "type": "invests_in", "weight": 0.8, "evidence": ["新加坡 GIC、DFJ Growth 以及既有投资人 IVP、Sapphire Ventures 参投"]},
+        {"source": "IVP", "target": "LangChain", "type": "invests_in", "weight": 0.8, "evidence": ["新加坡 GIC、DFJ Growth 以及既有投资人 IVP、Sapphire Ventures 参投"]},
+        {"source": "Sapphire Ventures", "target": "LangChain", "type": "invests_in", "weight": 0.8, "evidence": ["新加坡 GIC、DFJ Growth 以及既有投资人 IVP、Sapphire Ventures 参投"]},
+        {"source": "Harrison Chase", "target": "LangChain", "type": "affiliated_with", "weight": 0.8, "evidence": ["CEO Harrison Chase 表示资金将主要用于扩张 LangSmith"]}
+      ],
+      "metrics": [
+        {"name": "C 轮融资额", "value": "3 亿美元"},
+        {"name": "融资后估值", "value": "30 亿美元"},
+        {"name": "一年前估值", "value": "12.5 亿美元"},
+        {"name": "LangSmith 使用组织数", "value": "超 7000 家"}
+      ],
+      "why_it_matters": "资本叙事从「怎么造 agent」切换到「怎么运维 agent」——LangSmith 的 7000 家组织与一年内翻倍到 30 亿美元的估值，说明 agent 生产化是下一轮平台层溢价所在。"
+    },
+    {
+      "article_id": "2026-11-14-3",
+      "entities": [
+        {"name": "FAA", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["FAA 宣布把 Strategic Management of Airspace, Routes and Trajectories（SMART）系统用于全美 22 个 Air Route Traffic Control Center 的空域"]},
+        {"name": "SMART", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["FAA 宣布把 Strategic Management of Airspace, Routes and Trajectories（SMART）系统用于全美 22 个 Air Route Traffic Control Center 的空域"]},
+        {"name": "Air Space Intelligence", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["SMART 是 Air Space Intelligence 承接的 8.75 亿美元、12 年期合同的一部分"]},
+        {"name": "NATCA", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["代表 1.5 万名管制员的 NATCA 工会称未参与设计、测试或部署"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "FAA 把 AI 空管系统 SMART 推广至全美 22 个航路中心",
+          "summary": "FAA 将 SMART 系统用于全美 22 个 Air Route Traffic Control Center 的空域，此前该系统于 9 月 21 日起在华盛顿特区周边试运行。",
+          "participants": [
+            {"name": "FAA", "type": "organization", "role": "subject"},
+            {"name": "SMART", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["FAA 宣布把 Strategic Management of Airspace, Routes and Trajectories（SMART）系统用于全美 22 个 Air Route Traffic Control Center 的空域"]
+        },
+        {
+          "type": "policy",
+          "label": "NATCA 工会与二十多名议员质疑 SMART 部署未经充分评估",
+          "summary": "NATCA 称未参与设计、测试或部署，10 月有二十多名议员致信要求暂停并评估安全与培训问题，FAA 的全国推广并未正面回应这些质疑。",
+          "participants": [
+            {"name": "NATCA", "type": "organization", "role": "subject"},
+            {"name": "FAA", "type": "organization", "role": "object"},
+            {"name": "SMART", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["代表 1.5 万名管制员的 NATCA 工会称未参与设计、测试或部署，且 10 月有二十多名议员致信要求暂停并评估安全与培训问题"]
+        }
+      ],
+      "relations": [
+        {"source": "SMART", "target": "Air Space Intelligence", "type": "developed_by", "weight": 0.9, "evidence": ["SMART 是 Air Space Intelligence 承接的 8.75 亿美元、12 年期合同的一部分"]},
+        {"source": "Air Space Intelligence", "target": "FAA", "type": "supplies", "weight": 0.8, "evidence": ["SMART 是 Air Space Intelligence 承接的 8.75 亿美元、12 年期合同的一部分"]},
+        {"source": "FAA", "target": "SMART", "type": "uses", "weight": 0.9, "evidence": ["FAA 宣布把 Strategic Management of Airspace, Routes and Trajectories（SMART）系统用于全美 22 个 Air Route Traffic Control Center 的空域"]}
+      ],
+      "metrics": [
+        {"name": "SMART 合同金额", "value": "8.75 亿美元"},
+        {"name": "SMART 合同期", "value": "12 年"},
+        {"name": "覆盖航路中心数", "value": "22 个"},
+        {"name": "协助改道航班数", "value": "180 架"},
+        {"name": "每趟平均节省时间", "value": "约 10 分钟"},
+        {"name": "每趟平均节省燃油", "value": "约 80 加仑"},
+        {"name": "NATCA 代表管制员数", "value": "1.5 万名"}
+      ],
+      "why_it_matters": "AI 空管从区域性试点到全美 22 个中心铺开仅用不到两个月，但 NATCA 与议员的安全质疑未被正面回应——公共部门 AI 部署的速度与治理程序之间出现明显落差。"
+    },
+    {
+      "article_id": "2026-11-14-4",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 首次公开募股(IPO)的多家承销商已拒收来自中国大陆与香港机构的买单"]},
+        {"name": "ITAR", "type": "policy", "aliases": ["《国际武器贸易条例》"], "confidence": 0.9, "evidence": ["部分约束源于美国管制国防产品贸易的《国际武器贸易条例》(ITAR)"]},
+        {"name": "Goldman Sachs", "type": "company", "aliases": ["高盛"], "confidence": 0.9, "evidence": ["Goldman Sachs 与 Morgan Stanley 牵头"]},
+        {"name": "Morgan Stanley", "type": "company", "aliases": ["摩根士丹利"], "confidence": 0.9, "evidence": ["Goldman Sachs 与 Morgan Stanley 牵头"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "ITAR 约束下投行拒收中国与香港投资者对 Anthropic IPO 的买单",
+          "summary": "Anthropic 首次公开募股定于 11 月 18 日定价、次日以 ANT 在纳斯达克上市，Goldman Sachs 与 Morgan Stanley 牵头、另有 20 家银行参与；但多家承销商已拒收来自中国大陆与香港机构的买单，或认为它们几乎不可能获得配额，部分约束源于《国际武器贸易条例》(ITAR)。",
+          "participants": [
+            {"name": "Goldman Sachs", "type": "company", "role": "subject"},
+            {"name": "Morgan Stanley", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "ITAR", "type": "policy", "role": "regulator"}
+          ],
+          "evidence": ["Anthropic 首次公开募股(IPO)的多家承销商已拒收来自中国大陆与香港机构的买单，或认为它们几乎不可能获得配额，部分约束源于美国管制国防产品贸易的《国际武器贸易条例》(ITAR)", "IPO 定于 11 月 18 日定价、次日以 ANT 在纳斯达克上市，Goldman Sachs 与 Morgan Stanley 牵头，另有 20 家银行参与"]
+        }
+      ],
+      "relations": [
+        {"source": "ITAR", "target": "Anthropic", "type": "restricts", "weight": 0.9, "evidence": ["其模型、平台与应用程序在特定情形下可能构成受 ITAR 约束的「国防物品或国防服务」出口"]},
+        {"source": "Goldman Sachs", "target": "Anthropic", "type": "underwrites", "weight": 0.6, "evidence": ["Goldman Sachs 与 Morgan Stanley 牵头，另有 20 家银行参与"]},
+        {"source": "Morgan Stanley", "target": "Anthropic", "type": "underwrites", "weight": 0.6, "evidence": ["Goldman Sachs 与 Morgan Stanley 牵头，另有 20 家银行参与"]}
+      ],
+      "metrics": [
+        {"name": "IPO 定价日期", "value": "11 月 18 日"},
+        {"name": "纳斯达克上市代码", "value": "ANT"},
+        {"name": "招股书修订日期", "value": "11 月 10 日"},
+        {"name": "参与承销银行数", "value": "20 家"}
+      ],
+      "why_it_matters": "出口管制第一次直接决定「谁有资格当一家头部 AI 公司的股东」——ITAR 把中国背景资金挡在 IPO 门外，资本结构本身成了地缘政治工具。"
+    },
+    {
+      "article_id": "2026-11-14-5",
+      "entities": [
+        {"name": "Will DePue", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["前 OpenAI 工程师、现 Unemployment Labs 创始人的 Will DePue 发布「检查点法证」报告"]},
+        {"name": "Unemployment Labs", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["前 OpenAI 工程师、现 Unemployment Labs 创始人的 Will DePue 发布「检查点法证」报告"]},
+        {"name": "DeepSeek-V4-Pro", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["包括 DeepSeek-V4-Pro、Kimi K3 与 MiniMax-M3——在英伟达 Blackwell 系统上被初始化"]},
+        {"name": "Kimi K3", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["包括 DeepSeek-V4-Pro、Kimi K3 与 MiniMax-M3——在英伟达 Blackwell 系统上被初始化"]},
+        {"name": "MiniMax-M3", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["包括 DeepSeek-V4-Pro、Kimi K3 与 MiniMax-M3——在英伟达 Blackwell 系统上被初始化"]},
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.9, "evidence": ["涉及四家公司 DeepSeek、Moonshot AI、MiniMax 与蚂蚁集团"]},
+        {"name": "Moonshot AI", "type": "company", "aliases": ["月之暗面"], "confidence": 0.9, "evidence": ["涉及四家公司 DeepSeek、Moonshot AI、MiniMax 与蚂蚁集团"]},
+        {"name": "MiniMax", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["涉及四家公司 DeepSeek、Moonshot AI、MiniMax 与蚂蚁集团"]},
+        {"name": "蚂蚁集团", "type": "company", "aliases": ["Ant Group"], "confidence": 0.9, "evidence": ["涉及四家公司 DeepSeek、Moonshot AI、MiniMax 与蚂蚁集团"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["在英伟达 Blackwell 系统上被初始化"]},
+        {"name": "Blackwell", "type": "hardware", "aliases": ["Grace Blackwell", "GB200", "GB300"], "confidence": 0.9, "evidence": ["其中 4 款模型匹配 Grace Blackwell（旗舰液冷机架产品的 GB200/GB300）"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Will DePue 发布法证报告称 6 款中国模型在英伟达 Blackwell 系统上被初始化",
+          "summary": "报告称发现「确凿证据」表明 6 款中国 AI 模型——包括 DeepSeek-V4-Pro、Kimi K3 与 MiniMax-M3——在英伟达 Blackwell 系统上被初始化，其中 4 款匹配受对华出口管制的 Grace Blackwell 旗舰机架产品。",
+          "participants": [
+            {"name": "Will DePue", "type": "person", "role": "subject"},
+            {"name": "DeepSeek-V4-Pro", "type": "model", "role": "object"},
+            {"name": "Kimi K3", "type": "model", "role": "object"},
+            {"name": "MiniMax-M3", "type": "model", "role": "object"},
+            {"name": "Blackwell", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["发现「确凿证据」表明 6 款中国 AI 模型——包括 DeepSeek-V4-Pro、Kimi K3 与 MiniMax-M3——在英伟达 Blackwell 系统上被初始化"]
+        },
+        {
+          "type": "security",
+          "label": "DeepSeek、Moonshot AI、MiniMax 与蚂蚁集团被指涉 Blackwell 使用且均未公开回应",
+          "summary": "报告称六款模型涉及四家公司，各实验室均未公开回应；该「纸面证据」正在放大对出口管制如何被穿透的追问。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "Moonshot AI", "type": "company", "role": "subject"},
+            {"name": "MiniMax", "type": "company", "role": "subject"},
+            {"name": "蚂蚁集团", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["各实验室均未公开回应"]
+        }
+      ],
+      "relations": [
+        {"source": "DeepSeek-V4-Pro", "target": "DeepSeek", "type": "developed_by", "weight": 0.7, "evidence": ["涉及四家公司 DeepSeek、Moonshot AI、MiniMax 与蚂蚁集团"]},
+        {"source": "Kimi K3", "target": "Moonshot AI", "type": "developed_by", "weight": 0.7, "evidence": ["涉及四家公司 DeepSeek、Moonshot AI、MiniMax 与蚂蚁集团"]},
+        {"source": "MiniMax-M3", "target": "MiniMax", "type": "developed_by", "weight": 0.7, "evidence": ["涉及四家公司 DeepSeek、Moonshot AI、MiniMax 与蚂蚁集团"]},
+        {"source": "DeepSeek-V4-Pro", "target": "Blackwell", "type": "uses", "weight": 0.8, "evidence": ["包括 DeepSeek-V4-Pro、Kimi K3 与 MiniMax-M3——在英伟达 Blackwell 系统上被初始化"]},
+        {"source": "Kimi K3", "target": "Blackwell", "type": "uses", "weight": 0.8, "evidence": ["包括 DeepSeek-V4-Pro、Kimi K3 与 MiniMax-M3——在英伟达 Blackwell 系统上被初始化"]},
+        {"source": "MiniMax-M3", "target": "Blackwell", "type": "uses", "weight": 0.8, "evidence": ["包括 DeepSeek-V4-Pro、Kimi K3 与 MiniMax-M3——在英伟达 Blackwell 系统上被初始化"]},
+        {"source": "Blackwell", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["在英伟达 Blackwell 系统上被初始化"]},
+        {"source": "Will DePue", "target": "Unemployment Labs", "type": "affiliated_with", "weight": 0.8, "evidence": ["前 OpenAI 工程师、现 Unemployment Labs 创始人的 Will DePue 发布「检查点法证」报告"]}
+      ],
+      "metrics": [
+        {"name": "检出受管制芯片初始化指纹的中国模型数", "value": "6 款"},
+        {"name": "匹配 Grace Blackwell 的模型数", "value": "4 款"},
+        {"name": "检索的芯片布局与种子组合数", "value": "超 6 万亿种"}
+      ],
+      "why_it_matters": "管制穿透第一次有了「权重级指纹」这种可检验痕迹——即便无法定位芯片位置，模型本身就能暴露其训练硬件，把 Blackwell 博弈从供应链延伸到算法层。"
+    },
+    {
+      "article_id": "2026-11-14-6",
+      "entities": [
+        {"name": "Qualcomm", "type": "company", "aliases": ["高通"], "confidence": 0.95, "evidence": ["高通公布三款新的数据中心方案"]},
+        {"name": "Dragonfly C1000", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["Dragonfly C1000 CPU 是为「agentic、通用与 AI 头节点负载」设计的专用数据中心 CPU"]},
+        {"name": "Dragonfly AI300", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["同步发布的 Dragonfly AI300 是继 2025 年 10 月 AI200/AI250 之后第三代风冷/直液冷机架级推理加速器"]},
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.95, "evidence": ["并称 Meta 将采用"]},
+        {"name": "Cristiano Amon", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["CEO Cristiano Amon 将 agentic AI 推动的数据中心推理需求激增作为产品定位的核心理由"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "高通发布 Dragonfly C1000 CPU 与 Dragonfly AI300 推理加速器",
+          "summary": "高通公布三款新的数据中心方案，包括为 agentic 推理设计的 Dragonfly C1000 CPU 与第三代推理加速器 AI300，二者预计 2028 年商用。",
+          "participants": [
+            {"name": "Qualcomm", "type": "company", "role": "subject"},
+            {"name": "Dragonfly C1000", "type": "hardware", "role": "object"},
+            {"name": "Dragonfly AI300", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["高通公布三款新的数据中心方案"]
+        },
+        {
+          "type": "partnership",
+          "label": "Meta 将部署高通 Dragonfly C1000",
+          "summary": "高通官方称相对现有服务器 CPU 每瓦性能提升约 2 倍，预计 2028 年商用，并称 Meta 将采用。",
+          "participants": [
+            {"name": "Qualcomm", "type": "company", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "partner"},
+            {"name": "Dragonfly C1000", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["官方称相对现有服务器 CPU 每瓦性能提升约 2 倍，预计 2028 年商用，并称 Meta 将采用"]
+        }
+      ],
+      "relations": [
+        {"source": "Dragonfly C1000", "target": "Qualcomm", "type": "developed_by", "weight": 0.9, "evidence": ["高通公布三款新的数据中心方案"]},
+        {"source": "Dragonfly AI300", "target": "Qualcomm", "type": "developed_by", "weight": 0.9, "evidence": ["高通公布三款新的数据中心方案"]},
+        {"source": "Qualcomm", "target": "Meta", "type": "supplies", "weight": 0.5, "evidence": ["并称 Meta 将采用"]},
+        {"source": "Cristiano Amon", "target": "Qualcomm", "type": "affiliated_with", "weight": 0.8, "evidence": ["CEO Cristiano Amon 将 agentic AI 推动的数据中心推理需求激增作为产品定位的核心理由"]}
+      ],
+      "metrics": [
+        {"name": "C1000 相对现有服务器 CPU 每瓦性能提升", "value": "约 2 倍"},
+        {"name": "AI300 内存带宽每瓦每卡优势", "value": "4-8 倍"},
+        {"name": "C1000 与 AI300 预计商用时间", "value": "2028 年"},
+        {"name": "C1000 核数", "value": "250+"}
+      ],
+      "why_it_matters": "高通以「免液冷机架 + 每瓦推理」切入数据中心推理，说明该市场正从英伟达主导走向按功耗与成本分层的新进入者格局，Meta 的采用意向是重要背书。"
+    },
+    {
+      "article_id": "2026-11-14-7",
+      "entities": [
+        {"name": "Cloudflare", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Cloudflare 兑现承诺，把 8 月首发的 agent 设计浏览器引擎 Kitesurf 以 Apache 2.0 协议开源"]},
+        {"name": "Kitesurf", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["把 8 月首发的 agent 设计浏览器引擎 Kitesurf 以 Apache 2.0 协议开源"]},
+        {"name": "Workers", "type": "product", "aliases": ["Cloudflare Workers"], "confidence": 0.9, "evidence": ["它完全运行在 Cloudflare Workers 上"]},
+        {"name": "Puppeteer", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["可接入 Puppeteer 等 CDP 客户端"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Cloudflare 以 Apache 2.0 开源面向 agent 的无容器浏览器 Kitesurf",
+          "summary": "Cloudflare 把 8 月首发的 agent 设计浏览器引擎 Kitesurf 以 Apache 2.0 协议开源，支持本地运行或部署到自有 Workers 账户。",
+          "participants": [
+            {"name": "Cloudflare", "type": "company", "role": "subject"},
+            {"name": "Kitesurf", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Cloudflare 兑现承诺，把 8 月首发的 agent 设计浏览器引擎 Kitesurf 以 Apache 2.0 协议开源"]
+        },
+        {
+          "type": "infra",
+          "label": "Kitesurf 完全运行在 Cloudflare Workers 上、不依赖浏览器容器",
+          "summary": "Kitesurf 不依赖浏览器容器或 Chromium 进程却能解析 HTML、应用 CSS、执行页面 JavaScript 并渲染截图，主打更低 CPU/内存占用与按需求的全球弹性扩展。",
+          "participants": [
+            {"name": "Kitesurf", "type": "product", "role": "subject"},
+            {"name": "Workers", "type": "product", "role": "object"}
+          ],
+          "evidence": ["它完全运行在 Cloudflare Workers 上：不依赖浏览器容器或 Chromium 进程"]
+        }
+      ],
+      "relations": [
+        {"source": "Kitesurf", "target": "Cloudflare", "type": "developed_by", "weight": 0.9, "evidence": ["把 8 月首发的 agent 设计浏览器引擎 Kitesurf 以 Apache 2.0 协议开源"]},
+        {"source": "Kitesurf", "target": "Workers", "type": "uses", "weight": 0.8, "evidence": ["它完全运行在 Cloudflare Workers 上"]},
+        {"source": "Puppeteer", "target": "Kitesurf", "type": "uses", "weight": 0.5, "evidence": ["可接入 Puppeteer 等 CDP 客户端"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "无容器、跑在 Workers 上的浏览器把 agent 的「看网页」成本压缩到函数级弹性——浏览器正在从桌面软件变成 agent 基础设施的调用单元。"
+    },
+    {
+      "article_id": "2026-11-14-8",
+      "entities": [
+        {"name": "Sierra", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Sierra 发布 Personal Agent Protocol 1.0（代号 Poppy）"]},
+        {"name": "Poppy", "type": "product", "aliases": ["Personal Agent Protocol"], "confidence": 0.9, "evidence": ["Sierra 发布 Personal Agent Protocol 1.0（代号 Poppy）"]},
+        {"name": "Shopify", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Shopify 为其平台每一家商店默认发布 Poppy 文件（商家零实施）"]},
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.95, "evidence": ["Meta 的 Muse agent（已超 1000 万用户）现在访问每站都先查 Poppy"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Meta 的 Muse agent（已超 1000 万用户）现在访问每站都先查 Poppy"]},
+        {"name": "MCP", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["标准建立在 MCP、OpenAPI、UCP 等既有标准之上"]},
+        {"name": "Delta", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["涵盖 Delta、Intuit、Salesforce、Twilio、Wix、Zoom 等"]},
+        {"name": "Salesforce", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["涵盖 Delta、Intuit、Salesforce、Twilio、Wix、Zoom 等"]},
+        {"name": "Twilio", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["涵盖 Delta、Intuit、Salesforce、Twilio、Wix、Zoom 等"]},
+        {"name": "Mercury", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Mercury、Synchrony、土耳其航空等已上线，如 Mercury 让个人 agent 查余额、归类和发起转账"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Sierra 发布 Personal Agent Protocol 1.0（Poppy）",
+          "summary": "Poppy 是定义个人 AI agent 如何代表用户与公司交互的开放标准，先通过发现文件自报身份与权限，再用 OAuth 登录、经 API/网站/公司自身 agent 完成业务，建立在 MCP、OpenAPI、UCP 等既有标准之上。",
+          "participants": [
+            {"name": "Sierra", "type": "company", "role": "subject"},
+            {"name": "Poppy", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Sierra 发布 Personal Agent Protocol 1.0（代号 Poppy）"]
+        },
+        {
+          "type": "partnership",
+          "label": "Shopify 全量默认发布 Poppy 文件、Meta 的 Muse 优先识别",
+          "summary": "Shopify 为其平台每一家商店默认发布 Poppy 文件（商家零实施），Meta 的 Muse agent 现在访问每站都先查 Poppy，60 家新公司加入设计伙伴，总数超过百家。",
+          "participants": [
+            {"name": "Sierra", "type": "company", "role": "subject"},
+            {"name": "Poppy", "type": "product", "role": "object"},
+            {"name": "Shopify", "type": "company", "role": "partner"},
+            {"name": "Meta", "type": "company", "role": "partner"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Shopify 为其平台每一家商店默认发布 Poppy 文件（商家零实施），Meta 的 Muse agent（已超 1000 万用户）现在访问每站都先查 Poppy"]
+        }
+      ],
+      "relations": [
+        {"source": "Poppy", "target": "Sierra", "type": "developed_by", "weight": 0.9, "evidence": ["Sierra 发布 Personal Agent Protocol 1.0（代号 Poppy）"]},
+        {"source": "Poppy", "target": "MCP", "type": "built_on", "weight": 0.7, "evidence": ["标准建立在 MCP、OpenAPI、UCP 等既有标准之上"]},
+        {"source": "Shopify", "target": "Poppy", "type": "uses", "weight": 0.7, "evidence": ["Shopify 为其平台每一家商店默认发布 Poppy 文件（商家零实施）"]},
+        {"source": "Muse", "target": "Poppy", "type": "uses", "weight": 0.8, "evidence": ["Meta 的 Muse agent（已超 1000 万用户）现在访问每站都先查 Poppy"]},
+        {"source": "Sierra", "target": "Delta", "type": "partners_with", "weight": 0.5, "evidence": ["60 家新公司加入设计伙伴，总数超过百家，涵盖 Delta、Intuit、Salesforce、Twilio、Wix、Zoom 等"]},
+        {"source": "Sierra", "target": "Salesforce", "type": "partners_with", "weight": 0.5, "evidence": ["60 家新公司加入设计伙伴，总数超过百家，涵盖 Delta、Intuit、Salesforce、Twilio、Wix、Zoom 等"]},
+        {"source": "Sierra", "target": "Twilio", "type": "partners_with", "weight": 0.5, "evidence": ["60 家新公司加入设计伙伴，总数超过百家，涵盖 Delta、Intuit、Salesforce、Twilio、Wix、Zoom 等"]},
+        {"source": "Mercury", "target": "Poppy", "type": "uses", "weight": 0.6, "evidence": ["Mercury、Synchrony、土耳其航空等已上线，如 Mercury 让个人 agent 查余额、归类和发起转账"]}
+      ],
+      "metrics": [
+        {"name": "Muse agent 用户数", "value": "超 1000 万"},
+        {"name": "Poppy 设计伙伴总数", "value": "超过百家"},
+        {"name": "新加入设计伙伴数", "value": "60 家"}
+      ],
+      "why_it_matters": "agent 商务的胜负手正在从「谁的模型强」转向「谁先定义 agent 与公司交互的协议」——Shopify 全量默认发布与 Meta Muse 的优先识别，让 Poppy 有机会成为事实标准。"
+    },
+    {
+      "article_id": "2026-11-14-9",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英伟达在伦敦 KubeCon 2026 做出一系列开源承诺"]},
+        {"name": "OpenShell", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["把 agentic 编排运行时 OpenShell 捐赠给 Cloud Native Computing Foundation (CNCF)"]},
+        {"name": "CNCF", "type": "organization", "aliases": ["Cloud Native Computing Foundation"], "confidence": 0.9, "evidence": ["把 agentic 编排运行时 OpenShell 捐赠给 Cloud Native Computing Foundation (CNCF)"]},
+        {"name": "Agent Substrate", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["英伟达还表态投入谷歌主导的开源框架 Agent Substrate（在 Kubernetes 上编排 agentic 负载）"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.95, "evidence": ["英伟达还表态投入谷歌主导的开源框架 Agent Substrate（在 Kubernetes 上编排 agentic 负载）"]},
+        {"name": "Amanda Brock", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["OpenUK CEO Amanda Brock 直言，这则消息被黄仁勋离任彻底盖过"]},
+        {"name": "OpenUK", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["OpenUK CEO Amanda Brock 直言，这则消息被黄仁勋离任彻底盖过"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "英伟达把 agent 编排运行时 OpenShell 捐赠给 CNCF",
+          "summary": "在伦敦 KubeCon 2026，英伟达宣布把 agentic 编排运行时 OpenShell 捐赠给 Cloud Native Computing Foundation，把「自主 agent 的安全基础设施」交到社区手中。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "OpenShell", "type": "tool", "role": "object"},
+            {"name": "CNCF", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["把 agentic 编排运行时 OpenShell 捐赠给 Cloud Native Computing Foundation (CNCF)"]
+        },
+        {
+          "type": "partnership",
+          "label": "英伟达计划与谷歌合作集成 OpenShell 与 Agent Substrate",
+          "summary": "英伟达表态投入谷歌主导的开源框架 Agent Substrate，并计划与谷歌合作把 OpenShell 与 Agent Substrate 集成，让企业能跨云与本地系统安全地治理 agent。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "partner"},
+            {"name": "OpenShell", "type": "tool", "role": "object"},
+            {"name": "Agent Substrate", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["并计划与谷歌合作把 OpenShell 与 Agent Substrate 集成，让企业能跨云与本地系统安全地治理 agent"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenShell", "target": "NVIDIA", "type": "developed_by", "weight": 0.8, "evidence": ["把 agentic 编排运行时 OpenShell 捐赠给 Cloud Native Computing Foundation (CNCF)"]},
+        {"source": "OpenShell", "target": "CNCF", "type": "donated_to", "weight": 0.9, "evidence": ["把 agentic 编排运行时 OpenShell 捐赠给 Cloud Native Computing Foundation (CNCF)"]},
+        {"source": "OpenShell", "target": "Agent Substrate", "type": "integrates", "weight": 0.7, "evidence": ["并计划与谷歌合作把 OpenShell 与 Agent Substrate 集成"]},
+        {"source": "Agent Substrate", "target": "Google", "type": "developed_by", "weight": 0.7, "evidence": ["英伟达还表态投入谷歌主导的开源框架 Agent Substrate"]},
+        {"source": "NVIDIA", "target": "Google", "type": "partners_with", "weight": 0.7, "evidence": ["并计划与谷歌合作把 OpenShell 与 Agent Substrate 集成"]},
+        {"source": "Amanda Brock", "target": "OpenUK", "type": "affiliated_with", "weight": 0.8, "evidence": ["OpenUK CEO Amanda Brock 直言，这则消息被黄仁勋离任彻底盖过"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "在创始人离任同周把核心运行时捐给 CNCF，英伟达在把开源信誉从黄仁勋个人背书转成机构化资产——治理确定性成了它此刻最想对外传递的信号。"
+    },
+    {
+      "article_id": "2026-11-14-10",
+      "entities": [
+        {"name": "AgentSSL", "type": "paper", "aliases": ["Agentic Semi-Supervised Learning"], "confidence": 0.9, "evidence": ["这篇被 NeurIPS 2026 接收的论文提出 Agentic Semi-Supervised Learning（AgentSSL），把半监督学习视为程序搜索问题"]},
+        {"name": "ProgramSelectBench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["作者引入 ProgramSelectBench，汇集 1.7 万份 agent 生成与人工的 SSL 程序，并评测无监督与主动选择方法"]},
+        {"name": "半监督学习", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["把半监督学习视为程序搜索问题"]},
+        {"name": "程序搜索", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["把半监督学习视为程序搜索问题"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "AgentSSL 论文把半监督学习化为程序搜索问题，弱监督下 12 项设定中 8 项超最强人工基线",
+          "summary": "这篇被 NeurIPS 2026 接收的论文提出 Agentic Semi-Supervised Learning，在弱反馈、等计算量条件下让 agent 合成并组合既有 SSL 技术，以最高 +21.8% 超过最强人工基线，并引入 ProgramSelectBench 研究程序选择瓶颈。",
+          "participants": [
+            {"name": "AgentSSL", "type": "paper", "role": "subject"},
+            {"name": "ProgramSelectBench", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["这篇被 NeurIPS 2026 接收的论文提出 Agentic Semi-Supervised Learning（AgentSSL），把半监督学习视为程序搜索问题"]
+        }
+      ],
+      "relations": [
+        {"source": "AgentSSL", "target": "程序搜索", "type": "built_on", "weight": 0.8, "evidence": ["把半监督学习视为程序搜索问题"]},
+        {"source": "AgentSSL", "target": "半监督学习", "type": "uses", "weight": 0.6, "evidence": ["agent 能合成并组合既有的 SSL 技术"]},
+        {"source": "AgentSSL", "target": "ProgramSelectBench", "type": "evaluated_on", "weight": 0.8, "evidence": ["作者引入 ProgramSelectBench，汇集 1.7 万份 agent 生成与人工的 SSL 程序，并评测无监督与主动选择方法"]}
+      ],
+      "metrics": [
+        {"name": "超过最强人工基线的设定数", "value": "12 项中 8 项"},
+        {"name": "最高提升幅度", "value": "+21.8%"},
+        {"name": "用反馈指标选程序时性能最高下降", "value": "47%"},
+        {"name": "ProgramSelectBench 程序数", "value": "1.7 万份"}
+      ],
+      "why_it_matters": "研究把 agent 利用无标注数据的瓶颈从「程序合成」精确锁定到「程序选择」——半监督场景下性能可因选错程序骤降 47%，这决定了 MLE agent 下一阶段的投入方向。"
+    },
+    {
+      "article_id": "2026-11-14-11",
+      "entities": [
+        {"name": "CoReMem", "type": "paper", "aliases": ["Coding-Repository Memory"], "confidence": 0.9, "evidence": ["CoReMem（Coding-Repository Memory）把这个成本内化进框架：通过「前瞻段评估」"]},
+        {"name": "ChainSWE", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 ChainSWE 上，CoReMem 把 27B actor 的解决率从 21.0% 提至 25.7%"]},
+        {"name": "前瞻段评估", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["通过「前瞻段评估」，对比带/不带某条轨迹段跑下一个任务的效果"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "CoReMem 框架让编码 agent 按实测记忆价值决定写什么，在 ChainSWE 上提升解决率",
+          "summary": "CoReMem 通过「前瞻段评估」把记忆压缩为以仓库位置与可执行检查为主题的锚点，在 ChainSWE 上把 27B actor 的解决率从 21.0% 提至 25.7%，步骤数减少 17%。",
+          "participants": [
+            {"name": "CoReMem", "type": "paper", "role": "subject"},
+            {"name": "ChainSWE", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 ChainSWE 上，CoReMem 把 27B actor 的解决率从 21.0% 提至 25.7%"]
+        }
+      ],
+      "relations": [
+        {"source": "CoReMem", "target": "ChainSWE", "type": "evaluated_on", "weight": 0.9, "evidence": ["在 ChainSWE 上，CoReMem 把 27B actor 的解决率从 21.0% 提至 25.7%"]},
+        {"source": "CoReMem", "target": "前瞻段评估", "type": "uses", "weight": 0.7, "evidence": ["通过「前瞻段评估」，对比带/不带某条轨迹段跑下一个任务的效果"]}
+      ],
+      "metrics": [
+        {"name": "ChainSWE 解决率", "value": "21.0% → 25.7%"},
+        {"name": "步骤数减少", "value": "17%"},
+        {"name": "缓存感知 token 总数减少", "value": "11%"}
+      ],
+      "why_it_matters": "agent 记忆第一次被当成可度量、可核算的成本项——「写什么、何时写、何时读」从工程直觉变成带收益验证的决策，是 agent 长期自主运行的效率拐点。"
+    },
+    {
+      "article_id": "2026-11-14-12",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 前一日推出 ChatGPT Wallet，让 agent 在用户生物识别授权下完成真实购买"]},
+        {"name": "ChatGPT Wallet", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 前一日推出 ChatGPT Wallet，让 agent 在用户生物识别授权下完成真实购买"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.95, "evidence": ["Google 今让 Gemini 连接 Google Wallet 并可经 Plaid 关联银行、但明确「只读不动钱」"]},
+        {"name": "Gemini", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Google 今让 Gemini 连接 Google Wallet 并可经 Plaid 关联银行、但明确「只读不动钱」"]},
+        {"name": "Google Wallet", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Google 今让 Gemini 连接 Google Wallet 并可经 Plaid 关联银行、但明确「只读不动钱」"]},
+        {"name": "Plaid", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Google 今让 Gemini 连接 Google Wallet 并可经 Plaid 关联银行、但明确「只读不动钱」"]},
+        {"name": "Sierra", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Sierra 的 Poppy 1.0 则试图用开放协议先成为「agent 怎么证明身份、能干什么」的标准"]},
+        {"name": "Poppy", "type": "product", "aliases": ["Personal Agent Protocol"], "confidence": 0.9, "evidence": ["Sierra 的 Poppy 1.0 则试图用开放协议先成为「agent 怎么证明身份、能干什么」的标准"]},
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.95, "evidence": ["Sierra 与 Meta、Shopify 联手，赌「可被公司验证与授权的 agent」才是支付真正起飞的前提"]},
+        {"name": "Shopify", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Sierra 与 Meta、Shopify 联手，赌「可被公司验证与授权的 agent」才是支付真正起飞的前提"]},
+        {"name": "Visa", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["并套用 Visa/Mastercard 正在建立的 agent 身份框架"]},
+        {"name": "Mastercard", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["并套用 Visa/Mastercard 正在建立的 agent 身份框架"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "OpenAI、Google、Sierra 同日把手伸向用户钱包，三条路径并行",
+          "summary": "OpenAI 前一日推出 ChatGPT Wallet 让 agent 在生物识别授权下完成真实购买，Google 让 Gemini 只读连接 Google Wallet 与银行账户，Sierra 用 Poppy 1.0 协议定义 agent 的身份与权限，三者选择主动代付、只读增强、协议先行三种渐进路径。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Sierra", "type": "company", "role": "subject"},
+            {"name": "ChatGPT Wallet", "type": "product", "role": "object"},
+            {"name": "Gemini", "type": "product", "role": "object"},
+            {"name": "Poppy", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 前一日推出 ChatGPT Wallet，让 agent 在用户生物识别授权下完成真实购买；Google 今让 Gemini 连接 Google Wallet 并可经 Plaid 关联银行、但明确「只读不动钱」；Sierra 的 Poppy 1.0 则试图用开放协议先成为「agent 怎么证明身份、能干什么」的标准"]
+        },
+        {
+          "type": "partnership",
+          "label": "Sierra 与 Meta、Shopify 联手，赌协议先行成为支付起飞前提",
+          "summary": "Sierra 与 Meta、Shopify 联手，赌「可被公司验证与授权的 agent」才是支付真正起飞的前提，并套用 Visa/Mastercard 正在建立的 agent 身份框架。",
+          "participants": [
+            {"name": "Sierra", "type": "company", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "partner"},
+            {"name": "Shopify", "type": "company", "role": "partner"},
+            {"name": "Poppy", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Sierra 与 Meta、Shopify 联手，赌「可被公司验证与授权的 agent」才是支付真正起飞的前提，并套用 Visa/Mastercard 正在建立的 agent 身份框架"]
+        }
+      ],
+      "relations": [
+        {"source": "ChatGPT Wallet", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 前一日推出 ChatGPT Wallet，让 agent 在用户生物识别授权下完成真实购买"]},
+        {"source": "Gemini", "target": "Google Wallet", "type": "integrates", "weight": 0.9, "evidence": ["Google 今让 Gemini 连接 Google Wallet 并可经 Plaid 关联银行、但明确「只读不动钱」"]},
+        {"source": "Gemini", "target": "Plaid", "type": "uses", "weight": 0.7, "evidence": ["Google 今让 Gemini 连接 Google Wallet 并可经 Plaid 关联银行、但明确「只读不动钱」"]},
+        {"source": "Poppy", "target": "Sierra", "type": "developed_by", "weight": 0.9, "evidence": ["Sierra 的 Poppy 1.0 则试图用开放协议先成为「agent 怎么证明身份、能干什么」的标准"]},
+        {"source": "Sierra", "target": "Meta", "type": "partners_with", "weight": 0.7, "evidence": ["Sierra 与 Meta、Shopify 联手，赌「可被公司验证与授权的 agent」才是支付真正起飞的前提"]},
+        {"source": "Sierra", "target": "Shopify", "type": "partners_with", "weight": 0.7, "evidence": ["Sierra 与 Meta、Shopify 联手，赌「可被公司验证与授权的 agent」才是支付真正起飞的前提"]},
+        {"source": "Poppy", "target": "Visa", "type": "built_on", "weight": 0.5, "evidence": ["并套用 Visa/Mastercard 正在建立的 agent 身份框架"]},
+        {"source": "Poppy", "target": "Mastercard", "type": "built_on", "weight": 0.5, "evidence": ["并套用 Visa/Mastercard 正在建立的 agent 身份框架"]},
+        {"source": "ChatGPT Wallet", "target": "Gemini", "type": "compared_with", "weight": 0.5, "evidence": ["三者选择了三种渐进路径——主动代付、只读增强、协议先行"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "支付底层成为 agent 商务的主战场——代付、只读、协议三条路线同一窗口期开跑，谁的用户授权关系成为默认入口，谁就握住 agent 时代的分发权。"
+    }
+  ]
+}

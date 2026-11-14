@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-14",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "抽取整体准确、无事实幻觉，证据均能对应原文；主要问题是若干关系类型使用不当与关键关系边缺失，以及从背景提及处过度建边。",
+  "findings": [
+    {
+      "article_id": "2026-11-14-9",
+      "severity": "medium",
+      "problem": "事件「英伟达把 OpenShell 捐赠给 CNCF」只体现在 events.participants 里，relations 中没有 OpenShell 与 CNCF 之间任何边，导致整个图谱里 CNCF 是孤立实体，捐赠这一核心事实无法沿边读出。",
+      "fix": "新增关系 OpenShell --donated_to--> CNCF（或用图中既有的捐赠类关系，如 OpenShell --contributed_to--> CNCF），证据引用「把 agentic 编排运行时 OpenShell 捐赠给 Cloud Native Computing Foundation (CNCF)」；这样 CNCF 不再是孤立节点。"
+    },
+    {
+      "article_id": "2026-11-14-4",
+      "severity": "medium",
+      "problem": "Goldman Sachs --partners_with--> Anthropic 与 Morgan Stanley --partners_with--> Anthropic 关系类型不当：原文中它们是 IPO 的牵头承销商（underwriters），是提供服务的一方，并非与 Anthropic 对等的业务合作伙伴。",
+      "fix": "把这两条 partners_with 改为承销类专门关系，如 Goldman Sachs --underwrites--> Anthropic、Morgan Stanley --underwrites--> Anthropic；若图中无 underwrites 类型，则删除这两条边，把承销关系保留在 launch 事件参与者即可，不要用 partners_with 兜底。"
+    },
+    {
+      "article_id": "2026-11-14-1",
+      "severity": "medium",
+      "problem": "关系 Google Research --subsidiary_of--> Google 使用类型不当：Google Research 是 Google 的内部研究部门而非独立子公司，subsidiary_of 暗示法人层级关系。",
+      "fix": "改为 department_of / part_of 类型（若存在），或删除该条边，将 Google Research 与 Google 的关系保留在事件参与者层级，避免语义夸大。"
+    },
+    {
+      "article_id": "2026-11-14-2",
+      "severity": "low",
+      "problem": "GIC 被标成 organization，而同批其他投资人（CapitalG、DFJ Growth、IVP、Sapphire Ventures）均标为 company，类型不一致不利于图谱连通与聚合。",
+      "fix": "将 GIC 类型改为 company（或 investment firm），使其与同一融资事件的其它 funder 类型统一。"
+    },
+    {
+      "article_id": "2026-11-14-6",
+      "severity": "medium",
+      "problem": "Titania --developed_by--> Axelera AI 是按原文一句话语境中的背景对比「连同此前 Axelera AI 的 Titania」抽取的，并非今日新闻主体；为背景提及对象单独建边属于过度抽取，容易引入与当日主要事件无关的噪音节点。",
+      "fix": "删除 Titania 与 Axelera AI 这一对实体及 developed_by 边（它们的角色只是类比衬托 Qualcomm 的新品，信息增量低）；如确要保留，应明确标注为背景参照而非当日主体。"
+    }
+  ],
+  "lessons": [
+    "捐赠/转让类新闻中，捐赠方与被捐物、被捐物与被捐组织之间要建立显式关系边（如 donated_to），不能只把受赠方写进事件参与者，否则受赠方会成为孤立节点。",
+    "承销、托管、代运营等第三方服务关系不要用 partners_with 兜底，应使用专门关系类型（如 underwrites），或用对等服务关系标注清楚。",
+    "从一句话的语境对比或背景衬托中提到的对象（如「连同此前的 X」）通常不是当日新闻主体，除非其信息是本文报道焦点，否则不要为它们单独建实体和边。"
+  ]
+}

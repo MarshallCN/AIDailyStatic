@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-14",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "前两轮的问题（donated_to 缺失、underwrites/part_of 类型、DePue 前隶属、Claude Personal Finance 误列本日 launch）均已修复，实体与证据高度一致，无方向反转或幻觉。本轮主要问题集中在 metrics 口径与事件纯度：一处数字被抽掉限定词而改变口径，一处关键数字遗漏，两处把「状态/架构特性」包装成事件造成冗余。",
+  "findings": [
+    {
+      "article_id": "2026-11-14-4",
+      "severity": "medium",
+      "problem": "metric「参与承销银行数: 20 家」与原文口径不符。原文是「Goldman Sachs 与 Morgan Stanley 牵头，另有 20 家银行参与」，20 是牵头行之外的追加数，参与承销的银行合计应为 22 家。按现在的 label 读图会得到「承销银行总数 20 家」的错误结论。",
+      "fix": "把该 metric 的名称与值改为能保留原文口径的形式，例如「另有参与承销银行数: 20 家」，或合并表述为「参与承销银行合计: 22 家（含牵头的高盛与摩根士丹利）」，不要去掉「另有」直接按总数写。"
+    },
+    {
+      "article_id": "2026-11-14-3",
+      "severity": "medium",
+      "problem": "metrics 遗漏关键数字「系统整合约 200 条数据流——天气、航路、流量与管制员配置」。现有 7 项 metric 都对应原文数字，但这一反映系统规模的架构数据没有进 metrics，削弱了图的量化信息。",
+      "fix": "新增 metric：{\"name\": \"SMART 整合数据流数\", \"value\": \"约 200 条\"}，证据即原文「系统整合约 200 条数据流——天气、航路、流量与管制员配置」。"
+    },
+    {
+      "article_id": "2026-11-14-5",
+      "severity": "medium",
+      "problem": "事件 2「DeepSeek、Moonshot AI、MiniMax 与蚂蚁集团被指涉 Blackwell 使用且均未公开回应」与事件 1 同源于 DePue 同一份报告，核心主张（模型在 Blackwell 上初始化）与事件 1 重复；该事件真正新增的只有 4 家公司名单与「未公开回应」这一静态状态，没有新的动作发生，属于把一个主张拆成两个事件。",
+      "fix": "把四家公司名单与「各实验室均未公开回应」并入事件 1 的 summary（事件 1 participants 补上四家公司），删除事件 2；若确需保留公司层面的曝光信息，也应在事件 2 中只承载名单与回应状态，不再重复「被指在 Blackwell 使用」的断言。"
+    },
+    {
+      "article_id": "2026-11-14-7",
+      "severity": "medium",
+      "problem": "事件 2「Kitesurf 完全运行在 Cloudflare Workers 上、不依赖浏览器容器」不是事件——它描述的是产品的架构特性（运行位置、容器依赖），没有发生任何动作，被标成 infra 事件会让事件列表混入非事件内容。",
+      "fix": "删除该事件，运行方式与弹性扩展等信息已由事件 1 的 summary 与关系 Kitesurf --uses--> Workers 承载，不必单列事件。"
+    },
+    {
+      "article_id": "2026-11-14-9",
+      "severity": "low",
+      "problem": "关系 OpenShell --integrates--> Agent Substrate 的 evidence 是「并计划与谷歌合作把 OpenShell 与 Agent Substrate 集成」，原文语义是计划中的集成，integrates 却读出已完成状态；NVIDIA --partners_with--> Google 同理建立在「计划合作」上。",
+      "fix": "在关系证据中保留「计划」限定（如 evidence 标注计划中），或在关系类型上选择带计划语义的表达；不要让人读出集成/合作已经完成的结论。"
+    },
+    {
+      "article_id": "2026-11-14-0",
+      "severity": "low",
+      "problem": "关系 ChatGPT Wallet --compared_with--> Gemini 的证据「真正的智能体支付（如 OpenAI 前一日发布的 ChatGPT Wallet）仍被谨慎地与个人财务只读分析区分开」区分的是「智能体支付」与「个人财务只读分析」两个类别，只读一侧同时包含 Google（Gemini）与 Anthropic（Claude Personal Finance），证据并未单独指向 Gemini，支撑不足。",
+      "fix": "把该关系改为整体的类别对照（如 ChatGPT Wallet 与只读财务分析的对比，保留在事件或 why_it_matters），或删除该边，避免 compared_with 单独指向 Gemini。"
+    }
+  ],
+  "lessons": [
+    "把数字搬进 metrics 时必须保留原文限定词：原文写「A 与 B 牵头，另有 N 家参与」时，label 不能直接按总数写 N，应记为 N+2 合计或明确标注「另有」。",
+    "「被指涉 + 未回应」这类静态状态不构成事件：没有动作发生的状态说明并入对应主张事件的 summary，不要为同一份报告拆出多个互相重复的事件。",
+    "架构/特性描述不是事件：只描述软件运行方式（跑在 X 上、不依赖 Y）的内容属于实体属性或关系，不要为其单列事件。"
+  ]
+}

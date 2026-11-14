@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-14",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "抽取整体质量高，实体与证据高度一致，未见方向反转或幻觉。主要问题集中在事件类型标注不严谨：未发生的 IPO 被标成 launch、向外部开放被标成 open_source、把 DePue 的「前 OpenAI 工程师」标成当前 affiliated_with，三处都会在图中读出与原文相悖的语义。",
+  "findings": [
+    {
+      "article_id": "2026-11-14-4",
+      "severity": "medium",
+      "problem": "第二个事件 \"Anthropic 定于 11 月 18 日定价、次日以 ANT 在纳斯达克上市\" 被标为类型 launch。原文明确这是 11 月 18/19 日才发生的计划中事件，并非 11 月 14 日已经完成的上市；launch 类型会让图读出「Anthropic 已上市」的错误结论（时间未到）。",
+      "fix": "把该事件类型从 launch 改为 plan/reported 一类的计划性事件（若无此类型，折进整个 ITAR/IPO 的 policy 事件，或在 summary 与 metrics 里保留「11 月 18 日定价、次日上市」的计划时点），不要在本日图谱里标成已完成 launch。"
+    },
+    {
+      "article_id": "2026-11-14-1",
+      "severity": "medium",
+      "problem": "第二个事件 \"Google 把 Antigravity /teamwork 等工具向外部研究者与开发者开放\" 被标为类型 open_source。原文只说「现把这些工具随 /teamwork（以及 /boost 等）一起向外部开放，研究者与开发者可应用到自己的工作中」，只表述了「对外可用」，没有任何开源许可（如某 license）的证据。open_source 类型没有证据支撑，属于类型拔高。",
+      "fix": "确认原文是否给出开源许可；若无 license 证据，把事件类型改为 release/availability：/teamwork 工具对所有用户开放可用，而不是「开源」。若确有 license 则补充对应证据。"
+    },
+    {
+      "article_id": "2026-11-14-5",
+      "severity": "medium",
+      "problem": "关系 \"Will DePue --affiliated_with--> OpenAI\" 的 evidence 是「前 OpenAI 工程师…的 Will DePue」。affiliated_with 是当前隶属语义，图中会读出「DePue 现在隶属于 OpenAI」，与原文（前任工程师）相悖；DePue 现在属 Unemployment Labs。",
+      "fix": "给 DePue←→OpenAI 这条边加上时效/前隶属语义：改用描述「曾任职」的关系类型（如 worked_at / former_member），或直接删除该边，仅保留 \"Will DePue --affiliated_with--> Unemployment Labs\"（现任创始人）。"
+    },
+    {
+      "article_id": "2026-11-14-0",
+      "severity": "low",
+      "problem": "第一个事件 \"Anthropic 上线经 Plaid 打通只读银行访问的 Claude Personal Finance\" 被标为 launch，但原文明确该产品是「本月 5 日」上线的对比对象，不是 11 月 14 日这一天的发布事件。把不同日期上线的前置产品当作本日 launch 事件，会让今天的图谱里出现一个大前天就上线的事件。",
+      "fix": "Claude Personal Finance 在本日只是被拿来与 Gemini 对照的既有产品，不应单列为今日 launch 事件；保留其为实体及 uses Plaid 关系即可（metric 已正确记录了「本月 5 日」），或把事件类型改成 comparison/context 而非 launch。"
+    }
+  ],
+  "lessons": [
+    "计划中、尚未发生的事件（如未定价/未上市的 IPO）不要标为 launch，应使用 plan/reported 语义或折进相邻事务事件，避免图读出已完成的错误结论。",
+    "原文只说「向外部开放/对外可用」而没有给出具体开源许可时，不要选用 open_source 事件类型，应记 release/availability 或补上 license 证据。",
+    "对「前任/曾在某公司任职」的人，不要用表当前隶属的 affiliated_with，应使用表述曾任职的关系（worked_at/former）或删除，仅在现任关系上用 affiliated_with。"
+  ]
+}
