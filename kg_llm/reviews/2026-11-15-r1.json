@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-15",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 70,
+  "summary": "事实与关系方向基本无误，但系统性存在关系类型用错（released_by 用于城市、affiliated_with 兜底获奖、regulates 用于监管对象之外）、多条推测性评论被拆成独立事件虚增事件数，以及同一模型拼写不一致（Kimi K3.1 Pro / Kimi-K3.1-Pro）导致跨文章连通失败。",
+  "findings": [
+    {
+      "article_id": "2026-11-15-1",
+      "severity": "high",
+      "problem": "关系 \"AI 音乐奖 --released_by--> 洛杉矶\" 关系类型用错：首届 AI 音乐奖是在洛杉矶举行，不是被这座城市\"发布\"（released_by 是产��/作品发布关系）。同时实体 \"洛杉矶\" 被标为 organization，实为地点。",
+      "fix": "将实体 \"洛杉矶\" 类型改为 location；把该关系改为表示\"在…举行/举办\"的关系（如 held_in 或 located_in），若类型表无此项则删除该关系。"
+    },
+    {
+      "article_id": "2026-11-15-1",
+      "severity": "medium",
+      "problem": "关系 \"Xania Monet --affiliated_with--> AI 音乐奖\" 语义模糊且未表达原文事实：原文是 Xania Monet 拿下年度艺人与年度歌曲，这是\"获奖\"关系，affiliated_with 无法传达，属于用模糊关系兜底。",
+      "fix": "改为表达\"赢得/获颁\"的关系（如 won / received_award），Xania Monet 为 source、AI 音乐奖（或奖项实体）为 target；若无对应类型则删除，不要用 affiliated_with 兜底。"
+    },
+    {
+      "article_id": "2026-11-15-10",
+      "severity": "medium",
+      "problem": "事件2 \"监管端把 AI 列为系统性风险或触发资本充足与压力测试要求\" 是 why_it_matters 里的推测性分析，原文并未报道美联储采取任何此类监管动作，被拆成独立事件（类型 policy）会虚增事件数并引入未发生的事实。同篇关系 \"美联储 --regulates--> AI 金融稳定风险\" 用 regulates 不当——美联储只是调查/监测该风险，并未将其列为监管事项。",
+      "fix": "删除推测性事件2，把该分析保留在 why_it_matters；将关系 \"美联储 --regulates--> AI 金融稳定风险\" 改为 monitors/tracks 之类表达监测的关系或删除。"
+    },
+    {
+      "article_id": "2026-11-15-12",
+      "severity": "medium",
+      "problem": "事件2 \"欧洲正用罚款界定 AI 厂商使用用户数据的边界\" 是编辑性评论被拆成独立事件；关系 \"欧盟 --regulates--> Meta\" 证据不足——本次处罚仅由意大利 Garante 作出，文末泛化的\"欧洲\"不能坐实欧盟对 Meta 的处罚。",
+      "fix": "删除评论性事件2；将监管关系限定为 Garante（意大利）对 Meta，若要保留欧盟则需补充欧盟层面实际监管动作的证据，否则删除。"
+    },
+    {
+      "article_id": "2026-11-15-14",
+      "severity": "medium",
+      "problem": "关系 \"LongCat 2.5 --uses--> 国产AI芯片\" 未准确表达文章核心声明：文章说的是模型\"在国产芯片上训练\"（trained on），uses 暗示运行时依赖，语义偏离核心事实；且整段是厂商宣称、未经独立验证。",
+      "fix": "将该关系改为 trained_on（或 built_on），并在关系证据/事件中保留\"宣称、未经独立验证\"的限定；事件标题中\"完成训练\"要及时标注\"宣称\"（已有，保持一致）。"
+    },
+    {
+      "article_id": "2026-11-15-5",
+      "severity": "medium",
+      "problem": "同一模型在不同文章规范名不一致：2026-11-15-3 实体为 \"Kimi K3.1 Pro\"（带空格），2026-11-15-5 实体为 \"Kimi-K3.1-Pro\"（连字符），指向同一个 Moonshot AI 模型，导致图谱无法把两处的该模型连成同一实体、无法跨文章连通。",
+      "fix": "统一规范名为 \"Kimi K3.1 Pro\"，把 \"Kimi-K3.1-Pro\" 设为 alias 合并为同一实体，使两篇文章的该模型节点连通。"
+    },
+    {
+      "article_id": "2026-11-15-8",
+      "severity": "medium",
+      "problem": "实体 \"多智能体安全\" 被标为 paper，但原文论文并无此题名，这实际是论文的主题/研究方向，实体类型错配；关系 \"多智能体安全 --integrates--> agent 身份治理\" 用 integrates 表达原文\"呼应\"的语义不当。",
+      "fix": "将 \"多智能体安全\" 实体类型改为 topic（或删除该实体），关系 \"--integrates--> agent 身份治理\" 改为 references/relates_to 或删除，不要用 integrates 表达\"呼应\"。"
+    },
+    {
+      "article_id": "2026-11-15-0",
+      "severity": "low",
+      "problem": "事件类型 launch 用于 OpenAI 机器人团队并入核心研究与 Applied 的组织重组，事件类型与内容不符。",
+      "fix": "组织架构调整类事件改用 reorg/组织结构变更类型，不要用 launch。"
+    },
+    {
+      "article_id": "2026-11-15-16",
+      "severity": "low",
+      "problem": "事件2 类型标为 security，但其内容是把故障归因于网络容量升级并排除网络攻击与 AI agent，并非安全类事件。",
+      "fix": "将事件2 类型改为 infra / incident-attribution 类，或并入事件1。"
+    }
+  ],
+  "lessons": [
+    "每个事件必须对应原文实际发生的事实，不要把 why_it_matters 里的推测性评论或政策展望拆成独立事件虚增事件数。",
+    "地点实体用 location 类型；\"在X举行/举办\"不要用 released_by、developed_by 等产品所有权关系，应使用表示举行的关系或删除。",
+    "同一主体跨文章必须使用相同规范名或互相设为 alias（尤其空格与连字符等拼写变体，如 Kimi K3.1 Pro / Kimi-K3.1-Pro），否则图谱无法跨文章连通。"
+  ]
+}

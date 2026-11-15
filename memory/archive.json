@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T23:14:50Z",
+  "updated_at": "2026-11-15T23:21:13Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -933,8 +933,8 @@
       "period_id": "2026-W42",
       "period_type": "week",
       "start_date": "2026-10-12",
-      "end_date": "2026-10-15",
-      "summary": "2026-10-12 至 2026-10-15 期间，Anthropic、OpenAI、NVIDIA 主要围绕 trend、policy 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-10-16",
+      "summary": "2026-10-12 至 2026-10-16 期间，Anthropic、OpenAI、NVIDIA 主要围绕 trend、security 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "Anthropic",
         "OpenAI",
@@ -943,12 +943,12 @@
       ],
       "event_types": [
         "trend",
-        "policy",
-        "research"
+        "security",
+        "policy"
       ],
       "trend_signals": [
         "核心实体：Anthropic、OpenAI、NVIDIA",
-        "主事件类型：trend、policy"
+        "主事件类型：trend、security"
       ],
       "representative_article_ids": [
         "2026-10-12-0",

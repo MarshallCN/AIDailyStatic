@@ -1,0 +1,689 @@
+{
+  "date": "2026-11-15",
+  "articles": [
+    {
+      "article_id": "2026-11-15-0",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.95, "evidence": ["OpenAI 已将旗下机器人研究人员移到主研究与 Applied 组织"]},
+        {"name": "Applied", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["OpenAI 已将旗下机器人研究人员移到主研究与 Applied 组织"]},
+        {"name": "机器人", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["OpenAI 把机器人研究人员并回核心研究与 Applied 部门"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "OpenAI 将机器人团队并入核心研究与 Applied 部门",
+          "summary": "OpenAI 把机器人研究人员移到主研究与 Applied 组织，官方称重组是因为相信能加快机器人工作进度，机器人不再被当作独立旁支。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Applied", "type": "organization", "role": "object"},
+            {"name": "机器人", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["OpenAI 把机器人研究人员并回核心研究与 Applied 部门"]
+        }
+      ],
+      "relations": [
+        {"source": "Applied", "target": "OpenAI", "type": "part_of", "weight": 0.9, "evidence": ["OpenAI 已将旗下机器人研究人员移到主研究与 Applied 组织"]},
+        {"source": "OpenAI", "target": "机器人", "type": "integrates", "weight": 0.7, "evidence": ["把机器人并入通用研究与产品化部门"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "机器人从独立编制并入核心研究节奏，说明具身智能不再是模型研究的旁支——算力、数据与评估正与主模型共享一条管线。"
+    },
+    {
+      "article_id": "2026-11-15-1",
+      "entities": [
+        {"name": "AI 音乐奖", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["首届 AI 音乐奖在洛杉矶落幕"]},
+        {"name": "Xania Monet", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Xania Monet 拿下年度艺人与年度歌曲"]},
+        {"name": "AI 音乐", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["首届 AI 音乐奖在洛杉矶落幕"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "首届 AI 音乐奖在洛杉矶举行，Xania Monet 斩获年度艺人与年度歌曲",
+          "summary": "典礼大量使用 AI 主持人、真人歌手对 AI 歌曲假唱与真人替身，Xania Monet 拿下年度艺人与年度歌曲，但全场被流程延误、音频故障与脱拍困扰。",
+          "participants": [
+            {"name": "AI 音乐奖", "type": "product", "role": "subject"},
+            {"name": "Xania Monet", "type": "person", "role": "object"}
+          ],
+          "evidence": ["首届 AI 音乐奖在洛杉矶落幕"]
+        }
+      ],
+      "relations": [
+        {"source": "AI 音乐奖", "target": "Xania Monet", "type": "targets", "weight": 0.7, "evidence": ["Xania Monet 拿下年度艺人与年度歌曲"]},
+        {"source": "AI 音乐奖", "target": "AI 音乐", "type": "targets", "weight": 0.5, "evidence": ["首届 AI 音乐奖在洛杉矶落幕"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "AI 内容第一次站上主流颁奖台，但「虚拟形象、假唱与真人如何衔接」尚无标准——AI 创作者的版权与署名问题开始有正式的评审场景去触发。"
+    },
+    {
+      "article_id": "2026-11-15-2",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.95, "evidence": ["Google DeepMind 发布 Gemini 4 Hydrogen"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.95, "evidence": ["开始在 Google 搜索面向所有用户逐步铺开"]},
+        {"name": "Gemini 4 Hydrogen", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Google DeepMind 发布 Gemini 4 Hydrogen"]},
+        {"name": "Gemini 3.8 Flash", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["其速度约为 Gemini 3.8 Flash 的 2.5 倍"]},
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Carbon 是精度端，Hydrogen 是延迟与成本端"]},
+        {"name": "Claude Fable 5.2", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["它在 AutomationBench 上的表现接近 Claude Fable 5.2"]},
+        {"name": "AutomationBench", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["它在 AutomationBench 上的表现接近 Claude Fable 5.2"]},
+        {"name": "Google 搜索", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["在 Google 搜索面向所有用户逐步铺开"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google DeepMind 发布速度优化的 Gemini 4 Hydrogen",
+          "summary": "定位于 Carbon 与 Argon 之外的速度优先档，官方称速度约为 Gemini 3.8 Flash 的 2.5 倍，适合 coding agent 等延迟敏感负载。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Hydrogen", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google DeepMind 发布 Gemini 4 Hydrogen"]
+        },
+        {
+          "type": "launch",
+          "label": "Gemini 4 Hydrogen 铺入 Google 搜索",
+          "summary": "开始在 Google 搜索面向所有用户逐步铺开，用于改善意图理解。",
+          "participants": [
+            {"name": "Gemini 4 Hydrogen", "type": "model", "role": "subject"},
+            {"name": "Google 搜索", "type": "product", "role": "object"}
+          ],
+          "evidence": ["开始在 Google 搜索面向所有用户逐步铺开"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Hydrogen", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["Google DeepMind 发布 Gemini 4 Hydrogen"]},
+        {"source": "Google DeepMind", "target": "Google", "type": "subsidiary_of", "weight": 0.7, "evidence": ["Google DeepMind 发布 Gemini 4 Hydrogen"]},
+        {"source": "Gemini 4 Hydrogen", "target": "Gemini 3.8 Flash", "type": "outperforms", "weight": 0.8, "evidence": ["其速度约为 Gemini 3.8 Flash 的 2.5 倍"]},
+        {"source": "Gemini 4 Hydrogen", "target": "Gemini 4 Carbon", "type": "compared_with", "weight": 0.5, "evidence": ["Carbon 是精度端，Hydrogen 是延迟与成本端"]},
+        {"source": "Gemini 4 Hydrogen", "target": "AutomationBench", "type": "evaluated_on", "weight": 0.8, "evidence": ["它在 AutomationBench 上的表现接近 Claude Fable 5.2"]},
+        {"source": "Gemini 4 Hydrogen", "target": "Claude Fable 5.2", "type": "compared_with", "weight": 0.6, "evidence": ["它在 AutomationBench 上的表现接近 Claude Fable 5.2"]},
+        {"source": "Gemini 4 Hydrogen", "target": "Google 搜索", "type": "integrates", "weight": 0.8, "evidence": ["在 Google 搜索面向所有用户逐步铺开"]}
+      ],
+      "metrics": [
+        {"name": "相对 Gemini 3.8 Flash 的速度倍数", "value": "2.5 倍"},
+        {"name": "相对 Claude Fable 5.2 的单项任务成本", "value": "约五分之一"}
+      ],
+      "why_it_matters": "Gemini 家族开始按延迟/成本与精度显式分层——「便宜档接近前沿、但价格差数倍」成为常态，agent 类应用的推理成本选择被推到前台。"
+    },
+    {
+      "article_id": "2026-11-15-3",
+      "entities": [
+        {"name": "Gemini 4 Carbon", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Gemini 4 Carbon 以 85.4%（±3.0）拿下数月来首个非 OpenAI 的第一名"]},
+        {"name": "MathArena", "type": "benchmark", "aliases": [], "confidence": 0.95, "evidence": ["MathArena 榜单更新显示"]},
+        {"name": "Claude Fable 5.2", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Claude Fable 5.2 以 82.8% 居次"]},
+        {"name": "GPT-6.1 Sol", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["GPT-6.1 Sol 回落到 80.6%"]},
+        {"name": "Kimi K3.1 Pro", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["开源模型中最好的仍是月之暗面的 Kimi K3.1 Pro"]},
+        {"name": "Moonshot AI", "type": "company", "aliases": ["月之暗面"], "confidence": 0.85, "evidence": ["开源模型中最好的仍是月之暗面的 Kimi K3.1 Pro"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["拿下数月来首个非 OpenAI 的第一名"]}
+      ],
+      "events": [
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Carbon 以 85.4% 登顶 MathArena，成为数月来首个非 OpenAI 榜首",
+          "summary": "Gemini 4 Carbon 以 85.4%（±3.0）拿下第一名，Claude Fable 5.2 以 82.8% 居次，GPT-6.1 Sol 回落到 80.6%。",
+          "participants": [
+            {"name": "Gemini 4 Carbon", "type": "model", "role": "subject"},
+            {"name": "MathArena", "type": "benchmark", "role": "benchmark"},
+            {"name": "Claude Fable 5.2", "type": "model", "role": "competitor"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["Gemini 4 Carbon 以 85.4%（±3.0）拿下数月来首个非 OpenAI 的第一名"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Carbon", "target": "MathArena", "type": "evaluated_on", "weight": 0.9, "evidence": ["Gemini 4 Carbon 以 85.4%（±3.0）拿下数月来首个非 OpenAI 的第一名"]},
+        {"source": "Gemini 4 Carbon", "target": "Claude Fable 5.2", "type": "outperforms", "weight": 0.8, "evidence": ["Claude Fable 5.2 以 82.8% 居次"]},
+        {"source": "Gemini 4 Carbon", "target": "GPT-6.1 Sol", "type": "outperforms", "weight": 0.7, "evidence": ["GPT-6.1 Sol 回落到 80.6%"]},
+        {"source": "Gemini 4 Carbon", "target": "Claude Fable 5.2", "type": "compared_with", "weight": 0.6, "evidence": ["Fable 5.2 约 40.20 美元"]},
+        {"source": "Kimi K3.1 Pro", "target": "Moonshot AI", "type": "developed_by", "weight": 0.8, "evidence": ["开源模型中最好的仍是月之暗面的 Kimi K3.1 Pro"]}
+      ],
+      "metrics": [
+        {"name": "MathArena 得分", "value": "85.4%（±3.0）"},
+        {"name": "Claude Fable 5.2 MathArena 得分", "value": "82.8%"},
+        {"name": "GPT-6.1 Sol MathArena 得分", "value": "80.6%"},
+        {"name": "Carbon 单次测试成本", "value": "约 15.70 美元"},
+        {"name": "Sol 单次测试成本", "value": "约 1.07 美元"},
+        {"name": "Fable 5.2 单次测试成本", "value": "约 40.20 美元"},
+        {"name": "Kimi K3.1 Pro MathArena 得分", "value": "54.3%"},
+        {"name": "Carbon 榜首相对价格倍数", "value": "15 倍"},
+        {"name": "Carbon 分数优势", "value": "约 5 个百分点"}
+      ],
+      "why_it_matters": "「榜首」与「性价比」正在分叉——用 15 倍价钱换 5 个百分点，说明大多数生产部署应当按成本选模型，位次竞赛只属于少数场景。"
+    },
+    {
+      "article_id": "2026-11-15-4",
+      "entities": [
+        {"name": "AWS", "type": "company", "aliases": ["Amazon Web Services"], "confidence": 0.95, "evidence": ["AWS 为 Bedrock 推出新一代 AgentCore 运行时"]},
+        {"name": "Bedrock", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["AWS 为 Bedrock 推出新一代 AgentCore 运行时"]},
+        {"name": "AgentCore", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["AWS 为 Bedrock 推出新一代 AgentCore 运行时"]},
+        {"name": "Firecracker", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["用 Firecracker 微虚机快照来替代冷启动时的完整初始化"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "AWS 推出新一代 Bedrock AgentCore 运行时",
+          "summary": "核心变化是用 Firecracker 微虚机快照替代冷启动时的完整初始化，专门面向多步工具调用与自主循环的 agent 负载。",
+          "participants": [
+            {"name": "AWS", "type": "company", "role": "subject"},
+            {"name": "AgentCore", "type": "product", "role": "object"},
+            {"name": "Firecracker", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["AWS 为 Bedrock 推出新一代 AgentCore 运行时"]
+        },
+        {
+          "type": "infra",
+          "label": "AgentCore 用 Firecracker 快照把 agent 冷启动压到 2 秒以内",
+          "summary": "冷启动从约 30 秒降到 2 秒以内，把「函数即服务」的快速冷启动思路迁移到 agent 的会话与工具执行上。",
+          "participants": [
+            {"name": "AgentCore", "type": "product", "role": "subject"},
+            {"name": "Firecracker", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["用 Firecracker 微虚机快照来替代冷启动时的完整初始化"]
+        }
+      ],
+      "relations": [
+        {"source": "AgentCore", "target": "AWS", "type": "developed_by", "weight": 0.9, "evidence": ["AWS 为 Bedrock 推出新一代 AgentCore 运行时"]},
+        {"source": "AgentCore", "target": "Firecracker", "type": "uses", "weight": 0.9, "evidence": ["用 Firecracker 微虚机快照来替代冷启动时的完整初始化"]},
+        {"source": "AgentCore", "target": "Bedrock", "type": "part_of", "weight": 0.7, "evidence": ["AWS 为 Bedrock 推出新一代 AgentCore 运行时"]}
+      ],
+      "metrics": [
+        {"name": "AgentCore 冷启动时间（优化前）", "value": "约 30 秒"},
+        {"name": "AgentCore 冷启动时间（优化后）", "value": "2 秒以内"}
+      ],
+      "why_it_matters": "agent 冷启动第一次被当成基础设施性能指标来优化——把函数式快速冷启动迁到 agent 会话，说明前提是「agent 时长会按需频繁拉起」已成规模负载。"
+    },
+    {
+      "article_id": "2026-11-15-5",
+      "entities": [
+        {"name": "llama.cpp", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["llama.cpp 和 ggml 在 11 月 13 日同时发布 v1.0.0"]},
+        {"name": "ggml", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["llama.cpp 和 ggml 在 11 月 13 日同时发布 v1.0.0"]},
+        {"name": "Kimi K3.1 Pro", "type": "model", "aliases": ["Kimi-K3.1-Pro"], "confidence": 0.85, "evidence": ["llama.cpp 还新增了对 Kimi-K3.1-Pro、Ripple 与 xing4_0 等文本架构的支持"]},
+        {"name": "Ripple", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["llama.cpp 还新增了对 Kimi-K3.1-Pro、Ripple 与 xing4_0 等文本架构的支持"]},
+        {"name": "xing4_0", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["llama.cpp 还新增了对 Kimi-K3.1-Pro、Ripple 与 xing4_0 等文本架构的支持"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.8, "evidence": ["多个厂商（Nvidia、AMD、Qualcomm、Arm、IBM、Intel）为 CI 提供了硬件"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "llama.cpp 与 ggml 发布 1.0.0 并承诺稳定 C API",
+          "summary": "同日发布 v1.0.0，承诺今后对公共 C API 的任何破坏性改动都用主版本号提升来提示，下游不再担心静默 API 变动。",
+          "participants": [
+            {"name": "llama.cpp", "type": "tool", "role": "subject"},
+            {"name": "ggml", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["llama.cpp 和 ggml 在 11 月 13 日同时发布 v1.0.0"]
+        },
+        {
+          "type": "open_source",
+          "label": "Nvidia、AMD、Qualcomm 等厂商为开源推理栈提供 CI 硬件",
+          "summary": "多个厂商为 CI 提供硬件，为开源推理栈的可持续生态给出稳定基础。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "llama.cpp", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["多个厂商（Nvidia、AMD、Qualcomm、Arm、IBM、Intel）为 CI 提供了硬件"]
+        }
+      ],
+      "relations": [
+        {"source": "llama.cpp", "target": "ggml", "type": "built_on", "weight": 0.9, "evidence": ["llama.cpp 和 ggml 在 11 月 13 日同时发布 v1.0.0"]},
+        {"source": "llama.cpp", "target": "Kimi K3.1 Pro", "type": "integrates", "weight": 0.8, "evidence": ["llama.cpp 还新增了对 Kimi-K3.1-Pro、Ripple 与 xing4_0 等文本架构的支持"]},
+        {"source": "llama.cpp", "target": "Ripple", "type": "integrates", "weight": 0.7, "evidence": ["llama.cpp 还新增了对 Kimi-K3.1-Pro、Ripple 与 xing4_0 等文本架构的支持"]},
+        {"source": "llama.cpp", "target": "xing4_0", "type": "integrates", "weight": 0.7, "evidence": ["llama.cpp 还新增了对 Kimi-K3.1-Pro、Ripple 与 xing4_0 等文本架构的支持"]},
+        {"source": "NVIDIA", "target": "llama.cpp", "type": "supplies", "weight": 0.6, "evidence": ["多个厂商（Nvidia、AMD、Qualcomm、Arm、IBM、Intel）为 CI 提供了硬件"]}
+      ],
+      "metrics": [
+        {"name": "llama.cpp 与 ggml 发布版本", "value": "1.0.0"},
+        {"name": "发布日期", "value": "11 月 13 日"}
+      ],
+      "why_it_matters": "本地 AI 生态的核心依赖从快速迭代切换到稳定的兼容性契约，C API 冻结意味着下游工具链可以开始长期依赖而不用盯每一次变更。"
+    },
+    {
+      "article_id": "2026-11-15-6",
+      "entities": [
+        {"name": "Salesforce", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Salesforce 以 Apache 2.0 协议发布开权重语音转录模型 SOV-Transcribe-1"]},
+        {"name": "SOV-Transcribe-1", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Salesforce 以 Apache 2.0 协议发布开权重语音转录模型 SOV-Transcribe-1"]},
+        {"name": "Artificial Analysis", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 Artificial Analysis 的转录基准上领先开源权重同行"]},
+        {"name": "多语言语音识别", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["它更强调中文等多语言场景的落地"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Salesforce 以 Apache 2.0 开源非流式语音转录模型 SOV-Transcribe-1",
+          "summary": "面向非流式（non-streaming）语音识别，Apache 2.0 无商用摩擦，企业可直接接入会议纪要、客服录音转写等流程。",
+          "participants": [
+            {"name": "Salesforce", "type": "company", "role": "subject"},
+            {"name": "SOV-Transcribe-1", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Salesforce 以 Apache 2.0 协议发布开权重语音转录模型 SOV-Transcribe-1"]
+        },
+        {
+          "type": "benchmark",
+          "label": "SOV-Transcribe-1 在 Artificial Analysis 转录基准上领先开源权重模型",
+          "summary": "官方称该模型在 Artificial Analysis 的转录基准上领先开源权重同行，具体参数量与训练细节未完整披露。",
+          "participants": [
+            {"name": "SOV-Transcribe-1", "type": "model", "role": "subject"},
+            {"name": "Artificial Analysis", "type": "organization", "role": "benchmark"}
+          ],
+          "evidence": ["在 Artificial Analysis 的转录基准上领先开源权重同行"]
+        }
+      ],
+      "relations": [
+        {"source": "SOV-Transcribe-1", "target": "Salesforce", "type": "developed_by", "weight": 0.9, "evidence": ["Salesforce 以 Apache 2.0 协议发布开权重语音转录模型 SOV-Transcribe-1"]},
+        {"source": "SOV-Transcribe-1", "target": "Artificial Analysis", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 Artificial Analysis 的转录基准上领先开源权重同行"]},
+        {"source": "SOV-Transcribe-1", "target": "多语言语音识别", "type": "targets", "weight": 0.6, "evidence": ["它更强调中文等多语言场景的落地"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "大厂把语音基础能力开源当作竞赛手段——既扩大生态又抬高指标门槛，非流式转录的多语言选项正在被重新定义。"
+    },
+    {
+      "article_id": "2026-11-15-7",
+      "entities": [
+        {"name": "Memorilla", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["斯坦福研究人员发布 Memorilla"]},
+        {"name": "Stanford", "type": "organization", "aliases": ["斯坦福"], "confidence": 0.95, "evidence": ["斯坦福研究人员发布 Memorilla"]},
+        {"name": "Qwen3-8B", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["再喂给冻结的 Qwen3-8B 解码器"]},
+        {"name": "FactKG", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 FactKG 基准上它达到 84.33%"]},
+        {"name": "Hugging Face", "type": "organization", "aliases": ["HuggingFace", "HF"], "confidence": 0.9, "evidence": ["模型权重已发布到 Hugging Face"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "斯坦福发布潜语义记忆模块 Memorilla，用 16 个记忆 token 压缩整份文档集",
+          "summary": "训练约 194M 参数的可学习模块把任意大小文档集压缩成固定 16 个记忆 token 再喂给冻结的 Qwen3-8B，编码器与解码器都不改。",
+          "participants": [
+            {"name": "Stanford", "type": "organization", "role": "subject"},
+            {"name": "Memorilla", "type": "model", "role": "object"},
+            {"name": "Qwen3-8B", "type": "model", "role": "object"}
+          ],
+          "evidence": ["把整份文档集压成 16 个记忆 token"]
+        },
+        {
+          "type": "research",
+          "label": "Memorilla 在 FactKG 达到 84.33%，验证压缩记忆路线",
+          "summary": "在 FactKG 基准上达到 84.33%，用大约只有全上下文 108 分之一的文档 token，验证压缩记忆可逼近甚至超过全上下文。",
+          "participants": [
+            {"name": "Memorilla", "type": "model", "role": "subject"},
+            {"name": "FactKG", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 FactKG 基准上它达到 84.33%"]
+        }
+      ],
+      "relations": [
+        {"source": "Memorilla", "target": "Stanford", "type": "developed_by", "weight": 0.9, "evidence": ["斯坦福研究人员发布 Memorilla"]},
+        {"source": "Memorilla", "target": "Qwen3-8B", "type": "built_on", "weight": 0.8, "evidence": ["再喂给冻结的 Qwen3-8B 解码器"]},
+        {"source": "Memorilla", "target": "FactKG", "type": "evaluated_on", "weight": 0.9, "evidence": ["在 FactKG 基准上它达到 84.33%"]},
+        {"source": "Memorilla", "target": "Hugging Face", "type": "released_by", "weight": 0.6, "evidence": ["模型权重已发布到 Hugging Face"]}
+      ],
+      "metrics": [
+        {"name": "记忆模块参数量", "value": "约 194M"},
+        {"name": "记忆 token 数量", "value": "固定 16 个"},
+        {"name": "FactKG 得分", "value": "84.33%"},
+        {"name": "相对全上下文的文档 token 用量", "value": "108 分之一"}
+      ],
+      "why_it_matters": "「压缩记忆」与「无限上下文」正面竞争——在不重训基础模型的前提下把长文档压成小表示即逼近全上下文，对存储与推理成本敏感的部署更具实操意义。"
+    },
+    {
+      "article_id": "2026-11-15-8",
+      "entities": [
+        {"name": "多智能体安全", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["AI 安全的重心正从单个模型不犯错转向多个 agent 协同时不集体出错"]},
+        {"name": "agent 群体的安全", "type": "paper", "aliases": [], "confidence": 0.85, "evidence": ["论文认为，安全训练通常假设面对的是单个上下文里的单个模型"]},
+        {"name": "Törnberg", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["研究者 Törnberg 提出"]},
+        {"name": "安全训练", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["单个模型的安全训练无法阻挡多个自主 agent 协作时涌现的坏结果"]},
+        {"name": "agent 身份治理", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["这与近期企业里“agent 身份治理”“agent 行为合同”等方向呼应"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "研究者提出 agent 群体的安全不能只靠单个模型的安全训练",
+          "summary": "论文主张单点防护不足以阻止系统层面的失败，agent 群体需要明确谁能调用谁的接口、何时人工介入、失败如何归因。",
+          "participants": [
+            {"name": "agent 群体的安全", "type": "paper", "role": "subject"},
+            {"name": "安全训练", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["单个模型的安全训练无法阻挡多个自主 agent 协作时涌现的坏结果"]
+        }
+      ],
+      "relations": [
+        {"source": "agent 群体的安全", "target": "Törnberg", "type": "authored_by", "weight": 0.8, "evidence": ["研究者 Törnberg 提出"]},
+        {"source": "多智能体安全", "target": "安全训练", "type": "targets", "weight": 0.6, "evidence": ["安全训练通常假设面对的是单个上下文里的单个模型"]},
+        {"source": "多智能体安全", "target": "agent 身份治理", "type": "targets", "weight": 0.6, "evidence": ["这与近期企业里“agent 身份治理”“agent 行为合同”等方向呼应"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "AI 安全讨论正从「模型内部对齐」延展到「分布式系统治理」——agent 群体层会不会集体失控，开始与单模型是否安全同样重要。"
+    },
+    {
+      "article_id": "2026-11-15-9",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英伟达代表向伊利诺伊州国会议员 Bill Foster 确认"]},
+        {"name": "Bill Foster", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["英伟达代表向伊利诺伊州国会议员 Bill Foster 确认"]},
+        {"name": "芯片安全法案", "type": "policy", "aliases": [], "confidence": 0.9, "evidence": ["《芯片安全法案》中的反走私追踪措施在技术层面可以实施"]},
+        {"name": "Blackwell", "type": "hardware", "aliases": ["Grace Blackwell"], "confidence": 0.9, "evidence": ["外界追问中国实验室如何在出口管制下取得 Blackwell 算力"]},
+        {"name": "Megaspeed", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["该表态出现在 Megaspeed 走私案发酵"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "英伟达向国会确认芯片追踪技术上可行",
+          "summary": "英伟达代表向 Bill Foster 确认《芯片安全法案》中的反走私追踪措施技术层面可实施，与行业组织此前声称「追踪可能不可行」的立场相矛盾。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "芯片安全法案", "type": "policy", "role": "regulator"},
+            {"name": "Bill Foster", "type": "person", "role": "object"}
+          ],
+          "evidence": ["英伟达代表向伊利诺伊州国会议员 Bill Foster 确认，《芯片安全法案》中的反走私追踪措施在技术层面可以实施"]
+        },
+        {
+          "type": "security",
+          "label": "Megaspeed 走私案发酵引发对 Blackwell 取得路径的追问",
+          "summary": "外界追问中国实验室如何在出口管制下取得 Blackwell 算力，问题关键从「能不能拦截」转向「是否愿意承担合规代价」。",
+          "participants": [
+            {"name": "Megaspeed", "type": "company", "role": "subject"},
+            {"name": "Blackwell", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["该表态出现在 Megaspeed 走私案发酵、外界追问中国实验室如何在出口管制下取得 Blackwell 算力之际"]
+        }
+      ],
+      "relations": [
+        {"source": "芯片安全法案", "target": "NVIDIA", "type": "regulates", "weight": 0.8, "evidence": ["《芯片安全法案》中的反走私追踪措施在技术层面可以实施"]},
+        {"source": "NVIDIA", "target": "芯片安全法案", "type": "complies_with", "weight": 0.5, "evidence": ["《芯片安全法案》中的反走私追踪措施在技术层面可以实施"]},
+        {"source": "Blackwell", "target": "NVIDIA", "type": "developed_by", "weight": 0.7, "evidence": ["外界追问中国实验室如何在出口管制下取得 Blackwell 算力"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "行业公开立场与私下口径的分歧表明：大规模芯片追踪的障碍不是工程可行性，而是企业愿不愿意为合规工程付成本——治理与博弈成为出口管制的真正战场。"
+    },
+    {
+      "article_id": "2026-11-15-10",
+      "entities": [
+        {"name": "美联储", "type": "organization", "aliases": ["Federal Reserve"], "confidence": 0.95, "evidence": ["美联储发布的金融稳定调查显示"]},
+        {"name": "金融稳定调查", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["美联储发布的金融稳定调查显示"]},
+        {"name": "AI 金融稳定风险", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["把 AI 列为最受关注的金融稳定风险"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "美联储调查显示 AI 连续成为最大金融稳定风险",
+          "summary": "87% 的受访联系人把 AI 列为最受关注的金融稳定风险，高于春季调查的 50%，金融机构对 AI 相关的集中度、估值泡沫与故障传导担忧显著升温。",
+          "participants": [
+            {"name": "美联储", "type": "organization", "role": "subject"},
+            {"name": "AI 金融稳定风险", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["87% 的受访联系人点名它"]
+        }
+      ],
+      "relations": [
+        {"source": "金融稳定调查", "target": "美联储", "type": "released_by", "weight": 0.85, "evidence": ["美联储发布的金融稳定调查显示"]},
+        {"source": "美联储", "target": "AI 金融稳定风险", "type": "targets", "weight": 0.6, "evidence": ["把 AI 列为最受关注的金融稳定风险"]}
+      ],
+      "metrics": [
+        {"name": "把 AI 列为风险的联系人比例", "value": "87%"},
+        {"name": "春季调查比例", "value": "50%"}
+      ],
+      "why_it_matters": "监管把 AI 列为系统性风险会直接抬高 AI 基建的融资与合规成本——当资本充足与压力测试预期跟进，云厂商扩张与硬件估值的节奏都可能被放慢。"
+    },
+    {
+      "article_id": "2026-11-15-11",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 计划 11 月 19 日以 ANT 在纳斯达克挂牌"]},
+        {"name": "Dario Amodei", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["CEO Dario Amodei 直言算力是公司面临的最深商业困境"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.9, "evidence": ["Nvidia 在其中出资约 100 亿美元"]},
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.9, "evidence": ["Anthropic 用一份巨额采购单绑定了 Amazon（10 年 1100 亿美元）"]},
+        {"name": "Claude", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["问题是 Claude 的优势能否从“写代码最强”延伸到更宽的商业化"]},
+        {"name": "Claude Sheets", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["发布了 Claude Sheets、Whiteboards、Data 与 Meet 等生产力工具"]},
+        {"name": "Claude Whiteboards", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["发布了 Claude Sheets、Whiteboards、Data 与 Meet 等生产力工具"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌", "Google Inc."], "confidence": 0.9, "evidence": ["把目标明确指向 Google Workspace 与 Office 的领地"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.9, "evidence": ["把目标明确指向 Google Workspace 与 Office 的领地"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 计划以 ANT 在纳斯达克 IPO，估值 1.3–1.4 万亿美元",
+          "summary": "11 月 19 日在纳斯达克挂牌，估值约 1.3–1.4 万亿美元，发行簿记超募约 6 倍，并行私募约 260 亿美元，Nvidia 出资约 100 亿美元。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["Anthropic 计划 11 月 19 日以 ANT 在纳斯达克挂牌，估值在约 1.3–1.4 万亿美元区间"]
+        },
+        {
+          "type": "trend",
+          "label": "Amodei 坦言算力是 Anthropic 最深的商业困境",
+          "summary": "产能必须比实际需求提前一到两年采购，届时收入是否足以覆盖成本尚无保证；既定义务总额接近 9010 亿美元，其中约 710 亿美元 2027 年 9 月前到期。",
+          "participants": [
+            {"name": "Dario Amodei", "type": "person", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["CEO Dario Amodei 直言算力是公司面临的最深商业困境"]
+        },
+        {
+          "type": "launch",
+          "label": "Anthropic 上市前连发 Claude Sheets、Whiteboards、Data 与 Meet 生产力工具",
+          "summary": "密集发布 Claude Sheets、Whiteboards、Data 与 Meet 等生产力工具，把目标明确指向 Google Workspace 与 Office 的领地。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Sheets", "type": "product", "role": "object"},
+            {"name": "Claude Whiteboards", "type": "product", "role": "object"}
+          ],
+          "evidence": ["发布了 Claude Sheets、Whiteboards、Data 与 Meet 等生产力工具"]
+        }
+      ],
+      "relations": [
+        {"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.95, "evidence": ["CEO Dario Amodei 直言算力是公司面临的最深商业困境"]},
+        {"source": "NVIDIA", "target": "Anthropic", "type": "invests_in", "weight": 0.9, "evidence": ["Nvidia 在其中出资约 100 亿美元"]},
+        {"source": "Amazon", "target": "Anthropic", "type": "supplies", "weight": 0.8, "evidence": ["Anthropic 用一份巨额采购单绑定了 Amazon（10 年 1100 亿美元）"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["问题是 Claude 的优势能否从“写代码最强”延伸到更宽的商业化"]},
+        {"source": "Claude Sheets", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["发布了 Claude Sheets、Whiteboards、Data 与 Meet 等生产力工具"]},
+        {"source": "Claude Whiteboards", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["发布了 Claude Sheets、Whiteboards、Data 与 Meet 等生产力工具"]},
+        {"source": "Anthropic", "target": "Google", "type": "competes_with", "weight": 0.7, "evidence": ["把目标明确指向 Google Workspace 与 Office 的领地"]},
+        {"source": "Anthropic", "target": "Microsoft", "type": "competes_with", "weight": 0.7, "evidence": ["把目标明确指向 Google Workspace 与 Office 的领地"]}
+      ],
+      "metrics": [
+        {"name": "IPO 估值区间", "value": "约 1.3–1.4 万亿美元"},
+        {"name": "发行簿记超募倍数", "value": "约 6 倍"},
+        {"name": "并行私募规模", "value": "约 260 亿美元"},
+        {"name": "Nvidia 出资额", "value": "约 100 亿美元"},
+        {"name": "既定算力义务总额", "value": "接近 9010 亿美元"},
+        {"name": "2027 年 9 月前到期的义务", "value": "约 710 亿美元"},
+        {"name": "Amazon 采购合约规模与期限", "value": "10 年 1100 亿美元"}
+      ],
+      "why_it_matters": "高增长收入与万亿级远期算力义务并存，Anthropic 的成功与否会直接传导到云厂商与芯片链——这家公司把「确定性融资」与「明年高度不确定」的两难一并摆上了桌面。"
+    },
+    {
+      "article_id": "2026-11-15-12",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.95, "evidence": ["意大利数据保护局（Garante）对 Meta 开出 8.05 亿欧元罚单"]},
+        {"name": "Garante", "type": "organization", "aliases": ["意大利数据保护局"], "confidence": 0.9, "evidence": ["意大利数据保护局（Garante）对 Meta 开出 8.05 亿欧元罚单"]},
+        {"name": "欧盟", "type": "organization", "aliases": ["EU"], "confidence": 0.85, "evidence": ["这是欧盟隐私执法中针对 Meta 的大额处罚之一"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "意大利监管因访问安卓照片与视频对 Meta 开出 8.05 亿欧元罚单",
+          "summary": "意大利数据保护局（Garante）因 Meta 访问安卓用户照片与视频对其处以 8.05 亿欧元罚款，是欧盟隐私执法中针对 Meta 的大额处罚之一。",
+          "participants": [
+            {"name": "Garante", "type": "organization", "role": "regulator"},
+            {"name": "Meta", "type": "company", "role": "object"}
+          ],
+          "evidence": ["意大利数据保护局（Garante）对 Meta 开出 8.05 亿欧元罚单"]
+        }
+      ],
+      "relations": [
+        {"source": "Garante", "target": "Meta", "type": "regulates", "weight": 0.95, "evidence": ["意大利数据保护局（Garante）对 Meta 开出 8.05 亿欧元罚单"]},
+        {"source": "Meta", "target": "欧盟", "type": "complies_with", "weight": 0.5, "evidence": ["这强化了“先征得同意、且最小化采集”在欧盟的实践优先级"]}
+      ],
+      "metrics": [
+        {"name": "对 Meta 的罚款金额", "value": "8.05 亿欧元"}
+      ],
+      "why_it_matters": "把终端设备默认纳入数据处理会被处以亿级欧元罚款——欧洲正在用执行成本重新界定「AI 厂商能用用户数据到哪一步」，数据驱动型公司得为此重估合规账。"
+    },
+    {
+      "article_id": "2026-11-15-13",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 发布了 Claude Fable 5.2"]},
+        {"name": "Claude Fable 5.2", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 发布了 Claude Fable 5.2"]},
+        {"name": "代码渲染", "type": "topic", "aliases": ["写代码画图"], "confidence": 0.85, "evidence": ["其图像能力走的是“用代码画图”路线"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["高于 GPT-6 Astra 的 29.8%"]},
+        {"name": "Mythos 5.2", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["被分化为 Claude Fable 与 Mythos 5.2 两个档位"]},
+        {"name": "Claude Fable", "type": "product", "aliases": [], "confidence": 0.8, "evidence": ["被分化为 Claude Fable 与 Mythos 5.2 两个档位"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 发布用代码画图的 Claude Fable 5.2",
+          "summary": "模型不调用独立图像生成器，而是编写代码引导模拟画笔逐笔绘制，以约 70 万笔触画出停车场场景并可覆盖修改。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Fable 5.2", "type": "model", "role": "object"},
+            {"name": "代码渲染", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Anthropic 发布了 Claude Fable 5.2"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Claude Fable 5.2 在机器人评测中以 64.9% 领先 GPT-6 Astra",
+          "summary": "在机器人评测中以 64.9% 领先 GPT-6 Astra 的 29.8%，并按精度需求分化出 Claude Fable 与 Mythos 5.2 两个档位。",
+          "participants": [
+            {"name": "Claude Fable 5.2", "type": "model", "role": "subject"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["在机器人评测中称 Fable 5.2 获得 64.9%，高于 GPT-6 Astra 的 29.8%"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude Fable 5.2", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 发布了 Claude Fable 5.2"]},
+        {"source": "Claude Fable 5.2", "target": "代码渲染", "type": "uses", "weight": 0.8, "evidence": ["其图像能力走的是“用代码画图”路线"]},
+        {"source": "Claude Fable 5.2", "target": "GPT-6 Astra", "type": "outperforms", "weight": 0.8, "evidence": ["高于 GPT-6 Astra 的 29.8%"]},
+        {"source": "Claude Fable 5.2", "target": "Mythos 5.2", "type": "compared_with", "weight": 0.5, "evidence": ["被分化为 Claude Fable 与 Mythos 5.2 两个档位"]},
+        {"source": "Claude Fable 5.2", "target": "Claude Fable", "type": "part_of", "weight": 0.5, "evidence": ["被分化为 Claude Fable 与 Mythos 5.2 两个档位"]}
+      ],
+      "metrics": [
+        {"name": "演示画作用笔触数", "value": "约 70 万笔触"},
+        {"name": "机器人评测得分", "value": "64.9%"},
+        {"name": "GPT-6 Astra 机器人评测得分", "value": "29.8%"}
+      ],
+      "why_it_matters": "图像生成路线从「直接出图」转向「写代码控渲染」——输出可复现、可微调、可嵌进既有渲染管线，创作者工具的控制门槛被明显降低。"
+    },
+    {
+      "article_id": "2026-11-15-14",
+      "entities": [
+        {"name": "美团", "type": "company", "aliases": ["Meituan"], "confidence": 0.95, "evidence": ["美团发布 LongCat 2.5"]},
+        {"name": "LongCat 2.5", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["美团发布 LongCat 2.5"]},
+        {"name": "Claude Opus 5", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["对照同一测试中 Claude Opus 5 的 89.1 分"]},
+        {"name": "国产 AI 芯片", "type": "topic", "aliases": ["国产芯片"], "confidence": 0.9, "evidence": ["一个被描述为“基于国产芯片训练”的 AI 模型"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "美团发布 LongCat 2.5",
+          "summary": "模型覆盖美团自身的电商、即时配送与客服等场景，一项评测得分为 88.4。",
+          "participants": [
+            {"name": "美团", "type": "company", "role": "subject"},
+            {"name": "LongCat 2.5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["美团发布 LongCat 2.5"]
+        },
+        {
+          "type": "trend",
+          "label": "LongCat 2.5 宣称在国产 AI 芯片上完成训练",
+          "summary": "若确如所述，意味着在与国产 AI 芯片配合的框架、算子与集群调度上做了工程适配，回应了出口管制背景下寻求算力自主的叙事。",
+          "participants": [
+            {"name": "LongCat 2.5", "type": "model", "role": "subject"},
+            {"name": "国产 AI 芯片", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["一个被描述为“基于国产芯片训练”的 AI 模型"]
+        }
+      ],
+      "relations": [
+        {"source": "LongCat 2.5", "target": "美团", "type": "developed_by", "weight": 0.9, "evidence": ["美团发布 LongCat 2.5"]},
+        {"source": "LongCat 2.5", "target": "Claude Opus 5", "type": "compared_with", "weight": 0.8, "evidence": ["对照同一测试中 Claude Opus 5 的 89.1 分"]},
+        {"source": "LongCat 2.5", "target": "国产 AI 芯片", "type": "built_on", "weight": 0.8, "evidence": ["一个被描述为“基于国产芯片训练”的 AI 模型"]}
+      ],
+      "metrics": [
+        {"name": "LongCat 2.5 评测得分", "value": "88.4"},
+        {"name": "Claude Opus 5 对照得分", "value": "89.1"}
+      ],
+      "why_it_matters": "大厂把「国产芯片训练」作为宣传点推自有模型，说明算力自主从供应链选择题变成营销与叙事选项——但单点分数接近前沿并不等于端到端能力对齐。"
+    },
+    {
+      "article_id": "2026-11-15-15",
+      "entities": [
+        {"name": "XRP Ledger", "type": "product", "aliases": ["XRP 账本"], "confidence": 0.9, "evidence": ["XRP Ledger 上的 AI agent 已产生约 1170 万笔小额支付"]},
+        {"name": "agent 支付", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["agent 自主为单个任务付费"]},
+        {"name": "云端钱包", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["与云端钱包方案平行的另一种探索"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "XRP Ledger 上 AI agent 已产生 1170 万笔小额支付",
+          "summary": "单笔从 1 美元到 50 美分左右用于逐任务计价，agent 自主为单个任务付费，是 agent 经济激励层在链上基础设施上的一个具体迹象。",
+          "participants": [
+            {"name": "agent 支付", "type": "topic", "role": "subject"},
+            {"name": "XRP Ledger", "type": "product", "role": "object"}
+          ],
+          "evidence": ["XRP Ledger 上的 AI agent 已产生约 1170 万笔小额支付"]
+        },
+        {
+          "type": "trend",
+          "label": "预计明年 agent 支付笔数超过人类支付",
+          "summary": "有受访者预计明年 agent 的支付笔数将超过人类支付，agent 支付通道的竞争将从面向人转向面向机器。",
+          "participants": [
+            {"name": "agent 支付", "type": "topic", "role": "subject"}
+          ],
+          "evidence": ["预计明年 agent 的支付笔数将超过人类支付"]
+        }
+      ],
+      "relations": [
+        {"source": "agent 支付", "target": "XRP Ledger", "type": "built_on", "weight": 0.8, "evidence": ["XRP Ledger 上的 AI agent 已产生约 1170 万笔小额支付"]},
+        {"source": "agent 支付", "target": "云端钱包", "type": "compared_with", "weight": 0.6, "evidence": ["与云端钱包方案平行的另一种探索"]}
+      ],
+      "metrics": [
+        {"name": "XRP Ledger 上的 agent 小额支付笔数", "value": "约 1170 万笔"},
+        {"name": "单笔支付区间", "value": "1 美元到 50 美分"}
+      ],
+      "why_it_matters": "当 agent 拥有可自主发起的小额支付能力，结算基础设施的竞争就从「面向人」转向「面向机器」，链上逐任务计价成为与云端钱包平行的 agent 商务路径。"
+    },
+    {
+      "article_id": "2026-11-15-16",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.95, "evidence": ["微软 365 从 11 月 12 日午间到次日跨越 70 多国中断"]},
+        {"name": "Microsoft 365", "type": "product", "aliases": ["微软 365"], "confidence": 0.95, "evidence": ["微软 365 从 11 月 12 日午间到次日跨越 70 多国中断"]},
+        {"name": "Copilot", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["影响 Outlook、Teams 与 Copilot"]},
+        {"name": "Outlook", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["影响 Outlook、Teams 与 Copilot"]},
+        {"name": "Teams", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["影响 Outlook、Teams 与 Copilot"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI 也提醒用户新的连接可能失败"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["外溢到 OpenAI、Anthropic 的 Microsoft 365 连接器"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "微软 365 全球中断波及 70 多国",
+          "summary": "从 11 月 12 日午间到次日跨越 70 多国中断，影响 Outlook、Teams 与 Copilot，并外溢到 OpenAI、Anthropic 的 Microsoft 365 连接器。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Microsoft 365", "type": "product", "role": "object"},
+            {"name": "Copilot", "type": "product", "role": "object"}
+          ],
+          "evidence": ["微软 365 从 11 月 12 日午间到次日跨越 70 多国中断"]
+        },
+        {
+          "type": "infra",
+          "label": "微软把故障归因于网络容量升级并排除攻击与 AI agent",
+          "summary": "明确排除网络攻击与 AI agent 因素，OpenAI 也提醒用户新的连接可能失败，即使没有恶意，底层小调整也能放大为系统性中断。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Microsoft 365", "type": "product", "role": "object"}
+          ],
+          "evidence": ["微软归因于此前的一次网络容量升级，明确排除网络攻击与 AI agent 因素"]
+        }
+      ],
+      "relations": [
+        {"source": "Microsoft 365", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["微软 365 从 11 月 12 日午间到次日跨越 70 多国中断"]},
+        {"source": "Copilot", "target": "Microsoft 365", "type": "part_of", "weight": 0.8, "evidence": ["影响 Outlook、Teams 与 Copilot"]},
+        {"source": "Outlook", "target": "Microsoft 365", "type": "part_of", "weight": 0.6, "evidence": ["影响 Outlook、Teams 与 Copilot"]},
+        {"source": "Teams", "target": "Microsoft 365", "type": "part_of", "weight": 0.6, "evidence": ["影响 Outlook、Teams 与 Copilot"]},
+        {"source": "OpenAI", "target": "Microsoft 365", "type": "uses", "weight": 0.6, "evidence": ["外溢到 OpenAI、Anthropic 的 Microsoft 365 连接器"]},
+        {"source": "Anthropic", "target": "Microsoft 365", "type": "uses", "weight": 0.6, "evidence": ["外溢到 OpenAI、Anthropic 的 Microsoft 365 连接器"]}
+      ],
+      "metrics": [
+        {"name": "受影响国家数", "value": "70 多国"}
+      ],
+      "why_it_matters": "agent 与 Copilot 把越来越多关键流程搬进云生产力层，底层依赖一中断影响半径就同步放大——可靠性与回滚机制上升为与模型能力同等重要的基础设施维度。"
+    }
+  ]
+}
