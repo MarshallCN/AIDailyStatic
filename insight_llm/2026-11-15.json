@@ -1,0 +1,421 @@
+{
+  "date": "2026-11-15",
+  "overview": {
+    "headline": "Anthropic 以「史上 IPO + 天文算力义务」同时登顶：ANT 超额认购 6 倍、$901B 既定义务 2027 前 $71B 到期，Amodei 上市前亲口承认算力是「最深商业困境」、一边铺 Sheets/Whiteboards/Data/Meet 抢办公入口；同周英伟达黄仁勋辞任 CEO（CFO Colette Kress 临时接棒）、法证检出一枚「6 款中国模型用禁售 Blackwell 训练」的指纹、英伟达亲口确认芯片追踪「技术上可行」——出口管制的边界从「你买不买得到」第一次被拉回「你愿不愿意为合规付出工程代价」；agent 商务在 72 小时内集体拿支付开刀（OpenAI Wallet / Gemini 连银行卡 / Sierra Poppy 协议 / XRP 1170 万笔小额支付），「面向机器的结算层」成为各家必争的下一块",
+    "summary": "过去 7 天（11/09–11/15）是「资本定价」与「硬约束落地」在同一周互相咬合的结构性一周。最核心的是 Anthropic IPO：定价 $70–78、8.25 亿股、11/19 以 ANT 挂牌，完全稀释市值最高约 $1.4T，发行簿记超募约 6 倍并伴随约 $260 亿并行私募（Nvidia 出资约 $100 亿、TSMC 董事会批准最高 $10 亿认购 Anthropic/OpenAI）；但同期披露的账本把「高增长」与「天文义务」并排摆在台面上——晚 10 月年化收入约 $810 亿，既定义务总额却接近 $9010 亿、其中约 $710 亿在 2027 年 9 月前到期，Amodei 在与 JPMorgan 的 Dimon 对谈中直言算力是公司「最深的商业困境」：产能必须比需求提前一到两年买，届时收入能否覆盖成本尚无保证。这也是「确定性叙事融资 vs 承认前路难料」矛盾的浓缩：Anthropic 一边用 Shopvite 式的确定性叙事路演，一边在上市前一周密集发布 Claude Sheets/Whiteboards/Data/Meet 把产品端对准 Google Workspace 与 Office，并与 Amazon 签下 10 年 $1100 亿绑定。第二根主线是英伟达的「创始人危机」与出口管制的再校准：11/12 WSJ/NYT 报道董事会酝酿罢免黄仁勋（婚外情 + 疑似涉华间谍），盘后市值一度蒸发 $6000 亿，11/13 黄仁勋正式辞任 CEO、CFO Colette Kress 出任临时 CEO、继任者遴选启动（Arm 的 Rene Haas 被点名）、董事长由 Harvey C. Jones 出任——AI 交易对「单一传奇掌门人 + 算力领头羊」的依赖被真实地暴露；同周前 OpenAI 工程师 Will DePue 发布法证分析称在 DeepSeek-V4-Pro、Kimi K3、MiniMax-M3 等 6 款中国模型权重中检出受管制 Blackwell 的初始化指纹，英伟达代表则向国会确认芯片反走私追踪「技术上可实施」（与行业组织公开称「可能不可行」的立场相悖）——出口管制问题第一次从「物理上能不能拦」转向「是否愿意承担合规的工程与审查代价」，且与 Anthropic 区域政策 11/12 生效禁止中国大陆公司使用 Claude、投行因 ITAR 拒收中国与香港投资者 IPO 买单相呼应，构成一条「美国收紧 + 对华脱钩落地为产品/资本两个层面」的完整链。第三根主线是 agent 商务在 72 小时内集体到达支付层：11/13 OpenAI 发布 ChatGPT Wallet（+ Amex 首个智能体商务集成），11/14 Google 在全美向 Gemini 用户开放连接 Google Wallet 并通过 Plaid 关联银行账户（只读财务智能）、Sierra 释出 Personal Agent Protocol（Poppy）1.0（Shopify 全量开启、Meta 的 Muse 优先识别），11/15 报道 XRP Ledger 上 AI agent 已完成 1170 万笔小额支付（受访者预计明年 agent 支付笔数超过人类）——「谁掌握 agent 的结算与身份，谁就掌握 agent 经济」成为共识，三家走法（OpenAI 代付型 Wallet / Google 只读型 Plaid / Sierra 协议型 Poppy）分处云端钱包、银行只读与开放协议三条轨道。同期还夹着开源模型洪流（llama.cpp/ggml 双双 1.0.0 承诺稳定 C API、Kimi K3.1 Pro、Reflection Beam 501B、Runway Praxis-1、Thinking Machines Inkling 2 Small 594B、美团 LongCat 2.5 国产芯片版、Salesforce SOV-Transcribe-1）、前沿模型价格/效率分叉的量化（Gemini 4 Carbon 以 85.4% 登顶 MathArena 但单次 $15.7、是 Sol 的 15 倍、却只比第二名多约 5 个百分点；Hydrogen 廉价快档进 Google 搜索；Claude Fable 5.2 降价 20%）、agent 基础设施的工业化（AWS AgentCore 用 Firecracker 把冷启动压到 2 秒内、LangChain $300M C 轮 @$30 亿估值押注 agent 可观测性、Nvidia 把 OpenShell 捐给 CNCF），以及美联储调查 87% 将 AI 列为最大金融稳定风险、意大利对 Meta 开出 $805M 罚单等监管与安全信号的密集化。",
+    "key_observations": [
+      "Anthropic 的 IPO 是「确定性叙事与天文义务」的正面冲撞：ANT 超募 6 倍 + 约 $260 亿私募（Nvidia $100 亿、TSMC 最高 $10 亿），估值最高约 $1.4T；但既定义务总额接近 $9010 亿、$710 亿在 2027 年 9 月前到期，Amodei 亲口承认算力是「最深商业困境」——市场第一次为一个「收入高速增长但算力义务同步天文数字」的公司同时定价它的叙事与它的资产负债表。",
+      "英伟达的创始人危机把 AI 交易的单点依赖暴露给市场：黄仁勋辞任 CEO、CFO Colette Kress 临时接棒、Arm 的 Rene Haas 被点名继任，11/12 消息当天盘后市值一度蒸发 $6000 亿——「传奇 CEO + 算力叙事」的绑定强度被真实量化，叙事风险成为 AI 板块定价的一部分。",
+      "出口管制从「能不能买到」转向「愿不愿意为合规付出代价」且同时落在产品与资本两头：法证检 6 款中国模型带 Blackwell 指纹、英伟达确认芯片追踪技术上可行、Anthropic 11/12 起禁止中国大陆公司用 Claude、投行因 ITAR 拒收中国/香港 IPO 买单——对华脱钩从芯片蔓延到模型访问与一级市场资金。",
+      "agent 商务在 72 小时内到达支付层并出现三种走法：OpenAI 的 ChatGPT Wallet（代付 + Amex）、Google 的 Wallet/Plaid 只读财务智能、Sierra 的 Poppy 1.0 开放协议（Shopify 全量、Meta Muse 优先识别），外加 XRP 上 1170 万笔 agent 小额支付——「面向机器的结算与身份层」取代模型能力成为新的必争战场。",
+      "前沿模型「价格与精度分叉」第一次被同一基准量化：Gemini 4 Carbon 85.4% 登顶 MathArena 但单次约 $15.7（Sol 的 15 倍、却只比 Fable 5.2 多约 2.6 个百分点），Hydrogen 以约 Fable 1/5 的成本进 Google 搜索，Claude Fable 5.2 降价 20%——「榜首」与「性价比」正在分开，生产场景的选型逻辑向成本与延迟倾斜。",
+      "开源与 agent 基础设施双线工业化：llama.cpp/ggml 1.0.0 承诺稳定 C API（Nvidia/AMD/Qualcomm/Arm/IBM/Intel 提供 CI 硬件）、Kimi K3.1 Pro / Beam / Praxis-1 / Inkling 2 Small / LongCat 2.5 一周内密集开放权重；AWS AgentCore 用 Firecracker 快照把 agent 冷启动压到 2 秒内、LangChain 以 $30 亿估值融资 $300M 押注 agent 可观测性——「运行与监控 agent 的平台层」成为被资本和市场同时确认的下一层。",
+      "监管与安全信号集中收紧：美联储金融稳定调查 87% 将 AI 列为最大风险（春季仅 50%）、意大利对 Meta 开出 $805M 罚单（涉安卓照片访问）、纽约 RAISE 法案生效、澳大利亚强制 AI 安全保障、微软 365 跨 70 多国中断暴露单点依赖——AI 从「产业议题」加速变成「金融稳定与基础设施可靠性议题」。" 
+    ]
+  },
+  "themes": [
+    {
+      "theme_id": "clue:anthropic-ipo-value-vs-obligation-2026w46",
+      "title": "Anthropic 的 IPO：史上最大 AI 上市 + $9010 亿既定义务同时登顶——Amodei 上市前坦言算力是「最深商业困境」，产品端却抢在挂牌前铺 Sheets/Whiteboards/Data/Meet 收割办公入口",
+      "summary": "Anthropic 在本周完成从「路演」到「定价前夜」的全流程：11/10 提交定价区间 $70–78/股、发行 8.25 亿股，11/12 启动 IPO 路演（完全稀释市值最高约 $1.4T、远低于此前传闻的 $2T），计划 11/18 定价、11/19 以 ANT 在纳斯达克挂牌，发行簿记超募约 6 倍并伴随约 $260 亿并行私募（Nvidia 出资约 $100 亿，TSMC 董事会批准最高 $10 亿分别认购 Anthropic/OpenAI 普通股与优先股）。但账本的另一半把「高增长」与「天文义务」并排：晚 10 月年化收入约 $810 亿（9 月约 $710 亿），而 Anthropic 的既定义务总额据 Bloomberg 已接近 $9010 亿、其中约 $710 亿在 2027 年 9 月前到期。Amodei 在与 JPMorgan 的 Jamie Dimon 对谈中直言算力是公司面临的最深商业困境：产能必须比实际需求提前一到两年采购，届时收入是否足以覆盖成本尚无保证——这几乎是把本轮 AI 基建资本密集叙事的核心矛盾（收入高增长与天文远期义务并存）原样说出口。与此同时，Anthropic 在 IPO 前夕密集发布 Claude Sheets、Whiteboards、Data 与 Meet 生产力工具（11/11 把 Claude 作为可见参与者带入 Google Meet、实时起草计划/排期/作答），把产品端明确指向 Google Workspace 与 Office 的领地；11/12 还生效区域使用政策，禁止中国大陆公司及关联实体使用 Claude。这种「一边用确定性叙事融资、一边承认前路高度不确定、一边抢办公入口」的组合，把 Anthropic 的成败与国家/云/芯片链的资产负债表深度绑定（Amazon 10 年 $1100 亿、Google 为 TeraWulf 肯塔基园区提供信用兜底预计带来约 $190 亿合同收入、Nebius 亦流向同一生态）。",
+      "conclusion": "这条线值得持续跟踪，因为它把「AI 公司值多少钱」的问题第一次变成「如何在一张资产负债表上同时容纳高增长与超前购买的算力义务」的会计与资本市场问题。跟踪点三组：一，ANT 11/19 挂牌后的首日定价与后续波动，能否消化「超募 6 倍 + 私募 $260 亿」与「$9010 亿义务」的张力——这是 AI 一级市场让价潮（OpenAI 首轮 $11B @ $1.25T、Anthropic 从传闻 $2T 回落至 $1.4T）之后第一个二级市场大考；二，Claude 的办公/生产力工具（Meet/Sheets/Whiteboards/Data）能否在 Google Workspace 与 Office 两强之间真正撕开口子，决定「写代码最强」能否延伸到更宽的商业化；三，$710 亿在 2027 年 9 月前到期的义务，会不会反过来约束 Anthropic 后续的资本开支节奏与云厂绑定谈判。",
+      "trend_signals": [
+        "二级市场为 AI 定价的第一个超大型样本：Anthropic MAX 估值约 $1.4T 超募 6 倍 + 约 $260 亿私募 + Nvidia $100 亿/TSMC 最高 $10 亿入股——「资本抢筹」与「义务天文」在同一份招股书里同时存在。",
+        "创始人亲口把算力定义为商业困境：Amodei 称产能必须提前一到两年购买、届时收入能否覆盖成本无保证，既定义务总额近 $9010 亿、$710 亿 2027 年前到期——「算力 = 资产负债表」叙事进入 CEO 的公开表述。",
+        "上市前产品攻势对准办公：Claude 进 Google Meet、发布 Sheets/Whiteboards/Data——Anthropic 以「写代码最强」为底，产品端向企业协作与生产力层扩张。",
+        "科技巨头以投资/信用的形态绑定 Anthropic 成败：TSMC 批准认购、Nvidia 私募出资、Google 为数据中心订单提供信用兜底、Amazon 10 年 $1100 亿——云与芯片链的资产负债表与一家模型公司深度互锁。",
+        "区域政策与资本脱钩同步：Anthropic 11/12 起禁中国大陆公司用 Claude，投行因 ITAR 拒收中国/香港投资者 IPO 买单——AI 巨头一面全球化融资、一面在地缘上收缩。"
+      ],
+      "core_entities": ["Anthropic IPO (ANT)", "Dario Amodei", "$901B 既定义务", "Claude Sheets/Whiteboards/Data/Meet", "Nvidia $10B 私募", "TSMC $10 亿认购", "Amazon 10 年 $1100 亿"],
+      "event_types": ["ipo", "capital", "product", "compute"],
+      "dominant_category": "观察",
+      "evidence": [
+        {
+          "article_id": "2026-11-10-2",
+          "report_index": 3,
+          "title": "Anthropic 提交 IPO 定价区间 $70–78，估值最高约 $1.4T，将于 11 月 19 日上市",
+          "source": "Reuters",
+          "date": "2026-11-10",
+          "summary": "Anthropic 更新招股书，发行 825M 股、定价 $70–78/股，隐含估值最高约 $1.404T，低于此前传闻的 $2T，将于纳斯达克以代码 ANT 挂牌。"
+        },
+        {
+          "article_id": "2026-11-12-1",
+          "report_index": 2,
+          "title": "Anthropic 启动 IPO 路演：定价 70–78 美元、售 8.25 亿股，11/18 定价、11/19 上市，完全稀释市值最高约 1.4 万亿美元",
+          "source": "Bloomberg",
+          "date": "2026-11-12",
+          "summary": "Anthropic 于 11 月 10 日启动 IPO 路演，拟发行 8.25 亿股 A 类普通股、每股 70–78 美元（含 26 亿美元私募配售），完全稀释估值约 1.03–1.41 万亿美元，11/18 定价、11/19 在纳斯达克以 ANT 代码上市，据报已被多倍超额认购。"
+        },
+        {
+          "article_id": "2026-11-15-11",
+          "report_index": 12,
+          "title": "Amodei：算力是 Anthropic 最深的商业困境，上市前一周坦言明年高度不确定",
+          "source": "the-decoder.com",
+          "date": "2026-11-15",
+          "summary": "距创纪录 IPO 前几天，Anthropic 的 Amodei 向投资者坦言算力是公司最深困境：产能必须提前一两年买，而那时还不知道收入能否覆盖成本；Anthropic 既定义务总额已接近 9010 亿美元，其中约 710 亿美元在 2027 年 9 月前到期。"
+        },
+        {
+          "article_id": "2026-11-11-3",
+          "report_index": 4,
+          "title": "Anthropic 把 Claude 带入 Google Meet 实时干活，并推出 Claude Sheets、Whiteboards 与 Data",
+          "source": "Anthropic",
+          "date": "2026-11-11",
+          "summary": "Anthropic 推出 Claude Meetings，让 Claude 以可见参与者身份加入 Google Meet 视频会议，在讨论进行中实时起草计划、排期并作答；同时发布 Claude Sheets、Whiteboards 与 Data。"
+        },
+        {
+          "article_id": "2026-11-11-10",
+          "report_index": 11,
+          "title": "TSMC 董事会批准最高 10 亿美元投资 Anthropic 与 OpenAI，并新设 5 亿美元半导体战略投资公司",
+          "source": "Reuters",
+          "date": "2026-11-11",
+          "summary": "台积电董事会批准最高各 5 亿美元投资 Anthropic（按 IPO 价认购普通股）与 OpenAI（认购优先股），合计最高 10 亿美元，另设最高 5 亿美元投资公司布局半导体生态。"
+        },
+        {
+          "article_id": "2026-11-13-4",
+          "report_index": 5,
+          "title": "Google 为 TeraWulf 在肯塔基的 Anthropic 数据中心订单提供信用兜底",
+          "source": "Bloomberg",
+          "date": "2026-11-13",
+          "summary": "Google 为 TeraWulf 位于肯塔基 Hawesville 的 Anthropic 数据中心园区提供信用兜底，预计带来约 190 亿美元合同收入。"
+        },
+        {
+          "article_id": "2026-11-09-0",
+          "report_index": 1,
+          "title": "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2，价格下调 20%",
+          "source": "Anthropic",
+          "date": "2026-11-09",
+          "summary": "Dario Amodei 在呼吁“放缓”后首次推出前沿模型——Fable 5.2 和 Mythos 5.2，定价 $8/百万输入、$40/百万输出 token，比 5.1 代便宜 20%，且输出快 30%。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:nvidia-founder-exit-2026w46",
+      "title": "英伟达的创始人危机：黄仁勋辞任 CEO、Colette Kress 临时接棒、Rene Haas 被点名——「传奇 CEO + 算力叙事」的绑定被真实地量化，11/12 消息当天盘后市值一度蒸发 $6000 亿",
+      "summary": "11/12 WSJ 与 NYT 先后报道 Nvidia 董事会准备罢免掌舵约 33 年的黄仁勋，起因是第二段与公司医疗健康业务副总裁的婚外情、以及此前一段被指涉华间谍的绯闻，盘中消息一出 Nvidia 和相关 AI 板块剧烈震荡，盘后市值一度蒸发约 $6000 亿（Nvidia 股价单日一度跌超 9%）。11/13 事件定格：Nvidia 董事会宣布黄仁勋辞任 CEO，CFO Colette Kress 出任临时 CEO，董事长由 Harvey C. Jones 出任，并启动内外部继任者遴选；董事会表示尚未正式接洽候选人或选定猎头，但 FT 报道董事会已接触 Arm CEO Rene Haas，使得继任者悬念成为接下来数月的最大变量。Semianalysis 同步深入拆解黄仁勋离任后的英伟达：出口管制、RASA 立法、开源与供应链正经历结构性松动——芯片全栈自主（RASA）对华收紧、2028 年 70% 产能来自非英伟达芯片、约 $5300 亿表外担保等结构性议题在 CEO 更替背景下被重新审视。这一事件暴露的核心是 AI 交易的「单点依赖」：当市场把大量叙事押在「英伟达 = 算力 = 增长的确定性来源」上，而该确定性的化身（黄仁勋）突然出现信任危机时，整个 AI 板块的叙事与资金信心都被连带动摇。它把「叙事风险」第一次作为可量化的市场变量摆到台前——这不是一家公司的人事新闻，而是 AI 资本开支叙事脆弱性的压力测试。",
+      "conclusion": "这条线值得继续跟踪，因为它测的是「AI 交易对个别创始人的依赖有多深」以及「创始人离场后叙事如何重建」。跟踪点：一，继任者到底花落谁家（Rene Haas 只是被点名，董事会尚未接洽任何人）——临时 CEO Colette Kress 的执政期与继任者人选将决定市场是否消化「英伟达无黄仁勋」的长期叙事；二，黄仁勋危机与同周出口管制再校准（芯片追踪技术上可行、6 款中国模型带 Blackwell 指纹）叠加，是否会加速英伟达在 RASA/对华业务上的结构性调整；三，Nebius 2027 年 $400 亿数据中心计划与 CoreWeave 盈利目标等供应链玩家的财报与指引，会如何反映「英伟达叙事松动」对 AI 资本开支信心的传导。",
+      "trend_signals": [
+        "AI 交易的单点依赖被量化：黄仁勋辞任消息当天盘后市值一度蒸发约 $6000 亿、Nvidia 单日跌超 9%——「传奇 CEO + 算力领头羊」的绑定强度第一次有了市场数字。",
+        "创始人与公司治理分离成为变量：黄仁勋因个人丑闻 + 疑似涉华间谍绯闻辞任，CFO Colette Kress 临时接棒、Harvey C. Jones 任董事长、继任者遴选启动——公司治理而非业务基本面成为短期定价主导。",
+        "继任者悬念悬而未决：董事会未接触任何候选人，Rene Haas 被媒体点名——继任者人选将决定「无黄仁勋的英伟达」叙事是否成立。",
+        "出口管制与 CEO 更替同周共振：芯片追踪技术上可行、6 款中国模型检 Blackwell 指纹、Semianalysis 拆解 RASA/对华收紧——CEO 离场让结构性问题（主权芯片、表外担保）被重新摆上台面。",
+        "叙事风险进入定价：AI 板块对单一关键人物的依赖，使每次「信任危机」都可能成为整个板块 beta 的一次集中释放。"
+      ],
+      "core_entities": ["黄仁勋辞任 CEO", "Colette Kress 临时 CEO", "Harvey C. Jones 董事长", "Rene Haas 继任者", "Nvidia 董事会", "RASA 对华收紧"],
+      "event_types": ["governance", "personnel", "market", "export-control"],
+      "dominant_category": "观察",
+      "evidence": [
+        {
+          "article_id": "2026-11-12-0",
+          "report_index": 1,
+          "title": "Nvidia 董事会据报酝酿罢免黄仁勋：两段婚外情 + 疑似涉华间谍，盘后市值一度蒸发 6000 亿美元",
+          "source": "WSJ",
+          "date": "2026-11-12",
+          "summary": "《华尔街日报》《纽约时报》先后报道 Nvidia 董事会准备罢免掌舵约 33 年的黄仁勋，起因是第二段与公司医疗健康业务副总裁的婚外情、以及此前一段被指涉华间谍的绯闻，盘后股价一度跌超 9%。"
+        },
+        {
+          "article_id": "2026-11-13-1",
+          "report_index": 2,
+          "title": "英伟达宣布 CEO 交接：黄仁勋辞职，CFO Colette Kress 出任临时 CEO",
+          "source": "Nvidia",
+          "date": "2026-11-13",
+          "summary": "英伟达董事会宣布黄仁勋辞任 CEO，财务长柯蕾丝临时接棒，并启动内外部继任者遴选。"
+        },
+        {
+          "article_id": "2026-11-13-2",
+          "report_index": 3,
+          "title": "英伟达继任者遴选进行中：董事会尚未接触任何候选人，Arm 的 Rene Haas 被点名",
+          "source": "FT",
+          "date": "2026-11-13",
+          "summary": "英伟达董事会表示尚未正式接洽候选人或选定猎头公司；FT 报道董事会已接触 Arm CEO Rene Haas。"
+        },
+        {
+          "article_id": "2026-11-13-0",
+          "report_index": 1,
+          "title": "英伟达巨变：一位创始人离开之后的世界",
+          "source": "Semianalysis",
+          "date": "2026-11-13",
+          "summary": "Semianalysis 深入拆解黄仁勋离任后的英伟达：出口管制、RASA 立法、开源与供应链正在经历结构性松动。"
+        },
+        {
+          "article_id": "2026-11-12-13",
+          "report_index": 14,
+          "title": "观察：黄仁勋危机把 AI 的叙事风险推到台前——当\"传奇 CEO\"与\"算力叙事\"绑定时，市场有多脆弱",
+          "source": "观察",
+          "date": "2026-11-12",
+          "summary": "Nvidia 董事会酝酿罢免黄仁勋引发的市场震动，清晰地暴露了 AI 交易对\"单一传奇掌门人 + 算力领头羊\"极为依赖的基本面脆弱性。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:export-control-borderline-2026w46",
+      "title": "出口管制的边界被重新划：法证检 6 款中国模型带禁售 Blackwell 指纹、英伟达确认芯片追踪技术上可行、Anthropic 11/12 禁中国大陆用 Claude、投行因 ITAR 拒中国/香港 IPO 买单——对华脱钩从芯片蔓延到模型与资本",
+      "summary": "本周出口管制议题从「物理上能不能拦」第一次转向「愿不愿意为合规付出工程与审查代价」，并在芯片、模型访问、资本三个层面同时落地。芯片层：前 OpenAI 工程师 Will DePue 发布法证分析，称在 DeepSeek-V4-Pro、Kimi K3、MiniMax-M3 等 6 款中国模型的权重中检出受管制英伟达 Blackwell 的初始化指纹——这是「禁售芯片训练」第一次以可核查的技术痕迹被指认，直接回应 Megaspeed 走私案发酵后外界追问的「中国实验室如何在出口管制下取得 Blackwell 算力」；同周英伟达代表向国会议员 Bill Foster 确认《芯片安全法案》中的反走私追踪措施「技术层面可实施」，与行业组织公开声称的「追踪可能不可行」立场相悖，把争论焦点拉到实施成本与数据共享而非工程可行性。模型访问层：Anthropic 更新后的区域使用政策 11/12 生效，明确禁止中国大陆及其注册公司、或任何被其控制的实体使用 Claude——从芯片层面延伸到模型访问的脱钩落地。资本层：承销 Anthropic IPO 的多家投行被报道拒绝中国大陆与香港机构的申购或认为难以分得配额，部分原因与美国《国际武器贸易条例》(ITAR) 有关——一级市场资金以地缘/合规为由把对华资金挡在门外。这条链的完整闭合意味着：出口管制的实际约束正从「美国许可」扩展到「中国进口审批 + 海外算力租赁 + 模型访问 + 一级市场资金」的全渠道，且开始用「技术指纹」与「可行性确认」这样的可核查证据来支撑治理主张。",
+      "conclusion": "这条线值得持续跟踪，因为它决定的不只是芯片能不能卖，而是「对华脱钩」在一家 AI 巨头的运营里渗透到哪一层——芯片（Blackwell 指纹）、模型访问（Anthropic 禁用）、资本（ITAR 拒单）在同一个窗口期同时收紧，说明这不是孤立的出口政策，而是产业/资本/地缘的系统性再切割。跟踪点：一，Will DePue 的黑客式/法证式检出能否被独立复现，以及中国模型厂商会如何应对「训练来源」被技术指认——这决定了出口管制是否获得一种新的、可机检的执法手段；二，英伟达对国会确认「追踪技术上可行」后，是否会配套具体的追踪方案与时间表，以及行业公开立场与私下口径的差异如何收场；三，ITAR 拒收中国/香港 IPO 资金会不会成为后续所有美国 AI 大额融资/上市的通行条款，进一步把中国资本挡在全球 AI 一级市场之外。",
+      "trend_signals": [
+        "训练来源开始被技术指认：法证在 DeepSeek-V4-Pro、Kimi K3、MiniMax-M3 等 6 款中国模型权重中检出禁售 Blackwell 的初始化指纹——出口管制的执法第一次有了可机检的「芯片指纹」抓手。",
+        "「技术上可行」vs「公开称不可行」的立场背离：英伟达私下向国会确认芯片追踪技术可实施，行业组织公开称可能不可行——合规成本与数据共享成为真正争论点而非可行性。",
+        "模型访问层脱钩落地：Anthropic 11/12 起禁止中国大陆公司及关联实体使用 Claude——对华限制从芯片延伸到模型访问。",
+        "资本层以 ITAR 为由拒单：投行拒收中国与香港投资者对 Anthropic IPO 的买单——地缘/合规成为一级市场资金分配的新门槛。",
+        "治理主张获得可核查证据支撑：走私案（Megaspeed 移交司法部）+ 技术指纹 + 可行性确认同时出现——出口管制的执行从「新闻」转向「可留痕的执法」。"
+      ],
+      "core_entities": ["Blackwell 初始化指纹", "Will DePue", "Megaspeed 案", "芯片追踪技术", "Anthropic 对华禁用", "ITAR IPO 拒单"],
+      "event_types": ["export-control", "security", "policy", "forensics"],
+      "dominant_category": "安全",
+      "evidence": [
+        {
+          "article_id": "2026-11-14-5",
+          "report_index": 6,
+          "title": "法证指纹显示 6 款中国模型用「禁售的」英伟达 Blackwell 训练",
+          "source": "TechRadar",
+          "date": "2026-11-14",
+          "summary": "前 OpenAI 工程师 Will DePue 发布法证分析，称在 DeepSeek-V4-Pro、Kimi K3、MiniMax-M3 等 6 款中国模型的权重中检出受管制英伟达 Blackwell 的初始化指纹。"
+        },
+        {
+          "article_id": "2026-11-15-9",
+          "report_index": 10,
+          "title": "英伟达向国会确认：芯片追踪技术上可行",
+          "source": "MIT Technology Review",
+          "date": "2026-11-15",
+          "summary": "英伟达代表向国会议员 Bill Foster 确认反走私芯片追踪措施“技术上可实施”，与行业组织认为“可能不可行”的公开立场相悖。"
+        },
+        {
+          "article_id": "2026-11-12-2",
+          "report_index": 3,
+          "title": "Anthropic 区域使用政策 11/12 生效：禁止中国大陆公司及关联实体使用 Claude",
+          "source": "Anthropic",
+          "date": "2026-11-12",
+          "summary": "Anthropic 更新后的区域使用政策于 11 月 12 日生效，明确禁止中国大陆及其注册公司、或任何\"直接或间接被其控制\"的实体使用 Claude。"
+        },
+        {
+          "article_id": "2026-11-14-4",
+          "report_index": 5,
+          "title": "多家投行因 ITAR 拒收中国与香港投资者对 Anthropic IPO 的买单",
+          "source": "Bloomberg",
+          "date": "2026-11-14",
+          "summary": "承销 Anthropic 上市的银行被报道拒绝中国大陆与香港机构的申购或认为难以分得配额，部分原因与美国《国际武器贸易条例》(ITAR) 有关。"
+        },
+        {
+          "article_id": "2026-11-09-6",
+          "report_index": 7,
+          "title": "商务部对 Megaspeed 的调查在英伟达介入后移交司法部",
+          "source": "纽约时报",
+          "date": "2026-11-09",
+          "summary": "据《纽约时报》，美商务部对新加坡芯片转售商 Megaspeed 的调查在英伟达总法律顾问联系办案人员后中止并移交司法部刑事调查。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:agent-commerce-payments-2026w46",
+      "title": "agent 商务在 72 小时内集体到达支付层：OpenAI ChatGPT Wallet / Gemini 连 Google Wallet+Plaid / Sierra Poppy 协议 / XRP 1170 万笔小额支付——「面向机器的结算与身份层」成为新战场",
+      "summary": "本周 agent 商务从「能力展示」进入「结算基础设施」阶段，并在同一个窗口期出现三种走法。第一种是 OpenAI 的「代付型」Wallet：11/13 发布 ChatGPT Wallet，让 AI 智能体在用户授权的支出额度内完成真实购买，并与 American Express 达成首个智能体商务集成，把「agent 替用户买单」做成产品入口。第二种是 Google 的「只读型」财务智能：11/14 Google 在美国向全部 Gemini 用户开放连接 Google Wallet，并可选通过 Plaid 关联银行、信用卡账户，让 Gemini 基于消费数据回答财务问题——不是替用户付钱，而是读取账户数据做智能。第三种是 Sierra 的「协议型」Poppy：11/14 释出个人 agent 与公司交互的开放标准 Personal Agent Protocol（Poppy）1.0，Shopify 对每家居商默认启用、Meta 的 Muse agent 访问每站先查 Poppy、设计伙伴逾百家，把「agent 之间如何握手、如何谈交易」做成开放协议。与此同时，链上数据给出了另一种量级信号：11/15 报道称 XRP Ledger 上的 AI agent 已完成约 1170 万笔小额支付（单笔从 1 美元到 50 美分、用于逐任务计价），有受访者预计明年 agent 的支付笔数将超过人类。同一个窗口期里 OpenAI 让 agent 能替用户买单、Google 让 Gemini 只读银行账户、Sierra 立起 Poppy 协议，加上链上小额支付的规模化迹象，说明「agent 经济」的瓶颈正从「模型会不会办事」转向「agent 有没有身份、能不能付款、和谁按什么规矩交易」——结算层替代能力层成为各家必争的下一块。",
+      "conclusion": "这条线值得持续跟踪，因为它决定 agent 经济能否从「demo」变成「可自我结算的经济体」——agent 拥有可自主发起支付的身份与额度，是把「agent 商务」从叙事变成真实交易的关键一步，而三种走法（OpenAI 云端钱包代付 / Google 银行只读 / Sierra 开放协议）之间的竞争，本质上是「agent 的钱包、身份与结算标准」由谁掌握。跟踪点：一，ChatGPT Wallet 的 Amex 集成与后续卡组织/银行合作，能否让「代付型」agent 支付落地到真实购买场景与退款/争议处理；二，Poppy 协议能否从 Shopify/Meta 走向更广的开放生态，形成「agent 商务的 HTML」式的标准层；三，链上 agent 小额支付（XRP 1170 万笔、agent 支付笔数将超人类）是否被第三方审计确认为真实且规模化，以及它会不会催生「面向机器」的结算与合规基础设施。",
+      "trend_signals": [
+        "三种走法同时成型：OpenAI「代付型」Wallet（+ Amex 首个集成）、Google「只读型」Wallet/Plaid 财务智能、Sierra「协议型」Poppy 1.0（Shopify 全量、Meta 优先）——agent 商务的结算策略在 72 小时内分化成三条轨道。",
+        "agent 迎来真实支付入口：ChatGPT Wallet 让 agent 在用户授权额度内完成真实购买——「替用户买单」从演示变成产品接口。",
+        "银行/卡组织成为 agent 财务层的基础：Google 通过 Plaid 关联银行与信用卡、Sierra 与支付相关伙伴逾百家——金融基础设施开始对接 agent 身份。",
+        "开放协议争夺标准：Sierra 的 Poppy 让「agent 之间如何握手、按什么规矩交易」成为开放标准，Shopify 全量开启——标准层竞争已开始。",
+        "链上 agent 支付规模化迹象：XRP Ledger 上 agent 完成约 1170 万笔小额支付，受访者预计明年支付笔数超人类——「面向机器的结算」出现链上量级信号（需第三方审计口径看待）。"
+      ],
+      "core_entities": ["ChatGPT Wallet", "American Express", "Gemini + Google Wallet/Plaid", "Sierra Poppy 1.0", "Shopify", "XRP Ledger agent 支付"],
+      "event_types": ["payments", "agent-commerce", "protocol", "product"],
+      "dominant_category": "应用/产业",
+      "evidence": [
+        {
+          "article_id": "2026-11-13-5",
+          "report_index": 6,
+          "title": "OpenAI 推出 ChatGPT Wallet，定义智能体支付与「智能体商务」",
+          "source": "OpenAI",
+          "date": "2026-11-13",
+          "summary": "OpenAI 发布 ChatGPT Wallet，让 AI 智能体在用户授权的支出额度内完成真实购买，并与 American Express 达成首个智能体商务集成。"
+        },
+        {
+          "article_id": "2026-11-14-0",
+          "report_index": 1,
+          "title": "Gemini 连上 Google Wallet 与银行卡：只读财务智能，向智能体支付时代探路",
+          "source": "Google",
+          "date": "2026-11-14",
+          "summary": "Google 在美国向全部 Gemini 用户开放连接 Google Wallet，并可选通过 Plaid 关联银行、信用卡账户，让 Gemini 基于消费数据回答财务问题。"
+        },
+        {
+          "article_id": "2026-11-14-8",
+          "report_index": 9,
+          "title": "Sierra 发布 Personal Agent Protocol（Poppy）1.0，Shopify 全量开启、Meta 的 Muse 优先识别",
+          "source": "Sierra",
+          "date": "2026-11-14",
+          "summary": "Sierra 释出个人 agent 与公司交互的开放标准 Poppy 1.0，Shopify 对每家居商默认启用，Meta 的 Muse agent 访问每站先查 Poppy，设计伙伴逾百家。"
+        },
+        {
+          "article_id": "2026-11-15-15",
+          "report_index": 16,
+          "title": "特斯拉友好的 XRP 账本上，AI agent 已产生 1170 万笔小额支付",
+          "source": "X",
+          "date": "2026-11-15",
+          "summary": "报道称 XRP Ledger 上的 AI agent 已完成 1170 万笔小额支付，单笔可从 1 美元到 50 美分左右，用于逐任务计价；有受访者预计明年 agent 的支付笔数将超过人类支付。"
+        },
+        {
+          "article_id": "2026-11-14-12",
+          "report_index": 13,
+          "title": "AI 实验室同日把手伸向用户钱包：支付与「agent 商务」的三种走法",
+          "source": "观察",
+          "date": "2026-11-14",
+          "summary": "在同一个窗口期，OpenAI 让 agent 能替用户买单、Google 让 Gemini 只读银行账户、Sierra 立起 Poppy 协议，支付底层正成为各家的主战场。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:frontier-price-efficiency-divergence-2026w46",
+      "title": "前沿模型「价格与精度」开始分叉：Gemini 4 Carbon 以 $15.7 登顶 MathArena 却是 Sol 的 15 倍、Hydrogen 以约 Fable 1/5 成本进 Google 搜索、Claude Fable 5.2 降价 20%——「榜首」与「性价比」正在分开",
+      "summary": "本周多起发布把「前沿 = 最贵」的默认假设第一次摊到同一张基准表上量化。MathArena 榜单更新显示，Gemini 4 Carbon 以 85.4%（±3.0）拿下数月来首个非 OpenAI 的第一名，Claude Fable 5.2 以 82.8% 居次、GPT-6.1 Sol 回落到 80.6%；但成本差距被反复强调——Carbon 单次测试约 $15.70、是 Sol（约 $1.07）的约 15 倍、是 Fable 5.2（约 $40.20）的约 1/3，也就是说拿到第一名只比第二名多约 2.6 个百分点，代价却是 Sol 的 15 倍价格；且 Carbon 多数时候撞上时间上限而不轻易放弃、曾有脚本连续运行超 11 小时。同周 Google 还发布速度优先档 Gemini 4 Hydrogen（11/15），声称比 Gemini 3.8 Flash 快 2.5 倍，开始进入 Google 搜索，第三方评测显示其在 AutomationBench 上接近 Claude Fable 5.2、而单任务成本约为后者五分之一——把「便宜档接近前沿模型、价格差数倍」的现象又从 Carbon 一侧补齐到廉价一侧。Anthropic 侧则用降价抢生态：11/09 发布 Fable 5.2 与 Mythos 5.2，定价比 5.1 代便宜 20% 且输出快 30%；11/14 Google 宣布 Carbon 入门价 $2/百万 token 对标前沿。综合看，「榜首」与「性价比」正在明显分叉：交出一张 85.4% 的榜单头名并不意味着它是生产场景的合理选择，多数生产负载（coding agent、高频搜索、日常调用）可能更需要 Hydrogen 这类低成本快档而非顶配。对部署方而言，选型逻辑正从「谁最强」转向「在特定成本/延迟预算下谁最够用」。",
+      "conclusion": "这条线值得持续跟踪，因为它标志着前沿模型的竞争维度正从「谁的精度最高」扩展到「单位成本能买到多少精度」——当第一名的 15 倍价格只换约 5 个百分点的优势，且出现了成本约为五分之一、性能却接近前沿的廉价档，生产部署的基准就不再是单纯的 SOTA，而是成本/延迟约束下的最优解。跟踪点：一，Gemini 4 家族的分层策略（Carbon 精度端 / Hydrogen 速度端）能否验证「分层定价 + 进搜索/助手落地」的商业模型优于单一顶配；二，基准（MathArena、AutomationBench）能否在成本维度上形成被广泛采纳的「性价比」标尺，从而重塑模型采购决策；三，Anthropic 降价 20% + OpenAI 统一 token 池等价格战，是否会进一步压低前沿模型价格、压缩新进入者的利润空间，并把「写代码最强」的优势延伸到更宽的办公场景。",
+      "trend_signals": [
+        "第一名的经济含义被量化：Gemini 4 Carbon 以 85.4% 登顶 MathArena，但单次约 $15.7、是 Sol 的约 15 倍，只比 Fable 5.2 多约 2.6 个百分点——「榜首」与「性价比」在同一基准上分叉。",
+        "分层出现廉价快档：Gemini 4 Hydrogen 声称比 3.8 Flash 快 2.5 倍、第三方测其单任务成本约 Fable 5.2 的五分之一——「便宜档接近前沿」成为新的产品叙事。",
+        "价格战同步展开：Anthropic 降价 20%（Fable/Mythos 5.2）、Google Carbon 入门价 $2/百万 token 对标前沿——前沿模型价格持续下探。",
+        "进搜索/助手成为落地渠道：Hydrogen 铺入 Google 搜索用于意图理解——成本敏感的高频负载成为廉价模型的主战场。",
+        "选型逻辑从 SOTA 转向成本预算：多数生产场景未必需要顶配，成本/延迟约束下的「够用」成为部署基准。"
+      ],
+      "core_entities": ["Gemini 4 Carbon", "Gemini 4 Hydrogen", "MathArena", "Claude Fable 5.2", "GPT-6.1 Sol", "AutomationBench"],
+      "event_types": ["model", "pricing", "benchmark", "product"],
+      "dominant_category": "基础设施",
+      "evidence": [
+        {
+          "article_id": "2026-11-15-3",
+          "report_index": 4,
+          "title": "Gemini 4 Carbon 以 15 倍价格登顶 MathArena",
+          "source": "The Verge",
+          "date": "2026-11-15",
+          "summary": "Gemini 4 Carbon 在 MathArena 以 85.4% 拿下数月来首个非 OpenAI 榜首，但单次测试成本约 15.7 美元，是年度最贵档（Sol 约 1.07 美元）。"
+        },
+        {
+          "article_id": "2026-11-15-2",
+          "report_index": 3,
+          "title": "Gemini 4 Hydrogen 作为廉价快速档上线，并铺入 Google 搜索",
+          "source": "Google",
+          "date": "2026-11-15",
+          "summary": "Google DeepMind 发布速度优化的 Gemini 4 Hydrogen，声称比 Gemini 3.8 Flash 快 2.5 倍，并已面向全部用户进入 Google 搜索；第三方评测显示其在 AutomationBench 上接近 Claude Fable 5.2，单任务成本约为后者五分之一。"
+        },
+        {
+          "article_id": "2026-11-10-0",
+          "report_index": 1,
+          "title": "Google 正式开放 Gemini 4 Carbon，入门价 $2/百万 token 对标前沿",
+          "source": "Google",
+          "date": "2026-11-10",
+          "summary": "Google 将 Gemini 4 Carbon 面向所有付费开发者、企业和 AI Ultra 订阅者开放，并同步在 Antigravity 预览\"agent 蜂群\"协作功能；入门价 $2/百万 token 对标前沿。"
+        },
+        {
+          "article_id": "2026-11-09-0",
+          "report_index": 1,
+          "title": "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2，价格下调 20%",
+          "source": "Anthropic",
+          "date": "2026-11-09",
+          "summary": "Dario Amodei 在呼吁“放缓”后首次推出前沿模型——Fable 5.2 和 Mythos 5.2，定价 $8/百万输入、$40/百万输出 token，比 5.1 代便宜 20%，且输出快 30%。"
+        },
+        {
+          "article_id": "2026-11-10-13",
+          "report_index": 14,
+          "title": "观察：前沿模型价格战叠加估值回调，AI 商业化进入“以价换量”与信心冷却并存期",
+          "source": "观察",
+          "date": "2026-11-10",
+          "summary": "Gemini 4 Carbon 以 $2/$10 入门价对标 GPT-6 Astra 与 Fable 5.2，而 Anthropic IPO 估值从 $2T 传闻回落至 ~$1.4T，AI 正进入“低价竞争”与“资本降温”双轨阶段。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    {
+      "theme_id": "clue:open-source-and-agent-infra-industrialization-2026w46",
+      "title": "开源与 agent 基础设施双线工业化：llama.cpp/ggml 1.0.0 承诺稳定 C API、Kimi K3.1 Pro/Beam/Praxis-1/Inkling 2 Small 一周密集开放权重，AWS AgentCore 把 agent 冷启动压到 2 秒内、LangChain 以 $30 亿估值融资 $300M",
+      "summary": "本周开源与 agent 基础设施同时进入「工业化」阶段。开源侧：llama.cpp 与底层张量库 ggml 于 11/13 同时发布 v1.0.0，约定对公共 C API 的任何破坏性改动都以主版本号提升来标志，结束「快速迭代但易碎」的阶段，Nvidia/AMD/Qualcomm/Arm/IBM/Intel 为 CI 提供硬件，还新增对 Kimi-K3.1-Pro、Ripple、xing4_0 等文本架构与 drama-3 TTS、MageVL-Cowork 视觉能力的支持、强化 llama-server 的工具调用安全并新增 OpenAI 兼容的 /v1/audio/speech 端点；权重开放层面，一周内密集出现 Kimi K3.1 Pro（Moonshot，2.8T 总/104B 激活、1M 上下文）、Reflection Beam（501B 总/23B 激活、Apache 2.0 + 40+ 伙伴）、Runway Praxis-1（27B MoE 扩散世界动作模型，RoboLab-120 领先开源 VLA）、Thinking Machines Inkling 2 Small（594B 总/17B 激活、Apache 2.0）、美团 LongCat 2.5（国产芯片训练、MIT 协议开放权重）等，构成「开源权重可商用、参数量级逼近闭源」的洪流；Salesforce 还以 Apache 2.0 开源非流式语音转录 SOV-Transcribe-1。基础设施侧：AWS 为 Bedrock 推出新一代 AgentCore 运行时，用 Firecracker 微虚机快照把 agent 冷启动从约 30 秒压到 2 秒以内（把「函数式快速冷启动」思路迁移到 agent 会话与工具执行）；LangChain 完成由 CapitalG 领投的 $300M C 轮、估值 $30 亿（较一年前翻倍），押注「运行与监控 agent」的平台层 LangSmith；Nvidia 在 KubeCon 把 agent 编排运行时 OpenShell 捐给 CNCF、并与 Google 合作集成 OpenShell 与 Agent Substrate；Cloudflare 开源面向 agent 的无容器浏览器 Kitesurf；Qualcomm 发布数据中心 CPU Dragonfly C1000 与推理加速器 AI300（Meta 将部署）。开源模型的可商用化 + agent 运行时/可观测性/编排的工程化，共同把「agent 时代」从模型能力竞争推向「跑得稳、测得到、编排得起」的基础设施竞争。",
+      "conclusion": "这条线值得持续跟踪，因为它标志着两件事同时成熟：开源权重首次以「1.0.0 + 稳定 C API + 大厂 CI 硬件背书」的形态成为可依赖的工业基座，而 agent 基础设施（冷启动、可观测性、编排、浏览器、推理芯片）开始被资本（LangChain $300M）与标准组织（OpenShell → CNCF）同时确认。「agent 能跑」不再是问题，「agent 跑得稳、排得起、测得到」成为下一层竞争。跟踪点：一，llama.cpp/ggml 1.0.0 之后，开源本地推理栈能否真正成为企业生产依赖，以及下游是否因稳定性承诺而把更多任务迁到本地/合规边界内；二，一周内多个对标闭源的超大权重（Kimi K3.1 Pro、Beam、Inkling 2 Small、Praxis-1）的密集开放，是否会实质分流前沿模型的商业价值，还是停留在生态/指标竞争；三，AWS AgentCore（<2s 冷启动）、LangChain LangSmith、OpenShell→CNCF 之间的运行/观测/编排标准，会不会收敛为一个「agent 云平台」共识层。",
+      "trend_signals": [
+        "开源推理栈进入工业契约期：llama.cpp/ggml 1.0.0 承诺破坏性改动以主版本号标记，Nvidia/AMD/Qualcomm/Arm/IBM/Intel 提供 CI 硬件——本地开源推理从快速迭代转向稳定兼容性。",
+        "一周内超大权重密集开放：Kimi K3.1 Pro（2.8T/104B）、Beam（501B/23B）、Inkling 2 Small（594B/17B）、Praxis-1（27B）—「开源权重参数量级逼近闭源」成为常态。",
+        "agent 冷启动工程化：AWS AgentCore 用 Firecracker 快照把冷启动从约 30 秒压到 2 秒内——「函数式快速冷启动」迁移到 agent 会话。",
+        "资本与标准同时确认 agent 基建层：LangChain $300M C 轮 @$30 亿估值押注 agent 可观测性；Nvidia 把 OpenShell 捐给 CNCF——「运行与监控 agent 的平台层」被资本与标准组织双重确认。",
+        "面向 agent 的专用硬件涌现：Qualcomm Dragonfly C1000 + AI300（Meta 部署）、OpenAI 收购旅行 agent Odessia 后并入入口——从芯片到产品入口都在为 agent 一代定制。"
+      ],
+      "core_entities": ["llama.cpp/ggml 1.0.0", "Kimi K3.1 Pro", "Reflection Beam", "Inkling 2 Small", "AWS AgentCore Firecracker", "LangChain LangSmith", "OpenShell → CNCF"],
+      "event_types": ["open-source", "infra", "launch", "capital"],
+      "dominant_category": "开源",
+      "evidence": [
+        {
+          "article_id": "2026-11-15-5",
+          "report_index": 6,
+          "title": "llama.cpp 与 ggml 双双发布 1.0.0，承诺稳定 C API",
+          "source": "HuggingFace",
+          "date": "2026-11-15",
+          "summary": "llama.cpp 与底层张量库 ggml 同日发布 v1.0.0，约定任何对公共 C API 的破坏性改动都会以主版本号提升来标志；多个厂商为 CI 提供硬件。"
+        },
+        {
+          "article_id": "2026-11-15-4",
+          "report_index": 5,
+          "title": "AWS 新一代 Bedrock AgentCore 用 Firecracker 快照把 agent 冷启动压到 2 秒内",
+          "source": "TechCrunch",
+          "date": "2026-11-15",
+          "summary": "AWS 为 Bedrock 推出新一代 AgentCore 运行时，核心变化是用 Firecracker 微虚机快照替代冷启动时的完整初始化：官方称 agent 冷启动从约 30 秒降到 2 秒以内。"
+        },
+        {
+          "article_id": "2026-11-14-2",
+          "report_index": 3,
+          "title": "LangChain 以 30 亿美元估值完成 3 亿美元 C 轮：资本押注「运行与监控 agent」的平台层",
+          "source": "TechCrunch",
+          "date": "2026-11-14",
+          "summary": "LangChain 完成由 CapitalG 领投的 3 亿美元 C 轮，估值 30 亿美元、较一年前翻倍，将用来扩张企业 agent 监控平台 LangSmith。"
+        },
+        {
+          "article_id": "2026-11-11-6",
+          "report_index": 7,
+          "title": "Moonshot 发布 Kimi K3.1 Pro：2.8T 参数、104B 激活的开源多模态 agent 模型，1M 上下文",
+          "source": "Hugging Face",
+          "date": "2026-11-11",
+          "summary": "月之暗面发布 Kimi K3.1 Pro，2.8T 总参数、104B 激活的原生多模态 agent 模型，1M 上下文，K3.1 系列首作，完整权重将开放。"
+        },
+        {
+          "article_id": "2026-11-12-4",
+          "report_index": 5,
+          "title": "Reflection 开源 501B 参数编码/推理模型 Beam：1M 上下文、24%B 激活，Apache 2.0 + 40 余家生态伙伴",
+          "source": "Reflection",
+          "date": "2026-11-12",
+          "summary": "Anthropic 前 CTO 团队创立的 Reflection 发布首个开源权重模型 Beam：稀疏 MoE、501B 总参数 / 23B 激活、1M 上下文，Apache 2.0 授权并配 40+ 伙伴。"
+        },
+        {
+          "article_id": "2026-11-14-9",
+          "report_index": 10,
+          "title": "英伟达在 KubeCon 把 agent 编排运行时 OpenShell 捐给 CNCF",
+          "source": "Nvidia",
+          "date": "2026-11-14",
+          "summary": "英伟达于 KubeCon 2026 伦敦大会宣布把 agent 编排运行时 OpenShell 捐给 CNCF，并承诺与谷歌合作集成 OpenShell 与 Agent Substrate。"
+        }
+      ],
+      "graph": {
+        "nodes": [],
+        "edges": []
+      }
+    }
+  ],
+  "memory_refs": {
+    "recent_window": {
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-15"
+    },
+    "archive_refs": ["2026-W46"]
+  }
+}
