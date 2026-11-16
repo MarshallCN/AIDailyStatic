@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-16",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 85,
+  "summary": "事实、数字与关系方向整体准确，r1 轮的五项问题（黄仁勋现行 affiliated_with、LongCat 与 Tencent Hy4 的 compared_with、两条 targets 边、Qwen3.8-Max 缺失、Kimi K3.1 Pro 证据错配）均已修正。剩余问题集中在三类：AWS-Blackstone 50 亿美元交易被 partners_with 兜底（资本流向被埋没）、13 个实体零关系边（含 7 篇核心对象「标准模型」与多家被点名的公司）、NVIDIA 规范名大小写未按对照表统一（跨日连通被截断）。审计器报的「Qwen4-Max / Qwen3.8-Max 疑似重复」是误报，两者确为不同型号，不应合并。",
+  "findings": [
+    {
+      "article_id": "2026-11-16-3",
+      "severity": "medium",
+      "problem": "关系 \"AWS --partners_with--> Blackstone Digital Infrastructure Trust\" 类型与方向都欠妥：原文是 Blackstone 向 AWS 投入 50 亿美元、换取部分数据中心基础设施多数股权的资本/股权交易，实质是投资方（Blackstone）与资金方（AWS）的流向关系，partners_with 是兜底类型，且把 AWS 放在 source 位会把图读成\"AWS 与 Blackstone 联合开发数据中心\"，掩埋资本流向。",
+      "fix": "改为 Blackstone Digital Infrastructure Trust --invests_in--> AWS（投资方为 source、被投方为 target），evidence 保留原句\"与 Blackstone Digital Infrastructure Trust 达成一项 50 亿美元数据中心交易，出售部分数据中心基础设施的多数股权\"；若类型表确无 invests_in，则选择能表达资金/股权交易的类型并保持投资方为 source，不要用 partners_with 兜底。"
+    },
+    {
+      "article_id": "2026-11-16-7",
+      "severity": "medium",
+      "problem": "零关系边实体成系统性模式：本篇的核心研究对象「标准模型」没有任何关系边，\"复核了证明并给出关键追问\"的 Golterman、Kronfeld、Shamir 三位格点理论家也没有边；同类问题还波及 2026-11-16-2（CoreWeave、Nebius、Reuters）、2026-11-16-8（Hugging Face，模型发布平台却零边）、2026-11-16-9（Tencent Hy4、ERNIE、Nvidia）、2026-11-16-10（企业 AI 投资、黄仁勋、Nvidia）、2026-11-16-11（黄仁勋）——共 13 个实体只有事件参与者身份、没有任何关系边，实体表与关系图脱节，图里\"实体齐全但没有有价值的边\"。",
+      "fix": "能给出直接证据的就补边：为本篇补 GPT-6 Astra 与「标准模型」之间的断言边（如 proposes/addresses 语义，evidence 用\"为粒子物理标准模型给出候选格点定义\"），为三位理论家补复核语义边（若类型表无 reviews 类则删除这三人的实体及事件参与者身份）；2 篇补 Nvidia 领导层危机对 CoreWeave/Nebius 的因果边（如无 affects 类则删除孤立实体）、8 篇补 Fx-Bio-1031 --hosted_on--> Hugging Face；9 篇中 Tencent Hy4、ERNIE 只是并列例证、10/11 篇的黄仁勋已是离任背景人物，补不出可支撑边的一律从实体表删除并同步移除其事件参与者身份，只保留在事件 summary 的文字里。"
+    },
+    {
+      "article_id": "2026-11-16-2",
+      "severity": "medium",
+      "problem": "实体规范名对照表规定 NVIDIA 为规范名（英伟达、Nvidia 为变体），本篇及 2026-11-16-5、2026-11-16-9、2026-11-16-10、2026-11-16-11 五篇全部把 \"Nvidia\" 用作规范名。当日内部一致，但规范名大小写不同会让 Nvidia 与历史图谱中的 NVIDIA 节点无法按名合并，切断跨日连通。",
+      "fix": "五篇统一改用规范名 \"NVIDIA\"，aliases 保留 [\"英伟达\", \"Nvidia\"]；events、relations 中所有引用同步替换，确保证据句之外的每个出现位置都一致。"
+    },
+    {
+      "article_id": "2026-11-16-3",
+      "severity": "low",
+      "problem": "事件 \"美国新规进一步限制亚洲部分地区与巴西的先进 AI 芯片获取路径\" 的 summary 写入了\"市场随即对 AI 基础设施类公司重新定价，亚马逊当日收跌 3.34% 至 257.75 美元\"——亚马逊当日的跌幅由出口新规、Vulcan 火箭失利与科技股整体走弱多重原因共同造成，把收盘数字写进政策事件既与既有规则\"股价市场反应不要写进其他事件\"冲突，也过度归因于新规单一因素。",
+      "fix": "删去 policy 事件 summary 中的\"亚马逊当日收跌 3.34% 至 257.75 美元\"结论，只保留\"市场随即对 AI 基础设施类公司重新定价\"的定性后果（原文有此因果表述）；跌幅与收盘价两个 metric 保留，或单列一个独立的市场反应事件承载（若单列则同时说明是多重原因所致）。"
+    }
+  ],
+  "lessons": [
+    "资金/股权交易类新闻（注资、增资、出售多数股权、巨型数据中心交易）：投资方/买方是 source、被投方/卖方是 target，用 invests_in 或能表达资金流向的交易类型，不要用 partners_with 兜底，资本流向决定方向。",
+    "事件 participants 里出现的每个实体在 relations 里至少要有一条可支撑的边：能补的直接补（hosted_on、invests_in、affects 等）；找不到可支撑边的并列例证或背景人物，要连同其实体与参与者身份一起从实体表删除，只留在事件 summary 文字里，避免零边实体稀释图谱。",
+    "实体规范名对照表中已列出的主体必须原样使用表内规范名（如 NVIDIA 而非 Nvidia、Google 而非 Google Inc.），大小写与拼写变体只能进 aliases；对照表是跨日连通的关键，不得自行改写拼写。"
+  ]
+}

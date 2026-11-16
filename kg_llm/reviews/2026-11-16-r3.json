@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-16",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "实体与事件抽取扎实、跨文章规范名一致（NVIDIA、Hugging Face、GPT-6 Astra 均能连通），但存在关系类型与方向的两处误导：AWS-Blackstone 的资产出售被标成 invests_in、Nathaniel Craig 与 GPT-6 Astra 的人-模型协作被标成 partners_with；且多篇被点名的参与者（CoreWeave/Nebius、Tencent Hy4/ERNIE）未抽为实体。",
+  "findings": [
+    {
+      "article_id": "2026-11-16-3",
+      "severity": "high",
+      "problem": "关系 'Blackstone Digital Infrastructure Trust --invests_in--> AWS' 类型与方向都误导读者：原文是 AWS 把数据中心基础设施的多数股权以 50 亿美元出售/让渡给 Blackstone（'出售部分数据中心基础设施的多数股权'），并非 Blackstone 对 AWS 公司注资。该关系会让整张图误读成 Blackstone 成为 AWS 的股权投资方。对应事件也被标成 'partnership'，类型同样不妥。",
+      "fix": "改用表示资产处置的关系，如 'AWS --sells_to--> Blackstone Digital Infrastructure Trust'（或 partnership），source 应为 AWS、target 为 Blackstone，证据用原文 '出售部分数据中心基础设施的多数股权'；不要用 invests_in 指向 AWS 公司。同时把这个事件从 partnership 改为资产处置/divestiture 类型。"
+    },
+    {
+      "article_id": "2026-11-16-7",
+      "severity": "medium",
+      "problem": "关系 'Nathaniel Craig --partners_with--> GPT-6 Astra' 把人类科学家与 AI 模型的科研协作标成 partners_with，双方不是对等的机构伙伴关系，关系类型不符（partners_with 只用于公司/组织之间的合作）。",
+      "fix": "改用 collaborates_with（或 collaborative_research）表达 Craig 与 GPT-6 Astra 的科研协作关系；partners_with 留给真正的组织间伙伴关系。"
+    },
+    {
+      "article_id": "2026-11-16-2",
+      "severity": "medium",
+      "problem": "trend 事件 'NVIDIA 领导层危机拖累 CoreWeave、Nebius 等类云服务商股价连续下挫' 明确点名了 CoreWeave、Nebius 两家上市公司，但它们未抽为实体，事件参与者缺失，股价下挫这条断言没有对应节点支撑。",
+      "fix": "把 CoreWeave、Nebius 抽为实体（type company），加入该 trend 事件的 participants，并用关系（如 NVIDIA --affects--> CoreWeave/Nebius 或以事件为承载）支撑'股价连续下挫'的断言。"
+    },
+    {
+      "article_id": "2026-11-16-9",
+      "severity": "low",
+      "problem": "trend 事件 '与早前 Tencent Hy4、ERNIE 等一起构成中国摆脱对英伟达单一依赖的例证' 点名了 Tencent Hy4、ERNIE 三个模型/公司，但均未抽为实体，举例主体缺失，跨文章也无法与它们连通。",
+      "fix": "把 Tencent Hy4、ERNIE 抽为实体（type model），加入该 trend 事件的 participants，或用关系表达 LongCat-2.5 与它们同属'国产算力训练旗舰'路线。"
+    }
+  ],
+  "lessons": [
+    "关系类型要先判断交易实质：invests_in 仅用于对公司的股权/债务注资；资产出售/让渡（如 AWS 把数据中心多数股权卖给 Blackstone）用 sells_to 或 partnership，勿误标为 invests_in。",
+    "人类科学家与 AI 模型的协作研究用 collaborates_with，不要用 partners_with——partners_with 只用于公司或组织之间的伙伴关系。",
+    "事件的 participants 要覆盖原文点名的具体主体（公司、模型），不要只抽主题主体而遗漏被明确点名的关联组织。"
+  ]
+}

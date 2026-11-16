@@ -1,0 +1,2194 @@
+{
+  "date": "2026-11-16",
+  "articles": [
+    {
+      "article_id": "2026-11-16-0",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 向美国 ChatGPT Pro 订阅用户灰度上线 ChatGPT Wallet"
+          ]
+        },
+        {
+          "name": "ChatGPT Wallet",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "ChatGPT Wallet 是 OpenAI 面向 AI 代理设计的一套支付能力"
+          ]
+        },
+        {
+          "name": "ChatGPT Pro",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "首发限定美国 ChatGPT Pro 订阅用户"
+          ]
+        },
+        {
+          "name": "American Express",
+          "type": "company",
+          "aliases": [
+            "美国运通"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "这一功能由 OpenAI 与美国运通、万事达卡和 Visa 联合开发"
+          ]
+        },
+        {
+          "name": "Mastercard",
+          "type": "company",
+          "aliases": [
+            "万事达卡"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "这一功能由 OpenAI 与美国运通、万事达卡和 Visa 联合开发"
+          ]
+        },
+        {
+          "name": "Visa",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "这一功能由 OpenAI 与美国运通、万事达卡和 Visa 联合开发"
+          ]
+        },
+        {
+          "name": "dots",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "通过 OpenAI 的个人代理 dots 调用"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 向美国 ChatGPT Pro 订阅用户灰度上线 ChatGPT Wallet",
+          "summary": "OpenAI 推出面向 AI 代理的支付能力，代理找到商品后价格与付款方式先经用户过目，通过面容识别或指纹确认后扣款，支付网络生成临时代替卡号，代理与商家都拿不到真实卡号。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "ChatGPT Wallet",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "ChatGPT Pro",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "OpenAI 向美国 ChatGPT Pro 订阅用户灰度上线 ChatGPT Wallet"
+          ]
+        },
+        {
+          "type": "partnership",
+          "label": "OpenAI 与美国运通、万事达卡和 Visa 联合开发 ChatGPT Wallet 支付能力",
+          "summary": "钱包功能由 OpenAI 与美国运通、万事达卡和 Visa 联合开发，通过 OpenAI 的个人代理 dots 调用，卡片积分与符合条件的争议保护依然适用。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "American Express",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Mastercard",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Visa",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "ChatGPT Wallet",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "这一功能由 OpenAI 与美国运通、万事达卡和 Visa 联合开发"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "ChatGPT Wallet",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "OpenAI 向美国 ChatGPT Pro 订阅用户灰度上线 ChatGPT Wallet"
+          ]
+        },
+        {
+          "source": "dots",
+          "target": "ChatGPT Wallet",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "通过 OpenAI 的个人代理 dots 调用"
+          ]
+        },
+        {
+          "source": "OpenAI",
+          "target": "American Express",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": [
+            "这一功能由 OpenAI 与美国运通、万事达卡和 Visa 联合开发"
+          ]
+        },
+        {
+          "source": "OpenAI",
+          "target": "Mastercard",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": [
+            "这一功能由 OpenAI 与美国运通、万事达卡和 Visa 联合开发"
+          ]
+        },
+        {
+          "source": "OpenAI",
+          "target": "Visa",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": [
+            "这一功能由 OpenAI 与美国运通、万事达卡和 Visa 联合开发"
+          ]
+        },
+        {
+          "source": "ChatGPT Wallet",
+          "target": "ChatGPT Pro",
+          "type": "targets",
+          "weight": 0.6,
+          "evidence": [
+            "首发限定美国 ChatGPT Pro 订阅用户"
+          ]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "AI 代理第一次拿到真实可用的支付通道，购物代理的瓶颈从「能不能买到」转向「权限边界」——支付网络发卡与航司封接口在同一周对撞，agent 商业的手续标准将率先在航旅与支付之间成形。"
+    },
+    {
+      "article_id": "2026-11-16-1",
+      "entities": [
+        {
+          "name": "Alibaba",
+          "type": "company",
+          "aliases": [
+            "阿里",
+            "阿里云",
+            "阿里巴巴"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "阿里云发布 Qwen4-Max"
+          ]
+        },
+        {
+          "name": "Qwen4-Max",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Qwen4-Max 是阿里 Qwen4 系列的首款旗舰"
+          ]
+        },
+        {
+          "name": "Qwen3.8-Max",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "与 8 月以受限开源协议放开 Qwen3.8-Max 权重不同"
+          ]
+        },
+        {
+          "name": "QwenCloud",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "接入 QwenCloud 按量付费 API 与 Token Plan"
+          ]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "直接对标 Claude Opus 5.5、GPT-6 与 Kimi K3.1 Pro 但价格明显更低"
+          ]
+        },
+        {
+          "name": "GPT-6",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "直接对标 Claude Opus 5.5、GPT-6 与 Kimi K3.1 Pro 但价格明显更低"
+          ]
+        },
+        {
+          "name": "Kimi K3.1 Pro",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "直接对标 Claude Opus 5.5、GPT-6 与 Kimi K3.1 Pro 但价格明显更低"
+          ]
+        },
+        {
+          "name": "Kimi K3.1",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "在 Terminal-Bench 4.0 上落后于 Opus 5.5 与 Kimi K3.1"
+          ]
+        },
+        {
+          "name": "DeepSWE",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 DeepSWE 编码测试上小幅领先 Claude Opus 5.5"
+          ]
+        },
+        {
+          "name": "Terminal-Bench 4.0",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 Terminal-Bench 4.0 上落后于 Opus 5.5 与 Kimi K3.1"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "阿里云正式全量上线 Qwen4-Max 旗舰模型",
+          "summary": "Qwen4-Max 作为 Qwen4 系列首款旗舰于 16 日正式全量上线，接入 QwenCloud 按量付费 API 与 Token Plan，并进入 QwenWork、Qoder 与 QwenStudio，采用稀疏 MoE 架构，总参数 2.4 万亿。",
+          "participants": [
+            {
+              "name": "Alibaba",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Qwen4-Max",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "QwenCloud",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Qwen4-Max 是阿里 Qwen4 系列的首款旗舰",
+            "于 16 日正式全量上线"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Qwen4-Max 在 DeepSWE 小幅领先、在 Terminal-Bench 4.0 落后于 Opus 5.5 与 Kimi K3.1",
+          "summary": "官方榜单表现喜忧参半：在 DeepSWE 编码测试上小幅领先 Claude Opus 5.5，但在 Terminal-Bench 4.0 上落后于 Opus 5.5 与 Kimi K3.1，定价上直接对标 Claude Opus 5.5、GPT-6 与 Kimi K3.1 Pro 但价格明显更低。",
+          "participants": [
+            {
+              "name": "Qwen4-Max",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "DeepSWE",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "Terminal-Bench 4.0",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "Claude Opus 5.5",
+              "type": "model",
+              "role": "competitor"
+            },
+            {
+              "name": "Kimi K3.1 Pro",
+              "type": "model",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "在 DeepSWE 编码测试上小幅领先 Claude Opus 5.5，但在 Terminal-Bench 4.0 上落后于 Opus 5.5 与 Kimi K3.1"
+          ]
+        },
+        {
+          "type": "policy",
+          "label": "阿里宣布 Qwen4-Max 权重闭源、不可下载，仅承诺更小 Qwen4 系列开放权重",
+          "summary": "与 8 月以受限开源协议放开 Qwen3.8-Max 权重不同，这次阿里明确 Qwen4-Max 权重闭源、不可下载，仅承诺更小的 Qwen4 系列模型会开放权重（日期未定），并称移除了瞄准攻击技能的训练数据、保留防御性安全数据。",
+          "participants": [
+            {
+              "name": "Alibaba",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Qwen4-Max",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "与 8 月以受限开源协议放开 Qwen3.8-Max 权重不同，这次阿里明确 Qwen4-Max 权重闭源、不可下载"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Qwen4-Max",
+          "target": "Alibaba",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "Qwen4-Max 是阿里 Qwen4 系列的首款旗舰"
+          ]
+        },
+        {
+          "source": "QwenCloud",
+          "target": "Qwen4-Max",
+          "type": "integrates",
+          "weight": 0.7,
+          "evidence": [
+            "接入 QwenCloud 按量付费 API 与 Token Plan"
+          ]
+        },
+        {
+          "source": "Qwen4-Max",
+          "target": "DeepSWE",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "在 DeepSWE 编码测试上小幅领先 Claude Opus 5.5"
+          ]
+        },
+        {
+          "source": "Qwen4-Max",
+          "target": "Terminal-Bench 4.0",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "在 Terminal-Bench 4.0 上落后于 Opus 5.5 与 Kimi K3.1"
+          ]
+        },
+        {
+          "source": "Qwen4-Max",
+          "target": "Claude Opus 5.5",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": [
+            "直接对标 Claude Opus 5.5、GPT-6 与 Kimi K3.1 Pro 但价格明显更低"
+          ]
+        },
+        {
+          "source": "Qwen4-Max",
+          "target": "GPT-6",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "直接对标 Claude Opus 5.5、GPT-6 与 Kimi K3.1 Pro 但价格明显更低"
+          ]
+        },
+        {
+          "source": "Qwen4-Max",
+          "target": "Kimi K3.1 Pro",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "直接对标 Claude Opus 5.5、GPT-6 与 Kimi K3.1 Pro 但价格明显更低"
+          ]
+        },
+        {
+          "source": "Qwen4-Max",
+          "target": "Kimi K3.1",
+          "type": "compared_with",
+          "weight": 0.5,
+          "evidence": [
+            "在 Terminal-Bench 4.0 上落后于 Opus 5.5 与 Kimi K3.1"
+          ]
+        },
+        {
+          "source": "Qwen4-Max",
+          "target": "Qwen3.8-Max",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": [
+            "相比 Qwen3.8-Max，同等任务平均 token 消耗下降逾一半，把单任务成本压低了约六成"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Qwen4-Max 总参数",
+          "value": "2.4 万亿"
+        },
+        {
+          "name": "Qwen4-Max 单 token 激活参数",
+          "value": "71 亿"
+        },
+        {
+          "name": "Qwen4-Max N-gram 嵌入参数",
+          "value": "3280 亿"
+        },
+        {
+          "name": "Qwen4-Max 上下文长度",
+          "value": "100 万 token"
+        },
+        {
+          "name": "每百万输入 token 价格",
+          "value": "1.5 美元"
+        },
+        {
+          "name": "每百万输出 token 价格",
+          "value": "4.5 美元"
+        },
+        {
+          "name": "缓存输入/输出价格",
+          "value": "约 1.41 / 4.24 美元"
+        },
+        {
+          "name": "相比 Qwen3.8-Max 的单任务成本降幅",
+          "value": "约六成"
+        },
+        {
+          "name": "相比 Qwen3.8-Max 的平均 token 消耗降幅",
+          "value": "逾一半"
+        }
+      ],
+      "why_it_matters": "Qwen 旗舰从 Qwen3.8-Max 的受限开源转向完全闭源，等于中国开源阵营最大型号的一次后撤——「便宜、闭源、性价比对标前沿」意味着开源与闭源的分界线开始按模型尺寸而非公司划分。"
+    },
+    {
+      "article_id": "2026-11-16-2",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Nvidia 确认其 2026 年向韩国供应先进 GPU 的计划完全如期推进"
+          ]
+        },
+        {
+          "name": "黄仁勋",
+          "type": "person",
+          "aliases": [
+            "Jensen Huang"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "黄仁勋因涉嫌\"间谍丑闻\"辞职"
+          ]
+        },
+        {
+          "name": "韩国科学信息通信部",
+          "type": "organization",
+          "aliases": [
+            "MSIT",
+            "韩国科技部"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "韩国科学信息通信部表示已核实 Nvidia 确认其 2026 年向韩国供应先进 GPU 的计划完全如期推进"
+          ]
+        },
+        {
+          "name": "韩国",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "Nvidia 确认其 2026 年向韩国供应先进 GPU 的计划完全如期推进"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "韩国科学信息通信部核实 NVIDIA 2026 年对韩供应至多 26 万颗先进 GPU 的计划如期推进",
+          "summary": "韩方声明核实 NVIDIA 确认其 2026 年向韩国供应先进 GPU 的计划完全如期推进，至多 26 万颗，并继续联合 AI 项目，这批 GPU 将支撑韩国的实体与代理式 AI 基础设施。",
+          "participants": [
+            {
+              "name": "韩国科学信息通信部",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "韩国",
+              "type": "organization",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "韩国科学信息通信部表示已核实 Nvidia 确认其 2026 年向韩国供应先进 GPU 的计划完全如期推进，至多 26 万颗"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "NVIDIA 领导层危机拖累 CoreWeave、Nebius 等类云服务商股价连续下挫",
+          "summary": "围绕黄仁勋事件的出口管制与市场担忧扰动整个 AI 芯片板块，本轮 NVIDIA 领导层危机已拖累 CoreWeave、Nebius 等类云服务商股价连续下挫。",
+          "participants": [
+            {
+              "name": "黄仁勋",
+              "type": "person",
+              "role": "subject"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            }
+          ],
+          "evidence": [
+            "本轮 Nvidia 领导层危机已拖累 CoreWeave、Nebius 等类云服务商股价连续下挫"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "路透审查发现超过 30 亿美元中国算力项目建立在受限 NVIDIA 芯片之上",
+          "summary": "路透对受限 NVIDIA 处理器的审查发现，超过 30 亿美元的中国算力项目建立在受限芯片之上，出口执行问题依旧悬而未决。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "路透对受限 Nvidia 处理器的审查发现，超过 30 亿美元的中国算力项目建立在受限芯片之上"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "NVIDIA",
+          "target": "韩国",
+          "type": "supplies",
+          "weight": 0.9,
+          "evidence": [
+            "Nvidia 确认其 2026 年向韩国供应先进 GPU 的计划完全如期推进，至多 26 万颗"
+          ]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "韩国科学信息通信部",
+          "type": "partners_with",
+          "weight": 0.6,
+          "evidence": [
+            "并继续联合 AI 项目"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Nvidia 2026 年对韩供应先进 GPU 数量",
+          "value": "至多 26 万颗"
+        },
+        {
+          "name": "建立在受限芯片上的中国算力项目规模",
+          "value": "超过 30 亿美元"
+        }
+      ],
+      "why_it_matters": "黄仁勋离任未动摇 Nvidia 对韩 26 万颗 GPU 的交付承诺，说明亚洲供应纪律已制度化而非系于个人；但 30 亿美元受限芯片项目暴露的出口执行漏洞，仍是比领导层更长期的悬案。"
+    },
+    {
+      "article_id": "2026-11-16-3",
+      "entities": [
+        {
+          "name": "美国",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "新颁布的一项美国规则进一步限制了亚洲部分地区与巴西的先进 AI 芯片获取路径"
+          ]
+        },
+        {
+          "name": "美国 AI 芯片出口新规",
+          "type": "policy",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "新颁布的一项美国规则进一步限制了亚洲部分地区与巴西的先进 AI 芯片获取路径"
+          ]
+        },
+        {
+          "name": "巴西",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "新颁布的一项美国规则进一步限制了亚洲部分地区与巴西的先进 AI 芯片获取路径"
+          ]
+        },
+        {
+          "name": "Amazon",
+          "type": "company",
+          "aliases": [
+            "亚马逊"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "亚马逊当日收跌 3.34% 至 257.75 美元"
+          ]
+        },
+        {
+          "name": "AWS",
+          "type": "company",
+          "aliases": [
+            "亚马逊云服务"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "亚马逊云服务（AWS）宣布与 Blackstone Digital Infrastructure Trust 达成一项 50 亿美元数据中心交易"
+          ]
+        },
+        {
+          "name": "Blackstone Digital Infrastructure Trust",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "亚马逊云服务（AWS）宣布与 Blackstone Digital Infrastructure Trust 达成一项 50 亿美元数据中心交易"
+          ]
+        },
+        {
+          "name": "联合发射联盟",
+          "type": "organization",
+          "aliases": [
+            "ULA"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "联合发射联盟一枚 Vulcan 火箭在发射数分钟后于飞行途中失效"
+          ]
+        },
+        {
+          "name": "Vulcan 火箭",
+          "type": "hardware",
+          "aliases": [
+            "Vulcan"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "联合发射联盟一枚 Vulcan 火箭在发射数分钟后于飞行途中失效"
+          ]
+        },
+        {
+          "name": "Leo",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "所载约 40 颗计划投入其\"Leo\"低轨卫星宽带网络的卫星未能入轨"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "美国新规进一步限制亚洲部分地区与巴西的先进 AI 芯片获取路径",
+          "summary": "11 月 16 日新颁布的一项美国规则进一步限制了亚洲部分地区与巴西的先进 AI 芯片获取路径，市场随即对 AI 基础设施类公司重新定价。",
+          "participants": [
+            {
+              "name": "美国",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "美国 AI 芯片出口新规",
+              "type": "policy",
+              "role": "object"
+            },
+            {
+              "name": "巴西",
+              "type": "organization",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "新颁布的一项美国规则进一步限制了亚洲部分地区与巴西的先进 AI 芯片获取路径"
+          ]
+        },
+        {
+          "type": "launch",
+          "label": "联合发射联盟 Vulcan 火箭飞行途中失效，约 40 颗 Leo 卫星未能入轨",
+          "summary": "联合发射联盟一枚 Vulcan 火箭在发射数分钟后于飞行途中失效，所载约 40 颗计划投入其 Leo 低轨卫星宽带网络的卫星未能入轨，对 ULA 新型重型火箭与亚马逊的组网进度都是重击。",
+          "participants": [
+            {
+              "name": "联合发射联盟",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Vulcan 火箭",
+              "type": "hardware",
+              "role": "object"
+            },
+            {
+              "name": "Leo",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "联合发射联盟一枚 Vulcan 火箭在发射数分钟后于飞行途中失效，所载约 40 颗计划投入其\"Leo\"低轨卫星宽带网络的卫星未能入轨"
+          ]
+        },
+        {
+          "type": "partnership",
+          "label": "AWS 与 Blackstone Digital Infrastructure Trust 达成 50 亿美元数据中心交易",
+          "summary": "亚马逊云服务（AWS）宣布与 Blackstone Digital Infrastructure Trust 达成一项 50 亿美元数据中心交易，出售部分数据中心基础设施的多数股权，被视为亚马逊在 AI 巨额投入与市场对回报审视之间寻求平衡的动作。",
+          "participants": [
+            {
+              "name": "AWS",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Blackstone Digital Infrastructure Trust",
+              "type": "organization",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "亚马逊云服务（AWS）宣布与 Blackstone Digital Infrastructure Trust 达成一项 50 亿美元数据中心交易，出售部分数据中心基础设施的多数股权"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "美国 AI 芯片出口新规",
+          "target": "美国",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": [
+            "新颁布的一项美国规则进一步限制了亚洲部分地区与巴西的先进 AI 芯片获取路径"
+          ]
+        },
+        {
+          "source": "美国 AI 芯片出口新规",
+          "target": "巴西",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": [
+            "新颁布的一项美国规则进一步限制了亚洲部分地区与巴西的先进 AI 芯片获取路径"
+          ]
+        },
+        {
+          "source": "AWS",
+          "target": "Amazon",
+          "type": "subsidiary_of",
+          "weight": 0.9,
+          "evidence": [
+            "亚马逊云服务（AWS）宣布与 Blackstone Digital Infrastructure Trust 达成一项 50 亿美元数据中心交易"
+          ]
+        },
+        {
+          "source": "Blackstone Digital Infrastructure Trust",
+          "target": "AWS",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "亚马逊云服务（AWS）宣布与 Blackstone Digital Infrastructure Trust 达成一项 50 亿美元数据中心交易，出售部分数据中心基础设施的多数股权"
+          ]
+        },
+        {
+          "source": "Vulcan 火箭",
+          "target": "联合发射联盟",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "联合发射联盟一枚 Vulcan 火箭在发射数分钟后于飞行途中失效"
+          ]
+        },
+        {
+          "source": "Leo",
+          "target": "Amazon",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": [
+            "所载约 40 颗计划投入其\"Leo\"低轨卫星宽带网络的卫星未能入轨"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "亚马逊当日跌幅",
+          "value": "3.34%"
+        },
+        {
+          "name": "亚马逊当日收盘价",
+          "value": "257.75 美元"
+        },
+        {
+          "name": "Vulcan 所载 Leo 卫星数量",
+          "value": "约 40 颗"
+        },
+        {
+          "name": "AWS-Blackstone 数据中心交易金额",
+          "value": "50 亿美元"
+        }
+      ],
+      "why_it_matters": "出口新规第一次把 AI 基建的宏观风险直接写进个股定价——亚马逊同日因火箭失利与新规承压，AI 资本开支叙事开始同时接受政策与物理事故的检验。"
+    },
+    {
+      "article_id": "2026-11-16-4",
+      "entities": [
+        {
+          "name": "GitHub",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "GitHub 发布更新日志"
+          ]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": [
+            "谷歌"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "宣布 Google 的 Gemini 4 Hydrogen 已在 Copilot 内全面可用"
+          ]
+        },
+        {
+          "name": "Gemini 4 Hydrogen",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "宣布 Google 的 Gemini 4 Hydrogen 已在 Copilot 内全面可用（GA）"
+          ]
+        },
+        {
+          "name": "Gemini 3.8 Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "相比 Gemini 3.8 Flash 在指令遵循上有明显改进"
+          ]
+        },
+        {
+          "name": "GitHub Copilot",
+          "type": "product",
+          "aliases": [
+            "Copilot"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "宣布 Google 的 Gemini 4 Hydrogen 已在 Copilot 内全面可用（GA）"
+          ]
+        },
+        {
+          "name": "Gemini API",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "早前该模型已在 Gemini API（含免费层）全面可用"
+          ]
+        },
+        {
+          "name": "Antigravity",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "并成为 Google 托管 Agent 版 Antigravity 的默认模型"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "GitHub 宣布 Gemini 4 Hydrogen 在 Copilot 内全面可用",
+          "summary": "GitHub 发布更新日志，宣布 Google 的 Gemini 4 Hydrogen 已在 Copilot 内全面可用（GA），它专为代理式编码、工具使用与多步工作流设计，覆盖 VS Code、JetBrains、Copilot CLI 等多个入口。",
+          "participants": [
+            {
+              "name": "GitHub",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "GitHub Copilot",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "Gemini 4 Hydrogen",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "宣布 Google 的 Gemini 4 Hydrogen 已在 Copilot 内全面可用（GA）"
+          ]
+        },
+        {
+          "type": "policy",
+          "label": "GitHub 将 Gemini 3.8 Flash 停用时间定为 2026 年 12 月 14 日并推荐 Gemini 4 Hydrogen 替代",
+          "summary": "GitHub 另行说明将把 Gemini 4 Hydrogen 作为 Gemini 3.8 Flash 的推荐替代，3.8 Flash 计划于 2026 年 12 月 14 日在 Copilot Chat、内联编辑、ask 与代理模式及代码补全等场景停止服务。",
+          "participants": [
+            {
+              "name": "GitHub",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Gemini 3.8 Flash",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Gemini 4 Hydrogen",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "3.8 Flash 计划于 2026 年 12 月 14 日在 Copilot Chat、内联编辑、ask 与代理模式及代码补全等场景停止服务"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Gemini 4 Hydrogen",
+          "target": "Google",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "宣布 Google 的 Gemini 4 Hydrogen 已在 Copilot 内全面可用（GA）"
+          ]
+        },
+        {
+          "source": "GitHub Copilot",
+          "target": "Gemini 4 Hydrogen",
+          "type": "integrates",
+          "weight": 0.9,
+          "evidence": [
+            "宣布 Google 的 Gemini 4 Hydrogen 已在 Copilot 内全面可用（GA）"
+          ]
+        },
+        {
+          "source": "Gemini 4 Hydrogen",
+          "target": "Gemini 3.8 Flash",
+          "type": "replaces",
+          "weight": 0.8,
+          "evidence": [
+            "GitHub 还另行说明将把 Gemini 4 Hydrogen 作为 Gemini 3.8 Flash 的推荐替代"
+          ]
+        },
+        {
+          "source": "Gemini 4 Hydrogen",
+          "target": "Gemini 3.8 Flash",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "相比 Gemini 3.8 Flash 在指令遵循上有明显改进"
+          ]
+        },
+        {
+          "source": "Gemini API",
+          "target": "Gemini 4 Hydrogen",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "早前该模型已在 Gemini API（含免费层）全面可用"
+          ]
+        },
+        {
+          "source": "Antigravity",
+          "target": "Gemini 4 Hydrogen",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "并成为 Google 托管 Agent 版 Antigravity 的默认模型"
+          ]
+        },
+        {
+          "source": "GitHub Copilot",
+          "target": "GitHub",
+          "type": "developed_by",
+          "weight": 0.5,
+          "evidence": [
+            "GitHub 发布更新日志"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Gemini 3.8 Flash 在 Copilot 停止服务日期",
+          "value": "2026 年 12 月 14 日"
+        }
+      ],
+      "why_it_matters": "Copilot 给 Gemini 家族排出了显式换代时间表（3.8 Flash 12 月 14 日停服），「推荐模型」从建议升级为排期，模型生命周期管理正式成为 IDE 产品的一部分。"
+    },
+    {
+      "article_id": "2026-11-16-5",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Nvidia 扩大了其面向科学与工程的 CUDA-X 软件集合"
+          ]
+        },
+        {
+          "name": "CUDA-X",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Nvidia 扩大了其面向科学与工程的 CUDA-X 软件集合"
+          ]
+        },
+        {
+          "name": "天文",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "新增针对天文、分子模拟和空间生物学的计算工具"
+          ]
+        },
+        {
+          "name": "分子模拟",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "新增针对天文、分子模拟和空间生物学的计算工具"
+          ]
+        },
+        {
+          "name": "空间生物学",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "新增针对天文、分子模拟和空间生物学的计算工具"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "NVIDIA 扩充 CUDA-X 软件集合，新增天文、分子模拟与空间生物学计算工具",
+          "summary": "NVIDIA 扩大其面向科学与工程的 CUDA-X 软件集合，新增针对天文、分子模拟和空间生物学的计算工具，官方称这些工具可加速研究工作流，且其中一部分能与 AI 代理配合工作。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "CUDA-X",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Nvidia 扩大了其面向科学与工程的 CUDA-X 软件集合，新增针对天文、分子模拟和空间生物学的计算工具"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "CUDA-X",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "Nvidia 扩大了其面向科学与工程的 CUDA-X 软件集合"
+          ]
+        },
+        {
+          "source": "CUDA-X",
+          "target": "天文",
+          "type": "targets",
+          "weight": 0.7,
+          "evidence": [
+            "新增针对天文、分子模拟和空间生物学的计算工具"
+          ]
+        },
+        {
+          "source": "CUDA-X",
+          "target": "分子模拟",
+          "type": "targets",
+          "weight": 0.7,
+          "evidence": [
+            "新增针对天文、分子模拟和空间生物学的计算工具"
+          ]
+        },
+        {
+          "source": "CUDA-X",
+          "target": "空间生物学",
+          "type": "targets",
+          "weight": 0.7,
+          "evidence": [
+            "新增针对天文、分子模拟和空间生物学的计算工具"
+          ]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "领导层动荡期 Nvidia 仍在推进 CUDA-X 软件生态，说明平台扩展节奏已与创始人个人脱钩——科学计算加代理融合是 Nvidia 对冲出口管制收紧的另一条战线。"
+    },
+    {
+      "article_id": "2026-11-16-6",
+      "entities": [
+        {
+          "name": "LiveGeo",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "论文提出了 LiveGeo 基准（11 月 12 日发布）"
+          ]
+        },
+        {
+          "name": "Claude Sonnet 5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Claude Sonnet 5 在动态评估的静态基线上得分 22.8%"
+          ]
+        },
+        {
+          "name": "Gemini 3.7 Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Gemini 3.7 Flash 从 26.2% 降到 13.4% 与 14.1%"
+          ]
+        },
+        {
+          "name": "地理任务",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "AI 代理完成地理任务时，一旦模拟城市条件发生变化，表现会明显恶化"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "LiveGeo 基准研究显示 AI 代理在地理环境动态变化时成功率从 19.1% 骤降至 5.7% 与 4.0%",
+          "summary": "研究者提出 LiveGeo 基准，用于检验代理能否在周边环境演进时核对旧信息并修订计划；平均成功率从匹配的静态测试的 19.1% 降至两种动态设定下的 5.7% 与 4.0%，Claude Sonnet 5 与 Gemini 3.7 Flash 均明显下滑，代码与数据已开源。",
+          "participants": [
+            {
+              "name": "LiveGeo",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "Claude Sonnet 5",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Gemini 3.7 Flash",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "平均成功率从匹配的静态测试的 19.1% 降至两种动态设定下的 5.7% 与 4.0%"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude Sonnet 5",
+          "target": "LiveGeo",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "例如 Claude Sonnet 5 在动态评估的静态基线上得分 22.8%"
+          ]
+        },
+        {
+          "source": "Gemini 3.7 Flash",
+          "target": "LiveGeo",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "Gemini 3.7 Flash 从 26.2% 降到 13.4% 与 14.1%"
+          ]
+        },
+        {
+          "source": "LiveGeo",
+          "target": "地理任务",
+          "type": "targets",
+          "weight": 0.6,
+          "evidence": [
+            "AI 代理完成地理任务时，一旦模拟城市条件发生变化，表现会明显恶化"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "静态匹配测试平均成功率",
+          "value": "19.1%"
+        },
+        {
+          "name": "共享动态设定平均成功率",
+          "value": "5.7%"
+        },
+        {
+          "name": "仅任务动态设定平均成功率",
+          "value": "4.0%"
+        },
+        {
+          "name": "相对静态测试的降幅",
+          "value": "70.3% 与 79.3%"
+        },
+        {
+          "name": "表现最好的代理在地点定位与地点发现任务的 pass@1",
+          "value": "38.0%"
+        },
+        {
+          "name": "Claude Sonnet 5 静态基线得分",
+          "value": "22.8%"
+        },
+        {
+          "name": "Claude Sonnet 5 共享动态与仅任务动态得分",
+          "value": "2.0% 与 2.7%"
+        },
+        {
+          "name": "Gemini 3.7 Flash 静态基线得分",
+          "value": "26.2%"
+        },
+        {
+          "name": "Gemini 3.7 Flash 共享动态与仅任务动态得分",
+          "value": "13.4% 与 14.1%"
+        }
+      ],
+      "why_it_matters": "地理类代理任务在环境动态化后成功率跌到个位数，证明当前代理的世界知识是快照而非可更新的模型——「静态匹配过拟合」将是所有长周期规划 agent 的通用瓶颈，不止地理一域。"
+    },
+    {
+      "article_id": "2026-11-16-7",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 发表物理论文：与 GPT-6 Astra 共同提出标准模型的格点定义"
+          ]
+        },
+        {
+          "name": "Nathaniel Craig",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "加州大学圣芭芭拉分校粒子物理理论组负责人、OpenAI 访问科学家 Nathaniel Craig 介绍了他如何与 GPT-6 Astra 合作"
+          ]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": [
+            "GPT-6-Astra"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 发表物理论文：与 GPT-6 Astra 共同提出标准模型的格点定义"
+          ]
+        },
+        {
+          "name": "标准模型",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "为粒子物理标准模型给出候选格点定义"
+          ]
+        },
+        {
+          "name": "加州大学圣芭芭拉分校",
+          "type": "organization",
+          "aliases": [
+            "UCSB"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "加州大学圣芭芭拉分校粒子物理理论组负责人、OpenAI 访问科学家 Nathaniel Craig"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Nathaniel Craig 与 GPT-6 Astra 合作为标准模型提出候选格点定义，格点理论家完成复核",
+          "summary": "Craig 与 GPT-6 Astra 为粒子物理标准模型给出候选格点定义，借鉴 Ginsparg–Wilson、overlap 费米子与 Lüscher 等此前方案并补上验证格一环；思路由人类提出，把策略变成可行构造并牵头完成详细证明的是 Astra，Maarten Golterman、Andreas Kronfeld 和 Yigal Shamir 复核了证明并给出关键追问。",
+          "participants": [
+            {
+              "name": "Nathaniel Craig",
+              "type": "person",
+              "role": "subject"
+            },
+            {
+              "name": "GPT-6 Astra",
+              "type": "model",
+              "role": "partner"
+            },
+            {
+              "name": "标准模型",
+              "type": "topic",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "介绍了他如何与 GPT-6 Astra 合作，为粒子物理标准模型给出候选格点定义"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "GPT-6 Astra",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "OpenAI 发表物理论文：与 GPT-6 Astra 共同提出标准模型的格点定义"
+          ]
+        },
+        {
+          "source": "Nathaniel Craig",
+          "target": "加州大学圣芭芭拉分校",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": [
+            "加州大学圣芭芭拉分校粒子物理理论组负责人、OpenAI 访问科学家 Nathaniel Craig"
+          ]
+        },
+        {
+          "source": "Nathaniel Craig",
+          "target": "OpenAI",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": [
+            "加州大学圣芭芭拉分校粒子物理理论组负责人、OpenAI 访问科学家 Nathaniel Craig"
+          ]
+        },
+        {
+          "source": "Nathaniel Craig",
+          "target": "GPT-6 Astra",
+          "type": "partners_with",
+          "weight": 0.8,
+          "evidence": [
+            "加州大学圣芭芭拉分校粒子物理理论组负责人、OpenAI 访问科学家 Nathaniel Craig 介绍了他如何与 GPT-6 Astra 合作"
+          ]
+        },
+        {
+          "source": "GPT-6 Astra",
+          "target": "标准模型",
+          "type": "proposes",
+          "weight": 0.9,
+          "evidence": [
+            "为粒子物理标准模型给出候选格点定义"
+          ]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "AI 首次进入理论物理的构造端：人类提思路、模型完成证明并牵头复核链条，标准模型格点化有了 AI 署名的候选答案，非微扰定义这个逾五十年问题第一次看到 AI 参与的可能路径。"
+    },
+    {
+      "article_id": "2026-11-16-8",
+      "entities": [
+        {
+          "name": "The Endless Frontier",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "The Endless Frontier 在 Hugging Face 上放出 Fx-Bio-1031 的权重"
+          ]
+        },
+        {
+          "name": "Hugging Face",
+          "type": "company",
+          "aliases": [
+            "HF",
+            "HuggingFace"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "The Endless Frontier 在 Hugging Face 上放出 Fx-Bio-1031 的权重"
+          ]
+        },
+        {
+          "name": "Fx-Bio-1031",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "The Endless Frontier 在 Hugging Face 上放出 Fx-Bio-1031 的权重"
+          ]
+        },
+        {
+          "name": "Qwen3.8-Flash-Next",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "从 Qwen3.8-Flash-Next 做后训练而来"
+          ]
+        },
+        {
+          "name": "BioMysteryBench",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 BioMysteryBench 的 Difficult 子集上 Fx-Bio-1031 取得 70.59% 的 Pass@5"
+          ]
+        },
+        {
+          "name": "BixBench3",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 BixBench3（面向交互式 notebook 软件环境中生物数据与多步工作流的基准）上得 45.76"
+          ]
+        },
+        {
+          "name": "Opus 5",
+          "type": "model",
+          "aliases": [
+            "Opus-5"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "高于 Opus-5 的 52.94%"
+          ]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": [
+            "GPT-6-Astra"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "低于 GPT-6-Astra 的 48.70 但高于 Opus-5 的 40.60"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "The Endless Frontier 开源 1800 亿参数生物信息学模型 Fx-Bio-1031",
+          "summary": "The Endless Frontier 在 Hugging Face 上放出 Fx-Bio-1031 的权重，模型从 Qwen3.8-Flash-Next 做后训练而来，面向多步生物信息学分析，授权采用 Qwen Community License 1.0。",
+          "participants": [
+            {
+              "name": "The Endless Frontier",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Fx-Bio-1031",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Hugging Face",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "The Endless Frontier 在 Hugging Face 上放出 Fx-Bio-1031 的权重"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "Fx-Bio-1031 在 BioMysteryBench 与 BixBench3 上取得有竞争力的成绩",
+          "summary": "内部代理评估框架显示，Fx-Bio-1031 在 BioMysteryBench Difficult 子集上取得 70.59% 的 Pass@5，高于 Opus-5 的 52.94% 与 GPT-6-Astra 的 47.06%；在 BixBench3 上得 45.76，低于 GPT-6-Astra 的 48.70 但高于 Opus-5 的 40.60。",
+          "participants": [
+            {
+              "name": "Fx-Bio-1031",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "BioMysteryBench",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "BixBench3",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "Opus 5",
+              "type": "model",
+              "role": "competitor"
+            },
+            {
+              "name": "GPT-6 Astra",
+              "type": "model",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "在 BioMysteryBench 的 Difficult 子集上 Fx-Bio-1031 取得 70.59% 的 Pass@5"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fx-Bio-1031",
+          "target": "The Endless Frontier",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "The Endless Frontier 在 Hugging Face 上放出 Fx-Bio-1031 的权重"
+          ]
+        },
+        {
+          "source": "Fx-Bio-1031",
+          "target": "Qwen3.8-Flash-Next",
+          "type": "fine_tuned_from",
+          "weight": 0.9,
+          "evidence": [
+            "从 Qwen3.8-Flash-Next 做后训练而来"
+          ]
+        },
+        {
+          "source": "Fx-Bio-1031",
+          "target": "BioMysteryBench",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "在 BioMysteryBench 的 Difficult 子集上 Fx-Bio-1031 取得 70.59% 的 Pass@5"
+          ]
+        },
+        {
+          "source": "Fx-Bio-1031",
+          "target": "BixBench3",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "在 BixBench3（面向交互式 notebook 软件环境中生物数据与多步工作流的基准）上得 45.76"
+          ]
+        },
+        {
+          "source": "Fx-Bio-1031",
+          "target": "Opus 5",
+          "type": "outperforms",
+          "weight": 0.6,
+          "evidence": [
+            "在 BioMysteryBench 的 Difficult 子集上 Fx-Bio-1031 取得 70.59% 的 Pass@5，高于 Opus-5 的 52.94%"
+          ]
+        },
+        {
+          "source": "Fx-Bio-1031",
+          "target": "GPT-6 Astra",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": [
+            "在 BixBench3（面向交互式 notebook 软件环境中生物数据与多步工作流的基准）上得 45.76，低于 GPT-6-Astra 的 48.70 但高于 Opus-5 的 40.60"
+          ]
+        },
+        {
+          "source": "Fx-Bio-1031",
+          "target": "Hugging Face",
+          "type": "hosted_on",
+          "weight": 0.8,
+          "evidence": [
+            "The Endless Frontier 在 Hugging Face 上放出 Fx-Bio-1031 的权重"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Fx-Bio-1031 参数量",
+          "value": "1800 亿"
+        },
+        {
+          "name": "Fx-Bio-1031 在 BioMysteryBench Difficult 的 Pass@5",
+          "value": "70.59%"
+        },
+        {
+          "name": "Opus 5 在 BioMysteryBench Difficult 的 Pass@5",
+          "value": "52.94%"
+        },
+        {
+          "name": "GPT-6 Astra 在 BioMysteryBench Difficult 的 Pass@5",
+          "value": "47.06%"
+        },
+        {
+          "name": "Fx-Bio-1031 在 BixBench3 的得分",
+          "value": "45.76"
+        },
+        {
+          "name": "GPT-6 Astra 在 BixBench3 的得分",
+          "value": "48.70"
+        },
+        {
+          "name": "Opus 5 在 BixBench3 的得分",
+          "value": "40.60"
+        }
+      ],
+      "why_it_matters": "垂直科学模型开放权重首次在生物信息学双基准上同时压制闭源前沿，且复用 Qwen 许可证生态——开源模型的竞争力正从通用评测转向细分领域工程能力。"
+    },
+    {
+      "article_id": "2026-11-16-9",
+      "entities": [
+        {
+          "name": "Meituan",
+          "type": "company",
+          "aliases": [
+            "美团"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "美团发布了开源的 LongCat-2.5"
+          ]
+        },
+        {
+          "name": "LongCat-2.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "美团发布了开源的 LongCat-2.5，一个面向编码代理的 1.6 万亿参数模型"
+          ]
+        },
+        {
+          "name": "华为昇腾芯片",
+          "type": "hardware",
+          "aliases": [
+            "昇腾",
+            "Ascend"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "独立自托管部署的示例需要 194 片华为昇腾芯片"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "美团开源 1.6 万亿参数编码代理模型 LongCat-2.5，训练全程未用 Nvidia GPU",
+          "summary": "美团发布开源的 LongCat-2.5，一个面向编码代理的 1.6 万亿参数模型，训练完全在中国国产硬件上进行，官方称全程未使用任何英伟达 GPU，独立自托管部署的示例需要 194 片华为昇腾芯片。",
+          "participants": [
+            {
+              "name": "Meituan",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "LongCat-2.5",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "美团发布了开源的 LongCat-2.5，一个面向编码代理的 1.6 万亿参数模型"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "LongCat-2.5 与 Tencent Hy4、ERNIE 共同构成中国国产算力训练旗舰模型的路线例证",
+          "summary": "这是国产算力训出旗舰模型路线的又一块拼图，与早前 Tencent Hy4、ERNIE 等一起构成中国摆脱对英伟达单一依赖的例证，被市场视为中国算力自主化战略的一部分。",
+          "participants": [
+            {
+              "name": "LongCat-2.5",
+              "type": "model",
+              "role": "subject"
+            }
+          ],
+          "evidence": [
+            "与早前 Tencent Hy4、ERNIE 等一起构成中国摆脱对英伟达单一依赖的例证"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "LongCat-2.5",
+          "target": "Meituan",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "美团发布了开源的 LongCat-2.5"
+          ]
+        },
+        {
+          "source": "LongCat-2.5",
+          "target": "华为昇腾芯片",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "独立自托管部署的示例需要 194 片华为昇腾芯片"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "LongCat-2.5 参数量",
+          "value": "1.6 万亿"
+        },
+        {
+          "name": "LongCat-2.5 自托管部署所需昇腾芯片数量",
+          "value": "194 片"
+        }
+      ],
+      "why_it_matters": "1.6T 旗舰第一次在完全国产硬件栈上训练并开源，把「全自主算力栈」变成可部署样本——对华出口管制越收紧，这条替代路线的样板效应就越强。"
+    },
+    {
+      "article_id": "2026-11-16-10",
+      "entities": [
+        {
+          "name": "斯坦福 AI Index",
+          "type": "organization",
+          "aliases": [
+            "Stanford AI Index",
+            "Stanford HAI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "斯坦福 AI Index 最新报告显示，2026 年迄今全球企业级 AI 投资已累计突破 1 万亿美元大关"
+          ]
+        },
+        {
+          "name": "美联储",
+          "type": "organization",
+          "aliases": [
+            "Federal Reserve"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "美联储最新调查将其列为头号金融稳定风险"
+          ]
+        },
+        {
+          "name": "AI Index 报告",
+          "type": "paper",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "斯坦福 AI Index 最新报告显示，2026 年迄今全球企业级 AI 投资已累计突破 1 万亿美元大关"
+          ]
+        },
+        {
+          "name": "美联储调查",
+          "type": "paper",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": [
+            "美联储最新调查将其列为头号金融稳定风险"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "斯坦福 AI Index 报告显示 2026 年全球企业 AI 投资突破 1 万亿美元，年轻工人就业继续下滑",
+          "summary": "斯坦福 AI Index 最新报告显示 2026 年迄今全球企业级 AI 投资已累计突破 1 万亿美元大关；与投资端火热相对，AI 高暴露职业中年轻工人的就业继续下滑，公众态度由早前偏乐观转向更复杂。",
+          "participants": [
+            {
+              "name": "斯坦福 AI Index",
+              "type": "organization",
+              "role": "subject"
+            }
+          ],
+          "evidence": [
+            "斯坦福 AI Index 最新报告显示，2026 年迄今全球企业级 AI 投资已累计突破 1 万亿美元大关"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "美联储最新调查将 AI 投资列为头号金融稳定风险",
+          "summary": "美联储最新调查将其列为头号金融稳定风险，把如此巨额的投入能否持续获得回报的问题摆上台面，这也是 AI 资本开支超级周期的量级注脚。",
+          "participants": [
+            {
+              "name": "美联储",
+              "type": "organization",
+              "role": "regulator"
+            }
+          ],
+          "evidence": [
+            "美联储最新调查将其列为头号金融稳定风险"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "AI Index 报告",
+          "target": "斯坦福 AI Index",
+          "type": "authored_by",
+          "weight": 0.8,
+          "evidence": [
+            "斯坦福 AI Index 最新报告显示，2026 年迄今全球企业级 AI 投资已累计突破 1 万亿美元大关"
+          ]
+        },
+        {
+          "source": "美联储调查",
+          "target": "美联储",
+          "type": "authored_by",
+          "weight": 0.7,
+          "evidence": [
+            "美联储最新调查将其列为头号金融稳定风险"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "2026 年迄今全球企业 AI 投资规模",
+          "value": "超过 1 万亿美元"
+        }
+      ],
+      "why_it_matters": "AI 叙事从「技术竞赛」切换为「资本狂热与就业/信任再平衡」——1 万亿美元投资与年轻工人就业下滑同框，美联储已将其列为首要金融稳定风险，财报季资本开支指引将成为下一个定价锚。"
+    },
+    {
+      "article_id": "2026-11-16-11",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Nvidia 对 Hugging Face 的 13 亿美元收购仍处于悬而未决状态"
+          ]
+        },
+        {
+          "name": "Hugging Face",
+          "type": "company",
+          "aliases": [
+            "HF",
+            "HuggingFace"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Nvidia 对 Hugging Face 的 13 亿美元收购仍处于悬而未决状态"
+          ]
+        },
+        {
+          "name": "GitHub",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "GitHub 引入 Gemini 4 Hydrogen、各类模型在 HF 之外分散托管"
+          ]
+        },
+        {
+          "name": "Gemini 4 Hydrogen",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "GitHub 引入 Gemini 4 Hydrogen、各类模型在 HF 之外分散托管"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "NVIDIA 对 Hugging Face 的 13 亿美元收购仍悬而未决，领导层危机给交易增添变数",
+          "summary": "NVIDIA 对 Hugging Face 的 13 亿美元收购仍处于悬而未决状态，随着黄仁勋卸任、董事会继续调查，外界对这一交易能否照常推进、以及收购后 Hugging Face 作为全球最大开源模型平台的走向产生疑问。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Hugging Face",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Nvidia 对 Hugging Face 的 13 亿美元收购仍处于悬而未决状态"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "黄仁勋因\"间谍丑闻\"卸任，董事会继续调查",
+          "summary": "随着黄仁勋因\"间谍丑闻\"卸任、董事会继续调查，NVIDIA 领导层陷入动荡，让谁在拍板、何时能落地更加模糊。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "随着黄仁勋因\"间谍丑闻\"卸任、董事会继续调查"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "GitHub 引入 Gemini 4 Hydrogen、模型分散托管，Hugging Face 的平台聚合力被稀释",
+          "summary": "开源生态的迁移成本在上升，GitHub 引入 Gemini 4 Hydrogen、各类模型在 HF 之外分散托管，都意味着平台聚合力正被稀释。",
+          "participants": [
+            {
+              "name": "GitHub",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Hugging Face",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Gemini 4 Hydrogen",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "GitHub 引入 Gemini 4 Hydrogen、各类模型在 HF 之外分散托管，都意味着平台聚合力正被稀释"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "NVIDIA",
+          "target": "Hugging Face",
+          "type": "acquires",
+          "weight": 0.9,
+          "evidence": [
+            "Nvidia 对 Hugging Face 的 13 亿美元收购仍处于悬而未决状态"
+          ]
+        },
+        {
+          "source": "GitHub",
+          "target": "Gemini 4 Hydrogen",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": [
+            "GitHub 引入 Gemini 4 Hydrogen、各类模型在 HF 之外分散托管"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Nvidia 收购 Hugging Face 的交易金额",
+          "value": "13 亿美元"
+        }
+      ],
+      "why_it_matters": "13 亿美元收购案的命运开始由董事会调查而非商业条款决定——Hugging Face 作为开源中枢一旦易主或长期悬置，模型托管与许可证的不确定性会直接改写开源生态的迁移成本。"
+    },
+    {
+      "article_id": "2026-11-16-12",
+      "entities": [
+        {
+          "name": "United Airlines",
+          "type": "company",
+          "aliases": [
+            "联合航空"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "联合航空对被判定\"未经授权\"的 AI 订票代理实施限制"
+          ]
+        },
+        {
+          "name": "AI 订票代理",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "联合航空对被判定\"未经授权\"的 AI 订票代理实施限制，理由是要保护客户关系与数据掌控权"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "这发生在 OpenAI 刚推出 ChatGPT Wallet、让代理能代表用户购物的同一天"
+          ]
+        },
+        {
+          "name": "ChatGPT Wallet",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "这发生在 OpenAI 刚推出 ChatGPT Wallet、让代理能代表用户购物的同一天"
+          ]
+        },
+        {
+          "name": "Sierra",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "类似 Sierra 的 Poppy 一类\"企业声明代理何种操作被允许\"的协议"
+          ]
+        },
+        {
+          "name": "Poppy",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "类似 Sierra 的 Poppy 一类\"企业声明代理何种操作被允许\"的协议"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "联合航空对未经授权的 AI 订票代理实施限制，保护客户关系与数据掌控权",
+          "summary": "联合航空对被判定\"未经授权\"的 AI 订票代理实施限制，理由是要保护客户关系与数据掌控权，不仅技术上拦截，更在协议与接口访问上设限。",
+          "participants": [
+            {
+              "name": "United Airlines",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "AI 订票代理",
+              "type": "topic",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "联合航空对被判定\"未经授权\"的 AI 订票代理实施限制，理由是要保护客户关系与数据掌控权"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "ChatGPT Wallet 推出与联合航空封禁代理同日发生，agent 购物权限之争成形",
+          "summary": "一边是 OpenAI 推出 ChatGPT Wallet、让代理能代表用户购物，一边是航司明确说\"这部分入口不对外开放\"，支付网络则反向推进认可并识别合规代理交易，为 agent-driven commerce 铺路。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "United Airlines",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "ChatGPT Wallet",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "这发生在 OpenAI 刚推出 ChatGPT Wallet、让代理能代表用户购物的同一天"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "United Airlines",
+          "target": "AI 订票代理",
+          "type": "restricts",
+          "weight": 0.9,
+          "evidence": [
+            "联合航空对被判定\"未经授权\"的 AI 订票代理实施限制，理由是要保护客户关系与数据掌控权"
+          ]
+        },
+        {
+          "source": "ChatGPT Wallet",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "这发生在 OpenAI 刚推出 ChatGPT Wallet、让代理能代表用户购物的同一天"
+          ]
+        },
+        {
+          "source": "Poppy",
+          "target": "Sierra",
+          "type": "developed_by",
+          "weight": 0.6,
+          "evidence": [
+            "类似 Sierra 的 Poppy 一类\"企业声明代理何种操作被允许\"的协议"
+          ]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "同一周「支付网络给代理发卡」与「航司封代理接口」并行发生，agent 商业的第一场标准之争落在权限协议上——谁定义「代理可以做什么」，谁就掌握 agent-driven commerce 的入口。"
+    }
+  ]
+}

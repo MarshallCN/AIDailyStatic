@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-16",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "事实、数字与关系方向整体准确，metrics 完整，无幻觉或方向反转；但存在规律性语义瑕疵：已辞职的黄仁勋在 3 篇文章里仍被断言为对 Nvidia 的现行 affiliated_with；机构报告/美联储调查用对抗性 targets 类型连边；LongCat-2.5 与 Tencent Hy4 只是同一条国产算力趋势里的并列例子却被建成 compared_with；Qwen3.8-Max 作为关键对比基线未抽成实体、metrics 名称悬空引用。",
+  "findings": [
+    {
+      "article_id": "2026-11-16-2",
+      "severity": "medium",
+      "problem": "关系 \"黄仁勋 --affiliated_with--> Nvidia\" 断言现行隶属关系，但该关系自身的证据句就是\"在黄仁勋因涉嫌'间谍丑闻'辞职、Nvidia 领导层陷入动荡之际\"——证据与关系语义自相矛盾。同一问题还出现在 2026-11-16-10（证据\"在黄仁勋离任…\"）与 2026-11-16-11（证据\"随着黄仁勋因'间谍丑闻'卸任…\"），共 3 处。",
+      "fix": "本周新闻已明确黄仁勋辞职/卸任，三处 affiliated_with 边都不应断言当前隶属：删除这些边，或改用以 person 为 source 的 former_executive_of/已离任语义（若类型表无对应项则删除），使关系与\"辞职/卸任\"的证据句一致；人物身份保留在 entities 与事件中即可。"
+    },
+    {
+      "article_id": "2026-11-16-9",
+      "severity": "medium",
+      "problem": "关系 \"LongCat-2.5 --compared_with--> Tencent Hy4\" 关系类型用错：原文只说 LongCat-2.5 与 Tencent Hy4、ERNIE 等\"一起构成中国摆脱对英伟达单一依赖的例证\"，是同一条国产算力路线上的并列例子，文章没有任何比较二者优劣的内容——共同出现被当成了比较。",
+      "fix": "删除该 compared_with 边；\"同为一条趋势的例子\"由 trend 事件承载即可，不要为\"共同构成例证\"造比较边，也不要补 ERNIE 的同型边。"
+    },
+    {
+      "article_id": "2026-11-16-10",
+      "severity": "medium",
+      "problem": "两条关系 \"斯坦福 AI Index --targets--> 企业 AI 投资\" 与 \"美联储 --targets--> 企业 AI 投资\" 误用对抗性/指向性 targets 类型：AI Index 是测评与统计该主题，美联储调查是把该风险列为头号金融稳定风险，均无\"针对\"的对抗语义，与既有规则（机构研报/调查不得用 targets 兜底）冲突。",
+      "fix": "删除这两条 targets 边；AI Index 与美联储对投资主题的断言只保留在各自事件（research/trend）与 why_it_matters 中。确需保留监测语义时，evidence 必须直接支撑且避免使用 targets。"
+    },
+    {
+      "article_id": "2026-11-16-1",
+      "severity": "medium",
+      "problem": "Qwen3.8-Max 是文中两处核心语义的主体：成本/价格对比基线（\"相比 Qwen3.8-Max，同等任务平均 token 消耗下降逾一半，把单任务成本压低了约六成\"）与许可政策对照（\"与 8 月以受限开源协议放开 Qwen3.8-Max 权重不同\"），但实体表没有该节点，而 metrics 名称（\"相比 Qwen3.8-Max 的单任务成本降幅\"等）却引用了实体表之外的字符串。",
+      "fix": "新增实体 Qwen3.8-Max（type model）；建 Qwen4-Max --compared_with--> Qwen3.8-Max，evidence 用\"相比 Qwen3.8-Max，同等任务平均 token 消耗下降逾一半，把单任务成本压低了约六成\"，把前代对比基线固化进图，metrics 名称引用也才有实体可挂。"
+    },
+    {
+      "article_id": "2026-11-16-1",
+      "severity": "low",
+      "problem": "关系 \"Qwen4-Max --compared_with--> Kimi K3.1 Pro\" 的证据引用的是 Terminal-Bench 榜单句\"在 Terminal-Bench 4.0 上落后于 Opus 5.5 与 Kimi K3.1\"——该句提到的是不带 Pro 的 Kimi K3.1，且内容是榜单胜负而非定价对标，证据与断言对象和语义都不符。",
+      "fix": "将该关系 evidence 改为\"直接对标 Claude Opus 5.5、GPT-6 与 Kimi K3.1 Pro 但价格明显更低\"；Terminal-Bench 榜单对比如需入图，应另建指向 Kimi K3.1（非 Pro）实体的边，避免版本混用导致证据失效。"
+    }
+  ],
+  "lessons": [
+    "人物已在当日或本周新闻中辞职/卸任时，不要建现行 affiliated_with 边（证据句写\"辞职/卸任\"即自相矛盾）；改为 former_executive_of/已离任语义或删除，人物身份保留在 entities 与事件里。",
+    "compared_with 的 evidence 必须同时提到对比双方且版本名精确（Kimi K3.1 与 Kimi K3.1 Pro 是不同实体），榜单胜负句不能作为定价对标断言的证据。"
+  ]
+}
