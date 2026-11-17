@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-17",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 83,
+  "summary": "事实与数字全部对得上原文，无幻觉、无 high 级问题，r1/r2 的大部分问题已修复（Vals evaluates、arXiv 无 authored_by、投资关系补全、launch participants 清理等）；但仍有 4 处 medium 级建模缺陷：推理框架支持方向与时态反写、移植事件主体/对象错配、遗漏对比锚点实体 GPT-6 Astra 导致跨文章断连、基准与定价两个独立事实被压成一个事件；另有 3 处 low 级限定词丢失与背景句升格问题。",
+  "findings": [
+    {
+      "article_id": "2026-11-17-9",
+      "severity": "medium",
+      "problem": "关系 SenseNova-Loop-9B --uses--> vLLM 与 SenseNova-Loop-9B --uses--> SGLang 方向与时态都错了。原文『vLLM 与 SGLang 支持正通过公开 PR 落地』是说推理框架正在为模型添加支持、尚未落地，模型目前并不能使用它们；uses 断言了已在使用，且方向反了（应是框架支持模型）。",
+      "fix": "删除这两条 uses 关系。支持落地前不要建边；如需保留进展信息，应反转为 vLLM --integrates--> SenseNova-Loop-9B（及 SGLang 同构），并在 evidence 中保留『正通过公开 PR 落地』的进行时限定。"
+    },
+    {
+      "article_id": "2026-11-17-3",
+      "severity": "medium",
+      "problem": "关系 Claude Mythos Preview --uses--> AMD MI355X 对象错配。原文是 Claude Mythos Preview『把一个 Anthropic 模型的提示处理性能带到 AMD MI355X GPU 上』——被移植、最终跑在 MI355X 上的是那个未具名的 Anthropic 模型，Mythos 是执行移植的主体；且原文明确这只是 prompt-processing 起步而非完整部署。当前边读成『Mythos 使用 MI355X』，把移植动作的接受者误挂到执行者身上。",
+      "fix": "删除该边；或新增未具名实体『被移植的 Anthropic 模型』（model）并挂 --uses--> AMD MI355X，evidence 用原文片段。不要把 Mythos 写成 MI355X 的使用者。"
+    },
+    {
+      "article_id": "2026-11-17-0",
+      "severity": "medium",
+      "problem": "遗漏对比锚点实体 GPT-6 Astra。原文三处以其为基准（『比 GPT-6 Astra 高 5.2 分，成本不到其三成』『较 GPT-6 Astra 降 20%』），但 entities 里只有 GPT-6.2 Astra/Sol，对比数字仅进 metrics；该实体在 2026-11-17-12 已存在，本篇缺失导致两篇无法通过该锚点连通，也违反既有经验『对比基线模型要建 compared_with 边』。",
+      "fix": "在 entities 新增 GPT-6 Astra（type model），并加关系 GPT-6.2 Astra --compared_with--> GPT-6 Astra（evidence：『比 GPT-6 Astra 高 5.2 分，成本不到其三成』），确保与 2026-11-17-12 的 GPT-6 Astra 拼写完全一致。"
+    },
+    {
+      "article_id": "2026-11-17-0",
+      "severity": "medium",
+      "problem": "事件切分不当：事件 2『GPT-6.2 Astra 在 Agents' Last Exam 等专业基准上刷新纪录并大幅降价』把基准跑分与定价调整两个独立事实压成一个 benchmark 事件。本文标题就是『降价冲击前沿模型定价体系』，降价（$8/$40/$0.40、较 GPT-6 Astra 降 20%、Sol $2/$10）是标题级新闻点，混进跑分事件会丢失叙事层次。",
+      "fix": "拆成两个事件：benchmark 事件只承载 Agents' Last Exam / Terminal-Bench-Science / Vals Science Index 的跑分与对比；另建 pricing/launch 类型事件承载 Astra 与 Sol 的定价及 20% 降幅，metrics 相应归入各自事件。"
+    },
+    {
+      "article_id": "2026-11-17-12",
+      "severity": "low",
+      "problem": "事件 0 label『arXiv 论文提出交互式科学判断基准 SciResearch-Eval』及实体 arXiv 的 evidence 仍把 arXiv 当作提出者。提出基准的是论文作者，arXiv 只是预印本宿主；r1 删掉了 authored_by 关系，但同样的错误断言被搬进了事件 label 和实体 evidence。",
+      "fix": "label 改为『SciResearch-Eval 论文提出交互式科学判断基准』或以论文/研究团队为主体；arXiv 实体 evidence 保留为宿主语境（如『arXiv 论文提出』改写为『发表于 arXiv 的论文』），不要在 label 中断言 arXiv 提出。"
+    },
+    {
+      "article_id": "2026-11-17-13",
+      "severity": "low",
+      "problem": "事件 1 label『商业 AI 检测器首次以对抗性证据进入联邦法庭』丢掉了原文限定词。原文是『这被视为商业 AI 检测器作为对抗另一方律师的呈堂证据的首次联邦使用之一』——带『被视为』和『之一』，是未定论的主观判断，label 却断言成确定事实。",
+      "fix": "label 加回限定，如『商业 AI 检测器被视为首次以对抗性证据进入联邦法庭（之一）』，或至少保留『被视为』与『之一』，不要断言绝对首次。"
+    },
+    {
+      "article_id": "2026-11-17-10",
+      "severity": "low",
+      "problem": "关系 美国 --restricts--> 中国（weight 0.4）仍是 r2 指出过的遗留：它由一句背景印证句（『以及美国收紧芯片出口的调查报道相互印证』）推出，未锚定到任何具体报告名称，也没有『报道称』限定；r2 要求删除或锚定，本轮仅降权未满足要求。该边可能让读者误以为本篇主体是美中芯片管制。",
+      "fix": "删除该边；如保留，evidence 必须锚定到路透等具体报道并保留『报道称』限定，或改为只在本篇 trend 事件 summary 中叙述而不建独立关系边。"
+    }
+  ],
+  "lessons": [
+    "推理框架/平台的『支持正通过公开 PR 落地』是进行时：支持未落地前不要建 模型 --uses--> 框架 的边，落地后用 框架 --integrates--> 模型。",
+    "模型移植类新闻中，执行移植的主体与被移植的目标模型是两个实体：『A 把 B 的性能带到 C 上』时，uses/运行类边挂在 B 与 C 之间，不要挂在执行移植的 A 与 C 之间。",
+    "事件 label 必须保留原文的程度限定：原文写『被视为…首次…之一』时，label 不得去掉限定断言成绝对『首次』。"
+  ]
+}

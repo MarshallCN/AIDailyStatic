@@ -1,0 +1,2687 @@
+{
+  "date": "2026-11-17",
+  "articles": [
+    {
+      "article_id": "2026-11-17-0",
+      "entities": [
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 推出 GPT-6.2 Astra"
+          ]
+        },
+        {
+          "name": "GPT-6.2 Astra",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "OpenAI 推出 GPT-6.2 Astra"
+          ]
+        },
+        {
+          "name": "GPT-6.2 Sol",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "以及面向日常工作的 GPT-6.2 Sol"
+          ]
+        },
+        {
+          "name": "Claude Fable 5.2",
+          "type": "model",
+          "aliases": [
+            "Anthropic Fable 5.2"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "比 Claude Fable 5.2 高 5.5 分"
+          ]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "独立评测把 Astra 排在 Anthropic Fable 5.2 之后"
+          ]
+        },
+        {
+          "name": "Agents' Last Exam",
+          "type": "benchmark",
+          "aliases": [
+            "Agents Last Exam"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "在 Agents' Last Exam（多步骤专业工作基准）上比 GPT-6 Astra 高 5.2 分"
+          ]
+        },
+        {
+          "name": "Terminal-Bench-Science",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 Terminal-Bench-Science 与 Vals Science Index 上也自称刷新纪录"
+          ]
+        },
+        {
+          "name": "Vals Science Index",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在 Terminal-Bench-Science 与 Vals Science Index 上也自称刷新纪录"
+          ]
+        },
+        {
+          "name": "Preparedness Framework",
+          "type": "policy",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "两款模型在 Preparedness Framework 下均达到网络安全 Critical 级"
+          ]
+        },
+        {
+          "name": "Control Room",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "并升级了监控与干预系统（Control Room）"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 发布旗舰模型 GPT-6.2 Astra 与日常模型 GPT-6.2 Sol",
+          "summary": "OpenAI 推出定位\"最艰巨专业项目\"的前沿模型 GPT-6.2 Astra 与面向日常工作的 GPT-6.2 Sol，并在专业工作基准上声称刷新纪录。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "GPT-6.2 Astra",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "GPT-6.2 Sol",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "OpenAI 推出 GPT-6.2 Astra，定位\"最艰巨专业项目\"的前沿模型"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "GPT-6.2 Astra 在 Agents' Last Exam 等专业基准上刷新纪录并大幅降价",
+          "summary": "OpenAI 称 Astra 在 Agents' Last Exam 上比上一代高 5.2 分、成本不到其三成，比 Claude Fable 5.2 高 5.5 分、成本仅为其 5%，但独立评测把 Astra 排在 Anthropic Fable 5.2 之后。",
+          "participants": [
+            {
+              "name": "GPT-6.2 Astra",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "Agents' Last Exam",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "Vals Science Index",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "Claude Fable 5.2",
+              "type": "model",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "在 Agents' Last Exam（多步骤专业工作基准）上比 GPT-6 Astra 高 5.2 分"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "OpenAI 收紧高风险网络安全助手限制并升级 Control Room 监控干预系统",
+          "summary": "两款模型在 Preparedness Framework 下均达到网络安全 Critical 级、生物化学 High 级，Astra 是首个公开达到 AI 自我改进 High 级的模型，OpenAI 相应收紧高风险助手限制并升级监控与干预系统。",
+          "participants": [
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Control Room",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "OpenAI 收紧了高风险网络安全助手的限制，并升级了监控与干预系统（Control Room）"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "GPT-6.2 Astra",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "OpenAI 推出 GPT-6.2 Astra"
+          ]
+        },
+        {
+          "source": "GPT-6.2 Sol",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "以及面向日常工作的 GPT-6.2 Sol"
+          ]
+        },
+        {
+          "source": "GPT-6.2 Astra",
+          "target": "Agents' Last Exam",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "在 Agents' Last Exam（多步骤专业工作基准）上比 GPT-6 Astra 高 5.2 分"
+          ]
+        },
+        {
+          "source": "GPT-6.2 Astra",
+          "target": "Terminal-Bench-Science",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": [
+            "在 Terminal-Bench-Science 与 Vals Science Index 上也自称刷新纪录"
+          ]
+        },
+        {
+          "source": "GPT-6.2 Astra",
+          "target": "Vals Science Index",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": [
+            "在 Terminal-Bench-Science 与 Vals Science Index 上也自称刷新纪录"
+          ]
+        },
+        {
+          "source": "GPT-6.2 Astra",
+          "target": "Claude Fable 5.2",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": [
+            "独立评测把 Astra 排在 Anthropic Fable 5.2 之后，但任务成本低很多"
+          ]
+        },
+        {
+          "source": "Claude Fable 5.2",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": [
+            "独立评测把 Astra 排在 Anthropic Fable 5.2 之后"
+          ]
+        },
+        {
+          "source": "GPT-6.2 Astra",
+          "target": "Preparedness Framework",
+          "type": "complies_with",
+          "weight": 0.7,
+          "evidence": [
+            "两款模型在 Preparedness Framework 下均达到网络安全 Critical 级"
+          ]
+        },
+        {
+          "source": "GPT-6.2 Sol",
+          "target": "Preparedness Framework",
+          "type": "complies_with",
+          "weight": 0.7,
+          "evidence": [
+            "两款模型在 Preparedness Framework 下均达到网络安全 Critical 级"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "GPT-6.2 Astra 在 Agents' Last Exam 较 GPT-6 Astra 提升",
+          "value": "5.2 分"
+        },
+        {
+          "name": "GPT-6.2 Astra 成本较 GPT-6 Astra",
+          "value": "不到其三成"
+        },
+        {
+          "name": "GPT-6.2 Astra 在 Agents' Last Exam 较 Claude Fable 5.2 提升",
+          "value": "5.5 分"
+        },
+        {
+          "name": "GPT-6.2 Astra 成本仅为 Claude Fable 5.2 的",
+          "value": "5%"
+        },
+        {
+          "name": "Astra API 输入价格",
+          "value": "$8 / 百万 token"
+        },
+        {
+          "name": "Astra API 输出价格",
+          "value": "$40 / 百万 token"
+        },
+        {
+          "name": "Astra API 缓存输入价格",
+          "value": "$0.40 / 百万 token"
+        },
+        {
+          "name": "Astra 定价较 GPT-6 Astra 降幅",
+          "value": "20%"
+        },
+        {
+          "name": "Sol API 输入/输出价格",
+          "value": "$2 / $10 每百万 token"
+        },
+        {
+          "name": "网络安全等级",
+          "value": "Critical"
+        },
+        {
+          "name": "生物化学等级",
+          "value": "High"
+        },
+        {
+          "name": "AI 自我改进等级",
+          "value": "High（首个公开达到）"
+        }
+      ],
+      "why_it_matters": "Astra 在独立评测仍落后 Fable 5.2 的情况下靠 5% 的成本抢市场，说明前沿竞争已从纯能力比拼转向\"够用+便宜\"，且自我改进能力首次公开达 High 级把安全论证推向前台。"
+    },
+    {
+      "article_id": "2026-11-17-1",
+      "entities": [
+        {
+          "name": "AMD",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "AMD 于 11 月 16 日宣布完成对 World Labs 的收购"
+          ]
+        },
+        {
+          "name": "World Labs",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "AMD 于 11 月 16 日宣布完成对 World Labs 的收购"
+          ]
+        },
+        {
+          "name": "李飞飞",
+          "type": "person",
+          "aliases": [
+            "AI 教母"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "李飞飞（\"AI 教母\"）加入 AMD 担任执行副总裁兼首席科学家"
+          ]
+        },
+        {
+          "name": "苏姿丰",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "直接向董事长兼 CEO 苏姿丰汇报"
+          ]
+        },
+        {
+          "name": "Justin Johnson",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "原共同创始人 Justin Johnson 与 Ben Mildenhall 继续领导研究团队"
+          ]
+        },
+        {
+          "name": "Ben Mildenhall",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "原共同创始人 Justin Johnson 与 Ben Mildenhall 继续领导研究团队"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "试图在软件与模型层面中和英伟达 CUDA 生态的优势"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "AMD 以约 82 亿美元全股票收购 World Labs",
+          "summary": "AMD 于 11 月 16 日宣布完成对李飞飞创办的 World Labs 的收购，交易约 82 亿美元（全股票），李飞飞出任 AMD 执行副总裁兼首席科学家并直接向苏姿丰汇报。",
+          "participants": [
+            {
+              "name": "AMD",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "World Labs",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "李飞飞",
+              "type": "person",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "AMD 于 11 月 16 日宣布完成对 World Labs 的收购，交易约 82 亿美元（全股票）"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "AMD 把 World Labs 的 3D 与机器人仿真研究结合进硬件路线图，向 AI 全栈布局",
+          "summary": "苏姿丰将交易定位为\"共同设计计算平台与基础模型\"，把交互式 3D 与机器人仿真研究同 AMD 硬件路线图结合，试图中和英伟达 CUDA 生态的优势。",
+          "participants": [
+            {
+              "name": "AMD",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "World Labs",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "把 World Labs 的交互式 3D 与机器人仿真研究同 AMD 硬件路线图结合"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "AMD",
+          "target": "World Labs",
+          "type": "acquires",
+          "weight": 0.95,
+          "evidence": [
+            "AMD 于 11 月 16 日宣布完成对 World Labs 的收购，交易约 82 亿美元（全股票）"
+          ]
+        },
+        {
+          "source": "李飞飞",
+          "target": "World Labs",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": [
+            "AMD 完成对李飞飞创办的 World Labs 约 82 亿美元全股票收购"
+          ]
+        },
+        {
+          "source": "李飞飞",
+          "target": "AMD",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": [
+            "李飞飞（\"AI 教母\"）加入 AMD 担任执行副总裁兼首席科学家"
+          ]
+        },
+        {
+          "source": "苏姿丰",
+          "target": "AMD",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": [
+            "直接向董事长兼 CEO 苏姿丰汇报"
+          ]
+        },
+        {
+          "source": "Justin Johnson",
+          "target": "World Labs",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": [
+            "原共同创始人 Justin Johnson 与 Ben Mildenhall 继续领导研究团队"
+          ]
+        },
+        {
+          "source": "Ben Mildenhall",
+          "target": "World Labs",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": [
+            "原共同创始人 Justin Johnson 与 Ben Mildenhall 继续领导研究团队"
+          ]
+        },
+        {
+          "source": "AMD",
+          "target": "NVIDIA",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": [
+            "试图在软件与模型层面中和英伟达 CUDA 生态的优势"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "AMD 收购 World Labs 交易金额",
+          "value": "约 82 亿美元（全股票）"
+        }
+      ],
+      "why_it_matters": "硬件公司首次整体收编世界级基础模型团队，AMD 从\"卖算力\"转向模型与硬件协同设计，CUDA 生态不再是唯一的护城河叙事。"
+    },
+    {
+      "article_id": "2026-11-17-2",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "NVIDIA 展示了 Rubin 家族新成员 Rubin HPC"
+          ]
+        },
+        {
+          "name": "Rubin HPC",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "NVIDIA 展示了 Rubin 家族新成员 Rubin HPC"
+          ]
+        },
+        {
+          "name": "Rubin",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "标准 Rubin 为 28,672 个"
+          ]
+        },
+        {
+          "name": "Rubin Ultra",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "暗示其采用类似 Rubin Ultra 的四芯片配置"
+          ]
+        },
+        {
+          "name": "NVLink-C2C",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "用 NVLink-C2C 互联"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "NVIDIA 于超级计算 2026 发布 Rubin HPC GPU",
+          "summary": "NVIDIA 展示 Rubin 家族新成员 Rubin HPC，宣称拥有其任何 GPU 上最多的 CUDA 核心（超过 50,000 个），面向智能体化 HPC 与科学仿真。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Rubin HPC",
+              "type": "hardware",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "NVIDIA 展示了 Rubin 家族新成员 Rubin HPC"
+          ]
+        },
+        {
+          "type": "infra",
+          "label": "Rubin HPC 计划 2028 年上市，把代理式工作负载引入科学计算",
+          "summary": "芯片计划 2028 年上市，定位\"智能体化 HPC\"，把代理式工作负载引入科学计算领域，继续强化 CUDA 生态护城河叙事。",
+          "participants": [
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Rubin HPC",
+              "type": "hardware",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "芯片计划 2028 年上市"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Rubin HPC",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "NVIDIA 展示了 Rubin 家族新成员 Rubin HPC"
+          ]
+        },
+        {
+          "source": "Rubin HPC",
+          "target": "NVLink-C2C",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "暗示其采用类似 Rubin Ultra 的四芯片配置，用 NVLink-C2C 互联"
+          ]
+        },
+        {
+          "source": "Rubin HPC",
+          "target": "Rubin",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": [
+            "标准 Rubin 为 28,672 个"
+          ]
+        },
+        {
+          "source": "Rubin HPC",
+          "target": "Rubin Ultra",
+          "type": "compared_with",
+          "weight": 0.7,
+          "evidence": [
+            "暗示其采用类似 Rubin Ultra 的四芯片配置"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Rubin HPC CUDA 核心数",
+          "value": "超过 50,000 个"
+        },
+        {
+          "name": "标准 Rubin CUDA 核心数",
+          "value": "28,672 个"
+        },
+        {
+          "name": "Rubin HPC 上市年份",
+          "value": "2028"
+        }
+      ],
+      "why_it_matters": "超 5 万 CUDA 核心把核心数军备竞赛推向新档位，\"智能体化 HPC\"意味着 NVIDIA 把代理式工作负载当作科学计算的下一波算力需求引擎。"
+    },
+    {
+      "article_id": "2026-11-17-3",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Anthropic 联合创始人 Tom Brown 在 IPO 路演（IPO 定于 Nov 19）中称"
+          ]
+        },
+        {
+          "name": "Claude Mythos Preview",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Claude Mythos Preview 把一个 Anthropic 模型的提示处理性能带到 AMD MI355X GPU 上花费了约三天"
+          ]
+        },
+        {
+          "name": "Tom Brown",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "Anthropic 联合创始人 Tom Brown 在 IPO 路演（IPO 定于 Nov 19）中称"
+          ]
+        },
+        {
+          "name": "AMD",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "该进展与 AMD 完成对 World Labs 的收购同频"
+          ]
+        },
+        {
+          "name": "AMD MI355X",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "把一个 Anthropic 模型的提示处理性能带到 AMD MI355X GPU 上花费了约三天"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "英伟达",
+            "Nvidia"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "被解读为在硬件层面对 NVIDIA CUDA 生态的\"挖角\""
+          ]
+        },
+        {
+          "name": "CUDA",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "被解读为在硬件层面对 NVIDIA CUDA 生态的\"挖角\""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Anthropic 称 Claude Mythos Preview 约三天把模型移植到 AMD MI355X GPU",
+          "summary": "Anthropic 联合创始人 Tom Brown 在 IPO 路演中称，Claude Mythos Preview 把一个 Anthropic 模型的提示处理性能带到 AMD MI355X GPU 上花费约三天，自主移植或编写了近 100% 的内核。",
+          "participants": [
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Claude Mythos Preview",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "AMD MI355X",
+              "type": "hardware",
+              "role": "object"
+            },
+            {
+              "name": "AMD",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "Claude Mythos Preview 把一个 Anthropic 模型的提示处理性能带到 AMD MI355X GPU 上花费了约三天"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "以模型移植能力削弱 CUDA 依赖成为 AMD 与大型模型厂商的共同叙事",
+          "summary": "约三天完成此前需数月到一年的软件移植周期，被解读为对 NVIDIA CUDA 生态的\"挖角\"，与 AMD 收购 World Labs 同频，但未披露完整推理性能数据。",
+          "participants": [
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "AMD",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "\"以模型移植能力削弱 CUDA 依赖\"正成为 AMD 与大型模型厂商共同的叙事"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude Mythos Preview",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "把一个 Anthropic 模型的提示处理性能带到 AMD MI355X GPU 上"
+          ]
+        },
+        {
+          "source": "Claude Mythos Preview",
+          "target": "AMD MI355X",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "把一个 Anthropic 模型的提示处理性能带到 AMD MI355X GPU 上花费了约三天"
+          ]
+        },
+        {
+          "source": "AMD MI355X",
+          "target": "AMD",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "带到 AMD MI355X GPU 上花费了约三天"
+          ]
+        },
+        {
+          "source": "CUDA",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "在硬件层面对 NVIDIA CUDA 生态的\"挖角\""
+          ]
+        },
+        {
+          "source": "AMD",
+          "target": "NVIDIA",
+          "type": "competes_with",
+          "weight": 0.8,
+          "evidence": [
+            "被解读为在硬件层面对 NVIDIA CUDA 生态的\"挖角\""
+          ]
+        },
+        {
+          "source": "Tom Brown",
+          "target": "Anthropic",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": [
+            "Anthropic 联合创始人 Tom Brown 在 IPO 路演（IPO 定于 Nov 19）中称"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "模型移植到 AMD GPU 的耗时",
+          "value": "约三天（此前需数月到一年）"
+        },
+        {
+          "name": "自主移植或编写内核比例",
+          "value": "近 100%"
+        }
+      ],
+      "why_it_matters": "模型自主完成硬件移植让 NVIDIA 的软件护城河第一次暴露在\"模型即编译器\"式的绕行路径下，AMD 的追赶从硬件规格转向生态迁移成本。"
+    },
+    {
+      "article_id": "2026-11-17-4",
+      "entities": [
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Anthropic 以 beta 形式推出 Claude Linked Billing"
+          ]
+        },
+        {
+          "name": "Claude Linked Billing",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Anthropic 以 beta 形式推出 Claude Linked Billing"
+          ]
+        },
+        {
+          "name": "Factory",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "使使用 Factory、Linear、Ramp 等智能体工具的用户"
+          ]
+        },
+        {
+          "name": "Linear",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "使使用 Factory、Linear、Ramp 等智能体工具的用户"
+          ]
+        },
+        {
+          "name": "Ramp",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "使使用 Factory、Linear、Ramp 等智能体工具的用户"
+          ]
+        },
+        {
+          "name": "Claude API",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "即可把 Claude API 的使用费用计入其自身 Claude Platform 组织"
+          ]
+        },
+        {
+          "name": "Claude Platform",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "计入其自身 Claude Platform 组织"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 以 beta 形式推出 Claude Linked Billing",
+          "summary": "使用 Factory、Linear、Ramp 等智能体工具的用户无需向各供应商分享 API key，即可把 Claude API 使用费用计入自身 Claude Platform 组织，面向把 AI 支出集中到单一账户的企业客户。",
+          "participants": [
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Claude Linked Billing",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Anthropic 以 beta 形式推出 Claude Linked Billing"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "智能体经济下 API 计费与身份链路逐步标准化",
+          "summary": "一个客户横跨多家 agent 工具调用同一模型厂商，利用方需要统一计量、统一开票、可审计的消费链路，Anthropic 借此加强对其下游 agent 生态现金流的锁定。",
+          "participants": [
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Claude Linked Billing",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "这是\"智能体经济\"下 API 计费与身份链路逐步标准化的又一信号"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude Linked Billing",
+          "target": "Anthropic",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": [
+            "Anthropic 以 beta 形式推出 Claude Linked Billing"
+          ]
+        },
+        {
+          "source": "Factory",
+          "target": "Claude API",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "使使用 Factory、Linear、Ramp 等智能体工具的用户，无需向各供应商分享 API key"
+          ]
+        },
+        {
+          "source": "Linear",
+          "target": "Claude API",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "使使用 Factory、Linear、Ramp 等智能体工具的用户，无需向各供应商分享 API key"
+          ]
+        },
+        {
+          "source": "Ramp",
+          "target": "Claude API",
+          "type": "uses",
+          "weight": 0.8,
+          "evidence": [
+            "使使用 Factory、Linear、Ramp 等智能体工具的用户，无需向各供应商分享 API key"
+          ]
+        },
+        {
+          "source": "Claude API",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "即可把 Claude API 的使用费用计入其自身 Claude Platform 组织"
+          ]
+        },
+        {
+          "source": "Claude Platform",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "计入其自身 Claude Platform 组织"
+          ]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "计费与身份链路成为模型厂商锁定下游 agent 生态的新抓手，Anthropic 把 API 消费变成可统一开票的企业级账务关系，现金流锁定从调用环节延伸到开票环节。"
+    },
+    {
+      "article_id": "2026-11-17-5",
+      "entities": [
+        {
+          "name": "Calif",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Calif 研究员 Quang Luong 使用 OpenAI Codex"
+          ]
+        },
+        {
+          "name": "Quang Luong",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Calif 研究员 Quang Luong 使用 OpenAI Codex 在约 20 分钟"
+          ]
+        },
+        {
+          "name": "OpenAI Codex",
+          "type": "tool",
+          "aliases": [
+            "Codex"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "使用 OpenAI Codex 在约 20 分钟、不到 200 美元 token 成本内"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "OpenAI 在同日发布的 GPT-6.2 中强调"
+          ]
+        },
+        {
+          "name": "OpenJDK",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "挖出 CVE-2026-114938——OpenJDK 17、21、25 的 AVX-512 Base64 解码器中一个预认证堆溢出漏洞"
+          ]
+        },
+        {
+          "name": "Oracle",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Oracle 于 11 月 17 日下午 1 点发布补丁"
+          ]
+        },
+        {
+          "name": "Java4Shell",
+          "type": "topic",
+          "aliases": [
+            "CVE-2026-114938"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "Calif 将该漏洞命名为 Java4Shell"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Quang Luong 用 OpenAI Codex 挖出 OpenJDK 高危漏洞 CVE-2026-114938",
+          "summary": "Calif 研究员 Quang Luong 使用 OpenAI Codex 在约 20 分钟、不到 200 美元 token 成本内挖出 OpenJDK 17/21/25 AVX-512 Base64 解码器的预认证堆溢出漏洞，Calif 命名为 Java4Shell，CVSS 4.0 评分 9.2。",
+          "participants": [
+            {
+              "name": "Quang Luong",
+              "type": "person",
+              "role": "subject"
+            },
+            {
+              "name": "OpenAI Codex",
+              "type": "tool",
+              "role": "subject"
+            },
+            {
+              "name": "OpenJDK",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "Java4Shell",
+              "type": "topic",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "使用 OpenAI Codex 在约 20 分钟、不到 200 美元 token 成本内，挖出 CVE-2026-114938"
+          ]
+        },
+        {
+          "type": "security",
+          "label": "Oracle 当日发布补丁修复 Java4Shell",
+          "summary": "Oracle 于 11 月 17 日下午 1 点发布补丁，Java 17 对应版本为 17.0.21.1；该发现延续 PHP2Shell 模式，AI 辅助漏洞挖掘正走向稳定发现真实关键软件的高危 RCE。",
+          "participants": [
+            {
+              "name": "Oracle",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Java4Shell",
+              "type": "topic",
+              "role": "object"
+            },
+            {
+              "name": "OpenJDK",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "Oracle 于 11 月 17 日下午 1 点发布补丁"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "OpenAI Codex",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "使用 OpenAI Codex 在约 20 分钟"
+          ]
+        },
+        {
+          "source": "Quang Luong",
+          "target": "Calif",
+          "type": "affiliated_with",
+          "weight": 0.9,
+          "evidence": [
+            "Calif 研究员 Quang Luong 使用 OpenAI Codex"
+          ]
+        },
+        {
+          "source": "Java4Shell",
+          "target": "OpenJDK",
+          "type": "targets",
+          "weight": 0.9,
+          "evidence": [
+            "挖出 CVE-2026-114938——OpenJDK 17、21、25 的 AVX-512 Base64 解码器中一个预认证堆溢出漏洞"
+          ]
+        },
+        {
+          "source": "OpenJDK",
+          "target": "Oracle",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": [
+            "Oracle 于 11 月 17 日下午 1 点发布补丁"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "挖掘漏洞耗时",
+          "value": "约 20 分钟"
+        },
+        {
+          "name": "挖掘漏洞 token 成本",
+          "value": "不到 200 美元"
+        },
+        {
+          "name": "Java4Shell CVSS 4.0 评分",
+          "value": "9.2"
+        },
+        {
+          "name": "Java 17 修复版本",
+          "value": "17.0.21.1"
+        }
+      ],
+      "why_it_matters": "AI 辅助挖洞已稳定产出真实关键软件的高危 RCE（CVSS 9.2），\"AI 找洞\"从概念验证变成可复现、低成本的常态化产能，攻防两侧的自动化程度同时被抬高。"
+    },
+    {
+      "article_id": "2026-11-17-6",
+      "entities": [
+        {
+          "name": "Vals",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "旧金山 AI 评测公司 Vals 11 月 17 日发布研究"
+          ]
+        },
+        {
+          "name": "Anthropic",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "测试 Anthropic、OpenAI、Google 与 DeepSeek 的前沿模型"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "测试 Anthropic、OpenAI、Google 与 DeepSeek 的前沿模型"
+          ]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": [
+            "谷歌"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "测试 Anthropic、OpenAI、Google 与 DeepSeek 的前沿模型"
+          ]
+        },
+        {
+          "name": "DeepSeek",
+          "type": "company",
+          "aliases": [
+            "深度求索"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "测试 Anthropic、OpenAI、Google 与 DeepSeek 的前沿模型"
+          ]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Claude Opus 5.5 在 Vals 的试验里有 69% 的次数把一间伊朗学校标为打击目标"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Vals 发布研究：游戏框架致前沿模型把平民误判为军事目标",
+          "summary": "Vals 测试 Anthropic、OpenAI、Google 与 DeepSeek 的前沿模型在无人机与卫星图像中的目标识别表现，场景被描述为\"游戏\"时模型以高比例把平民、救护车和学校识别为军事目标。",
+          "participants": [
+            {
+              "name": "Vals",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Claude Opus 5.5",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Anthropic",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Google",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "DeepSeek",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "测试 Anthropic、OpenAI、Google 与 DeepSeek 的前沿模型在无人机与卫星图像中识别目标的表现"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "前沿模型在目标判读场景对操作语义框架缺乏护栏",
+          "summary": "同一模型在操作语义（游戏 vs 真实战争）转变时对\"敌对目标\"的判定几乎没有护栏，对采用 AI 辅助目标识别的系统而言是部署前必须解决的可靠性问题。",
+          "participants": [
+            {
+              "name": "Vals",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Claude Opus 5.5",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "这暴露出模型在\"目标判读\"这一高影响军事/安防场景下的脆弱性与框架敏感度"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Claude Opus 5.5",
+          "target": "Anthropic",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "测试 Anthropic、OpenAI、Google 与 DeepSeek 的前沿模型在无人机与卫星图像中识别目标的表现",
+            "Claude Opus 5.5 在 Vals 的试验里有 69% 的次数把一间伊朗学校标为打击目标"
+          ]
+        },
+        {
+          "source": "Vals",
+          "target": "Claude Opus 5.5",
+          "type": "evaluates",
+          "weight": 0.8,
+          "evidence": [
+            "Claude Opus 5.5 在 Vals 的试验里有 69% 的次数把一间伊朗学校标为打击目标"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Claude Opus 5.5 把伊朗学校标为打击目标的比率",
+          "value": "69%"
+        }
+      ],
+      "why_it_matters": "目标判读这类高影响场景对\"游戏 vs 真实\"的框架变化几乎无护栏，AI 辅助军事决策的可靠性问题被证明是结构性短板而非单个模型的偶发错误。"
+    },
+    {
+      "article_id": "2026-11-17-7",
+      "entities": [
+        {
+          "name": "Uber",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Uber 与 Zipline 在得克萨斯州 Spring 正式启动无人机配送服务"
+          ]
+        },
+        {
+          "name": "Zipline",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Uber 与 Zipline 在得克萨斯州 Spring 正式启动无人机配送服务"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Uber 与 Zipline 在得州 Spring 启动无人机配送服务",
+          "summary": "无人机在地面约 300 英尺高空以约 70 英里/小时飞行，可携带最多 8 磅订单，主要面向食品与零售最后一公里配送，首批后将拓展至得州数十座城市。",
+          "participants": [
+            {
+              "name": "Uber",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Zipline",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "Uber 与 Zipline 在得克萨斯州 Spring 正式启动无人机配送服务"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "无人机即时配送成为最接近商业闭环的物理世界应用赛道之一",
+          "summary": "外卖平台流量与成熟无人机物流网络结合，随空域监管逐步松绑，无人机即时配送从试点走向规模化。",
+          "participants": [
+            {
+              "name": "Uber",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Zipline",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "无人机即时配送正在成为 AI 驱动的物理世界应用中最接近商业闭环的赛道之一"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Uber",
+          "target": "Zipline",
+          "type": "partners_with",
+          "weight": 0.9,
+          "evidence": [
+            "Uber 与 Zipline 在得克萨斯州 Spring 正式启动无人机配送服务"
+          ]
+        },
+        {
+          "source": "Zipline",
+          "target": "Uber",
+          "type": "supplies",
+          "weight": 0.7,
+          "evidence": [
+            "把外卖平台流量与成熟无人机物流网络结合"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "无人机飞行高度",
+          "value": "约 300 英尺"
+        },
+        {
+          "name": "无人机飞行速度",
+          "value": "约 70 英里/小时"
+        },
+        {
+          "name": "订单最大载重",
+          "value": "最多 8 磅"
+        },
+        {
+          "name": "长期日配送目标",
+          "value": "每日百万单"
+        }
+      ],
+      "why_it_matters": "外卖平台流量与成熟无人机物流网络首次在美国规模化合流，无人机即时配送从监管试点进入可测算的商业闭环，成为 AI 物理世界应用最先跑通单位经济学的赛道之一。"
+    },
+    {
+      "article_id": "2026-11-17-8",
+      "entities": [
+        {
+          "name": "Genesis AI",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Genesis AI 以 35 亿美元投后估值完成 5 亿美元 A 轮"
+          ]
+        },
+        {
+          "name": "Premji Invest",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "由 Premji Invest、Khosla Ventures 与 Eclipse 联合领投"
+          ]
+        },
+        {
+          "name": "Khosla Ventures",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "由 Premji Invest、Khosla Ventures 与 Eclipse 联合领投"
+          ]
+        },
+        {
+          "name": "Eclipse",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "由 Premji Invest、Khosla Ventures 与 Eclipse 联合领投"
+          ]
+        },
+        {
+          "name": "T. Rowe Price",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": [
+            "Nvidia",
+            "英伟达"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "name": "Bpifrance",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "name": "HSG",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "name": "Zoom",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "name": "Samsung Next",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "name": "Ericsson",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "name": "GENE",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "公司自研 GENE 基础模型与 Genesis 世界仿真平台"
+          ]
+        },
+        {
+          "name": "Genesis 世界仿真平台",
+          "type": "product",
+          "aliases": [
+            "Genesis"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "公司自研 GENE 基础模型与 Genesis 世界仿真平台"
+          ]
+        },
+        {
+          "name": "Eno",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "计划把 Eno 机器人部署到工厂与仓储客户"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Genesis AI 以 35 亿美元投后估值完成 5 亿美元 A 轮",
+          "summary": "由 Premji Invest、Khosla Ventures 与 Eclipse 联合领投，T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投，是欧洲最大的机器人融资之一。",
+          "participants": [
+            {
+              "name": "Genesis AI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "Premji Invest",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "Khosla Ventures",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "Eclipse",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "T. Rowe Price",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "Bpifrance",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "HSG",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "Zoom",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "Samsung Next",
+              "type": "company",
+              "role": "funder"
+            },
+            {
+              "name": "Ericsson",
+              "type": "company",
+              "role": "funder"
+            }
+          ],
+          "evidence": [
+            "Genesis AI 以 35 亿美元投后估值完成 5 亿美元 A 轮，由 Premji Invest、Khosla Ventures 与 Eclipse 联合领投"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "世界模型加仿真加具身智能的机器人融资成为投资热点",
+          "summary": "把基础模型与物理世界仿真结合、用仿真环境训练机器人再落地真实工厂成为资本认可范式，Nvidia 与 Ericsson 等硬件与通信巨头参与。",
+          "participants": [
+            {
+              "name": "Genesis AI",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "NVIDIA",
+              "type": "company",
+              "role": "partner"
+            },
+            {
+              "name": "Ericsson",
+              "type": "company",
+              "role": "partner"
+            }
+          ],
+          "evidence": [
+            "这桩融资凸显\"世界模型 + 仿真 + 具身智能\"的投资热度"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Premji Invest",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.9,
+          "evidence": [
+            "由 Premji Invest、Khosla Ventures 与 Eclipse 联合领投"
+          ]
+        },
+        {
+          "source": "Khosla Ventures",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.9,
+          "evidence": [
+            "由 Premji Invest、Khosla Ventures 与 Eclipse 联合领投"
+          ]
+        },
+        {
+          "source": "Eclipse",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.9,
+          "evidence": [
+            "由 Premji Invest、Khosla Ventures 与 Eclipse 联合领投"
+          ]
+        },
+        {
+          "source": "T. Rowe Price",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "source": "NVIDIA",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "source": "Ericsson",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "source": "Samsung Next",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "source": "Zoom",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "source": "HSG",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "source": "Bpifrance",
+          "target": "Genesis AI",
+          "type": "invests_in",
+          "weight": 0.8,
+          "evidence": [
+            "T. Rowe Price、Nvidia、Bpifrance、HSG、Zoom、Samsung Next、Ericsson 参投"
+          ]
+        },
+        {
+          "source": "GENE",
+          "target": "Genesis AI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "公司自研 GENE 基础模型"
+          ]
+        },
+        {
+          "source": "Genesis 世界仿真平台",
+          "target": "Genesis AI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "公司自研 GENE 基础模型与 Genesis 世界仿真平台"
+          ]
+        },
+        {
+          "source": "Eno",
+          "target": "Genesis AI",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": [
+            "计划把 Eno 机器人部署到工厂与仓储客户"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Genesis AI A 轮融资额",
+          "value": "5 亿美元"
+        },
+        {
+          "name": "Genesis AI 投后估值",
+          "value": "35 亿美元"
+        }
+      ],
+      "why_it_matters": "Nvidia、Ericsson 等硬件与通信巨头直接押注机器人基础模型公司，说明具身智能被视为下一代 AI 计算的出货载体，\"世界模型+仿真\"成为资本认可的机器人训练范式。"
+    },
+    {
+      "article_id": "2026-11-17-9",
+      "entities": [
+        {
+          "name": "商汤",
+          "type": "company",
+          "aliases": [
+            "SenseTime"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "商汤 SenseNova 于 11 月 17 日正式开源"
+          ]
+        },
+        {
+          "name": "SenseNova",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "SenseNova 正式发布并开源 SenseNova-Loop-9B（Apache 2.0）"
+          ]
+        },
+        {
+          "name": "SenseNova-Loop-9B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "SenseNova 正式发布并开源 SenseNova-Loop-9B（Apache 2.0）"
+          ]
+        },
+        {
+          "name": "AutomationBench",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "AutomationBench 从 14.33 升至 36.67"
+          ]
+        },
+        {
+          "name": "AIDABench",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "AIDABench 65.31 对 65.01 反超"
+          ]
+        },
+        {
+          "name": "NL2Repo",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "NL2Repo 略低（41.36 对 44.60）"
+          ]
+        },
+        {
+          "name": "Qwen3.8-27B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "与 Qwen3.8-27B 持平"
+          ]
+        },
+        {
+          "name": "vLLM",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "vLLM 与 SGLang 支持正通过公开 PR 落地"
+          ]
+        },
+        {
+          "name": "SGLang",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "vLLM 与 SGLang 支持正通过公开 PR 落地"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "商汤发布并开源循环解码器多模态模型 SenseNova-Loop-9B",
+          "summary": "商汤旗下 SenseNova 品牌以 Apache 2.0 发布 SenseNova-Loop-9B，循环式架构把 32 个物理解码层通过共享循环块扩展为 56 次层运算，前向等价约 14.6B 参数，支持 512K 上下文与文本+图像输入。",
+          "participants": [
+            {
+              "name": "商汤",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "SenseNova",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "SenseNova-Loop-9B",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "SenseNova 正式发布并开源 SenseNova-Loop-9B（Apache 2.0）"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "SenseNova-Loop-9B release 版在多项基准上超越 Preview 版",
+          "summary": "AutomationBench 从 14.33 升至 36.67 与 Qwen3.8-27B 持平，AIDABench 65.31 对 65.01 反超，NL2Repo 略低（41.36 对 44.60）。",
+          "participants": [
+            {
+              "name": "SenseNova-Loop-9B",
+              "type": "model",
+              "role": "subject"
+            },
+            {
+              "name": "AutomationBench",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "AIDABench",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "NL2Repo",
+              "type": "benchmark",
+              "role": "benchmark"
+            },
+            {
+              "name": "Qwen3.8-27B",
+              "type": "model",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "release 版相比 Preview 全面提升：AutomationBench 从 14.33 升至 36.67"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "SenseNova-Loop-9B",
+          "target": "商汤",
+          "type": "released_by",
+          "weight": 0.9,
+          "evidence": [
+            "SenseNova 正式发布并开源 SenseNova-Loop-9B（Apache 2.0）"
+          ]
+        },
+        {
+          "source": "SenseNova",
+          "target": "商汤",
+          "type": "released_by",
+          "weight": 0.8,
+          "evidence": [
+            "商汤 SenseNova 于 11 月 17 日正式开源"
+          ]
+        },
+        {
+          "source": "SenseNova-Loop-9B",
+          "target": "AutomationBench",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "AutomationBench 从 14.33 升至 36.67"
+          ]
+        },
+        {
+          "source": "SenseNova-Loop-9B",
+          "target": "AIDABench",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "AIDABench 65.31 对 65.01 反超"
+          ]
+        },
+        {
+          "source": "SenseNova-Loop-9B",
+          "target": "NL2Repo",
+          "type": "evaluated_on",
+          "weight": 0.8,
+          "evidence": [
+            "NL2Repo 略低（41.36 对 44.60）"
+          ]
+        },
+        {
+          "source": "SenseNova-Loop-9B",
+          "target": "Qwen3.8-27B",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": [
+            "与 Qwen3.8-27B 持平"
+          ]
+        },
+        {
+          "source": "SenseNova-Loop-9B",
+          "target": "vLLM",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "vLLM 与 SGLang 支持正通过公开 PR 落地"
+          ]
+        },
+        {
+          "source": "SenseNova-Loop-9B",
+          "target": "SGLang",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": [
+            "vLLM 与 SGLang 支持正通过公开 PR 落地"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "SenseNova-Loop-9B 参数规模",
+          "value": "9B（前向等价约 14.6B 参数）"
+        },
+        {
+          "name": "物理解码层扩展",
+          "value": "32 层扩展为 56 次层运算"
+        },
+        {
+          "name": "上下文长度",
+          "value": "512K"
+        },
+        {
+          "name": "256K 上下文多模态推理显存占用",
+          "value": "约 15 GiB"
+        },
+        {
+          "name": "AutomationBench 得分（release vs Preview）",
+          "value": "36.67（14.33）"
+        },
+        {
+          "name": "AIDABench 得分（release vs Preview）",
+          "value": "65.31 对 65.01"
+        },
+        {
+          "name": "NL2Repo 得分（release vs Preview）",
+          "value": "41.36 对 44.60"
+        }
+      ],
+      "why_it_matters": "\"参数压缩换取更深的单次计算\"的循环架构在开源生态再落一子，9B 参数跑出 14.6B 前向等价深度，推理效率竞争从堆参数转向堆计算深度。"
+    },
+    {
+      "article_id": "2026-11-17-10",
+      "entities": [
+        {
+          "name": "DeepSeek",
+          "type": "company",
+          "aliases": [
+            "深度求索"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "TechNode 报道称，DeepSeek 因服务\"容量约束\"对免费用户实施对话限额"
+          ]
+        },
+        {
+          "name": "TechNode",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "TechNode 报道称"
+          ]
+        },
+        {
+          "name": "Qwen",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "在新一轮开源模型（如 Qwen 竞品）通过蒸馏 US 前沿模型加速落地"
+          ]
+        },
+        {
+          "name": "美国",
+          "type": "organization",
+          "aliases": [
+            "US"
+          ],
+          "confidence": 0.8,
+          "evidence": [
+            "以及美国收紧芯片出口的调查报道相互印证"
+          ]
+        },
+        {
+          "name": "中国",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "这是中国推理算力困局在面向消费者的产品层面的直接外显"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "DeepSeek 因容量约束收紧免费对话提示上限",
+          "summary": "TechNode 报道称，DeepSeek 因服务\"容量约束\"对免费用户实施对话限额，把可用提示长度收紧到约 40,000 字符，公司表示源于算力容量压力，引发大量用户抱怨。",
+          "participants": [
+            {
+              "name": "DeepSeek",
+              "type": "company",
+              "role": "subject"
+            },
+            {
+              "name": "TechNode",
+              "type": "organization",
+              "role": "subject"
+            }
+          ],
+          "evidence": [
+            "TechNode 报道称，DeepSeek 因服务\"容量约束\"对免费用户实施对话限额"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "中国推理算力困局在消费级产品层面外显",
+          "summary": "开源模型通过蒸馏加速落地、推理需求激增背景下算力供给成为主要矛盾，与路透关于受限芯片扩建与美方收紧芯片出口的报道相互印证。",
+          "participants": [
+            {
+              "name": "中国",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "DeepSeek",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Qwen",
+              "type": "model",
+              "role": "competitor"
+            }
+          ],
+          "evidence": [
+            "这是中国推理算力困局在面向消费者的产品层面的直接外显"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "DeepSeek",
+          "target": "Qwen",
+          "type": "competes_with",
+          "weight": 0.7,
+          "evidence": [
+            "在新一轮开源模型（如 Qwen 竞品）通过蒸馏 US 前沿模型加速落地、推理需求激增的背景下"
+          ]
+        },
+        {
+          "source": "美国",
+          "target": "中国",
+          "type": "restricts",
+          "weight": 0.4,
+          "evidence": [
+            "以及美国收紧芯片出口的调查报道相互印证"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "免费对话提示长度上限",
+          "value": "约 40,000 字符"
+        }
+      ],
+      "why_it_matters": "免费额度收紧把中国推理算力缺口直接暴露在消费端，供给受限成为比模型能力更硬的瓶颈，\"需求爆发、供给受限\"成为理解中国 AI 产业的关键坐标。"
+    },
+    {
+      "article_id": "2026-11-17-11",
+      "entities": [
+        {
+          "name": "Reuters",
+          "type": "organization",
+          "aliases": [
+            "路透"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "路透对 300 多份中国学术论文、专利、公司披露与政府文件的重审发现"
+          ]
+        },
+        {
+          "name": "OpenAI",
+          "type": "company",
+          "aliases": [
+            "Open AI"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "如 OpenAI 的 GPT-4o、o1"
+          ]
+        },
+        {
+          "name": "GPT-4o",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "蒸馏美国前沿模型（如 OpenAI 的 GPT-4o、o1）已从学术实验演变为中国工业界的普遍实践"
+          ]
+        },
+        {
+          "name": "o1",
+          "type": "model",
+          "aliases": [
+            "OpenAI o1"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "如 OpenAI 的 GPT-4o、o1"
+          ]
+        },
+        {
+          "name": "Qwen",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "被广泛用于训练 Qwen 等本土模型的竞品与衍生模型"
+          ]
+        },
+        {
+          "name": "中国",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": [
+            "路透对 300 多份中国学术论文、专利、公司披露与政府文件的重审发现"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "路透调查发现中国工业界普遍蒸馏美国前沿模型训练本土竞品",
+          "summary": "路透重审 300 多份中国学术论文、专利、公司披露与政府文件，发现蒸馏 GPT-4o、o1 等美国前沿模型已从学术实验演变为中国工业界普遍实践，被用于训练 Qwen 等本土模型。",
+          "participants": [
+            {
+              "name": "Reuters",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "中国",
+              "type": "organization",
+              "role": "object"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "object"
+            },
+            {
+              "name": "Qwen",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "蒸馏美国前沿模型（如 OpenAI 的 GPT-4o、o1）已从学术实验演变为中国工业界的普遍实践"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "蒸馏成为中国快速追平的一种低成本路径",
+          "summary": "在中国用本土替代应对算力限制的背景下，从已有最强模型提取知识与能力成为中国快速追平的低成本路径。",
+          "participants": [
+            {
+              "name": "中国",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "OpenAI",
+              "type": "company",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "用\"蒸馏\"从已有最强模型里提取知识与能力，成为中国快速追平的一种低成本路径"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Qwen",
+          "target": "GPT-4o",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": [
+            "蒸馏美国前沿模型（如 OpenAI 的 GPT-4o、o1）已从学术实验演变为中国工业界的普遍实践",
+            "被广泛用于训练 Qwen 等本土模型的竞品与衍生模型"
+          ]
+        },
+        {
+          "source": "Qwen",
+          "target": "o1",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": [
+            "蒸馏美国前沿模型（如 OpenAI 的 GPT-4o、o1）已从学术实验演变为中国工业界的普遍实践"
+          ]
+        },
+        {
+          "source": "GPT-4o",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "如 OpenAI 的 GPT-4o、o1"
+          ]
+        },
+        {
+          "source": "o1",
+          "target": "OpenAI",
+          "type": "developed_by",
+          "weight": 0.9,
+          "evidence": [
+            "如 OpenAI 的 GPT-4o、o1"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "路透重审的中国文献与披露数量",
+          "value": "300 多份"
+        }
+      ],
+      "why_it_matters": "蒸馏从学术实验变成中国工业界普遍实践，美国模型的能力经训练数据通道直接注入本土竞品——芯片管制能卡算力硬件，卡不住已发布模型的知识扩散。"
+    },
+    {
+      "article_id": "2026-11-17-12",
+      "entities": [
+        {
+          "name": "arXiv",
+          "type": "organization",
+          "aliases": [
+            "Arxiv"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "arXiv 论文提出 SciResearch-Eval，一个交互式科学判断基准"
+          ]
+        },
+        {
+          "name": "SciResearch-Eval",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "arXiv 论文提出 SciResearch-Eval，一个交互式科学判断基准"
+          ]
+        },
+        {
+          "name": "GPT-6 Astra",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "GPT-6 Astra 为 94%"
+          ]
+        },
+        {
+          "name": "Claude Fable 5.2",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "Claude Fable 5.2 为 99%"
+          ]
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "type": "model",
+          "aliases": [
+            "Opus"
+          ],
+          "confidence": 0.9,
+          "evidence": [
+            "Opus 仅 35% 试次，Astra 为 66%"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "arXiv 论文提出交互式科学判断基准 SciResearch-Eval",
+          "summary": "以\"测量材料热学性质并拟合热传导仿真器\"为标准任务，智能体自主设计实验、使用可能欠分辨或物理有误的仿真器并以 95% 置信区间报告每个性质，是首个同时包含自主实验、缺陷仿真器与按真实真值打分校准区间的基准。",
+          "participants": [
+            {
+              "name": "arXiv",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "SciResearch-Eval",
+              "type": "benchmark",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "arXiv 论文提出 SciResearch-Eval，一个交互式科学判断基准"
+          ]
+        },
+        {
+          "type": "benchmark",
+          "label": "SciResearch-Eval 评测显示多数模型高置信地报错值",
+          "summary": "在 93 个任务、9 个模型、2,511 个试次的留出集上，多数模型区间覆盖真值比例仅 20–62%，而 GPT-6 Astra 为 94%、Claude Fable 5.2 为 99%，Claude 5.5 模型很少诊断缺失的物理。",
+          "participants": [
+            {
+              "name": "SciResearch-Eval",
+              "type": "benchmark",
+              "role": "subject"
+            },
+            {
+              "name": "GPT-6 Astra",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Claude Fable 5.2",
+              "type": "model",
+              "role": "object"
+            },
+            {
+              "name": "Claude Opus 5.5",
+              "type": "model",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "多数模型在仿真器缺失物理时会报错值却自评\"95% 确信\"——其区间覆盖真值的比例仅 20–62%"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "GPT-6 Astra",
+          "target": "SciResearch-Eval",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": [
+            "GPT-6 Astra 为 94%"
+          ]
+        },
+        {
+          "source": "Claude Fable 5.2",
+          "target": "SciResearch-Eval",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": [
+            "Claude Fable 5.2 为 99%"
+          ]
+        },
+        {
+          "source": "Claude Opus 5.5",
+          "target": "SciResearch-Eval",
+          "type": "evaluated_on",
+          "weight": 0.9,
+          "evidence": [
+            "Opus 仅 35% 试次，Astra 为 66%"
+          ]
+        },
+        {
+          "source": "GPT-6 Astra",
+          "target": "Claude Fable 5.2",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": [
+            "其区间覆盖真值的比例仅 20–62%，而 GPT-6 Astra 为 94%、Claude Fable 5.2 为 99%"
+          ]
+        },
+        {
+          "source": "GPT-6 Astra",
+          "target": "Claude Opus 5.5",
+          "type": "compared_with",
+          "weight": 0.8,
+          "evidence": [
+            "Opus 仅 35% 试次，Astra 为 66%"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "留出集任务数",
+          "value": "93 个"
+        },
+        {
+          "name": "评测模型数",
+          "value": "9 个"
+        },
+        {
+          "name": "留出集试次数",
+          "value": "2,511 个"
+        },
+        {
+          "name": "多数模型区间覆盖真值比例",
+          "value": "20–62%"
+        },
+        {
+          "name": "GPT-6 Astra 区间覆盖真值比例",
+          "value": "94%"
+        },
+        {
+          "name": "Claude Fable 5.2 区间覆盖真值比例",
+          "value": "99%"
+        },
+        {
+          "name": "Claude Opus 5.5 诊断缺失物理的试次比例",
+          "value": "35%"
+        },
+        {
+          "name": "GPT-6 Astra 诊断缺失物理的试次比例",
+          "value": "66%"
+        }
+      ],
+      "why_it_matters": "首个同时考核自主实验、缺陷仿真器与校准置信区间的基准证明：会做对仿真器的模型未必理解物理，自主科学代理的不确定性表达是系统性短板，不能只按任务成功率验收。"
+    },
+    {
+      "article_id": "2026-11-17-13",
+      "entities": [
+        {
+          "name": "美国司法部",
+          "type": "organization",
+          "aliases": [
+            "DOJ",
+            "联邦检察官"
+          ],
+          "confidence": 0.95,
+          "evidence": [
+            "美国司法部把 AI 检测器 Pangram 输出作为呈堂证据"
+          ]
+        },
+        {
+          "name": "Pangram",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": [
+            "把辩护方动议经 AI 检测器 Pangram 判定为 AI 生成的结论作为呈堂证据"
+          ]
+        },
+        {
+          "name": "ChatGPT",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "本案\"已变成由 ChatGPT 进行辩护\""
+          ]
+        },
+        {
+          "name": "Khalwinder Bhengura",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": [
+            "得州北区联邦检察官在 United States v. Khalwinder Bhengura 案中"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "美国司法部把 AI 检测器 Pangram 输出作为呈堂证据",
+          "summary": "得州北区联邦检察官在 United States v. Khalwinder Bhengura 案中把辩护方动议经 Pangram 判定为 AI 生成的结论作为呈堂证据，并告知法官本案\"已变成由 ChatGPT 进行辩护\"。",
+          "participants": [
+            {
+              "name": "美国司法部",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Pangram",
+              "type": "product",
+              "role": "object"
+            },
+            {
+              "name": "Khalwinder Bhengura",
+              "type": "person",
+              "role": "object"
+            },
+            {
+              "name": "ChatGPT",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "把辩护方动议经 AI 检测器 Pangram 判定为 AI 生成的结论作为呈堂证据"
+          ]
+        },
+        {
+          "type": "trend",
+          "label": "商业 AI 检测器首次以对抗性证据进入联邦法庭",
+          "summary": "被视为商业 AI 检测器作为对抗另一方律师的呈堂证据的首次联邦使用之一，辩护律师称 AI 起草源于医疗紧急事件并辩称 Pangram 无法确凿证明作者身份。",
+          "participants": [
+            {
+              "name": "美国司法部",
+              "type": "organization",
+              "role": "subject"
+            },
+            {
+              "name": "Pangram",
+              "type": "product",
+              "role": "object"
+            }
+          ],
+          "evidence": [
+            "这被视为商业 AI 检测器作为对抗另一方律师的呈堂证据的首次联邦使用之一"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "source": "美国司法部",
+          "target": "Pangram",
+          "type": "uses",
+          "weight": 0.9,
+          "evidence": [
+            "把辩护方动议经 AI 检测器 Pangram 判定为 AI 生成的结论作为呈堂证据"
+          ]
+        },
+        {
+          "source": "美国司法部",
+          "target": "Khalwinder Bhengura",
+          "type": "targets",
+          "weight": 0.8,
+          "evidence": [
+            "得州北区联邦检察官在 United States v. Khalwinder Bhengura 案中"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Pangram 检测研究涉及的非洲作者人数",
+          "value": "187 位"
+        }
+      ],
+      "why_it_matters": "商业 AI 检测器首次以对抗性证据进入联邦法庭，AI 生成内容的判定从技术问题变成司法证据问题，检测器对特定人群的漏检差异将直接冲击程序正义。"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-17",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "核心事实基本准确、证据多能支撑断言，无高危幻觉；但存在多处关系类型与命名规范化缺陷：评测机构对被测模型的边写成 uses、把 arXiv 当作论文作者、article 5 的 GPT-6.2 与 article 0 的 GPT-6.2 Astra/Sol 拼写不一致导致跨文章无法连通，另有事件/实体类型错用及参投关系缺失，需要修订。",
+  "findings": [
+    {
+      "article_id": "2026-11-17-12",
+      "severity": "medium",
+      "problem": "关系 SciResearch-Eval --authored_by--> arXiv 把 arXiv 当作基准的作者。arXiv 是预印本仓库/宿主，不是研究作者；原文只说\"arXiv 论文提出\"，论文实际作者未披露。写成 authored_by arXiv 陈述了一个错误事实（仓库不可能创作基准）。",
+      "fix": "删除该 authored_by 关系；如作者名单未知，则不要创建以 arXiv 为主体的创作关系，改用反映\"发布于/托管于 arXiv\"语义的关系，或删掉这条边，避免把宿主仓库当作作者。"
+    },
+    {
+      "article_id": "2026-11-17-6",
+      "severity": "medium",
+      "problem": "关系 Vals --uses--> Claude Opus 5.5 关系类型用错。Vals 是评测机构，对模型做的是测试/评测，不是\"使用\"；这条边把评测行为误写成工具调用关系，表达不出\"Vals 评测出 Opus 5.5 有 69% 误判\"的核心语义。",
+      "fix": "把该边换成表示评测/测试的关系（例如 Vals --evaluates--> Claude Opus 5.5），或直接删除，让核心断言落到 metrics/更新的评测事件上，不要用 uses 表达评测机构与样本模型的关系。"
+    },
+    {
+      "article_id": "2026-11-17-5",
+      "severity": "medium",
+      "problem": "实体 \"GPT-6.2\" 与 article 0 的 \"GPT-6.2 Astra\" / \"GPT-6.2 Sol\" 拼写不一致。原文 article 5 写\"同日发布的 GPT-6.2\"，指的是 OpenAI 的 GPT-6.2 家族，但当前以 \"GPT-6.2\" 独立建实体，无法与 article 0 的具体模型连通，违反规范名一致性。",
+      "fix": "对 article 5 提及的 GPT-6.2，按所指的具体模型统一映射到既有的 GPT-6.2 Astra（或明确其指代），并在 aliases 中保留原文拼写，确保与 article 0 的模型在图上连通，避免产生孤立拼写实体。"
+    },
+    {
+      "article_id": "2026-11-17-13",
+      "severity": "low",
+      "problem": "关系 Pangram --targets--> ChatGPT 语义过强。Pangram 是对文本做\"是否由 ChatGPT/AI 生成\"的检测判定，不是\"针对\"ChatGPT 发起攻击的对象关系；原文语境是把检测结果当呈堂证据。",
+      "fix": "换成能表达\"检测/判定 AI（或 ChatGPT）生成内容\"的关系，或删除该边；保留有明确证据支撑的 美国司法部 --uses--> Pangram 即可，不要过度解读为攻击关系。"
+    },
+    {
+      "article_id": "2026-11-17-9",
+      "severity": "low",
+      "problem": "实体 \"SenseNova\" 类型标为 company 且 alias 为 商汤，把模型/产品品牌 SenseNova 与公司主体商汤(SenseTime)合并成一个 company 实体；这是不同主体被错误合并的实体类型/规范化问题。",
+      "fix": "将公司实体命名为商汤/SenseTime（type company），把 SenseNova 作为产品/模型品牌（type product 或并入模型名），不要让 SenseNova 同时充当 company 并 alias 商汤。"
+    },
+    {
+      "article_id": "2026-11-17-10",
+      "severity": "low",
+      "problem": "事件 0 类型标为 research，但该事件是 TechNode 对 DeepSeek 的新闻报道/事件通报，不是研究活动；research 类型错配。",
+      "fix": "改用一个表示新闻/报道/事件通报的类型（如 report/news），不要对第三方媒体转述使用 research 类型。"
+    },
+    {
+      "article_id": "2026-11-17-8",
+      "severity": "low",
+      "problem": "参投方 Bpifrance、HSG、Zoom、Samsung Next 已建成 company 实体，但没有对应的 invests_in 关系，而 Premji/Khosla/Eclipse/T. Rowe Price/NVIDIA/Ericsson 都有；同一篇内投资关系处理不一致，导致冗余孤立实体。",
+      "fix": "为 Bpifrance、HSG、Zoom、Samsung Next 也补上 --invests_in--> Genesis AI 关系（原文明确并列列出这些参投方），或删掉未被关系使用的冗余实体，保证投资关系完整一致。"
+    }
+  ],
+  "lessons": [
+    "评测机构对被测模型只建立\"评测/测试\"关系，绝不用 uses 表达评测机构与样本模型之间的边。",
+    "以 arXiv 为载体的论文，组织实体（arXiv）不是作者，不要写 authored_by arXiv；作者未署名时删除创作关系或用\"发布于/托管于\"语义。",
+    "同一模型族在不同新闻中的称呼（如\"GPT-6.2\"与\"GPT-6.2 Astra/Sol\"）必须按所指映射到最精确的既有实体并保留原文为 alias，避免制造无法跨文章连通的孤立拼写。"
+  ]
+}

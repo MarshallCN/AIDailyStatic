@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-17",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "整体事实准确、关系方向正确、证据可验证率高，与当日各源一致，无 high 级问题；但有 4 处 medium 级语义建模瑕疵：把第三方受益工具当作 launch 参与者、家族品牌与具体模型概念冗余且父关系类型不一致、别名混淆产品家族与具体模型、以及基于背景提及推出的美中政治关系可能误导图意。建议修订后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-17-4",
+      "severity": "medium",
+      "problem": "launch 事件的 participants 把 Factory、Linear、Ramp 列入 role=object，把第三方受益工具当成被发布对象。这三个是用户使用 Claude API 时涉及的已有 agent 工具，并非本次被推出的产品。",
+      "fix": "把 Factory/Linear/Ramp 从 launch 事件的 participants 中移除（或改 role 为 context），仅保留 Anthropic（subject）与 Claude Linked Billing（object）；Factory/Linear/Ramp 保留为实体及各自的 --uses--> Claude API 关系即可。"
+    },
+    {
+      "article_id": "2026-11-17-9",
+      "severity": "medium",
+      "problem": "实体建模存在品牌家族与具体模型两层冗余，且父关系类型不一致：SenseNova（product）与 SenseNova-Loop-9B（model）是'家族 vs 具体成员'关系却被当作两个并列独立实体；父关系分别用了 SenseNova --developed_by--> 商汤 与 SenseNova-Loop-9B --released_by--> 商汤 两种类型。",
+      "fix": "统一粒度：把 SenseNova 明确为发布品牌/家族并归并进 SenseNova-Loop-9B 的标注，或对这两个'指回商汤'的归属关系统一使用同一种关系类型（released_by 或 developed_by 择一），避免父子概念割裂图谱连通性。"
+    },
+    {
+      "article_id": "2026-11-17-5",
+      "severity": "medium",
+      "problem": "实体 GPT-6.2 Astra 被赋予别名 'GPT-6.2'，并以'source 证据：OpenAI 在同日发布的 GPT-6.2 中强调'支撑其 --developed_by--> OpenAI 关系。此处的 'GPT-6.2' 指整个发布家族而非特指 Astra，别名把产品家族与具体模型混为一谈，也让本篇出现一个锚定偏弱、跨文章的实体。",
+      "fix": "去掉 'GPT-6.2' 别名（家族名≠具体模型名）；本篇对 GPT-6.2 的提及只是背景句，重新评估该 developed_by 关系是否属于本篇——建议删除，或另建 GPT-6.2（家族）实体并用 release 事件承载。"
+    },
+    {
+      "article_id": "2026-11-17-10",
+      "severity": "medium",
+      "problem": "关系 美国 --restricts--> 中国 是从一句印证性背景句（'美国收紧芯片出口的调查报道相互印证'）推出的二元政治断言，并非本篇主体（本篇主题是 DeepSeek 因容量收紧免费对话上限）。该边会让图谱读者误以为本篇讨论美中芯片管制。",
+      "fix": "删除或降级该边。如保留，应把证据直接锚定到具体报告且加'报道称'一类限定，或改用较弱的关系类型/权重，并避免让跨主体政治断言脱离本篇核心叙事。"
+    }
+  ],
+  "lessons": [
+    "launch/发布事件的 participants 只列入真正被发布的实体；第三方受益工具（用户使用某服务时涉及的已有产品，如 Factory/Linear/Ramp）不算被发布对象，只保留为实体+关系，不要列为参与者。",
+    "模型家族名（如 GPT-6.2、SenseNova）与具体模型（如 GPT-6.2 Astra、SenseNova-Loop-9B）是不同粒度的实体，不要把家族名当作具体模型的别名，也不要把父子概念当成两个并列独立实体。",
+    "同一'归属到组织'关系在同类实体间使用统一的关系类型，避免同一篇内 developed_by 与 released_by 混用导致图谱关联被割裂。"
+  ]
+}
