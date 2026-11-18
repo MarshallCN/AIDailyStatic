@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-18",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 82,
+  "summary": "抽取整体质量高：实体齐全、证据可核实、关键数字大量进入 metrics。主要问题是关系类型/归因不够精确——纳斯达克被标成对 Anthropic 的 regulator、伙伴关系双向重复建边、Cairn 被错误归因使用 GLM。",
+  "findings": [
+    {
+      "article_id": "2026-11-18-0",
+      "severity": "medium",
+      "problem": "关系 \"Nasdaq --regulates--> Anthropic\" 类型用错。原文只说 ANT 将于纳斯达克挂牌（\"ANT 将于周四 11/19 于纳斯达克上市\"），纳斯达克是上市交易所，不是对 Anthropic 行使监管权的主体，regulates 会让图谱读出\"纳斯达克监管 Anthropic\"的错误含义。",
+      "fix": "删除该 regulates 关系，改为方向相反的 listing 关系：\"Anthropic --listed_on--> Nasdaq\"（evidence 用原文\"ANT 将于周四 11/19 于纳斯达克上市\"）。"
+    },
+    {
+      "article_id": "2026-11-18-7",
+      "severity": "medium",
+      "problem": "partners_with 是双向对称关系，却同时建了 \"三菱重工 --partners_with--> SAKURA internet\" 和 \"SAKURA internet --partners_with--> 三菱重工\" 两条同义边，构成重复关系，没有新增信息。",
+      "fix": "只保留一条 \"三菱重工 --partners_with--> SAKURA internet\"，删除反向重复边（\"SAKURA internet --partners_with--> 三菱重工\"）。"
+    },
+    {
+      "article_id": "2026-11-18-12",
+      "severity": "medium",
+      "problem": "对同一对象建了 \"加州 DMV --regulates--> Waymo\" 与 \"加州 DMV --restricts--> Waymo\" 两条表意重叠的关系（禁止运营既是限制又是监管），造成重复边。",
+      "fix": "只保留一条信息量更强的 \"加州 DMV --restricts--> Waymo\"，删除 regulates 重复边。"
+    },
+    {
+      "article_id": "2026-11-18-8",
+      "severity": "medium",
+      "problem": "关系 \"Cairn --uses--> GLM\" 归因错误。原文表述为\"其工具自称 Cairn，一个开源的 AI 渗透测试框架。被控机器还带一个基于 GLM 模型的 AI 编程智能体（Pi harness）上下文\"——Cairn 与基于 GLM 的 Pi harness 是被控机器上的两个独立工具，原文并没有说 Cairn 使用 GLM。",
+      "fix": "删除 \"Cairn --uses--> GLM\" 这条边，它混淆了两个独立工具。如要保留，应把归一化为独立实体并去掉 uses 归因，或用与证据一致的说法（GLM 智能体是机器上的另一个组件）。"
+    }
+  ],
+  "lessons": [
+    "交易所/资本市场不是监管机构：实体在某交易所上市应使用 listed_on（上市所在地）类关系，不要用 regulates；regulates 只用于真正的监管主体（监管局、立法、执法机构）。",
+    "partners_with 等对称关系不应双向各建一条边，只在单向建一条即可，避免重复边。",
+    "一段话同时提到多个独立工具时，不要把一个工具的属性/模型归到另一个工具上；先分清各自 subject 再连关系。"
+  ]
+}

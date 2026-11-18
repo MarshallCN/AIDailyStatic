@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T23:28:35Z",
+  "updated_at": "2026-11-18T23:19:57Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -956,6 +956,35 @@
         "2026-10-12-2",
         "2026-10-12-3",
         "2026-10-12-4"
+      ]
+    },
+    {
+      "period_id": "2026-W43",
+      "period_type": "week",
+      "start_date": "2026-10-19",
+      "end_date": "2026-10-19",
+      "summary": "2026-10-19 至 2026-10-19 期间，NVIDIA、Nscale、SemiAnalysis 主要围绕 trend、benchmark 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "NVIDIA",
+        "Nscale",
+        "SemiAnalysis",
+        "Anthropic"
+      ],
+      "event_types": [
+        "trend",
+        "benchmark",
+        "security"
+      ],
+      "trend_signals": [
+        "核心实体：NVIDIA、Nscale、SemiAnalysis",
+        "主事件类型：trend、benchmark"
+      ],
+      "representative_article_ids": [
+        "2026-10-19-0",
+        "2026-10-19-1",
+        "2026-10-19-2",
+        "2026-10-19-3",
+        "2026-10-19-4"
       ]
     }
   ]

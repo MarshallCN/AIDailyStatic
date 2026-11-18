@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-18",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 81,
+  "summary": "r1/r2 的结构性发现（重复边、competes_with/supplies/regulates 误用、Cairn--uses-->GLM 归因）已全部修复，事实与方向逐条核对无误。剩余问题集中在关系类型精度与边完整性：Anthropic--Nasdaq 仍用 complies_with 而非 r2 明确指定的 listed_on；Xing4 的「零 CUDA」被写成 deprecates；恶意包 agent-framework 的 developed_by 边会把攻击归因给微软；Gemini 4 Neon 缺 Artificial Analysis 的 evaluated_on 边；MisAnthropic 一篇遗漏 RSP 实体。medium 问题 5 条，判 revise。",
+  "findings": [
+    {
+      "article_id": "2026-11-18-0",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --complies_with--> Nasdaq\"（evidence \"ANT 将于周四 11/19 于纳斯达克上市\"）类型仍然用错：r2 已明确要求改成 listed_on，本轮只是把 regulates 换成了 complies_with，方向对了但类型依旧不是挂牌关系。complies_with 读作\"Anthropic 对纳斯达克负有合规义务\"，原文并无任何合规断言，只有上市挂牌这一事实。",
+      "fix": "按 r2 指示改为 \"Anthropic --listed_on--> Nasdaq\"（evidence 不变，仍用 \"ANT 将于周四 11/19 于纳斯达克上市\"）。上市所在地不是监管/合规关系。"
+    },
+    {
+      "article_id": "2026-11-18-1",
+      "severity": "medium",
+      "problem": "Gemini 4 Neon 缺少对 Artificial Analysis 的 evaluated_on 边：本文 headline 基准结果（智能指数 61 分排第 3，标题与摘要都点名）只出现在事件 participants 和 metrics 里，relations 层完全没有；同一篇里 Vals、Agent Arena、Legal Research Bench 都建了 evaluated_on 边，唯独最重要的 AA 基准漏边。",
+      "fix": "新增 \"Gemini 4 Neon --evaluated_on--> Artificial Analysis\"（evidence 用 \"在 Artificial Analysis 智能指数（xhigh 思考档）拿到 61 分排第 3\"），使关系层覆盖该篇所有被报道的基准结果。"
+    },
+    {
+      "article_id": "2026-11-18-5",
+      "severity": "medium",
+      "problem": "关系 \"Xing4 --deprecates--> CUDA\" 类型夸大：原文只说训练\"全程不用 GPU、不用 CUDA\"（零依赖/不使用），没有任何\"宣告 CUDA 淘汰\"的断言；deprecates 是主动宣布淘汰某物的语义，把中性的\"不依赖\"写成了贬义动作。",
+      "fix": "改为表示\"不使用/不依赖\"的关系类型（如 does_not_use、avoids，若类型表存在），或删掉该边、保留 \"Xing4 --uses--> MindSpore\" 来表达零 CUDA 栈；不要用 deprecates 表达\"零依赖\"。"
+    },
+    {
+      "article_id": "2026-11-18-8",
+      "severity": "medium",
+      "problem": "关系 \"agent-framework --developed_by--> Microsoft\"（evidence \"恶意版微软 PyPI 包 agent-framework\"）在本篇语境下会把恶意投毒包归因给微软：故事主体是\"恶意版 1.26.1/1.26.2 被上传、攻击者疑似破解 ESRP 证书签名发布\"，这条边读作\"微软开发了该包\"与事件语义冲突；同时载荷直取 Azure/DevOps 与云托管身份令牌，攻击目标完全没进图。",
+      "fix": "让该边明确只指官方包身份（evidence 改写为\"微软官方维护的 agent-framework 包，本次遭恶意冒名发布\"），并新增表达攻击行为的边，如新建 Azure 实体并建 \"agent-framework（恶意版）--targets--> Azure\"（evidence \"窃取 Azure、云托管身份令牌及凭证\"），避免图谱读出\"微软开发恶意版本\"。"
+    },
+    {
+      "article_id": "2026-11-18-11",
+      "severity": "medium",
+      "problem": "遗漏 RSP 实体：声明两条核心指控之一是\"Anthropic 于 2 月弱化其 Responsible Scaling Policy（放弃单方面暂停开发的承诺）\"，但实体与关系层只抽了 SB 1047、RAISE Act、AEGIS Act 三条游说目标，最重要的 RSP 弱化指控既无实体也无边。",
+      "fix": "新增实体 RSP（Responsible Scaling Policy，type policy），并建 \"Anthropic --weakens--> RSP\" 类关系（evidence \"Anthropic 于 2 月弱化其 Responsible Scaling Policy（放弃单方面暂停开发的承诺）\"），使被点名政策与游说目标同样完整入图。"
+    },
+    {
+      "article_id": "2026-11-18-2",
+      "severity": "low",
+      "problem": "\"Vera Rubin --developed_by--> Nvidia\" 与 \"H200 --developed_by--> Nvidia\" 的 evidence 分别是\"她称 Vera Rubin 等先进芯片需求积压\"和\"中国已基本拒绝接收 H200 交付\"——这两句支撑的是需求积压与交付受阻，不支撑\"由 Nvidia 开发\"这一断言（原文从未陈述产品归属，属背景知识），违反\"证据必须支撑所附断言\"。",
+      "fix": "若产品归属是背景知识而非原文断言，应改类型为更弱的关联（如 Vera Rubin --affiliated_with--> Nvidia）并保留现有 evidence，或补充能体现产品归属的表述；不要用不支撑断言的证据挂 developed_by。"
+    },
+    {
+      "article_id": "2026-11-18-6",
+      "severity": "low",
+      "problem": "实体 \"AI 文本检测器\" 被标成 type=product，但它是泛化的工具类别（原文只有\"一个商业检测器\"，无具名产品），不是具体产品；与同图 MindSpore/ESRP/Cairn 等 tool 类型不一致。",
+      "fix": "将 type 改为 tool（与同图工具类实体一致），或标为 topic；不要用 product 承载泛化工具类别。"
+    },
+    {
+      "article_id": "2026-11-18-0",
+      "severity": "low",
+      "problem": "事件 participants 中 SpaceX 的 role 标为 \"competitor\"，但原文只把 SpaceX 当作估值对比基准（\"仅次于 SpaceX 6 月的 $1.77 万亿\"），不存在竞争关系，role 标签讲错故事。",
+      "fix": "将 role 改为 benchmark/reference 之类表示对比基准的取值，或从 participants 移除（compared_with 关系已承载该对比）。"
+    },
+    {
+      "article_id": "2026-11-18-5",
+      "severity": "low",
+      "problem": "实体 中国电信 的 aliases 包含 \"Telecom\"，过于宽泛：任何名称含 Telecom 的主体（其他电信运营商等）都可能与之错误合并，破坏规范名最小化原则。",
+      "fix": "删除 \"Telecom\" 别名，只保留 \"China Telecom\" 与中文名。"
+    }
+  ],
+  "lessons": [
+    "「不使用/不依赖某技术」（如零 CUDA 训练）是中性事实，用 does_not_use/avoids 类关系表达，不要用 deprecates——deprecates 仅当原文明确宣告淘汰某技术时才用。",
+    "模型在一篇新闻里被报道的每个基准成绩都要建 evaluated_on 边，不能只写进 metrics 或事件 participants；headline 基准（出现在标题/摘要里的那个）最容易漏，漏了会让图缺最重要的证据边。",
+    "供应链投毒/冒名类安全新闻中，恶意发布的包与官方包同名但性质不同：developed_by 只连官方身份，恶意攻击行为单独建 targets 类边并带上被窃取的目标服务实体，避免图谱读成「官方开发了恶意版本」。"
+  ]
+}

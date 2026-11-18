@@ -1,0 +1,562 @@
+{
+  "date": "2026-11-18",
+  "articles": [
+    {
+      "article_id": "2026-11-18-0",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic 以每股 $83 为其 IPO 定价"]},
+        {"name": "Nasdaq", "type": "organization", "aliases": ["纳斯达克"], "confidence": 0.95, "evidence": ["ANT 将于周四 11/19 于纳斯达克上市"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["仅次于 SpaceX 6 月的 $1.77 万亿"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 以每股 $83 定价 IPO，全稀释估值约 $1.5 万亿，11/19 在纳斯达克挂牌",
+          "summary": "Anthropic 把 IPO 定价为每股 $83，高于 $70–78 区间，全稀释估值约 $1.5 万亿美元，ANT 将于 11/19 在纳斯达克上市。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Nasdaq", "type": "organization", "role": "object"},
+            {"name": "SpaceX", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["Anthropic 于 11/18 晚间把 IPO 定价为每股 $83"]
+        }
+      ],
+      "relations": [
+        {"source": "Anthropic", "target": "SpaceX", "type": "compared_with", "weight": 0.8, "evidence": ["这将是美股有史以来估值第二高的 IPO，仅次于 SpaceX 6 月的 $1.77 万亿"]},
+        {"source": "Anthropic", "target": "Nasdaq", "type": "complies_with", "weight": 0.6, "evidence": ["ANT 将于周四 11/19 于纳斯达克上市"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic IPO 发行价", "value": "$83/股"},
+        {"name": "全稀释估值", "value": "约 $1.5 万亿美元"},
+        {"name": "IPO 发行规模", "value": "8.25 亿股"},
+        {"name": "IPO 募资规模", "value": "至少约 $680 亿"},
+        {"name": "私募配售规模", "value": "约 $260 亿"},
+        {"name": "机构认购需求", "value": "约 $4000 亿"},
+        {"name": "零售认购需求", "value": "逼近 $1000 亿"},
+        {"name": "SpaceX 上市估值（对比基准）", "value": "$1.77 万亿"}
+      ],
+      "why_it_matters": "Anthropic 超指引区间定价，把前沿 AI 资产的公共市场估值锚定在 $1.5 万亿，同时上市即遭遇对其安全品牌是否只是募资话术的公开质疑，成为安全叙事与商业价值平衡的试金石。"
+    },
+    {
+      "article_id": "2026-11-18-1",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.98, "evidence": ["Google DeepMind 于 11/18 发布 Gemini 4 Neon"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.97, "evidence": ["Google DeepMind 于 11/18 发布 Gemini 4 Neon"]},
+        {"name": "Gemini 4 Neon", "type": "model", "aliases": ["Neon"], "confidence": 0.98, "evidence": ["Google DeepMind 于 11/18 发布 Gemini 4 Neon"]},
+        {"name": "Artificial Analysis", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["在 Artificial Analysis 智能指数（xhigh 思考档）拿到 61 分排第 3"]},
+        {"name": "Vals", "type": "benchmark", "aliases": [], "confidence": 0.88, "evidence": ["Vals 指数排第 2（70.9%）"]},
+        {"name": "Agent Arena", "type": "benchmark", "aliases": [], "confidence": 0.88, "evidence": ["Agent Arena 指数 1336 分排全球第 2"]},
+        {"name": "Legal Research Bench", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["Legal Research Bench 与 Tax Agent Bench 居首"]},
+        {"name": "Gemini API", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["当日起逐步在 Gemini API、Google AI Studio"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google DeepMind 发布前沿模型 Gemini 4 Neon",
+          "summary": "Google DeepMind 于 11/18 发布 Gemini 4 Neon，定位前沿级智能加快速端到端任务完成，主打企业、分析与科研。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Gemini 4 Neon", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google DeepMind 于 11/18 发布 Gemini 4 Neon"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Gemini 4 Neon 在 Artificial Analysis 智能指数排第 3（61 分）",
+          "summary": "Gemini 4 Neon 在 Artificial Analysis 智能指数获取 61 分排第 3，在 Vals 与 Agent Arena 指数分列第 2。",
+          "participants": [
+            {"name": "Gemini 4 Neon", "type": "model", "role": "subject"},
+            {"name": "Artificial Analysis", "type": "organization", "role": "benchmark"}
+          ],
+          "evidence": ["在 Artificial Analysis 智能指数（xhigh 思考档）拿到 61 分排第 3"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4 Neon", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["Google DeepMind 于 11/18 发布 Gemini 4 Neon"]},
+        {"source": "Google DeepMind", "target": "Google", "type": "subsidiary_of", "weight": 0.7, "evidence": ["Google DeepMind 于 11/18 发布 Gemini 4 Neon"]},
+        {"source": "Gemini 4 Neon", "target": "Vals", "type": "evaluated_on", "weight": 0.7, "evidence": ["Vals 指数排第 2（70.9%）"]},
+        {"source": "Gemini 4 Neon", "target": "Agent Arena", "type": "evaluated_on", "weight": 0.7, "evidence": ["Agent Arena 指数 1336 分排全球第 2"]},
+        {"source": "Gemini 4 Neon", "target": "Legal Research Bench", "type": "evaluated_on", "weight": 0.6, "evidence": ["Legal Research Bench 与 Tax Agent Bench 居首"]},
+        {"source": "Gemini 4 Neon", "target": "Gemini API", "type": "integrates", "weight": 0.6, "evidence": ["当日起逐步在 Gemini API、Google AI Studio"]}
+      ],
+      "metrics": [
+        {"name": "Artificial Analysis 智能指数分数", "value": "61 分（排第 3）"},
+        {"name": "Vals 指数得分", "value": "70.9%（排第 2）"},
+        {"name": "Agent Arena 指数得分", "value": "1336 分（全球第 2）"},
+        {"name": "API 输入价格", "value": "$3/百万 token"},
+        {"name": "缓存输入价格", "value": "$0.15（95% 折扣）"},
+        {"name": "API 输出价格", "value": "$15"},
+        {"name": "上下文窗口", "value": "1M token"}
+      ],
+      "why_it_matters": "Google 把‘前沿级智能＋快速端到端任务’打包成可被企业直采的定价档（$3/$15、1M 上下文），在深思型大档位之外另立一个公开可比的竞争力刻度，瞄准的是企业落地而非论文榜单。"
+    },
+    {
+      "article_id": "2026-11-18-2",
+      "entities": [
+        {"name": "Nvidia", "type": "company", "aliases": ["英伟达"], "confidence": 0.98, "evidence": ["代理 CEO 兼 CFO Colette Kress 报告 2027 财年 Q3 营收 $1158 亿"]},
+        {"name": "Colette Kress", "type": "person", "aliases": ["Kress"], "confidence": 0.95, "evidence": ["代理 CEO 兼 CFO Colette Kress 报告 2027 财年 Q3 营收 $1158 亿"]},
+        {"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.97, "evidence": ["黄仁勋本人提出愿回归"]},
+        {"name": "H200", "type": "hardware", "aliases": [], "confidence": 0.95, "evidence": ["停止向中国销售 H200"]},
+        {"name": "Vera Rubin", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["她称 Vera Rubin 等先进芯片需求积压"]},
+        {"name": "中国", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["中国已基本拒绝接收 H200 交付"]},
+        {"name": "Trump", "type": "person", "aliases": ["特朗普"], "confidence": 0.9, "evidence": ["黄仁勋与特朗普敲定的\u201c以 25% 关税换取中国准入\u201d安排"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Nvidia 发布 2027 财年 Q3 财报，营收 $1158 亿（同比 +103%）",
+          "summary": "在黄仁勋离职后的首场财报会上，代理 CEO 兼 CFO Colette Kress 报告 Q3 营收 $1158 亿，同比增 103%，并给 Q4 指引 $1300 亿 ±3%。",
+          "participants": [
+            {"name": "Nvidia", "type": "company", "role": "subject"},
+            {"name": "Colette Kress", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["代理 CEO 兼 CFO Colette Kress 报告 2027 财年 Q3 营收 $1158 亿"]
+        },
+        {
+          "type": "policy",
+          "label": "Nvidia 停止向中国销售 H200，终结关税换准入安排",
+          "summary": "Kress 宣布停止向中国销售 H200，终结黄仁勋与特朗普敲定的以 25% 关税换取中国准入的安排。",
+          "participants": [
+            {"name": "Nvidia", "type": "company", "role": "subject"},
+            {"name": "H200", "type": "hardware", "role": "object"},
+            {"name": "中国", "type": "organization", "role": "object"},
+            {"name": "Trump", "type": "person", "role": "partner"}
+          ],
+          "evidence": ["停止向中国销售 H200，终结了黄仁勋与特朗普敲定的"]
+        },
+        {
+          "type": "trend",
+          "label": "黄仁勋离职，Nvidia 高管明确无意重新任命他",
+          "summary": "黄仁勋本人提出愿回归，但 Nvidia 高管明确表示无意重新任命他，因应其离职 Nvidia 股价已累跌约 10%。",
+          "participants": [
+            {"name": "Jensen Huang", "type": "person", "role": "subject"},
+            {"name": "Nvidia", "type": "company", "role": "object"}
+          ],
+          "evidence": ["黄仁勋本人提出愿回归，但 Nvidia 高管明确表示无意重新任命他"]
+        }
+      ],
+      "relations": [
+        {"source": "Colette Kress", "target": "Nvidia", "type": "affiliated_with", "weight": 0.85, "evidence": ["代理 CEO 兼 CFO Colette Kress 报告 2027 财年 Q3 营收 $1158 亿"]},
+        {"source": "Vera Rubin", "target": "Nvidia", "type": "developed_by", "weight": 0.7, "evidence": ["她称 Vera Rubin 等先进芯片需求积压"]},
+        {"source": "H200", "target": "Nvidia", "type": "developed_by", "weight": 0.7, "evidence": ["中国已基本拒绝接收 H200 交付"]},
+        {"source": "Nvidia", "target": "中国", "type": "restricts", "weight": 0.85, "evidence": ["停止向中国销售 H200"]}
+      ],
+      "metrics": [
+        {"name": "Nvidia 2027 财年 Q3 营收", "value": "$1158 亿（同比 +103%）"},
+        {"name": "Nvidia Q4 业绩指引", "value": "$1300 亿 ±3%"},
+        {"name": "Nvidia 股价累计跌幅（黄仁勋离职后）", "value": "约 10%"},
+        {"name": "对华销售关税", "value": "25%"}
+      ],
+      "why_it_matters": "Nvidia 在新管理层下主动切断对华销售并承认可能失去东南亚潜在客户，标志其全球策略从‘用关税换准入’的谈判姿态退回地缘现实；股价不涨与开源 AI 战略不变，则凸显黄仁勋个人品牌与公司治理价值正在分裂。"
+    },
+    {
+      "article_id": "2026-11-18-3",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.98, "evidence": ["Microsoft 在 Ignite 2026 宣布 Home 与 Office in Copilot 正式可用"]},
+        {"name": "Copilot", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Word、Excel、PowerPoint 现在可直接在 Copilot 应用内"]},
+        {"name": "Word", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Word、Excel、PowerPoint 现在可直接在 Copilot 应用内"]},
+        {"name": "Excel", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Word、Excel、PowerPoint 现在可直接在 Copilot 应用内"]},
+        {"name": "PowerPoint", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Word、Excel、PowerPoint 现在可直接在 Copilot 应用内"]},
+        {"name": "MAI Code 2", "type": "model", "aliases": ["Code 2"], "confidence": 0.92, "evidence": ["微软同时发布自有编程模型 MAI Code 2"]},
+        {"name": "MAI Code 2 Flash", "type": "model", "aliases": ["Code 2 Flash"], "confidence": 0.9, "evidence": ["微软同时发布自有编程模型 MAI Code 2 / Code 2 Flash"]},
+        {"name": "GitHub Copilot", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["在 GitHub Copilot 中可达 GPT-6.1 Sol 约 98% 的编码质量"]},
+        {"name": "GPT-6.1 Sol", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["可达 GPT-6.1 Sol 约 98% 的编码质量"]},
+        {"name": "Opus 5.5", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["在 Opus 5.5 的 5% 价格下达到 96% 性能"]},
+        {"name": "GPT-6 Luna", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["Flash 在 GPT-6 Luna 的 65% 价格"]},
+        {"name": "Haiku 5.5", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["Haiku 5.5 的 20% 价格下提供可比性能"]},
+        {"name": "Satya Nadella", "type": "person", "aliases": ["Nadella"], "confidence": 0.92, "evidence": ["CEO Nadella 把 Copilot 描述为"]},
+        {"name": "Autopilot", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["另公布常驻的个人智能体 Autopilot"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Microsoft 在 Ignite 发布自有编程模型 MAI Code 2 / Code 2 Flash",
+          "summary": "微软发布 MAI Code 2，在 GitHub Copilot 中可达 GPT-6.1 Sol 约 98% 的编码质量但价格约 40%。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "MAI Code 2", "type": "model", "role": "object"}
+          ],
+          "evidence": ["微软同时发布自有编程模型 MAI Code 2 / Code 2 Flash"]
+        },
+        {
+          "type": "launch",
+          "label": "Microsoft 把 Word/Excel/PowerPoint 直接内置进 Copilot 应用",
+          "summary": "Home 与 Office in Copilot 正式可用，Word、Excel、PowerPoint 可在 Copilot 应用内直接创建、编辑与协作，Nadella 把 Copilot 重新定义为工作新操作系统。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Copilot", "type": "product", "role": "object"},
+            {"name": "Word", "type": "product", "role": "object"},
+            {"name": "Excel", "type": "product", "role": "object"},
+            {"name": "PowerPoint", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Word、Excel、PowerPoint 现在可直接在 Copilot 应用内创建、编辑与协作"]
+        }
+      ],
+      "relations": [
+        {"source": "MAI Code 2", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["微软同时发布自有编程模型 MAI Code 2 / Code 2 Flash"]},
+        {"source": "Word", "target": "Copilot", "type": "integrates", "weight": 0.85, "evidence": ["Word、Excel、PowerPoint 现在可直接在 Copilot 应用内"]},
+        {"source": "Excel", "target": "Copilot", "type": "integrates", "weight": 0.85, "evidence": ["Word、Excel、PowerPoint 现在可直接在 Copilot 应用内"]},
+        {"source": "PowerPoint", "target": "Copilot", "type": "integrates", "weight": 0.85, "evidence": ["Word、Excel、PowerPoint 现在可直接在 Copilot 应用内"]},
+        {"source": "MAI Code 2", "target": "GPT-6.1 Sol", "type": "compared_with", "weight": 0.8, "evidence": ["可达 GPT-6.1 Sol 约 98% 的编码质量但价格约 40%"]},
+        {"source": "MAI Code 2", "target": "Opus 5.5", "type": "compared_with", "weight": 0.75, "evidence": ["在 Opus 5.5 的 5% 价格下达到 96% 性能"]},
+        {"source": "MAI Code 2 Flash", "target": "GPT-6 Luna", "type": "compared_with", "weight": 0.7, "evidence": ["Flash 在 GPT-6 Luna 的 65% 价格"]},
+        {"source": "MAI Code 2 Flash", "target": "Haiku 5.5", "type": "compared_with", "weight": 0.7, "evidence": ["Haiku 5.5 的 20% 价格下提供可比性能"]},
+        {"source": "MAI Code 2", "target": "GitHub Copilot", "type": "integrates", "weight": 0.8, "evidence": ["在 GitHub Copilot 中可达 GPT-6.1 Sol 约 98% 的编码质量"]},
+        {"source": "Satya Nadella", "target": "Microsoft", "type": "affiliated_with", "weight": 0.8, "evidence": ["CEO Nadella 把 Copilot 描述为"]},
+        {"source": "Autopilot", "target": "Microsoft", "type": "developed_by", "weight": 0.7, "evidence": ["另公布常驻的个人智能体 Autopilot"]}
+      ],
+      "metrics": [
+        {"name": "MAI Code 2 对 GPT-6.1 Sol 的编码质量", "value": "约 98%（价格约 40%）"},
+        {"name": "MAI Code 2 对 Opus 5.5 的性能", "value": "96%（价格 5%）"},
+        {"name": "MAI Code 2 Flash 对 GPT-6 Luna 的价格比", "value": "65%"},
+        {"name": "MAI Code 2 Flash 对 Haiku 5.5 的价格比", "value": "20%"}
+      ],
+      "why_it_matters": "微软把 Office 降格为 Copilot 的组件、并让自有编程模型以约四成价格逼近 GPT-6.1 Sol 的编码质量，等于同时发动‘工作负载入口’与‘价格-性能’两场战争，直接挤压 OpenAI 与 Anthropic 的收费天花板。"
+    },
+    {
+      "article_id": "2026-11-18-4",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["OpenAI 于 11/18 发布研究，量化其前沿模型对芯片设计的真实影响"]},
+        {"name": "Jalapeño", "type": "hardware", "aliases": ["Jalapeno"], "confidence": 0.9, "evidence": ["在自研推理芯片 Jalapeño 上"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["与 AMD 的合作中"]},
+        {"name": "Synopsys", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 同时与 Synopsys 合作"]},
+        {"name": "GPT-6.2 Astra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["GPT-6.2 Astra 按规格从零设计核心"]},
+        {"name": "PicoRV32", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["两个开源 32 位 RISC-V 核心（PicoRV32 与 OpenTitan/Ibex）"]},
+        {"name": "OpenTitan/Ibex", "type": "hardware", "aliases": [], "confidence": 0.85, "evidence": ["两个开源 32 位 RISC-V 核心（PicoRV32 与 OpenTitan/Ibex）"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "OpenAI 发布研究，量化模型在芯片设计上的收益",
+          "summary": "OpenAI 量化其前沿模型对芯片设计的影响：Jalapeño 的 warp engine 与 matrix unit 标准单元面积缩约 13%/10%，并助 AMD 旗舰 GPU 实现最高 14% PPA 提升。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Jalapeño", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["OpenAI 于 11/18 发布研究，量化其前沿模型对芯片设计的真实影响"]
+        },
+        {
+          "type": "research",
+          "label": "GPT-6.2 Astra 在两个开源 RISC-V 核心上整体评估设计能力",
+          "summary": "论文评估 GPT 各代在 PicoRV32 与 OpenTitan/Ibex 上的设计能力，GPT-6.2 Astra 按规格从零设计核心的进步大于改进既有设计的进步。",
+          "participants": [
+            {"name": "GPT-6.2 Astra", "type": "model", "role": "subject"},
+            {"name": "PicoRV32", "type": "hardware", "role": "benchmark"},
+            {"name": "OpenTitan/Ibex", "type": "hardware", "role": "benchmark"}
+          ],
+          "evidence": ["GPT-6.2 Astra 按规格从零设计核心"]
+        }
+      ],
+      "relations": [
+        {"source": "Jalapeño", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["在自研推理芯片 Jalapeño 上"]},
+        {"source": "OpenAI", "target": "AMD", "type": "partners_with", "weight": 0.85, "evidence": ["与 AMD 的合作中，模型改写描述电路的 SystemVerilog RTL"]},
+        {"source": "OpenAI", "target": "Synopsys", "type": "partners_with", "weight": 0.8, "evidence": ["OpenAI 同时与 Synopsys 合作"]},
+        {"source": "GPT-6.2 Astra", "target": "PicoRV32", "type": "evaluated_on", "weight": 0.75, "evidence": ["两个开源 32 位 RISC-V 核心（PicoRV32 与 OpenTitan/Ibex）"]},
+        {"source": "GPT-6.2 Astra", "target": "OpenTitan/Ibex", "type": "evaluated_on", "weight": 0.75, "evidence": ["两个开源 32 位 RISC-V 核心（PicoRV32 与 OpenTitan/Ibex）"]}
+      ],
+      "metrics": [
+        {"name": "Jalapeño warp engine 标准单元面积缩小", "value": "约 13%"},
+        {"name": "Jalapeño matrix unit 标准单元面积缩小", "value": "约 10%"},
+        {"name": "乘法器重设计面积缩小", "value": "约 15%（延迟从两时钟降一）"},
+        {"name": "AMD 旗舰 GPU PPA 提升", "value": "最高 14%"},
+        {"name": "约一年工程进度的完成时间", "value": "不到 5 个月"},
+        {"name": "GPT-6.2 Astra 从零设计核心的 token 用量", "value": "约 11.2 万 token/run"},
+        {"name": "评分运行总次数", "value": "9,881 次"}
+      ],
+      "why_it_matters": "OpenAI 把大模型对芯片 EDA 的贡献从‘能写代码’推进到‘能在硅片省面积、提高 PPA 并被客户纳入流片’的量化验证，模型开始直接参与半导体设计闭环，可能重塑 EDA 行业的工具与人力结构。"
+    },
+    {
+      "article_id": "2026-11-18-5",
+      "entities": [
+        {"name": "中国电信", "type": "company", "aliases": ["China Telecom", "Telecom"], "confidence": 0.95, "evidence": ["中国电信领衔的 Xingchen AGI Lab 于 11/18 发布技术报告"]},
+        {"name": "Xingchen AGI Lab", "type": "organization", "aliases": ["星辰 AGI 实验室"], "confidence": 0.9, "evidence": ["中国电信领衔的 Xingchen AGI Lab 于 11/18 发布技术报告"]},
+        {"name": "Xing4", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["介绍 TeleChat 系列向 Xing4 的演进"]},
+        {"name": "昇腾 910C", "type": "hardware", "aliases": ["Ascend 910C"], "confidence": 0.92, "evidence": ["在 8,192 张昇腾 910C 上"]},
+        {"name": "MindSpore", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["基于 MindSpore HyperParallel 与拓扑感知混合分片"]},
+        {"name": "TeleGym", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["后训练引入统一智能体执行平台 TeleGym"]},
+        {"name": "TeleChat", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["介绍 TeleChat 系列向 Xing4 的演进"]},
+        {"name": "CUDA", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["全程不用 GPU、不用 CUDA"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "中国电信领衔的 Xingchen AGI Lab 用纯昇腾零 CUDA 完成 2850 亿参数 MoE 预训练",
+          "summary": "基于 MindSpore HyperParallel 与拓扑感知混合分片，在 8,192 张昇腾 910C 上完成 2850 亿参数 MoE 预训练，全程不用 GPU、不用 CUDA。",
+          "participants": [
+            {"name": "Xingchen AGI Lab", "type": "organization", "role": "subject"},
+            {"name": "中国电信", "type": "company", "role": "subject"},
+            {"name": "Xing4", "type": "model", "role": "object"},
+            {"name": "昇腾 910C", "type": "hardware", "role": "object"},
+            {"name": "MindSpore", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["在 8,192 张昇腾 910C 上完成 2850 亿参数 MoE 的预训练，全程不用 GPU、不用 CUDA"]
+        },
+        {
+          "type": "open_source",
+          "label": "开源 Xing4 的 29B 开放权重版本",
+          "summary": "报告同时给出 29B 总参、4B 激活的开放权重版本，支持 256K–1M 上下文，后训练引入统一智能体执行平台 TeleGym。",
+          "participants": [
+            {"name": "Xingchen AGI Lab", "type": "organization", "role": "subject"},
+            {"name": "Xing4", "type": "model", "role": "object"}
+          ],
+          "evidence": ["报告同时给出 29B 总参（4B 激活）的开放权重版本"]
+        }
+      ],
+      "relations": [
+        {"source": "Xing4", "target": "Xingchen AGI Lab", "type": "developed_by", "weight": 0.9, "evidence": ["中国电信领衔的 Xingchen AGI Lab 于 11/18 发布技术报告"]},
+        {"source": "Xingchen AGI Lab", "target": "中国电信", "type": "subsidiary_of", "weight": 0.8, "evidence": ["中国电信领衔的 Xingchen AGI Lab 于 11/18 发布技术报告"]},
+        {"source": "Xing4", "target": "TeleChat", "type": "built_on", "weight": 0.75, "evidence": ["介绍 TeleChat 系列向 Xing4 的演进"]},
+        {"source": "Xing4", "target": "昇腾 910C", "type": "uses", "weight": 0.85, "evidence": ["在 8,192 张昇腾 910C 上"]},
+        {"source": "Xing4", "target": "MindSpore", "type": "uses", "weight": 0.85, "evidence": ["基于 MindSpore HyperParallel 与拓扑感知混合分片"]},
+        {"source": "Xing4", "target": "TeleGym", "type": "uses", "weight": 0.8, "evidence": ["后训练引入统一智能体执行平台 TeleGym"]},
+        {"source": "Xing4", "target": "CUDA", "type": "deprecates", "weight": 0.9, "evidence": ["全程不用 GPU、不用 CUDA"]}
+      ],
+      "metrics": [
+        {"name": "昇腾 910C 训练卡数", "value": "8,192 张"},
+        {"name": "MoE 总参数量", "value": "2850 亿参数"},
+        {"name": "开放权重版总参数", "value": "29B（4B 激活）"},
+        {"name": "上下文长度", "value": "256K–1M"}
+      ],
+      "why_it_matters": "在 Nvidia 停售 H200、美国收紧高端芯片出口的节点上，中国电信用纯昇腾＋MindSpore 完成 2850 亿参数级训练闭环，把算力自主从口号落成可复现的技术报告，去 CUDA 成为可验证的国产替代方向。"
+    },
+    {
+      "article_id": "2026-11-18-6",
+      "entities": [
+        {"name": "MIT", "type": "organization", "aliases": ["麻省理工"], "confidence": 0.95, "evidence": ["MIT 与 Cornell 研究人员在论文中"]},
+        {"name": "Cornell", "type": "organization", "aliases": ["康奈尔"], "confidence": 0.95, "evidence": ["MIT 与 Cornell 研究人员在论文中"]},
+        {"name": "测试时自适应", "type": "topic", "aliases": ["test-time adaptation"], "confidence": 0.9, "evidence": ["采用测试时自适应（test-time adaptation）"]},
+        {"name": "AI 文本检测器", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["一个商业检测器对伪装成真人的 AI 生成文本只能识别约 27%"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "MIT 与 Cornell 提出测试时自适应，把 AI 文本检测准确率从 27% 提到 93%",
+          "summary": "采用测试时自适应，让已部署的检测模型在涌现的未标注新数据上实时调整内部参数，商业检测器对伪装文本的识别从约 27% 提高到 93%。",
+          "participants": [
+            {"name": "MIT", "type": "organization", "role": "subject"},
+            {"name": "Cornell", "type": "organization", "role": "subject"},
+            {"name": "测试时自适应", "type": "topic", "role": "object"},
+            {"name": "AI 文本检测器", "type": "product", "role": "object"}
+          ],
+          "evidence": ["一个商业检测器对伪装成真人的 AI 生成文本只能识别约 27%，而新方法达到 93%"]
+        }
+      ],
+      "relations": [
+        {"source": "测试时自适应", "target": "MIT", "type": "authored_by", "weight": 0.85, "evidence": ["MIT 与 Cornell 研究人员在论文中"]},
+        {"source": "测试时自适应", "target": "Cornell", "type": "authored_by", "weight": 0.85, "evidence": ["MIT 与 Cornell 研究人员在论文中"]},
+        {"source": "AI 文本检测器", "target": "测试时自适应", "type": "uses", "weight": 0.8, "evidence": ["让已部署的检测模型在涌现的、未经标注的新数据上实时调整内部参数"]}
+      ],
+      "metrics": [
+        {"name": "商业检测器对伪装文本的识别准确率", "value": "约 27%"},
+        {"name": "测试时自适应方法的识别准确率", "value": "93%"}
+      ],
+      "why_it_matters": "把‘部署后实时调参’引入检测方，意味着 AI 文本检测从‘每代模型重训’的军备竞赛转向对抗式持续适应，让检测器摆脱只对训练期新模型有效的先天滞后。"
+    },
+    {
+      "article_id": "2026-11-18-7",
+      "entities": [
+        {"name": "三菱重工", "type": "company", "aliases": ["MHI", "Mitsubishi Heavy Industries"], "confidence": 0.95, "evidence": ["三菱重工（MHI）与樱 Internet（SAKURA internet）于 11/18 签署战略联盟谅解备忘录"]},
+        {"name": "SAKURA internet", "type": "company", "aliases": ["樱 Internet", "樱"], "confidence": 0.95, "evidence": ["三菱重工（MHI）与樱 Internet（SAKURA internet）于 11/18 签署战略联盟谅解备忘录"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "三菱重工与 SAKURA internet 结盟，共建日本主权 AI 模块化数据中心",
+          "summary": "三菱重工与樱 Internet 签署战略联盟谅解备忘录，合作加强日本主权 AI 基础设施，开发可高效快速建造的模块化 AI 数据中心。",
+          "participants": [
+            {"name": "三菱重工", "type": "company", "role": "subject"},
+            {"name": "SAKURA internet", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["三菱重工（MHI）与樱 Internet（SAKURA internet）于 11/18 签署战略联盟谅解备忘录"]
+        }
+      ],
+      "relations": [
+        {"source": "三菱重工", "target": "SAKURA internet", "type": "partners_with", "weight": 0.9, "evidence": ["三菱重工（MHI）与樱 Internet（SAKURA internet）于 11/18 签署战略联盟谅解备忘录"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "日本把主权 AI 落到重工与云商的重工业组合——MHI 补社会基础设施与高安全、樱 补云与数据中心运营，显示主权 AI 叙事正转化为跨行业共建国内算力的具体落地订单方向。"
+    },
+    {
+      "article_id": "2026-11-18-8",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.95, "evidence": ["恶意版微软 PyPI 包 agent-framework"]},
+        {"name": "agent-framework", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["恶意版微软 PyPI 包 agent-framework（1.26.1 与 1.26.2）被上传"]},
+        {"name": "PyPI", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["向 PyPI 上传带凭据窃取器的 agent-framework"]},
+        {"name": "Wiz", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Wiz 于 11/18 披露"]},
+        {"name": "ESRP", "type": "tool", "aliases": ["工程系统发布管道"], "confidence": 0.85, "evidence": ["微软 ESRP（工程系统发布管道）的客户端证书与私钥"]},
+        {"name": "Cairn", "type": "tool", "aliases": [], "confidence": 0.8, "evidence": ["其工具自称 Cairn，一个开源的 AI 渗透测试框架"]},
+        {"name": "GLM", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["基于 GLM 模型的 AI 编程智能体"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "恶意版微软 PyPI 包 agent-framework 被上传投毒",
+          "summary": "Wiz 披露 11/17 起恶意版 agent-framework（1.26.1/1.26.2）被上传，载荷随每次 Python 启动执行并窃取 Azure、云托管身份令牌及凭证，恶意版本后遭隔离。",
+          "participants": [
+            {"name": "Wiz", "type": "company", "role": "subject"},
+            {"name": "agent-framework", "type": "product", "role": "object"},
+            {"name": "Microsoft", "type": "company", "role": "object"},
+            {"name": "PyPI", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["恶意版微软 PyPI 包 agent-framework（1.26.1 与 1.26.2）被上传"]
+        },
+        {
+          "type": "security",
+          "label": "攻击者疑似破解微软 ESRP 证书签名恶意包",
+          "summary": "攻击者疑似窃取并破解微软 ESRP 的客户端证书与私钥来签名发布该包，被控机器还带一个基于 GLM 模型的 AI 编程智能体上下文。",
+          "participants": [
+            {"name": "ESRP", "type": "tool", "role": "object"},
+            {"name": "Microsoft", "type": "company", "role": "object"}
+          ],
+          "evidence": ["攻击者疑似窃取并破解了微软 ESRP（工程系统发布管道）的客户端证书与私钥来签名发布该包"]
+        }
+      ],
+      "relations": [
+        {"source": "agent-framework", "target": "Microsoft", "type": "developed_by", "weight": 0.85, "evidence": ["恶意版微软 PyPI 包 agent-framework"]},
+        {"source": "ESRP", "target": "Microsoft", "type": "developed_by", "weight": 0.8, "evidence": ["微软 ESRP（工程系统发布管道）的客户端证书与私钥"]}
+      ],
+      "metrics": [
+        {"name": "agent-framework 包月下载量", "value": "约 20 万次/月"},
+        {"name": "恶意投毒版本", "value": "1.26.1 与 1.26.2"},
+        {"name": "Wiz 建议锁定的安全版本", "value": "1.26.0"}
+      ],
+      "why_it_matters": "这次投毒把攻击面从‘冒充官方账号’抬到‘破解官方签名证书’，载荷直取 Azure 与云托管身份令牌，说明 AI 智能体生态的供应链信任链正成为高价值、且以 AI 工具武装的攻击目标。"
+    },
+    {
+      "article_id": "2026-11-18-9",
+      "entities": [
+        {"name": "加州", "type": "organization", "aliases": ["California"], "confidence": 0.95, "evidence": ["州长 Newsom 于 11/18 发布新建议，强化加州 AI 安全框架"]},
+        {"name": "Newsom", "type": "person", "aliases": ["纽森"], "confidence": 0.92, "evidence": ["州长 Newsom 于 11/18 发布新建议"]},
+        {"name": "RSI", "type": "topic", "aliases": ["递归自改进"], "confidence": 0.85, "evidence": ["赋予对递归自改进（RSI）开发与使用的设限权力"]},
+        {"name": "SB 813", "type": "policy", "aliases": [], "confidence": 0.8, "evidence": ["建议与已签署的 SB 813（独立验证组织框架）"]},
+        {"name": "AB 1405", "type": "policy", "aliases": [], "confidence": 0.8, "evidence": ["AB 1405（AI 审计师注册）配套"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "加州发布强化 AI 安全框架，州设定基线标准并强制独立监督",
+          "summary": "Newsom 提出由州设定所有 AI 公司必须遵守的基线安全标准，强制独立测试与验证，扩大安全事故上报，并与 SB 813、AB 1405 配套。",
+          "participants": [
+            {"name": "加州", "type": "organization", "role": "subject"},
+            {"name": "Newsom", "type": "person", "role": "subject"},
+            {"name": "SB 813", "type": "policy", "role": "object"},
+            {"name": "AB 1405", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["由州（而非企业自己）设定所有 AI 公司必须遵守的基线安全标准"]
+        },
+        {
+          "type": "policy",
+          "label": "加州授予州紧急关停危险模型与对递归自改进设限的权力",
+          "summary": "建议授予州在紧急情况下下令立即关停危险模型的权限，并赋予对递归自改进（RSI）开发与使用的设限权力，首次把 RSI 纳入监管对象。",
+          "participants": [
+            {"name": "加州", "type": "organization", "role": "subject"},
+            {"name": "RSI", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["赋予对递归自改进（RSI）开发与使用的设限权力"]
+        }
+      ],
+      "relations": [
+        {"source": "Newsom", "target": "加州", "type": "affiliated_with", "weight": 0.8, "evidence": ["州长 Newsom 于 11/18 发布新建议"]},
+        {"source": "加州", "target": "RSI", "type": "regulates", "weight": 0.8, "evidence": ["赋予对递归自改进（RSI）开发与使用的设限权力"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "加州把基线标准、强制第三方验证、紧急关停与 RSI 设限全部收归州政府，首度把递归自改进明确写入监管对象，等于在联邦缺位下定义美国最严格的 AI 治理模板，并直接对冲 Anthropic 等公司的自我监管叙事。"
+    },
+    {
+      "article_id": "2026-11-18-10",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.97, "evidence": ["Google 更新 Gemini 应用控制"]},
+        {"name": "Gemini", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Google 拆分 Gemini 应用原有的\u201cKeep Activity\u201d开关"]},
+        {"name": "Gemini 应用", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Google 更新 Gemini 应用控制"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Google 拆分 Gemini 聊天历史与 AI 训练开关，关闭历史后保留期延长至约两个月",
+          "summary": "Google 让用户可在保留聊天历史的同时独立选择退出生成式 AI 训练，但关闭历史开关后会话保留期从 24/72 小时拉长到约两个月。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Gemini", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google 拆分 Gemini 应用原有的\u201cKeep Activity\u201d开关"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["Google 更新 Gemini 应用控制"]},
+        {"source": "Gemini 应用", "target": "Gemini", "type": "integrates", "weight": 0.75, "evidence": ["Google 拆分 Gemini 应用原有的\u201cKeep Activity\u201d开关"]},
+        {"source": "Gemini 应用", "target": "Google", "type": "developed_by", "weight": 0.75, "evidence": ["Google 更新 Gemini 应用控制"]}
+      ],
+      "metrics": [
+        {"name": "关闭历史后保留期（原）", "value": "24/72 小时"},
+        {"name": "关闭历史后保留期（新）", "value": "约两个月"},
+        {"name": "经人工审核会话最长保留期", "value": "三年"}
+      ],
+      "why_it_matters": "Google 用‘不进 AI 训练’的独立开关，换走用户在端侧的留存期从 72 小时拉长到两个月（人工审核可达三年），把隐私权柄从‘是否收集’让渡成‘由谁消化’，是行业默认数据策略的一次可量化回退。"
+    },
+    {
+      "article_id": "2026-11-18-11",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["斥其以安全品牌背书向公众募资数十亿美元"]},
+        {"name": "CAIS", "type": "organization", "aliases": ["Center for AI Safety"], "confidence": 0.92, "evidence": ["Center for AI Safety（CAIS）与一批科学家、法律学者与科技领袖签署并发布"]},
+        {"name": "Dan Hendrycks", "type": "person", "aliases": ["Hendrycks"], "confidence": 0.9, "evidence": ["CAIS 主任 Dan Hendrycks 表示"]},
+        {"name": "SB 1047", "type": "policy", "aliases": [], "confidence": 0.8, "evidence": ["游说削弱 SB 1047、RAISE Act 与 AEGIS Act"]},
+        {"name": "RAISE Act", "type": "policy", "aliases": [], "confidence": 0.8, "evidence": ["游说削弱 SB 1047、RAISE Act 与 AEGIS Act"]},
+        {"name": "AEGIS Act", "type": "policy", "aliases": [], "confidence": 0.8, "evidence": ["游说削弱 SB 1047、RAISE Act 与 AEGIS Act"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "CAIS 等广泛联盟发表 MisAnthropic 声明，挑战 Anthropic 安全品牌",
+          "summary": "在 Anthropic 上市定价当天，CAIS 与科学家、法律学者与科技领袖签署 MisAnthropic 声明，斥其以安全品牌募资却冲刺递归自改进 AI 并弱化安全承诺。",
+          "participants": [
+            {"name": "CAIS", "type": "organization", "role": "subject"},
+            {"name": "Dan Hendrycks", "type": "person", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Center for AI Safety（CAIS）与一批科学家、法律学者与科技领袖签署并发布\u201cMisAnthropic 声明\u201d"]
+        }
+      ],
+      "relations": [
+        {"source": "CAIS", "target": "Anthropic", "type": "targets", "weight": 0.85, "evidence": ["斥其以安全品牌背书向公众募资数十亿美元"]},
+        {"source": "Dan Hendrycks", "target": "CAIS", "type": "affiliated_with", "weight": 0.85, "evidence": ["CAIS 主任 Dan Hendrycks 表示"]},
+        {"source": "Anthropic", "target": "SB 1047", "type": "targets", "weight": 0.7, "evidence": ["游说削弱 SB 1047、RAISE Act 与 AEGIS Act"]},
+        {"source": "Anthropic", "target": "RAISE Act", "type": "targets", "weight": 0.7, "evidence": ["游说削弱 SB 1047、RAISE Act 与 AEGIS Act"]},
+        {"source": "Anthropic", "target": "AEGIS Act", "type": "targets", "weight": 0.7, "evidence": ["游说削弱 SB 1047、RAISE Act 与 AEGIS Act"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic IPO 发行价（同日对照）", "value": "$83/股"},
+        {"name": "Anthropic 估值（同日对照）", "value": "约 $1.5 万亿"}
+      ],
+      "why_it_matters": "在 Anthropic 定价当天，安全界以降调安全品牌的方式公开唱空其募资逻辑，把‘安全叙事是否有商业溢价’从舆论问题变成威胁 $1.5 万亿估值的实质风险。"
+    },
+    {
+      "article_id": "2026-11-18-12",
+      "entities": [
+        {"name": "加州 DMV", "type": "organization", "aliases": ["DMV", "加州车辆管理局"], "confidence": 0.92, "evidence": ["加州 DMV 以\u201c其无人驾驶高速公路运营因屡次闯入有施工人员、车辆与设备的活跃施工区\u201d为由"]},
+        {"name": "Waymo", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["禁止 Waymo 在州内所有高速公路运营或测试"]},
+        {"name": "加州公路巡警", "type": "organization", "aliases": ["CHP"], "confidence": 0.82, "evidence": ["试图超越正在实施 traffic break 的加州公路巡警车辆"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "加州 DMV 以迫在眉睫的危险为由禁止 Waymo 在州内高速公路运行",
+          "summary": "加州 DMV 禁止 Waymo 在州内所有高速公路运营或测试无人驾驶车辆，理由是车辆屡次闯入活跃施工区，Waymo 随后暂停全部市场的高速服务以评估性能。",
+          "participants": [
+            {"name": "加州 DMV", "type": "organization", "role": "subject"},
+            {"name": "Waymo", "type": "company", "role": "object"},
+            {"name": "加州公路巡警", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["禁止 Waymo 在州内所有高速公路运营或测试"]
+        }
+      ],
+      "relations": [
+        {"source": "加州 DMV", "target": "Waymo", "type": "restricts", "weight": 0.9, "evidence": ["禁止 Waymo 在州内所有高速公路运营或测试"]}
+      ],
+      "metrics": [
+        {"name": "Waymo 市区周行程量", "value": "每周超过 50 万次"},
+        {"name": "今年在加州暂停高速运营次数", "value": "第二次"}
+      ],
+      "why_it_matters": "加州 DMV 对 Waymo 的高速禁令与本州同日对递归自改进等激进项的设限同周收紧，显示监管既盯前沿技术的失控风险、也盯无人驾驶的区域运营安全，自动驾驶运营许可正被‘逐市场验证’取代‘全国铺开’。"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-18",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 86,
+  "summary": "主体与全部数字逐条核对原文明确无误，事件切分清晰（IPO、财报、政策、论文各自独立）。主要问题在关系边界：多处把同文里仅作宏观背景或语境的主体硬建成关系边（Anthropic–Nvidia 竞争、三菱/樱–日本供货、Waymo 合规），属\"共同出现不等于有关系\"，需修订后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-18-0",
+      "severity": "medium",
+      "problem": "关系 Anthropic --competes_with--> Nvidia（weight 0.35，evidence \"在 Nvidia 高层动荡后、市场对前沿 AI 资产信心的一次大考\"）无原文支撑：原文只是把 Nvidia 高层动荡作为宏观市场背景来衡量\"对前沿 AI 资产信心的考验\"，通篇没有任何 Anthropic 与 Nvidia 存在竞争关系的断言，属\"共同出现不等于有关系\"。",
+      "fix": "删除该 competes_with 关系。如确想保留 Nvidia 作为市场语境主体，只保留实体但不建关系边，不要凭同篇出现推断竞争。"
+    },
+    {
+      "article_id": "2026-11-18-7",
+      "severity": "medium",
+      "problem": "关系 三菱重工 --supplies--> 日本 与 SAKURA internet --supplies--> 日本（evidence 均为\"合作加强日本主权 AI 与主权云时代的国内数字基础设施\"）把\"共建国内数字基础设施\"误当成了\"向日本供货\"：原文只说明家公司合作建设面向日本的数据中心，不存在公司与作为客户的国家之间的供需断言，supplies 是类型与方向双重错误。",
+      "fix": "删除这两条 supplies 边；项目参与方之间的 partners_with 已足够表达该事实，不要用公司与国家/地区之间的供需关系兜底。"
+    },
+    {
+      "article_id": "2026-11-18-12",
+      "severity": "medium",
+      "problem": "关系 Waymo --complies_with--> 加州 DMV（evidence \"Waymo 表示正与 DMV 磋商恢复，并自行暂停其全部运营市场的高速服务\"）类型不当：原文说 Waymo 是与 DMV 磋商、并主动自行暂停服务以评估，这是协商与自主行动，不是对禁运令的合规执行，complies_with 讲出的故事与原文不符（还同时存在反方向的 regulates 边，语义自相矛盾）。",
+      "fix": "删除该 complies_with 边，只保留 加州 DMV --regulates--> Waymo 一条关系。若确需表达 Waymo 的应对，改用能涵盖\"自行暂停/磋商\"的类型，或直接删除。"
+    },
+    {
+      "article_id": "2026-11-18-0",
+      "severity": "low",
+      "problem": "事件类型把 IPO 定价上市标成了 launch：\"Anthropic 以每股 $83 定价 IPO，11/19 在纳斯达克挂牌\" 是财务/资本市场事件，与产品发布类 launch 语义不同，会与其他 launch 事件混在一类。",
+      "fix": "核对事件类型枚举，如有 finance/ipo 之类财务类类型应改用之；若枚举中没有，确认 launch 是否确属允许用于 IPO 的类型，避免财务事件与产品发布事件在同一类型下混淆。"
+    }
+  ],
+  "lessons": [
+    "仅凭同文出现的背景信息（宏观市场语境、地缘叙事）不得建立关系边，competes_with 等关系必须在原文有直接断言，否则删除该边。",
+    "对公司与国家/地区之间除非原文明确存在面向该国客户的供需关系，否则不要用 supplies/restricts 兜底建边；共建国内基建只保留参与方之间的 partners_with。",
+    "complies_with 只用于主体主动执行监管方指令的场合；协商、主动停运、申诉等自主行为不要用 complies_with 建边。"
+  ]
+}
