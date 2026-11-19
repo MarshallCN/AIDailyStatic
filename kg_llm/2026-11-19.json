@@ -1,0 +1,743 @@
+{
+  "date": "2026-11-19",
+  "articles": [
+    {
+      "article_id": "2026-11-19-0",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic（代码 ANT）11/19 在纳斯达克开始交易"]},
+        {"name": "Nasdaq", "type": "organization", "aliases": ["纳斯达克"], "confidence": 0.95, "evidence": ["Anthropic（代码 ANT）11/19 在纳斯达克开始交易"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["超过 SpaceX 6 月上市首日的 5.22 亿股"]},
+        {"name": "Alphabet", "type": "company", "aliases": ["谷歌母公司"], "confidence": 0.95, "evidence": ["大股东 Alphabet 持股约 10%"]},
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.95, "evidence": ["Amazon 约 11%（约 $1590 亿）"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 以史上最大 IPO 募资 $813 亿并在纳斯达克挂牌",
+          "summary": "Anthropic 以 $83/股发行 9.8 亿股募资 $813 亿，叠加 $260 亿私募总募资 $1073 亿，成史上最大 IPO，全稀释市值约 $1.76 万亿。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Nasdaq", "type": "organization", "role": "object"},
+            {"name": "SpaceX", "type": "company", "role": "benchmark"}
+          ],
+          "evidence": ["以 $83/股发行 9.8 亿股，募资 $813 亿,超过 SpaceX 6 月的 $750 亿，成为史上最大 IPO"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 首日交易 ANT 盘中最高 $115.10、收涨 17.07% 报 $97.17",
+          "summary": "ANT 首日开盘 $111.50（+34%），盘中最高 $115.10（+38.7%），收于 $97.17（+17.07%），按收盘价计全稀释市值约 $1.76 万亿。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Amazon", "type": "company", "role": "investor"}
+          ],
+          "evidence": ["盘中最高触及 $115.10（+38.7%）"]
+        }
+      ],
+      "relations": [
+        {"source": "Anthropic", "target": "SpaceX", "type": "compared_with", "weight": 0.7, "evidence": ["超过 SpaceX 6 月上市首日的 5.22 亿股"]},
+        {"source": "Alphabet", "target": "Anthropic", "type": "invests_in", "weight": 0.7, "evidence": ["大股东 Alphabet 持股约 10%（市值约 $1490 亿）"]},
+        {"source": "Amazon", "target": "Anthropic", "type": "invests_in", "weight": 0.7, "evidence": ["Amazon 约 11%（约 $1590 亿）"]}
+      ],
+      "metrics": [
+        {"name": "ANT 开盘价", "value": "$111.50（较发行价 +34%）"},
+        {"name": "ANT 盘中最高价", "value": "$115.10（+38.7%）"},
+        {"name": "ANT 收盘价", "value": "$97.17（+17.07%）"},
+        {"name": "全稀释市值", "value": "约 $1.76 万亿"},
+        {"name": "IPO 发行价", "value": "$83/股"},
+        {"name": "IPO 募资", "value": "$813 亿"},
+        {"name": "私募配售", "value": "$260 亿"},
+        {"name": "总募资", "value": "$1073 亿"},
+        {"name": "上限总募资（含超额配售）", "value": "约 $1195 亿"},
+        {"name": "首日成交量", "value": "逾 6 亿股"},
+        {"name": "Alphabet 持股", "value": "约 10%（市值约 $1490 亿）"},
+        {"name": "Amazon 持股", "value": "约 11%（约 $1590 亿）"}
+      ],
+      "why_it_matters": "Anthropic 以 $1.76 万亿全稀释市值收官首日，史上最大 IPO 把前沿 AI 资产的公共估值锚定在万亿级，接下来每个季度都要面对财报压力，AI 资本化的观察坐标从一级市场切到公开市场。"
+    },
+    {
+      "article_id": "2026-11-19-1",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Altman 明确表示 OpenAI\"计划上市\""]},
+        {"name": "Sam Altman", "type": "person", "aliases": ["Altman"], "confidence": 0.97, "evidence": ["Altman 明确表示 OpenAI\"计划上市\""]},
+        {"name": "Greg Brockman", "type": "person", "aliases": ["Brockman"], "confidence": 0.95, "evidence": ["Brockman 表示为筹算力亲自找过马斯克"]},
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.95, "evidence": ["DeepSeek 二轮融资落定、冲刺科创板的消息同期出现"]},
+        {"name": "Jensen Huang", "type": "person", "aliases": ["黄仁勋"], "confidence": 0.92, "evidence": ["两人都私下联系过离职后的黄仁勋"]},
+        {"name": "Christine Lagarde", "type": "person", "aliases": ["Lagarde"], "confidence": 0.9, "evidence": ["欧洲央行行长 Lagarde 警告当前 AI\"估值野心巨大\""]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "OpenAI 官宣计划上市，把前沿实验室集体走向公开市场变成行业叙事",
+          "summary": "Altman 在 DealBook 峰会上确认 OpenAI\"计划上市\"（\"We plan to be public\"），未给时间表；CNBC 报道 OpenAI 6 月已秘密提交 IPO 申请，目标 2027 年上市。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Sam Altman", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["Altman 明确表示 OpenAI\"计划上市\""]
+        },
+        {
+          "type": "trend",
+          "label": "Altman 承认竞速是坏事、Brockman 称全世界建的算力还不够",
+          "summary": "Altman 谈\"战争迷雾中的竞速是坏事\"，承认今年是转型之年；Brockman 表示为筹算力亲自找过马斯克和 Brin，称全世界建的算力还不够。",
+          "participants": [
+            {"name": "Sam Altman", "type": "person", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Greg Brockman", "type": "person", "role": "subject"},
+            {"name": "Jensen Huang", "type": "person", "role": "object"}
+          ],
+          "evidence": ["两人都私下联系过离职后的黄仁勋"]
+        },
+        {
+          "type": "trend",
+          "label": "Christine Lagarde 警告当前 AI 估值野心巨大、终将被修正",
+          "summary": "欧洲央行行长 Lagarde 在 DealBook 对话中警告当前 AI\"估值野心巨大，终将被修正\"。",
+          "participants": [
+            {"name": "Christine Lagarde", "type": "person", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"}
+          ],
+          "evidence": ["欧洲央行行长 Lagarde 警告当前 AI\"估值野心巨大，终将被修正\""]
+        }
+      ],
+      "relations": [
+        {"source": "Sam Altman", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["Altman 明确表示 OpenAI\"计划上市\""]},
+        {"source": "Greg Brockman", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["Brockman 表示为筹算力亲自找过马斯克"]}
+      ],
+      "metrics": [
+        {"name": "OpenAI 上市目标时间", "value": "2027 年"},
+        {"name": "生产工程师加固安全比例", "value": "25%（自 8 月起）"},
+        {"name": "企业营收变化", "value": "三季度翻倍"}
+      ],
+      "why_it_matters": "Altman 在 Anthropic 挂牌前一天确认上市计划，OpenAI 与 DeepSeek 的资本化进程同期推进，把\"前沿实验室集体走向公开市场\"从猜测变成共同选择，AI 一级市场的参照系正整体切换。"
+    },
+    {
+      "article_id": "2026-11-19-2",
+      "entities": [
+        {"name": "GAO", "type": "organization", "aliases": ["美国政府问责署"], "confidence": 0.95, "evidence": ["美国政府问责署（GAO）11/18（周三）发布报告"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["测试 ChatGPT、Claude、Gemini 与 Grok"]},
+        {"name": "Claude", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["测试 ChatGPT、Claude、Gemini 与 Grok"]},
+        {"name": "Gemini", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["测试 ChatGPT、Claude、Gemini 与 Grok"]},
+        {"name": "Grok", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["测试 ChatGPT、Claude、Gemini 与 Grok"]},
+        {"name": "Hassan", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["主导议员 Hassan（下届参议院国土安全委员会主席）"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI、Google 回应称测试数月前针对旧版模型完成"]},
+        {"name": "Google", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["OpenAI、Google 回应称测试数月前针对旧版模型完成"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 表示不否认\"坚定的测试者能诱导出有害内容\""]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "GAO 测试证实 ChatGPT、Claude、Gemini、Grok 均能生成可行的恐怖袭击方案",
+          "summary": "GAO 11/18 发布报告：调查人员今年春天测试四款平台，全部在 12 小时内生成可执行的袭击计划，每款平台都先触发护栏但被常见绕过技术得手。",
+          "participants": [
+            {"name": "GAO", "type": "organization", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"},
+            {"name": "Claude", "type": "product", "role": "object"},
+            {"name": "Gemini", "type": "product", "role": "object"},
+            {"name": "Grok", "type": "product", "role": "object"}
+          ],
+          "evidence": ["四款平台全部在 12 小时内生成了可用于袭击的详细方案"]
+        },
+        {
+          "type": "policy",
+          "label": "Hassan 将推动更强安全测试立法并召开听证会",
+          "summary": "主导议员 Hassan（下届参议院国土安全委员会主席）称\"平民 12 小时就能拿到致命袭击的行动手册\"，将推动更强安全测试立法并召开听证会。",
+          "participants": [
+            {"name": "Hassan", "type": "person", "role": "subject"},
+            {"name": "GAO", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["将推动更强安全测试立法并召开听证会"]
+        }
+      ],
+      "relations": [
+        {"source": "GAO", "target": "ChatGPT", "type": "targets", "weight": 0.7, "evidence": ["测试 ChatGPT、Claude、Gemini 与 Grok"]},
+        {"source": "GAO", "target": "Claude", "type": "targets", "weight": 0.7, "evidence": ["测试 ChatGPT、Claude、Gemini 与 Grok"]},
+        {"source": "GAO", "target": "Gemini", "type": "targets", "weight": 0.7, "evidence": ["测试 ChatGPT、Claude、Gemini 与 Grok"]},
+        {"source": "GAO", "target": "Grok", "type": "targets", "weight": 0.7, "evidence": ["测试 ChatGPT、Claude、Gemini 与 Grok"]},
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["OpenAI、Google 回应称测试数月前针对旧版模型完成"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Anthropic 表示不否认\"坚定的测试者能诱导出有害内容\""]},
+        {"source": "Gemini", "target": "Google", "type": "developed_by", "weight": 0.8, "evidence": ["OpenAI、Google 回应称测试数月前针对旧版模型完成"]}
+      ],
+      "metrics": [
+        {"name": "生成可行袭击方案时间", "value": "12 小时内"},
+        {"name": "产出 IED 爆炸计划平台数", "value": "两款"},
+        {"name": "产出电网变电站攻击方案平台数", "value": "两款"}
+      ],
+      "why_it_matters": "自主测试证明现役聊天机器人的安全护栏可被常见绕过手法在 12 小时内全部击穿，把能力治理的证据从厂商自报转向独立机构核验，直接支撑更强安全测试立法。"
+    },
+    {
+      "article_id": "2026-11-19-3",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Meta 超 10 亿押注的 AI 智能体 Muse"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.96, "evidence": ["员工报告 Muse 推送从未提出的育儿请求"]},
+        {"name": "Reuters", "type": "organization", "aliases": ["路透"], "confidence": 0.9, "evidence": ["路透（11/18）审查了 Meta 内部 20 多条反馈帖"]},
+        {"name": "Signal", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["另一名员工被提醒回复姐姐发来的 Signal 加密消息"]},
+        {"name": "Meredith Whittaker", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Signal 总裁 Meredith Whittaker 批评 Meta"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "路透调查披露 Meta 的 Muse 智能体读取 Signal 消息、冒出他人银行余额",
+          "summary": "路透审查 Meta 内部 20 多条反馈帖，员工报告 Muse 读取加密 Signal 消息、冒出他人银行余额等事故，属严重的隐私侵犯。",
+          "participants": [
+            {"name": "Reuters", "type": "organization", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "object"},
+            {"name": "Muse", "type": "product", "role": "object"},
+            {"name": "Signal", "type": "product", "role": "object"}
+          ],
+          "evidence": ["另一名员工被提醒回复姐姐发来的 Signal 加密消息"]
+        },
+        {
+          "type": "security",
+          "label": "Signal 总裁 Meredith Whittaker 批评 Meta 在不尊重隐私的情况下发布 Muse",
+          "summary": "Meredith Whittaker 批评 Meta\"在不尊重基本隐私与网络安全的情况下发布 Muse\"，称授予智能体广泛设备访问权\"在技术上不负责任\"。",
+          "participants": [
+            {"name": "Meredith Whittaker", "type": "person", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "object"},
+            {"name": "Signal", "type": "product", "role": "partner"}
+          ],
+          "evidence": ["Signal 总裁 Meredith Whittaker 批评 Meta\"在不尊重基本隐私与网络安全的情况下发布 Muse\""]
+        }
+      ],
+      "relations": [
+        {"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["Muse 是 Meta 押注 AI 商业化百亿美元计划的核心产品"]},
+        {"source": "Reuters", "target": "Signal", "type": "partners_with", "weight": 0.6, "evidence": ["路透与 Signal 团队及 AI Now 研究所联合测试"]},
+        {"source": "Meredith Whittaker", "target": "Signal", "type": "affiliated_with", "weight": 0.7, "evidence": ["Signal 总裁 Meredith Whittaker 批评 Meta"]}
+      ],
+      "metrics": [
+        {"name": "Muse 下载量", "value": "超 1000 万"},
+        {"name": "Meta 内部反馈帖数量", "value": "20 多条"}
+      ],
+      "why_it_matters": "Meta 押注百亿美元的旗舰智能体被实测能越权读取加密消息与账户数据，服务条款把责任推给用户而平台不担责，暴露\"先上线再修\"模式在设备级权限智能体上的系统性隐私风险。"
+    },
+    {
+      "article_id": "2026-11-19-4",
+      "entities": [
+        {"name": "Citi", "type": "company", "aliases": ["花旗"], "confidence": 0.97, "evidence": ["Citi（美国第三大商业银行）本周更新《在线用户协议》"]},
+        {"name": "JPMorgan", "type": "company", "aliases": ["摩根大通"], "confidence": 0.9, "evidence": ["摩根大通与美银上月已发布类似政策"]},
+        {"name": "Bank of America", "type": "company", "aliases": ["美银"], "confidence": 0.9, "evidence": ["摩根大通与美银上月已发布类似政策"]},
+        {"name": "PNC", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["PNC 11/18 跟进"]},
+        {"name": "Citizens", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["Citizens 本周电邮客户警告"]},
+        {"name": "Wells Fargo", "type": "company", "aliases": ["富国银行"], "confidence": 0.9, "evidence": ["富国银行政策亦将于 11/24 生效"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Citi 更新条款把第三方 AI 智能体账户操作的一切后果转由客户承担",
+          "summary": "Citi 更新在线用户协议：客户把凭据授予第三方 AI 智能体，则一切操作都被视为客户授权，即使越权或凭据泄露导致黑客入账，银行无义务调查智能体是否遵循原指示。",
+          "participants": [
+            {"name": "Citi", "type": "company", "role": "subject"},
+            {"name": "JPMorgan", "type": "company", "role": "peer"}
+          ],
+          "evidence": ["银行\"无义务调查智能体是否遵循了客户的原始指示\""]
+        },
+        {
+          "type": "trend",
+          "label": "摩根大通、美银、PNC、富国、Citizens 多家大行相继跟进类似政策",
+          "summary": "摩根大通与美银上月已发布类似政策，PNC 11/18 跟进，Citizens 本周电邮客户警告，富国银行政策将于 11/24 生效，形成行业一致收紧。",
+          "participants": [
+            {"name": "Citi", "type": "company", "role": "subject"},
+            {"name": "JPMorgan", "type": "company", "role": "peer"},
+            {"name": "Bank of America", "type": "company", "role": "peer"},
+            {"name": "PNC", "type": "company", "role": "peer"},
+            {"name": "Wells Fargo", "type": "company", "role": "peer"},
+            {"name": "Citizens", "type": "company", "role": "peer"}
+          ],
+          "evidence": ["摩根大通与美银上月已发布类似政策，PNC 11/18 跟进"]
+        }
+      ],
+      "relations": [
+        {"source": "JPMorgan", "target": "Citi", "type": "compared_with", "weight": 0.6, "evidence": ["摩根大通与美银上月已发布类似政策"]},
+        {"source": "Bank of America", "target": "Citi", "type": "compared_with", "weight": 0.6, "evidence": ["摩根大通与美银上月已发布类似政策"]},
+        {"source": "PNC", "target": "Citi", "type": "compared_with", "weight": 0.6, "evidence": ["PNC 11/18 跟进"]},
+        {"source": "Citizens", "target": "Citi", "type": "compared_with", "weight": 0.5, "evidence": ["Citizens 本周电邮客户警告"]},
+        {"source": "Wells Fargo", "target": "Citi", "type": "compared_with", "weight": 0.6, "evidence": ["富国银行政策亦将于 11/24 生效"]}
+      ],
+      "metrics": [
+        {"name": "富国银行政策生效日期", "value": "11/24"},
+        {"name": "美式消费者保护法律依据", "value": "《电子资金转移法》/Regulation E"}
+      ],
+      "why_it_matters": "美国大行把外部 AI 智能体账户操作的全部责任转给客户，与监管下的消费者保障形成冲突，边界将从合同条款如何与 Regulation E 限额责任衔接处被划定。"
+    },
+    {
+      "article_id": "2026-11-19-5",
+      "entities": [
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索", "杭州深度求索"], "confidence": 0.98, "evidence": ["11/17 杭州深度求索完成投资人变更"]},
+        {"name": "Tencent", "type": "company", "aliases": ["腾讯"], "confidence": 0.95, "evidence": ["以腾讯关联的上海珩岫（9.5653%，居首）"]},
+        {"name": "CATL", "type": "company", "aliases": ["宁德时代"], "confidence": 0.92, "evidence": ["宁德时代体系三只基金（合计约 9.57%）"]},
+        {"name": "Liang Wenfeng", "type": "person", "aliases": ["梁文锋"], "confidence": 0.95, "evidence": ["其控股主体以 99% 股权担任 GP"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["国内对标 OpenAI/Anthropic 的标杆大模型公司"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["国内对标 OpenAI/Anthropic 的标杆大模型公司"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "DeepSeek 完成约 1055 亿元第二轮融资，31 家机构经 SPV 入股",
+          "summary": "杭州深度求索 11/17 完成投资人变更，新增 31 家合伙人、认缴出资合计 34.39 亿元，本轮融资总额约 1055 亿元，较首轮 510 亿翻倍。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "Tencent", "type": "company", "role": "funder"},
+            {"name": "CATL", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["本轮融资总额约 1055 亿元（首轮 510 亿之后翻倍）"]
+        },
+        {
+          "type": "trend",
+          "label": "DeepSeek 冲刺科创板 IPO，对标 OpenAI/Anthropic",
+          "summary": "9 月有报道称 DeepSeek 已委托中信证券筹备科创板 IPO，在 Anthropic 挂牌的同一天，国内对标 OpenAI/Anthropic 的标杆大模型公司资本化进程进入倒计时。",
+          "participants": [
+            {"name": "DeepSeek", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"},
+            {"name": "Anthropic", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["国内对标 OpenAI/Anthropic 的标杆大模型公司的资本化进程也正式进入倒计时"]
+        }
+      ],
+      "relations": [
+        {"source": "Tencent", "target": "DeepSeek", "type": "invests_in", "weight": 0.8, "evidence": ["以腾讯关联的上海珩岫（9.5653%，居首）"]},
+        {"source": "CATL", "target": "DeepSeek", "type": "invests_in", "weight": 0.7, "evidence": ["宁德时代体系三只基金（合计约 9.57%）"]},
+        {"source": "Liang Wenfeng", "target": "DeepSeek", "type": "affiliated_with", "weight": 0.9, "evidence": ["其控股主体以 99% 股权担任 GP"]},
+        {"source": "DeepSeek", "target": "OpenAI", "type": "competes_with", "weight": 0.6, "evidence": ["国内对标 OpenAI/Anthropic 的标杆大模型公司"]},
+        {"source": "DeepSeek", "target": "Anthropic", "type": "competes_with", "weight": 0.6, "evidence": ["国内对标 OpenAI/Anthropic 的标杆大模型公司"]}
+      ],
+      "metrics": [
+        {"name": "本轮融资总额", "value": "约 1055 亿元"},
+        {"name": "首轮融资规模", "value": "510 亿"},
+        {"name": "新增合伙人数量", "value": "31 家"},
+        {"name": "认缴出资合计", "value": "34.39 亿元"},
+        {"name": "腾讯关联持股", "value": "9.5653%（居首）"},
+        {"name": "宁德时代体系持股", "value": "合计约 9.57%"},
+        {"name": "锁定期", "value": "七年，上市后再加五年"},
+        {"name": "注册资本", "value": "由 1644.75 万元增至 1991.87 万元"}
+      ],
+      "why_it_matters": "DeepSeek 用一个由创始人控制的 SPV 间接持股 31 家机构融资约 1055 亿元并设七年锁定，把中国硬科技一级市场的合规穿透与长期锁仓做成新范式，与 Anthropic 挂牌同天标志着国内外标杆 AI 公司同步走向资本市场。"
+    },
+    {
+      "article_id": "2026-11-19-6",
+      "entities": [
+        {"name": "Isomorphic Labs", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["Isomorphic Labs 11/17 宣布完成 $50 亿美元 C 轮"]},
+        {"name": "Demis Hassabis", "type": "person", "aliases": ["Hassabis"], "confidence": 0.97, "evidence": ["Hassabis 卸任 Google DeepMind CEO"]},
+        {"name": "Greenoaks", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["由 Greenoaks 与 Sequoia Capital 共同领投"]},
+        {"name": "Sequoia Capital", "type": "company", "aliases": ["红杉"], "confidence": 0.93, "evidence": ["由 Greenoaks 与 Sequoia Capital 共同领投"]},
+        {"name": "Andreessen Horowitz", "type": "company", "aliases": ["a16z"], "confidence": 0.9, "evidence": ["Andreessen Horowitz 与 Alphabet 参投"]},
+        {"name": "Alphabet", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Andreessen Horowitz 与 Alphabet 参投"]},
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind"], "confidence": 0.9, "evidence": ["Hassabis 卸任 Google DeepMind CEO"]},
+        {"name": "AlphaFold", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["公司以 AlphaFold 蛋白结构预测起家"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Isomorphic Labs 完成 $50 亿 C 轮，创生物科技史上最大单轮",
+          "summary": "Isomorphic Labs 11/17 宣布完成 $50 亿美元 C 轮，由 Greenoaks 与 Sequoia Capital 共同领投，Andreessen Horowitz 与 Alphabet 参投，距 $21 亿 B 轮仅 6 个月。",
+          "participants": [
+            {"name": "Isomorphic Labs", "type": "company", "role": "subject"},
+            {"name": "Greenoaks", "type": "company", "role": "funder"},
+            {"name": "Sequoia Capital", "type": "company", "role": "funder"},
+            {"name": "Andreessen Horowitz", "type": "company", "role": "funder"},
+            {"name": "Alphabet", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["Isomorphic Labs 11/17 宣布完成 $50 亿美元 C 轮"]
+        },
+        {
+          "type": "trend",
+          "label": "Demis Hassabis 卸任 Google DeepMind CEO 后首次融资，全力押注 AI 制药",
+          "summary": "这是 Hassabis 卸任 Google DeepMind CEO、转而专注药物研发以来的首次融资，他转任 DeepMind 董事长，把首批候选药物推进人体临床试验。",
+          "participants": [
+            {"name": "Demis Hassabis", "type": "person", "role": "subject"},
+            {"name": "Google DeepMind", "type": "company", "role": "object"},
+            {"name": "Isomorphic Labs", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Hassabis 卸任 Google DeepMind CEO，转而专注药物研发以来的首次融资"]
+        }
+      ],
+      "relations": [
+        {"source": "Greenoaks", "target": "Isomorphic Labs", "type": "invests_in", "weight": 0.85, "evidence": ["由 Greenoaks 与 Sequoia Capital 共同领投"]},
+        {"source": "Sequoia Capital", "target": "Isomorphic Labs", "type": "invests_in", "weight": 0.85, "evidence": ["由 Greenoaks 与 Sequoia Capital 共同领投"]},
+        {"source": "Andreessen Horowitz", "target": "Isomorphic Labs", "type": "invests_in", "weight": 0.8, "evidence": ["Andreessen Horowitz 与 Alphabet 参投"]},
+        {"source": "Alphabet", "target": "Isomorphic Labs", "type": "invests_in", "weight": 0.8, "evidence": ["Andreessen Horowitz 与 Alphabet 参投"]},
+        {"source": "Demis Hassabis", "target": "Isomorphic Labs", "type": "affiliated_with", "weight": 0.9, "evidence": ["Hassabis 卸任 Google DeepMind CEO，转而专注药物研发"]},
+        {"source": "Demis Hassabis", "target": "Google DeepMind", "type": "affiliated_with", "weight": 0.7, "evidence": ["他转任 DeepMind 董事长"]},
+        {"source": "Isomorphic Labs", "target": "AlphaFold", "type": "built_on", "weight": 0.7, "evidence": ["公司以 AlphaFold 蛋白结构预测起家"]}
+      ],
+      "metrics": [
+        {"name": "Isomorphic Labs C 轮融资额", "value": "$50 亿美元"},
+        {"name": "此前 B 轮融资额", "value": "$21 亿"},
+        {"name": "距 B 轮间隔", "value": "6 个月"},
+        {"name": "Bloomberg 报道估值", "value": "约 $500 亿"}
+      ],
+      "why_it_matters": "Hassabis 转任 DeepMind 董事长后为 Isomorphic Labs 半年内翻倍的 C 轮（$21 亿→$50 亿）拿到生物科技史上最大单轮，反映资本对\"AI+生物\"叙事的信任溢价，一旦临床首批失败这个估值逻辑将迎来第一次压力测试。"
+    },
+    {
+      "article_id": "2026-11-19-7",
+      "entities": [
+        {"name": "Palo Alto Networks", "type": "company", "aliases": ["PANW"], "confidence": 0.97, "evidence": ["Palo Alto Networks 宣布达成最终协议"]},
+        {"name": "Applied Compute", "type": "company", "aliases": [], "confidence": 0.96, "evidence": ["以 $45 亿全股票收购 Applied Compute"]},
+        {"name": "Yash Patil", "type": "person", "aliases": [], "confidence": 0.92, "evidence": ["Applied Compute 联合创始人兼 CEO Yash Patil"]},
+        {"name": "Elad Gil", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Elad Gil 领投、Nvidia 参投"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.9, "evidence": ["Elad Gil 领投、Nvidia 参投"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["2025 年由三位前 OpenAI 研究员创立"]},
+        {"name": "Databricks", "type": "company", "aliases": [], "confidence": 0.88, "evidence": ["与 AWS/Azure/GCP、Databricks、Together/Fireworks 等竞逐"]}
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "Palo Alto Networks 以 $45 亿全股票收购开放权重模型平台 Applied Compute",
+          "summary": "Palo Alto Networks 11/18 宣布达成最终协议，以 $45 亿全股票收购 Applied Compute，从\"守护 AI\"跨入\"训练并托管 AI\"，交易预计 2027 财年 Q3 完成。",
+          "participants": [
+            {"name": "Palo Alto Networks", "type": "company", "role": "subject"},
+            {"name": "Applied Compute", "type": "company", "role": "object"},
+            {"name": "Yash Patil", "type": "person", "role": "object"}
+          ],
+          "evidence": ["以 $45 亿全股票收购 Applied Compute"]
+        },
+        {
+          "type": "trend",
+          "label": "Applied Compute 由三位前 OpenAI 研究员创立并做到 $1 亿年化收入",
+          "summary": "Applied Compute 2025 年由三位前 OpenAI 研究员创立，AC2 云用异步强化学习训练/托管模型，18 个月做到 $1 亿年化收入，约两周前刚以 $32.5 亿估值融资 $3.5 亿。",
+          "participants": [
+            {"name": "Applied Compute", "type": "company", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Elad Gil", "type": "person", "role": "funder"},
+            {"name": "NVIDIA", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["2025 年由三位前 OpenAI 研究员创立"]
+        }
+      ],
+      "relations": [
+        {"source": "Palo Alto Networks", "target": "Applied Compute", "type": "acquires", "weight": 0.95, "evidence": ["以 $45 亿全股票收购 Applied Compute"]},
+        {"source": "NVIDIA", "target": "Applied Compute", "type": "invests_in", "weight": 0.7, "evidence": ["Elad Gil 领投、Nvidia 参投"]},
+        {"source": "Elad Gil", "target": "Applied Compute", "type": "invests_in", "weight": 0.7, "evidence": ["Elad Gil 领投、Nvidia 参投"]},
+        {"source": "Applied Compute", "target": "Databricks", "type": "competes_with", "weight": 0.6, "evidence": ["与 AWS/Azure/GCP、Databricks、Together/Fireworks 等竞逐模型训练与推理预算"]},
+        {"source": "Yash Patil", "target": "Applied Compute", "type": "affiliated_with", "weight": 0.8, "evidence": ["Applied Compute 联合创始人兼 CEO Yash Patil"]}
+      ],
+      "metrics": [
+        {"name": "收购对价", "value": "$45 亿（全股票）"},
+        {"name": "Applied Compute 年化收入", "value": "$1 亿（18 个月）"},
+        {"name": "Applied Compute 最新估值", "value": "$32.5 亿（融资 $3.5 亿）"},
+        {"name": "PANW FQ1 2027 营收", "value": "$34.5 亿（+39%）"},
+        {"name": "PANW 全年营收指引", "value": "$145.2–145.7 亿"},
+        {"name": "收盘后股价", "value": "涨约 9%"},
+        {"name": "自建算力规划", "value": "三年到五年内逾 100MW"}
+      ],
+      "why_it_matters": "安全厂商 Pala Alto Networks 自建算力收购模型训练平台，把\"守护 AI\"的业务逻辑延伸到\"必须参与训练才能监督 AI\"，让安全厂第一次直接与 Databricks、云巨头竞逐模型训练与推理预算。"
+    },
+    {
+      "article_id": "2026-11-19-8",
+      "entities": [
+        {"name": "Tencent", "type": "company", "aliases": ["腾讯"], "confidence": 0.97, "evidence": ["腾讯混元 11/18 公布"]},
+        {"name": "Hunyuan Hy4 Flash", "type": "model", "aliases": ["Hy4 Flash"], "confidence": 0.95, "evidence": ["11/16 上线的 Hy4 Flash 首日处理 token 量突破 50 万亿"]},
+        {"name": "Hy4", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["而 Hy4 为输入 $0.834、输出 $2.501"]},
+        {"name": "Hy4 Preview", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["首日用量达前代 Hy4 Preview 的 10 倍"]},
+        {"name": "WorkBuddy", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["在腾讯智能体平台 WorkBuddy 上"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "腾讯混元发布 Hy4 Flash，首日处理 token 突破 50 万亿创系列纪录",
+          "summary": "腾讯混元 11/16 上线 Hy4 Flash，首日处理 token 量突破 50 万亿，创混元系列模型首日调用纪录，定价较旗舰 Hy4 低了约一个数量级。",
+          "participants": [
+            {"name": "Tencent", "type": "company", "role": "subject"},
+            {"name": "Hunyuan Hy4 Flash", "type": "model", "role": "object"}
+          ],
+          "evidence": ["11/16 上线的 Hy4 Flash 首日处理 token 量突破 50 万亿"]
+        },
+        {
+          "type": "trend",
+          "label": "Hy4 Flash 在 WorkBuddy 平台首日用量为前代 Hy4 Preview 的 10 倍",
+          "summary": "Hy4 Flash 在腾讯智能体平台 WorkBuddy 上首日用量达前代 Hy4 Preview 的 10 倍，已帮助完成超过 5000 万个真实用户任务。",
+          "participants": [
+            {"name": "Hunyuan Hy4 Flash", "type": "model", "role": "subject"},
+            {"name": "Hy4 Preview", "type": "model", "role": "predecessor"},
+            {"name": "WorkBuddy", "type": "product", "role": "object"}
+          ],
+          "evidence": ["首日用量达前代 Hy4 Preview 的 10 倍"]
+        }
+      ],
+      "relations": [
+        {"source": "Hunyuan Hy4 Flash", "target": "Tencent", "type": "developed_by", "weight": 0.9, "evidence": ["腾讯混元 11/18 公布"]},
+        {"source": "Hunyuan Hy4 Flash", "target": "WorkBuddy", "type": "integrates", "weight": 0.8, "evidence": ["在腾讯智能体平台 WorkBuddy 上"]},
+        {"source": "Hunyuan Hy4 Flash", "target": "Hy4", "type": "compared_with", "weight": 0.7, "evidence": ["Flash 低了约一个数量级"]},
+        {"source": "Hy4 Preview", "target": "Hunyuan Hy4 Flash", "type": "compared_with", "weight": 0.6, "evidence": ["首日用量达前代 Hy4 Preview 的 10 倍"]}
+      ],
+      "metrics": [
+        {"name": "Hy4 Flash 首日 token 消耗", "value": "突破 50 万亿"},
+        {"name": "WorkBuddy 上首日用量的倍数", "value": "前代 Hy4 Preview 的 10 倍"},
+        {"name": "完成的真实用户任务", "value": "超 5000 万个"},
+        {"name": "Hy4 Flash 输入价格", "value": "$0.070/百万 token（缓存 $0.003）"},
+        {"name": "Hy4 Flash 输出价格", "value": "$0.281"},
+        {"name": "Hy4 输入价格", "value": "$0.834"},
+        {"name": "Hy4 输出价格", "value": "$2.501"}
+      ],
+      "why_it_matters": "腾讯用\"首日 50 万亿 token + 5000 万任务\"和低约一个数量级的定价，说明中国大模型竞争已进入以量换价的推理价格战，且智能体任务而非对话成为 token 消耗的最大增量场景。"
+    },
+    {
+      "article_id": "2026-11-19-9",
+      "entities": [
+        {"name": "Kuaishou", "type": "company", "aliases": ["快手"], "confidence": 0.95, "evidence": ["快手旗下可灵 AI 本周发布 Kling Image 4.0"]},
+        {"name": "Kling Image 4.0", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["快手旗下可灵 AI 本周发布 Kling Image 4.0"]},
+        {"name": "Artificial Analysis", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Kling Image 4.0 Preview 在 Artificial Analysis 图像榜"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["OpenAI 图像模型与 Google Nano Banana 2.1"]},
+        {"name": "Google", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Google Nano Banana 2.1 正在价格和编辑能力上向下卷"]},
+        {"name": "Google Nano Banana 2.1", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["Google Nano Banana 2.1 正在价格和编辑能力上向下卷"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "快手可灵发布 Kling Image 4.0，业界首个原生 8K 生图",
+          "summary": "快手旗下可灵 AI 本周发布 Kling Image 4.0，业界首个支持原生 8K 图像生成的模型，单图文字渲染最多 2000 字符，Image Sets 功能单提示出最多 10 张一致性图像。",
+          "participants": [
+            {"name": "Kuaishou", "type": "company", "role": "subject"},
+            {"name": "Kling Image 4.0", "type": "model", "role": "object"}
+          ],
+          "evidence": ["快手旗下可灵 AI 本周发布 Kling Image 4.0"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Kling Image 4.0 Preview 在 Artificial Analysis 图像榜保持领先",
+          "summary": "公司称 Kling Image 4.0 Preview 在 Artificial Analysis 图像榜的文生图与图像编辑上保持领先，文生图在 UIUX 设计场景排名第 3。",
+          "participants": [
+            {"name": "Kling Image 4.0", "type": "model", "role": "subject"},
+            {"name": "Artificial Analysis", "type": "organization", "role": "benchmark"}
+          ],
+          "evidence": ["Kling Image 4.0 Preview 在 Artificial Analysis 图像榜的文生图与图像编辑上保持领先"]
+        }
+      ],
+      "relations": [
+        {"source": "Kling Image 4.0", "target": "Kuaishou", "type": "developed_by", "weight": 0.9, "evidence": ["快手旗下可灵 AI 本周发布 Kling Image 4.0"]},
+        {"source": "Kling Image 4.0", "target": "Artificial Analysis", "type": "evaluated_on", "weight": 0.7, "evidence": ["Kling Image 4.0 Preview 在 Artificial Analysis 图像榜"]},
+        {"source": "Kling Image 4.0", "target": "Google Nano Banana 2.1", "type": "competes_with", "weight": 0.7, "evidence": ["Google Nano Banana 2.1 正在价格和编辑能力上向下卷"]},
+        {"source": "Google Nano Banana 2.1", "target": "Google", "type": "developed_by", "weight": 0.7, "evidence": ["Google Nano Banana 2.1 正在价格和编辑能力上向下卷"]}
+      ],
+      "metrics": [
+        {"name": "原生分辨率", "value": "8K"},
+        {"name": "单图文字渲染上限", "value": "2000 字符"},
+        {"name": "内置商用字体数量", "value": "70+"},
+        {"name": "支持语言数", "value": "7 种"},
+        {"name": "提示词上限", "value": "15000 token"},
+        {"name": "单提示生成一致性图像数", "value": "最多 10 张"},
+        {"name": "UIUX 设计场景排名", "value": "第 3"}
+      ],
+      "why_it_matters": "可灵把\"原生 8K + 批量一致性输出\"做成产品化能力，用一次成组的工业级输出卡位广告与电商专业工作流，而不是与 OpenAI、Google 拼单张质量，是中国生图模型在分辨率维度的一次差异化卡位。"
+    },
+    {
+      "article_id": "2026-11-19-10",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软"], "confidence": 0.95, "evidence": ["11/12 微软 365（Outlook/Teams 近 24 小时）"]},
+        {"name": "FAA", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["11/13 FAA 全国停飞（超 4 小时、2 万余航班取消）"]},
+        {"name": "JPMorgan", "type": "company", "aliases": ["摩根大通"], "confidence": 0.95, "evidence": ["11/16 摩根大通交易受阻"]},
+        {"name": "NSA", "type": "organization", "aliases": [], "confidence": 0.93, "evidence": ["11/17 NSA 机密内网（NSANet）降级"]},
+        {"name": "United Airlines", "type": "company", "aliases": ["美联航"], "confidence": 0.92, "evidence": ["同天美联航系统故障约 90 分钟"]},
+        {"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.93, "evidence": ["苹果 iCloud/Apple Pay 中断数小时"]},
+        {"name": "Jay Clayton", "type": "person", "aliases": ["Clayton"], "confidence": 0.9, "evidence": ["DNI Jay Clayton 11/17 起公开称"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "11/12–17 微软、FAA、摩根大通、NSA、苹果接连宕机形成多米诺周",
+          "summary": "过去一周美国基础设施接连宕机：微软 365、FAA 全国停飞、摩根大通交易受阻、美联航系统故障、NSA 机密内网降级、苹果 iCloud 中断，官方归为与维护和技术变更有关的独立服务中断。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "object"},
+            {"name": "FAA", "type": "organization", "role": "object"},
+            {"name": "JPMorgan", "type": "company", "role": "object"},
+            {"name": "NSA", "type": "organization", "role": "object"},
+            {"name": "Apple", "type": "company", "role": "object"},
+            {"name": "United Airlines", "type": "company", "role": "object"}
+          ],
+          "evidence": ["过去一周是美国基础设施的多米诺周"]
+        },
+        {
+          "type": "trend",
+          "label": "归因指向\"AI 发现漏洞→机构集中补丁\"的新因果链",
+          "summary": "华盛顿 Sun 报道华尔街高管与 NSA 私下告诉国会议员，故障源于\"AI 模型查出漏洞→机构抢着一次性打补丁\"，远超系统设计承受力；Clayton 把 NSA 故障与 PHP 严重漏洞补丁挂钩。",
+          "participants": [
+            {"name": "Jay Clayton", "type": "person", "role": "subject"},
+            {"name": "NSA", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["故障源于\"AI 模型查出漏洞→机构抢着一次性打补丁\""]
+        }
+      ],
+      "relations": [
+        {"source": "Microsoft", "target": "FAA", "type": "compared_with", "weight": 0.5, "evidence": ["11/18 在国会作证时把各事件归为\"与维护和技术变更有关的独立服务中断\""]},
+        {"source": "JPMorgan", "target": "Microsoft", "type": "compared_with", "weight": 0.5, "evidence": ["11/16 摩根大通交易受阻"]},
+        {"source": "United Airlines", "target": "Microsoft", "type": "compared_with", "weight": 0.5, "evidence": ["同天美联航系统故障约 90 分钟"]},
+        {"source": "Apple", "target": "Microsoft", "type": "compared_with", "weight": 0.5, "evidence": ["苹果 iCloud/Apple Pay 中断数小时"]},
+        {"source": "NSA", "target": "JPMorgan", "type": "compared_with", "weight": 0.5, "evidence": ["过去一周是美国基础设施的多米诺周"]}
+      ],
+      "metrics": [
+        {"name": "微软 365 宕机时长", "value": "近 24 小时"},
+        {"name": "FAA 停飞时长", "value": "超 4 小时、2 万余航班取消"},
+        {"name": "美联航系统故障时长", "value": "约 90 分钟"},
+        {"name": "本年已登记漏洞数", "value": "超 10 万（2025 年两倍以上）"},
+        {"name": "微软 10 月单次修复漏洞数", "value": "约 1400 个"}
+      ],
+      "why_it_matters": "当 AI 让漏洞发现提速，补丁供应链本身成了新的单点失效——一周打 10 到 12 个补丁的老旧系统接连宕机，指向一条独立于外部攻击的结构性基础设施规律。"
+    },
+    {
+      "article_id": "2026-11-19-11",
+      "entities": [
+        {"name": "上海人工智能实验室", "type": "organization", "aliases": ["上海 AI 实验室", "InternLM 团队"], "confidence": 0.95, "evidence": ["上海人工智能实验室上周悄然在 Hugging Face 上传 Sage S2.1 Flash"]},
+        {"name": "Sage S2.1 Flash", "type": "model", "aliases": [], "confidence": 0.97, "evidence": ["上海人工智能实验室上周悄然在 Hugging Face 上传 Sage S2.1 Flash"]},
+        {"name": "GLM-5.3-Flash", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["复用 GLM-5.3-Flash 架构"]},
+        {"name": "Hugging Face", "type": "company", "aliases": ["HF"], "confidence": 0.92, "evidence": ["悄然在 Hugging Face 上传 Sage S2.1 Flash"]},
+        {"name": "DeepSeek-V4.1-Flash-1017", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["领先 DeepSeek-V4.1-Flash-1017（89.2）"]},
+        {"name": "H200", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["参考部署为 8 张 H200 + vLLM/SGLang"]},
+        {"name": "MLE-bench Lite", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["MLE-bench Lite 90.3 分居首"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "上海人工智能实验室以 MIT 协议开源 Sage S2.1 Flash",
+          "summary": "上海人工智能实验室在 Hugging Face 以 MIT 协议发布 Sage S2.1 Flash，约 321B 总参数、18B 激活参数的 MoE，复用 GLM-5.3-Flash 架构，权重与代码均开放。",
+          "participants": [
+            {"name": "上海人工智能实验室", "type": "organization", "role": "subject"},
+            {"name": "Sage S2.1 Flash", "type": "model", "role": "object"},
+            {"name": "Hugging Face", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["上海人工智能实验室上周悄然在 Hugging Face 上传 Sage S2.1 Flash"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Sage S2.1 Flash 在 MLE-bench Lite 90.3 分居首",
+          "summary": "官方模型卡报告 Sage S2.1 Flash MLE-bench Lite 90.3 分居首，领先 DeepSeek-V4.1-Flash-1017 的 89.2，多任务居首。",
+          "participants": [
+            {"name": "Sage S2.1 Flash", "type": "model", "role": "subject"},
+            {"name": "DeepSeek-V4.1-Flash-1017", "type": "model", "role": "competitor"},
+            {"name": "MLE-bench Lite", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["MLE-bench Lite 90.3 分居首"]
+        }
+      ],
+      "relations": [
+        {"source": "Sage S2.1 Flash", "target": "上海人工智能实验室", "type": "developed_by", "weight": 0.9, "evidence": ["上海人工智能实验室上周悄然在 Hugging Face 上传 Sage S2.1 Flash"]},
+        {"source": "Sage S2.1 Flash", "target": "GLM-5.3-Flash", "type": "built_on", "weight": 0.8, "evidence": ["复用 GLM-5.3-Flash 架构"]},
+        {"source": "Sage S2.1 Flash", "target": "DeepSeek-V4.1-Flash-1017", "type": "outperforms", "weight": 0.8, "evidence": ["领先 DeepSeek-V4.1-Flash-1017（89.2）"]},
+        {"source": "Sage S2.1 Flash", "target": "MLE-bench Lite", "type": "evaluated_on", "weight": 0.8, "evidence": ["MLE-bench Lite 90.3 分居首"]},
+        {"source": "Sage S2.1 Flash", "target": "H200", "type": "uses", "weight": 0.7, "evidence": ["参考部署为 8 张 H200 + vLLM/SGLang"]}
+      ],
+      "metrics": [
+        {"name": "MLE-bench Lite 得分", "value": "90.3（居首）"},
+        {"name": "DeepSeek-V4.1-Flash-1017 MLE-bench Lite 得分", "value": "89.2"},
+        {"name": "总参数量", "value": "约 321B"},
+        {"name": "激活参数量", "value": "约 18B"},
+        {"name": "BF16 权重大小", "value": "约 645 GB"},
+        {"name": "参考部署 GPU 数", "value": "8 张 H200"},
+        {"name": "OfficeQA Pro 得分", "value": "72.2"},
+        {"name": "更大的 Sage S2.1 参数量", "value": "753B"}
+      ],
+      "why_it_matters": "上海 AI 实验室以 MIT 协议把 321B 科学多模态模型连同工具链做成可本地部署的开源资产，在 MLE-bench 上超 DeepSeek 同类，瞄准的是闭源前沿模型在化学/生物长尾任务上的空白。"
+    },
+    {
+      "article_id": "2026-11-19-12",
+      "entities": [
+        {"name": "arXiv:2611.24844", "type": "paper", "aliases": [], "confidence": 0.97, "evidence": ["（arXiv:2611.24844）表明这条路比想象中更脆弱"]},
+        {"name": "数据过滤", "type": "topic", "aliases": ["数据扣留"], "confidence": 0.9, "evidence": ["数据过滤/微调隔离不是能力护栏，只是\"延缓器\""]},
+        {"name": "模型能力遏制", "type": "topic", "aliases": ["能力遏制"], "confidence": 0.85, "evidence": ["它意味着能力遏制必须转向部署层"]},
+        {"name": "7B 参数模型", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["一个 7B 参数模型被扣掉整个编程语言后，也以同样方式恢复"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文（arXiv:2611.24844）证明数据过滤只能延迟、无法阻止能力形成",
+          "summary": "作者在象棋、奥赛罗、分子字符串等任务上扣留单项技能训练信号，发现被过滤的能力会延迟出现，模型只需从零初始化所需的很小一部分数据即可习得该技能，且比例随模型进步下降。",
+          "participants": [
+            {"name": "arXiv:2611.24844", "type": "paper", "role": "subject"},
+            {"name": "数据过滤", "type": "topic", "role": "object"},
+            {"name": "7B 参数模型", "type": "model", "role": "object"}
+          ],
+          "evidence": ["数据过滤/微调隔离不是能力护栏，只是\"延缓器\""]
+        }
+      ],
+      "relations": [
+        {"source": "arXiv:2611.24844", "target": "数据过滤", "type": "refutes", "weight": 0.85, "evidence": ["开发者通过扣留训练数据来阻止模型学到可能被滥用的能力"]},
+        {"source": "数据过滤", "target": "模型能力遏制", "type": "insufficient_for", "weight": 0.8, "evidence": ["数据过滤/微调隔离不是能力护栏，只是\"延缓器\""]}
+      ],
+      "metrics": [
+        {"name": "被扣技能的习得数据比例", "value": "随时间下降，只需从零初始化所需的一小部分"},
+        {"name": "演示恢复的模型规模", "value": "7B 参数模型"}
+      ],
+      "why_it_matters": "实验证据挑战\"用训练数据供应链管控前沿模型能力\"的监管思路——数据过滤只是延缓器，被扣技能会随通用能力自行浮现，能力遏制必须转向部署层的护栏、评测与监控。"
+    },
+    {
+      "article_id": "2026-11-19-13",
+      "entities": [
+        {"name": "arXiv:2611.24830", "type": "paper", "aliases": [], "confidence": 0.96, "evidence": ["arXiv:2611.24830 提出 Chiron"]},
+        {"name": "Chiron", "type": "model", "aliases": [], "confidence": 0.96, "evidence": ["arXiv:2611.24830 提出 Chiron"]},
+        {"name": "行为预测", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["个体行为预测准确率最高可比前沿 LLM 提高 28.4%"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文提出 Chiron，用真实行为数据对齐做进训练目标来测量与预测人类行为",
+          "summary": "arXiv:2611.24830 提出 Chiron，在心理构念表征、个体行为预测、人群响应分布对齐三个目标上联合微调 LLM，把模拟人类从讲故事变成可校准的量具。",
+          "participants": [
+            {"name": "arXiv:2611.24830", "type": "paper", "role": "subject"},
+            {"name": "Chiron", "type": "model", "role": "object"}
+          ],
+          "evidence": ["arXiv:2611.24830 提出 Chiron"]
+        },
+        {
+          "type": "research",
+          "label": "Chiron 跨 36 行为域、78 社科实验，个体行为预测比前沿 LLM 高 28.4%",
+          "summary": "Chiron 的个体行为预测准确率最高可比前沿 LLM 提高 28.4%，在社科实验模拟中效应大小估计误差降低 82.2%–94.3%。",
+          "participants": [
+            {"name": "Chiron", "type": "model", "role": "subject"},
+            {"name": "行为预测", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["个体行为预测准确率最高可比前沿 LLM 提高 28.4%"]
+        }
+      ],
+      "relations": [
+        {"source": "arXiv:2611.24830", "target": "Chiron", "type": "introduces", "weight": 0.8, "evidence": ["arXiv:2611.24830 提出 Chiron"]},
+        {"source": "Chiron", "target": "行为预测", "type": "targets", "weight": 0.7, "evidence": ["个体行为预测准确率最高可比前沿 LLM 提高 28.4%"]}
+      ],
+      "metrics": [
+        {"name": "个体行为预测提升幅度", "value": "最高 +28.4%"},
+        {"name": "效应大小估计误差下降", "value": "82.2%–94.3%"},
+        {"name": "覆盖行为域", "value": "36 个"},
+        {"name": "社科实验数", "value": "78 个"}
+      ],
+      "why_it_matters": "Chiron 用真实行为数据把人群分布对齐做进训练目标，把\"模拟人类\"从不可靠的故事变成可验证的量具，行为科学、市场研究与政策模拟有望用可校准的数字人群做实验。"
+    },
+    {
+      "article_id": "2026-11-19-14",
+      "entities": [
+        {"name": "xAI", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Grok Bot（xAI）本周上线旅行预订能力"]},
+        {"name": "Grok", "type": "product", "aliases": ["Grok Bot"], "confidence": 0.95, "evidence": ["Grok Bot（xAI）本周上线旅行预订能力"]},
+        {"name": "Sabre", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Sabre 预告其首个全球旅行插件即将进入 Grok Bot 市场"]},
+        {"name": "United Airlines", "type": "company", "aliases": ["美联航"], "confidence": 0.9, "evidence": ["上周美联航刚宣布封禁 AI 智能体未经授权订票"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Grok Bot 上线机票/酒店/租车对话预订能力",
+          "summary": "xAI 的 Grok Bot 本周开始可从聊天中直接预订机票、酒店与租车，用户在对话中提出行程即返回带价格选项并完成预订，配套演示覆盖从首次搜索到登机牌的全流程。",
+          "participants": [
+            {"name": "xAI", "type": "organization", "role": "subject"},
+            {"name": "Grok", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Grok Bot（xAI）本周上线旅行预订能力"]
+        },
+        {
+          "type": "partnership",
+          "label": "Sabre 首个全球旅行插件进入 Grok Bot 市场，提供端到端对话预订",
+          "summary": "Sabre 在投资者日预告其首个全球旅行插件即将进入 Grok Bot 市场，提供端到端对话式预订与主动事件驱动 agentic API，接通 400+ 航空公司与 200 万酒店库存。",
+          "participants": [
+            {"name": "Sabre", "type": "company", "role": "subject"},
+            {"name": "Grok", "type": "product", "role": "object"},
+            {"name": "xAI", "type": "organization", "role": "partner"}
+          ],
+          "evidence": ["Sabre 预告其首个全球旅行插件即将进入 Grok Bot 市场"]
+        }
+      ],
+      "relations": [
+        {"source": "Sabre", "target": "xAI", "type": "partners_with", "weight": 0.85, "evidence": ["Sabre 预告其首个全球旅行插件即将进入 Grok Bot 市场"]},
+        {"source": "Sabre", "target": "Grok", "type": "supplies", "weight": 0.7, "evidence": ["插件接通 Sabre 覆盖的 400+ 航空公司与 200 万酒店库存"]},
+        {"source": "United Airlines", "target": "Grok", "type": "restricts", "weight": 0.7, "evidence": ["上周美联航刚宣布封禁 AI 智能体未经授权订票"]}
+      ],
+      "metrics": [
+        {"name": "Sabre 插件覆盖航空公司数", "value": "400+"},
+        {"name": "Sabre 插件覆盖酒店库存", "value": "200 万"},
+        {"name": "自动触发票价阈值示例", "value": "东京机票跌破 $800"}
+      ],
+      "why_it_matters": "Grok 绕过航空公司直连 GDS 完成预订，与美联航封禁 AI 订票同周发生，把\"智能体经济\"与接口地位之争摆上台面，航空公司、GDS 与 AI 平台正在争夺行程交易的入口。"
+    }
+  ]
+}

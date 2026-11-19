@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-19",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "第 1 轮指出的 7 处问题已全部修复，事实、数字与事件切分整体准确。本轮剩余问题集中在 evidence 与角色语义：OpenAI--competes_with-->Anthropic 的证据仍只是时间上下文、xAI 实体在 2026-11-19-2 中无原文依据、梁文锋隶属证据指向的是退出行为、Isomorphic why_it_matters 把 6 个月写成 3 个月，另有事件参与者角色误用（partner/competitor）与同一事实反向重复边。",
+  "findings": [
+    {
+      "article_id": "2026-11-19-1",
+      "severity": "medium",
+      "problem": "关系 'OpenAI --competes_with--> Anthropic' 的 evidence 是 \"Anthropic 挂牌前一天的表态\"——这只有时间/叙事上下文，没有任何竞争或对标语义。第 1 轮对 competes_with 已确立'需要原文明确的竞争/对标语义支撑'的规则，本关系仍违反该规则。",
+      "fix": "删除该关系，或把 evidence 换成原文中能读出两家前沿实验室相互对标/竞争的话句（如'前沿实验室集体走向公开市场'的并列叙事不算竞争证据，若原文没有更直接的竞争表述则删除）。"
+    },
+    {
+      "article_id": "2026-11-19-2",
+      "severity": "medium",
+      "problem": "实体 'xAI' 与关系 'Grok --developed_by--> xAI' 在原文中完全没有依据：原文只提到被测试的 Grok，通篇未出现 xAI 一词，evidence 引用的只是测试名单\"测试 ChatGPT、Claude、Gemini 与 Grok\"。属于用外部常识补实体、且 evidence 不支撑。",
+      "fix": "删除本篇的 xAI 实体与 'Grok --developed_by--> xAI' 关系（xAI 已在 2026-11-19-14 中有原文依据，跨文章合并会自然连通）；如确需保留，evidence 必须标注为外部推理而非原文事实。"
+    },
+    {
+      "article_id": "2026-11-19-5",
+      "severity": "medium",
+      "problem": "关系 'Liang Wenfeng --affiliated_with--> DeepSeek' 的 evidence 是 \"梁文锋本人退出直接合伙人名单\"——原文这句话描述的是退出行为，与其隶属 DeepSeek 的断言方向相反，证据存在但不支撑所附断言。",
+      "fix": "把 evidence 换成支撑隶属关系的原文表述：\"其控股主体以 99% 股权担任杭州程砚 GP\"（梁文锋仍通过控股主体控制持股平台），或改用创始人/实控人身份表述。"
+    },
+    {
+      "article_id": "2026-11-19-6",
+      "severity": "medium",
+      "problem": "why_it_matters 写\"三个月即翻倍的 C 轮（$21 亿→$50 亿）\"，但原文明确\"距其 $21 亿 B 轮仅 6 个月\"，且本篇 metrics '距 B 轮间隔'也正确记录为 6 个月。叙述字段出现原文没有的数字，与本文自身 metrics 自相矛盾。",
+      "fix": "把 why_it_matters 中的\"三个月\"改为\"6 个月\"（或\"半年内\"），与原文和 metrics 保持一致。"
+    },
+    {
+      "article_id": "2026-11-19-4",
+      "severity": "medium",
+      "problem": "事件 2 的 participants 把 JPMorgan、Bank of America、PNC、Wells Fargo、Citizens 全部标为 role 'partner'——这些是先后推出同类政策的同行银行，不是 Citi 的合作伙伴；事件 1 中 JPMorgan 的 role 'competitor' 同样不成立。角色语义与实际关系（relations 里用的 compared_with）不一致。",
+      "fix": "把事件 2 中五家银行的 role 改为 'peer'/'同类'（或 subject），把事件 1 中 JPMorgan 的 role 改为 'peer'；不要在参与者角色里使用 partner/competitor 兜底。"
+    },
+    {
+      "article_id": "2026-11-19-14",
+      "severity": "medium",
+      "problem": "同一事实用一对方向相反的边重复表达：'Grok --integrates--> Sabre' 与 'Sabre --supplies--> Grok' 的 evidence 完全相同（\"插件接通 Sabre 覆盖的 400+ 航空公司与 200 万酒店库存\"），违反经验库'同一对主体之间的同一事实不要用一对方向相反的边重复表达'的规则。",
+      "fix": "只保留语义更具体的一条：'Sabre --supplies--> Grok'（Sabre 经插件向 Grok 供库存），删除 'Grok --integrates--> Sabre'。"
+    },
+    {
+      "article_id": "2026-11-19-0",
+      "severity": "low",
+      "problem": "事件 1 的 participants 中 SpaceX 的 role 是 'competitor'，但原文只说 SpaceX 6 月 IPO 的募资与首日成交量是被超越的纪录参照，Anthropic 与 SpaceX 之间没有竞争关系。",
+      "fix": "把 SpaceX 的 role 改为 'benchmark'/'参照'，与 relations 中 'Anthropic --compared_with--> SpaceX' 的语义保持一致。"
+    },
+    {
+      "article_id": "2026-11-19-8",
+      "severity": "low",
+      "problem": "事件 2 的 participants 中 Hy4 Preview 的 role 是 'competitor'，但它是 Hy4 Flash 的前代产品、用量对比的基线，不是竞争对手。",
+      "fix": "把 Hy4 Preview 的 role 改为 'predecessor'/'前代'（或直接以 compared_with 关系表达），不要用 competitor。"
+    },
+    {
+      "article_id": "2026-11-19-7",
+      "severity": "low",
+      "problem": "实体名 'Nvidia' 未按经验库规范名对照表使用规范名 'NVIDIA'（表中规定 NVIDIA 为规范名、Nvidia 与英伟达为变体写进 aliases），会破坏与既往天数图谱的跨天连通。",
+      "fix": "将实体 name 改为 'NVIDIA'，把 'Nvidia'、'英伟达' 放入 aliases。"
+    },
+    {
+      "article_id": "2026-11-19-9",
+      "severity": "low",
+      "problem": "实体 'Kuaishou' 的 aliases 包含 '可灵 AI'——可灵 AI 是快手旗下的产品/品牌名，不是公司别名，未来若'可灵 AI'作为独立主体出现会被错误合并进 Kuaishou。",
+      "fix": "从 Kuaishou 的 aliases 中移除 '可灵 AI'；如需保留品牌信息，抽成独立的产品实体并建 developed_by 关系。"
+    },
+    {
+      "article_id": "2026-11-19-11",
+      "severity": "low",
+      "problem": "实体 'Hugging Face' 的 type 标为 'organization'，但经验库规范名对照表规定 Hugging Face 为 company（变体 HuggingFace、HF）。",
+      "fix": "将 Hugging Face 的 type 改为 'company'，与规范名对照表保持一致。"
+    }
+  ],
+  "lessons": [
+    "事件 participants 的 role 必须反映该主体在事件中的实际语义：被超越的纪录保持者、前代产品、被对比的同行都不是 competitor 或 partner，应标为 benchmark/predecessor/peer，且与 relations 中对应边的类型一致。",
+    "实体与关系的 evidence 必须来自原文：原文未提及的组织（如某产品的母公司）不得仅凭外部常识抽取实体或建 developed_by 边；如确需用常识补全，evidence 必须标注为推理而非原文事实。",
+    "why_it_matters 等叙述性字段中的量化表述（金额、时长、间隔）必须与本文 metrics 和原文一致，不得出现原文没有的数字（如把 6 个月写成 3 个月）。"
+  ]
+}

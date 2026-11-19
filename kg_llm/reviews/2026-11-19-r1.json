@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-19",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "整体可用：事实、数字与事件切分大体准确，度量指标丰富。主要问题是若干关系类型误用或证据不支撑——最严重的是 2026-11-19-1 把 'OpenAI --compared_with--> Jensen Huang' 建成了不存在的比较关系；另有把'同期出现'当竞争、把公司背景事件标成 research、以及会把产品级主体上升到公司的关系问题。",
+  "findings": [
+    {
+      "article_id": "2026-11-19-1",
+      "severity": "high",
+      "problem": "关系 'OpenAI --compared_with--> Jensen Huang' 的 evidence 是 \"两人都私下联系过离职后的黄仁勋\"，原文只说明 Altman 和 Brockman 私下联系了 Huang，没有任何 OpenAI 与 Jensen Huang 之间的比较语义。这是一个编造/错置的关系，读不成事实。",
+      "fix": "删除 'OpenAI --compared_with--> Jensen Huang' 这条关系。如需保留，应改为从 Sam Altman/Greg Brockman 指向 Jensen Huang 的 'contacted'（联系）之类关系，而不是 OpenAI（公司）与 Huang（个人）之间的 compared_with。"
+    },
+    {
+      "article_id": "2026-11-19-1",
+      "severity": "medium",
+      "problem": "关系 'OpenAI --competes_with--> DeepSeek' 的 evidence 是 \"DeepSeek 二轮融资落定、冲刺科创板的消息同期出现\"——这是同篇同期出现，不是竞争语义。属于把'共同出现'当成了'竞争'。",
+      "fix": "仅凭'同期出现'不足以建立 competes_with。若原文没有学界/行业把二者明确对标竞争的表述，应删除该关系；若保留，请补充一段能读出'竞争'语义的 evidence。"
+    },
+    {
+      "article_id": "2026-11-19-7",
+      "severity": "medium",
+      "problem": "第二个事件 type 标为 'research'，但内容（\"Applied Compute 由三位前 OpenAI 研究员创立并做到 $1 亿年化收入\"）是被收购公司的背景/成长介绍，不是研究事件。type 与实际性质不符。",
+      "fix": "将该事件 type 改为 'trend'（或成长类），与事件 1 的 'acquisition' 区分；'research' 只应保留给研究论文或实验性成果类事件。"
+    },
+    {
+      "article_id": "2026-11-19-12",
+      "severity": "medium",
+      "problem": "关系 '7B 参数模型 --correlates_with--> 数据过滤' weight 0.4 语义模糊：'7B 参数模型被扣掉整个编程语言后也以同样方式恢复' 讲的是被扣数据后能力恢复，用 correlates_with 连接一个模型描述与一个抽象概念，无法读成明确事实。",
+      "fix": "删除该弱关系，或将证据改写为能读成事实的边（例如 7B 模型对'数据过滤'的抵抗与更大模型一致的结论性描述）；若只是旁证，建议不建关系。"
+    },
+    {
+      "article_id": "2026-11-19-3",
+      "severity": "medium",
+      "problem": "关系 'Muse --targets--> Signal' 的 evidence 是 \"另一名员工被提醒回复姐姐发来的 Signal 加密消息\"。Muse 是经用户授予的通知权限读取了 Signal 消息，这是'读取/访问'行为，不是'targets（针对）'，关系类型用错。",
+      "fix": "把 'Muse --targets--> Signal' 改为表示'访问/读取'的关系类型（如 reads / accesses / interacts_with），或删除。targets 只用于明确的'针对某平台/安全目标'语义。"
+    },
+    {
+      "article_id": "2026-11-19-0",
+      "severity": "medium",
+      "problem": "关系 'Anthropic --complies_with--> Nasdaq' 的 evidence 是 \"Anthropic（代码 ANT）11/19 在纳斯达克开始交易\"。挂牌/上市交易不是'合规于交易所'，complies_with 语义与事实不符。",
+      "fix": "改为表示'在 Nasdaq 上市/交易'的类型（如 listed_on / trades_on），或将 Nasdaq 仅作为事件参与者而不建 complies_with 关系。"
+    },
+    {
+      "article_id": "2026-11-19-9",
+      "severity": "low",
+      "problem": "关系 'Kling Image 4.0 --competes_with--> OpenAI' 的 evidence 是 \"OpenAI 图像模型与 Google Nano Banana 2.1 正在价格和编辑能力上向下卷\"。原文对比的是 Kling 与 OpenAI 的图像模型、以及 Nano Banana 2.1 这个具体模型，不是与 OpenAI 公司整体。把产品级竞争上升到公司级。",
+      "fix": "要么把 target 收敛到更具体的实体（如同被抽取的 OpenAI 图像模型），要么改写 evidence 明确指向 OpenAI 的图像模型而非 OpenAI 公司。若公司级竞争无原文支撑，可删除而保留 '--competes_with--> Google Nano Banana 2.1' 这条。"
+    }
+  ],
+  "lessons": [
+    "compared_with 关系只在原文存在明确的'比较/对比'语义时建立；只是被同一人提及、同期出现或共同牵扯的两个主体之间不得建立比较关系。",
+    "competes_with 需要原文有明确的竞争/对标语义支撑；仅因两个主体在同一篇新闻里同期出现（如同为融资消息）不得建竞争关系。",
+    "事件 type 必须与事件实际性质一致：公司背景、成长、融资后发展等用 trend 类，research 只用于研究论文或实验性成果；关系 target 的粒度要跟住原文，产品竞争不要无据上升到公司级。"
+  ]
+}

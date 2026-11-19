@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-19",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "整体抽取扎实、事实硬伤少，但有 4 处 medium 关系语义/切分问题：article 0 融资事件 label 与 summary 金额口径不符（$813 亿 vs 混入 $1073 亿/上限 $1195 亿）、article 10 把并列故障实体两两抽成 compared_with 伪关系、article 3 把\"联合测试\"误抽成 partners_with 合作、article 12 的 refutes/insufficient_for 关系证据与语义略偏。无 high 级事实错误，但 medium 超过 2 条，需修订后放行。",
+  "findings": [
+    {
+      "article_id": "2026-11-19-0",
+      "severity": "medium",
+      "problem": "关系 Anthropic --compared_with--> SpaceX 的 evidence 是\"超过 SpaceX 6 月上市首日的 5.22 亿股\"，这是首日成交量的对比而非实体间一般意义的能力/规模比较，作为 compared_with 关系信息量低、易被读成泛化含义。更实质的问题是事件 0 的 label 为\"募资 $813 亿\"，summary 却混入了私募 $260 亿、总募资 $1073 亿、含超配上限约 $1195 亿三个更大金额口径，label 承诺的小口径与内容成果不一致，事件切分不干净。",
+      "fix": "将事件 0 拆成\"Anthropic IPO 公开募资 $813 亿（9.8 亿股 @ $83）\"与\"叠加 $260 亿私募后总募资 $1073 亿、含超额配售上限约 $1195 亿\"两个口径清晰的事件；Anthropic--SpaceX 的 compared_with 若保留，应把 type 改成更贴切的\"首日成交量对比\"语义边或直接删除。"
+    },
+    {
+      "article_id": "2026-11-19-3",
+      "severity": "medium",
+      "problem": "关系 Reuters --partners_with--> Signal 的 evidence 是\"路透与 Signal 团队及 AI Now 研究所联合测试\"，这是 Reuters 与 Signal 团队（及 AI Now）在测试这件事上的共同协作，不是组织对组织的商业合作关系，partners_with 是强关系，与\"联合做一次安全测试\"语义不符。",
+      "fix": "删除 Reuters --partners_with--> Signal 关系，改为更贴切的证据型关系或直接删掉该边（Reuters 与 Signal 团队、AI Now 的联合测试属事件内部事实，不必抽成 partners_with 合作边）。"
+    },
+    {
+      "article_id": "2026-11-19-12",
+      "severity": "medium",
+      "problem": "关系 arXiv:2611.24844 --refutes--> 数据过滤 与 数据过滤 --insufficient_for--> 模型能力遏制 的方向不对：数据过滤的对象是\"能力遏制\"这个手段，论文要表达的是\"数据过滤作为能力遏制手段无效\"，即数据过滤对能力遏制构成 insufficient（不足以达成），而不是数据过滤 insuff_for 能力遏制这种可被读成\"在数据过滤问题上能力遏制不够\"的歧义。",
+      "fix": "改为 数据过滤 --insufficient_for--> 模型能力遏制 是对的，但把第一个关系重心改为\"论文证明\"数据过滤无法阻止能力形成\"：arXiv:2611.24844 --refutes--> 数据过滤\"权重保持，问题主要在 relation 的 evidence 只写了开发者做法未指向结论。建议把 relations 中两条合并成一条高权重的\"论文 refutes『数据过滤作为能力护栏』\"，或把 insufficient_for 的源目标写清为\"能力遏制\"依赖\"数据过滤\"不成立。"
+    },
+    {
+      "article_id": "2026-11-19-10",
+      "severity": "medium",
+      "problem": "article 10 的事件 1 把微软 365、FAA、摩根大通、美联航、NSA、苹果六个实体塞进一个\"多米诺周\"事件，relation 部分却把 Microsoft/FAA/JPMorgan/United Airlines/Apple/NSA 两两连了五条 compared_with（如 Microsoft --compared_with--> FAA、JPMorgan --compared_with--> Microsoft、NSA --compared_with--> JPMorgan），这些边没有原文逐对比价的支撑，只是\"同一时段各自故障\"，属低信息量的伪关系，噪音大。",
+      "fix": "删除 article 10 中五条 compared_with 两两关系边，保留\"11/12–17 美国基础设施多点故障\"事件本身即可；如需表示关联，只保留有原文明确归因链的一条（如 AI 补丁 → 集中打补丁 → 宕机）作为因果事件，不要为同一事件里的并列实体两两建 compared_with。"
+    },
+    {
+      "article_id": "2026-11-19-14",
+      "severity": "low",
+      "problem": "xAI 被标注为 organization（以及 event 2 中 xAI 的 role 为 partner），而 xAI 是公司实体；Sabre --partners_with--> xAI 与 Sabre --supplies--> Grok 两条关系并存，其中 Sabre --supplies--> Grok 的 evidence 是\"插件接通 Sabre 覆盖的 400+ 航空公司\",方向实际是 Sabre 为 Grok 平台提供库存/插件，读成\"Grok supplies Sabre\"反了，但此处方向 Sabre→Grok 正确；主要问题是 event 2 把 Sabre 与 xAI 的关系同时标了 partnership 和参与方 partner 角色，重复。",
+      "fix": "把 xAI 类型改为 company；event 2 中保留 Sabre --partners_with--> Grok（或 xAI）一条合作语义即可，删除重复的 partner 角色标注，并为 Sabre --supplies--> Grok 单独保留数据提供关系。"
+    }
+  ],
+  "lessons": [
+    "融资/IPO 类新闻中，公开发行募资、私募配售、含超额配售的上限金额是不同口径，应拆成独立事件或用明确 label 区分，不要用一个 label 承诺小金额却在 summary 里混入更大口径。",
+    "同一事件里多个并列实体（如多点故障、同周宕机）不要两两建 compared_with 关系，除非原文对每对实体有明确逐项对比证据；无证据的并列关联应留在事件证据里而非抽成实体关系边。",
+    "\"联合测试/联合调查\"属于事件内协作事实，不要抽成 partners_with 这一类强合作关系边；只有原文明确表述为组织对组织的业务合作关系时才用 partners_with。"
+  ]
+}
