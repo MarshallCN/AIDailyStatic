@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-20",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "数字与事实整体准确（650 例过早死亡、Inkling 2 Mini 参数、Alpöge 仅发 Lean 等均与原文一致），但存在多处实体类型与关系类型错配：国家被标成 organization，第三方背景数据被当成事件参与方，单一动作被拆成重复事件。",
+  "findings": [
+    {
+      "article_id": "2026-11-20-11",
+      "severity": "medium",
+      "problem": "实体类型错配（审查点 5）：Barbados、Norway、Finland 三个主权国家被标成 type=organization，与其它 company/organization 混为一类，会撕裂图谱分类。",
+      "fix": "将 Barbados/Norway/Finland 的实体类型改为 country（或 government/region），不要用 organization；对应 relation 中这些主体作为参与方时同步修正其类型。"
+    },
+    {
+      "article_id": "2026-11-20-2",
+      "severity": "medium",
+      "problem": "事件切分不当（审查点 4）：Event 1 'OpenAI 开始向少量 ChatGPT Plus 用户测试 Dots' 与 Event 2 'Dots 下沉标志自主 agent 从高端尝鲜推向主力消费订阅' 叙述的是同一条事实（Dots 下沉到 $20/月 Plus 档），Event 2 只是 Event 1 的意义重述，没有独立事件内容，造成重复。",
+      "fix": "合并为一个 launch/test 事件，把『从高端尝鲜推向主力消费订阅』这类趋势判断写入 why_it_matters 或该事件的 summary，不要另立一个内容重复的 trend 事件。"
+    },
+    {
+      "article_id": "2026-11-20-14",
+      "severity": "medium",
+      "problem": "关系类型与参与方错配（审查点 1、3）：berkeley 实验室的 4%/4.4% 是文中单独引用的另一项估计，不是 MIT 研究的参与方，也不构成与 MIT 的对比。relation 'Lawrence Berkeley National Laboratory --compared_with--> MIT' 被设成 compared_with，且 Event 2 把伯克利列为 participants/object，证据仅支持『伯克利另有一项背景估计』。",
+      "fix": "从 MIT 事件 2 的 participants 中移除 Lawrence Berkeley National Laboratory，删除 'compared_with' 关系；如需保留，改用引用型关系（如 related_to）并把证据锚定到 4%/4.4% 这一背景引述，而不是对比断言。"
+    },
+    {
+      "article_id": "2026-11-20-4",
+      "severity": "low",
+      "problem": "关系类型过强（审查点 3）：relation 'ChatGPT Space --competes_with--> Notion/Canva' 的证据是原文的编辑评论『直接向 Notion/Canva 类编辑器竞争』，并非可验证的合作/竞争事实，双方间没有可验证的交互证据。",
+      "fix": "把这两条 competes_with 标注为分析性推断（降低权重并注明），或改用更保守的表述，避免把编辑观点当成实体关系写进图谱。"
+    },
+    {
+      "article_id": "2026-11-20-0",
+      "severity": "low",
+      "problem": "关系类型不当（审查点 3）：TechCrunch 是报道媒体，其指出 Google 推出慢一步属于『提到了/报道』，被标成 evaluates（评估）关系，读者会误读成正式评测。",
+      "fix": "将 'TechCrunch --evaluates--> Gemini for Mac' 删除或改为 reports_on/mentions 类关系；媒体评论不应设为 evaluates。"
+    }
+  ],
+  "lessons": [
+    "主权国家、地区、政府在实体类型上不要标成 organization，应使用 country/government/region 类型，避免与公司组织混为一类。",
+    "当一篇新闻的 launch/research 事件与其后的 trend 事件叙述的是同一条事实时，合并为一个事件，把趋势判断写进 why_it_matters，不要另立内容重复的事件。",
+    "作为背景引用的第三方估计（另一项研究或机构数据）不要设为事件的 participants 或 compared_with 对象，仅保留为引用实体并用 related_to 类关系。"
+  ]
+}

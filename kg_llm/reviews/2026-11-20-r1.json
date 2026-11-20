@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-20",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "关系方向/归属整体正确，但存在多处证据与关系主体错配（Cognition--Apple 被当成合作、Lean 承载了黎曼猜想与 Clay 的关系、Gemini 4 用了不支持的 developed_by），且数篇把同一发布拆成重复事件、期刊被标成 paper 并加双向冗余出版关系。",
+  "findings": [
+    {
+      "article_id": "2026-11-20-3",
+      "severity": "high",
+      "problem": "关系 \"Cognition --partners_with--> Apple\"（weight 0.6）类型错误。原文只在说『让 Devin 开发 Apple 应用需要一个真正的 Mac 环境』——Apple 是被开发的目标平台，证据没有任何双方正式合作、联合开发或合作协议的内容，partners_with 是凭空捏造的强关系。",
+      "fix": "删除该关系；『开发 Apple 平台应用』不足以构成合作，且工具链题目（EC2 Mac）与 Apple 无直接合作证据，不要用 partners_with 兜底。"
+    },
+    {
+      "article_id": "2026-11-20-5",
+      "severity": "high",
+      "problem": "关系 \"Lean --related_to--> Clay Mathematics Institute\"（weight 0.4）把证据『黎曼猜想是 Clay 数学研究所千禧年问题之一』挂到了 Lean 上。证据指向的是黎曼猜想（Riemann hypothesis）与 Clay 的关系，Lean 与 Clay 没有任何关联，关系主体错配。",
+      "fix": "删除这条联系 Lean 与 Clay 的关系。若要表达千禧年问题，应新增黎曼猜想实体并在其与 Clay 之间建立关系（证据在前文存在），且不能用 Lean 承载该语义。"
+    },
+    {
+      "article_id": "2026-11-20-1",
+      "severity": "medium",
+      "problem": "关系 \"Gemini 4 --developed_by--> Google\"（weight 0.8）的证据仅是『兼容 Gemini 3.6 及全部 Gemini 4 模型』。证据只说明 Tool Retrieval 兼容 Gemini 4，并不证明 Google 开发了 Gemini 4 模型，断言与证据不匹配。",
+      "fix": "删除这条证据不支撑的关系（Gemini 4 在该文中只是兼容性对象，developed_by 无本地证据）。"
+    },
+    {
+      "article_id": "2026-11-20-0",
+      "severity": "medium",
+      "problem": "同一披露被拆成两个 launch 事件：事件1『推出 computer use 功能』与事件2『仅在美国英文推出、需订阅+18岁』实为同一则发布的正文与门槛条件，参与者完全相同（Google / Gemini for Mac），内容重叠。",
+      "fix": "合并为单个 launch 事件，把订阅档位、推出地区、年龄门槛放进该事件的 summary/metrics，不要把同一发布的限定条件拆成第二个事件。"
+    },
+    {
+      "article_id": "2026-11-20-14",
+      "severity": "medium",
+      "problem": "Environmental Research Letters 是期刊而非论文，被标成 paper 类型；且同时添加双向冗余关系 \"ERL --authored_by--> MIT\" 与 \"MIT --publishes--> ERL\"，同一对主体两条反向关系互相重复。",
+      "fix": "要么把 ERL 归为 journal/期刊类型并只保留发表侧关系，要么以具体论文实体承载 authored_by 与 publishes，避免同一对主体双向叠加两条语义接近的关系。"
+    },
+    {
+      "article_id": "2026-11-20-11",
+      "severity": "medium",
+      "problem": "事件2『Gill 强调 AI 风险不分国界』把 Norway 列为 object，但该事件内容（Gill 讲话、500 vs 6 响应团队）与挪威/芬兰倡议无关，参与者与事件主体错配；另有强制关系 \"European Commission --related_to--> Finland\"（weight 0.5）证据只提到倡议签署。",
+      "fix": "从事件2 participants 中去掉 Norway（它是另一条 32 国倡议的背景，不属该事件主体）；删除证据不足的 European Commission--Finland related_to 关系，或将倡议签署单独成一个事件。"
+    },
+    {
+      "article_id": "2026-11-20-9",
+      "severity": "low",
+      "problem": "关系 \"Ai2 --compared_with--> DeepMind\" 与 \"Ai2 --compared_with--> Anthropic\"（weight 0.5）证据是『与同期 DeepMind、Anthropic 关于 AI 作为科研 agent 的讨论一致』。这只是提及/背景呼应，并非可核查的对比，compared_with 语义偏强。",
+      "fix": "这类『与 X 讨论一致』的提及不应生成 compared_with 关系；删除或改用更弱的提及型语义（若 schema 存在）。"
+    }
+  ],
+  "lessons": [
+    "仅『为某平台开发应用/在某平台上构建』不足以构成 partners_with，要有双方正式合作或联合开发证据才算合作；合作对象与证据主体必须一致。",
+    "关系必须挂在证据点名的主体上：证据说的是 A 与 B 的关系，就不要把关系接到 C（例如把『黎曼猜想是 Clay 千禧年问题』挂到 Lean）。",
+    "同一则披露的推出地区、订阅档位、年龄/资质门槛应并入同一个 launch 事件的 summary 与 metrics，不要拆成第二个重复事件；期刊与论文要区分类型，同一对主体不要同时叠加 authored_by 与 publishes 双向冗余。"
+  ]
+}

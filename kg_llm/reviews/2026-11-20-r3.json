@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-20",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 77,
+  "summary": "归纳基本忠实、数字与方向大体正确，无高严重度事实错误；主要问题集中在事件切分偏碎（同一发布拆成多个重复 launch/benchmark 事件）、实体类型与别名使用不一致（journal/paper 混用、职务塞进 aliases）、以及若干关键量化结果没进 metrics。",
+  "findings": [
+    {
+      "article_id": "2026-11-20-1",
+      "severity": "medium",
+      "problem": "两个事件都是 launch 类型、描述的是同一次「Tool Retrieval 预览」发布：Event 1「按需加载 schema」与 Event 2「支持服务端/客户端/MCP 三种检索并兼容 Gemini 4」是同一发布的不同侧面，被拆成两个互相重叠的 launch 事件。",
+      "fix": "合并为一个 launch 事件（如「Google 在 Gemini API 推出 Tool Retrieval 预览」），把三种检索方式、兼容范围、无额外费用等作为该事件的细节并入；若确有拆分的必要，请把第二个事件降为 research/feature 类型而非另一个 launch，避免同一动作被重复记录。"
+    },
+    {
+      "article_id": "2026-11-20-6",
+      "severity": "medium",
+      "problem": "事件 2（benchmark）的断言「大多数游戏获得更大学习增益、更陡学习斜率，宏观平均指标优于基线」没有任何具体数字进 metrics（如相对基线的增益幅度或斜率值），同时实体名「Mastery 掌握度」用中英混排的合成词作规范名，无法与其他文章/概念稳定连通。",
+      "fix": "把原文中可得的量化结果补进 metrics（至少记录「三种智能体设定」「优于基线」的对比对象与量级）；将实体规范名改为单一稳定名的概念，如「掌握度(Mastery)」统一一处，不要把双语合成词当作实体规范名。"
+    },
+    {
+      "article_id": "2026-11-20-14",
+      "severity": "medium",
+      "problem": "实体「Environmental Research Letters」在 entities 里被标为 type=journal，但在 research 事件 participants 里被标为 type=paper，同一实体在文中类型不一致；相应关系「MIT --publishes--> Environmental Research Letters」读起来像是 MIT 向刊物发表了东西，方向与对象不精确——实际是 MIT 团队在该期刊『发表了一篇论文』。",
+      "fix": "统一该实体类型为 journal（论文应单独成为 paper 类实体或在 metric 中体现文章名）；将关系改为「MIT --publishes--> (论文)」或「(论文) --published_in--> Environmental Research Letters」，避免把期刊误当成发表对象。"
+    },
+    {
+      "article_id": "2026-11-20-11",
+      "severity": "medium",
+      "problem": "person 实体「Gill」的 aliases 填的是职务头衔「联合国数字与新兴技术特使」，这不是姓名/拼写变体而是角色描述；此外该类中「135 位 vs 3 位」「500 vs 6」等对比数字进了 metrics 但用于支撑 why_it_matters 的『500 对 6』不对称，其直接承载句（Gill 引语）证据链稍弱。",
+      "fix": "从 Gill 的 aliases 中删除职务头衔（如该人全名缺失，可保留 name=Gill 并在 evidence 中附职务，但不要塞进 aliases）；如原文未给出 Gill 全名，请在实体上注明待补全名，避免职务被当作替代名导致图谱把职位与人物混淆。"
+    }
+  ],
+  "lessons": [
+    "同一产品的单个发布动作不要拆成多个同类型（launch）事件；不同支撑特性并入一个主事件或用子事件/细节表达，避免互相重叠的重复事件。",
+    "同一实体在多处出现时类型必须一致（如期刊永远标 journal、论文标 paper），不要把期刊名称当作发布对象直接作为关系的 target。",
+    "person 实体的 aliases 只放真实姓名与拼写变体（姓氏、英文原名），不要把职务头衔或角色描述塞进 aliases。"
+  ]
+}
