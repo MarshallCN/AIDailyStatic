@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-21",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "图谱整体准确、指标丰富，但存在跨文章主体命名不一致（GPT-6 Astra 拼写分裂）、事件标签用非规范名（Ant 股价 vs Anthropic）以及若干关系类型/证据不匹配（Navier-Stokes 现象 uses Lean 4、Cursor restricts 未然之事、Opus 5.5 未被 TH 评测却建了 evaluated_on 边）。",
+  "findings": [
+    {
+      "article_id": "2026-11-21-7",
+      "severity": "high",
+      "problem": "实体 \"GPT-6 Astra（前代）\" 的规范名把相对描述\"前代\"拼进实体名，与 2026-11-21-14 中同一模型 \"GPT-6 Astra\" 无法跨文章连通（直接削弱共享实体）；且本篇文章内部也不一致——同文 metrics 与事件里用的是不带标注的 \"GPT-6 Astra\"，只有 entities 列表写成 \"GPT-6 Astra（前代）\"。",
+      "fix": "将实体规范名统一改为 \"GPT-6 Astra\"，\"前代\"这一相对语境只写进 label/summary/summary（如 \"从前代 GPT-6 Astra 的 54.0%\"），不要进实体名，使其能与 2026-11-21-14 的 \"GPT-6 Astra\" 合并连通。"
+    },
+    {
+      "article_id": "2026-11-21-15",
+      "severity": "medium",
+      "problem": "事件 2 的 label 写 \"Ant 股价上市首日开 111.50 收 97.17\"，而该事件 participants 与 entities 用的是 \"Anthropic\"，且全篇文章标题是 Anthropic IPO。\"Ant\" 是非规范缩写且与蚂蚁集团（Ant Group）歧义，导致同一主体在图谱里出现两种写法。",
+      "fix": "统一改用规范名 \"Anthropic\"，把事件 2 label 改为 \"Anthropic 上市首日开 111.50 收 97.17（周五盘中一度跌约 13.5% 至 84 美元附近）\"，并确认 participants 全部指向 Anthropic。"
+    },
+    {
+      "article_id": "2026-11-21-1",
+      "severity": "medium",
+      "problem": "关系 \"无外力 Navier-Stokes 爆破 --uses--> Lean 4\" 语义错误：被证明的物理学现象本身不\"使用\" Lean 4，使用 Lean 4 的是这项证明/工作；且 topic 实体 \"无外力 Navier-Stokes 爆破\" 冗余，与 \"Navier-Stokes 方程\" 重叠。",
+      "fix": "删除该 uses 边，或把 source 改为代表证明工作的实体（如论文/作者 Buckmaster 与 Alpöge）再建 --uses--> Lean 4；主题实体合并进 \"Navier-Stokes 方程\"。"
+    },
+    {
+      "article_id": "2026-11-21-12",
+      "severity": "medium",
+      "problem": "关系 \"Cursor --restricts--> Kimi K2.5\" 断言过强：原文只说 Cursor \"正考虑\"淘汰 PRC 开源权重模型（考虑中，未实施），restricts 是既定事实动词，且与同篇 \"Cursor --uses--> Kimi K2.5\" 相互矛盾。",
+      "fix": "改为表达未然状态的类型（如 considers_restricting 或 pending restriction）并保留用途边，或在 metrics/label 注明\"正考虑 2027 年起淘汰\"，避免把意图写成已发生的限制。"
+    },
+    {
+      "article_id": "2026-11-21-14",
+      "severity": "medium",
+      "problem": "关系 \"Claude Opus 5.5 --evaluated_on--> TH1.1\" 与 \"--evaluated_on--> TH2 套件\" 证据不匹配：TH 是 METR 用来测前沿模型任务时间线的套件，而 Opus 5.5 在这篇里是\"设计 AI 评估\"的判断力测试对象，并未被 TH 评测；evidence\"在 TH1.1 与 TH2 合并套件上\"只描述 METR 套件本身，不支撑 Opus 的边。",
+      "fix": "删除这两条 Opus 5.5 --evaluated_on--> evaluated_on TH 的边；需要时用 METR --evaluates--> Claude Opus 5.5 表达，并把 TH1.1/TH2 连接给真正被测的前沿模型（或删去实体级关系、保留在 summary 里）。"
+    },
+    {
+      "article_id": "2026-11-21-12",
+      "severity": "medium",
+      "problem": "事件 2 \"禁止联邦系统使用 PRC 模型\" 把 Airbnb 与 DoorDash 列为 object 角色，但原文只说这两家\"接受了委员会质询\"（被询问使用中国模型情况），并非拟议禁令的对象；DeepSeek 是禁令的既有背景而非该事件核心。",
+      "fix": "从该事件的 participants 移除 Airbnb 与 DoorDash（或单列一个\"接受质询\"事件），只保留 美国众议院 --subject--> 国家开放权重计划/DeepSeek；Airbnb/DoorDash 的 co-occurrence 不足以构成关系。"
+    }
+  ],
+  "lessons": [
+    "同一模型/产品在不同文章里必须使用同一规范名，'前代/新一代'等相对描述只写进 label 或 summary，绝不拼进实体名，否则图谱无法跨文章连通。",
+    "关系动词要精确反映时态：主体只是'正考虑'淘汰/限制时不可用既定语气的关系类型（restricts、bans），应删除或用未然类型，且不要让相互矛盾的关系（同既 uses 又 restricts）同时成立。",
+    "benchmark 关系（evaluated_on）只能连接真正被该基准评测的对象：若 evidence 只描述基准本身、并未评测该实体，就删除这条边，不要凭套件名出现在同篇就建边。"
+  ]
+}

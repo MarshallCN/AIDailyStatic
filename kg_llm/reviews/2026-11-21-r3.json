@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-21",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 88,
+  "summary": "事实整体准确、关系方向与 evidence 支撑均正确，无 high 级错误；但存在 3 处 entity 类型/规范名错配和 1 处关系类型用错。具体：article-0 把 Claude 标成 product 而图谱内其他生成式模型一律用 model；article-7 把「Anthropic 也有类似发现」错抽成 OpenAI 与 Anthropic 的 compared_with 比较关系；article-12 政策规范名未按原文引号内的「国家美国开源权重计划」原样保留；article-0 的 Lean FRO--collaborates_with-->Mathlib 把组织与代码库放在 collaborates_with 边上。另提示：确定性审计对 GPT-6 Astra / GPT-6.2 Astra 的疑似重复实体提示为误报，二者是不同模型版本且正被比较，不应合并。",
+  "findings": [
+    {
+      "article_id": "2026-11-21-0",
+      "severity": "medium",
+      "problem": "实体 Claude 的 type 标成了 product。Claude 是 Anthropic 的模型，当天图谱内其他生成式/语言模型（Beam、GPT-6 Astra、GPT-6.2 Sol、Nitro-P、Kimi K2.5）均标为 model，Claude 与之主题同类，标成 product 造成跨文章实体类型不一致，破坏图谱对「模型」实体的统一建模。",
+      "fix": "将 Claude 的 type 从 product 改为 model；product 类型仅保留给面向用户的产品/服务（如 Codex、Cursor、Claude Computer Use）。"
+    },
+    {
+      "article_id": "2026-11-21-7",
+      "severity": "medium",
+      "problem": "关系 OpenAI --compared_with--> Anthropic（weight 0.4）的证据是「Anthropic 也有类似发现（完整推理轨迹训练的增益高于摘要）」。这是两家公司各自独立观察到同类现象，属于相互印证/共同佐证，并非 OpenAI 与 Anthropic 两者之间的正面比较，compared_with 关系类型用错。",
+      "fix": "将 compared_with 改为 corroborates（或 related_to），语义为「Anthropic 的发现印证 OpenAI 的结论」；或删除该条关系，仅在事件说明中保留两家同时发现的事实。"
+    },
+    {
+      "article_id": "2026-11-21-12",
+      "severity": "medium",
+      "problem": "政策实体规范名写成了「美国国家开源权重计划」，但原文是以引号给出的官方计划名「国家美国开源权重计划」（detail 原文：建议启动「国家美国开源权重计划」）。规范名被调整语序改写，且 aliases 中又冗余保留了一个含「国家」前缀的变体，可能导致与其他日对该政策名的引用无法连通。",
+      "fix": "以原文引号内名称为规范名，设为「国家美国开源权重计划」；删除冗余 alias 或至少保证规范名与官方引用名逐字一致。"
+    },
+    {
+      "article_id": "2026-11-21-0",
+      "severity": "medium",
+      "problem": "关系 Lean FRO --collaborates_with--> Mathlib 把组织（Lean FRO）与代码库/工具（Mathlib）放进同一 collaborates_with 边。collaborates_with 表达两个主体协作，Mathlib 是工具而非协作主体，关系类型与实体类型不匹配，且该边与证据「Lean FRO 与 Mathlib 计划已独立核验」所表达的联合验证语义不完全吻合。",
+      "fix": "删除 Lean FRO--collaborates_with-->Mathlib，或改为 Lean FRO --uses--> Mathlib（Lean FRO 使用 Mathlib 库）/ Lean FRO 与 Mathlib 计划共同参与核验的事实放在事件 participants 中表达，不要设组织—工具性质的 collaborates_with。"
+    }
+  ],
+  "lessons": [
+    "模型本体实体统一用 type=model（Claude、GPT-6.x、Beam、Nitro-P、Kimi 等），product 类型仅保留给面向用户的产品/服务（Codex、Cursor、Computer use 等）。",
+    "政策/项目等专名的规范名必须原样保留原文引号内的官方名称（如「国家美国开源权重计划」），不得调整语序或改写。",
+    "两家机构「都有类似发现/共同印证」的关系应归为 corroborates/related_to，不要抽成 compared_with 这类正面比较关系。"
+  ]
+}

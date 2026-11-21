@@ -1,0 +1,768 @@
+{
+  "date": "2026-11-21",
+  "articles": [
+    {
+      "article_id": "2026-11-21-0",
+      "entities": [
+        {"name": "Lean FRO", "type": "organization", "aliases": ["Lean Focused Research Organization"], "confidence": 0.95, "evidence": ["Lean FRO 与 Mathlib 计划已独立核验 Anthropic 数学家 Levent Alpöge 的黎曼猜想证明"]},
+        {"name": "Mathlib", "type": "tool", "aliases": ["Mathlib 计划"], "confidence": 0.92, "evidence": ["Lean FRO 与 Mathlib 计划已独立核验 Anthropic 数学家 Levent Alpöge 的黎曼猜想证明"]},
+        {"name": "Levent Alpöge", "type": "person", "aliases": ["Alpöge"], "confidence": 0.97, "evidence": ["Anthropic 数学家 Levent Alpöge 的黎曼猜想证明"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 数学家 Levent Alpöge 的黎曼猜想证明"]},
+        {"name": "Claude", "type": "product", "aliases": [], "confidence": 0.92, "evidence": ["这次 Claude 在冲刺阶段远远超过了我"]},
+        {"name": "Lean", "type": "tool", "aliases": ["Lean 证明助手"], "confidence": 0.9, "evidence": ["1700 万行 Lean 代码库的形式发布证明"]},
+        {"name": "黎曼猜想", "type": "topic", "aliases": ["Riemann hypothesis"], "confidence": 0.9, "evidence": ["黎曼猜想证明"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Lean FRO 与 Mathlib 以机器核验独立验证 Alpöge 的黎曼猜想证明",
+          "summary": "Lean 社区博客发文认证，Lean FRO 与 Mathlib 计划已独立核验 Levent Alpöge 的黎曼猜想证明，四条标准全部满足，称「完全确信该证明正确」。",
+          "participants": [
+            {"name": "Lean FRO", "type": "organization", "role": "subject"},
+            {"name": "Mathlib", "type": "tool", "role": "subject"},
+            {"name": "Levent Alpöge", "type": "person", "role": "object"},
+            {"name": "黎曼猜想", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Lean FRO 与 Mathlib 计划已独立核验 Anthropic 数学家 Levent Alpöge 的黎曼猜想证明", "称「完全确信该证明正确」"]
+        },
+        {
+          "type": "research",
+          "label": "Alpöge 以 1700 万行 Lean 代码库形式发布证明，自称与 Claude 合作约六周",
+          "summary": "Alpöge 于 11/20 以一份 1700 万行 Lean 代码库的形式发布证明，自称与 Claude 合作约六周，称「这次 Claude 在冲刺阶段远远超过了我」。",
+          "participants": [
+            {"name": "Levent Alpöge", "type": "person", "role": "subject"},
+            {"name": "Claude", "type": "product", "role": "object"},
+            {"name": "Lean", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Alpöge 于 11/20 以一份 1700 万行 Lean 代码库的形式发布证明", "这次 Claude 在冲刺阶段远远超过了我"]
+        }
+      ],
+      "relations": [
+        {"source": "Levent Alpöge", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["Anthropic 数学家 Levent Alpöge 的黎曼猜想证明"]},
+        {"source": "Levent Alpöge", "target": "Claude", "type": "collaborates_with", "weight": 0.85, "evidence": ["这次 Claude 在冲刺阶段远远超过了我"]},
+        {"source": "Levent Alpöge", "target": "Lean", "type": "uses", "weight": 0.9, "evidence": ["1700 万行 Lean 代码库的形式发布证明"]},
+        {"source": "Lean FRO", "target": "Mathlib", "type": "collaborates_with", "weight": 0.8, "evidence": ["Lean FRO 与 Mathlib 计划已独立核验 Anthropic 数学家 Levent Alpöge 的黎曼猜想证明"]}
+      ],
+      "metrics": [
+        {"name": "证明代码库规模", "value": "1700 万行 Lean 代码"},
+        {"name": "黎曼猜想提出年份", "value": "1859 年"},
+        {"name": "问题悬置时长", "value": "悬而未决近 170 年"}
+      ],
+      "why_it_matters": "这条把黎曼猜想从 11/20 的「单方面宣称+Lean 代码」推进到社区级机器核验，AI 数学成果的真伪判定标准已从同行评审转向「可编译+多独立检查器接受」的机器确证。"
+    },
+    {
+      "article_id": "2026-11-21-1",
+      "entities": [
+        {"name": "Tristan Buckmaster", "type": "person", "aliases": ["Buckmaster"], "confidence": 0.95, "evidence": ["Alpöge 与纽约大学 Tristan Buckmaster 又发布了第二个重磅数学结果"]},
+        {"name": "Levent Alpöge", "type": "person", "aliases": ["Alpöge"], "confidence": 0.95, "evidence": ["Alpöge 与纽约大学 Tristan Buckmaster 又发布了第二个重磅数学结果"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["都出自同一组 Anthropic 背景的研究者"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["今年 9 月 OpenAI 曾宣称证明该百万美元问题"]},
+        {"name": "Navier-Stokes 方程", "type": "topic", "aliases": ["Navier-Stokes"], "confidence": 0.9, "evidence": ["证明了无外力（unforced）Navier-Stokes 方程的有限时间爆破"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["使用了一组 Anthropic 与 OpenAI 的模型（包括 Codex）"]},
+        {"name": "Lean 4", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["约 60 万行 Lean 4 形式化"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Buckmaster 与 Alpöge 用 AI 辅助证明无外力 Navier-Stokes 方程有限时间爆破",
+          "summary": "Alpöge 与纽约大学 Tristan Buckmaster 用 AI 辅助证明无外力 Navier-Stokes 方程的有限时间爆破，配套约 60 万行 Lean 4 形式化，处理的是「真正的」原始问题表述。",
+          "participants": [
+            {"name": "Tristan Buckmaster", "type": "person", "role": "subject"},
+            {"name": "Levent Alpöge", "type": "person", "role": "subject"},
+            {"name": "Navier-Stokes 方程", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Alpöge 与纽约大学 Tristan Buckmaster 又发布了第二个重磅数学结果", "证明了无外力（unforced）Navier-Stokes 方程的有限时间爆破"]
+        },
+        {
+          "type": "research",
+          "label": "新证明堵上 OpenAI 9 月「搅拌力后门」，处理真正原始问题表述",
+          "summary": "OpenAI 9 月证明依赖精心调校的「搅拌力」，被指取巧；新证明堵上该后门，处理「真正的」原始问题表述，并等待同等严格的社区审查。",
+          "participants": [
+            {"name": "Tristan Buckmaster", "type": "person", "role": "subject"},
+            {"name": "Levent Alpöge", "type": "person", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["新证明堵上了这个后门，处理的是「真正的」原始问题表述", "今年 9 月 OpenAI 曾宣称证明该百万美元问题"]
+        }
+      ],
+      "relations": [
+        {"source": "Tristan Buckmaster", "target": "Levent Alpöge", "type": "collaborates_with", "weight": 0.9, "evidence": ["Alpöge 与纽约大学 Tristan Buckmaster 又发布了第二个重磅数学结果"]},
+        {"source": "Levent Alpöge", "target": "Anthropic", "type": "affiliated_with", "weight": 0.9, "evidence": ["都出自同一组 Anthropic 背景的研究者"]},
+        {"source": "Tristan Buckmaster", "target": "Lean 4", "type": "uses", "weight": 0.8, "evidence": ["工作包含约 60 万行 Lean 4 形式化"]},
+        {"source": "Levent Alpöge", "target": "Lean 4", "type": "uses", "weight": 0.8, "evidence": ["工作包含约 60 万行 Lean 4 形式化"]},
+        {"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["使用了一组 Anthropic 与 OpenAI 的模型（包括 Codex）"]}
+      ],
+      "metrics": [
+        {"name": "Lean 4 形式化规模", "value": "约 60 万行"},
+        {"name": "问题奖金", "value": "百万美元问题"}
+      ],
+      "why_it_matters": "同一组 Anthropic 背景研究者一天内拿下两个百万美元级证明，且这个堵上 OpenAI 取巧「搅拌力」后门、处理原始问题表述，说明 LLM+交互式定理证明器已成数学发现主流工具，而社区机器核验仍是决定真伪的最后一关。"
+    },
+    {
+      "article_id": "2026-11-21-2",
+      "entities": [
+        {"name": "arXiv:2611.21885", "type": "paper", "aliases": [], "confidence": 0.95, "evidence": ["论文《Language Models Can Rewrite Their Own Weights》（arXiv:2611.21885）报告"]},
+        {"name": "27B 开源模型", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["一个 27B 开源模型能诊断自己的失败模式并直接改写背后权重"]},
+        {"name": "递归自我改进", "type": "topic", "aliases": ["recursive self-improvement"], "confidence": 0.9, "evidence": ["作者认为这是走向递归自我改进（recursive self-improvement）的必要一步"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文展示 27B 语言模型通过自身推理直接改写权重、无梯度变强",
+          "summary": "论文报告给定权重、批改过的答案与运行自身的能力，一个 27B 开源模型能诊断失败模式并直接改写权重，没有梯度、没有训练循环，在未见过的题目上准确率提升 6.6 个百分点。",
+          "participants": [
+            {"name": "arXiv:2611.21885", "type": "paper", "role": "subject"},
+            {"name": "27B 开源模型", "type": "model", "role": "object"}
+          ],
+          "evidence": ["论文《Language Models Can Rewrite Their Own Weights》（arXiv:2611.21885）报告", "一个 27B 开源模型能诊断自己的失败模式并直接改写背后权重"]
+        },
+        {
+          "type": "research",
+          "label": "27B 模型能自修复受损副本至原始准确率 80% 以上，且能力随规模涌现",
+          "summary": "一个几乎无法解题的「受损副本」被模型用纯前向推理带回到原始准确率的 80% 以上，小模型要么不改、要么改坏自己，只有最大模型能改进并自我修复。",
+          "participants": [
+            {"name": "27B 开源模型", "type": "model", "role": "subject"},
+            {"name": "递归自我改进", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["带回到原始准确率的 80% 以上", "作者认为这是走向递归自我改进（recursive self-improvement）的必要一步"]
+        }
+      ],
+      "relations": [
+        {"source": "arXiv:2611.21885", "target": "27B 开源模型", "type": "introduces", "weight": 0.85, "evidence": ["论文《Language Models Can Rewrite Their Own Weights》（arXiv:2611.21885）报告"]},
+        {"source": "27B 开源模型", "target": "递归自我改进", "type": "targets", "weight": 0.8, "evidence": ["作者认为这是走向递归自我改进（recursive self-improvement）的必要一步"]}
+      ],
+      "metrics": [
+        {"name": "未见题目准确率提升", "value": "6.6 个百分点"},
+        {"name": "连续会话准确率只升不降", "value": "连续八个会话"},
+        {"name": "受损副本恢复至原始准确率", "value": "80% 以上"}
+      ],
+      "why_it_matters": "首次展示模型能无梯度、无训练循环仅靠前向推理改写权重变强并自修复，把「训练与推理之间的墙」重定义为工具限制而非智能属性，直指递归自我改进的技术前提。"
+    },
+    {
+      "article_id": "2026-11-21-3",
+      "entities": [
+        {"name": "Reflection", "type": "organization", "aliases": ["新实验室 Reflection"], "confidence": 0.95, "evidence": ["新实验室 Reflection 公开 Beam（501.3B 总参/23.4B 激活、Apache 2.0）的完整技术报告"]},
+        {"name": "Beam", "type": "model", "aliases": [], "confidence": 0.97, "evidence": ["Reflection 的 Beam 技术报告（arXiv:2611.26358）披露了这款 10 月发布的 Apache-2.0 开源 MoE 的完整训练细节"]},
+        {"name": "DFlash 2", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["配套 1.93B 参数的推测解码草稿模型 DFlash 2"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.9, "evidence": ["在 10.5K 张 NVIDIA GB300 上运行 4 周"]},
+        {"name": "GB300", "type": "hardware", "aliases": [], "confidence": 0.92, "evidence": ["在 10.5K 张 NVIDIA GB300 上运行 4 周"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Reflection 发布 Beam 完整技术报告，披露开源 MoE 训练细节",
+          "summary": "Reflection 公开 Beam（501.3B 总参/23.4B 激活、Apache 2.0）的完整技术报告，含 23.8T token 预训练、52 层、256 experts、1M token 上下文等全部训练细节。",
+          "participants": [
+            {"name": "Reflection", "type": "organization", "role": "subject"},
+            {"name": "Beam", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Reflection 的 Beam 技术报告（arXiv:2611.26358）披露了这款 10 月发布的 Apache-2.0 开源 MoE 的完整训练细节"]
+        },
+        {
+          "type": "research",
+          "label": "Beam 在 10.5K GB300 上 4 周跑完超 1 亿次 RL rollout，未见平台期",
+          "summary": "后训练采用全异步 RL，在 10.5K 张 NVIDIA GB300 上运行 4 周、生成超过 1 亿次 rollout，称是开源实验室迄今最大规模 RL 之一，且能力随 RL 算力增加持续提升、没有平台期迹象。",
+          "participants": [
+            {"name": "Beam", "type": "model", "role": "subject"},
+            {"name": "GB300", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["在 10.5K 张 NVIDIA GB300 上运行 4 周", "没有平台期迹象"]
+        }
+      ],
+      "relations": [
+        {"source": "Beam", "target": "Reflection", "type": "developed_by", "weight": 0.9, "evidence": ["Reflection 公开 Beam（501.3B 总参/23.4B 激活、Apache 2.0）的完整技术报告"]},
+        {"source": "Beam", "target": "GB300", "type": "uses", "weight": 0.8, "evidence": ["在 10.5K 张 NVIDIA GB300 上运行 4 周"]},
+        {"source": "GB300", "target": "NVIDIA", "type": "developed_by", "weight": 0.7, "evidence": ["在 10.5K 张 NVIDIA GB300 上运行 4 周"]},
+        {"source": "DFlash 2", "target": "Reflection", "type": "developed_by", "weight": 0.7, "evidence": ["配套 1.93B 参数的推测解码草稿模型 DFlash 2"]}
+      ],
+      "metrics": [
+        {"name": "总参数量", "value": "501.3B"},
+        {"name": "激活参数量", "value": "23.4B"},
+        {"name": "预训练 token 数", "value": "23.8T"},
+        {"name": "专家数", "value": "256 experts"},
+        {"name": "层数", "value": "52 层"},
+        {"name": "上下文长度", "value": "1M token"},
+        {"name": "RL 运行规模", "value": "10.5K 张 GB300、4 周、超 1 亿次 rollout"},
+        {"name": "有害请求拒绝/转向率", "value": "88.9%"},
+        {"name": "无害请求合规率", "value": "81.5%"},
+        {"name": "推测解码草稿参数量", "value": "1.93B"}
+      ],
+      "why_it_matters": "开源实验室公开了迄今最大规模异步 RL 的运行细节并给出「未见平台期」的规模化数据点，把 RL scaling 之争从口号变成可核算的工程曲线，直接给前沿最贵的那部分训练开销背书。"
+    },
+    {
+      "article_id": "2026-11-21-4",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 11/20 公告：与全球最大 AI 数据服务器制造商鸿海（Foxconn）建立合作"]},
+        {"name": "Foxconn", "type": "company", "aliases": ["鸿海", "鸿海科技集团"], "confidence": 0.95, "evidence": ["与全球最大 AI 数据服务器制造商鸿海（Foxconn）建立合作"]},
+        {"name": "Sam Altman", "type": "person", "aliases": ["Altman"], "confidence": 0.9, "evidence": ["Sam Altman 称这代表「重振美国工业的一代人的机会」"]},
+        {"name": "Broadcom", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["与此前与 Broadcom 的合作"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "OpenAI 与 Foxconn 合作在美国共同设计多代 AI 数据中心机架",
+          "summary": "并行设计、研发多代 AI 数据中心机架，以跟上模型快速演进的需求，并改进机架架构使其可在美国多地制造、扩大芯片与本土供应商采购。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Foxconn", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["OpenAI 11/20 公告：与全球最大 AI 数据服务器制造商鸿海（Foxconn）建立合作", "并行设计、研发多代 AI 数据中心机架"]
+        },
+        {
+          "type": "infra",
+          "label": "Foxconn 在美国生产线缆、网络、冷却与电源关键部件，OpenAI 供应链本土化",
+          "summary": "Foxconn 在美国制造 AI 数据中心的关键设备（线缆、网络、冷却与电源系统），协议不含采购承诺或财务义务，但 OpenAI 获得早期评估新系统并选择购买的权利。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Foxconn", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Foxconn 在美国生产 AI 数据中心的关键设备", "协议不含采购承诺或财务义务"]
+        }
+      ],
+      "relations": [
+        {"source": "OpenAI", "target": "Foxconn", "type": "partners_with", "weight": 0.9, "evidence": ["OpenAI 11/20 公告：与全球最大 AI 数据服务器制造商鸿海（Foxconn）建立合作"]},
+        {"source": "Foxconn", "target": "OpenAI", "type": "supplies", "weight": 0.75, "evidence": ["Foxconn 在美国生产 AI 数据中心的关键设备"]},
+        {"source": "Sam Altman", "target": "OpenAI", "type": "affiliated_with", "weight": 0.7, "evidence": ["Sam Altman 称这代表「重振美国工业的一代人的机会」"]},
+        {"source": "OpenAI", "target": "Broadcom", "type": "partners_with", "weight": 0.6, "evidence": ["与此前与 Broadcom 的合作"]}
+      ],
+      "metrics": [
+        {"name": "与 Broadcom 合作开发规模", "value": "10GW OpenAI 设计加速器与网络系统"}
+      ],
+      "why_it_matters": "OpenAI 从租用标准集群转向机架级 co-design 并把制造与关键器件放回美国本土，硬件定义权收归自身，供应链从「采购」升级为「设计归 OpenAI、制造与器件本土化」的一体化模式。"
+    },
+    {
+      "article_id": "2026-11-21-5",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["Google 削减了 2027 年 Broadcom 设计的 TPU 8i 系列出货计划约 100 万颗"]},
+        {"name": "Broadcom", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Broadcom 设计的 TPU 8i 系列出货计划"]},
+        {"name": "MediaTek", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["MediaTek 设计的 TPU 8t 系列出货"]},
+        {"name": "TPU 8i", "type": "hardware", "aliases": ["8i Max", "Whalefish"], "confidence": 0.92, "evidence": ["Broadcom 设计的 TPU 8i 系列出货计划"]},
+        {"name": "TPU 8t", "type": "hardware", "aliases": [], "confidence": 0.92, "evidence": ["MediaTek 设计的 TPU 8t 系列出货"]},
+        {"name": "郭明錤", "type": "person", "aliases": [], "confidence": 0.92, "evidence": ["天风国际分析师郭明錤 11/20 发布行业调查"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "郭明錤调查显示 Google 削减 2027 年 Broadcom 版 TPU 8i 订单约 100 万颗",
+          "summary": "Google 削减 2027 年 Broadcom 设计的 TPU 8i 系列出货计划约 100 万颗，约为此前预期的 20%，大部分削减落在单价更高的 8i Max（Whalefish）上。",
+          "participants": [
+            {"name": "郭明錤", "type": "person", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "object"},
+            {"name": "TPU 8i", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["Google 削减了 2027 年 Broadcom 设计的 TPU 8i 系列出货计划约 100 万颗", "大部分削减落在单价更高的 8i Max（代号 Whalefish）上"]
+        },
+        {
+          "type": "trend",
+          "label": "Google 转增 MediaTek 设计 TPU 8t 出货，自研芯片双源战略再平衡",
+          "summary": "Google 计划增加 2027 年 MediaTek 设计的 TPU 8t 系列出货，TPU 8t（高毛利走量线）与 TPU 8i（定制高性能线）配比向 MediaTek 倾斜，市场反应剧烈。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "MediaTek", "type": "company", "role": "partner"},
+            {"name": "TPU 8t", "type": "hardware", "role": "object"},
+            {"name": "TPU 8i", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["Google 计划增加 2027 年 MediaTek 设计的 TPU 8t 系列出货", "TPU 8t（MediaTek，高毛利走量线，可见度到 2029）"]
+        }
+      ],
+      "relations": [
+        {"source": "TPU 8i", "target": "Broadcom", "type": "developed_by", "weight": 0.85, "evidence": ["Broadcom 设计的 TPU 8i 系列出货计划"]},
+        {"source": "TPU 8t", "target": "MediaTek", "type": "developed_by", "weight": 0.85, "evidence": ["MediaTek 设计的 TPU 8t 系列出货"]},
+        {"source": "Google", "target": "TPU 8i", "type": "uses", "weight": 0.8, "evidence": ["Google 削减了 2027 年 Broadcom 设计的 TPU 8i 系列出货计划"]},
+        {"source": "Google", "target": "TPU 8t", "type": "uses", "weight": 0.8, "evidence": ["Google 计划增加 2027 年 MediaTek 设计的 TPU 8t 系列出货"]},
+        {"source": "Broadcom", "target": "Google", "type": "supplies", "weight": 0.7, "evidence": ["Broadcom 设计的 TPU 8i 系列出货计划"]},
+        {"source": "MediaTek", "target": "Google", "type": "supplies", "weight": 0.7, "evidence": ["MediaTek 设计的 TPU 8t 系列出货"]}
+      ],
+      "metrics": [
+        {"name": "TPU 8i 出货削减量", "value": "约 100 万颗"},
+        {"name": "削减比例", "value": "约 20%"},
+        {"name": "Broadcom 当日股价跌幅", "value": "11.4%"},
+        {"name": "MediaTek 当日股价跌幅", "value": "约 10%"},
+        {"name": "TPU 8t 可见度", "value": "到 2029"}
+      ],
+      "why_it_matters": "Google 把 2027 年 TPU 配比从 Broadcom 定制高性能线向 MediaTek 高毛利走量线倾斜，叠加供应链与电力约束，自研芯片双源战略正实质改写 2027 年的 AI 算力供给曲线。"
+    },
+    {
+      "article_id": "2026-11-21-6",
+      "entities": [
+        {"name": "Nscale", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Nscale 宣布部署全球首批 NVIDIA Vera Rubin NVL72 机架"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["Nvidia", "英伟达"], "confidence": 0.9, "evidence": ["Nvidia Q3 财报一致：Vera Rubin NVL72 与 Vera CPU 已在三季度开始放量出货"]},
+        {"name": "Vera Rubin NVL72", "type": "hardware", "aliases": [], "confidence": 0.95, "evidence": ["部署全球首批 NVIDIA Vera Rubin NVL72 系统"]},
+        {"name": "Dell", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["率先采用 Dell 新的 PowerRack 网络机架"]},
+        {"name": "PowerRack", "type": "hardware", "aliases": [], "confidence": 0.92, "evidence": ["率先采用 Dell 新的 PowerRack 网络机架"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Nscale 部署全球首批 NVIDIA Vera Rubin NVL72 机架",
+          "summary": "Nscale 从伦敦宣布部署全球首批 NVIDIA Vera Rubin NVL72 系统，每台机柜含 72 颗 Rubin GPU、36 颗 Vera CPU 及配套内存，作为单一 AI 超算整体运行。",
+          "participants": [
+            {"name": "Nscale", "type": "company", "role": "subject"},
+            {"name": "Vera Rubin NVL72", "type": "hardware", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Nscale 宣布部署全球首批 NVIDIA Vera Rubin NVL72 机架", "每台 Vera Rubin NVL72 机柜含 72 颗 Rubin GPU"]
+        },
+        {
+          "type": "infra",
+          "label": "Nscale 成为首个使用 Dell 整柜预制液冷网络机架 PowerRack 的客户",
+          "summary": "Dell 新的 PowerRack 网络机架把交换机、供电与液冷全部在工厂完成装配与测试、整柜发货，把现场网络机架组装工作量降到零，帮助 Nscale 更快投产。",
+          "participants": [
+            {"name": "Nscale", "type": "company", "role": "subject"},
+            {"name": "Dell", "type": "company", "role": "partner"},
+            {"name": "PowerRack", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["率先采用 Dell 新的 PowerRack 网络机架", "把现场网络机架组装工作量降到零"]
+        }
+      ],
+      "relations": [
+        {"source": "Vera Rubin NVL72", "target": "NVIDIA", "type": "developed_by", "weight": 0.9, "evidence": ["部署全球首批 NVIDIA Vera Rubin NVL72 系统"]},
+        {"source": "Nscale", "target": "Vera Rubin NVL72", "type": "uses", "weight": 0.85, "evidence": ["Nscale 宣布部署全球首批 NVIDIA Vera Rubin NVL72 机架"]},
+        {"source": "PowerRack", "target": "Dell", "type": "developed_by", "weight": 0.9, "evidence": ["率先采用 Dell 新的 PowerRack 网络机架"]},
+        {"source": "Nscale", "target": "PowerRack", "type": "uses", "weight": 0.85, "evidence": ["率先采用 Dell 新的 PowerRack 网络机架"]},
+        {"source": "Dell", "target": "Nscale", "type": "supplies", "weight": 0.6, "evidence": ["帮助 Nscale 更快把高性能 AI 基础设施投入生产"]}
+      ],
+      "metrics": [
+        {"name": "每机柜 Rubin GPU 数", "value": "72 颗"},
+        {"name": "每机柜 Vera CPU 数", "value": "36 颗"},
+        {"name": "先进封装工艺", "value": "CoWoS（依托台积电 5nm/3nm）"},
+        {"name": "放量出货时间", "value": "三季度起"}
+      ],
+      "why_it_matters": "整柜工厂预制液冷机架把现场网络组装工作量降到零，Vera Rubin 作为 Blackwell 之后的新平台真正进入交付阶段，neocloud 成为首批尝鲜者，算力供给从机柜级转向整柜超算级。"
+    },
+    {
+      "article_id": "2026-11-21-7",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 11/20 发布文章详述其对抗性蒸馏（adversarial distillation）防御"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["提取受保护推理的平均攻击成功率从 GPT-6 Astra 的 54.0% 降至 GPT-6.2 Astra 的 0.2%"]},
+        {"name": "GPT-6.2 Astra", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["提取受保护推理的平均攻击成功率从 GPT-6 Astra 的 54.0% 降至 GPT-6.2 Astra 的 0.2%"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Anthropic 也有类似发现"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "OpenAI 公布对抗性蒸馏防御，分类器、API 限制与账号网络调查层层叠加",
+          "summary": "防御分多层：输出分类器覆盖工具调用参数、API 限制把受保护推理与产生它的对话绑定、再叠加对账号网络的调查，还会与其他厂商共享入侵指标（IOC）。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6.2 Astra", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI 11/20 发布文章详述其对抗性蒸馏（adversarial distillation）防御", "输出分类器在最终答案之外也覆盖工具调用参数"]
+        },
+        {
+          "type": "security",
+          "label": "提取受保护推理的攻击成功率从 GPT-6 Astra 的 54.0% 降至 GPT-6.2 Astra 的 0.2%",
+          "summary": "内部红队评估显示，提取受保护推理的平均攻击成功率从前代 GPT-6 Astra 的 54.0% 降至 GPT-6.2 Astra 的 0.2%，推理轨迹泄露是前沿能力外泄的关键通道。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6.2 Astra", "type": "model", "role": "object"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "object"}
+          ],
+          "evidence": ["提取受保护推理的平均攻击成功率从 GPT-6 Astra 的 54.0% 降至 GPT-6.2 Astra 的 0.2%"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-6.2 Astra", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["提取受保护推理的平均攻击成功率从 GPT-6 Astra 的 54.0% 降至 GPT-6.2 Astra 的 0.2%"]},
+        {"source": "GPT-6 Astra", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["提取受保护推理的平均攻击成功率从 GPT-6 Astra 的 54.0% 降至 GPT-6.2 Astra 的 0.2%"]},
+        {"source": "GPT-6.2 Astra", "target": "GPT-6 Astra", "type": "compared_with", "weight": 0.8, "evidence": ["提取受保护推理的平均攻击成功率从 GPT-6 Astra 的 54.0% 降至 GPT-6.2 Astra 的 0.2%"]},
+        {"source": "OpenAI", "target": "Anthropic", "type": "compared_with", "weight": 0.4, "evidence": ["Anthropic 也有类似发现"]}
+      ],
+      "metrics": [
+        {"name": "提取受保护推理平均攻击成功率（前代 GPT-6 Astra）", "value": "54.0%"},
+        {"name": "提取受保护推理平均攻击成功率（GPT-6.2 Astra）", "value": "0.2%"}
+      ],
+      "why_it_matters": "把蒸馏攻击成功率从 54.0% 压到 0.2% 说明前沿推理轨迹可用多层防御堵住，前提是覆盖工具参数与跨会话复用；叠加 BIS 收紧「远程访问+蒸馏」，这项防御同时具有产业与政策含义。"
+    },
+    {
+      "article_id": "2026-11-21-8",
+      "entities": [
+        {"name": "Amazon", "type": "company", "aliases": ["亚马逊"], "confidence": 0.93, "evidence": ["Amazon 威胁情报部门披露了一起被其称为「自主 AI 武器化」的攻击"]},
+        {"name": "Cairn", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["让开源智能体框架独立完成发现漏洞、编写利用、提权、持久化的完整链条"]},
+        {"name": "MONAI Label", "type": "product", "aliases": ["MONAI Label 医学影像应用"], "confidence": 0.9, "evidence": ["在 MONAI Label（医学影像标注应用）中自主发现并利用了一个路径遍历零日漏洞"]},
+        {"name": "MONAI", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["MONAI 已发布补丁并申请 CVE"]},
+        {"name": "CJ Moses", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Amazon CISO CJ Moses 的评价是：自主 AI 利用漏洞的速度已经超过大多数安全运营中心"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Amazon 披露 Cairn 自主 AI 11 分钟内利用 MONAI Label 零日漏洞拿下 root",
+          "summary": "疑似中国关联攻击者使用开源 Cairn agentic AI 框架，在 MONAI Label 中自主发现并利用路径遍历零日漏洞，从 API 映射到获取 root 级反向 shell 全程约 11 分钟。",
+          "participants": [
+            {"name": "Amazon", "type": "company", "role": "subject"},
+            {"name": "Cairn", "type": "tool", "role": "object"},
+            {"name": "MONAI Label", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Amazon 威胁情报部门披露了一起被其称为「自主 AI 武器化」的攻击", "在 MONAI Label（医学影像标注应用）中自主发现并利用了一个路径遍历零日漏洞"]
+        },
+        {
+          "type": "security",
+          "label": "MONAI 发布补丁并申请 CVE，自主 AI 利用速度超过多数 SOC 处理告警速度",
+          "summary": "MONAI 已发布补丁并申请 CVE；Amazon CISO CJ Moses 称自主 AI 利用漏洞的速度已经超过大多数安全运营中心处理告警的速度。",
+          "participants": [
+            {"name": "MONAI", "type": "organization", "role": "subject"},
+            {"name": "MONAI Label", "type": "product", "role": "object"},
+            {"name": "CJ Moses", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["MONAI 已发布补丁并申请 CVE", "自主 AI 利用漏洞的速度已经超过大多数安全运营中心"]
+        }
+      ],
+      "relations": [
+        {"source": "MONAI Label", "target": "MONAI", "type": "developed_by", "weight": 0.7, "evidence": ["MONAI Label（医学影像标注应用）", "MONAI 已发布补丁并申请 CVE"]},
+        {"source": "Cairn", "target": "MONAI Label", "type": "targets", "weight": 0.85, "evidence": ["在 MONAI Label（医学影像标注应用）中自主发现并利用了一个路径遍历零日漏洞"]},
+        {"source": "CJ Moses", "target": "Amazon", "type": "affiliated_with", "weight": 0.7, "evidence": ["Amazon CISO CJ Moses"]}
+      ],
+      "metrics": [
+        {"name": "攻击全程耗时", "value": "约 11 分钟"},
+        {"name": "横向移动目标", "value": "第二所大学网络"}
+      ],
+      "why_it_matters": "攻击者不是逐行手写利用代码，而是让开源智能体自主完成发现漏洞→提权→持久化全链，速度超过多数 SOC 告警处理，把「AI 攻击者」从概念演示搬到生产环境，医学开源软件成为高价值目标。"
+    },
+    {
+      "article_id": "2026-11-21-9",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 的 Codex 0.170 更新把 GPT-6.2 Sol 设为 Plus 与 Pro 用户 Codex 会话的默认模型"]},
+        {"name": "GPT-6.2 Sol", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 的 Codex 0.170 更新把 GPT-6.2 Sol 设为 Plus 与 Pro 用户 Codex 会话的默认模型"]},
+        {"name": "GPT-6.2 Astra", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["GPT-6.2 Astra 与 Sol 面向所有 Plus、Pro、Enterprise 与 Edu 用户在 ChatGPT Work 与 Codex 中可用"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 的 Codex 0.170 更新把 GPT-6.2 Sol 设为 Plus 与 Pro 用户 Codex 会话的默认模型"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 让 GPT-6.2 Sol 成为 Plus/Pro 用户 Codex 的默认模型",
+          "summary": "Codex 0.170 更新把 GPT-6.2 Sol 设为 Plus 与 Pro 用户 Codex 会话的默认模型，上个月 GPT-6.1 Sol 才成为默认模型，一个月内再次换代。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6.2 Sol", "type": "model", "role": "object"},
+            {"name": "Codex", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 的 Codex 0.170 更新把 GPT-6.2 Sol 设为 Plus 与 Pro 用户 Codex 会话的默认模型"]
+        },
+        {
+          "type": "launch",
+          "label": "GPT-6.2 Astra 与 Sol 向所有 Plus/Pro/Enterprise/Edu 用户全面开放",
+          "summary": "同一天，GPT-6.2 Astra 与 Sol 面向所有 Plus、Pro、Enterprise 与 Edu 用户在 ChatGPT Work 与 Codex 中可用，延续 6.2 系列快速铺开的节奏。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6.2 Astra", "type": "model", "role": "object"},
+            {"name": "GPT-6.2 Sol", "type": "model", "role": "object"}
+          ],
+          "evidence": ["GPT-6.2 Astra 与 Sol 面向所有 Plus、Pro、Enterprise 与 Edu 用户在 ChatGPT Work 与 Codex 中可用"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-6.2 Sol", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 的 Codex 0.170 更新把 GPT-6.2 Sol 设为 Plus 与 Pro 用户 Codex 会话的默认模型"]},
+        {"source": "Codex", "target": "GPT-6.2 Sol", "type": "integrates", "weight": 0.85, "evidence": ["OpenAI 的 Codex 0.170 更新把 GPT-6.2 Sol 设为 Plus 与 Pro 用户 Codex 会话的默认模型"]},
+        {"source": "GPT-6.2 Astra", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["GPT-6.2 Astra 与 Sol 面向所有 Plus、Pro、Enterprise 与 Edu 用户在 ChatGPT Work 与 Codex 中可用"]}
+      ],
+      "metrics": [
+        {"name": "6.2 系列 MedChemBench 成绩", "value": "84.5%"}
+      ],
+      "why_it_matters": "把最新推理模型直接绑定为 coding agent 标杆 Codex 的默认档并一个月内换代，模型迭代通过「产品即分销」瞬间转化为开发者端的实际用量与下游工具链适配方向。"
+    },
+    {
+      "article_id": "2026-11-21-10",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 的 11/20 发布说明新增一行：「Computer use (beta) for Team and Enterprise plans」"]},
+        {"name": "Claude Computer Use", "type": "product", "aliases": ["Computer use", "电脑操作智能体"], "confidence": 0.95, "evidence": ["Anthropic 的 11/20 发布说明新增一行：「Computer use (beta) for Team and Enterprise plans」"]},
+        {"name": "Claude Team", "type": "product", "aliases": ["Team 计划"], "confidence": 0.9, "evidence": ["面向 Claude Team 与 Enterprise 计划开放"]},
+        {"name": "Google", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["与上周 Google 给 Gemini for Mac 上 computer use"]},
+        {"name": "OpenAI", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["OpenAI 的 desktop agent 铺开放在一起"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 把 Computer use 测试版开放给 Claude Team 与 Enterprise 计划",
+          "summary": "电脑操作能力正式下沉到团队版与企业版，Claude Computer Use 让模型像人一样操作桌面应用与网页，此前主要停留在更高门槛或受限范围，管理员可按需启用并配置。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Computer Use", "type": "product", "role": "object"},
+            {"name": "Claude Team", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Anthropic 的 11/20 发布说明新增一行：「Computer use (beta) for Team and Enterprise plans」", "面向 Claude Team 与 Enterprise 计划开放"]
+        },
+        {
+          "type": "trend",
+          "label": "三大实验室在「桌面智能体」赛道全部就位，Anthropic 先走企业订阅通道",
+          "summary": "与 Google 给 Gemini for Mac 上 computer use、OpenAI 的 desktop agent 铺开放在一起，三大实验室在「智能体接管桌面」赛道全部就位，Anthropic 的特点是强调管理员控制与合规。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Google", "type": "company", "role": "competitor"},
+            {"name": "OpenAI", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["与上周 Google 给 Gemini for Mac 上 computer use", "OpenAI 的 desktop agent 铺开放在一起"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude Computer Use", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 的 11/20 发布说明新增一行：「Computer use (beta) for Team and Enterprise plans」"]},
+        {"source": "Claude Computer Use", "target": "Claude Team", "type": "integrated_in", "weight": 0.8, "evidence": ["面向 Claude Team 与 Enterprise 计划开放"]},
+        {"source": "Anthropic", "target": "Google", "type": "competes_with", "weight": 0.6, "evidence": ["与上周 Google 给 Gemini for Mac 上 computer use"]},
+        {"source": "Anthropic", "target": "OpenAI", "type": "competes_with", "weight": 0.6, "evidence": ["OpenAI 的 desktop agent 铺开放在一起"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "三大实验室在「智能体接管桌面」赛道全部就位，Anthropic 的差异化是先走企业订阅、强调管理员控制与合规，目标锁定有预算和合规要求的中大型组织而非消费端。"
+    },
+    {
+      "article_id": "2026-11-21-11",
+      "entities": [
+        {"name": "Siemens", "type": "company", "aliases": ["西门子"], "confidence": 0.95, "evidence": ["Siemens 在 Formnext 2026（法兰克福，11/21）与 AGIBOT、EOS、AM Solutions 联合展示"]},
+        {"name": "AGIBOT", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Siemens 在 Formnext 2026（法兰克福，11/21）与 AGIBOT、EOS、AM Solutions 联合展示"]},
+        {"name": "EOS", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Siemens 正与 EOS、AM Solutions 在 Erlangen 电子工厂规划"]},
+        {"name": "AM Solutions", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["AM Solutions 联合展示了面向增材制造的端到端「数字主线」"]},
+        {"name": "Designcenter", "type": "product", "aliases": ["Siemens Designcenter"], "confidence": 0.9, "evidence": ["在 Siemens Designcenter 中调整几何"]},
+        {"name": "MCP", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["整个流程通过 MCP 协议编排工程软件的各功能步骤"]},
+        {"name": "文本到抓手智能体", "type": "tool", "aliases": ["AI agent", "agentic 工作流"], "confidence": 0.85, "evidence": ["Siemens 与 AGIBOT 展示「文本到抓手」智能体"]},
+        {"name": "Karsten Heuser", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["Siemens 增材制造副总裁 Karsten Heuser 表示"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Siemens 在 Formnext 2026 展示从文本描述到增材制造数据的抓手设计 agentic 工作流",
+          "summary": "在法兰克福 Formnext 2026 上，Siemens 与 AGIBOT、EOS、AM Solutions 联合展示端到端「数字主线」：用户文本描述任务，AI agent 选择抓手类型、调整几何、仿真验证并把设计准备成可直接增材制造的数据。",
+          "participants": [
+            {"name": "Siemens", "type": "company", "role": "subject"},
+            {"name": "AGIBOT", "type": "company", "role": "partner"},
+            {"name": "文本到抓手智能体", "type": "tool", "role": "object"},
+            {"name": "MCP", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Siemens 在 Formnext 2026（法兰克福，11/21）与 AGIBOT、EOS、AM Solutions 联合展示", "整个流程通过 MCP 协议编排工程软件的各功能步骤"]
+        },
+        {
+          "type": "infra",
+          "label": "Siemens 与 EOS、AM Solutions 规划自适应生产单元，整合 AM 与后处理",
+          "summary": "下一步在 Erlangen 电子工厂规划把 AM、自动化与后处理整合进同一条产线的生产单元，让「设计端的灵活」延续到「制造端的灵活」。",
+          "participants": [
+            {"name": "Siemens", "type": "company", "role": "subject"},
+            {"name": "EOS", "type": "company", "role": "partner"},
+            {"name": "AM Solutions", "type": "company", "role": "partner"}
+          ],
+          "evidence": ["Siemens 正与 EOS、AM Solutions 在 Erlangen 电子工厂规划", "增材制造则是把个性化设计柔性变成实体零件的理想互补"]
+        }
+      ],
+      "relations": [
+        {"source": "Siemens", "target": "AGIBOT", "type": "partners_with", "weight": 0.7, "evidence": ["Siemens 在 Formnext 2026（法兰克福，11/21）与 AGIBOT、EOS、AM Solutions 联合展示"]},
+        {"source": "Designcenter", "target": "Siemens", "type": "developed_by", "weight": 0.8, "evidence": ["在 Siemens Designcenter 中调整几何"]},
+        {"source": "Siemens", "target": "EOS", "type": "partners_with", "weight": 0.7, "evidence": ["Siemens 正与 EOS、AM Solutions 在 Erlangen 电子工厂规划"]},
+        {"source": "Siemens", "target": "AM Solutions", "type": "partners_with", "weight": 0.7, "evidence": ["Siemens 在 Formnext 2026（法兰克福，11/21）与 AGIBOT、EOS、AM Solutions 联合展示"]},
+        {"source": "文本到抓手智能体", "target": "MCP", "type": "uses", "weight": 0.75, "evidence": ["整个流程通过 MCP 协议编排工程软件的各功能步骤"]},
+        {"source": "Karsten Heuser", "target": "Siemens", "type": "affiliated_with", "weight": 0.7, "evidence": ["Siemens 增材制造副总裁 Karsten Heuser 表示"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "工业软件巨头把 agent+MCP 作为下一代 CAD/CAE 交互范式，用户从逐个操作工程工具转向用自然语言描述让智能体编排工具链，增材制造成为把个性化设计柔性变成实体零件的落地补位。"
+    },
+    {
+      "article_id": "2026-11-21-12",
+      "entities": [
+        {"name": "Cursor", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Cursor——8 月被 SpaceX 以约 600 亿美元股权估值收购、其 Composer 2 编码模型构建在 Moonshot AI 的 Kimi K2.5 之上"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["8 月被 SpaceX 以约 600 亿美元股权估值收购"]},
+        {"name": "Moonshot AI", "type": "company", "aliases": ["月之暗面"], "confidence": 0.92, "evidence": ["其 Composer 2 编码模型构建在 Moonshot AI 的 Kimi K2.5 之上"]},
+        {"name": "Kimi K2.5", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["其 Composer 2 编码模型构建在 Moonshot AI 的 Kimi K2.5 之上"]},
+        {"name": "美国众议院", "type": "organization", "aliases": ["众议院"], "confidence": 0.9, "evidence": ["众议院国土安全委员会与中国问题特别委员会的报告显示"]},
+        {"name": "美国国家开源权重计划", "type": "policy", "aliases": ["国家美国开源权重计划"], "confidence": 0.9, "evidence": ["启动「国家美国开源权重计划」"]},
+        {"name": "DeepSeek", "type": "company", "aliases": ["深度求索"], "confidence": 0.8, "evidence": ["并在 10 月 DeepSeek 联邦禁用令的基础上"]},
+        {"name": "Airbnb", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["Airbnb 与 DoorDash 也接受了委员会关于其使用中国 AI 模型的质询"]},
+        {"name": "DoorDash", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["Airbnb 与 DoorDash 也接受了委员会关于其使用中国 AI 模型的质询"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "Cursor 告知国会正考虑因「地缘政治风险」淘汰中国开源权重模型",
+          "summary": "CNBC 独家报道的众议院报告显示，Cursor 已告知委员会，正考虑因「地缘政治风险」淘汰 PRC 开发的开源权重模型。",
+          "participants": [
+            {"name": "Cursor", "type": "product", "role": "subject"},
+            {"name": "美国众议院", "type": "organization", "role": "regulator"},
+            {"name": "Kimi K2.5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["正考虑「因地缘政治风险淘汰 PRC 开发的开源权重模型」"]
+        },
+        {
+          "type": "policy",
+          "label": "众议院报告建议推出美国国家开放权重计划并禁联邦系统使用 PRC 模型",
+          "summary": "报告建议启动「国家美国开源权重计划」，并在 10 月 DeepSeek 联邦禁用令基础上，禁止联邦信息系统与联邦合同中使用 PRC 开发的模型。",
+          "participants": [
+            {"name": "美国众议院", "type": "organization", "role": "subject"},
+            {"name": "美国国家开源权重计划", "type": "policy", "role": "object"},
+            {"name": "DeepSeek", "type": "company", "role": "object"}
+          ],
+          "evidence": ["在 10 月 DeepSeek 联邦禁用令的基础上", "启动「国家美国开源权重计划」"]
+        },
+        {
+          "type": "policy",
+          "label": "Airbnb 与 DoorDash 接受美国众议院关于使用中国 AI 模型的质询",
+          "summary": "Airbnb 与 DoorDash 也接受了委员会关于其使用中国 AI 模型的质询，美国对中国开源模型渗透美国技术栈的审查正从硬件出口管制扩展到软件供应链。",
+          "participants": [
+            {"name": "美国众议院", "type": "organization", "role": "regulator"},
+            {"name": "Airbnb", "type": "company", "role": "object"},
+            {"name": "DoorDash", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Airbnb 与 DoorDash 也接受了委员会关于其使用中国 AI 模型的质询"]
+        }
+      ],
+      "relations": [
+        {"source": "SpaceX", "target": "Cursor", "type": "acquires", "weight": 0.85, "evidence": ["8 月被 SpaceX 以约 600 亿美元股权估值收购"]},
+        {"source": "Kimi K2.5", "target": "Moonshot AI", "type": "developed_by", "weight": 0.85, "evidence": ["其 Composer 2 编码模型构建在 Moonshot AI 的 Kimi K2.5 之上"]},
+        {"source": "Cursor", "target": "Kimi K2.5", "type": "uses", "weight": 0.85, "evidence": ["其 Composer 2 编码模型构建在 Moonshot AI 的 Kimi K2.5 之上"]},
+        {"source": "美国众议院", "target": "DeepSeek", "type": "targets", "weight": 0.7, "evidence": ["在 10 月 DeepSeek 联邦禁用令的基础上"]}
+      ],
+      "metrics": [
+        {"name": "SpaceX 收购 Cursor 估值", "value": "约 600 亿美元股权估值"}
+      ],
+      "why_it_matters": "美国对中国 AI 技术渗透的审查从硬件出口管制扩展到软件供应链，Cursor 的选择定义了中国开源模型在前沿开发者中的政策与商业双重风向标，Kimi/Qwen/DeepSeek 的西半球采用正被重新衡量。"
+    },
+    {
+      "article_id": "2026-11-21-13",
+      "entities": [
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["AMD 11/20 发布 Nitro-P"]},
+        {"name": "Nitro-P", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["AMD 11/20 发布 Nitro-P，把 Nitro 家族从潜空间文生图推进到无 VAE 的像素空间设计"]},
+        {"name": "Instinct MI300X", "type": "hardware", "aliases": ["MI300X"], "confidence": 0.92, "evidence": ["在 Instinct MI300X 上，完整模型 512px 生成 10.26 samples/s"]},
+        {"name": "GenEval", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["GenEval 得分 0.88"]},
+        {"name": "PixelDiT", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["超过 NVLabs 的 PixelDiT（0.74）"]},
+        {"name": "NVLabs", "type": "organization", "aliases": [], "confidence": 0.8, "evidence": ["超过 NVLabs 的 PixelDiT（0.74）"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "AMD 发布无 VAE 的 679M 参数像素空间文生图模型 Nitro-P",
+          "summary": "Nitro-P 用轻量 U-Net 取代传统扩散模型的 VAE decoder，端到端直接生成像素，把 Nitro 家族从潜空间路线推进到无 VAE 像素空间设计，并全部开源。",
+          "participants": [
+            {"name": "AMD", "type": "company", "role": "subject"},
+            {"name": "Nitro-P", "type": "model", "role": "object"}
+          ],
+          "evidence": ["AMD 11/20 发布 Nitro-P，把 Nitro 家族从潜空间文生图推进到无 VAE 的像素空间设计", "用轻量 U-Net 取代传统扩散模型的 VAE decoder"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Nitro-P 在 MI300X 上 512px 达 10.26 samples/s、GenEval 0.88，超过 PixelDiT",
+          "summary": "在 Instinct MI300X 上，完整模型 512px 生成 10.26 samples/s、GenEval 得分 0.88；蒸馏单步变体达到 90.02 samples/s，1024px GenEval 0.87 超过 PixelDiT 的 0.74。",
+          "participants": [
+            {"name": "Nitro-P", "type": "model", "role": "subject"},
+            {"name": "Instinct MI300X", "type": "hardware", "role": "object"},
+            {"name": "GenEval", "type": "benchmark", "role": "benchmark"},
+            {"name": "PixelDiT", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["在 Instinct MI300X 上，完整模型 512px 生成 10.26 samples/s", "1024px 下 GenEval 0.87，超过 NVLabs 的 PixelDiT（0.74）"]
+        }
+      ],
+      "relations": [
+        {"source": "Nitro-P", "target": "AMD", "type": "developed_by", "weight": 0.9, "evidence": ["AMD 11/20 发布 Nitro-P"]},
+        {"source": "Nitro-P", "target": "Instinct MI300X", "type": "uses", "weight": 0.8, "evidence": ["在 Instinct MI300X 上，完整模型 512px 生成 10.26 samples/s"]},
+        {"source": "Nitro-P", "target": "GenEval", "type": "evaluated_on", "weight": 0.85, "evidence": ["GenEval 得分 0.88"]},
+        {"source": "Nitro-P", "target": "PixelDiT", "type": "outperforms", "weight": 0.75, "evidence": ["1024px 下 GenEval 0.87，超过 NVLabs 的 PixelDiT（0.74）"]},
+        {"source": "PixelDiT", "target": "NVLabs", "type": "developed_by", "weight": 0.7, "evidence": ["超过 NVLabs 的 PixelDiT（0.74）"]}
+      ],
+      "metrics": [
+        {"name": "参数量", "value": "679M"},
+        {"name": "512px 生成速度（完整模型）", "value": "10.26 samples/s"},
+        {"name": "GenEval 得分（512px）", "value": "0.88"},
+        {"name": "蒸馏单步变体速度", "value": "90.02 samples/s"},
+        {"name": "GenEval 得分（1024px）", "value": "0.87"},
+        {"name": "PixelDiT GenEval 得分", "value": "0.74"}
+      ],
+      "why_it_matters": "像素空间省去 VAE 编解码开销并配合蒸馏把高质量文生图推到接近实时交互的延迟区间，AMD 用「开源模型+自家 ROCm 硬件」直接向像素空间 SOTA 路径发起竞争，证明自家硬件的性价比。"
+    },
+    {
+      "article_id": "2026-11-21-14",
+      "entities": [
+        {"name": "METR", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["METR 在 Q4 能力更新中给出了最新的「时间线」数据"]},
+        {"name": "TH1.1", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 TH1.1 与 TH2 合并套件上"]},
+        {"name": "TH2 套件", "type": "benchmark", "aliases": ["TH2"], "confidence": 0.9, "evidence": ["在 TH1.1 与 TH2 合并套件上"]},
+        {"name": "Claude Opus 5.5", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["最接近的 Claude Opus 5.5 也只是「略高于门槛」"]},
+        {"name": "GPT-6 Astra", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Opus 5.5 给 GPT-6 Astra 设计的任务打分"]}
+      ],
+      "events": [
+        {
+          "type": "benchmark",
+          "label": "METR 发布 Q4 能力更新，可验证任务时间线每 3.6 个月翻倍",
+          "summary": "在 TH1.1 与 TH2 合并套件上，前沿模型能达到的人类任务时长约每 3.6 个月翻一倍（110 天），TH2 可验证子集约 1.65 个月翻倍，按趋势 2027 年 7 月触及 200 小时门槛。",
+          "participants": [
+            {"name": "METR", "type": "organization", "role": "subject"},
+            {"name": "TH1.1", "type": "benchmark", "role": "benchmark"},
+            {"name": "TH2 套件", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["METR 在 Q4 能力更新中给出了最新的「时间线」数据", "在 TH1.1 与 TH2 合并套件上"]
+        },
+        {
+          "type": "research",
+          "label": "METR 认为没有任何模型产出的 AI 评估有用，判断力仍是最明显短板",
+          "summary": "在「让模型设计 METR 认为有用的 AI 评估」任务中没有任何模型的设计被采用，最接近的 Claude Opus 5.5 也只是略高于门槛；AI 评委对同级模型的产出系统性高估。",
+          "participants": [
+            {"name": "METR", "type": "organization", "role": "subject"},
+            {"name": "Claude Opus 5.5", "type": "model", "role": "object"},
+            {"name": "GPT-6 Astra", "type": "model", "role": "object"}
+          ],
+          "evidence": ["没有任何模型产出的 AI 评估被 METR 认为有用", "Opus 5.5 给 GPT-6 Astra 设计的任务打分"]
+        }
+      ],
+      "relations": [
+        {"source": "METR", "target": "Claude Opus 5.5", "type": "evaluates", "weight": 0.8, "evidence": ["最接近的 Claude Opus 5.5 也只是「略高于门槛」"]},
+        {"source": "METR", "target": "GPT-6 Astra", "type": "evaluates", "weight": 0.75, "evidence": ["让模型设计 METR 认为有用的 AI 评估"]},
+        {"source": "Claude Opus 5.5", "target": "GPT-6 Astra", "type": "evaluates", "weight": 0.6, "evidence": ["Opus 5.5 给 GPT-6 Astra 设计的任务打分"]}
+      ],
+      "metrics": [
+        {"name": "可验证任务时间线翻倍周期", "value": "每 3.6 个月（110 天）"},
+        {"name": "TH2 可验证子集翻倍周期", "value": "约 1.65 个月"},
+        {"name": "触及 200 小时任务门槛预测时间", "value": "2027 年 7 月"},
+        {"name": "AI 评委对同级模型任务打分高估", "value": "平均约 0.2 分（满分 1）"}
+      ],
+      "why_it_matters": "可验证能力按 3.6 个月翻倍指数扩张，但「选对问题、判断好坏」的品味仍无模型达标，衡量 AI 是否加速 R&D 的指标从会不会写代码转向能不能判断好坏，这是难以 RL 的开放瓶颈。"
+    },
+    {
+      "article_id": "2026-11-21-15",
+      "entities": [
+        {"name": "Steven Rattner", "type": "person", "aliases": ["Rattner"], "confidence": 0.9, "evidence": ["金融分析师 Steven Rattner（Willett Advisors）基于公司披露与美联储数据估算"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 约 5300 名现任及前任内部人合计持股市值约 4330 亿美元"]},
+        {"name": "Dario Amodei", "type": "person", "aliases": ["Dario"], "confidence": 0.92, "evidence": ["七位联合创始人（Dario 与 Daniela Amodei、Jared Kaplan、Jack Clark、Chris Olah、Sam McCandlish、Tom Brown）"]},
+        {"name": "Daniela Amodei", "type": "person", "aliases": ["Daniela"], "confidence": 0.92, "evidence": ["七位联合创始人（Dario 与 Daniela Amodei、Jared Kaplan、Jack Clark、Chris Olah、Sam McCandlish、Tom Brown）"]},
+        {"name": "非创始人内部人", "type": "person", "aliases": ["非创始人内部人群体"], "confidence": 0.8, "evidence": ["非创始人内部人首日可出售锁定期持股的 10%"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Rattner 估算 Anthropic 约 5300 名内部人持股市值 4330 亿美元，超过美国最穷 4500 万家庭净资产",
+          "summary": "约 5300 名现任及前任内部人合计持股市值约 4330 亿美元，而美国最穷的约 4500 万家庭合计净资产为 4320 亿美元，一家成立五年公司的内部人财富超过美国 1/3 底层家庭财富总和。",
+          "participants": [
+            {"name": "Steven Rattner", "type": "person", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["金融分析师 Steven Rattner（Willett Advisors）基于公司披露与美联储数据估算", "Anthropic 约 5300 名现任及前任内部人合计持股市值约 4330 亿美元"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 上市首日开 111.50 美元、收 97.17 美元",
+          "summary": "Anthropic 上市首日股价开 111.50 美元、收 97.17 美元，非创始人内部人该日即可出售锁定期持股的 10%（约 3.15 亿股）。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "非创始人内部人", "type": "person", "role": "object"}
+          ],
+          "evidence": ["Ant 股价上市首日开 111.50 美元、收 97.17 美元"]
+        },
+        {
+          "type": "trend",
+          "label": "Anthropic 周五盘中一度跌约 13.5% 至 84 美元附近，解禁抛压显现",
+          "summary": "非创始人内部人上市首日即可出售锁定期持股的 10%（约 3.15 亿股），叠加高估值回调，周五盘中一度跌约 13.5% 至 84 美元附近，「解禁抛售 + 高估值回调」压力显现。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "object"},
+            {"name": "非创始人内部人", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["周五盘中一度跌约 13.5% 至 84 美元附近"]
+        }
+      ],
+      "relations": [
+        {"source": "Dario Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.85, "evidence": ["七位联合创始人（Dario 与 Daniela Amodei、Jared Kaplan、Jack Clark、Chris Olah、Sam McCandlish、Tom Brown）"]},
+        {"source": "Daniela Amodei", "target": "Anthropic", "type": "affiliated_with", "weight": 0.85, "evidence": ["七位联合创始人（Dario 与 Daniela Amodei、Jared Kaplan、Jack Clark、Chris Olah、Sam McCandlish、Tom Brown）"]},
+        {"source": "非创始人内部人", "target": "Anthropic", "type": "affiliated_with", "weight": 0.7, "evidence": ["非创始人内部人首日可出售锁定期持股的 10%"]}
+      ],
+      "metrics": [
+        {"name": "Anthropic 内部人持股市值", "value": "约 4330 亿美元"},
+        {"name": "内部人数量", "value": "约 5300 名"},
+        {"name": "美国最穷家庭数及净资产", "value": "约 4500 万家庭 / 4320 亿美元"},
+        {"name": "七位联合创始人持股市值", "value": "合计约 1630 亿美元"},
+        {"name": "员工期权与受限股（按 97.17 收盘计）", "value": "约 2700 亿美元"},
+        {"name": "员工平均行权价", "value": "2.91 美元"},
+        {"name": "持股超 1000 万美元员工数", "value": "约 2800 名"},
+        {"name": "早期千万富翁员工数", "value": "约 600 名"},
+        {"name": "首日可售锁定期持股比例", "value": "10%（约 3.15 亿股）"}
+      ],
+      "why_it_matters": "单家公司 IPO 一夜重排约三万内部人的财富位次、超过美国最穷 1/3 家庭总净资产，同时解禁抛压首日就显形，AI 财富集中问题与泡沫论被同一个数字同时推上台面。"
+    }
+  ]
+}

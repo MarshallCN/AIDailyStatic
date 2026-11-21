@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-21",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 86,
+  "summary": "抽取无硬事实错误、无关系方向反转，16 篇全部数字与原文逐条核对一致，实体/事件切分总体合规。主要问题集中在三处中型缺陷：2026-11-21-2 对『递归自我改进的一步』过度断言为论文 proposes 贡献、2026-11-21-15 把首日与次日股价数据混入同一事件标签且参与者遗漏核心主体、2026-11-21-3 把硬件提供方 NVIDIA 误标为事件 partner 角色。",
+  "findings": [
+    {
+      "article_id": "2026-11-21-2",
+      "severity": "medium",
+      "problem": "关系 \"arXiv:2611.21885 --proposes--> 递归自我改进\" 过度断言。原文只说作者『认为这是走向递归自我改进（recursive self-improvement）的必要一步』，论文并未把『递归自我改进』本身作为贡献『提出』；proposes 类关系只应表达论文明确声称的贡献，这里与同目标实体的 targets 关系语义重复、夸大了原文。",
+      "fix": "删除该 proposes 关系，只保留（或也删除）arXiv:2611.21885 --targets--> 递归自我改进；对『被作者认为是某方向的一步』这类方向性表述，不要生成 proposes/contribution 类关系，方向性连接用 targets 或直接省略。"
+    },
+    {
+      "article_id": "2026-11-21-15",
+      "severity": "medium",
+      "problem": "事件『Anthropic 上市首日开 111.50 收 97.17（周五盘中一度跌约 13.5% 至 84 美元附近），解禁抛压显现』把首日收盘数据（111.50/97.17，IPO 首日）与次日周五盘中跌 13.5% 至 84 美元两种不同时间点的数据压进同一个事件标签，时间表述混乱；参与者只列了 Anthropic，漏掉了承受解禁抛压的核心主体『非创始人内部人』；且关系 \"Steven Rattner --evaluates--> Anthropic\" 用 evaluates 不恰当（Rattner 是估算内部人持股财富，并非评估公司能力）。",
+      "fix": "将股价动作事件按日期拆分或明确标注时间点（首日 111.50→97.17 vs 次日盘中跌 13.5%），参与者加入『非创始人内部人』（其 10%/约 3.15 亿股即刻可卖才是解禁抛压主体）；把 Rattner 的关系类型从 evaluates 改为 analyzes/reports_on 之类或删除该关系。"
+    },
+    {
+      "article_id": "2026-11-21-3",
+      "severity": "medium",
+      "problem": "事件『Beam 在 10.5K GB300 上 4 周跑完超 1 亿次 RL rollout』的参与者把 NVIDIA 标为 role \"partner\"。原文只说在 10.5K 张 NVIDIA GB300 硬件上运行，NVIDIA 是硬件厂商而非 RL 训练的合作伙伴，该角色标注会误导后续生成 partners_with 关系。",
+      "fix": "从该事件参与者中移除 NVIDIA 的 \"partner\" 角色（如保留则改为 context/背景角色），并确保不在 Beam 与 NVIDIA 之间生成 partners_with 关系。"
+    }
+  ],
+  "lessons": [
+    "概念方向不等于论文贡献：原文说某方法『是走向X的必要一步』时，不要生成 paper --proposes--> X；proposes 只用于论文明确声称的贡献，方向性表述用 targets 或省略。",
+    "事件的参与者 role 要据实：硬件厂商、代工厂等在产品训练/部署事件中只是背景或供应链角色，不要标成 partner，也不要据此生成 partners_with 关系。",
+    "股价/IPO 类事件涉及多个时间点时，按日期拆分事件或明确标注时间点（首日 vs 次日盘中），不要把不同日期的数据混进同一事件标签。"
+  ]
+}
