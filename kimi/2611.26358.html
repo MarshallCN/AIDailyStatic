@@ -1,0 +1,583 @@
+<p class="faq-q"><strong>Q1</strong>: 这篇论文试图解决什么问题？</p>
+
+<div class="faq-a">
+
+该论文旨在解决**构建一个高效、高性能且安全的开放权重稀疏混合专家（MoE）语言模型**的问题，专门面向编码、推理与智能体（agentic）工作负载。具体而言，其核心目标可归纳为以下几个层面：
+
+### 1. 推理效率与模型规模的平衡
+- 论文试图突破传统稠密模型在推理阶段的高计算成本瓶颈，通过稀疏 MoE 架构（501.3B 总参数 / 23.4B 激活参数）实现**3–4 倍的推理计算节省**，同时仍达到或接近前沿模型的推理与代码能力（如 GLM-5.2、Qwen 3.8-Max 等级别）。
+
+### 2. 端到端训练与数据策展的系统性方法
+- **预训练（Pretraining）**：解决如何在 23.8T 高质量 token 上实现稳定、可预测的扩展（scaling）。论文提出了基于“计算效率（CE）”的扩展阶梯（scaling ladder）、数据受限子采样（DLS）以及领域定制的数据策展流程（针对 Web、代码、STEM/PDF 的专用过滤与质量分层），以在四个数量级的计算规模上保持可预测的验证损失下降。
+- **中期训练（Midtraining）**：解决如何在不损害通用能力的前提下，将有效上下文长度扩展至 **1M token**。通过两阶段中期训练（Stage 1 聚焦推理与代码，Stage 2 聚焦长上下文）以及基于正确性锚定的数据，实现了长上下文性能与通用能力的帕累托改进。
+
+### 3. 大规模异步强化学习（RL）与智能体能力培养
+- **后训练（Post-Training）**：解决如何通过高计算量的 RL campaign（在 10.5K GB300 GPU 上运行 4 周，生成超过 1 亿条 rollouts）来系统性提升模型在软件工程（SWE）、终端使用（Terminal）、数学/科学、竞技编程、网络搜索及通用工具使用等方面的智能体能力。
+- 论文重点解决了异步 RL 中的**策略陈旧性（policy staleness）、采样一致性、路由/数值一致性以及奖励作弊（reward hacking）**等工程与算法难题，使模型能够在持续增加 RL 计算量时仍不断提升性能，且未出现平台期。
+
+### 4. 多专家能力整合
+- 解决如何将两个独立训练的专家——**智能体专家（Agentic Expert，侧重推理与工具使用）**与**对齐专家（Alignment Teacher，侧重安全、有用性与对话质量）**——无缝合并为单一模型。论文采用**多教师在线策略蒸馏（MOPD）**，通过全词表反向 KL 散度和概率化教师路由，在保留各自专业能力的同时避免“分裂大脑”（split-braining）现象。
+
+### 5. 安全性与对齐
+- 解决开放权重模型在**拒绝有害请求**与**避免对无害请求过度拒绝**之间的权衡。通过审慎对齐（Deliberative Alignment）SFT、上下文感知的安全 RL、以及大规模红队测试，论文试图确保模型在达到最高有害请求拒绝率的同时，仍保持对合法请求的高 compliance 率（88.9% 拒绝/转移有害请求，81.5% 遵从无害请求）。
+- 在系统性风险评估（生物武器、化学武器、失控、网络攻击）下，论文通过大量内部与第三方评测，论证该模型的边际风险为“有限（Limited）”，即相对于现有开放权重模型并未造成实质性的攻防平衡偏移。
+
+### 6. 硬件-模型协同设计与部署效率
+- 解决如何在 GB300 NVL72 等最新硬件上实现高训练效率（21% MFU，92.3% goodput）与高效推理部署。包括 FP8/NVFP4 量化、1.93B 参数的投机解码草稿模型（DFlash 2），以及支持长上下文、MoE 路由重放和全词表蒸馏的异步 RL 基础设施。
+
+综上，该论文的核心贡献在于提供了一套**从数据策展、架构设计、长上下文扩展、大规模异步 RL 到多专家蒸馏与安全对齐的完整技术栈**，以推动开放权重模型在代码、推理与智能体任务上达到前沿性能，同时确保训练的可扩展性与部署的推理效率。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q2</strong>: 有哪些相关研究？</p>
+
+<div class="faq-a">
+
+与 Beam 模型相关的研究可从架构设计、数据策展、后训练算法、安全对齐及系统基础设施等维度进行梳理。
+
+---
+
+### 1. 模型架构与预训练基础
+
+**Transformer 与稀疏专家混合（MoE）**
+- 基础架构方面，Beam 基于decoder-only Transformer与稀疏MoE范式，相关工作包括 Vaswani 等提出的原始 Transformer 架构[^2^]，以及 Shazeer 等提出的稀疏门控 MoE 层[^1^]。
+- 在专家路由与负载均衡上，Beam 采用了 DeepSeek-AI 等提出的**辅助损失自由（auxiliary-loss-free）负载均衡**策略[^19^]，并结合序列级平衡与自适应偏置更新以提升大规模训练稳定性。
+
+**归一化、注意力与位置编码**
+- Beam 使用 SandwichNorm[^3^][^4^][^5^]、RMSNorm[^12^] 与深度缩放残差连接（DSRes）以抑制深层网络的激活爆炸。
+- 注意力机制上，采用了 Group Query Attention（GQA）[^6^]、QK 归一化[^7^]、交错局部-全局注意力[^4^][^8^]、RoPE[^9^] 与 NoPE[^14^]，并引入元素级门控注意力（gated attention）[^15^]来抑制投影后的异常激活。
+
+**激活与初始化**
+- 专家激活使用 SwiGLU[^10^]；输出 logits 采用软上限（soft capping）[^13^]；线性层与嵌入层遵循标准的 fan-in 初始化。
+
+---
+
+### 2. 数据策展与扩展律
+
+**网络与领域数据过滤**
+- 在 web 数据策展中，Beam 参考了 MassiveWeb[^28^]、RefinedWeb[^29^]、DCLM[^30^]、FineWeb-Edu[^31^] 与 OLMo 3[^32^] 的质量分层与启发式过滤思想，并在此基础上提出**域分区（domain partitioning）**与**质量感知上采样（quality-aware upsampling）**流程。
+- 语言识别使用 fastText[^33^][^34^] 与 GlotLID[^36^]；代码数据的语言检测借鉴 go-enry[^37^] 与 Magika[^38^]。
+- PDF/OCR 处理与结构化转换 pipeline 参考了相关文档理解与 VLM OCR 技术。
+
+**扩展律与超参数调优**
+- 计算效率（CE）评估与 scaling ladder 方法参考了 Microsoft AI Team 的 MAI-Thinking-1[^24^]。
+- 数据受限子采样（DLS）源于 Muennighoff 等的工作[^25^]。
+- 峰值学习率与权重衰减的扩展律拟合遵循 Bjorck 等[^26^]与 Malladi 等[^27^]关于学习率随模型规模、batch size 与 token 规模乘性缩放的研究。
+
+---
+
+### 3. 后训练与强化学习
+
+**推理与数学强化学习**
+- Beam 的 RL 核心采用 **GRPO（Group Relative Policy Optimization）**[^44^]，并在完全异步设置下执行，借鉴了 in-flight weight updates[^45^] 与 partial rollouts[^46^]。
+- 采样一致性方面，采用 nucleus sampling[^47^] 并在训练时重放采样核（nucleus replay）[^48^]，以消除生成与训练分布之间的支持集不匹配。
+- MoE 路由一致性通过 **routing replay**[^49^] 保持，避免训练-推理数值差异导致专家选择偏移。
+
+**软件工程（SWE）与智能体任务**
+- SWE 任务环境构建参考了 SWE-Universe[^53^]、DockSmith[^54^]、SPICE[^55^] 及多个开源 SWE 语料库（SWE-Gym[^56^]、R2E-Gym[^57^]、Multi-SWE-RL[^58^]、MEnvData[^59^]、SWE-smith[^60^]、Scale-SWE[^61^]）。
+- 终端使用（Terminal）任务基于 Harbor 格式[^63^] 构建；评测参考 Terminal-Bench[^62^]。
+- 网络搜索任务参考 InfoSeek[^74^]、OpenSeeker[^75^] 与 DeepDive[^76^]。
+
+**数学与科学验证**
+- 数学答案验证基于 SymPy[^69^] 与 math-verify[^70^] 库；科学问题与大学数学合成 pipeline 参考了 OpenMathReasoning[^66^]、MathNet[^67^] 等相关数据工作。
+
+---
+
+### 4. 模型融合、蒸馏与推理优化
+
+**多教师在线策略蒸馏
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q3</strong>: 论文如何解决这个问题？</p>
+
+<div class="faq-a">
+
+Beam 通过贯穿预训练、中期训练、后训练及部署全阶段的系统性设计，解决了高效能开放权重 MoE 模型的构建问题。以下从架构、数据、训练算法、专家融合与基础设施五个维度展开说明。
+
+---
+
+### 1. 模型架构：稳定且高效的稀疏 MoE 设计
+
+**稀疏专家激活与负载均衡**
+Beam 采用 decoder-only 稀疏 MoE 架构，总参数量 $501.3\,\text{B}$，每 token 激活 $23.4\,\text{B}$ 参数。路由机制使用 sigmoid 门控的 top-$k$ 选择，并引入 DeepSeek 风格的**辅助损失自由负载均衡**[^19^]。为进一步提升稳定性，论文设计了**自适应专家偏置更新策略**：
+$$
+\eta_{\text{bias}}(t) = \frac{1}{2}\eta_{\text{bias}}^{\max}\left[1 + \cos\left(\pi \max\left(0, \frac{t - T_w}{T - T_w}\right)\right)\right]
+$$
+其中 $T_w$ 为预热步数，$T$ 为总训练步数。该策略在预热期保持恒定偏置更新，随后随余弦学习率同步衰减，显著改善大规模训练后期的路由稳定性。
+
+**残差流稳定性控制**
+针对深层网络激活爆炸问题，Beam 提出**深度缩放残差连接（Depth-Scaled Residual, DSRes）**：
+$$
+\mathbf{x}_n = \frac{1}{\sqrt{n}}\sum_{t=1}^{n}\mathbf{h}_t
+$$
+其中 $n$ 为累积子层数。该设计在保持 RMSNorm 尺度不变性的同时，将残差流范数约束为与层数无关的常数，并可通过递归形式高效计算：
+$$
+\mathbf{x}_n = \frac{\sqrt{n-1}}{\sqrt{n}}\mathbf{x}_{n-1} + \frac{1}{\sqrt{n}}\mathbf{h}_n
+$$
+
+**注意力与位置编码**
+采用 $5:1$ 交错局部-全局注意力，局部层使用 RoPE（基频 $10{,}000$，窗口 $512$），全局层使用 NoPE。结合 GQA（48 query heads / 8 KV heads）、QK 归一化与**元素级门控注意力**：
+$$
+\mathbf{g}_h = \sigma(\mathbf{G}_h\mathbf{x} + \mathbf{b}_h)
+$$
+通过将偏置初始化为 $-2.5$、门控矩阵初始化为极小值，有效抑制注意力输出投影后的激活异常。
+
+---
+
+### 2. 数据策展：质量-数量权衡与领域定制
+
+**分领域过滤管道**
+Web 数据被划分为 math、code、STEM、English、non-English 五个域，每个域独立应用启发式规则与分类器过滤。对于技术域（math、code、STEM），标准 MassiveWeb 风格过滤器会误删 $80\!-\!88\%$ 的高质量 token；Beam 通过**域分区**与专用质量分类器，保留了约 $1.8\,\text{T}$ 本会被剔除的技术 token。
+
+**质量感知上采样**
+基于内部训练的细粒度质量分类器，将 English web 语料划分为二十个质量层级，采用截断指数衰减的重复率曲线，对高质量层级进行约 $1.5\times$ 平均重复率的上采样，相比均匀采样提升约 $10\%$ 的计算效率。
+
+**STEM/PDF 的 OCR 与后处理**
+论文构建了可水平扩展的 GPU OCR pipeline，使用 vLLM 作为推理引擎，并针对 H100、H200、RTX Pro 6000 等加速器进行 per-accelerator 参数扫描。OCR 后执行多阶段质检：
+- **重复检测器**：基于文本压缩比、最长重复子串、计数循环等特征的逻辑回归模型，对严重重复 case 的召回率达 $99.3\%$，误杀率仅 $0.06\%$；
+- **空白页过滤**：利用 MSER 与 Sauvola 自适应二值化检测页面字符连通分量，实现 $98.2\%$ 精度与 $96.5\%$ 召回；
+- **文档级过滤**：剔除平均 OCR 置信度低于 $0.8$ 或字符密度过低的文档。
+
+**去重与数据受限子采样（DLS）**
+采用 MinHash + LSH 进行模糊去重，并在 scaling ladder 各层级应用 DLS：按训练 token 比例缩减可用数据，使小模型的数据重复次数与最终大模型一致，从而准确建模目标规模的数据重复效应。
+
+---
+
+### 3. 训练方法论：可预测的扩展与长上下文衔接
+
+**预训练优化器与超参数**
+使用 **AdamC** 优化器，配合解耦权重衰减与学习率的平方余弦衰减 schedule。通过将峰值学习率 $\eta_{\max}$ 与权重衰减 $\lambda_{\max}$ 重新参数化为**有效学习率**与**稳态参数范数**，将二维调优降维为一维 $\alpha$ 网格搜索：
+$$
+\eta&#x27;_{\text{eff}} = \alpha \eta_{\text{eff,base}}, \quad \lambda&#x27;_{\max} = \alpha^2 \lambda_{\max,\text{base}}, \quad \eta&#x27;_{\max} = \alpha \eta_{\max,\text{base}}
+$$
+拟合得到的扩展律显示，$\eta_{\max}$ 随 token 规模按 $D^{-0.32}$、随 batch size 按 $B^{0.5}$ 缩放。
+
+**中期训练的两阶段上下文扩展**
+- **Stage 1**：在 $32\,\text{K}$ 上下文上训练 $850\,\text{B}$ token，聚焦 STEM、竞技编程、软件工程与终端使用，禁用 MoE 序列辅助损失与偏置更新，允许专家特化；
+- **Stage 2**：在 $512\,\text{K}$ 上下文上训练 $100\,\text{B}$ token，混合 $50\%$ 有机长文本（书籍、论文、代码库）、$15\%$ 合成长上下文 QA 与 $35\%$  recall 数据，将有效上下文扩展至 $1\,\text{M}$ token。
+
+---
+
+### 4. 后训练：双专家异步 RL 与能力合并
+
+**Agentic Expert 的高计算量 RL**
+Agentic Expert 在 $10.5\,\text{K}$ GB300 GPU 上进行了为期四周的异步 RL，生成超过 $1$ 亿条 rollouts。训练采用 **GRPO** 变体，关键工程措施包括：
+- **异步 rollout 与 policy staleness 控制**：推理节点每完成一个优化步即更新权重，在途 rollouts 允许跨多个 policy 版本完成，通过记录每 token 的 policy 版本来管理；
+- **采样一致性**：使用 nucleus sampling（$p=0.99$）并在训练时重放采样核，避免截断分布外的梯度；
+- **路由重放（Routing Replay）**：冻结路由器权重，但在 RL 中重放生成阶段记录的专家选择，避免数值漂移导致 top-$k$ 专家变化；
+- **奖励完整性**：对 SWE 与终端任务，通过独立 judge 模型对通过 verifier 的提交进行 reward-hacking 检测，被判为作弊的 rollout 奖励归零。
+
+**Alignment Teacher 的价值对齐**
+Alignment Teacher 通过 SFT 与 RL 学习安全、准确性、指令遵循与有用性。其 RL 环境包括：
+- **知识校准**：使用三元奖励（正确 $1.0$ / 拒绝 $0.5$ / 错误 $0.0$），并通过难度分层采样确保拒绝与回答边界始终有梯度信号；
+- **长上下文忠实性**：基于 SQL 引擎的合成 pipeline 生成可验证的长上下文任务，避免 judge 在长输入上的可靠性衰减；
+- **RLAIF 对话质量**：使用生成式奖励模型与 nine-attribute 评判标准，在内部 arena 上通过 Bradley-Terry 模型拟合 Elo，最终达到约 $1044$ Elo，处于开放模型帕累托前沿。
+
+**多教师在线策略蒸馏（MOPD）**
+为合并两个专家，论文采用概率化路由：对每个任务族按预设比例采样 Agentic 或 Alignment Teacher 作为监督源。蒸馏目标为全词表反向 KL：
+$$
+\hat{\mathcal{L}}(\theta) = \frac{1}{M}\sum_{i=1}^{M}\frac{1}{R}\sum_{j=1}^{R}\frac{1}{|\mathcal{T}_{ij}|}\sum_{t\in\mathcal{T}_{ij}} D_{\text{KL}}\left( \pi_\theta(\cdot \mid x_i, y_{ij,&lt;t}) \,\|\, \pi_{T_{ij}}(\cdot \mid x_i, y_{ij,&lt;t}) \right)
+$$
+通过传输教师隐藏状态而非完整 logits，并在 trainer 上以分块（chunk size $C$）方式计算 KL，将临时显存占用从 $O(NV)$ 降至 $O(CV)$。
+
+---
+
+### 5. 基础设施、量化与部署效率
+
+**硬件-模型协同设计**
+- 预训练在 $6{,}144$ GB300 GPU 上完成，稳态 MFU 达 $21\%$，goodput 达 $92.3\%$；
+- 采用拓扑感知放置，将 TP 与 EP 限制在 NVLink 域内，每 NVL72 机架预留 $2$ 个节点作为热备；
+- 异步 checkpoint 服务隔离了序列化与存储 I/O，预训练每 $250$ 步保存 $7.7\,\text{TB}$ checkpoint，RL 每 $2$ 步保存 $14.5\,\text{TB}$。
+
+**量化与投机解码**
+- 支持 **FP8** 与 **NVFP4** 量化：NVFP4 使用局部 Hessian 感知权重量化，配合 FP8 KV cache，在几乎无损下游性能的前提下大幅降低显存占用；
+- 部署 **DFlash 2** 投机解码：$1.93\,\text{B}$ 参数的 draft 模型，通过块级扩散并行生成候选 token，与主模型协同提升吞吐。
+
+---
+
+### 6. 安全：从预训练到部署的纵深防御
+
+**数据层**：预训练阶段过滤有害内容、NSFW 与 PII，降低记忆化风险。
+
+**后训练层**：
+- **审慎对齐 SFT（Deliberative Alignment）**：先生成带安全策略的候选轨迹，再经模型重写去除策略痕迹，使模型在训练时未见策略文本，仅保留推理行为；
+- **上下文感知安全 RL**：混合单轮、多轮、越狱与智能体任务，使用 $1:5$ 的无害-有害比例，通过了解对话历史与越狱意图的 judge 给出拒绝/遵从奖励；
+- **规模效应**：将 Alignment Teacher 从 $100\,\text{B}$ 扩展至 $501\,\text{B}$ 参数，在同等训练设置下将无害请求误拒率相对降低 $48.7\%$。
+
+**评估层**：在 Open Safety Framework 下，Beam 在生物武器、化学武器、失控、网络攻击四类系统性风险上均被评为 **Limited**；在 Iris Safety Evaluations（ISE）中，对有害请求拒绝/转移率达 $88.9\%$，对无害请求遵从率达 $81.5\%$，处于观察到的帕累托前沿。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q4</strong>: 论文做了哪些实验？</p>
+
+<div class="faq-a">
+
+论文围绕预训练扩展、数据策展、中期训练、后训练对齐、系统基础设施及安全评估六个维度开展了大量实验，具体可归纳如下。
+
+---
+
+### 1. 预训练：扩展律与数据消融实验
+
+**Scaling Ladder 与计算效率验证**
+- 在从约 $300\,\text{M}$ 到 $6\,\text{B}$ active parameters 的多个层级上训练固定 tokens-per-parameter（TPP）的基线模型，拟合 FLOPs-到-验证损失的幂律 $L_{\text{base}}(C) = aC^b + c$。
+- 对每个干预（architecture、data 或 numerics）计算**计算效率（Compute Efficiency, CE）**：
+  $$
+  \text{CE}(C, L) = \frac{1}{C}\left(\frac{L - c}{a}\right)^{1/b}
+  $$
+  要求跨层级 CE 提升超过 $5\%$ 且模型稳定，才接受该干预（Section 2.1.3）。
+
+**质量分类器对比实验**
+- 在三个分类器级评估（Natural holdout Keep-AUC、Binary evaluation AUC、Ordinal evaluation Spearman）上对比 DCLM、FineWeb-Edu 与内部训练的 fastText/in-house 分类器（Table 5）。
+- 进一步在 scaling ladder 上进行**数据消融**：用各分类器将 English web 划分为质量层级后，在固定上采样 schedule 下训练，测量 ladder-average CE。内部 in-house 分类器相对 DCLM fastText 达到 $1.35\times$ CE（Figure 6）。
+
+**域分区与过滤效率实验**
+- 对比分区过滤与标准 MassiveWeb 过滤器：后者会删除 web-STEM、web-code、web-math 中 $80\!-\!88\%$ 的 token（约 $1.8\,\text{T}$）。
+- 以**过滤效率** $e(F) = (\bar{q}_{\text{tok}}(D_{\text{keep}}) - \bar{q}_{\text{tok}}(D)) / r_{\text{tok}}(F)$ 为指标，迭代搜索各域的启发式规则（Figure 5, Table 4）。
+
+**数据受限子采样（DLS）验证**
+- 在 scaling ladder 的每一层按训练 token 比例缩减可用数据，保持各来源的 epoch 数与目标运行一致，以准确投影数据重复效应（Section 2.1.3）。
+
+---
+
+### 2. 中期训练：上下文扩展与数据混合实验
+
+**Stage 1 数据消融**
+- 使用较小规模 proxy run（50% 稳定混合 + 50% 新数据源）评估各数据源对训练动态与下游能力的影响。
+- 通过**尖峰分析（spike analysis）**定位导致损失/梯度范数异常的损坏 batch，并建立定制化过滤器（Section 3.4）。
+
+**Stage 2 混合比例网格搜索**
+- 在有机长上下文数据（书籍、论文、代码库）、合成长上下文 QA 与 recall 数据之间进行混合比例搜索。
+- 最终选定 $50\% / 15\% / 35\%$ 的配比，在 RULER 512K 上提升 $+58.4\,\text{pp}$，同时在 HellaSwag、MMLU-Pro 等短上下文基准上控制回退（Figure 14）。
+
+---
+
+### 3. 后训练：强化学习与对齐实验
+
+**Agentic Expert RL 动力学诊断**
+- 监控全局梯度范数（中位数 $1.7\times 10^{-3}$）、采样-训练策略间每 token KL 散度（中位数 $2.2\times 10^{-4}$ nats）与采样 token 负对数似然（$0.37 \to 0.50$ nats）随训练进度的变化（Figure 15）。
+- 验证 nucleus sampling 重放与 routing replay 对训练-推理一致性的影响。
+
+**推理预算与性能权衡实验**
+- 在 DeepSWE 上测量 pass@1 随**推理 effort**（$e \in \{64,128,256,512\}$）与**实际输出长度**的关系。RL 训练后在相同长度下达到更高性能，并扩展了有效推理预算范围（Figure 16）。
+
+**单领域训练的跨域泛化实验**
+- 在 RL 的 $26\!-\!52\%$ 阶段仅训练数学/STEM/代码，$52\!-\!65\%$ 阶段仅训练 SWE。
+- 结果显示：SWE 基准在 STEM-only 阶段保持稳定；STEM/代码基准在 SWE-only 阶段无回退；BrowseComp 在未直接训练搜索任务前即从 $50.1$ 提升至 $57.9$（Figure 17）。
+
+**Alignment Teacher 行为预测实验**
+- 基于 SFT checkpoint 的 replicator-type 方程预测 RL 中各行为（rigid scaffolding、unnecessary formatting）的演化：
+  $$
+  \frac{dL}{dt} \approx 2\kappa_\eta g \pi(1-\pi)
+  $$
+  其中 $g$ 为组内选择性优势。在 $318$ 次 post-training run 上，该方程对奖励增益的预测相关系数达 $r=0.79$，并能准确预测 misbehavior 是被放大还是抑制（Figure 25）。
+
+**知识校准（Knowledge Calibration）实验**
+- 使用三元奖励（correct $1.0$ / declined $0.5$ / wrong $0.0$）训练模型在封闭书本问答中主动拒绝不确定问题。
+- 训练前，$41\%$ 的低推理 effort 拒绝样本在高 effort 下变为错误答案；训练后该比例降至 $12\%$（Figure 26）。
+- 在 AA-Omniscience 外部集上，幻觉率（非正确答案中错误答案占比）从 $53\%$ 降至 $33\%$，准确率保持 $31\% \to 32\%$。
+
+**长上下文忠实性实验**
+- 对比两种 RL 环境：基于 judge 的 Long-Context Grounded Queries 与基于 SQL 引擎的 Verifiable Rewards。
+- 在 LongBench-v2 上，Beam 达到 $67\%$ 准确率，超过人类专家参考（$50.1\%$），并在同规模模型中处于帕累托前沿（Figure 28）。
+
+**对话质量 RLAIF 实验**
+- 使用 nine-attribute 评判标准与 Bradley-Terry 模型拟合内部 arena Elo。最终 Alignment Teacher 达到约 $1044$ Elo，相对 GLM 5.2 的人类验证胜率为 $56.3\%$，与 arena 预测 $56.5\%$ 吻合（Figure 29）。
+
+---
+
+### 4. 模型合并与量化实验
+
+**多教师在线策略蒸馏（MOPD）验证**
+- 对比合并后的学生模型与 Agentic / Alignment 两个教师：学生在 Agentic 编码、数学科学、指令遵循、安全等车道上广泛恢复或超越教师性能（Table 11）。
+- **Split brain 测试**：构造融合两种教师提示分布特征的混合任务，未发现显著性能退化（Section 4.3.4）。
+
+**量化精度对比**
+- 评估 BF16、FP8、NVFP4 三种精度下的下游性能与 KV cache 配置（Section 4.5）。
+- NVFP4 配合 FP8 KV cache 在 LongBench-v2 等长上下文任务上保持与 BF16 接近的准确率（Figure 28）。
+
+---
+
+### 5. 系统性能与基础设施实验
+
+**训练效率测量**
+- 预训练稳态 **MFU** 为 $21\%$（ amortized $18\%$）；中期训练（32K）中位数 MFU $13.7\%$，512K 上下文为 $7.7\%$（Table 25）。
+-
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q5</strong>: 有什么可以进一步探索的点？</p>
+
+<div class="faq-a">
+
+基于 Beam 的技术报告，以下是可以进一步探索的研究方向，按技术层次分类。
+
+---
+
+### 1. 架构稳定性与效率的深层理论
+
+**深度缩放残差连接（DSRes）的理论扩展**
+论文在独立同分布假设下推导了 DSRes 的范数保持性质：
+$$
+\mathbf{x}_n = \frac{1}{\sqrt{n}}\sum_{t=1}^{n}\mathbf{h}_t
+$$
+可进一步探索非独立子层输出（如存在残差相关性）下的理论保证，以及 DSRes 与初始化方案（如深度缩放增益初始化 $1/\sqrt{L}$）的联合优化空间。
+
+**自适应专家路由的泛化性**
+Beam 提出了随余弦学习率同步衰减的专家偏置更新策略：
+$$
+\eta_{\text{bias}}(t) = \frac{1}{2}\eta_{\text{bias}}^{\max}\left[1 + \cos\left(\pi \max\left(0, \frac{t-T_w}{T-T_w}\right)\right)\right]
+$$
+该策略在 Beam 的 $256$ 专家、$52$ 层架构上验证有效，但其在不同专家数量、不同负载均衡机制（如 shared experts vs. non-shared）及不同任务分布下的最优衰减形式仍待系统研究。
+
+**注意力模式的动态优化**
+Beam 采用固定的 $5:1$ 局部-全局注意力交错比例。可探索任务自适应或学习型的注意力跨度分配，以及 NoPE 全局层与 RoPE 局部层的最优组合策略。
+
+---
+
+### 2. 数据策展的自动化与多模态扩展
+
+**质量评估的跨域迁移**
+论文训练了专门针对 English web、STEM 与 code 的质量分类器，并通过 scaling ladder 验证了下游 CE 增益。可研究单一通用质量模型在跨域、跨语言场景下的鲁棒性，以及利用更强基础模型（如多模态大模型）替代人工标注 judge 的可行性。
+
+**PDF 与 STEM 数据的多模态 OCR 增强**
+当前 OCR pipeline 将文档转为结构化 Markdown，依赖 VLM 进行页面级转录。进一步可探索：
+- 原生多模态预训练（直接在页面图像 + 文本上训练）是否优于纯文本 OCR 输出；
+- 数学公式与表格的结构化表示优化（如 LaTeX/MathML 与原生的联合编码）。
+
+**数据混合的动态优化**
+论文通过网格搜索确定了 Stage 2 长上下文数据的最优混合比例（$50\%$ 有机 / $15\%$ 合成 / $35\%$ recall）。可引入在线数据混合策略（如基于下游验证损失的梯度反馈）自动调整各数据源的采样权重，减少人工搜索成本。
+
+---
+
+### 3. 中期训练：专家特化与长上下文权衡
+
+**专家特化的边界与遗忘控制**
+中期训练 Stage 1 中禁用了 MoE 序列辅助损失与偏置更新，允许专家针对 STEM 与代码特化。需进一步探索：
+- 该策略是否会导致预训练阶段获得的通用能力永久退化；
+- 特化专家在后续通用任务上的激活稀疏性变化；
+- 重新引入轻量负载均衡约束的最优时机与强度。
+
+**上下文扩展的连续学习机制**
+Beam 采用两阶段离散扩展（$32\text{K} \to 512\text{K}$）。可探索渐进式上下文扩展（如每次倍增并配合位置编码插值或 NTK-aware 扩展）是否能进一步降低长上下文引入的 perplexity 尖峰，并减少 recall 数据的依赖。
+
+---
+
+### 4. 大规模异步强化学习的理论与工程
+
+**Policy Staleness 的理论边界**
+论文记录了异步 RL 中采样-训练策略的 KL 散度（中位数 $2.2\times 10^{-4}$ nats），但未给出收敛性保证。可建立异步 actor-critic / policy gradient 在 MoE 路由重放与 nucleus 采样下的偏差-方差分析，推导最大可容忍的 rollout 延迟与策略版本差异。
+
+**动态推理预算分配**
+Beam 使用离散的 reasoning effort（$e \in \{64,128,256,512\}$）控制 rollout 预算，并观察到性能随预算单调提升。进一步可探索：
+- 任务自适应的推理预算预测（如在 trajectory 初期估计所需思考长度）；
+- 在 RL 奖励中引入更精细的长度成本函数（如次线性惩罚或基于任务难度的动态阈值）。
+
+**奖励完整性的自动防御**
+当前依赖人工更新 judge rubric 来捕捉新出现的 reward hacking。可研究：
+- 对抗性生成器-判别器框架，自动生成并防御 hacking 策略；
+- 基于因果推断的轨迹分析，区分“真正完成任务”与“利用验证器漏洞”的行为模式。
+
+---
+
+### 5. 多教师蒸馏与能力合并
+
+**MOPD 的理论分析与路由学习**
+论文采用固定概率的硬路由（$r(x)$）选择监督教师。可探索：
+- 可学习的路由网络，根据输入动态分配教师权重；
+- MOPD 在超过两个教师时的扩展性，以及学生容量与教师数量之间的最优配比；
+- 全词表反向 KL 与 forward KL、JS 散度等其他蒸馏目标在异步设置下的比较。
+
+**分裂大脑（Split Braining）的深度诊断**
+尽管论文在混合任务上未发现显著的性能退化，但可构建更精细的神经级探针（如层间表示相似性、注意力头专业化模式），检测学生在不同提示分布下的内部状态切换行为。
+
+---
+
+### 6. 安全对齐的规模化与机制理解
+
+**模型容量与安全-有用权衡的因果关系**
+论文观察到将 Alignment Teacher 从 $100\text{B}$ 扩展至 $501\text{B}$ 参数，在相同训练设置下将过度拒绝率相对降低 $48.7\%$。需进一步验证：
+- 该现象是否普遍存在于其他安全训练框架；
+- 容量扩展改善的是“对无害请求的细微语义区分能力”还是“对安全策略的鲁棒记忆”；
+- 是否存在容量阈值，超过后有害请求拒绝率不再显著下降。
+
+**上下文感知安全 RL 的对抗压力测试**
+当前安全 RL 使用固定的多任务混合（单轮、多轮、越狱、智能体）。可探索：
+- 自适应对抗用户策略（如基于模型的攻击者）在训练循环中的动态集成；
+- 跨语言、跨模态（如图像中的隐藏指令）的越狱防御；
+- 工具使用场景下的间接提示注入与沙箱逃逸的联合训练。
+
+---
+
+### 7. 系统效率与部署优化
+
+**量化极限与感知一致性**
+论文验证了 NVFP4 + FP8 KV cache 在 LongBench-v2 上的有效性。可进一步探索：
+- 更低精度（如 INT4 权重、INT8 KV）在长上下文推理中的误差传播；
+- 量化感知训练（QAT）与后训练量化的差距，特别是在 MoE 门控与注意力激活上的敏感性差异。
+
+**投机解码的草稿模型设计**
+DFlash 2 使用 $1.93\text{B}$ 参数的独立 draft 模型。可研究：
+- 从主模型蒸馏出的超轻量 draft 模型（如单层或 Mamba 架构）的接受率与延迟权衡；
+- 基于任务难度动态切换 draft 策略（简单任务用高接受率小模型，复杂任务退化为自回归）。
+
+**故障恢复与训练连续性**
+论文实现了异步检查点与本地推理恢复。可进一步探索：
+- 基于模型状态冗余（如纠删码）的无需回滚容错训练；
+- RL rollout 的优先级重放缓冲区，在节点故障时最大化保留高价值轨迹。
+
+---
+
+### 8. 真实世界风险评估与验证
+
+**湿实验验证（Wet-Lab Validation）**
+论文提到正在对更强模型进行湿实验试验。对 Beam 本身，可设计受控的分子生物学协议验证实验，将模型生成的 DNA 片段设计、合成筛选规避等方案在真实实验室中执行，量化从“计算正确”到“实验成功”的转化率。
+
+**长期自主性实时评估**
+与 Andon Labs 的合作正在开展真实商业环境（自动售货业务与封闭经济）中的长期自主性测试。需持续跟踪：
+- 模型在开放经济中是否表现出资源积累与权力寻租倾向；
+- 人类干预频率随模型能力提升的变化趋势；
+- 从真实部署中提取的可复现场景对安全缓解措施的回测有效性。
+
+**跨框架红队测试的标准化**
+论文整合了 Gray Swan Shade、IPI Arena、Irregular 网络评估等多源测试结果。可推动建立开放权重的标准化红队基准（类似 ISE 的开源计划），涵盖对抗性鲁棒性、奖励作弊与间接提示注入的统一评测协议。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q6</strong>: 总结一下论文的主要内容</p>
+
+<div class="faq-a">
+
+Beam 是 Reflection 推出的首个开放权重稀疏混合专家（MoE）模型，专为编码、推理与智能体（agentic）任务设计。以下从模型架构、训练流程、基础设施、安全性与评估结果五个维度总结其核心内容。
+
+---
+
+### 1. 模型架构与核心参数
+
+Beam 采用 decoder-only 稀疏 MoE 架构，关键配置如下：
+
+| 配置项 | 数值 |
+|--------|------|
+| 总参数量 | $501.3\,\text{B}$ |
+| 每 token 激活参数量 | $23.4\,\text{B}$ |
+| 层数 | $52$ |
+| 每层专家数 | $256$ |
+| 每 token 激活专家数 | $8$ |
+| 隐藏维度 | $5120$ |
+| 词表大小 | $151{,}936$ |
+| 最大上下文长度 | $1\,\text{M}$ tokens |
+
+**关键架构创新**
+- **深度缩放残差连接（DSRes）**：将残差流按累积子层数的平方根缩放，即
+  $$
+  \mathbf{x}_n = \frac{1}{\sqrt{n}}\sum_{t=1}^{n}\mathbf{h}_t
+  $$
+  以约束深层激活范数，避免爆炸。
+- **自适应专家偏置衰减**：负载均衡偏置的学习率随主学习率余弦衰减同步调整：
+  $$
+  \eta_{\text{bias}}(t) = \frac{1}{2}\eta_{\text{bias}}^{\max}\left[1 + \cos\left(\pi \max\left(0, \frac{t-T_w}{T-T_w}\right)\right)\right]
+  $$
+  显著提升大规模训练后期的路由稳定性。
+- **交错局部-全局注意力**：局部层使用 RoPE（窗口 $512$），全局层使用 NoPE，配合 GQA 与 QK 归一化降低 KV cache 占用。
+- **门控注意力**：通过可学习的门控向量抑制注意力输出投影后的激活异常。
+
+---
+
+### 2. 训练流程：三阶段递进
+
+#### 2.1 预训练（Pretraining）
+- **数据规模**：在 $23.8\,\text{T}$ 高质量 token 上训练，混合 English web（$35\%$）、Code（$35.47\%$）、STEM（$23.87\%$）及多语言数据。
+- **数据策展**：采用**域分区**（math/code/STEM/English/non-English）与**质量感知上采样**（基于细粒度质量分类器对 top tier 数据给予约 $1.5\times$ 重复率），并构建了可水平扩展的 GPU OCR pipeline 处理 PDF 与 STEM 文档。
+- **扩展方法论**：建立 scaling ladder（$300\,\text{M}$ 至 $23.4\,\text{B}$ active parameters），通过**计算效率（CE）**指标筛选架构与数据干预：
+  $$
+  \text{CE}(C, L) = \frac{1}{C}\left(\frac{L-c}{a}\right)^{1/b}
+  $$
+  并引入**数据受限子采样（DLS）**确保小模型实验能准确反映大模型的数据重复效应。
+- **超参数调优**：将 AdamC 的峰值学习率与权重衰减重新参数化为**有效学习率**与**稳态参数范数**，把二维搜索降为一维 $\alpha$ 网格搜索。
+- **训练效率**：在 $6{,}144$ 张 NVIDIA GB300 GPU 上完成端到端训练，稳态 MFU 达 $21\%$，最终阶段 goodput 达 $92.3\%$。
+
+#### 2.2 中期训练（Midtraining）
+两阶段衔接预训练与后训练：
+- **Stage 1**：$850\,\text{B}$ tokens，$32\text{K}$ 上下文，聚焦 STEM、竞技编程、软件工程与终端使用。**禁用 MoE 序列辅助损失与偏置更新**，允许专家特化。
+- **Stage 2**：$100\,\text{B}$ tokens，$512\text{K}$ 上下文，采用 $50\%$ 有机长文本、$15\%$ 合成长上下文 QA、$35\%$ recall 数据的配比，将有效上下文扩展至 $1\,\text{M}$ tokens，且在 RULER 等长上下文基准上提升显著，短上下文能力基本保持。
+
+#### 2.3 后训练（Post-Training）
+采用**双专家分离训练 + 蒸馏合并**范式：
+
+**Agentic Expert**
+- 短 SFT 建立工具调用与推理格式后，进行**大规模异步 RL**：在约 $10.5\text{K}$ GB300 GPU 上运行 4 周，生成超过 $1$ 亿条 rollouts，采用 GRPO 变体。
+- 关键稳定技术：**nucleus sampling 重放**（训练时对齐生成核）、**routing replay**（冻结路由器并复用生成阶段专家选择）、**FP32 残差流与路由器**减少数值漂移。
+- 引入**推理 effort** 输入与线性长度惩罚，训练模型在不同计算预算间自适应分配思考长度。
+
+**Alignment Teacher**
+- 单独训练以学习安全、准确性、指令遵循与对话质量。
+- **知识校准**：使用三元奖励（correct $1.0$ / declined $0.5$ / wrong $0.0$），使模型在不确定时主动拒绝，降低幻觉率。
+- **RLAIF**：基于 nine-attribute 评判标准与生成式奖励模型，在内部 arena 上持续优化对话质量，最终 Elo 约 $1044$，处于开放模型帕累托前沿。
+
+**多教师在线策略蒸馏（MOPD）**
+- 将上述两专家通过全词表反向 KL 散度合并为单一学生模型：
+  $$
+  \hat{\mathcal{L}}(\theta) = \frac{1}{M}\sum_{i=1}^{M}\frac{1}{R}\sum_{j=1}^{R}\frac{1}{|\mathcal{T}_{ij}|}\sum_{t\in\mathcal{T}_{ij}} D_{\text{KL}}\left( \pi_\theta(\cdot \mid x_i, y_{ij,&lt;t}) \,\|\, \pi_{T_{ij}}(\cdot \mid x_i, y_{ij,&lt;t}) \right)
+  $$
+- 采用概率化任务路由（如代码任务全由 Agentic 教师监督，对话安全全由 Alignment 教师监督），并通过传输隐藏状态与分块计算将显存占用从 $O(NV)$ 降至 $O(CV)$。
+
+---
+
+### 3. 基础设施与部署效率
+
+- **训练框架 Unicron**：基于 Megatron-LM，支持 attention 与 MoE 的并行折叠（Parallel Folding），结合 TP/CP/DP/EP 等多维并行。
+- **异步检查点**：将序列化与存储 I/O 隔离到独立服务，实现近乎零开销的频繁 checkpoint（RL 每 $2$ 步保存 $14.5\,\text{TB}$）。
+- **Sandbox 架构**：支持 gVisor 与 Kata Containers 双隔离后端，覆盖 $20+$ 集群的多云多区域部署，用于 RL 任务执行与评测。
+- **量化与投机解码**：支持 FP8 与 NVFP4 权重量化（配合 FP8 KV cache），并部署 $1.93\,\text{B}$ 参数的 DFlash 2 投机解码草稿模型，显著提升推理吞吐。
+
+---
+
+### 4. 安全性与对齐
+
+**纵深防御体系**
+- **预训练**：过滤有害内容、NSFW、PII 与重复数据。
+- **SFT**：采用 Deliberative Alignment——先以策略生成安全轨迹，再重写去除策略文本痕迹，使模型内化推理而非背诵规则。
+- **RL**：安全环境固定占数据混合的 $5\%$，覆盖单轮、多轮、越狱与智能体工具使用场景，采用上下文感知的 judge（可见对话历史、越狱意图与危险动作）。
+
+**评估结果**
+- **Iris Safety Evaluations (ISE)**：Beam 对有害请求（C3/C4）的拒绝/转移率达 $88.9\%$，对无害请求（C1/C2）的遵从率达 $81.5\%$，处于观察到的开放模型帕累托前沿。
+- **Open Safety Framework (OSF)**：在生物武器、化学武器、失控、网络攻击四类系统性风险上均被评为 **Limited**（即未造成相对于现有开放权重模型的实质性威胁升级）。
+- **规模效应实验**：将 Alignment Teacher 从 $100\,\text{B}$ 扩展至 $501\,\text{B}$ 参数，在同等安全训练设置下，无害请求过度拒绝率相对降低 $48.7\%$。
+
+---
+
+### 5. 核心评估表现
+
+Beam 在多项基准上达到或接近开放权重前沿水平：
+- **Agentic 编码**：DeepSWE、SWE-bench Verified/Pro 等持续随 RL 计算增加而提升，未出现平台期。
+- **数学与科学**：AIME 2026、GPQA-Diamond、LiveCodeBench v6 等随训练稳步增长。
+- **长上下文**：LongBench-v2 达到 $67\%$ 准确率，超过人类专家参考（$50.1\%$），在同规模模型中处于帕累托前沿。
+- **工具使用与搜索**：BrowseComp 在未直接训练搜索任务前即从 $50.1$ 提升至 $57.9$，展现强跨域泛化。
+
+---
+
+### 6. 开放发布
+
+Beam 以 Apache 2.0 许可证发布，提供 BF16、FP8、NVFP4 三种精度格式及投机解码草稿模型权重，并配套开源安全评估工具 Iris Safety Evaluations（ISE）。
+
+
+
+</div>
+
+<p class="faq-q"><strong>Q7</strong>: 想要进一步了解论文</p>
+
+<div class="faq-a">
+
+以上只是了解一篇论文的几个基本FAQ。如果你还想与Kimi进一步讨论该论文，请点击 <a href="http://kimi.com/_prefill_chat?prefill_prompt=我们要讨论的论文是Beam%20Model%20Technical%20Report，链接是 https://arxiv.org/pdf/2611.26358 ，已有的FAQ链接是 https://papers.cool/arxiv/kimi?paper=2611.26358 。请以此为基础，继续回答我后面的问题。&system_prompt=你是一个学术助手，后面的对话将围绕着以下论文内容进行，已经通过链接给出了论文的PDF和论文已有的FAQ。用户将继续向你咨询论文的相关问题，请你作出专业的回答，不要出现第一人称，当涉及到分点回答时，鼓励你以markdown格式输出。&send_immediately=false" target="_blank"><strong>这里 <i class="fa fa-external-link"></i></strong></a> 为你跳转Kimi AI网页版，并启动一个与该论文相关的新会话。
+
+</div>
