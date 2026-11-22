@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-22",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 70,
+  "summary": "主要问题：一条把调查对象臆断为业务关系的幻觉边（2026-11-22-1 的 NVIDIA--supplies-->Megaspeed），以及多处反向重复边（developed_by 与 released_by 成对同时出现）、关系类型误用（ICRC--regulates-->自主武器、俄罗斯--restricts-->自主武器）。",
+  "findings": [
+    {
+      "article_id": "2026-11-22-1",
+      "severity": "high",
+      "problem": "关系 \"NVIDIA --supplies--> Megaspeed\" 是幻觉。原文只说 SEC 与加州总检察长调查「先进芯片或机密信息是否流入中国」，矛头指向新加坡的 Megaspeed——这是调查对象/待核实嫌疑，并不构成 NVIDIA 向 Megaspeed 供应芯片的既成事实。现有证据（\"调查矛头指向新加坡的 Megaspeed\"）支撑的是「被调查」关系，不是「供应」关系。",
+      "fix": "删除该关系；若坚持保留，应改为无既定事实指向的方向并标注为调查嫌疑（如 Megaspeed --targets--> 无），但更稳妥的做法是直接不建边，因为原文没有任何关于 NVIDIA 与 Megaspeed 业务往来的被陈述为事实的内容。"
+    },
+    {
+      "article_id": "2026-11-22-9",
+      "severity": "medium",
+      "problem": "同一事实生成了两条反向重复边：\"Entra Connect Health --developed_by--> Microsoft\" 与 \"Microsoft --released_by--> Entra Connect Health\" 都在表达「微软开发/发布了 Entra Connect Health」，方向的 verifier 是同一主体，属于冗余对偶边,会让图谱同一条关系出现两条含义重叠的边。",
+      "fix": "只保留一条规范方向（edvicebely：X --developed_by--> Y 表示 X 由 Y 开发，保留 Entra Connect Health --developed_by--> Microsoft），删除反向的 released_by 边，或在保留 released_by 时删除 developed_by，二选一。"
+    },
+    {
+      "article_id": "2026-11-22-5",
+      "severity": "medium",
+      "problem": "冗余对偶边重复：\"Frostbite --developed_by--> Architect Labs\" 与 \"Architect Labs --released_by--> Frostbite\" 指向同一事实（Architect Labs 开发了 Frostbite），成对出现使关系重复计数，图谱冗余。",
+      "fix": "保留一条规范边（Frostbite --developed_by--> Architect Labs），删除反向重复的 \"Architect Labs --released_by--> Frostbite\"。"
+    },
+    {
+      "article_id": "2026-11-22-11",
+      "severity": "medium",
+      "problem": "关系类型误用/方向反了：① \"红十字国际委员会 --regulates--> 自主武器\" 不成立——ICRC 在原文中只是会后「警告窗口会关闭」，它是呼吁方/观察方，没有对自主武器的监管权，regulates 类型失实。② \"俄罗斯 --restricts--> 自主武器\" 语义错——原文是俄罗斯带头拖延、阻挠达成约束性条约，即阻挠对自主武器的限制，而非限制自主武器，方向与动词都反了。",
+      "fix": "①删除 ICRC --regulates--> 自主武器 这条边（ICRC 在本新闻中无任何监管动作），如需保留可改为 \"红十字国际委员会 --warns_on--> 自主武器\"（若该类型存在）或直接不建边。②将俄罗斯的边改为表示「阻挠/反对限制」的方向，例如 source=俄罗斯 target=联合国或自主武器,type=opposes/obstructs，不要用 restricts。"
+    },
+    {
+      "article_id": "2026-11-22-2",
+      "severity": "medium",
+      "problem": "事件切分重复：两个 trend 事件（\"重估 2030 净零目标\" 与 \"排放与用电增长快于同行\"）主体、证据几乎重叠，都围绕 Meta 2025 排放数据展开，区别只在对微软/谷歌/亚马逊的对比，与其拆成两个事件不如合并或明确第二事件聚焦的对照关系。",
+      "fix": "合并为一个「Meta 2025 排放增 45% 并重估 2030 净零目标」事件，把微软/谷歌/亚马逊的对比作为该事件的上下文而非单独第二个事件；或若保留两个事件，让第二个事件专门表述 comparative 关系而不重复排放/重估主体的陈述。"
+    }
+  ],
+  "lessons": [
+    "涉调查/监管类新闻中，被点名调查的对象不构成与主体既成的业务关系（如供应、合作），没有原文陈述为事实的往来就不要建业务边。",
+    "生成关系时，同一事实只保留一条规范方向的边，不要同时产出 developed_by 与其反向的 released_by 等对偶重复边。",
+    "只有真正行使监管权或身处被监管位置的主体才能用 regulates/restricts 类关系；仅表态、警告、呼吁的主体不要用监管型关系类型。"
+  ]
+}

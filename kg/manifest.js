@@ -1,6 +1,7 @@
 window.KG_MANIFEST = {
-  version: '20261121231908',
+  version: '20261122231730',
   files: [
+    '2026-11-22.json',
     '2026-11-21.json',
     '2026-11-20.json',
     '2026-11-19.json',

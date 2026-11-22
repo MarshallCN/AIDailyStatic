@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-22",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 86,
+  "summary": "整体抽取质量高，未发现事实幻觉或关系方向颠倒，事件切分与指标基本准确。主要问题是若干关系的证据字符串与该关系不直接匹配（CoreWeave 供应类、Entra 的 uses）、一处事件类型用错（议提案标成 trend）、以及自主武器概念被拆成两个近重复实体削弱连通性。",
+  "findings": [
+    {
+      "article_id": "2026-11-22-3",
+      "severity": "medium",
+      "problem": "关系 CoreWeave --supplies--> OpenAI 与 CoreWeave --supplies--> Anthropic 所附的证据字符串都是「英伟达还投资了其客户（OpenAI、Anthropic 等）」，这句话只证明英伟达投资了客户，并未直接陈述 CoreWeave 为 OpenAI/Anthropic 供应算力。证据与所标关系的主体对不一致，读者无法凭该证据验证供应关系。",
+      "fix": "改为引用原文中能把 OpenAI、Anthropic 定位成 CoreWeave 客户的表述（原文「其客户（OpenAI、Anthropic 等）」本身即把两者指向 CoreWeave 的客户），或在证据中直接采用能支撑 supply 语义的原文短语；同时保持 NVIDIA --invests_in--> OpenAI/Anthropic 两条关系的现有证据不变。"
+    },
+    {
+      "article_id": "2026-11-22-9",
+      "severity": "medium",
+      "problem": "关系 Entra Connect Health --uses--> Entra 管理中心 方向与语义模糊：原文是「该 API 用于让管理员通过 Entra 管理中心监控……」，即 Entra Connect Health API 是通过中心管理门户被读取/展示的对象，不是它主动「使用」管理中心；uses 这个动作词无法准确表达被动被监控的关系。",
+      "fix": "删除这条关系，或改为语义准确的方向与类型（若保留，应表达『Entra Connect Health 的健康数据通过 Entra 管理中心呈现给管理员』这一被管理关系，而非主动 uses）；不要为凑关系数保留语义不清的边。"
+    },
+    {
+      "article_id": "2026-11-22-0",
+      "severity": "medium",
+      "problem": "事件 2 类型标为 trend 不当：Pachocki 提出「三层自律——共同安全规范、共同上限、越限前置条件」是具体、可执行的政策/倡议行为，而非市场趋势；且文中明确命名的模型 GPT-3.5（对数困惑度约 0.99，与 GPT-4 并列作为公开数据主体）未被抽成实体，导致与其他提及 GPT-3.5 的文章无法连通。",
+      "fix": "将事件 2 的 type 改为 policy（或 proposal/倡议类事件），它是针对行业的监管倡议而非趋势；并新增实体 GPT-3.5（type=model，证据为「GPT-3.5 的对数困惑度约 0.99」），同时补充其与 OpenAI 的 developed_by 关系。"
+    },
+    {
+      "article_id": "2026-11-22-11",
+      "severity": "medium",
+      "problem": "自主武器（topic）与自主武器约束性条约（policy）是同一概念的两次物化，被拆成两个近重复实体，削弱同概念跨文章连通性；且关系 联合国 --seeks_to_regulate--> 自主武器 的证据（「128 个缔约方同意拟定一项国际文件」）实际支撑的是『同意拟定（非约束性）文件』，与 seeks_to_regulate 的管控语义不符。",
+      "fix": "将两实体合并为单一概念实体（保留自主武器或自主武器管控其一，另一并入 aliases），避免同概念分裂；seeks_to_regulate 关系的证据改为明确表达『联合国就自主武器管控进行约束性谈判』的原文，或将其降为描述非约束文件产出的低强度关系（如 agrees_to_draft）。"
+    }
+  ],
+  "lessons": [
+    "每条关系的证据字符串必须直接支撑它所标注的关系主体对：若关系只能由上下文推断，就引用最能支撑该语义的原文短语，不要引用只涉及另一主角（如投资方）的句子充数。",
+    "区分事件类型：个人/机构提出的具体、可执行的监管或倡议动议应标为 policy 类事件，只有市场长期性走向才标 trend，不要用 trend 兜底。",
+    "不要把同一概念的不同表述拆成多个近重复实体（topic 版 vs policy 版）；应合并为一个实体并纳入别名，并按关系语义挑选匹配的原文证据。"
+  ]
+}

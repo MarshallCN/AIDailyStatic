@@ -1,0 +1,557 @@
+{
+  "date": "2026-11-22",
+  "articles": [
+    {
+      "article_id": "2026-11-22-0",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.98, "evidence": ["OpenAI 首次公开预训练困惑度数据", "OpenAI 首席科学家 Jakub Pachocki 发文"]},
+        {"name": "Jakub Pachocki", "type": "person", "aliases": ["Pachocki"], "confidence": 0.97, "evidence": ["OpenAI 首席科学家 Jakub Pachocki 发文", "Pachocki 预期在 0.68–0.7 区间还会出现新一轮能力的跃升"]},
+        {"name": "GPT-4", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["GPT-4 约 0.91"]},
+        {"name": "未具名新模型", "type": "model", "aliases": ["一个未具名的新模型"], "confidence": 0.88, "evidence": ["一个未具名的新模型约 0.76"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "OpenAI 首次公开预训练困惑度数据，公开 GPT-3.5、GPT-4 与未具名新模型的交叉熵损失",
+          "summary": "OpenAI 首席科学家 Jakub Pachocki 发文首次公开公司内部预训练困惑度数据，GPT-3.5 约 0.99、GPT-4 约 0.91、未具名新模型约 0.76。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Jakub Pachocki", "type": "person", "role": "subject"},
+            {"name": "GPT-4", "type": "model", "role": "object"},
+            {"name": "未具名新模型", "type": "model", "role": "object"}
+          ],
+          "evidence": ["OpenAI 首次公开预训练困惑度数据", "首次公开公司内部预训练困惑度（交叉熵损失）数据", "一个未具名的新模型约 0.76"]
+        },
+        {
+          "type": "trend",
+          "label": "Jakub Pachocki 提议行业设立基于困惑度的共同开发上限",
+          "summary": "Pachocki 提议三层自律：共同设置评估与红衣对抗安全规范、承诺不越过以困惑度等度量定义的共同上限、为越限设定达到具体里程碑的前置条件。",
+          "participants": [
+            {"name": "Jakub Pachocki", "type": "person", "role": "subject"},
+            {"name": "OpenAI", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["提议行业设立「基于困惑度的共同上限」", "承诺不越过以困惑度等度量定义的共同上限"]
+        }
+      ],
+      "relations": [
+        {"source": "Jakub Pachocki", "target": "OpenAI", "type": "affiliated_with", "weight": 0.9, "evidence": ["OpenAI 首席科学家 Jakub Pachocki 发文"]},
+        {"source": "GPT-4", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["GPT-4 约 0.91"]},
+        {"source": "未具名新模型", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["一个未具名的新模型约 0.76"]},
+        {"source": "未具名新模型", "target": "GPT-4", "type": "achieves_lower_perplexity", "weight": 0.8, "evidence": ["一个未具名的新模型约 0.76（对数困惑度低于 GPT-4 的约 0.91）"]}
+      ],
+      "metrics": [
+        {"name": "GPT-3.5 对数困惑度", "value": "约 0.99"},
+        {"name": "GPT-4 对数困惑度", "value": "约 0.91"},
+        {"name": "未具名新模型对数困惑度", "value": "约 0.76"},
+        {"name": "变革性能力涌现阈值", "value": "0.8 以下"},
+        {"name": "能力新一轮跃升预期区间", "value": "0.68–0.7"}
+      ],
+      "why_it_matters": "把「监控能力何时追上能力」落成一个可跨实验室追踪、可对齐的困惑度数值，为在外部强制冻结诉讼压力之外的自愿行业自律提供了可执行路标，同时让竞争对手看清 OpenAI 的相对位置。"
+    },
+    {
+      "article_id": "2026-11-22-1",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.98, "evidence": ["英伟达周五单日下跌 14%", "SEC 执行人员正在审查英伟达潜在的会计问题"]},
+        {"name": "黄仁勋", "type": "person", "aliases": ["Jensen Huang"], "confidence": 0.97, "evidence": ["自黄仁勋 11 月 12 日辞职以来连续第七周收跌"]},
+        {"name": "SEC", "type": "organization", "aliases": ["美国证券交易委员会"], "confidence": 0.95, "evidence": ["SEC 执行人员正在审查英伟达潜在的会计问题"]},
+        {"name": "Rob Bonta", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["加州总检察长 Rob Bonta 则发出调查传票"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["对 AI 算力建设的可持续性与 Google、AMD 的竞争感到不安"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["对 AI 算力建设的可持续性与 Google、AMD 的竞争感到不安"]},
+        {"name": "Megaspeed", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["调查矛头指向新加坡的 Megaspeed"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "英伟达连续七周收跌，市值蒸发约 2.6 万亿美元",
+          "summary": "英伟达周五单日下跌 14%，自黄仁勋 11 月 12 日辞职以来连续第七周收跌，累计跌幅约 46%，市值约 3 万亿美元。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "黄仁勋", "type": "person", "role": "object"},
+            {"name": "Google", "type": "company", "role": "competitor"},
+            {"name": "AMD", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["英伟达周五单日下跌 14%", "连续第七周收跌", "市值蒸发约 2.6 万亿美元"]
+        },
+        {
+          "type": "policy",
+          "label": "SEC 审查英伟达会计问题，加州总检察长发传票调查芯片入华",
+          "summary": "SEC 执行人员审查英伟达潜在会计问题，加州总检察长 Rob Bonta 发出调查传票，矛头指向新加坡的 Megaspeed 及黄仁勋的往来。",
+          "participants": [
+            {"name": "SEC", "type": "organization", "role": "regulator"},
+            {"name": "Rob Bonta", "type": "person", "role": "regulator"},
+            {"name": "NVIDIA", "type": "company", "role": "object"},
+            {"name": "Megaspeed", "type": "company", "role": "object"}
+          ],
+          "evidence": ["SEC 执行人员正在审查英伟达潜在的会计问题", "加州总检察长 Rob Bonta 则发出调查传票", "调查矛头指向新加坡的 Megaspeed"]
+        }
+      ],
+      "relations": [
+        {"source": "黄仁勋", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.9, "evidence": ["自黄仁勋 11 月 12 日辞职以来连续第七周收跌"]},
+        {"source": "SEC", "target": "NVIDIA", "type": "regulates", "weight": 0.9, "evidence": ["SEC 执行人员正在审查英伟达潜在的会计问题"]},
+        {"source": "Rob Bonta", "target": "NVIDIA", "type": "regulates", "weight": 0.85, "evidence": ["加州总检察长 Rob Bonta 则发出调查传票"]},
+        {"source": "Rob Bonta", "target": "Megaspeed", "type": "targets", "weight": 0.8, "evidence": ["调查矛头指向新加坡的 Megaspeed"]},
+        {"source": "NVIDIA", "target": "Google", "type": "competes_with", "weight": 0.8, "evidence": ["对 AI 算力建设的可持续性与 Google、AMD 的竞争感到不安"]},
+        {"source": "NVIDIA", "target": "AMD", "type": "competes_with", "weight": 0.8, "evidence": ["对 AI 算力建设的可持续性与 Google、AMD 的竞争感到不安"]}
+      ],
+      "metrics": [
+        {"name": "周五单日跌幅", "value": "14%"},
+        {"name": "周连跌时长", "value": "连续第七周收跌"},
+        {"name": "累计跌幅", "value": "约 46%"},
+        {"name": "市值蒸发", "value": "约 2.6 万亿美元"},
+        {"name": "当前市值", "value": "约 3 万亿美元"},
+        {"name": "季度营收", "value": "1158 亿美元"},
+        {"name": "下财年增长指引", "value": "75%"}
+      ],
+      "why_it_matters": "英伟达在营收翻倍的超预期财报后仍遭 7 周连跌、市值蒸发 2.6 万亿，市场定价重心已从业绩转向 AI 泡沫与 SEC、加州合规调查叠加的治理风险。"
+    },
+    {
+      "article_id": "2026-11-22-2",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.97, "evidence": ["Meta 2025 年用电量上升 35%", "公司正「重新评估时间线、顺序与中期里程碑，包括 2030 净零目标」"]},
+        {"name": "Rachel Peterson", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Meta 数据中心副总裁 Rachel Peterson 与可持续发展负责人 Blair Swedeen"]},
+        {"name": "Blair Swedeen", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["Meta 数据中心副总裁 Rachel Peterson 与可持续发展负责人 Blair Swedeen"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.9, "evidence": ["微软、谷歌、亚马逊同期排放增幅较小（约 16%–25%）"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.9, "evidence": ["微软、谷歌、亚马逊同期排放增幅较小（约 16%–25%）"]},
+        {"name": "亚马逊", "type": "company", "aliases": ["Amazon"], "confidence": 0.9, "evidence": ["微软、谷歌、亚马逊同期排放增幅较小（约 16%–25%）"]},
+        {"name": "2030 净零目标", "type": "topic", "aliases": ["2030 净零时间表"], "confidence": 0.9, "evidence": ["包括 2030 净零目标"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Meta 2025 年排放增 45% 至 1180 万吨并重估 2030 净零目标，增幅快于微软谷歌亚马逊",
+          "summary": "Meta 年度可持续发展报告显示 2025 年净排放增 45% 至 1180 万吨二氧化碳当量、用电量上升 35%，公司正重新评估 2030 净零时间表；排放增长主要来自供应链间接排放，增幅显著快于微软、谷歌、亚马逊（约 16%–25%）。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "Rachel Peterson", "type": "person", "role": "subject"},
+            {"name": "Blair Swedeen", "type": "person", "role": "subject"},
+            {"name": "2030 净零目标", "type": "topic", "role": "object"},
+            {"name": "Microsoft", "type": "company", "role": "competitor"},
+            {"name": "Google", "type": "company", "role": "competitor"},
+            {"name": "亚马逊", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["2025 年净排放增 45% 至 1180 万吨二氧化碳当量", "包括 2030 净零目标", "排放增长主要来自供应链", "微软、谷歌、亚马逊同期排放增幅较小（约 16%–25%）"]
+        }
+      ],
+      "relations": [
+        {"source": "Rachel Peterson", "target": "Meta", "type": "affiliated_with", "weight": 0.9, "evidence": ["Meta 数据中心副总裁 Rachel Peterson 与可持续发展负责人 Blair Swedeen"]},
+        {"source": "Blair Swedeen", "target": "Meta", "type": "affiliated_with", "weight": 0.9, "evidence": ["Meta 数据中心副总裁 Rachel Peterson 与可持续发展负责人 Blair Swedeen"]},
+        {"source": "Meta", "target": "Microsoft", "type": "compared_with", "weight": 0.75, "evidence": ["微软、谷歌、亚马逊同期排放增幅较小（约 16%–25%）"]},
+        {"source": "Meta", "target": "Google", "type": "compared_with", "weight": 0.75, "evidence": ["微软、谷歌、亚马逊同期排放增幅较小（约 16%–25%）"]},
+        {"source": "Meta", "target": "亚马逊", "type": "compared_with", "weight": 0.75, "evidence": ["微软、谷歌、亚马逊同期排放增幅较小（约 16%–25%）"]}
+      ],
+      "metrics": [
+        {"name": "2025 年净排放增幅", "value": "45%"},
+        {"name": "2025 年净排放总量", "value": "1180 万吨二氧化碳当量"},
+        {"name": "2025 年用电量增幅", "value": "35%"},
+        {"name": "清洁能源签约规模", "value": "超 30 吉瓦（覆盖 7 国 28 州）"},
+        {"name": "已发电清洁能源", "value": "约 12 吉瓦"},
+        {"name": "同行排放增幅", "value": "约 16%–25%"}
+      ],
+      "why_it_matters": "Meta 既是全球最大清洁能源买家之一又因数据中心用电激增重估 2030 净零目标，AI 基建的碳成本与气候承诺之间的真实张力被官方年度数据首次量化暴露。"
+    },
+    {
+      "article_id": "2026-11-22-3",
+      "entities": [
+        {"name": "CoreWeave", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["负债 470 亿美元", "上一季度营收 36.6 亿美元"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.96, "evidence": ["英伟达持股约 11% 并另签 63 亿美元算力保底协议"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.92, "evidence": ["英伟达还投资了其客户（OpenAI、Anthropic 等）"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["英伟达还投资了其客户（OpenAI、Anthropic 等）"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "CoreWeave 负债升至 470 亿美元，以债务驱动 AI 算力扩张的模式遭审视",
+          "summary": "The Guardian 报道 CoreWeave 负债 470 亿美元，其中逾百亿美元明年到期，上一季度净亏损 7.09 亿、利息支出 8.46 亿美元。",
+          "participants": [
+            {"name": "CoreWeave", "type": "company", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "funder"},
+            {"name": "OpenAI", "type": "company", "role": "object"},
+            {"name": "Anthropic", "type": "company", "role": "object"}
+          ],
+          "evidence": ["负债 470 亿美元", "其中逾百亿美元明年到期", "上一季度营收 36.6 亿美元、净亏损 7.09 亿、利息支出 8.46 亿美元"]
+        },
+        {
+          "type": "funding",
+          "label": "英伟达持股 CoreWeave 约 11% 并签 63 亿美元算力保底协议托底",
+          "summary": "英伟达持有 CoreWeave 约 11% 股份，并以 63 亿美元协议承诺购买其无法售出的算力，还投资了 OpenAI、Anthropic 等客户，形成资金循环。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "funder"},
+            {"name": "CoreWeave", "type": "company", "role": "object"}
+          ],
+          "evidence": ["英伟达持股约 11% 并另签 63 亿美元算力保底协议", "形成「英伟达的钱经客户流入 CoreWeave，再回流为芯片采购」的循环"]
+        }
+      ],
+      "relations": [
+        {"source": "NVIDIA", "target": "CoreWeave", "type": "invests_in", "weight": 0.9, "evidence": ["英伟达持股约 11% 并另签 63 亿美元算力保底协议"]},
+        {"source": "NVIDIA", "target": "CoreWeave", "type": "supplies", "weight": 0.8, "evidence": ["再回流为芯片采购"]},
+        {"source": "CoreWeave", "target": "OpenAI", "type": "supplies", "weight": 0.85, "evidence": ["英伟达还投资了其客户（OpenAI、Anthropic 等）"]},
+        {"source": "CoreWeave", "target": "Anthropic", "type": "supplies", "weight": 0.85, "evidence": ["英伟达还投资了其客户（OpenAI、Anthropic 等）"]},
+        {"source": "NVIDIA", "target": "OpenAI", "type": "invests_in", "weight": 0.8, "evidence": ["英伟达还投资了其客户（OpenAI、Anthropic 等）"]},
+        {"source": "NVIDIA", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["英伟达还投资了其客户（OpenAI、Anthropic 等）"]}
+      ],
+      "metrics": [
+        {"name": "负债总额", "value": "470 亿美元"},
+        {"name": "明年到期债务", "value": "逾 100 亿美元"},
+        {"name": "季度营收", "value": "36.6 亿美元"},
+        {"name": "季度净亏损", "value": "7.09 亿美元"},
+        {"name": "季度利息支出", "value": "8.46 亿美元"},
+        {"name": "英伟达持股", "value": "约 11%"},
+        {"name": "算力保底协议金额", "value": "63 亿美元"}
+      ],
+      "why_it_matters": "英伟达既持股又用算力保底协议为 CoreWeave 托底，AI 算力泡沫的风险被锁进「芯片商的钱绕客户回流成采购」的资金循环里，成为黄仁勋辞职后英伟达审视资助目标的集中检验点。"
+    },
+    {
+      "article_id": "2026-11-22-4",
+      "entities": [
+        {"name": "CrowdStrike", "type": "company", "aliases": [], "confidence": 0.96, "evidence": ["端点防护厂商 CrowdStrike 正洽谈收购云接入厂商 Zscaler"]},
+        {"name": "Zscaler", "type": "company", "aliases": [], "confidence": 0.96, "evidence": ["端点防护厂商 CrowdStrike 正洽谈收购云接入厂商 Zscaler"]},
+        {"name": "Palo Alto Networks", "type": "company", "aliases": ["PANW"], "confidence": 0.9, "evidence": ["更直接地与 Palo Alto Networks（市值约 2820 亿美元）竞争"]}
+      ],
+      "events": [
+        {
+          "type": "acquisition",
+          "label": "CrowdStrike 洽谈收购 Zscaler，或为网络安全史上最大并购之一",
+          "summary": "据 Bloomberg 报道，端点防护厂商 CrowdStrike 正洽谈收购云接入厂商 Zscaler，Zscaler 市值约 320 亿美元，谈判仍在进行、存在破裂可能。",
+          "participants": [
+            {"name": "CrowdStrike", "type": "company", "role": "subject"},
+            {"name": "Zscaler", "type": "company", "role": "object"}
+          ],
+          "evidence": ["端点防护厂商 CrowdStrike 正洽谈收购云接入厂商 Zscaler", "Zscaler 市值约 320 亿美元"]
+        }
+      ],
+      "relations": [
+        {"source": "CrowdStrike", "target": "Zscaler", "type": "acquires", "weight": 0.9, "evidence": ["CrowdStrike 正洽谈收购云接入厂商 Zscaler"]},
+        {"source": "CrowdStrike", "target": "Palo Alto Networks", "type": "competes_with", "weight": 0.8, "evidence": ["更直接地与 Palo Alto Networks（市值约 2820 亿美元）竞争"]}
+      ],
+      "metrics": [
+        {"name": "Zscaler 市值", "value": "约 320 亿美元"},
+        {"name": "CrowdStrike 市值", "value": "约 2350 亿美元"},
+        {"name": "Palo Alto Networks 市值", "value": "约 2820 亿美元"},
+        {"name": "Zscaler 盘后涨幅", "value": "18%"},
+        {"name": "CrowdStrike 跌幅", "value": "逾 8%"}
+      ],
+      "why_it_matters": "收购 Zscaler 让 CrowdStrike 一次性补齐终端保护之外的云原生零信任安全缺口并正面挑战 Palo Alto Networks，网络安全并购联合已从单点工具走向平台级竞争整合。"
+    },
+    {
+      "article_id": "2026-11-22-5",
+      "entities": [
+        {"name": "Architect Labs", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Architect Labs 称其 AI 系统从指令集到布局端到端设计了通用 CPU「Frostbite」"]},
+        {"name": "Frostbite", "type": "hardware", "aliases": ["Frostbite CPU"], "confidence": 0.92, "evidence": ["从指令集到布局端到端设计了通用 CPU「Frostbite」"]},
+        {"name": "interaction nets", "type": "topic", "aliases": ["交互网"], "confidence": 0.85, "evidence": ["Frostbite 建立在 1990 年提出的 interaction nets（交互网）计算模型上"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Architect Labs 推出 AI 从指令集到布局端到端设计的通用 CPU Frostbite",
+          "summary": "美国初创 Architect Labs 宣称其 AI 系统自主迭代了 Frostbite 的编译器、指令集、架构、微架构、RTL、验证乃至最终 GDS 版图。",
+          "participants": [
+            {"name": "Architect Labs", "type": "company", "role": "subject"},
+            {"name": "Frostbite", "type": "hardware", "role": "object"}
+          ],
+          "evidence": ["Architect Labs 称其 AI 系统从指令集到布局端到端设计了通用 CPU「Frostbite」"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Frostbite 在 25 个负载上每瓦性能达对照核心的 4.59 倍",
+          "summary": "Frostbite 在 25 个负载上每瓦性能几何平均为对照内核 TCPU 的 4.59 倍，每面积性能平均 8.77 倍，但均为流片前的仿真结果。",
+          "participants": [
+            {"name": "Frostbite", "type": "hardware", "role": "subject"},
+            {"name": "Architect Labs", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["在 25 个负载上每瓦性能几何平均为对照内核（TCPU，双发射按序）的 4.59 倍", "以上均为流片前的仿真结果"]
+        }
+      ],
+      "relations": [
+        {"source": "Frostbite", "target": "Architect Labs", "type": "developed_by", "weight": 0.9, "evidence": ["Architect Labs 称其 AI 系统从指令集到布局端到端设计了通用 CPU「Frostbite」"]},
+        {"source": "Frostbite", "target": "interaction nets", "type": "built_on", "weight": 0.85, "evidence": ["Frostbite 建立在 1990 年提出的 interaction nets（交互网）计算模型上"]}
+      ],
+      "metrics": [
+        {"name": "每瓦性能（25 负载几何平均）", "value": "4.59 倍"},
+        {"name": "调优负载每瓦性能", "value": "6.02 倍"},
+        {"name": "留评负载每瓦性能", "value": "3.83 倍"},
+        {"name": "每面积性能", "value": "8.77 倍"},
+        {"name": "7nm 合成设计频率", "value": "800 MHz"},
+        {"name": "最终版图频率", "value": "500 MHz"},
+        {"name": "quad 面积", "value": "0.792 mm²"},
+        {"name": "Lean 代码规模", "value": "逾 80 万行"}
+      ],
+      "why_it_matters": "AI 若能从指令集一路端到端设计到 GDS 版图的通用 CPU 被流片证实，将动摇传统芯片设计的分工、人力密集与验证范式，尽管当前 4.59 倍仍停留在仿真阶段且对照基线未公开。"
+    },
+    {
+      "article_id": "2026-11-22-6",
+      "entities": [
+        {"name": "You Don't Need Long Context", "type": "paper", "aliases": ["You don't need long context"], "confidence": 0.95, "evidence": ["论文《You don't need long context》质疑「更长的上下文必然更好」这一共识"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英伟达 12 位作者在 31 页预印本中展示"]},
+        {"name": "Claude Opus 4.5", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["作者让 Claude Opus 4.5 与 GPT-5.6 Sol 在 13 个长程与长输入基准上运行"]},
+        {"name": "GPT-5.6 Sol", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["作者让 Claude Opus 4.5 与 GPT-5.6 Sol 在 13 个长程与长输入基准上运行"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "英伟达论文《You Don't Need Long Context》主张频繁压缩可替代长上下文",
+          "summary": "英伟达 12 位作者在 31 页预印本中展示，频繁上下文压缩与选择性检索让 Claude Opus 4.5 与 GPT-5.6 Sol 在短上下文下几乎不损失长程任务精度。",
+          "participants": [
+            {"name": "You Don't Need Long Context", "type": "paper", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Claude Opus 4.5", "type": "model", "role": "object"},
+            {"name": "GPT-5.6 Sol", "type": "model", "role": "object"}
+          ],
+          "evidence": ["论文《You don't need long context》质疑「更长的上下文必然更好」这一共识", "作者让 Claude Opus 4.5 与 GPT-5.6 Sol 在 13 个长程与长输入基准上运行"]
+        },
+        {
+          "type": "benchmark",
+          "label": "论文在 H100 上测出 256K 长上下文服务成本高出 16K 的 3.6 至 7 倍",
+          "summary": "在 H100 上测量，用 256K 而非 16K 上下文窗口服务 GLM 5.2、Kimi K2.6、Qwen 3 Coder Next 每个生成 token 成本高出 3.6 至 7 倍。",
+          "participants": [
+            {"name": "You Don't Need Long Context", "type": "paper", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["用 256K 而非 16K 上下文窗口服务，GLM 5.2、Kimi K2.6、Qwen 3 Coder Next 每个生成 token 的成本高出 3.6 至 7 倍"]
+        }
+      ],
+      "relations": [
+        {"source": "You Don't Need Long Context", "target": "NVIDIA", "type": "authored_by", "weight": 0.9, "evidence": ["英伟达 12 位作者在 31 页预印本中展示"]},
+        {"source": "You Don't Need Long Context", "target": "Claude Opus 4.5", "type": "uses", "weight": 0.85, "evidence": ["作者让 Claude Opus 4.5 与 GPT-5.6 Sol 在 13 个长程与长输入基准上运行"]},
+        {"source": "You Don't Need Long Context", "target": "GPT-5.6 Sol", "type": "uses", "weight": 0.85, "evidence": ["作者让 Claude Opus 4.5 与 GPT-5.6 Sol 在 13 个长程与长输入基准上运行"]}
+      ],
+      "metrics": [
+        {"name": "长上下文服务成本差", "value": "3.6 至 7 倍"},
+        {"name": "长程与长输入基准数", "value": "13 个"},
+        {"name": "上下文窗口对比", "value": "256K vs 16K"}
+      ],
+      "why_it_matters": "英伟达用实测成本差（256K 比 16K 贵 3.6–7 倍）直接挑战『越长上下文越好』的行业共识，把长上下文竞赛本身的性价比必要性重新拉回议程。"
+    },
+    {
+      "article_id": "2026-11-22-7",
+      "entities": [
+        {"name": "PGX", "type": "tool", "aliases": ["Physically Grounded Execution"], "confidence": 0.95, "evidence": ["PGX（Physically Grounded Execution）把长程人形 loco-manipulation 拆成三层分工"]},
+        {"name": "牛津大学", "type": "organization", "aliases": ["牛津团队"], "confidence": 0.9, "evidence": ["牛津团队提出 PGX"]},
+        {"name": "GR00T N1.6", "type": "model", "aliases": [], "confidence": 0.92, "evidence": ["咖啡取送任务成功率从 35%（GR00T N1.6）与 0%（π0.5）升至 80% 与 60%"]},
+        {"name": "π0.5", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["咖啡取送任务成功率从 35%（GR00T N1.6）与 0%（π0.5）升至 80% 与 60%"]},
+        {"name": "Unitree G1", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["在 Isaac Lab Arena 与真实 Unitree G1 人形上评估"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "牛津团队提出 PGX 物理接地执行框架，提升人形机器人长程任务成功率",
+          "summary": "PGX 用状态机 + VLA + 世界坐标锁定三层分解长程人形移动操作，咖啡取送任务中 GR00T N1.6 成功率从 35% 升至 80%。",
+          "participants": [
+            {"name": "PGX", "type": "tool", "role": "subject"},
+            {"name": "牛津大学", "type": "organization", "role": "subject"},
+            {"name": "GR00T N1.6", "type": "model", "role": "object"},
+            {"name": "π0.5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["牛津团队提出 PGX", "咖啡取送任务成功率从 35%（GR00T N1.6）与 0%（π0.5）升至 80% 与 60%"]
+        }
+      ],
+      "relations": [
+        {"source": "PGX", "target": "牛津大学", "type": "developed_by", "weight": 0.9, "evidence": ["牛津团队提出 PGX"]},
+        {"source": "PGX", "target": "GR00T N1.6", "type": "uses", "weight": 0.85, "evidence": ["用相同权重、不改训练的平铺策略"]},
+        {"source": "PGX", "target": "π0.5", "type": "uses", "weight": 0.85, "evidence": ["咖啡取送任务成功率从 35%（GR00T N1.6）与 0%（π0.5）升至 80% 与 60%"]},
+        {"source": "GR00T N1.6", "target": "Unitree G1", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 Isaac Lab Arena 与真实 Unitree G1 人形上评估", "用相同权重、不改训练的平铺策略"]}
+      ],
+      "metrics": [
+        {"name": "GR00T N1.6 咖啡取送成功率", "value": "35% → 80%"},
+        {"name": "π0.5 咖啡取送成功率", "value": "0% → 60%"}
+      ],
+      "why_it_matters": "用物理量接管『何时何地』、把『如何执行』留给 VLA，PGX 证明人形长程任务的瓶颈未必在模型能力本身，而在任务分解与执行叙事的可靠性。"
+    },
+    {
+      "article_id": "2026-11-22-8",
+      "entities": [
+        {"name": "ThreatFabric", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["荷兰安全公司 ThreatFabric 披露 Android 恶意框架 Bazuka"]},
+        {"name": "Bazuka", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["披露 Android 恶意框架 Bazuka", "由 23 个模块组成"]},
+        {"name": "Android", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["披露 Android 恶意框架 Bazuka"]},
+        {"name": "ADB", "type": "tool", "aliases": ["Android 调试桥"], "confidence": 0.9, "evidence": ["框架还利用 Android 调试桥（ADB）获取权限"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "ThreatFabric 披露 Android 恶意框架 Bazuka，控制面板首次集成 LLM 挑选受害目标",
+          "summary": "ThreatFabric 披露由下载器、核心与 23 个模块组成的 Android 欺诈框架 Bazuka，覆盖键盘记录、2FA 拦截，并首次在控制面板集成大语言模型用于挑选受害目标。",
+          "participants": [
+            {"name": "ThreatFabric", "type": "company", "role": "subject"},
+            {"name": "Bazuka", "type": "tool", "role": "object"},
+            {"name": "Android", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["荷兰安全公司 ThreatFabric 披露 Android 恶意框架 Bazuka", "由一个 dropper/downloader、一个 core 和 23 个模块组成"]
+        }
+      ],
+      "relations": [
+        {"source": "Bazuka", "target": "Android", "type": "targets", "weight": 0.9, "evidence": ["披露 Android 恶意框架 Bazuka"]},
+        {"source": "Bazuka", "target": "ADB", "type": "uses", "weight": 0.85, "evidence": ["框架还利用 Android 调试桥（ADB）获取权限、开启 Wireless Debugging"]}
+      ],
+      "metrics": [
+        {"name": "恶意模块数", "value": "23 个模块"}
+      ],
+      "why_it_matters": "恶意软件首次把 LLM 直接接进控制面板用于规模化挑选受害目标，AI 让网络犯罪的运营门槛更低、目标筛选更精准，移动威胁的进攻端也在工具化升级。"
+    },
+    {
+      "article_id": "2026-11-22-9",
+      "entities": [
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.96, "evidence": ["微软在一份发给受影响管理员的安全通知中表示"]},
+        {"name": "Entra Connect Health", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["攻击者利用 Entra Connect Health 服务 API 的漏洞，未经授权读取管理员邮箱地址与租户配置信息"]},
+        {"name": "Entra 管理中心", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["该 API 用于让管理员通过 Entra 管理中心监控本地身份基础设施的健康、性能与告警"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "攻击者利用 Microsoft Entra Connect Health API 漏洞读取管理员邮箱与租户数据",
+          "summary": "微软通知客户，攻击者利用 Entra Connect Health API 中一个漏洞获得租户级元数据的未授权只读访问，包括管理员账号邮箱、租户 ID 等；服务端已修复。",
+          "participants": [
+            {"name": "Microsoft", "type": "company", "role": "subject"},
+            {"name": "Entra Connect Health", "type": "product", "role": "object"}
+          ],
+          "evidence": ["攻击者利用 Entra Connect Health 服务 API 的漏洞，未经授权读取管理员邮箱地址与租户配置信息", "微软在一份发给受影响管理员的安全通知中表示"]
+        }
+      ],
+      "relations": [
+        {"source": "Entra Connect Health", "target": "Microsoft", "type": "developed_by", "weight": 0.9, "evidence": ["微软在一份发给受影响管理员的安全通知中表示，攻击者利用 Entra Connect Health API 中一个漏洞"]},
+        {"source": "Entra Connect Health", "target": "Entra 管理中心", "type": "uses", "weight": 0.7, "evidence": ["该 API 用于让管理员通过 Entra 管理中心监控本地身份基础设施的健康、性能与告警"]}
+      ],
+      "metrics": [
+        {"name": "漏洞引入日期", "value": "7 月 23 日"},
+        {"name": "漏洞发现日期", "value": "11 月 9 日"},
+        {"name": "服务端修复日期", "value": "11 月 19 日"},
+        {"name": "调查完成日期", "value": "11 月 20 日"}
+      ],
+      "why_it_matters": "Entra Connect Health 这类『读得到租户元数据』的运维 API 成为新攻击面，身份基础设施无需写权限的只读泄露同样能暴露管理员级别的敏感信息。"
+    },
+    {
+      "article_id": "2026-11-22-10",
+      "entities": [
+        {"name": "Signal", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Signal 阻止 Siri 与 Gemini 读取聊天内容", "端到端加密消息应用 Signal 在 iOS 27 与 Android 上新增防护"]},
+        {"name": "Meredith Whittaker", "type": "person", "aliases": ["Whittaker"], "confidence": 0.95, "evidence": ["Signal 总裁 Meredith Whittaker 在博客中说"]},
+        {"name": "Siri", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["苹果的 Siri Onscreen Awareness 深度集成进操作系统"]},
+        {"name": "Gemini", "type": "product", "aliases": ["Gemini Intelligence"], "confidence": 0.9, "evidence": ["Google 的 Gemini Intelligence 与苹果的 Siri Onscreen Awareness 深度集成进操作系统"]},
+        {"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.92, "evidence": ["苹果的 Siri Onscreen Awareness 深度集成进操作系统"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.92, "evidence": ["Google 的 Gemini Intelligence 与苹果的 Siri Onscreen Awareness 深度集成进操作系统"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.9, "evidence": ["继去年阻止微软 Recall 在 Windows 上截取截图后"]},
+        {"name": "Recall", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["继去年阻止微软 Recall 在 Windows 上截取截图后"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "Signal 阻止 Siri 与 Gemini 等操作系统级 AI 智能体读取聊天内容",
+          "summary": "Signal 总裁 Meredith Whittaker 表示，Signal 现在对 iOS 27 与可检测的 Android 端系统性 AI 采取类似措施，检测到 AI 助试图读取 Signal 屏幕时阻止截图与画面捕获。",
+          "participants": [
+            {"name": "Signal", "type": "company", "role": "subject"},
+            {"name": "Siri", "type": "product", "role": "object"},
+            {"name": "Gemini", "type": "product", "role": "object"},
+            {"name": "Apple", "type": "company", "role": "object"},
+            {"name": "Google", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Signal 阻止 Siri 与 Gemini 读取聊天内容", "苹果的 Siri Onscreen Awareness 深度集成进操作系统"]
+        },
+        {
+          "type": "trend",
+          "label": "Signal 呼吁苹果、谷歌、微软全面披露 AI 访问机制并提供显式排除工具",
+          "summary": "Signal 呼吁苹果、谷歌、微软全面披露 AI 访问机制，并给开发者提供清晰的脱离 AI 访问的选项；Whittaker 表示防护并不完整，macOS 上无法提供截图防护。",
+          "participants": [
+            {"name": "Signal", "type": "company", "role": "subject"},
+            {"name": "Apple", "type": "company", "role": "object"},
+            {"name": "Google", "type": "company", "role": "object"},
+            {"name": "Microsoft", "type": "company", "role": "object"}
+          ],
+          "evidence": ["呼吁苹果、谷歌、微软全面披露 AI 访问机制，并给开发者提供清晰的脱离 AI 访问的选项"]
+        }
+      ],
+      "relations": [
+        {"source": "Meredith Whittaker", "target": "Signal", "type": "affiliated_with", "weight": 0.9, "evidence": ["Signal 总裁 Meredith Whittaker 在博客中说"]},
+        {"source": "Signal", "target": "Siri", "type": "restricts", "weight": 0.9, "evidence": ["Signal 阻止 Siri 与 Gemini 读取聊天内容"]},
+        {"source": "Signal", "target": "Gemini", "type": "restricts", "weight": 0.9, "evidence": ["Signal 阻止 Siri 与 Gemini 读取聊天内容"]},
+        {"source": "Siri", "target": "Apple", "type": "developed_by", "weight": 0.85, "evidence": ["苹果的 Siri Onscreen Awareness 深度集成进操作系统"]},
+        {"source": "Gemini", "target": "Google", "type": "developed_by", "weight": 0.85, "evidence": ["Google 的 Gemini Intelligence 与苹果的 Siri Onscreen Awareness 深度集成进操作系统"]},
+        {"source": "Recall", "target": "Microsoft", "type": "developed_by", "weight": 0.8, "evidence": ["继去年阻止微软 Recall 在 Windows 上截取截图后"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "OS 级 AI 智能体把屏幕内容访问深度集成进系统，Signal 以拦截截屏对抗，端到端加密应用的隐私边界之争已从应用层上移到操作系统层。"
+    },
+    {
+      "article_id": "2026-11-22-11",
+      "entities": [
+        {"name": "联合国", "type": "organization", "aliases": ["UN"], "confidence": 0.95, "evidence": ["128 个缔约方同意「协商一致」拟定一项国际文件"]},
+        {"name": "俄罗斯", "type": "organization", "aliases": [], "confidence": 0.92, "evidence": ["俄罗斯带头用拖延战术阻挠"]},
+        {"name": "美国", "type": "organization", "aliases": ["美国政府"], "confidence": 0.92, "evidence": ["美国等投入 AI 军事的国家不愿承诺约束性协议"]},
+        {"name": "红十字国际委员会", "type": "organization", "aliases": ["ICRC"], "confidence": 0.92, "evidence": ["红十字国际委员会在会后警告，监管自主武器的窗口很快就会关闭"]},
+        {"name": "自主武器", "type": "topic", "aliases": ["自主武器管控"], "confidence": 0.9, "evidence": ["未能就法律约束性的自主武器管控谈判授权达成共识"]},
+        {"name": "自主武器约束性条约", "type": "policy", "aliases": ["法律约束性的自主武器管控"], "confidence": 0.85, "evidence": ["未能就法律约束性的自主武器管控谈判授权达成共识"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "联合国自主武器谈判未达成约束性条约，仅同意两年内拟定非约束规程",
+          "summary": "在日内瓦举行的联合国特定常规武器公约会议因俄罗斯拖延与美国等不愿承诺约束性协议，未达成约束性条约，128 个缔约方仅同意拟定一项非约束国际文件。",
+          "participants": [
+            {"name": "联合国", "type": "organization", "role": "subject"},
+            {"name": "俄罗斯", "type": "organization", "role": "regulator"},
+            {"name": "美国", "type": "organization", "role": "regulator"},
+            {"name": "红十字国际委员会", "type": "organization", "role": "partner"},
+            {"name": "自主武器", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["未能就法律约束性的自主武器管控谈判授权达成共识", "俄罗斯带头用拖延战术阻挠", "128 个缔约方同意「协商一致」拟定一项国际文件"]
+        }
+      ],
+      "relations": [
+        {"source": "联合国", "target": "自主武器", "type": "seeks_to_regulate", "weight": 0.85, "evidence": ["128 个缔约方同意「协商一致」拟定一项国际文件"]},
+        {"source": "俄罗斯", "target": "自主武器约束性条约", "type": "opposes", "weight": 0.85, "evidence": ["俄罗斯带头用拖延战术阻挠"]},
+        {"source": "美国", "target": "自主武器约束性条约", "type": "opposes", "weight": 0.8, "evidence": ["美国等投入 AI 军事的国家不愿承诺约束性协议"]}
+      ],
+      "metrics": [
+        {"name": "同意缔约方数量", "value": "128 个"},
+        {"name": "自主武器规则讨论持续时长", "value": "13 年"},
+        {"name": "非约束规程产出目标年份", "value": "2028 年前"}
+      ],
+      "why_it_matters": "约束性自主武器条约在俄罗斯拖延与美国等不愿承诺下再次落空，人工智能军事化的治理窗口正在关闭，监管仍停留在非约束规程层面。"
+    },
+    {
+      "article_id": "2026-11-22-12",
+      "entities": [
+        {"name": "Apple", "type": "company", "aliases": ["苹果"], "confidence": 0.96, "evidence": ["Apple 招聘开发自主 AI agent", "据 Bloomberg 报道，Apple 通过招聘信息透露正在打造自主 AI agent"]},
+        {"name": "自主 AI agent", "type": "product", "aliases": ["主动式、智能体式 AI 助手"], "confidence": 0.9, "evidence": ["Apple 通过招聘信息透露正在打造自主 AI agent"]},
+        {"name": "John Ternus", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["在 John Ternus 领导下 Apple 正加速 AI"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.92, "evidence": ["抵御 OpenAI、Anthropic 与 Meta 的桌面智能体竞争"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["抵御 OpenAI、Anthropic 与 Meta 的桌面智能体竞争"]},
+        {"name": "Meta", "type": "company", "aliases": ["Facebook"], "confidence": 0.92, "evidence": ["抵御 OpenAI、Anthropic 与 Meta 的桌面智能体竞争"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["启用 ChatGPT computer-use 的步骤从 4 步增至 14 步"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Apple 招聘开发自主 AI agent，计划最早 2027 年底推出",
+          "summary": "据 Bloomberg 报道，Apple 通过招聘信息透露正在打造可用电脑做跨应用、浏览网页、写代码的自主 AI agent，项目仍在早期，已考虑最早 2027 年底推出。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "自主 AI agent", "type": "product", "role": "object"},
+            {"name": "John Ternus", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["Apple 通过招聘信息透露正在打造自主 AI agent", "已考虑最早在 2027 年底推出"]
+        },
+        {
+          "type": "policy",
+          "label": "Apple 在 macOS 27.3 收紧第三方 AI 智能体对 Mac 的访问",
+          "summary": "Apple 正在收紧第三方 agent 对 Mac 的控制，macOS 27.3 将部署警告劝阻用户向第三方 agent 授予完全访问权限，启用 ChatGPT computer-use 步骤从 4 步增至 14 步。",
+          "participants": [
+            {"name": "Apple", "type": "company", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"}
+          ],
+          "evidence": ["macOS 27.3 将部署警告，劝阻用户向第三方 agent 授予完全访问权限", "启用 ChatGPT computer-use 的步骤从 4 步增至 14 步"]
+        }
+      ],
+      "relations": [
+        {"source": "John Ternus", "target": "Apple", "type": "affiliated_with", "weight": 0.9, "evidence": ["在 John Ternus 领导下 Apple 正加速 AI"]},
+        {"source": "自主 AI agent", "target": "Apple", "type": "developed_by", "weight": 0.85, "evidence": ["Apple 通过招聘信息透露正在打造自主 AI agent"]},
+        {"source": "Apple", "target": "OpenAI", "type": "competes_with", "weight": 0.85, "evidence": ["抵御 OpenAI、Anthropic 与 Meta 的桌面智能体竞争"]},
+        {"source": "Apple", "target": "Anthropic", "type": "competes_with", "weight": 0.85, "evidence": ["抵御 OpenAI、Anthropic 与 Meta 的桌面智能体竞争"]},
+        {"source": "Apple", "target": "Meta", "type": "competes_with", "weight": 0.85, "evidence": ["抵御 OpenAI、Anthropic 与 Meta 的桌面智能体竞争"]},
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.8, "evidence": ["启用 ChatGPT computer-use 的步骤从 4 步增至 14 步"]}
+      ],
+      "metrics": [
+        {"name": "macOS 受控版本", "value": "27.3"},
+        {"name": "ChatGPT computer-use 启用步骤", "value": "4 → 14 步"},
+        {"name": "计划最早推出年份", "value": "2027 年底"}
+      ],
+      "why_it_matters": "苹果一边布局自研自主 AI agent，一边在 macOS 27.3 收紧第三方智能体对 Mac 的权限，桌面智能体之争的竞争扩张与隐私管控两条线同时推进。"
+    }
+  ]
+}
