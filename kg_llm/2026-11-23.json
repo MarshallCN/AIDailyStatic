@@ -1,0 +1,589 @@
+{
+  "date": "2026-11-23",
+  "articles": [
+    {
+      "article_id": "2026-11-23-0",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.98, "evidence": ["英伟达董事会周一宣布黄仁勋复任 CEO", "仍需面对 SEC 对其会计问题的调查"]},
+        {"name": "黄仁勋", "type": "person", "aliases": ["Jensen Huang"], "confidence": 0.97, "evidence": ["英伟达董事会周一宣布黄仁勋复任 CEO"]},
+        {"name": "特朗普", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["特朗普亲自游说董事会让他回归"]},
+        {"name": "SEC", "type": "organization", "aliases": ["美国证券交易委员会"], "confidence": 0.95, "evidence": ["仍需面对 SEC 对其会计问题的调查"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "英伟达董事会闪电复职黄仁勋，股价单日暴涨约 33%，带动美股创 4 月以来最佳表现",
+          "summary": "辞职 11 天后，英伟达董事会周一宣布黄仁勋复任 CEO，公司股价单日暴涨约 33%，纳指收涨 6.5%、标普 500 收涨约 5%。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "黄仁勋", "type": "person", "role": "object"},
+            {"name": "特朗普", "type": "person", "role": "subject"}
+          ],
+          "evidence": ["英伟达董事会周一宣布黄仁勋复任 CEO", "特朗普亲自游说董事会让他回归", "公司股价单日暴涨约 33%", "标普 500 收涨约 5%"]
+        },
+        {
+          "type": "policy",
+          "label": "黄仁勋回归并未回答引发抛售的治理与会计根本问题，SEC 仍在调查英伟达",
+          "summary": "英伟达仍需面对 SEC 对其会计问题的调查，以及加州传票所涉芯片流入中国的指控，反弹未收复全部失地。",
+          "participants": [
+            {"name": "SEC", "type": "organization", "role": "regulator"},
+            {"name": "NVIDIA", "type": "company", "role": "object"}
+          ],
+          "evidence": ["仍需面对 SEC 对其会计问题的调查", "加州传票所涉芯片流入中国的指控"]
+        }
+      ],
+      "relations": [
+        {"source": "黄仁勋", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.9, "evidence": ["英伟达董事会周一宣布黄仁勋复任 CEO"]},
+        {"source": "SEC", "target": "NVIDIA", "type": "regulates", "weight": 0.85, "evidence": ["仍需面对 SEC 对其会计问题的调查"]}
+      ],
+      "metrics": [
+        {"name": "英伟达股价单日涨幅", "value": "约 33%"},
+        {"name": "标普 500 单日涨幅", "value": "约 5%"},
+        {"name": "纳指单日涨幅", "value": "6.5%"},
+        {"name": "道指单日涨幅", "value": "3%"},
+        {"name": "复职前上周单周跌幅", "value": "23%"},
+        {"name": "六周市值蒸发", "value": "约 8 万亿美元"},
+        {"name": "反弹收复市值", "value": "约 3 万亿美元"},
+        {"name": "仍较峰值低", "value": "约 5 万亿美元"},
+        {"name": "季度营收", "value": "首破 1000 亿美元"}
+      ],
+      "why_it_matters": "黄仁勋回归只换来了股市约 3 万亿美元的修复，SEC 会计调查与芯片入华指控丝毫未动，说明市场对数千亿美元 AI 资本开支能否兑现回报的根本疑问依旧悬而未决。"
+    },
+    {
+      "article_id": "2026-11-23-1",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic 上周 IPO 正式完成交割"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达"], "confidence": 0.95, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.95, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"name": "Microsoft", "type": "company", "aliases": ["微软", "MSFT"], "confidence": 0.95, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"name": "博通", "type": "company", "aliases": ["Broadcom"], "confidence": 0.9, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"name": "美光", "type": "company", "aliases": ["Micron"], "confidence": 0.9, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"name": "台积电", "type": "company", "aliases": ["TSMC"], "confidence": 0.9, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"name": "Matt Stoller", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["批评者（如 Matt Stoller）称这次 IPO 是「rug pull」"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "Anthropic 完成史上最大 IPO 交割，发行 11.27 亿股募资约 935 亿美元",
+          "summary": "Anthropic 发行 11.27 亿股 A 类股（含绿鞋 1.47 亿股），每股 83 美元，总募资约 935 亿美元，其中约 916 亿美元归属公司。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["发行 11.27 亿股 A 类股（含绿鞋增发的 1.47 亿股）", "总募资约 935 亿美元"]
+        },
+        {
+          "type": "funding",
+          "label": "Anthropic 向 AMD、英伟达、微软、谷歌等芯片与云巨头私募 260 亿美元",
+          "summary": "Anthropic 以同价向 AMD、博通、谷歌、美光、微软、英伟达与台积电出售约 3.13 亿股 N 类股，再募约 260 亿美元，承销商上市次日全额行使绿鞋。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "AMD", "type": "company", "role": "funder"},
+            {"name": "NVIDIA", "type": "company", "role": "funder"},
+            {"name": "Google", "type": "company", "role": "funder"},
+            {"name": "Microsoft", "type": "company", "role": "funder"},
+            {"name": "博通", "type": "company", "role": "funder"},
+            {"name": "美光", "type": "company", "role": "funder"},
+            {"name": "台积电", "type": "company", "role": "funder"}
+          ],
+          "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股", "再募约 260 亿美元", "承销商在上市次日即全额行使绿鞋"]
+        }
+      ],
+      "relations": [
+        {"source": "AMD", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"source": "NVIDIA", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"source": "Google", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"source": "Microsoft", "target": "Anthropic", "type": "invests_in", "weight": 0.8, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"source": "博通", "target": "Anthropic", "type": "invests_in", "weight": 0.7, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"source": "美光", "target": "Anthropic", "type": "invests_in", "weight": 0.7, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]},
+        {"source": "台积电", "target": "Anthropic", "type": "invests_in", "weight": 0.7, "evidence": ["向 AMD、博通、谷歌、美光、微软、英伟达与台积电合作伙伴出售约 3.13 亿股 N 类股"]}
+      ],
+      "metrics": [
+        {"name": "IPO 发行价", "value": "83 美元"},
+        {"name": "A 类股发行量", "value": "11.27 亿股"},
+        {"name": "绿鞋增发量", "value": "1.47 亿股"},
+        {"name": "总募资", "value": "约 935 亿美元"},
+        {"name": "归属公司募资", "value": "约 916 亿美元"},
+        {"name": "N 类股私募量", "value": "约 3.13 亿股"},
+        {"name": "私募募资", "value": "约 260 亿美元"},
+        {"name": "上市首日最高价", "value": "115.10 美元"},
+        {"name": "上周五最低价", "value": "83.05 美元"}
+      ],
+      "why_it_matters": "绿鞋上市次日即全额行使、再配 260 亿美元私募，被华尔街解读为 Anthropic 对现金饥渴超出常规的信号，而其股价快速回落到距发行价仅 5 美分，使这只 IPO 成为 AI 交易情绪最灵敏的温度计。"
+    },
+    {
+      "article_id": "2026-11-23-2",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.97, "evidence": ["Meta 首席 AI 官 Alexander Wang 在 X 上发文"]},
+        {"name": "Alexander Wang", "type": "person", "aliases": ["Alexandr Wang", "王亚历山大"], "confidence": 0.97, "evidence": ["Meta 首席 AI 官 Alexander Wang 在 X 上发文"]},
+        {"name": "Levent Alpöge", "type": "person", "aliases": ["Alpöge"], "confidence": 0.95, "evidence": ["Anthropic 数学家 Levent Alpöge 声称在 Claude 帮助下证明黎曼猜想"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 数学家 Levent Alpöge 声称在 Claude 帮助下证明黎曼猜想"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["声称在 Claude 帮助下证明黎曼猜想"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Meta 首席 AI 官 Alexander Wang 警告「超级智能正在到来」，呼吁拒绝把社会移交给 AI",
+          "summary": "Wang 在 X 上发文称超级智能正在到来，主张行业不能只做安全对齐，还要思考想要什么样的未来，「不应接受把社会移交给 AI」。",
+          "participants": [
+            {"name": "Alexander Wang", "type": "person", "role": "subject"},
+            {"name": "Meta", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["Meta 首席 AI 官 Alexander Wang 在 X 上发文", "超级智能正在到来", "我们不应接受把社会移交给 AI"]
+        }
+      ],
+      "relations": [
+        {"source": "Alexander Wang", "target": "Meta", "type": "affiliated_with", "weight": 0.9, "evidence": ["Meta 首席 AI 官 Alexander Wang 在 X 上发文"]},
+        {"source": "Levent Alpöge", "target": "Anthropic", "type": "affiliated_with", "weight": 0.85, "evidence": ["Anthropic 数学家 Levent Alpöge 声称在 Claude 帮助下证明黎曼猜想"]},
+        {"source": "Levent Alpöge", "target": "Claude", "type": "uses", "weight": 0.8, "evidence": ["声称在 Claude 帮助下证明黎曼猜想"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 数学家 Levent Alpöge 声称在 Claude 帮助下证明黎曼猜想"]}
+      ],
+      "metrics": [
+        {"name": "帖子半日浏览量", "value": "超过 800 万"},
+        {"name": "Meta 年度资本开支指引", "value": "1350 亿至 1450 亿美元"}
+      ],
+      "why_it_matters": "AI 掌门人公开承认递归自我改进可能脱离人类控制、把叙事从「对齐」推向「我们要什么样的未来」的治理层面，同时让 Meta 的超高资本开支承诺与风险警示形成强烈张力。"
+    },
+    {
+      "article_id": "2026-11-23-3",
+      "entities": [
+        {"name": "Paul Krugman", "type": "person", "aliases": ["Krugman"], "confidence": 0.95, "evidence": ["Krugman 在 Substack 上以「这就是狂热终结的方式」为题"]},
+        {"name": "Matt Stoller", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["Stoller 的靶子是英伟达"]},
+        {"name": "Dean Baker", "type": "person", "aliases": [], "confidence": 0.95, "evidence": ["Baker 则坚持「数学不成立」"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["Stoller 的靶子是英伟达"]},
+        {"name": "黄仁勋", "type": "person", "aliases": ["Jensen Huang"], "confidence": 0.9, "evidence": ["黄仁勋复职被视为「气泡拒绝破裂」的又一证据"]},
+        {"name": "Alibaba", "type": "company", "aliases": ["阿里巴巴", "阿里"], "confidence": 0.9, "evidence": ["他用阿里最便宜的模型处理 75 篇 20 页论文只花了 47 美分"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["双方围绕英伟达「循环融资」、Anthropic 定价与 AI 收入的争论仍在继续"]},
+        {"name": "Goldman Sachs", "type": "organization", "aliases": ["高盛"], "confidence": 0.9, "evidence": ["高盛的金融状况指数今年已收紧约 100 个基点"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Krugman、Stoller 与 Baker 趁暴跌宣告 AI 泡沫破裂",
+          "summary": "三位经济学家分别用「未来的世通」、英伟达安然式循环融资与前沿模型 40 美元定价主张泡沫破裂，但周一的暴涨打断了他们的胜利游行。",
+          "participants": [
+            {"name": "Paul Krugman", "type": "person", "role": "subject"},
+            {"name": "Matt Stoller", "type": "person", "role": "subject"},
+            {"name": "Dean Baker", "type": "person", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "object"}
+          ],
+          "evidence": ["Krugman 在 Substack 上以「这就是狂热终结的方式」为题", "Stoller 的靶子是英伟达", "Baker 则坚持「数学不成立」"]
+        },
+        {
+          "type": "trend",
+          "label": "黄仁勋复职带动美股反弹，被视为「气泡拒绝破裂」的又一证据",
+          "summary": "周一 SPDR 标普 500 ETF 盘中上涨约 4.7%，黄仁勋复职被视为气泡拒绝破裂的证据，但结构性风险未消。",
+          "participants": [
+            {"name": "黄仁勋", "type": "person", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["黄仁勋复职被视为「气泡拒绝破裂」的又一证据"]
+        }
+      ],
+      "relations": [
+        {"source": "黄仁勋", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.85, "evidence": ["黄仁勋复职被视为「气泡拒绝破裂」的又一证据"]},
+        {"source": "Matt Stoller", "target": "NVIDIA", "type": "targets", "weight": 0.6, "evidence": ["英伟达对采购其芯片的「新云」厂商的循环融资是「安然式表外会计」"]},
+        {"source": "Dean Baker", "target": "Alibaba", "type": "uses", "weight": 0.7, "evidence": ["他用阿里最便宜的模型处理 75 篇 20 页论文只花了 47 美分"]}
+      ],
+      "metrics": [
+        {"name": "前沿模型每百万输出 token 定价", "value": "高达 40 美元"},
+        {"name": "阿里最便宜模型处理 75 篇 20 页论文成本", "value": "47 美分"},
+        {"name": "标普 500 前十大公司中科技公司数", "value": "8 家"},
+        {"name": "科技公司占标普权重", "value": "40%"},
+        {"name": "美国占发达国家股市市值", "value": "75%"},
+        {"name": "高盛金融状况指数今年收紧幅度", "value": "约 100 个基点"},
+        {"name": "上周单周收紧幅度", "value": "逾 40 个基点"},
+        {"name": "对 2027 年增长拖累估计", "value": "0.5 个百分点"}
+      ],
+      "why_it_matters": "华尔街用一根大阳线把泡沫破裂论暂时挡了回去，但八家科技公司占标普 40%、美国占发达市场市值 75% 的结构意味着「持有全球股票」本质上是在押注少数几家 AI 公司，这种集中风险并未因反弹而消解。"
+    },
+    {
+      "article_id": "2026-11-23-4",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.98, "evidence": ["OpenAI 今日起向全球 ChatGPT Plus、Pro、Business 与 Enterprise 用户推出聊天调校版 GPT-6.2 Sol"]},
+        {"name": "GPT-6.2 Sol", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["推出聊天调校版 GPT-6.2 Sol，成为聊天页默认模型"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["成为聊天页默认模型"]},
+        {"name": "GPT-5.6 Terra", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["GPT-5.6 Sol 与 GPT-5.6 Terra 将于 12 月 23 日退役"]},
+        {"name": "GPT-5.6 Sol", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["GPT-5.6 Sol 与 GPT-5.6 Terra 将于 12 月 23 日退役"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 上线聊天调校版 GPT-6.2 Sol，成为 ChatGPT 默认模型",
+          "summary": "OpenAI 向全部付费订阅层级推出聊天调校版 GPT-6.2 Sol 并设为聊天页默认模型，图像理解正确率从 47.4% 提升到 71.7%。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-6.2 Sol", "type": "model", "role": "object"},
+            {"name": "ChatGPT", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 今日起向全球 ChatGPT Plus、Pro、Business 与 Enterprise 用户推出聊天调校版 GPT-6.2 Sol，成为聊天页默认模型"]
+        },
+        {
+          "type": "launch",
+          "label": "OpenAI 宣布 GPT-5.6 Sol 与 GPT-5.6 Terra 于 12 月 23 日分别从不同入口退役，设定代际切换时间表",
+          "summary": "OpenAI 宣布 GPT-5.6 Sol 与 GPT-5.6 Terra 于 12 月 23 日退役：Sol 从 Chat、Work、Codex 退役，Terra 从 Work、Codex 退役，为代际切换设定明确时间表。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "GPT-5.6 Sol", "type": "model", "role": "object"},
+            {"name": "GPT-5.6 Terra", "type": "model", "role": "object"}
+          ],
+          "evidence": ["GPT-5.6 Sol 与 GPT-5.6 Terra 将于 12 月 23 日退役"]
+        }
+      ],
+      "relations": [
+        {"source": "GPT-6.2 Sol", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 今日起向全球 ChatGPT Plus、Pro、Business 与 Enterprise 用户推出聊天调校版 GPT-6.2 Sol"]},
+        {"source": "ChatGPT", "target": "GPT-6.2 Sol", "type": "integrates", "weight": 0.85, "evidence": ["成为聊天页默认模型"]},
+        {"source": "GPT-6.2 Sol", "target": "GPT-5.6 Terra", "type": "replaces", "weight": 0.8, "evidence": ["GPT-5.6 Sol 与 GPT-5.6 Terra 将于 12 月 23 日退役"]},
+        {"source": "GPT-6.2 Sol", "target": "GPT-5.6 Sol", "type": "replaces", "weight": 0.8, "evidence": ["GPT-5.6 Sol 与 GPT-5.6 Terra 将于 12 月 23 日退役"]}
+      ],
+      "metrics": [
+        {"name": "图像理解正确率提升", "value": "从 47.4% 到 71.7%"},
+        {"name": "困难指令遵循率提升", "value": "从 62.5% 到 78.1%"}
+      ],
+      "why_it_matters": "OpenAI 用「聊天专用」命名把同一代模型拆成场景化版本并快速设为默认、还给出明确的退役时间表，意味着聊天体验的竞争已从入口转向细节捕捉与联网搜索可靠性。"
+    },
+    {
+      "article_id": "2026-11-23-5",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic 发布 Claude Ship 测试版"]},
+        {"name": "Claude Ship", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Anthropic 发布 Claude Ship 测试版"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["Claude Ship 面向 Claude Team 与 Enterprise 计划的 GitHub 仓库开放"]},
+        {"name": "PR Steward", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["由 Code Review 与两个新 agent（PR Steward、Claude Approvals）组成"]},
+        {"name": "Claude Approvals", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["由 Code Review 与两个新 agent（PR Steward、Claude Approvals）组成"]},
+        {"name": "Code Review", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["由 Code Review 与两个新 agent（PR Steward、Claude Approvals）组成"]},
+        {"name": "Claude Code", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["开发者还可在 Claude Code 中直接使用 /ship 命令"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 发布 Claude Ship 测试版，自动化拉取请求的审阅、修复与批准",
+          "summary": "Claude Ship 由已上市的 Code Review、PR Steward 与 Claude Approvals 组成，团队用策略文件控制放行边界，Claude 也能在 Claude Code 中用 /ship 全流程跟进。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude Ship", "type": "product", "role": "object"},
+            {"name": "PR Steward", "type": "tool", "role": "object"},
+            {"name": "Claude Approvals", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Anthropic 发布 Claude Ship 测试版", "由 Code Review 与两个新 agent（PR Steward、Claude Approvals）组成"]
+        }
+      ],
+      "relations": [
+        {"source": "Claude Ship", "target": "Anthropic", "type": "released_by", "weight": 0.9, "evidence": ["Anthropic 发布 Claude Ship 测试版"]},
+        {"source": "Claude Ship", "target": "Claude Code", "type": "built_on", "weight": 0.7, "evidence": ["开发者还可在 Claude Code 中直接使用 /ship 命令"]},
+        {"source": "Claude Ship", "target": "PR Steward", "type": "integrates", "weight": 0.8, "evidence": ["由 Code Review 与两个新 agent（PR Steward、Claude Approvals）组成"]},
+        {"source": "Claude Ship", "target": "Claude Approvals", "type": "integrates", "weight": 0.8, "evidence": ["由 Code Review 与两个新 agent（PR Steward、Claude Approvals）组成"]},
+        {"source": "Claude Ship", "target": "Code Review", "type": "integrates", "weight": 0.7, "evidence": ["由 Code Review 与两个新 agent（PR Steward、Claude Approvals）组成"]}
+      ],
+      "metrics": [
+        {"name": "Claude Code 团队合并 PR 数量增长", "value": "翻倍以上"},
+        {"name": "revert 比例下降", "value": "超过 40%"}
+      ],
+      "why_it_matters": "Claude Ship 把代码评审与合并的裁决权交给仓库里的策略文件而非单个人为把关，让「AI 审阅—批准」推进到可托管整个合并流程，放行边界变成可审计、可版本化的代码配置。"
+    },
+    {
+      "article_id": "2026-11-23-6",
+      "entities": [
+        {"name": "Kling AI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["快手旗下 Kling AI 今日发布 Kling Image 4.0"]},
+        {"name": "快手", "type": "company", "aliases": ["Kuaishou"], "confidence": 0.9, "evidence": ["快手旗下 Kling AI 今日发布 Kling Image 4.0"]},
+        {"name": "Kling Image 4.0", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["快手旗下 Kling AI 今日发布 Kling Image 4.0"]},
+        {"name": "Kling 4.0", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["紧随 Kling 4.0 视频模型之后"]},
+        {"name": "Artificial Analysis 图像排行榜", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["据 Artificial Analysis 图像排行榜"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Kling AI 发布原生 8K 图像生成模型 Kling Image 4.0",
+          "summary": "快手旗下 Kling AI 发布业界首个原生 8K AI 图像生成模型，单提示可产出最多 10 张连贯图像，文本渲染支持单图 2000 字符。",
+          "participants": [
+            {"name": "Kling AI", "type": "company", "role": "subject"},
+            {"name": "Kling Image 4.0", "type": "model", "role": "object"}
+          ],
+          "evidence": ["快手旗下 Kling AI 今日发布 Kling Image 4.0", "业界首个原生 8K 分辨率 AI 图像生成模型"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Kling Image 4.0 在 Artificial Analysis 图像排行榜文生图与图像编辑保持领先",
+          "summary": "据 Artificial Analysis 图像排行榜，Kling Image 4.0 Preview 在文生图与图像编辑两项保持领先，文生图在 UIUX 设计场景排名第三。",
+          "participants": [
+            {"name": "Kling Image 4.0", "type": "model", "role": "subject"},
+            {"name": "Artificial Analysis 图像排行榜", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["据 Artificial Analysis 图像排行榜"]
+        }
+      ],
+      "relations": [
+        {"source": "Kling Image 4.0", "target": "Kling AI", "type": "developed_by", "weight": 0.9, "evidence": ["快手旗下 Kling AI 今日发布 Kling Image 4.0"]},
+        {"source": "Kling AI", "target": "快手", "type": "subsidiary_of", "weight": 0.8, "evidence": ["快手旗下 Kling AI 今日发布 Kling Image 4.0"]},
+        {"source": "Kling Image 4.0", "target": "Artificial Analysis 图像排行榜", "type": "evaluated_on", "weight": 0.8, "evidence": ["据 Artificial Analysis 图像排行榜"]}
+      ],
+      "metrics": [
+        {"name": "Kling Image 4.0 原生分辨率", "value": "8K"},
+        {"name": "单提示最大连拍数", "value": "10 张"},
+        {"name": "单图最大文本渲染字符数", "value": "2000 字符"},
+        {"name": "文生图 UIUX 设计场景排名", "value": "第三"}
+      ],
+      "why_it_matters": "Kling 把图像生成从分辨率竞赛推进到「单提示产出整套连贯画面 + 可编辑文本」的生产级交付，并紧随视频模型发布，正把单图能力升级成完整视觉工作流。"
+    },
+    {
+      "article_id": "2026-11-23-7",
+      "entities": [
+        {"name": "Google", "type": "company", "aliases": ["谷歌"], "confidence": 0.98, "evidence": ["Google 搜索今日起允许用户在 AI 模式中自愿连接 Google Wallet"]},
+        {"name": "Google Search", "type": "product", "aliases": ["Google 搜索"], "confidence": 0.95, "evidence": ["Google 搜索今日起允许用户在 AI 模式中自愿连接 Google Wallet"]},
+        {"name": "Google Wallet", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["今日起可连接 Google Wallet"]},
+        {"name": "Google Drive", "type": "product", "aliases": ["Drive"], "confidence": 0.9, "evidence": ["未来几周支持 Drive 与 Gemini 应用"]},
+        {"name": "Gemini", "type": "product", "aliases": ["Gemini 应用"], "confidence": 0.9, "evidence": ["未来几周支持 Drive 与 Gemini 应用"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google 搜索 Personal Intelligence 接入 Wallet、Drive 与 Gemini 应用",
+          "summary": "Google 搜索允许用户在 AI 模式中自愿连接 Google Wallet，未来几周支持 Drive 与 Gemini 应用，让搜索结果结合个人消费、文档与聊天上下文。",
+          "participants": [
+            {"name": "Google", "type": "company", "role": "subject"},
+            {"name": "Google Search", "type": "product", "role": "subject"},
+            {"name": "Google Wallet", "type": "product", "role": "object"},
+            {"name": "Google Drive", "type": "product", "role": "object"},
+            {"name": "Gemini", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Google 搜索今日起允许用户在 AI 模式中自愿连接 Google Wallet", "未来几周支持 Drive 与 Gemini 应用"]
+        }
+      ],
+      "relations": [
+        {"source": "Google Search", "target": "Google", "type": "developed_by", "weight": 0.9, "evidence": ["Google 搜索今日起允许用户在 AI 模式中自愿连接 Google Wallet"]},
+        {"source": "Google Search", "target": "Google Wallet", "type": "integrates", "weight": 0.85, "evidence": ["今日起可连接 Google Wallet"]},
+        {"source": "Google Search", "target": "Google Drive", "type": "integrates", "weight": 0.8, "evidence": ["未来几周支持 Drive 与 Gemini 应用"]},
+        {"source": "Google Search", "target": "Gemini", "type": "integrates", "weight": 0.8, "evidence": ["Gemini 应用与 AI 模式之间将共享上下文"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "Google 让搜索结果叠加个人金融、文档与聊天上下文，把搜索差异化从「世界的信息」推向「你的信息」，个人数据由此成为核心护城河，同时刻意划清「只读不碰钱」的边界。"
+    },
+    {
+      "article_id": "2026-11-23-8",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind"], "confidence": 0.97, "evidence": ["Google DeepMind 今日为 Gemini API 推出原生文件切片控制"]},
+        {"name": "Gemini API", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["Google DeepMind 今日为 Gemini API 推出原生文件切片控制"]},
+        {"name": "Gemini 4", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["该能力覆盖全部 Gemini 4 模型"]},
+        {"name": "Microsoft Office", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["同步支持 Microsoft Office 与 OpenDocument 格式的原生上传"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Google DeepMind 为 Gemini API 推出原生文件切片控制，按实际检查内容计费",
+          "summary": "开发者上传一次文件即可按页、单元格、时间区间与内容层指定模型加载哪些部分，token 只按实际检查的内容计费，覆盖全部 Gemini 4 模型。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Gemini API", "type": "product", "role": "object"},
+            {"name": "Gemini 4", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google DeepMind 今日为 Gemini API 推出原生文件切片控制", "该能力覆盖全部 Gemini 4 模型"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini API", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["Google DeepMind 今日为 Gemini API 推出原生文件切片控制"]},
+        {"source": "Gemini API", "target": "Gemini 4", "type": "integrates", "weight": 0.85, "evidence": ["该能力覆盖全部 Gemini 4 模型"]},
+        {"source": "Gemini API", "target": "Microsoft Office", "type": "integrates", "weight": 0.75, "evidence": ["同步支持 Microsoft Office 与 OpenDocument 格式的原生上传"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "服务端文件切片把「只读需要的页、单元格、时段」从客户端本地转档中解放出来并按实际检查内容计费，是面向多模态 agent 工作流省 token、降企业按用户沙箱切分成本的最直接手段。"
+    },
+    {
+      "article_id": "2026-11-23-9",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind"], "confidence": 0.97, "evidence": ["DeepMind 用多智能体团队与 Lean 形式化验证协作改进量子算法"]},
+        {"name": "Gemini 4", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["让多组 Gemini 4 agent 团队在 Lean 定理证明器验证下协作改进量子算法"]},
+        {"name": "Lean", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["先用 Lean 形式化验证"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "DeepMind 用多智能体团队与 Lean 形式化验证协作改进量子算法",
+          "summary": "多组 Gemini 4 agent 团队在 Lean 定理证明器验证下协作改进量子算法，聚变能量模拟的算力成本降至原来的约 1/12。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Gemini 4", "type": "model", "role": "subject"},
+            {"name": "Lean", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["让多组 Gemini 4 agent 团队在 Lean 定理证明器验证下协作改进量子算法", "先用 Lean 形式化验证"]
+        },
+        {
+          "type": "open_source",
+          "label": "DeepMind 开源用于量子算法的 Lean 库与经过验证的问题规格",
+          "summary": "团队开源了用于量子算法的 Lean 库与经过验证的问题规格，让协作式 agent 研究可直接复用经数学正确性保证的想法。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "Lean", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["开源了用于量子算法的 Lean 库与经过验证的问题规格"]
+        }
+      ],
+      "relations": [
+        {"source": "Gemini 4", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["让多组 Gemini 4 agent 团队在 Lean 定理证明器验证下协作改进量子算法"]},
+        {"source": "Google DeepMind", "target": "Lean", "type": "uses", "weight": 0.85, "evidence": ["先用 Lean 形式化验证"]},
+        {"source": "Gemini 4", "target": "Lean", "type": "uses", "weight": 0.8, "evidence": ["先用 Lean 形式化验证"]}
+      ],
+      "metrics": [
+        {"name": "聚变模拟成本降幅", "value": "11.8 倍"},
+        {"name": "纠错量子比特需求", "value": "从 5650 降到 4338"},
+        {"name": "光敏分子量子模拟成本降幅", "value": "8 倍"},
+        {"name": "P450 酶模拟改进", "value": "2.5 倍"},
+        {"name": "P450 内存需求", "value": "从 481 降到 333 量子比特"},
+        {"name": "Grover 提速", "value": "2.57 倍"},
+        {"name": "算术原语 arcsin 提速", "value": "290 倍"}
+      ],
+      "why_it_matters": "DeepMind 把「多组 agent 竞争性提出方案 + Lean 形式化验证」引入量子算法自动搜索，证明了 agent 在经典机器无法直接试错、须严格数学证真的领域也能稳定产出可迁移成果，为推理之外的应用打开了可验证路径。"
+    },
+    {
+      "article_id": "2026-11-23-10",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.98, "evidence": ["OpenAI 与思科联合开源 Shirudo"]},
+        {"name": "Cisco", "type": "company", "aliases": ["思科"], "confidence": 0.95, "evidence": ["OpenAI 与思科联合开源 Shirudo"]},
+        {"name": "Shirudo", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 与思科联合开源 Shirudo"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["用 Codex 为 Java4Shell 漏洞生成了一段盾牌"]},
+        {"name": "Java4Shell", "type": "topic", "aliases": [], "confidence": 0.9, "evidence": ["成功挡住了对运行中 Elasticsearch 的 Java4Shell 攻击"]},
+        {"name": "Elasticsearch", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["向运行中的 Elasticsearch 进程的 Base64 解码器附加输入检查"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "OpenAI 与思科基于 eBPF 联合开源运行时防护盾 Shirudo",
+          "summary": "OpenAI 与思科联合开源基于 eBPF 的运行时 Shirudo，可在不打补丁、不重启服务的情况下拦截针对 Linux 系统的漏洞利用，以 BSD 2-Clause 开源。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Cisco", "type": "company", "role": "subject"},
+            {"name": "Shirudo", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["OpenAI 与思科联合开源 Shirudo", "基于 eBPF 的运行时"]
+        },
+        {
+          "type": "security",
+          "label": "Codex 生成的盾牌成功挡住对运行中 Elasticsearch 的 Java4Shell 攻击",
+          "summary": "OpenAI 用 Codex 为 Java4Shell 漏洞生成盾牌，向 Elasticsearch 的 Base64 解码器附加输入检查，攻击输入被当场拒绝而服务照常运行。",
+          "participants": [
+            {"name": "Codex", "type": "product", "role": "subject"},
+            {"name": "Shirudo", "type": "tool", "role": "object"},
+            {"name": "Java4Shell", "type": "topic", "role": "object"},
+            {"name": "Elasticsearch", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["用 Codex 为 Java4Shell 漏洞生成了一段盾牌", "向运行中的 Elasticsearch 进程的 Base64 解码器附加输入检查", "攻击输入被当场拒绝而服务照常运行"]
+        }
+      ],
+      "relations": [
+        {"source": "Shirudo", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 与思科联合开源 Shirudo"]},
+        {"source": "Shirudo", "target": "Cisco", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 与思科联合开源 Shirudo"]},
+        {"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["用 Codex 为 Java4Shell 漏洞生成了一段盾牌"]},
+        {"source": "Shirudo", "target": "Java4Shell", "type": "targets", "weight": 0.8, "evidence": ["成功挡住了对运行中 Elasticsearch 的 Java4Shell 攻击"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "OpenAI 与思科把「针对零日漏洞的可测试临时盾牌」产品化开源，让防护随漏洞披露一起分发、不用从零打补丁，同时验证了 agent 可编程生成并验证部署级防护这一新范式。"
+    },
+    {
+      "article_id": "2026-11-23-11",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic 将 Enterprise Frontier Safeguards 开放公测"]},
+        {"name": "Enterprise Frontier Safeguards", "type": "product", "aliases": ["EFS"], "confidence": 0.95, "evidence": ["Anthropic 将 Enterprise Frontier Safeguards 开放公测"]},
+        {"name": "Fable 5", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["EFS 是对 Fable 5 时代 30 天数据留存政策的直接回应"]},
+        {"name": "Amazon Bedrock", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["现覆盖 Claude Platform、Claude Platform on AWS、Amazon Bedrock 与 Claude on Google Cloud"]},
+        {"name": "30 天数据留存政策", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["EFS 是对 Fable 5 时代 30 天数据留存政策的直接回应"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Anthropic 开放 Enterprise Frontier Safeguards 公测，提供零数据留存自动化滥用监测",
+          "summary": "EFS 在零数据留存承诺下提供跨请求的自动化滥用监测，提示词与输出写入客户自有云存储，Anthropic 与云厂商均不保留数据。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Enterprise Frontier Safeguards", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Anthropic 将 Enterprise Frontier Safeguards 开放公测", "在零数据留存承诺下提供跨请求的自动化滥用监测"]
+        },
+        {
+          "type": "policy",
+          "label": "EFS 以密封安全数据架构回应 Fable 5 时代 30 天数据留存政策引发的企业抵制",
+          "summary": "受严格监管的企业强烈抵制 Fable 5 时代 30 天数据留存政策，EFS 改为客户自带存储、Anthropic 与云厂商均不保留副本。",
+          "participants": [
+            {"name": "Enterprise Frontier Safeguards", "type": "product", "role": "subject"},
+            {"name": "Fable 5", "type": "model", "role": "object"},
+            {"name": "30 天数据留存政策", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["EFS 是对 Fable 5 时代 30 天数据留存政策的直接回应"]
+        }
+      ],
+      "relations": [
+        {"source": "Enterprise Frontier Safeguards", "target": "Anthropic", "type": "released_by", "weight": 0.9, "evidence": ["Anthropic 将 Enterprise Frontier Safeguards 开放公测"]},
+        {"source": "Enterprise Frontier Safeguards", "target": "Amazon Bedrock", "type": "integrates", "weight": 0.7, "evidence": ["现覆盖 Claude Platform、Claude Platform on AWS、Amazon Bedrock 与 Claude on Google Cloud"]},
+        {"source": "Enterprise Frontier Safeguards", "target": "30 天数据留存政策", "type": "replaces", "weight": 0.75, "evidence": ["EFS 是对 Fable 5 时代 30 天数据留存政策的直接回应"]}
+      ],
+      "metrics": [
+        {"name": "参与开发的客户数", "value": "100 多家"},
+        {"name": "财富 100 强企业参与比例", "value": "四分之一"},
+        {"name": "Safety Case 处置时限", "value": "7 天内"}
+      ],
+      "why_it_matters": "Anthropic 用「客户自带云存储 + 服务商零留存 + 裁决权交给客户安全团队」回应受监管企业对数据留存的根本抵触，把滥用监测从信任假设换成可自证的密封数据架构，扫清了 Enterprise 化最大的合规障碍。"
+    },
+    {
+      "article_id": "2026-11-23-12",
+      "entities": [
+        {"name": "Google Research", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Google Research 公布 DeepCrossAttention（DCA）架构"]},
+        {"name": "DeepCrossAttention", "type": "paper", "aliases": ["DCA"], "confidence": 0.9, "evidence": ["Google Research 公布 DeepCrossAttention（DCA）架构"]},
+        {"name": "残差连接", "type": "topic", "aliases": ["残差结构"], "confidence": 0.85, "evidence": ["取代传统的固定残差求和"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Google Research 公布 DeepCrossAttention 架构，以动态路由替代残差连接",
+          "summary": "DCA 用可学习权重与按层跨注意力动态组合前序层输出，取代传统固定残差求和，在参数几乎不增的情况下实现同质量 3 倍训练提速。",
+          "participants": [
+            {"name": "Google Research", "type": "organization", "role": "subject"},
+            {"name": "DeepCrossAttention", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["Google Research 公布 DeepCrossAttention（DCA）架构", "取代传统的固定残差求和"]
+        }
+      ],
+      "relations": [
+        {"source": "DeepCrossAttention", "target": "Google Research", "type": "developed_by", "weight": 0.85, "evidence": ["Google Research 公布 DeepCrossAttention（DCA）架构"]},
+        {"source": "DeepCrossAttention", "target": "残差连接", "type": "replaces", "weight": 0.8, "evidence": ["取代传统的固定残差求和"]}
+      ],
+      "metrics": [
+        {"name": "同质量训练提速", "value": "3 倍"},
+        {"name": "参数量降低上限", "value": "30%–40%"}
+      ],
+      "why_it_matters": "DCA 证明在不堆层数的前提下仍能靠改善深层信息流动效率拿到 3 倍训练提速，为「以深为贵」的大模型竞赛提供了一条与堆层正交的改进路径，也直指残差连接是深层表征丢失的瓶颈。"
+    },
+    {
+      "article_id": "2026-11-23-13",
+      "entities": [
+        {"name": "功能深度是可习得的", "type": "paper", "aliases": ["功能深度是在预训练中习得的"], "confidence": 0.9, "evidence": ["功能深度是可习得的"]},
+        {"name": "JaeSeong Kim", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["作者 JaeSeong Kim 与 KyungTae Lim"]},
+        {"name": "KyungTae Lim", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["作者 JaeSeong Kim 与 KyungTae Lim"]},
+        {"name": "Pythia", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["跨 Pythia、OLMo、Amber 公开检查点追踪该量"]},
+        {"name": "OLMo", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["跨 Pythia、OLMo、Amber 公开检查点追踪该量"]},
+        {"name": "Amber", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["跨 Pythia、OLMo、Amber 公开检查点追踪该量"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "新论文用容斥分解隔离层组协作计算，证明 transformer 功能深度在预训练中习得",
+          "summary": "作者 JaeSeong Kim 与 KyungTae Lim 引入精确容斥分解，跨 Pythia、OLMo、Amber 检查点追踪 connected component，证明深度是学习过程中涌现的功能结构。",
+          "participants": [
+            {"name": "功能深度是可习得的", "type": "paper", "role": "object"},
+            {"name": "JaeSeong Kim", "type": "person", "role": "subject"},
+            {"name": "KyungTae Lim", "type": "person", "role": "subject"},
+            {"name": "Pythia", "type": "model", "role": "object"},
+            {"name": "OLMo", "type": "model", "role": "object"},
+            {"name": "Amber", "type": "model", "role": "object"}
+          ],
+          "evidence": ["作者 JaeSeong Kim 与 KyungTae Lim", "跨 Pythia、OLMo、Amber 公开检查点追踪该量", "引入一种精确的容斥分解"]
+        }
+      ],
+      "relations": [
+        {"source": "功能深度是可习得的", "target": "JaeSeong Kim", "type": "authored_by", "weight": 0.85, "evidence": ["作者 JaeSeong Kim 与 KyungTae Lim"]},
+        {"source": "功能深度是可习得的", "target": "KyungTae Lim", "type": "authored_by", "weight": 0.85, "evidence": ["作者 JaeSeong Kim 与 KyungTae Lim"]},
+        {"source": "功能深度是可习得的", "target": "Pythia", "type": "uses", "weight": 0.7, "evidence": ["跨 Pythia、OLMo、Amber 公开检查点追踪该量"]},
+        {"source": "功能深度是可习得的", "target": "OLMo", "type": "uses", "weight": 0.7, "evidence": ["跨 Pythia、OLMo、Amber 公开检查点追踪该量"]},
+        {"source": "功能深度是可习得的", "target": "Amber", "type": "uses", "weight": 0.7, "evidence": ["跨 Pythia、OLMo、Amber 公开检查点追踪该量"]}
+      ],
+      "metrics": [],
+      "why_it_matters": "把「模型的深」从架构的静态属性重新解释为预训练中习得的涌现功能结构，意味着以单层为单位评估贡献会低估整体协作价值，为预训练动力学与剪枝、蒸馏研究提供了可测量方向。"
+    }
+  ]
+}

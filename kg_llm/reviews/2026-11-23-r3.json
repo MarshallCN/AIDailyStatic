@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-23",
+  "round": 3,
+  "verdict": "accept",
+  "quality_score": 87,
+  "summary": "逐条将全部14篇文章的实体、关系、指标与原新闻核对，未发现任何事实幻觉或关系方向错误；跨文章共享实体（NVIDIA、Anthropic、OpenAI、Google DeepMind）命名一致且未被错误合并。仅有2处轻微的关系类型与实体类型瑕疵，不影响发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-23-11",
+      "severity": "medium",
+      "problem": "2026-11-23-11 的关系 'Enterprise Frontier Safeguards --replaces--> 30天数据留存政策' 类型用错。原文表述是「EFS 是对 Fable 5 时代 30 天数据留存政策的直接回应」，EFS 是在零留存模型下提供滥用监测的一款独立产品，是对该政策的应对，而非把该政策作为对象直接取代。",
+      "fix": "将关系类型由 'replaces' 改为 'responds_to'（source=Enterprise Frontier Safeguards，target=30 天数据留存政策），evidence 保持原文『EFS 是对 Fable 5 时代 30 天数据留存政策的直接回应』；或删除该边，仅保留事件层面上的『回应』关系。"
+    },
+    {
+      "article_id": "2026-11-23-2",
+      "severity": "medium",
+      "problem": "2026-11-23-2 实体 'Alexander Wang' 的 aliases 包含 'Alexandr Wang' 与 '王亚历山大'，但原文正文只写作『Alexander Wang』，未声明与 'Alexandr Wang' 为同一人。把近形人名当作别名直接合并，存在把本文的 Meta AI 官（若与现实中 Scale AI 的 Alex 同名）误连到其他主体的风险。",
+      "fix": "仅把 canonical 名定为 'Alexander Wang'，如确需收录变体，须在 evidence 中注明依据（例如该文页面 URL slug 即 'alexandr-wang-meta'，可支撑 'Alexandr Wang' 为同一人），并去掉无证据的 '王亚历山大'；拿不准时不要并入任何同名他人。"
+    },
+    {
+      "article_id": "2026-11-23-3",
+      "severity": "low",
+      "problem": "2026-11-23-3 实体 'Goldman Sachs' 类型标为 'organization'。高盛是投资银行上市公司，在 company 类型可用时不应标成泛化的 organization。",
+      "fix": "将 'Goldman Sachs'（高盛）的 type 由 'organization' 改为 'company'，aliases 保留 '高盛'。"
+    }
+  ],
+  "lessons": [
+    "当原文表述为「某物是对某政策的直接回应」时，用 responds_to 关系，不要用 replaces 把『回应』误写成『取代』。",
+    "添加人名别名（尤其是近形拼写如 Alexander vs Alexandr）前必须核实原文是否有证据支持二者为同一人，无证据一律当作不同人，勿同名合并。"
+  ]
+}

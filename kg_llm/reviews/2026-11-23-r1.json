@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-23",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "图谱整体扎实、关系方向无误，但第4篇把两个不同代际、不同入口退役的模型 GPT-5.6 Sol 与 GPT-5.6 Terra 错合并成单一实体，且第5篇 built_on 关系的证据被错挂；第2篇事件 participants 把仅作背景提及的主体当成当事人。",
+  "findings": [
+    {
+      "article_id": "2026-11-23-4",
+      "severity": "high",
+      "problem": "实体 \"GPT-5.6 Terra\"（type=model）把 \"GPT-5.6 Sol\" 设为别名，实际上是两个不同的模型：原文明确说 GPT-5.6 Sol 与 GPT-5.6 Terra 将于 12 月 23 日『分别从 Chat/Work/Codex 与 Work/Codex 中退役』，入口不同、是并列的两代模型。合并后图谱第 2026-11-23-4 中只有一个 GPT-5.6 Terra 实体，且退休事件只提 Terra，关系 \"GPT-6.2 Sol --replaces--> GPT-5.6 Terra\" 也只覆盖一个模型，整个代际切换故事被走样。",
+      "fix": "将 GPT-5.6 Sol 与 GPT-5.6 Terra 拆为两个独立 model 实体；退役事件应列出两个参与者，并分别注明退役入口（Sol 从 Chat/Work/Codex、Terra 从 Work/Codex）；replaces 关系如保留应同时指向两个旧模型，或删除该关系改为由退役事件本身表达代际切换。"
+    },
+    {
+      "article_id": "2026-11-23-5",
+      "severity": "medium",
+      "problem": "关系 \"Claude Ship --built_on--> Claude\" 的证据是『Claude Code 团队 6 至 9 月合并的 PR 数量翻倍以上，revert 比例下降超过 40%』——这是一条团队工程指标，完全不支撑 built_on 关系，属于证据错挂；且把模型实体 Claude 与工具 Claude Code 混为一谈（内置 /ship 命令的载体是 Claude Code 工具，而非 Claude 模型本身）。",
+      "fix": "要么删除该 built_on 关系，要么改为 \"Claude Ship --built_on--> Claude Code\"（若确有此关系），并把证据换成诸如『开发者可在 Claude Code 中直接使用 /ship 命令』这类真正支撑该断言的内容。"
+    },
+    {
+      "article_id": "2026-11-23-2",
+      "severity": "medium",
+      "problem": "事件 participants 把 Anthropic 列为 role=subject，但该事件是『Wang 在 X 发文警示超级智能』；Anthropic 只是因 Lieve 等人借其模型证明黎曼猜想的背景而被提及，并未参与 Wang 的发言本身。把背景主体当作事件当事人会让事件角色语义失真。",
+      "fix": "从该事件的 participants 中移除 Anthropic（它与 Levent Alpöge、Claude 关联的事件应独立存在于关系层），或明确把其 role 改成一个只表示『被引用』而非参与事件的角色。"
+    },
+    {
+      "article_id": "2026-11-23-1",
+      "severity": "low",
+      "problem": "IPO 融资事件的 participants 把 Matt Stoller 列为 role=subject，但他的『rug pull』批评发生在 IPO 之外的舆论层，并非募资事件的当事人（funding 事件的当事人应为发行人 Anthropic 与承销/购买方），角色归类不当。",
+      "fix": "从 IPO 事件 participants 移除 Matt Stoller，保留其作为已抽取实体与事件证据『批评者称 rug pull』的联系即可。"
+    }
+  ],
+  "lessons": [
+    "同一文章中出现多个并列的同代模型（如 GPT-5.6 Sol 与 GPT-5.6 Terra、不同入口退役），必须按各自名称拆为独立实体，绝不要把其中一个设为另一个的别名或规范化名。",
+    "关系必须挂在真正支撑该断言的那条证据上；区分模型实体与同名工具实体（Claude 模型 vs Claude Code 工具），不要把团队工程指标当成产品关系的证据。",
+    "只把事件的实际当事人放进 participants；在文章里被引用仅作背景的其他主体（公司、作者）不应被当作该事件的 subject/object，应留在实体与关系层单独表达。"
+  ]
+}

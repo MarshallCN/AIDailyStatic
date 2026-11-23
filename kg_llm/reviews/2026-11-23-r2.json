@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-23",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 84,
+  "summary": "第 1 轮的三个问题（GPT-5.6 Sol/Terra 合并、built_on 证据错挂、第 2 篇事件 participants 错列背景主体）已全部修正，事实无硬错、关系方向全部正确。剩余残留问题均为中等：第 1 篇 IPO 事件证据夹带无关批评引语、第 5 篇同一事实双向重复成两条关系、以及确定性审计把 GPT-6.2 Sol 与 GPT-5.6 Sol 误报为重复实体需明确否决以免反向改坏。",
+  "findings": [
+    {
+      "article_id": "2026-11-23-1",
+      "severity": "medium",
+      "problem": "事件 funding『Anthropic 完成史上最大 IPO 交割，发行 11.27 亿股募资约 935 亿美元』的 evidence 里夹着『称这次 IPO 是「rug pull」』——这条是批评者 Matt Stoller 对定价的外部舆论，不支撑『交割完成/募资 935 亿』这一断言，属于证据存在但支撑的是另一回事，会误导读者以为 rug pull 是交割事件的一部分。",
+      "fix": "从该 IPO 交割事件的 evidence 中移除『称这次 IPO 是「rug pull」』，只保留支撑发行量、价格与募资额的原句（发行 11.27 亿股 A 类股、每股 83 美元、总募资约 935 亿美元等）；rug pull 的批评内容可写入 why_it_matters，或保留为 Matt Stoller 实体在该事件外的独立表述。"
+    },
+    {
+      "article_id": "2026-11-23-5",
+      "severity": "medium",
+      "problem": "同一事实被双向重复表达成了两条关系：『Claude Ship --built_on--> Claude Code』与『Claude Code --integrates--> Claude Ship』（证据同为『开发者还可在 Claude Code 中直接使用 /ship 命令』）。两条边指向同一个关系，图谱会被无意义地重复连通，计入关系数但不增加信息。",
+      "fix": "保留其中方向更明确的一条（建议保留 Claude Ship --built_on--> Claude Code，因 Claude Code 是底座），删除另一条 Claude Code --integrates--> Claude Ship。"
+    },
+    {
+      "article_id": "2026-11-23-4",
+      "severity": "medium",
+      "problem": "确定性审计把 GPT-6.2 Sol 与 GPT-5.6 Sol 标为『疑似重复实体』建议合并——这是一个假正例，绝不能采纳：GPT-6.2 Sol 是今日上线的聊天默认模型，GPT-5.6 Sol 是将于 12 月 23 日退役的旧模型，两者是先后代际、来源原文明确并列，合并会抹掉 replaces 关系与代际切换故事。当前抽取把它们分开是正确的。",
+      "fix": "维持 GPT-6.2 Sol 与 GPT-5.6 Sol 为两个独立 model 实体，不合并、不设别名；可沿用 GPT-6.2 Sol --replaces--> GPT-5.6 Sol 关系表达代际切换。无需改动，仅需确认不会按审计建议合并。"
+    }
+  ],
+  "lessons": [
+    "事件 evidence 只引用能直接支撑该事件断言的原句；批评者/评论者的外部舆论引语（如「rug pull」）不得挂到募资、交割等事件上，应归入该主体自己的关系或 why_it_matters。",
+    "同一条事实不要用两个不同关系类型双向重复表达（既 built_on 又 integrates）；保留方向最明确的一条，删除另一条，避免无效重复连通。",
+    "带版本号的模型名即便前缀相似（GPT-6.2 Sol 与 GPT-5.6 Sol）也是不同代际的独立实体，勿按名称相似度合并；除非原文明确同一实体，否则一律拆开并在别名里做区分。"
+  ]
+}
