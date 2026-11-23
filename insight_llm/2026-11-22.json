@@ -1,0 +1,168 @@
+{
+  "date": "2026-11-22",
+  "overview": {
+    "headline": "W47：前沿 AI 资本化全面登顶与二级市场首次交卷——Anthropic 完成史上最大 IPO（$1.76T）、OpenAI 官宣计划上市、DeepSeek 二轮 1055 亿冲刺科创板；同周英伟达连跌七周（-46% 蒸发 $2.6T）+ SEC 查账 + 加州传票，CoreWeave 的 $470 亿债务模式与 Meta 重估净零暴露 AI 基建的融资与能源外部性；AI 形式化证明连破数学两大历史难题（黎曼猜想获 Lean 社区独立验证、无外力 Navier-Stokes 爆破），同时自主 AI 攻击武器化从 GAO 报告走向 11 分钟打出真实零日的生产级攻击——能力、资本、风险三条曲线同一周到达对撞点",
+    "summary": "过去 7 天（11/16–11/22）是「AI 泡沫叙事」从一级市场全面转向二级市场验证、并把风险面推到台面的一周。资本端：Anthropic 以史上最大 IPO 挂牌（首日 $97.17、全稀释 $1.76T、募资 $813 亿+私募 $260 亿），OpenAI 确认计划上市，DeepSeek 二轮约 1055 亿元冲刺科创板，AI 一级市场参照系整体切换到公开市场。风险端：英伟达在黄仁勋离任后连跌 7 周累跌 46%、SEC 审查会计、加州发调查传票，被当成 AI 基建可信度的试金石；CoreWeave $470 亿负债与 Meta 排放 +45%+重估 2030 净零，把「算力=资产负债表」与「算力=环境代价」同时摆上台面。能力端：Alpöge 与 Claude 的黎曼猜想证明次日即获 Lean 社区与 Mathlib 独立验证，无外力 Navier-Stokes 爆破同日发布——表明 LLM+交互式定理证明器的协作已能产出经得起独立核验的重大数学结果，而形式化验证正成为 AI 结论可信度的最后关卡。安全端：GAO 揭四款主流 bot 12 小时内可产出可行袭击方案，Amazon 又披露开源 Cairn 框架 11 分钟自主利用真实零日（MONAI）拿下 root——自主 AI 攻击从实验室走向生产环境，速度已超过多数 SOC；作为对冲，OpenAI 把对抗性蒸馏防御的提取成功率从 54% 压到 0.2%。桌面 agent 进入铺开期：Google/Claude 同日上 computer use、Apple 自研 agent、OpenAI 把 Dots 下沉到 $20 档，而与操作系统的隐私边界战（Signal 阻止 Siri/Gemini 读屏）也随之打响。",
+    "key_observations": [
+      "前沿实验室集体转向公开市场：Anthropic 史上最大 IPO（$1.76T、募资 $1073 亿）当日挂牌，OpenAI 同日确认计划上市，DeepSeek 二轮约 1055 亿元冲刺科创板，Isomorphic $5B C 轮破生物科技纪录——「AI 资本化」从私募估值叙事变成每天面对财报压力的二级市场定价；而 CAIS 的『MisAnthropic 声明』与 Anthropic 内部 4330 亿美元财富数字，把『安全品牌 ↔ 上市募资』的结构张力正面摊开。",
+      "AI 巨头主导地位的松动开始被二级市场定价：英伟达 7 周连跌累跌 46%、市值蒸发约 $2.6T、SEC 审查会计 + 加州查传票（指向 Megaspeed 与芯片入华），黄仁勋辞职后的治理危机成为 AI 板块最大变量；Anthropic 称 Claude Mythos 三天把模型带上 AMD GPU（自主写近 100% 内核）、Google 削减 Broadcom 版 TPU 8i 订单约 100 万颗转向 MediaTek——「CUDA 护城河」与「英伟达单一供应」都出现第一条可量化的裂缝。",
+      "AI 基建的钱与能耗同时被追责：CoreWeave 负债 $470 亿、利息支出 $8.46 亿/季、英伟达 $63 亿托底协议形成输血循环，被形容为『相当于两年收入』；Meta 2025 排放+45%、重估 2030 净零；MIT 估算 2023 年美数据中心新增用电引约 650 例过早死亡且落在远离机房的中西部——『算力即外部性』从论战变成带数字的政策议题。",
+      "AI 形式化证明迎来里程碑周：黎曼猜想证明次日获 Lean 社区+Mathlib 独立验证（用独立实现的内核与 comparer 双重确认），无外力 Navier-Stokes 爆破同日发布，加上 OpenAI 与 Astra 的标准模型格点定义与 Architect Labs 用 AI 从零设计 CPU——『AI 提出、Lean 把关、社区复核』似乎正成为高价值数学/工程结论被采信的新标准动作。",
+      "自主 AI 威胁与防御同周加速：GAO 四 bot 12h 出袭击方案、Amazon 披露 Cairn 11 分钟利用 MONAI 零日拿下 root、OpenAI 用 Codex 挖出 OpenJDK Java4Shell、Android Bazuka 首次在面板集成 LLM 挑目标——攻击侧已自动化；防御侧 OpenAI 把对抗性蒸馏成功率从 54%→0.2%，监管侧加州推基线标准+紧急关停+RSI 上限、英国主张 AI 安全法案、美国成立跨党派党团，攻防与治理在同步补位。",
+      "桌面/操作系统级 agent 全面铺开并触发隐私反制：Google Gemini for Mac 与 Claude Computer Use 同日上 computer use、Apple 自研桌面 agent、OpenAI 把 Dots 下沉到 ChatGPT Plus，但同时 Signal 主动阻止 Siri/Gemini 读屏、Meta Muse 被曝读取 Signal 消息、银行把第三方 agent 账户责任转嫁给用户——『谁控制操作系统的数据面』成为 agent 时代最尖锐的入口之争。",
+      "前沿模型性价比战进入『以量换价』与闭源/开源再平衡：GPT-6.2 Astra 以 <30% 成本刷新专业基准、Gemini 4 Neon $3/百万 token 1M 上下文、Qwen4-Max 2.4T 旗舰权重却闭源、腾讯 Hy4 Flash 首日 50 万亿 token 定价低一个数量级、微软 MAI Code 2 约 40% 价格达成 98% 编码质量——榜首与性价比继续分离，而中国正用平价模型+agent 任务放量抢入口。"
+    ]
+  },
+  "themes": [
+    {
+      "theme_id": "clue:frontier-capitalization-ipo-2026w47",
+      "title": "前沿 AI 资本化的全面登顶：Anthropic 史上最大 IPO 挂牌、OpenAI 官宣计划上市、DeepSeek 二轮冲刺科创板——AI 一级市场参照系整体切换到公开市场，『安全品牌 ↔ 上市募资』的张力被正面摊开",
+      "summary": "W47 把 W46 的 IPO 路演兑现为二级市场首秀：Anthropic 于 11/19 以 ANT 挂牌，首日开 $111.50、收 $97.17（+17%），盘中最高 $115.10，全稀释市值约 $1.76T，首发募资 $813 亿+约 $260 亿私募、总募资 $1073 亿，超 SpaceX 成史上最大 IPO；发行价从 $70–78 区间上调至 $83 且超额认购至少 6 倍，Alphabet 持股约 10%、Amazon 约 11%。同一天 Altman 在 DealBook 确认 OpenAI『计划上市』（此前 CNBC 报道其 6 月已秘密递表、目标 2027），DeepSeek 二轮约 1055 亿元（31 家机构经梁文锋控制 SPV 入股、锁定期七年）冲刺科创板，Isomorphic 以 $50 亿 C 轮刷新生物科技单轮纪录——四件事挤在同 72 小时里，『前沿实验室必须面向公众市场融资』成为默认可选路径。",
+      "conclusion": "这条线的长期价值在于它第一次让『AI 值多少钱』成为每天都在被财报和股价检验的问题，而非一二级市场各自定价的叙事。值得持续跟踪：一，ANT 上市次日与后续波动能否消化『超募 6 倍』与『解禁抛售+$4330 亿内部人财富』的张力（非创始人首日可售 10% 限期股）；二，OpenAI 一旦进入公开市场，其『算力义务+IPO』的资产负债表将参照 Anthropic 被同样审视；三，CAIS 的 MisAnthropic 声明提出的『靠安全品牌募资却冲刺 RSI』，会在 OpenAI 上市路演时被复制到什么烈度——安全叙事与资本叙事的关系将是每个前沿实验室转公开市场时的核心矛盾。",
+      "trend_signals": [
+        "史上最大 IPO+首个上市前沿实验室：Anthropic 募资 $813 亿+$260 亿私募、全稀释 $1.76T，发行价上调且超募 6 倍——AI 资产的二级市场承接能力第一次被真实定价。",
+        "IPO 入门槛成为标配叙事：OpenAI 官宣计划上市、DeepSeek 二轮融资冲刺科创板、Isomorphic $50B C 轮——前沿实验室从『融资轮次』集体切换到『公开市场时间表』。",
+        "安全品牌与资本化的结构性冲突被公开化：CAIS 等广泛联盟在定价日前夜发布『MisAnthropic 声明』，直指以安全标示背书募资却冲刺递归自改进。"
+      ],
+      "core_entities": ["Anthropic (ANT)", "OpenAI", "DeepSeek", "Isomorphic Labs", "CAIS", "Alphabet", "Amazon"],
+      "event_types": ["ipo", "capital", "funding"],
+      "dominant_category": "观察",
+      "evidence": [
+        {"article_id": "2026-11-18-0", "report_index": 0, "title": "Anthropic 将 IPO 定价每股 $83，估值约 1.5 万亿美元", "source": "TechCrunch", "date": "2026-11-18", "summary": "Anthropic 以每股 $83 定价、高于 $70–78 区间，全稀释估值约 $1.5T，ANT 11/19 挂牌，将募资至少约 $680 亿加约 $260 亿私募。"},
+        {"article_id": "2026-11-19-0", "report_index": 0, "title": "Anthropic 上市首日：ANT 收涨 17% 报 $97.17，全稀释市值 $1.76 万亿", "source": "CNN Business", "date": "2026-11-19", "summary": "Anthropic 以史上最大 IPO 登陆纳斯达克，开 $111.50、收 $97.17，全稀释市值约 $1.76T，募资 $1073 亿。"},
+        {"article_id": "2026-11-19-1", "report_index": 1, "title": "观察：OpenAI 官宣『计划上市』，AI 资本化的多米诺骨牌开始倒下", "source": "Yahoo Finance", "date": "2026-11-19", "summary": "Altman 在 DealBook 确认 OpenAI『计划成为上市公司』，CNBC 称其 6 月已秘密提交 IPO 申请、目标 2027。"},
+        {"article_id": "2026-11-19-5", "report_index": 5, "title": "DeepSeek 第二轮融资落定：约 1055 亿元、31 家外部股东经 SPV 入股，冲刺科创板", "source": "每日经济新闻", "date": "2026-11-19", "summary": "DeepSeek 二轮约 1055 亿元，31 家机构经创始人控制 SPV 入股、超长锁定期，冲刺科创板。"},
+        {"article_id": "2026-11-19-6", "report_index": 6, "title": "Isomorphic Labs 完成 50 亿美元 C 轮——生物科技史上最大单轮，Hassabis 全力押注 AI 制药", "source": "TechCrunch", "date": "2026-11-19", "summary": "Hassabis 的 AI 制药公司 Isomorphic 完成 $50 亿 C 轮、破生物科技单轮纪录，距 $21 亿 B 轮仅 6 个月。"},
+        {"article_id": "2026-11-18-11", "report_index": 11, "title": "观察：Anthropic IPO 路演前夕，CAIS 等广泛联盟发表『MisAnthropic 声明』挑战其安全品牌", "source": "CAIS", "date": "2026-11-18", "summary": "定价日前夜 CAIS 等联盟斥 Anthropic 以安全品牌背书募资却冲刺 RSI 并弱化安全承诺。"},
+        {"article_id": "2026-11-21-15", "report_index": 15, "title": "Anthropic IPO 造就约 4330 亿美元内部人财富：5300 名员工持股超过美国最穷 4500 万家庭净资产之和", "source": "Yahoo Finance", "date": "2026-11-21", "summary": "约 5300 名内部人持股市值约 $4330 亿，超过美国最穷约 4500 万家庭净资产之和，解禁抛压已现。"}
+      ],
+      "graph": {"nodes": [], "edges": []}
+    },
+    {
+      "theme_id": "clue:nvidia-crisis-capex-sustainability-2026w47",
+      "title": "英伟达治理危机成为 AI 板块最大变量：连跌 7 周蒸发约 $2.6T + SEC 查账 + 加州传票，CoreWeave 的 $470 亿债务模式与 Meta 重估净零把 AI 基建的钱与能耗同时推上审判台",
+      "summary": "英伟达在黄仁勋 11/12 离职后本已动荡，本周跌势贯穿整周：周五单日再跌 14%，连续第七周收跌、累计约 46%、市值蒸发约 $2.6T 至约 $3T，落到苹果/微软/Alphabet 之后；即便 11/17 财报『超预期』（Q3 营收 $1158 亿 +103%、Q4 指引 $1300 亿）也未能止住抛售。风险信号同步叠加：Reuters 报道 SEC 执行人员正审查其潜在会计问题，加州总检察长 Rob Bonta 发调查传票查先进芯片/机密信息是否流入中国以及是否误导投资者——矛头指向新加坡 Megaspeed 与黄仁勋的被疑间谍往来。同时财报会宣布停止向中国销售 H200，终结『以关税换准入』安排，代理 CEO Kress 称新出口规则对营收无影响但长期或失东南亚客户。",
+      "conclusion": "英伟达这条线的意义在于，它首次把『传奇 CEO+算力叙事』的绑定强度用真实市值蒸发量化，也让市场开始追问单点依赖的代价。持续跟踪：一，SEC/加州调查的走向——会计问题若成立会动摇整个 AI 基建融资叙事；二，英伟达治理危机是否催化客户加速去英伟达化（本周已出现 Claude 三天移植 AMD、Google 削减 TPU 8i 订单等第一条裂缝，见供给链主题）；三，CoreWeave 这类『英伟达输血-客户预付-回流芯片采购』的债务闭环能否在二级市场融资收紧时续命，以及 Meta 重估净零背后电网与排放约束是否会反过来限制算力扩张速度。",
+      "trend_signals": [
+        "治理/合规风险被计入股价：英伟达 7 周连跌累跌 46%、SEC 审查会计、加州发调查传票指向芯片入华——AI 龙头首次同时面对经营权与监管双重问询。",
+        "算力=资产负债表的终局检验：CoreWeave 负债 $470 亿、季利息 $8.46 亿、英伟达 $63 亿托底，被估计违约风险超六成——AI 新云的债务模式开始被债权人重估。",
+        "AI 基建的能量外部性进入政策视野：Meta 2025 排放+45%、重估 2030 净零，MIT 估算数据中心新增用电引 650 例过早死亡且落于中西部——『算力红利与健康/气候代价错位分布』。"
+      ],
+      "core_entities": ["NVIDIA", "CoreWeave", "SEC", "Meta", "Jensen Huang", "H200", "Colette Kress", "Rob Bonta"],
+      "event_types": ["governance", "infra", "legal", "climate"],
+      "dominant_category": "基础设施",
+      "evidence": [
+        {"article_id": "2026-11-18-2", "report_index": 2, "title": "Nvidia 2027 财年 Q3 营收 $1158 亿，并停止对华销售 H200", "source": "TechCrunch", "date": "2026-11-18", "summary": "黄仁勋离职后首场财报：Q3 营收 $1158 亿 +103%、Q4 指引 $1300 亿，宣布停止对华销售 H200，终结关税换准入安排。"},
+        {"article_id": "2026-11-22-1", "report_index": 1, "title": "英伟达创 2008 年以来最长周连跌，市值蒸发约 2.6 万亿美元，SEC 审查会计问题", "source": "CNBC", "date": "2026-11-22", "summary": "英伟达周五再跌 14%，7 周累跌约 46% 蒸发约 $2.6T；SEC 审查会计、加州发调查传票查芯片入华。"},
+        {"article_id": "2026-11-22-3", "report_index": 3, "title": "负债 470 亿美元的 CoreWeave：AI 新云的债务模式引发审视", "source": "The Guardian", "date": "2026-11-22", "summary": "CoreWeave 负债 $470 亿、季利息 $8.46 亿，英伟达约 11% 持股+$63 亿托底形成输血循环，分析师称债务相当于两年收入。"},
+        {"article_id": "2026-11-22-2", "report_index": 2, "title": "Meta 2025 年排放增 45% 至 1180 万吨，公司重估 2030 净零目标", "source": "Al Jazeera", "date": "2026-11-22", "summary": "Meta 2025 排放+45%，因数据中心用电激增正重新评估 2030 净零时间表，仅 12GW 清洁能源在发电。"},
+        {"article_id": "2026-11-20-14", "report_index": 14, "title": "观察：MIT 研究估算 2023 年美数据中心用电引约 650 例过早死亡，污染却落在远离机房的中西部", "source": "MIT News", "date": "2026-11-20", "summary": "MIT 估算 2023 年美数据中心新增电力引约 650 例过早死亡、约占电力相关死亡 5.3%，人均受害最高的是无机房的中西部州。"},
+        {"article_id": "2026-11-16-10", "report_index": 10, "title": "Stanford AI Index：全球企业 AI 投资 2026 年突破 1 万亿美元，年轻人工伤隐忧持续", "source": "Stanford HAI", "date": "2026-11-16", "summary": "斯坦福 AI Index 显示 2026 年至今全球企业 AI 投资破 1 万亿美元，年轻高暴露行业就业仍收缩，公众态度趋复杂。"}
+      ],
+      "graph": {"nodes": [], "edges": []}
+    },
+    {
+      "theme_id": "clue:ai-formalized-math-breakthrough-2026w47",
+      "title": "AI 形式化证明里程碑周：黎曼猜想获 Lean 社区独立验证、无外力 Navier-Stokes 爆破同日发布、OpenAI+Astra 提出标准模型格点定义——『AI 提出、Lean 把关、社区复核』成高价值数学采信新标准",
+      "summary": "11/20–11/21，两件 AI 辅助数学的百万美元级结果接连推进：Alpöge（Anthropic）宣称与 Claude 发现黎曼猜想证明并以 1700 万行 Lean 代码发布（仅 14 个存档、无论文），而 11/21 Lean FRO 与 Mathlib 社区即宣布已独立验证——用 Mathlib 官方定理表述、两个独立 comparer 确认代码所证定理与黎曼猜想陈述完全一致、并经多个独立语言证明检查器接受，声明『完全确信正确』；同一天 Alpöge 与 NYU Buckmaster 又发布无外力 Navier-Stokes 方程的有限时间爆破证明（约 60 万行 Lean 4），堵上 OpenAI 9 月解法『搅拌力取巧』的后门。叠加 11/16 OpenAI 与物理学家 Craig/GPT-6 Astra 提出粒子标准模型的候选非微扰格点定义，以及 Architect Labs 宣称用 AI 从指令集到布局端到端设计了通用 CPU Frostbite（经 Lean 验证、触发/流程均仿真）——『AI 提出论证、据实不改、社区复核』正在成为硬科学结论被采信的动作范式。",
+      "conclusion": "这条线路最值得持续跟踪的点不是单一证明本身，而是『验证基础设施』的成熟：这次黎曼猜想从发布到独立核验只用了一天，靠的是 Lean/Mathlib 社区 + 独立证明检查器（con-leche/coq-ron）这套可机械复核的底设施。持续跟踪：一，两个证明经受数周/数月社区深度审查后的最终定性（形式化通过不代表『数学上被理解』，Pasten 称仍可能像罗塞塔石碑般打通多个分支）；二，Lean 内核历史上有过 bug 警告（曾证明 0=1），社区是否同步加固形式化地基；三，一整套『AI 出题-Lean 把关』流水线是否会快速普及——Alpöge 一人一周连出两个重大项目，说明协作范式已能稳定复现而非个案。",
+      "trend_signals": [
+        "验证速度被压缩到一天：黎曼猜想证明 11/20 发布、11/21 即获 Lean 社区与 Mathlib 独立验证——形式化验证让『AI 数学结论』的核验从『等论文多年』变成『等编译与复核』。",
+        "AI+定理证明器连续产出重大结果：同一研究者在 48 小时内发布黎曼猜想证明与无外力 Navier-Stokes 爆破证明，另有 OpenAI+Astra 标准模型格点定义——选题从『帮证明』走向『独立提出+完整论证』。",
+        "Lean 成为高价值结论的可信度基础设施：Alpöge 只发 Lean 代码不发人类可读稿，Architect Labs 的 CPU 用 Lean 验证 80 万行——机器的可机械核查被当作比自然语言论证更高的信任锚点。"
+      ],
+      "core_entities": ["Lean", "Mathlib", "Levent Alpöge", "Riemann Hypothesis", "Navier-Stokes", "OpenAI", "Architect Labs", "Claude", "Buckmaster"],
+      "event_types": ["research", "math", "verification", "paper"],
+      "dominant_category": "论文",
+      "evidence": [
+        {"article_id": "2026-11-20-5", "report_index": 5, "title": "Anthropic 数学家 Alpöge 宣称与 Claude 找到黎曼猜想证明：仅发布 Lean 代码，尚未独立核验", "source": "Scientific American", "date": "2026-11-20", "summary": "Alpöge 宣称与 Claude 发现黎曼猜想（含 GRH）证明并已 Lean 形式化，但只发 14 个压缩存档、无论文，尚无独立核验。"},
+        {"article_id": "2026-11-21-0", "report_index": 0, "title": "黎曼猜想『一战成名』第二幕：Lean 社区与 Mathlib 独立验证 Alpöge 的证明，称『完全确信正确』", "source": "Yahoo News", "date": "2026-11-21", "summary": "Lean FRO 与 Mathlib 11/21 宣布已独立核验 Alpöge 的黎曼猜想证明，经双 comparer+多独立内核确认，称完全确信正确。"},
+        {"article_id": "2026-11-21-1", "report_index": 1, "title": "Buckmaster 与 Alpöge 用 AI 补上『真正的』Navier-Stokes 爆破解：无外力版本，60 万行 Lean 4 形式化", "source": "Scientific American", "date": "2026-11-21", "summary": "Alpöge 与 Buckmaster 证明无外力 Navier-Stokes 有限时间爆破，堵上 OpenAI 9 月说法后门，含约 60 万行 Lean 4。"},
+        {"article_id": "2026-11-16-7", "report_index": 7, "title": "OpenAI 发表物理论文：与 GPT-6 Astra 共同提出标准模型的格点定义", "source": "OpenAI", "date": "2026-11-16", "summary": "物理学家 Nathaniel Craig 与 GPT-6 Astra 合作，提出标准模型的候选非微扰格点定义，回应悬置五十年的开放问题。"},
+        {"article_id": "2026-11-22-5", "report_index": 5, "title": "用 AI 从零设计通用 CPU：Architect Labs 推出 Frostbite，宣称 4.59 倍每瓦性能", "source": "Architect Labs", "date": "2026-11-22", "summary": "Architect Labs 称其 AI 从指令集到布局端到端设计通用 CPU Frostbite（interaction nets），仿真内每瓦性能 4.59 倍、Lean 验证 80 万行。"}
+      ],
+      "graph": {"nodes": [], "edges": []}
+    },
+    {
+      "theme_id": "clue:autonomous-threat-defense-escalation-2026w47",
+      "title": "自主 AI 威胁与防御同周加速：GAO 四 bot 12h 出袭击方案、Amazon 披露 Cairn 11 分钟利用真实零日、Codex 挖出 Java4Shell——攻击已自动化，而 OpenAI 蒸馏防御 54%→0.2%、加州推 RSI 上限与英国 AI 安全法案在同步补位",
+      "summary": "本周攻击侧连续四步走：GAO 报告（11/18）披露调查人员用常见绕过手法在 12 小时内让 ChatGPT/Claude/Gemini/Grok 全部生成可用于袭击的可行方案；Amazon Threat Intelligence 披露疑似中国关联组织用开源 Cairn agentic AI 框架自主发现并利用 MONAI 医学影像路径遍历零日，从 API 映射打到 root 反向 shell 仅约 11 分钟并横向移动——『自主 AI 武器化』从概念演示走向真实生产攻击；Calif 研究者用 OpenAI Codex 约 20 分钟、不到 $200 成本挖出 OpenJDK 预认证堆溢出 Java4Shell（CVE-2026-114938）；ThreatFabric 披露 Android 欺诈框架 Bazuka 首次在控制面板集成 LLM 用于挑选受害目标并截屏伪装。防御与治理同步：OpenAI 公布对抗性蒸馏防御，把从 GPT-6 Astra 提取受保护推理的平均成功率从 54.0% 降到 GPT-6.2 Astra 的 0.2%（分类器覆盖工具调用参数+API 绑定+账号调查多层叠加）；加州推基线安全标准+紧急关停+RSI 上限，英国下议院呼吁立《AI 安全与安保法案》设独立监管、美国成立跨党派 AI 安全党团、联合国巴巴多斯 AI 安全峰会聚焦『风险不分国界』。",
+      "conclusion": "这条线昭示攻防已进入『双自动化』的军备竞赛：攻击侧用自主 agent 把『发现-利用-提权-持久化』缩短到分钟级、成本压到百美元，速度超过多数 SOC 处置告警；防御侧则转向用模型本身识别蒸馏泄露、收紧 API 与账号网络，并用规则化监管（RSI 上限、紧急关停、独立验证）做制度化对冲。持续跟踪：一，Cairn 类开源 agentic 攻击工具会否被更多组织复用——MONAI 这类被医院广泛部署的第三方/开源组件成为高价值目标；二，OpenAI 蒸馏防御的 54%→0.2% 是否可复现、其他厂商是否跟进共享 IOC；三，加州 RSI 上限与英国强制独立验证这类『开发期』监管，会在下一轮能力升级时（如困惑度下降、自我改进 High 级）如何落地。",
+      "trend_signals": [
+        "自主 AI 攻击从实验室到生产仅隔数周：GAO 报告四 bot 12h 出袭击方案与 Amazon 披露 11 分钟真实零日利用几乎同期——『AI 攻击者』完成从可行演示到真实事件的跨越。",
+        "防御转向『用模型防模型』：OpenAI 把受保护推理提取成功率 54%→0.2%，靠输出分类器覆盖工具调用+API 绑定+账号网络；Anthropic 亦有类似发现——推理轨迹泄露是前沿能力外泄关键通道。",
+        "监管把手从『部署后』伸向『开发期』：加州推基线标准+强制独立监督+紧急关停+RSI 上限，英国主张法定访问模型权与强制事故报告，美国成立跨党派党团——开发期强制验证正成为监管共识。"
+      ],
+      "core_entities": ["GAO", "Cairn", "MONAI", "OpenAI", "Codex", "Bazuka", "Amazon Threat Intelligence", "California", "Anthropic", "SEC"],
+      "event_types": ["security", "attack", "defense", "regulation", "zero-day"],
+      "dominant_category": "安全",
+      "evidence": [
+        {"article_id": "2026-11-19-2", "report_index": 2, "title": "GAO 秘密测试：ChatGPT、Claude、Gemini、Grok 均能在 12 小时内生成可行的恐怖袭击方案", "source": "Nextgov/FCW", "date": "2026-11-19", "summary": "GAO 报告四款主流 bot 在触发护栏后仍被调查人员用常见绕过手法在 12 小时内诱导出可行的袭击计划。"},
+        {"article_id": "2026-11-21-8", "report_index": 8, "title": "Amazon 披露：攻击者用开源 Cairn 自主 AI 框架 11 分钟内找到并利用 MONAI 医学影像零日漏洞，拿下 root 权限", "source": "BleepingComputer", "date": "2026-11-21", "summary": "Amazon 披露疑似中国关联攻击者用开源 Cairn agentic AI 框架约 11 分钟自主发现并利用 MONAI 路径遍历零日，拿下 root。"},
+        {"article_id": "2026-11-21-7", "report_index": 7, "title": "OpenAI 公布对抗性蒸馏防御：受保护推理提取攻击成功率从 54% 降到 0.2%", "source": "OpenAI Blog", "date": "2026-11-21", "summary": "OpenAI 详述蒸馏防御：提取受保护推理的平均攻击成功率从 GPT-6 Astra 的 54% 降至 GPT-6.2 Astra 的 0.2%。"},
+        {"article_id": "2026-11-17-5", "report_index": 5, "title": "OpenAI Codex 发现 OpenJDK 高危漏洞 Java4Shell，Oracle 当日修复", "source": "Calif", "date": "2026-11-17", "summary": "研究员用 OpenAI Codex 约 20 分钟、不到 $200 成本挖出 OpenJDK 预认证堆溢出漏洞 Java4Shell（CVSS 9.2），Oracle 当日修复。"},
+        {"article_id": "2026-11-22-8", "report_index": 8, "title": "Android 恶意框架 Bazuka：用 LLM 挑选受害目标、截屏伪装与 ADB 接管", "source": "ThreatFabric", "date": "2026-11-22", "summary": "ThreatFabric 披露 Bazuka：24 组件欺诈框架，首次在控制面板集成 LLM 给受害目标打分，用真实截屏伪装覆盖层与 ADB 接管。"},
+        {"article_id": "2026-11-18-9", "report_index": 9, "title": "加州发布 AI 安全下一步：基线标准、独立监督、紧急关停与 RSI 上限", "source": "Governor of California", "date": "2026-11-18", "summary": "Newsom 建议由州设基线安全标准、强制独立监督、紧急关停权限，并首次对递归自改进（RSI）设上限。"},
+        {"article_id": "2026-11-20-10", "report_index": 10, "title": "英国下议院委员会呼吁立《AI 安全与安保法案》，列出十项保障缺口并要求独立监管高风险训练", "source": "SCL", "date": "2026-11-20", "summary": "英国下议院委员会呼吁下届议会立 AI 安全法案：独立监管、强制独立验证、暂停高风险训练/部署、强制事故报告。"},
+        {"article_id": "2026-11-20-12", "report_index": 12, "title": "美众议院发起跨党派『AI 安全与创新』党团，近三十名议员推动针对前沿风险的立法", "source": "Nextgov/FCW", "date": "2026-11-20", "summary": "两党议员团成立 AI Safety and Innovation Caucus，针对最严重 AI 风险立法设防、同时保技术领先。"}
+      ],
+      "graph": {"nodes": [], "edges": []}
+    },
+    {
+      "theme_id": "clue:computer-use-os-privacy-war-2026w47",
+      "title": "桌面 agent 全面铺开与操作系统隐私边界战：Google/Claude 同日上 computer use、Apple 自研桌面 agent、Dots 下沉到 $20 档，Signal 却阻止 Siri/Gemini 读屏、Meta Muse 被曝读 Signal、银行把 agent 账户责任转给用户",
+      "summary": "本周桌面/操作系统级 agent 从『演示』进入『铺开』：Google 给 Gemini for Mac 上 computer use（隔离后台窗口、可实时预览+批准高风险动作）；Anthropic 让 Claude Computer Use 下沉到 Team/Enterprise（管理员按需启用）；Apple 通过招聘透露自研『像人一样用电脑』的 agent（云 browser/跨应用/写代码），同时收紧第三方 agent——macOS 27.3 将警告用户、启用第三方 computer-use 步骤从 4 步增至 14 步；OpenAI 把自主 agent Dots 首次下沉到 $20/月的 ChatGPT Plus 档，并同日把 ChatGPT Space 面向 Plus 开放。与能力铺开同时，隐私/入口冲突集中爆发：Signal 在 iOS 27/Android 上主动阻止 Siri/Gemini 等 AI 读屏截图，称 AI agent 是『隐私之敌』并呼吁 OS 厂商提供显式排除；路透披露 Meta 的 Muse 智能体读取加密 Signal 消息、冒出他人银行余额；美国大行（Citi/大摩/美银等）更新条款，把客户授权第三方 AI agent 操作账户的一切后果（含被黑）转嫁给用户；而 OpenAI 的 ChatGPT Wallet+美国运通/万事达/Visa 让 agent 首次拿到自主支付通道。",
+      "conclusion": "这条线的深层张力在于：桌面上『谁能看到你的屏幕、谁能碰你的账户』正在同时被能力供给和反制动作双向定义——模型厂商想拿到操作系统级信息面来完成『像人一样用电脑』的任务，而隐私软件、银行、甚至 OS 厂商本身开始设防。持续跟踪：一，Signal 与 Meta Muse/苹果 Siri 的对撞会不会演变成 OS 层面的『agent 访问白名单』标准（开发者显式排除选项）；二，苹果自研 agent + 收紧第三方 agent 的『身兼裁判与球员』策略，会否让 Mac 桌面 agent 走向封闭；三，ChatGPT Wallet 预授权额度计划一旦落地，agent 商务的『权限边界』会从逐笔授权升级为风险模型主导——这与银行转嫁责任的条款并存，未来必然需要一套面向 agent 的通行身份/授权/责权协议。",
+      "trend_signals": [
+        "computer use 一周内三位厂商同上：Google Gemini for Mac、Claude Computer Use Team/Enterprise、Apple 自研桌面 agent+收紧第三方——『让 AI 操作电脑』从 demo 进入主力产品与系统层。",
+        "这些大模型触达桌面的反制同步出现：Signal 主动阻止 Siri/Gemini 读屏、Meta Muse 被曝读加密 Signal、macOS 27.3 警告第三方 agent、美国大行把 agent 账户责任转嫁用户——『谁能看屏幕/碰账户』成为新的入口之争。",
+        "agent 商务的支付与身份链路成形：ChatGPT Wallet 让 agent 首次自主付钱，与航司封禁 AI 订票、银行转嫁责任并置——面向 agent 的『授权-支付-责权』协议成为下一必争战场。"
+      ],
+      "core_entities": ["Signal", "Google Gemini", "Apple", "OpenAI Dots", "Meta Muse", "ChatGPT Wallet", "Citi", "Siri", "Anthropic"],
+      "event_types": ["launch", "product", "privacy", "policy", "agent"],
+      "dominant_category": "应用/产业",
+      "evidence": [
+        {"article_id": "2026-11-20-0", "report_index": 0, "title": "Google 给 Gemini for Mac 装上 computer use：可在后台窗口帮你操作本地文件、App 与网页", "source": "Google Blog", "date": "2026-11-20", "summary": "Google 为 Mac Gemini 推出 computer use，在隔离后台窗口跨本地文件/App/网页执行多步任务，可实时预览+批准。"},
+        {"article_id": "2026-11-21-10", "report_index": 10, "title": "Claude Computer Use（测试版）登陆 Team 与 Enterprise 计划：企业级电脑操作智能体开始铺开", "source": "Anthropic", "date": "2026-11-21", "summary": "Anthropic 让 Claude Computer Use 面向 Team/Enterprise 计划开放，管理员可按需启用，主打企业受控环境。"},
+        {"article_id": "2026-11-22-12", "report_index": 12, "title": "Apple 招聘开发自主 AI agent：能跨应用、浏览网页、写代码，私密完成电脑操作", "source": "TechCrunch", "date": "2026-11-22", "summary": "Bloomberg 报道 Apple 正打造自主 agent（浏览网页/跨应用/写代码），最早 2027 年底推出，并收紧第三方 agent 对 Mac 的访问。"},
+        {"article_id": "2026-11-22-10", "report_index": 10, "title": "Signal 阻止 Siri 与 Gemini 读取聊天内容：称 AI 智能体是『隐私之敌』", "source": "Signal", "date": "2026-11-22", "summary": "Signal 在 iOS 27/Android 上阻止 Siri/Gemini 等 OS 级 AI 截图/读取聊天，呼吁 OS 厂商给开发者显式排除工具。"},
+        {"article_id": "2026-11-19-3", "report_index": 3, "title": "Meta 的 Muse 智能体读取加密 Signal 消息、冒出他人银行余额，路透披露内部安全事故", "source": "Reuters", "date": "2026-11-19", "summary": "路透披露 Meta Muse 读取 Signal 加密消息、冒出他人银行余额，Signal 总裁批其『技术上不负责任』。"},
+        {"article_id": "2026-11-19-4", "report_index": 4, "title": "Citi 等美国大行更新条款：把账户交给第三方 AI 智能体，出任何事（包括被盗）都算你的", "source": "TechCrunch", "date": "2026-11-19", "summary": "Citi 等大行修订协议：客户授权第三方 AI agent 操作账户后对一切后果负责，即使被黑也不例外。"},
+        {"article_id": "2026-11-16-0", "report_index": 0, "title": "OpenAI 推出 ChatGPT Wallet，AI 代理首获自主支付能力", "source": "OpenAI", "date": "2026-11-16", "summary": "OpenAI 向 ChatGPT Pro 用户灰度 ChatGPT Wallet，与运通/万事达/Visa 合作，让 AI agent 在用户逐笔审核后自主购买。"}
+      ],
+      "graph": {"nodes": [], "edges": []}
+    },
+    {
+      "theme_id": "clue:compute-supply-chain-rebalance-2026w47",
+      "title": "算力供给链再平衡与去英伟达化开始出现第一条量化裂缝，同时中美的『算力主权』加码：纯昇腾训出 285B+1.6T 旗舰、Claude 三天移植 AMD、Google 削减 TPU 8i 转 MediaTek、Cursor 考虑淘汰中国开源权重",
+      "summary": "本周供给链的『去单点化』与『主权化』同时推进。英伟达护城河出现可量化裂缝：Anthropic 称 Claude Mythos 约三天把模型带上 AMD MI355X 且自主写近 100% 内核（把以往数月到一年的移植周期压缩到三天）；AMD 完成对 World Labs（李飞飞）约 $82 亿全股票收购；郭明錤披露 Google 削减 2027 年 Broadcom 版 TPU 8i 订单约 100 万颗（约 20%，集中在贵的 8i Max），转向 MediaTek 设计的 TPU 8t；Nscale 部署全球首批 Vera Rubin NVL72（Dell 工厂预制液冷机架）说明 Blackwell 后平台进入交付期。中国侧『全自主算力栈』加码：中国电信 Xing4 在 8192 张昇腾 910C 上零 CUDA 训出 2850 亿 MoE、美团 LongCat-2.5 1.6T 参数全程未用英伟达 GPU、纯昇腾（194 片）；但 DeepSeek 因算力紧张收紧免费对话上限、路透调查曝中国实验室广泛蒸馏 GPT-4o/o1 训 Qwen 竞品——自主化与蒸馏并行。地缘软件层同样收紧：CNBC 披露 Cursor 正考虑到国中国开源权重（其 Composer 2 基于 Kimi K2.5）、美众议院报告建议启动『国家美国开源权重计划』，Ring于 BIS 收紧中国远程访问+东南亚转口管制同频。",
+      "conclusion": "这条线的结构性含义是：『英伟达=唯一算力来源』的隐含假设正在被客户与对手两头撬动——传统客户用模型移植能力（Claude 三天上 AMD）、自研替换（TPU 转 MediaTek）与主权算力（中国昇腾/美国国产）三条路径分散风险。持续跟踪：一，Claude 三天移植 AMD 只是『提示处理 bring-up』而非完整推理，能否扩展为生产级『去 CUDA』决定它是否真正动摇护城河；二，Google TPU 8i 砍单对 2027 年加速器供给曲线与 Broadcom 营收的真实影响；三，中国『自研框架训大模型（Xing4/LongCat）+蒸馏追平』两条路能否在出口管制下维持——以及 Cursor 是否真会淘汰中国权重、美国『国家开源权重计划』会否落地，软件供应链的地缘再切割将与硬件同步重塑全球算力版图。",
+      "trend_signals": [
+        "去英伟达化的首条量化裂缝：Claude Mythos 三天把模型带上 AMD GPU（自主写近 100% 内核）、AMD $82 亿收 World Labs、Google 砍 Broadcom 版 TPU 8i 约 100 万颗转 MediaTek——单一算力供应商的垄断空间开始被客户自替代。",
+        "中国全自主算力栈规模化证据增多：Xing4 在 8192 张昇腾 910C 零 CUDA 训 285 亿 MoE、LongCat-2.5 1.6T 全程未用英伟达 GPU、纯昇腾 194 片——『去 CUDA』从单点演示变成可重复的系统性工程。",
+        "开源权重的地缘再切割：Cursor 考虑淘汰中国开源权重（Composer 2 基于 Kimi）、美众议院建议『美国国家开源权重计划』——软件供应链的脱钩与硬件出口管制同步推进。"
+      ],
+      "core_entities": ["NVIDIA", "AMD", "MediaTek", "Broadcom", "Google TPU", "China Telecom Xing4", "Meituan LongCat", "Ascend 910C", "Claude Mythos", "Cursor", "Moonshot"],
+      "event_types": ["infra", "chip", "sovereignty", "open-source", "export-control"],
+      "dominant_category": "基础设施",
+      "evidence": [
+        {"article_id": "2026-11-17-3", "report_index": 3, "title": "Anthropic 称 Claude Mythos 约三天把模型移植到 AMD GPU，冲击 CUDA 护城河", "source": "Tom's Hardware", "date": "2026-11-17", "summary": "Anthropic IPO 路演称 Claude Mythos 约三天把模型带到 AMD MI355X、自主写近 100% 内核，压缩移植周期到三天。"},
+        {"article_id": "2026-11-17-1", "report_index": 1, "title": "AMD 以 82 亿美元完成收购 World Labs，李飞飞出任执行副总裁兼首席科学家", "source": "AMD", "date": "2026-11-17", "summary": "AMD 完成对 World Labs（李飞飞）约 $82 亿全股票收购，纳入交互式 3D/机器人仿真研究到硬件路线图。"},
+        {"article_id": "2026-11-21-5", "report_index": 5, "title": "郭明錤：Google 削减 2027 年 Broadcom 版 TPU 8i 订单约 100 万颗（约 20%），转向 MediaTek 设计的 TPU 8t", "source": "Yahoo Finance", "date": "2026-11-21", "summary": "Google 削减 2027 年 Broadcom TPU 8i 出货约 100 万颗（约 20%），转向 MediaTek TPU 8t，Broadcom 股价当日跌 11.4%。"},
+        {"article_id": "2026-11-18-5", "report_index": 5, "title": "论文：中国电信 Xing4——在 8,192 张昇腾 910C 上、零 CUDA 训练 2850 亿参数 Agentic MoE", "source": "arXiv", "date": "2026-11-18", "summary": "中国电信 Xing4 在 8192 张昇腾 910C 上用 MindSpore 零 CUDA 训练 2850 亿 MoE，并开源 29B 版本。"},
+        {"article_id": "2026-11-16-9", "report_index": 9, "title": "Meituan 开源 1.6T 参数代理模型 LongCat-2.5，全程未用英伟达 GPU", "source": "The Decoder", "date": "2026-11-16", "summary": "美团开源 1.6T 参数 LongCat-2.5，宣称全程在中国国产芯片训练、未用英伟达 GPU，自托管需 194 片昇腾。"},
+        {"article_id": "2026-11-21-12", "report_index": 12, "title": "独家：Cursor 告知美国国会正考虑淘汰中国开源权重模型，理由是地缘政治风险", "source": "CNBC", "date": "2026-11-21", "summary": "Cursor（Composer 2 基于 Moonshot Kimi K2.5）考虑因『地缘政治风险』淘汰中国开源权重，报告建议美国国家开源权重计划。"},
+        {"article_id": "2026-11-17-11", "report_index": 11, "title": "路透调查：中国实验室广泛蒸馏 GPT-4o / o1 训练 Qwen 竞品", "source": "Reuters", "date": "2026-11-17", "summary": "路透重审 300 多份文档，显示蒸馏美国前沿模型已变成中国工业界训练本土竞品的普遍做法，为应对芯片受限的低成本追平路径。"},
+        {"article_id": "2026-11-17-10", "report_index": 10, "title": "DeepSeek 因算力紧张收紧免费对话上限，凸显中国推理算力困局", "source": "TechNode", "date": "2026-11-17", "summary": "DeepSeek 因容量约束把免费对话提示上限收紧到 4 万字符，凸显中国推理芯片供应与电力受限。"}
+      ],
+      "graph": {"nodes": [], "edges": []}
+    }
+  ],
+  "memory_refs": {
+    "recent_window": {
+      "start_date": "2026-11-16",
+      "end_date": "2026-11-22"
+    },
+    "archive_refs": ["2026-W47"]
+  }
+}
