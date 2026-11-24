@@ -1,0 +1,574 @@
+{
+  "date": "2026-11-24",
+  "articles": [
+    {
+      "article_id": "2026-11-24-0",
+      "entities": [
+        {"name": "古特雷斯", "type": "person", "aliases": ["Guterres"], "confidence": 0.97, "evidence": ["联合国秘书长古特雷斯发出明确呼吁"]},
+        {"name": "联合国", "type": "organization", "aliases": ["UN"], "confidence": 0.95, "evidence": ["联合国秘书长古特雷斯发出明确呼吁"]},
+        {"name": "全球AI风险治理框架", "type": "policy", "aliases": ["AI 风险管理多边框架"], "confidence": 0.85, "evidence": ["在未来一年内制定一个全球包容、以原则为基础、并由独立可信监督支��的 AI 风险管理多边框架"]},
+        {"name": "联合国自主武器谈判", "type": "policy", "aliases": [], "confidence": 0.85, "evidence": ["这与周末联合国自主武器谈判未能达成条约形成呼应"]},
+        {"name": "巴巴多斯AI安全特别峰会", "type": "organization", "aliases": ["AI 安全特别峰会", "Barbados AI 安全峰会"], "confidence": 0.85, "evidence": ["在巴巴多斯布里奇敦召开的 AI 安全特别峰会上"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "古特雷斯呼吁成员国一年内建立全球 AI 风险治理多边框架",
+          "summary": "秘书长在巴巴多斯 AI 安全特别峰会上把 AI 治理时间表落到具体的一年，要求框架全球包容、以原则为基础并由独立可信监督支撑。",
+          "participants": [
+            {"name": "古特雷斯", "type": "person", "role": "subject"},
+            {"name": "联合国", "type": "organization", "role": "subject"},
+            {"name": "全球AI风险治理框架", "type": "policy", "role": "object"},
+            {"name": "巴巴多斯AI安全特别峰会", "type": "organization", "role": "subject"}
+          ],
+          "evidence": ["联合国秘书长古特雷斯发出明确呼吁", "在未来一��内制定一个全球包容、以原则为基础、并由独立可信监督支撑的 AI 风险管理多边框架"]
+        },
+        {
+          "type": "policy",
+          "label": "联合国自主武器谈判未能达成条约，与 AI 治理呼吁形成呼应",
+          "summary": "周末联合国自主武器谈判未达成条约，说明在军事与民用两个层面各国离规则共识仍有距离。",
+          "participants": [
+            {"name": "联合国", "type": "organization", "role": "subject"},
+            {"name": "联合国自主武器谈判", "type": "policy", "role": "object"}
+          ],
+          "evidence": ["这与周末联合国自主武器谈判未能达成条约形成呼应"]
+        }
+      ],
+      "relations": [
+        {"source": "古特雷斯", "target": "联合国", "type": "affiliated_with", "weight": 0.9, "evidence": ["联合国秘书长古特雷斯发出明确呼吁"]},
+        {"source": "全球AI风险治理框架", "target": "联合国自主武器谈判", "type": "related_to", "weight": 0.5, "evidence": ["这与周末联合国自主武器谈判未能达成条约形成呼应"]}
+      ],
+      "metrics": [
+        {"name": "建立治理框架的时间窗口", "value": "一年"},
+        {"name": "全球治理机构对应的年代", "value": "1945 年"}
+      ],
+      "why_it_matters": "AI 治理时间表首次落到具体的『一年』，把空洞承诺转成可倒计时的 deadline；但军事层面自主武器谈判刚破裂，说明真正的规则共识在军事与民用两端都仍缺位。"
+    },
+    {
+      "article_id": "2026-11-24-1",
+      "entities": [
+        {"name": "美国商务部", "type": "organization", "aliases": [], "confidence": 0.95, "evidence": ["美国商务部周一将新加坡、马来西亚、泰国的 7 家实体列入实体清单"]},
+        {"name": "Alibaba", "type": "company", "aliases": ["阿里巴巴", "阿里"], "confidence": 0.97, "evidence": ["阿里巴巴在新加坡的子公司 Apex Enterprise Solutions"]},
+        {"name": "Megaspeed", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["其中既有 Megaspeed 的关联公司"]},
+        {"name": "英伟达", "type": "company", "aliases": ["Nvidia", "NVIDIA"], "confidence": 0.92, "evidence": ["美国商务部将英伟达关联企业 Megaspeed", "Megaspeed 正是黄仁勋风波的核心"]},
+        {"name": "Apex Enterprise Solutions", "type": "company", "aliases": ["Apex"], "confidence": 0.9, "evidence": ["阿里巴巴在新加坡的子公司 Apex Enterprise Solutions"]},
+        {"name": "五角大楼", "type": "organization", "aliases": ["美国国防部"], "confidence": 0.9, "evidence": ["此前五角大楼已把阿里列入涉军名单"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "美国商务部将 Megaspeed 关联公司与阿里新加坡子公司等 7 家实体列入实体清单",
+          "summary": "美国商务部将新加坡、马来西亚、泰国的 7 家实体列入实体清单，既有 Megaspeed 关联公司，也包括阿里新加坡子公司 Apex Enterprise Solutions���并切断美国芯片出口。",
+          "participants": [
+            {"name": "美国商务部", "type": "organization", "role": "subject"},
+            {"name": "Megaspeed", "type": "company", "role": "object"},
+            {"name": "Apex Enterprise Solutions", "type": "company", "role": "object"},
+            {"name": "Alibaba", "type": "company", "role": "object"}
+          ],
+          "evidence": ["美国商务部周一将新加坡、马来西亚、泰国的 7 家实体列入实体清单", "也包括阿里巴巴在新加坡的子公司 Apex Enterprise Solutions"]
+        },
+        {
+          "type": "policy",
+          "label": "五角大楼此前将阿里列入涉军名单，阿里正在起诉",
+          "summary": "此前五角大楼已把阿里列入涉军名单，阿里正在起诉，使阿里在华盛顿的处境更复杂。",
+          "participants": [
+            {"name": "五角大楼", "type": "organization", "role": "regulator"},
+            {"name": "Alibaba", "type": "company", "role": "object"}
+          ],
+          "evidence": ["此前五角大楼已把阿里列入涉军名单，阿里正在起诉"]
+        }
+      ],
+      "relations": [
+        {"source": "Megaspeed", "target": "英伟达", "type": "affiliated_with", "weight": 0.8, "evidence": ["美国商务部将英伟达关联企业 Megaspeed"]},
+        {"source": "美国商务部", "target": "Megaspeed", "type": "targets", "weight": 0.9, "evidence": ["其中既有 Megaspeed 的关联公司（Speedmatrix、MSFusion、Swiftdata）"]},
+        {"source": "美国商务部", "target": "Apex Enterprise Solutions", "type": "targets", "weight": 0.9, "evidence": ["也包括阿里巴巴在新加坡的子公司 Apex Enterprise Solutions"]},
+        {"source": "Apex Enterprise Solutions", "target": "Alibaba", "type": "subsidiary_of", "weight": 0.85, "evidence": ["阿里巴巴在新加坡的子公司 Apex Enterprise Solutions"]},
+        {"source": "Megaspeed", "target": "Alibaba", "type": "supplies", "weight": 0.75, "evidence": ["让 Megaspeed 向阿里出租 AI 算力"]},
+        {"source": "Apex Enterprise Solutions", "target": "Megaspeed", "type": "contracts_with", "weight": 0.7, "evidence": ["2024 年与 Megaspeed 签署了一份服务协议", "该协议是让 Megaspeed 向阿里出租 AI 算力"]},
+        {"source": "五角大楼", "target": "Alibaba", "type": "targets", "weight": 0.8, "evidence": ["此前五角大楼已把阿里列入涉军名单"]}
+      ],
+      "metrics": [
+        {"name": "列入实体清单的实体数", "value": "7 家"},
+        {"name": "Apex 成立时间", "value": "2023 年 7 月"},
+        {"name": "Apex 与 Megaspeed 签署服务协议时间", "value": "2024 年"}
+      ],
+      "why_it_matters": "华盛顿首次把对 Megaspeed 的打击延伸到阿里系，并配合『芯片在境外、算力回流中国』的境外数据中心新规，封堵灰色算力通道的意图已越过单一公司指向整个供应链。"
+    },
+    {
+      "article_id": "2026-11-24-2",
+      "entities": [
+        {"name": "inclusionAI", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["蚂蚁集团 inclusionAI 发布 124B 总参数、5.5B 激活的混合线性 MoE 模型 Ling-3.2-air"]},
+        {"name": "蚂蚁集团", "type": "company", "aliases": ["蚂蚁", "Ant Group"], "confidence": 0.9, "evidence": ["蚂蚁集团 inclusionAI 发布 124B 总参数、5.5B 激活的混合线性 MoE 模型 Ling-3.2-air"]},
+        {"name": "Ling-3.2-air", "type": "model", "aliases": [], "confidence": 0.97, "evidence": ["蚂蚁集团 inclusionAI 发布 124B 总参数、5.5B 激活的混��线性 MoE 模型 Ling-3.2-air"]},
+        {"name": "Ling-3.0-flash-VL", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["与 Ling-3.0-flash-VL 共享原生多模态架构"]},
+        {"name": "Artificial Analysis Intelligence Index", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["在 Artificial Analysis Intelligence Index v5.0.1 上得 23 分"]},
+        {"name": "SGLang", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["SGLang day-0 镜像支持 MTP 投机解码"]},
+        {"name": "vLLM", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["vLLM 通过官方 fork 提供支持"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "inclusionAI 以 MIT 许可开源混合线性 MoE 模型 Ling-3.2-air",
+          "summary": "蚂蚁集团 inclusionAI 发布 124B 总参数、5.5B 激活的 Ling-3.2-air，权重以 MIT 许可发布在 Hugging Face，工作流自动化与专业文档推理显著增强。",
+          "participants": [
+            {"name": "inclusionAI", "type": "company", "role": "subject"},
+            {"name": "蚂蚁集团", "type": "company", "role": "subject"},
+            {"name": "Ling-3.2-air", "type": "model", "role": "object"}
+          ],
+          "evidence": ["蚂蚁集团 inclusionAI 发布 124B 总参数、5.5B 激活的混合线性 MoE 模型 Ling-3.2-air", "权重以 MIT 许可发布在 Hugging Face"]
+        },
+        {
+          "type": "benchmark",
+          "label": "Ling-3.2-air 在多个工作流与文档推理基准上大幅提升",
+          "summary": "AutomationBench-AA 从 15.7% 升至 61%，GDP.pdf 从 8.4% 升至 16%，Terminal-Bench 4.0 从 0% 升至 27%，Harvey LAB-AA v1.1 达 87.7%。",
+          "participants": [
+            {"name": "Ling-3.2-air", "type": "model", "role": "subject"},
+            {"name": "Artificial Analysis Intelligence Index", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 Artificial Analysis Intelligence Index v5.0.1 上得 23 分", "AutomationBench-AA 从 15.7% 升至 61%"]
+        }
+      ],
+      "relations": [
+        {"source": "Ling-3.2-air", "target": "inclusionAI", "type": "developed_by", "weight": 0.9, "evidence": ["蚂蚁集团 inclusionAI 发布 124B 总参数、5.5B 激活的混合线性 MoE 模型 Ling-3.2-air"]},
+        {"source": "inclusionAI", "target": "蚂蚁集团", "type": "subsidiary_of", "weight": 0.8, "evidence": ["蚂蚁集团 inclusionAI 发布"]},
+        {"source": "Ling-3.2-air", "target": "Ling-3.0-flash-VL", "type": "built_on", "weight": 0.7, "evidence": ["与 Ling-3.0-flash-VL 共享原生多模态架构"]},
+        {"source": "Ling-3.2-air", "target": "Artificial Analysis Intelligence Index", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 Artificial Analysis Intelligence Index v5.0.1 上得 23 分"]},
+        {"source": "SGLang", "target": "Ling-3.2-air", "type": "integrates", "weight": 0.75, "evidence": ["SGLang day-0 镜像支持 MTP 投机解码"]},
+        {"source": "vLLM", "target": "Ling-3.2-air", "type": "integrates", "weight": 0.75, "evidence": ["vLLM 通过官方 fork 提供支持"]}
+      ],
+      "metrics": [
+        {"name": "Ling-3.2-air 总参数量", "value": "124B"},
+        {"name": "每 token 激活参数量", "value": "5.5B"},
+        {"name": "路由专家数", "value": "512 个"},
+        {"name": "AutomationBench-AA 得分", "value": "从 15.7% 升至 61%"},
+        {"name": "GDP.pdf 全过率", "value": "从 8.4% 升至 16%"},
+        {"name": "Terminal-Bench 4.0 得分", "value": "从 0% 升至 27%"},
+        {"name": "AA-Briefcase v1.1 Elo", "value": "从 987 升至 1340"},
+        {"name": "Harvey LAB-AA v1.1 标准通过率", "value": "87.7%"},
+        {"name": "Artificial Analysis Intelligence Index 得分", "value": "23 分"}
+      ],
+      "why_it_matters": "开源 MoE 在『决策密集、token 稀疏』的 agent 工作流里把性价比打下来，MIT 许可加 SGLang/vLLM 当天支持，说明推理栈正在为稀疏激活 MoE 做专门化加速，这是闭源模型的成本短板。"
+    },
+    {
+      "article_id": "2026-11-24-3",
+      "entities": [
+        {"name": "Google Research", "type": "organization", "aliases": [], "confidence": 0.9, "evidence": ["Google Research 详解 DeepCrossAttention（DCA）架构"]},
+        {"name": "DeepCrossAttention", "type": "paper", "aliases": ["DCA"], "confidence": 0.9, "evidence": ["Google Research 详解 DeepCrossAttention（DCA）架构"]},
+        {"name": "Kyriakos Axiotis", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["由研究科学家 Kyriakos Axiotis 与首席工程师 Thomas Fu"]},
+        {"name": "Thomas Fu", "type": "person", "aliases": [], "confidence": 0.9, "evidence": ["由研究科学家 Kyriakos Axiotis 与首席工程师 Thomas Fu"]},
+        {"name": "残差连接", "type": "topic", "aliases": ["残差结构"], "confidence": 0.85, "evidence": ["把 Transformer 的固定加法残差，替换为「可学习路由」"]},
+        {"name": "LM1B", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在 LM1B 上，30 层 DCA 模型的困惑度即可与标准 42 层 Transformer 相当"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Google Research 详解 DeepCrossAttention 架构，用可学习路由替换残差连接",
+          "summary": "DCA 把 Transformer 的固定加法残差替换为基于学习的动态路由，在参数量仅增不到 0.2% 的情况下实现同质量最多约 3 倍训练提速。",
+          "participants": [
+            {"name": "Google Research", "type": "organization", "role": "subject"},
+            {"name": "DeepCrossAttention", "type": "paper", "role": "object"},
+            {"name": "残差连接", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Google Research 详解 DeepCrossAttention（DCA）架构", "把 Transformer 的固定加法残差，替换为「可学习路由」"]
+        },
+        {
+          "type": "research",
+          "label": "DCA 在 LM1B/C4 上用更少训练步数达到同等质量",
+          "summary": "30 层 DCA 模型在 LM1B 上的困惑度即与标准 42 层 Transformer 相当，深度减少约 29%，最多可少用约 5 倍步数。",
+          "participants": [
+            {"name": "DeepCrossAttention", "type": "paper", "role": "subject"},
+            {"name": "LM1B", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 LM1B 上，30 层 DCA 模���的困惑度即可与标准 42 层 Transformer 相当"]
+        }
+      ],
+      "relations": [
+        {"source": "DeepCrossAttention", "target": "Google Research", "type": "developed_by", "weight": 0.85, "evidence": ["Google Research 详解 DeepCrossAttention（DCA）架构"]},
+        {"source": "DeepCrossAttention", "target": "残差连接", "type": "replaces", "weight": 0.8, "evidence": ["把 Transformer 的固定加法残差，替换为「可学习路由」"]},
+        {"source": "Kyriakos Axiotis", "target": "Google Research", "type": "affiliated_with", "weight": 0.85, "evidence": ["由研究科学家 Kyriakos Axiotis 与首席工程师 Thomas Fu"]},
+        {"source": "Thomas Fu", "target": "Google Research", "type": "affiliated_with", "weight": 0.85, "evidence": ["由研究科学家 Kyriakos Axiotis 与首席工程师 Thomas Fu"]},
+        {"source": "DeepCrossAttention", "target": "LM1B", "type": "evaluated_on", "weight": 0.75, "evidence": ["在 LM1B 上，30 层 DCA 模型的困惑度即可与标准 42 层 Transformer 相当"]}
+      ],
+      "metrics": [
+        {"name": "同质量训练提速", "value": "3 倍"},
+        {"name": "参数量增幅", "value": "不到 0.2%"},
+        {"name": "等质等效深度减少", "value": "约 29%"},
+        {"name": "最高步数节省", "value": "约 5 倍"},
+        {"name": "LM1B 困惑度降幅", "value": "0.19（对照组 0.02）"}
+      ],
+      "why_it_matters": "DCA 证明不堆层也能靠改善深层信息流动拿到 3 倍训练提速，把训练效率竞争从『加算力』转向『改信息路由』，并直指加法残差是深层表征丢失的瓶颈。"
+    },
+    {
+      "article_id": "2026-11-24-4",
+      "entities": [
+        {"name": "MemOnce", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["MemOnce 针对长时交互与持续推理的痛处"]},
+        {"name": "Qwen3.5-4B", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["在 Qwen3.5-4B 上，用 MemOnce 适配后 1M 上下文的记忆状态缓存降至约 25MB"]},
+        {"name": "记忆编解码器", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["一是记忆编解码器：只缓存少量末层隐藏状态作为紧凑记忆表征"]},
+        {"name": "记忆稀疏注意力", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["二是记忆稀疏注意力：每次连续输入只检索一次相关记忆表征"]},
+        {"name": "KV 缓存", "type": "topic", "aliases": [], "confidence": 0.8, "evidence": ["标准 Transformer 在上下文扩张时存储逐层、逐 token 的 KV 缓存"]},
+        {"name": "Transformer", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["标准 Transformer 在上下文扩张时存储逐层、逐 token 的 KV 缓存"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "MemOnce 用记忆编解码器与记忆稀疏注意力把 1M 上下文 KV 缓存降到约 25MB",
+          "summary": "MemOnce 只缓存少量末层隐藏状态并对历史记忆动态解码回 KV 缓存，将 1M 上下文的记忆状态缓存从基线缩减 1313 倍至约 25MB。",
+          "participants": [
+            {"name": "MemOnce", "type": "paper", "role": "subject"},
+            {"name": "Qwen3.5-4B", "type": "model", "role": "object"},
+            {"name": "Transformer", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["在 Qwen3.5-4B 上，用 MemOnce 适配后 1M 上下文的记忆状态缓存降至约 25MB", "一是记忆编解码器：只缓存少量末层隐藏状态作为紧凑记忆表征"]
+        },
+        {
+          "type": "infra",
+          "label": "MemOnce 把历史记忆 offload 到 CPU 或 SSD，是走向真正无限上下文的一步",
+          "summary": "历史记忆可 offload 到 CPU 或 SSD，GPU 内只保留常数大小的活跃记忆子集，对实现真正的『无限上下文』是有价值的一步。",
+          "participants": [
+            {"name": "MemOnce", "type": "paper", "role": "subject"}
+          ],
+          "evidence": ["历史记忆可offload到 CPU 或 SSD"]
+        }
+      ],
+      "relations": [
+        {"source": "MemOnce", "target": "记忆编解码器", "type": "uses", "weight": 0.75, "evidence": ["一是记忆编解码器：只缓存少量末层隐藏状态作为紧凑记忆表征"]},
+        {"source": "MemOnce", "target": "记忆稀疏注意力", "type": "uses", "weight": 0.75, "evidence": ["二是记忆稀疏注意力：每次连续输入只检索一次相关记忆表征"]},
+        {"source": "MemOnce", "target": "KV 缓存", "type": "compresses", "weight": 0.8, "evidence": ["把 1M 上下文的 KV 缓存降到约 25MB"]},
+        {"source": "Transformer", "target": "KV 缓存", "type": "uses", "weight": 0.7, "evidence": ["标准 Transformer 在上下文扩张时存储逐层、逐 token 的 KV 缓存"]},
+        {"source": "MemOnce", "target": "Qwen3.5-4B", "type": "uses", "weight": 0.7, "evidence": ["在 Qwen3.5-4B 上，用 MemOnce 适配后"]}
+      ],
+      "metrics": [
+        {"name": "上下文规模", "value": "1M"},
+        {"name": "KV 缓存容量", "value": "约 25MB"},
+        {"name": "缓存缩减倍数", "value": "1313 倍"},
+        {"name": "预填充延迟降幅", "value": "6.9 倍"},
+        {"name": "吞吐提升", "value": "3.5 倍"},
+        {"name": "长上下文评测提升", "value": "5.77%"}
+      ],
+      "why_it_matters": "把逐层逐 token 的 KV 缓存压缩成常数大小的活跃记忆、历史可 offload 到 CPU/SSD，MemOnce 提供了把『无限上下文』从口号落到可部署工程的一步，直击长上下文线性增长的 GPU 内存瓶颈。"
+    },
+    {
+      "article_id": "2026-11-24-5",
+      "entities": [
+        {"name": "LoopRes", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["新加坡国立大学团队提出 LoopRes"]},
+        {"name": "新加坡国立大学", "type": "organization", "aliases": ["NUS"], "confidence": 0.9, "evidence": ["新加坡国立大学团队提出 LoopRes"]},
+        {"name": "Qwen3-1.7B-Base", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["2 倍算力下 Qwen3-1.7B-Base 相对 SFT 提升 29.1%"]},
+        {"name": "SFT", "type": "topic", "aliases": ["监督微调"], "confidence": 0.85, "evidence": ["2 倍算力下 Qwen3-1.7B-Base 相对 SFT 提升 29.1%"]},
+        {"name": "Transformer", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["循环型 Transformer 通过反复执行同一层块来增加计算量"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "新加坡国立大学团队提出 LoopRes，让预训练模型循环复用层获得测试时扩展",
+          "summary": "LoopRes 微调预训练模型在推理时循环执行中间层，2 倍算力下 Qwen3-1.7B-Base 相对 SFT 提升 29.1%，是此前最优基线增益的两倍多。",
+          "participants": [
+            {"name": "LoopRes", "type": "paper", "role": "object"},
+            {"name": "新加坡国立大学", "type": "organization", "role": "subject"},
+            {"name": "Qwen3-1.7B-Base", "type": "model", "role": "object"}
+          ],
+          "evidence": ["新加坡国立大学团队提出 LoopRes", "微调预训练模型在推理时循环执行中间层"]
+        },
+        {
+          "type": "benchmark",
+          "label": "LoopRes 跨 3 个模型家族、6 个预训练模型、9 个基准一致有效",
+          "summary": "实验覆盖 3 个模型���族、6 个预训练模型、9 个数学与代码基准，增益在 4B、8B 乃至 30B 上持续成立。",
+          "participants": [
+            {"name": "LoopRes", "type": "paper", "role": "subject"},
+            {"name": "SFT", "type": "topic", "role": "baseline"}
+          ],
+          "evidence": ["2 倍算力下 Qwen3-1.7B-Base 相对 SFT 提升 29.1%"]
+        }
+      ],
+      "relations": [
+        {"source": "LoopRes", "target": "新加坡国立大学", "type": "developed_by", "weight": 0.85, "evidence": ["新加坡国立大学团队提出 LoopRes"]},
+        {"source": "LoopRes", "target": "Qwen3-1.7B-Base", "type": "fine_tuned_from", "weight": 0.75, "evidence": ["微调预训练模型在推理时循环执行中间层"]},
+        {"source": "LoopRes", "target": "SFT", "type": "outperforms", "weight": 0.8, "evidence": ["2 倍算力下 Qwen3-1.7B-Base 相对 SFT 提升 29.1%"]},
+        {"source": "LoopRes", "target": "Transformer", "type": "built_on", "weight": 0.7, "evidence": ["循环型 Transformer 通过反复执行同一层块来增加计算量"]}
+      ],
+      "metrics": [
+        {"name": "算力增益", "value": "2-4 倍"},
+        {"name": "相对 SFT 平均提升", "value": "29.1%"},
+        {"name": "覆盖模型家族数", "value": "3 个"},
+        {"name": "覆盖预训练模型数", "value": "6 个"},
+        {"name": "覆盖基准数", "value": "9 个"}
+      ],
+      "why_it_matters": "LoopRes 把测试时算力扩展从『从零训练循环模型』变成『在已有权重上微调』，2 倍算力就能超越 8B 骨干的 SFT，说明存量权重是当下效率竞赛的低垂果实，也抬高了小模型扩展的上限。"
+    },
+    {
+      "article_id": "2026-11-24-6",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic 的经济学团队发布《Working with AI》报告"]},
+        {"name": "Working with AI", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 的经济学团队发布《Working with AI》报告"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Anthropic 首席经济学家此前用 Claude 使用数据判断失业率无显著差异"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "Anthropic 经济学团队发布《Working with AI》报告，访谈 58 家美国企业客户",
+          "summary": "报告访谈 58 家美国企业客户的 66 位受访者，覆盖法律、金融、医疗与工程等行业，探究 AI 对就业的作用。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Working with AI", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["Anthropic 的经济学团队发布《Working with AI》报告"]
+        },
+        {
+          "type": "trend",
+          "label": "AI 对就业的作用是放缓招聘而非大规模裁员",
+          "summary": "58 家公司中只有两家明确因 AI 淘汰某个岗位，而三分之二反映 AI 已拉低新增招聘速度，另有九家削减了合同工。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Working with AI", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["58 家公司中，只有两家明确因 AI 淘汰了某个具体岗位", "三分之二反映 AI 已经拉低了新增招聘的速度"]
+        }
+      ],
+      "relations": [
+        {"source": "Working with AI", "target": "Anthropic", "type": "authored_by", "weight": 0.85, "evidence": ["Anthropic 的经济学团队发布《Working with AI》报告"]},
+        {"source": "Anthropic", "target": "Claude", "type": "uses_data", "weight": 0.5, "evidence": ["Anthropic 首席经济学家此前用 Claude 使用数据判断失业率无显著差异"]}
+      ],
+      "metrics": [
+        {"name": "受访企业客户数", "value": "58 家"},
+        {"name": "受访人数", "value": "66 位"},
+        {"name": "明确淘汰岗位的家数", "value": "2 家"},
+        {"name": "反映放缓招聘的企业比例", "value": "三分之二"},
+        {"name": "削减合同工的家数", "value": "9 家"}
+      ],
+      "why_it_matters": "基于第一手客户访谈，AI 就业冲击以『新增需求收缩』而非『存量岗位消失』的形式先行，把公众对大规模失业的恐惧修正为招聘预算先收紧的结构性信号。"
+    },
+    {
+      "article_id": "2026-11-24-7",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.98, "evidence": ["OpenAI 与 Cisco 发布开源项目 Shirudo"]},
+        {"name": "Cisco", "type": "company", "aliases": ["思科"], "confidence": 0.95, "evidence": ["OpenAI 与 Cisco 发布开源项目 Shirudo"]},
+        {"name": "Shirudo", "type": "tool", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 与 Cisco 发布开源项目 Shirudo"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["AI 代理（如 Codex）扫描漏洞"]},
+        {"name": "Elasticsearch", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["挡下了运行中的 Elasticsearch 9.5.5 节点上的 Java4Shell（CVSS 9.2）攻击"]},
+        {"name": "Java4Shell", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["挡下了运行中的 Elasticsearch 9.5.5 节点上的 Java4Shell（CVSS 9.2）攻击"]},
+        {"name": "eBPF", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["构建在 eBPF 之上"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "OpenAI 与 Cisco 发布开源 eBPF 运行时 Shirudo，让 AI 代理部署临时防护盾",
+          "summary": "Shirudo 基于 eBPF，AI 代理扫描漏洞、编写并签名临时的防护盾，在合法流量正常通过的同时阻断已知利用，加载前经签名校验与内核 verifier。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Cisco", "type": "company", "role": "subject"},
+            {"name": "Shirudo", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["OpenAI 与 Cisco 发布开源项目 Shirudo", "构建在 eBPF 之上"]
+        },
+        {
+          "type": "security",
+          "label": "Codex 生成的防护盾无需重启挡住 Elasticsearch 节点上的 Java4Shell 攻击",
+          "summary": "一次被披露的测试中，Codex 生成的防护盾在无需重启的情况下挡下了运行中 Elasticsearch 9.5.5 节点上的 Java4Shell（CVSS 9.2）攻击。",
+          "participants": [
+            {"name": "Codex", "type": "product", "role": "subject"},
+            {"name": "Shirudo", "type": "tool", "role": "object"},
+            {"name": "Elasticsearch", "type": "tool", "role": "object"},
+            {"name": "Java4Shell", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["一个由 Codex 生成的防护盾成功在无需重启的情况下", "挡下了运行中的 Elasticsearch 9.5.5 节点上的 Java4Shell（CVSS 9.2）攻击"]
+        }
+      ],
+      "relations": [
+        {"source": "Shirudo", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 与 Cisco 发布开源项目 Shirudo"]},
+        {"source": "Shirudo", "target": "Cisco", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 与 Cisco 发布开源项目 Shirudo"]},
+        {"source": "Shirudo", "target": "eBPF", "type": "built_on", "weight": 0.8, "evidence": ["构建在 eBPF 之上"]},
+        {"source": "Codex", "target": "OpenAI", "type": "developed_by", "weight": 0.85, "evidence": ["AI 代理（如 Codex）扫描漏洞"]},
+        {"source": "Shirudo", "target": "Java4Shell", "type": "targets", "weight": 0.8, "evidence": ["挡下了运行中的 Elasticsearch 9.5.5 节点上的 Java4Shell（CVSS 9.2）攻击"]}
+      ],
+      "metrics": [
+        {"name": "Java4Shell 漏洞 CVSS 评分", "value": "9.2"},
+        {"name": "Elasticsearch 节点版本", "value": "9.5.5"}
+      ],
+      "why_it_matters": "当防护本身由 AI 代理编写、再由签名与内核 verifier 双重约束批准，『AI 写安全工具』第一次有了可审计、可追溯的生产路径，也提出了谁批准 AI 代理写出防护的新治理问题。"
+    },
+    {
+      "article_id": "2026-11-24-8",
+      "entities": [
+        {"name": "AIR 研究实验室", "type": "organization", "aliases": ["AIR 研究中心"], "confidence": 0.85, "evidence": ["AIR 研究实验室发布 WebSec 基准"]},
+        {"name": "WebSec", "type": "benchmark", "aliases": [], "confidence": 0.9, "evidence": ["AIR 研究实验室发布 WebSec 基准"]},
+        {"name": "Firecrawl", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["测试了 Firecrawl、Tavily、Perplexity、Parallel、Exa、Nimble、Brave、You.com 八个搜索 API"]},
+        {"name": "You.com", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["测试了 Firecrawl、Tavily、Perplexity、Parallel、Exa、Nimble、Brave、You.com 八个搜索 API"]},
+        {"name": "SolanaCry", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["伪装成 Solana 开发包的 SolanaCry 仓库"]},
+        {"name": "NetSupport Manager", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["其 README 的 PowerShell ��行命令会安装能远程控制受害机器的 NetSupport Manager"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "AIR 研究实验室发布 WebSec 基准，测试 8 个商用搜索 API 全部返回恶意内容",
+          "summary": "WebSec 用 4719 次真实编码任务查询测试八个搜索 API 并扫描 28.2 万多个结果，八家引擎无一例外都返回过已知恶意内容，累计暴露 1026 次。",
+          "participants": [
+            {"name": "AIR 研究实验室", "type": "organization", "role": "subject"},
+            {"name": "WebSec", "type": "benchmark", "role": "object"}
+          ],
+          "evidence": ["AIR 研究实验室发布 WebSec 基准", "测试了 Firecrawl、Tavily、Perplexity、Parallel、Exa、Nimble、Brave、You.com 八个搜索 API"]
+        },
+        {
+          "type": "security",
+          "label": "伪装成 Solana 开发包的 SolanaCry 仓库用一行命令安装远程控制后门",
+          "summary": "典型案例是伪装成 Solana 开发包的 SolanaCry 仓库，其 README 的 PowerShell 一行命令会安装能远程控制受害机器的 NetSupport Manager。",
+          "participants": [
+            {"name": "SolanaCry", "type": "topic", "role": "subject"},
+            {"name": "NetSupport Manager", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["伪装成 Solana 开发包的 SolanaCry 仓库", "其 README 的 PowerShell 一行命令会安装能远程控制受害机器的 NetSupport Manager"]
+        }
+      ],
+      "relations": [
+        {"source": "WebSec", "target": "AIR 研究实验室", "type": "developed_by", "weight": 0.85, "evidence": ["AIR 研究实验室发布 WebSec 基准"]},
+        {"source": "WebSec", "target": "Firecrawl", "type": "evaluates", "weight": 0.5, "evidence": ["测试了 Firecrawl、Tavily、Perplexity、Parallel、Exa、Nimble、Brave、You.com 八个搜索 API"]},
+        {"source": "WebSec", "target": "You.com", "type": "evaluates", "weight": 0.5, "evidence": ["测试了 Firecrawl、Tavily、Perplexity、Parallel、Exa、Nimble、Brave、You.com 八个搜索 API"]},
+        {"source": "SolanaCry", "target": "NetSupport Manager", "type": "uses", "weight": 0.6, "evidence": ["其 README 的 PowerShell 一行命令会安装能远程控制受害机器的 NetSupport Manager"]}
+      ],
+      "metrics": [
+        {"name": "编码任务查询次数", "value": "4719 次"},
+        {"name": "被测试搜索 API 数", "value": "8 个"},
+        {"name": "扫描返回结果数", "value": "28.2 万多个"},
+        {"name": "累计恶意内容暴露次数", "value": "1026 次"},
+        {"name": "各引擎风险率区间", "value": "0.8% 到 2.2%"},
+        {"name": "每日 5000 次代理搜索的恶意命中", "value": "约 50 次"}
+      ],
+      "why_it_matters": "搜索 API 的选择本身就是编码智能体供应链的安全变量——『读即执行』让检索层投毒成为最便捷的攻击入口，安全防线必须前移到检索与包管理环节。"
+    },
+    {
+      "article_id": "2026-11-24-9",
+      "entities": [
+        {"name": "AWS", "type": "company", "aliases": ["亚马逊云科技", "Amazon Web Services"], "confidence": 0.95, "evidence": ["AWS 发布基于 Gemma 4 的 Strands Decider v2 五个开源决策模型"]},
+        {"name": "Strands Decider v2", "type": "model", "aliases": ["v2"], "confidence": 0.95, "evidence": ["AWS 发布基于 Gemma 4 的 Strands Decider v2 五个开源决策模型"]},
+        {"name": "Strands Decider v1", "type": "model", "aliases": ["v1"], "confidence": 0.92, "evidence": ["团队此前用 v1 在亚马逊内部票据系统上替代 Claude Sonnet"]},
+        {"name": "Gemma 4", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["AWS 发布基于 Gemma 4 的 Strands Decider v2 五个开源决策模型"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["团队此前用 v1 在亚马逊内部票据系统上替代 Claude Sonnet"]},
+        {"name": "Strands Box", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["AWS 还与 Strands Box 沙箱一起新增了对 Claude Code、Codex、Kiro CLI 的原生支持"]},
+        {"name": "Claude Code", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["新增了对 Claude Code、Codex、Kiro CLI 的原生支持"]},
+        {"name": "Codex", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["新增了对 Claude Code、Codex、Kiro CLI 的原生支持"]},
+        {"name": "Kiro CLI", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["新增了对 Claude Code、Codex、Kiro CLI 的原生支持"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "AWS 发布基于 Gemma 4 的 Strands Decider v2 五个开源决策模型",
+          "summary": "Strands Decider v2 在单次前向传播中直接返回选项概率而非生成文本，基于 Gemma 4、五个尺寸，Apache-2.0 开源，训练数据从 13.6 万增至 1700 万条。",
+          "participants": [
+            {"name": "AWS", "type": "company", "role": "subject"},
+            {"name": "Strands Decider v2", "type": "model", "role": "object"},
+            {"name": "Gemma 4", "type": "model", "role": "object"}
+          ],
+          "evidence": ["AWS 发布基于 Gemma 4 的 Strands Decider v2 五个开源决策模型"]
+        },
+        {
+          "type": "infra",
+          "label": "AWS 用 Strands Decider v1 替代 Claude Sonnet，标成本降 98%、单次调用提速 78%",
+          "summary": "团队此前用 v1 在亚马逊内部票据系统上替代 Claude Sonnet，标成本降 98%、单次调用提速 78%，同时 Strands Box 对 Claude Code、Codex、Kiro CLI 提供原生隔离支持。",
+          "participants": [
+            {"name": "AWS", "type": "company", "role": "subject"},
+            {"name": "Strands Decider v1", "type": "model", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"},
+            {"name": "Claude Code", "type": "tool", "role": "object"},
+            {"name": "Codex", "type": "product", "role": "object"}
+          ],
+          "evidence": ["团队此前用 v1 在亚马逊内部票据系统上替代 Claude Sonnet，标成本降 98%、单次调用提速 78%"]
+        }
+      ],
+      "relations": [
+        {"source": "Strands Decider v2", "target": "AWS", "type": "developed_by", "weight": 0.9, "evidence": ["AWS 发布基于 Gemma 4 的 Strands Decider v2 五个开源决策模型"]},
+        {"source": "Strands Decider v1", "target": "AWS", "type": "developed_by", "weight": 0.8, "evidence": ["团队此前用 v1 在亚马逊内部票据系统上替代 Claude Sonnet"]},
+        {"source": "Strands Decider v2", "target": "Gemma 4", "type": "built_on", "weight": 0.8, "evidence": ["基于 Gemma 4、五个尺寸（E2B、E4B、12B、26B-A4B、31B）"]},
+        {"source": "Strands Decider v1", "target": "Claude", "type": "replaces", "weight": 0.7, "evidence": ["团队此前用 v1 在亚马逊内部票据系统上替代 Claude Sonnet"]},
+        {"source": "Strands Box", "target": "Claude Code", "type": "integrates", "weight": 0.7, "evidence": ["新增了对 Claude Code、Codex、Kiro CLI 的原生支持"]},
+        {"source": "Strands Box", "target": "Codex", "type": "integrates", "weight": 0.7, "evidence": ["新增了对 Claude Code、Codex、Kiro CLI 的原生支持"]},
+        {"source": "Strands Box", "target": "Kiro CLI", "type": "integrates", "weight": 0.7, "evidence": ["新增了对 Claude Code、Codex、Kiro CLI 的原生支持"]},
+        {"source": "Strands Box", "target": "AWS", "type": "developed_by", "weight": 0.8, "evidence": ["AWS 还与 Strands Box 沙箱一起新增了原生支持"]}
+      ],
+      "metrics": [
+        {"name": "模型尺寸", "value": "E2B、E4B、12B、26B-A4B、31B"},
+        {"name": "训练数据量", "value": "1700 万条（v1 为 13.6 万条）"},
+        {"name": "六项文本基准平均分", "value": "v1 70.0 → v2 82.1"},
+        {"name": "期望校准误差", "value": "0.027（v1 为 0.062）"},
+        {"name": "内部票据系统标成本降幅", "value": "98%"},
+        {"name": "单次调用提速", "value": "78%"}
+      ],
+      "why_it_matters": "AWS 把『不生成文本、单次前向传播直接打分』的系统一决策模型开源到 31B 规模，并用它替换自家 Claude 推理拿 98% 成本降幅，说明 agent 高频小决��的推理栈正与通用大模型分化成独立赛道。"
+    },
+    {
+      "article_id": "2026-11-24-10",
+      "entities": [
+        {"name": "商汤", "type": "company", "aliases": ["SenseTime"], "confidence": 0.95, "evidence": ["商汤发布开源 8B 多模态模型 SenseNova U1.6"]},
+        {"name": "SenseNova U1.6", "type": "model", "aliases": [], "confidence": 0.95, "evidence": ["商汤发布开源 8B 多模态模型 SenseNova U1.6"]},
+        {"name": "SenseNova-Loop-9B", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["这是商汤一周内第二次开源（前一次是 SenseNova-Loop-9B）"]},
+        {"name": "ComfyUI", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["ComfyUI 当天就有官方权重与工作流"]},
+        {"name": "UltraTextBench", "type": "benchmark", "aliases": [], "confidence": 0.85, "evidence": ["在 UltraTextBench 密集信息图任务上"]}
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "商汤开源 8B 多模态模型 SenseNova U1.6，支持原生图像自纠错",
+          "summary": "SenseNova U1.6 生成海报/信息图后自我检查并按提示修正文字错误，Apache-2.0 权重与 ComfyUI 工作流当天可用，是商汤一周内第二次开源。",
+          "participants": [
+            {"name": "商汤", "type": "company", "role": "subject"},
+            {"name": "SenseNova U1.6", "type": "model", "role": "object"}
+          ],
+          "evidence": ["商汤发布开源 8B 多模态模型 SenseNova U1.6", "这是商汤一周内第二次开源（前一次是 SenseNova-Loop-9B）"]
+        },
+        {
+          "type": "benchmark",
+          "label": "SenseNova U1.6 在 UltraTextBench 上开启自纠后得分提升",
+          "summary": "在 UltraTextBench 密集信息图任务上，U1.6 Lite 单遍得 86.04、开启自纠后达 92.28；内部评测称美学质量约比 U1.5 高 10%。",
+          "participants": [
+            {"name": "SenseNova U1.6", "type": "model", "role": "subject"},
+            {"name": "UltraTextBench", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["在 UltraTextBench 密集信息图任务上，U1.6 Lite 单遍得 86.04、开启自纠后达 92.28"]
+        }
+      ],
+      "relations": [
+        {"source": "SenseNova U1.6", "target": "商汤", "type": "developed_by", "weight": 0.9, "evidence": ["商汤发布开源 8B 多模态模型 SenseNova U1.6"]},
+        {"source": "SenseNova U1.6", "target": "UltraTextBench", "type": "evaluated_on", "weight": 0.8, "evidence": ["在 UltraTextBench 密集信息图任务上"]},
+        {"source": "ComfyUI", "target": "SenseNova U1.6", "type": "integrates", "weight": 0.7, "evidence": ["ComfyUI 当天就有官方权重与工作流"]},
+        {"source": "SenseNova-Loop-9B", "target": "商汤", "type": "released_by", "weight": 0.7, "evidence": ["这是商汤一周内第二次开源（前一次是 SenseNova-Loop-9B）"]}
+      ],
+      "metrics": [
+        {"name": "模型参数量", "value": "8B"},
+        {"name": "UltraTextBench 单遍得分", "value": "86.04"},
+        {"name": "UltraTextBench 自纠后得分", "value": "92.28"},
+        {"name": "美学质量较 U1.5 提升", "value": "约 10%"},
+        {"name": "蒸馏 LoRA 步数", "value": "4 步与 8 步"}
+      ],
+      "why_it_matters": "把『检查—修订』文字校正内置到单一生成流程并开源权重，开源图像模型正把『文字是硬伤』这个最露怯环节固化成能力，而不是依赖外部 OCR/校对模型缝合。"
+    },
+    {
+      "article_id": "2026-11-24-11",
+      "entities": [
+        {"name": "Cognition", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["Cognition 在 11 月发布了 Devin 编码模型的新版本 SWE-2.1"]},
+        {"name": "SWE-2.1", "type": "model", "aliases": ["SWE-2"], "confidence": 0.95, "evidence": ["Cognition 在 11 月发布了 Devin 编码模型的新版本 SWE-2.1", "相比此前的 SWE-2，新版本在编码与网络安全类基准上均有提升"]},
+        {"name": "SWE-2.1 Lightning", "type": "model", "aliases": ["Lightning"], "confidence": 0.9, "evidence": ["Cognition 在 11 月发布了 Devin 编码模型的新版本 SWE-2.1 与 SWE-2.1 Lightning"]},
+        {"name": "Devin", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Devin 编码模型的新版本 SWE-2.1"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Cognition 发布 Devin 编码模型 SWE-2.1 与约 10 倍快的 SWE-2.1 Lightning",
+          "summary": "相比 SWE-2，SWE-2.1 在编码与网络安全类基准上均有提升，并针对追求速度的场景推出约 10 倍快的 Lightning 档位（通过 Devin 提供，至 12 月初可用）。",
+          "participants": [
+            {"name": "Cognition", "type": "company", "role": "subject"},
+            {"name": "SWE-2.1", "type": "model", "role": "object"},
+            {"name": "SWE-2.1 Lightning", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Cognition 在 11 月发布了 Devin 编码模型的新版本 SWE-2.1 与 SWE-2.1 Lightning"]
+        }
+      ],
+      "relations": [
+        {"source": "SWE-2.1", "target": "Cognition", "type": "developed_by", "weight": 0.9, "evidence": ["Cognition 在 11 月发布了 Devin 编码模型的新版本 SWE-2.1"]},
+        {"source": "SWE-2.1 Lightning", "target": "Cognition", "type": "developed_by", "weight": 0.8, "evidence": ["推出约 10 倍快的 Lightning 档位"]},
+        {"source": "Devin", "target": "SWE-2.1 Lightning", "type": "integrates", "weight": 0.7, "evidence": ["约 10 倍快的 Lightning 档位（通过 Devin 提供）"]}
+      ],
+      "metrics": [
+        {"name": "Lightning 档位提速", "value": "约 10 倍"},
+        {"name": "Lightning 可用时间", "value": "至 12 月初"}
+      ],
+      "why_it_matters": "Devin 编码模型用『高精度 + 约 10 倍快』的双档位拆分，把编码竞争从单点模型推向『速率-质量』两轴的产品化竞赛，也预示 agent ���型将按任务成本继续分档量产。"
+    }
+  ]
+}

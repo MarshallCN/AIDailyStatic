@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-24",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "抽取整体扎实，事实、数字与关系方向均能由原文证据支撑，主要问题是若干实体类型错配（峰会当作 organization）与信息贫乏（8 个搜索 API 只抽了 2 个、方法论文把单一测试基座当成 fine_tuned_from 关系），按判级规则计 3 条 medium 定为 revise。",
+  "findings": [
+    {
+      "article_id": "2026-11-24-0",
+      "severity": "medium",
+      "problem": "实体「巴巴多斯AI安全特别峰会」类型标为 organization（role 也设为 subject）。它不是机构而是一次多边会议事件，原文只有「在巴巴多斯布里奇敦召开的 AI 安全特别峰会上」，它是事件发生的场合而非参与主体。",
+      "fix": "把它改为 type=event/policy（或直接移除该实体，把它并入事件 evidence），事件 participants 中不应把它作为 subject；古特雷斯与联合国才是 subject。"
+    },
+    {
+      "article_id": "2026-11-24-8",
+      "severity": "medium",
+      "problem": "本轮新闻的核心断言是「8 个搜索 API 全部返回恶意内容」，但实体只抽了 Firecrawl 和 You.com 两个，Tavily、Perplexity、Parallel、Exa、Nimble、Brave 六个完全缺失，relations 也只建了 WebSec evaluates Firecrawl 和 evaluates You.com 两条边。8 个是封闭枚举，缺 6 个导致图谱无法支撑「全部 API 受影响」的事实。",
+      "fix": "补齐其余六个 API（Tavily、Perplexity、Parallel、Exa、Nimble、Brave）为 tool 实体，并为 WebSec 建 evaluates 边到全部 8 个 API，evidence 引用同一句枚举。"
+    },
+    {
+      "article_id": "2026-11-24-5",
+      "severity": "medium",
+      "problem": "关系 LoopRes --fine_tuned_from--> Qwen3-1.7B-Base 过度具体。LoopRes 是一种方法，原文明确它在 3 个模型家族、6 个预训练模型上验证，Qwen3-1.7B-Base 只是其中一个测试基座，证据「微调预训练模型在推理时循环执行中间层」是方法描述，不支撑该基座与 LoopRes 之间存在细粒度微调关系。",
+      "fix": "删除这条 fine_tuned_from 关系，或在 evidence 明确「对 Qwen3-1.7B-Base 执行 LoopRes 微调验证」后再保留；当前证据不足以支撑，应改为 LoopRes --evaluated_on--> Qwen3-1.7B-Base。"
+    }
+  ],
+  "lessons": [
+    "会议/峰会/谈判类主体（AI 安全特别峰会、自主武器谈判）归为 policy 或 event，不要标成 organization；场所与场合只进事件 evidence，不作为参与者 subject。",
+    "枚举列举并构成新闻核心断言的主体（如『全部 8 个搜索 API 均受影响』）应逐一抽取为实体并建边，而不是只抽一两个代表。",
+    "方法类论文在多基座验证（如 Looping/fine-tune 跨多个预训练模型）时，不要把某个测试基座提升为 fine_tuned_from/developed_from 关系，采用 evaluated_on 表达对其验证。"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-24",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 78,
+  "summary": "整体抽取扎实：事件切分、metrics 与 evidence 大多能在原文逐条复核，无高严重度事实错误或关系反向。主要问题是关系类型误用（评测被写成 targets）、Strands Decider 的 v1/v2 版本被合并成单一实体、一条零信息 uses 边，以及遗漏英伟达这一关键主体。",
+  "findings": [
+    {
+      "article_id": "2026-11-24-8",
+      "severity": "medium",
+      "problem": "关系 \"WebSec --targets--> Firecrawl\" 与 \"WebSec --targets--> You.com\" 关系类型用错。WebSec 是评测基准，证据只支撑\"测试/评估这 8 个搜索 API\"；且原文里这些搜索 API 是被投喂、返回恶意内容的一方而非被攻击对象。targets 在同文件中被用于真实对抗/执法语义（如 2026-11-24-1 的\"美国商务部 targets 实体清单\"），套在评测关系上语义讲不通。",
+      "fix": "把这两条关系的类型改为 evaluates（WebSec evaluates Firecrawl / You.com），维持 source=WebSec、target=被测 API，证据不变；若管线没有 evaluates 类型，改用 test_on，杜绝用 targets 表达评测。"
+    },
+    {
+      "article_id": "2026-11-24-9",
+      "severity": "medium",
+      "problem": "实体 \"Strands Decider\" 把 \"Strands Decider v1\"、\"Strands Decider v2\"、\"v1\"、\"v2\" 全部收进 aliases 合并成单一 canonical 节点。但 v1 与 v2 是不同版本：基准分 70.0 vs 82.1、期望校准误差 0.062 vs 0.027，且角色不同（替代 Claude Sonnet 的是 v1，本篇新发布的是 v2）。合并后图谱无法区分两版本，跨文章也无法正确引用。",
+      "fix": "将 Strands Decider v1 与 Strands Decider v2 拆成两个独立实体；把\"v1\"\"v2\"从 aliases 中移除。事件与关系分别指向对应版本节点（发布/评估指向 v2，替代 Claude Sonnet 降本提速指向 v1），不要把版本标记当作同一 canonical 节点的别名。"
+    },
+    {
+      "article_id": "2026-11-24-6",
+      "severity": "medium",
+      "problem": "关系 \"Anthropic --uses--> Claude\" 是零信息边且证据不支撑。原文只是\"Anthropic 首席经济学家此前用 Claude 使用数据判断失业率无显著差异\"——是引用 Claude 使用数据做研究判断，不是 Anthropic 使用 Claude 的能力；且 Anthropic 本身就是 Claude 的开发者，这条边近乎恒定事实，没有给图谱增加任何信息。",
+      "fix": "删除该 uses 关系。若要保留，应把主体改为经济学团队/经济学家，类型改为 reflects_analysis_on / uses_data 之类能表达\"用 Claude 使用数据分析\"的语义，而不用泛化的 uses。"
+    },
+    {
+      "article_id": "2026-11-24-1",
+      "severity": "medium",
+      "problem": "遗漏重要主体英伟达（Nvidia）。原文开篇就称 Megaspeed 为\"英伟达关联企业\"，结尾又明确\"英伟达 2022 年把阿里介绍给 Megaspeed 前 CEO Alice Huang，而 Megaspeed 正是黄仁勋风波的核心\"——英伟达是全篇关键背景，也是跨文章连通的重要主体，但实体列表完全缺失。",
+      "fix": "补充实体 英伟达（type company，aliases: Nvidia、NVIDIA，confidence 高），并新增关系 Megaspeed --affiliated_with--> 英伟达，evidence 用原文\"英伟达关联企业 Megaspeed\"及\"Megaspeed 正是黄仁勋风波的核心\"。"
+    }
+  ],
+  "lessons": [
+    "评测/基准类新闻中，基准对被测对象的『测试/评估』关系用 evaluates 或 test_on，不要用有对抗或执法语义的 targets；targets 只用于攻击、制裁、实体清单这类真实对抗关系。",
+    "模型或项目带明确版本号（v1/v2、-air/-flash 等）时，把不同版本拆成独立实体，不要用版本标记做同一 canonical 节点的 alias，否则图谱无法区分版本。",
+    "关系边必须有证据支撑且有信息量：某组织与自家产品的泛化 uses 边，若证据只是『引用自家数据做研究』，应删除或改用能表达该研究语义的关系类型，避免零信息边。"
+  ]
+}

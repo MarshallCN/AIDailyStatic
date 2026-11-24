@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-24",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "抽取整体质量高，关系方向、实体类型与数字几乎全部经得起原文核对，未发现 hard 事实错误或关系方向反置。但存在几处关系类型兜底、把编辑性评论当成一次性事件、以及关键上下文主体（峰会）遗漏等 medium 级问题，建议收紧后发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-24-0",
+      "severity": "medium",
+      "problem": "事件 0 的 participants 只列了古特雷斯、联合国、全球AI风险治理框架，遗漏了核心上下文主体「巴巴多斯 AI 安全特别峰会」——这是古特雷斯发言的具体场合，也是「把时间表落到具体一年」的关键背景，且该主体未被抽取为任何实体。",
+      "fix": "把「巴巴多斯 AI 安全特别峰会」作为会议类实体加入 entities（aliases: Barbados AI 安全峰会），并列入事件 0 的 participants；若 knowledge 图不支持会议实体，至少在事件 0 的 summary 中保留该场合。"
+    },
+    {
+      "article_id": "2026-11-24-1",
+      "severity": "medium",
+      "problem": "关系 \"Apex Enterprise Solutions --partners_with--> Megaspeed\" 用泛化的 partners_with 兜底。原文明确该协议实质是「让 Megaspeed 向阿里出租 AI 算力」的算力租赁服务协议，partners_with 丢失了真实语义，也读不出方向含义。",
+      "fix": "改为更具方向性的具体关系，如 \"Apex Enterprise Solutions --signs_agreement_with--> Megaspeed\"（或 contracts_with），并在 evidence 里保留「2024 年与 Megaspeed 签署了一份服务协议」；如补充算力租赁则用 supplies（Megaspeed 向阿里出租算力）。不要用 partners_with 兜底。"
+    },
+    {
+      "article_id": "2026-11-24-4",
+      "severity": "medium",
+      "problem": "关系 \"MemOnce --replaces--> KV 缓存\" 语义不准确：MemOnce 并没有「取代」KV 缓存，而是把逐层逐 token 的 KV 缓存压缩/映射为紧凑记忆表征再动态解码回 KV 缓存，即对缓存做压缩与稀疏化。replaces 读起来像 MemOnce 整个替代了缓存机制。",
+      "fix": "改为 \"MemOnce --compresses--> KV 缓存\"（或 reduces），evidence 用「标准 Transformer 存储逐层逐 token KV 缓存 / 把 1M 上下文降至约 25MB」；仅当一个对象被另一个明确取代时才用 replaces。"
+    },
+    {
+      "article_id": "2026-11-24-11",
+      "severity": "medium",
+      "problem": "事件 2「编码模型的『分档』正成为常见打法」是把原文的编辑性评论/行业观察抽成了独立 trend 事件，并把 Cognition、SWE-2.1 填进 participants，暗示这一总体趋势是 SWE-2.1 发布内的具体事实。该论点无 SWE-2.1 的具体数据支撑，属于对行业的泛化判断。",
+      "fix": "删除这条独立事件，或把它改为在 SWE-2.1 发布事件里的一句话说明（不占独立事件槽位），不给它分配 Cognition/SWE-2.1 之外泛化到行业的 participants 与关系边。趋势性评论应标记为 commentary，不应伪装成事件。"
+    },
+    {
+      "article_id": "2026-11-24-5",
+      "severity": "low",
+      "problem": "事件 2 的参与者 SFT 被标为 role \"benchmark\"，但其实体 type 是 \"topic\"（监督微调基线）。SFT 在这里是 baseline 而非基准数据集，角色与类型不一致，会让图读成「SFT 是一个 benchmark」。",
+      "fix": "把 SFT 在该事件的 role 从 \"benchmark\" 改为 \"baseline\"（或删除角色），保持 type=\"topic\"；benchmark 角色只留给 UltraTextBench/Artificial Analysis 这类真正的评测基准。"
+    }
+  ],
+  "lessons": [
+    "编辑性/行业趋势评论（如「X 正成为常见打法」）不是一次性新闻事件，无具体可验证数据支撑时不抽为独立事件，也不给泛化论断分配 participants 与关系边。",
+    "协议/合同/租赁类商业关系不要用 partners_with 兜底：按协议实质选 supplies、contracts_with 等具体类型，方向为提供方→接收方。",
+    "replaces 只在一个对象被另一个明确取代时使用；对「压缩/缩减/稀疏化」类改进（如缓存优化）改用 compresses/reduces。",
+    "事件若有明确场合主体（会议、峰会、论坛）应作为实体抽取并列入 participants，不要只保留发言人而从图中丢失去处。"
+  ]
+}
