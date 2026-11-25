@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-25",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 77,
+  "summary": "第 1 轮的 Megaspeed 伪边、partners_with、competes_with、complies_with 等问题均已改正，但 AlphaGenome 2 的\"致病相关变异\"改写走样在第 2 轮仍残留——metric 已修、事件 summary 却保留同一错误；且 AlphaGenome 2 篇事件 1/2 基于同一证据重复叙述同一核心事实，Maple 篇把并列模型列表中的 DeepSeek 标成 company 与同列表 GPT OSS 不一致，另有机制说明/背景分析被包装成事件。",
+  "findings": [
+    {
+      "article_id": "2026-11-25-7",
+      "severity": "high",
+      "problem": "事件 1（launch）的 summary 仍写\"识别致病相关变异数量约为此前最先进模型的两倍\"，而原文是\"识别出的基因表达改变型变异数量约为此前最先进模型的两倍\"。第 1 轮已指出该改写走样并修正了 metrics（现为\"识别的基因表达改变型变异数\"），但同一错误原样保留在事件 summary 这一主要展示字段里，修复不彻底。",
+      "fix": "把事件 1 summary 改为\"识别出的基因表达改变型变异数量约为此前最先进模型的两倍\"，与已修正的 metric 保持一致；全文（summary/label/metrics）确认不再出现\"致病相关变异\"字样。"
+    },
+    {
+      "article_id": "2026-11-25-7",
+      "severity": "medium",
+      "problem": "事件 2（research，\"在 68 个组织的 1 亿多个单细胞图谱上训练并下钻单细胞颗粒度\"）与事件 1 重复：两者共用同一条证据（\"模型在 68 个组织的 1 亿多个单细胞图谱上训练\"），叙述同一组核心事实（1 亿+ 单细胞图谱训练、下钻单细胞颗粒度、基因表达改变型变异数约 2 倍），只是措辞不同，构成\"把一个动作拆成互相重复的多个事件\"。",
+      "fix": "删除事件 2，或把它并入事件 1（把\"68 个组织\"\"外推到未见过的细胞与疾病状态\"等仅有的增量信息并入事件 1 的 summary/metrics），保证同一核心事实只由一个事件承载。"
+    },
+    {
+      "article_id": "2026-11-25-12",
+      "severity": "medium",
+      "problem": "实体类型错配与列表抽取不全：原文\"运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型\"是并列的模型列表，但 DeepSeek 被标成 company，同列表的 GPT OSS 却是 model，类型不一致；且 Kimi、GLM、Gemma 三个模型完全没被抽取，只有 DeepSeek 与 GPT OSS 各被抽了一个。",
+      "fix": "将 DeepSeek 的 type 改为 model（此处的 DeepSeek 指其开源模型，与同列表 GPT OSS 一致），并把 Kimi、GLM、Gemma 补齐为 model 实体，或至少保证\"Maple --uses--> DeepSeek\"的语义是指模型而非公司。"
+    },
+    {
+      "article_id": "2026-11-25-1",
+      "severity": "medium",
+      "problem": "事件 2（infra，\"Private Inference 用机密计算保护处理中数据，与零数据留存互补\"）不是事件：它是对产品机制的背景解释（如何工作、与零数据留存如何互补、产能约束），文中没有任何动作或变化发生，被包装成独立事件节点会虚增事件数。",
+      "fix": "删除该事件节点，把\"与零数据留存互补、受机密计算容量约束\"等机制信息并入事件 1 的 summary 或 metrics；仅当原文存在可归为某一动作的新事实时才保留独立事件。"
+    },
+    {
+      "article_id": "2026-11-25-5",
+      "severity": "low",
+      "problem": "事件 2（trend，\"黄仁勋因这桩诉讼再度成为焦点人物，正值 Megaspeed 调查交织\"）是叙事背景与时机评论，不是新闻动作；它还把 Megaspeed 列为参与者，但证据仅是\"正值…交织之际\"的时间叠加，不构成事件参与。",
+      "fix": "删除该事件节点；把\"时机微妙（复职风波、国会问询与 Megaspeed 调查交织）\"并入事件 1 的 why_it_matters 或 summary，不要以事件形式呈现背景评论。"
+    },
+    {
+      "article_id": "2026-11-25-11",
+      "severity": "low",
+      "problem": "关系 \"AMD --compared_with--> NVIDIA\"（weight 0.55）是共同出现的弱边：证据\"英伟达单日下跌 8.69%，AMD 跌 9.56%\"只是两者在同一抛售中被并列提及，\"compared_with\"不刻画任何实质关系，属于把\"提到了\"当成关系。",
+      "fix": "删除该关系边；同板块个股在同一市场事件中的并列下跌不建立 compared_with 类关系，该信息保留在事件 summary/metrics 中即可。"
+    },
+    {
+      "article_id": "2026-11-25-12",
+      "severity": "low",
+      "problem": "关系 \"Mark Suman --affiliated_with--> 苹果\"（weight 0.6）语义过强：证据是\"前苹果工程师 Mark Suman\"，\"前\"字表明是过往雇佣关系，affiliated_with 会读成当前隶属。",
+      "fix": "若图谱支持过往雇佣语义，改用 worked_at/former_employee_of 之类关系；否则删除该边，仅保留创始人与 Maple 的 affiliated_with 关系。"
+    }
+  ],
+  "lessons": [
+    "背景解释、机制说明、事后评论（如\"某功能如何工作\"\"某人因此成为焦点\"）不是事件，只有新闻中实际发生的动作（发布、融资、政策、研究、安全事件、市场波动）才生成事件节点，机制信息并入事件 summary 或 metrics。",
+    "同一核心事实的多个侧面不能拆成多个事件：若第二个事件与第一个共用同一条 evidence 且叙述同一组数字/结论，应合并；仅在存在可区分的动作或子主题时才拆分。",
+    "并列的模型/产品列表要完整抽取且类型一致：同一句中并列出现的模型（如\"运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型\"）要么统一标为 model 要么统一标为公司，不得混标，也不得只抽取列表中的部分主体。"
+  ]
+}

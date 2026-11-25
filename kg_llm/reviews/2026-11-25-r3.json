@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-25",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 80,
+  "summary": "r2 的全部问题已修正（致病相关变异改写、DeepSeek 类型与模型列表不全、重复/背景事件、compared_with 伪边均已清除），但本轮仍有硬伤：3 条词表外自创关系类型（files_settlement_with、negotiating_with、related_by_theme）会在发布管线被归一化为 trend；文章 6 把银行集体审查过度指派为具体银行↔具体项目的 restrict 边，并漏抽 Partners Group Digital Halo 实体；文章 12 仍把产品机制说明包装成 launch 事件。",
+  "findings": [
+    {
+      "article_id": "2026-11-25-5",
+      "severity": "medium",
+      "problem": "关系 \"NVIDIA --files_settlement_with--> 北加州联邦地区法院\" 的类型不在 kg-extract.md 的关系词表（developed_by/released_by/authored_by/subsidiary_of/affiliated_with/built_on/fine_tuned_from/uses/integrates/replaces/deprecates/evaluated_on/outperforms/compared_with/partners_with/invests_in/acquires/competes_with/supplies/licenses_to/regulates/complies_with/restricts/targets）之内，属自创类型；发布管线会把词表外类型静默归一化为 trend（kg-utils.js:531、scripts/static_pipeline.py:611），这条边的语义标签在成品图中直接丢失。",
+      "fix": "删除该边——\"和解协议于 11 月 24 日提交法院、尚待法官批准\"已由事件完整承载；不要在词表外自创关系类型。"
+    },
+    {
+      "article_id": "2026-11-25-9",
+      "severity": "medium",
+      "problem": "关系 \"Meta --negotiating_with--> 亚马逊\" 的类型不在关系词表内，属自创类型（同 files_settlement_with 一样会被管线归一化为 trend）；且词表内没有\"谈判中\"类型，改用 partners_with 又会把尚未达成的谈判过度承诺为合作关系。",
+      "fix": "删除该边，谈判事实由 partnership 事件（\"Meta 与亚马逊就连接 Muse 与亚马逊商城解除封锁进行多轮谈判\"）承载；双方协议未达成前不要用 partners_with。"
+    },
+    {
+      "article_id": "2026-11-25-12",
+      "severity": "medium",
+      "problem": "关系 \"Maple --related_by_theme--> OpenAI\"（weight 0.5）的类型不在词表内，且其语义就是\"同题材提及\"：原文\"这一赛道与 OpenAI 同日发布的 Private Inference 遥相呼应\"是编辑评论，不是两实体间的事实关系，属于把「提到了」当成关系；发布时同样会被归一化为 trend。",
+      "fix": "删除该边，主题呼应留在 why_it_matters 或事件 summary 即可，不要建实体关系边。"
+    },
+    {
+      "article_id": "2026-11-25-0",
+      "severity": "medium",
+      "problem": "三条关系 \"FCC --targets--> Kuiper Systems\"、\"FCC --targets--> Viasat\"、\"FCC --targets--> 美国天文学会\" 会被读成\"FCC 针对/打击这三方\"，但原文事实是 FCC 在授权令中驳回三方的否决请愿；targets 在词表中限定为\"政策/产品→对象\"的针对关系，监管机构对请愿方的裁决不是针对性打击，图讲出了相反的故事。",
+      "fix": "将这三条边改为 regulates（监管方对被监管方的裁决动作，词表内最接近），或删除该组边、让驳回内容由事件 2（\"FCC 驳回 Kuiper Systems、Viasat 与美国天文学会的否决请愿\"）承载。"
+    },
+    {
+      "article_id": "2026-11-25-6",
+      "severity": "medium",
+      "problem": "关系 \"花旗 --restricts--> Bridge Data Centres\"、\"渣打 --restricts--> GMI Cloud\"、\"花旗 --restricts--> 字节跳动\" 把原文的集体行动指派成具体银行↔具体项目/客户的精确边：原文只说\"花旗、渣打与新加坡主要银行已对数据中心客户展开全面审查\"，各笔贷款（BDC 66 亿、Aolani 4.8 亿、GMI Cloud 3 亿等）的暂停与推迟均未点名放贷行；证据存在但不支撑这些逐对指派，违反\"每条关系的证据必须直接支撑它所标注的关系主体对\"规则。",
+      "fix": "删除这三条具体指派边（Bridge Data Centres、Aolani、GMI Cloud 已通过 supplies 边连通字节跳动/腾讯，不会变孤立），把\"银行集体审查、推迟放款\"留在事件与 summary；若必须保留边，只能建\"花旗/渣打 --restricts--> 数据中心客户\"这类原文可支撑的泛化边。"
+    },
+    {
+      "article_id": "2026-11-25-6",
+      "severity": "medium",
+      "problem": "原文点名的四笔被冻结贷款之一 Partners Group Digital Halo（3.72 亿美元）只出现在 metrics 里，没有抽成实体，也未进入任何事件 participants 或关系端点——它与 Bridge Data Centres、Aolani、GMI Cloud 并列，是新闻的核心主体之一，属于遗漏的重要主体。",
+      "fix": "补抽 Partners Group Digital Halo 实体（company），加入事件 2 的 participants（object），保留其 metrics 条目。"
+    },
+    {
+      "article_id": "2026-11-25-12",
+      "severity": "medium",
+      "problem": "事件 2（launch，\"Maple 把 DeepSeek、Kimi、GLM 等开源模型跑在可信执行环境里\"）不是新闻动作：本篇新闻是融资，TEE 中运行开源模型是对产品如何工作的背景解释，原文没有任何发布/上线动作发生，违反已沉淀规则\"背景解释、机制说明不是事件\"（r2 教训，本条仍未落实）。",
+      "fix": "删除该事件节点，把\"在 TEE 中运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型、配合端到端加密使公司自身无法访问用户数据\"并入事件 1（funding）的 summary；\"Maple --uses--> 各模型/TEE\"等关系边保留。"
+    },
+    {
+      "article_id": "2026-11-25-10",
+      "severity": "low",
+      "problem": "关系 \"1Password --uses--> GitHub\" 的证据\"攻击者通过一名员工的 GitHub 企业账号攻入了内部系统\"讲的是攻击者的动作，不直接支撑\"1Password 使用 GitHub\"这一主体对（证据与关系主体错位）；且该边信息量≈0，反而把\"内部系统被攻破\"的新闻重点淡化成了正常基础设施依赖。",
+      "fix": "删除该边，攻击路径（员工 GitHub 企业账号→内部系统→推送恶意代码→拉取元数据）由事件 summary 承载；不要用\"使用\"类边表达安全事故。"
+    },
+    {
+      "article_id": "2026-11-25-9",
+      "severity": "low",
+      "problem": "事件 2（launch）把两个时间点不同的事实压成一个事件：10 月已宣布的\"上线六周美加用户超 1000 万、约四分之一日活\"与本周的\"Muse 直接进入 Instagram 私信\"，且类型 launch 对增长公告不准确（本周的 Instagram 集成才是发布类动作）。",
+      "fix": "拆开处理：Muse 进入 Instagram 私信保留为 launch 事件；用户增长数据并入该事件 summary/metrics 或 why_it_matters，不要混成一个跨时间点的事件。"
+    },
+    {
+      "article_id": "2026-11-25-4",
+      "severity": "low",
+      "problem": "事件 3（trend，\"黄仁勋将就 Megaspeed 往来接受众议院闭门问询\"）是已排期的具体立法问询动作，不是市场长期性走向；与事件 1、2 同为政策/司法类却标了 trend，违反\"只有市场长期性走向才标 trend，不要用 trend 兜底\"规则。",
+      "fix": "事件 3 的类型改为 policy（立法机构的具体问询动作），与事件 1/2 保持一致。"
+    },
+    {
+      "article_id": "2026-11-25-11",
+      "severity": "low",
+      "problem": "全篇唯一关系 \"黄仁勋 --affiliated_with--> NVIDIA\" 是背景性隶属边，与新闻主体（AI 板块深跌、纳指/英伟达/AMD/安霸跌幅）无关；该文关系数不足审计目标（审计已报），但语义上也没有其他可证据支撑的实体关系候选——不要再用 compared_with 或主题性弱边凑数（r2 已删同类边，本轮不再新增是正确的）。",
+      "fix": "保留现有 affiliation 边即可；若补边只能用原文可支撑的语义（如指数与个股的同市场语境），没有证据支撑时宁缺毋滥，让事件与 metrics 承载跌幅联动。"
+    }
+  ],
+  "lessons": [
+    "关系类型必须取自词表：词表没有合适类型时删除该边、把语义留在事件里，不要自创类型（files_settlement_with、negotiating_with、related_by_theme 等词表外类型会被发布管线静默归一化为 trend，语义标签在成品图中丢失）。",
+    "监管机构的裁决动作（驳回/否决请愿）不要写成 targets：targets 只表达政策/产品对对象的针对关系，裁决语义由事件承载或用 regulates，避免建出\"FCC 打击某公司\"这类误导边。",
+    "原文只描述集体行动（如\"多家银行展开全面审查\"）时，不要拆成\"某机构--restricts-->某具体项目\"的逐对指派边；证据不支撑具体指派的边要么泛化要么删除。"
+  ]
+}

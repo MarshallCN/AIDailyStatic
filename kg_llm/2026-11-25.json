@@ -1,0 +1,610 @@
+{
+  "date": "2026-11-25",
+  "articles": [
+    {
+      "article_id": "2026-11-25-0",
+      "entities": [
+        {"name": "FCC", "type": "organization", "aliases": ["美国 FCC", "FCC 航天局"], "confidence": 0.95, "evidence": ["美国 FCC 航天局有条件批准", "FCC 航天局于 11 月 25 日发布备忘录意见与授权令"]},
+        {"name": "SpaceX", "type": "company", "aliases": [], "confidence": 0.97, "evidence": ["对 SpaceX 的 Starmind 申请作出"]},
+        {"name": "Starmind", "type": "product", "aliases": ["Starmind 星座"], "confidence": 0.95, "evidence": ["SpaceX“Starmind”星座", "对 SpaceX 的 Starmind 申请作出"]},
+        {"name": "Starlink", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["主要通信走与 Starlink 的激光星间链路"]},
+        {"name": "Starship", "type": "hardware", "aliases": [], "confidence": 0.9, "evidence": ["押注 Starship 降低部署成本"]},
+        {"name": "Kuiper Systems", "type": "company", "aliases": ["Kuiper"], "confidence": 0.9, "evidence": ["裁决驳回了 Kuiper Systems（亚马逊）、Viasat 和美国天文学会（AAS）的否决请愿"]},
+        {"name": "Viasat", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["裁决驳回了 Kuiper Systems（亚马逊）、Viasat 和美国天文学会（AAS）的否决请愿"]},
+        {"name": "美国天文学会", "type": "organization", "aliases": ["AAS"], "confidence": 0.9, "evidence": ["美国天文学会（AAS）的否决请愿", "AAS 随即声明“深感失望”"]},
+        {"name": "亚马逊", "type": "company", "aliases": ["Amazon"], "confidence": 0.85, "evidence": ["Kuiper Systems（亚马逊）"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "FCC 航天局有条件批准 SpaceX 百万颗轨道数据中心卫星星座 Starmind",
+          "summary": "FCC 对 SpaceX 的 Starmind 申请作出“部分批准、部分暂缓”裁决，授权在 500 至 1002 公里低轨部署最多 100 万颗卫星作为在轨 AI 数据中心，并设里程碑与 15 年许可期。",
+          "participants": [
+            {"name": "FCC", "type": "organization", "role": "subject"},
+            {"name": "SpaceX", "type": "company", "role": "object"},
+            {"name": "Starmind", "type": "product", "role": "object"}
+          ],
+          "evidence": ["FCC 航天局于 11 月 25 日发布备忘录意见与授权令，对 SpaceX 的 Starmind 申请作出“部分批准、部分暂缓”的裁决", "美国 FCC 航天局有条件批准"]
+        },
+        {
+          "type": "policy",
+          "label": "FCC 驳回 Kuiper Systems、Viasat 与美国天文学会的否决请愿",
+          "summary": "裁决驳回了 Kuiper Systems（亚马逊）、Viasat 和美国天文学会的否决请愿，FCC 认为批准符合公共利益、让美国在太空与人工智能领域保持领先。",
+          "participants": [
+            {"name": "FCC", "type": "organization", "role": "subject"},
+            {"name": "Kuiper Systems", "type": "company", "role": "object"},
+            {"name": "Viasat", "type": "company", "role": "object"},
+            {"name": "美国天文学会", "type": "organization", "role": "object"}
+          ],
+          "evidence": ["裁决驳回了 Kuiper Systems（亚马逊）、Viasat 和美国天文学会（AAS）的否决请愿"]
+        }
+      ],
+      "relations": [
+        {"source": "FCC", "target": "SpaceX", "type": "regulates", "weight": 0.9, "evidence": ["FCC 航天局于 11 月 25 日发布备忘录意见与授权令"]},
+        {"source": "Starmind", "target": "SpaceX", "type": "developed_by", "weight": 0.9, "evidence": ["对 SpaceX 的 Starmind 申请作出"]},
+        {"source": "Starmind", "target": "Starlink", "type": "uses", "weight": 0.75, "evidence": ["主要通信走与 Starlink 的激光星间链路"]},
+        {"source": "Starmind", "target": "Starship", "type": "uses", "weight": 0.7, "evidence": ["押注 Starship 降低部署成本"]},
+        {"source": "FCC", "target": "Kuiper Systems", "type": "targets", "weight": 0.8, "evidence": ["裁决驳回了 Kuiper Systems（亚马逊）"]},
+        {"source": "FCC", "target": "Viasat", "type": "targets", "weight": 0.8, "evidence": ["裁决驳回了 Kuiper Systems（亚马逊）、Viasat"]},
+        {"source": "FCC", "target": "美国天文学会", "type": "targets", "weight": 0.8, "evidence": ["美国天文学会（AAS）的否决请愿"]},
+        {"source": "Kuiper Systems", "target": "亚马逊", "type": "subsidiary_of", "weight": 0.7, "evidence": ["Kuiper Systems（亚马逊）"]}
+      ],
+      "metrics": [
+        {"name": "计划部署卫星总数", "value": "100 万颗"},
+        {"name": "轨道高度范围", "value": "500 至 1002 公里"},
+        {"name": "首颗卫星部署里程碑", "value": "2033 年 11 月前"},
+        {"name": "部署 10% 里程碑", "value": "2035 年（10 万颗）"},
+        {"name": "部署 50% 里程碑", "value": "2038 年"},
+        {"name": "全部完成里程碑", "value": "2040 年"},
+        {"name": "许可期", "value": "15 年"},
+        {"name": "目前在轨卫星总数参照", "value": "约 1.7 万颗"}
+      ],
+      "why_it_matters": "美国首次大规模授权“天基 AI 算力”这一形态，把算力部署从地面数据中心推向轨道，地缘算力竞争第一次延伸到太空基础设施层面。"
+    },
+    {
+      "article_id": "2026-11-25-1",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.98, "evidence": ["OpenAI 正与一小批客户测试 Private Inference"]},
+        {"name": "阿尔特曼", "type": "person", "aliases": ["Altman"], "confidence": 0.92, "evidence": ["阿尔特曼 11 月 25 日在 X 上宣布"]},
+        {"name": "Private Inference", "type": "product", "aliases": ["Alpha 版 Private Inference"], "confidence": 0.95, "evidence": ["OpenAI 正与一小批客户测试 Private Inference"]},
+        {"name": "Private Intelligence", "type": "product", "aliases": [], "confidence": 0.88, "evidence": ["作为 Private Intelligence（面向企业前沿 AI 的隐私框架）的一部分"]},
+        {"name": "机密计算", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["用机密计算在模型处理过程中保护提示词与输出", "用机密计算和严格控制在“模型处理中”保护提示与输出"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 在少数客户中开始 Alpha 版 Private Inference 小范围测试",
+          "summary": "OpenAI CEO 阿尔特曼宣布正与一小批客户测试 Private Inference，作为面向企业前沿 AI 的隐私框架 Private Intelligence 的一部分，用机密计算和严格控制在“模型处理中”保护提示词与输出，与零数据留存互补，规模化取决于 OpenAI 仍在争取的机密计算容量。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Private Inference", "type": "product", "role": "object"},
+            {"name": "机密计算", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["OpenAI 正与一小批客户测试 Private Inference", "作为 Private Intelligence（面向企业前沿 AI 的隐私框架）的一部分"]
+        }
+      ],
+      "relations": [
+        {"source": "Private Inference", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 正与一小批客户测试 Private Inference"]},
+        {"source": "Private Inference", "target": "机密计算", "type": "uses", "weight": 0.8, "evidence": ["用机密计算在模型处理过程中保护提示词与输出"]},
+        {"source": "Private Intelligence", "target": "OpenAI", "type": "developed_by", "weight": 0.7, "evidence": ["作为 Private Intelligence（面向企业前沿 AI 的隐私框架）的一部分"]},
+        {"source": "阿尔特曼", "target": "OpenAI", "type": "affiliated_with", "weight": 0.8, "evidence": ["阿尔特曼 11 月 25 日在 X 上宣布"]}
+      ],
+      "metrics": [
+        {"name": "Private Inference 状态", "value": "Alpha"},
+        {"name": "测试客户规模", "value": "一小批"}
+      ],
+      "why_it_matters": "处理期隐私首次被产品化：OpenAI 把“机密计算”从安全基建变成企业可登记买单的前沿模型卖点，能否规模化取决于仍稀缺的机密计算容量。"
+    },
+    {
+      "article_id": "2026-11-25-2",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.98, "evidence": ["OpenAI 正逐步将 ChatGPT 的 Chat 与 Work 两个标签页合并为单一体验"]},
+        {"name": "ChatGPT", "type": "product", "aliases": [], "confidence": 0.95, "evidence": ["OpenAI 正逐步将 ChatGPT 的 Chat 与 Work 两个标签页合并为单一体验"]},
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.95, "evidence": ["这一方向与 Anthropic 一致"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["后者早在九月就把 Claude 聊天与 Cowork 并入同一界面"]},
+        {"name": "Cowork", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["后者早在九月就把 Claude 聊天与 Cowork 并入同一界面"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "OpenAI 合并 ChatGPT 的 Chat 与 Work 体验并统一用量额度",
+          "summary": "OpenAI 正逐步把 ChatGPT 的两个标签页合并为单一体验，并引入统一用量计量表，Chat 与 Work 消耗同一份额度，重度用户可能更快触达上限。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "ChatGPT", "type": "product", "role": "object"}
+          ],
+          "evidence": ["OpenAI 正逐步将 ChatGPT 的 Chat 与 Work 两个标签页合并为单一体验", "ChatGPT 将引入统一的用量计量表"]
+        },
+        {
+          "type": "trend",
+          "label": "OpenAI 与 Anthropic 同时把“对话”与“干活”产品边界抹平",
+          "summary": "Anthropic 早在九月就把 Claude 聊天与 Cowork 并入同一界面，两大厂商竞夺同一入口。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Claude", "type": "model", "role": "object"},
+            {"name": "Cowork", "type": "product", "role": "object"}
+          ],
+          "evidence": ["这一方向与 Anthropic 一致：后者早在九月就把 Claude 聊天与 Cowork 并入同一界面"]
+        }
+      ],
+      "relations": [
+        {"source": "ChatGPT", "target": "OpenAI", "type": "developed_by", "weight": 0.9, "evidence": ["OpenAI 正逐步将 ChatGPT 的 Chat 与 Work 两个标签页合并为单一体验"]},
+        {"source": "Anthropic", "target": "OpenAI", "type": "competes_with", "weight": 0.7, "evidence": ["两大厂商正把“对话”与“干活”的产品边界抹平，争夺同一个入口"]},
+        {"source": "Cowork", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["后者早在九月就把 Claude 聊天与 Cowork 并入同一界面"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["后者早在九月就把 Claude 聊天与 Cowork 并入同一界面"]}
+      ],
+      "metrics": [
+        {"name": "推送范围", "value": "一小批 Pro 订阅者"},
+        {"name": "统一计量后重度用户影响", "value": "更快触达上限"}
+      ],
+      "why_it_matters": "两大厂商把“对话”与“干活”放进同一入口与同一成本池，聊天和任务执行的计费心智在合并，重度用户将被卷入分层计费。"
+    },
+    {
+      "article_id": "2026-11-25-3",
+      "entities": [
+        {"name": "Anthropic", "type": "company", "aliases": [], "confidence": 0.98, "evidence": ["Anthropic 决定迁到 Rust"]},
+        {"name": "Messages API", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Anthropic 详解其 Messages API 由 Python 迁至 Rust 的全程"]},
+        {"name": "Rust", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["Anthropic 决定迁到 Rust"]},
+        {"name": "Claude", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["Messages API 是客户以及 Claude Code、Cowork 等自家应用访问 Claude 的主通道"]},
+        {"name": "Claude Code", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Messages API 是客户以及 Claude Code、Cowork 等自家应用访问 Claude 的主通道"]},
+        {"name": "Cowork", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Messages API 是客户以及 Claude Code、Cowork 等自家应用访问 Claude 的主通道"]}
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Anthropic 将 Messages API 从 Python 迁移到 Rust，单请求 CPU 降约 70%",
+          "summary": "Anthropic 决定把承载巨大流量的 Messages API 迁到 Rust，最终单请求 CPU 使用减少约 70%、中位首 token 延迟改善约 20%，全程不停服。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Messages API", "type": "product", "role": "object"},
+            {"name": "Rust", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["Anthropic 决定迁到 Rust", "单请求 CPU 使用减少约 70%"]
+        },
+        {
+          "type": "infra",
+          "label": "用 AI 把生产 Messages API 自身当校验器，影子模式找出分叉点",
+          "summary": "团队让 Rust 版本在生产流量上以影子模式运行，自动找出分叉点并派 agent 修复差异，最终在不停服、不冻结功能开发的情况下完成切换。",
+          "participants": [
+            {"name": "Anthropic", "type": "company", "role": "subject"},
+            {"name": "Messages API", "type": "product", "role": "object"},
+            {"name": "Claude", "type": "model", "role": "object"}
+          ],
+          "evidence": ["让 Rust 版本在生产流量上以影子模式运行，自动找出分叉点并派 agent 修复差异", "在不停服、不冻结功能开发的情况下完成切换"]
+        }
+      ],
+      "relations": [
+        {"source": "Messages API", "target": "Anthropic", "type": "developed_by", "weight": 0.9, "evidence": ["Anthropic 详解其 Messages API 由 Python 迁至 Rust 的全程"]},
+        {"source": "Messages API", "target": "Rust", "type": "uses", "weight": 0.8, "evidence": ["Anthropic 决定迁到 Rust"]},
+        {"source": "Messages API", "target": "Claude", "type": "integrates", "weight": 0.8, "evidence": ["Messages API 是客户以及 Claude Code、Cowork 等自家应用访问 Claude 的主通道"]},
+        {"source": "Claude Code", "target": "Claude", "type": "uses", "weight": 0.75, "evidence": ["Messages API 是客户以及 Claude Code、Cowork 等自家应用访问 Claude 的主通道"]},
+        {"source": "Cowork", "target": "Claude", "type": "uses", "weight": 0.7, "evidence": ["Messages API 是客户以及 Claude Code、Cowork 等自家应用访问 Claude 的主通道"]},
+        {"source": "Claude", "target": "Anthropic", "type": "developed_by", "weight": 0.8, "evidence": ["Messages API 是客户以及 Claude Code、Cowork 等自家应用访问 Claude 的主通道"]}
+      ],
+      "metrics": [
+        {"name": "单请求 CPU 使用降幅", "value": "约 70%"},
+        {"name": "内存占用降幅", "value": "超 80%"},
+        {"name": "中位首 token 延迟改善", "value": "约 20%"},
+        {"name": "Messages API 流量增长", "value": "约 1800 倍"}
+      ],
+      "why_it_matters": "用 Rust 重写并让生产 API 自身当校验器、agent 在影子模式下自主修差异，Anthropic 给出“用 AI 迁移一个承载巨大流量的生产系统”最完整的实操样本。"
+    },
+    {
+      "article_id": "2026-11-25-4",
+      "entities": [
+        {"name": "万斯", "type": "person", "aliases": ["J.D. Vance"], "confidence": 0.92, "evidence": ["副总统万斯周三在俄亥俄州对记者表示"]},
+        {"name": "特朗普", "type": "person", "aliases": ["Trump"], "confidence": 0.92, "evidence": ["这直接回应了周一特朗普的说法"]},
+        {"name": "白宫", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["白宫与司法部的说法已出现公开矛盾"]},
+        {"name": "司法部", "type": "organization", "aliases": ["美国司法部"], "confidence": 0.9, "evidence": ["司法部在特朗普推动黄仁勋复职前并未对他展开正式调查"]},
+        {"name": "黄仁勋", "type": "person", "aliases": ["Jensen Huang"], "confidence": 0.95, "evidence": ["黄仁勋下周二还要就 Megaspeed 往来接受众议院闭门问询"]},
+        {"name": "众议院", "type": "organization", "aliases": ["美国众议院"], "confidence": 0.85, "evidence": ["黄仁勋下周二还要就 Megaspeed 往来接受众议院闭门问询"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英伟达年度大会亦将移师华盛顿举行"]},
+        {"name": "Megaspeed", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["黄仁勋下周二还要就 Megaspeed 往来接受众议院闭门问询"]},
+        {"name": "超微", "type": "company", "aliases": ["Super Micro"], "confidence": 0.85, "evidence": ["英伟达客户超微（Super Micro）"]},
+        {"name": "Blanche", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["总检察长 Blanche 的结论"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "万斯公开称黄仁勋没有在接受任何调查",
+          "summary": "万斯称司法部和国家安全体系的多个官员都告诉他黄仁勋没有在接受任何调查，直接回应了特朗普“已被证明无罪”的说法。",
+          "participants": [
+            {"name": "万斯", "type": "person", "role": "subject"},
+            {"name": "司法部", "type": "organization", "role": "object"},
+            {"name": "黄仁勋", "type": "person", "role": "object"}
+          ],
+          "evidence": ["多个官员都告诉我，他没有在接受任何调查"]
+        },
+        {
+          "type": "policy",
+          "label": "路透社报道司法部在黄仁勋复职前从未正式立案调查他",
+          "summary": "路透社报道司法部在特朗普推动黄仁勋复职前并未对他展开正式调查，总检察长 Blanche 的结论建立在超微与 Megaspeed 的既有调查之上。",
+          "participants": [
+            {"name": "司法部", "type": "organization", "role": "subject"},
+            {"name": "黄仁勋", "type": "person", "role": "object"}
+          ],
+          "evidence": ["司法部在特朗普推动黄仁勋复职前并未对他展开正式调查"]
+        },
+        {
+          "type": "trend",
+          "label": "黄仁勋将就 Megaspeed 往来接受众议院闭门问询",
+          "summary": "黄仁勋还要就 Megaspeed 往来接受众议院闭门问询，英伟达年度大会亦将移师华盛顿，争议进入调查与问询交织阶段。",
+          "participants": [
+            {"name": "黄仁勋", "type": "person", "role": "subject"},
+            {"name": "众议院", "type": "organization", "role": "object"},
+            {"name": "Megaspeed", "type": "company", "role": "object"}
+          ],
+          "evidence": ["黄仁勋下周二还要就 Megaspeed 往来接受众议院闭门问询"]
+        }
+      ],
+      "relations": [
+        {"source": "万斯", "target": "白宫", "type": "affiliated_with", "weight": 0.7, "evidence": ["副总统万斯周三在俄亥俄州对记者表示"]},
+        {"source": "特朗普", "target": "白宫", "type": "affiliated_with", "weight": 0.7, "evidence": ["这直接回应了周一特朗普的说法"]},
+        {"source": "Blanche", "target": "司法部", "type": "affiliated_with", "weight": 0.7, "evidence": ["总检察长 Blanche 的结论"]},
+        {"source": "黄仁勋", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.85, "evidence": ["英伟达年度大会亦将移师华盛顿举行"]},
+        {"source": "众议院", "target": "黄仁勋", "type": "targets", "weight": 0.75, "evidence": ["黄仁勋下周二还要就 Megaspeed 往来接受众议院闭门问询"]},
+        {"source": "司法部", "target": "Megaspeed", "type": "targets", "weight": 0.8, "evidence": ["建立在英伟达客户超微（Super Micro）与 Megaspeed 的既有调查之上"]},
+        {"source": "NVIDIA", "target": "超微", "type": "supplies", "weight": 0.6, "evidence": ["英伟达客户超微（Super Micro）"]}
+      ],
+      "metrics": [
+        {"name": "黄仁勋众议院问询时间", "value": "下周二"}
+      ],
+      "why_it_matters": "白宫（“调查过”暗示）与司法部（“从未立案”）首次出现公开矛盾，叠加国会问询与复职风波，黄仁勋去职的官方叙事正在被逐个环节证伪。"
+    },
+    {
+      "article_id": "2026-11-25-5",
+      "entities": [
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.96, "evidence": ["英伟达同意支付 2.9 亿美元和解", "保留了针对英伟达与黄仁勋的诉求"]},
+        {"name": "黄仁勋", "type": "person", "aliases": ["Jensen Huang"], "confidence": 0.93, "evidence": ["保留了针对英伟达与黄仁勋的诉求，黄仁勋也因而再度成为焦点人物"]},
+        {"name": "北加州联邦地区法院", "type": "organization", "aliases": [], "confidence": 0.85, "evidence": ["和解协议于 11 月 24 日提交北加州联邦地区法院"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "英伟达同意支付 2.9 亿美元和解 2017-18 加密挖矿证券集体诉讼",
+          "summary": "英伟达同意支付 2.9 亿美元和解一桩 2018 年提起的证券集体诉讼，和解协议已提交北加州联邦地区法院，尚待法官批准。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "北加州联邦地区法院", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["英伟达同意支付 2.9 亿美元和解", "和解协议于 11 月 24 日提交北加州联邦地区法院，尚待法官批准"]
+        }
+      ],
+      "relations": [
+        {"source": "黄仁勋", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.75, "evidence": ["保留了针对英伟达与黄仁勋的诉求"]},
+        {"source": "NVIDIA", "target": "北加州联邦地区法院", "type": "files_settlement_with", "weight": 0.6, "evidence": ["和解协议于 11 月 24 日提交北加州联邦地区法院，尚待法官批准"]}
+      ],
+      "metrics": [
+        {"name": "和解金额", "value": "2.9 亿美元"},
+        {"name": "指控少报的挖矿相关 GPU 销售", "value": "约 11 亿美元"},
+        {"name": "下调指引后股价两日跌幅", "value": "28.5%"},
+        {"name": "和解金额占索赔总额比", "value": "约 14%"},
+        {"name": "原告律师费申请上限", "value": "6200 万美元"},
+        {"name": "初步批准听证时间", "value": "2027 年 2 月 4 日"}
+      ],
+      "why_it_matters": "2.9 亿美元对英伟达金额不大，但时机选在黄仁勋复职、国会问询与 Megaspeed 调查交织之际，是主动切割监管与声誉风险叠加的一次财务动作。"
+    },
+    {
+      "article_id": "2026-11-25-6",
+      "entities": [
+        {"name": "美国芯片出口管制", "type": "policy", "aliases": ["美国芯片管制", "美国对华芯片管制"], "confidence": 0.85, "evidence": ["随着美国芯片出口管制升级", "美国对华芯片管制正在反噬亚洲 AI 债务融资市场"]},
+        {"name": "贝恩资本", "type": "company", "aliases": ["Bain Capital"], "confidence": 0.85, "evidence": ["贝恩资本旗下 Bridge Data Centres"]},
+        {"name": "Bridge Data Centres", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["贝恩资本旗下 Bridge Data Centres（马来西亚设施服务字节跳动）"]},
+        {"name": "字节跳动", "type": "company", "aliases": ["ByteDance"], "confidence": 0.95, "evidence": ["Bridge Data Centres（马来西亚设施服务字节跳动）"]},
+        {"name": "Aolani", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["Aolani（马来西亚、服务字节跳动）"]},
+        {"name": "GMI Cloud", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["GMI Cloud（泰国、服务腾讯）"]},
+        {"name": "腾讯", "type": "company", "aliases": ["Tencent"], "confidence": 0.9, "evidence": ["GMI Cloud（泰国、服务腾讯）"]},
+        {"name": "花旗", "type": "company", "aliases": ["Citi", "花旗集团"], "confidence": 0.85, "evidence": ["花旗、渣打与新加坡主要银行已对数据中心客户展开全面审查"]},
+        {"name": "渣打", "type": "company", "aliases": ["Standard Chartered"], "confidence": 0.85, "evidence": ["花旗、渣打与新加坡主要银行已对数据中心客户展开全面审查"]},
+        {"name": "Megaspeed", "type": "company", "aliases": [], "confidence": 0.8, "evidence": ["对 Megaspeed 及阿里关联实体的实体清单行动"]},
+        {"name": "Alibaba", "type": "company", "aliases": ["阿里巴巴", "阿里"], "confidence": 0.85, "evidence": ["对 Megaspeed 及阿里关联实体的实体清单行动"]}
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "美国芯片管制让亚洲 AI 数据中心融资市场急冻，近 50 亿美元交易搁浅",
+          "summary": "随着美国芯片出口管制升级，银行对涉及中资客户的 AI 数据中心贷款集体踩刹车，近 50 亿美元交易搁浅。",
+          "participants": [
+            {"name": "美国芯片出口管制", "type": "policy", "role": "subject"},
+            {"name": "字节跳动", "type": "company", "role": "object"},
+            {"name": "Alibaba", "type": "company", "role": "object"},
+            {"name": "腾讯", "type": "company", "role": "object"}
+          ],
+          "evidence": ["随着美国芯片出口管制升级，银行对涉及中资客户的 AI 数据中心贷款集体踩刹车", "近 50 亿美元交易搁浅"]
+        },
+        {
+          "type": "trend",
+          "label": "花旗、渣打等银行暂停向字节跳动、阿里、腾讯关联的数据中心项目放贷",
+          "summary": "花旗、渣打与新加坡主要银行已对数据中心客户展开全面审查，规模最大的 Bridge Data Centres 66 亿美元贷款因需更多尽调而推迟放款。",
+          "participants": [
+            {"name": "花旗", "type": "company", "role": "subject"},
+            {"name": "渣打", "type": "company", "role": "subject"},
+            {"name": "Bridge Data Centres", "type": "company", "role": "object"},
+            {"name": "Aolani", "type": "company", "role": "object"},
+            {"name": "GMI Cloud", "type": "company", "role": "object"}
+          ],
+          "evidence": ["花旗、渣打与新加坡主要银行已对数据中心客户展开全面审查", "多家放贷机构因需更多尽调而推迟放款"]
+        }
+      ],
+      "relations": [
+        {"source": "Bridge Data Centres", "target": "贝恩资本", "type": "subsidiary_of", "weight": 0.75, "evidence": ["贝恩资本旗下 Bridge Data Centres"]},
+        {"source": "Bridge Data Centres", "target": "字节跳动", "type": "supplies", "weight": 0.75, "evidence": ["贝恩资本旗下 Bridge Data Centres（马来西亚设施服务字节跳动）"]},
+        {"source": "Aolani", "target": "字节跳动", "type": "supplies", "weight": 0.7, "evidence": ["Aolani（马来西亚、服务字节跳动）"]},
+        {"source": "GMI Cloud", "target": "腾讯", "type": "supplies", "weight": 0.7, "evidence": ["GMI Cloud（泰国、服务腾讯）"]},
+        {"source": "美国芯片出口管制", "target": "Megaspeed", "type": "targets", "weight": 0.75, "evidence": ["对 Megaspeed 及阿里关联实体的实体清单行动"]},
+        {"source": "美国芯片出口管制", "target": "Alibaba", "type": "targets", "weight": 0.75, "evidence": ["对 Megaspeed 及阿里关联实体的实体清单行动"]},
+        {"source": "花旗", "target": "Bridge Data Centres", "type": "restricts", "weight": 0.7, "evidence": ["花旗、渣打与新加坡主要银行已对数据中心客户展开全面审查", "多家放贷机构因需更多尽调而推迟放款"]},
+        {"source": "渣打", "target": "GMI Cloud", "type": "restricts", "weight": 0.7, "evidence": ["花旗、渣打与新加坡主要银行已对数据中心客户展开全面审查"]},
+        {"source": "花旗", "target": "字节跳动", "type": "restricts", "weight": 0.6, "evidence": ["银行对涉及中资客户的 AI 数据中心贷款集体踩刹车"]}
+      ],
+      "metrics": [
+        {"name": "搁浅交易总额", "value": "近 50 亿美元"},
+        {"name": "Bridge Data Centres 贷款规模（追加后）", "value": "66 亿美元"},
+        {"name": "Aolani 贷款规模", "value": "4.8 亿美元"},
+        {"name": "Partners Group Digital Halo 贷款规模", "value": "3.72 亿美元"},
+        {"name": "GMI Cloud 贷款规模", "value": "3 亿美元"}
+      ],
+      "why_it_matters": "算力管制首次从芯片采购端蔓延到融资端，连“未直接违规”的项目也因合规与坏账风险被银行停贷，管制成本正由供应链传导到资本链。"
+    },
+    {
+      "article_id": "2026-11-25-7",
+      "entities": [
+        {"name": "Google DeepMind", "type": "company", "aliases": ["DeepMind", "谷歌 DeepMind"], "confidence": 0.95, "evidence": ["Google DeepMind 发布 AlphaGenome 2"]},
+        {"name": "AlphaGenome 2", "type": "model", "aliases": [], "confidence": 0.96, "evidence": ["Google DeepMind 发布 AlphaGenome 2"]},
+        {"name": "AlphaGenome", "type": "model", "aliases": [], "confidence": 0.9, "evidence": ["AlphaGenome 2 是 2025 年 AlphaGenome 与 AlphaGenome Atlas 的继任者"]},
+        {"name": "AlphaGenome API", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["即日起通过 AlphaGenome API 向非商业研究开放"]},
+        {"name": "Google Antigravity", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["随后还将在 Google Antigravity 中发布 AlphaGenome 2 Skills"]},
+        {"name": "Gayoso", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["研究科学家 Gayoso 认为关键突破是"]},
+        {"name": "Avsec", "type": "person", "aliases": [], "confidence": 0.85, "evidence": ["基因组学负责人 Avsec 则强调"]}
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "Google DeepMind 发布 AlphaGenome 2，预测基因变异对单个细胞类型的影响",
+          "summary": "AlphaGenome 2 用 68 个组织的超过 1 亿个单细胞图谱训练，能预测 DNA 变异对具体细胞类型与状态的影响，并可外推到未见过的细胞与疾病状态，识别出的基因表达改变型变异数量约为此前最先进模型的两倍。",
+          "participants": [
+            {"name": "Google DeepMind", "type": "company", "role": "subject"},
+            {"name": "AlphaGenome 2", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Google DeepMind 发布 AlphaGenome 2", "模型在 68 个组织的 1 亿多个单细胞图谱上训练"]
+        }
+      ],
+      "relations": [
+        {"source": "AlphaGenome 2", "target": "Google DeepMind", "type": "developed_by", "weight": 0.9, "evidence": ["Google DeepMind 发布 AlphaGenome 2"]},
+        {"source": "AlphaGenome 2", "target": "AlphaGenome", "type": "built_on", "weight": 0.75, "evidence": ["AlphaGenome 2 是 2025 年 AlphaGenome 与 AlphaGenome Atlas 的继任者"]},
+        {"source": "AlphaGenome API", "target": "AlphaGenome 2", "type": "integrates", "weight": 0.8, "evidence": ["即日起通过 AlphaGenome API 向非商业研究开放"]},
+        {"source": "Google Antigravity", "target": "AlphaGenome 2", "type": "integrates", "weight": 0.65, "evidence": ["随后还将在 Google Antigravity 中发布 AlphaGenome 2 Skills"]},
+        {"source": "Gayoso", "target": "Google DeepMind", "type": "affiliated_with", "weight": 0.7, "evidence": ["研究科学家 Gayoso 认为关键突破是"]},
+        {"source": "Avsec", "target": "Google DeepMind", "type": "affiliated_with", "weight": 0.7, "evidence": ["基因组学负责人 Avsec 则强调"]}
+      ],
+      "metrics": [
+        {"name": "训练单细胞图谱数量", "value": "1 亿多个"},
+        {"name": "覆盖组织数", "value": "68 个"},
+        {"name": "识别的基因表达改变型变异数", "value": "约 2 倍于此前最先进模型"}
+      ],
+      "why_it_matters": "AlphaGenome 2 把变异预测从组织平均下钻到单细胞颗粒度，让“变异-细胞-疾病”的预测闭环首次真正闭合，直指药物开发所需的细胞特异精度。"
+    },
+    {
+      "article_id": "2026-11-25-8",
+      "entities": [
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.98, "evidence": ["OpenAI 在其公共数学仓库发布 111 页预印本"]},
+        {"name": "The matrix multiplication exponent is nine fourths", "type": "paper", "aliases": [], "confidence": 0.9, "evidence": ["题为《The matrix multiplication exponent is nine fourths》的手稿"]},
+        {"name": "Lean", "type": "tool", "aliases": [], "confidence": 0.85, "evidence": ["Lean 形式化覆盖了无除法电路情形下的 ω=9/4"]},
+        {"name": "张量网络", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["把张量网络压缩到足以违反"]}
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "OpenAI 数学仓库发布 111 页预印本，宣称矩阵乘法指数恰为 9/4",
+          "summary": "OpenAI 在其公共数学仓库发布预印本，主张对任意域方阵乘法指数 ω_F = 9/4，在 10 月给出上界后这次补上匹配的下界。",
+          "participants": [
+            {"name": "OpenAI", "type": "company", "role": "subject"},
+            {"name": "The matrix multiplication exponent is nine fourths", "type": "paper", "role": "object"}
+          ],
+          "evidence": ["OpenAI 在其公共数学仓库发布 111 页预印本", "对任意域 F，方阵乘法指数 ω_F = 9/4"]
+        },
+        {
+          "type": "research",
+          "label": "Lean 形式化覆盖无除法电路情形下的 ω=9/4，但尚未圈外复核",
+          "summary": "Lean 形式化覆盖了无除法电路情形下的 ω=9/4，但逐尺寸门数界尚未形式化，也还没有圈外数学家公开复核。",
+          "participants": [
+            {"name": "The matrix multiplication exponent is nine fourths", "type": "paper", "role": "subject"},
+            {"name": "Lean", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["Lean 形式化覆盖了无除法电路情形下的 ω=9/4", "也还没有圈外数学家公开复核"]
+        }
+      ],
+      "relations": [
+        {"source": "The matrix multiplication exponent is nine fourths", "target": "OpenAI", "type": "authored_by", "weight": 0.9, "evidence": ["OpenAI 在其公共数学仓库发布 111 页预印本"]},
+        {"source": "The matrix multiplication exponent is nine fourths", "target": "Lean", "type": "uses", "weight": 0.7, "evidence": ["Lean 形式化覆盖了无除法电路情形下的 ω=9/4"]},
+        {"source": "The matrix multiplication exponent is nine fourths", "target": "张量网络", "type": "uses", "weight": 0.6, "evidence": ["把张量网络压缩到足以违反"]}
+      ],
+      "metrics": [
+        {"name": "矩阵乘法指数 ω", "value": "9/4（即 2.25）"},
+        {"name": "预印本页数", "value": "111 页"},
+        {"name": "任意 n×n 乘法的门数下界", "value": "⌈n^(9/4)/2⌉ 个乘法或除法门"}
+      ],
+      "why_it_matters": "若成立，矩阵乘法指数首次被精确锁死为 2.25，等于终结“ω=2”这一持续数十年的猜想方向，但缺圈外独立复核仍是唯一软肋。"
+    },
+    {
+      "article_id": "2026-11-25-9",
+      "entities": [
+        {"name": "Meta", "type": "company", "aliases": ["Facebook", "Meta AI"], "confidence": 0.95, "evidence": ["Meta 与亚马逊正就连接 Muse 智能体与亚马逊商城进行多轮谈判"]},
+        {"name": "亚马逊", "type": "company", "aliases": ["Amazon"], "confidence": 0.92, "evidence": ["Meta 与亚马逊正就连接 Muse 智能体与亚马逊商城进行多轮谈判"]},
+        {"name": "Muse", "type": "product", "aliases": [], "confidence": 0.9, "evidence": ["Meta 的购物智能体 Muse", "亚马逊封禁了 Meta 的购物智能体 Muse"]},
+        {"name": "Instagram", "type": "product", "aliases": [], "confidence": 0.85, "evidence": ["Muse 直接进入 Instagram 私信"]}
+      ],
+      "events": [
+        {
+          "type": "partnership",
+          "label": "Meta 与亚马逊就连接 Muse 与亚马逊商城解除封锁进行多轮谈判",
+          "summary": "两家公司就如何连接 Muse 智能体与亚马逊商城、解除九月封锁进行磋商，广告展示与搜索结果质量是两大分歧点，尚未有结论。",
+          "participants": [
+            {"name": "Meta", "type": "company", "role": "subject"},
+            {"name": "亚马逊", "type": "company", "role": "partner"},
+            {"name": "Muse", "type": "product", "role": "object"}
+          ],
+          "evidence": ["Meta 与亚马逊正就连接 Muse 智能体与亚马逊商城进行多轮谈判", "亚马逊封禁了 Meta 的购物智能体 Muse"]
+        },
+        {
+          "type": "launch",
+          "label": "Muse 上线六周内美加用户超 1000 万，并直接进入 Instagram 私信",
+          "summary": "Muse 增长迅猛，10 月上线六周内美加用户超 1000 万、约四分之一日活，本周又宣布直接进入 Instagram 私信。",
+          "participants": [
+            {"name": "Muse", "type": "product", "role": "subject"},
+            {"name": "Instagram", "type": "product", "role": "object"},
+            {"name": "Meta", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["10 月 Meta 已宣布上线六周内美加用户超 1000 万", "本周又宣布 Muse 直接进入 Instagram 私信"]
+        }
+      ],
+      "relations": [
+        {"source": "Muse", "target": "Meta", "type": "developed_by", "weight": 0.9, "evidence": ["封禁了 Meta 的购物智能体 Muse"]},
+        {"source": "亚马逊", "target": "Muse", "type": "restricts", "weight": 0.8, "evidence": ["亚马逊封禁了 Meta 的购物智能体 Muse"]},
+        {"source": "Meta", "target": "亚马逊", "type": "negotiating_with", "weight": 0.7, "evidence": ["Meta 与亚马逊正就连接 Muse 智能体与亚马逊商城进行多轮谈判"]},
+        {"source": "Muse", "target": "Instagram", "type": "integrates", "weight": 0.65, "evidence": ["本周又宣布 Muse 直接进入 Instagram 私信"]}
+      ],
+      "metrics": [
+        {"name": "Muse 美加用户数", "value": "超 1000 万"},
+        {"name": "达标时间", "value": "上线六周内"},
+        {"name": "Muse 日活占比", "value": "约四分之一"},
+        {"name": "封锁持续时间", "value": "两个月（9 月封禁）"}
+      ],
+      "why_it_matters": "Muse 的规模让平台对封锁的回应从“封禁”转向“谈判”，购物决策从人转向代理时，电商广告与推荐位经济模型首次直接让位于智能体的流量与议价筹码。"
+    },
+    {
+      "article_id": "2026-11-25-10",
+      "entities": [
+        {"name": "1Password", "type": "company", "aliases": [], "confidence": 0.92, "evidence": ["1Password 在 11 月 25 日的披露中确认"]},
+        {"name": "GitHub", "type": "tool", "aliases": [], "confidence": 0.9, "evidence": ["攻击者通过一名员工的 GitHub 企业账号攻入了内部系统"]},
+        {"name": "端到端加密", "type": "topic", "aliases": [], "confidence": 0.85, "evidence": ["客户密码受到端到端加密保护"]}
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "攻击者经员工 GitHub 企业账号侵入 1Password 内部系统并推送恶意代码",
+          "summary": "攻击者通过一名员工的 GitHub 企业账号攻入 1Password 内部系统并推送恶意代码，拉取了客户名称、登录邮箱等元数据，密码本身未泄露。",
+          "participants": [
+            {"name": "1Password", "type": "company", "role": "subject"},
+            {"name": "GitHub", "type": "tool", "role": "object"}
+          ],
+          "evidence": ["攻击者通过一名员工的 GitHub 企业账号攻入了内部系统", "并向内部服务器推送恶意代码"]
+        }
+      ],
+      "relations": [
+        {"source": "1Password", "target": "GitHub", "type": "uses", "weight": 0.7, "evidence": ["通过一名员工的 GitHub 企业账号攻入了内部系统"]},
+        {"source": "1Password", "target": "端到端加密", "type": "uses", "weight": 0.7, "evidence": ["客户密码受到端到端加密保护"]}
+      ],
+      "metrics": [
+        {"name": "攻击发生日期", "value": "11 月 19 日"},
+        {"name": "1Password 披露日期", "value": "11 月 25 日"}
+      ],
+      "why_it_matters": "对以“安全”为卖点的密码管理器，漏洞不在核心加密而在供应链入口——员工代码托管账号这类权限边界，才是最值得重新审视的高价值攻击面。"
+    },
+    {
+      "article_id": "2026-11-25-11",
+      "entities": [
+        {"name": "纳指", "type": "topic", "aliases": ["NASDAQ"], "confidence": 0.85, "evidence": ["纳指盘中跌幅一度达 4%"]},
+        {"name": "NVIDIA", "type": "company", "aliases": ["英伟达", "Nvidia"], "confidence": 0.95, "evidence": ["英伟达单日下跌 8.69%"]},
+        {"name": "AMD", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["AMD 跌 9.56%"]},
+        {"name": "安霸", "type": "company", "aliases": ["Ambarella"], "confidence": 0.85, "evidence": ["安霸（Ambarella）因指引疲弱重挫 19.9%"]},
+        {"name": "黄仁勋", "type": "person", "aliases": ["Jensen Huang"], "confidence": 0.9, "evidence": ["周一黄仁勋复职带来的反弹迅速消退"]}
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "11 月 25 日美股 AI 板块再度深跌，纳指盘中跌约 4%",
+          "summary": "纳指盘中跌幅一度达 4%，英伟达跌 8.69%、AMD 跌 9.56%、安霸因指引疲弱重挫 19.9%，顽固通胀与 AI 估值质疑主导抛售。",
+          "participants": [
+            {"name": "纳指", "type": "topic", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "object"},
+            {"name": "AMD", "type": "company", "role": "object"},
+            {"name": "安霸", "type": "company", "role": "object"}
+          ],
+          "evidence": ["纳指盘中跌幅一度达 4%", "英伟达单日下跌 8.69%，AMD 跌 9.56%"]
+        },
+        {
+          "type": "trend",
+          "label": "黄仁勋复职带来的反弹仅维持一天就被获利了结",
+          "summary": "周一部分英伟达股东借黄仁勋复职消息获利了结，反弹仅维持了一天。",
+          "participants": [
+            {"name": "黄仁勋", "type": "person", "role": "subject"},
+            {"name": "NVIDIA", "type": "company", "role": "object"}
+          ],
+          "evidence": ["周一黄仁勋复职带来的反弹迅速消退", "周一部分英伟达股东借黄仁勋复职消息获利了结"]
+        }
+      ],
+      "relations": [
+        {"source": "黄仁勋", "target": "NVIDIA", "type": "affiliated_with", "weight": 0.7, "evidence": ["周一黄仁勋复职带来的反弹迅速消退"]}
+      ],
+      "metrics": [
+        {"name": "纳指盘中跌幅", "value": "4%"},
+        {"name": "英伟达当日跌幅", "value": "8.69%"},
+        {"name": "AMD 当日跌幅", "value": "9.56%"},
+        {"name": "安霸当日跌幅", "value": "19.9%"}
+      ],
+      "why_it_matters": "监管与法律密集落地（调查风波、和解）与市场对算力资本开支能否兑现的怀疑同框，融资成本与信心周期将反作用于资本开支节奏，估值叙事进入自证阶段。"
+    },
+    {
+      "article_id": "2026-11-25-12",
+      "entities": [
+        {"name": "Maple", "type": "company", "aliases": [], "confidence": 0.9, "evidence": ["由前苹果工程师创办的隐私 AI 初创 Maple 获 530 万美元种子轮"]},
+        {"name": "Mark Suman", "type": "person", "aliases": [], "confidence": 0.88, "evidence": ["Maple 由前苹果工程师 Mark Suman 与 Anthony Ronning 创办"]},
+        {"name": "Anthony Ronning", "type": "person", "aliases": [], "confidence": 0.88, "evidence": ["Maple 由前苹果工程师 Mark Suman 与 Anthony Ronning 创办"]},
+        {"name": "Epic Ventures", "type": "company", "aliases": [], "confidence": 0.85, "evidence": ["融资由 Epic Ventures 领投"]},
+        {"name": "DeepSeek", "type": "model", "aliases": [], "confidence": 0.85, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"name": "Kimi", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"name": "GLM", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"name": "Gemma", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"name": "GPT OSS", "type": "model", "aliases": [], "confidence": 0.8, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"name": "TEE", "type": "topic", "aliases": ["可信执行环境"], "confidence": 0.85, "evidence": ["其应用在受信任执行环境（TEE）中运行"]},
+        {"name": "OpenAI", "type": "company", "aliases": ["Open AI"], "confidence": 0.9, "evidence": ["这一赛道与 OpenAI 同日发布的 Private Inference 遥相呼应"]}
+      ],
+      "events": [
+        {
+          "type": "funding",
+          "label": "隐私 AI 初创 Maple 获 530 万美元种子轮，Epic Ventures 领投",
+          "summary": "由前苹果工程师创办的 Maple 获 530 万美元种子轮，融资由 Epic Ventures 领投，Draper Associates、Planetary VC、Epoch VC 参投。",
+          "participants": [
+            {"name": "Epic Ventures", "type": "company", "role": "funder"},
+            {"name": "Maple", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["获 530 万美元种子轮", "融资由 Epic Ventures 领投"]
+        },
+        {
+          "type": "launch",
+          "label": "Maple 把 DeepSeek、Kimi、GLM 等开源模型跑在可信执行环境里",
+          "summary": "Maple 的应用在受信任执行环境（TEE）中运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型，配合端到端加密，公司自身都无法访问用户数据。",
+          "participants": [
+            {"name": "Maple", "type": "company", "role": "subject"},
+            {"name": "TEE", "type": "topic", "role": "object"},
+            {"name": "DeepSeek", "type": "model", "role": "object"},
+            {"name": "Kimi", "type": "model", "role": "object"},
+            {"name": "GLM", "type": "model", "role": "object"},
+            {"name": "Gemma", "type": "model", "role": "object"},
+            {"name": "GPT OSS", "type": "model", "role": "object"}
+          ],
+          "evidence": ["其应用在受信任执行环境（TEE）中运行", "运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]
+        }
+      ],
+      "relations": [
+        {"source": "Epic Ventures", "target": "Maple", "type": "invests_in", "weight": 0.8, "evidence": ["融资由 Epic Ventures 领投"]},
+        {"source": "Mark Suman", "target": "Maple", "type": "affiliated_with", "weight": 0.75, "evidence": ["Maple 由前苹果工程师 Mark Suman 与 Anthony Ronning 创办"]},
+        {"source": "Anthony Ronning", "target": "Maple", "type": "affiliated_with", "weight": 0.75, "evidence": ["Maple 由前苹果工程师 Mark Suman 与 Anthony Ronning 创办"]},
+        {"source": "Maple", "target": "TEE", "type": "uses", "weight": 0.75, "evidence": ["其应用在受信任执行环境（TEE）中运行"]},
+        {"source": "Maple", "target": "DeepSeek", "type": "uses", "weight": 0.7, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"source": "Maple", "target": "Kimi", "type": "uses", "weight": 0.6, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"source": "Maple", "target": "GLM", "type": "uses", "weight": 0.6, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"source": "Maple", "target": "Gemma", "type": "uses", "weight": 0.6, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"source": "Maple", "target": "GPT OSS", "type": "uses", "weight": 0.6, "evidence": ["运行 DeepSeek、Kimi、GLM、Gemma 与 GPT OSS 等模型"]},
+        {"source": "Maple", "target": "OpenAI", "type": "related_by_theme", "weight": 0.5, "evidence": ["这一赛道与 OpenAI 同日发布的 Private Inference 遥相呼应"]}
+      ],
+      "metrics": [
+        {"name": "种子轮金额", "value": "530 万美元"},
+        {"name": "三个月使用量增长", "value": "60 倍"}
+      ],
+      "why_it_matters": "处理期隐私从 OpenAI 的企业服务一路铺到开源模型创业，TEE 把“连服务商都读不到数据”做成卖点，隐私正从合规项变成产品差异化。"
+    }
+  ]
+}

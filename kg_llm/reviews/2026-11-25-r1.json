@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-25",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 70,
+  "summary": "确定性审计满分，但存在语义级硬伤：Megaspeed 在 2026-11-25-4 与 2026-11-25-5 两条都被抽成与 NVIDIA 的 affiliated_with 关系，原文证据（并列提及两者既有调查）完全不支撑这一从属关系，属虚构边。另有花旗/渣打等核心角色零关系边、Meta-亚马逊谈判被写成已确立的 partners_with、Maple-OpenAI 用'遥相呼应'推定 competes_with 等关系类型用错问题。",
+  "findings": [
+    {
+      "article_id": "2026-11-25-4",
+      "severity": "high",
+      "problem": "关系 \"Megaspeed --affiliated_with--> NVIDIA\"（weight 0.7）是虚构的。所引证据是\"英伟达客户超微（Super Micro）与 Megaspeed 的既有调查\"，这句话只是把超微和 Megaspeed 并列列为受调查对象，并未表明 Megaspeed 与 NVIDIA 有任何从属或关联。NVIDIA 的关联方证据只对超微成立（\"英伟达客户超微\"）。",
+      "fix": "删除该 \"Megaspeed --affiliated_with--> NVIDIA\" 关系。Megaspeed 与 NVIDIA 之间没有原文支撑的关系边，其正确关系应保留为司法部对其的调查（\"司法部 --targets--> Megaspeed\"）。"
+    },
+    {
+      "article_id": "2026-11-25-5",
+      "severity": "high",
+      "problem": "同样的虚构关系再次出现：\"Megaspeed --affiliated_with--> NVIDIA\"（weight 0.55），证据仅\"正值黄仁勋复职风波、国会问询与 Megaspeed 调查交织之际\"——这只是说两件事时间上交织，不构成 Megaspeed 与 NVIDIA 的任何关系。",
+      "fix": "删除该关系。本篇中 Megaspeed 仅在叙事背景中出现，不应与 NVIDIA 建立 affiliated_with 边；若保留实体，应去掉这条无证据关系��避免与第 4 篇同构的错误重复。"
+    },
+    {
+      "article_id": "2026-11-25-6",
+      "severity": "medium",
+      "problem": "本篇核心事件是花旗、渣打等银行暂停/推迟向字节、阿里、腾讯关联的数据中心项目放贷，但花旗、渣打这两个主语实体在 relations 里没有任何一条边，全文 64 条关系中没有一条刻画\u201c银行停贷\u201d这一新闻主线。主事者反而成了孤立角色。",
+      "fix": "为花旗/渣打（或银行群体）补充关系边，例如 \"花旗 --stops_loan_to--> Bridge Data Centres\"、\"渣打 --suspends_lending_to--> GMI Cloud\" 之类，或至少建立\"银行 --causes--> 搁浅交易\"的边，让新闻核心动作进入图谱。"
+    },
+    {
+      "article_id": "2026-11-25-9",
+      "severity": "medium",
+      "problem": "关系 \"Meta --partners_with--> 亚马逊\"（weight 0.7）用错。原文明确说两家公司仅\"多轮谈判\"且\"谈判尚未有结论，能否达成都不确定\"，并不存在已确立的合作关系。partners_with 应表示已落地的合作，用于正在进行且结果未定的磋商会误述事实。",
+      "fix": "将 partners_with 改为 negotiating_with（或建\"Meta --negotiates_with--> 亚马逊\"），并在事件/边中保留\"尚无结论\"的不确定语义，不要断言为既定合作。"
+    },
+    {
+      "article_id": "2026-11-25-12",
+      "severity": "medium",
+      "problem": "关系 \"Maple --competes_with--> OpenAI\"（weight 0.55）用错。所引证据\"这一赛道与 OpenAI 同日发布的 Private Inference 遥相呼应\"只是说两者主题/产品取向上相近、同日出现，属于共同出现的主题相似，原文没有任何直接竞争、争夺同一客户市场的表述。",
+      "fix": "删除该 competes_with 关系，或改用更弱的\"Maple --relates_to--> OpenAIPrivateInference\"之类表述相关性的边；competes_with 需要原文有明确竞争表述才使用。"
+    },
+    {
+      "article_id": "2026-11-25-5",
+      "severity": "medium",
+      "problem": "关系 \"NVIDIA --complies_with--> 北加州联邦地区法院\" 类型用错。法院是被提交和解协议的机构，不是 NVIDIA 要\u201c遵守\u201d的监管方；原文本意是和解协议提交法院、尚待法官批准。",
+      "fix": "把 complies_with 改为更准确的\"litigates_in\"或\"files_settlement_with\"，表达\u201c英伟达在法院进行诉讼/提交和解\u201d，不要用合规类关系指向司法机构。"
+    },
+    {
+      "article_id": "2026-11-25-7",
+      "severity": "low",
+      "problem": "metrics 命名不精确：写作\"识别的致病相关变异数倍数 约 2 倍于此前最先进模型\"，但原文指标是\"识别出的基因表达改变型变异数量约为此前最先进模型的两倍\"，\"基因表达改变型变异\"被压缩成了\"致病相关变异\"，会误导读者为致病变异翻倍。",
+      "fix": "将 metric 名称改为\"识别的基因表达改变型变异数\"，value 保持\"约 2 倍于此前最先进模型\"，严格贴合原文表述。"
+    }
+  ],
+  "lessons": [
+    "并列出现在同一调查叙事中的两个主体（如\"对 X 与 Y 的既有调查\"）不构成两者之间存在 affiliated_with 或任何直接从属关系的证据，只有原文明确表述从属/关联时才建立关系边。",
+    "谈判、磋商尚未达成协议或结果不确定的新闻，不要使用 partners_with 断言既定合作，应使用表达协商/意向的动词并保留不确定语义。",
+    "\"遥相呼应\"、\"同赛道\"、同日发布等主题相似表述不构成 competes_with 关系，需要原文有明确的直接竞争或争夺同一客户/市场的表述才使用。"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T23:24:55Z",
+  "updated_at": "2026-11-25T23:28:03Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -985,6 +985,35 @@
         "2026-10-19-2",
         "2026-10-19-3",
         "2026-10-19-4"
+      ]
+    },
+    {
+      "period_id": "2026-W44",
+      "period_type": "week",
+      "start_date": "2026-10-26",
+      "end_date": "2026-10-26",
+      "summary": "2026-10-26 至 2026-10-26 期间，Anthropic、OpenAI、Goldman Sachs 主要围绕 trend、funding 持续出现，形成可沿时间延续的周级趋势。",
+      "core_entities": [
+        "Anthropic",
+        "OpenAI",
+        "Goldman Sachs",
+        "AMD"
+      ],
+      "event_types": [
+        "trend",
+        "funding",
+        "benchmark"
+      ],
+      "trend_signals": [
+        "核心实体：Anthropic、OpenAI、Goldman Sachs",
+        "主事件类型：trend、funding"
+      ],
+      "representative_article_ids": [
+        "2026-10-26-0",
+        "2026-10-26-1",
+        "2026-10-26-2",
+        "2026-10-26-3",
+        "2026-10-26-4"
       ]
     }
   ]
