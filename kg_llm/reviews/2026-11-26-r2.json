@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-26",
+  "round": 2,
+  "verdict": "revise",
+  "quality_score": 72,
+  "summary": "抽取整体扎实，实体、事件切分与 metrics 大部分准确对得上原文，无幻觉或方向彻底颠倒的高危错误；主要问题是若干关系证据错位/弱化（Neon 归属证据用了 Carbon）、人物-机构隶属关系误建（Greer↔BIS）、以及把共同出现当成关系（OpenAI competes_with Anthropic）、个别服务关系方向反置（Gmail↔Workspace MCP）。累计 5 条 medium 级问题，超出可发布阈值。",
+  "findings": [
+    {
+      "article_id": "2026-11-26-0",
+      "severity": "medium",
+      "problem": "关系 \"Gemini 4 Neon --developed_by--> Google\" 的 evidence 引用的是 \"谷歌最强的 Gemini 4 Carbon 也只列第五（10.9%）\"，支撑的对象是 Carbon 而非 Neon，属于证据与断言对象错位（证据存在但支撑的是另一回事）。",
+      "fix": "Neon 确为谷歌模型，关系方向本身成立，但将 evidence 改为能直接支撑 Neon 归属的表述（如原文 \"Gemini 4 Neon 第六（10.1%），广受赞誉\"，并结合 Gemini 4 家族即谷歌产品的事实），不要用 Carbon 的证据给 Neon 背书。"
+    },
+    {
+      "article_id": "2026-11-26-1",
+      "severity": "medium",
+      "problem": "关系 \"Jamieson Greer --affiliated_with--> 美国商务部工业与安全局（BIS）\" 错配。Greer 是美国贸易代表（USTR），不是 BIS 的隶属人员；原文只说 Greer 就新规表态，谈不到他隶属 BIS。",
+      "fix": "删除该 affiliated_with 关系，或在有确凿归属证据时改为指向其真实任职机构；若只需表达其表态，可并入 Nvidia/BIS 事件而不建人物-机构隶属关系。"
+    },
+    {
+      "article_id": "2026-11-26-8",
+      "severity": "medium",
+      "problem": "关系 \"OpenAI --competes_with--> Anthropic\" 的唯一 evidence 是 \"OpenAI 与 Anthropic 一些员工认为\"，这是两家公司因同一新闻被并列提及，原文并未提供竞争动作或竞争声明，属于把共同出现当成合作关系/关系。",
+      "fix": "删除该 competes_with 关系。若确要表达竞争，需引用两家公司就同一产品/市场上的直接对抗证据，否则不建。"
+    },
+    {
+      "article_id": "2026-11-26-7",
+      "severity": "medium",
+      "problem": "关系 \"Gmail --uses--> Workspace MCP 服务器\"（以及 Google Drive 同型）方向/类型反置。原文是 Workspace MCP 服务器为 Gmail、Drive 等应用提供标准的 agent 访问接口，是服务器向应用提供接入，而非应用\"使用\"服务器。",
+      "fix": "将方向改为 \"Workspace MCP 服务器 --serves/provides_access_to--> Gmail / Google Drive\"，或改用表达\"服务器集成/承载 Gmail 接口\"的类型；避免把目标应用当成 source。"
+    },
+    {
+      "article_id": "2026-11-26-5",
+      "severity": "medium",
+      "problem": "规范名不一致：实体记为 \"GPT-6\"，但该实体及事件的 evidence/summary 全是 \"基于 GPT-6.2 的设计在 5 个靶点上\"，标题也写 GPT-6 模型。GPT-6 与文中实测的 GPT-6.2 混用，读者无法判断被验证的是哪个模型，图谱无法与该实测口径连通。",
+      "fix": "统一为原文实测口径——实体或事件中明确指出是 GPT-6.2（\"其 GPT-6 模型…基于 GPT-6.2 的设计在 5 个靶点上\"），把实体名与证据所指版本对齐，避免 GPT-6/GPT-6.2 二义。"
+    }
+  ],
+  "lessons": [
+    "给人物建 affiliated_with 关系时，target 必须是其实际任职/隶属机构；被引述人仅就某事表态的监管或政府机构不等于其上级，不要混同（如贸易代表↔BIS）。",
+    "服务交付/接口类关系注意方向：提供接口的一方（如 MCP 服务器）作 source，被接入的应用作 target，写成 \"server --provides_access_to--> app\"，不要反向写成应用\"使用\"服务器。",
+    "两家及以上公司因同一新闻被并列提及不等于竞争关系；competes_with 必须有明确的竞争动作、声明或直接对抗证据，否则不建。"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-26",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 86,
+  "summary": "整体质量高，事实与数字几乎全部可验证、跨文章实体复用良好、metrics 丰富。但第 3 篇存在一条 developed_by 关系方向反了（Anthropic 被写成由 Claude 开发），另有多条关系类型或粒度不当、一处被测模型实体遗漏。",
+  "findings": [
+    {
+      "article_id": "2026-11-26-3",
+      "severity": "high",
+      "problem": "关系 \"Anthropic --developed_by--> Claude\" 方向反了，读成 Anthropic 是由 Claude 开发的，与事实相反。且证据 \"它拥有自己的图标、在自己窗口内打开\" 讲的是被安装的 artifact 桌面应用，与该关系（Claude 的归属）完全无关。",
+      "fix": "改为 \"Claude --developed_by--> Anthropic\"（source=Claude、target=Anthropic），并换用能支撑 Claude 由 Anthropic 开发/归属的证据；该 artifacts 应用的证据若需保留应挂在 Install as app 或 Claude artifact 的相关关系上。"
+    },
+    {
+      "article_id": "2026-11-26-6",
+      "severity": "medium",
+      "problem": "Siren 测评明确测的是 6 款 Claude 模型（Mythos 5/Mythos 5.1/Opus 5.5/Sonnet 5.5/Haiku 5.5/Mythos 5.2），但只抽了 Mythos 5、Opus 5.5、Sonnet 5.5、Haiku 5.5 四个实体，遗漏了 Mythos 5.1 和 Mythos 5.2——而 metrics 里已给出 5.1=12.7%、近期组含 5.2=0.6%–1.6%，6 款被测模型应抽全。",
+      "fix": "补上 Mythos 5.1 与 Mythos 5.2 实体，并分别添加它们 --evaluated_on--> Siren 的关系（证据引用原模型的越界比例），使被测模型列表与 metrics 一致。"
+    },
+    {
+      "article_id": "2026-11-26-4",
+      "severity": "medium",
+      "problem": "关系 \"Gemini --outperforms--> GPT-Live-1.1\" 被当作总体超越，但原文只是 Gemini 在\"某些呼叫处理指标\"上得分更高，且真人坐席整体仍更受偏爱、GPT-Live-1.1 才是机器榜第一。局部指标优势被表述为全局 outperforms，会误导。",
+      "fix": "改用 compared_with 保留双向比较，或把关系限定为具体的评测关系并在证据/命名中注明\"仅在部分呼叫处理指标上\"，避免暗示 Gemini 整体强于 GPT-Live-1.1。"
+    },
+    {
+      "article_id": "2026-11-26-9",
+      "severity": "medium",
+      "problem": "关系 \"NVIDIA --supplies--> Moonshot AI\" 是推断而非原文直接事实：文中只写 Moonshot 担心\"失去对海外云托管 Nvidia 芯片的访问\"，并无 Nvidia 直接向 Moonshot 供货的证据链（芯片是经海外云厂商托管的）。",
+      "fix": "删除或降级该 suppliers 关系；若保留供应关系，应指向海外云数据中心/cloud 托管方，或改为 Moonshot AI --relies_on-->（海外云托管 Nvidia 算力）并给出原文引用。"
+    },
+    {
+      "article_id": "2026-11-26-7",
+      "severity": "medium",
+      "problem": "关系 \"Google --regulates--> Gmail\" 类型不当：Google 是 Gmail 的所有者/开发者，并不是\"监管\" Gmail 的监管方；regulates 只适用于监管机构对受监管对象。",
+      "fix": "把该关系改为 Google --developed_by-->（或 provides）Gmail，或删除；若要表达谷歌对 agent 访问 Gmail 的治理限制，应挂在 Workspace MCP 服务器/policy 相关主体上而非直连 Gmail。"
+    }
+  ],
+  "lessons": [
+    "developed_by 的方向必须是被开发主体指向开发方（如 \"Claude --developed_by--> Anthropic\"），绝不可把公司写成由产品开发；同时关系证据必须能支撑该归属关系本身，而不是无关的界面/功能描述。",
+    "outperforms 仅用于总体或全量对比；若优势仅存在于某项或某几项子指标，改用 compared_with 或在关系命名/证据中明确限定领域，避免把局部优势写成全面超越。",
+    "对测评/评测类新闻，列出全部被测主体作为实体并逐一连 evaluated_on 关系，metrics 里出现的主体都应在实体表中存在，不能只抽取部分样本。"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-26",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 74,
+  "summary": "抽取整体结构完整、关键数字（GDPx 各模型得分、Terminal-Bench 50.0、Siren 越界率、S$ 定价等）与原文核对一致，但存在证据与断言错配（多条 developed_by、一条 NVIDIA→智谱 无据）、同一基准跨文章命名不一致（Terminal Bench vs Terminal-Bench）、一条关系被自身证据直接反驳，以及重复指标，均有待修订后方可发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-26-0",
+      "severity": "medium",
+      "problem": "关系 \"Gemini 4 Neon --developed_by--> Google\" 的 evidence 写的是\"谷歌提示缓存落后于对手而偏高\"，这句原文只讲推理成本，完全没有建立\"Neon 由 Google 开发\"这一断言；\"GPT-6.2 Astra --developed_by--> OpenAI\" 的 evidence 写的是\"被视为 OpenAI 在 Hugging Face 事件后的安全承诺并非作秀\"，同样不指向开发关系。证据存在但支撑的是另一回事（回头核对问题）。",
+      "fix": "把两条 developed_by 关系的 evidence 换成原文中真正确立开发归属的句子。Neon→Google 用\"谷歌最强的 Gemini 4 Carbon\"\"广受赞誉的 Gemini 4 Neon\"等表明 Gemini 系列属谷歌的表述（或直接引用文中的 Gemini 归属语境）；Astra→OpenAI 补充明确 OpenAI 发布 GPT-6.2 的原文表述，若无则删除该关系。"
+    },
+    {
+      "article_id": "2026-11-26-9",
+      "severity": "medium",
+      "problem": "关系 \"NVIDIA --supplies--> 智谱\" 的 evidence 是\"若失去对海外云托管 Nvidia 芯片的访问\"，这句原文针对 Moonshot AI，且原文通篇没有 Nvidia 向智谱供货的事实；对智谱成立的是\"出口新规 restricts 智谱\"，两码事。supplies 这个断言对智谱站不住脚。",
+      "fix": "删除 \"NVIDIA --supplies--> 智谱\" 这条关系。智谱受到的只有 \"美国对华芯片出口新规 --restricts--> 智谱\"（已有）；把 Nvidia 供给关系保留给 Moonshot AI 并用其专属证据即可，不要用一句只点名 Moonshot 的证据去支撑智谱。"
+    },
+    {
+      "article_id": "2026-11-26-0",
+      "severity": "medium",
+      "problem": "同一基准跨两篇文章命名不一致：本文用 \"Terminal Bench 4.1\"（带空格），而 2026-11-26-2 用 \"Terminal-Bench 4.1\"（带连字符）作为实体名。同为 Cognition 的 Terminal-Bench 4.1 基准，两处拼写不同导致无法在图谱中跨文章连通。",
+      "fix": "统一规范名，两处都使用同一写法（建议 \"Terminal-Bench 4.1\"），并在其中一处实体上加别名覆盖另一种拼写（如加 alias \"Terminal Bench 4.1\"），确保两篇文章的节点合并且可连通。"
+    },
+    {
+      "article_id": "2026-11-26-3",
+      "severity": "medium",
+      "problem": "关系 \"Claude artifact --integrates--> Claude\" 的 evidence 是\"在自己窗口内打开（而非内嵌于 Claude）\"，这句原文恰恰否认 artifact 内嵌/归属于 Claude，证据与其声称的 integrates 关系自相矛盾。",
+      "fix": "删除或改写该关系。原文表述是 artifact 脱离 Claude 独立成原生应用，应改为反映真实方向的边（例如 \"Claude --generates--> Claude artifact\"，evidence 用\"把 Claude 生成的 artifact\"），不要用\"而非内嵌于 Claude\"去支撑 integrates。"
+    },
+    {
+      "article_id": "2026-11-26-6",
+      "severity": "low",
+      "problem": "metrics 中 \"Mythos 5.1 越界使用比例 12.7%\" 重复出现两次（一条独立列出，一条又作为\"近期模型含 Mythos 5.2 越界使用比例 0.6%–1.6%\"前的冗余项），同一事实录入两条，稀释 substance。",
+      "fix": "删除两条重复的 \"Mythos 5.1 越界使用比例 12.7%\"（保留一条即可），保留 Mythos 5=25.8%、Mythos 5.2/近期=0.6%–1.6%、叠加后 Mythos 5=0.1% 等各自独立的数值。"
+    },
+    {
+      "article_id": "2026-11-26-0",
+      "severity": "low",
+      "problem": "本文漏抽关键数值细节：原文明确写出 Astra 是首个在法律域得分超过 0 的模型、并在 M&A 任务上首次有模型答对（翻出改变付款额度的签约函）；这些是全文最有新闻价值的两条\"首次\"事实，既未进 events 也未进 metrics。",
+      "fix": "建议把 M&A 首次答对与首个法律域破零两条纳入事件总结或 metrics（如\"首个在法律域得分>0 的模型\"、\"首次答对 M&A 任务的模型\"），补足信息贫乏缺口。"
+    }
+  ],
+  "lessons": [
+    "同一基准/实体的规范名在同日多篇文章中必须完全一致，并在出现异拼写的节点上加别名覆盖另一种写法，否则跨文章无法连通。",
+    "关系的 evidence 必须指向原文中明确建立该断言的那一句；当证据只落到另一主体或另一事实时不得套用，必要时换更直接的原文或删除该关系。",
+    "对中方模型不宜仅因海外云上出现 Nvidia 芯片就建立\"supplies\"关系，需原文明确存在该主体的直接供货事实；仅被出口新规提及只可建 restricts/regulates。"
+  ]
+}
