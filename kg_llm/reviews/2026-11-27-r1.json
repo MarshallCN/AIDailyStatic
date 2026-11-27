@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-27",
+  "round": 1,
+  "verdict": "revise",
+  "quality_score": 76,
+  "summary": "实体抽取与事件覆盖整体扎实、证据基本可回溯，但关系层有多处把原文的意向/聚合表述上升为具体业务关系（台积电->supplies->Terafab/NVIDIA、华为->competes_with->NVIDIA 证据不成立），11 篇与 7 篇存在事件重复切分，8 篇用聚合实体 KVAE-3.0 承接只属于音频子变体的性能比较，需修订后再发布。",
+  "findings": [
+    {
+      "article_id": "2026-11-27-4",
+      "severity": "high",
+      "problem": "两条 supplies 关系的证据都不支撑断言。\"台积电 --supplies--> Terafab\" 的证据是\"加深台积电与马斯克旗下庞大算力需求之间的绑定\"，原文只说台积电考虑在贴近 Terafab 处建厂、加深绑定，属于空间选址与战略意向，并非已发生的供应关系；\"台积电 --supplies--> NVIDIA\" 的证据是\"英伟达对供应商先进封装、基板产能的扩张相互叠加\"，主语是英伟达扩张其供应商（含台积电）产能，同样没有直接建立\"台积电供应英伟达\"这一具体业务关系。",
+      "fix": "删除\"台积电 --supplies--> Terafab/NVIDIA\"这两条关系，或改为只描述原文直接支持的断言：Terafab 侧可改为\"台积电 --plans_to_locate_near--> Terafab\"（建厂选址贴近）一类匹配证据的关系；NVIDIA 一侧因无直接供应表述应直接删除，不得凭\"相互叠加\"引申出 supplies。"
+    },
+    {
+      "article_id": "2026-11-27-5",
+      "severity": "medium",
+      "problem": "\"华为 --competes_with--> NVIDIA\" 的 evidence 是\"以降低对英伟达的依赖\"，原文指明的是 MiniMax 转投华为/阿里芯片以降低对英伟达依赖，是 MiniMax 与英伟达之间的替代关系，并没有说华为与英伟达直接竞争。competes_with 关系建立在引用错误方向的证据上。",
+      "fix": "删除\"华为 --competes_with--> NVIDIA\"；补充一条能正确表达原文主张的关系，如\"MiniMax --reduces_dependence_on--> NVIDIA\"（证据\"以降低对英伟达的依赖\"），MiniMax 对华为/阿里保持现有的 uses。"
+    },
+    {
+      "article_id": "2026-11-27-11",
+      "severity": "medium",
+      "problem": "事件切分不当：事件一\"美国零售 AI 应用激增引发监管与护栏呼声\"与事件二\"倡导者呼吁为零售 AI 设置监管与护栏\"指向的是同一核心主张（呼吁对零售 AI 设置监管护栏），两条 summary 高度重复，把同一个断言拆成了互相重复的两个事件。",
+      "fix": "合并为一个事件（保留\"AI 激增\"作为背景、\"呼吁设置监管护栏\"作为主张），或删除其中一个；事件参与者里的\"监管与护栏\"作为 regulator 角度重复出现也应随之收敛。"
+    },
+    {
+      "article_id": "2026-11-27-8",
+      "severity": "medium",
+      "problem": "聚合实体与子变体混淆：\"KVAE-3.0 --outperforms--> LTX-2.5 / Stable Audio 3\" 实际是音频变体 KVAE-Audio-Stereo 的主观对比胜率（超70%），被泛化成整个 KVAE-3.0 系列优于 LTX-2.5；且 LTX-2.5 是视频生成模型，KVAE-3.0 是 tokenizer，跨类比较被一个聚合实体承接会读成\"音频 tokenizer 系列优于视频模型\"的错误语义。此外 KVAE-3.0 标 type=model，与 LTX-2.5、Gemma 等生成模型同类型，属类型错配。",
+      "fix": "把 outperforms 关系限定到具体变体 KVAE-Audio-Stereo（证据\"KVAE-Audio-Stereo...超过70%的胜率领先开源竞品\"），不要在聚合实体 KVAE-3.0 上挂 outperforms；并将 KVAE-3.0 的类型从 model 改为 tokenizer/tool（或新建类型），避免与生成模型混为一类。"
+    },
+    {
+      "article_id": "2026-11-27-7",
+      "severity": "medium",
+      "problem": "事件切分不当：\"发布 Nemotron-Labs-Image-30B-A3B\"与\"公布多项基准得分\"被拆成两个事件，benchmark 事件只是把 metrics 里的 GenEval92.86/GenEval2 65.43/WISE 91.50/BizGenEval 86.0 重复了一遍，且其 participants 只列了 GenEval 一个基准、漏掉另外三个，属于发布细节的冗余切分。",
+      "fix": "把基准得分并入发布事件（发布时公布基准是同一动作），或删除独立的 benchmark 事件；若保留则补齐四个基准为 participants，避免与其他三处 evaluated_on 重复。"
+    }
+  ],
+  "lessons": [
+    "关系类型必须由原文直接支持的事实决定，把\"绑定\"\"相互叠加\"\"贴近选址\"这类意向/聚合表述上升为 supplies、competes_with 等具体业务关系是错误；证据只能支撑它字面上说的关系。",
+    "同一条新闻中\"现象/趋势\"与\"呼吁/政策\"两个事件若指向同一核心主张，应合并为一个事件，不要把一个断言拆成互相重复的两个事件。",
+    "把只属于某个子变体（如 KVAE-Audio-Stereo）的性能比较标注到该变体上，不要在聚合实体（如 KVAE-3.0 系列）上承接子变体的 outperforms 关系，并避免跨类比较（tokenizer vs 生成模型）被同一实体含糊承接。"
+  ]
+}

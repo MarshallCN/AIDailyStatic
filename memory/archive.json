@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T23:17:23Z",
+  "updated_at": "2026-11-27T23:20:06Z",
   "periods": [
     {
       "period_id": "2026-W10",
@@ -991,22 +991,22 @@
       "period_id": "2026-W44",
       "period_type": "week",
       "start_date": "2026-10-26",
-      "end_date": "2026-10-27",
-      "summary": "2026-10-26 至 2026-10-27 期间，Anthropic、OpenAI、AMD 主要围绕 trend、benchmark 持续出现，形成可沿时间延续的周级趋势。",
+      "end_date": "2026-10-28",
+      "summary": "2026-10-26 至 2026-10-28 期间，Anthropic、OpenAI、Google 主要围绕 trend、research 持续出现，形成可沿时间延续的周级趋势。",
       "core_entities": [
         "Anthropic",
         "OpenAI",
-        "AMD",
-        "Goldman Sachs"
+        "Google",
+        "Alphabet"
       ],
       "event_types": [
         "trend",
-        "benchmark",
-        "research"
+        "research",
+        "benchmark"
       ],
       "trend_signals": [
-        "核心实体：Anthropic、OpenAI、AMD",
-        "主事件类型：trend、benchmark"
+        "核心实体：Anthropic、OpenAI、Google",
+        "主事件类型：trend、research"
       ],
       "representative_article_ids": [
         "2026-10-26-0",

@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-27",
+  "round": 3,
+  "verdict": "revise",
+  "quality_score": 83,
+  "summary": "12 篇抽取整体扎实，证据与数字基本对得上原文，跨文章实体（LTX-2.5、Lightricks、智谱、GLM）命名一致、连通良好。主要问题是若干关系类型与实体类型用得不准：把承包商当开发者、用 compared_with 连接辩论双方、把设施当 product、以及一篇政策新闻被泛化成纯 topic 联想，加上一条审计器建议的处理需要纠正。",
+  "findings": [
+    {
+      "article_id": "2026-11-27-0",
+      "severity": "medium",
+      "problem": "关系 \"Cloud One --developed_by--> Leidos\" 把承包当开发。原文只说 \"IT 主承包商原为 SAIC，2026年转由 Leidos 接手\"，Leidos 是接手的主承包商而非制造者，developed_by 暗示 Leidos 造了 Cloud One，原文没有此断言。",
+      "fix": "改为一组反映承包/管理关系的关系，如 \"Leidos --manages--> Cloud One\" 或 \"Leidos --contractor_of--> Cloud One\"，不要把 Contractor 推导成 Developer。"
+    },
+    {
+      "article_id": "2026-11-27-8",
+      "severity": "medium",
+      "problem": "审计器把 KVAE-2D-3.0 / KVAE-3D-3.0 标为疑似重复实体，但二者实为不同产物：2D 是图像 tokenizer（潜在尺寸匹配 FLUX.2-VAE），3D 是视频 tokenizer（帧空间压缩32倍/时间压缩4倍），不能合并。另外 KVAE-3.0 实体 type 为 tool，而其 event participants 里角色却是 model，类型不一致。",
+      "fix": "保留 KVAE-2D-3.0 与 KVAE-3D-3.0 为独立实体（不要照审计提示合并到 KVAE-3.0）；把 KVAE-3.0 及其变体的 type 统一为 tool（tokenizer），event participants 里的 type 一并改为 tool。"
+    },
+    {
+      "article_id": "2026-11-27-4",
+      "severity": "medium",
+      "problem": "Terafab 被标为 product，但原文称其为\"马斯克布局的巨型算力与制造基地\"，是设施/基础设施而非产品。且关系 \"台积电 --associates_with--> 马斯克\" 依据的是原文的推测性表述（\"若建成，得州新厂……加深台积电与马斯克旗下庞大算力需求之间的绑定\"），把对未来诉求当作既定关系。",
+      "fix": "把 Terafab 的 type 改为 infra/facility；删除或降级 \"台积电 --associates_with--> 马斯克\"（原文是条件句的绑定预期，非已发生的关系），如需表达可改为空间上的 \"台积电(新厂) --located_near--> Terafab\"。"
+    },
+    {
+      "article_id": "2026-11-27-10",
+      "severity": "medium",
+      "problem": "关系 \"Ege Erdil --compared_with--> Daniel Kokotajlo\" 类型用错。两人是在播客上辩论并持相反估计（20% vs >50%），不是基准/方案之间的相互比较；compared_with 被用于\"对比\"场景，连在两个争论主体上读不出正确事实。",
+      "fix": "删除这个 compared_with 关系；若要保留两人对立，改用辩论/分歧语义（如 debated_with/争议对象），而不是基准对比类型。"
+    },
+    {
+      "article_id": "2026-11-27-11",
+      "severity": "medium",
+      "problem": "全文实体几乎全是泛化 topic（AI 客服、动态定价、算法用工决策、监管与护栏、美国零售商），没有任何具体主体，关联都是 topic 之间的联想（uses/targets），语义信息贫乏。原新闻是 The Guardian 政策观察，核心角色是\"美国联邦/州监管立法机构\"这类可抽出的具体主体。",
+      "fix": "补充原文里可考的具体主体（如推动立法的监管机构/立法层面）作为 organization 实体；砍掉纯泛化 topic 节点之间的联想关系，保留一条 policy 事件即可，避免把共同话题当成关系。"
+    }
+  ],
+  "lessons": [
+    "主体只被原文称为\"主承包商/承包商\"时不要推导成 developed_by，用 contractor_of/manages 表示，开发者身份必须有原文明确说明。",
+    "不要把两个相互辩论、持相反立场的主体连成 compared_with；该关系只用于基准、方案、模型的横向对比，辩论对立需用专项关系或删除。",
+    "确定性审计器标\"疑似重复实体\"时先回原文核对名称与证据再决定是否合并；2D/3D、音频/视频等确属不同产物的同名前缀实体要保持独立。"
+  ]
+}

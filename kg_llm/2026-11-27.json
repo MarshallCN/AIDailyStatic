@@ -1,0 +1,1240 @@
+{
+  "date": "2026-11-27",
+  "articles": [
+    {
+      "article_id": "2026-11-27-0",
+      "entities": [
+        {
+          "name": "Cloud One",
+          "type": "product",
+          "aliases": ["美国空军云平台 Cloud One"],
+          "confidence": 0.95,
+          "evidence": ["美国空军最大云平台之一 Cloud One 遭到黑客入侵"]
+        },
+        {
+          "name": "美国空军",
+          "type": "organization",
+          "aliases": ["美空军"],
+          "confidence": 0.95,
+          "evidence": ["美国空军最大云平台之一 Cloud One 遭到黑客入侵"]
+        },
+        {
+          "name": "美军网络司令部",
+          "type": "organization",
+          "aliases": ["网络司令部"],
+          "confidence": 0.9,
+          "evidence": ["调查人员已请美军网络司令部评估损害"]
+        },
+        {
+          "name": "Leidos",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["IT 主承包商原为 SAIC，2026年转由 Leidos 接手"]
+        },
+        {
+          "name": "战区综合战斗弹药系统",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["跟踪全球200多处空军基地弹药与导弹的“战区综合战斗弹药系统”"]
+        }
+      ],
+      "events": [
+        {
+          "type": "security",
+          "label": "黑客入侵美国空军旗舰云平台 Cloud One",
+          "summary": "美国空军最大云平台之一 Cloud One 遭黑客入侵，入侵约一个月前系统升级期间被发现，调查方请出美军网络司令部评估损害，回迁云应用与更新均被暂停冻结。",
+          "participants": [
+            {"name": "美国空军", "type": "organization", "role": "subject"},
+            {"name": "Cloud One", "type": "product", "role": "object"},
+            {"name": "战区综合战斗弹药系统", "type": "product", "role": "object"},
+            {"name": "美军网络司令部", "type": "organization", "role": "regulator"}
+          ],
+          "evidence": ["美国空军最大云平台之一 Cloud One 遭到黑客入侵", "调查人员已请美军网络司令部评估损害"]
+        },
+        {
+          "type": "infra",
+          "label": "Cloud One 遭入侵后云应用回迁暂停、更新冻结",
+          "summary": "入侵引发的连锁影响是回迁云应用的工作被暂停、已在运行的应用更新被冻结、部分用户的管理员权限被撤销。",
+          "participants": [
+            {"name": "美国空军", "type": "organization", "role": "subject"},
+            {"name": "Cloud One", "type": "product", "role": "object"}
+          ],
+          "evidence": ["回迁云应用的工作被暂停，已在运行的应用更新被冻结"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cloud One",
+          "target": "Leidos",
+          "type": "developed_by",
+          "weight": 0.8,
+          "evidence": ["IT 主承包商原为 SAIC，2026年转由 Leidos 接手"]
+        },
+        {
+          "source": "美国空军",
+          "target": "Cloud One",
+          "type": "uses",
+          "weight": 0.75,
+          "evidence": ["托管着空军的命令控制、战斗管理系统等数十款应用"]
+        },
+        {
+          "source": "Cloud One",
+          "target": "战区综合战斗弹药系统",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": ["跟踪全球200多处空军基地弹药与导弹的“战区综合战斗弹药系统”"]
+        }
+      ],
+      "metrics": [
+        {"name": "Cloud One 监控覆盖空军基地数量", "value": "200多处"},
+        {"name": "Cloud One 托管应用数量", "value": "数十款"}
+      ],
+      "why_it_matters": "攻击者攻破云平台控制面（可比作指控万能遥控器），已逼近军事指控能力的核心，且 FBI、五角大楼等联邦机构此前集体遭入侵，构成政府云系统性漏洞信号。"
+    },
+    {
+      "article_id": "2026-11-27-1",
+      "entities": [
+        {
+          "name": "Language Models Can Rewrite Their Own Weights",
+          "type": "paper",
+          "aliases": ["自我改写论文"],
+          "confidence": 0.95,
+          "evidence": ["论文“Language Models Can Rewrite Their Own Weights”提出一种“自我改写”"]
+        },
+        {
+          "name": "self-rewriting",
+          "type": "topic",
+          "aliases": ["自我改写"],
+          "confidence": 0.9,
+          "evidence": ["提出一种“自我改写”(self-rewriting)"]
+        },
+        {
+          "name": "测试时扩展",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["与测试时扩展不同"]
+        },
+        {
+          "name": "再训练",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["与再训练不同"]
+        },
+        {
+          "name": "27B 模型",
+          "type": "model",
+          "aliases": ["27B模型"],
+          "confidence": 0.85,
+          "evidence": ["只有27B模型能像人类那样通过对比“能答完”与“答到 token 耗尽”的隐藏状态"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "arXiv 论文提出语言模型可自我改写自身权重",
+          "summary": "论文提出 self-rewriting：27B 模型无需梯度与再训练，靠自身推理诊断失败并直接编辑权重，在490道未见题上准确率提升6.6个百分点，收益固化在权重中。",
+          "participants": [
+            {"name": "Language Models Can Rewrite Their Own Weights", "type": "paper", "role": "object"},
+            {"name": "self-rewriting", "type": "topic", "role": "object"},
+            {"name": "27B 模型", "type": "model", "role": "object"}
+          ],
+          "evidence": ["论文“Language Models Can Rewrite Their Own Weights”提出一种“自我改写”(self-rewriting)"]
+        },
+        {
+          "type": "research",
+          "label": "27B 模型能自我改写权重修复损坏的自身",
+          "summary": "模型习得的修复合在从未见过的图像基准上把损坏副本的准确率从7%拉回70%，约为完好模型的83%，修复能力随规模涌现。",
+          "participants": [
+            {"name": "27B 模型", "type": "model", "role": "object"},
+            {"name": "self-rewriting", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["准确率从7%拉回70%（约为完好模型的83%）"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "27B 模型",
+          "target": "self-rewriting",
+          "type": "uses",
+          "weight": 0.85,
+          "evidence": ["只有27B模型能像人类那样通过对比“能答完”与“答到 token 耗尽”的隐藏状态"]
+        },
+        {
+          "source": "self-rewriting",
+          "target": "测试时扩展",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["与测试时扩展不同"]
+        },
+        {
+          "source": "self-rewriting",
+          "target": "再训练",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["与再训练不同"]
+        }
+      ],
+      "metrics": [
+        {"name": "自改写后未见题准确率提升", "value": "6.6个百分点"},
+        {"name": "改写测试未见题数量", "value": "490道"},
+        {"name": "修复后损坏副本准确率(从7%拉回)", "value": "70%"},
+        {"name": "修复后相对完好模型准确率", "value": "约为完好模型的83%"}
+      ],
+      "why_it_matters": "能力随规模涌现且收益固化在权重中（每答一题零额外成本），提示“改进模型或许只需一次对话而非一次训练”，可能改写对齐和后训练的成本结构。"
+    },
+    {
+      "article_id": "2026-11-27-2",
+      "entities": [
+        {
+          "name": "One Byte, One Token",
+          "type": "paper",
+          "aliases": ["一个字节一个 token"],
+          "confidence": 0.95,
+          "evidence": ["论文“One Byte, One Token”针对子词分词在中文等语言上的弱点"]
+        },
+        {
+          "name": "Qwen3.8-27B",
+          "type": "model",
+          "aliases": ["Qwen3.8"],
+          "confidence": 0.9,
+          "evidence": ["把已训练的27B子词模型直接转成纯字节级模型"]
+        },
+        {
+          "name": "字节级建模",
+          "type": "topic",
+          "aliases": ["一个字节一个 token 路线"],
+          "confidence": 0.88,
+          "evidence": ["该工作属于字节级建模与混合注意力（Gated DeltaNet+全注意力比3:1）路线的延伸"]
+        },
+        {
+          "name": "混合注意力",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["该工作属于字节级建模与混合注意力（Gated DeltaNet+全注意力比3:1）路线的延伸"]
+        },
+        {
+          "name": "Gated DeltaNet",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": ["混合注意力（Gated DeltaNet+全注意力比3:1）"]
+        }
+      ],
+      "events": [
+        {
+          "type": "research",
+          "label": "论文将 Qwen3.8-27B 转为纯字节级模型保留大部分能力",
+          "summary": "One Byte, One Token 论文把已训练27B子词模型词表从248,320压缩到384，转成纯字节级模型（一个字节一个 token），约1430 GPU小时训练后保留大部分能力。",
+          "participants": [
+            {"name": "One Byte, One Token", "type": "paper", "role": "object"},
+            {"name": "Qwen3.8-27B", "type": "model", "role": "object"},
+            {"name": "字节级建模", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["把已训练的27B子词模型直接转成纯字节级模型"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "One Byte, One Token",
+          "target": "Qwen3.8-27B",
+          "type": "built_on",
+          "weight": 0.85,
+          "evidence": ["把已训练的27B子词模型直接转成纯字节级模型"]
+        },
+        {
+          "source": "One Byte, One Token",
+          "target": "混合注意力",
+          "type": "built_on",
+          "weight": 0.7,
+          "evidence": ["该工作属于字节级建模与混合注意力（Gated DeltaNet+全注意力比3:1）路线的延伸"]
+        },
+        {
+          "source": "混合注意力",
+          "target": "Gated DeltaNet",
+          "type": "uses",
+          "weight": 0.55,
+          "evidence": ["混合注意力（Gated DeltaNet+全注意力比3:1）"]
+        }
+      ],
+      "metrics": [
+        {"name": "字节级改造后词表规模(从248,320压缩)", "value": "384"},
+        {"name": "Qwen3.8 处理中文维基平均每 token 字节", "value": "3.84字节"},
+        {"name": "训练耗时", "value": "178.6小时"},
+        {"name": "训练算力", "value": "约1430 GPU小时（8×H200)"}
+      ],
+      "why_it_matters": "把词表从24.8万压到384仍保留大部分能力，说明字节级建模大幅缓解中文分词痛点、压低部署开销，为中文等语言提供拼写透明的更短表示。"
+    },
+    {
+      "article_id": "2026-11-27-3",
+      "entities": [
+        {
+          "name": "AWS",
+          "type": "company",
+          "aliases": ["Amazon Web Services"],
+          "confidence": 0.93,
+          "evidence": ["Trainium3 是 AWS 面向大规模训练与推理的新一代专用芯片"]
+        },
+        {
+          "name": "Trainium3",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.92,
+          "evidence": ["Trainium3 是 AWS 面向大规模训练与推理的新一代专用芯片"]
+        },
+        {
+          "name": "Lightricks",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["LTX-2.5 由 Lightricks 开源"]
+        },
+        {
+          "name": "LTX-2.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": ["在 AWS Trainium3 上以约28B的 LTX-2.5 模型生成视频及同步声音"]
+        },
+        {
+          "name": "Hugging Face",
+          "type": "company",
+          "aliases": ["HuggingFace", "HF"],
+          "confidence": 0.92,
+          "evidence": ["Hugging Face 团队用 AWS Trainium3 跑通了 Lightricks LTX-2.5 文生视频+音效模型"]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "Hugging Face 用 AWS Trainium3 跑通 LTX-2.5 视频生成",
+          "summary": "Hugging Face 团队在 AWS Trainium3 上以约28B的 LTX-2.5 模型生成视频及同步声音，把 Trainium 系列评测从文本扩展到视频这类新兴生成式负载。",
+          "participants": [
+            {"name": "Hugging Face", "type": "company", "role": "subject"},
+            {"name": "AWS", "type": "company", "role": "partner"},
+            {"name": "Trainium3", "type": "hardware", "role": "object"},
+            {"name": "LTX-2.5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Hugging Face 团队用 AWS Trainium3 跑通了 Lightricks LTX-2.5 文生视频+音效模型"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Trainium3",
+          "target": "AWS",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Trainium3 是 AWS 面向大规模训练与推理的新一代专用芯片"]
+        },
+        {
+          "source": "LTX-2.5",
+          "target": "Lightricks",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["LTX-2.5 由 Lightricks 开源"]
+        },
+        {
+          "source": "Hugging Face",
+          "target": "Trainium3",
+          "type": "uses",
+          "weight": 0.7,
+          "evidence": ["Hugging Face 团队用 AWS Trainium3 跑通了 Lightricks LTX-2.5 文生视频+音效模型"]
+        }
+      ],
+      "metrics": [
+        {"name": "LTX-2.5 参数规模", "value": "约28B"}
+      ],
+      "why_it_matters": "视频生成负载在自研芯片上跑通，把 Trainium 评测从文本扩展到更接近生产负载的视频，为非英伟达 GPU 跑生成式 AI 提供了新的可行路径。"
+    },
+    {
+      "article_id": "2026-11-27-4",
+      "entities": [
+        {
+          "name": "台积电",
+          "type": "company",
+          "aliases": ["TSMC"],
+          "confidence": 0.95,
+          "evidence": ["台积电正在考虑在得克萨斯州建一座约226亿美元的新半导体厂"]
+        },
+        {
+          "name": "马斯克",
+          "type": "person",
+          "aliases": ["Elon Musk"],
+          "confidence": 0.9,
+          "evidence": ["靠近马斯克的 Terafab"]
+        },
+        {
+          "name": "Terafab",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["马斯克的 Terafab（马斯克布局的巨型算力与制造基地）"]
+        }
+      ],
+      "events": [
+        {
+          "type": "infra",
+          "label": "台积电考虑斥资226亿美元在得克萨斯建厂逼近 Terafab",
+          "summary": "台积电据报考虑在得克萨斯新建约226亿美元半导体厂，选址靠近马斯克 Terafab，延续先进产能迁美与向美国产能累计投资2650亿美元的战略。",
+          "participants": [
+            {"name": "台积电", "type": "company", "role": "subject"},
+            {"name": "Terafab", "type": "product", "role": "object"}
+          ],
+          "evidence": ["台积电正在考虑在得克萨斯州建一座约226亿美元的新半导体厂", "靠近马斯克的 Terafab"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Terafab",
+          "target": "马斯克",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": ["马斯克的 Terafab（马斯克布局的巨型算力与制造基地）"]
+        },
+        {
+          "source": "台积电",
+          "target": "马斯克",
+          "type": "associates_with",
+          "weight": 0.5,
+          "evidence": ["加深台积电与马斯克旗下庞大算力需求之间的绑定"]
+        }
+      ],
+      "metrics": [
+        {"name": "得州新厂投资额", "value": "约226亿美元"},
+        {"name": "台积电对美产能累计承诺投资", "value": "约2650亿美元"}
+      ],
+      "why_it_matters": "台积电在美国二度扩产并贴近马斯克算力基地，叠加英伟达封装产能扩张，显示美国 AI 基建供应链在地缘与供给约束下由巨头互相锁定加速重构。"
+    },
+    {
+      "article_id": "2026-11-27-5",
+      "entities": [
+        {
+          "name": "智谱",
+          "type": "company",
+          "aliases": ["智谱AI", "Zhipu AI"],
+          "confidence": 0.96,
+          "evidence": ["智谱近期上线新一代旗舰模型 GLM-5.4"]
+        },
+        {
+          "name": "GLM-5.4",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.94,
+          "evidence": ["智谱近期上线新一代旗舰模型 GLM-5.4"]
+        },
+        {
+          "name": "循环 Transformer",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["首次引入循环 Transformer 结构"]
+        },
+        {
+          "name": "MiniMax",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.95,
+          "evidence": ["MiniMax 创始人兼 CEO 闫俊杰公开表示"]
+        },
+        {
+          "name": "闫俊杰",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["MiniMax 创始人兼 CEO 闫俊杰公开表示"]
+        },
+        {
+          "name": "华为",
+          "type": "company",
+          "aliases": ["Huawei"],
+          "confidence": 0.9,
+          "evidence": ["采用华为与阿里巴巴的 AI 芯片"]
+        },
+        {
+          "name": "Alibaba",
+          "type": "company",
+          "aliases": ["阿里巴巴", "阿里"],
+          "confidence": 0.9,
+          "evidence": ["采用华为与阿里巴巴的 AI 芯片"]
+        },
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达"],
+          "confidence": 0.92,
+          "evidence": ["以降低对英伟达的依赖"]
+        },
+        {
+          "name": "M3 Pro",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["MiniMax 的3T级 M3 Pro 已完成多轮强化学习准备发布"]
+        },
+        {
+          "name": "M4 Flash",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["M4 Flash 已启动预训练"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "智谱发布新一代旗舰模型 GLM-5.4 引入循环 Transformer",
+          "summary": "智谱上线 GLM-5.4，首次引入循环 Transformer，在不增加7500亿参数规模的前提下把有效计算深度提升约36%，新增训练算力仅约10%。",
+          "participants": [
+            {"name": "智谱", "type": "company", "role": "subject"},
+            {"name": "GLM-5.4", "type": "model", "role": "object"},
+            {"name": "循环 Transformer", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["智谱近期上线新一代旗舰模型 GLM-5.4", "首次引入循环 Transformer 结构"]
+        },
+        {
+          "type": "infra",
+          "label": "MiniMax 转投华为与阿里国产芯片以降低对英伟达依赖",
+          "summary": "MiniMax 创始人闫俊杰表示加快采用华为与阿里巴巴 AI 芯片以降低对英伟达依赖，两个国产芯片超级节点方案预计四季度爬坡用于推理。",
+          "participants": [
+            {"name": "MiniMax", "type": "company", "role": "subject"},
+            {"name": "华为", "type": "company", "role": "object"},
+            {"name": "Alibaba", "type": "company", "role": "object"},
+            {"name": "NVIDIA", "type": "company", "role": "competitor"}
+          ],
+          "evidence": ["采用华为与阿里巴巴的 AI 芯片，以降低对英伟达的依赖"]
+        },
+        {
+          "type": "trend",
+          "label": "港股“大模型双雄”智谱与 MiniMax 齐涨超17%",
+          "summary": "11月27日恒生科技指数大涨6.45%，智谱与 MiniMax 均涨超17%，国产大模型双雄联袂走强，全球呈“美国领先、中国紧随、双轨并行”格局。",
+          "participants": [
+            {"name": "智谱", "type": "company", "role": "subject"},
+            {"name": "MiniMax", "type": "company", "role": "subject"}
+          ],
+          "evidence": ["智谱(02513.HK)与 MiniMax(00100.HK)均涨超17%"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "GLM-5.4",
+          "target": "智谱",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["智谱近期上线新一代旗舰模型 GLM-5.4"]
+        },
+        {
+          "source": "GLM-5.4",
+          "target": "循环 Transformer",
+          "type": "built_on",
+          "weight": 0.75,
+          "evidence": ["首次引入循环 Transformer 结构"]
+        },
+        {
+          "source": "MiniMax",
+          "target": "华为",
+          "type": "uses",
+          "weight": 0.65,
+          "evidence": ["采用华为与阿里巴巴的 AI 芯片，以降低对英伟达的依赖"]
+        },
+        {
+          "source": "MiniMax",
+          "target": "Alibaba",
+          "type": "uses",
+          "weight": 0.65,
+          "evidence": ["采用华为与阿里巴巴的 AI 芯片，以降低对英伟达的依赖"]
+        },
+        {
+          "source": "M3 Pro",
+          "target": "MiniMax",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": ["MiniMax 的3T级 M3 Pro 已完成多轮强化学习准备发布"]
+        },
+        {
+          "source": "M4 Flash",
+          "target": "MiniMax",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": ["M4 Flash 已启动预训练"]
+        },
+        {
+          "source": "闫俊杰",
+          "target": "MiniMax",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["MiniMax 创始人兼 CEO 闫俊杰公开表示"]
+        }
+      ],
+      "metrics": [
+        {"name": "GLM-5.4 参数规模", "value": "7500亿"},
+        {"name": "GLM-5.4 有效计算深度提升", "value": "约36%"},
+        {"name": "GLM-5.4 新增训练算力", "value": "约10%"},
+        {"name": "智谱股价涨幅", "value": "超17%"},
+        {"name": "MiniMax 股价涨幅", "value": "超17%"},
+        {"name": "M3 Pro 参数量", "value": "3T级"},
+        {"name": "H3 开源生态下载量", "value": "1.5亿次"},
+        {"name": "MiniMax 融资后账面现金", "value": "约30亿美元"},
+        {"name": "智谱八月 ARR", "value": "16亿美元"},
+        {"name": "MiniMax ARR", "value": "超8亿美元"}
+      ],
+      "why_it_matters": "中国大模型以“增深度不加参数量”和“国产芯片回报率反超”两条路径对冲算力封锁，港股双雄齐涨给出资本背书，美中双轨格局加速成形。"
+    },
+    {
+      "article_id": "2026-11-27-6",
+      "entities": [
+        {
+          "name": "汤森路透",
+          "type": "company",
+          "aliases": ["路透社母公司"],
+          "confidence": 0.95,
+          "evidence": ["路透社母公司汤森路透将于今年底正式推出新一代自研大模型 Thomson 1.1"]
+        },
+        {
+          "name": "Thomson 1.1",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.94,
+          "evidence": ["将于今年底正式推出新一代自研大模型 Thomson 1.1"]
+        },
+        {
+          "name": "GLM",
+          "type": "model",
+          "aliases": ["GLM 系列", "智谱 GLM"],
+          "confidence": 0.9,
+          "evidence": ["基座采用两个开源模型：中国智谱 AI 的 GLM 系列与谷歌轻量级开源模型 Gemma"]
+        },
+        {
+          "name": "Gemma",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["谷歌轻量级开源模型 Gemma"]
+        },
+        {
+          "name": "Google",
+          "type": "company",
+          "aliases": ["谷歌"],
+          "confidence": 0.93,
+          "evidence": ["谷歌轻量级开源模型 Gemma"]
+        },
+        {
+          "name": "智谱",
+          "type": "company",
+          "aliases": ["智谱AI", "Zhipu AI"],
+          "confidence": 0.94,
+          "evidence": ["中国智谱 AI 的 GLM 系列"]
+        },
+        {
+          "name": "Joel Hellen",
+          "type": "person",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["公司 CTO Joel Hellen 解释选型依据"]
+        }
+      ],
+      "events": [
+        {
+          "type": "launch",
+          "label": "汤森路透年底推出自研模型 Thomson 1.1 基座采用 GLM 与 Gemma",
+          "summary": "汤森路透今年底推出 Thomson 1.1，基座采用智谱 GLM 与谷歌 Gemma 两个开源模型，延续上一代以阿里开源 Qwen 为底座的路线，以降本并强化核心技术自主可控。",
+          "participants": [
+            {"name": "汤森路透", "type": "company", "role": "subject"},
+            {"name": "Thomson 1.1", "type": "model", "role": "object"},
+            {"name": "GLM", "type": "model", "role": "partner"},
+            {"name": "Gemma", "type": "model", "role": "partner"}
+          ],
+          "evidence": ["将于今年底正式推出新一代自研大模型 Thomson 1.1", "基座采用两个开源模型：中国智谱 AI 的 GLM 系列与谷歌轻量级开源模型 Gemma"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Thomson 1.1",
+          "target": "汤森路透",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["将于今年底正式推出新一代自研大模型 Thomson 1.1"]
+        },
+        {
+          "source": "Thomson 1.1",
+          "target": "GLM",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": ["基座采用两个开源模型：中国智谱 AI 的 GLM 系列与谷歌轻量级开源模型 Gemma"]
+        },
+        {
+          "source": "Thomson 1.1",
+          "target": "Gemma",
+          "type": "built_on",
+          "weight": 0.8,
+          "evidence": ["基座采用两个开源模型：中国智谱 AI 的 GLM 系列与谷歌轻量级开源模型 Gemma"]
+        },
+        {
+          "source": "Gemma",
+          "target": "Google",
+          "type": "developed_by",
+          "weight": 0.7,
+          "evidence": ["谷歌轻量级开源模型 Gemma"]
+        },
+        {
+          "source": "GLM",
+          "target": "智谱",
+          "type": "developed_by",
+          "weight": 0.75,
+          "evidence": ["中国智谱 AI 的 GLM 系列"]
+        },
+        {
+          "source": "Joel Hellen",
+          "target": "汤森路透",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["公司 CTO Joel Hellen 解释选型依据"]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "汤森路透连续两代以开源与中国模型为底座，说明主流企业正用开源+中国组合对冲成本与供应风险，美国闭源模型在企业私有化部署中的主导地位继续松动。"
+    },
+    {
+      "article_id": "2026-11-27-7",
+      "entities": [
+        {
+          "name": "NVIDIA",
+          "type": "company",
+          "aliases": ["英伟达"],
+          "confidence": 0.95,
+          "evidence": ["英伟达 Nemotron Labs 将 30B 总参/3B 激活的自回归图像生成模型 Nemotron-Labs-Image-30B-A3B 放到 Hugging Face"]
+        },
+        {
+          "name": "Nemotron-Labs-Image-30B-A3B",
+          "type": "model",
+          "aliases": ["Nemotron Image 30B A3B"],
+          "confidence": 0.94,
+          "evidence": ["Nemotron-Labs-Image-30B-A3B 放到 Hugging Face"]
+        },
+        {
+          "name": "Nemotron-Labs-VisualCreation",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["它是 Nemotron-Labs-VisualCreation 的栅格组件"]
+        },
+        {
+          "name": "GenEval",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["厂商报告的基准包括 GenEval 92.86"]
+        },
+        {
+          "name": "GenEval2",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["GenEval2 65.43"]
+        },
+        {
+          "name": "WISE Verified",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["WISE Verified 91.50"]
+        },
+        {
+          "name": "BizGenEval",
+          "type": "benchmark",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["BizGenEval 86.0"]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "英伟达开源图像生成模型 Nemotron-Labs-Image-30B-A3B",
+          "summary": "英伟达 Nemotron Labs 将 30B 总参/3B 激活的 Nemotron-Labs-Image-30B-A3B 放到 Hugging Face，授权为非商用，以“像素即代码”统一视觉 token 与显式代码；厂商报告基准包括 GenEval 92.86、GenEval2 65.43、WISE Verified 91.50、BizGenEval 86.0。",
+          "participants": [
+            {"name": "NVIDIA", "type": "company", "role": "subject"},
+            {"name": "Nemotron-Labs-Image-30B-A3B", "type": "model", "role": "object"},
+            {"name": "GenEval", "type": "benchmark", "role": "benchmark"},
+            {"name": "GenEval2", "type": "benchmark", "role": "benchmark"},
+            {"name": "WISE Verified", "type": "benchmark", "role": "benchmark"},
+            {"name": "BizGenEval", "type": "benchmark", "role": "benchmark"}
+          ],
+          "evidence": ["将 30B 总参/3B 激活的自回归图像生成模型 Nemotron-Labs-Image-30B-A3B 放到 Hugging Face"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Nemotron-Labs-Image-30B-A3B",
+          "target": "NVIDIA",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["英伟达 Nemotron Labs 将 30B 总参/3B 激活的自回归图像生成模型 Nemotron-Labs-Image-30B-A3B 放到 Hugging Face"]
+        },
+        {
+          "source": "Nemotron-Labs-VisualCreation",
+          "target": "Nemotron-Labs-Image-30B-A3B",
+          "type": "integrates",
+          "weight": 0.6,
+          "evidence": ["它是 Nemotron-Labs-VisualCreation 的栅格组件"]
+        },
+        {
+          "source": "Nemotron-Labs-Image-30B-A3B",
+          "target": "GenEval",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": ["厂商报告的基准包括 GenEval 92.86"]
+        },
+        {
+          "source": "Nemotron-Labs-Image-30B-A3B",
+          "target": "GenEval2",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": ["GenEval2 65.43"]
+        },
+        {
+          "source": "Nemotron-Labs-Image-30B-A3B",
+          "target": "WISE Verified",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": ["WISE Verified 91.50"]
+        },
+        {
+          "source": "Nemotron-Labs-Image-30B-A3B",
+          "target": "BizGenEval",
+          "type": "evaluated_on",
+          "weight": 0.7,
+          "evidence": ["BizGenEval 86.0"]
+        }
+      ],
+      "metrics": [
+        {"name": "Nemotron Image 参数量(总参/激活)", "value": "30B总参/3B激活"},
+        {"name": "GenEval 得分", "value": "92.86"},
+        {"name": "GenEval2 得分", "value": "65.43"},
+        {"name": "WISE Verified 得分", "value": "91.50"},
+        {"name": "BizGenEval 得分", "value": "86.0"},
+        {"name": "Image-Tokenizer 参数量", "value": "约6.42亿"},
+        {"name": "Leech 晶格向量码本大小", "value": "196,560"}
+      ],
+      "why_it_matters": "英伟达把旗舰图像生成能力以“视觉 token+代码”形式非商用开源，标志其从卖闭源模型转向输出可编辑生成基础设施，意图主导生成式基础层。"
+    },
+    {
+      "article_id": "2026-11-27-8",
+      "entities": [
+        {
+          "name": "Kandinsky Lab",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": ["Kandinsky Lab 释出 KVAE-3.0 系列 tokenizer"]
+        },
+        {
+          "name": "KVAE-3.0",
+          "type": "tool",
+          "aliases": ["KVAE-3.0 系列 tokenizer"],
+          "confidence": 0.94,
+          "evidence": ["KVAE-3.0 是一组面向音频、图像、视频域的自编码器 tokenizer"]
+        },
+        {
+          "name": "KVAE-Audio-Stereo",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["KVAE-Audio-Stereo 是48kHz通用立体声 VAE，50Hz 潜在率"]
+        },
+        {
+          "name": "KVAE-2D-3.0",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["KVAE-2D-3.0 潜在尺寸匹配 FLUX.2-VAE"]
+        },
+        {
+          "name": "KVAE-3D-3.0",
+          "type": "tool",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["KVAE-3D-3.0 把帧空间压缩32倍、时间压缩4倍"]
+        },
+        {
+          "name": "DINOv2",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": ["对 DINOv2 等特征做蒸馏对齐"]
+        },
+        {
+          "name": "Stable Audio 3",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["超过70%的胜率领先开源竞品 Stable Audio 3"]
+        },
+        {
+          "name": "FLUX.2-VAE",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": ["KVAE-2D-3.0 潜在尺寸匹配 FLUX.2-VAE"]
+        },
+        {
+          "name": "MiniMax-H3 VAE",
+          "type": "product",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["在人类偏好测试里全面领先 MiniMax-H3 VAE"]
+        },
+        {
+          "name": "V-JEPA",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.8,
+          "evidence": ["新增了对 V-JEPA 特征的对齐"]
+        },
+        {
+          "name": "LTX-2.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.9,
+          "evidence": ["超过70%的胜率领先开源竞品 Stable Audio 3 与 LTX-2.5"]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Kandinsky Lab 发布多模态 tokenizer KVAE-3.0",
+          "summary": "Kandinsky Lab 释出面向音频/图像/视频域的 KVAE-3.0 tokenizer，靠对 DINOv2 等特征蒸馏的潜在对齐提升重建质量，在多项主观评测中超过开源竞品。",
+          "participants": [
+            {"name": "Kandinsky Lab", "type": "organization", "role": "subject"},
+            {"name": "KVAE-3.0", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Kandinsky Lab 释出 KVAE-3.0 系列 tokenizer"]
+        },
+        {
+          "type": "benchmark",
+          "label": "KVAE 音频变体主观对比胜率超70%领先 Stable Audio 3 与 LTX-2.5",
+          "summary": "KVAE-3.0 音频变体 KVAE-Audio-Stereo 在主观对比评测中胜率超70%，领先开源竞品 Stable Audio 3 与 LTX-2.5。",
+          "participants": [
+            {"name": "KVAE-Audio-Stereo", "type": "tool", "role": "object"},
+            {"name": "Stable Audio 3", "type": "product", "role": "competitor"},
+            {"name": "LTX-2.5", "type": "model", "role": "competitor"}
+          ],
+          "evidence": ["超过70%的胜率领先开源竞品 Stable Audio 3 与 LTX-2.5"]
+        },
+        {
+          "type": "benchmark",
+          "label": "KVAE-3D-3.0 在人类偏好测试全面领先 MiniMax-H3 VAE",
+          "summary": "KVAE-3.0 视频变体 KVAE-3D-3.0 在人类偏好测试中全面领先 MiniMax-H3 VAE。",
+          "participants": [
+            {"name": "KVAE-3D-3.0", "type": "tool", "role": "object"},
+            {"name": "MiniMax-H3 VAE", "type": "product", "role": "competitor"}
+          ],
+          "evidence": ["在人类偏好测试里全面领先 MiniMax-H3 VAE"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "KVAE-3.0",
+          "target": "Kandinsky Lab",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Kandinsky Lab 释出 KVAE-3.0 系列 tokenizer"]
+        },
+        {
+          "source": "KVAE-3.0",
+          "target": "DINOv2",
+          "type": "uses",
+          "weight": 0.6,
+          "evidence": ["对 DINOv2 等特征做蒸馏对齐"]
+        },
+        {
+          "source": "KVAE-Audio-Stereo",
+          "target": "Stable Audio 3",
+          "type": "outperforms",
+          "weight": 0.7,
+          "evidence": ["超过70%的胜率领先开源竞品 Stable Audio 3"]
+        },
+        {
+          "source": "KVAE-Audio-Stereo",
+          "target": "LTX-2.5",
+          "type": "outperforms",
+          "weight": 0.7,
+          "evidence": ["超过70%的胜率领先开源竞品 Stable Audio 3 与 LTX-2.5"]
+        },
+        {
+          "source": "KVAE-2D-3.0",
+          "target": "FLUX.2-VAE",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["KVAE-2D-3.0 潜在尺寸匹配 FLUX.2-VAE"]
+        },
+        {
+          "source": "KVAE-3D-3.0",
+          "target": "V-JEPA",
+          "type": "uses",
+          "weight": 0.6,
+          "evidence": ["新增了对 V-JEPA 特征的对齐以保留语义容量"]
+        },
+        {
+          "source": "KVAE-3D-3.0",
+          "target": "MiniMax-H3 VAE",
+          "type": "outperforms",
+          "weight": 0.7,
+          "evidence": ["在人类偏好测试里全面领先 MiniMax-H3 VAE"]
+        }
+      ],
+      "metrics": [
+        {"name": "KVAE-Audio-Stereo 采样率", "value": "48kHz"},
+        {"name": "KVAE-Audio-Stereo 潜在率", "value": "50Hz"},
+        {"name": "KVAE-Audio-Stereo 主观对比胜率", "value": "超70%"},
+        {"name": "KVAE-3D-3.0 帧空间压缩倍数", "value": "32倍"},
+        {"name": "KVAE-3D-3.0 时间压缩倍数", "value": "4倍"}
+      ],
+      "why_it_matters": "音频/图像/视频 tokenizer 完全统一并靠潜在对齐实现更高压缩不损可扩散性，压缩率与重建质量正成为生成式基础设施开源竞争的核心战场。"
+    },
+    {
+      "article_id": "2026-11-27-9",
+      "entities": [
+        {
+          "name": "Lightricks",
+          "type": "company",
+          "aliases": [],
+          "confidence": 0.93,
+          "evidence": ["Lightricks 更新 LTX-2.5"]
+        },
+        {
+          "name": "LTX-2.5",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.94,
+          "evidence": ["Lightricks 更新 LTX-2.5"]
+        },
+        {
+          "name": "Gemma 4 12B",
+          "type": "model",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["配了 Gemma 4 12B 自定义文本编码器"]
+        },
+        {
+          "name": "Blackwell",
+          "type": "hardware",
+          "aliases": [],
+          "confidence": 0.88,
+          "evidence": ["面向 Blackwell 硬件"]
+        }
+      ],
+      "events": [
+        {
+          "type": "open_source",
+          "label": "Lightricks 更新开源视频模型 LTX-2.5 加入原生多镜头",
+          "summary": "Lightricks 更新 LTX-2.5，加入原生多镜头生成、扩散保真渲染与扩散视频解码器，并配 Gemma 4 12B 文本编码器，蒸馏模型面向 Blackwell 提供 NVFP4 量化路径。",
+          "participants": [
+            {"name": "Lightricks", "type": "company", "role": "subject"},
+            {"name": "LTX-2.5", "type": "model", "role": "object"}
+          ],
+          "evidence": ["Lightricks 更新 LTX-2.5"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "LTX-2.5",
+          "target": "Lightricks",
+          "type": "developed_by",
+          "weight": 0.85,
+          "evidence": ["Lightricks 更新 LTX-2.5"]
+        },
+        {
+          "source": "LTX-2.5",
+          "target": "Gemma 4 12B",
+          "type": "uses",
+          "weight": 0.65,
+          "evidence": ["配了 Gemma 4 12B 自定义文本编码器"]
+        },
+        {
+          "source": "LTX-2.5",
+          "target": "Blackwell",
+          "type": "uses",
+          "weight": 0.6,
+          "evidence": ["面向 Blackwell 硬件"]
+        }
+      ],
+      "metrics": [
+        {"name": "LTX-2.5 自定义文本编码器参数量", "value": "Gemma 4 12B"},
+        {"name": "LTX-2.5 量化精度", "value": "NVFP4"}
+      ],
+      "why_it_matters": "开源视频模型同时补齐推理质量（多镜头/扩散解码器）与新一代硬件适配（NVFP4/Blackwell/Trainium3），开源视频生态正同时对齐质量与加速硬件部署路径。"
+    },
+    {
+      "article_id": "2026-11-27-10",
+      "entities": [
+        {
+          "name": "Daniel Kokotajlo",
+          "type": "person",
+          "aliases": ["Kokotajlo"],
+          "confidence": 0.9,
+          "evidence": ["Erdil 认为约20%，Kokotajlo 认为高于50%"]
+        },
+        {
+          "name": "Ege Erdil",
+          "type": "person",
+          "aliases": ["Erdil"],
+          "confidence": 0.9,
+          "evidence": ["谷歌 DeepMind 研究员 Ege Erdil"]
+        },
+        {
+          "name": "Google DeepMind",
+          "type": "company",
+          "aliases": ["DeepMind", "谷歌 DeepMind"],
+          "confidence": 0.9,
+          "evidence": ["谷歌 DeepMind 研究员 Ege Erdil"]
+        },
+        {
+          "name": "AI Futures Project",
+          "type": "organization",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["AI Futures Project 作者 Daniel Kokotajlo"]
+        }
+      ],
+      "events": [
+        {
+          "type": "trend",
+          "label": "Kokotajlo 与 Erdil 激辩 2029 前超智能几率",
+          "summary": "Kokotajlo 与 Erdil 在 Dwarkesh 播客就 2029 年出现超人类专家智能的几率辩论：Erdil 认为约20%，Kokotajlo 认为高于50%，但在多数风险判断上意外一致。",
+          "participants": [
+            {"name": "Ege Erdil", "type": "person", "role": "subject"},
+            {"name": "Daniel Kokotajlo", "type": "person", "role": "competitor"}
+          ],
+          "evidence": ["Erdil 认为约20%，Kokotajlo 认为高于50%"]
+        },
+        {
+          "type": "policy",
+          "label": "Kokotajlo 提议把研究算力上限压到公司总容量5%-10%",
+          "summary": "Kokotajlo 主张前沿实验室接近完全自动化科研，建议把研究算力上限压到公司总容量的5%～10%以争取对齐技术时间；Erdil 则认为暂停或放慢训练为时过早。",
+          "participants": [
+            {"name": "Daniel Kokotajlo", "type": "person", "role": "subject"},
+            {"name": "Ege Erdil", "type": "person", "role": "competitor"}
+          ],
+          "evidence": ["把研究算力上限压到公司总容量的5%～10%"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "Ege Erdil",
+          "target": "Google DeepMind",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["谷歌 DeepMind 研究员 Ege Erdil"]
+        },
+        {
+          "source": "Daniel Kokotajlo",
+          "target": "AI Futures Project",
+          "type": "affiliated_with",
+          "weight": 0.8,
+          "evidence": ["AI Futures Project 作者 Daniel Kokotajlo"]
+        },
+        {
+          "source": "Ege Erdil",
+          "target": "Daniel Kokotajlo",
+          "type": "compared_with",
+          "weight": 0.6,
+          "evidence": ["Erdil 认为约20%，Kokotajlo 认为高于50%"]
+        }
+      ],
+      "metrics": [
+        {"name": "Erdil 对2029前超智能概率估计", "value": "约20%"},
+        {"name": "Kokotajlo 对2029前超智能概率估计", "value": "高于50%"}
+      ],
+      "why_it_matters": "两位顶级研究者在“2029 前超智能”几率上给出20%–50%的显著非零估计且风险判断罕见趋同，前沿与治理界开始为可能的智能爆发做预案。"
+    },
+    {
+      "article_id": "2026-11-27-11",
+      "entities": [
+        {
+          "name": "美国零售商",
+          "type": "organization",
+          "aliases": ["零售商"],
+          "confidence": 0.88,
+          "evidence": ["美国零售商 AI 应用激增"]
+        },
+        {
+          "name": "AI 客服",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["AI 客服替代人工"]
+        },
+        {
+          "name": "动态定价",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["动态定价让价格不再透明"]
+        },
+        {
+          "name": "算法用工决策",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["算法用工决策可能放大歧视"]
+        },
+        {
+          "name": "监管与护栏",
+          "type": "topic",
+          "aliases": [],
+          "confidence": 0.85,
+          "evidence": ["呼吁对其设置监管与护栏"]
+        }
+      ],
+      "events": [
+        {
+          "type": "policy",
+          "label": "美国零售 AI 应用激增引发对监管与护栏的呼吁",
+          "summary": "零售商在客服、动态定价与用工排班中越来越多采用 AI，消费者权益与倡导者以决策缺乏可解释性为由呼吁用监管与护栏替代企业自律，监管真空成为零售 AI 落地的公共关切，联邦与州层面立法讨论将持续升温。",
+          "participants": [
+            {"name": "美国零售商", "type": "organization", "role": "subject"},
+            {"name": "监管与护栏", "type": "topic", "role": "object"},
+            {"name": "AI 客服", "type": "topic", "role": "object"}
+          ],
+          "evidence": ["呼吁对其设置监管与护栏"]
+        }
+      ],
+      "relations": [
+        {
+          "source": "美国零售商",
+          "target": "AI 客服",
+          "type": "uses",
+          "weight": 0.6,
+          "evidence": ["AI 客服替代人工"]
+        },
+        {
+          "source": "美国零售商",
+          "target": "动态定价",
+          "type": "uses",
+          "weight": 0.6,
+          "evidence": ["动态定价让价格不再透明"]
+        },
+        {
+          "source": "美国零售商",
+          "target": "算法用工决策",
+          "type": "uses",
+          "weight": 0.6,
+          "evidence": ["算法用工决策可能放大歧视"]
+        },
+        {
+          "source": "监管与护栏",
+          "target": "美国零售商",
+          "type": "targets",
+          "weight": 0.5,
+          "evidence": ["呼吁对其设置监管与护栏"]
+        }
+      ],
+      "metrics": [],
+      "why_it_matters": "AI 以快过治理框架的速度渗透 C 端零售，监管真空正把透明度、公平与责任问题推向联邦与州立法议程，护栏从企业自律转向硬规则。"
+    }
+  ]
+}
